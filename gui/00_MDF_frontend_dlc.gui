@@ -1,0 +1,109 @@
+types dlc_types {
+	type dlc_collection = flowcontainer {
+		margin_left = 20
+		spacing = 16
+
+        text_single = {
+            parentanchor = vcenter
+            max_width = 150
+            align = nobaseline
+            using = Font_Size_Medium
+            elide = right
+            text = "DLC"
+        }
+
+        # Vanilla
+        flowcontainer = {
+            # datamodel = "[GetDlcCollection]" # MDF
+            datamodel = "[DataModelFirst( GetDlcCollection, '(int32)11' )]" # MDF - Set arg 2 to current number of real DLCs in menu
+            spacing = 11
+
+            item = {
+                container = {
+                    parentanchor = vcenter
+
+                    widget = {
+                        visible = "[Dlc.IsMajor]"
+                        size = { 80 80 }
+
+                        dlc_button = {}
+                    }
+
+                    widget = {
+                        visible = "[Not( Dlc.IsMajor )]"
+                        size = { 65 65 }
+
+                        dlc_button = {}
+                    }
+                }
+            }
+        }
+        
+        vertical_divider = {
+            visible = "[GreaterThan_int32(GetDataModelSize(GetDlcCollection), '(int32)11')]" # MDF - Set arg 2 to # of real DLCs
+        }
+
+        # Mods
+        flowcontainer = {
+            # datamodel = "[GetDlcCollection]" # MDF
+            datamodel = "[DataModelSkipFirst(GetDlcCollection, '(int32)11')]" # MDF - Set arg 2 to # of real DLCs
+            parentanchor = vcenter
+            spacing = 11
+
+            item = {
+                container = {
+                    parentanchor = vcenter
+
+                    widget = {
+                        visible = "[Dlc.IsMajor]"
+                        size = { 80 80 }
+                        dlc_button = {
+                            blockoverride "button_params" {
+                                tooltip = "MDF_MOD_DLC_BUTTON_TOOLTIP"
+                            }
+                        }
+                    }
+
+                    widget = {
+                        visible = "[Not(Dlc.IsMajor)]"
+                        size = { 65 65 }
+                        dlc_button = {
+                            blockoverride "button_params" {
+                                tooltip = "MDF_MOD_DLC_BUTTON_TOOLTIP"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+	}
+
+	type dlc_button = button {
+		size = { 100% 100% }
+		# alpha = "[TransparentIfFalse( Dlc.IsEnabled )]" # MDF
+		# onclick = "[Dlc.ShowInStore]" # MDF
+		# tooltip = "DLC_BUTTON_TOOLTIP" # MDF
+		using = tooltip_ne
+        
+        # MDF
+        block "button_params" { # MDF
+            alpha   = "[TransparentIfFalse( Dlc.IsEnabled )]"
+            onclick = "[Dlc.ShowInStore]"
+            tooltip = "DLC_BUTTON_TOOLTIP"
+        }
+
+		icon = {
+			size = { 100% 100% }
+			texture = "gfx/interface/backgrounds/round_frame_dec.dds"
+
+			icon = {
+				size = { 100% 100% }
+				position = { 3 -3 }
+
+				texture = "[Dlc.GetIcon]"
+				parentanchor = center
+
+			}
+		}
+	}
+}

@@ -1,0 +1,237 @@
+﻿#食品ナーフ
+#汎用鉄から汚染削除
+#汎用鉄、石炭強化
+#汎用パソコンを追加
+company_basic_pc = {
+	icon = "gfx/interface/icons/company_icons/nsm/company_basic_pc.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+	flavored_company = no
+
+	uses_dynamic_naming = yes
+
+	dynamic_company_type_names = {
+		"dynamic_company_type_company"
+		"dynamic_company_type_consortium"
+		"dynamic_company_type_corporation"
+		"dynamic_company_type_conglomerate"
+		"dynamic_company_type_syndicate"
+		"dynamic_company_type_combine"
+		"dynamic_company_type_guild"
+	}
+
+	building_types = {
+		building_processors_foundry
+		building_computer_assembly_plant
+	}
+
+	extension_building_types = {
+		building_lead_mine
+		#building_power_plant
+	}
+
+	possible = {
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_computer_assembly_plant
+					is_building_type = building_processors_foundry
+				}
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_lead_mine_throughput_add = 0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_computer_assembly_plant
+					is_building_type = building_processors_foundry
+				}
+				level >= 5
+			}
+		}
+	}
+}
+REPLACE:company_basic_food = {
+	icon = "gfx/interface/icons/company_icons/basic_food.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+
+	category = aristocrat_owned
+
+	flavored_company = no
+
+	uses_dynamic_naming = yes
+
+	dynamic_company_type_names = {
+		"dynamic_company_type_company"
+		"dynamic_company_type_consortium"
+		"dynamic_company_type_corporation"
+		"dynamic_company_type_conglomerate"
+		"dynamic_company_type_syndicate"
+		"dynamic_company_type_combine"
+	}
+
+	building_types = {
+		building_food_industry
+	}
+
+	extension_building_types = {
+		building_livestock_ranch
+		building_wheat_farm
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_groceries
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_groceries_complete_tt
+			has_variable = prestige_good_generic_groceries_var
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_food_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_birth_rate_mult = 0.03
+		building_food_industry_throughput_add = 0.15
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_food_industry
+				level >= 3
+			}
+		}
+	}
+}
+REPLACE:company_basic_metal_mining = {
+	icon = "gfx/interface/icons/company_icons/basic_metal_mining.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
+
+	flavored_company = no
+
+	uses_dynamic_naming = yes
+
+	dynamic_company_type_names = {
+		"dynamic_company_type_company"
+		"dynamic_company_type_consortium"
+		"dynamic_company_type_corporation"
+		"dynamic_company_type_conglomerate"
+		"dynamic_company_type_syndicate"
+		"dynamic_company_type_combine"
+		"dynamic_company_type_guild"
+	}
+
+	building_types = {
+		building_iron_mine
+		building_lead_mine
+	}
+
+	extension_building_types = {
+		building_coal_mine
+		building_sulfur_mine
+	}
+
+	possible = {
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_iron_mine
+					is_building_type = building_lead_mine
+				}
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_steel_mill_throughput_add = 0.1
+		#state_pollution_reduction_health_mult = 0.05
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_iron_mine
+					is_building_type = building_lead_mine
+				}
+				level >= 5
+			}
+		}
+	}
+}
+REPLACE:company_basic_mineral_mining = {
+	icon = "gfx/interface/icons/company_icons/basic_mineral_mining.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
+
+	flavored_company = no
+
+	uses_dynamic_naming = yes
+
+	dynamic_company_type_names = {
+		"dynamic_company_type_company"
+		"dynamic_company_type_consortium"
+		"dynamic_company_type_corporation"
+		"dynamic_company_type_conglomerate"
+		"dynamic_company_type_syndicate"
+		"dynamic_company_type_combine"
+		"dynamic_company_type_guild"
+	}
+
+	building_types = {
+		building_sulfur_mine
+		building_coal_mine
+	}
+
+	extension_building_types = {
+		building_iron_mine
+		building_lead_mine
+	}
+
+	possible = {
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_sulfur_mine
+					is_building_type = building_coal_mine
+				}
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_chemical_plant_throughput_add = 0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_sulfur_mine
+					is_building_type = building_coal_mine
+				}
+				level >= 3
+			}
+		}
+	}
+}

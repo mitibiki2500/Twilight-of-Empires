@@ -1,0 +1,84 @@
+﻿#社会系
+INJECT:pmg_base_building_government_administration = { #行政府
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_local_computer_networks
+	}
+}
+INJECT:pmg_base_building_university = { #大学
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_big_science_and_humanities_department
+	}
+}
+INJECT:pmg_base_building_construction_sector = { #建設
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_prefabricated_concrete_buildings
+	}
+}
+INJECT:pmg_amenities = { #都市
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_shopping_centers
+	}
+}
+INJECT:pmg_public_transport = { #都市輸送
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_modern_city_transport
+	}
+}
+#インフラ
+INJECT:pmg_base_building_power_plant = { #発電
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_MRgas_plant
+		pm_nuclear1_plant
+		pm_nuclear2_plant
+	}
+}
+INJECT:pmg_base_building_railway = { #鉄道
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_mr1_trains
+		pm_mr2_trains
+	}
+}
+
+
+#兵舎
+INJECT:pmg_training = {
+	production_methods = {
+		pm_network_centric_warfare
+	}
+}
+
+INJECT:pmg_training_conscription = {
+	production_methods = {
+		pm_network_centric_warfare_conscription
+	}
+}
+
+#INJECT:pmg_naval_theory = {
+#	production_methods = {
+#		pm_modern_naval_doctrine
+#	}
+#}
+
+#海軍要塞
+INJECT:pmg_base_building_naval_fortification = {
+	production_methods = {
+		pm_naval_fortification_radar_batteries
+		pm_naval_fortification_coastal_missile_batteries
+		pm_naval_fortification_integrated_defense_grid
+	}
+}

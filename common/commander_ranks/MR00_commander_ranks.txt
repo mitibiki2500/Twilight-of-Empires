@@ -1,0 +1,242 @@
+﻿# If you're adding more ranks that commanders can be promoted to, make sure to change HIGHEST_PROMOTION_RANK in defines
+#陸軍上限x10 
+REPLACE:commander_rank_1 = {
+	rank_value = 1
+	texture = "gfx/interface/icons/commander_rank_icons/commander_rank_1.dds"
+
+	character_modifier = {
+		character_prominence_add = 10
+		character_max_offensive_battles_add = 2
+	}
+
+	general_modifier = { #陸軍上限x10
+		character_command_limit_add = 300 #was30
+	}
+
+	admiral_modifier = {
+		character_command_limit_add = 20
+		character_naval_mission_area_add = 2
+	}
+
+	country_modifier = {
+		country_bureaucracy_add = -10
+	}
+
+	title = {
+		first_valid = {
+			triggered_desc = {
+				desc = commander_rank_1_general
+				trigger = {
+					has_role_of_type = general
+				}
+			}
+			triggered_desc = {
+				desc = commander_rank_1_admiral
+				trigger = {
+					has_role_of_type = admiral
+				}
+			}
+			desc = commander_rank_1_fallback
+		}
+	}
+}
+
+REPLACE:commander_rank_2 = {
+	rank_value = 2
+    texture = "gfx/interface/icons/commander_rank_icons/commander_rank_2.dds"
+
+	character_modifier = {
+		character_prominence_add = 20
+		character_max_offensive_battles_add = 2
+	}
+
+	general_modifier = { #陸軍上限x10
+		character_command_limit_add = 600
+	}
+
+	admiral_modifier = {
+		character_command_limit_add = 40
+		character_naval_mission_area_add = 3
+	}
+
+	country_modifier = {
+		country_bureaucracy_add = -15
+	}
+
+	title = {
+		first_valid = {
+			triggered_desc = {
+				desc = commander_rank_2_general
+				trigger = {
+					has_role_of_type = general
+				}
+			}
+			triggered_desc = {
+				desc = commander_rank_2_admiral
+				trigger = {
+					has_role_of_type = admiral
+				}
+			}
+			desc = commander_rank_2_fallback
+		}
+	}
+}
+
+REPLACE:commander_rank_3 = {
+	rank_value = 3
+    texture = "gfx/interface/icons/commander_rank_icons/commander_rank_3.dds"
+
+	character_modifier = {
+		character_prominence_add = 30
+		character_max_offensive_battles_add = 3
+	}
+
+	general_modifier = { #陸軍上限x10
+		character_command_limit_add = 800
+	}
+
+	admiral_modifier = {
+		character_command_limit_add = 60
+		character_naval_mission_area_add = 4
+	}
+
+	country_modifier = {
+		country_bureaucracy_add = -20
+	}
+
+	title = {
+		first_valid = {
+			triggered_desc = {
+				desc = commander_rank_3_general
+				trigger = {
+					has_role_of_type = general
+				}
+			}
+			triggered_desc = {
+				desc = commander_rank_3_admiral
+				trigger = {
+					has_role_of_type = admiral
+				}
+			}
+			desc = commander_rank_3_fallback
+		}
+	}
+}
+
+REPLACE:commander_rank_4 = {
+	rank_value = 4
+    texture = "gfx/interface/icons/commander_rank_icons/commander_rank_4.dds"
+
+	character_modifier = {
+		character_prominence_add = 40
+		character_max_offensive_battles_add = 3
+	}
+
+	general_modifier = { #陸軍上限x10
+		character_command_limit_add = 1250
+	}
+
+	admiral_modifier = {
+		character_command_limit_add = 80
+		character_naval_mission_area_add = 5
+	}
+
+	country_modifier = {
+		country_bureaucracy_add = -25
+	}
+
+	title = {
+		first_valid = {
+			triggered_desc = {
+				desc = commander_rank_4_general
+				trigger = {
+					has_role_of_type = general
+				}
+			}
+			triggered_desc = {
+				desc = commander_rank_4_admiral
+				trigger = {
+					has_role_of_type = admiral
+				}
+			}
+			desc = commander_rank_4_fallback
+		}
+	}
+}
+
+REPLACE:commander_rank_5 = {
+	rank_value = 5
+    texture = "gfx/interface/icons/commander_rank_icons/commander_rank_5.dds"
+
+	character_modifier = {
+		character_prominence_add = 50
+		character_max_offensive_battles_add = 4
+	}
+
+	general_modifier = { #陸軍上限x10
+		character_command_limit_add = 2000
+	}
+
+	admiral_modifier = {
+		character_command_limit_add = 100
+		character_naval_mission_area_add = 6
+	}
+
+	country_modifier = {
+		country_bureaucracy_add = -30
+	}
+
+	title = {
+		first_valid = {
+			triggered_desc = {
+				desc = commander_rank_5_general
+				trigger = {
+					has_role_of_type = general
+				}
+			}
+			triggered_desc = {
+				desc = commander_rank_5_admiral
+				trigger = {
+					has_role_of_type = admiral
+				}
+			}
+			desc = commander_rank_5_fallback
+		}
+	}
+}
+
+REPLACE:commander_rank_ruler = {
+	rank_value = 6
+    texture = "gfx/interface/icons/character_role_icons/ruler.dds"
+
+	character_modifier = {
+		character_max_offensive_battles_add = 2
+	}
+
+	general_modifier = { #陸軍上限x10
+		character_command_limit_add = 500
+	}
+
+	admiral_modifier = {
+		character_command_limit_add = 30
+		character_naval_mission_area_add = 2
+	}
+
+	country_modifier = {
+		country_bureaucracy_add = -10
+	}
+
+	title = {
+		first_valid = {
+			triggered_desc = {
+				desc = commander_rank_ruler
+				trigger = {
+					is_ruler_of_own_country = yes
+					has_role_of_type = general
+				}
+			}
+			desc = commander_rank_ruler_fallback
+		}
+	}
+}
+

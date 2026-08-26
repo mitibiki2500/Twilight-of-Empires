@@ -1,0 +1,85 @@
+﻿# フークネート硫黄鉱床
+#プロバン炭田
+#ロイゲン鉱床
+#アルビア炭田
+#アイラグロワール
+#テーガール山脈
+#トルン平原
+#クンド砂漠
+#世界が焦がれる都
+
+# フークネート硫黄鉱床
+state_trait_huuknet_sulfur = {
+    icon = "gfx/interface/icons/state_trait_icons/mine_rich.dds"
+    modifier = {
+        building_sulfur_mine_throughput_add = 0.15
+    }
+}
+
+state_trait_provan_coalfield = { #プロバン炭田
+    icon = "gfx/interface/icons/state_trait_icons/mine_small.dds"
+    modifier = {
+        building_coal_mine_throughput_add = 0.1
+    }
+}
+state_trait_reugen_mineral_deposits = { #ロイゲン鉱床
+
+    icon = "gfx/interface/icons/state_trait_icons/mine_large.dds"
+    modifier = {
+        building_group_bg_mining_throughput_add = 0.15
+    }
+}
+state_trait_albia_coalfield = { #アルビア炭田
+    icon = "gfx/interface/icons/state_trait_icons/mine_large.dds"
+    modifier = {
+        building_coal_mine_throughput_add = 0.15
+    }
+}
+#アイラグロワール
+state_trait_aira_gloire = {
+    icon = "gfx/interface/icons/state_trait_icons/farm1.dds"
+    modifier = {
+        building_group_bg_agriculture_throughput_add = 0.1
+    }
+}
+state_trait_tegar_mountains = { #テーガール山脈
+    icon = "gfx/interface/icons/state_trait_icons/mountain_s.dds"
+    modifier = {
+        building_coal_mine_throughput_add = 0.1
+        state_infrastructure_mult = -0.1 #インフラ
+		state_market_access_price_impact = -0.04 #追加市場価格補正
+    }
+}
+state_trait_torun_plains = { #トルン平原
+    icon = "gfx/interface/icons/state_trait_icons/farm1.dds"
+    modifier = {
+        building_group_bg_agriculture_throughput_add = 0.15
+		building_group_bg_plantations_throughput_add = 0.15
+		goods_output_grain_mult = 0.1
+    }
+}
+state_trait_kund_desert = { #クンド砂漠
+    icon = "gfx/interface/icons/state_trait_icons/desert.dds"
+    modifier = {
+        building_group_bg_agriculture_throughput_add = -0.20
+        state_infrastructure_mult = -0.2
+    }
+}
+state_trait_north_tricon_soil = { #北トリコンの土壌
+    icon = "gfx/interface/icons/state_trait_icons/farm_p.dds"
+    modifier = {
+        building_group_bg_agriculture_throughput_add = -0.1
+		building_group_bg_plantations_throughput_add = 0.1
+    }
+}
+state_trait_consta = { #世界が焦がれる都
+	icon = "gfx/interface/icons/state_trait_icons/constantinople.dds"
+    modifier = {
+    state_migration_pull_mult = 0.25
+    state_pop_qualifications_mult = 0.25
+    building_group_bg_manufacturing_throughput_add = 0.05
+    state_infrastructure_add = 50
+	}
+}
+
+

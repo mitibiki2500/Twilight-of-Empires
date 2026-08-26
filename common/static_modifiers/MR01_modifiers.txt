@@ -1,0 +1,103 @@
+﻿#追加補正系はここ
+#ゲームルール
+MR_md_BANinfamy = { #悪名生成なし(ゲームルール)
+    icon = gfx/interface/icons/dlc_icons/dlc_mr.dds
+	country_infamy_generation_mult = -0.5 #悪名の生成減少
+	country_infamy_decay_mult = 99.99 #悪名減衰
+}
+
+MR_md_UPspeed_2 = {
+	icon = gfx/interface/icons/dlc_icons/dlc_mr.dds
+	#研究
+	country_tech_research_speed_mult = 1 #研究速度
+	country_tech_spread_mult = 1 #普及速度
+	#建築
+	state_construction_mult = 1 #建設速度
+	#内政内
+	state_colony_growth_creation_factor = 0.4 #植民地成長LV4
+	country_law_enactment_speed_mult = 1 #法律制定速度
+	country_resource_discovery_chance_mult = 1 #資源発見確率
+	state_incorporation_speed_mult = 1 #編入速度
+	country_institution_size_change_speed_mult = 1 #制度の変更速度
+	#人口識字
+	state_migration_quota_mult = 1 #移住割り当て
+	state_literacy_growth_add = 0.0005 #識字率成長
+	state_birth_rate_mult = 0.1 #出生率
+	state_mortality_mult = -0.05 #死亡率
+	#外交
+    power_bloc_mandate_progress_mult = 1 #権限の週間進捗
+	country_infamy_decay_mult = 1 #悪名減衰
+	country_diplomatic_play_maneuvers_mult = 1 #行動力補正
+}
+MR_md_UPspeed_3 = {
+	icon = gfx/interface/icons/dlc_icons/dlc_mr.dds
+	#研究
+	country_tech_research_speed_mult = 2 #研究速度
+	country_tech_spread_mult = 2 #普及速度
+	#建築
+	state_construction_mult = 2 #建設速度
+	#内政内
+	state_colony_growth_creation_factor = 0.8 #植民地成長LV4
+	country_law_enactment_speed_mult = 2 #法律制定速度
+	country_resource_discovery_chance_mult = 2 #資源発見確率
+	state_incorporation_speed_mult = 2 #編入速度
+	country_institution_size_change_speed_mult = 2 #制度の変更速度
+	#人口識字
+	state_migration_quota_mult = 2 #移住割り当て
+	state_literacy_growth_add = 0.001 #識字率成長
+	state_birth_rate_mult = 0.2 #出生率
+	state_mortality_mult = -0.1 #死亡率
+	#外交
+    power_bloc_mandate_progress_mult = 2 #権限の週間進捗
+	country_infamy_decay_mult = 2 #悪名減衰
+	country_diplomatic_play_maneuvers_mult = 2 #行動力補正
+}
+MR_md_UPspeed_5 = {
+	icon = gfx/interface/icons/dlc_icons/dlc_mr.dds
+	#研究
+	country_tech_research_speed_mult = 4 #研究速度
+	country_tech_spread_mult = 4 #普及速度
+	#建築
+	state_construction_mult = 4 #建設速度
+	#内政内
+	state_colony_growth_creation_factor = 1.6 #植民地成長LV4
+	country_law_enactment_speed_mult = 4 #法律制定速度
+	country_resource_discovery_chance_mult = 4 #資源発見確率
+	state_incorporation_speed_mult = 4 #編入速度
+	country_institution_size_change_speed_mult = 4 #制度の変更速度
+	#人口識字
+	state_migration_quota_mult = 4 #移住割り当て
+	state_literacy_growth_add = 0.002 #識字率成長
+	state_birth_rate_mult = 0.4 #出生率
+	state_mortality_mult = -0.2  #死亡率
+	#外交
+    power_bloc_mandate_progress_mult = 4 #権限の週間進捗
+	country_infamy_decay_mult = 4 #悪名減衰
+	country_diplomatic_play_maneuvers_mult = 4 #行動力補正
+}
+
+
+
+#追加補正系
+MR_german_uni = {#ドイツ用出生率 20減衰
+	icon = gfx/interface/icons/dlc_icons/dlc_mr.dds
+	state_birth_rate_mult = 0.05 #pop成長率
+	country_tech_research_speed_mult = 0.1 #研究速度
+	country_prestige_mult = 0.1 #威信補正
+}
+
+MR_NGER_income = { #北ドイツ統一ボーナス 15年
+	icon = gfx/interface/icons/dlc_icons/dlc_mr.dds
+	country_tax_income_add = 25000 #25K
+	country_minting_mult = 0.1 #鋳貨10%
+	state_birth_rate_mult = 0.05 #pop成長率
+}
+
+MR_recognized = { #承認補正
+	icon = gfx/interface/icons/dlc_icons/dlc_mr.dds
+	country_tech_research_speed_mult = 0.1 #研究速度
+	country_tech_spread_add = 10 #普及追加
+	country_tech_spread_mult = 0.25 #普及補正
+	#state_birth_rate_mult = 0.01 #pop成長率
+	state_mortality_mult = -0.05  #死亡率
+}

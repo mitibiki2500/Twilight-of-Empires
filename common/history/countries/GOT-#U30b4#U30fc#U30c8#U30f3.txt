@@ -1,0 +1,13 @@
+﻿COUNTRIES = {
+	c:GOT ?= {
+	        effect_starting_technology_tier_4_tech = yes
+	        effect_starting_politics_traditional = yes
+	        activate_law = law_type:law_local_police
+	        activate_law = law_type:law_censorship
+	        activate_law = law_type:law_legacy_slavery
+	        set_country_type = recognized
+	    
+	        trigger_event = { id = sick_man.1 }
+	        add_journal_entry = { type = je_great_game_control }
+	}
+}

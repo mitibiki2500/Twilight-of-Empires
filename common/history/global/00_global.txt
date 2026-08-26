@@ -1,0 +1,57 @@
+﻿# This is executed last among all history
+GLOBAL = {
+	
+	every_country = {
+		limit = { NOT = { has_law = law_type:law_slavery_banned } }
+		ig:ig_landowners = { add_ideology = ideology_pro_slavery }
+	}
+
+	#Event Variables
+	
+	set_global_variable = {
+		name = number_of_mega_earthquakes
+		value = 0
+	}
+
+	set_global_variable = {
+		name = number_of_mega_floods
+		value = 0
+	}
+	
+	set_global_variable = {
+		name = number_of_mega_eruptions
+		value = 0
+	}
+
+	# Twilight of Empires - 1836 starting relations
+	c:PAI = { change_relations = { country = c:GOT value = -50 } }
+	c:XAS = { change_relations = { country = c:XAT value = -50 } }
+	c:XAS = { change_relations = { country = c:XAL value = -50 } }
+	c:XAI = { change_relations = { country = c:PAI value = -50 } }
+	c:XAI = { change_relations = { country = c:GSU value = -50 } }
+	c:XCC = { change_relations = { country = c:XAI value = -100 } }
+	c:PAI = { change_relations = { country = c:GSU value = 50 } }
+	c:XAI = { change_relations = { country = c:XAJ value = 30 } }
+	c:XAM = { change_relations = { country = c:XEP value = 30 } }
+	c:XAM = { change_relations = { country = c:XAL value = 30 } }
+	c:XAL = { change_relations = { country = c:XEP value = 30 } }
+
+	# コンバフ - ネウストリア: 歴史的対立はあるが開始時は正式ライバルではない
+	c:XAJ = { change_relations = { country = c:XAL value = -30 } }
+
+	# Rivalries / embargoes remain diplomatic actions rather than Treaty articles.
+	c:PAI = { create_diplomatic_pact = { country = c:GOT type = rivalry } }
+	c:GOT = { create_diplomatic_pact = { country = c:PAI type = rivalry } }
+	c:XAS = { create_diplomatic_pact = { country = c:XAT type = rivalry } }
+	c:XAT = { create_diplomatic_pact = { country = c:XAS type = rivalry } }
+	c:XAS = { create_diplomatic_pact = { country = c:XAL type = rivalry } }
+	c:XAL = { create_diplomatic_pact = { country = c:XAS type = rivalry } }
+	c:XAI = { create_diplomatic_pact = { country = c:PAI type = rivalry } }
+
+	# Ilvone is unrecognized, so no formal XAI-GSU rivalry: hostility is embargo + relations.
+	c:XAI = { create_diplomatic_pact = { country = c:GSU type = embargo } }
+	c:GSU = { create_diplomatic_pact = { country = c:XAI type = embargo } }
+
+	# ToE - Ria civil war is initialized by on_game_start (see 99_toe_ria_colony_and_wars_on_actions.txt)
+
+}

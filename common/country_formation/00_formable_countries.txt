@@ -1,0 +1,67 @@
+﻿# NSM minor formations - red outlines
+
+NAL = {
+    use_culture_states = no
+    states = { STATE_NSM_020 STATE_NSM_064 STATE_NSM_163 STATE_NSM_181 STATE_NSM_221 STATE_NSM_244 STATE_NSM_350 STATE_NSM_383 STATE_NSM_405 STATE_NSM_410 STATE_NSM_431 STATE_NSM_523 STATE_NSM_622 }
+    required_states_fraction = 0.8
+    ai_will_do = { always = yes }
+    possible = { always = yes }
+}
+NSK = {
+    use_culture_states = no
+    states = { STATE_NSM_056 STATE_NSM_139 STATE_NSM_164 STATE_NSM_165 STATE_NSM_261 STATE_NSM_300 STATE_NSM_415 STATE_NSM_521 STATE_NSM_534 }
+    required_states_fraction = 0.8
+    ai_will_do = { always = yes }
+    possible = { always = yes }
+}
+NTR = {
+    use_culture_states = no
+    states = { STATE_NSM_001 STATE_NSM_188 STATE_NSM_232 STATE_NSM_255 }
+    required_states_fraction = 0.8
+    ai_will_do = { always = yes }
+    possible = { always = yes }
+}
+ATI = {
+    use_culture_states = no
+    states = { STATE_NSM_034 STATE_NSM_085 STATE_NSM_086 STATE_NSM_100 STATE_NSM_243 STATE_NSM_274 STATE_NSM_328 STATE_NSM_349 STATE_NSM_379 STATE_NSM_429 }
+    required_states_fraction = 0.8
+    ai_will_do = { always = yes }
+    possible = { always = yes }
+}
+XBZ = {
+    use_culture_states = no
+    states = { STATE_NSM_073 }
+    required_states_fraction = 0.8
+    ai_will_do = { always = yes }
+    possible = { always = yes }
+}
+XAX = {
+    use_culture_states = no
+    states = { STATE_NSM_195 }
+    required_states_fraction = 0.8
+    ai_will_do = { always = yes }
+    possible = { always = yes }
+}
+XBE = {
+    use_culture_states = no
+    states = { STATE_NSM_075 STATE_NSM_457 }
+    required_states_fraction = 0.8
+    ai_will_do = { always = yes }
+    possible = { always = yes }
+}
+GOT = {
+    use_culture_states = no
+    states = { STATE_NSM_386 }
+    required_states_fraction = 0.8
+    ai_will_do = { always = yes }
+    possible = { always = yes }
+}
+
+# Central Empire - minor unification of the initial Central Empire bloc
+NCE = {
+    use_culture_states = no
+    states = { STATE_NSM_001 STATE_NSM_033 STATE_NSM_035 STATE_NSM_040 STATE_NSM_042 STATE_NSM_055 STATE_NSM_056 STATE_NSM_113 STATE_NSM_121 STATE_NSM_128 STATE_NSM_163 STATE_NSM_164 STATE_NSM_188 STATE_NSM_194 STATE_NSM_217 STATE_NSM_226 STATE_NSM_232 STATE_NSM_233 STATE_NSM_255 STATE_NSM_314 STATE_NSM_350 STATE_NSM_369 STATE_NSM_398 STATE_NSM_405 STATE_NSM_415 STATE_NSM_439 STATE_NSM_450 STATE_NSM_465 STATE_NSM_512 STATE_NSM_514 STATE_NSM_518 STATE_NSM_519 }
+    required_states_fraction = 0.8
+    ai_will_do = { always = yes }
+    possible = { has_technology_researched = nationalism }
+}

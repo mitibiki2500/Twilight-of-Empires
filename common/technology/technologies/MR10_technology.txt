@@ -1,0 +1,110 @@
+﻿MR_coke_tech = { #コーラ製造
+	# Unlocks Mulberry Groves PM on Rice Farms
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/fractional_distillation.dds"
+	category = production
+	can_research = no
+
+	modifier = {
+		building_food_industry_throughput_add = 0.1
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+ 
+REPLACE:shift_work = { #シフト勤務に企業枠
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/shift_work.dds"
+	category = production
+
+	modifier = {
+		building_economy_of_scale_level_cap_add = 20
+		country_max_companies_add = 1
+		country_free_charters_add = 1
+	}
+
+	unlocking_technologies = {
+		mechanized_workshops
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+REPLACE:civilizing_mission = { #文明化とマラリアに植民補正
+	# Unlocks Panama Canal survey expedition decision
+	# Unlocks the Panama Canal
+
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/civilizing_mission.dds"
+	category = society
+
+	modifier = {
+		country_institution_colonial_affairs_max_investment_add = 1
+		country_infamy_generation_against_unrecognized_mult = -0.25
+		state_colony_growth_speed_mult = 0.25 #植民地成長速度
+	}
+
+	unlocking_technologies = {
+		quinine
+		nationalism
+	}
+
+	ai_weight = {
+		value = 1
+
+		# Important for colonizers
+		if = {
+			limit = {
+				navy_size >= 25
+				is_country_type = recognized
+			}
+			add = 1
+		}
+		if = {
+			limit = {
+				has_strategy = ai_strategy_colonial_expansion
+			}
+			add = 1
+		}
+	}
+}
+
+REPLACE:malaria_prevention = { #文明化とマラリアに植民補正
+	# Should permit for colonization of state regions with severe malaria
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/malaria_prevention.dds"
+	category = society
+
+	modifier = {
+		country_institution_colonial_affairs_max_investment_add = 1
+		country_institution_health_system_max_investment_add = 1
+		state_colony_growth_speed_mult = 0.75 #植民地成長速度
+	}
+
+	unlocking_technologies = {
+		civilizing_mission
+	}
+
+	ai_weight = {
+		value = 1
+
+		# Important for colonizers
+		if = {
+			limit = {
+				navy_size >= 25
+				is_country_type = recognized
+			}
+			add = 1
+		}
+		if = {
+			limit = {
+				has_strategy = ai_strategy_colonial_expansion
+			}
+			add = 1
+		}
+	}
+}

@@ -1,0 +1,99 @@
+﻿company_nsm_talistan = {
+	icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_talistan.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NSM_162 }
+	building_types = {
+		building_iron_mine
+		building_automotive_industry
+		building_explosives_factory
+	}
+	extension_building_types = {
+		building_motor_industry
+		building_rubber_plantation
+	}
+	possible_prestige_goods = {
+		prestige_good_MSN_talistan_automobile
+	}
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NSM_162
+			any_scope_building = {
+				is_building_type = building_iron_mine
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = {
+		building_motor_industry_throughput_add = 0.1
+	}
+	ai_weight = { value = 3 }
+}
+
+# ToE固有企業（統合）
+
+company_nsm_riimeus = {
+    icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_riimeus.dds"
+    background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+    flavored_company = yes
+    preferred_headquarters = { STATE_NSM_047 }
+    building_types = {
+        building_cotton_plantation
+        building_textile_mill
+        building_livestock_ranch
+    }
+    extension_building_types = {
+        building_logging_camp
+        building_furniture_manufactory
+    }
+    possible_prestige_goods = {
+		prestige_good_MSN_premium_cotton
+	}
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_NSM_047
+            any_scope_building = {
+                is_building_type = building_cotton_plantation
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+        building_cotton_plantation_throughput_add = 0.10
+    }
+    ai_weight = { value = 3 }
+}
+
+company_nsm_corn_major = {
+    icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_corn_major.dds"
+    background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_corn.dds"
+    flavored_company = yes
+    preferred_headquarters = { STATE_NSM_104 }
+    building_types = {
+        building_maize_farm
+        building_food_industry
+        building_railway
+    }
+    extension_building_types = {
+        building_wheat_farm
+        building_port
+        building_chemical_plant
+    }
+    possible_prestige_goods = {
+		prestige_good_MSN_premium_grain
+	}
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_NSM_104
+            any_scope_building = {
+                is_building_type = building_maize_farm
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+        state_birth_rate_mult = 0.05
+        building_chemical_plant_throughput_add = 0.15
+    }
+    ai_weight = { value = 3 }
+}

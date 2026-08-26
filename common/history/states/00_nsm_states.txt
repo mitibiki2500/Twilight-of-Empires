@@ -1,0 +1,5139 @@
+﻿STATES = {
+s:STATE_NSM_001 = { #トリリア
+        create_state = {
+            country = c:XAL
+            owned_provinces = { x4E3A2F x67AA79 x6a23c3 xdab81c }
+            state_type = incorporated
+        }
+        create_state = {
+            country = c:XEO
+            owned_provinces = { x989D27 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xal
+    }
+    s:STATE_NSM_002 = { #ポドソルバタック
+        create_state = {
+            country = c:XBP
+            owned_provinces = { xAA8747 x25EB35 xDDCDAA xF53637 xCD2AD4 xED799E x757956 xEB2B7E xAF7DCD xAE46B5 x76E561 xF198AC xAECAA9 x5D8023 x745C30 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbp
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+s:STATE_NSM_003 = { #クム
+        create_state = {
+            country = c:XAM
+            owned_provinces = { x76A896 x9fe990 x9E8630 x44273A x608E66 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xam
+    }
+    s:STATE_NSM_004 = { #ハイゾ
+        create_state = {
+            country = c:KKN
+            owned_provinces = { x39BF86 x684122 xe2ca3e xF3AA68 xA4CF44 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_005 = { #アララ
+        create_state = {
+            country = c:ATI
+            owned_provinces = { xECE664 xada270 x7d3057 xD3AB98 xCADC95 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_006 = { #北阿35
+        create_state = {
+            country = c:XCP
+            owned_provinces = { x919837 x46DAA5 x3D6839 xB87571 xE682D9 x3CB76C xBAA999 xF45581 xD83AE1 x3CDC8D xD1EA34 xD46465 xE2CA7B xE02C82 x75526B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcv
+    }
+    s:STATE_NSM_007 = { #東欧98
+        create_state = {
+            country = c:XAT
+            owned_provinces = { xAAE57F x782537 xE18EF3 x2AAB7A xCE3874 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat
+    }
+    s:STATE_NSM_008 = { #豪37
+        create_state = {
+            country = c:XBH
+            owned_provinces = { x5B2E7B xEBAFDD x3AAF9A xAA444F x6FA8B3 xA6F17D xEF5B27 x889F2E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbh
+    }
+    s:STATE_NSM_009 = { #南阿11
+        create_state = {
+            country = c:XAX
+            owned_provinces = { x37AC51 x53DE4A x4C5337 x6EB389 xEFB784 x506F5B xB6E4C1 xB7F36E x41F43E x9133A4 x45E8E7 x6E958C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_010 = { #東欧79
+        create_state = {
+            country = c:XAT
+            owned_provinces = { x238558 x66676B x5CE99A x69AFA8 xE96AD2 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat
+    }
+    s:STATE_NSM_011 = { #豪41
+        create_state = {
+            country = c:XBD
+            owned_provinces = { x649EAD xA09E62 xC747CA x36C493 x31B3AF xBFA364 x567E84 x70C187 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbd
+    }
+    s:STATE_NSM_012 = { #西デール
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x949D30 xCCA929 x49C9C3 xDDA226 xDF2D5B xC1E8C7 x6A4538 xF3B435 xDE873C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_dale
+}
+    s:STATE_NSM_013 = { #パイドル
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xF4E337 xae9c58 xacdc9b x229984 xA69342 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_old
+}
+    s:STATE_NSM_014 = { #北米54
+        create_state = {
+            country = c:XCC
+            owned_provinces = { xB57F82 xcb4d6a x81DF60 x828464 xEC3DCC }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+    s:STATE_NSM_015 = { #中央諸島部3
+        create_state = {
+            country = c:GSU
+            owned_provinces = { x459534 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_016 = { #豪32
+        create_state = {
+            country = c:XBF
+            owned_provinces = { x53D45B x51D167 xD76690 x62D0E5 xDE454F x55DC71 xB69048 xCBBCDA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbf
+    }
+    s:STATE_NSM_017 = { #ガプグ
+        create_state = {
+            country = c:XBD
+            owned_provinces = { xD8C860 xB3EB55 x6D4143 x68EB56 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbd
+    }
+    s:STATE_NSM_018 = { #ハゲゴゲ
+        create_state = {
+            country = c:XAT
+            owned_provinces = { xD093B2 xe395f2 xa42b6e xE1DCB7 xEC51D5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat
+    }
+    s:STATE_NSM_019 = { #西亜39
+        create_state = {
+            country = c:BLM
+            owned_provinces = { x435875 xc9bd5b xD0F0F3 x65B3A9 xE67625 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_020 = { #東ハイランド
+        create_state = {
+            country = c:XAA
+            owned_provinces = { x35E272 x8CE89D xC54685 xF2612E xC0A299 x85F42F xBC635D x7BC069 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaa
+    }
+    s:STATE_NSM_021 = { #ネビネータ
+        create_state = {
+            country = c:XDL
+            owned_provinces = { x634A76 x8C5DAD xC5D093 xd3e16e x3be1e6 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdl
+    }
+    s:STATE_NSM_022 = { #ウスル
+        create_state = {
+            country = c:XBF
+            owned_provinces = { x5C4955 x38D1C9 xA57A59 x946361 x3BCB4F xB9C3A2 x668876 x55BA6B xAB855E x4EDA78 x2FE335 xB5C483 x84BE53 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbf
+    }
+    s:STATE_NSM_023 = { #クセニア
+        create_state = {
+            country = c:XBX
+            owned_provinces = { x2FB93D x29AD9D xF574AF xB65D25 xC43BDD xCCD3A9 x9B793E xA19874 x4AC8AF xC93F31 x788EB1 xE25186 xCDBC47 x3CAA53 x54C087 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbx
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+}
+    s:STATE_NSM_024 = { #北フロシエン
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xBFA47B xD9806D xAEBD6D x2CC4A7 x81E647 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_eskan
+}
+s:STATE_NSM_025 = { #東欧95
+        create_state = {
+            country = c:XAT
+            owned_provinces = { x2EBBB1 x8188b6 xde32e9 xEA2FF2 xDC58B5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat_2
+    }
+    s:STATE_NSM_026 = { #ハリス
+        create_state = {
+            country = c:GSU
+            owned_provinces = { xABE0C9 xCF4D45 x385669 xB3D39E x72DFBE }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_027 = { #ボムドピーレ
+        create_state = {
+            country = c:XBZ
+            owned_provinces = { x554526 x42823F xB98543 x2B8536 xDC8458 x603239 xED736C xD99D26 xD85724 xCCD4E6 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbx
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+}
+    s:STATE_NSM_028 = { #フークネート
+        create_state = {
+            country = c:XAQ
+            owned_provinces = { x65BE73 xAF7D94 xE1C852 x34A33F x3CECCC xDF7F65 x895790 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaq
+    }
+    s:STATE_NSM_029 = { #ドント
+        create_state = {
+            country = c:XBF
+            owned_provinces = { x61CC95 x3B7529 xB8CD71 x3CE285 x46BC6E x756566 x3EA245 xF08D42 xCC69CF x446F8A xE0C23C xF3B356 xEAE74B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbf
+    }
+    s:STATE_NSM_030 = { #北アイラ
+        create_state = {
+            country = c:XAC
+            owned_provinces = { xCC9DDD x87433E x67B2B9 x2BF56A x6AD474 x36A6BD x59A08D x8F9442 x85866F xA54E4B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xac
+    }
+    s:STATE_NSM_031 = { #カルファ
+        create_state = {
+            country = c:XAY
+            owned_provinces = { x75958F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbe
+    }
+    s:STATE_NSM_032 = { #リードニア
+        create_state = {
+            country = c:XBM
+            owned_provinces = { xF1B3C0 xC5BDC8 xD5BBE2 xD9A59E x5D564C x6D6E7B x62EEF0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbo
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+s:STATE_NSM_033 = { #東欧55
+        create_state = {
+            country = c:XES
+            owned_provinces = { x48DEC0 x34f582 xec844d xB09C97 x76DC9E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xes
+    }
+    s:STATE_NSM_034 = { #西亜25
+        create_state = {
+            country = c:REG
+            owned_provinces = { x45354A xE9BCBE x9FC069 xDAAADE x80615F x6BDBA9 x9698A3 x45AF60 xF4932E xD0F5D5 xD5D799 xC75438 xA2ED26 xC8E19A xE9B559 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_reg
+    }
+s:STATE_NSM_035 = { #パゾール
+        create_state = {
+            country = c:XEX
+            owned_provinces = { x853362 xa046c6 x1f9735 xA0D2B6 xB2577B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xex
+    }
+    s:STATE_NSM_036 = { #バイゼル
+        create_state = {
+            country = c:XAI
+            owned_provinces = { xC09F70 x52ABC6 xE7E13C xF44F81 x9B346A xE14D9A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xai
+    }
+    s:STATE_NSM_037 = { #カケン
+        create_state = {
+            country = c:XDN
+            owned_provinces = { xA18091 xD6EBF4 xAFC5A0 x9A6E9C x26A62D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaq
+    }
+    s:STATE_NSM_038 = { #ルーファ
+        create_state = {
+            country = c:XBJ
+            owned_provinces = { xC1A086 x69e018 xe55da9 x8223de x815885 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        add_claim = c:XBK
+        add_claim = c:XBL
+}
+    s:STATE_NSM_039 = { #南米6
+        create_state = {
+            country = c:XBY
+            owned_provinces = { x57C082 x23CD5B xBF906F xB42445 xDBEC7B x30BB4F xC8967B x53A231 xB1D39C xA25D39 x53BB90 xD46176 x326D48 x43AF3C x7DB34E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xby
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 6
+            duration = 18250
+        }
+}
+    s:STATE_NSM_040 = { #アルツァフ=ロイゲン
+        create_state = {
+            country = c:XAK
+            owned_provinces = { xD4AC33 x239B78 xBE4C70 x28473B xA1508E xD2F32D x32F4E0 x738823 x7B369D x6DD5F2 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xal_2
+    
+        create_state = {
+            country = c:ATZ
+            owned_provinces = { xC079A7 }
+            state_type = incorporated
+        }
+    }
+    s:STATE_NSM_041 = { #セン
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xE9EFE5 xEE50A2 x328579 xD73630 x50CA9E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+            add_homeland = cu:nsm_map_pai
+        add_homeland = cu:nsm_map_pai_eskan
+}
+s:STATE_NSM_042 = { #パーゾ
+        create_state = {
+            country = c:XEY
+            owned_provinces = { x76922F x39b6b8 x9E715D x4AE2DD xF05B68 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xex
+    }
+    s:STATE_NSM_043 = { #豪8
+        create_state = {
+            country = c:XBB
+            owned_provinces = { x29AF59 xA1E528 xBDC225 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_044 = { #西亜65
+        create_state = {
+            country = c:GSU
+            owned_provinces = { x51C7CA xE4D880 x80933d xe8c620 x5924e5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_045 = { #西亜2
+        create_state = {
+            country = c:GOT
+            owned_provinces = { x4EA423 x51C0D5 x2A8377 xB8DA89 xA34266 x9FB829 xCBF4B8 xE65727 x60E195 xEDD547 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_046 = { #西亜47
+        create_state = {
+            country = c:SOS
+            owned_provinces = { xC9667D xa6e0db x974E5C x352529 x46ADBC }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_sos
+    }
+    s:STATE_NSM_047 = { #北米67
+        create_state = {
+            country = c:XCC
+            owned_provinces = { x346F4A x98EE8B x6CDE2E xA8E7C2 x456441 xB9A4A5 x41BB44 xE04EB4 xAE423E x676637 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_048 = { #北阿31
+        create_state = {
+            country = c:XCM
+            owned_provinces = { xF13EF2 xB3D6B7 xD471E5 x4FC5CE x66DE8E x80E6DD xDFB7DA x87A9BA xE7EA79 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcm
+    }
+    s:STATE_NSM_049 = { #西亜60
+        create_state = {
+            country = c:XDG
+            owned_provinces = { x7FE159 xcb9f69 xd145bf x86b3c5 x2e17da }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_050 = { #サンドリア
+        create_state = {
+            country = c:XCN
+            owned_provinces = { x9EC0CF xae65c7 xA35B8F xE592E3 x997472 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcn
+    }
+    s:STATE_NSM_051 = { #西亜45
+        create_state = {
+            country = c:SOS
+            owned_provinces = { x2D7665 xB68A2E x6A3225 xEED468 x62AE29 xCF4727 x5C8360 x7FDE56 x27EEA0 xB564CF x80CEB0 x86854A x306439 x408060 x71F4EF }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_sos
+    }
+    s:STATE_NSM_052 = { #北米62
+        create_state = {
+            country = c:XBS
+            owned_provinces = { xE07A2E xAE4FB8 x6E4187 x4FE2EE x243B5B x3EB543 xD14E84 xD1BD42 x34914E xC17A9E x70DF6E xBE3FB8 xDBB9AC xA7CBA4 xD965BE }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbs
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_053 = { #豪28
+        create_state = {
+            country = c:XBF
+            owned_provinces = { xDDF0DE x849069 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbf
+    }
+    s:STATE_NSM_054 = { #東欧81
+        create_state = {
+            country = c:XAT
+            owned_provinces = { xF13468 xde2742 x2149d6 x3a42f4 x477997 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat
+    }
+    s:STATE_NSM_055 = { #ドブー
+        create_state = {
+            country = c:XAL
+            owned_provinces = { x999FB9 xEB6E37 x32847C x654B4F xDC3DD1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xal_2
+    }
+s:STATE_NSM_056 = { #ヨルン
+        create_state = {
+            country = c:XEQ
+            owned_provinces = { xDD5426 xE8C489 x92844C xAAE474 x46CC82 xB740A3 x5B7676 x79455D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xae
+    }
+    s:STATE_NSM_057 = { #北米55
+        create_state = {
+            country = c:XBW
+            owned_provinces = { x777A43 x9BDA49 x40BFE2 x5FE379 x723225 x5DAE3E x28AF54 x25B08E xAAE42D x4D6674 x35393F x6393B4 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbo
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_058 = { #北阿48
+        create_state = {
+            country = c:XCR
+            owned_provinces = { xDCE06F xE83F2B x3B7E77 xB68DCB xDB8474 xB48F92 xB29A52 xD8ACEF x389B48 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcr
+    }
+    s:STATE_NSM_059 = { #北米34
+        create_state = {
+            country = c:XBL
+            owned_provinces = { xCA53B9 xB2CDDD xEE3FD7 xE89C76 xE59B97 x5B375A x933F2D x4CBC40 xB32D45 xD38D2C xADBD99 x547960 xA9B7A9 x6D7E29 xDA262F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 8
+            duration = 18250
+        }
+
+        add_claim = c:XBK
+        add_claim = c:XBJ
+}
+    s:STATE_NSM_060 = { #パール
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xDC7247 xf2bc21 x1e519b xac3b70 x962C3E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_eskan
+}
+    s:STATE_NSM_061 = { #豪12
+        create_state = {
+            country = c:XBB
+            owned_provinces = { xDD39DA x8E4A31 xF1D9AB x94D1BB }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_062 = { #東欧3
+        create_state = {
+            country = c:GOT
+            owned_provinces = { xCE242B xD1C571 xDCF2BC xCF6CE4 x5C6226 x822FA0 xBD4D37 xA75949 xEECB4B x7AAA40 xF38338 xE0C730 xE78CBE xD7803C x3BB0C9 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_063 = { #北阿45
+        create_state = {
+            country = c:XAX
+            owned_provinces = { xDD284D x94e86e x5F245C x99A65C x32E6DF }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcv
+    }
+    s:STATE_NSM_064 = { #ポル
+        create_state = {
+            country = c:XAA
+            owned_provinces = { x7CA9B4 x7EB497 xa5868b x3d3999 xd137f2 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaa
+    }
+    s:STATE_NSM_065 = { #北米16
+        create_state = {
+            country = c:XBK
+            owned_provinces = { x3EDE65 xCD5261 x8EDF25 xEF849B x5F5B69 xA77247 x72B97C xEE8839 x65C3CA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+
+        add_claim = c:XBJ
+        add_claim = c:XBL
+}
+    s:STATE_NSM_066 = { #南阿20
+        create_state = {
+            country = c:XDC
+            owned_provinces = { x646052 xC8714A x7C3D33 x49A987 xE0E95B xCB37CE }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xde
+    
+        add_claim = c:XBG
+}
+    s:STATE_NSM_067 = { #豪43
+        create_state = {
+            country = c:XCI
+            owned_provinces = { x344752 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbd
+    }
+    s:STATE_NSM_068 = { #北阿29
+        create_state = {
+            country = c:XCW
+            owned_provinces = { xA22FC3 x93d2bf xc0a1da xf37eba x407d72 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcw
+    }
+    s:STATE_NSM_069 = { #北米40
+        create_state = {
+            country = c:XCC
+            owned_provinces = { xBA4357 x61CCDE x32DD63 xB1E1D9 xe9c5ab }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+    s:STATE_NSM_070 = { #豪38
+        create_state = {
+            country = c:XBH
+            owned_provinces = { xCFCFAE xE583DB xA6D026 x8E729C xCF242F xBC38B6 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbh
+    }
+    s:STATE_NSM_071 = { #東亜7
+        create_state = {
+            country = c:GSU
+            owned_provinces = { xC2C591 xCEC242 xF2CEF4 xDB8AD3 x98C58D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_072 = { #南阿16
+        create_state = {
+            country = c:XDH
+            owned_provinces = { xA97E9E x67759f x781c72 xB4AB68 x7AE43C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdl
+    }
+    s:STATE_NSM_617 = {
+        create_state = {
+            country = c:XDG
+            owned_provinces = { xA77048 xe84e79 xbe32c5 x55ad28 x864834 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdl
+    }
+    s:STATE_NSM_073 = { #南米12
+        create_state = {
+            country = c:XBZ
+            owned_provinces = { xB483C1 xA8AFA8 x479899 xBDAF97 x85BC2D x415D69 x258D71 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbz
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 6
+            duration = 18250
+        }
+}
+    s:STATE_NSM_074 = { #中央諸島部13
+        create_state = {
+            country = c:KTO
+            owned_provinces = { x55A440 xBD5228 xDC92A9 xD4A470 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_075 = { #豪45
+        create_state = {
+            country = c:XBE
+            owned_provinces = { x6C6633 x69314B xEC2D2C x5BE161 x604A6D xC9BF6F xB1ED58 x23802A xBDD494 xF1F17E x7DD6AA xD5EFAA xBFBE65 x9BA045 x5881A1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbe
+    }
+    s:STATE_NSM_076 = { #豪39
+        create_state = {
+            country = c:XBH
+            owned_provinces = { x5D5C31 x72E982 xF3D088 xF1BD7E xEF3268 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbh
+    }
+    s:STATE_NSM_077 = {
+        create_state = {
+            country = c:XCH
+            owned_provinces = { xC239C7 x369002 x5BEB9F x80463C xA5A1D9 xCAFC76 xEF5713 x14B2B0 x390D4D x5E68EA x868192 x83C387 xA81E24 xCD79C1 xF2D45E x172FFB x3C8A98 x61E535 x8640D2 xAB9B6F x396747 xD0F60C xF551A9 x1AAC46 x3F07E3 x646280 x89BD1D xAE18BA xD37357 xF8CEF4 x687526 x1D2991 x42842E x67DFCB x8C3A68 xB19505 xD6F0A2 xFB4B3F x20A6DC x450179 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdc
+    }
+    s:STATE_NSM_624 = {
+        create_state = {
+            country = c:XCH
+            owned_provinces = { x243C44 x6A5C16 x8FB7B3 xB41250 xD96DED xFEC88A x232327 x487EC4 x6DD961 x9234FE x70D148 xB78F9B xDCEA38 x0145D5 x26A072 x4BFB0F x7056AC x95B149 xBA0CE6 xDF6783 x672D2C x04C220 x291DBD x4E785A x73D3F7 x982E94 xBD8931 xE2E4CE x073F6B x2C9A08 x90B37B x51F5A5 x765042 x9BABDF xC0067C xE56119 x0ABCB6 x2F1753 x5472F0 x79CD8D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdc
+    }
+    s:STATE_NSM_625 = {
+        create_state = {
+            country = c:XCH
+            owned_provinces = { x59BCB7 x9E282A xC383C7 xE8DE64 x0D3901 x32949E x57EF3B x7C4AD8 xA1A575 xC60012 x23B243 xEB5BAF x10B64C x3511E9 x5A6C86 x7FC723 xA422C0 xC97D5D xEED8FA x133397 xA39EB0 x388E34 x5DE9D1 x82446E xA79F0B xCCFAA8 xF15545 x16B0E2 x3B0B7F x60661C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdc
+    }
+    s:STATE_NSM_626 = {
+        create_state = {
+            country = c:XCH
+            owned_provinces = { x2F5531 x85C1B9 xAA1C56 xCF77F3 xF4D290 x192D2D x3E88CA x63E367 x883E04 xAD99A1 x723294 xD2F43E xF74FDB x1CAA78 x410515 x6660B2 x8BBB4F xB016EC xD57189 xFACC26 x45D1B6 x1F27C3 x448260 x69DDFD x8E389A xB39337 xD8EED4 xFD4971 x22A40E x47FFAB x546B45 x6C5A48 x91B5E5 xB61082 xDB6B1F x00C6BC x252159 x4A7CF6 x6FD793 x943230 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdc
+    }
+    s:STATE_NSM_078 = { #ウラニー
+        create_state = {
+            country = c:XAC
+            owned_provinces = { x29ABA6 xD04825 xC29D39 x66987D x77CF43 xC63EB4 xBFA060 x67926F xAD78AD xDDE9C8 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xac
+    }
+    s:STATE_NSM_079 = { #西亜42
+        create_state = {
+            country = c:BZN
+            owned_provinces = { x33E682 xd99e58 x59799b x929063 xE478A9 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+    }
+    s:STATE_NSM_080 = { #東欧52
+        create_state = {
+            country = c:XAM
+            owned_provinces = { xA99A45 x517047 xE1AF27 xD4A634 x659C30 x296B8D x613350 xD9A641 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xam_2
+    }
+    s:STATE_NSM_081 = { #西亜15
+        create_state = {
+            country = c:GOT
+            owned_provinces = { xDC4868 x9AA661 xF593DF xE6D5E5 x3FB899 x74F482 xC2F548 x8D3FAB xCF52E5 x87842B xCF9B83 x9B363A xECD9DC x9EC9A6 xB58198 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+    }
+s:STATE_NSM_082 = { #西亜18
+        create_state = {
+            country = c:GLT
+            owned_provinces = { x83E12F x8B2599 xC64B3F xEC2A3B x4EBF68 x6D3E29 x7D7F99 x52CB4D x82B962 xEB396B xD2E1CE xC0C8D3 xD035D9 x45EE61 x24B750 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got_2
+    }
+    s:STATE_NSM_083 = { #西亜71
+        create_state = {
+            country = c:GSU
+            owned_provinces = { xD4B254 x7fe63a x5d5341 x5d99d2 xA3BD9B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_084 = { #西亜16
+        create_state = {
+            country = c:ATI
+            owned_provinces = { xC1AF94 xAD3C41 x425B4E x4D6076 xB9E737 xF42DA4 x39AC48 x23E0AA x51246A xD82DE1 xBAC623 xB2E9F1 xB09BA0 xCA9198 x60AFB5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_reg
+    }
+s:STATE_NSM_085 = { #西亜28
+        create_state = {
+            country = c:CAN
+            owned_provinces = { x59DAE1 x636ad7 xe44d84 xd9bcb7 x6DED81 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_reg
+    }
+    s:STATE_NSM_086 = { #西亜56
+        create_state = {
+            country = c:NRK
+            owned_provinces = { xCD9D47 xCFE4E7 x6DA137 xF09B64 x9D6E2A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_reg
+    }
+    s:STATE_NSM_087 = { #北阿8
+        create_state = {
+            country = c:XCM
+            owned_provinces = { x753158 xe7de93 xc95431 xAF3C95 x313434 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcm_2
+    }
+s:STATE_NSM_088 = { #東欧66
+        create_state = {
+            country = c:XAM
+            owned_provinces = { xE85196 x34C0A9 xA92D8F x58B830 x5DE32B xB0655B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xam_2
+    }
+    s:STATE_NSM_089 = { #ブルミア
+        create_state = {
+            country = c:XAI
+            owned_provinces = { xD2F05A x2d2dac xd98f91 x27b85d x62A24B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xai
+    }
+
+s:STATE_NSM_091 = { #フィトル
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x81958F xa26b24 x533a4c xe6a35a x2d6364 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_3
+            add_homeland = cu:nsm_map_pai_northern
+}
+s:STATE_NSM_092 = { #パイ
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xDDD32C x4cb55f xbb279e xac678e x2CBE33 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+    }
+    s:STATE_NSM_093 = { #グリド
+        create_state = {
+            country = c:XAP
+            owned_provinces = { x383B3F x337e33 xDDE0D7 x70D381 x84A885 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xam
+    }
+    s:STATE_NSM_094 = { #北米31
+        create_state = {
+            country = c:XBK
+            owned_provinces = { x35E885 x8C6BA1 x4E9D32 x8CC237 x81AFC6 xB06CBF x623E2E x7F334A x69F375 xAE9653 x4A8E9C xB9B3AC x71843E xB6BEC7 x86EFAB }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+
+        add_claim = c:XBJ
+        add_claim = c:XBL
+}
+    s:STATE_NSM_095 = { #豪13
+        create_state = {
+            country = c:XBC
+            owned_provinces = { x9BAB32 x956986 x43B74C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_096 = { #南阿30
+        create_state = {
+            country = c:XDF
+            owned_provinces = { xBE8453 xa7776a x88453b x931fb4 xF5799F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdf
+    }
+    s:STATE_NSM_097 = { #豪48
+        create_state = {
+            country = c:XBF
+            owned_provinces = { x684866 xBD4866 x29442B x6CDAE9 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbf
+    }
+
+    s:STATE_NSM_099 = { #北米57
+        create_state = {
+            country = c:PPT
+            owned_provinces = { x719E63 xcb14cb xe3abea x23DC74 xA9EB28 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbw
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_100 = { #西亜23
+        create_state = {
+            country = c:GTZ
+            owned_provinces = { x6DEA46 x417932 x8B5771 x73A374 x4A3264 xE0674A xC2D2E2 xE7EECB xB9A07F xED70E1 xDF60D9 x42613F xB759A9 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+    }
+    s:STATE_NSM_101 = { #北阿64
+        create_state = {
+            country = c:XAX
+            owned_provinces = { x7CCE9F xE88585 xA786A1 xABD6D8 x3C606A x30C940 x73C0D1 x77CF6D x6AE286 xF07E98 x6985A5 xBA5758 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_102 = { #北阿69
+        create_state = {
+            country = c:XDL
+            owned_provinces = { xAC889A x857025 xAD4BBF xD3DCCD x342628 xD0639C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdl
+    }
+    s:STATE_NSM_103 = { #南阿21
+        create_state = {
+            country = c:XBG
+            owned_provinces = { xEF8CF2 x8bd2e9 x7047ef x7E2F81 xA68146 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbg
+    }
+    s:STATE_NSM_104 = { #北米30
+        create_state = {
+            country = c:XBK
+            owned_provinces = { xD156CF x3E2F39 xAA6D69 x8CB4CF x2DE547 xA6E49B xAB3D67 xF280B4 x3B6943 x4FB5A9 xF5B5CE xDED43F xDB503D xB95A68 x7C522A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 8
+            duration = 18250
+        }
+
+        add_claim = c:XBJ
+        add_claim = c:XBL
+}
+    s:STATE_NSM_105 = { #南阿28
+        create_state = {
+            country = c:XDE
+            owned_provinces = { xDF53EA xD2CE83 x769C2D x8C49A6 x2E718B x9DAF4B x4D3343 x9B3684 xBC26B3 xC4EA3F xA73AB1 x5D8D60 x98CDE2 xB74D87 x8DCB53 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xde
+    
+        add_claim = c:XDF
+}
+    s:STATE_NSM_106 = { #北阿37
+        create_state = {
+            country = c:XCS
+            owned_provinces = { xE3B62F x95E295 xAEE274 x62595E xA87ACA xE042D0 xA94245 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcr
+    }
+    s:STATE_NSM_107 = { #ポル
+        create_state = {
+            country = c:XEZ
+            owned_provinces = { x61D5F3 xC97DA3 xC7BFB1 x38BE45 xB27A2C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xez
+    }
+    s:STATE_NSM_108 = { #コーサル
+        create_state = {
+            country = c:XAS
+            owned_provinces = { xF0416E xC42661 x8DCA70 x8CDEB6 xEEA956 x7C3F36 x76D847 x46A4B1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas
+    }
+    s:STATE_NSM_109 = { #北阿7
+        create_state = {
+            country = c:XCM
+            owned_provinces = { x2DAC3B xef301d xD9A637 xD7DF8D x7EC228 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcm_2
+    }
+    s:STATE_NSM_110 = { #ガゾ
+        create_state = {
+            country = c:XAT
+            owned_provinces = { xC42BAA xEA7A42 xF4834E x48E241 xEC8984 x886825 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat
+    }
+    s:STATE_NSM_111 = { #豪17
+        create_state = {
+            country = c:XBD
+            owned_provinces = { x559454 xA46572 xC4C8CC xDE2760 xDE41A1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbd
+    }
+    s:STATE_NSM_112 = { #キイト
+        create_state = {
+            country = c:XAS
+            owned_provinces = { xBBA8D7 xB3E955 x5DEFE4 x6FC37C x563363 x8745A5 x73597E x43CC54 x5CA3AA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas
+    }
+    s:STATE_NSM_113 = { #プロテン
+        create_state = {
+            country = c:XEP
+            owned_provinces = { x7CCE49 x302872 x37ed29 x6b5480 xC7BA53 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xep
+    }
+    s:STATE_NSM_114 = { #北阿28
+        create_state = {
+            country = c:XCW
+            owned_provinces = { xAD9751 xF08285 x57EF49 x44E1C6 xE65E57 x395345 x6F684C xBC8BC0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcw
+    }
+    s:STATE_NSM_115 = { #南阿23
+        create_state = {
+            country = c:XDD
+            owned_provinces = { xCB519A xE33460 x77E149 xBBDC45 xBFA281 xCDBBD5 xE1393E x87B552 xBAA18D xD99C3C xDD3F2C xBAF0F2 x85997B xE93BB4 xC0944D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdd
+    }
+    s:STATE_NSM_116 = { #東グレムンド
+        create_state = {
+            country = c:XAS
+            owned_provinces = { xDAA7F5 x5c3d73 xb1518e xf3de82 x61def1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas
+    }
+    s:STATE_NSM_117 = { #南阿40
+        create_state = {
+            country = c:XDF
+            owned_provinces = { x634969 x7c8cae xcdcc42 x369D97 x7CC66B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xde
+    }
+    s:STATE_NSM_118 = { #東コンバフ
+        create_state = {
+            country = c:XAJ
+            owned_provinces = { x95356C x5f2516 x46744E xBB6891 xC728AA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaj
+    }
+    s:STATE_NSM_119 = { #南米16
+        create_state = {
+            country = c:XCB
+            owned_provinces = { x983992 xF16072 x2AEE36 x28E67F x5EBE75 x733379 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcb
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 5
+            duration = 18250
+        }
+}
+    s:STATE_NSM_120 = { #北米35
+        create_state = {
+            country = c:XCC
+            owned_provinces = { xE4AAB9 xAC6E7F xAD6989 xDE9D74 xDBBD77 x97B3CA x6A8C9F x6DECC3 xCD3A8A x54A13C xA978BC xCD5B46 x89653B x8AEA4C xAB7AB4 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 8
+            duration = 18250
+        }
+}
+s:STATE_NSM_121 = { #ネスプロエンジャ
+        create_state = {
+            country = c:XES
+            owned_provinces = { xD24C5A xE5845A x588F9E xE5CAA9 x62734E x45D173 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xes
+    }
+    s:STATE_NSM_122 = { #北阿56
+        create_state = {
+            country = c:XCZ
+            owned_provinces = { x52E2DD x2c9e7b xC84C6E x603A3A xEBEC88 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcz
+    }
+    s:STATE_NSM_123 = { #北阿60
+        create_state = {
+            country = c:XDA
+            owned_provinces = { xDA5B43 xC3F161 xC15992 xEFBE96 x4CB3AB xB6C43D xB4974F xAE408C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xda
+    }
+s:STATE_NSM_124 = { #西亜8
+        create_state = {
+            country = c:GLT
+            owned_provinces = { xF58541 x5DDC55 x256F89 xDD23D2 x776289 xA82539 x88C5E1 x506031 x88D9D9 xAC954B xC63571 xC1E4B5 xF25A24 xF27FCB xC1342C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got_2
+    }
+    s:STATE_NSM_125 = { #北阿61
+        create_state = {
+            country = c:XAX
+            owned_provinces = { x568E43 xB2D296 x5C384F xA8795B xB856B7 x2DA46F x927E4A xD3CB6B xAB63C9 x33C1C0 x8D6691 x5A5A60 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_126 = { #コバップレニアン
+        create_state = {
+            country = c:KBP
+            owned_provinces = { x9CEFE5 x6F7D3E x594451 x93768B xDD919A xF08F32 xEA2A24 x4B9529 xA5F3B5 xA0F33A xE641DC xBF3E34 x4D942A x44A89C xD9DF41 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+    }
+s:STATE_NSM_127 = { #北米20
+        create_state = {
+            country = c:XCC
+            owned_provinces = { x2CDAD9 x26E737 x337F8D x8AC063 xE68374 xE6D2A7 xD041E9 xC62C9A xA3CED2 xDAD249 x55CF9A xAF937E x6EDE33 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 8
+            duration = 18250
+        }
+}
+    s:STATE_NSM_128 = { #北アルツァフ
+        create_state = {
+            country = c:XAK
+            owned_provinces = { x61B98D x27269c x4ec72a x7DE772 xC4C6B8 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xal_2
+    }
+s:STATE_NSM_129 = { #西亜1
+        create_state = {
+            country = c:GOT
+            owned_provinces = { xCA6E54 x22c176 xaf2243 x4c38a7 xB88C7F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_130 = { #南阿22
+        create_state = {
+            country = c:XDC
+            owned_provinces = { xE2C0C0 xB5D9E8 xC043C3 xBA343C xD07272 x9F6C41 x618680 xF488A9 xEAF5A7 x4B7C9A x90E063 xACE272 x47AF6E x95DD93 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xde
+    
+        add_claim = c:XBG
+}
+    s:STATE_NSM_131 = { #南米11
+        create_state = {
+            country = c:XBZ
+            owned_provinces = { xD79150 xbc25b6 xed296a x55ed53 xba8da8 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbz
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 6
+            duration = 18250
+        }
+}
+    s:STATE_NSM_132 = { #北阿6
+        create_state = {
+            country = c:XCK
+            owned_provinces = { x32E4D3 x924881 x23B4D7 xC35139 xEC699E xE3D928 xA4D456 xB2B1B0 xAC4549 xA9D661 xDA2758 xAD68B2 xAAD9C3 xE04182 x3DE1B0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xck
+    }
+    s:STATE_NSM_133 = { #サナン
+        create_state = {
+            country = c:XAQ
+            owned_provinces = { xD0543D xDFE48B x7B3848 xDEC93F xC2AF84 xEAD465 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaq
+    }
+    s:STATE_NSM_134 = { #西亜53
+        create_state = {
+            country = c:SOS
+            owned_provinces = { xF0A893 x7C263B x417E59 x4A5A3B x7E6B49 xF355D6 x61BE72 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_sos
+    }
+    s:STATE_NSM_135 = { #北米42
+        create_state = {
+            country = c:XBO
+            owned_provinces = { xF0AFE1 x39A12A xB5C36D xBBD7DA x948331 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbo
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_136 = { #豪31
+        create_state = {
+            country = c:XBF
+            owned_provinces = { x55EEC3 xB0944A xC69D5B x6FDC4D x8AC749 x539F64 x8EA770 x256473 xEB5FC2 x4CE286 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbf
+    }
+    s:STATE_NSM_137 = { #北阿62
+        create_state = {
+            country = c:XAX
+            owned_provinces = { x6E4540 x238453 xB4C135 x29832E xE5B6EE x39DADC x79899D xE83E77 xE0F483 xC2BC36 xE3DF77 xB72B58 xEE2B5D xA88A7D xA95A50 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_138 = { #北米56
+        create_state = {
+            country = c:XBW
+            owned_provinces = { xAB68CA xE9236A x9A4F42 xE02CBD xB9E889 x88D9BB x2AEF2B x4C8499 x873F72 xA8AAAF xCAE963 xA42D61 x2BCBD5 xCEBC26 xD53E43 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbo
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_139 = { #カセ
+        create_state = {
+            country = c:XAE
+            owned_provinces = { x65D6BF x7B8EAA xBDB253 x612C5A x6CDBEF x6CA085 xC6ABDB }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xae
+    }
+    s:STATE_NSM_140 = { #南阿25
+        create_state = {
+            country = c:XDE
+            owned_provinces = { xABAF69 x90D5C5 xE0296B x80E2A3 xEA7ECC x7F2683 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xde
+    
+        add_claim = c:XDF
+}
+    s:STATE_NSM_141 = { #北米32
+        create_state = {
+            country = c:XBL
+            owned_provinces = { x567471 xD03FE8 xBE9A99 x309D80 x23C13A x985255 x736389 x6CF5D1 x822D23 x2F425A x3DB1B4 x30D8B6 xDAB46E x3AE1D1 x45BB5B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 8
+            duration = 18250
+        }
+
+        add_claim = c:XBK
+        add_claim = c:XBJ
+}
+    s:STATE_NSM_142 = { #ポリリン
+        create_state = {
+            country = c:XAC
+            owned_provinces = { x839A90 xE2C9E4 xA27D8E x81A6A3 xd22955 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xac
+    }
+    s:STATE_NSM_143 = { #北米14
+        create_state = {
+            country = c:XBJ
+            owned_provinces = { x5E9B7C xEDD07A xB588A6 x6CD652 xE18825 xDBBAC7 xCC6D97 x316574 xE752D4 x726646 xC4E363 x9F6A25 x3B9746 xCD4A86 xB2B941 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+
+        add_claim = c:XBK
+        add_claim = c:XBL
+}
+    s:STATE_NSM_144 = { #南バゾナ
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x7B5F7E x887638 xDCD65D xC2C846 x398593 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_4
+    }
+    s:STATE_NSM_145 = { #コメール
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x8D263E xAEAE69 xF2CE83 x44E354 x2AD840 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_shaftar
+}
+    s:STATE_NSM_146 = { #プルーン
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xBED6E4 xC5473C x569D79 xBFAFCF x4ED4C2 x9DB696 xCD77AC }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_5
+            add_homeland = cu:nsm_map_pai_northern
+}
+    s:STATE_NSM_147 = { #北阿59
+        create_state = {
+            country = c:XDA
+            owned_provinces = { x366532 xAAC92B x83DC4A xDF49C2 xAEBE5B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xda
+    }
+    s:STATE_NSM_148 = { #南米14
+        create_state = {
+            country = c:XCB
+            owned_provinces = { xCFDDAF xCB5B41 x9CD14C x2AF2C8 x5BAC48 x3D514F xBDF49E x3AF171 x5ED9AF x72925F xAF3F78 xA4E324 xC9E88F xAB8391 xA8EC7A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcb
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 5
+            duration = 18250
+        }
+}
+    s:STATE_NSM_149 = { #北阿54
+        create_state = {
+            country = c:XCZ
+            owned_provinces = { x836687 xE1D0AA xC56AD2 x298f4e x5D9ABC }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcz
+    }
+    s:STATE_NSM_150 = { #北阿16
+        create_state = {
+            country = c:XAS
+            owned_provinces = { x70C364 x53c580 xb64d90 x9a3eac x98826f }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcn
+    }
+    s:STATE_NSM_151 = { #ホルン
+        create_state = {
+            country = c:XAQ
+            owned_provinces = { xE6F4D2 xB16BC1 x30B862 x31CA98 x9E2723 xBDAD87 x47BE60 xEC54D8 xBED734 x4BBEC8 xCD9985 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaq
+    }
+    s:STATE_NSM_152 = { #南阿14
+        create_state = {
+            country = c:XAX
+            owned_provinces = { xE0D64A x5AC63A xC86E85 xD8CE3F x96F0AC x6CD074 x3AE6B0 x7B717D xB063C8 xC09CC9 x328B5A x47D3F2 xC77CA9 x4FAF93 x356225 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_153 = { #豪1
+        create_state = {
+            country = c:XAZ
+            owned_provinces = { x562660 xC39D9B xAC9F56 x8B543D x73AC31 xAF515D x4EB77D xB2463E x759648 x64A377 xAE8760 xAE9A54 xF4A0C1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_154 = { #北米8
+        create_state = {
+            country = c:XCC
+            owned_provinces = { x94BD36 xADD297 xCE6660 x913461 xE6C781 x7C375E x534626 x4E7B93 x52DAAC x62B861 x98E4CD xB85084 xC33469 xB2C423 xE585AA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+}
+    s:STATE_NSM_155 = { #ブルソク
+        create_state = {
+            country = c:XAQ
+            owned_provinces = { xDF7D58 x78BF3A x2FC23F xEBADB9 xB73253 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaq
+    }
+    s:STATE_NSM_156 = { #南阿7
+        create_state = {
+            country = c:XDD
+            owned_provinces = { xEAC77C xA9B8AC x91B573 xE88171 xA09F9C xB35D7E x55C2A4 x77B280 xC594D5 x92CEAB }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdd
+    }
+    s:STATE_NSM_157 = { #北阿40
+        create_state = {
+            country = c:XCX
+            owned_provinces = { x259632 x42AC8B x235224 x8CBD7E x662546 x5CAFBA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcz
+    }
+    s:STATE_NSM_158 = { #ボルツ
+        create_state = {
+            country = c:XAQ
+            owned_provinces = { xE5C881 xE1A2D9 x86882A xa8da40 x392522 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaq
+    }
+    s:STATE_NSM_159 = { #北米78
+        create_state = {
+            country = c:XCE
+            owned_provinces = { xF2D78B x8F3CB1 x744D54 x7D6B78 x2f3178 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xce
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+s:STATE_NSM_160 = { #東亜6
+        create_state = {
+            country = c:GLZ
+            owned_provinces = { xCD6EBB xF1CB48 x818634 x51F233 xBBAAA7 xAE3FA7 x7E7860 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    }
+    s:STATE_NSM_161 = { #西亜38
+        create_state = {
+            country = c:BLM
+            owned_provinces = { x2AECDD x3ef58c x839bcc xCE5270 xED3769 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_162 = { #上フーシャメウス
+        create_state = {
+            country = c:XCC
+            owned_provinces = { x3BBDB4 x31A4C6 x25DBB0 x60D92B xE33257 x35E3C4 x2CEAB1 x3B9FAB x4DD04B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_163 = { #クトル
+        create_state = {
+            country = c:XAG
+            owned_provinces = { xEFC7C2 x44877a x9b7db0 x2f1e97 x91ADA1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xag
+    }
+    s:STATE_NSM_164 = { #ホリグ
+        create_state = {
+            country = c:XAF
+            owned_provinces = { x7F9F64 x887861 x6CE633 xDC298A xDF7B60 x8A873A x90A1BE }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaf
+    }
+    s:STATE_NSM_165 = { #クリサン
+        create_state = {
+            country = c:XAB
+            owned_provinces = { xE05CCB xCAD9D0 x328B9D xC5537C xF3467A xB34CD0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xab
+    }
+    s:STATE_NSM_166 = { #西亜57
+        create_state = {
+            country = c:KKN
+            owned_provinces = { x6A482F x64414b xe9335a x5b4f60 xDC626F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_167 = { #南阿17
+        create_state = {
+            country = c:XDH
+            owned_provinces = { xE8DAAD x7ecc42 xade46a x40E05F xB7EDCB }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdl
+    }
+    s:STATE_NSM_168 = { #東欧91
+        create_state = {
+            country = c:XAS
+            owned_provinces = { x54246F xABD67D xA52781 x9CDEF5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat_2
+    }
+    s:STATE_NSM_169 = { #南米25
+        create_state = {
+            country = c:XCF
+            owned_provinces = { xD5E09F xcf1b70 x78c7b2 x2964e5 xe62bda }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcf
+    }
+    s:STATE_NSM_170 = { #中央諸島部15
+        create_state = {
+            country = c:FOM
+            owned_provinces = { x80EE73 x758399 x8568A6 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_171 = { #西亜7
+        create_state = {
+            country = c:GOT
+            owned_provinces = { x2ACE6B xE8CDD2 x8B6D5E x6AB4AD xE152EE x25BB36 xC769DF xEBB1DF x9A473B xBBE0BD x41BA5C xD43369 xC4C09B x848B4C xF4EA27 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_172 = { #西亜32
+        create_state = {
+            country = c:ATI
+            owned_provinces = { xE1E89F xcc617f x5dd0d3 x8d2d4d x4F2A5D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_173 = { #パイドン
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x62F333 x2B8C56 x67CB7B x3EBEDB xD1ADBF x6ED774 xAB8A85 x302731 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+    }
+    s:STATE_NSM_174 = { #豪19
+        create_state = {
+            country = c:XCI
+            owned_provinces = { x24E24A x31CF8C x6FF354 x59EFCE }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbd
+    }
+    s:STATE_NSM_175 = { #豪14
+        create_state = {
+            country = c:MNG
+            owned_provinces = { x72807B x4C8F37 x8AB842 x30B0C1 x51B944 xE129A5 x444E25 x39F5B9 xA83359 xE47236 x4C7F2F xACAB27 xEFEAEF xF34533 xAD9594 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_176 = { #下ミスリア
+        create_state = {
+            country = c:XCN
+            owned_provinces = { xAE9C35 x9DBED4 xB1B036 x9FD23E xE28028 x5D2461 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcn
+    }
+
+    s:STATE_NSM_178 = { #南阿5
+        create_state = {
+            country = c:XDJ
+            owned_provinces = { x3DA18B x55E1E0 x905AA3 x6aa6ea x33E56A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdl
+    }
+s:STATE_NSM_179 = { #西プルド
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x51B7AD x918750 x74269b x387134 xDDB18F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_5
+            add_homeland = cu:nsm_map_pai_northern
+}
+    s:STATE_NSM_180 = { #東欧88
+        create_state = {
+            country = c:XAS
+            owned_provinces = { x42F324 xE1C07E xF07570 xc220b4 x626757 x3FDB30 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas
+    }
+    s:STATE_NSM_181 = { #エセン
+        create_state = {
+            country = c:XAD
+            owned_provinces = { x455C5C x905d5e x48d973 xC26836 xE57935 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xag
+    }
+    s:STATE_NSM_182 = { #豪51
+        create_state = {
+            country = c:XBI
+            owned_provinces = { xB13ABF xD15AF1 x48DCD4 x35EE67 xDAA859 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbh
+    }
+    s:STATE_NSM_183 = { #南阿36
+        create_state = {
+            country = c:XDC
+            owned_provinces = { xCF584E x3CCD8A xB0D36E x14e2d3 xB6C0B1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xde
+    
+        add_claim = c:XBG
+}
+    s:STATE_NSM_184 = { #豪50
+        create_state = {
+            country = c:GAK
+            owned_provinces = { xF0C4DD x7B765C x90BC6D x845C9B xE32BC1 xB8DE85 xDBF197 xA6B083 xE8F330 xBE2731 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbh
+    }
+s:STATE_NSM_185 = { #ポツ
+        create_state = {
+            country = c:XAJ
+            owned_provinces = { x68F29B x393c90 x93a3d6 xC39590 xA7A589 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xac
+    }
+    s:STATE_NSM_186 = { #北阿10
+        create_state = {
+            country = c:XCM
+            owned_provinces = { x69C89C x96F270 x54F348 x60994B xCA4B8B xBB638A xECA948 x979CAA xBA4D61 xAB35B8 x4B2D44 xD853E8 xCB4D3B xB1628C x9C863C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcm
+    }
+s:STATE_NSM_187 = { #東亜1
+        create_state = {
+            country = c:GLT
+            owned_provinces = { x50DF48 x259528 x553B5A xE6529E x2C7231 x6A4C73 xAACD61 xC4E7CA x6E9038 x489C60 x8BCE46 x7EABCC x556659 xC837E1 x684464 xEB5071 xE0698D xAE2A3F x8C709F xE9C437 xF53179 x7C4A8D xA179A8 xDDD4C6 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got_2
+    }
+    s:STATE_NSM_188 = { #東欧47
+        create_state = {
+            country = c:XAL
+            owned_provinces = { x72E59F x4F6C50 xB4ABCE xB9469E x54B24B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xal
+    }
+    s:STATE_NSM_189 = { #中央諸島部11
+        create_state = {
+            country = c:GSU
+            owned_provinces = { x55F3A2 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+s:STATE_NSM_190 = { #ポー
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x4FAAB1 xc9152f x482562 x4f714b x355274 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_3
+            add_homeland = cu:nsm_map_pai_northern
+}
+    s:STATE_NSM_191 = { #北阿50
+        create_state = {
+            country = c:XDK
+            owned_provinces = { xCDCEA9 xA4D483 xBF42C8 x655759 xBA5C40 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdk
+    }
+    s:STATE_NSM_192 = { #ホームフート
+        create_state = {
+            country = c:XAI
+            owned_provinces = { xD78984 x97ED3A x23E8E8 x7F264C xDA4D33 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xai
+    }
+s:STATE_NSM_193 = { #北プルド
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xDA4FC1 x93d75c x72BB5F x4DED70 x677C7A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_5
+            add_homeland = cu:nsm_map_pai_northern
+}
+s:STATE_NSM_194 = { #東欧50
+        create_state = {
+            country = c:XEU
+            owned_provinces = { x55D5D7 x8ecd64 xE13083 x942950 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xep
+    
+        create_state = {
+            country = c:ETR
+            owned_provinces = { x973E51 }
+            state_type = incorporated
+        }
+    }
+    s:STATE_NSM_195 = { #南阿15
+        create_state = {
+            country = c:XAX
+            owned_provinces = { x56435C x717247 xC4C2C2 xBCB24E xD05833 xDCAAE4 xDB9F98 x718E33 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+s:STATE_NSM_196 = { #東亜3
+        create_state = {
+            country = c:GLZ
+            owned_provinces = { xCE44CE x787A26 x813E7B x425F6A xE09969 x4BA450 xDDCF7C x9BE08C x57612C xD25F90 xA32DAF xF25E72 xDB7C3B xBFBA6E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    }
+    s:STATE_NSM_197 = { #北阿41
+        create_state = {
+            country = c:XCY
+            owned_provinces = { xC0E66E x65b1b4 x46f31d x19bc8d x888D5A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcz
+    }
+    s:STATE_NSM_198 = { #奥デール
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xA76646 x7AF477 x25748D xEBC0BC xEFA8A8 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_shaftar
+}
+    s:STATE_NSM_199 = { #中央コンバフ
+        create_state = {
+            country = c:XAJ
+            owned_provinces = { xD9D9CA x9C70A9 xD27674 xCF9B44 x3A2A57 x23AF40 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaj
+    }
+    s:STATE_NSM_200 = { #北米44
+        create_state = {
+            country = c:XBN
+            owned_provinces = { x592636 xF19CE3 xF39FBB xDE327E x516E3D x8FBAAA xDAF145 x88CEB4 xB63171 x828082 xF44647 x6D262E xDD34C2 xC3C426 x582666 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbo
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+s:STATE_NSM_201 = { #西亜59
+        create_state = {
+            country = c:ATI
+            owned_provinces = { x6FC1AE xE67867 xD8E170 x8F4A2A x4EF2E5 xD2F231 xAEB58B xE5E081 xB92980 x63734C x39CB47 xF39E62 x31283F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_202 = { #中央諸島部7
+        create_state = {
+            country = c:GSU
+            owned_provinces = { x53F08C x9C3B89 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_203 = { #パルン
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xDCF230 x35c72d xEC373D x69BB5F xAB432E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_palun
+}
+    s:STATE_NSM_204 = { #南米20
+        create_state = {
+            country = c:XCF
+            owned_provinces = { x988B59 xd1eb6d x7ea2e4 xaa5ed5 x67BF60 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcf
+    }
+    s:STATE_NSM_205 = { #南レシンド
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xDE7760 xE94025 x30B590 xD24491 x493C47 xE360E7 xD15AB6 x9D4E37 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_3
+            add_homeland = cu:nsm_map_pai_northern
+}
+    s:STATE_NSM_206 = { #北阿9
+        create_state = {
+            country = c:XCL
+            owned_provinces = { x32485B x91C89D xA0D5F2 xC924CB xCEDE30 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcm_2
+    }
+    s:STATE_NSM_207 = { #北阿47
+        create_state = {
+            country = c:XCR
+            owned_provinces = { x71F3EA x3ED945 x90A3AB x924E49 xA97DA0 x95E3D0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcr
+    }
+    s:STATE_NSM_208 = { #豪44
+        create_state = {
+            country = c:XBE
+            owned_provinces = { xD6C15C x7CEB39 x90735F xE55EB9 x30DFAB xB5A265 xDC909F xF3E846 x7E5D94 xECE476 xBB82D5 xB5D79A xD09F73 x4ACB81 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbe
+    }
+    s:STATE_NSM_209 = { #北阿67
+        create_state = {
+            country = c:XAX
+            owned_provinces = { xC72759 xA69B68 x693D6B x97F05E x998334 x3F7663 x9E9F26 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdk
+    }
+    s:STATE_NSM_210 = { #北阿34
+        create_state = {
+            country = c:XCP
+            owned_provinces = { xE0A885 x6D823D xC05CB3 xA8E54A xCB7864 x6F7253 xCC9DE4 x8A9A5B x97BABE x29D4D3 x8C493E xAFDD39 x64BB28 x3D4C53 xA79939 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcv
+    }
+    s:STATE_NSM_211 = { #西亜30
+        create_state = {
+            country = c:ATI
+            owned_provinces = { x65A24E x35AA3B x499CA8 x345262 x72A1B8 xC7956C x502754 x23ED83 x5DD0D9 x729231 x8D8557 x9BCBA1 x57EB49 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_212 = { #西亜36
+        create_state = {
+            country = c:BLM
+            owned_provinces = { x9B8782 x6EC4DC x80A8BE xD4698C x58E0D7 x4AE863 xF2D14B xD9B54F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+s:STATE_NSM_213 = { #西亜9
+        create_state = {
+            country = c:GLT
+            owned_provinces = { xE08F7E xE151AC x4A265C x53C14B xB737D9 x273F55 x67EF26 x2DD836 xBE7EE0 x4FE6EF xEBAE3B xF19492 x867178 xCCEE37 xDE33BF }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got_2
+    }
+    s:STATE_NSM_214 = { #西欧54
+        create_state = {
+            country = c:XAQ
+            owned_provinces = { x46EFC1 xc29772 x38c099 x7fc436 x6d69e0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xai
+    }
+    s:STATE_NSM_215 = { #ナイラ
+        create_state = {
+            country = c:XAC
+            owned_provinces = { x83AA4C xD37992 xD83543 x6F90A8 x735874 x5DB49E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xac
+    }
+    s:STATE_NSM_216 = { #北米43
+        create_state = {
+            country = c:XBO
+            owned_provinces = { xD43CA4 xF4D5BA xE25A3B xAF7855 x40B678 x47325A x35F49A x637731 xE2CCDB x7BEC80 xF0EA89 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbo
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_217 = { #東欧25
+        create_state = {
+            country = c:XEP
+            owned_provinces = { xC92BDF xeb7f43 x79308B xE77C24 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xep
+    
+        create_state = {
+            country = c:ANS
+            owned_provinces = { x85D453 }
+            state_type = incorporated
+        }
+    }
+    s:STATE_NSM_218 = { #東欧64
+        create_state = {
+            country = c:XAR
+            owned_provinces = { xAE5CC9 xB179A8 x4DDE4A x4AA554 x377285 xE993C3 x2C5F30 xC53DAC x7DE3D7 x97879D x8DAEC6 xB97E30 xC96460 x92EAAB x917A32 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xar
+    }
+    s:STATE_NSM_219 = { #南米4
+        create_state = {
+            country = c:XBZ
+            owned_provinces = { x3FC196 xE47480 xB8B8B6 x45DF3B xC74EC4 xD186DD x7BEE2A x60C6AE x9B7B9C x53A6C3 xF529EF xC5587C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbz
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+}
+    s:STATE_NSM_220 = { #南阿24
+        create_state = {
+            country = c:XDD
+            owned_provinces = { x81425A xEF9BC1 xF1E425 x78B851 xC0C65B xE341C1 x913944 xCFD1D3 xB8B542 x943864 x9B7FB2 xAEEAA0 xCCD050 x7C2F33 x46CB9D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdd
+    }
+    s:STATE_NSM_221 = { #トゥロール
+        create_state = {
+            country = c:XAH
+            owned_provinces = { xD878D0 x83E1D0 xDA9727 xBDAF62 x8ba9c2 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xag
+    }
+    s:STATE_NSM_222 = { #北米39
+        create_state = {
+            country = c:XCC
+            owned_provinces = { x797682 xC2B6C7 xE58EE3 xC27F73 x44DB47 x3B94A5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+    s:STATE_NSM_223 = { #北米75
+        create_state = {
+            country = c:XBU
+            owned_provinces = { xE4598B xF37789 xEF64D5 xCE8980 xD8F1AB xAEBCA5 xC3A4C3 x5A2A68 xCC6C73 xEF4682 x34C878 xCF46C5 xF18EC1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbu
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+    s:STATE_NSM_224 = { #北阿27
+        create_state = {
+            country = c:XCK
+            owned_provinces = { x9BF59A x3CD5D6 x6796B4 xB2C8DA x9169A8 xE1B9C0 xCB43D7 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xck
+    }
+    s:STATE_NSM_225 = { #東ヤル
+        create_state = {
+            country = c:XDN
+            owned_provinces = { x98485C xC34CE5 x813959 x308764 xA13398 x9A46A0 x28BB4E xE1C591 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaq
+    }
+s:STATE_NSM_226 = { #東欧27
+        create_state = {
+            country = c:XET
+            owned_provinces = { xB8343C xBCEEAF xE86D33 x69F5A2 xC1BECC x87D532 xDFE15E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xep
+    
+        create_state = {
+            country = c:WMR
+            owned_provinces = { xCBE8B0 x9FA72B }
+            state_type = incorporated
+        }
+    }
+    s:STATE_NSM_227 = { #南米26
+        create_state = {
+            country = c:XCF
+            owned_provinces = { xA02889 xC76136 xCFF0DA xBD9230 xDB47ED }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcf
+    }
+    s:STATE_NSM_228 = { #スルーク
+        create_state = {
+            country = c:XAQ
+            owned_provinces = { xA6AC35 xE99D7C xD494BA x806C5B xA6299F x346525 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaq
+    }
+    s:STATE_NSM_229 = { #北阿63
+        create_state = {
+            country = c:XAX
+            owned_provinces = { x36D39A xBB2885 x4C6C49 x5AB572 xA1E153 x9DEFED x35B94E x963887 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_230 = { #西亜34
+        create_state = {
+            country = c:ATI
+            owned_provinces = { x4AE679 x79F1C1 xDE2BCA x4EAD83 xDFBCD6 xE2EC3D xCD694F xA43176 x4C6433 xF1D6BE xBDC377 xEDDBD3 xEBB8BC }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+s:STATE_NSM_231 = { #北米59
+        create_state = {
+            country = c:XBP
+            owned_provinces = { xADDDD9 xC8C345 x78CAE5 xB69FBF x727F5A x7B926F x876E41 xF1A326 x454331 xC18069 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbp
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_621 = { #西亜73
+        create_state = {
+            country = c:ATI
+            owned_provinces = { x5BCF31 x3D715B xbe7a6c xB58059 xE8BA87 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_232 = { #東欧49
+        create_state = {
+            country = c:XAW
+            owned_provinces = { x97402B xDC892F xDF45B1 xC6D7D3 x28D068 xB79756 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xal
+    }
+s:STATE_NSM_233 = { #東欧28
+        create_state = {
+            country = c:NPL
+            owned_provinces = { x45D36F x665C33 xC08E32 xCC2A9B xBDDA25 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xep
+    }
+    s:STATE_NSM_234 = { #西亜3
+        create_state = {
+            country = c:GOT
+            owned_provinces = { x9F2370 x45F396 xEAA825 x69CCD0 xA5D435 xEEEE61 xDE8880 xC3F5E1 xEF9B6F xBBA7AB x232329 xF2A93E x6ED781 x95F13C x2E5A6E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_235 = { #豪2
+        create_state = {
+            country = c:MVA
+            owned_provinces = { x4DF0D8 x5FC8D3 xA8EB24 xEDB7AD xC8B696 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_236 = { #パリトル
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xA25D58 xED4B8D xD8B1C0 x9B8D93 x5EC195 xF09AB1 x8FD2AD xDEB0A0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_eskan
+}
+    s:STATE_NSM_237 = { #ボーツ
+        create_state = {
+            country = c:XAI
+            owned_provinces = { xDC464D x795F76 x27F38A xC7786B x6EF444 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xai
+    }
+    s:STATE_NSM_238 = { #西欧64
+        create_state = {
+            country = c:XAS
+            owned_provinces = { x67B959 xD2A562 xF3AEB6 xDCA54F xBF71B3 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas
+    }
+    s:STATE_NSM_239 = { #西ポドボドル
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xD3B983 x7d2a59 xA24B6F x8CCFB4 xA930AF }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_northern
+        add_homeland = cu:nsm_map_pai_3
+}
+    s:STATE_NSM_240 = { #豪20
+        create_state = {
+            country = c:XCI
+            owned_provinces = { xA7D7C4 x535E62 x838A23 x58E95F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbd
+    }
+    s:STATE_NSM_241 = { #南米8
+        create_state = {
+            country = c:XBX
+            owned_provinces = { x96DFC5 xCDB57B x259E87 x772869 x4B888C xC38A4A xB7BD79 xE751A0 x398953 xB537D6 x8DF2EF xA99EC6 xF0D567 xBA4D80 xD1C8D0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbz
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 6
+            duration = 18250
+        }
+}
+    s:STATE_NSM_242 = { #豪30
+        create_state = {
+            country = c:XBB
+            owned_provinces = { x644481 x24C1CB x3E8064 x972779 xE7D330 x42A738 xECCC6F x7F6599 x84CF4B xA4DBB2 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_243 = { #西亜52
+        create_state = {
+            country = c:NRK
+            owned_provinces = { x52AE95 xD9AEC0 xE34A2A x9A6C98 xA6CADB xE65555 x79DD70 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_reg
+    }
+s:STATE_NSM_244 = { #ランデン
+        create_state = {
+            country = c:XAJ
+            owned_provinces = { x66DB51 x24C753 xD04F5F xC6E2F3 xD7E826 xE02723 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xag
+    }
+    s:STATE_NSM_245 = { #北米63
+        create_state = {
+            country = c:XBS
+            owned_provinces = { x8CA76B xAC6993 xEE58DB x703B83 x3C9183 x91CA72 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbs
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_246 = { #北米13
+        create_state = {
+            country = c:XBK
+            owned_provinces = { x4E845D xE36074 x8DAC7E x53304D x33AD3D x7AEB87 x9A6B2E xBAE931 xA55C67 xABA0BA x93A75F x8EF5E3 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 8
+            duration = 18250
+        }
+
+        add_claim = c:XBJ
+        add_claim = c:XBL
+}
+    s:STATE_NSM_247 = { #東欧92
+        create_state = {
+            country = c:XAS
+            owned_provinces = { xBA5D83 x78709A xA4B4C0 x3EEFB5 xD83CC3 xAB9A6A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat_2
+    }
+s:STATE_NSM_248 = { #西亜61
+        create_state = {
+            country = c:GSU
+            owned_provinces = { x5E5879 x664840 x861bcd x9EA137 x86EB58 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_249 = { #南阿9
+        create_state = {
+            country = c:XAX
+            owned_provinces = { x553165 x25AA53 x662D42 x684370 x45A759 x36A064 x94E9CA x9AC473 x60AE96 x88F335 x3C8C9A xDB8BD8 x442F60 xE78155 xA57D47 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_250 = { #東欧77
+        create_state = {
+            country = c:XAS
+            owned_provinces = { xE1BBA0 xA34BBF x8BADA0 xD7A79D xC946D9 x7EBFBA x7D3C4A x52D937 x8FF4AA xA4E0E5 x75744B x61772B xF23336 x8C2E27 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat_2
+    }
+    s:STATE_NSM_251 = { #豪29
+        create_state = {
+            country = c:XBF
+            owned_provinces = { x24F131 xF1F2E9 x487561 xF0F071 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbf
+    }
+    s:STATE_NSM_252 = { #北阿44
+        create_state = {
+            country = c:XCV
+            owned_provinces = { xECCC8E x54CCD3 xBF5EBA x25A7AD xDB8F88 xAFA645 x3EB6A0 xDFE8D6 x83AABB x9DC2CA xCE80B9 xF2C7E3 x95A561 x546149 xC46E4E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcv
+    }
+    s:STATE_NSM_253 = { #南阿2
+        create_state = {
+            country = c:XDB
+            owned_provinces = { xD1DC7F xAF6774 x9D2B3F x87C5E2 x60BA8B xEFDF70 x8CF15D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xda
+    }
+    s:STATE_NSM_254 = { #北米68
+        create_state = {
+            country = c:XBW
+            owned_provinces = { xB3C685 xdaca34 xBB8824 xE3BA7C xE3DF28 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbw_2
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_255 = { #東欧51
+        create_state = {
+            country = c:XAL
+            owned_provinces = { xAF7845 xC9824B x3ABA2D x78516D xE3D8A2 xF5F56E x8FA675 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xal
+    }
+    s:STATE_NSM_256 = { #北米5
+        create_state = {
+            country = c:XBK
+            owned_provinces = { x66616E x506E59 x4DE575 xB47F43 x4E695E x997B41 xACD697 xCA4FCF xAE568B xCACF5C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+
+        add_claim = c:XBJ
+        add_claim = c:XBL
+}
+    s:STATE_NSM_257 = { #西亜6
+        create_state = {
+            country = c:GOT
+            owned_provinces = { x645E57 xD3323C xF0A541 xD64A28 x99AB6A xEA9FAE x45E331 xD92F28 x28B7BF x87D65D x86DACC x325A7D xC3B775 xDFE85F xB47A95 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_258 = { #西亜22
+        create_state = {
+            country = c:XGG
+            owned_provinces = { xD4E460 x40945B xC651DE xA07094 x6AD446 x82A62C xA6AE78 x5FAE8C xB62B78 x459E3E xDB8898 xF5D392 x92C14E xDFAED3 xBD4C77 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+    }
+    s:STATE_NSM_259 = { #グゼ
+        create_state = {
+            country = c:XAI
+            owned_provinces = { x87A471 x782E63 xC5E465 x56c01a x894E9D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xai
+    }
+    s:STATE_NSM_260 = { #南阿39
+        create_state = {
+            country = c:XDE
+            owned_provinces = { xDA9C3D x57E971 x4D6A37 xF22523 xA0EEC5 xE77DC6 x966160 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xde
+    
+        add_claim = c:XDF
+}
+    s:STATE_NSM_261 = { #ヨーロク
+        create_state = {
+            country = c:XAE
+            owned_provinces = { xB8C25C x262635 x5F6A40 xB4B970 x32DFC8 xBCB92C xEA992A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xae
+    }
+    s:STATE_NSM_262 = { #中央諸島部9
+        create_state = {
+            country = c:GSU
+            owned_provinces = { x9CA09F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+s:STATE_NSM_263 = { #東欧97
+        create_state = {
+            country = c:XAT
+            owned_provinces = { xC3A7E2 x84CEBF xB8819B x3DB639 xACCF49 x80EEE5 xEDABCB x90A6C7 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat
+    }
+    s:STATE_NSM_264 = { #南阿3
+        create_state = {
+            country = c:XAX
+            owned_provinces = { x2F9A5A xBCDD56 x76D7D4 xBEF235 xBCBAA2 x9F8A26 xD190D8 x8A948F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_265 = { #豪11
+        create_state = {
+            country = c:XBB
+            owned_provinces = { x83DA97 x83415F xCBDA45 x42C8BC x31EF2E x5FB285 xA43D59 xA0BEAB }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_266 = { #北米52
+        create_state = {
+            country = c:XCC
+            owned_provinces = { x62F1B0 x6ACC96 x713926 xF2AC6A xB1F381 x6DA37D x2E97AA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+    s:STATE_NSM_267 = { #ポーツ
+        create_state = {
+            country = c:XAQ
+            owned_provinces = { xA67B82 xc6c667 xdc7ab8 x34847e xC44FA8 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xez
+    }
+    s:STATE_NSM_268 = { #東欧53
+        create_state = {
+            country = c:XAM
+            owned_provinces = { x396381 x62DBDF x2AE5B3 xF57277 xD1BF34 x9939B7 xDAB8C5 xEE8790 x95695F xC0DF96 x678AA8 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xam_2
+    }
+    s:STATE_NSM_269 = { #北阿52
+        create_state = {
+            country = c:XCU
+            owned_provinces = { x84D386 x36b639 x4441a1 xc3ed50 xA8C363 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcr
+    }
+    s:STATE_NSM_270 = { #北阿43
+        create_state = {
+            country = c:XDA
+            owned_provinces = { x93387E x489B57 xB27FCF x73A1A1 xCF7672 x4A524F x5EE6CF xF18A90 xC13C5C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xda
+    }
+    s:STATE_NSM_271 = { #中央諸島部4
+        create_state = {
+            country = c:GSU
+            owned_provinces = { x8EF059 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_272 = { #下デール
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x6AB7B4 xE2A741 x7A5C64 xD667C7 xB39F35 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_dale
+}
+    s:STATE_NSM_273 = { #北米74
+        create_state = {
+            country = c:XBV
+            owned_provinces = { x74C683 x2CD899 x3A7C88 x872774 x7E5F4D xBFE453 x79237F xDB9CE6 xF4A373 x8ABABA xA144C4 xA0B130 xDE29D4 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbu
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+    s:STATE_NSM_274 = { #西亜55
+        create_state = {
+            country = c:SPE
+            owned_provinces = { xCBE9ED x966957 xda1683 x6F774F x9B4472 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_reg
+    }
+    s:STATE_NSM_275 = { #南阿31
+        create_state = {
+            country = c:XDF
+            owned_provinces = { xF26163 xddbfa2 x9a2c14 x334365 x869D3C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdf
+    }
+s:STATE_NSM_276 = { #ガーク
+        create_state = {
+            country = c:XEZ
+            owned_provinces = { x91E64E x2194db xa8b4bb xBE64AF x367F60 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xez
+    }
+    s:STATE_NSM_277 = { #東欧87
+        create_state = {
+            country = c:XAS
+            owned_provinces = { xDB2C58 x2b407c x3998ed xEA389D xCF97D6 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas
+    }
+    s:STATE_NSM_278 = { #南米10
+        create_state = {
+            country = c:XBZ
+            owned_provinces = { x4FE644 xF4C4D0 x75BBBC xC3C126 x46B24B x86C237 x8CE239 xA29C29 x2F4861 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbz
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 6
+            duration = 18250
+        }
+}
+    s:STATE_NSM_279 = { #東欧100
+        create_state = {
+            country = c:XAU
+            owned_provinces = { xB1BCDB xE581E4 x77A844 x2C984B xB26F72 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xau
+    }
+    s:STATE_NSM_280 = { #北阿70
+        create_state = {
+            country = c:XDM
+            owned_provinces = { xC5E2BB x20513a xa1e747 xd7a7c8 xbb2788 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdl
+    }
+    s:STATE_NSM_281 = { #南阿27
+        create_state = {
+            country = c:XAX
+            owned_provinces = { x659FA1 x58D3AC xF0AA2B xCACD3D x93443D xAA5B2F x8CF1BB x86BE4D x756379 x6A4B84 x6BBA73 xC5B123 xBE7EC2 x3BD635 xBED2E5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_282 = { #南阿18
+        create_state = {
+            country = c:XDF
+            owned_provinces = { xED47ED xb29026 x8a50cf x83677e xC54865 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdl
+    }
+    s:STATE_NSM_283 = { #北阿55
+        create_state = {
+            country = c:XCZ
+            owned_provinces = { xDE6629 xc3c7e9 xee7a41 xC499AA x855F3A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcz
+    }
+    s:STATE_NSM_284 = { #北米41
+        create_state = {
+            country = c:XBO
+            owned_provinces = { x625675 xEA55DD xBCB7D2 xA0B15A xAD682A xCE4479 x64BFB8 xE7ACCD xCA418D x3AD49C xCD7F79 xA3E2C3 x31917D xDB613C x85755F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbo
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+    s:STATE_NSM_285 = { #南阿4
+        create_state = {
+            country = c:XAX
+            owned_provinces = { x28BDBE x57A868 xE2D7F1 xEDDC46 x7CDB59 xB286AE xB17670 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_286 = { #北阿51
+        create_state = {
+            country = c:XCU
+            owned_provinces = { xA36F81 x1b58bc x2363de x786cce x4F9DA8 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcr
+    }
+    s:STATE_NSM_287 = { #中央諸島部6
+        create_state = {
+            country = c:GSU
+            owned_provinces = { x85DC70 x31B474 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_288 = { #東欧84
+        create_state = {
+            country = c:XAS
+            owned_provinces = { x3185A7 x9A37A9 xC894AC x7A539C x7e5cef }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcn
+    }
+    s:STATE_NSM_619 = {
+        create_state = {
+            country = c:XAS
+            owned_provinces = { x8BCE65 xA0B62E xACBC82 xB07BBA x77234F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xde
+    }
+    s:STATE_NSM_289 = { #西亜49
+        create_state = {
+            country = c:SOS
+            owned_provinces = { xF34F3B xD8366D xE6D9B0 x809F9C x2A382E xD62CCC x75535A x4E673E x90AFB6 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_sos
+    }
+    s:STATE_NSM_290 = { #ルパレー
+        create_state = {
+            country = c:XAC
+            owned_provinces = { x8FA553 xD94088 xA6D65C xE0A883 xA4716E x343743 x50AF5E x42DED8 x89D3F5 x53C54C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xac
+    }
+    s:STATE_NSM_291 = { #豪15
+        create_state = {
+            country = c:XBC
+            owned_provinces = { x2EBA33 xD5EB8C xE3DB65 xD3A269 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_292 = { #南米18
+        create_state = {
+            country = c:XCF
+            owned_provinces = { x2B7156 xbe63ad xedd536 x88e6a0 x774A2B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcf
+    }
+    s:STATE_NSM_293 = { #ブルミア
+        create_state = {
+            country = c:XAO
+            owned_provinces = { xC96CDB x7CB1D4 x725894 x33677C x41DC34 xB2ED7B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xan
+    }
+    s:STATE_NSM_294 = { #北阿38
+        create_state = {
+            country = c:XCS
+            owned_provinces = { xB2B0CD x2dddac x76F26C x9EA7AB x47BB7D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcr
+    }
+    s:STATE_NSM_295 = { #北阿18
+        create_state = {
+            country = c:XAS
+            owned_provinces = { x4A964C x2C6D45 xF34FEA x74C7AD x736A65 x9E3B2B xC862B0 x8698AE xDA2CAA xC96154 x6FC164 x4C2F5F x9CCA28 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas_2
+    }
+    s:STATE_NSM_296 = { #北米70
+        create_state = {
+            country = c:XBW
+            owned_provinces = { xCA4BD6 xA32D59 x49403E xE0C3CB x83F07B xC2C3BB }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbw_2
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+    s:STATE_NSM_297 = { #西亜37
+        create_state = {
+            country = c:ATI
+            owned_provinces = { x4AA032 xE3A650 xEA5481 xD7B32A xCC7846 xEEF3EF xAC6189 xCE8B68 xD26477 x49A15A x8AEC5B x95DF61 xD14480 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_298 = { #北阿53
+        create_state = {
+            country = c:XCU
+            owned_provinces = { x8C916C xf35fa0 x6a517f x6488A8 xF254DB }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcr
+    }
+    s:STATE_NSM_299 = { #南米19
+        create_state = {
+            country = c:XCF
+            owned_provinces = { x8CEA7F x96a4aa x8df26a x242d62 xd27a18 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcf
+    }
+    s:STATE_NSM_300 = { #クコ
+        create_state = {
+            country = c:XAB
+            owned_provinces = { xF04D88 x3ED378 xC04A24 x4533da xA8D88F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xab
+    }
+    s:STATE_NSM_301 = { #南コンバフ
+        create_state = {
+            country = c:XAJ
+            owned_provinces = { xB67D6D xE190EC xAE3DC1 xDB8B36 x69D765 x9B9EAD }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaj
+    }
+s:STATE_NSM_302 = { #西亜29
+        create_state = {
+            country = c:ATI
+            owned_provinces = { x51E267 xA5C4CD x5E8878 x45B84F x96B36D xA8D5EB }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_303 = { #豪9
+        create_state = {
+            country = c:XBB
+            owned_provinces = { x86CF6C xF2384C x67BFC1 xEA7324 x8C252C x6BB1D0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_304 = { #南阿1
+        create_state = {
+            country = c:XDB
+            owned_provinces = { x70F549 x97f38e x41607E x5F4054 x6FDAD0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xda
+    }
+    s:STATE_NSM_305 = { #北米72
+        create_state = {
+            country = c:PTK
+            owned_provinces = { x5DAEBC xB93EBA xE84745 x3FD34B x4BEAE0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbw
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_306 = { #北阿4
+        create_state = {
+            country = c:XCK
+            owned_provinces = { xB999BB xD4BCDA x5E9585 xA0B893 x4283A2 xC47BA9 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xck
+    }
+    s:STATE_NSM_307 = { #東欧78
+        create_state = {
+            country = c:XAR
+            owned_provinces = { x8BCA82 xBF4142 x24EDBE x3BDAB6 x24564E x3EC746 x996C4D xCCC29A x70D556 xEB49BC xE9AD8F x9295A8 x9A3D44 x71908F xB6A051 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xar
+    }
+    s:STATE_NSM_308 = { #東欧99
+        create_state = {
+            country = c:XAU
+            owned_provinces = { x48D9D3 x4f8d63 xE65E2F x523235 xA12EA6 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xau
+    }
+    s:STATE_NSM_309 = { #北阿57
+        create_state = {
+            country = c:XCZ
+            owned_provinces = { xA7D0F2 xa8efe8 xC0C434 xB9CB68 x838B60 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcz
+    }
+    s:STATE_NSM_310 = { #北米58
+        create_state = {
+            country = c:XBQ
+            owned_provinces = { x37B382 x35F090 x60CA58 xD63251 x435624 xF226A3 x39E35C xA09E68 x86BA68 xA56855 x739AB4 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbq
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_311 = { #東欧63
+        create_state = {
+            country = c:XAS
+            owned_provinces = { xA133B6 x5E2F67 xAD59B9 x86EFE7 x782E2D xEA506D xE4F03E x98D37F xE7D69B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas
+    }
+    s:STATE_NSM_312 = { #北米33
+        create_state = {
+            country = c:XBL
+            owned_provinces = { x8D5686 x76323E xD87EDF xE0866A x603229 x3FD184 x982DA2 x268AAD x44A23A xE1B3B0 x6F9755 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+
+        add_claim = c:XBK
+        add_claim = c:XBJ
+}
+    s:STATE_NSM_313 = { #南フロシエン
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x467D98 x8e4c91 x6737ba x6d6b63 xBB9DB7 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_eskan
+}
+    s:STATE_NSM_314 = { #プロバン
+        create_state = {
+            country = c:XEP
+            owned_provinces = { x4DC3DA x87CC36 x7AA651 xE3F5A5 xDB994F xDCF22C x7CBD5D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xep
+    }
+    s:STATE_NSM_315 = { #南阿13
+        create_state = {
+            country = c:XAX
+            owned_provinces = { x96B756 xE5B093 x4d265e xda6370 xB7BB85 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_316 = { #北阿66
+        create_state = {
+            country = c:XDK
+            owned_provinces = { x8E7F9B xDFDCD1 xE79546 xA03A4F xB6DC51 x9B3371 xABAF57 x634932 x56DEB1 x9CF1AC xAEE18A xCEAB77 xEE9950 xB8734B xDB6A5F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdk
+    }
+    s:STATE_NSM_317 = { #南阿35
+        create_state = {
+            country = c:XDC
+            owned_provinces = { xC7562A xD36E72 xC3EE3A x9D6BBE xC4E45B xB165A9 xC9F4BC xEE8D81 xCD95EC xA64758 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xde
+    
+        add_claim = c:XBG
+}
+    s:STATE_NSM_318 = { #南阿12
+        create_state = {
+            country = c:XAX
+            owned_provinces = { xA3CC74 xA1259A xD89688 xA22A8F x58D565 xAC88C5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_319 = { #西レシンド
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xC59640 xF3DB32 xCFB380 xD24932 x50908F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_3
+            add_homeland = cu:nsm_map_pai_northern
+}
+    s:STATE_NSM_320 = { #南阿19
+        create_state = {
+            country = c:XCH
+            owned_provinces = { xD75484 xe7e863 xc45d34 xABBAD7 x5A2E33 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdc
+    }
+    s:STATE_NSM_321 = { #西亜35
+        create_state = {
+            country = c:ATI
+            owned_provinces = { x7DC277 x2f2925 xa0957f x5b55c7 xBDE16B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_322 = { #北阿22
+        create_state = {
+            country = c:XAS
+            owned_provinces = { x93C0A4 x1d1d40 x7D6C28 x45E057 x85DAEF }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas_2
+    }
+    s:STATE_NSM_323 = { #北阿24
+        create_state = {
+            country = c:XCX
+            owned_provinces = { x26AE7C x7b6226 xdfb4d2 x9d2540 x92b969 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcz
+    }
+    s:STATE_NSM_324 = { #ミスリアデルタ
+        create_state = {
+            country = c:XCN
+            owned_provinces = { xD98D2B xCA682C x7C8062 xA870A6 x8F3062 xC0F3B6 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcn
+    }
+    s:STATE_NSM_325 = { #東欧56
+        create_state = {
+            country = c:XAM
+            owned_provinces = { x78F196 xED5ACF x81B827 x25D699 x37C059 xC961BE xBD8BA4 xC92369 xE66547 x366F46 x75D255 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xam_2
+    }
+    s:STATE_NSM_326 = { #東プルド
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x72346F xa9328d x77931d x6EA9C5 xEFE226 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_5
+            add_homeland = cu:nsm_map_pai_northern
+}
+    s:STATE_NSM_327 = { #北米61
+        create_state = {
+            country = c:XBR
+            owned_provinces = { x277526 xAA4B52 xAFB945 x62AE2F xE3EE87 xCF3693 xCFA24E xBD3868 x3BC39B x3ECD9D xC5E357 xC492CB }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbs
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+s:STATE_NSM_328 = { #西亜27
+        create_state = {
+            country = c:CAN
+            owned_provinces = { x413248 x4bc95c xF46561 x7DA76F xC66B7F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_reg
+    }
+    s:STATE_NSM_329 = { #西亜12
+        create_state = {
+            country = c:GOT
+            owned_provinces = { x56A840 x4EC041 xF0D931 x79AA99 x9FC864 x8DDADC x9271AA xD66FEB x25EFB6 xED7239 xEEE6C7 x76DACF xB57E99 xDC6EDB x27775C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_330 = { #東欧94
+        create_state = {
+            country = c:XAT
+            owned_provinces = { x893683 x5b19e8 xcb69a7 xAF4BB7 x37DD62 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xau
+    }
+    s:STATE_NSM_331 = { #西亜64
+        create_state = {
+            country = c:GSU
+            owned_provinces = { x61CE8B xF5BBC6 x73BF93 x24B4CA x7C8788 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_332 = { #北米48
+        create_state = {
+            country = c:XBP
+            owned_provinces = { x865C75 xF2C9E9 x688C73 x2B6544 x30778F x47C03D x55C34A xC3C84E x8CAFB5 x51CF51 x773939 xE42FAB x45BF3E x3B695A x8EB430 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_333 = { #中央諸島部14
+        create_state = {
+            country = c:SHR
+            owned_provinces = { x2DCBB3 xD62451 x90A7C0 x8A93B4 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+
+    s:STATE_NSM_335 = { #北阿19
+        create_state = {
+            country = c:XCQ
+            owned_provinces = { xCCC747 x868F49 x9AE16E xE93BA3 xE69A29 xEDB75D x50743C x346C41 xC1EB24 x27EB95 x95D234 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas_2
+    }
+    s:STATE_NSM_336 = { #中央諸島部1
+        create_state = {
+            country = c:GSU
+            owned_provinces = { xE08BBD x7C4484 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_337 = { #北米51
+        create_state = {
+            country = c:XCC
+            owned_provinces = { x5DF392 x83384F x28D2C8 xE1EAE5 x65868A xEAC07D xB9EB9C x28BEA9 x57696B x4D9B8C xBF4EDE x67D5F5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_338 = { #南阿38
+        create_state = {
+            country = c:XDE
+            owned_provinces = { x5BF1D8 x7d6435 xc63477 xcb1a65 x701a54 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xde
+    
+        add_claim = c:XDF
+}
+s:STATE_NSM_339 = { #西亜67
+        create_state = {
+            country = c:GSU
+            owned_provinces = { x81E79B x7aad5b xc487c7 xE64BEA x99315D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_340 = { #北米76
+        create_state = {
+            country = c:XCE
+            owned_provinces = { x64C599 xDDE477 x51E243 x86E3C4 xF3CABA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xce
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+    s:STATE_NSM_341 = { #西亜40
+        create_state = {
+            country = c:BLM
+            owned_provinces = { x6B347D x2344a1 x25858e x1c8da9 xaecae7 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_342 = { #豪4
+        create_state = {
+            country = c:XBA
+            owned_provinces = { x479827 x6BD060 x23C13D x814A9C x473B43 x9D5A70 xDCB242 x852D7E xB53A87 x5BD0E1 x67AC93 xD73D2A xC02691 xF4A846 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_343 = { #豪42
+        create_state = {
+            country = c:XBD
+            owned_provinces = { x789340 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbd
+    }
+    s:STATE_NSM_344 = { #東欧19
+        create_state = {
+            country = c:GLP
+            owned_provinces = { x5F5025 xD933B4 xB5EFA2 x7AD3CE x3BBBC1 xCB6F2B x7CB29B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+    }
+    s:STATE_NSM_345 = { #西亜58
+        create_state = {
+            country = c:ATI
+            owned_provinces = { x7B6581 x3A9A47 xEBB8CA x8B7585 xA16FB7 xAFB34A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_346 = { #西亜70
+        create_state = {
+            country = c:GSU
+            owned_provinces = { x87F1F1 x60F035 x27F125 xC7D956 xBA6445 x8D8B81 x41728A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+s:STATE_NSM_347 = { #バリゾナ
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xC87144 x384016 xf179ad xADEF65 xA25570 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_4
+    }
+    s:STATE_NSM_348 = { #豪52
+        create_state = {
+            country = c:XBI
+            owned_provinces = { x4CD431 xECF150 xDC302E xC0CACE x4B7368 xB8AEB6 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbh
+    }
+    s:STATE_NSM_349 = { #西亜54
+        create_state = {
+            country = c:SPE
+            owned_provinces = { xC65076 xdfe5f3 xec22ea xbc98f1 x8E903C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_reg
+    }
+    s:STATE_NSM_350 = { #ドント
+        create_state = {
+            country = c:XAG
+            owned_provinces = { xBA8C8D x2CBB38 xE0E9CA xE9366F xD08DE0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xag
+    }
+    s:STATE_NSM_351 = { #東欧1
+        create_state = {
+            country = c:GOT
+            owned_provinces = { xF3C3E0 xF3E783 x4C8A73 xDF6DE5 xE1BAD0 xF1A95E xCC9BC4 xCD3AD1 xEC8CA0 xA9EC35 xAD526C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_352 = { #北米28
+        create_state = {
+            country = c:XBK
+            owned_provinces = { xF55D3D xC2712A xEF4780 x964730 xE73286 x69CFD9 xA6B724 x5B2C50 x55DF4D xABC977 xC6D5D4 xF328A0 x90AEA3 x38C169 xC45C39 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 8
+            duration = 18250
+        }
+
+        add_claim = c:XBJ
+        add_claim = c:XBL
+}
+    s:STATE_NSM_353 = { #北阿26
+        create_state = {
+            country = c:XCK
+            owned_provinces = { x9B4D34 xA57D4C xE2A88F x9B384E xE7B0A5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xck
+    }
+    s:STATE_NSM_354 = { #南米15
+        create_state = {
+            country = c:XCA
+            owned_provinces = { xF48F8B x815A5C x5A8139 x44D7EA x464B2F x344155 x63C6A0 x4BC6AD xBAEB48 x7CDB8F xE2D830 xD92AE7 x5FF199 xAA999C xD2A9C6 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcb
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 5
+            duration = 18250
+        }
+}
+s:STATE_NSM_355 = { #東レシンド
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x959660 x62d02b x47bee9 x56BE98 xC44CC8 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_3
+            add_homeland = cu:nsm_map_pai_northern
+}
+    s:STATE_NSM_356 = { #北阿20
+        create_state = {
+            country = c:XCQ
+            owned_provinces = { x4EC379 x48F492 xB2283B x7AB3D3 x9C889C x7C4073 xB77E65 x62292C xA44880 x92C62B xA4689E x9B5879 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas_2
+    }
+    s:STATE_NSM_357 = { #豪54
+        create_state = {
+            country = c:XBI
+            owned_provinces = { x79AB27 xA27373 xC1539C x59E9C4 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbh
+    }
+    s:STATE_NSM_358 = { #北阿49
+        create_state = {
+            country = c:XCR
+            owned_provinces = { xC5CF4B xE236B8 x543467 xAC7FA0 xDC6A94 xA0B9A6 x46842F x4BD4AF x9CC74A x2D4827 x76EA36 xC275BF x376383 x569941 xCDB66C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcr
+    }
+    s:STATE_NSM_359 = { #マサガ
+        create_state = {
+            country = c:XAI
+            owned_provinces = { xB168B4 x4a9e47 xA5CEE5 xCD59E9 xEB5127 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xai
+    }
+    s:STATE_NSM_360 = { #東デール
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x9FC85A x71665A xBD5992 x98E6C0 xD3A665 xAEDD47 x86C987 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_dale
+}
+    s:STATE_NSM_361 = { #南阿6
+        create_state = {
+            country = c:XDC
+            owned_provinces = { xCEDBD4 xCC4C77 xE9A7B3 x68BB5E x4CA87B x8A6028 xCF6A27 x842653 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xda
+    
+        add_claim = c:XBG
+}
+    s:STATE_NSM_620 = {
+        create_state = {
+            country = c:XDC
+            owned_provinces = { x283F2A x63D47B xEB82B2 xDD8D6D x58DDAC x8E5861 x90AC35 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdd
+    
+        add_claim = c:XBG
+}
+    s:STATE_NSM_362 = { #南米2
+        create_state = {
+            country = c:XBY
+            owned_provinces = { xCDD971 xE02C7F x893B68 x29352B xAEE0C3 xBABC70 x8E5046 x32CCD9 xD6C330 x339B98 xCA97A6 xF3B3B7 x274B5A x9CA950 xC75436 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xby
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+}
+    s:STATE_NSM_363 = { #北米60
+        create_state = {
+            country = c:XBT
+            owned_provinces = { xE14C88 x666C68 xEF92C1 xCE8E3D x7BEA98 xD44E93 x64625A x536124 xDCA669 x8B2B3B xE63E53 xDE48D5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbq
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_364 = { #北阿17
+        create_state = {
+            country = c:XCO
+            owned_provinces = { x7CA5AF xDAB3E0 x496646 x26565F x8A9340 x4DC564 xDBB853 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcv
+    }
+    s:STATE_NSM_365 = { #北米7
+        create_state = {
+            country = c:XCC
+            owned_provinces = { xA2D43D x9CC75D xBB6DB1 xB96843 x43B136 xC5E677 x98DBC5 x7B732B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+}
+    s:STATE_NSM_366 = { #南阿33
+        create_state = {
+            country = c:XBG
+            owned_provinces = { xEB7FE2 xAE925E x954462 x767680 xC3A0B8 xDA78E1 xF43A4B xAD88D0 x9C4682 xE4BA3F x5DA158 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbg
+    }
+    s:STATE_NSM_367 = { #中央諸島部5
+        create_state = {
+            country = c:XCG
+            owned_provinces = { x49F18E x76C544 x83474E xCDAE66 xC3ED49 xCF9051 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcg
+    }
+    s:STATE_NSM_368 = { #北阿21
+        create_state = {
+            country = c:XAS
+            owned_provinces = { x87708E x9C4454 xAA5033 xB58CCC xB2E136 xDA9CB5 x526241 x46A6B6 xD46FC8 xE165CF xD1F126 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas_2
+    }
+s:STATE_NSM_369 = { #ブレルン
+        create_state = {
+            country = c:XAL
+            owned_provinces = { x7C8353 xF09134 x59456E xDAC0E1 xf1c894 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xal_2
+    }
+    s:STATE_NSM_370 = { #北米6
+        create_state = {
+            country = c:XBK
+            owned_provinces = { xC2ED90 xabee1a xd1397d xa1283a x37A459 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+
+        add_claim = c:XBJ
+        add_claim = c:XBL
+}
+    s:STATE_NSM_371 = { #北米80
+        create_state = {
+            country = c:XCD
+            owned_provinces = { xBE9F5D x92935b xb1f09f xD3E5C8 x63F36E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcd
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_372 = { #中央諸島部17
+        create_state = {
+            country = c:GSU
+            owned_provinces = { xDCEC92 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_373 = { #豪27
+        create_state = {
+            country = c:XBF
+            owned_provinces = { xECB68D xDCA284 x84BE85 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbf
+    }
+    s:STATE_NSM_374 = { #西亜21
+        create_state = {
+            country = c:BZN
+            owned_provinces = { x7FD34A x51E29A xE62F45 x3BC4CD x938EA6 x6C463F xD44B87 x89C6A5 x89ABA8 xEC39F3 x7BBB76 xF4E72F xB6CF62 x963126 x35CA9F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+    }
+    s:STATE_NSM_375 = { #東欧83
+        create_state = {
+            country = c:XAT
+            owned_provinces = { xBC6CBD x284615 xea7e65 xE96340 xEF7041 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat
+    }
+    s:STATE_NSM_376 = { #東欧74
+        create_state = {
+            country = c:XAS
+            owned_provinces = { xB52953 xE977DE xCE2BEF x9C5898 x34C6CA xA14B28 x65916B xA2E2E3 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas
+    }
+    s:STATE_NSM_377 = { #北阿65
+        create_state = {
+            country = c:XAX
+            owned_provinces = { xC4ED5D xCEE434 xD6C6B8 x26262F x54EF93 xE94647 xE6D7B1 x8E6042 x992D24 x65A8B9 x585162 x666A80 xB33ECD x64D36A x6FC15D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdk
+    }
+    s:STATE_NSM_378 = { #北阿2
+        create_state = {
+            country = c:XCK
+            owned_provinces = { x3FC0B5 x3D4144 xCD32E1 x69CAE7 xB5BE74 xEDCAA3 xB63F32 xEBDEAC x4E7458 xC83C5B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xck
+    }
+s:STATE_NSM_379 = { #西亜26
+        create_state = {
+            country = c:REG
+            owned_provinces = { xAAB754 xDAB5F3 xAB4342 x92EE59 x5E4960 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_reg
+    }
+    s:STATE_NSM_380 = { #北阿3
+        create_state = {
+            country = c:XCK
+            owned_provinces = { xCABD2E x56b929 x33C62D x5ABF27 xDD6B62 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xck
+    }
+s:STATE_NSM_381 = { #東亜2
+        create_state = {
+            country = c:GLZ
+            owned_provinces = { x882D9E x6B4B7C xF5DEBF x59C140 x2B4E5E x77C53F x74AB61 x698376 xE488D8 x83CED4 x3CDDCC xB7D630 x25E4CA x545B7C x88AA72 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    }
+    s:STATE_NSM_382 = { #豪53
+        create_state = {
+            country = c:XBD
+            owned_provinces = { xC4A4B9 xD026A5 xC3BC34 xCF6339 x25F0D7 x517756 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbd
+    }
+s:STATE_NSM_383 = { #マワス
+        create_state = {
+            country = c:XAC
+            owned_provinces = { xB36C42 xc8c8e3 xacabf2 x83cdea xD4BA46 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xag
+    }
+    s:STATE_NSM_384 = { #北米71
+        create_state = {
+            country = c:PTK
+            owned_provinces = { xF2B739 x869BB5 xF34E63 x6BD7BC x4AC843 xD7DBDA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbw
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_385 = { #北米73
+        create_state = {
+            country = c:XBX
+            owned_provinces = { x965895 xCFAFDC xD627C6 xBA61BA x72D245 xE45684 x4C3827 xDED32C xB16C91 x9D4086 xDBC7B4 x3B7B66 xCE4788 x743B33 xA8DA67 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbx
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+}
+    s:STATE_NSM_386 = { #西亜5
+        create_state = {
+            country = c:GOT
+            owned_provinces = { xC95D86 x67A87E x3EE287 xA43482 x8EBB46 x4AE73B xA2C3BC x6BA6B0 xBA85A0 x7AEBDE x869354 x54A447 x8E5D47 xA62A7F x70E0EF }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_387 = { #北米10
+        create_state = {
+            country = c:XBJ
+            owned_provinces = { xE0BE4A xD727B4 xD35E77 xB8C0D2 x9528A7 x968DB6 xA8E958 xB86D7F x41C88E x9A548C x92B635 x808CAB }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 8
+            duration = 18250
+        }
+
+        add_claim = c:XBK
+        add_claim = c:XBL
+}
+    s:STATE_NSM_388 = { #西亜10
+        create_state = {
+            country = c:GOT
+            owned_provinces = { xC925C9 x28BC90 x4D4934 x9BD2E5 x29D58F x89742F xB34DC2 x7AC72B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_389 = { #クリクル
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x26BE4E x53D657 x58615C xC8B85B x357A44 x5F8535 x94DD34 xD67784 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+            add_homeland = cu:nsm_map_pai
+        add_homeland = cu:nsm_map_pai_eskan
+}
+    s:STATE_NSM_390 = { #南ボーツ
+        create_state = {
+            country = c:XAI
+            owned_provinces = { x92C6E8 xe3a667 x75243a x6D9982 x51255F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xez
+    }
+    s:STATE_NSM_391 = { #北阿5
+        create_state = {
+            country = c:XCL
+            owned_provinces = { x97BD99 xE87696 xDCC759 xE8E8C5 xD9AE49 x652F3D x8C683F xEE725C xD57CF4 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xck
+    }
+    s:STATE_NSM_392 = { #バル
+        create_state = {
+            country = c:XAJ
+            owned_provinces = { x6F337C x71DC2D xF2BBF4 x67BE74 x4C6343 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaj
+    }
+    s:STATE_NSM_393 = { #西亜14
+        create_state = {
+            country = c:GOT
+            owned_provinces = { x36D85F x95C76C xEB5CB8 x56AFC9 x70E048 x857391 xB2568F x639165 x94234E x32F084 xEF6B7C xB1E943 x535E46 x48DB71 x7E2B24 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_394 = { #北阿23
+        create_state = {
+            country = c:XAS
+            owned_provinces = { xE384BF x9D359E xCDCB52 xA92CA4 xA4476A x45DAB7 x5FAE5B xDFD8A8 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas_2
+    }
+    s:STATE_NSM_395 = { #東欧65
+        create_state = {
+            country = c:XAM
+            owned_provinces = { x7EE968 x89278F x5ACFBD xA57E79 xD7305D xED81BF xE7BD65 x73DC27 x8A388F x317957 xD94663 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xam_2
+    }
+    s:STATE_NSM_396 = { #東欧93
+        create_state = {
+            country = c:XAT
+            owned_provinces = { x309265 x673148 xE4AACA xE18338 xECA5EE x874697 xB9ACA1 xA8C0C1 x96352B xEAB2E6 xF1E849 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat_2
+    }
+s:STATE_NSM_397 = { #西欧10
+        create_state = {
+            country = c:XAC
+            owned_provinces = { xAEAD7C x92937b x7439d4 xdd703b xbf58ac }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xac
+    }
+    s:STATE_NSM_398 = { #東欧23
+        create_state = {
+            country = c:XEP
+            owned_provinces = { x948092 x3a9e6c x6b90a6 xF4D8C0 xE49C3E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xep
+    }
+    s:STATE_NSM_399 = { #東欧76
+        create_state = {
+            country = c:XAR
+            owned_provinces = { x899276 xF08C68 x8DAF6B x89BAC3 xE17A47 xD9E5CA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xar
+    }
+    s:STATE_NSM_400 = { #西亜11
+        create_state = {
+            country = c:GOT
+            owned_provinces = { x96E9C7 xA27357 x26CAE3 x3BCBBE x7CD46F xE0C146 x95AFA1 x315974 xBFBA3C x716337 xCEE7EF xE0B3C8 xE4EAF4 x3E99AC x5FF4DE }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_401 = { #東欧85
+        create_state = {
+            country = c:XAS
+            owned_provinces = { x9fa084 x1fedaf xD86F5B xC075BD x5C5271 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas
+    }
+s:STATE_NSM_402 = { #東亜5
+        create_state = {
+            country = c:GLZ
+            owned_provinces = { x51D6DB xC12B87 x57E250 xE97357 xCD7727 xD448C6 x39905E x68BB62 x8FDDCB xB39E3C x61E77C x3CDD37 x8AC083 xD65B75 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    }
+    s:STATE_NSM_403 = { #バリン
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x30AA3E xAF2B3A xEF8225 xCFEB8C xAA5EAA xD5A986 x27A75E x709A85 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_4
+    }
+    s:STATE_NSM_404 = { #北米45
+        create_state = {
+            country = c:XBP
+            owned_provinces = { x5D8580 xEC78E1 xC4BC48 xA836C5 xBA4793 x802872 xE63B41 x9CE3F1 x945B99 x7F7376 x6FDD8C x265D51 xAF8F6B x3BCA97 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbo
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_405 = { #ノーダム
+        create_state = {
+            country = c:XAG
+            owned_provinces = { xDCEC69 x9e809e xF3AC41 xBD7A36 x7C8678 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xag
+    }
+    s:STATE_NSM_406 = { #北阿33
+        create_state = {
+            country = c:XCP
+            owned_provinces = { x8F6292 x6E9276 xB97489 xCD39D0 xB4D3D2 xAB6A35 x3C7999 xC64CE0 x489781 x4FAE54 x8C3638 x369C56 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcv
+    }
+s:STATE_NSM_407 = { #イワジル
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x88E451 x94F168 x947FA3 x64ABB9 xBFD9B9 x9DAA25 }
+            state_type = incorporated
+        }
+        create_state = {
+            country = c:GLP
+            owned_provinces = { x7BDDAE xA79430 x2ECC4A xE75F82 x69E064 x35D3CF xBA9835 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+            add_homeland = cu:nsm_map_pai
+        add_homeland = cu:nsm_map_pai_eskan
+}
+    s:STATE_NSM_408 = { #北米12
+        create_state = {
+            country = c:XBK
+            owned_provinces = { x28E1D5 x2EA06E x8EA56D x36363e x299b50 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+
+        add_claim = c:XBJ
+        add_claim = c:XBL
+}
+    s:STATE_NSM_409 = { #豪35
+        create_state = {
+            country = c:XBB
+            owned_provinces = { xDCC125 x80E067 xCA7455 xB9BB84 xD5932F x50ED2C xAF34BE xDE9BBA xB17BC0 x237541 xCEA197 xA664C8 x6B9796 x91F2F5 x932E63 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_410 = { #ランポル
+        create_state = {
+            country = c:XAD
+            owned_provinces = { xB39F36 x58B454 x573244 x57B952 xE8B338 x5E7340 x91CE72 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xag
+    }
+    s:STATE_NSM_411 = { #トメル
+        create_state = {
+            country = c:XAN
+            owned_provinces = { x805738 x72CB59 xF42A5F x7D8F82 xCF6939 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xan
+    }
+    s:STATE_NSM_412 = { #北米15
+        create_state = {
+            country = c:XBK
+            owned_provinces = { xC63085 x89BDB5 xE06FDF xA82A40 x40882D xBD406E x2E8394 xB4EEDD x2FBE70 xC72B67 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+
+        add_claim = c:XBJ
+        add_claim = c:XBL
+}
+    s:STATE_NSM_413 = { #北米53
+        create_state = {
+            country = c:XCC
+            owned_provinces = { xAB649D x592A55 x56DF82 x7196A3 x6D8C5D x42F372 x89493E x64AA37 xDCF3BD x29ECED }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_414 = { #北米3
+        create_state = {
+            country = c:XCC
+            owned_provinces = { x7C8168 x27E498 xA2E7F1 xB0A778 x51E7E8 xCEEC23 x86686C xA8EAE2 x47CA5B xD159A7 x48965D x36F168 xE54D86 xF09E3A xF1A5A8 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+}
+    s:STATE_NSM_415 = { #プラント
+        create_state = {
+            country = c:XAF
+            owned_provinces = { x95D88E xabcd2e x28EDAC x764898 xF078B0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaf
+    }
+    s:STATE_NSM_416 = { #ストトロ
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xEE3092 xae6ac9 x46c177 xCE4997 xE3235B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_shaftar
+}
+    s:STATE_NSM_417 = { #豪21
+        create_state = {
+            country = c:XBE
+            owned_provinces = { x33EDE9 xF2566F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbe
+    }
+    s:STATE_NSM_418 = { #南米21
+        create_state = {
+            country = c:XCF
+            owned_provinces = { x854F57 x8e6933 x25832c xF0626A xF4A0A5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcf
+    }
+    s:STATE_NSM_419 = { #西欧41
+        create_state = {
+            country = c:XAV
+            owned_provinces = { x6DA645 x8b9eaa x426e78 x35c6b6 x7462f3 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaq
+    }
+    s:STATE_NSM_420 = { #北米36
+        create_state = {
+            country = c:XCC
+            owned_provinces = { xECD6E7 x7d7eb9 xd4cf61 x9BDAF2 x9B8E27 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_421 = { #北米24
+        create_state = {
+            country = c:XBJ
+            owned_provinces = { xC74B30 x3DCF56 x9D64B2 xD42542 xE2325A xBC78BF x4BCD50 xE64C4D x83A85C x51D323 xC8CBE7 x528B43 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 8
+            duration = 18250
+        }
+
+        add_claim = c:XBK
+        add_claim = c:XBL
+}
+    s:STATE_NSM_422 = { #西亜50
+        create_state = {
+            country = c:TUK
+            owned_provinces = { xB7D38F xE25373 x836727 x816964 x8E5960 x7F5E92 xBED648 xA97840 x2A7C8E x303B54 xA18523 xBDCDA8 x485A58 xE8B2E9 xACC22F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+    }
+    s:STATE_NSM_423 = { #北米29
+        create_state = {
+            country = c:XBN
+            owned_provinces = { xDF54C4 xB32DC8 xEDE084 xDA6334 xDC6DC3 x52987B xD3ED2D x99C986 xEE7830 xF1A69D xB7F02B xC9D3A3 xE87C69 xC0477E x994E64 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbo
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+    s:STATE_NSM_424 = { #北米66
+        create_state = {
+            country = c:XCD
+            owned_provinces = { xA16C44 x70A835 xEBD1DF x456132 x589892 xC0D33D x30BEA2 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcd
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_425 = { #西亜33
+        create_state = {
+            country = c:ATI
+            owned_provinces = { x57932C x43322E xCE317B xF56FE8 xCBF0B4 x82B943 x483B28 xD69BAC xE3F362 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_426 = { #北阿58
+        create_state = {
+            country = c:XDA
+            owned_provinces = { x63875C x74EA8F xAEBA25 xD7E0DE x302450 xCA90B1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xda
+    }
+    s:STATE_NSM_427 = { #北米18
+        create_state = {
+            country = c:XBL
+            owned_provinces = { xB4A699 xF464CA xD8C6B6 x26F1F2 xCC2A33 xD9CED3 xCEBFEA x78EAB3 xBE7B86 x37C686 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+
+        add_claim = c:XBK
+        add_claim = c:XBJ
+}
+    s:STATE_NSM_428 = { #南阿26
+        create_state = {
+            country = c:XDE
+            owned_provinces = { xE78251 x9BD06A x8C646E x257059 xAF33A6 x24A19C xA3EB76 xD4DADF x72BD80 x3CEF69 xDCD334 x884429 x664C82 xF5BC8F x479AA2 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xde
+    
+        add_claim = c:XDF
+}
+    s:STATE_NSM_429 = { #西亜24
+        create_state = {
+            country = c:SKR
+            owned_provinces = { xD994EB x817885 x5AC32D x29E765 x44595C x4AA953 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+    }
+    s:STATE_NSM_430 = { #西亜13
+        create_state = {
+            country = c:XGG
+            owned_provinces = { xD78F44 xDBBD9E xB12952 x84AF72 xEF9E29 xDE80E4 xB23DAE xD9E768 x66DC9B x6E9737 x61F326 x28B0B6 x4B646E xDC269D xC5B5AC x8D3426 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+    }
+    s:STATE_NSM_431 = { #ポツマス
+        create_state = {
+            country = c:XAH
+            owned_provinces = { xB4D929 x68DC49 x7DE856 xb3bfc6 x52a429 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xag
+    }
+    s:STATE_NSM_432 = { #東ポドボドル
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x51DBC0 xDE70BB x80416F xEF987F xAD443B x2FBD92 x23CB43 xF5BDE1 xA82FB6 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_northern
+        add_homeland = cu:nsm_map_pai_3
+}
+    s:STATE_NSM_433 = { #西亜20
+        create_state = {
+            country = c:BRN
+            owned_provinces = { x81E599 xB25C81 x3EF4C4 x5DB157 xEDAD2D xB8E173 xE8DD89 x5EB94F xDAAC2D xDE48C2 xBFE1DA x4BC3E0 xA5235F xCDBB2A x65B854 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+    }
+    s:STATE_NSM_434 = { #豪34
+        create_state = {
+            country = c:KNN
+            owned_provinces = { x47744A xDB7C7F x70C8C9 xAB3AC1 xD96B5C x5B9E96 xA03BB4 x55A162 xE76BA9 xCC27E7 x637E49 x519E26 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_435 = { #南阿37
+        create_state = {
+            country = c:XDE
+            owned_provinces = { xC7D1D3 x615d6b x3e8f33 x1e1979 xE8A050 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xde
+    
+        add_claim = c:XDF
+}
+    s:STATE_NSM_436 = { #西亜4
+        create_state = {
+            country = c:GOT
+            owned_provinces = { xE5AEA5 xC08F7E x639999 xD69146 xDF30C4 xDFEF55 x805696 xD4B99D x8CDEB7 x7F8584 xDD9675 xCA558D x6B4389 x93618B x243B48 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_437 = { #パクテン
+        create_state = {
+            country = c:PAI
+            owned_provinces = { xA25930 x54CB9C x3A8E90 x8DD6E9 x33A734 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai
+            add_homeland = cu:nsm_map_pai_old
+}
+    s:STATE_NSM_438 = { #北米79
+        create_state = {
+            country = c:XCE
+            owned_provinces = { x49EA24 xEB72D2 xD9AC96 x7392AD xB464BA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xce
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_439 = { #プロト
+        create_state = {
+            country = c:XEP
+            owned_provinces = { xCC3070 x1c9382 x2E6476 xDBF23B xCF806D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xep
+    }
+    s:STATE_NSM_440 = { #南阿10
+        create_state = {
+            country = c:XAX
+            owned_provinces = { x306F81 x4B8E85 xA23C7A x9F9530 xF5F236 x9DCDE4 xB6DCEB x2A3432 xF44746 xEFD559 xEBBEB8 xE42B79 x7BF2C7 x8E2C6C x369677 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_441 = { #西亜17
+        create_state = {
+            country = c:ATI
+            owned_provinces = { xB68A77 xB2AD89 x94D7D6 x755B27 xA5B832 xC0C883 xF58A73 x54727C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_442 = { #中ミスリア
+        create_state = {
+            country = c:XCN
+            owned_provinces = { x515040 x3A994D x46F253 x57E24F x82DA64 xDF70A7 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcn
+    }
+s:STATE_NSM_443 = { #中央諸島部12
+        create_state = {
+            country = c:XAI
+            owned_provinces = { xD8C84F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbe
+    }
+    s:STATE_NSM_444 = { #南米9
+        create_state = {
+            country = c:XBZ
+            owned_provinces = { x77B1CB xC1DFA1 xD2CCAD xDB5841 x3E7C6E x606055 x7EA15B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbz
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 6
+            duration = 18250
+        }
+}
+    s:STATE_NSM_445 = { #北米38
+        create_state = {
+            country = c:XCC
+            owned_provinces = { x7BEB6F xbb547d xdb1b55 xE1385D xCA7333 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_446 = { #北米26
+        create_state = {
+            country = c:XBM
+            owned_provinces = { x7E6184 x6E9D42 x40D7A5 x23713A xC4BA98 xC6BBD2 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbo
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+    s:STATE_NSM_447 = { #東欧96
+        create_state = {
+            country = c:XAT
+            owned_provinces = { x49AE39 x368d81 x72f069 x4C2758 xE254C5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat
+    }
+    s:STATE_NSM_448 = { #北米17
+        create_state = {
+            country = c:XBL
+            owned_provinces = { x6C9EB7 x733258 x5E87A7 xD234E4 x6AC3D4 xEC4894 x2F9347 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+
+        add_claim = c:XBK
+        add_claim = c:XBJ
+}
+    s:STATE_NSM_449 = { #豪7
+        create_state = {
+            country = c:XBB
+            owned_provinces = { xDA462D x5DCD46 x98AD6D x98C0A5 xDF903A xD4BE31 x32DDE0 x9A45B6 x8D7F2D xC86BCB x8FDB66 x84A69D x9BC13E x639D81 xE38D39 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+s:STATE_NSM_450 = { #西欧30
+        create_state = {
+            country = c:XEW
+            owned_provinces = { x7B879E x693789 x994654 xE5E8C9 xE459DE xA660B6 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xal_2
+    }
+s:STATE_NSM_451 = { #西ヤル
+        create_state = {
+            country = c:XDN
+            owned_provinces = { x88F0F3 x39F4D3 xB0B5CC xAF2B32 x5E7942 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaq
+    }
+    s:STATE_NSM_452 = { #東欧21
+        create_state = {
+            country = c:BRN
+            owned_provinces = { xE46DF1 x73E183 x70C7CF xC24B67 x3FE7AF xBBCBE9 xEE4095 xEE65C0 x53454A x67AA4A x57F2CC xBD332F xD88CA3 xEB754C x5D5F67 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+    }
+s:STATE_NSM_453 = { #西亜19
+        create_state = {
+            country = c:GLT
+            owned_provinces = { xED41AA xF0A0A8 x85EE2C xB7EC6B x9A6A7A x6EBAA4 xAB2FA7 x79B5CE x6C7339 x3FDFB7 x49CB73 xE05B78 x495330 x253759 xD79CBE }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got_2
+    }
+    s:STATE_NSM_454 = { #豪23
+        create_state = {
+            country = c:XBE
+            owned_provinces = { x66B97B x2E4B41 x3BD07A x374937 xCC8830 xA4AF67 xDA307C x7D385E xE79FBB xA96E45 xF4CC51 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbe
+    }
+    s:STATE_NSM_455 = { #西亜69
+        create_state = {
+            country = c:GSU
+            owned_provinces = { x8D799D xEE526E xA89A8F x23E2D5 xB87E88 x96A442 x793C28 xB06153 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_456 = { #南米22
+        create_state = {
+            country = c:XCF
+            owned_provinces = { xC4CB84 x836c60 xf0c249 x644855 x56A2C5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcf
+    }
+    s:STATE_NSM_457 = { #豪24
+        create_state = {
+            country = c:XBE
+            owned_provinces = { x5DB97A x9FB529 x444534 x684C75 x9EA424 xD36F36 xB9284C xE37E5D xC03EC2 x4C757B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbe
+    }
+    s:STATE_NSM_458 = { #南阿32
+        create_state = {
+            country = c:XCH
+            owned_provinces = { xF25196 xc9b63e xABEB77 xC6584B x77A289 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdc
+    }
+    s:STATE_NSM_459 = { #豪40
+        create_state = {
+            country = c:XBD
+            owned_provinces = { x46E8BA xEBB629 xDEB287 x3A3144 xE4A539 x544262 xA7F5B3 xB32DB1 x97F49A x8D3762 xB2799E xE6CB76 xF4E1D1 xCED263 x71DEB2 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbd
+    }
+    s:STATE_NSM_460 = { #トフン
+        create_state = {
+            country = c:XAJ
+            owned_provinces = { xC6C1BB xCB2A95 xE19C43 x68BCB2 xF3C82A xD8E62C xDEC9DD xDA9CD2 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaj
+    }
+    s:STATE_NSM_461 = { #北阿46
+        create_state = {
+            country = c:XCV
+            owned_provinces = { x33B4BD xBC37BC x994967 x48EA56 x2B9C74 xADEA30 xF15664 xB7F475 xB5DF54 x6A453E x7DDA2D x4FD48C xB8D1E7 x27727B x78D8A1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcv
+    }
+    s:STATE_NSM_462 = { #東欧54
+        create_state = {
+            country = c:XAM
+            owned_provinces = { x505265 xCB7E61 x256B75 xC1DA79 xECDF86 xAE512F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xam_2
+    }
+    s:STATE_NSM_463 = { #豪5
+        create_state = {
+            country = c:XAZ
+            owned_provinces = { x92AEB6 x7E765E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    
+        create_state = {
+            country = c:KSO
+            owned_provinces = { x998955 x975270 x4C7967 }
+            state_type = incorporated
+        }
+    }
+    s:STATE_NSM_464 = { #北阿42
+        create_state = {
+            country = c:XCW
+            owned_provinces = { xA0C8BF xD5A382 xD66B6F x876361 xE7BD53 x576E5E xF0CC3D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcw
+    }
+s:STATE_NSM_465 = { #東欧26
+        create_state = {
+            country = c:XFA
+            owned_provinces = { xCB6844 x21c870 x6e7b7b x90EFDF x92E58C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xep
+    }
+    s:STATE_NSM_466 = { #西亜51
+        create_state = {
+            country = c:SOS
+            owned_provinces = { x509B79 xF35D62 x9A6D6C x647E6F x97F08D x9B7448 x4CDE7C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_sos
+    }
+s:STATE_NSM_467 = { #東欧68
+        create_state = {
+            country = c:XAM
+            owned_provinces = { xAD34CC x66C17B xD080A2 xDC30DB x496424 x38C392 xADD9C1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xam
+    }
+    s:STATE_NSM_468 = { #上ミスリア
+        create_state = {
+            country = c:XCN
+            owned_provinces = { x6E4C6A x8E3A25 xBE7488 xB1799D xB3B0A5 xA98A3F x6E5586 xEC8BE0 xF32B7A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcn
+    }
+    s:STATE_NSM_469 = { #東欧72
+        create_state = {
+            country = c:XAI
+            owned_provinces = { xEB4ED1 x41D078 xD2F469 x473927 x4cf2a0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xai
+    }
+    s:STATE_NSM_470 = { #北阿1
+        create_state = {
+            country = c:XCL
+            owned_provinces = { xE93AF3 x88CD61 x74BA87 xF3F143 xA996B3 x2A7443 x8EB4CF xE45FDD x766F87 x878D63 x739E9E x30C8DA x8EDCA8 x41966F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xck
+    }
+    s:STATE_NSM_471 = { #南米1
+        create_state = {
+            country = c:XBW
+            owned_provinces = { x3FB2A3 x798235 x39E342 xE282EF xD97167 xB6A546 xE6B3B1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbw_2
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+}
+    s:STATE_NSM_472 = { #パレン
+        create_state = {
+            country = c:XAN
+            owned_provinces = { x4E8943 x3DDAD4 x999735 xE1DD7E xBE4851 xE66949 x34E9DA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xan
+    }
+s:STATE_NSM_473 = { #リル
+        create_state = {
+            country = c:XAJ
+            owned_provinces = { xDFA9BE x38A097 xD35FEA x9D5580 xC880D0 x627C43 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaj
+    }
+    s:STATE_NSM_474 = { #南阿8
+        create_state = {
+            country = c:XDB
+            owned_provinces = { xF1EF6B xc633c6 xBF8783 x26D5A5 x8D4D8B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xda
+    }
+    s:STATE_NSM_475 = { #北米2
+        create_state = {
+            country = c:XCC
+            owned_provinces = { x97BD41 xF5AEEB x4B2727 xBB3352 x8FF5B0 xF3D04D xD930C4 x52899A xC6C9BC x51BCC3 xBAA1BE x78248E x9C6AB1 xEA31CD x29E550 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+}
+    s:STATE_NSM_476 = { #豪18
+        create_state = {
+            country = c:XCI
+            owned_provinces = { x2E9331 x99666D xE48699 x7BC05D }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbd
+    }
+    s:STATE_NSM_477 = { #豪6
+        create_state = {
+            country = c:XBB
+            owned_provinces = { xAF6877 x51E9E3 xC63E77 x8D5836 xB2F1DF x9B56B2 xC347BD x5FC77F xDAF24B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_478 = { #北米19
+        create_state = {
+            country = c:XCC
+            owned_provinces = { x4C5B65 x572D35 xC04132 x2CC571 xF12E99 x84E9B5 x49AD37 xDFDFE2 xF3E7C6 xBCC445 xB2D393 xB33C23 x419F38 xE0EB8C xB82C3A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+}
+    s:STATE_NSM_479 = { #豪36
+        create_state = {
+            country = c:SUN
+            owned_provinces = { x9132A8 xC3BA77 x73C0C8 xB5C4AB x9B282C x8B4E6C xBE9643 x426F61 x3C6F70 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbh
+    }
+
+    s:STATE_NSM_481 = { #南米13
+        create_state = {
+            country = c:XCB
+            owned_provinces = { xDBB13D xF0E12C xE1DF55 xBC2483 x4C935E x54CD77 x909187 xCF6C88 x9C4161 xBFEB93 x64C9E0 xD130C5 x2FCA30 x3B3C3E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcb
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 5
+            duration = 18250
+        }
+}
+    s:STATE_NSM_482 = { #豪22
+        create_state = {
+            country = c:XBE
+            owned_provinces = { x91EE87 x86B87E xCBBBAE xD798F5 x2D9526 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbe
+    }
+    s:STATE_NSM_483 = { #豪49
+        create_state = {
+            country = c:BRI
+            owned_provinces = { xAF85B9 xD25AA1 x60E1B3 xD82C83 x5A8F2B x255C5D x854487 xD8B0BA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbh
+    }
+    s:STATE_NSM_484 = { #南米27
+        create_state = {
+            country = c:XCF
+            owned_provinces = { x57617E xdfb5f5 x3ec341 xcd65a2 xCA6956 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcf
+    }
+    s:STATE_NSM_485 = { #ペプ
+        create_state = {
+            country = c:XAI
+            owned_provinces = { xF4DCA7 x7B968A xC3E756 x88F251 x2B4E53 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xai
+    }
+    s:STATE_NSM_486 = { #西亜48
+        create_state = {
+            country = c:SOS
+            owned_provinces = { xC8E782 xB7B333 x9C666F xBF705C x96BD53 xC485CE }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_sos
+    }
+    s:STATE_NSM_487 = { #北米64
+        create_state = {
+            country = c:XCC
+            owned_provinces = { xD060C1 xCC5678 x6A6F85 xCC558B xB02851 xCF654B x876377 x6BD4D8 x46E2BD x4CE596 x8E578B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcd
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_488 = { #中フーシャメウス
+        create_state = {
+            country = c:XCC
+            owned_provinces = { x3FCB5B x4CC762 x54C962 x48ECA4 x45AC79 x509BA5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_489 = { #西亜62
+        create_state = {
+            country = c:KKN
+            owned_provinces = { xABD3DF x88E024 x935925 xF136BB x587985 xE234A5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_ati
+    }
+    s:STATE_NSM_490 = { #コンバフ
+        create_state = {
+            country = c:XAJ
+            owned_provinces = { x4BDF8D xE2D96C xCE8D53 x86E52D x96F447 xDBD8BD xAA328F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaj
+    }
+    s:STATE_NSM_491 = { #南阿29
+        create_state = {
+            country = c:XAX
+            owned_provinces = { xB06964 xAECF6F x28D756 xE4EABF xC25751 xDE5B70 xEA44C1 x4E8367 x8ADEF3 x5AC2B9 xA57597 xA58D97 xD174E5 xCB285A xC6643E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xax
+    }
+    s:STATE_NSM_492 = { #ニシレク
+        create_state = {
+            country = c:XAV
+            owned_provinces = { xE45D26 xd69bc8 x82cf4b xBD6B9D x2BBE2E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaq
+    }
+    s:STATE_NSM_493 = { #豪25
+        create_state = {
+            country = c:XBE
+            owned_provinces = { xE4F4E9 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbe
+    }
+    s:STATE_NSM_494 = { #北阿39
+        create_state = {
+            country = c:XAS
+            owned_provinces = { xA2512F xCE7624 x85614B xD4CF7A xB5E477 xAFD5BF xB9C4C5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas_2
+    }
+    s:STATE_NSM_495 = { #北米77
+        create_state = {
+            country = c:XCE
+            owned_provinces = { xD1312B xf5de56 x2a905d xcdd07c x87E93B }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xce
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+    s:STATE_NSM_496 = { #豪10
+        create_state = {
+            country = c:XBB
+            owned_provinces = { x4186A9 xEECDE6 x90DC92 x94CA9A x682434 x71EF30 x922B25 xEC463B x8FE6BF xD42E36 xB56FAE x593339 xF4DEAD x8B2C7A xE573DE }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_497 = { #北米11
+        create_state = {
+            country = c:XBK
+            owned_provinces = { x80274D x968980 x32B1CF x8A8B6B x6AA985 xD480C7 xE2A6AB xD3A186 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+
+        add_claim = c:XBJ
+        add_claim = c:XBL
+}
+    s:STATE_NSM_498 = { #南米7
+        create_state = {
+            country = c:XCA
+            owned_provinces = { xDF46B7 x598E61 xC7899B x25E446 x7F4175 xEC3BCF x3DBE45 x90EECC x7EEEBB x359C4A xF16C3E x6BAE93 xB98443 xE43959 x38915E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbz
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 5
+            duration = 18250
+        }
+}
+    s:STATE_NSM_499 = { #南米24
+        create_state = {
+            country = c:XCF
+            owned_provinces = { xA0614C x4A9C80 x3eb199 x55b3a3 x3d1bcb }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcf
+    }
+    s:STATE_NSM_500 = { #南米17
+        create_state = {
+            country = c:XCF
+            owned_provinces = { x67484B x90263F xA4BD6C xE57551 x9BE825 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcf
+    }
+s:STATE_NSM_501 = { #北米22
+        create_state = {
+            country = c:XCC
+            owned_provinces = { x89B727 xBFC3D4 x97279D x85C983 x868469 xCFEEE2 xD98360 x2ECB6D x28A06C xCA4D6F xF1EB2A x776D70 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+}
+    s:STATE_NSM_502 = { #中央諸島部8
+        create_state = {
+            country = c:GSU
+            owned_provinces = { xD7CFD2 x4FDEA0 x2E8D40 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_503 = { #豪3
+        create_state = {
+            country = c:XBA
+            owned_provinces = { x80D3BB xEEB355 xBC9B75 x5A9DB4 x565D6C xDB56CE xE698A9 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_504 = { #東欧4
+        create_state = {
+            country = c:GOT
+            owned_provinces = { x479AA1 xB1AFD1 x8BE8D4 x95EAE3 xC1D12A x90D9EF x5F2854 x94D7A5 x7AA091 xEDBCA6 x71D827 xA996BE x26AC68 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_got
+    }
+    s:STATE_NSM_505 = { #北阿15
+        create_state = {
+            country = c:XAS
+            owned_provinces = { x91E4BB xA65523 x95A9B1 xBD9049 x73385C x6F3778 x53D8D6 xF45CB2 x714842 xC1449D x38D3E6 xC18C77 x95F37E x37B19C x856E53 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcv
+    }
+    s:STATE_NSM_506 = { #北米65
+        create_state = {
+            country = c:XCD
+            owned_provinces = { x8E3851 x97C14C x809175 x8BE095 xD67B5F x96809E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcd
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_507 = { #西亜68
+        create_state = {
+            country = c:GSU
+            owned_provinces = { xE536E6 x9CAB90 xF5E683 xDBE555 xF450B4 xB15A68 xAE6D4D x99BD61 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_508 = { #中央諸島部2
+        create_state = {
+            country = c:GSU
+            owned_provinces = { x5FD14A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_gsu
+    }
+    s:STATE_NSM_509 = { #南米23
+        create_state = {
+            country = c:XCF
+            owned_provinces = { x48D68F xe94ea1 x7beca1 xf4edf5 x285965 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcf
+    }
+    s:STATE_NSM_510 = { #北阿36
+        create_state = {
+            country = c:XCR
+            owned_provinces = { xBA5D74 xEB9798 x3C707F xD258B4 x54C174 x918C58 x73663E x30CDD2 x632C40 xE3E551 xA04333 x60EA70 xAE86AC x60F180 xD29124 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcv
+    }
+    s:STATE_NSM_511 = { #南阿34
+        create_state = {
+            country = c:XDC
+            owned_provinces = { x7F944C xC9E078 x4EEB2C xED2A28 xA029C2 xEB9C59 xE3D326 x346860 x308D6F xADACBE }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xde
+    
+        add_claim = c:XBG
+}
+s:STATE_NSM_512 = { #東欧29
+        create_state = {
+            country = c:XER
+            owned_provinces = { x883C59 xA6A655 xBCB525 xB7A537 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xep
+    
+        create_state = {
+            country = c:NSL
+            owned_provinces = { xAAB545 xD7E530 }
+            state_type = incorporated
+        }
+    }
+s:STATE_NSM_513 = { #北阿25
+        create_state = {
+            country = c:XCK
+            owned_provinces = { x92C845 xA73E46 x79AA7B xADD8A1 xF2C6B0 xC75174 xBEABC2 xD85F45 x395353 }
+            state_type = incorporated
+        }
+        create_state = {
+            country = c:XAI
+            owned_provinces = { xBBD4BC xC0F492 xC07490 xB74653 x32F3F5 xE0C02F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xck
+    }
+    s:STATE_NSM_514 = { #西欧50
+        create_state = {
+            country = c:XAL
+            owned_provinces = { xA63DB6 x2F574E xED8039 x2EBC5B xA5F568 xD2CA4E xF27F5C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xal_2
+    }
+    s:STATE_NSM_515 = { #北阿30
+        create_state = {
+            country = c:XCW
+            owned_provinces = { x49F58F x32DE6D x797067 x28BC70 xC1F42D x81D581 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcw
+    }
+    s:STATE_NSM_516 = { #北米4
+        create_state = {
+            country = c:XBK
+            owned_provinces = { xEF72A3 x58E2D9 xA2B3AB xE8F05A xF474E7 xC93780 x449962 xECE38C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+
+        add_claim = c:XBJ
+        add_claim = c:XBL
+}
+
+s:STATE_NSM_518 = { #トルン
+        create_state = {
+            country = c:XEV
+            owned_provinces = { xF3AFA5 x6B375C x7C274D x69374B xC84B6F x6A4635 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xal_2
+    }
+    s:STATE_NSM_519 = { #トレリア
+        create_state = {
+            country = c:XAL
+            owned_provinces = { x972388 x1f6b87 x783b8f x83D5E3 x7A723F }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xal_2
+    }
+    s:STATE_NSM_520 = { #豪26
+        create_state = {
+            country = c:XBA
+            owned_provinces = { x409A8D xD4936E }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbe
+    }
+    s:STATE_NSM_521 = { #フォト
+        create_state = {
+            country = c:XAB
+            owned_provinces = { x42789B x3baaae xF2D9C4 xF157D5 xCD34BD }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xab
+    }
+    s:STATE_NSM_522 = { #東欧89
+        create_state = {
+            country = c:XAS
+            owned_provinces = { xCA27C2 x5E8E52 xB29535 xB23777 xD1467C x95D9B8 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas
+    }
+    s:STATE_NSM_523 = { #西ハイランド
+        create_state = {
+            country = c:XAA
+            owned_provinces = { xB9D8B1 x6CAD74 xF38658 xC499C6 xC3E3E8 x2AF4EF x619F3E x358059 xC5F4B1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xaa
+    }
+    s:STATE_NSM_524 = { #中央諸島部16
+        create_state = {
+            country = c:RWA
+            owned_provinces = { x3FAB35 x2AB098 xDB60C2 xA270B1 x84C26C }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbb
+    }
+    s:STATE_NSM_525 = { #東欧86
+        create_state = {
+            country = c:XAS
+            owned_provinces = { xF3712A x25DBB1 xEA63DA x32A27B xDC5138 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xas
+    }
+    s:STATE_NSM_526 = { #ポートル
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x50DA84 x454646 x38572F x2FBED3 xB8C1B9 xAA45CA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_2
+            add_homeland = cu:nsm_map_pai
+        add_homeland = cu:nsm_map_pai_eskan
+}
+    s:STATE_NSM_527 = { #東欧82
+        create_state = {
+            country = c:XAT
+            owned_provinces = { xDE83C5 x8a7538 xDD8A76 xE558A3 x748C37 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xat
+    }
+    s:STATE_NSM_528 = { #豪46
+        create_state = {
+            country = c:XBF
+            owned_provinces = { xF1C235 x70EC85 x385257 xCCCCC6 xEAB1D8 x793772 xD92C29 x4A295F x73322F x96C3D6 x7D5C50 xAC877A }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbf
+    }
+    s:STATE_NSM_529 = { #カルダン
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x33A2B9 x499449 xDAEEA7 x65B529 x34B9C3 xA7BDDB x384C55 x81BEC8 x8D4F38 xB2F472 x9E4E2E xCB31DF x9D8D6F xF14CCA }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_pai_4
+    }
+    s:STATE_NSM_530 = { #下フーシャメウス
+        create_state = {
+            country = c:XCC
+            owned_provinces = { xD22491 x488A77 xDAD5E8 xA637C7 x50BB6D xE32DC5 xE2A3C1 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xcc
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_531 = { #北米27
+        create_state = {
+            country = c:XBM
+            owned_provinces = { xDA745E xAB9D3A x3BE5BB xCEE5C0 xD44E25 x3CD5A2 x4CA123 xED4498 x76F0DB xE2D575 x446023 xDA6943 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbo
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+    s:STATE_NSM_532 = { #北米69
+        create_state = {
+            country = c:XBW
+            owned_provinces = { xA59E91 x977C64 x337927 xE23268 x90A823 xDBEF70 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbw_2
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 10
+            duration = 18250
+        }
+}
+    s:STATE_NSM_533 = { #北米9
+        create_state = {
+            country = c:XBJ
+            owned_provinces = { xA5D83E xECCB80 xD9C841 xE8E95B xC29642 x63405B x86ABA6 x60654A xC3BFCE xCFE043 x76DE44 xED382E xD18895 x9AA9AE x24A7BF }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbk
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 7
+            duration = 18250
+        }
+
+        add_claim = c:XBK
+        add_claim = c:XBL
+}
+    s:STATE_NSM_534 = { #ガロー
+        create_state = {
+            country = c:PAI
+            owned_provinces = { x3F6038 x9F5359 xAEC4B6 x526654 xEFBD94 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xae
+    }
+    s:STATE_NSM_535 = { #北米新規
+        create_state = {
+            country = c:XCE
+            owned_provinces = { xC381E1 xC26ABE x3BEDA1 x36AC7D x2C2D4E xC33E37 x31AE5D xF1DA9D xDE38D3 xD4BDC4 xE2D9EC x577193 xEA3E5C xE4CBC1 xC36761 x98E1C0 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xbx
+    
+        # Great War compound contamination
+        start_harvest_condition_with_params = {
+            type = toe_great_war_compound_contamination
+            intensity = 9
+            duration = 18250
+        }
+}
+
+    s:STATE_NSM_622 = { #フォト北島
+            create_state = {
+                country = c:XAB
+                owned_provinces = { x60D660 x2a99aa x74315e xbaaa65 x928fca }
+                state_type = incorporated
+            }
+            add_homeland = cu:nsm_map_xaa
+        }
+
+    s:STATE_NSM_623 = { #レフリア湾岸（旧STATE_NSM_617南部）
+        create_state = {
+            country = c:XAX
+            owned_provinces = { xC8D98B x92EA2D xa8a02f x70dd39 x3FE4E5 }
+            state_type = incorporated
+        }
+        add_homeland = cu:nsm_map_xdl
+    }
+}

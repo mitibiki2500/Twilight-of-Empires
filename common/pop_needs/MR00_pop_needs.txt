@@ -1,0 +1,241 @@
+﻿# goods						The good being referenced
+# weight					The base weight that is applied to this good based on market Sell Order share
+# max_supply_share			The maximum weight that can be applied to this good based on market Sell Order share, relative supply above this amount will have no further impact on base weight
+# min_supply_share			If above 0, a minimum of this multiplier of the base weight will be applied to a good regardless of its market Sell Order share
+#移動の自由修正
+REPLACE:popneed_free_movement = { #移動の自由
+	default = transportation
+
+	entry = {
+		goods = transportation
+		
+		weight = 1
+		max_supply_share = 0.75
+		min_supply_share = 0.0
+	}
+	
+	entry = {
+		goods = automobiles
+		
+		weight = 1.25
+		max_supply_share = 1.0
+		min_supply_share = 0.0
+	}
+
+	entry = { #肉#追加
+		goods = meat
+
+		weight = 0.20
+		max_supply_share = 0.60
+		min_supply_share = 0.0
+	}
+
+	}
+#化粧品の代替
+REPLACE:popneed_luxury_items = { #高級物品
+	default = silk
+
+	obsession_demand_min = 0.75
+	obsession_demand_mult = 1.75
+	prestige_goods_demand_increase = 0.75
+	entry = {
+		goods = silk
+
+		weight = 0.5
+		max_supply_share = 0.25
+		min_supply_share = 0.1
+	}
+	entry = {
+		goods = luxury_clothes
+
+		weight = 1
+		max_supply_share = 0.5
+		min_supply_share = 0.1
+	}
+	entry = {
+		goods = luxury_furniture
+
+		weight = 1
+		max_supply_share = 0.5
+		min_supply_share = 0.1
+	}
+	entry = {
+		goods = porcelain
+
+		weight = 1
+		max_supply_share = 0.5
+		min_supply_share = 0.1
+	}
+	entry = {
+		goods = radios
+
+		weight = 1
+		max_supply_share = 0.5
+		min_supply_share = 0.0
+	}
+	entry = { #化粧品の代替
+		goods = dye
+
+		weight = 0.75
+		max_supply_share = 0.2
+		min_supply_share = 0.0
+	}
+}
+#パソコンにpop需要追加
+REPLACE:popneed_leisure = { #レジャー
+	default = services
+
+	obsession_demand_min = 0.5
+	obsession_demand_mult = 2.0
+	prestige_goods_demand_increase = 1.0
+
+	entry = {
+		goods = services
+
+		weight = 0.1
+		max_supply_share = 1.0
+		min_supply_share = 0.0
+	}
+
+	entry = {
+		goods = fine_art
+
+		weight = 4
+		max_supply_share = 1.0
+		min_supply_share = 0.0
+	}
+
+	entry = {
+		goods = small_arms
+
+		weight = 0.75
+		max_supply_share = 0.25
+		min_supply_share = 0.0
+	}
+
+	entry = {
+		goods = aeroplanes
+
+		weight = 1
+		max_supply_share = 0.2
+		min_supply_share = 0.0
+	}
+
+	entry = {
+		goods = automobiles
+
+		weight = 1
+		max_supply_share = 0.25
+		min_supply_share = 0.0
+	}
+
+	entry = {
+		goods = radios
+
+		weight = 1
+		max_supply_share = 0.2
+		min_supply_share = 0.0
+	}
+
+	entry = {
+		goods = opium
+
+		weight = 0.5
+		max_supply_share = 0.5
+		min_supply_share = 0.0
+	}
+
+	entry = {
+		goods = clippers
+
+		weight = 1
+		max_supply_share = 0.25
+		min_supply_share = 0.0
+	}
+
+	entry = {
+		goods = steamers
+
+		weight = 0.75
+		max_supply_share = 0.25
+		min_supply_share = 0.0
+	}
+
+	entry = { #パソコンにpop需要追加
+		goods = computer
+
+		weight = 1
+		max_supply_share = 0.25
+		min_supply_share = 0.0
+	}
+}
+REPLACE:popneed_stimulants = { #興奮剤
+	default = sugar
+
+	entry = {
+		goods = sugar
+
+		weight = 1
+		max_supply_share = 0.75
+		min_supply_share = 0.0
+	}
+
+	entry = {
+		goods = tea
+
+		weight = 0.95
+		max_supply_share = 0.75
+		min_supply_share = 0.0
+	}
+
+	entry = {
+		goods = coffee
+
+		weight = 0.95
+		max_supply_share = 0.75
+		min_supply_share = 0.0
+	}
+
+	entry = {
+		goods = tobacco
+
+		weight = 0.8
+		max_supply_share = 0.75
+		min_supply_share = 0.0
+	}
+
+	entry = { #パソコンにpop需要追加
+		goods = computer
+
+		weight = 1
+		max_supply_share = 0.4
+		min_supply_share = 0.0
+	}
+}
+REPLACE:popneed_communication = { #コミュニケーション
+	default = transportation
+
+	entry = {
+		goods = transportation
+
+		weight = 1
+		max_supply_share = 0.75
+		min_supply_share = 0.0
+	}
+
+	entry = {
+		goods = telephones
+
+		weight = 2
+		max_supply_share = 1.0
+		min_supply_share = 0.0
+	}
+	
+	entry = { #パソコンにpop需要追加
+		goods = computer
+
+		weight = 1.5
+		max_supply_share = 0.4
+		min_supply_share = 0.0
+	}
+}

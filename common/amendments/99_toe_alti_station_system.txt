@@ -1,0 +1,14 @@
+﻿amendment_toe_alti_station_system = {
+    parent = law_appointed_bureaucrats
+    allowed_laws = { law_appointed_bureaucrats }
+
+    modifier = {
+        country_bureaucracy_mult = 0.10
+        state_tax_capacity_add = 15
+        state_tax_capacity_mult = 0.15
+    }
+
+    possible = { always = yes }
+    can_repeal = { always = no }
+    ai_will_revoke = { always = no }
+}

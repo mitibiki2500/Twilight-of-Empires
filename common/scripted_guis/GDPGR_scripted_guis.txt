@@ -1,0 +1,35 @@
+﻿GDPGR_sg_annl_growth_leaderboard = {
+    scope = country
+    effect = {
+        ordered_country = {
+            limit = {
+                has_variable = GDPGR_annl_growth_leaderboard_pos
+                var:GDPGR_annl_growth_leaderboard_pos > 0
+            }
+            max = 10
+            order_by = {
+                add = var:GDPGR_annl_growth_leaderboard_pos
+                multiply = -1
+            }
+            custom_tooltip = GDPGR_tt_leaderboard_line
+        }
+    }
+}
+
+GDPGR_sg_annl_growth_leaderboard_top_gdps = {
+    scope = country
+    effect = {
+        ordered_country = {
+            limit = {
+                has_variable = GDPGR_annl_growth_leaderboard_pos
+                var:GDPGR_annl_growth_leaderboard_pos > 0
+            }
+            max = 10
+            order_by = {
+                add = gdp
+                # multiply = -1
+            }
+            custom_tooltip = GDPGR_tt_leaderboard_line_top_gdps
+        }
+    }
+}

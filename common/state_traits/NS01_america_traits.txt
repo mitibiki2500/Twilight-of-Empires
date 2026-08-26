@@ -1,0 +1,78 @@
+﻿#グレートリイアプレーンズ 
+#フーシャメウスコットンステート 
+#フーシャメウス川
+#三大湖
+#グルーグ砂漠 
+#ドリフ砂漠 
+#南ドリフ砂漠 
+#中央高地 
+
+#グレートリイアプレーンズ
+state_trait_great_riia_plains = {
+    icon = "gfx/interface/icons/state_trait_icons/g_plains.dds"
+    modifier = {
+        building_group_bg_agriculture_throughput_add = 0.25
+        goods_output_grain_mult = 0.1
+        state_infrastructure_add = 10
+    }
+}
+#フーシャメウスコットンステート
+state_trait_fushameus_cotton_state = {
+    icon = "gfx/interface/icons/state_trait_icons/farm_c.dds"
+    modifier = {
+        building_cotton_plantation_throughput_add = 0.2
+        building_group_bg_agriculture_throughput_add = 0.05
+    }
+}
+#フーシャメウス川
+state_trait_fushameus_river = {
+    icon = "gfx/interface/icons/state_trait_icons/g_river.dds"
+    modifier = {
+        building_group_bg_agriculture_throughput_add = 0.2
+        building_group_bg_plantations_throughput_add = 0.2
+        state_infrastructure_add = 40
+        state_market_access_price_impact = 0.04 #追加市場価格補正
+    }
+}
+#三大湖
+state_trait_three_great_lakes = {
+    icon = "gfx/interface/icons/state_trait_icons/lake.dds"
+    modifier = {
+        state_infrastructure_add = 25
+        building_power_plant_throughput_add = 0.25
+        building_group_bg_fishing_throughput_add = 0.15
+        state_market_access_price_impact = 0.04 #追加市場価格補正
+    }
+}
+#グルーグ砂漠
+state_trait_grug_desert = {
+    icon = "gfx/interface/icons/state_trait_icons/desert.dds"
+    modifier = {
+        building_group_bg_agriculture_throughput_add = -0.15
+        building_group_bg_ranching_throughput_add = 0.15
+    }
+}
+#ドリフ砂漠
+state_trait_drif_desert = {
+    icon = "gfx/interface/icons/state_trait_icons/desert.dds"
+    modifier = {
+        building_group_bg_agriculture_throughput_add = -0.25
+        state_infrastructure_mult = -0.2
+    }
+}
+#南ドリフ砂漠
+state_trait_south_drif_desert = {
+    icon = "gfx/interface/icons/state_trait_icons/desert.dds"
+    modifier = {
+        building_group_bg_agriculture_throughput_add = -0.2
+        state_infrastructure_mult = -0.1
+    }
+}
+#中央高地
+state_trait_central_highlands = {
+    icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+    modifier = {
+        building_group_bg_mining_throughput_add = 0.05
+        state_infrastructure_mult = -0.10
+    }
+}

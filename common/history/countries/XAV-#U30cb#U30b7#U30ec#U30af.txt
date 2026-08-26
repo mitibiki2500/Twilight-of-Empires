@@ -1,0 +1,14 @@
+﻿COUNTRIES = {
+	c:XAV ?= {
+	        effect_starting_technology_tier_1_tech = yes
+	        effect_starting_politics_reactionary = yes
+	        activate_law = law_type:law_religious_schools
+	        set_country_type = recognized
+	    
+	        add_company = company_type:company_nsm_arlzack
+	        company:company_nsm_arlzack = {
+	            set_company_establishment_date = 1790.1.1
+	            set_company_state_region = s:STATE_NSM_492
+	        }
+	}
+}

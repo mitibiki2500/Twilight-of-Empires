@@ -1,0 +1,45 @@
+﻿#ニール川 #大砂漠 #フィルズネータ油田地帯 #ガースト平原 #フィルズネータ湖 #熱帯雨林
+#ニール川
+state_trait_toe_nile_river = {
+    icon = "gfx/interface/icons/state_trait_icons/g_river.dds"
+    modifier = {
+        building_group_bg_agriculture_throughput_add = 0.25
+        building_group_bg_plantations_throughput_add = 0.25
+        state_infrastructure_add = 40
+        state_market_access_price_impact = 0.02 #追加市場価格補正
+    }
+}
+#大砂漠
+state_trait_great_desert = {
+    icon = "gfx/interface/icons/state_trait_icons/desert.dds"
+    modifier = {
+        state_non_homeland_colony_growth_speed_mult = -0.5
+        building_group_bg_agriculture_throughput_add = -0.4
+        state_infrastructure_mult = -0.2
+        state_migration_pull_mult = -0.25
+    }
+}
+#フィルズネータ油田地帯
+state_trait_filsneta_oil_fields = {
+    icon = "gfx/interface/icons/state_trait_icons/oil.dds"
+    modifier = {
+        building_group_bg_oil_extraction_throughput_add = 0.5
+    }
+}
+#ガースト平原
+state_trait_gerst_plains = {
+    icon = "gfx/interface/icons/state_trait_icons/farm1.dds"
+    modifier = {
+        state_infrastructure_add = 15
+        state_infrastructure_mult = 0.10
+        building_group_bg_agriculture_throughput_add = 0.10
+    }
+}
+#フィルズネータ湖
+state_trait_filsneta_lake = {
+    icon = "gfx/interface/icons/state_trait_icons/lake.dds"
+    modifier = {
+        building_power_plant_throughput_add = 0.25
+        state_infrastructure_add = 25
+    }
+}

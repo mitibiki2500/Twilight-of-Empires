@@ -1,0 +1,650 @@
+﻿# NSM 16.5 - Starting Navies
+MILITARY_FORMATIONS = {
+    c:ATI ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_east_asia
+            name = NSM_ATI_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:BLM ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_east_asia
+            name = NSM_BLM_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:CAN ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_west_asia
+            name = NSM_CAN_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:GOT ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_gorton
+            name = NSM_GOT_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_ship_of_the_line
+                count = 8
+            }
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 22
+            }
+
+        }
+    }
+
+    c:KKN ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_east_asia
+            name = NSM_KKN_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:NRK ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_west_asia
+            name = NSM_NRK_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+
+    c:SOS ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_west_asia
+            name = NSM_SOS_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:SPE ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_west_asia
+            name = NSM_SPE_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:XAA ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_albia
+            name = NSM_XAA_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XAB ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_north_europe
+            name = NSM_XAB_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XAC ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_albia
+            name = NSM_XAC_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 6
+            }
+        }
+    }
+    c:XAD ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_albia
+            name = NSM_XAD_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XAE ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_north_europe
+            name = NSM_XAE_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XAF ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_north_europe
+            name = NSM_XAF_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 6
+            }
+        }
+    }
+    c:XAG ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_albia
+            name = NSM_XAG_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XAH ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_albia
+            name = NSM_XAH_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 6
+            }
+        }
+    }
+
+    c:XAJ ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_albia
+            name = NSM_XAJ_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XAK ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_central_europe
+            name = NSM_XAK_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 6
+            }
+        }
+    }
+    c:XAL ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_central_europe
+            name = NSM_XAL_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_ship_of_the_line
+                count = 8
+            }
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 22
+            }
+
+        }
+    }
+    c:XAN ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_east_europe
+            name = NSM_XAN_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XAO ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_east_europe
+            name = NSM_XAO_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XAP ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_east_europe
+            name = NSM_XAP_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+
+    c:XAT ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_middle_east
+            name = NSM_XAT_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 3
+            }
+        }
+    }
+    c:XAU ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_middle_east
+            name = NSM_XAU_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XAV ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_west_europe
+            name = NSM_XAV_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 6
+            }
+        }
+    }
+    c:XAW ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_central_europe
+            name = NSM_XAW_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XAY ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_central_fushion
+            name = NSM_XAY_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 3
+            }
+        }
+    }
+    c:XAZ ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_central_fushion
+            name = NSM_XAZ_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 3
+            }
+        }
+    }
+    c:XBA ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_central_fushion
+            name = NSM_XBA_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+
+    c:XBC ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_central_fushion
+            name = NSM_XBC_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:XBD ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_east_fushion
+            name = NSM_XBD_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:XBE ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_newfoot
+            name = NSM_XBE_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:XBF ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_south_fushion
+            name = NSM_XBF_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:XBH ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_south_fushion
+            name = NSM_XBH_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:XBI ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_south_fushion
+            name = NSM_XBI_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:XBJ ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_far_east
+            name = NSM_XBJ_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XBK ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_north_ria
+            name = NSM_XBK_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XBL ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_north_ria
+            name = NSM_XBL_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XBM ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_west_ria
+            name = NSM_XBM_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XBO ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_west_ria
+            name = NSM_XBO_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XBW ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_south_ria
+            name = NSM_XBW_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XBY ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_south_ria
+            name = NSM_XBY_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XBZ ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_south_ria
+            name = NSM_XBZ_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XCB ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_south_ria
+            name = NSM_XCB_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XCC ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_east_ria
+            name = NSM_XCC_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XCD ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_east_ria
+            name = NSM_XCD_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XCE ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_east_ria
+            name = NSM_XCE_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XCF ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_south_ria
+            name = NSM_XCF_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XCG ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_central_islands
+            name = NSM_XCG_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 3
+            }
+        }
+    }
+    c:XCI ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_central_islands
+            name = NSM_XCI_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:XDG ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_south_lefria
+            name = NSM_XDG_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 2
+            }
+        }
+    }
+    c:XDN ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_west_europe
+            name = NSM_XDN_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 6
+            }
+        }
+    }
+    c:XEP ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_central_europe
+            name = NSM_XEP_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_ship_of_the_line
+                count = 8
+            }
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 22
+            }
+
+        }
+    }
+    c:XEW ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_central_europe
+            name = NSM_XEW_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XEX ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_south_europe
+            name = NSM_XEX_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XEY ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_south_europe
+            name = NSM_XEY_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 4
+            }
+        }
+    }
+    c:XEZ ?= {
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_nsm_west_europe
+            name = NSM_XEZ_Starting_Fleet
+            ship = {
+                type = ship_type:ship_type_frigate
+                count = 8
+            }
+        }
+    }
+}

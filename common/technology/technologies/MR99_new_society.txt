@@ -1,0 +1,727 @@
+﻿# Era 5 x7
+international_organizations = { #国際組織
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/onu.dds"
+	category = society
+	modifier = {
+		country_influence_mult = 0.05 #影響力
+		country_improve_relations_speed_mult = 0.05 #関係改善速度
+		country_prestige_mult = 0.05 #威信
+	}
+	unlocking_technologies = {
+		feminism
+		international_exchange_standards
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+jazz_blues = { #ジャズ・ブルーズ
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/jazz_blues.dds"
+	category = society
+	unlocking_technologies = {
+		film
+	}	
+	modifier = {
+		country_prestige_mult = 0.1 #威信
+	}
+	ai_weight = {
+		value = 1
+	}
+}
+
+keynesian_economics = { #ケインズ経済学
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/keynesian_economics.dds"
+	category = society
+	modifier = {
+		country_authority_add = 150 #権力
+		building_minimum_wage_mult = 0.1 #賃金目標
+		state_dependent_wage_mult = 0.25 #扶養者所得
+	}
+	unlocking_technologies = {
+		behaviorism
+		macroeconomics
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+modern_urban_planning = { #近代的都市計画
+	# Unlocks skyscrapers and modern cities
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/modern_urban_planning.dds"
+	category = society
+	
+	unlocking_technologies = {
+		paved_roads
+	}
+
+	modifier = {
+		state_building_construction_sector_max_level_add = 5
+		state_trade_capacity_mult = 0.1
+		state_urbanization_per_level_mult = -0.1 #市街地ごとの都市化
+	}
+	
+	ai_weight = {
+		value = 1 # Important tech for modern economies
+	}
+}
+
+molecular_biology = { #分子生物学
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/molecular_biology.dds"
+	category = society
+
+	modifier = {
+		state_mortality_mult = -0.01
+		country_tech_research_speed_mult = 0.02 #研究速度
+		country_weekly_innovation_max_add = 10 #革新上限
+	}
+
+	unlocking_technologies = {
+		malaria_prevention
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+penicillin = { #ペニシリン
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/penicillin.dds"
+	category = society
+	
+	modifier = {
+		country_institution_health_system_max_investment_add = 1
+		state_colony_growth_speed_mult = 1 #植民地成長速度
+	}
+	
+	unlocking_technologies = {
+		malaria_prevention
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+vikelas_international_sports_tech = {
+	# 
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/vikelas_international_sports_tech.dds"
+	category = society
+
+	unlocking_technologies = {
+		organized_sports
+		international_organizations
+	}
+
+	modifier = {
+		country_influence_mult = 0.05 #影響力
+		country_improve_relations_speed_mult = 0.05 #関係改善速度
+		country_prestige_mult = 0.05 #威信
+	}
+
+	ai_weight = {
+		value = 1
+
+		#Morgenröte: added this part
+		if = {
+			limit = { 
+				exists = c:FRA
+				c:FRA = ROOT 
+			}
+			add = 1 #Pierre de Coubertin
+		}
+
+		if = {
+			limit = { 
+				exists = c:GRE
+				c:GRE = ROOT 
+			}
+			add = 1 #Greece should at least try to host the Games
+		}
+	}
+}
+
+#Era 6x12
+socialdemocracy = { #社会民主主義
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/socialdemocracy.dds"
+	category = society
+	modifier = {
+		state_dependent_wage_mult = 0.25 #被扶養者所得
+		building_minimum_wage_mult = 0.1 #賃金目標
+		state_radicals_from_political_movements_mult = -0.2 #政治運動からの急進派 
+		country_institution_social_security_max_investment_add = 1 #社会保障+1
+	}
+	unlocking_technologies = {
+		international_organizations
+		keynesian_economics
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+highway_systems = {
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/highway_systems.dds"
+	category = society
+
+	modifier = {
+		state_building_construction_sector_max_level_add = 5 #建設最大レベル
+		state_infrastructure_mult = 0.1 #インフラ
+	}
+
+	unlocking_technologies = {
+		modern_urban_planning
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+international_travel = {
+	# Unlocks civilian planes
+	# Unlocks airport	
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/international_travel.dds"
+	category = society
+	modifier = {
+		country_free_charters_add = 1 #企業認可
+		state_migration_quota_mult = 0.1 #移住割り当て
+	}
+	unlocking_technologies = {
+		highway_systems
+	}
+	
+		ai_weight = {
+		value = 1
+	}
+}
+
+decolonization = { #脱植民地化
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/decolonization.dds"
+	category = society
+	modifier = {
+		country_influence_mult = 0.05 #影響力
+		country_improve_relations_speed_mult = 0.05 #関係改善速度
+		country_prestige_mult = 0.05 #威信
+		#country_infamy_generation_against_unrecognized_mult = 0.2
+		#country_allow_decolonization_mechanics_bool = yes
+	}
+	unlocking_technologies = {
+		international_organizations
+		antibiotics
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+market_studies = { #市場調査　
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/market_studies.dds"
+	category = society
+	modifier = {
+		country_max_companies_add = 1 #企業数+1
+	}
+	unlocking_technologies = {
+		mass_surveillance
+		modern_financial_instruments
+		keynesian_economics
+		mass_propaganda
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+cryptographic_communication = { #暗号信号
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/cryptographic_communication.dds"
+	category = society
+	modifier = {
+		country_authority_mult = 0.1 #権力
+	}
+	unlocking_technologies = {
+		mass_surveillance
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+secure_market_transactions = { #安全な市場取引
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/secure_market_transactions.dds"
+	category = society
+	modifier = {
+		country_minting_mult = 0.1 #鋳貨
+		country_loan_interest_rate_add = -0.02 #金利
+	}
+	unlocking_technologies = {
+		cryptographic_communication
+		market_studies
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+computability_theory = { #計算可能性理論
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/computability_theory.dds"
+	category = society
+	modifier = {
+		state_bureaucracy_population_base_cost_factor_mult = -0.05 #人口管理コスト
+		country_tech_research_speed_mult = 0.02 #研究速度
+		country_weekly_innovation_max_add = 10 #革新上限
+	}
+	unlocking_technologies = {
+		cryptographic_communication
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+vaccination_campaigns = { #ワクチンキャンペーン
+    # Organized public health campaigns for vaccinations
+    era = era_6
+    texture = "gfx/interface/icons/invention_icons/vaccination_campaigns.dds"
+    category = society
+
+    unlocking_technologies = {
+		antibiotics
+		central_planning
+    }
+
+    modifier = {
+        state_mortality_mult = -0.01
+		country_institution_cost_institution_health_system_mult = -0.1
+		state_harvest_condition_disease_outbreak_impact_mult = -0.1
+		state_harvest_condition_disease_outbreak_duration_mult = -0.1
+		state_colony_growth_speed_mult = 1 #植民地成長速度
+    }
+
+    ai_weight = {
+        value = 1
+    }
+}
+
+funded_research_projects = { #資金提供された研究プロジェクト
+	# Government-funded research projects to advance science and technology
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/funded_research_projects.dds"
+	category = society
+
+	unlocking_technologies = {
+		analytical_philosophy
+		socialdemocracy
+	}
+
+	modifier = {
+		building_university_throughput_add = 0.1
+		country_free_charters_add = 1
+	}
+
+	ai_weight = { value = 1 }
+}
+
+government_broadcasting = { #国営テレビ
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/government_broadcasting.dds"
+	category = society
+	modifier = {
+		country_authority_mult = 0.25
+	}
+	unlocking_technologies = {
+		vikelas_international_sports_tech
+		socialdemocracy
+	}
+	
+		ai_weight = {
+		value = 1
+	}
+}
+
+neoimperialism = { #新帝国主義
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/neoimperialism.dds"
+	category = society
+	modifier = {
+		country_influence_mult = 0.1 # Neo-colonialism, a different form of influence
+		country_institution_cost_institution_police_mult = -0.1
+		state_colony_growth_speed_mult = 1 #植民地成長速度
+		#country_allow_superpower_mechanics_bool = yes
+	}
+	unlocking_technologies = {
+		socialdemocracy
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+# Era 7x13
+prefabricated_concrete_buildings = { #プレハブ建築
+	# Unlocks modular prefab concrete structures for construction industry
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/prefabricated_concrete_buildings.dds"
+	category = society
+
+	unlocking_technologies = {
+		highway_systems
+	}
+
+	modifier = {
+		country_max_weekly_construction_progress_add = 40
+		state_building_construction_sector_max_level_add = 10
+		#state_building_hydroelectric_power_plant_max_level_add = 2
+	}
+
+	ai_weight = {
+		value = 1
+		if = {
+			limit = { has_strategy = ai_strategy_industrial_expansion }
+			add = 1
+		}
+	}
+}
+
+cognitive_sciences = { #認知科学
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/cognitive_sciences.dds"
+	category = society
+
+	unlocking_technologies = {
+		computability_theory
+		behaviorism
+	}
+
+	modifier = {
+		country_influence_mult = 0.05
+		building_university_throughput_add = 0.1
+	}
+
+	ai_weight = { value = 1 }
+}
+
+neuroscience = { #神経科学
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/neuroscience.dds"
+	category = society
+
+	unlocking_technologies = {
+		cognitive_sciences
+	}
+
+	modifier = {
+		state_turmoil_effects_mult = -0.1
+		state_mortality_turmoil_mult = -0.1
+		state_bureaucracy_population_base_cost_factor_mult = -0.1
+		state_pop_qualifications_mult = 0.05
+	}
+
+	ai_weight = { value = 1 }
+}
+
+software_tech = { #ソフトウェア
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/software_tech.dds"
+	category = society
+
+	unlocking_technologies = {
+		computability_theory
+		market_studies
+	}
+	modifier = {
+		state_tax_capacity_add = 25
+	}
+
+	modifier = {
+	}
+
+	ai_weight = { value = 1 }
+}
+
+multinational_corporations = { #多国籍企業
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/multinational_corporations.dds"
+	category = society
+	modifier = {
+		country_max_companies_add = 1
+		country_free_charters_add = 1
+		#state_urbanization_per_level_mult = -0.1
+	}
+	unlocking_technologies = {
+		neoimperialism
+		telecommunications
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+modern_statistics = { #現代統計学
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/modern_statistics.dds"
+	category = society
+	modifier = {
+		state_tax_capacity_add = 25
+	}
+	unlocking_technologies = {
+		software_tech
+		math_finance
+		#funded_research_projects
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+math_finance = { #数理ファイナンス
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/math_finance.dds"
+	category = society
+	modifier = {
+		country_government_dividends_efficiency_add = 0.05
+		building_cash_reserves_mult = 0.1
+		country_minting_mult = 0.1
+	}
+	unlocking_technologies = {
+		computability_theory
+		secure_market_transactions
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+neoliberism = { #新自由主義
+	# To be against keynesian economics bonus or malus
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/neoliberism.dds"
+	category = society
+	modifier = {
+		country_free_charters_add = 1
+		country_authority_mult = -0.2
+		state_political_strength_from_wealth_mult = 0.25
+	}
+	unlocking_technologies = {
+		math_finance
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+networking_protocols = { #ネットワークプロトコル
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/networking_protocols.dds"
+	category = society
+	unlocking_technologies = {
+		computability_theory
+		software_tech
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+telecommunications = { #電気通信
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/telecommunications.dds"
+	category = society
+	modifier = {
+		country_influence_mult = 0.1
+		#state_working_adult_ratio_add = 0.05
+	}
+	unlocking_technologies = {
+		government_broadcasting
+		international_travel
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+counterculture = { #対抗文化
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/pacifism.dds"
+	category = society
+
+	modifier = {
+		country_influence_mult = 0.05 #影響力
+		country_improve_relations_speed_mult = 0.05 #関係改善速度
+		country_prestige_mult = 0.05 #威信
+		state_expected_sol_from_literacy = 1 #要求生活水準
+	}
+	
+	unlocking_technologies = {
+		decolonization
+		mass_propaganda
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+genetic_disease_screening = { #遺伝疾患検診
+    # Early screening for hereditary diseases
+    era = era_7
+    texture = "gfx/interface/icons/invention_icons/genetic_disease_screening.dds"
+    category = society
+
+    unlocking_technologies = {
+        vaccination_campaigns
+		funded_research_projects
+    }
+
+    modifier = {
+        state_mortality_mult = -0.01
+    }
+
+    ai_weight = {
+        value = 1
+    }
+}
+
+rock_and_roll = { #ロックンロール
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/rock_and_roll.dds"
+	category = society
+	unlocking_technologies = {
+		jazz_blues
+		counterculture
+	}
+	modifier = {
+		country_prestige_mult = 0.1 #威信
+	}
+	ai_weight = {
+		value = 1
+	}
+}
+
+
+pop_art = { #ポップアート
+    era = era_7
+    texture = "gfx/interface/icons/invention_icons/pop_art.dds"
+    category = society
+
+    unlocking_technologies = {
+        telecommunications
+        counterculture
+    }
+
+    modifier = {
+        country_prestige_mult = 0.1
+		state_decree_cost_mult = -0.1
+    }
+
+    ai_weight = {
+        value = 1
+    }
+}
+
+neo_feminism = { #新フェミニズム
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/neo_feminism.dds"
+	category = society
+
+	modifier = {
+		state_working_adult_ratio_add = 0.05 #就業率
+		state_expected_sol_from_literacy = 2 #要求生活水準
+	}
+	
+	unlocking_technologies = {
+		counterculture
+	}
+		
+	ai_weight = {
+		value = 1
+	}
+}
+
+genetic_engineering = { #遺伝子工学
+    # Pioneering genetic modification techniques
+    era = era_7
+    texture = "gfx/interface/icons/invention_icons/genetic_engineering.dds"
+    category = society
+
+    unlocking_technologies = {
+        genetic_disease_screening
+    }
+
+    modifier = {
+        state_mortality_mult = -0.01
+    }
+
+    ai_weight = {
+        value = 1
+    }
+}
+
+mass_entertainment = { #大衆娯楽
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/mass_entertainment.dds"
+	category = society
+
+	unlocking_technologies = {
+		telecommunications
+		counterculture
+	}
+
+	modifier = {
+		country_prestige_mult = 0.1
+		country_authority_mult = 0.1
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+modern_city_transport = { #近代都市交通
+	# Unlocks advanced public transportation systems for urban areas
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/modern_city_transport.dds"
+	category = society
+
+	unlocking_technologies = {
+		prefabricated_concrete_buildings
+	}
+
+	modifier = {
+		building_group_bg_service_throughput_add = 0.1
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}

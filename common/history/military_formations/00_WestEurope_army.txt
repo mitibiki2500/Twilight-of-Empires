@@ -1,0 +1,38 @@
+﻿MILITARY_FORMATIONS = {
+    c:XAI ?= {
+        create_military_formation = {
+            type = army
+            hq_region = sr:region_nsm_west_europe
+            name = Royal_Teagar_Army
+            combat_unit = {
+                type = unit_type:combat_unit_type_skirmish_infantry
+                state_region = s:STATE_NSM_192
+                count = 10
+            }
+            combat_unit = {
+                type = unit_type:combat_unit_type_skirmish_infantry
+                state_region = s:STATE_NSM_485
+                count = 10
+            }
+        }
+    }
+}
+
+
+c:XAI ?= {
+    create_military_formation = {
+        type = army
+        hq_region = sr:region_nsm_west_europe
+        name = NSM_XAI_Marine_Corps
+        combat_unit = {
+            type = unit_type:combat_unit_type_toe_early_marines
+            state_region = s:STATE_NSM_192
+            count = 15
+        }
+        combat_unit = {
+            type = unit_type:combat_unit_type_toe_early_marines
+            state_region = s:STATE_NSM_485
+            count = 15
+        }
+    }
+}

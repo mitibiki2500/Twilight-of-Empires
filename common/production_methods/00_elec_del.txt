@@ -1,0 +1,506 @@
+﻿#電気ローカル削除対応
+REPLACE:pm_electric_sewing_machines = {
+	texture = "gfx/interface/icons/production_method_icons/electric_sewing_machines.dds"
+
+	unlocking_technologies = {
+		electrical_capacitors
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fabric_add = 60
+			goods_input_dye_add = 20
+			goods_input_tools_add = 10
+			goods_input_electricity_add = 10
+
+			# output goods
+			goods_output_clothes_add = 140
+		}
+
+		level_scaled = {
+			# profit = 1300
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 500
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_automatic_power_looms = {
+	texture = "gfx/interface/icons/production_method_icons/automatic_power_looms.dds"
+
+	unlocking_technologies = {
+		electrical_capacitors
+	}
+
+	disallowing_laws = {
+		law_industry_banned
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5				# x40 =  200
+			goods_input_electricity_add = 10			# x30 =  300
+		}
+
+		level_scaled = {
+			# profit = -500 (break-even when annual laborer wage > 10.4)
+			building_employment_laborers_add = -2500
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_assembly_lines_building_furniture_manufactory = {
+	texture = "gfx/interface/icons/production_method_icons/assembly_lines.dds"
+
+	unlocking_technologies = {
+		conveyors
+	}
+
+	disallowing_laws = {
+		law_industry_banned
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			goods_input_oil_add = 5
+			goods_input_electricity_add = 5
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -3000
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_assembly_lines_building_tooling_workshop = {
+	texture = "gfx/interface/icons/production_method_icons/assembly_lines.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	unlocking_technologies = {
+		conveyors
+	}
+
+	disallowing_laws = {
+		law_industry_banned
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_oil_add = 10
+			goods_input_electricity_add = 5
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -3000
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_brine_electrolysis = {
+	texture = "gfx/interface/icons/production_method_icons/vaccum_brine_electrolysis.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 25
+		}
+	}
+
+	unlocking_technologies = {
+		electrical_capacitors
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_sulfur_add = 40
+			goods_input_fertilizer_add = 50
+			goods_input_paper_add = 30
+			goods_input_electricity_add = 20
+
+			# output goods
+			goods_output_explosives_add = 150
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 1000
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 1500
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_electric_arc_process = {
+	texture = "gfx/interface/icons/production_method_icons/electric_arc_process.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 25
+		}
+	}
+
+	unlocking_technologies = {
+		electric_arc_process
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_iron_add = 100
+			goods_input_coal_add = 30
+			goods_input_electricity_add = 30
+
+			# output goods
+			goods_output_steel_add = 150
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 1000
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_electric_engines = {
+	texture = "gfx/interface/icons/production_method_icons/electric_engines.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	unlocking_technologies = {
+		electric_railway
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_steel_add = 40
+			goods_input_electricity_add = 30
+
+			# output goods
+			goods_output_engines_add = 80
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 1000
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_assembly_lines_building_motor_industry = {
+	texture = "gfx/interface/icons/production_method_icons/assembly_lines.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		conveyors
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			goods_input_oil_add = 5
+			goods_input_electricity_add = 5
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1500
+			building_employment_machinists_add = -500
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_assembly_lines_building_automotive_industry = {
+	texture = "gfx/interface/icons/production_method_icons/assembly_lines.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		conveyors
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			goods_input_oil_add = 5
+			goods_input_electricity_add = 5
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1500
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_arc_welding_shipbuilding = {
+	texture = "gfx/interface/icons/production_method_icons/arc_welded_steam_ships.dds"
+
+	unlocking_technologies = {
+		arc_welding
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			# Todo [PRCAL-41723]: Placeholder value
+			country_ship_construction_add = 20
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 20
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_steel_add = 30
+			goods_input_electricity_add = 30
+			goods_input_engines_add = 10
+
+			# output goods
+			goods_output_steamers_add = 80
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 1000
+			building_employment_machinists_add = 2000
+			building_employment_engineers_add = 1500
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_radios = {
+	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+	unlocking_technologies = {
+		radio
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_electricity_add = 50
+			goods_output_telephones_add = -20
+			goods_output_radios_add = 40
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 500
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_assembly_lines_building_arms_industry = {
+	texture = "gfx/interface/icons/production_method_icons/assembly_lines.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	unlocking_technologies = {
+		conveyors
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_oil_add = 10
+			goods_input_electricity_add = 5
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_assembly_lines_building_munition_plant = {
+	texture = "gfx/interface/icons/production_method_icons/assembly_lines.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	unlocking_technologies = {
+		conveyors
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_oil_add = 10
+			goods_input_electricity_add = 5
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+
+REPLACE:pm_arcades = {
+	texture = "gfx/interface/icons/production_method_icons/arcades.dds"
+	unlocking_technologies = {
+		elevator
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_glass_add = 2
+			goods_input_steel_add = 2
+			goods_input_electricity_add = 1
+			goods_output_services_add = 30
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 1000
+			building_employment_clerks_add = 3000
+			building_employment_shopkeepers_add = 1000
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_electric_streetlights = {
+	texture = "gfx/interface/icons/production_method_icons/electric_streetlights.dds"
+
+	city_lights_color_index = 2	# Needs to match city_graphics_data.settings color array
+
+	unlocking_technologies = {
+		electrical_generation
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_electricity_add = 3
+			goods_output_services_add = 10
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 200
+			building_employment_engineers_add = 50
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_infrastructure_add = 2
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_film_art = {
+	texture = "gfx/interface/icons/production_method_icons/film_art.dds"
+
+	unlocking_technologies = {
+		film
+	}
+
+	building_modifiers = {
+
+		workforce_scaled = { # 1000 profit
+			goods_input_tools_add = 10 # 400
+			goods_input_paper_add = 15 # 450
+			goods_input_electricity_add = 5 # 150
+
+			goods_output_fine_art_add = 10 # 2000
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+
+REPLACE:pm_arc_welded_buildings = {
+	texture = "gfx/interface/icons/production_method_icons/arc_welded_buildings.dds"
+
+	unlocking_technologies = {
+		arc_welding
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_construction_add = 15
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_steel_add = 50
+			goods_input_glass_add = 40
+			goods_input_explosives_add = 20
+			goods_input_tools_add = 40
+			goods_input_electricity_add = 40
+		}
+
+		level_scaled = {
+			building_employment_bureaucrats_add = 100
+			building_employment_clerks_add = 100
+			building_employment_engineers_add = 50
+			building_employment_machinists_add = 150
+			building_employment_laborers_add = 600
+		}
+		unscaled = {
+			building_laborers_mortality_mult = 0.1
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_construction_mult = 0.01
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}

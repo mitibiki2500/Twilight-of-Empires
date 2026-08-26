@@ -1,0 +1,715 @@
+﻿TREATIES = {
+	# ============================================================
+	# Twilight of Empires - 1836 historical treaties
+	# ============================================================
+
+	# 神聖同盟: トルン - ヴェレティエン
+	create_treaty = {
+		name = TOE_TREATY_HOLY_ALLIANCE
+		first_country = c:XAM
+		second_country = c:XEP
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 10 }
+		articles_to_create = {
+			{ article = defensive_pact }
+		}
+	}
+
+	# 神聖同盟: トルン - ネウストリア
+	create_treaty = {
+		name = TOE_TREATY_HOLY_ALLIANCE
+		first_country = c:XAM
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 10 }
+		articles_to_create = {
+			{ article = defensive_pact }
+		}
+	}
+
+	# 神聖同盟: ネウストリア - ヴェレティエン
+	create_treaty = {
+		name = TOE_TREATY_HOLY_ALLIANCE
+		first_country = c:XAL
+		second_country = c:XEP
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 10 }
+		articles_to_create = {
+			{ article = defensive_pact }
+		}
+	}
+
+	# 帝国諸侯: 各帝国諸侯 - ネウストリア
+	# 独立保証 + 勢力生成5000。プレイヤー同盟とは別の条約として実装。
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XAW
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XAW
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XAW
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XEX
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XEX
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XEX
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XEY
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XEY
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XEY
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XAK
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XAK
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XAK
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XEU
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XEU
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XEU
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XEV
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XEV
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XEV
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XEW
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XEW
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XEW
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XAG
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XAG
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XAG
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XEP
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XEP
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XEP
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XET
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XET
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XET
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XER
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XER
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XER
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XES
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XES
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XES
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XFA
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XFA
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XFA
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XEQ
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XEQ
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XEQ
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XAF
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XAF
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XAF
+				target_country = c:XAL
+			}
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_IMPERIAL_PRINCES
+		first_country = c:XEO
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 99 }
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:XAL
+				target_country = c:XEO
+			}
+			{
+				article = toe_imperial_prince_leverage
+				source_country = c:XEO
+				target_country = c:XAL
+			}
+		}
+	}
+
+	# 伊牌永久同盟: イルボネー - パイド
+	create_treaty = {
+		name = TOE_TREATY_ILPAI_PERMANENT_ALLIANCE
+		first_country = c:GSU
+		second_country = c:PAI
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 50 }
+		articles_to_create = {
+			{ article = defensive_pact }
+			{ article = trade_privilege source_country = c:GSU target_country = c:PAI }
+			{ article = trade_privilege source_country = c:PAI target_country = c:GSU }
+		}
+	}
+
+	# テーガール=コンバフ通商協定
+	# 防衛協定は付けない。
+	create_treaty = {
+		name = TOE_TREATY_TEAGAR_KOMBAF_TRADE
+		first_country = c:XAI
+		second_country = c:XAJ
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 10 }
+		articles_to_create = {
+			{ article = trade_privilege source_country = c:XAI target_country = c:XAJ }
+			{ article = trade_privilege source_country = c:XAJ target_country = c:XAI }
+		}
+	}
+
+	# 貿易勅許状: イルボネー - アルティア（条約港なし・相互貿易特権のみ）
+	create_treaty = {
+		name = TOE_TREATY_TRADE_CHARTER
+		first_country = c:GSU
+		second_country = c:ATI
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 50 }
+		articles_to_create = {
+			
+			{ article = trade_privilege source_country = c:GSU target_country = c:ATI }
+			{ article = trade_privilege source_country = c:ATI target_country = c:GSU }
+		}
+	}
+
+	# テーガールの軍事支援: テーガール - ゴートン
+	# テーガール -> ゴートン: 軍事支援
+	# ゴートン -> テーガール: 木材150 + 貿易特権
+	create_treaty = {
+		name = TOE_TREATY_TEAGAR_GORTON_TRADE
+		first_country = c:XAI
+		second_country = c:GOT
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 10 }
+		articles_to_create = {
+			{ article = trade_privilege source_country = c:XAI target_country = c:GOT }
+			{ article = trade_privilege source_country = c:GOT target_country = c:XAI }
+			{
+				article = goods_transfer
+				source_country = c:XAI
+				target_country = c:GOT
+				inputs = { { goods = g:small_arms } { quantity = 150 } }
+			}
+			{
+				article = goods_transfer
+				source_country = c:GOT
+				target_country = c:XAI
+				inputs = { { goods = g:wood } { quantity = 300 } }
+			}
+		}
+	}
+
+	# 六か国条約（通常条約・50年）
+	# サンドと六か国の通常条約。
+	# サンド側から各相手国への通行料免除と一方的な貿易特権を50年間設定。
+	# サンド -> テーガール: 海峡通行料なし
+	create_treaty = {
+		name = TOE_TREATY_SIX_NATIONS
+		first_country = c:XAS
+		second_country = c:XAI
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 50 }
+		articles_to_create = {
+			{ article = no_tolls source_country = c:XAS target_country = c:XAI }
+			{ article = trade_privilege source_country = c:XAS target_country = c:XAI }
+		}
+	}
+
+	# サンド -> コンバフ: 海峡通行料なし
+	create_treaty = {
+		name = TOE_TREATY_SIX_NATIONS
+		first_country = c:XAS
+		second_country = c:XAJ
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 50 }
+		articles_to_create = {
+			{ article = no_tolls source_country = c:XAS target_country = c:XAJ }
+			{ article = trade_privilege source_country = c:XAS target_country = c:XAJ }
+		}
+	}
+
+	# サンド -> ネウストリア: 海峡通行料なし
+	create_treaty = {
+		name = TOE_TREATY_SIX_NATIONS
+		first_country = c:XAS
+		second_country = c:XAL
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 50 }
+		articles_to_create = {
+			{ article = no_tolls source_country = c:XAS target_country = c:XAL }
+			{ article = trade_privilege source_country = c:XAS target_country = c:XAL }
+		}
+	}
+
+	# サンド -> ヴェレティエン: 海峡通行料なし
+	create_treaty = {
+		name = TOE_TREATY_SIX_NATIONS
+		first_country = c:XAS
+		second_country = c:XEP
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 50 }
+		articles_to_create = {
+			{ article = no_tolls source_country = c:XAS target_country = c:XEP }
+			{ article = trade_privilege source_country = c:XAS target_country = c:XEP }
+		}
+	}
+
+	# サンド -> トルン: 海峡通行料なし
+	create_treaty = {
+		name = TOE_TREATY_SIX_NATIONS
+		first_country = c:XAS
+		second_country = c:XAM
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 50 }
+		articles_to_create = {
+			{ article = no_tolls source_country = c:XAS target_country = c:XAM }
+			{ article = trade_privilege source_country = c:XAS target_country = c:XAM }
+		}
+	}
+
+	# サンド -> パイド: 海峡通行料なし
+	create_treaty = {
+		name = TOE_TREATY_SIX_NATIONS
+		first_country = c:XAS
+		second_country = c:PAI
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 50 }
+		articles_to_create = {
+			{ article = no_tolls source_country = c:XAS target_country = c:PAI }
+			{ article = trade_privilege source_country = c:XAS target_country = c:PAI }
+		}
+	}
+
+	# スンプロ防衛協定: ネルツ・ニシレク・ヤルの相互防衛（10年）
+	create_treaty = {
+		name = TOE_TREATY_SUNPRO_DEFENSE
+		first_country = c:XAQ
+		second_country = c:XAV
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 10 }
+		articles_to_create = {
+			{ article = defensive_pact }
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_SUNPRO_DEFENSE
+		first_country = c:XAQ
+		second_country = c:XDN
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 10 }
+		articles_to_create = {
+			{ article = defensive_pact }
+		}
+	}
+	create_treaty = {
+		name = TOE_TREATY_SUNPRO_DEFENSE
+		first_country = c:XAV
+		second_country = c:XDN
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 10 }
+		articles_to_create = {
+			{ article = defensive_pact }
+		}
+	}
+
+	# ナルク -> アルティ 通過権（世界市場への交易経路確保）20年
+	create_treaty = {
+		name = TOE_TREATY_NARK_ALTI_TRANSIT
+		first_country = c:NRK
+		second_country = c:SKR
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 20 }
+		articles_to_create = {
+			{ article = transit_rights source_country = c:NRK target_country = c:SKR }
+		}
+	}
+
+    # 帝国諸侯: NPL - ネウストリア
+    create_treaty = {
+        name = TOE_TREATY_IMPERIAL_PRINCES
+        first_country = c:NPL
+        second_country = c:XAL
+        is_draft = no
+        entered_into_force_on = 1836.1.1
+        binding_period = { years = 99 }
+        articles_to_create = {
+            { article = guarantee_independence source_country = c:XAL target_country = c:NPL }
+            { article = toe_imperial_prince_leverage source_country = c:NPL target_country = c:XAL }
+        }
+    }
+
+    # 帝国諸侯: ANS - ネウストリア
+    create_treaty = {
+        name = TOE_TREATY_IMPERIAL_PRINCES
+        first_country = c:ANS
+        second_country = c:XAL
+        is_draft = no
+        entered_into_force_on = 1836.1.1
+        binding_period = { years = 99 }
+        articles_to_create = {
+            { article = guarantee_independence source_country = c:XAL target_country = c:ANS }
+            { article = toe_imperial_prince_leverage source_country = c:ANS target_country = c:XAL }
+        }
+    }
+
+    # 帝国諸侯: ETR - ネウストリア
+    create_treaty = {
+        name = TOE_TREATY_IMPERIAL_PRINCES
+        first_country = c:ETR
+        second_country = c:XAL
+        is_draft = no
+        entered_into_force_on = 1836.1.1
+        binding_period = { years = 99 }
+        articles_to_create = {
+            { article = guarantee_independence source_country = c:XAL target_country = c:ETR }
+            { article = toe_imperial_prince_leverage source_country = c:ETR target_country = c:XAL }
+        }
+    }
+
+    # 帝国諸侯: WMR - ネウストリア
+    create_treaty = {
+        name = TOE_TREATY_IMPERIAL_PRINCES
+        first_country = c:WMR
+        second_country = c:XAL
+        is_draft = no
+        entered_into_force_on = 1836.1.1
+        binding_period = { years = 99 }
+        articles_to_create = {
+            { article = guarantee_independence source_country = c:XAL target_country = c:WMR }
+            { article = toe_imperial_prince_leverage source_country = c:WMR target_country = c:XAL }
+        }
+    }
+
+    # 帝国諸侯: NSL - ネウストリア
+    create_treaty = {
+        name = TOE_TREATY_IMPERIAL_PRINCES
+        first_country = c:NSL
+        second_country = c:XAL
+        is_draft = no
+        entered_into_force_on = 1836.1.1
+        binding_period = { years = 99 }
+        articles_to_create = {
+            { article = guarantee_independence source_country = c:XAL target_country = c:NSL }
+            { article = toe_imperial_prince_leverage source_country = c:NSL target_country = c:XAL }
+        }
+    }
+
+    # 帝国諸侯: ATZ - ネウストリア
+    create_treaty = {
+        name = TOE_TREATY_IMPERIAL_PRINCES
+        first_country = c:ATZ
+        second_country = c:XAL
+        is_draft = no
+        entered_into_force_on = 1836.1.1
+        binding_period = { years = 99 }
+        articles_to_create = {
+            { article = guarantee_independence source_country = c:XAL target_country = c:ATZ }
+            { article = toe_imperial_prince_leverage source_country = c:ATZ target_country = c:XAL }
+        }
+    }
+
+	# リイア共和国 - イルボネー：10年間防衛協定
+	create_treaty = {
+		name = TOE_TREATY_RIA_REPUBLIC_ILVONE_DEFENSE
+		first_country = c:XBJ
+		second_country = c:GSU
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 10 }
+		articles_to_create = {
+			{ article = defensive_pact }
+		}
+	}
+
+	# リイア社会共和国 - イルボネー：10年間防衛協定
+	create_treaty = {
+		name = TOE_TREATY_RIA_SOCIAL_ILVONE_DEFENSE
+		first_country = c:XBL
+		second_country = c:GSU
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 10 }
+		articles_to_create = {
+			{ article = defensive_pact }
+		}
+	}
+
+	# テーガール - トルトル：独立保証・相互貿易特権（10年）
+	create_treaty = {
+		name = TOE_TREATY_TEAGAR_TORTAL
+		first_country = c:XAI
+		second_country = c:XCI
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 10 }
+		articles_to_create = {
+			{ article = guarantee_independence source_country = c:XAI target_country = c:XCI }
+			{ article = trade_privilege source_country = c:XAI target_country = c:XCI }
+			{ article = trade_privilege source_country = c:XCI target_country = c:XAI }
+		}
+	}
+
+	# イルボネー - トルトル：独立保証・相互貿易特権（10年）
+	create_treaty = {
+		name = TOE_TREATY_ILVONE_TORTAL
+		first_country = c:GSU
+		second_country = c:XCI
+		is_draft = no
+		entered_into_force_on = 1836.1.1
+		binding_period = { years = 10 }
+		articles_to_create = {
+			{ article = guarantee_independence source_country = c:GSU target_country = c:XCI }
+			{ article = trade_privilege source_country = c:GSU target_country = c:XCI }
+			{ article = trade_privilege source_country = c:XCI target_country = c:GSU }
+		}
+	}
+}

@@ -1,0 +1,63 @@
+﻿CONSCRIPTION = {
+	every_country = {
+		if = {
+			limit = {
+				any_scope_building = { 
+					always = no
+					always = no
+				}
+				NOT = {
+					any_scope_building = { 
+						is_building_type = building_conscription_center
+						always = no
+					}				
+				}				
+			}
+		}	
+		else_if = {
+			limit = {
+				any_scope_building = { 
+					always = no
+					always = no
+				}
+				NOT = {
+					any_scope_building = { 
+						is_building_type = building_conscription_center
+						always = no
+					}				
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = { has_law = law_type:law_peasant_levies }
+				any_scope_building = { 
+					always = no
+					has_active_production_method = pm_mobile_artillery
+				}
+				NOT = {
+					any_scope_building = { 
+						is_building_type = building_conscription_center
+						always = no
+					}				
+				}					
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_law = law_type:law_peasant_levies }
+				any_scope_building = { 
+					always = no
+					always = no
+				}
+				NOT = {
+					any_scope_building = { 
+						is_building_type = building_conscription_center
+						always = no
+					}				
+				}					
+			}
+		}			
+	}
+}

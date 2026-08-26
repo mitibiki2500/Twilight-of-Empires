@@ -1,0 +1,196 @@
+﻿#追加技術系
+#工業
+INJECT:pmg_base_building_food_industry = { #食品
+	production_methods = {
+		pm_mr1_food
+	}
+}
+INJECT:pmg_distillery = { #コーラ
+	production_methods = {
+		pm_patent_coke
+		pm_patent_coke2
+	}
+}
+
+INJECT:pmg_base_building_textile_mill = { #織物
+	production_methods = {
+		pm_mr1_clothes
+		pm_mr2_clothes
+	}
+}
+INJECT:pmg_luxury_building_textile_mill = {
+	production_methods = {
+		pm_mr1_lux_clothes
+		pm_mr2_lux_clothes
+	}
+}
+
+INJECT:pmg_base_building_furniture_manufactory = { #家具
+	production_methods = {
+		pm_mr1_furniture
+		pm_mr2_furniture
+	}
+}
+INJECT:pmg_luxury_building_furniture_manufactory = {
+	production_methods = {
+		pm_mr1_lux_furniture
+	}
+}
+
+INJECT:pmg_base_building_glassworks = { #ガラス
+	production_methods = {
+		pm_mr1_glass
+		pm_mr2_glass
+	}
+}
+INJECT:pmg_luxury_building_glassworks = {
+	production_methods = {
+		pm_quartz_glass 
+		pm_curie_uranium_glass
+	}
+}
+
+INJECT:pmg_base_building_tooling_workshop = { #工具
+	production_methods = {
+		pm_mr1_tool
+	}
+}
+
+INJECT:pmg_base_building_paper_mill = { #紙
+	production_methods = {
+		pm_mr1_paper
+	}
+}
+
+INJECT:pmg_fertilizer_production = { #肥料
+	production_methods = {
+		pm_mr1_fertilizer
+	}
+}
+
+INJECT:pmg_steelmaking_process = { #製鉄
+	production_methods = {
+		pm_mr1_steel
+	}
+}
+
+INJECT:pmg_base_building_motor_industry = { #発動機
+	production_methods = {
+		pm_mr1_engines
+	}
+}
+
+INJECT:pmg_base_building_shipyard = { #船
+	production_methods = {
+		pm_mr1_steamers
+	}
+}
+
+INJECT:pmg_automobile_production = { #自動車
+	production_methods = {
+		pm_mr1_automobile_production
+	}
+}
+
+INJECT:pmg_synthetic_dyes = { #化粧品,染料
+	production_methods = {
+		pm_traditional_perfumes_dye
+		pm_industrial_dye
+		pm_synthetic_compounds_dye
+		pm_modern_dye
+	}
+}
+
+INJECT:pmg_radios_category = { #電話ラジオ
+	production_methods = {
+		pm_transistor_radios
+	}
+}
+INJECT:pmg_telephones_category = {
+	production_methods = {
+		pm_bakelite_telephones
+		pm_touch_tone_telephones
+	}
+}
+
+
+pmg_building_synthetic_oil = { #合成石油ゴム
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_mr_oil_production
+	}
+}
+pmg_building_synthetic_rubber = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_mr_no_rubber_production
+		pm_mr1_rubber_production
+		pm_mr2_rubber_production
+		pm_mr3_rubber_production
+		pm_mr4_rubber_production
+	}
+}
+
+
+#砲弾
+INJECT:pmg_foundries = {
+	production_methods = {
+		pm_mobile_artillery
+	}
+}
+
+#武器
+INJECT:pmg_firearms_manufacturing = {
+	production_methods = {
+		pm_selective_automatic_rifles
+		pm_assault_rifles
+	}
+}
+
+#飛行機戦車
+INJECT:pmg_aeroplanes = {
+	production_methods = {
+		pm_modern_warplanes_production
+		pm_supersonic_warplanes_production
+	}
+}
+
+INJECT:pmg_tanks = {
+	production_methods = {
+		pm_second_gen_tank_production
+		pm_third_gen_tank_production		
+	}
+}
+
+#弾薬
+INJECT:pmg_base_building_munition_plant = {
+	production_methods = {
+		pm_precised_shells
+	}
+}
+
+pmg_automation_building_electrics_industry = { #電気省人化
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_automation_disabled
+		pm_rotary_valve_engine_building_mr
+		pm_assembly_lines_building_mr
+	}
+}
+pmg_automation_building_synthetics_plant = { #化粧省人化
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_automation_disabled
+		pm_rotary_valve_engine_building_mr
+		pm_assembly_lines_building_mr
+		
+	}
+}
+pmg_automation_building_chemical_plant = { #肥料省人化
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_automation_disabled
+		pm_rotary_valve_engine_building_mr
+		pm_assembly_lines_building_mr
+	}
+}

@@ -1,0 +1,398 @@
+﻿je_nsm_altia_conquest_sparia = {
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+    group = je_group_historical_content
+    is_shown_in_lobby = { this = c:SKR }
+    scripted_button = toe_alti_claim_sparia_button
+    should_be_pinned_by_default_uninvolved_or_context = yes
+    should_be_pinned_by_default_involved = yes
+
+    is_shown_when_inactive = {
+        this = c:SKR
+        NOT = { has_variable = toe_altia_sparia_conquered }
+    }
+
+    possible = {
+        this = c:SKR
+        NOT = { has_variable = toe_altia_sparia_conquered }
+    }
+
+    complete = {
+        has_variable = toe_altia_sparia_claims_granted
+        owns_entire_state_region = STATE_NSM_034
+        owns_entire_state_region = STATE_NSM_379
+        owns_entire_state_region = STATE_NSM_100
+        owns_entire_state_region = STATE_NSM_422
+        owns_entire_state_region = STATE_NSM_086
+        owns_entire_state_region = STATE_NSM_243
+        owns_entire_state_region = STATE_NSM_274
+        owns_entire_state_region = STATE_NSM_349
+    }
+
+    on_complete = {
+        set_variable = toe_altia_sparia_conquered
+        toe_alti_reward_sparia = yes
+        if = { limit = { NOT = { has_journal_entry = je_nsm_altia_conquest_altia } } add_journal_entry = { type = je_nsm_altia_conquest_altia } }
+        if = { limit = { NOT = { has_journal_entry = je_nsm_altia_conquest_gorton } } add_journal_entry = { type = je_nsm_altia_conquest_gorton } }
+    }
+
+    weight = 1000
+    transferable = no
+}
+
+je_nsm_altia_conquest_altia = {
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+    group = je_group_historical_content
+    scripted_button = toe_alti_claim_altia_button
+    should_be_pinned_by_default_uninvolved_or_context = yes
+    should_be_pinned_by_default_involved = yes
+
+    is_shown_when_inactive = {
+        this = c:SKR
+        has_variable = toe_altia_sparia_conquered
+        NOT = { has_variable = toe_altia_altia_conquered }
+    }
+
+    possible = {
+        this = c:SKR
+        has_variable = toe_altia_sparia_conquered
+        NOT = { has_variable = toe_altia_altia_conquered }
+    }
+
+    complete = {
+        has_variable = toe_altia_altia_claims_granted
+        owns_entire_state_region = STATE_NSM_005
+        owns_entire_state_region = STATE_NSM_084
+        owns_entire_state_region = STATE_NSM_172
+        owns_entire_state_region = STATE_NSM_201
+        owns_entire_state_region = STATE_NSM_211
+        owns_entire_state_region = STATE_NSM_230
+        owns_entire_state_region = STATE_NSM_297
+        owns_entire_state_region = STATE_NSM_302
+        owns_entire_state_region = STATE_NSM_321
+        owns_entire_state_region = STATE_NSM_345
+        owns_entire_state_region = STATE_NSM_425
+        owns_entire_state_region = STATE_NSM_441
+        owns_entire_state_region = STATE_NSM_621
+    }
+
+    on_complete = {
+        set_variable = toe_altia_altia_conquered
+        toe_alti_reward_altia = yes
+        if = {
+            limit = { has_variable = toe_altia_gorton_conquered NOT = { has_journal_entry = je_nsm_altia_conquest_paido } }
+            add_journal_entry = { type = je_nsm_altia_conquest_paido }
+        }
+    }
+
+    weight = 1000
+    transferable = no
+}
+
+je_nsm_altia_conquest_gorton = {
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+    group = je_group_historical_content
+    scripted_button = toe_alti_claim_gorton_button
+    should_be_pinned_by_default_uninvolved_or_context = yes
+    should_be_pinned_by_default_involved = yes
+
+    is_shown_when_inactive = {
+        this = c:SKR
+        has_variable = toe_altia_sparia_conquered
+        NOT = { has_variable = toe_altia_gorton_conquered }
+    }
+
+    possible = {
+        this = c:SKR
+        has_variable = toe_altia_sparia_conquered
+        NOT = { has_variable = toe_altia_gorton_conquered }
+    }
+
+    complete = {
+        has_variable = toe_altia_gorton_claims_granted
+        owns_entire_state_region = STATE_NSM_045
+        owns_entire_state_region = STATE_NSM_062
+        owns_entire_state_region = STATE_NSM_081
+        owns_entire_state_region = STATE_NSM_129
+        owns_entire_state_region = STATE_NSM_171
+        owns_entire_state_region = STATE_NSM_234
+        owns_entire_state_region = STATE_NSM_257
+        owns_entire_state_region = STATE_NSM_329
+        owns_entire_state_region = STATE_NSM_351
+        owns_entire_state_region = STATE_NSM_386
+        owns_entire_state_region = STATE_NSM_388
+        owns_entire_state_region = STATE_NSM_393
+        owns_entire_state_region = STATE_NSM_400
+        owns_entire_state_region = STATE_NSM_436
+        owns_entire_state_region = STATE_NSM_504
+        owns_entire_state_region = STATE_NSM_082
+        owns_entire_state_region = STATE_NSM_124
+        owns_entire_state_region = STATE_NSM_187
+        owns_entire_state_region = STATE_NSM_213
+        owns_entire_state_region = STATE_NSM_453
+        owns_entire_state_region = STATE_NSM_258
+        owns_entire_state_region = STATE_NSM_430
+    }
+
+    on_complete = {
+        set_variable = toe_altia_gorton_conquered
+        toe_alti_reward_gorton = yes
+        if = {
+            limit = { has_variable = toe_altia_altia_conquered NOT = { has_journal_entry = je_nsm_altia_conquest_paido } }
+            add_journal_entry = { type = je_nsm_altia_conquest_paido }
+        }
+    }
+
+    weight = 1000
+    transferable = no
+}
+
+je_nsm_altia_conquest_paido = {
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+    group = je_group_historical_content
+    scripted_button = toe_alti_claim_paido_button
+    should_be_pinned_by_default_uninvolved_or_context = yes
+    should_be_pinned_by_default_involved = yes
+
+    is_shown_when_inactive = {
+        this = c:SKR
+        has_variable = toe_altia_altia_conquered
+        has_variable = toe_altia_gorton_conquered
+        NOT = { has_variable = toe_altia_paido_conquered }
+    }
+
+    possible = {
+        this = c:SKR
+        has_variable = toe_altia_altia_conquered
+        has_variable = toe_altia_gorton_conquered
+        NOT = { has_variable = toe_altia_paido_conquered }
+    }
+
+    complete = {
+        has_variable = toe_altia_paido_claims_granted
+        owns_entire_state_region = STATE_NSM_012
+        owns_entire_state_region = STATE_NSM_013
+        owns_entire_state_region = STATE_NSM_024
+        owns_entire_state_region = STATE_NSM_041
+        owns_entire_state_region = STATE_NSM_060
+        owns_entire_state_region = STATE_NSM_091
+        owns_entire_state_region = STATE_NSM_092
+        owns_entire_state_region = STATE_NSM_144
+        owns_entire_state_region = STATE_NSM_145
+        owns_entire_state_region = STATE_NSM_146
+        owns_entire_state_region = STATE_NSM_173
+        owns_entire_state_region = STATE_NSM_179
+        owns_entire_state_region = STATE_NSM_190
+        owns_entire_state_region = STATE_NSM_193
+        owns_entire_state_region = STATE_NSM_198
+        owns_entire_state_region = STATE_NSM_203
+        owns_entire_state_region = STATE_NSM_205
+        owns_entire_state_region = STATE_NSM_236
+        owns_entire_state_region = STATE_NSM_239
+        owns_entire_state_region = STATE_NSM_272
+        owns_entire_state_region = STATE_NSM_313
+        owns_entire_state_region = STATE_NSM_319
+        owns_entire_state_region = STATE_NSM_326
+        owns_entire_state_region = STATE_NSM_347
+        owns_entire_state_region = STATE_NSM_355
+        owns_entire_state_region = STATE_NSM_360
+        owns_entire_state_region = STATE_NSM_389
+        owns_entire_state_region = STATE_NSM_403
+        owns_entire_state_region = STATE_NSM_407
+        owns_entire_state_region = STATE_NSM_416
+        owns_entire_state_region = STATE_NSM_432
+        owns_entire_state_region = STATE_NSM_437
+        owns_entire_state_region = STATE_NSM_526
+        owns_entire_state_region = STATE_NSM_529
+        owns_entire_state_region = STATE_NSM_534
+        owns_entire_state_region = STATE_NSM_293
+        owns_entire_state_region = STATE_NSM_411
+        owns_entire_state_region = STATE_NSM_472
+        owns_entire_state_region = STATE_NSM_046
+        owns_entire_state_region = STATE_NSM_051
+        owns_entire_state_region = STATE_NSM_134
+        owns_entire_state_region = STATE_NSM_289
+        owns_entire_state_region = STATE_NSM_466
+        owns_entire_state_region = STATE_NSM_486
+    }
+
+    on_complete = {
+        set_variable = toe_altia_paido_conquered
+        toe_alti_reward_paido = yes
+        if = { limit = { NOT = { has_journal_entry = je_nsm_altia_conquest_trilia } } add_journal_entry = { type = je_nsm_altia_conquest_trilia } }
+        if = { limit = { NOT = { has_journal_entry = je_nsm_altia_conquest_ilvone } } add_journal_entry = { type = je_nsm_altia_conquest_ilvone } }
+    }
+
+    weight = 1000
+    transferable = no
+}
+
+je_nsm_altia_conquest_trilia = {
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+    group = je_group_historical_content
+    scripted_button = toe_alti_claim_trilia_button
+    should_be_pinned_by_default_uninvolved_or_context = yes
+    should_be_pinned_by_default_involved = yes
+
+    is_shown_when_inactive = {
+        this = c:SKR
+        has_variable = toe_altia_paido_conquered
+        NOT = { has_variable = toe_altia_trilia_conquered }
+    }
+
+    possible = {
+        this = c:SKR
+        has_variable = toe_altia_paido_conquered
+        NOT = { has_variable = toe_altia_trilia_conquered }
+    }
+
+    complete = {
+        has_variable = toe_altia_trilia_claims_granted
+        owns_entire_state_region = STATE_NSM_056
+        owns_entire_state_region = STATE_NSM_091
+        owns_entire_state_region = STATE_NSM_139
+        owns_entire_state_region = STATE_NSM_146
+        owns_entire_state_region = STATE_NSM_164
+        owns_entire_state_region = STATE_NSM_165
+        owns_entire_state_region = STATE_NSM_173
+        owns_entire_state_region = STATE_NSM_179
+        owns_entire_state_region = STATE_NSM_190
+        owns_entire_state_region = STATE_NSM_193
+        owns_entire_state_region = STATE_NSM_203
+        owns_entire_state_region = STATE_NSM_205
+        owns_entire_state_region = STATE_NSM_239
+        owns_entire_state_region = STATE_NSM_261
+        owns_entire_state_region = STATE_NSM_300
+        owns_entire_state_region = STATE_NSM_319
+        owns_entire_state_region = STATE_NSM_326
+        owns_entire_state_region = STATE_NSM_355
+        owns_entire_state_region = STATE_NSM_415
+        owns_entire_state_region = STATE_NSM_416
+        owns_entire_state_region = STATE_NSM_432
+        owns_entire_state_region = STATE_NSM_521
+        owns_entire_state_region = STATE_NSM_534
+        owns_entire_state_region = STATE_NSM_036
+        owns_entire_state_region = STATE_NSM_037
+        owns_entire_state_region = STATE_NSM_089
+        owns_entire_state_region = STATE_NSM_107
+        owns_entire_state_region = STATE_NSM_118
+        owns_entire_state_region = STATE_NSM_192
+        owns_entire_state_region = STATE_NSM_199
+        owns_entire_state_region = STATE_NSM_214
+        owns_entire_state_region = STATE_NSM_225
+        owns_entire_state_region = STATE_NSM_237
+        owns_entire_state_region = STATE_NSM_259
+        owns_entire_state_region = STATE_NSM_267
+        owns_entire_state_region = STATE_NSM_276
+        owns_entire_state_region = STATE_NSM_301
+        owns_entire_state_region = STATE_NSM_359
+        owns_entire_state_region = STATE_NSM_390
+        owns_entire_state_region = STATE_NSM_392
+        owns_entire_state_region = STATE_NSM_419
+        owns_entire_state_region = STATE_NSM_451
+        owns_entire_state_region = STATE_NSM_460
+        owns_entire_state_region = STATE_NSM_473
+        owns_entire_state_region = STATE_NSM_485
+        owns_entire_state_region = STATE_NSM_490
+        owns_entire_state_region = STATE_NSM_492
+        owns_entire_state_region = STATE_NSM_001
+        owns_entire_state_region = STATE_NSM_040
+        owns_entire_state_region = STATE_NSM_055
+        owns_entire_state_region = STATE_NSM_113
+        owns_entire_state_region = STATE_NSM_128
+        owns_entire_state_region = STATE_NSM_188
+        owns_entire_state_region = STATE_NSM_217
+        owns_entire_state_region = STATE_NSM_232
+        owns_entire_state_region = STATE_NSM_233
+        owns_entire_state_region = STATE_NSM_255
+        owns_entire_state_region = STATE_NSM_314
+        owns_entire_state_region = STATE_NSM_369
+        owns_entire_state_region = STATE_NSM_398
+        owns_entire_state_region = STATE_NSM_439
+        owns_entire_state_region = STATE_NSM_450
+        owns_entire_state_region = STATE_NSM_465
+        owns_entire_state_region = STATE_NSM_514
+        owns_entire_state_region = STATE_NSM_518
+        owns_entire_state_region = STATE_NSM_519
+        owns_entire_state_region = STATE_NSM_028
+        owns_entire_state_region = STATE_NSM_035
+        owns_entire_state_region = STATE_NSM_042
+        owns_entire_state_region = STATE_NSM_133
+        owns_entire_state_region = STATE_NSM_151
+        owns_entire_state_region = STATE_NSM_155
+        owns_entire_state_region = STATE_NSM_158
+        owns_entire_state_region = STATE_NSM_228
+        owns_entire_state_region = STATE_NSM_003
+        owns_entire_state_region = STATE_NSM_033
+        owns_entire_state_region = STATE_NSM_080
+        owns_entire_state_region = STATE_NSM_088
+        owns_entire_state_region = STATE_NSM_093
+        owns_entire_state_region = STATE_NSM_121
+        owns_entire_state_region = STATE_NSM_194
+        owns_entire_state_region = STATE_NSM_226
+        owns_entire_state_region = STATE_NSM_268
+        owns_entire_state_region = STATE_NSM_293
+        owns_entire_state_region = STATE_NSM_325
+        owns_entire_state_region = STATE_NSM_395
+        owns_entire_state_region = STATE_NSM_411
+        owns_entire_state_region = STATE_NSM_462
+        owns_entire_state_region = STATE_NSM_467
+        owns_entire_state_region = STATE_NSM_472
+        owns_entire_state_region = STATE_NSM_512
+    }
+
+    on_complete = {
+        set_variable = toe_altia_trilia_conquered
+        toe_alti_reward_trilia = yes
+    }
+
+    weight = 1000
+    transferable = no
+}
+
+je_nsm_altia_conquest_ilvone = {
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+    group = je_group_historical_content
+    scripted_button = toe_alti_claim_ilvone_button
+    should_be_pinned_by_default_uninvolved_or_context = yes
+    should_be_pinned_by_default_involved = yes
+
+    is_shown_when_inactive = {
+        this = c:SKR
+        has_variable = toe_altia_paido_conquered
+        NOT = { has_variable = toe_altia_ilvone_conquered }
+    }
+
+    possible = {
+        this = c:SKR
+        has_variable = toe_altia_paido_conquered
+        NOT = { has_variable = toe_altia_ilvone_conquered }
+    }
+
+    complete = {
+        has_variable = toe_altia_ilvone_claims_granted
+        owns_entire_state_region = STATE_NSM_015
+        owns_entire_state_region = STATE_NSM_026
+        owns_entire_state_region = STATE_NSM_044
+        owns_entire_state_region = STATE_NSM_071
+        owns_entire_state_region = STATE_NSM_083
+        owns_entire_state_region = STATE_NSM_202
+        owns_entire_state_region = STATE_NSM_248
+        owns_entire_state_region = STATE_NSM_271
+        owns_entire_state_region = STATE_NSM_287
+        owns_entire_state_region = STATE_NSM_331
+        owns_entire_state_region = STATE_NSM_336
+        owns_entire_state_region = STATE_NSM_339
+        owns_entire_state_region = STATE_NSM_346
+        owns_entire_state_region = STATE_NSM_455
+        owns_entire_state_region = STATE_NSM_507
+        owns_entire_state_region = STATE_NSM_508
+    }
+
+    on_complete = {
+        set_variable = toe_altia_ilvone_conquered
+        toe_alti_reward_ilvone = yes
+    }
+
+    weight = 1000
+    transferable = no
+}

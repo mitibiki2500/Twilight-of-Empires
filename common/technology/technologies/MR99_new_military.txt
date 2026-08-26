@@ -1,0 +1,788 @@
+﻿
+# Era 5x3
+modern_warplanes = { #現代航空機
+	# boosts warplanes production
+	# requires aluminium
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/modern_warplanes.dds"
+	category = military
+	
+	modifier = {
+		# increased oil consumption
+		# increased recon/scouting/go fast
+	}
+	
+	unlocking_technologies = {	
+		military_aviation
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+agassiz_sounding_tech = { #アガシズ式測深技術
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/agassiz_sounding_tech.dds"
+	category = military
+	
+	modifier = {
+		building_group_bg_fishing_throughput_add = 0.1
+		ship_detection_mult = 0.15
+		ship_screening_mult = 0.1
+		ship_accuracy_mult = 0.1
+	}
+	
+	unlocking_technologies = {
+		submarine
+	}
+	ai_weight = {
+		value = 1 # Very important in general
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+urtiss_seaplanes_tech = { #水上飛行機
+
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/curtiss_seaplanes.dds"
+	category = military
+	
+	unlocking_technologies = {
+		military_aviation
+	}
+
+	modifier = {
+		ship_critical_hit_chance_mult = 0.1
+		ship_screening_mult = 0.1
+		ship_detection_mult = 0.1
+		ship_ship_type_aircraft_carrier_hull_damage_mult = 0.1
+	}
+
+	ai_weight = {
+		value = 1
+		
+		# Important for naval powers
+		if = {
+			limit = { navy_size >= 20 }
+			add = 0.5
+		}		
+		#Seaplane countries
+		if = {
+			limit = { 
+				exists = c:FRA
+				c:FRA = ROOT 
+			}
+			add = 0.5
+		}	
+		if = {
+			limit = { 
+				exists = c:USA
+				c:USA = ROOT 
+			}
+			add = 0.5
+		}		
+		if = {
+			limit = { 
+				exists = c:GBR
+				c:GBR = ROOT 
+			}
+			add = 0.5
+		}
+		if = {
+			limit = { 
+				exists = c:ITA
+				c:ITA = ROOT 
+			}
+			add = 0.5
+		}
+	}
+}
+
+# Era 6x12
+military_encryption = { #軍事暗号化
+	# Unlocks Military Encryption
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/military_encryption.dds"
+	category = military
+	
+	modifier = {
+		ship_ship_type_submarine_hull_damage_mult = 0.1
+		military_formation_organization_gain_mult = 0.05
+	}
+	
+	unlocking_technologies = {	
+		agassiz_sounding_tech
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+mechanized_infantry = { #機械化歩兵
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/mechanized_infantry.dds"
+	category = military
+	modifier = {
+		military_formation_mobilization_speed_mult = 0.2
+		#unit_combat_unit_type_self_propelled_artillery_offense_mult = 0.05
+		#unit_advancement_speed_mult = 0.1
+		#military_formation_attrition_risk_mult = -0.2
+		#country_military_wages_mult = 0.25
+	}
+	unlocking_technologies = {
+		mobile_armor
+	}
+	ai_weight = { 
+		value = 1 
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+blitzkrieg = { #電撃戦
+	# Unlocks Combined Arms Doctrine and faster offensive PMs
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/blitzkrieg.dds"
+	category = military
+	
+	modifier = {
+		#unit_combat_unit_type_modern_mechanized_infantry_offense_mult = 0.1
+	}
+	
+	unlocking_technologies = {
+		stormtroopers
+		mechanized_infantry
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = { 
+				exists = c:GER
+				c:GER = ROOT 
+			}
+			add = 2 #Blitzkrieg
+		}
+		if = {
+			limit = { 
+				OR = {
+					c:USA ?= ROOT
+					c:RUS ?= ROOT
+					c:GBR ?= ROOT
+				}
+			}
+			add = 1
+		}
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+amphibious_warfare = { #水陸両用戦
+	# Unlocks Amphibious Warfare
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/amphibious_warfare.dds"
+	category = military
+	
+	modifier = {
+		military_formation_mobilization_speed_mult = 0.05
+		#unit_advancement_speed_mult = 0.10
+		military_formation_attrition_risk_mult = -0.05
+	}
+	
+	unlocking_technologies = {	
+		stormtroopers
+		carrier_tech
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+air_support = { #航空支援
+	# Unlocks direct air support in mobilization
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/air_support.dds"
+	category = military
+	
+	modifier = {
+		# increased oil consumption
+		# increased recon/scouting/go fast
+	}
+	
+	unlocking_technologies = {	
+		modern_warplanes
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+rocketery = { #ロケット高額
+	# Unlocks Rocket artillery
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/rocketery.dds"
+	category = military
+	
+	modifier = {
+		# increased oil consumption
+		# increased recon/scouting/go fast
+	}
+	
+	unlocking_technologies = {	
+		flamethrowers
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+bombing = { #爆撃
+	# Unlocks Bombing
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/bombing.dds"
+	category = military
+	
+	modifier = {
+		#unit_kill_rate_add = 0.05
+		#unit_devastation_mult = 0.1
+	}
+	
+	unlocking_technologies = {	
+		modern_warplanes
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+paratroopers = { #空挺部隊
+	# Unlocks Paratroopers
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/paratroopers.dds"
+	category = military
+	
+	modifier = {
+		# increased oil consumption
+		# increased recon/scouting/go fast
+	}
+	
+	unlocking_technologies = {	
+		stormtroopers
+		modern_warplanes
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+naval_oil_propulsion = { #海軍石油推進
+	# Unlocks Naval Oil Propulsion
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/naval_oil_propulsion.dds"
+	category = military
+	
+	modifier = {
+		building_shipyard_throughput_add = 0.05
+	}
+	
+	unlocking_technologies = {	
+		concrete_dockyards
+		agassiz_sounding_tech
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+atomic_bomb = { #核兵器
+	# unlocks atomic bomb
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/atomic_bomb.dds"
+	category = military
+	
+	unlocking_technologies = {	
+		bombing
+		chemical_warfare
+	}
+	modifier = {
+		country_tech_research_speed_mult = 0.02 #研究速度
+		country_weekly_innovation_max_add = 10 #革新上限
+	}
+	
+	ai_weight = {
+		value = 1 # AI will not use this
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+				always = no
+			}
+			add = 1
+		}
+	}
+}
+
+semi_automatic_rifle = { #半自動小銃
+	# Unlocks Modular Firearms Design
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/semi_automatic_rifle.dds"
+	category = military
+
+	modifier = {
+		unit_kill_rate_add = 0.05
+	}
+
+	unlocking_technologies = {
+		flamethrowers
+	}
+
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+rocket_artillery = { #ロケット砲
+	# Unlocks Rocket artillery
+	# Unlocks Astronautics
+	era = era_6
+	texture = "gfx/interface/icons/invention_icons/rocket_artillery.dds"
+	category = military
+	
+	modifier = {
+		# increased oil consumption
+		# increased recon/scouting/go fast
+	}
+	
+	unlocking_technologies = {	
+		rocketery
+		mechanized_infantry
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+jet_aviation = { #ジェット航空
+	# unlocks jet aviation
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/jet_aviation.dds"
+	category = military
+	
+	unlocking_technologies = {	
+		air_support
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+space_rocketery = { #宇宙ロケット
+	# Unlocks Rocket artillery
+	# Unlocks Astronautics
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/space_rocketery.dds"
+	category = military
+	
+	modifier = {
+		# increased oil consumption
+		# increased recon/scouting/go fast
+	}
+	
+	unlocking_technologies = {	
+		rocketery
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+advanced_harbor_facilities = { #先進的港湾
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/advanced_harbor_facilities.dds"
+	category = military
+	modifier = {
+	}
+
+	unlocking_technologies = {	
+		naval_oil_propulsion
+	}
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+assault_rifles = { #アサルトライフル
+	# Unlocks Modular Firearms Design
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/assault_rifles.dds"
+	category = military
+
+	unlocking_technologies = {
+		semi_automatic_rifle
+		blitzkrieg
+	}
+
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+modular_shipbuilding = { #モジュラー船舶建造
+	# unlocks main battle tank
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/modular_shipbuilding.dds"
+	category = military
+	
+	unlocking_technologies = {	
+		advanced_harbor_facilities
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+main_battle_tank = { #主力戦車
+	# unlocks main battle tank
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/main_battle_tank.dds"
+	category = military
+
+	modifier = {
+		#country_military_wages_mult = 0.25
+		unit_army_offense_mult = 0.1
+		unit_army_defense_mult = 0.1
+	}
+	
+	unlocking_technologies = {	
+		assault_rifles
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+helicopters = { #ヘリコプター
+	# unlocks helicopters
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/helicopters.dds"
+	category = military
+
+	modifier = {
+		
+	}
+	
+	unlocking_technologies = {	
+		air_support
+		paratroopers
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+radar = { #レーダー
+	# unlocks radar
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/radar.dds"
+	category = military
+
+	modifier = {
+		#unit_convoy_defense_mult = 0.15
+		ship_ship_type_submarine_hull_damage_mult = 0.1
+		#ship_ship_type_nuclear_submarine_hull_damage_mult = 0.1
+
+
+	}
+	
+	unlocking_technologies = {	
+		bombing
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+electronic_countermeasures = { #ECM
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/electronic_countermeasures.dds"
+	category = military
+
+	modifier = {
+	}
+
+	unlocking_technologies = {	
+		radar
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+nuclear_submarine = { #原子力潜水艦
+	# unlocks nuclear submarine
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/nuclear_submarine.dds"
+	category = military
+
+	modifier = {
+	}
+	
+	unlocking_technologies = {	
+		guided_missiles
+		radar
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+precision_ammunition = { #精密弾薬
+	# unlocks precision ammunition
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/precision_ammunition.dds"
+	category = military
+
+	modifier = {
+		#country_military_wages_mult = 0.25
+		#unit_army_offense_mult = 0.1
+		building_artillery_foundry_throughput_add = 0.1
+		unit_kill_rate_add = 0.05
+	}
+	
+	unlocking_technologies = {	
+		assault_rifles
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+guided_missiles = { #誘導ミサイル
+	# unlocks guided missiles
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/guided_missiles.dds"
+	category = military
+	
+	unlocking_technologies = {	
+		rocket_artillery
+	}
+
+	modifier = {
+		#increase_nuclear_strike_power_bool_tt = yes
+		#increase_nuclear_strike_defence_bool_tt = yes
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+satellites = { #人工衛星
+	# unlocks satellites
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/satellites.dds"
+	category = military
+
+	modifier = {
+	}
+	
+	unlocking_technologies = {	
+		radar
+		space_rocketery
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+modern_naval_doctrine = { #近代海戦理論
+	# unlocks modern destroyers
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/modern_naval_doctrine.dds"
+	category = military
+
+	modifier = {
+
+		#country_military_wages_mult = 0.15
+	}
+
+	unlocking_technologies = {	
+		carrier_tech
+		battlefleet_tactics
+		military_encryption
+	}
+	
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}
+
+modern_battleships = { #近代戦艦
+	# unlocks modern cruisers and modern battleships
+	era = era_7
+	texture = "gfx/interface/icons/invention_icons/modern_battleships.dds"
+	category = military
+
+	unlocking_technologies = {
+		modern_naval_doctrine
+	}
+
+	modifier = {
+		#country_military_goods_cost_mult = 0.15
+		#unit_navy_experience_gain_mult = 0.1
+	}
+
+	ai_weight = {
+		value = 1
+		if = {
+			limit = {
+				has_variable = ztr_bolshevik_ideology_var
+			}
+			add = 1
+		}
+	}
+}

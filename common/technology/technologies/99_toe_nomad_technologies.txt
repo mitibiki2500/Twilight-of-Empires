@@ -1,0 +1,25 @@
+﻿toe_nomadism = {
+    era = era_1
+    texture = "gfx/interface/icons/law_icons/freeholders.dds"
+    category = society
+    can_research = no
+
+    modifier = {
+        building_group_bg_ranching_throughput_add = 0.10
+    }
+
+    ai_weight = { value = 0 }
+}
+
+toe_gun_mangudai = {
+    era = era_1
+    texture = "gfx/interface/icons/invention_icons/napoleonic_warfare.dds"
+    category = military
+    can_research = no
+
+    modifier = {
+        unit_combat_unit_type_toe_gun_mangudai_offense_mult = 0.05
+    }
+
+    ai_weight = { value = 0 }
+}

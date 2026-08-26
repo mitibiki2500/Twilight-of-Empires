@@ -1,0 +1,28 @@
+﻿#コーラ製造
+pm_patent_coke = {
+	texture = "gfx/interface/icons/production_method_icons/patent_stills.dds"
+    is_hidden_when_unavailable = yes
+	unlocking_technologies = {
+		MR_coke_tech
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_sugar_add = 25				# x30 =   750
+			goods_input_glass_add = 10				# x40 =   400
+            goods_input_opium_add = 5				# x50 =   250
+
+			# output goods
+			goods_output_coffee_add = 70			# x50 =  3500
+			goods_output_groceries_add = -40			# x30 = -1200
+		}
+
+		level_scaled = {
+			# profit = 650 (19.3)
+			building_employment_shopkeepers_add = 200	# x2.0 = 400 laborer wages
+			building_employment_machinists_add = 500	# x1.5 = 750 laborer wages
+			building_employment_engineers_add = 200		# x3.0 = 600 laborer wages
+		}
+	}
+}

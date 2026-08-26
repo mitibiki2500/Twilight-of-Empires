@@ -1,0 +1,435 @@
+﻿toe_ilvone_interest_west_ria = {
+    is_shown = {
+        this = c:GSU
+        NOT = { has_variable = toe_ilvone_west_ria_claimed }
+    }
+
+    possible = {
+        this = c:GSU
+    }
+
+    when_taken = {
+        set_variable = toe_ilvone_west_ria_claimed
+        change_infamy = { value = 25 }
+        s:STATE_NSM_032 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_057 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_094 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_099 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_135 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_138 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_200 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_216 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_223 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_231 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_254 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_273 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_284 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_296 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_305 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_310 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_327 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_363 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_384 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_404 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_423 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_446 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_531 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_532 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+    }
+
+    ai_chance = { value = 25 }
+}
+
+toe_ilvone_interest_east_ria = {
+    is_shown = {
+        this = c:GSU
+        NOT = { has_variable = toe_ilvone_east_ria_claimed }
+    }
+
+    possible = {
+        this = c:GSU
+    }
+
+    when_taken = {
+        set_variable = toe_ilvone_east_ria_claimed
+        change_infamy = { value = 25 }
+        s:STATE_NSM_002 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_014 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_047 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_052 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_069 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_159 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_162 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_222 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_245 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_266 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_312 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_332 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_337 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_340 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_371 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_413 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_420 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_424 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_438 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_445 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_487 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_488 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_495 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_506 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_530 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+        s:STATE_NSM_535 = {
+            if = {
+                limit = {
+                    any_scope_state = { NOT = { owner = ROOT } }
+                }
+                add_claim = ROOT
+            }
+        }
+    }
+
+    ai_chance = { value = 25 }
+}

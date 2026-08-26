@@ -1,0 +1,54 @@
+﻿COUNTRIES = {
+	c:XAI ?= {
+	        effect_starting_technology_tier_0_tech = yes
+	        effect_starting_politics_reactionary = yes
+	        set_country_type = recognized
+	        set_market_capital = STATE_NSM_192
+	    
+	        # NSM Teegar setup
+	        add_technology_researched = pharmaceuticals
+	        add_technology_researched = labor_movement
+	        activate_law = law_type:law_monarchy
+	        activate_law = law_type:law_wealth_voting
+	        activate_law = law_type:law_national_supremacy
+	        activate_law = law_type:law_freedom_of_conscience
+	        activate_law = law_type:law_appointed_bureaucrats
+	        activate_law = law_type:law_professional_army
+	        activate_law = law_type:law_professional_navy
+	        activate_law = law_type:law_no_home_affairs
+	        activate_law = law_type:law_interventionism
+	        activate_law = law_type:law_free_trade
+	        activate_law = law_type:law_per_capita_based_taxation
+	        activate_law = law_type:law_tenant_farmers
+	        activate_law = law_type:law_colonial_resettlement
+	        activate_law = law_type:law_dedicated_police
+	        activate_law = law_type:law_religious_schools
+	        activate_law = law_type:law_public_health_insurance
+	        activate_law = law_type:law_censorship
+	        activate_law = law_type:law_no_workers_rights
+	        activate_law = law_type:law_restricted_child_labor
+	        activate_law = law_type:law_women_own_property
+	        activate_law = law_type:law_no_social_security
+	        activate_law = law_type:law_migration_controls
+	        activate_law = law_type:law_slavery_banned
+	        activate_law = law_type:law_anti_strike_laws
+	        set_institution_investment_level = { institution = institution_schools level = 4 }
+	
+	        add_company = company_type:company_nsm_great_northern
+	        company:company_nsm_great_northern = {
+	            set_company_establishment_date = 1810.1.1
+	            set_company_state_region = s:STATE_NSM_192
+	        }
+	
+
+
+        add_company = company_type:company_nsm_royal_fusen
+        company:company_nsm_royal_fusen = {
+            set_company_establishment_date = 1600.1.1
+            set_company_state_region = s:STATE_NSM_192
+            add_owned_country = c:XBB # links the company-state to this company
+        }
+	
+	        add_journal_entry = { type = je_great_game_control }
+	}
+}

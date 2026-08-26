@@ -1,0 +1,49 @@
+﻿#グラフィック軽量化
+NMapName = {
+	NAME_DRAW_DISTANCE = 3000.0				# Remove names beyond this distance
+}
+NGraphics = {
+	# Gradient Borders
+	PROVINCE_BORDER_FADE_NEAR = 100
+	PROVINCE_BORDER_FADE_FAR = 100
+	STATE_BORDER_FADE_NEAR = 100
+	STATE_BORDER_FADE_FAR = 100
+	IMPASSABLE_BORDER_FADE_NEAR = 100
+	IMPASSABLE_BORDER_FADE_FAR = 100
+	DRAW_SHADOWS_CUTOFF = 10
+	DRAW_SHADOWS_FADE_LENGTH = 10
+
+	# Map markers
+	MAP_MARKER_FULL_UPDATE_FREQUENCY = 10.0					#Do the heavy parts of the map markers only every X seconds
+
+	# Flat map specific
+	FLAT_MAP_HEIGHT = 3.00
+	FLAT_MAP_FADE_SPEED = 20.0		# How fast to fade to/from flat map state
+
+	# Water fixes
+	WATER_SHADOW_MULTIPLIER = 0.1 				# Controls water shadow brightness ( multiplies the environment cubemap by this value and adds it to the shadow as light )
+
+	# Map layers
+	DYNAMIC_TERRAIN_LAZY_UPDATE_PROVINCES_PER_FRAME = 2			# Max number of provinces that may be updated per frame.
+    DYNAMIC_TERRAIN_LAZY_UPDATE_MAX_TIME_PER_FRAME = 0.003          # Max time per frame to spend on dynamic terrain updates in seconds.
+
+	# Route Spline fix
+	ROUTE_GENERATION_NAV_MESH_DENSITY = 0.1					# Controls the density of vertexes in the navmesh used to generate the road system
+
+	# Scaled Distance Roughness
+	DAYS_AFTER_BATTLE_TO_SHOW_ENTITY = 3	# For how long to show battle entities after the battle
+}
+
+NCities = {
+	RESIDENTIAL_CHANGE_DELAY = 50.0			# Time between updating the residential buildings of a city ( + 0-1 second for some random variance )
+	CITY_VFX_ZOOM_CUTOFF = 10				# zoom at which we hide all city VFXes
+	CITY_PARTICLES_ZOOM_CUTOFF = 10  	# zoom at which we hide all city particle effects (for example chimney smoke)
+}
+NProvinceHighlight = {
+	#TEXTURE_WIDTH = 512
+	#TEXTURE_HEIGHT = 256
+	#Province highlights use poisson disc sampling to create a gradient
+	#Poisson disc allows for a wider sample are with fewer samples
+	#KERNEL_SCALE = 1	# Size of the sample area, in world space
+	#SAMPLE_COUNT = 1	# How many samples to use (max 16)
+}

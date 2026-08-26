@@ -1,0 +1,56 @@
+pm_toe_dobu_palace = {
+    texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+    country_modifiers = {
+        workforce_scaled = {
+            country_prestige_add = 50
+            country_influence_add = 1000
+        }
+    }
+    building_modifiers = {
+        level_scaled = {
+            building_employment_bureaucrats_add = 400
+            building_employment_aristocrats_add = 100
+        }
+    }
+}
+
+pm_toe_trilia_cathedral_catholic = {
+    texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+    unlocking_religions = { catholic }
+    country_modifiers = {
+        workforce_scaled = {
+            state_birth_rate_mult = 0.025
+            country_influence_mult = 0.25
+        }
+    }
+    building_modifiers = {
+        level_scaled = {
+            building_employment_clergymen_add = 500
+        }
+    }
+}
+
+pm_toe_trilia_cathedral_non_catholic = {
+    texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+    disallowing_religions = { catholic }
+    country_modifiers = {
+        workforce_scaled = {
+            country_prestige_add = 25
+        }
+    }
+    building_modifiers = {
+        level_scaled = {
+            building_employment_clergymen_add = 500
+        }
+    }
+}
+
+pm_toe_canaria_imperial_castle = {
+    texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+    country_modifiers = {
+        throughput_scaled = {
+            country_legitimacy_headofstate_add = 20
+            country_authority_add = 100
+        }
+    }
+}

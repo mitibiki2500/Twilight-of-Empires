@@ -1,0 +1,213 @@
+﻿host_player_ally = {
+	groups= {
+		general
+	}
+	requires_approval = yes
+	should_notify_third_parties = yes
+
+	unlocking_technologies = {
+		international_relations
+	}
+
+	selectable = {
+		NOT = { is_country_type = decentralized }
+		is_revolutionary = no
+		is_power_bloc_leader = no
+	}
+	
+	potential = {
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			NOT = { has_diplomats_expelled = root }
+			is_revolutionary = no
+			is_power_bloc_leader = yes
+		}
+	
+		# scope root
+		NOT = { has_diplomats_expelled = scope:target_country }
+	}
+
+	pact = {
+		cost = 100
+
+		first_modifier = {
+			country_pact_leverage_generation_add = 5000
+		}
+
+		is_two_sided_pact = yes
+		has_junior_participant = yes
+
+		relations_progress_per_day = 0.5  # At 100, +1 relations
+		relations_improvement_max = 25
+
+		can_be_used_in_sway_offers = yes
+		sway_maneuvers_cost = 10
+
+		requirement_to_maintain = {
+			trigger = {
+				has_diplomatic_relevance = scope:target_country
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = DIPLO_ACTION_RELATIONS_POOR_OR_LESS_NOT
+					scope:target_country.relations:root > relations_threshold:poor
+				}
+			}
+
+			show_about_to_break_warning = {
+				scope:target_country.relations:root <= -17 # this is: poor + 3
+				scope:target_country.relations_change_rate:root < 0
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = "DIPLOMATIC_PACT_REQUIREMENT_AT_PEACE"
+					NOT = { has_war_with = scope:target_country }
+				}
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				NOT = { has_law = law_type:law_isolationism }
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				NOT = { scope:target_country = { has_law = law_type:law_isolationism } }
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = "DIPLOMATIC_PACT_REQUIREMENT_NOT_DECENTRALIZED"
+					NOT = { is_country_type = decentralized }
+					scope:target_country = {
+						NOT = { is_country_type = decentralized }
+					}
+				}
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = "DIPLOMATIC_PACT_REQUIREMENT_NO_SUBJECT_RELATION"
+					NOT = {
+						is_subject_of = scope:target_country
+						scope:target_country = { is_subject_of = root }
+					}
+				}
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				custom_tooltip = {
+					text = "DIPLOMATIC_PACT_REQUIREMENT_DIPLOMATIC_AUTONOMY"
+					aggressive_diplomatic_plays_permitted = yes
+					scope:target_country = { aggressive_diplomatic_plays_permitted = yes }					
+				}
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				NOT = { has_diplomats_expelled = scope:target_country }
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				scope:target_country = {
+					NOT = { has_diplomats_expelled = root }
+				}
+			}
+		}
+
+		requirement_to_maintain = {
+			trigger = {
+				is_power_bloc_leader = no
+			}
+		}		
+
+		manual_break_effect = {
+			change_relations = { country = scope:target_country value = -20 }
+		}
+		
+		auto_break_effect = {}
+	}
+
+    ai = {
+		check_acceptance_for_will_break = yes
+		check_acceptance_for_will_propose = yes	
+		accept_score = {
+			value = 0
+			
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_BASE"
+				value = -1000
+			}
+		}
+		junior_accept_score = {
+			value = 0
+			
+			add = {
+				desc = "DIPLOMATIC_ACCEPTANCE_BASE"
+				value = -1000
+			}
+		}
+	}
+}
+
+request_player_ally= {
+	groups= {
+		general
+	}
+
+	requires_approval = yes
+	can_use_obligations = yes
+
+	selectable = {
+		NOT = { is_country_type = decentralized }
+		is_revolutionary = no
+		is_power_bloc_leader = yes
+	}
+	
+	potential = {
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			is_revolutionary = no
+			is_power_bloc_leader = no
+		}
+
+		NOT = {
+			has_diplomats_expelled = root			
+		}
+	}
+
+	possible = {
+		NOT = { has_war_with = scope:target_country }
+
+		has_diplomatic_relevance = scope:target_country
+
+		custom_tooltip = {
+			text = DIPLO_ACTION_RELATIONS_POOR_OR_LESS_NOT
+			scope:target_country.relations:root > relations_threshold:poor
+		}					
+	}
+
+	reverse_pact = host_player_ally
+
+	ai = {
+		check_acceptance_for_will_break = yes
+
+	}
+}

@@ -1,0 +1,263 @@
+﻿#パイド
+company_nsm_royal_dale = {
+	icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_royal_dale.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NSM_360 }
+	building_types = {
+		building_food_industry
+		building_wheat_farm
+		building_railway
+	}
+	extension_building_types = {
+		building_livestock_ranch
+		building_chemical_plant
+	}
+	possible_prestige_goods = {
+		prestige_good_MSN_grain
+		prestige_good_MSN_dale_bread
+	}
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NSM_360
+			any_scope_building = {
+				is_building_type = building_food_industry
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = {
+		state_trade_advantage_mult = 0.1
+		goods_output_grain_mult = 0.1 #穀物直接
+		state_birth_rate_mult = 0.05
+	}
+	ai_weight = { value = 3 }
+}
+
+company_nsm_west_paido = {
+	icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_west_paido.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NSM_416 }
+	building_types = {
+		building_iron_mine
+		building_coal_mine
+		building_tooling_workshop
+	}
+	extension_building_types = {
+		building_lead_mine
+		building_sulfur_mine
+	}
+	possible_prestige_goods = {}
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NSM_416
+			any_scope_building = {
+				is_building_type = building_iron_mine
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = {
+		building_iron_mine_throughput_add = 0.1
+		building_coal_mine_throughput_add = 0.1
+	}
+	ai_weight = { value = 3 }
+}
+
+company_nsm_narta = {
+	icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_narta.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NSM_360 }
+	building_types = {
+		building_motor_industry
+		building_tooling_workshop
+		building_chemical_plant
+	}
+	extension_building_types = {
+		building_sulfur_mine
+		building_livestock_ranch
+	}
+	possible_prestige_goods = {
+		prestige_good_MSN_narta_tractor
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_tools_complete_tt
+			has_variable = prestige_good_generic_tools_var
+		}
+	}
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NSM_360
+			any_scope_building = {
+				is_building_type = building_motor_industry
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = {
+		building_group_bg_agriculture_throughput_add = 0.15
+	}
+	ai_weight = { value = 3 }
+}
+
+company_nsm_eskandel = {
+	icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_eskandel.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NSM_236 }
+	building_types = {
+		building_cotton_plantation
+		building_tea_plantation
+	}
+	extension_building_types = {
+		building_livestock_ranch
+		building_port
+		building_textile_mill
+	}
+	possible_prestige_goods = {
+		prestige_good_MSN_escano_cotton
+	}
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NSM_236
+			any_scope_building = {
+				is_building_type = building_cotton_plantation
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = {
+		building_textile_mill_throughput_add = 0.1
+	}
+	ai_weight = { value = 3 }
+}
+
+#ゴートン
+company_nsm_zloche = {
+	icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_zloche.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NSM_329 }
+	building_types = {
+		building_logging_camp
+		building_tooling_workshop
+	}
+	extension_building_types = {
+		building_furniture_manufactory
+		building_railway
+	}
+	possible_prestige_goods = {
+		prestige_good_MSN_softwood
+	}
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NSM_329
+			any_scope_building = {
+				is_building_type = building_logging_camp
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = {
+		building_construction_sector_throughput_add = 0.05
+	}
+	ai_weight = { value = 3 }
+}
+
+company_nsm_vodka = {
+	icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_vodka.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NSM_329 }
+	building_types = {
+		building_food_industry
+		building_rye_farm
+	}
+	extension_building_types = {
+		building_wheat_farm
+	}
+	possible_prestige_goods = {
+		prestige_good_MSN_vodka
+	}
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NSM_329
+			any_scope_building = {
+				is_building_type = building_food_industry
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = {
+		building_food_industry_throughput_add = 0.1
+	}
+	ai_weight = { value = 3 }
+}
+
+company_nsm_zolnia_gas = {
+	icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_zolnia_gas.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NSM_393 }
+	building_types = {
+		building_oil_rig
+		building_coal_mine
+	}
+	extension_building_types = {
+		building_power_plant
+		building_motor_industry
+	}
+	possible_prestige_goods = {
+		prestige_good_MSN_zolnia_gas
+	}
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NSM_393
+			any_scope_building = {
+				is_building_type = building_oil_rig
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = {
+		building_power_plant_throughput_add = 0.15
+	}
+	ai_weight = { value = 3 }
+}
+
+# ToE固有企業（統合）
+
+company_nsm_franco_huuknet = {
+    icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_franco_huuknet.dds"
+    background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
+    flavored_company = yes
+    preferred_headquarters = { STATE_NSM_028 }
+    building_types = {
+        building_sulfur_mine
+        building_port
+    }
+    extension_building_types = {
+        building_tooling_workshop
+        building_railway
+    }
+    possible_prestige_goods = {
+		prestige_good_MSN_premium_sulfur
+	}
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_NSM_028
+            any_scope_building = {
+                is_building_type = building_sulfur_mine
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+        building_sulfur_mine_throughput_add = 0.20
+    }
+    ai_weight = { value = 3 }
+}

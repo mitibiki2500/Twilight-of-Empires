@@ -1,0 +1,34 @@
+﻿#半導体
+pmg_base_building_processors = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_integrated_circuit
+		pm_microprocessor
+		pm_multi_core_processor
+	}
+}
+pmg_automation_building_chip_foundry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_photomask_projection 
+		pm_deep_uv_photolithography 
+	}
+}
+
+#パソコン
+pmg_base_building_computers = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_computer_teleprinters
+		pm_personal_computers
+		pm_laptops
+		pm_advanced_personal_computers
+	}
+}
+pmg_automation_building_computer_assembly = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_advanced_assembly_lines_building_computer_assembly
+		pm_robotic_building_computer_assembly
+	}
+}

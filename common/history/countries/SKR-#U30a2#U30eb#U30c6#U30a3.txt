@@ -1,0 +1,36 @@
+﻿COUNTRIES = {
+	c:SKR ?= {
+		add_technology_researched = toe_gun_mangudai
+		add_technology_researched = toe_nomadism
+	        effect_starting_technology_tier_3_tech = yes
+	        add_technology_researched = lathe
+	        add_technology_researched = atmospheric_engine
+	        add_technology_researched = joint_stock_companies
+	        add_technology_researched = napoleonic_warfare
+	        effect_starting_politics_traditional = yes
+        activate_law = law_type:law_monarchy
+	        activate_law = law_type:law_appointed_bureaucrats
+	        activate_law = law_type:law_professional_army
+	        activate_law = law_type:law_agrarianism
+	        activate_law = law_type:law_per_capita_based_taxation
+	        activate_law = law_type:law_toe_nomadism
+	        activate_law = law_type:law_religious_schools
+	        activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_right_to_associate
+	        set_country_type = unrecognized
+
+			add_company = company_type:company_nsm_national_arsenal
+	        company:company_nsm_national_arsenal = {
+	            set_company_establishment_date = 1790.1.1
+	            set_company_state_region = s:STATE_NSM_429
+	        }
+	    
+		# 1836.1.1 -> 1850.1.1
+		create_bidirectional_truce = {
+			tcountry = c:GOT
+			months = 168
+		}
+
+		add_journal_entry = { type = je_nsm_altia_conquest_sparia }
+	}
+}

@@ -1,0 +1,128 @@
+﻿POWER_BLOCS = {
+	c:XAI ?= {
+		create_power_bloc = {
+			name = TEEGALL_EMPIRE
+			map_color = { 210 50 60 }
+			founding_date = 1836.1.1
+			identity = identity_sovereign_empire
+			principle = principle_vassalization_2
+		}
+		if = {
+			limit = { has_dlc_feature = power_bloc_features }
+			power_bloc = {
+				add_principle = principle_colonial_offices_2
+				add_principle = principle_advanced_research_1
+			}
+		}
+	}
+	c:PAI ?= {
+		create_power_bloc = {
+			name = PAID_EMPIRE
+			map_color = { 108 55 150 }
+			founding_date = 1836.1.1
+			identity = identity_sovereign_empire
+			principle = principle_vassalization_1
+		}
+		if = {
+			limit = { has_dlc_feature = power_bloc_features }
+			power_bloc = {
+				add_principle = principle_external_trade_1
+				add_principle = principle_food_standardization_2
+			}
+		}
+	}
+	c:XAL ?= {
+		create_power_bloc = {
+			name = CENTRAL_EMPIRE
+			map_color = { 235 235 235 }
+			founding_date = 1836.1.1
+			identity = identity_religious
+			principle = principle_sacred_civics_2
+			member = c:XAW
+			member = c:XEX
+			member = c:XEY
+			member = c:XAK
+			member = c:XEU
+			member = c:XEV
+			member = c:XEW
+			member = c:XAG
+			member = c:XEP
+			member = c:XET
+			member = c:XER
+			member = c:XES
+			member = c:XFA
+			member = c:XEQ
+			member = c:XAF
+			member = c:XEO
+		
+            member = c:NPL
+            member = c:ANS
+            member = c:ETR
+            member = c:WMR
+            member = c:NSL
+            member = c:ATZ
+        }
+		if = {
+			limit = { has_dlc_feature = power_bloc_features }
+			power_bloc = {
+				add_principle = principle_market_unification_3
+				add_principle = principle_police_coordination_1
+				add_principle = principle_food_standardization_2
+			}
+		}
+	}
+
+	c:XAS ?= {
+		create_power_bloc = {
+			name = SAND_EMPIRE
+			map_color = { 44 118 91 }
+			founding_date = 1836.1.1
+			identity = identity_sovereign_empire
+			principle = principle_vassalization_1
+		}
+		if = {
+			limit = { has_dlc_feature = power_bloc_features }
+			power_bloc = { add_principle = principle_external_trade_1 }
+		}
+	}
+	c:GSU ?= {
+		create_power_bloc = {
+			name = OCEAN_TRADE_LEAGUE
+			map_color = { 206 185 89 }
+			founding_date = 1836.1.1
+			identity = identity_trade_league
+			principle = principle_external_trade_2
+			member = c:XBJ
+			member = c:XBL
+		}
+		if = {
+			limit = { has_dlc_feature = power_bloc_features }
+			power_bloc = { add_principle = principle_transport_1 }
+		}
+	}
+	c:GOT ?= {
+		create_power_bloc = {
+			name = GOTHON_EMPIRE
+			map_color = { 45 80 38 }
+			founding_date = 1836.1.1
+			identity = identity_sovereign_empire
+			principle = principle_vassalization_2
+		}
+	}
+
+	c:XAQ ?= {
+		create_power_bloc = {
+			name = SUNPRO_TRADE_LEAGUE
+			map_color = { 198 160 89 }
+			founding_date = 1836.1.1
+			identity = identity_trade_league
+			principle = principle_external_trade_1
+			member = c:XDN
+			member = c:XAV
+		}
+		if = {
+			limit = { has_dlc_feature = power_bloc_features }
+			power_bloc = { add_principle = principle_military_industry_1 }
+		}
+	}
+}

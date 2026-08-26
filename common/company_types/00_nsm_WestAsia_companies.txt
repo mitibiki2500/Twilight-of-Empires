@@ -1,0 +1,91 @@
+﻿company_nsm_national_arsenal = {
+	icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_national_arsenal.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NSM_211 }
+	building_types = {
+		building_arms_industry
+		building_gold_mine
+		building_iron_mine
+	}
+	extension_building_types = {
+		building_munition_plant
+		building_artillery_foundry
+	}
+	possible_prestige_goods = {
+		prestige_good_generic_small_arms
+	}
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NSM_211
+			any_scope_building = {
+				is_building_type = building_arms_industry
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = {
+		country_military_goods_cost_mult = -0.1
+	}
+	ai_weight = { value = 3 }
+}
+
+# ToE固有企業（統合）
+
+company_nsm_machida = {
+    icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_machida.dds"
+    background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+    flavored_company = yes
+    preferred_headquarters = { STATE_NSM_331 }
+    building_types = {
+        building_tooling_workshop
+        building_rubber_plantation
+    }
+    extension_building_types = {
+        building_steel_mill
+        building_motor_industry
+    }
+    possible_prestige_goods = { prestige_good_nsm_machida_tools }
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_NSM_331
+            any_scope_building = {
+                is_building_type = building_tooling_workshop
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+        building_tooling_workshop_throughput_add = 0.20
+    }
+    ai_weight = { value = 3 }
+}
+
+company_nsm_ilbone_fisheries = {
+    icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_ilbone_fisheries.dds"
+    background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_harbor_shipbuilding.dds"
+    flavored_company = yes
+    preferred_headquarters = { STATE_NSM_331 }
+    building_types = {
+        building_fishing_wharf
+        building_shipyard
+    }
+    extension_building_types = {
+        building_port
+        building_whaling_station
+    }
+    possible_prestige_goods = { prestige_good_nsm_ikafry }
+    possible = {
+        any_scope_state = {
+            state_region = s:STATE_NSM_331
+            any_scope_building = {
+                is_building_type = building_fishing_wharf
+                level >= 5
+            }
+        }
+    }
+    prosperity_modifier = {
+        building_fishing_wharf_throughput_add = 0.50
+    }
+    ai_weight = { value = 3 }
+}

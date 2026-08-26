@@ -1,0 +1,45 @@
+﻿# Root = State Region
+us_american_buildings_trigger = {
+	always = no
+	any_scope_state = {
+		owner = {
+			OR = {
+				country_has_primary_culture = cu:yankee
+				country_has_primary_culture = cu:dixie
+				country_has_primary_culture = cu:afro_american
+				country_has_primary_culture = cu:cajun
+			}
+		}
+	}
+}
+
+latin_american_buildings_trigger = {
+	OR = {
+		always = no
+		always = no
+		is_in_geographic_region = geographic_region_central_america
+		always = no
+	}
+}
+
+french_buildings_trigger = {
+	always = no
+}
+
+
+indian_buildings_trigger = {
+	always = no
+}
+
+
+balkan_buildings_trigger = {
+	OR = {
+		always = no
+		always = no
+		always = no
+	}
+}
+
+japanese_buildings_trigger = {
+	always = no
+}

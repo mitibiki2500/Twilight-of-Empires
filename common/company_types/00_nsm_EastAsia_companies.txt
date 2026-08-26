@@ -1,0 +1,105 @@
+﻿# NSM custom companies
+company_nsm_tatobi = {
+	icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_tatobi.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NSM_331 }
+	building_types = {
+		building_port
+		building_lead_mine
+		building_tea_plantation
+	}
+	extension_building_types = {
+		building_silk_plantation
+		building_logging_camp
+		building_gold_mine
+	}
+	possible_prestige_goods = {}
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NSM_331
+			any_scope_building = {
+				is_building_type = building_port
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = {
+		interest_group_ig_industrialists_pol_str_mult = 0.1
+		state_trade_advantage_mult = 0.1
+	}
+	ai_weight = { value = 3 }
+}
+
+company_nsm_hariba = {
+	icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_hariba.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NSM_331 }
+	building_types = {
+		building_textile_mill
+		building_silk_plantation
+		building_railway
+	}
+	extension_building_types = {
+		building_motor_industry
+		building_shipyard
+		building_cotton_plantation
+	}
+	possible_prestige_goods = {
+		prestige_good_MSN_harima_silk
+	}
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NSM_331
+			any_scope_building = {
+				is_building_type = building_textile_mill
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = {
+		interest_group_ig_industrialists_pol_str_mult = 0.1
+	}
+	ai_weight = { value = 3 }
+}
+
+company_nsm_renka = {
+	icon = "gfx/interface/icons/company_icons/nsm_original/company_nsm_renka.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	flavored_company = yes
+	preferred_headquarters = { STATE_NSM_331 }
+	building_types = {
+		building_steel_mill
+		building_coal_mine
+		building_tooling_workshop
+	}
+	extension_building_types = {
+		building_iron_mine
+		building_automotive_industry
+		building_power_plant
+	}
+	possible_prestige_goods = {
+		prestige_good_generic_steel
+	}
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_NSM_331
+			any_scope_building = {
+				is_building_type = building_steel_mill
+				level >= 5
+			}
+		}
+	}
+	prosperity_modifier = {
+		interest_group_ig_industrialists_pol_str_mult = 0.1
+		building_automotive_industry_throughput_add = 0.1
+	}
+	ai_weight = { value = 3 }
+}
+
+# Fieldsneta canonical definition is in 00_nsm_SouthAfirca.txt
+
+
+
+

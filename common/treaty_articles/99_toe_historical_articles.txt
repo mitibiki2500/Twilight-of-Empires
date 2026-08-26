@@ -1,0 +1,26 @@
+﻿toe_imperial_prince_leverage = {
+	kind = directed
+	cost = 0
+	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/power_bloc_embassy_treaties.dds"
+	flags = { can_be_renegotiated }
+	usage_limit = once_per_treaty
+
+	# Current Treaty-system equivalent of the old pact leverage modifier.
+	source_modifier = {
+		country_treaty_leverage_generation_add = 5000
+	}
+
+	visible = { always = yes }
+	possible = { always = yes }
+	can_ratify = { always = yes }
+	on_entry_into_force = {}
+	on_withdrawal = {}
+	on_break = {}
+
+	ai = {
+		treaty_categories = { power_bloc }
+		evaluation_chance = { value = 0 }
+		article_ai_usage = { request offer }
+		inherent_accept_score = { value = 0 }
+	}
+}

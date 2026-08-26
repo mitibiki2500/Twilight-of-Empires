@@ -1,0 +1,10 @@
+﻿#グラフィック軽量化
+NFogOfWar = {
+	# Jomini defines
+	# These are used when generating the FoW alpha mask
+	TEXTURE_WIDTH = 128	#size of the alpha mask. Resolution and sample count can greatly affect performance on gpu-bound systems
+	TEXTURE_HEIGHT = 64
+	KERNEL_SCALE = 1.0	#  > Tweak together with "FogOfWar.AlwaysDirty" and "shader_debug PDX_DEBUG_FOW_MASK" console commands
+	SAMPLE_COUNT = 1	# /
+	NOISE_TEXTURE = "gfx/map/fog_of_war/cloud.dds"
+}

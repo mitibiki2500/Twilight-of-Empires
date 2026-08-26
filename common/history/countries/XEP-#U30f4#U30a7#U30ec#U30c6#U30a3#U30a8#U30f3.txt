@@ -1,0 +1,41 @@
+﻿COUNTRIES = {
+	c:XEP ?= {
+	    effect_starting_technology_tier_0_tech = yes
+		add_technology_researched = shell_gun
+
+
+		add_taxed_goods = g:liquor
+		add_taxed_goods = g:luxury_furniture
+		add_taxed_goods = g:wine
+		
+		# Laws 
+		activate_law = law_type:law_monarchy
+		activate_law = law_type:law_autocracy 
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_women_own_property
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_appointed_bureaucrats
+		activate_law = law_type:law_national_supremacy # Poles were even excluded from Landrat posts in 1832. Germanization policies were in full swing by the mid-1830s
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_professional_army
+		activate_law = law_type:law_censorship
+		activate_law = law_type:law_combination_acts
+		
+        add_company = company_type:company_nsm_royal_arsenal
+	    company:company_nsm_royal_arsenal = {
+			set_company_establishment_date = 1780.1.1
+			set_company_state_region = s:STATE_NSM_439
+	    }
+        add_company = company_type:company_nsm_weller
+        company:company_nsm_weller = {
+            set_company_establishment_date = 1701.8.13
+            set_company_state_region = s:STATE_NSM_314
+            add_owned_country = c:XAG # links the company-state to this company
+    
+		}
+	}
+}

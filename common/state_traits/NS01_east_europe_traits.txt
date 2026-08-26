@@ -1,0 +1,76 @@
+﻿
+#PID
+state_trait_shghta_mountains = { #シャフタ山脈
+	icon = "gfx/interface/icons/state_trait_icons/mountain_s.dds"
+
+	modifier = {
+		state_market_access_price_impact = -0.04 #追加市場価格補正
+		state_infrastructure_mult = -0.2 #インフラ
+		building_coal_mine_throughput_add = 0.15 #石炭
+	}
+}
+
+state_trait_lerna_mountains = { #レルナ山脈
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+
+	modifier = {
+		state_market_access_price_impact = -0.04 #追加市場価格補正
+		state_infrastructure_mult = -0.2 #インフラ
+	}
+}
+
+state_trait_mayr_river = { #マイル川
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 15
+		state_market_access_price_impact = 0.02 #追加市場価格補正
+		building_group_bg_agriculture_throughput_add = 0.02
+		building_group_bg_plantations_throughput_add = 0.02
+	}
+}
+state_trait_mets_river = { #メッツ川
+	icon = "gfx/interface/icons/state_trait_icons/g_river.dds"
+
+	modifier = {
+		state_infrastructure_add = 30
+		state_market_access_price_impact = 0.04
+		building_group_bg_agriculture_throughput_add = 0.1
+		building_group_bg_plantations_throughput_add = 0.1
+	}
+}
+state_trait_hyusisayin_river = { #ヒュシサイン川
+	icon = "gfx/interface/icons/state_trait_icons/g_river.dds"
+
+	modifier = {
+		state_infrastructure_add = 25
+		state_market_access_price_impact = 0.04
+		building_group_bg_agriculture_throughput_add = 0.1
+		building_group_bg_plantations_throughput_add = 0.1
+	}
+}
+
+state_trait_dale_soil = { #デール平原
+	icon = "gfx/interface/icons/state_trait_icons/plains.dds"
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.1
+		building_group_bg_plantations_throughput_add = 0.1
+		goods_output_grain_mult = 0.15
+	}
+}
+
+state_trait_north_basin= { #北部盆地
+	icon = "gfx/interface/icons/state_trait_icons/farm1.dds"
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.05
+		building_group_bg_plantations_throughput_add = 0.15
+	}
+}
+state_trait_east_pai= { #東パイドの土壌
+	icon = "gfx/interface/icons/state_trait_icons/farm2.dds"
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.05
+		building_cotton_plantation_throughput_add = 0.15
+		building_silk_plantation_throughput_add = 0.15
+	}
+}

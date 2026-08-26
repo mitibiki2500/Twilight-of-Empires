@@ -1,0 +1,14 @@
+﻿MILITARY_FORMATIONS = {
+    c:PAI ?= {
+        create_military_formation = {
+            type = army
+            hq_region = sr:region_nsm_paido
+            name = Paidean_Army
+            combat_unit = {
+                type = unit_type:combat_unit_type_line_infantry
+                state_region = s:STATE_NSM_173
+                count = 5
+            }
+        }
+    }
+}

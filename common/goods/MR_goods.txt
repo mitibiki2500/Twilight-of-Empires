@@ -1,0 +1,57 @@
+﻿# goods types, organized by category
+
+# prestige_factor							Base prestige for occupying the rank MIN_PRESTIGE_AWARD spot on the goods production leaderboard. x2 awarded for every rank above the minimum.
+#輸送と電気のローカルを外す
+
+REPLACE:transportation = {
+	texture = "gfx/interface/icons/goods_icons/transportation.dds"
+	cost = 30
+	category = staple
+    tradeable = no
+	
+	prestige_factor = 4
+	consumption_tax_cost = 200
+}
+
+REPLACE:electricity = {
+	texture = "gfx/interface/icons/goods_icons/electricity.dds"
+	cost = 30
+	category = staple
+	tradeable = no
+
+	prestige_factor = 5
+	consumption_tax_cost = 200
+}
+	
+#商船の価格半減
+REPLACE:merchant_marine = {
+	texture = "gfx/interface/icons/goods_icons/merchant_marine.dds"
+	cost = 25 #50
+	category = staple
+
+	prestige_factor = 8
+	traded_quantity = 8 #was4 # 200
+	convoy_cost_multiplier = 0.05
+}
+
+#追加
+processors = {
+	texture = "gfx/interface/icons/goods_icons/processors.dds"
+	cost = 125 
+	category = industrial
+
+	prestige_factor = 15
+	traded_quantity = 8 #260
+}
+
+computer = {
+	texture = "gfx/interface/icons/goods_icons/computer.dds"
+	cost = 150 
+	category = industrial
+	
+	obsession_chance = 1.0
+	prestige_factor = 20
+	traded_quantity = 4 #280
+	convoy_cost_multiplier = 1.0
+}
+

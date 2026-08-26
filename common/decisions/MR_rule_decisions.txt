@@ -1,0 +1,125 @@
+﻿#悪名生成なし
+add_MRd_BANinfamy = {
+	is_shown = {
+		NOT = { has_modifier = MR_md_BANinfamy }
+		has_game_rule = MRrule_infamy_on
+	}
+	possible = {
+		has_game_rule = MRrule_infamy_on
+	}
+	when_taken = {
+		add_modifier = MR_md_BANinfamy
+	}
+
+	ai_chance = {
+		value =  -100		
+	}
+}
+remove_MRd_BANinfamy = {
+	is_shown = {
+		has_modifier = MR_md_BANinfamy
+	}
+	when_taken = {
+		remove_modifier = MR_md_BANinfamy
+	}
+	ai_chance = {
+		value = 100
+	}
+}
+
+#speed2
+add_MRd_speed_2 = {
+	is_shown = {
+		NOT = { has_modifier = MR_md_UPspeed_2 }
+		has_game_rule = MRrule_speed_on_2
+	}
+	possible = {
+		has_game_rule = MRrule_speed_on_2
+	}
+	when_taken = {
+		add_modifier = MR_md_UPspeed_2
+	}
+
+	ai_chance = {
+		value =  100		
+	}
+}
+remove_MRd_speed_2 = {
+	is_shown = {
+		has_modifier = MR_md_UPspeed_2
+		has_game_rule = MRrule_speed_on_2
+	}		
+	possible = {
+		has_game_rule = MRrule_speed_on_2
+	}
+	when_taken = {
+		remove_modifier = MR_md_UPspeed_2
+	}
+	ai_chance = {
+		value = -100
+	}
+}
+#speed3
+add_MRd_speed_3 = {
+	is_shown = {
+		NOT = { has_modifier = MR_md_UPspeed_3 }
+		has_game_rule = MRrule_speed_on_3
+	}
+	possible = {
+		has_game_rule = MRrule_speed_on_3
+	}
+	when_taken = {
+		add_modifier = MR_md_UPspeed_3
+	}
+
+	ai_chance = {
+		value =  100		
+	}
+}
+remove_MRd_speed_3 = {
+	is_shown = {
+		has_modifier = MR_md_UPspeed_3
+		has_game_rule = MRrule_speed_on_3
+	}		
+	possible = {
+		has_game_rule = MRrule_speed_on_3
+	}
+	when_taken = {
+		remove_modifier = MR_md_UPspeed_3
+	}
+	ai_chance = {
+		value = -100
+	}
+}
+#speed5
+add_MRd_speed_5 = {
+	is_shown = {
+		NOT = { has_modifier = MR_md_UPspeed_5 }
+		has_game_rule = MRrule_speed_on_5
+	}
+	possible = {
+		has_game_rule = MRrule_speed_on_5
+	}
+	when_taken = {
+		add_modifier = MR_md_UPspeed_5
+	}
+
+	ai_chance = {
+		value =  100		
+	}
+}
+remove_MRd_speed_5 = {
+	is_shown = {
+		has_modifier = MR_md_UPspeed_5
+		has_game_rule = MRrule_speed_on_5
+	}		
+	possible = {
+		has_game_rule = MRrule_speed_on_5
+	}
+	when_taken = {
+		remove_modifier = MR_md_UPspeed_5
+	}
+	ai_chance = {
+		value = -100
+	}
+}

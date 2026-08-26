@@ -1,0 +1,32 @@
+﻿#コメの省人化
+INJECT:pmg_harvesting_process_building_rice_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_tractors_rice_farm 
+		pm_compression_ignition_tractors_rice_farm
+	}
+}
+
+
+#バチカン製法追加
+REPLACE:pmg_base_building_vatican_city = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_vatican_city
+		pm_default_building_vatican_city_2
+		pm_monument_prestige_only_vatican_city
+		pm_monument_prestige_only
+		pm_monument_no_effects
+	}
+}
+
+#ゴム省人化
+INJECT:pmg_train_automation_building_rubber_plantation = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_rubber_tanker_cars
+	}
+}

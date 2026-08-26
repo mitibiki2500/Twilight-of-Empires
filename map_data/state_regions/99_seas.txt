@@ -1,0 +1,598 @@
+﻿# ToE 16.22.13 - sea state cleanup
+# Fushion-area merged sea states split; strategic-region duplicates normalized.
+
+STATE_NSM_SEA_033 = {
+    id = 736
+    provinces = { "x2cef29" }
+}
+
+STATE_NSM_SEA_039 = {
+    id = 737
+    provinces = { "x30f079" }
+}
+
+STATE_NSM_SEA_046 = {
+    id = 738
+    provinces = { "xee2ce5" }
+}
+
+STATE_NSM_SEA_083 = {
+    id = 739
+    provinces = { "x1caa7f" }
+}
+
+STATE_NSM_SEA_001 = {
+    id = 534
+    provinces = { "x0899ea" }
+}
+
+STATE_NSM_SEA_002 = {
+    id = 535
+    provinces = { "x095c95" }
+}
+
+STATE_NSM_SEA_003 = {
+    id = 536
+    provinces = { "x0d97e4" }
+}
+
+STATE_NSM_SEA_004 = {
+    id = 537
+    provinces = { "x0f82be" }
+}
+
+STATE_NSM_SEA_005 = {
+    id = 538
+    provinces = { "x0f8ebe" }
+}
+
+STATE_NSM_SEA_006 = {
+    id = 539
+    provinces = { "x102e93" }
+}
+
+STATE_NSM_SEA_007 = {
+    id = 540
+    provinces = { "x1034fe" }
+}
+
+STATE_NSM_SEA_008 = {
+    id = 541
+    provinces = { "x103d7c" }
+}
+
+STATE_NSM_SEA_009 = {
+    id = 542
+    provinces = { "x1087fd" }
+}
+
+STATE_NSM_SEA_010 = {
+    id = 543
+    provinces = { "x158fcd" }
+}
+
+STATE_NSM_SEA_011 = {
+    id = 544
+    provinces = { "x1748d0" }
+}
+
+STATE_NSM_SEA_012 = {
+    id = 545
+    provinces = { "x196dda" }
+}
+
+STATE_NSM_SEA_013 = {
+    id = 546
+    provinces = { "x1985fe" }
+}
+
+STATE_NSM_SEA_014 = {
+    id = 547
+    provinces = { "x1f6fb7" }
+}
+
+STATE_NSM_SEA_015 = {
+    id = 548
+    provinces = { "x2042ee" }
+}
+
+STATE_NSM_SEA_016 = {
+    id = 549
+    provinces = { "x217bdf" }
+}
+
+STATE_NSM_SEA_017 = {
+    id = 550
+    provinces = { "x233c87" }
+}
+
+STATE_NSM_SEA_018 = {
+    id = 551
+    provinces = { "x2372da" }
+}
+
+STATE_NSM_SEA_019 = {
+    id = 552
+    provinces = { "x252aee" }
+}
+
+STATE_NSM_SEA_020 = {
+    id = 553
+    provinces = { "x2737c8" }
+}
+
+STATE_NSM_SEA_021 = {
+    id = 554
+    provinces = { "x273def" }
+}
+
+STATE_NSM_SEA_022 = {
+    id = 555
+    provinces = { "x2766c3" }
+}
+
+STATE_NSM_SEA_023 = {
+    id = 556
+    provinces = { "x293ef9" }
+}
+
+STATE_NSM_SEA_024 = {
+    id = 557
+    provinces = { "x294978" }
+}
+
+STATE_NSM_SEA_025 = {
+    id = 558
+    provinces = { "x2951fc" }
+}
+
+STATE_NSM_SEA_026 = {
+    id = 559
+    provinces = { "x2c36f7" }
+}
+
+STATE_NSM_SEA_027 = {
+    id = 560
+    provinces = { "x3038c0" }
+}
+
+STATE_NSM_SEA_028 = {
+    id = 561
+    provinces = { "x3062d1" }
+}
+
+STATE_NSM_SEA_029 = {
+    id = 562
+    provinces = { "x3129d0" }
+}
+
+STATE_NSM_SEA_030 = {
+    id = 563
+    provinces = { "x312ce5" }
+}
+
+STATE_NSM_SEA_031 = {
+    id = 564
+    provinces = { "x3162d6" }
+}
+
+STATE_NSM_SEA_032 = {
+    id = 565
+    provinces = { "x316ba4" }
+}
+
+STATE_NSM_SEA_034 = {
+    id = 567
+    provinces = { "x347acd" }
+}
+
+STATE_NSM_SEA_035 = {
+    id = 568
+    provinces = { "x35419d" }
+}
+
+STATE_NSM_SEA_036 = {
+    id = 569
+    provinces = { "x3b72ed" }
+}
+
+STATE_NSM_SEA_037 = {
+    id = 570
+    provinces = { "x3b80d7" }
+}
+
+STATE_NSM_SEA_038 = {
+    id = 571
+    provinces = { "x3c338a" }
+}
+
+STATE_NSM_SEA_040 = {
+    id = 573
+    provinces = { "x4060ea" }
+}
+
+STATE_NSM_SEA_041 = {
+    id = 574
+    provinces = { "x436fce" }
+}
+
+STATE_NSM_SEA_042 = {
+    id = 575
+    provinces = { "x4462be" }
+}
+
+STATE_NSM_SEA_043 = {
+    id = 576
+    provinces = { "x4524db" }
+}
+
+STATE_NSM_SEA_044 = {
+    id = 577
+    provinces = { "x4642de" }
+}
+
+STATE_NSM_SEA_045 = {
+    id = 578
+    provinces = { "x4760f3" }
+}
+
+STATE_NSM_SEA_047 = {
+    id = 580
+    provinces = { "x488fbd" }
+}
+
+STATE_NSM_SEA_048 = {
+    id = 581
+    provinces = { "x4a60dd" }
+}
+
+STATE_NSM_SEA_049 = {
+    id = 582
+    provinces = { "x4a6fea" }
+}
+
+STATE_NSM_SEA_050 = {
+    id = 583
+    provinces = { "x4a78e7" }
+}
+
+STATE_NSM_SEA_051 = {
+    id = 584
+    provinces = { "x4b3ff2" }
+}
+
+STATE_NSM_SEA_052 = {
+    id = 585
+    provinces = { "x4b45b4" }
+}
+
+STATE_NSM_SEA_053 = {
+    id = 586
+    provinces = { "x4b56ea" }
+}
+
+STATE_NSM_SEA_054 = {
+    id = 587
+    provinces = { "x4f75ba" }
+}
+
+STATE_NSM_SEA_055 = {
+    id = 588
+    provinces = { "x50288d" }
+}
+
+STATE_NSM_SEA_056 = {
+    id = 589
+    provinces = { "x507dbc" }
+}
+
+STATE_NSM_SEA_057 = {
+    id = 590
+    provinces = { "x515bf0" }
+}
+
+STATE_NSM_SEA_058 = {
+    id = 591
+    provinces = { "x5273b6" }
+}
+
+STATE_NSM_SEA_059 = {
+    id = 592
+    provinces = { "x527db3" }
+}
+
+STATE_NSM_SEA_060 = {
+    id = 593
+    provinces = { "x5288cb" }
+}
+
+STATE_NSM_SEA_061 = {
+    id = 594
+    provinces = { "x54699e" }
+}
+
+STATE_NSM_SEA_062 = {
+    id = 595
+    provinces = { "x546bdf" }
+}
+
+STATE_NSM_SEA_063 = {
+    id = 596
+    provinces = { "x568fec" }
+}
+
+STATE_NSM_SEA_064 = {
+    id = 597
+    provinces = { "x5765ca" }
+}
+
+STATE_NSM_SEA_065 = {
+    id = 598
+    provinces = { "x5972b7" }
+}
+
+STATE_NSM_SEA_066 = {
+    id = 599
+    provinces = { "x5e4c8b" }
+}
+
+STATE_NSM_SEA_067 = {
+    id = 600
+    provinces = { "x5f368d" }
+}
+
+STATE_NSM_SEA_068 = {
+    id = 601
+    provinces = { "x5f65b2" }
+}
+
+STATE_NSM_SEA_069 = {
+    id = 602
+    provinces = { "x60329f" }
+}
+
+STATE_NSM_SEA_070 = {
+    id = 603
+    provinces = { "x6147a6" }
+}
+
+STATE_NSM_SEA_071 = {
+    id = 604
+    provinces = { "x6230c5" }
+}
+
+STATE_NSM_SEA_072 = {
+    id = 605
+    provinces = { "x626cdc" }
+}
+
+STATE_NSM_SEA_072_02 = {
+    id = 797
+    provinces = { "x32687f" }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+STATE_NSM_SEA_073 = {
+    id = 606
+    provinces = { "x6383ee" }
+}
+
+STATE_NSM_SEA_074 = {
+    id = 607
+    provinces = { "x638fbc" }
+}
+
+STATE_NSM_SEA_075 = {
+    id = 608
+    provinces = { "x6424a7" }
+}
+
+STATE_NSM_SEA_076 = {
+    id = 609
+    provinces = { "x642ad5" }
+}
+
+STATE_NSM_SEA_077 = {
+    id = 610
+    provinces = { "x6457eb" }
+}
+
+STATE_NSM_SEA_078 = {
+    id = 611
+    provinces = { "x677fb2" }
+}
+
+STATE_NSM_SEA_079 = {
+    id = 612
+    provinces = { "x6823fb" }
+}
+
+STATE_NSM_SEA_080 = {
+    id = 613
+    provinces = { "x6895f8" }
+}
+
+STATE_NSM_SEA_081 = {
+    id = 620
+    provinces = { "xe7650b" }
+}
+
+STATE_NSM_SEA_082 = {
+    id = 621
+    provinces = { "x42717c" }
+}
+
+STATE_NSM_SEA_084 = {
+    id = 623
+    provinces = { "x9e8ca4" }
+}
+
+STATE_NSM_SEA_085 = {
+    id = 624
+    provinces = { "x2c4c9c" }
+}
+
+STATE_NSM_SEA_087 = {
+    id = 626
+    provinces = { "xbf261e" }
+}
+
+STATE_NSM_SEA_088 = {
+    id = 627
+    provinces = { "x6c384b" }
+}
+
+STATE_NSM_SEA_090 = {
+    id = 629
+    provinces = { "x088693" }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+STATE_NSM_SEA_091 = {
+    id = 630
+    provinces = { "xaef130" }
+}
+
+STATE_NSM_SEA_092 = {
+    id = 631
+    provinces = { "xef541a" }
+}
+
+STATE_NSM_SEA_093 = {
+    id = 632
+    provinces = { "xe5341a" }
+}
+
+STATE_NSM_SEA_102 = {
+    id = 734
+    provinces = { "x9e55dc" }
+}
+
+STATE_NSM_SEA_105 = {
+    id = 735
+    provinces = { "xd44797" }
+}
+
+STATE_NSM_SEA_095 = {
+    id = 634
+    provinces = { "x642f6b" }
+}
+
+STATE_NSM_SEA_096 = {
+    id = 635
+    provinces = { "x5f7b73" }
+}
+
+STATE_NSM_SEA_099 = {
+    id = 638
+    provinces = { "x74a5b8" }
+}
+
+STATE_NSM_SEA_099_02 = {
+    id = 830
+    provinces = { "xc04b7f" }
+}
+
+STATE_NSM_SEA_099_03 = {
+    id = 831
+    provinces = { "x2c8e4a" }
+}
+
+STATE_NSM_SEA_192 = {
+    id = 733
+    provinces = { "xfa32fa" }
+}
+
+STATE_NSM_SEA_196 = {
+    id = 832
+    provinces = { "xf13df9" }
+}
+
+STATE_NSM_SEA_197 = {
+    id = 833
+    provinces = { "xf23ef9" }
+}

@@ -1,0 +1,258 @@
+﻿transfer_fleet_by_select_ship = {
+	kind = directed
+	cost = 0
+
+	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/ship_transfer_treaties.dds"
+
+	flags = {
+		# can_be_enforced
+		giftable
+		is_ship_transfer
+	}
+
+	usage_limit = once_per_side
+
+	maintenance_paid_by = source_country
+
+    required_inputs = {
+		ship
+    }
+
+	visible = {
+		is_revolutionary = no
+		
+	}
+
+	can_ratify = {
+		custom_tooltip = {
+            text = TREATY_SHIP_IN_BATTLE
+            scope:article ?= {
+                input_ship.ship_fleet = {
+                    any_scope_ship = { is_in_battle = no }
+                }
+            }
+        }
+		custom_tooltip = {
+			text = DUPLICATE_ARTICLE_SHIP_TRANSFER
+			NOT = {
+				scope:treaty ?= {
+					any_scope_article_option = {
+						has_type = ship_transfer
+					}
+				}
+			}
+		}
+	}
+
+	ship_valid_trigger = {
+		scope:input = {
+			owner = root
+			scope:other_country = { has_port_country = yes }
+			ship_fleet = {
+				any_scope_ship = { is_in_battle = no }
+			}
+		}
+	}
+
+	on_entry_into_force = {
+		scope:article_options = {
+			custom_description = {
+				text = "transfer_fleet_effect"
+				subject = input_ship.ship_fleet
+				object = target_country
+				target_country = {
+					save_scope_as = ship_taker
+				}
+				if = {
+					limit = { exists = input_ship }
+					input_ship = { 
+						ship_fleet = {
+							every_scope_ship = {
+								set_ship_owner_multiple = scope:ship_taker
+							}
+						}
+					}
+				}
+				source_country = {
+					clear_ownership_transfer_fleet = yes
+				}
+			}
+		}
+	}
+
+	on_withdrawal = {}
+
+	on_break = {
+		scope:withdrawing_country = {
+			change_relations = {
+				country = scope:non_withdrawing_country
+				value = {
+					add = {
+						value = -5
+						multiply = {
+							value = scope:treaty_options.remaining_binding_period
+							min = 365
+							divide = 365
+						}
+					}
+					max = -5
+					min = -100
+				}
+			}
+			change_infamy = {
+				value = {
+					add = {
+						value = 5
+						multiply = {
+							value = scope:treaty_options.remaining_binding_period
+							min = 365
+							divide = 365
+						}
+					}
+					min = 5
+					max = 50
+				}
+			}
+		}
+	}
+
+	ai = {
+		treaty_categories = {
+			military
+		}
+
+		evaluation_chance = {
+			value = 0
+		}
+
+		article_ai_usage = {
+			request
+			offer
+		}
+
+		combined_acceptance_cap_max = 50
+
+		# ==========================================
+		# 1. 提议权重逻辑优化：按“老船数量/价值”累加
+		# ==========================================
+		proposal_weight = {
+			value = 0.1 # 基础权重保持极低，避免无意义的频繁提议
+		}
+
+		# ==========================================
+		# 2. 上下文接受度评分：逐舰计算估值
+		# ==========================================
+		contextual_accept_score = {
+			value = 0
+
+			if = {
+				limit = { scope:source_country ?= this } 
+
+				# 情况 A：我们是交出舰队的一方
+				subtract = {
+					desc = "DIPLOMATIC_ACCEPTANCE_SHIP_VALUE"
+					value = {
+						scope:article.input_ship ?= {
+							ship_fleet = {
+								every_scope_ship = {
+									# 【核心修改】在这里对每一艘船独立判断
+									if = {
+										add = {
+											value = ai_ship_value
+											multiply = 0.2 # 只有这艘老船按 20% 估值（交出老船不心疼）
+										}
+									}
+									else = {
+										add = ai_ship_value # 新船依然按 100% 估值扣除接受度
+									}
+								}
+							}
+						}
+					}
+					# 舰队总价值计算完毕后，再带入公式
+					multiply = 7
+					divide = 25
+					divide = {
+						value = scope:treaty.binding_period
+						min = 365
+					}
+				}
+			}
+			else = {
+				# 情况 B：我们是接收舰队的一方
+				add = {
+					desc = "DIPLOMATIC_ACCEPTANCE_SHIP_VALUE"
+					value = {
+						scope:article.input_ship ?= {
+							ship_fleet = {
+								every_scope_ship = {
+									# 同样，买入舰队时，里面的老船在 AI 眼里也不值钱，只给 20% 的加分
+									if = {
+										add = {
+											value = ai_ship_value
+											multiply = 0.2 
+										}
+									}
+									else = {
+										add = ai_ship_value
+									}
+								}
+							}
+						}
+					}
+					multiply = 7
+					divide = 100
+					divide = {
+						value = scope:treaty.binding_period
+						min = 365
+					}
+					max = 75
+				}
+			}
+
+			# --- 以下逻辑保持不变 ---
+
+			# 长期条约放大器
+			if = {
+				limit = {
+					NOT = { exists = scope:is_treaty_active }
+					scope:treaty.binding_period >= 1825
+				}
+				multiply = {
+					desc = "DIPLOMATIC_ACCEPTANCE_BINDING_PERIOD"
+					value = 1
+					add = {
+						value = scope:treaty.binding_period
+						min = 365
+						divide = 3650
+					}
+					max = 2
+				}
+			}
+
+			# 否决单边“白嫖”条款
+			if = {
+				limit = {
+					scope:source_country ?= this
+					scope:treaty = {
+						NOT = {
+							any_scope_article_option = {
+								OR = {
+									AND = {
+										exists = target_country
+										target_country = scope:source_country
+									}
+									exists = second_country
+								}
+							}
+						}
+					}
+				}
+				subtract = {
+					desc = "DIPLOMATIC_ACCEPTANCE_ONE_SIDED_SHIP_TRADE"
+					value = 1000
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+﻿combat_unit_type_toe_gun_mangudai = {
+    group = combat_unit_group_cavalry
+    max_manpower = 1000
+    supply_capacity = 10
+
+    upkeep_modifier = {
+        goods_input_grain_add = 2
+        goods_input_small_arms_add = 2
+        goods_input_meat_add = 0.5
+    }
+
+    battle_modifier = {
+        unit_offense_add = 35
+        unit_defense_add = 20
+        unit_occupation_mult = 0.50
+        unit_kill_rate_add = 0.10
+        unit_morale_damage_mult = 0.20
+    }
+
+    unlocking_technologies = { toe_gun_mangudai }
+
+    combat_unit_image = {
+        trigger = { has_culture_graphics = east_asian }
+        texture = "gfx/unit_illustrations/cavalry_east_asian_lancer.dds"
+    }
+    combat_unit_image = {
+        trigger = { has_culture_graphics = south_asian }
+        texture = "gfx/unit_illustrations/cavalry_south_asian_lancer.dds"
+    }
+    combat_unit_image = {
+        trigger = { has_culture_graphics = african }
+        texture = "gfx/unit_illustrations/cavalry_african_lancer.dds"
+    }
+    combat_unit_image = {
+        trigger = { has_culture_graphics = arabic }
+        texture = "gfx/unit_illustrations/cavalry_arabic_lancer.dds"
+    }
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/cavalry_eu_lancer.dds"
+    }
+}

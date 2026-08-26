@@ -1,0 +1,73 @@
+﻿# Tank
+combat_unit_type_modern_light_tanks = {
+	group = combat_unit_group_cavalry
+	max_manpower = 1000
+	supply_capacity = 35
+	upkeep_modifier = {
+		goods_input_tanks_add = 3		#240
+		goods_input_artillery_add = 3		#210
+		goods_input_oil_add = 1		#70
+		goods_input_processors_add = 1		#80
+		goods_input_steel_add = 2		#100
+		goods_input_radios_add = 2		#160 #860
+	}
+	battle_modifier = {# 120
+		unit_offense_add = 60
+		unit_defense_add = 60
+		unit_morale_loss_add = 4
+		unit_devastation_mult = 0.1
+		unit_occupation_mult = 0.3
+		unit_naval_invasion_efficiency_mult = -0.25
+		unit_recovery_rate_add = 0.15
+	}
+	formation_modifier = {
+		military_formation_mobilization_speed_mult = 0.25
+	}
+	unlocking_technologies = {
+		blitzkrieg
+	}
+	combat_unit_image = {
+		texture = "gfx/unit_illustrations/cavalry_modern_light_tank.dds"
+	}
+	upgrades = {
+		combat_unit_type_main_battle_tanks
+		combat_unit_type_giant_death_robot
+	}
+}
+
+combat_unit_type_main_battle_tanks = {
+	group = combat_unit_group_cavalry
+	max_manpower = 800	#1000
+	supply_capacity = 40
+	upkeep_modifier = {
+		goods_input_tanks_add = 4		#320
+		goods_input_artillery_add = 4		#280
+		goods_input_oil_add = 1		#70
+		goods_input_processors_add = 2		#160
+		goods_input_steel_add = 3		#150
+		goods_input_radios_add = 2		#160 #1140
+	}
+	battle_modifier = {# 165
+		unit_offense_add = 90
+		unit_defense_add = 75
+		unit_morale_loss_add = 5
+		unit_kill_rate_add = 0.2
+		unit_devastation_mult = 0.1
+		unit_occupation_mult = 0.3
+		unit_naval_invasion_efficiency_mult = -0.15
+		unit_recovery_rate_add = 0.25
+	}
+	formation_modifier = {
+		military_formation_mobilization_speed_mult = 0.15
+	}
+	unlocking_technologies = {
+		main_battle_tank
+	}
+	combat_unit_image = {
+		texture = "gfx/unit_illustrations/cavalry_main_battle_tank.dds"
+	}
+	upgrades = {
+		combat_unit_type_giant_death_robot
+	}
+}
+

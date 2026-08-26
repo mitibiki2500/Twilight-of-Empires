@@ -1,0 +1,58 @@
+﻿#州の編入時間短縮と同化速度上昇
+NCountry = {
+    INCORPORATION_TIME_SAME_CULTURE = 1.5	 #was2 主要文化# Years if the state is a Homeland of one of the country's primary cultures
+	INCORPORATION_TIME_SAME_HERITAGE_AND_LANGUAGE = 3 #was5 国民至上# Years if the state is a Homeland of a culture that matches of one of the country's primary cultures' Heritage and Language traits
+	INCORPORATION_TIME_SAME_HERITAGE_OR_LANGUAGE = 6 #was10 # Years if the state is a Homeland of a culture that matches of one of the country's primary cultures' Heritage or Language traits
+	INCORPORATION_TIME_SAME_TRAIT_GROUP = 9 #was15 人種隔離?# Years if the state is a Homeland of a culture with any trait in common with a country's primary cultures
+	INCORPORATION_TIME_NO_MATCH = 15 #was25 多文化 Years if the state's Homeland cultures have nothing in common with the country's primary cultures
+}
+
+
+
+NPops = {
+	#同化x2.5
+	ASSIMILATION_RATE = 0.005 #0.002					# Percentage of pops who will Assimilate into a different Culture each month, if eligible
+	MIN_ASSIMILATION = 1						# If there is any assmiliation at least this many people will assimilate
+	ASSIMILATION_IN_HOMELAND_MULT = 0.3 #0.75#同化を0.002x0.75にするために調整		# Assimilation rate is multiplied by this in homelands
+
+    #改宗x2.5
+	CONVERSION_RATE = 0.005 #0.002						# Percentage of pops who will Convert into a different Religion each month, if eligible
+	CONVERSION_UNINCORPORATED_MULT = 0.1 		# CONVERSION_RATE is multiplied by this in unincorporated states
+	MIN_CONVERSION = 1							# If there is any conversion at least this many people will convert
+
+		### Pop Consolidation defines
+	# Pop Consolidation identifies pops so small their impact on the economy and politics is insignificant, and merges them into other pops in the same building or state.
+	#
+	# POP_MERGE_MAX_WORKFORCE_*: determines how small the pop needs to be in terms of Workforce in order to qualify to be merged with others in their same building or the unemployment pool
+	# POP_MERGE_MIN_NUM_POPS_SAME_PROFESSION_*: employed pops will not get merged with others in their same building if there aren't at least this many pops of the same type in the building
+	# WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR_*: unemployed Pops with less than POP_MERGE_MAX_WORKFORCE and a Workforce:Dependent ratio that's this much worse than the ideal will be all turned into Dependents and merged back into pops in the same state
+	#
+	# The tail of the define name corresponds to a Pop Consolidation Game Rule with the same name.
+	# When that Game Rule is active, the defined values for POP_MERGE_MAX_WORKFORCE and WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR represent the minimum values, while the maximum are that of the level above it.
+	# POP_MERGE_START_POP and POP_MERGE_MAX_TARGET_POP determines how high to scale the values towards the level above it.
+	# For example, at Moderate Consolidation, POP_MERGE_START_POP = 50000 and POP_MERGE_MAX_TARGET_POP = 100000, and a global population of 87560 pops:
+	# POP_MERGE_MAX_WORKFORCE will effectively be 45 (75% of the way from 30 to 50) and WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR will effectively be 1.6244 (75% of the way from 2 to 1.5)
+
+	POP_MERGE_MAX_WORKFORCE_MINOR_CONSOLIDATION = 30
+	POP_MERGE_MIN_NUM_POPS_SAME_PROFESSION_MINOR_CONSOLIDATION = 4
+	WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR_MINOR_CONSOLIDATION = 2
+
+	POP_MERGE_MAX_WORKFORCE_MODERATE_CONSOLIDATION = 50
+	POP_MERGE_MIN_NUM_POPS_SAME_PROFESSION_MODERATE_CONSOLIDATION = 3
+	WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR_MODERATE_CONSOLIDATION = 1.5
+
+	POP_MERGE_MAX_WORKFORCE_AGGRESSIVE_CONSOLIDATION = 80
+	POP_MERGE_MIN_NUM_POPS_SAME_PROFESSION_AGGRESSIVE_CONSOLIDATION = 2
+	WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR_AGGRESSIVE_CONSOLIDATION = 1
+
+	POP_MERGE_MAX_WORKFORCE_MAX_CONSOLIDATION = 100
+	WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR_MAX_CONSOLIDATION = 1
+	POP_MERGE_START_POPS = 50000
+	POP_MERGE_MAX_TARGET_POPS = 100000
+}
+
+# TOE 1.13 world market compatibility
+# Vanilla points at x9137A4 (North Atlantic), which does not exist on the TOE map.
+NEconomy = {
+	WORLD_MARKET_LOCATION = "x5288CB"
+}

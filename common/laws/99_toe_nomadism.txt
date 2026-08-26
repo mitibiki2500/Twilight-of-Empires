@@ -1,0 +1,31 @@
+﻿law_toe_nomadism = {
+    group = lawgroup_land_reform
+    icon = "gfx/interface/icons/law_icons/freeholders.dds"
+    progressiveness = -10
+
+    unlocking_technologies = { toe_nomadism }
+
+    modifier = {
+        # Homesteading base with aristocratic predominance.
+        building_group_bg_agriculture_allowed_collectivization_add = 0.5
+        building_group_bg_ranching_allowed_collectivization_add = 0.5
+        country_aristocrats_pol_str_mult = 0.25
+
+        # Martial nomadic society.
+        state_conscription_rate_add = 0.05
+        building_training_rate_mult = 0.25
+        country_military_goods_cost_mult = -0.20
+    }
+
+    on_enact = {
+        custom_tooltip = toe_nomadism_aristocrats_af_tt
+    }
+
+    ai_enact_weight_modifier = {
+        value = 0
+        if = {
+            limit = { has_technology_researched = toe_nomadism }
+            add = 1000
+        }
+    }
+}

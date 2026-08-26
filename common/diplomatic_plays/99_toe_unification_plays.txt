@@ -1,0 +1,40 @@
+﻿# ToE major-unification integration plays
+# Formation itself has no technology requirement. Only the unification/integration play is tech-gated.
+
+dp_toe_unify_cipro = {
+    war_goal = unification
+    requires_interest_marker = no
+    blocked_by_diplomatic_status = no
+    add_infamy_for_starting_initiator_wargoals = no
+    texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+
+    selectable_in_lens = { always = no }
+    possible = {
+        has_technology_researched = nationalism
+        NOT = { exists = c:NSP }
+        NOT = { is_country_type = decentralized }
+    }
+
+    on_weekly_pulse = {}
+    on_war_begins = {}
+    on_war_end = {}
+}
+
+dp_toe_unify_reich = {
+    war_goal = unification
+    requires_interest_marker = no
+    blocked_by_diplomatic_status = no
+    add_infamy_for_starting_initiator_wargoals = no
+    texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+
+    selectable_in_lens = { always = no }
+    possible = {
+        has_technology_researched = pan-nationalism
+        NOT = { exists = c:NRI }
+        NOT = { is_country_type = decentralized }
+    }
+
+    on_weekly_pulse = {}
+    on_war_begins = {}
+    on_war_end = {}
+}

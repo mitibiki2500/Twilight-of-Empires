@@ -1,0 +1,138 @@
+﻿# Frozen-port winter cycle.
+# month is zero-indexed: November = 10.
+on_monthly_pulse = {
+    on_actions = {
+        toe_frozen_ports_november_pulse
+    }
+}
+
+toe_frozen_ports_november_pulse = {
+    trigger = {
+        month = 10
+    }
+
+    effect = {
+        every_state = {
+            limit = {
+                has_state_trait = state_trait_cold_ports
+                is_coastal = yes
+            }
+
+            # Year-to-year winter strength. Stronger winters also last longer,
+            # so thaw is normally between late February and the end of March.
+            random_list = {
+                10 = {
+                    state_region = {
+                        start_harvest_condition_with_params = {
+                            type = toe_frozen_port
+                            intensity = 6
+                            duration = 120
+                        }
+                    }
+                }
+                20 = {
+                    state_region = {
+                        start_harvest_condition_with_params = {
+                            type = toe_frozen_port
+                            intensity = 7
+                            duration = 130
+                        }
+                    }
+                }
+                40 = {
+                    state_region = {
+                        start_harvest_condition_with_params = {
+                            type = toe_frozen_port
+                            intensity = 8
+                            duration = 140
+                        }
+                    }
+                }
+                20 = {
+                    state_region = {
+                        start_harvest_condition_with_params = {
+                            type = toe_frozen_port
+                            intensity = 9
+                            duration = 150
+                        }
+                    }
+                }
+                10 = {
+                    state_region = {
+                        start_harvest_condition_with_params = {
+                            type = toe_frozen_port
+                            intensity = 10
+                            duration = 151
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+# Game begins in January. Apply the remainder of the first winter immediately.
+on_game_started = {
+    on_actions = {
+        toe_frozen_ports_game_start
+    }
+}
+
+toe_frozen_ports_game_start = {
+    effect = {
+        every_state = {
+            limit = {
+                has_state_trait = state_trait_cold_ports
+                is_coastal = yes
+            }
+
+            # The campaign starts in January, so only the remaining winter is applied.
+            random_list = {
+                10 = {
+                    state_region = {
+                        start_harvest_condition_with_params = {
+                            type = toe_frozen_port
+                            intensity = 6
+                            duration = 75
+                        }
+                    }
+                }
+                20 = {
+                    state_region = {
+                        start_harvest_condition_with_params = {
+                            type = toe_frozen_port
+                            intensity = 7
+                            duration = 82
+                        }
+                    }
+                }
+                40 = {
+                    state_region = {
+                        start_harvest_condition_with_params = {
+                            type = toe_frozen_port
+                            intensity = 8
+                            duration = 90
+                        }
+                    }
+                }
+                20 = {
+                    state_region = {
+                        start_harvest_condition_with_params = {
+                            type = toe_frozen_port
+                            intensity = 9
+                            duration = 96
+                        }
+                    }
+                }
+                10 = {
+                    state_region = {
+                        start_harvest_condition_with_params = {
+                            type = toe_frozen_port
+                            intensity = 10
+                            duration = 100
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

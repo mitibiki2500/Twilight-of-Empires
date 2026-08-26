@@ -1,0 +1,234 @@
+﻿#行政府の生産量調整
+#モニュメント調整
+#電気ローカル削除対応
+
+#行政府の生産量調整
+REPLACE:pm_simple_organization = { #簡略化組織、行政力追加
+	texture = "gfx/interface/icons/production_method_icons/simple_organization.dds"
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_bureaucracy_add = 25
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_tax_capacity_add = 2
+		}
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clerks_add = 500
+		}
+	}
+
+	ai_value = -1000 # AI should get off this PM as fast as possible
+}
+REPLACE:pm_vertical_filing_cabinets = { #規格化書類整理、紙の消費量減少
+	texture = "gfx/interface/icons/production_method_icons/vertical_filing_cabinets.dds"
+	unlocking_technologies = {
+		central_archives
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_bureaucracy_add = 65
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_tax_capacity_add = 15
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = 15
+		}
+
+		level_scaled = {
+			building_employment_clerks_add = 500
+		}
+	}
+}
+
+
+#モニュメント調整
+REPLACE:pm_default_building_hagia_sophia = { #ハギアソフィア(権力)
+	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+
+	is_hidden_when_unavailable = yes
+
+	country_modifiers = {
+		workforce_scaled = {
+			interest_group_ig_devout_pop_attraction_mult = 0.1
+			country_authority_add = 250
+			country_prestige_add = 25
+		}
+	}
+
+	building_modifiers = {
+		#workforce_scaled = {
+		#}
+
+		level_scaled = {
+			building_employment_clergymen_add = 200
+		}
+	}
+}
+REPLACE:pm_default_building_vatican_city = { #バチカンデフォ(出生率)
+	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+
+	unlocking_religions = { catholic }
+	unlocking_technologies = { sericulture }
+
+
+	country_modifiers = {
+		workforce_scaled = {
+			interest_group_ig_devout_pol_str_mult = 0.25
+			country_influence_add = 100
+			country_authority_add = 100
+			state_birth_rate_mult = 0.05
+		}
+	}
+
+	building_modifiers = {
+		#workforce_scaled = {
+		#}
+
+		level_scaled = {
+			building_employment_clergymen_add = 500
+		}
+	}
+}
+pm_default_building_vatican_city_2 = { #バチカン他
+	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+
+	unlocking_religions = { catholic }
+	
+
+
+
+	country_modifiers = {
+		workforce_scaled = {
+			interest_group_ig_devout_pol_str_mult = 0.25
+			country_influence_add = 100
+			country_authority_add = 100
+			state_birth_rate_mult = 0.01
+		}
+	}
+
+	building_modifiers = {
+		#workforce_scaled = {
+		#}
+
+		level_scaled = {
+			building_employment_clergymen_add = 500
+		}
+	}
+}
+REPLACE:pm_monument_prestige_only_vatican_city = { #バチカン2
+	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+
+
+	disallowing_religions = { catholic }
+
+	country_modifiers = {
+		throughput_scaled = {
+			country_prestige_add = 25
+		}
+	}
+}
+REPLACE:pm_default_building_statue_of_liberty = { #自由の女神を移住割り当てに変更
+	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+
+	is_hidden_when_unavailable = yes
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_prestige_add = 75
+			state_migration_quota_mult = 0.1
+		}
+	}
+
+	building_modifiers = {
+		#workforce_scaled = {
+		#}
+
+		level_scaled = {
+			building_employment_bureaucrats_add = 100
+		}
+	}
+}
+
+
+
+
+#電気ローカル削除対応
+REPLACE:pm_electric_trains = {
+	texture = "gfx/interface/icons/production_method_icons/trains_electric.dds"
+	replacement_if_valid = pm_electric_trains_principle_transport_3
+
+	unlocking_technologies = {
+		electric_railway
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 5 # 300
+			goods_input_electricity_add = 8 # 240
+			goods_output_transportation_add = 35 # 1050
+		}
+		level_scaled = {
+			building_employment_laborers_add = 400
+			building_employment_machinists_add = 350
+			building_employment_engineers_add = 50
+			building_employment_clerks_add = 200
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_infrastructure_add = 30
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_electric_trains_principle_transport_3 = {
+	texture = "gfx/interface/icons/production_method_icons/trains_electric.dds"
+	is_hidden_when_unavailable = yes
+
+	unlocking_principles = {
+		principle_transport_3
+	}
+
+	unlocking_technologies = {
+		electric_railway
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 6 # 360
+			goods_input_electricity_add = 10 # 300
+			goods_output_transportation_add = 45 # 1350
+		}
+		level_scaled = {
+			building_employment_laborers_add = 400
+			building_employment_machinists_add = 350
+			building_employment_engineers_add = 50
+			building_employment_clerks_add = 200
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_infrastructure_add = 40
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}

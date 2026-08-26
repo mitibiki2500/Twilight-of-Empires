@@ -1,0 +1,27 @@
+﻿PAI_SARGIS_STOTRO = {
+    first_name = "Sargis"
+    last_name = "Stotro-Paido"
+    historical = yes
+    culture = cu:nsm_map_pai
+    religion = rel:nsm_tengri
+    age = 28
+    interest_group = ig_devout
+    ideology = ideology_modernizer_leader
+    ruler = yes
+    traits = { experienced_political_operator }
+    on_created = { set_variable = toe_paido_reigning_claimant }
+}
+
+PAI_ZUAR_STOTRO = {
+    first_name = "Zuar"
+    last_name = "Stotro-Paido"
+    historical = yes
+    culture = cu:nsm_map_pai
+    religion = rel:nsm_tengri
+    age = 25
+    interest_group = ig_landowners
+    ideology = ideology_authoritarian
+    ig_leader = yes
+    traits = { arrogant experienced_political_operator }
+    on_created = { set_variable = toe_paido_rival_claimant }
+}

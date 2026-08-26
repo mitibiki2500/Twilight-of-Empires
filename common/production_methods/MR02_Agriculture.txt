@@ -1,0 +1,874 @@
+﻿#電気のローカル削除
+#米省人化生産量調整
+#ゴム増量
+#金の生産量修正
+#硬材調整
+
+#バナナ生産量修正
+REPLACE:automatic_irrigation_building_banana_plantation = {
+	texture = "gfx/interface/icons/production_method_icons/automatic_irrigation.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	unlocking_technologies = {
+		pumpjacks
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# output goods
+			goods_input_engines_add = 5
+			goods_output_fruit_add = 50
+		}
+
+		level_scaled = {
+			# profit
+			building_employment_laborers_add = 3000
+			building_employment_farmers_add = 1500
+			building_employment_machinists_add = 500
+		}
+	}
+}
+
+#電気のローカル削除
+REPLACE:pm_electric_fencing = {
+	texture = "gfx/interface/icons/production_method_icons/electric_fencing.dds"
+	unlocking_technologies = {
+		electrical_generation
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_iron_add = 1
+			goods_input_electricity_add = 1
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1000
+		}
+	}
+
+	#required_input_goods = electricity 電気のローカル削除
+}
+REPLACE:pm_refrigerated_storage_building_livestock_ranch = {
+	texture = "gfx/interface/icons/production_method_icons/refrigerated_storage.dds"
+
+	unlocking_technologies = {
+		pasteurization
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_electricity_add = 1
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -500
+		}
+	}
+
+	#required_input_goods = electricity 電気のローカル削除
+}
+REPLACE:pm_refrigerated_rail_cars_building_livestock_ranch = {
+	texture = "gfx/interface/icons/production_method_icons/refrigerated_rail_cars.dds"
+
+	unlocking_technologies = {
+		electric_railway
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_electricity_add = 1
+			goods_input_transportation_add = 1
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1000
+		}
+	}
+
+	#required_input_goods = electricity 電気のローカル削除
+}
+
+#米省人化追加
+pm_tractors_rice_farm = { #省人化追加1
+	texture = "gfx/interface/icons/production_method_icons/tractors.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		mechanized_farming
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_coal_add = 4 #2
+			goods_input_engines_add = 2 #1
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -4000 #was-2000
+		}
+	}
+}
+pm_compression_ignition_tractors_rice_farm = { #省人化追加2
+	texture = "gfx/interface/icons/production_method_icons/compression_ignition_tractors.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 20
+		}
+	}
+
+	unlocking_technologies = {
+		compression_ignition
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_oil_add = 4 #2
+			goods_input_engines_add = 2 #1
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -5000 #was-2500
+		}
+	}
+}
+
+
+#農業の生産性を戻す 
+#4種 20,(25),30,45,60→
+    #20,(25),30,45,70 
+#米  35.(45),50,75,100→
+    #40,(50),60,90,140
+REPLACE:pm_chemical_fertilizer = {
+	texture = "gfx/interface/icons/production_method_icons/chemical_fertilizers.dds"
+	unlocking_technologies = {
+		nitrogen_fixation
+	}
+
+	state_modifiers = {
+		unscaled = {
+			state_harvest_condition_drought_impact_mult = 0.1
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fertilizer_add = 15	 # 450
+
+			# output goods
+			goods_output_grain_add = 70 #was60 # 1200
+		}
+
+		level_scaled = {
+			# earnings
+			building_employment_laborers_add = 2500
+			building_employment_farmers_add = 2500
+		}
+	}
+}
+#米も
+REPLACE:pm_simple_farming_building_rice_farm = {
+	texture = "gfx/interface/icons/production_method_icons/simple_farming.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			# output goods
+			goods_output_grain_add = 40 #was35
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 8000
+			building_employment_farmers_add = 2000
+		}
+		unscaled = {
+			building_slaves_mortality_mult = 0.2
+		}
+	}
+}
+
+REPLACE:pm_herring_meal_farming_building_rice_farm = {
+	texture = "gfx/interface/icons/production_method_icons/simple_fishing.dds"
+	
+	is_hidden_when_unavailable = yes
+
+	unlocking_geographic_regions = {
+		geographic_region_japan
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fish_add = 10 # 200
+
+			# output goods
+			goods_output_grain_add = 50 #was45	# 900
+		}
+
+		level_scaled = {
+			# earnings
+			building_employment_laborers_add = 8000
+			building_employment_farmers_add = 2000
+		}
+		unscaled = {
+			building_slaves_mortality_mult = 0.2
+		}
+	}
+}
+REPLACE:pm_soil_enriching_farming_building_rice_farm = {
+	texture = "gfx/interface/icons/production_method_icons/soil_enriching_farming.dds"
+
+	unlocking_technologies = {
+		intensive_agriculture
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fertilizer_add = 10	# 300
+
+			# output goods
+			goods_output_grain_add = 60 #was50	# 1000
+		}
+
+		level_scaled = {
+			# earnings
+			building_employment_laborers_add = 7000
+			building_employment_farmers_add = 3000
+		}
+		unscaled = {
+			building_slaves_mortality_mult = 0.1
+		}
+	}
+}
+REPLACE:pm_fertilization_building_rice_farm = {
+	texture = "gfx/interface/icons/production_method_icons/fertilization.dds"
+
+	unlocking_technologies = {
+		improved_fertilizer
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fertilizer_add = 20	# 600
+
+			# output goods
+			goods_output_grain_add = 90 #was75 # 1500
+		}
+
+		level_scaled = {
+			# earnings
+			building_employment_laborers_add = 6000
+			building_employment_farmers_add = 4000
+		}
+	}
+}
+REPLACE:pm_chemical_fertilizer_building_rice_farm = {
+	texture = "gfx/interface/icons/production_method_icons/chemical_fertilizers.dds"
+	unlocking_technologies = {
+		nitrogen_fixation
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fertilizer_add = 30	# 900
+
+			# output goods
+			goods_output_grain_add = 140 #was100 # 2000
+		}
+
+		level_scaled = {
+			# earnings
+			building_employment_laborers_add = 5000
+			building_employment_farmers_add = 5000
+		}
+	}
+}
+
+#硬材調整
+REPLACE:pm_hardwood = {
+	texture = "gfx/interface/icons/production_method_icons/hardwood_selection.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			# output goods
+			goods_output_wood_add = -20
+			goods_output_hardwood_add = 10
+		}
+	}
+}
+
+
+#ゴム増量
+REPLACE:slave_exploitation_rubber = {
+	texture = "gfx/interface/icons/production_method_icons/violent_treatment.dds"
+	state_modifiers = {
+		unscaled = {
+			state_slave_import_mult = 0.1
+		}
+	}
+
+	disallowing_laws = {
+		law_slavery_banned
+		law_colonial_slavery
+		law_debt_slavery ## So India uses other category
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_rubber_add = 50 #was25
+		}
+
+		unscaled = { #people were basically sent to rubber plantations to die. Also this late game SOL should be higher, mortality lower.
+			building_laborers_mortality_mult = 0.5
+			building_laborers_job_attractiveness_mult = -0.85
+			building_slaves_standard_of_living_add = -2.5
+			building_minimum_wage_mult = -0.25
+		}
+	}
+}
+REPLACE:worker_exploitation_rubber = {
+	texture = "gfx/interface/icons/production_method_icons/exploitative_practices.dds"
+
+	disallowing_laws = {
+		law_right_to_associate
+		law_corporatized_unions
+		law_factory_councils
+		law_guaranteed_liberties
+		law_regulatory_bodies
+		law_worker_protections
+		law_collectivized_agriculture
+		law_homesteading
+		law_multicultural
+		law_wage_subsidies
+		law_old_age_pension
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_rubber_add = 20 #was10
+		}
+
+		level_scaled = {
+		}
+
+		unscaled = { ##Peru + Congo, people were basically sent to rubber plantations to die. Also this is late game, so SOL should be higher, mortality functionally lower.
+			building_laborers_mortality_mult = 0.4
+			building_slaves_standard_of_living_add = -1.5
+			building_laborers_job_attractiveness_mult = -0.75
+			building_minimum_wage_mult = -0.25
+		}
+	}
+}
+REPLACE:default_building_rubber_plantation = { #ゴム増量
+	texture = "gfx/interface/icons/production_method_icons/plantation_production.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_rubber_add = 40 #was20 #reduced here and increased with exploitation laws
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 12000 #was6000
+			building_employment_farmers_add = 2000 #was1000
+		}
+	}
+}
+REPLACE:automatic_irrigation_building_rubber_plantation = { #ゴム増量
+	texture = "gfx/interface/icons/production_method_icons/automatic_irrigation.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	unlocking_technologies = {
+		pumpjacks
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 10 #was5
+			goods_output_rubber_add = 80 #was40
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 8000 #was4000
+			building_employment_farmers_add = 3000 #was1500
+			building_employment_machinists_add = 1000 #was500
+		}
+	}
+}
+pm_rubber_steam_rail_transport = { #ゴム省人化
+	texture = "gfx/interface/icons/production_method_icons/rail_transport.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10 #was10
+		}
+	}
+
+	unlocking_technologies = {
+		railways
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_transportation_add = 10 #was5
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2000 #was-1000
+		}
+	}
+}
+pm_rubber_tanker_cars = {#ゴム省人化2
+	texture = "gfx/interface/icons/production_method_icons/tanker_cars.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 20 #was10
+		}
+	}
+
+	unlocking_technologies = {
+		steel_railway_cars
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_transportation_add = 20 #was10
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -4000 #was-2000
+		}
+	}
+}
+
+
+#電気ローカル削除対応
+REPLACE:electric_rollers = {
+	texture = "gfx/interface/icons/production_method_icons/electric_rollers.dds"
+
+	unlocking_technologies = {
+		electrical_generation
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_iron_add = 2
+			goods_input_electricity_add = 2
+			goods_output_tobacco_add = 20
+		}
+
+		level_scaled = {
+			building_employment_machinists_add = 500
+			building_employment_laborers_add = -1500
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_electric_saw_mills = {
+	texture = "gfx/interface/icons/production_method_icons/electric_saw_mills.dds"
+	unlocking_technologies = {
+		electrical_generation
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 10
+			goods_input_electricity_add = 5
+
+			# output goods
+			goods_output_wood_add = 100 #+800
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 500
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_refrigerated_storage_building_fishing_wharf = {
+	texture = "gfx/interface/icons/production_method_icons/refrigerated_storage.dds"
+
+	unlocking_technologies = {
+		pasteurization
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_electricity_add = 5
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = -1000
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_refrigerated_rail_cars_building_fishing_wharf = {
+	texture = "gfx/interface/icons/production_method_icons/refrigerated_rail_cars.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		electric_railway
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_electricity_add = 5
+			goods_input_transportation_add = 5
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = -2000
+		}
+	}
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_flash_freezing_building_fishing_wharf = {
+	texture = "gfx/interface/icons/production_method_icons/flash_refrigerated.dds"
+
+	unlocking_technologies = {
+		flash_freezing
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_electricity_add = 7
+			goods_input_transportation_add = 7
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = -3000
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_refrigerated_storage_building_whaling_station = {
+	texture = "gfx/interface/icons/production_method_icons/refrigerated_storage.dds"
+
+	unlocking_technologies = {
+		pasteurization
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_electricity_add = 5
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = -1000
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_refrigerated_rail_cars_building_whaling_station = {
+	texture = "gfx/interface/icons/production_method_icons/refrigerated_rail_cars.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		electric_railway
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_electricity_add = 5
+			goods_input_transportation_add = 5
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = -2000
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+REPLACE:pm_flash_freezing_building_whaling_station = {
+	texture = "gfx/interface/icons/production_method_icons/flash_refrigerated.dds"
+
+	unlocking_technologies = {
+		flash_freezing
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_electricity_add = 7
+			goods_input_transportation_add = 7
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = -3000
+		}
+	}
+
+	#required_input_goods = electricity #電気ローカル削除対応
+}
+
+
+
+#金の生産量修正
+REPLACE:pm_picks_and_shovels_building_gold_mine = {
+	texture = "gfx/interface/icons/production_method_icons/picks_and_shovels.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+
+			# output goods
+			goods_output_gold_add = 10
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 4500
+		}
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 500
+		}
+	}
+}
+REPLACE:pm_atmospheric_engine_pump_building_gold_mine = {
+	texture = "gfx/interface/icons/production_method_icons/pumps.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	unlocking_technologies = {
+		atmospheric_engine
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 10
+			goods_input_coal_add = 10
+
+			# output goods
+			goods_output_gold_add = 20
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3750
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 1000
+		}
+	}
+}
+REPLACE:pm_condensing_engine_pump_building_gold_mine = {
+	texture = "gfx/interface/icons/production_method_icons/condensing_engine_pump.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		watertube_boiler
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 15
+			goods_input_coal_add = 15
+
+			# output goods
+			goods_output_gold_add = 30
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 500
+		}
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 1250
+		}
+	}
+}
+REPLACE:pm_diesel_pump_building_gold_mine = {
+	texture = "gfx/interface/icons/production_method_icons/diesel_pump.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	unlocking_technologies = {
+		compression_ignition
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 15
+			goods_input_oil_add = 5
+
+			# output goods
+			goods_output_gold_add = 40
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 750
+		}
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 1500
+		}
+	}
+}
+REPLACE:pm_nitroglycerin_building_gold_mine = {
+	texture = "gfx/interface/icons/production_method_icons/nitroglycerin.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	unlocking_technologies = {
+	 	nitroglycerin
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_explosives_add = 5
+
+			# output goods
+			goods_output_gold_add = 5
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+
+		unscaled = {
+			building_laborers_mortality_mult = 0.3
+			building_machinists_mortality_mult = 0.2
+			building_engineers_mortality_mult = 0.1
+		}
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 250
+		}
+	}
+}
+REPLACE:pm_dynamite_building_gold_mine = {
+	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	unlocking_technologies = {
+		dynamite
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_explosives_add = 10
+
+			# output goods
+			goods_output_gold_add = 10
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 500
+		}
+	}
+}
+REPLACE:default_building_gold_field = {
+	texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_gold_add = 20
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 4500
+		}
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 500
+		}
+	}
+}

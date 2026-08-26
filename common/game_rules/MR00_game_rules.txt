@@ -1,0 +1,42 @@
+﻿MRrule_infamy = {
+	default = MRrule_infamy_off
+
+	MRrule_infamy_off = {
+	}
+	MRrule_infamy_on = {
+		flag = fMR_infamy_on
+	}
+}
+
+MRrule_speed = {
+	default = MRrule_speed_off
+
+	MRrule_speed_off = {
+	}
+	MRrule_speed_on_2 = {
+		flag = fMR_speed_2
+	}
+	MRrule_speed_on_3 = {
+		flag = fMR_speed_3
+	}
+	MRrule_speed_on_5 = {
+		flag = fMR_speed_5
+	}
+}
+
+MRrule_company = {
+	default =  MRrule_company_coke_on
+
+	MRrule_company_on = { #すべて有効
+		flag = fMR_company_on
+	}
+	MRrule_company_coke_on = { #フレーバー有効
+ 		flag = fMR_company_coke_on
+	}
+	MRrule_company_coke_off = { #フレーバー無効
+ 		flag = fMR_company_coke_off
+	}
+	MRrule_company_off = { #すべて無効
+		flag = fMR_company_off
+	}
+}

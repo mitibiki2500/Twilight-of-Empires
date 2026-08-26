@@ -1,0 +1,56 @@
+﻿#supply_ship
+#補給艦の建設コストを1/5に変更
+REPLACE:ship_type_supply_ship = {
+    ship_group = ship_group_supply_ships
+
+    base_construction_cost = 25
+
+    modifier = {
+        ship_hit_points_max_add = 1000
+        ship_construction_progress_max_add = 5
+        ship_crew_max_add = 300
+        ship_readiness_gain_add = 10
+        ship_armor_add = 8
+        ship_supply_capacity_add = 3000 #was500 #船舶供給能力
+        ship_movement_speed_add = 4.5
+        ship_visibility_add = 10
+        ship_detection_add = 5
+        ship_vulnerability_add = 100
+    }
+
+    construction_goods = { #建造に必要な物資
+        goods_input_hardwood_add = 30 #was130
+        goods_input_fabric_add = 30 #was130
+    }
+
+    materiel_goods = {
+        goods_input_grain_add = 1
+    }
+
+    icon = "gfx/interface/icons/ships/ship_category/ship_group_supply_ships.dds"
+    profile_texture = "gfx/interface/icons/ships/ship_types/silhouette_supply_ship.dds"
+
+    modifications = {
+        ship_mod_slot_armor = {
+            ship_mod_supply_ship_armor_light
+            ship_mod_supply_ship_armor_medium
+            ship_mod_supply_ship_armor_high
+        }
+        ship_mod_slot_guns = {
+            ship_mod_supply_ship_guns_light
+        }
+        ship_mod_slot_propulsion = {
+            ship_mod_supply_ship_propulsion_light
+            ship_mod_supply_ship_propulsion_medium
+            ship_mod_supply_ship_propulsion_high
+        }
+        ship_mod_slot_range = {
+            ship_mod_supply_ship_range_light
+        }
+    }
+
+    default_modifications = {
+        ship_mod_slot_armor = ship_mod_supply_ship_armor_light
+		ship_mod_slot_propulsion = ship_mod_supply_ship_propulsion_light
+    }
+}

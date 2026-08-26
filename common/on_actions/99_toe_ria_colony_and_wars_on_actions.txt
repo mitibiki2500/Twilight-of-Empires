@@ -1,0 +1,44 @@
+﻿# ToE: Ria colony culture conversion and postwar handling
+on_game_start = {
+    on_actions = { toe_ria_colony_game_start toe_ria_civil_war_claims_game_start }
+}
+
+toe_ria_colony_game_start = {
+    effect = {
+        c:XBM ?= {
+            every_owned_state = {
+                every_pop = {
+                    change_pop_culture = { target = cu:nsm_map_gsu value = 0.15 }
+                }
+            }
+        }
+    }
+}
+
+
+toe_ria_civil_war_claims_game_start = {
+    effect = {
+        c:XBJ ?= { every_owned_state = { add_claim = c:XBK add_claim = c:XBL } }
+        c:XBK ?= { every_owned_state = { add_claim = c:XBJ add_claim = c:XBL } }
+        c:XBL ?= { every_owned_state = { add_claim = c:XBJ add_claim = c:XBK } }
+    }
+}
+
+on_monthly_pulse = {
+    on_actions = { toe_ria_empire_defeat_check }
+}
+
+toe_ria_empire_defeat_check = {
+    effect = {
+        if = {
+            limit = {
+                NOT = { c:XBK ?= { exists = yes } }
+                c:XBJ ?= { exists = yes }
+                c:XBL ?= { exists = yes }
+                NOT = { has_global_variable = toe_ria_empire_defeat_settled }
+            }
+            set_global_variable = { name = toe_ria_empire_defeat_settled value = 1 }
+            c:XBJ ?= { trigger_event = { id = toe_ria_civil_war.1 days = 1 } }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+﻿# Chemical weapons contaminate the land where a battle is fought.
+on_battle_ended = {
+	on_actions = { toe_gas_pollution_on_battle_ended }
+}
+
+toe_gas_pollution_on_battle_ended = {
+	effect = {
+		if = {
+			limit = {
+				# on_battle_ended fires for both countries; only execute once, on attacker's pass.
+				scope:attacker ?= { owner = ROOT }
+				OR = {
+					scope:attacker ?= {
+						this.commander_military_formation ?= {
+							has_mobilization_option = mobilization_option:mobilization_option_chemical_weapons
+						}
+					}
+					scope:defender ?= {
+						this.commander_military_formation ?= {
+							has_mobilization_option = mobilization_option:mobilization_option_chemical_weapons
+						}
+					}
+				}
+			}
+
+			# Find the war shared by root and the enemy, then scale pollution from total casualties on both sides.
+			random_scope_war = {
+				limit = { is_war_participant = scope:enemy_country }
+				toe_apply_gas_battle_pollution = yes
+			}
+		}
+	}
+}

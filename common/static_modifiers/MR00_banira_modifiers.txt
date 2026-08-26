@@ -1,0 +1,72 @@
+﻿REPLACE:recently_conquered_state = { #征服税収の修正
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	building_nationalization_cost_mult = -0.50
+	building_nationalization_radicals_mult = -0.50
+	state_pop_pol_str_mult = -0.50
+	state_conscription_rate_mult = -0.50
+    #税収補正
+	building_group_bg_agriculture_tax_mult = -0.5
+	building_group_bg_manufacturing_tax_mult = -0.5
+}
+
+REPLACE:treaty_port_state = { #条約港修正
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	#元からあったやつ
+	state_migration_pull_mult = 0.5 #移住求心力
+    #未編入補正を反転
+	state_infrastructure_mult = 0.25 #インフラ
+	state_conscription_rate_mult = 0.5 #徴兵効率
+	state_expected_sol_mult = 0.33 #州の許容生活水準
+	state_pop_pol_str_mult = 0.50 #政治力？
+	building_group_bg_manufacturing_throughput_add = 0.1 #製造業処理
+	building_group_bg_government_throughput_add = 0.1 #政府処理
+	building_group_bg_military_throughput_add = 0.1 #軍事処理
+	state_market_access_price_impact = 0.1 #市場アクセス
+	building_group_bg_infrastructure_construction_efficiency_add = 0.2 #インフラ建設
+	building_group_bg_extraction_construction_efficiency_add = 0.2 #資源建設
+	building_group_bg_heavy_industry_construction_efficiency_add = 0.5 #重工業建設
+	building_group_bg_light_industry_construction_efficiency_add = 0.3 #軽工業建設
+	building_group_bg_government_construction_efficiency_add = 0.3 #政府建設
+	#追加
+	state_education_access_add = 0.25 #教育機会
+	state_mortality_mult = -0.1
+	state_pollution_reduction_health_mult = -0.3
+	state_standard_of_living_add = 1
+	#受容による急進派現象
+	state_radicalism_increases_full_acceptance_mult = -1
+	state_radicalism_increases_second_rate_citizen_mult = 1
+	state_radicalism_increases_open_prejudice_mult = -1
+	state_radicalism_increases_cultural_erasure_mult = 1
+	state_radicalism_increases_violent_hostility_mult = -1
+}
+
+REPLACE:fra_republican_unrest = { #フランスの初期デバフ緩和
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	country_radicals_from_legitimacy_mult = 0.33 #Was1#正当性が低いことによる急進派
+	country_loyalists_from_legitimacy_mult = -0.15 #Was-0.5#正当性が高いことによる体制派 
+	country_legitimacy_ideological_incoherence_mult = 0.1 #Was0.25#イデオロギー不一致ペナ
+	political_movement_radicalism_add = 0.05 #was0.15#政治運動活動
+}
+
+REPLACE:modifier_springtime_of_the_peoples = { #民衆の春臨時緩和
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	political_movement_radicalism_add = 0.1 #Was0.35
+	state_pop_support_movement_radical_mult = 0.25
+	state_pop_support_movement_german_national_mult = 0.25
+	state_pop_support_movement_italian_national_mult = 0.25
+	state_pop_support_movement_yugoslav_national_mult = 0.25
+	state_pop_support_movement_liberal_mult = 0.25
+	state_pop_support_movement_cultural_minority_mult = 0.25
+	country_law_enactment_speed_mult = 0.5
+	political_movement_activism_growth_mult = 5
+}
+
+REPLACE:zeppelins_military_modifier = { #飛行船ナーフ
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	unit_army_offense_add = 5
+}
+
+REPLACE:war_hero_fighter = { #飛翔する軍神ナーフ
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	unit_army_offense_add = 5
+}

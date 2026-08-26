@@ -1,0 +1,65 @@
+﻿DIPLOMATIC_PLAYS = {
+    # リイア帝国 -> リイア共和国
+    # dp_conquer_state を土台にして開始時 war=yes を確実に成立させ、併合を主要求として追加する。
+    c:XBK = {
+        create_diplomatic_play = {
+            name = toe_ria_empire_republic_war
+            target_state = s:STATE_NSM_387.region_state:XBJ
+            war = yes
+            type = dp_conquer_state
+            add_war_goal = {
+                holder = c:XBK
+                type = annex_country
+                target_country = c:XBJ
+                primary_demand = yes
+            }
+            add_war_goal = { holder = c:XBJ type = return_state target_state = s:STATE_NSM_516.region_state:XBK primary_demand = yes }
+            add_war_goal = { holder = c:XBJ type = return_state target_state = s:STATE_NSM_256.region_state:XBK primary_demand = yes }
+            add_war_goal = { holder = c:XBJ type = return_state target_state = s:STATE_NSM_370.region_state:XBK primary_demand = yes }
+            add_war_goal = { holder = c:XBJ type = return_state target_state = s:STATE_NSM_497.region_state:XBK primary_demand = yes }
+            add_war_goal = { holder = c:XBJ type = return_state target_state = s:STATE_NSM_408.region_state:XBK primary_demand = yes }
+            add_war_goal = { holder = c:XBJ type = return_state target_state = s:STATE_NSM_412.region_state:XBK primary_demand = yes }
+            add_war_goal = { holder = c:XBJ type = return_state target_state = s:STATE_NSM_246.region_state:XBK primary_demand = yes }
+            add_war_goal = { holder = c:XBJ type = return_state target_state = s:STATE_NSM_352.region_state:XBK primary_demand = yes }
+        }
+
+        # リイア帝国 -> リイア社会共和国
+        create_diplomatic_play = {
+            name = toe_ria_empire_social_war
+            target_state = s:STATE_NSM_427.region_state:XBL
+            war = yes
+            type = dp_conquer_state
+            add_war_goal = {
+                holder = c:XBK
+                type = annex_country
+                target_country = c:XBL
+                primary_demand = yes
+            }
+            add_war_goal = { holder = c:XBL type = return_state target_state = s:STATE_NSM_065.region_state:XBK primary_demand = yes }
+            add_war_goal = { holder = c:XBL type = return_state target_state = s:STATE_NSM_104.region_state:XBK primary_demand = yes }
+            add_war_goal = { holder = c:XBL type = return_state target_state = s:STATE_NSM_094.region_state:XBK primary_demand = yes }
+        }
+    }
+
+    # リイア共和国 -> リイア社会共和国
+    c:XBJ = {
+        create_diplomatic_play = {
+            name = toe_ria_republic_social_war
+            target_state = s:STATE_NSM_427.region_state:XBL
+            war = yes
+            type = dp_conquer_state
+            add_war_goal = {
+                holder = c:XBJ
+                type = annex_country
+                target_country = c:XBL
+                primary_demand = yes
+            }
+            add_war_goal = {
+                holder = c:XBL
+                type = annex_country
+                target_country = c:XBJ
+                primary_demand = yes
+            }
+        }
+    }
+}

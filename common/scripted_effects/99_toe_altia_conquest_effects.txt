@@ -1,0 +1,2378 @@
+﻿# Alti Great Conquest: each campaign claim package costs 20 infamy.
+# Completion rewards are applied only to the conquered target states.
+
+toe_alti_grant_sparia_claims = {
+    set_variable = toe_altia_sparia_claims_granted
+    change_infamy = { value = 20 }
+    s:STATE_NSM_034 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_379 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_100 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_422 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_086 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_243 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_274 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_349 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+}
+
+toe_alti_reward_sparia = {
+    s:STATE_NSM_034 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_379 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_100 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_422 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_086 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_243 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_274 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_349 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+}
+
+toe_alti_grant_altia_claims = {
+    set_variable = toe_altia_altia_claims_granted
+    change_infamy = { value = 20 }
+    s:STATE_NSM_005 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_084 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_172 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_201 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_211 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_230 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_297 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_302 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_321 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_345 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_425 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_441 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_621 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+}
+
+toe_alti_reward_altia = {
+    s:STATE_NSM_005 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_084 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_172 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_201 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_211 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_230 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_297 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_302 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_321 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_345 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_425 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_441 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_621 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+}
+
+toe_alti_grant_gorton_claims = {
+    set_variable = toe_altia_gorton_claims_granted
+    change_infamy = { value = 20 }
+    s:STATE_NSM_045 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_062 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_081 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_129 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_171 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_234 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_257 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_329 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_351 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_386 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_388 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_393 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_400 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_436 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_504 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_082 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_124 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_187 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_213 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_453 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_258 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_430 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+}
+
+toe_alti_reward_gorton = {
+    s:STATE_NSM_045 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_062 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_081 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_129 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_171 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_234 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_257 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_329 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_351 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_386 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_388 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_393 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_400 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_436 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_504 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_082 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_124 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_187 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_213 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_453 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_258 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_430 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+}
+
+toe_alti_grant_paido_claims = {
+    set_variable = toe_altia_paido_claims_granted
+    change_infamy = { value = 20 }
+    s:STATE_NSM_012 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_013 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_024 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_041 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_060 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_091 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_092 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_144 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_145 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_146 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_173 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_179 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_190 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_193 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_198 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_203 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_205 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_236 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_239 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_272 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_313 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_319 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_326 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_347 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_355 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_360 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_389 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_403 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_407 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_416 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_432 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_437 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_526 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_529 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_534 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_293 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_411 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_472 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_046 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_051 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_134 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_289 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_466 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_486 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+}
+
+toe_alti_reward_paido = {
+    s:STATE_NSM_012 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_013 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_024 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_041 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_060 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_091 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_092 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_144 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_145 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_146 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_173 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_179 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_190 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_193 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_198 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_203 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_205 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_236 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_239 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_272 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_313 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_319 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_326 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_347 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_355 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_360 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_389 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_403 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_407 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_416 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_432 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_437 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_526 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_529 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_534 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_293 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_411 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_472 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_046 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_051 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_134 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_289 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_466 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_486 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+}
+
+toe_alti_grant_trilia_claims = {
+    set_variable = toe_altia_trilia_claims_granted
+    change_infamy = { value = 20 }
+    s:STATE_NSM_056 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_091 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_139 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_146 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_164 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_165 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_173 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_179 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_190 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_193 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_203 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_205 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_239 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_261 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_300 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_319 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_326 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_355 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_415 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_416 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_432 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_521 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_534 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_036 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_037 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_089 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_107 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_118 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_192 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_199 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_214 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_225 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_237 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_259 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_267 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_276 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_301 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_359 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_390 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_392 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_419 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_451 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_460 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_473 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_485 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_490 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_492 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_001 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_040 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_055 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_113 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_128 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_188 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_217 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_232 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_233 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_255 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_314 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_369 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_398 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_439 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_450 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_465 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_514 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_518 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_519 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_028 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_035 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_042 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_133 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_151 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_155 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_158 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_228 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_003 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_033 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_080 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_088 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_093 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_121 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_194 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_226 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_268 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_293 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_325 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_395 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_411 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_462 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_467 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_472 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_512 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+}
+
+toe_alti_reward_trilia = {
+    s:STATE_NSM_056 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_091 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_139 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_146 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_164 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_165 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_173 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_179 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_190 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_193 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_203 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_205 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_239 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_261 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_300 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_319 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_326 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_355 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_415 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_416 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_432 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_521 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_534 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_036 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_037 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_089 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_107 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_118 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_192 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_199 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_214 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_225 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_237 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_259 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_267 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_276 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_301 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_359 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_390 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_392 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_419 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_451 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_460 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_473 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_485 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_490 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_492 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_001 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_040 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_055 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_113 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_128 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_188 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_217 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_232 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_233 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_255 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_314 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_369 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_398 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_439 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_450 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_465 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_514 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_518 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_519 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_028 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_035 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_042 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_133 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_151 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_155 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_158 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_228 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_003 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_033 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_080 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_088 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_093 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_121 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_194 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_226 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_268 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_293 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_325 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_395 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_411 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_462 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_467 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_472 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_512 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+}
+
+toe_alti_grant_ilvone_claims = {
+    set_variable = toe_altia_ilvone_claims_granted
+    change_infamy = { value = 20 }
+    s:STATE_NSM_015 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_026 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_044 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_071 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_083 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_202 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_248 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_271 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_287 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_331 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_336 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_339 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_346 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_455 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_507 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+    s:STATE_NSM_508 = {
+        if = {
+            limit = { any_scope_state = { NOT = { owner = ROOT } } }
+            add_claim = ROOT
+        }
+    }
+}
+
+toe_alti_reward_ilvone = {
+    s:STATE_NSM_015 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_026 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_044 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_071 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_083 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_202 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_248 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_271 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_287 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_331 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_336 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_339 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_346 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_455 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_507 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+    s:STATE_NSM_508 = {
+        every_scope_state = {
+            limit = { owner = ROOT }
+            add_modifier = { name = toe_altia_conquest_state_integration_bonus }
+        }
+    }
+}

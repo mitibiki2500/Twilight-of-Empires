@@ -1,0 +1,1969 @@
+﻿BUILDINGS={
+	s:STATE_NSM_015={
+			region_state:GSU={
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_silk_plantation"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=2
+							region="STATE_NSM_015"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_015"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+			}
+		
+			region_state:GSU={
+				create_building={
+					building="building_shipyard"
+					add_ownership={ country={ country="c:GSU" levels=1 } }
+					reserves=1
+					activate_production_methods={ "pm_complex_shipbuilding" }
+				}
+			}
+		
+			region_state:GSU={
+				
+			}
+		
+			region_state:GSU = {
+				
+			}
+		
+		    region_state:GSU = {
+		        create_building = {
+		            building="building_naval_administration"
+		            add_ownership={ country={ country="c:GSU" levels=3 } }
+		            reserves=1
+		        }
+		    
+				create_building={
+					building="building_tea_plantation"
+					add_ownership={
+						country={ country="c:GSU" levels=1 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+				}
+			}
+		
+	}
+	s:STATE_NSM_031={
+			region_state:XAY={
+				create_building={
+					building="building_government_administration"
+					add_ownership={
+						country={
+							country="c:XAY"
+							levels=2
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+				}
+	
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_food_industry"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:XAY"
+							levels=1
+							region="STATE_NSM_031"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_textile_mill"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:XAY"
+							levels=1
+							region="STATE_NSM_031"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_tooling_workshop"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:XAY"
+							levels=1
+							region="STATE_NSM_031"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_pig_iron" "pm_automation_disabled" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_paper_mill"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:XAY"
+							levels=1
+							region="STATE_NSM_031"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_wheat_farm"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:XAY"
+							levels=1
+							region="STATE_NSM_031"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_livestock_ranch"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:XAY"
+							levels=1
+							region="STATE_NSM_031"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:XAY"
+							levels=1
+							region="STATE_NSM_031"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_fishing_wharf"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:XAY"
+							levels=1
+							region="STATE_NSM_031"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:XAY"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:XAY"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_cotton_plantation"
+					add_ownership={
+						country={
+							country="c:XAY"
+							levels=1
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_sugar_plantation"
+					add_ownership={
+						country={
+							country="c:XAY"
+							levels=1
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
+				}
+			}
+		
+			region_state:XAY={
+				create_building={
+					building="building_construction_sector"
+					add_ownership={ country={ country="c:XAY" levels=1 } }
+					reserves=1
+					activate_production_methods={ "pm_wooden_buildings" }
+				}
+				
+				
+				
+				create_building={
+					building="building_furniture_manufactory"
+					add_ownership={ building={ type="building_financial_district" country="c:XAY" levels=1 region="STATE_NSM_031" } }
+					reserves=1
+				}
+				
+				
+			}
+		
+			region_state:XAY={
+				create_building={
+					building="building_arms_industry"
+					add_ownership={ country={ country="c:XAY" levels=1 } }
+					reserves=1
+					activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
+				}
+			}
+		
+			region_state:XAY={
+				create_building={
+					building="building_shipyard"
+					add_ownership={ country={ country="c:XAY" levels=1 } }
+					reserves=1
+					activate_production_methods={ "pm_basic_shipbuilding" }
+				}
+			}
+		
+			region_state:XAY={
+				create_building={
+					building="building_naval_administration"
+					add_ownership={ country={ country="c:XAY" levels=2 } }
+					reserves=1
+				}
+			}
+		
+	}
+	s:STATE_NSM_074={
+			region_state:KTO={
+				create_building={
+					building="building_government_administration"
+					add_ownership={
+						country={
+							country="c:KTO"
+							levels=3
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+				}
+	
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_construction_sector"
+					add_ownership={
+						country={
+							country="c:KTO"
+							levels=1
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_wooden_buildings" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_food_industry"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:KTO"
+							levels=1
+							region="STATE_NSM_074"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_textile_mill"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:KTO"
+							levels=1
+							region="STATE_NSM_074"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
+				}
+				# source: NSM_integrated_buildings.txt
+	
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_paper_mill"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:KTO"
+							levels=1
+							region="STATE_NSM_074"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_rice_farm"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:KTO"
+							levels=4
+							region="STATE_NSM_074"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_livestock_ranch"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:KTO"
+							levels=1
+							region="STATE_NSM_074"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:KTO"
+							levels=1
+							region="STATE_NSM_074"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_fishing_wharf"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:KTO"
+							levels=1
+							region="STATE_NSM_074"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:KTO"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:KTO"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_cotton_plantation"
+					add_ownership={
+						country={
+							country="c:KTO"
+							levels=1
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_sugar_plantation"
+					add_ownership={
+						country={
+							country="c:KTO"
+							levels=3
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
+				}
+			}
+		
+			region_state:XAZ={
+				create_building={
+					building="building_construction_sector"
+					add_ownership={ country={ country="c:XAZ" levels=1 } }
+					reserves=1
+					activate_production_methods={ "pm_wooden_buildings" }
+				}
+				create_building={
+					building="building_food_industry"
+					add_ownership={ building={ type="building_financial_district" country="c:XAZ" levels=1 region="STATE_NSM_074" } }
+					reserves=1
+					activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
+				}
+				create_building={
+					building="building_textile_mill"
+					add_ownership={ building={ type="building_financial_district" country="c:XAZ" levels=1 region="STATE_NSM_074" } }
+					reserves=1
+					activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
+				}
+				
+				create_building={
+					building="building_furniture_manufactory"
+					add_ownership={ building={ type="building_financial_district" country="c:XAZ" levels=1 region="STATE_NSM_074" } }
+					reserves=1
+				}
+				
+				create_building={
+					building="building_paper_mill"
+					add_ownership={ building={ type="building_financial_district" country="c:XAZ" levels=1 region="STATE_NSM_074" } }
+					reserves=1
+					activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
+				}
+			}
+		
+			region_state:XAZ={
+				create_building={
+					building="building_arms_industry"
+					add_ownership={ country={ country="c:XAZ" levels=1 } }
+					reserves=1
+					activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
+				}
+			}
+		
+			region_state:XAZ={
+				create_building={
+					building="building_shipyard"
+					add_ownership={ country={ country="c:XAZ" levels=1 } }
+					reserves=1
+					activate_production_methods={ "pm_basic_shipbuilding" }
+				}
+			}
+		
+			region_state:XAZ={
+				create_building={
+					building="building_naval_administration"
+					add_ownership={ country={ country="c:XAZ" levels=2 } }
+					reserves=1
+				}
+			
+				create_building={
+					building="building_tea_plantation"
+					add_ownership={
+						country={ country="c:XAZ" levels=5 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+				}
+			}
+		
+	}
+	s:STATE_NSM_170={
+			region_state:FOM={
+				create_building={
+					building="building_government_administration"
+					add_ownership={
+						country={
+							country="c:FOM"
+							levels=4
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+				}
+	
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_cotton_plantation"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:FOM"
+							levels=2
+							region="STATE_NSM_170"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:FOM"
+							levels=2
+							region="STATE_NSM_170"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:FOM"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:FOM"
+							levels=2
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+			}
+		
+			region_state:XBB={
+				
+			}
+		
+			region_state:XBB={
+				
+			}
+		
+			region_state:XBB = {
+				
+			}
+		
+		    region_state:XBB = {
+		        create_building = {
+		            building="building_naval_administration"
+		            add_ownership={ country={ country="c:XBB" levels=4 } }
+		            reserves=1
+		        }
+		    
+				create_building={
+					building="building_tea_plantation"
+					add_ownership={
+						country={ country="c:XBB" levels=5 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+				}
+			
+				create_building={
+					building="building_government_administration"
+					add_ownership={ country={ country="c:XBB" levels=8 } }
+					reserves=1
+					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+				}
+}
+		
+	}
+	s:STATE_NSM_189={
+			region_state:GSU={
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_silk_plantation"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=2
+							region="STATE_NSM_189"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_189"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+			}
+		
+			region_state:GSU={
+				create_building={
+					building="building_sugar_plantation"
+					add_ownership={ country={ country="c:GSU" levels=5 } }
+					reserves=1
+					activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
+				}
+			
+				create_building={
+					building="building_tea_plantation"
+					add_ownership={
+						country={ country="c:GSU" levels=2 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+				}
+			}
+		
+	}
+	s:STATE_NSM_202={
+			region_state:GSU={
+				create_building={
+					building="building_government_administration"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+				}
+	
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_silk_plantation"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=3
+							region="STATE_NSM_202"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_202"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_sugar_plantation"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=6
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
+				}
+			
+				create_building={
+					building="building_tea_plantation"
+					add_ownership={
+						country={ country="c:GSU" levels=1 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+				}
+			}
+		
+	}
+	s:STATE_NSM_262={
+			region_state:GSU={
+				create_building={
+					building="building_government_administration"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+				}
+	
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_food_industry"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_262"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_bakery" "pm_manual_dough_processing" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_textile_mill"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_262"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
+				}
+				# source: NSM_integrated_buildings.txt
+	
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_paper_mill"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_262"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_wheat_farm"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=2
+							region="STATE_NSM_262"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_livestock_ranch"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_262"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_262"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_fishing_wharf"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_262"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=3
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+			}
+		
+			region_state:GSU={
+				
+			}
+		
+			region_state:GSU={
+				create_building={
+					building="building_naval_administration"
+					add_ownership={ country={ country="c:GSU" levels=1 } }
+					reserves=1
+				}
+			}
+		
+	}
+	s:STATE_NSM_271={
+			region_state:GSU={
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_silk_plantation"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=3
+							region="STATE_NSM_271"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_271"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+			
+				create_building={
+					building="building_tea_plantation"
+					add_ownership={
+						country={ country="c:GSU" levels=1 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+				}
+			}
+		
+	}
+	s:STATE_NSM_287={
+			region_state:GSU={
+				create_building={
+					building="building_government_administration"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+				}
+	
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_silk_plantation"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=3
+							region="STATE_NSM_287"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_287"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+	
+				create_building={
+					building="building_sugar_plantation"
+					add_ownership={
+						country={ country="c:GSU" levels=1 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
+				}
+						# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_sugar_plantation"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=5
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
+				}
+			
+				create_building={
+					building="building_tea_plantation"
+					add_ownership={
+						country={ country="c:GSU" levels=1 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+				}
+			}
+		
+	}
+	s:STATE_NSM_333={
+			region_state:SHR={
+				create_building={
+					building="building_government_administration"
+					add_ownership={
+						country={
+							country="c:SHR"
+							levels=5
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+				}
+	
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_cotton_plantation"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:SHR"
+							levels=2
+							region="STATE_NSM_333"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:SHR"
+							levels=2
+							region="STATE_NSM_333"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:SHR"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:SHR"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+			}
+		
+		    region_state:XBB = {
+		        create_building = {
+		            building="building_naval_administration"
+		            add_ownership={ country={ country="c:XBB" levels=2 } }
+		            reserves=1
+		        }
+		    
+				create_building={
+					building="building_tea_plantation"
+					add_ownership={
+						country={ country="c:XBB" levels=2 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+				}
+			
+				create_building={
+					building="building_government_administration"
+					add_ownership={ country={ country="c:XBB" levels=7 } }
+					reserves=1
+					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+				}
+}
+		
+	}
+	s:STATE_NSM_336={
+			region_state:GSU={
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_rice_farm"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_336"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_336"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+			
+	            create_building = {
+	                building = "building_sugar_plantation"
+	                levels = 5
+	                activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
+	               }
+	
+				create_building={
+					building="building_tea_plantation"
+					add_ownership={
+						country={ country="c:GSU" levels=1 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+				}
+			}
+		
+	}
+	s:STATE_NSM_367={
+			region_state:XCG={
+				create_building={
+					building="building_government_administration"
+					add_ownership={
+						country={
+							country="c:XCG"
+							levels=3
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+				}
+	
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_food_industry"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:XCG"
+							levels=1
+							region="STATE_NSM_367"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_bakery" "pm_manual_dough_processing" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_textile_mill"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:XCG"
+							levels=1
+							region="STATE_NSM_367"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
+				}
+				# source: NSM_integrated_buildings.txt
+	
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_paper_mill"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:XCG"
+							levels=1
+							region="STATE_NSM_367"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_wheat_farm"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:XCG"
+							levels=1
+							region="STATE_NSM_367"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_livestock_ranch"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:XCG"
+							levels=1
+							region="STATE_NSM_367"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:XCG"
+							levels=1
+							region="STATE_NSM_367"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_coal_mine"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:XCG"
+							levels=1
+							region="STATE_NSM_367"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_picks_and_shovels_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:XCG"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:XCG"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_cotton_plantation"
+					add_ownership={
+						country={
+							country="c:XCG"
+							levels=1
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_sugar_plantation"
+					add_ownership={
+						country={
+							country="c:XCG"
+							levels=2
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
+				}
+			}
+		
+			region_state:XCG={
+				create_building={
+					building="building_construction_sector"
+					add_ownership={ country={ country="c:XCG" levels=1 } }
+					reserves=1
+					activate_production_methods={ "pm_wooden_buildings" }
+				}
+				
+				
+				
+				create_building={
+					building="building_furniture_manufactory"
+					add_ownership={ building={ type="building_financial_district" country="c:XCG" levels=1 region="STATE_NSM_367" } }
+					reserves=1
+				}
+				
+				
+			}
+		
+			region_state:XCG={
+				
+			}
+		
+			region_state:XCG={
+				
+			}
+		
+			region_state:XCG={
+				create_building={
+					building="building_naval_administration"
+					add_ownership={ country={ country="c:XCG" levels=2 } }
+					reserves=1
+				}
+			
+				create_building={
+					building="building_tea_plantation"
+					add_ownership={
+						country={ country="c:XCG" levels=5 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+				}
+			}
+		
+	}
+	s:STATE_NSM_372={
+			region_state:GSU={
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_silk_plantation"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=3
+							region="STATE_NSM_372"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_372"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+			
+	            create_building = {
+	                building = "building_sugar_plantation"
+	                levels = 5
+	                activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
+	               }
+	
+				create_building={
+					building="building_tea_plantation"
+					add_ownership={
+						country={ country="c:GSU" levels=1 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+				}
+			}
+		
+	}
+	s:STATE_NSM_443={
+			region_state:XAI={
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_wheat_farm"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:XAI"
+							levels=2
+							region="STATE_NSM_443"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_soil_enriching_farming" "pm_tools_disabled" "pm_citrus_orchards" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:XAI"
+							levels=1
+							region="STATE_NSM_443"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:XAI"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:XAI"
+							levels=2
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+				# ToE shipping balance
+				create_building = {
+					building="building_shipyard"
+					add_ownership={ country={ country="c:XAI" levels=2 } }
+					reserves=1
+					activate_production_methods={ "pm_complex_shipbuilding" }
+				}
+	
+			}
+		
+			region_state:XAI={
+				create_building={
+					building="building_shipyard"
+					add_ownership={ country={ country="c:XAI" levels=3 } }
+					reserves=1
+					activate_production_methods={ "pm_complex_shipbuilding" }
+				}
+			}
+		
+			region_state:XAI={
+				
+			}
+		
+			region_state:XAI = {
+				
+			}
+		
+		    region_state:XAI = {
+		        create_building = {
+		            building="building_naval_administration"
+		            add_ownership={ country={ country="c:XAI" levels=12 } }
+		            reserves=1
+		        }
+		    }
+		
+	}
+	s:STATE_NSM_502={
+			region_state:GSU={
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_build
+				create_building={
+					building="building_sugar_plantation"
+					add_ownership={
+						country={ country="c:GSU" levels=1 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
+				}
+			# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_silk_plantation"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=3
+							region="STATE_NSM_502"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_502"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_sugar_plantation"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=5
+						}
+					}
+					reserves=1
+					activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
+				}
+			
+				create_building={
+					building="building_tea_plantation"
+					add_ownership={
+						country={ country="c:GSU" levels=1 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+				}
+			}
+		
+	}
+	s:STATE_NSM_508={
+			region_state:GSU={
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_rice_farm"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_508"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:GSU"
+							levels=1
+							region="STATE_NSM_508"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:GSU"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+			}
+		
+	}
+	s:STATE_NSM_524={
+			region_state:RWA={
+				create_building={
+					building="building_government_administration"
+					add_ownership={
+						country={
+							country="c:RWA"
+							levels=3
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+				}
+	
+				# source: NSM_integrated_buildings.txt
+				
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_rice_farm"
+					add_ownership={
+						
+			building={
+							type="building_manor_house"
+							country="c:RWA"
+							levels=3
+							region="STATE_NSM_524"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
+				}
+				# source: NSM_integrated_buildings.txt
+				create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_manor_house"
+							country="c:RWA"
+							levels=1
+							region="STATE_NSM_524"
+						}
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_trade_center"
+					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+					add_ownership={
+						country={
+							country="c:RWA"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				# source: NSM_world_trade_ports_resources.txt
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:RWA"
+							levels=1
+						}
+					}
+					activate_production_methods={ "pm_basic_port" }
+					reserves=1
+				}
+			}
+		
+			region_state:XBC={
+				create_building={
+					building="building_sugar_plantation"
+					add_ownership={ country={ country="c:XBC" levels=3 } }
+					reserves=1
+					activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
+				}
+			}
+		
+			region_state:XBC={
+				
+			}
+		
+			region_state:XBC={
+				create_building={
+					building="building_naval_administration"
+					add_ownership={ country={ country="c:XBC" levels=1 } }
+					reserves=1
+				}
+			
+				create_building={
+					building="building_tea_plantation"
+					add_ownership={
+						country={ country="c:XBC" levels=4 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+				}
+			}
+		
+	}
+}

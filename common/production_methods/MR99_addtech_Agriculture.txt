@@ -1,0 +1,435 @@
+﻿#農業石油,鉱山
+
+pm_mr1_farming = {
+	texture = "gfx/interface/icons/production_method_icons/pm_synthetic_pesticides.dds"
+	unlocking_technologies = {
+		synthetic_pesticides
+	}
+
+	state_modifiers = {
+		unscaled = {
+			state_harvest_condition_drought_impact_mult = 0.1
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fertilizer_add = 20	 # 600
+			goods_input_oil_add = 1	 # 40
+
+			# output goods
+			goods_output_grain_add = 90 # 1800
+		}
+
+		level_scaled = {
+			# earnings
+			building_employment_laborers_add = 2500
+			building_employment_farmers_add = 2500
+		}
+	}
+}
+pm_mr2_farming = {
+	texture = "gfx/interface/icons/production_method_icons/pm_ogm.dds"
+	unlocking_technologies = {
+		green_revolution
+	}
+
+	state_modifiers = {
+		unscaled = {
+			state_harvest_condition_drought_impact_mult = 0.1
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fertilizer_add = 20	 # 750
+			goods_input_oil_add = 3	 # 120
+
+			# output goods
+			goods_output_grain_add = 100 # 2000
+		}
+
+		level_scaled = {
+			# earnings
+			building_employment_laborers_add = 2500
+			building_employment_farmers_add = 2500
+		}
+	}
+}
+pm_mr1_rice_farm = {
+	texture = "gfx/interface/icons/production_method_icons/pm_synthetic_pesticides.dds"
+	unlocking_technologies = {
+		synthetic_pesticides
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fertilizer_add = 40	# 1200
+			goods_input_oil_add = 2	 # 80
+
+			# output goods
+			goods_output_grain_add = 180 # 3600
+		}
+
+		level_scaled = {
+			# earnings
+			building_employment_laborers_add = 5000
+			building_employment_farmers_add = 5000
+		}
+	}
+}
+pm_mr2_rice_farm = {
+	texture = "gfx/interface/icons/production_method_icons/pm_ogm.dds"
+	unlocking_technologies = {
+		green_revolution
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fertilizer_add = 40	# 1200
+			goods_input_oil_add = 6	 # 240
+
+			# output goods
+			goods_output_grain_add = 200 # 4000
+		}
+
+		level_scaled = {
+			# earnings
+			building_employment_laborers_add = 5000
+			building_employment_farmers_add = 5000
+		}
+	}
+}
+#家畜
+pm_conveyor_belt_abattoirs = {
+	texture = "gfx/interface/icons/production_method_icons/pm_conveyor_belt_abattoirs.dds"
+
+	unlocking_technologies = {
+		mechanical_arms
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 10
+			goods_input_engines_add = 2
+			goods_input_oil_add = 2
+			goods_input_electricity_add = 2
+
+			goods_output_meat_add = 60
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 2250
+			building_employment_farmers_add = 1750
+			building_employment_machinists_add = 1000
+		}
+	}
+}
+#石油
+pm_mr_oil = {
+	texture = "gfx/interface/icons/production_method_icons/pm_oil_horizontal_drilling.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		horizontal_drilling
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_engines_add = 60
+			goods_input_electricity_add = 20
+			goods_input_tools_add = 10
+
+			# output goods
+			goods_output_oil_add = 200
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 1000
+		}
+	}
+}
+
+
+#鉄
+pm_mr1_iron_mine = {
+	texture = "gfx/interface/icons/production_method_icons/electric_fueled_pump.dds"
+
+	unlocking_technologies = {
+		thermal_cracking
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 20
+			goods_input_electricity_add = 5
+			goods_input_oil_add = 5
+
+			# output goods
+			goods_output_iron_add = 100
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 750
+		}
+	}
+}
+pm_mr2_iron_mine = {
+	texture = "gfx/interface/icons/production_method_icons/advanced_mining_systems.dds"
+
+	unlocking_technologies = {
+		heavy_machinery
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 25
+			goods_input_electricity_add = 10
+			goods_input_engines_add = 5
+			goods_input_oil_add = 5
+
+			# output goods
+			goods_output_iron_add = 120
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 750
+		}
+	}
+}
+#石炭
+pm_mr1_coal_mine = {
+	texture = "gfx/interface/icons/production_method_icons/electric_fueled_pump.dds"
+
+	unlocking_technologies = {
+		thermal_cracking
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 20
+			goods_input_electricity_add = 5
+			goods_input_oil_add = 5
+
+			# output goods
+			goods_output_coal_add = 105
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 750
+		}
+	}
+}
+pm_mr2_coal_mine = {
+	texture = "gfx/interface/icons/production_method_icons/advanced_mining_systems.dds"
+
+	unlocking_technologies = {
+		heavy_machinery
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 25
+			goods_input_electricity_add = 10
+			goods_input_engines_add = 5
+			goods_input_oil_add = 5
+
+			# output goods
+			goods_output_coal_add = 120
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 750
+		}
+	}
+}
+#硫黄
+pm_mr1_sulfur_mine = {
+	texture = "gfx/interface/icons/production_method_icons/electric_fueled_pump.dds"
+
+	unlocking_technologies = {
+		thermal_cracking
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 20
+			goods_input_electricity_add = 5
+			goods_input_oil_add = 5
+
+			# output goods
+			goods_output_sulfur_add = 100
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 750
+		}
+	}
+}
+pm_mr2_sulfur_mine = {
+	texture = "gfx/interface/icons/production_method_icons/advanced_mining_systems.dds"
+
+	unlocking_technologies = {
+		heavy_machinery
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 25
+			goods_input_electricity_add = 10
+			goods_input_engines_add = 5
+			goods_input_oil_add = 5
+
+			# output goods
+			goods_output_sulfur_add = 120
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 750
+		}
+	}
+}
+#鉛
+pm_mr1_lead_mine = {
+	texture = "gfx/interface/icons/production_method_icons/electric_fueled_pump.dds"
+
+	unlocking_technologies = {
+		thermal_cracking
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 20
+			goods_input_electricity_add = 5
+			goods_input_oil_add = 5
+
+			# output goods
+			goods_output_lead_add = 100
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 750
+		}
+	}
+}
+pm_mr2_lead_mine = {
+	texture = "gfx/interface/icons/production_method_icons/advanced_mining_systems.dds"
+
+	unlocking_technologies = {
+		heavy_machinery
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 25
+			goods_input_electricity_add = 10
+			goods_input_engines_add = 5
+			goods_input_oil_add = 5
+
+			# output goods
+			goods_output_lead_add = 120
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 750
+		}
+	}
+}
