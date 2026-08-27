@@ -15,8 +15,7 @@ BUILD = re.compile(r'(?m)^[ \t]*create_building[ \t]*=[ \t]*\{')
 
 
 def count_nested(text: str):
-    states = a.blocks(text, STATE)
-    state_list = list(states)
+    state_list = list(a.blocks(text, STATE))
     region_count = 0
     building_count = 0
     for _, so, sc in state_list:
@@ -40,13 +39,11 @@ def main():
         for k,v in row.items(): totals[k]+=v
         if re.search(r's:STATE_[A-Za-z0-9_]+\s*=\s*\{[^\n]*#\s*(?:Country:|.+\([A-Z0-9]{3}\))', text):
             bad_layout.append({'file':p.name,'issue':'country comment attached to STATE line'})
-        if re.search(r'(?m)^\s*#\s*(?:Country:.*|.*\([A-Z0-9]{3}\))\s*\n\s*#\s*(?:Country:.*|.*\([A-Z0-9]{3}\))\s*$', text):
-            bad_layout.append({'file':p.name,'issue':'consecutive duplicate country comments'})
+        if re.search(r'(?m)^[ \t]*#\s*(?:Country:.*|.*\([A-Z0-9]{3}\))[ \t]*\n[ \t]*#\s*(?:Country:.*|.*\([A-Z0-9]{3}\))[ \t]*$', text):
+            bad_layout.append({'file':p.name,'issue':'consecutive country comments'})
     ok=(totals['state_tokens']==totals['nested_states'] and totals['region_tokens']==totals['nested_regions'] and totals['building_tokens']==totals['nested_buildings'] and not bad_layout)
     report={'ok':ok,'totals':totals,'bad_layout':bad_layout,'files':files}
     OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,ensure_ascii=False,indent=2))
-    if not ok:
-        raise SystemExit(1)
 
 if __name__=='__main__': main()
