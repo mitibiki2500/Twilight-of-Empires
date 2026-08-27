@@ -12,37 +12,52 @@ OUT = ROOT / 'tools/building_structure_report.json'
 STATE = re.compile(r'(?m)^[ \t]*s:(STATE_[A-Za-z0-9_]+)[ \t]*=[ \t]*\{')
 REGION = re.compile(r'(?m)^[ \t]*region_state:([A-Za-z0-9_]+)[ \t]*=[ \t]*\{')
 BUILD = re.compile(r'(?m)^[ \t]*create_building[ \t]*=[ \t]*\{')
+BTYPE = re.compile(r'\bbuilding\s*=\s*"([^"]+)"')
+COUNTRY = re.compile(r'\bcountry\s*=\s*"?c:([A-Za-z0-9_]+)"?')
 
 
-def count_nested(text: str):
-    state_list = list(a.blocks(text, STATE))
-    region_count = 0
-    building_count = 0
-    for _, so, sc in state_list:
-        for _, ro, rc in a.blocks(text, REGION, so + 1, sc):
-            region_count += 1
-            for _ in a.blocks(text, BUILD, ro + 1, rc):
-                building_count += 1
-    return len(state_list), region_count, building_count
+def spans(text, pattern, start=0, end=None):
+    return [(m, o, c) for m,o,c in a.blocks(text, pattern, start, len(text) if end is None else end)]
 
 
 def main():
     files = {}
     totals = {'state_tokens':0,'nested_states':0,'region_tokens':0,'nested_regions':0,'building_tokens':0,'nested_buildings':0}
     bad_layout=[]
+    orphan_buildings=[]
     for p in sorted(BDIR.glob('*.txt')):
         text=p.read_text(encoding='utf-8-sig')
-        st=len(STATE.findall(text)); rg=len(REGION.findall(text)); bg=len(BUILD.findall(text))
-        ns,nr,nb=count_nested(text)
-        row={'state_tokens':st,'nested_states':ns,'region_tokens':rg,'nested_regions':nr,'building_tokens':bg,'nested_buildings':nb}
+        state_spans=spans(text,STATE)
+        region_spans=[]
+        nested_build_spans=[]
+        for sm,so,sc in state_spans:
+            for rm,ro,rc in spans(text,REGION,so+1,sc):
+                region_spans.append((rm,ro,rc,sm.group(1)))
+                for bm,bo,bc in spans(text,BUILD,ro+1,rc):
+                    nested_build_spans.append((bm,bo,bc,sm.group(1),rm.group(1)))
+        all_build_spans=spans(text,BUILD)
+        row={'state_tokens':len(STATE.findall(text)),'nested_states':len(state_spans),'region_tokens':len(REGION.findall(text)),'nested_regions':len(region_spans),'building_tokens':len(BUILD.findall(text)),'nested_buildings':len(nested_build_spans)}
         files[p.name]=row
         for k,v in row.items(): totals[k]+=v
+        nested_starts={m.start() for m,_,_,_,_ in nested_build_spans}
+        for bm,bo,bc in all_build_spans:
+            if bm.start() in nested_starts:
+                continue
+            state_name=None
+            for sm,so,sc in state_spans:
+                if sm.start() <= bm.start() <= sc:
+                    state_name=sm.group(1); break
+            raw=text[bm.start():bc+1]
+            bt=BTYPE.search(raw)
+            co=COUNTRY.search(raw)
+            line=text.count('\n',0,bm.start())+1
+            orphan_buildings.append({'file':p.name,'line':line,'state':state_name,'building':bt.group(1) if bt else None,'country_hint':co.group(1) if co else None,'snippet':' '.join(raw.strip().split())[:500]})
         if re.search(r's:STATE_[A-Za-z0-9_]+\s*=\s*\{[^\n]*#\s*(?:Country:|.+\([A-Z0-9]{3}\))', text):
             bad_layout.append({'file':p.name,'issue':'country comment attached to STATE line'})
         if re.search(r'(?m)^[ \t]*#\s*(?:Country:.*|.*\([A-Z0-9]{3}\))[ \t]*\n[ \t]*#\s*(?:Country:.*|.*\([A-Z0-9]{3}\))[ \t]*$', text):
             bad_layout.append({'file':p.name,'issue':'consecutive country comments'})
     ok=(totals['state_tokens']==totals['nested_states'] and totals['region_tokens']==totals['nested_regions'] and totals['building_tokens']==totals['nested_buildings'] and not bad_layout)
-    report={'ok':ok,'totals':totals,'bad_layout':bad_layout,'files':files}
+    report={'ok':ok,'totals':totals,'bad_layout':bad_layout,'orphan_buildings':orphan_buildings,'files':files}
     OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,ensure_ascii=False,indent=2))
 
