@@ -26,7 +26,7 @@ jobs:
         run: python tools/audit_buildings.py
       - name: Commit audit report
         run: |
-          if git diff --quiet -- tools/building_audit_report.json; then
+          if [ -z "$(git status --porcelain -- tools/building_audit_report.json)" ]; then
             echo 'No report changes'
             exit 0
           fi
