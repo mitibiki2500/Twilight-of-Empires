@@ -1,0 +1,38 @@
+name: ToE economy and city graphics audit
+
+on:
+  push:
+    branches: [ gpt-economy-city-audit ]
+    paths:
+      - 'tools/audit_economy_city.py'
+      - 'common/history/buildings/**'
+      - 'map_data/state_regions/**'
+      - 'gfx/map/map_object_data/generated_map_object_locators_city.txt'
+      - '.github/workflows/toe_economy_city_audit.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gpt-economy-city-audit
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit economy and city graphics prerequisites
+        run: python tools/audit_economy_city.py
+      - name: Commit report
+        run: |
+          if [ -z "$(git status --porcelain -- tools/economy_city_audit.json)" ]; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/economy_city_audit.json
+          git commit -m 'Record economy and city graphics audit'
+          git push origin HEAD:gpt-economy-city-audit
