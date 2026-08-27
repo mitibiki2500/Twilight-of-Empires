@@ -1,0 +1,151 @@
+{
+  "summary": {
+    "passed": 14,
+    "failed": 0,
+    "total": 14
+  },
+  "checks": [
+    {
+      "name": "MAPI base 72",
+      "ok": true,
+      "detail": "common/static_modifiers/00_code_static_modifiers.txt"
+    },
+    {
+      "name": "Alti station system modifiers",
+      "ok": true,
+      "detail": [
+        "country_bureaucracy_mult = 0.10",
+        "state_tax_capacity_add = 15",
+        "state_tax_capacity_mult = 0.15"
+      ]
+    },
+    {
+      "name": "Ria pollution fund modifiers",
+      "ok": true,
+      "detail": [
+        "state_harvest_condition_toe_great_war_compound_contamination_impact_mult = -0.15",
+        "country_institution_cost_institution_health_system_mult = 0.15"
+      ]
+    },
+    {
+      "name": "New Foot temporary market links",
+      "ok": true,
+      "detail": [
+        "TOE temp tegar/newfoot market fix 01",
+        "TOE temp tegar/newfoot market fix 02"
+      ]
+    },
+    {
+      "name": "Tegar -> Gunma puppet exists",
+      "ok": true,
+      "detail": [
+        "common/history/diplomacy/00_subject_relationships.txt"
+      ]
+    },
+    {
+      "name": "No Tegar/Gunma vassal regression",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "Gunma subject MVA vassal relation present",
+      "ok": true,
+      "detail": [
+        "common/history/diplomacy/00_subject_relationships.txt"
+      ]
+    },
+    {
+      "name": "Gunma subject KSO vassal relation present",
+      "ok": true,
+      "detail": [
+        "common/history/diplomacy/00_subject_relationships.txt"
+      ]
+    },
+    {
+      "name": "Gunma subject KTO vassal relation present",
+      "ok": true,
+      "detail": [
+        "common/history/diplomacy/00_subject_relationships.txt"
+      ]
+    },
+    {
+      "name": "Alti heir three traits present",
+      "ok": true,
+      "detail": [
+        "common/character_templates/country_skr_#U30a2#U30eb#U30c6#U30a3.txt",
+        "今回の更新内容.txt"
+      ]
+    },
+    {
+      "name": "Invalid skeptical trait absent",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "Tegar no redundant three-tech regression",
+      "ok": true,
+      "detail": {
+        "XAI_files": [
+          "common/history/countries/XAI-#U30c6#U30fc#U30ac#U30fc#U30eb.txt"
+        ],
+        "regressions": []
+      }
+    },
+    {
+      "name": "All 12 restored prestige DDS assets exist",
+      "ok": true,
+      "detail": {
+        "saudi_aramco_oil_prestige.dds": [
+          "gfx/interface/icons/goods_icons/prestige_goods/saudi_aramco_oil_prestige.dds"
+        ],
+        "gazprom_natural_gas_prestige.dds": [
+          "gfx/interface/icons/goods_icons/prestige_goods/gazprom_natural_gas_prestige.dds"
+        ],
+        "apple_iphones_prestige.dds": [
+          "gfx/interface/icons/goods_icons/prestige_goods/apple_iphones_prestige.dds"
+        ],
+        "smartphones_prestige.dds": [
+          "gfx/interface/icons/goods_icons/prestige_goods/smartphones_prestige.dds"
+        ],
+        "olivetti_teleprinters_prestige.dds": [
+          "gfx/interface/icons/goods_icons/prestige_goods/olivetti_teleprinters_prestige.dds"
+        ],
+        "asml_euv_lithography_machines_prestige.dds": [
+          "gfx/interface/icons/goods_icons/prestige_goods/asml_euv_lithography_machines_prestige.dds"
+        ],
+        "intel_processors_prestige.dds": [
+          "gfx/interface/icons/goods_icons/prestige_goods/intel_processors_prestige.dds"
+        ],
+        "gpu_prestige.dds": [
+          "gfx/interface/icons/goods_icons/prestige_goods/gpu_prestige.dds"
+        ],
+        "wafers_prestige.dds": [
+          "gfx/interface/icons/goods_icons/prestige_goods/wafers_prestige.dds"
+        ],
+        "MB_holy_prestige.dds": [
+          "gfx/interface/icons/goods_icons/prestige_goods/MB_holy_prestige.dds"
+        ],
+        "MB_gold_prestige.dds": [
+          "gfx/interface/icons/goods_icons/prestige_goods/MB_gold_prestige.dds"
+        ],
+        "MR_bscopper.dds": [
+          "gfx/interface/icons/goods_icons/prestige_goods/MR_bscopper.dds"
+        ]
+      }
+    },
+    {
+      "name": "No known old nsm prestige mapping strings",
+      "ok": true,
+      "detail": {
+        "searched_files": [
+          "common/company_types/00_nsm_WestAsia_companies.txt",
+          "common/prestige_goods/MR00_prestige_goods.txt",
+          "common/prestige_goods/MSN00_prestige_goods.txt",
+          "localization/japanese/toe_prestige_goods_complete_l_japanese.yml",
+          "localization/replace/japanese/nsm_companies_l_japanese.yml"
+        ],
+        "bad": []
+      }
+    }
+  ]
+}
