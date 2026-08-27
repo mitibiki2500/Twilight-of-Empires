@@ -45,6 +45,15 @@ jobs:
         run: python tools/audit_buildings.py
       - name: Audit nesting and layout
         run: python tools/audit_building_structure.py
+      - name: Persist structure diagnostics
+        run: |
+          if [ -n "$(git status --porcelain -- tools/building_structure_report.json)" ]; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add tools/building_structure_report.json
+            git commit -m 'Record building structure diagnostics'
+            git push origin HEAD:gpt-building-admin-audit
+          fi
       - name: Verify no structural duplicates remain
         run: |
           python - <<'PY'
@@ -67,12 +76,13 @@ jobs:
         run: python tools/audit_rollbacks.py
       - name: Commit normalized files and reports
         run: |
-          if [ -z "$(git status --porcelain -- common/history/buildings tools/building_audit_report.json tools/building_structure_report.json tools/rollback_audit_report.json)" ]; then
+          git pull --rebase --autostash origin gpt-building-admin-audit
+          if [ -z "$(git status --porcelain -- common/history/buildings tools/building_audit_report.json tools/rollback_audit_report.json)" ]; then
             echo 'No cleanup/audit changes'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add common/history/buildings tools/building_audit_report.json tools/building_structure_report.json tools/rollback_audit_report.json
+          git add common/history/buildings tools/building_audit_report.json tools/rollback_audit_report.json
           git commit -m 'Rebuild clean building history from main and verify structure'
           git push origin HEAD:gpt-building-admin-audit
