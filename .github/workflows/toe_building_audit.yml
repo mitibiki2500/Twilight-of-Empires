@@ -6,6 +6,7 @@ on:
     paths:
       - 'tools/audit_buildings.py'
       - 'tools/cleanup_buildings.py'
+      - 'tools/audit_rollbacks.py'
       - 'common/history/buildings/**'
       - '.github/workflows/toe_building_audit.yml'
 
@@ -42,14 +43,16 @@ jobs:
           print('Verified:', s)
           print('XBB administration:', r['XBB_government_administration'])
           PY
-      - name: Commit normalized files and report
+      - name: Audit established fixes for rollback
+        run: python tools/audit_rollbacks.py
+      - name: Commit normalized files and reports
         run: |
-          if [ -z "$(git status --porcelain -- common/history/buildings tools/building_audit_report.json)" ]; then
-            echo 'No cleanup changes'
+          if [ -z "$(git status --porcelain -- common/history/buildings tools/building_audit_report.json tools/rollback_audit_report.json)" ]; then
+            echo 'No cleanup/audit changes'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add common/history/buildings tools/building_audit_report.json
-          git commit -m 'Normalize building history and fix XBB administration excess'
+          git add common/history/buildings tools/building_audit_report.json tools/rollback_audit_report.json
+          git commit -m 'Audit established ToE fixes after building cleanup'
           git push origin HEAD:gpt-building-admin-audit
