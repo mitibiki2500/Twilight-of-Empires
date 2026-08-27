@@ -1,10 +1,11 @@
-name: ToE building audit
+name: ToE building cleanup and audit
 
 on:
   push:
     branches: [ gpt-building-admin-audit ]
     paths:
       - 'tools/audit_buildings.py'
+      - 'tools/cleanup_buildings.py'
       - 'common/history/buildings/**'
       - '.github/workflows/toe_building_audit.yml'
 
@@ -12,7 +13,7 @@ permissions:
   contents: write
 
 jobs:
-  audit:
+  cleanup-and-audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,16 +23,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Audit building history
+      - name: Normalize building history and XBB administration
+        run: python tools/cleanup_buildings.py
+      - name: Re-audit normalized files
         run: python tools/audit_buildings.py
-      - name: Commit audit report
+      - name: Verify no structural duplicates remain
         run: |
-          if [ -z "$(git status --porcelain -- tools/building_audit_report.json)" ]; then
-            echo 'No report changes'
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('tools/building_audit_report.json').read_text(encoding='utf-8'))
+          s=r['summary']
+          assert s['brace_errors'] == 0, s
+          assert s['duplicate_state_ids'] == 0, s
+          assert s['duplicate_region_state_groups'] == 0, s
+          assert s['duplicate_building_groups'] == 0, s
+          assert r['XBB_government_administration']['total_levels'] == 105, r['XBB_government_administration']
+          print('Verified:', s)
+          print('XBB administration:', r['XBB_government_administration'])
+          PY
+      - name: Commit normalized files and report
+        run: |
+          if [ -z "$(git status --porcelain -- common/history/buildings tools/building_audit_report.json)" ]; then
+            echo 'No cleanup changes'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tools/building_audit_report.json
-          git commit -m 'Audit ToE building history duplicates and administration levels'
+          git add common/history/buildings tools/building_audit_report.json
+          git commit -m 'Normalize building history and fix XBB administration excess'
           git push origin HEAD:gpt-building-admin-audit
