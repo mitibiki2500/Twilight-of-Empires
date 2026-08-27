@@ -6,6 +6,8 @@ on:
     paths:
       - 'tools/audit_buildings.py'
       - 'tools/cleanup_buildings.py'
+      - 'tools/cleanup_buildings_v2.py'
+      - 'tools/audit_building_structure.py'
       - 'tools/audit_rollbacks.py'
       - 'common/history/buildings/**'
       - 'common/history/diplomacy/**'
@@ -23,6 +25,7 @@ permissions:
 
 jobs:
   cleanup-and-audit:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,10 +35,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Restore building history from current main baseline
+        run: |
+          git fetch origin main
+          git checkout origin/main -- common/history/buildings
       - name: Normalize building history and XBB administration
-        run: python tools/cleanup_buildings.py
+        run: python tools/cleanup_buildings_v2.py
       - name: Re-audit normalized files
         run: python tools/audit_buildings.py
+      - name: Audit nesting and layout
+        run: python tools/audit_building_structure.py
       - name: Verify no structural duplicates remain
         run: |
           python - <<'PY'
@@ -48,19 +57,22 @@ jobs:
           assert s['duplicate_region_state_groups'] == 0, s
           assert s['duplicate_building_groups'] == 0, s
           assert r['XBB_government_administration']['total_levels'] == 105, r['XBB_government_administration']
+          sr=json.loads(Path('tools/building_structure_report.json').read_text(encoding='utf-8'))
+          assert sr['ok'], sr
           print('Verified:', s)
+          print('Structure:', sr['totals'])
           print('XBB administration:', r['XBB_government_administration'])
           PY
       - name: Audit established fixes for rollback
         run: python tools/audit_rollbacks.py
       - name: Commit normalized files and reports
         run: |
-          if [ -z "$(git status --porcelain -- common/history/buildings tools/building_audit_report.json tools/rollback_audit_report.json)" ]; then
+          if [ -z "$(git status --porcelain -- common/history/buildings tools/building_audit_report.json tools/building_structure_report.json tools/rollback_audit_report.json)" ]; then
             echo 'No cleanup/audit changes'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add common/history/buildings tools/building_audit_report.json tools/rollback_audit_report.json
-          git commit -m 'Audit established ToE fixes after building cleanup'
+          git add common/history/buildings tools/building_audit_report.json tools/building_structure_report.json tools/rollback_audit_report.json
+          git commit -m 'Rebuild clean building history from main and verify structure'
           git push origin HEAD:gpt-building-admin-audit
