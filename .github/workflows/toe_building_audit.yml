@@ -8,6 +8,14 @@ on:
       - 'tools/cleanup_buildings.py'
       - 'tools/audit_rollbacks.py'
       - 'common/history/buildings/**'
+      - 'common/history/diplomacy/**'
+      - 'common/history/countries/**'
+      - 'common/character_templates/**'
+      - 'common/amendments/**'
+      - 'common/static_modifiers/**'
+      - 'common/prestige_goods/**'
+      - 'gfx/interface/icons/goods_icons/prestige_goods/**'
+      - 'map_data/adjacencies.csv'
       - '.github/workflows/toe_building_audit.yml'
 
 permissions:
