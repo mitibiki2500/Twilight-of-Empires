@@ -1,0 +1,154 @@
+name: Apply ToE company ownership and admin balance
+
+on:
+  push:
+    paths:
+      - '.github/workflows/toe_apply_company_ownership_admin.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Apply company categories and administration balance
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          company_changes = {
+              'common/company_types/00_nsm_WestEurope_companies.txt': {
+                  'company_nsm_royal_fusen': 'aristocrat_owned',
+                  'company_nsm_arlzack': 'shopkeeper_owned',
+              },
+              'common/company_types/00_nsm_EastEurope_companies.txt': {
+                  'company_nsm_royal_dale': 'bureaucrat_owned',
+                  'company_nsm_eskandel': 'aristocrat_owned',
+              },
+              'common/company_types/00_nsm_WestAsia_companies.txt': {
+                  'company_nsm_ilbone_fisheries': 'shopkeeper_owned',
+              },
+              'common/company_types/00_nsm_NorthAmerica_companies.txt': {
+                  'company_nsm_riimeus': 'aristocrat_owned',
+              },
+          }
+
+          def balanced_end(text, start):
+              brace = text.find('{', start)
+              if brace < 0:
+                  raise RuntimeError('opening brace not found')
+              depth = 1
+              i = brace + 1
+              while i < len(text) and depth:
+                  if text[i] == '{': depth += 1
+                  elif text[i] == '}': depth -= 1
+                  i += 1
+              if depth:
+                  raise RuntimeError('unbalanced braces')
+              return i
+
+          for path_s, changes in company_changes.items():
+              path = Path(path_s)
+              text = path.read_text(encoding='utf-8-sig')
+              for company, category in changes.items():
+                  m = re.search(r'(?m)^' + re.escape(company) + r'\s*=\s*\{', text)
+                  if not m:
+                      raise RuntimeError(f'{company} not found in {path}')
+                  end = balanced_end(text, m.start())
+                  block = text[m.start():end]
+                  if re.search(r'(?m)^\s*category\s*=', block):
+                      block = re.sub(r'(?m)^(\s*category\s*=\s*)\S+', r'\g<1>' + category, block, count=1)
+                  else:
+                      if 'flavored_company = yes' not in block:
+                          raise RuntimeError(f'flavored_company marker missing for {company}')
+                      block = block.replace('flavored_company = yes', 'flavored_company = yes\n\tcategory = ' + category, 1)
+                  text = text[:m.start()] + block + text[end:]
+              path.write_text(text, encoding='utf-8-sig', newline='\n')
+
+          # Target government-administration levels based on the user's in-game bureaucracy screenshots.
+          admin_targets = {
+              'XAI': { # Tegar: 52 -> 34
+                  'NSM_036':5, 'NSM_089':1, 'NSM_192':8, 'NSM_237':4, 'NSM_259':3,
+                  'NSM_359':3, 'NSM_390':3, 'NSM_469':3, 'NSM_485':3, 'NSM_513':1,
+              },
+              'XAS': { # Sand: 28 -> 34
+                  'NSM_112':3, 'NSM_168':3, 'NSM_247':3, 'NSM_277':3, 'NSM_311':3, 'NSM_401':3,
+              },
+              'PAI': { # Paido: 103 -> 88
+                  'NSM_012':5, 'NSM_024':3, 'NSM_145':2, 'NSM_198':5, 'NSM_236':4,
+                  'NSM_272':5, 'NSM_360':5, 'NSM_403':3, 'NSM_416':3, 'NSM_437':4, 'NSM_529':4,
+              },
+              'XBL': { # Riia Socialist Republic: 6 -> 2
+                  'NSM_059':1, 'NSM_141':0, 'NSM_427':1, 'NSM_448':0,
+              },
+          }
+
+          applied = []
+          for path in Path('common/history/buildings').glob('*.txt'):
+              text = path.read_text(encoding='utf-8-sig')
+              state_matches = list(re.finditer(r's:STATE_(NSM_\d+)\s*=\s*\{', text))
+              changed = False
+              for sm in reversed(state_matches):
+                  state = sm.group(1)
+                  target_country = None
+                  target_level = None
+                  for country, states in admin_targets.items():
+                      if state in states:
+                          target_country = country
+                          target_level = states[state]
+                          break
+                  if target_country is None:
+                      continue
+
+                  state_end = balanced_end(text, sm.start())
+                  state_block = text[sm.start():state_end]
+                  for bm in reversed(list(re.finditer(r'create_building\s*=\s*\{', state_block))):
+                      b_end = balanced_end(state_block, bm.start())
+                      b = state_block[bm.start():b_end]
+                      if 'building="building_government_administration"' not in b:
+                          continue
+                      if f'country="c:{target_country}"' not in b:
+                          continue
+                      lm = re.search(r'levels\s*=\s*(\d+)', b)
+                      old = int(lm.group(1)) if lm else 1
+                      abs_start = sm.start() + bm.start()
+                      abs_end = sm.start() + b_end
+                      if target_level == 0:
+                          line_start = text.rfind('\n', 0, abs_start) + 1
+                          line_end = text.find('\n', abs_end)
+                          line_end = abs_end if line_end < 0 else line_end + 1
+                          text = text[:line_start] + text[line_end:]
+                      else:
+                          if not lm:
+                              raise RuntimeError(f'levels missing: {target_country} {state}')
+                          b = b[:lm.start(1)] + str(target_level) + b[lm.end(1):]
+                          text = text[:abs_start] + b + text[abs_end:]
+                      applied.append((target_country, state, old, target_level, str(path)))
+                      changed = True
+                      break
+              if changed:
+                  path.write_text(text, encoding='utf-8-sig', newline='\n')
+
+          expected = sum(len(v) for v in admin_targets.values())
+          if len(applied) != expected:
+              raise RuntimeError(f'admin changes applied {len(applied)} / expected {expected}: {applied}')
+
+          print('Company ownership categories applied.')
+          for item in applied:
+              print('ADMIN', item)
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add common/company_types common/history/buildings
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Apply company partial ownership and admin balance"
+            git push
+          fi
