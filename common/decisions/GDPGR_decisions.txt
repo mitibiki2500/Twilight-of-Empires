@@ -1,51 +1,6 @@
-﻿# AI-only decision to secretly initialize mid-game; cannot use a journal entry for this purpose because apparently JEs
-# don't show up if they weren't there when the given AI country is first created, so I'm going to use a decision instead
-
-# Also catches newly-formed (i.e., released) countries, although the Canonically Correct way of doing that would be via
-# appropriate on actions
-
-GDPGR_de_initialize = {
-    is_shown = {
-        is_ai = yes
-        NOT = {
-            has_global_variable = GDPGR_initialization_debounce
-        }
-        any_country = {
-            NAND = {
-                has_variable = before_gdp # Check if it doesn't exist
-                var:before_gdp >= 0 # Check if it's a number
-                has_variable = GDPGR_rolling_difference
-                var:GDPGR_rolling_difference >= 0
-            }
-        }
-    }
-    
-    when_taken = {
-        set_global_variable = GDPGR_initialization_debounce
-        if = {
-            limit = {
-                NOR = {
-                    has_global_variable = GDPGR_year
-                    has_global_variable = GDPGR_month
-                }
-            }
-            GDPGR_initialize_all = yes
-        }
-        else = {
-            every_country = {
-                limit = {
-                    NAND = {
-                        has_variable = before_gdp
-                        var:before_gdp >= 0
-                    }
-                }
-                GDPGR_initialize_country = yes
-            }
-        }
-        remove_global_variable = GDPGR_initialization_debounce
-    }
-    
-    ai_chance = {
-        value = 1000000
-    }
-}
+﻿# Disabled by ToE performance/stability cleanup (2026-08-28).
+# The bundled GDPGR package is incomplete: GDPGR_initialize_all / GDPGR_initialize_country
+# and the variables maintained by the original package are absent.
+# Keeping the old AI-only decision caused every AI country to repeatedly evaluate an
+# any_country scan for an initialization path that can never complete.
+# GDPGR runtime initialization is intentionally disabled together with GDPGR_on_actions.txt.
