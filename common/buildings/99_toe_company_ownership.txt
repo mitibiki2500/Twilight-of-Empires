@@ -1,0 +1,41 @@
+﻿building_company_headquarter = {
+	building_group = bg_company_headquarter
+	city_type = city
+	levels_per_mesh = 50
+
+	lens = infrastructure
+	icon = "gfx/interface/icons/building_icons/building_company_hq.dds"
+
+	production_method_groups = {
+		pmg_toe_company_base_ownership
+		pmg_toe_company_partial_ownership
+	}
+
+	investment_scores = {}
+	buildable = no
+	expandable = no
+	downsizeable = no
+	ownership_type = other
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+}
+
+building_company_regional_headquarter = {
+	building_group = bg_company_regional_headquarter
+	city_type = city
+	levels_per_mesh = 50
+
+	lens = infrastructure
+	icon = "gfx/interface/icons/building_icons/building_company_regional_hq.dds"
+
+	production_method_groups = {
+		pmg_toe_company_base_ownership
+		pmg_toe_company_partial_ownership
+	}
+
+	investment_scores = {}
+	buildable = no
+	expandable = no
+	downsizeable = no
+	ownership_type = other
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+}
