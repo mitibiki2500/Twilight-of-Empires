@@ -29,13 +29,16 @@ on_monthly_pulse = {
 }
 
 toe_ria_empire_defeat_check = {
+    trigger = {
+        NOT = { has_global_variable = toe_ria_empire_defeat_settled }
+    }
+
     effect = {
         if = {
             limit = {
                 NOT = { c:XBK ?= { exists = yes } }
                 c:XBJ ?= { exists = yes }
                 c:XBL ?= { exists = yes }
-                NOT = { has_global_variable = toe_ria_empire_defeat_settled }
             }
             set_global_variable = { name = toe_ria_empire_defeat_settled value = 1 }
             c:XBJ ?= { trigger_event = { id = toe_ria_civil_war.1 days = 1 } }
