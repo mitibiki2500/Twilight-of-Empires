@@ -1,14 +1,8 @@
 ﻿# Twilight of Empires company ownership production methods
 
-# Base ownership: all companies can begin with shopkeeper ownership.
 pm_toe_company_base_shopkeepers = {
 	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
-
-	disallowing_laws = {
-		law_command_economy
-		law_cooperative_ownership
-	}
-
+	disallowing_laws = { law_command_economy law_cooperative_ownership }
 	building_modifiers = {
 		level_scaled = {
 			building_employment_shopkeepers_add = 50
@@ -21,20 +15,10 @@ pm_toe_company_base_shopkeepers = {
 	}
 }
 
-# Capitalist base ownership is unlocked by Stock Exchange and is blocked under Guild System.
 pm_toe_company_base_capitalists = {
 	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
-
-	unlocking_technologies = {
-		stock_exchange
-	}
-
-	disallowing_laws = {
-		law_guild_system
-		law_command_economy
-		law_cooperative_ownership
-	}
-
+	unlocking_technologies = { stock_exchange }
+	disallowing_laws = { law_guild_system law_command_economy law_cooperative_ownership }
 	building_modifiers = {
 		level_scaled = {
 			building_employment_capitalists_add = 50
@@ -43,6 +27,25 @@ pm_toe_company_base_capitalists = {
 		unscaled = {
 			building_capitalists_shares_add = 10
 			building_clerks_shares_add = 2
+		}
+	}
+}
+
+pm_toe_company_base_divine_economics = {
+	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
+	is_hidden_when_unavailable = yes
+	unlocking_technologies = { stock_exchange }
+	unlocking_principles = { principle_divine_economics_2 principle_divine_economics_3 }
+	disallowing_laws = { law_guild_system law_command_economy law_cooperative_ownership }
+	building_modifiers = {
+		level_scaled = {
+			building_employment_capitalists_add = 25
+			building_employment_clergymen_add = 25
+			building_employment_clerks_add = 50
+		}
+		unscaled = {
+			building_capitalists_shares_add = 10
+			building_clergymen_shares_add = 2
 		}
 	}
 }
@@ -77,9 +80,11 @@ pm_toe_company_base_worker_cooperative = {
 	}
 }
 
-# Partial ownership is separated from base ownership. Default companies have no second owner class.
+# Capitalist-owned is the default company category. These companies receive no additional owner class.
 pm_toe_company_partial_none = {
 	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
+	is_hidden_when_unavailable = yes
+	unlocking_company_categories = { capitalist_owned }
 	building_modifiers = {}
 }
 
@@ -88,12 +93,8 @@ pm_toe_company_partial_aristocrats = {
 	is_hidden_when_unavailable = yes
 	unlocking_company_categories = { aristocrat_owned }
 	building_modifiers = {
-		level_scaled = {
-			building_employment_aristocrats_add = 15
-		}
-		unscaled = {
-			building_aristocrats_shares_add = 5
-		}
+		level_scaled = { building_employment_aristocrats_add = 15 }
+		unscaled = { building_aristocrats_shares_add = 5 }
 	}
 }
 
@@ -102,12 +103,8 @@ pm_toe_company_partial_shopkeepers = {
 	is_hidden_when_unavailable = yes
 	unlocking_company_categories = { shopkeeper_owned }
 	building_modifiers = {
-		level_scaled = {
-			building_employment_shopkeepers_add = 15
-		}
-		unscaled = {
-			building_shopkeepers_shares_add = 5
-		}
+		level_scaled = { building_employment_shopkeepers_add = 15 }
+		unscaled = { building_shopkeepers_shares_add = 5 }
 	}
 }
 
@@ -116,16 +113,21 @@ pm_toe_company_partial_bureaucrats = {
 	is_hidden_when_unavailable = yes
 	unlocking_company_categories = { bureaucrat_owned }
 	building_modifiers = {
-		level_scaled = {
-			building_employment_bureaucrats_add = 15
-		}
-		unscaled = {
-			building_bureaucrats_shares_add = 5
-		}
+		level_scaled = { building_employment_bureaucrats_add = 15 }
+		unscaled = { building_bureaucrats_shares_add = 5 }
 	}
 }
 
-# Financial district shopkeeper ownership. Under Guild System this is the only private option.
+pm_toe_company_partial_academics = {
+	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
+	is_hidden_when_unavailable = yes
+	unlocking_company_categories = { academic_owned }
+	building_modifiers = {
+		level_scaled = { building_employment_academics_add = 15 }
+		unscaled = { building_academics_shares_add = 5 }
+	}
+}
+
 pm_toe_financial_district_shopkeepers = {
 	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
 	building_modifiers = {
@@ -133,13 +135,10 @@ pm_toe_financial_district_shopkeepers = {
 			building_employment_shopkeepers_add = 50
 			building_employment_clerks_add = 50
 		}
-		unscaled = {
-			building_shopkeepers_shares_add = 10
-		}
+		unscaled = { building_shopkeepers_shares_add = 10 }
 	}
 }
 
-# Existing capitalist ownership concept, now unlocked by Stock Exchange and unavailable under Guild System.
 pm_toe_financial_district_capitalists = {
 	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
 	unlocking_technologies = { stock_exchange }
@@ -167,8 +166,25 @@ pm_toe_financial_district_publicly_traded = {
 			building_employment_bureaucrats_add = 25
 			building_employment_clerks_add = 25
 		}
+		unscaled = { building_capitalists_shares_add = 10 }
+	}
+}
+
+pm_toe_financial_district_divine_economics = {
+	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
+	is_hidden_when_unavailable = yes
+	unlocking_technologies = { stock_exchange }
+	unlocking_principles = { principle_divine_economics_2 principle_divine_economics_3 }
+	disallowing_laws = { law_guild_system }
+	building_modifiers = {
+		level_scaled = {
+			building_employment_capitalists_add = 50
+			building_employment_clergymen_add = 25
+			building_employment_clerks_add = 25
+		}
 		unscaled = {
 			building_capitalists_shares_add = 10
+			building_clergymen_shares_add = 2
 		}
 	}
 }
