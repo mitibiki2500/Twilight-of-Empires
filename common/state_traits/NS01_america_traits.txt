@@ -6,6 +6,7 @@
 #ドリフ砂漠 
 #南ドリフ砂漠 
 #中央高地 
+#トリフセ山脈
 
 #グレートリイアプレーンズ
 state_trait_great_riia_plains = {
@@ -75,4 +76,12 @@ state_trait_central_highlands = {
         building_group_bg_mining_throughput_add = 0.05
         state_infrastructure_mult = -0.10
     }
+}
+#トリフセ山脈
+state_trait_torihuse_mountains = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	modifier = {
+		state_market_access_price_impact = -0.04 #追加市場価格補正
+		state_infrastructure_mult = -0.2 #インフラ
+	}
 }

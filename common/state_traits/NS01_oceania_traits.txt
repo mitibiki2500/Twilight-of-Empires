@@ -1,4 +1,4 @@
-﻿#フーション川 #グンマ高原 #ナイカン山脈 #ヌイカン山脈s
+﻿#フーション川 #グンマ高原 #ナイカン山脈 #ヌイカン山脈 #
 #フーション川
 state_trait_fushion_river = {
     icon = "gfx/interface/icons/state_trait_icons/g_river.dds"
@@ -32,5 +32,13 @@ state_trait_nuikan_mountains = {
         state_market_access_price_impact = -0.02 #追加市場価格補正
         state_infrastructure_mult = -0.1
         building_group_bg_mining_throughput_add = 0.1
+    }
+}
+state_trait_kinannu = {
+    icon = "gfx/interface/icons/state_trait_icons/farm2.dds"
+    modifier = {
+        building_group_bg_agriculture_throughput_add = 0.1
+        building_group_bg_plantations_throughput_add = 0.1
+        building_tea_plantation_throughput_add = 0.15 #お茶処理
     }
 }

@@ -1,0 +1,107 @@
+﻿# MAPI direct technology overrides. Only the three changed technologies are replaced.
+#市場アクセスの調整
+#ベース60+都市化2+中央集権化10(計72)+証券取引4+鉄道10(計86)港2(計88)+飛行船4+マクロ経済4(計96)
+REPLACE:urban_planning = { #都市化2
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/urban_planning.dds"
+	category = society
+
+	modifier = {
+		state_infrastructure_from_population_add = 1
+		state_infrastructure_from_population_max_add = 20
+		state_building_construction_sector_max_level_add = 5
+		country_max_weekly_construction_progress_add = 5
+		state_market_access_price_impact = 0.02 #was0
+	}
+
+	unlocking_technologies = {
+		urbanization
+	}
+
+	ai_weight = {
+		value = 2 # Important in general
+	}
+}
+
+
+REPLACE:centralization = { #中央集権10
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/centralization.dds"
+	category = society
+
+	modifier = {
+		state_tax_capacity_add = 25
+		country_institution_home_affairs_max_investment_add = 1
+		state_incorporation_speed_mult = 0.05
+		state_market_access_price_impact = 0.1 #was0
+	}
+
+	unlocking_technologies = {
+		tech_bureaucracy
+	}
+
+	ai_weight = {
+		value = 5 # Important in general
+
+		if = {
+			limit = { has_journal_entry = je_age_of_princes }
+			add = 30
+		}
+	}
+}
+
+REPLACE:stock_exchange = { #証券取引4
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/stock_exchanges.dds"
+	category = society
+
+	modifier = {
+		state_market_access_price_impact = 0.04 #was0.1
+	}
+
+	unlocking_technologies = {
+		international_trade
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+REPLACE:zeppelins = { #飛行船4
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/zeppelins.dds"
+	category = society
+
+	modifier = {
+		state_market_access_price_impact = 0.04 #was0.05
+	}
+
+	unlocking_technologies = {
+		steel_frame_buildings
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+REPLACE:macroeconomics = { #マクロ経済4
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/macroeconomics.dds"
+	category = society
+
+	modifier = {
+		country_max_companies_add = 1
+		state_market_access_price_impact = 0.04 #Was0.05
+	}
+
+	unlocking_technologies = {
+		international_exchange_standards
+		corporate_management
+	}
+
+	ai_weight = {
+		value = 3 # very important tech
+	}
+}

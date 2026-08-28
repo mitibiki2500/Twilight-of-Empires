@@ -41,7 +41,7 @@ STATE_NSM_027 = {
     id = 27
     subsistence_building = "building_subsistence_pasture"
     provinces = { x554526 x42823F xB98543 x2B8536 xDC8458 x603239 xED736C xD99D26 xD85724 xCCD4E6 }
-    traits = { "state_trait_drif_desert" }
+    traits = { "state_trait_drif_desert"  "tate_trait_torihuse_mountains" }
     city = "x554526"
     port = "x603239"
     naval_exit_id = 598
@@ -653,7 +653,7 @@ STATE_NSM_273 = {
     id = 273
     subsistence_building = "building_subsistence_farm"
     provinces = { x74C683 x2CD899 x3A7C88 x872774 x7E5F4D xBFE453 x79237F xDB9CE6 xF4A373 x8ABABA xA144C4 xA0B130 xDE29D4 }
-    traits = { "state_trait_central_highlands" }
+    traits = { "state_trait_central_highlands"  "tate_trait_torihuse_mountains" }
     city = "x74C683"
     farm = "x2CD899"
     mine = "x3A7C88"
@@ -720,24 +720,12 @@ STATE_NSM_305 = {
     id = 305
     subsistence_building = "building_subsistence_farm"
     provinces = { x5DAEBC xB93EBA xE84745 x3FD34B x4BEAE0 }
-    traits = { "state_trait_central_highlands" "state_trait_river" }
+    traits = { "state_trait_central_highlands" "state_trait_river"  "tate_trait_torihuse_mountains" }
     city = "x5DAEBC"
     farm = "xB93EBA"
     mine = "xE84745"
     wood = "x3FD34B"
-    arable_land = 50 #明確な耕作地不明
-
-
-
-
-
-
-
-
-
-
-
-
+    arable_land = 55 #明確な耕作地不明
     arable_resources = { "building_maize_farm" "building_livestock_ranch" "building_banana_plantation" "building_coffee_plantation" "building_cotton_plantation" "building_dye_plantation" "building_sugar_plantation" "building_tobacco_plantation" "building_tea_plantation" "building_silk_plantation" }
     capped_resources = {
         building_logging_camp = 8
@@ -1608,7 +1596,7 @@ STATE_NSM_535 = {
     id = 615
     subsistence_building = "building_subsistence_farm"
     provinces = { xC381E1 xC26ABE x3BEDA1 x36AC7D x2C2D4E xC33E37 x31AE5D xF1DA9D xDE38D3 xD4BDC4 xE2D9EC x577193 xEA3E5C xE4CBC1 xC36761 x98E1C0 }
-    traits = { "state_trait_drif_desert" }
+    traits = { "state_trait_drif_desert"  "tate_trait_torihuse_mountains" }
     city = "xC381E1"
     port = "xD4BDC4"
     naval_exit_id = 589
