@@ -1,0 +1,38 @@
+﻿pmg_toe_company_base_ownership = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_toe_company_base_shopkeepers
+		pm_toe_company_base_capitalists
+		pm_toe_company_base_divine_economics
+		pm_toe_company_base_government_run
+		pm_toe_company_base_worker_cooperative
+	}
+}
+
+pmg_toe_company_partial_ownership = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_toe_company_partial_none
+		pm_toe_company_partial_aristocrats
+		pm_toe_company_partial_shopkeepers
+		pm_toe_company_partial_bureaucrats
+		pm_toe_company_partial_academics
+	}
+}
+
+# Replace the vanilla financial-district ownership group with the ToE ownership progression.
+pmg_ownership_building_financial_district = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_ownership.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_toe_financial_district_shopkeepers
+		pm_toe_financial_district_capitalists
+		pm_toe_financial_district_publicly_traded
+		pm_toe_financial_district_divine_economics
+	}
+}
