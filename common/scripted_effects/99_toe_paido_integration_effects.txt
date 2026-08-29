@@ -9,54 +9,115 @@ toe_paido_init_integration = {
 # 文化統合（POPをパイドへ全転換＋tradition_paido付与）
 toe_paido_integrate_dale = {
 	cu:nsm_map_pai_dale = { add_tradition_trait = tradition_paido }
-	every_scope_state = { every_scope_pop = { limit = { has_pop_culture = cu:nsm_map_pai_dale } change_pop_culture = { target = cu:nsm_map_pai value = 1 } } }
+	every_scope_state = {
+		every_scope_pop = {
+			limit = { has_pop_culture = cu:nsm_map_pai_dale }
+			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+		}
+	}
 	set_variable = toe_paido_done_dale
 	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
+
 toe_paido_integrate_shaftar = {
 	cu:nsm_map_pai_shaftar = { add_tradition_trait = tradition_paido }
-	every_scope_state = { every_scope_pop = { limit = { has_pop_culture = cu:nsm_map_pai_shaftar } change_pop_culture = { target = cu:nsm_map_pai value = 1 } } }
+	every_scope_state = {
+		every_scope_pop = {
+			limit = { has_pop_culture = cu:nsm_map_pai_shaftar }
+			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+		}
+	}
 	set_variable = toe_paido_done_shaftar
 	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
+
 toe_paido_integrate_eskan = {
 	cu:nsm_map_pai_eskan = { add_tradition_trait = tradition_paido }
-	every_scope_state = { every_scope_pop = { limit = { has_pop_culture = cu:nsm_map_pai_eskan } change_pop_culture = { target = cu:nsm_map_pai value = 1 } } }
+	every_scope_state = {
+		every_scope_pop = {
+			limit = { has_pop_culture = cu:nsm_map_pai_eskan }
+			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+		}
+	}
 	set_variable = toe_paido_done_eskan
 	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
+
 toe_paido_integrate_old = {
 	cu:nsm_map_pai_old = { add_tradition_trait = tradition_paido }
-	every_scope_state = { every_scope_pop = { limit = { has_pop_culture = cu:nsm_map_pai_old } change_pop_culture = { target = cu:nsm_map_pai value = 1 } } }
+	every_scope_state = {
+		every_scope_pop = {
+			limit = { has_pop_culture = cu:nsm_map_pai_old }
+			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+		}
+	}
 	set_variable = toe_paido_done_old
 	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
+
 toe_paido_integrate_northern = {
 	cu:nsm_map_pai_northern = { add_tradition_trait = tradition_paido }
-	every_scope_state = { every_scope_pop = { limit = { has_pop_culture = cu:nsm_map_pai_northern } change_pop_culture = { target = cu:nsm_map_pai value = 1 } } }
+	every_scope_state = {
+		every_scope_pop = {
+			limit = { has_pop_culture = cu:nsm_map_pai_northern }
+			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+		}
+	}
 	set_variable = toe_paido_done_northern
 	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
+
 toe_paido_integrate_palun = {
 	cu:nsm_map_pai_palun = { add_tradition_trait = tradition_paido }
-	every_scope_state = { every_scope_pop = { limit = { has_pop_culture = cu:nsm_map_pai_palun } change_pop_culture = { target = cu:nsm_map_pai value = 1 } } }
+	every_scope_state = {
+		every_scope_pop = {
+			limit = { has_pop_culture = cu:nsm_map_pai_palun }
+			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+		}
+	}
 	set_variable = toe_paido_done_palun
 	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
+
 toe_paido_integrate_balin = {
 	cu:nsm_map_pai_4 = { add_tradition_trait = tradition_paido }
-	every_scope_state = { every_scope_pop = { limit = { has_pop_culture = cu:nsm_map_pai_4 } change_pop_culture = { target = cu:nsm_map_pai value = 1 } } }
+	every_scope_state = {
+		every_scope_pop = {
+			limit = { has_pop_culture = cu:nsm_map_pai_4 }
+			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+		}
+	}
 	set_variable = toe_paido_done_balin
 	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
 
 # 非必須：文化は残してtradition_paidoだけ付与。
-toe_paido_tradition_resind = { cu:nsm_map_pai_3 = { add_tradition_trait = tradition_paido } set_variable = toe_paido_done_resind change_variable = { name = toe_paido_achieved_count add = 1 } }
-toe_paido_tradition_prune = { cu:nsm_map_pai_5 = { add_tradition_trait = tradition_paido } set_variable = toe_paido_done_prune change_variable = { name = toe_paido_achieved_count add = 1 } }
-toe_paido_tradition_krikul = { cu:nsm_map_pai_2 = { add_tradition_trait = tradition_paido } set_variable = toe_paido_done_krikul change_variable = { name = toe_paido_achieved_count add = 1 } }
-toe_paido_tradition_sosilia = { cu:nsm_map_sos = { add_tradition_trait = tradition_paido } set_variable = toe_paido_done_sosilia change_variable = { name = toe_paido_achieved_count add = 1 } }
+toe_paido_tradition_resind = {
+	cu:nsm_map_pai_3 = { add_tradition_trait = tradition_paido }
+	set_variable = toe_paido_done_resind
+	change_variable = { name = toe_paido_achieved_count add = 1 }
+}
 
-# 毎週、各文化のhomeland内の施設レベルを再集計して条件を満たした文化を自動達成する。
+toe_paido_tradition_prune = {
+	cu:nsm_map_pai_5 = { add_tradition_trait = tradition_paido }
+	set_variable = toe_paido_done_prune
+	change_variable = { name = toe_paido_achieved_count add = 1 }
+}
+
+toe_paido_tradition_krikul = {
+	cu:nsm_map_pai_2 = { add_tradition_trait = tradition_paido }
+	set_variable = toe_paido_done_krikul
+	change_variable = { name = toe_paido_achieved_count add = 1 }
+}
+
+toe_paido_tradition_sosilia = {
+	cu:nsm_map_sos = { add_tradition_trait = tradition_paido }
+	set_variable = toe_paido_done_sosilia
+	change_variable = { name = toe_paido_achieved_count add = 1 }
+}
+
+# 毎週、各文化のhomeland内の施設レベルを再集計する。
+# 条件を満たしてもここでは達成扱いにせず、各文化のボタンを押した時だけ統合する。
 toe_paido_recalculate_integration = {
 	# 必須文化
 	set_variable = { name = toe_pai_dale_agri value = 0 }
@@ -82,10 +143,25 @@ toe_paido_recalculate_integration = {
 		if = {
 			limit = { state_region = { is_homeland = cu:nsm_map_pai_dale } }
 			every_scope_building = {
-				if = { limit = { OR = { is_building_type = building_wheat_farm is_building_type = building_rye_farm is_building_type = building_rice_farm is_building_type = building_maize_farm is_building_type = building_millet_farm } } ROOT = { change_variable = { name = toe_pai_dale_agri add = PREV.level } } }
-				if = { limit = { is_building_type = building_food_industry } ROOT = { change_variable = { name = toe_pai_dale_food add = PREV.level } } }
+				if = {
+					limit = {
+						OR = {
+							is_building_type = building_wheat_farm
+							is_building_type = building_rye_farm
+							is_building_type = building_rice_farm
+							is_building_type = building_maize_farm
+							is_building_type = building_millet_farm
+						}
+					}
+					ROOT = { change_variable = { name = toe_pai_dale_agri add = PREV.level } }
+				}
+				if = {
+					limit = { is_building_type = building_food_industry }
+					ROOT = { change_variable = { name = toe_pai_dale_food add = PREV.level } }
+				}
 			}
 		}
+
 		# シャフタパイド
 		if = {
 			limit = { state_region = { is_homeland = cu:nsm_map_pai_shaftar } }
@@ -94,6 +170,7 @@ toe_paido_recalculate_integration = {
 				if = { limit = { is_building_type = building_tooling_workshops } ROOT = { change_variable = { name = toe_pai_shaftar_tools add = PREV.level } } }
 			}
 		}
+
 		# エスカン
 		if = {
 			limit = { state_region = { is_homeland = cu:nsm_map_pai_eskan } }
@@ -102,6 +179,7 @@ toe_paido_recalculate_integration = {
 				if = { limit = { is_building_group = bg_manufacturing } ROOT = { change_variable = { name = toe_pai_eskan_industry add = PREV.level } } }
 			}
 		}
+
 		# オールドパイド
 		if = {
 			limit = { state_region = { is_homeland = cu:nsm_map_pai_old } }
@@ -110,13 +188,26 @@ toe_paido_recalculate_integration = {
 				if = { limit = { is_building_group = bg_mining } ROOT = { change_variable = { name = toe_pai_old_mining add = PREV.level } } }
 			}
 		}
+
 		# ノーザンパイド
 		if = {
 			limit = { state_region = { is_homeland = cu:nsm_map_pai_northern } }
 			every_scope_building = {
-				if = { limit = { OR = { is_building_type = building_wheat_farm is_building_type = building_rye_farm is_building_type = building_rice_farm is_building_type = building_maize_farm is_building_type = building_millet_farm } } ROOT = { change_variable = { name = toe_pai_northern_agri add = PREV.level } } }
+				if = {
+					limit = {
+						OR = {
+							is_building_type = building_wheat_farm
+							is_building_type = building_rye_farm
+							is_building_type = building_rice_farm
+							is_building_type = building_maize_farm
+							is_building_type = building_millet_farm
+						}
+					}
+					ROOT = { change_variable = { name = toe_pai_northern_agri add = PREV.level } }
+				}
 			}
 		}
+
 		# パルン
 		if = {
 			limit = { state_region = { is_homeland = cu:nsm_map_pai_palun } }
@@ -125,21 +216,31 @@ toe_paido_recalculate_integration = {
 				if = { limit = { is_building_group = bg_mining } ROOT = { change_variable = { name = toe_pai_palun_mining add = PREV.level } } }
 			}
 		}
+
 		# レシンド
 		if = {
 			limit = { state_region = { is_homeland = cu:nsm_map_pai_3 } }
-			every_scope_building = { if = { limit = { is_building_type = building_shipyards } ROOT = { change_variable = { name = toe_pai_resind_shipyard add = PREV.level } } } }
+			every_scope_building = {
+				if = { limit = { is_building_type = building_shipyards } ROOT = { change_variable = { name = toe_pai_resind_shipyard add = PREV.level } } }
+			}
 		}
+
 		# プルーン
 		if = {
 			limit = { state_region = { is_homeland = cu:nsm_map_pai_5 } }
-			every_scope_building = { if = { limit = { is_building_group = bg_plantations } ROOT = { change_variable = { name = toe_pai_prune_plantation add = PREV.level } } } }
+			every_scope_building = {
+				if = { limit = { is_building_group = bg_plantations } ROOT = { change_variable = { name = toe_pai_prune_plantation add = PREV.level } } }
+			}
 		}
+
 		# クリクル
 		if = {
 			limit = { state_region = { is_homeland = cu:nsm_map_pai_2 } }
-			every_scope_building = { if = { limit = { is_building_type = building_livestock_ranch } ROOT = { change_variable = { name = toe_pai_krikul_ranch add = PREV.level } } } }
+			every_scope_building = {
+				if = { limit = { is_building_type = building_livestock_ranch } ROOT = { change_variable = { name = toe_pai_krikul_ranch add = PREV.level } } }
+			}
 		}
+
 		# バリン
 		if = {
 			limit = { state_region = { is_homeland = cu:nsm_map_pai_4 } }
@@ -149,28 +250,14 @@ toe_paido_recalculate_integration = {
 			}
 		}
 	}
-
-	# 条件達成を自動反映。
-	if = { limit = { NOT = { has_variable = toe_paido_done_dale } var:toe_pai_dale_agri >= 50 var:toe_pai_dale_food >= 10 } toe_paido_integrate_dale = yes }
-	if = { limit = { NOT = { has_variable = toe_paido_done_shaftar } var:toe_pai_shaftar_mining >= 20 var:toe_pai_shaftar_tools >= 5 } toe_paido_integrate_shaftar = yes }
-	if = { limit = { NOT = { has_variable = toe_paido_done_eskan } var:toe_pai_eskan_plantation >= 20 var:toe_pai_eskan_industry >= 5 } toe_paido_integrate_eskan = yes }
-	if = { limit = { NOT = { has_variable = toe_paido_done_old } var:toe_pai_old_industry >= 10 var:toe_pai_old_mining >= 5 } toe_paido_integrate_old = yes }
-	if = { limit = { NOT = { has_variable = toe_paido_done_northern } var:toe_pai_northern_agri >= 15 } toe_paido_integrate_northern = yes }
-	if = { limit = { NOT = { has_variable = toe_paido_done_palun } var:toe_pai_palun_gold >= 3 var:toe_pai_palun_mining >= 5 } toe_paido_integrate_palun = yes }
-
-	if = { limit = { NOT = { has_variable = toe_paido_done_resind } var:toe_pai_resind_shipyard >= 5 country_average_culture_pop_acceptance = { culture = cu:nsm_map_pai_3 value >= 50 } } toe_paido_tradition_resind = yes }
-	if = { limit = { NOT = { has_variable = toe_paido_done_prune } var:toe_pai_prune_plantation >= 10 country_average_culture_pop_acceptance = { culture = cu:nsm_map_pai_5 value >= 50 } } toe_paido_tradition_prune = yes }
-	if = { limit = { NOT = { has_variable = toe_paido_done_krikul } var:toe_pai_krikul_ranch >= 15 country_average_culture_pop_acceptance = { culture = cu:nsm_map_pai_2 value >= 50 } } toe_paido_tradition_krikul = yes }
-	if = { limit = { NOT = { has_variable = toe_paido_done_sosilia } c:SOS ?= { gdp >= 6000000 relations:root >= 50 } } toe_paido_tradition_sosilia = yes }
-	if = { limit = { NOT = { has_variable = toe_paido_done_balin } var:toe_pai_balin_arms >= 5 var:toe_pai_balin_industry >= 5 } toe_paido_integrate_balin = yes }
 }
 
-# 成功報酬を達成数に合わせて選ぶ。
+# 成功報酬は達成文化数を倍率として適用する。
+# 1文化あたり 同化+4% / 社会研究+2.5% / 社会研究普及+2.5% / 威信+2%。
 toe_paido_apply_integration_reward = {
-	if = { limit = { var:toe_paido_achieved_count >= 11 } add_modifier = { name = toe_paido_people_11 days = 3650 } }
-	else_if = { limit = { var:toe_paido_achieved_count >= 10 } add_modifier = { name = toe_paido_people_10 days = 3650 } }
-	else_if = { limit = { var:toe_paido_achieved_count >= 9 } add_modifier = { name = toe_paido_people_9 days = 3650 } }
-	else_if = { limit = { var:toe_paido_achieved_count >= 8 } add_modifier = { name = toe_paido_people_8 days = 3650 } }
-	else_if = { limit = { var:toe_paido_achieved_count >= 7 } add_modifier = { name = toe_paido_people_7 days = 3650 } }
-	else = { add_modifier = { name = toe_paido_people_6 days = 3650 } }
+	add_modifier = {
+		name = toe_paido_people
+		days = 3650
+		multiplier = var:toe_paido_achieved_count
+	}
 }
