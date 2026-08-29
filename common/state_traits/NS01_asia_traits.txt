@@ -1,4 +1,4 @@
-﻿#大ステップ #シベリアの森 #ゴートン川 #スパール川 #リーギニア川 #アルティア川 #カニール大鉄鉱床 #イルボネ内海
+﻿#大ステップ #シベリアの森 #ゴートン川 #スパール川 #リーギニア川 #アルティア川 #カニール大鉄鉱床 #イルボネ内海# スルプ鉱床群
 #大ステップ
 state_trait_great_steppe = {
     icon = "gfx/interface/icons/state_trait_icons/g_plains.dds"
@@ -67,5 +67,14 @@ state_trait_ilvone_inland_sea = {
     modifier = {
         state_infrastructure_add = 25
         state_market_access_price_impact = 0.04
+    }
+}
+
+# スルプ鉱床群
+state_trait_sulpu_deposit_group = {
+    icon = "gfx/interface/icons/state_trait_icons/mine_rich.dds"
+    modifier = {
+        building_coal_mine_throughput_add = 0.10
+        building_lead_mine_throughput_add = 0.15
     }
 }
