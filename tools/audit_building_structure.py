@@ -62,9 +62,11 @@ def main():
         row={'state_tokens':len(STATE.findall(text)),'nested_states':len(state_spans),'region_tokens':len(REGION.findall(text)),'nested_regions':len(region_spans),'building_tokens':len(build_matches),'buildings_inside_region':inside_count}
         files[p.name]=row
         for k,v in row.items(): totals[k]+=v
-        if re.search(r's:STATE_[A-Za-z0-9_]+\s*=\s*\{[^\n]*#\s*(?:Country:|.+\([A-Z0-9]{3}\))', text):
+        # Country comments use three-letter country tags. State-name comments end
+        # with STATE_NSM_### and must not be treated as duplicate country labels.
+        if re.search(r's:STATE_[A-Za-z0-9_]+\s*=\s*\{[^\n]*#\s*(?:Country:|.+\([A-Z]{3}\))', text):
             bad_layout.append({'file':p.name,'issue':'country comment attached to STATE line'})
-        if re.search(r'(?m)^[ \t]*#\s*(?:Country:.*|.*\([A-Z0-9]{3}\))[ \t]*\n[ \t]*#\s*(?:Country:.*|.*\([A-Z0-9]{3}\))[ \t]*$', text):
+        if re.search(r'(?m)^[ \t]*#\s*(?:Country:.*|.*\([A-Z]{3}\))[ \t]*\n[ \t]*#\s*(?:Country:.*|.*\([A-Z]{3}\))[ \t]*$', text):
             bad_layout.append({'file':p.name,'issue':'consecutive country comments'})
     ok=(totals['state_tokens']==totals['nested_states'] and totals['region_tokens']==totals['nested_regions'] and totals['building_tokens']==totals['buildings_inside_region'] and not bad_layout and not orphan_buildings)
     report={'ok':ok,'totals':totals,'bad_layout':bad_layout,'orphan_buildings':orphan_buildings,'files':files}
