@@ -1,14 +1,55 @@
 {
-  "ok": true,
+  "ok": false,
   "totals": {
     "state_tokens": 534,
     "nested_states": 534,
     "region_tokens": 551,
     "nested_regions": 551,
-    "building_tokens": 4297,
-    "buildings_inside_region": 4297
+    "building_tokens": 4295,
+    "buildings_inside_region": 4295
   },
-  "bad_layout": [],
+  "bad_layout": [
+    {
+      "file": "00_NorthRia.txt",
+      "issue": "consecutive country comments"
+    },
+    {
+      "file": "01_SouthRia.txt",
+      "issue": "consecutive country comments"
+    },
+    {
+      "file": "02_WestEurope.txt",
+      "issue": "consecutive country comments"
+    },
+    {
+      "file": "03_EastEurope.txt",
+      "issue": "consecutive country comments"
+    },
+    {
+      "file": "04_NorthAfrica.txt",
+      "issue": "consecutive country comments"
+    },
+    {
+      "file": "05_SouthAfrica.txt",
+      "issue": "consecutive country comments"
+    },
+    {
+      "file": "06_WestAsia.txt",
+      "issue": "consecutive country comments"
+    },
+    {
+      "file": "07_EastAsia.txt",
+      "issue": "consecutive country comments"
+    },
+    {
+      "file": "08_CentralIslands.txt",
+      "issue": "consecutive country comments"
+    },
+    {
+      "file": "09_Oceania.txt",
+      "issue": "consecutive country comments"
+    }
+  ],
   "orphan_buildings": [],
   "files": {
     "00_NorthRia.txt": {
@@ -16,8 +57,8 @@
       "nested_states": 78,
       "region_tokens": 79,
       "nested_regions": 79,
-      "building_tokens": 548,
-      "buildings_inside_region": 548
+      "building_tokens": 546,
+      "buildings_inside_region": 546
     },
     "01_SouthRia.txt": {
       "state_tokens": 26,
