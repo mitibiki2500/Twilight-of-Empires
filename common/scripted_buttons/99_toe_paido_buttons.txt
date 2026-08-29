@@ -1,27 +1,144 @@
-﻿# Paido national integration manual completion button.
-# 必須条件が揃った後も任意文化を待てるよう、自動完了ではなくプレイヤーが押して終了する。
+﻿# Paido national integration culture buttons.
+# ブラジル国民統合JEと同じく、条件を満たした文化をプレイヤーが個別ボタンで統合する。
 
+REPLACE_OR_CREATE:toe_paido_integrate_dale_button = {
+	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_dale } NOT = { has_variable = toe_paido_finalize_integration } }
+	possible = {
+		custom_tooltip = { text = toe_paido_dale_agri_tt var:toe_pai_dale_agri >= 50 }
+		custom_tooltip = { text = toe_paido_dale_food_tt var:toe_pai_dale_food >= 10 }
+	}
+	effect = { toe_paido_integrate_dale = yes }
+	ai_chance = { base = 100 }
+}
+
+REPLACE_OR_CREATE:toe_paido_integrate_shaftar_button = {
+	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_shaftar } NOT = { has_variable = toe_paido_finalize_integration } }
+	possible = {
+		custom_tooltip = { text = toe_paido_shaftar_mining_tt var:toe_pai_shaftar_mining >= 20 }
+		custom_tooltip = { text = toe_paido_shaftar_tools_tt var:toe_pai_shaftar_tools >= 5 }
+	}
+	effect = { toe_paido_integrate_shaftar = yes }
+	ai_chance = { base = 100 }
+}
+
+REPLACE_OR_CREATE:toe_paido_integrate_eskan_button = {
+	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_eskan } NOT = { has_variable = toe_paido_finalize_integration } }
+	possible = {
+		custom_tooltip = { text = toe_paido_eskan_plantation_tt var:toe_pai_eskan_plantation >= 20 }
+		custom_tooltip = { text = toe_paido_eskan_industry_tt var:toe_pai_eskan_industry >= 5 }
+	}
+	effect = { toe_paido_integrate_eskan = yes }
+	ai_chance = { base = 100 }
+}
+
+REPLACE_OR_CREATE:toe_paido_integrate_old_button = {
+	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_old } NOT = { has_variable = toe_paido_finalize_integration } }
+	possible = {
+		custom_tooltip = { text = toe_paido_old_industry_tt var:toe_pai_old_industry >= 10 }
+		custom_tooltip = { text = toe_paido_old_mining_tt var:toe_pai_old_mining >= 5 }
+	}
+	effect = { toe_paido_integrate_old = yes }
+	ai_chance = { base = 100 }
+}
+
+REPLACE_OR_CREATE:toe_paido_integrate_northern_button = {
+	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_northern } NOT = { has_variable = toe_paido_finalize_integration } }
+	possible = {
+		custom_tooltip = { text = toe_paido_northern_agri_tt var:toe_pai_northern_agri >= 15 }
+	}
+	effect = { toe_paido_integrate_northern = yes }
+	ai_chance = { base = 100 }
+}
+
+REPLACE_OR_CREATE:toe_paido_integrate_palun_button = {
+	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_palun } NOT = { has_variable = toe_paido_finalize_integration } }
+	possible = {
+		custom_tooltip = { text = toe_paido_palun_gold_tt var:toe_pai_palun_gold >= 3 }
+		custom_tooltip = { text = toe_paido_palun_mining_tt var:toe_pai_palun_mining >= 5 }
+	}
+	effect = { toe_paido_integrate_palun = yes }
+	ai_chance = { base = 100 }
+}
+
+REPLACE_OR_CREATE:toe_paido_tradition_resind_button = {
+	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_resind } NOT = { has_variable = toe_paido_finalize_integration } }
+	possible = {
+		custom_tooltip = { text = toe_paido_resind_shipyard_tt var:toe_pai_resind_shipyard >= 5 }
+		custom_tooltip = {
+			text = toe_paido_resind_acceptance_tt
+			country_average_culture_pop_acceptance = { culture = cu:nsm_map_pai_3 value >= 50 }
+		}
+	}
+	effect = { toe_paido_tradition_resind = yes }
+	ai_chance = { base = 100 }
+}
+
+REPLACE_OR_CREATE:toe_paido_tradition_prune_button = {
+	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_prune } NOT = { has_variable = toe_paido_finalize_integration } }
+	possible = {
+		custom_tooltip = { text = toe_paido_prune_plantation_tt var:toe_pai_prune_plantation >= 10 }
+		custom_tooltip = {
+			text = toe_paido_prune_acceptance_tt
+			country_average_culture_pop_acceptance = { culture = cu:nsm_map_pai_5 value >= 50 }
+		}
+	}
+	effect = { toe_paido_tradition_prune = yes }
+	ai_chance = { base = 100 }
+}
+
+REPLACE_OR_CREATE:toe_paido_tradition_krikul_button = {
+	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_krikul } NOT = { has_variable = toe_paido_finalize_integration } }
+	possible = {
+		custom_tooltip = { text = toe_paido_krikul_ranch_tt var:toe_pai_krikul_ranch >= 15 }
+		custom_tooltip = {
+			text = toe_paido_krikul_acceptance_tt
+			country_average_culture_pop_acceptance = { culture = cu:nsm_map_pai_2 value >= 50 }
+		}
+	}
+	effect = { toe_paido_tradition_krikul = yes }
+	ai_chance = { base = 100 }
+}
+
+REPLACE_OR_CREATE:toe_paido_tradition_sosilia_button = {
+	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_sosilia } NOT = { has_variable = toe_paido_finalize_integration } }
+	possible = {
+		custom_tooltip = { text = toe_paido_sosilia_gdp_tt c:SOS ?= { gdp >= 6000000 } }
+		custom_tooltip = { text = toe_paido_sosilia_relations_tt relations:c:SOS >= 50 }
+	}
+	effect = { toe_paido_tradition_sosilia = yes }
+	ai_chance = { base = 100 }
+}
+
+REPLACE_OR_CREATE:toe_paido_integrate_balin_button = {
+	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_balin } NOT = { has_variable = toe_paido_finalize_integration } }
+	possible = {
+		custom_tooltip = { text = toe_paido_balin_arms_tt var:toe_pai_balin_arms >= 5 }
+		custom_tooltip = { text = toe_paido_balin_industry_tt var:toe_pai_balin_industry >= 5 }
+	}
+	effect = { toe_paido_integrate_balin = yes }
+	ai_chance = { base = 100 }
+}
+
+# 必須6文化を統合した後も任意文化を待てるよう、最後は手動で完了する。
 REPLACE_OR_CREATE:toe_paido_finish_integration_button = {
 	visible = {
 		this = c:PAI
 		NOT = { has_variable = toe_paido_finalize_integration }
 	}
 	possible = {
-		has_variable = toe_paido_done_dale
-		has_variable = toe_paido_done_shaftar
-		has_variable = toe_paido_done_eskan
-		has_variable = toe_paido_done_old
-		has_variable = toe_paido_done_northern
-		has_variable = toe_paido_done_palun
-		has_technology_researched = nationalism
-		cu:nsm_map_pai.culture_current_fervor >= 60
-		institution_investment_level = {
-			institution = institution_schools
-			value >= 2
+		custom_tooltip = { text = toe_paido_req_dale_done_tt has_variable = toe_paido_done_dale }
+		custom_tooltip = { text = toe_paido_req_shaftar_done_tt has_variable = toe_paido_done_shaftar }
+		custom_tooltip = { text = toe_paido_req_eskan_done_tt has_variable = toe_paido_done_eskan }
+		custom_tooltip = { text = toe_paido_req_old_done_tt has_variable = toe_paido_done_old }
+		custom_tooltip = { text = toe_paido_req_northern_done_tt has_variable = toe_paido_done_northern }
+		custom_tooltip = { text = toe_paido_req_palun_done_tt has_variable = toe_paido_done_palun }
+		custom_tooltip = { text = toe_paido_req_nationalism_tt has_technology_researched = nationalism }
+		custom_tooltip = { text = toe_paido_req_fervor_tt cu:nsm_map_pai.culture_current_fervor >= 60 }
+		custom_tooltip = {
+			text = toe_paido_req_schools_tt
+			institution_investment_level = { institution = institution_schools value >= 2 }
 		}
 	}
-	effect = {
-		set_variable = toe_paido_finalize_integration
-	}
+	effect = { set_variable = toe_paido_finalize_integration }
 	ai_chance = { base = 100 }
 }
