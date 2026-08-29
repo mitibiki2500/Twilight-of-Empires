@@ -3964,6 +3964,10 @@ BUILDINGS={
 			# ToE shipping balance
 			create_building = {
 				building="building_shipyard"
+				add_ownership={
+					country={ country="c:XAI" levels=5 }
+					company={ type=company_nsm_footwater_line country="c:XAI" levels=5 }
+				}
 			add_ownership={
 				country={ country="c:XAI" levels=10 }
 			}

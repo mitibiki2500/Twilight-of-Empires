@@ -497,7 +497,13 @@
 
 			create_building = {
 				building="building_cotton_plantation"
-				add_ownership={ building={ type="building_manor_house" country="c:XCC" levels=2 region="STATE_NSM_047" } }
+				add_ownership={
+					company={
+						type=company_nsm_riimeus
+						country="c:XCC"
+						levels=5
+					}
+				}
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
@@ -1182,7 +1188,13 @@
 
 			create_building = {
 				building="building_maize_farm"
-				add_ownership={ building={ type="building_manor_house" country="c:XBK" levels=2 region="STATE_NSM_094" } }
+				add_ownership={
+					company={
+						type=company_nsm_corn_major
+						country="c:XBK"
+						levels=5
+					}
+				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
@@ -1367,7 +1379,13 @@
 
 			create_building = {
 				building="building_maize_farm"
-				add_ownership={ building={ type="building_manor_house" country="c:XBK" levels=1 region="STATE_NSM_104" } }
+				add_ownership={
+					company={
+						type=company_nsm_corn_major
+						country="c:XBK"
+						levels=5
+					}
+				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
@@ -2841,7 +2859,13 @@
 
 			create_building = {
 				building="building_maize_farm"
-				add_ownership={ building={ type="building_manor_house" country="c:XBK" levels=1 region="STATE_NSM_246" } }
+				add_ownership={
+					company={
+						type=company_nsm_corn_major
+						country="c:XBK"
+						levels=5
+					}
+				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
@@ -3978,7 +4002,13 @@
 
 			create_building = {
 				building="building_maize_farm"
-				add_ownership={ building={ type="building_manor_house" country="c:XBK" levels=1 region="STATE_NSM_352" } }
+				add_ownership={
+					company={
+						type=company_nsm_corn_major
+						country="c:XBK"
+						levels=5
+					}
+				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
