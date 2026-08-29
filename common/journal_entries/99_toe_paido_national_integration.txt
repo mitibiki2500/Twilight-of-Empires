@@ -36,7 +36,10 @@ je_toe_paido_cultural_integration = {
 
 	# 条件だけ揃っても自動完了しない。最後のボタンを押した時だけ完了する。
 	complete = {
-		has_variable = toe_paido_finalize_integration
+		custom_tooltip = {
+			text = toe_paido_integration_finalized_tt
+			has_variable = toe_paido_finalize_integration
+		}
 	}
 
 	on_complete = {
