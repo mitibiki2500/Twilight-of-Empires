@@ -7,6 +7,7 @@ on:
       - 'tools/audit_buildings.py'
       - 'tools/cleanup_buildings.py'
       - 'tools/cleanup_buildings_v2.py'
+      - 'tools/finalize_building_readability.py'
       - 'tools/audit_building_structure.py'
       - 'tools/audit_rollbacks.py'
       - 'common/history/buildings/**'
@@ -41,6 +42,8 @@ jobs:
           git checkout origin/main -- common/history/buildings
       - name: Normalize building history and XBB administration
         run: python tools/cleanup_buildings_v2.py
+      - name: Deduplicate labels and verify semantic preservation
+        run: python tools/finalize_building_readability.py
       - name: Re-audit normalized files
         run: python tools/audit_buildings.py
       - name: Audit nesting and layout
