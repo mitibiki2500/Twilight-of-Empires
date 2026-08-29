@@ -7,7 +7,16 @@
 	        activate_law = law_type:law_legacy_slavery
 	        set_country_type = recognized
 	    
+	        # オスマンの「ヨーロッパの病人」開始イベントをゴートンでも発火。
+	        # イベント側の初期化・補正を維持しつつ、JEが確実に開始するよう明示的にも追加する。
 	        trigger_event = { id = sick_man.1 }
+	        add_journal_entry = { type = je_sick_man_main }
+	        add_journal_entry = { type = je_sick_man_syria }
+	        add_journal_entry = { type = je_sick_man_economy }
+	        add_journal_entry = { type = je_sick_man_education }
+	        add_journal_entry = { type = je_sick_man_separatism }
+	        add_journal_entry = { type = je_sick_man_army }
+	        add_journal_entry = { type = je_sick_man_bureaucracy }
 	        add_journal_entry = { type = je_great_game_control }
 	}
 }
