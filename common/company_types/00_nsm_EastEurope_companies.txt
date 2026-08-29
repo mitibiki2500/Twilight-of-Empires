@@ -16,7 +16,7 @@ company_nsm_royal_dale = {
 	}
 	possible_prestige_goods = {
 		prestige_good_MSN_grain
-		prestige_good_MSN_dale_bread
+		prestige_good_generic_groceries
 	}
 	possible = {
 		any_scope_state = {
@@ -113,12 +113,12 @@ company_nsm_eskandel = {
 	preferred_headquarters = { STATE_NSM_236 }
 	building_types = {
 		building_cotton_plantation
+		building_vineyard
 		building_tea_plantation
 	}
 	extension_building_types = {
 		building_livestock_ranch
 		building_port
-		building_textile_mill
 	}
 	possible_prestige_goods = {
 		prestige_good_MSN_escano_cotton
@@ -180,6 +180,7 @@ company_nsm_vodka = {
 		building_rye_farm
 	}
 	extension_building_types = {
+		building_vineyard
 		building_wheat_farm
 	}
 	possible_prestige_goods = {
@@ -195,7 +196,7 @@ company_nsm_vodka = {
 		}
 	}
 	prosperity_modifier = {
-		building_food_industry_throughput_add = 0.1
+		goods_output_liquor_mult = 0.1
 	}
 	ai_weight = { value = 3 }
 }
@@ -226,7 +227,7 @@ company_nsm_zolnia_gas = {
 		}
 	}
 	prosperity_modifier = {
-		building_power_plant_throughput_add = 0.15
+		building_automotive_industry_throughput_add = 0.1
 	}
 	ai_weight = { value = 3 }
 }
