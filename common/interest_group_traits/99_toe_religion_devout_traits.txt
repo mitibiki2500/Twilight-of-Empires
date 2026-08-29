@@ -1,0 +1,30 @@
+﻿# ToE religion-specific Devout approval traits
+
+ig_trait_toe_heavens_blessing = {
+    icon = "gfx/interface/icons/religion_icons/toe_solar.dds"
+    min_approval = loyal
+    modifier = {
+        building_group_bg_agriculture_throughput_add = 0.10
+        building_group_bg_plantations_throughput_add = 0.20
+    }
+}
+
+# Happy (+5): +25% conversion and +5% research.
+ig_trait_toe_missionary = {
+    icon = "gfx/interface/icons/religion_icons/confucianism.dds"
+    min_approval = happy
+    modifier = {
+        state_conversion_mult = 0.25
+        country_tech_research_speed_mult = 0.05
+    }
+}
+
+# Loyal (+10): stacks with Missionary, reaching +50% conversion and +10% research.
+ig_trait_toe_developing_philosophy = {
+    icon = "gfx/interface/icons/religion_icons/confucianism.dds"
+    min_approval = loyal
+    modifier = {
+        state_conversion_mult = 0.25
+        country_tech_research_speed_mult = 0.05
+    }
+}
