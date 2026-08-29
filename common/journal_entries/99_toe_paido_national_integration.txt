@@ -10,6 +10,7 @@ je_toe_paido_cultural_integration = {
 		toe_paido_init_integration = yes
 	}
 
+	# 各文化の母国州にある施設レベルを定期的に再集計する。
 	on_weekly_pulse = {
 		effect = {
 			if = {
@@ -19,9 +20,21 @@ je_toe_paido_cultural_integration = {
 		}
 	}
 
+	# ブラジル国民統合JEと同様、文化ごとに個別ボタンを持つ。
+	scripted_button = toe_paido_integrate_dale_button
+	scripted_button = toe_paido_integrate_shaftar_button
+	scripted_button = toe_paido_integrate_eskan_button
+	scripted_button = toe_paido_integrate_old_button
+	scripted_button = toe_paido_integrate_northern_button
+	scripted_button = toe_paido_integrate_palun_button
+	scripted_button = toe_paido_tradition_resind_button
+	scripted_button = toe_paido_tradition_prune_button
+	scripted_button = toe_paido_tradition_krikul_button
+	scripted_button = toe_paido_tradition_sosilia_button
+	scripted_button = toe_paido_integrate_balin_button
 	scripted_button = toe_paido_finish_integration_button
 
-	# 条件だけ揃っても自動完了しない。ボタンを押した時だけ完了。
+	# 条件だけ揃っても自動完了しない。最後のボタンを押した時だけ完了する。
 	complete = {
 		has_variable = toe_paido_finalize_integration
 	}
