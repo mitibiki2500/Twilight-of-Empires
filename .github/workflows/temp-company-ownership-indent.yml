@@ -1,0 +1,62 @@
+name: Temporary company ownership indentation cleanup
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ '.github/workflows/temp-company-ownership-indent.yml' ]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Fix indentation only
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          replacements = {
+            'common/history/buildings/00_NorthRia.txt': [
+              ('\t\t\t\tadd_ownership={\n\tcompany={\n\t\ttype=company_nsm_riimeus\n\t\tcountry="c:XCC"\n\t\tlevels=5\n\t}\n}',
+               '\t\t\t\tadd_ownership={\n\t\t\t\t\tcompany={\n\t\t\t\t\t\ttype=company_nsm_riimeus\n\t\t\t\t\t\tcountry="c:XCC"\n\t\t\t\t\t\tlevels=5\n\t\t\t\t\t}\n\t\t\t\t}'),
+              ('\t\t\t\tadd_ownership={\n\tcompany={\n\t\ttype=company_nsm_corn_major\n\t\tcountry="c:XBK"\n\t\tlevels=5\n\t}\n}',
+               '\t\t\t\tadd_ownership={\n\t\t\t\t\tcompany={\n\t\t\t\t\t\ttype=company_nsm_corn_major\n\t\t\t\t\t\tcountry="c:XBK"\n\t\t\t\t\t\tlevels=5\n\t\t\t\t\t}\n\t\t\t\t}')
+            ],
+            'common/history/buildings/02_WestEurope.txt': [
+              ('\t\t\t\tadd_ownership={\n\tcountry={ country="c:XAI" levels=5 }\n\tcompany={ type=company_nsm_footwater_line country="c:XAI" levels=5 }\n}',
+               '\t\t\t\tadd_ownership={\n\t\t\t\t\tcountry={ country="c:XAI" levels=5 }\n\t\t\t\t\tcompany={ type=company_nsm_footwater_line country="c:XAI" levels=5 }\n\t\t\t\t}')
+            ],
+            'common/history/buildings/06_WestAsia.txt': [
+              ('\t\t\t\tadd_ownership={\n\tcompany={\n\t\ttype=company_nsm_machida\n\t\tcountry="c:GSU"\n\t\tlevels=5\n\t}\n}',
+               '\t\t\t\tadd_ownership={\n\t\t\t\t\tcompany={\n\t\t\t\t\t\ttype=company_nsm_machida\n\t\t\t\t\t\tcountry="c:GSU"\n\t\t\t\t\t\tlevels=5\n\t\t\t\t\t}\n\t\t\t\t}'),
+              ('\t\t\t\tadd_ownership={\n\tcompany={\n\t\ttype=company_nsm_ilbone_fisheries\n\t\tcountry="c:GSU"\n\t\tlevels=5\n\t}\n}',
+               '\t\t\t\tadd_ownership={\n\t\t\t\t\tcompany={\n\t\t\t\t\t\ttype=company_nsm_ilbone_fisheries\n\t\t\t\t\t\tcountry="c:GSU"\n\t\t\t\t\t\tlevels=5\n\t\t\t\t\t}\n\t\t\t\t}')
+            ]
+          }
+          changed=0
+          for path,repls in replacements.items():
+              p=Path(path); t=p.read_text(encoding='utf-8-sig').replace('\r\n','\n').replace('\r','\n')
+              for old,new in repls:
+                  n=t.count(old)
+                  if n:
+                      t=t.replace(old,new)
+                      changed += n
+              p.write_text(t,encoding='utf-8-sig',newline='\n')
+          if changed != 8:
+              raise SystemExit(f'expected 8 ownership blocks formatted, got {changed}')
+          PY
+          git diff --check
+          git diff --stat
+          git diff
+      - name: Commit
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add common/history/buildings/00_NorthRia.txt common/history/buildings/02_WestEurope.txt common/history/buildings/06_WestAsia.txt
+          git commit -m "Format restored company ownership blocks"
+          git push origin HEAD:main
