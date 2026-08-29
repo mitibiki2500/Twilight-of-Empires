@@ -94,6 +94,7 @@ company_nsm_tg_corp = {
 	preferred_headquarters = { STATE_NSM_192 }
 	building_types = {
 		building_textile_mill
+		building_dye_plantation
 	}
 	extension_building_types = {
 		building_silk_plantation
@@ -265,7 +266,7 @@ company_nsm_falantier = {
 		}
 	}
 	prosperity_modifier = {
-		building_glassworks_throughput_add = 0.1
+		goods_output_glass_mult = 0.1
 		country_prestige_mult = 0.1
 	}
 	ai_weight = { value = 3 }
@@ -390,7 +391,7 @@ company_nsm_weller = {
 	}
 
 	prosperity_modifier = {
-		building_coal_mine_throughput_add = 0.15
+		goods_output_coal_mult = 0.15
 	}
 	ai_weight = { value = 3 }
 }
