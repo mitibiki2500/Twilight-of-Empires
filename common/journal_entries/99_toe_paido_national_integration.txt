@@ -1,0 +1,127 @@
+﻿# Paido-specific modernization journals.
+
+je_toe_paido_cultural_integration = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	group = je_group_historical_content
+
+	is_shown_in_lobby = { c:PAI ?= this }
+
+	immediate = {
+		toe_paido_init_integration = yes
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			if = {
+				limit = { NOT = { has_variable = toe_paido_finalize_integration } }
+				toe_paido_recalculate_integration = yes
+			}
+		}
+	}
+
+	scripted_button = toe_paido_finish_integration_button
+
+	# 条件だけ揃っても自動完了しない。ボタンを押した時だけ完了。
+	complete = {
+		has_variable = toe_paido_finalize_integration
+	}
+
+	on_complete = {
+		toe_paido_apply_integration_reward = yes
+	}
+
+	# 元のブラジル国民統合JEと同じ50年枠を維持。期限切れは失敗扱い。
+	timeout = 18262
+	on_timeout = {
+		add_modifier = {
+			name = toe_paido_integration_failure
+			days = 3650
+		}
+	}
+
+	invalid = { NOT = { c:PAI ?= this } }
+	weight = 100
+	transferable = no
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+# 「分裂した君主」をパイド専用の革新派vs保守派へ置換。
+# フランスJEそのものは変更せず、既存のオルレアン/レジティミスト計算を二陣営だけ再利用する。
+je_toe_paido_monarchist_rivalry = {
+	icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
+	group = je_group_historical_content
+
+	is_shown_in_lobby = { c:PAI ?= this }
+
+	modifiers_while_active = { toe_paido_rival_monarchs }
+
+	immediate = {
+		# 既存計算が参照する変数を初期化。ボナパルティストのバー・更新・イベントは使用しない。
+		fra_set_divided_monarchist_variables = yes
+		fra_weekly_pulse_legitimist_progress = yes
+		fra_weekly_pulse_orleanist_progress = yes
+	}
+
+	# オルレアン枠＝革新派、レジティミスト枠＝保守派。
+	scripted_progress_bar = divided_monarchists_orleanist_progress_bar
+	scripted_progress_bar = divided_monarchists_legitimist_progress_bar
+
+	on_weekly_pulse = {
+		effect = {
+			fra_weekly_pulse_legitimist_progress = yes
+			fra_weekly_pulse_orleanist_progress = yes
+		}
+	}
+
+	# 革新派には軍事施設レベルを追加。兵舎＋海軍基地の合計Lvを毎月そのまま進捗へ足す。
+	on_monthly_pulse = {
+		effect = {
+			set_variable = { name = toe_paido_military_facility_levels value = 0 }
+			every_scope_building = {
+				limit = {
+					OR = {
+						is_building_type = building_barracks
+						is_building_type = building_naval_base
+					}
+				}
+				ROOT = { change_variable = { name = toe_paido_military_facility_levels add = PREV.level } }
+			}
+			scope:journal_entry = {
+				add_progress = {
+					name = divided_monarchists_orleanist_progress_bar
+					value = root.var:toe_paido_military_facility_levels
+				}
+			}
+		}
+	}
+
+	complete = {
+		country_has_monarchy_law = yes
+		scope:journal_entry = {
+			OR = {
+				"scripted_bar_progress(divided_monarchists_orleanist_progress_bar)" >= divided_monarchists_upper_bound
+				"scripted_bar_progress(divided_monarchists_legitimist_progress_bar)" >= divided_monarchists_upper_bound
+			}
+		}
+	}
+
+	on_complete = {
+		if = {
+			limit = {
+				scope:journal_entry = {
+					"scripted_bar_progress(divided_monarchists_orleanist_progress_bar)" > "scripted_bar_progress(divided_monarchists_legitimist_progress_bar)"
+				}
+			}
+			set_variable = toe_paido_innovative_monarchs_won
+		}
+		else = { set_variable = toe_paido_conservative_monarchs_won }
+		fra_clear_divided_monarchist_variables = yes
+	}
+
+	invalid = { NOT = { country_has_monarchy_law = yes } }
+	on_invalid = { fra_clear_divided_monarchist_variables = yes }
+
+	weight = 100
+	transferable = no
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
