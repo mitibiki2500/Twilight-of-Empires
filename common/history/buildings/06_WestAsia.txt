@@ -1,5 +1,7 @@
 ﻿BUILDINGS={
 	s:STATE_NSM_004={
+		# 州名: ハイゾ (STATE_NSM_004)
+		# Country: KKN
 		# Country: KKN
 		region_state:KKN={
 			create_building={
@@ -13,7 +15,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -122,26 +124,26 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:KKN" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:KKN" levels=1 region="STATE_NSM_004" } }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:KKN" levels=1 } }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -150,11 +152,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_005={
+		# 州名: アララ (STATE_NSM_005)
+		# Country: ATI
 		# Country: ATI
 		region_state:ATI={
 			create_building={
@@ -168,7 +172,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -345,7 +349,7 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			# ToE dye supply rebalance - Canaria production
 			create_building={
 				building="building_dye_plantation"
@@ -353,20 +357,20 @@
 				reserves=1
 				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:ATI" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:ATI" levels=1 } }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_silk_plantation"
 				add_ownership={
@@ -383,11 +387,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_019={
+		# 州名: 西亜39 (STATE_NSM_019)
+		# Country: BLM
 		# Country: BLM
 		region_state:BLM={
 			create_building={
@@ -401,7 +407,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -524,17 +530,19 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:BLM" levels=1 } }
 				reserves=1
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_026={
+		# 州名: ハリス (STATE_NSM_026)
+		# Country: GSU
 		# Country: GSU
 		region_state:GSU={
 			create_building={
@@ -548,7 +556,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rice_farm"
@@ -601,14 +609,14 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:GSU" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -617,11 +625,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_034={
+		# 州名: 西亜25 (STATE_NSM_034)
+		# Country: REG
 		# Country: REG
 		region_state:REG={
 			create_building={
@@ -635,7 +645,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -732,21 +742,21 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:REG" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:REG" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:REG" levels=1 region="STATE_NSM_034" } }
@@ -757,6 +767,8 @@
 
 	}
 	s:STATE_NSM_044={
+		# 州名: 西亜65 (STATE_NSM_044)
+		# Country: GSU
 		# Country: GSU
 		region_state:GSU={
 			create_building={
@@ -770,18 +782,18 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rice_farm"
-			add_ownership={
-				building={
-					type="building_manor_house"
-					country="c:GSU"
-					levels=3
-					region="STATE_NSM_044"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:GSU"
+						levels=3
+						region="STATE_NSM_044"
+					}
 				}
-			}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
 			}
@@ -823,9 +835,9 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			# ToE: one naval fortification on strait coast
-			
+
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -837,7 +849,7 @@
 				}
 				reserves=1
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_fishing_wharf"
@@ -853,12 +865,12 @@
 				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" }
 			}
 			# source: NSM_world_trade_ports_resources.txt
-			      create_building = {
-			          building="building_naval_administration"
-			          add_ownership={ country={ country="c:GSU" levels=2 } }
-			          reserves=1
-			      }
-			
+			create_building = {
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:GSU" levels=2 } }
+				reserves=1
+			}
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -867,11 +879,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_045={
+		# 州名: 西亜2 (STATE_NSM_045)
+		# Country: GOT
 		# Country: GOT
 		region_state:GOT={
 			create_building={
@@ -885,7 +899,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -912,11 +926,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_046={
+		# 州名: 西亜47 (STATE_NSM_046)
+		# Country: SOS
 		# Country: SOS
 		region_state:SOS={
 			create_building={
@@ -930,7 +946,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -1065,7 +1081,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
+
 			# ToE dye supply rebalance - Canaria production
 			create_building={
 				building="building_dye_plantation"
@@ -1073,44 +1089,46 @@
 				reserves=1
 				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:SOS" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:SOS" levels=1 region="STATE_NSM_046" } }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:SOS" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
-			
+
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:SOS" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:SOS" levels=1 } }
 				reserves=1
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_049={
+		# 州名: 西亜60 (STATE_NSM_049)
+		# コゼビアネータ (XDG)
 		# コゼビアネータ (XDG)
 		region_state:XDG={
 			create_building={
@@ -1124,7 +1142,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
@@ -1205,20 +1223,20 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XDG" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XDG" levels=1 region="STATE_NSM_049" } }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_silk_plantation"
 				add_ownership={
@@ -1232,6 +1250,8 @@
 
 	}
 	s:STATE_NSM_051={
+		# 州名: 西亜45 (STATE_NSM_051)
+		# Country: SOS
 		# Country: SOS
 		region_state:SOS={
 			create_building={
@@ -1245,7 +1265,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -1354,11 +1374,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_079={
+		# 州名: 西亜42 (STATE_NSM_079)
+		# Country: BZN
 		# Country: BZN
 		region_state:BZN={
 			create_building={
@@ -1372,7 +1394,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -1441,11 +1463,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_081={
+		# 州名: 西亜15 (STATE_NSM_081)
+		# Country: GOT
 		# Country: GOT
 		region_state:GOT={
 			create_building={
@@ -1459,7 +1483,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -1486,11 +1510,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_082={
+		# 州名: 西亜18 (STATE_NSM_082)
+		# Country: GLT
 		# Country: GLT
 		region_state:GLT={
 			create_building={
@@ -1504,7 +1530,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -1545,11 +1571,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_083={
+		# 州名: 西亜71 (STATE_NSM_083)
+		# Country: GSU
 		# Country: GSU
 		region_state:GSU={
 			create_building={
@@ -1563,7 +1591,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rice_farm"
@@ -1616,20 +1644,20 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_sugar_plantation"
 				add_ownership={ country={ country="c:GSU" levels=3 } }
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
-			
-			      create_building = {
-			          building="building_naval_administration"
-			          add_ownership={ country={ country="c:GSU" levels=1 } }
-			          reserves=1
-			      }
-			
+
+			create_building = {
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:GSU" levels=1 } }
+				reserves=1
+			}
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -1638,11 +1666,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_084={
+		# 州名: 西亜16 (STATE_NSM_084)
+		# Country: ATI
 		# Country: ATI
 		region_state:ATI={
 			create_building={
@@ -1656,7 +1686,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -1793,7 +1823,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -1802,11 +1832,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_085={
+		# 州名: 西亜28 (STATE_NSM_085)
+		# Country: CAN
 		# Country: CAN
 		region_state:CAN={
 			create_building={
@@ -1820,7 +1852,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -1929,7 +1961,7 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			# ToE custom monument
 			create_building={
 				building="building_toe_canaria_imperial_castle"
@@ -1942,27 +1974,27 @@
 				reserves=1
 				activate_production_methods={ "pm_toe_canaria_imperial_castle" }
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:CAN" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:CAN" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:CAN" levels=1 region="STATE_NSM_085" } }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_silk_plantation"
 				add_ownership={
@@ -1971,17 +2003,19 @@
 				reserves=1
 				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:CAN" levels=1 } }
 				reserves=1
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_086={
+		# 州名: 西亜56 (STATE_NSM_086)
+		# Country: NRK
 		# Country: NRK
 		region_state:NRK={
 			create_building={
@@ -1995,7 +2029,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -2104,7 +2138,7 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			# ToE dye supply rebalance - Canaria production
 			create_building={
 				building="building_dye_plantation"
@@ -2112,30 +2146,32 @@
 				reserves=1
 				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:NRK" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:NRK" levels=1 region="STATE_NSM_086" } }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:NRK" levels=1 } }
 				reserves=1
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_100={
+		# 州名: 西亜23 (STATE_NSM_100)
+		# Country: GTZ
 		# Country: GTZ
 		region_state:GTZ={
 			create_building={
@@ -2149,7 +2185,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
@@ -2232,21 +2268,21 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:GTZ" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:GTZ" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:GTZ" levels=1 region="STATE_NSM_100" } }
@@ -2257,6 +2293,8 @@
 
 	}
 	s:STATE_NSM_124={
+		# 州名: 西亜8 (STATE_NSM_124)
+		# Country: GLT
 		# Country: GLT
 		region_state:GLT={
 			create_building={
@@ -2270,7 +2308,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -2311,11 +2349,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_129={
+		# 州名: 西亜1 (STATE_NSM_129)
+		# Country: GOT
 		# Country: GOT
 		region_state:GOT={
 			create_building={
@@ -2329,7 +2369,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -2382,11 +2422,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_134={
+		# 州名: 西亜53 (STATE_NSM_134)
+		# Country: SOS
 		# Country: SOS
 		region_state:SOS={
 			create_building={
@@ -2400,7 +2442,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -2467,18 +2509,20 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:SOS" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_144={
+		# 州名: 南バゾナ (STATE_NSM_144)
+		# Country: PAI
 		# Country: PAI
 		region_state:PAI={
 			create_building={
@@ -2492,7 +2536,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -2519,11 +2563,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_161={
+		# 州名: 西亜38 (STATE_NSM_161)
+		# Country: BLM
 		# Country: BLM
 		region_state:BLM={
 			create_building={
@@ -2537,7 +2583,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
@@ -2646,20 +2692,20 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:BLM" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:BLM" levels=1 region="STATE_NSM_161" } }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -2668,11 +2714,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_166={
+		# 州名: 西亜57 (STATE_NSM_166)
+		# Country: KKN
 		# Country: KKN
 		region_state:KKN={
 			# source: NSM_integrated_buildings.txt
@@ -2727,11 +2775,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_171={
+		# 州名: 西亜7 (STATE_NSM_171)
+		# Country: GOT
 		# Country: GOT
 		region_state:GOT={
 			# source: NSM_integrated_buildings.txt
@@ -2774,11 +2824,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_172={
+		# 州名: 西亜32 (STATE_NSM_172)
+		# Country: ATI
 		# Country: ATI
 		region_state:ATI={
 			create_building={
@@ -2792,7 +2844,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rice_farm"
@@ -2831,7 +2883,7 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -2840,11 +2892,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_201={
+		# 州名: 西亜59 (STATE_NSM_201)
+		# Country: ATI
 		# Country: ATI
 		region_state:ATI={
 			create_building={
@@ -2858,7 +2912,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -2897,11 +2951,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_211={
+		# 州名: 西亜30 (STATE_NSM_211)
+		# Country: ATI
 		# Country: ATI
 		region_state:ATI={
 			create_building={
@@ -2915,7 +2971,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -3052,13 +3108,13 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:ATI" levels=8 region="STATE_NSM_211" } }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -3067,11 +3123,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_212={
+		# 州名: 西亜36 (STATE_NSM_212)
+		# Country: BLM
 		# Country: BLM
 		region_state:BLM={
 			create_building={
@@ -3085,7 +3143,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -3140,18 +3198,20 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:BLM" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_213={
+		# 州名: 西亜9 (STATE_NSM_213)
+		# Country: GLT
 		# Country: GLT
 		region_state:GLT={
 			# source: NSM_integrated_buildings.txt
@@ -3192,11 +3252,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_230={
+		# 州名: 西亜34 (STATE_NSM_230)
+		# Country: ATI
 		# Country: ATI
 		region_state:ATI={
 			create_building={
@@ -3210,7 +3272,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -3347,7 +3409,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -3356,11 +3418,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_234={
+		# 州名: 西亜3 (STATE_NSM_234)
+		# Country: GOT
 		# Country: GOT
 		region_state:GOT={
 			create_building={
@@ -3374,7 +3438,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rye_farm"
@@ -3415,11 +3479,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_243={
+		# 州名: 西亜52 (STATE_NSM_243)
+		# Country: NRK
 		# Country: NRK
 		region_state:NRK={
 			create_building={
@@ -3433,7 +3499,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rice_farm"
@@ -3474,11 +3540,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_248={
+		# 州名: 西亜61 (STATE_NSM_248)
+		# Country: GSU
 		# Country: GSU
 		region_state:GSU={
 			create_building={
@@ -3492,7 +3560,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -3683,13 +3751,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
-			      create_building = {
-			          building="building_naval_administration"
-			          add_ownership={ country={ country="c:GSU" levels=5 } }
-			          reserves=1
-			      }
-			
+
+			create_building = {
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:GSU" levels=5 } }
+				reserves=1
+			}
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -3698,11 +3766,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_257={
+		# 州名: 西亜6 (STATE_NSM_257)
+		# Country: GOT
 		# Country: GOT
 		region_state:GOT={
 			create_building={
@@ -3716,7 +3786,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rye_farm"
@@ -3743,18 +3813,20 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:GOT" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_258={
+		# 州名: 西亜22 (STATE_NSM_258)
+		# 大ジュズ (XGG)
 		# 大ジュズ (XGG)
 		region_state:XGG={
 			create_building={
@@ -3768,7 +3840,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -3809,11 +3881,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_274={
+		# 州名: 西亜55 (STATE_NSM_274)
+		# Country: SPE
 		# Country: SPE
 		region_state:SPE={
 			create_building={
@@ -3827,7 +3901,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -3950,7 +4024,7 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			# ToE dye supply rebalance - Canaria production
 			create_building={
 				building="building_dye_plantation"
@@ -3958,30 +4032,32 @@
 				reserves=1
 				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:SPE" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:SPE" levels=1 region="STATE_NSM_274" } }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:SPE" levels=1 } }
 				reserves=1
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_289={
+		# 州名: 西亜49 (STATE_NSM_289)
+		# Country: SOS
 		# Country: SOS
 		region_state:SOS={
 			create_building={
@@ -3995,7 +4071,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -4048,11 +4124,13 @@
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_297={
+		# 州名: 西亜37 (STATE_NSM_297)
+		# Country: ATI
 		# Country: ATI
 		region_state:ATI={
 			create_building={
@@ -4066,7 +4144,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -4093,18 +4171,18 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
-			
-			create_building={
-				building="building_silk_plantation"
-				add_ownership={
-					country={ country="c:REG" levels=2 }
+
+				create_building={
+					building="building_silk_plantation"
+					add_ownership={
+						country={ country="c:REG" levels=2 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 				}
-				reserves=1
-				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
-			}
-			building="building_iron_mine"
+				building="building_iron_mine"
 				add_ownership={ country={ country="c:ATI" levels=3 } }
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" }
@@ -4127,7 +4205,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -4136,11 +4214,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_302={
+		# 州名: 西亜29 (STATE_NSM_302)
+		# Country: ATI
 		# Country: ATI
 		region_state:ATI={
 			create_building={
@@ -4154,7 +4234,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -4289,7 +4369,7 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -4298,11 +4378,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_321={
+		# 州名: 西亜35 (STATE_NSM_321)
+		# Country: ATI
 		# Country: ATI
 		region_state:ATI={
 			create_building={
@@ -4316,7 +4398,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rice_farm"
@@ -4357,7 +4439,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -4366,127 +4448,131 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_328={
+		# 州名: 西亜27 (STATE_NSM_328)
+		# Country: CAN
 		# Country: CAN
 		region_state:CAN={
-				create_building={
-					building="building_government_administration"
-					add_ownership={
-						country={
-							country="c:CAN"
-							levels=10
-						}
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:CAN"
+						levels=10
 					}
-					reserves=1
-					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 				}
-			
-				# source: NSM_integrated_buildings.txt
-				create_building={
-					building="building_textile_mill"
-					add_ownership={
-						building={
-							type="building_financial_district"
-							country="c:CAN"
-							levels=1
-							region="STATE_NSM_328"
-						}
-					}
-					reserves=1
-					activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
-				}
-				# source: NSM_integrated_buildings.txt
-				create_building={
-					building="building_rice_farm"
-					add_ownership={
-						building={
-							type="building_manor_house"
-							country="c:CAN"
-							levels=6
-							region="STATE_NSM_328"
-						}
-					}
-					reserves=1
-					activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
-				}
-				# source: NSM_integrated_buildings.txt
-				create_building={
-					building="building_livestock_ranch"
-					add_ownership={
-						building={
-							type="building_manor_house"
-							country="c:CAN"
-							levels=1
-							region="STATE_NSM_328"
-						}
-					}
-					reserves=1
-					activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
-				}
-				# s
-				create_building={
-					building="building_silk_plantation"
-					add_ownership={
-						country={ country="c:CAN" levels=1 }
-					}
-					reserves=1
-					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
-				}
+				reserves=1
+				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+			}
+
 			# source: NSM_integrated_buildings.txt
-				create_building={
-					building="building_fishing_wharf"
-					add_ownership={
-						building={
-							type="building_manor_house"
-							country="c:CAN"
-							levels=1
-							region="STATE_NSM_328"
-						}
+			create_building={
+				building="building_textile_mill"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:CAN"
+						levels=1
+						region="STATE_NSM_328"
 					}
-					reserves=1
-					activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" }
 				}
-				# source: NSM_world_trade_ports_resources.txt
-				create_building={
-					building="building_trade_center"
-					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
-					add_ownership={
-						country={
-							country="c:CAN"
-							levels=1
-						}
+				reserves=1
+				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
+			}
+			# source: NSM_integrated_buildings.txt
+			create_building={
+				building="building_rice_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:CAN"
+						levels=6
+						region="STATE_NSM_328"
 					}
-					reserves=1
 				}
-				# source: NSM_world_trade_ports_resources.txt
-				create_building={
-					building="building_port"
-					add_ownership={
-						country={
-							country="c:CAN"
-							levels=3
-						}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
+			}
+			# source: NSM_integrated_buildings.txt
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:CAN"
+						levels=1
+						region="STATE_NSM_328"
 					}
-					activate_production_methods={ "pm_basic_port" }
-					reserves=1
 				}
-			
-				# ToE dye supply rebalance - Canaria production
-				create_building={
-					building="building_dye_plantation"
-					add_ownership={ building={ type="building_financial_district" country="c:CAN" levels=12 region="STATE_NSM_328" } }
-					reserves=1
-					activate_production_methods={ "default_building_dye_plantation" "pm_road_carts" }
+				reserves=1
+				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+			}
+			# s
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:CAN" levels=1 }
 				}
-			
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+			}
+			# source: NSM_integrated_buildings.txt
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:CAN"
+						levels=1
+						region="STATE_NSM_328"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" }
+			}
+			# source: NSM_world_trade_ports_resources.txt
+			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					country={
+						country="c:CAN"
+						levels=1
+					}
+				}
+				reserves=1
+			}
+			# source: NSM_world_trade_ports_resources.txt
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:CAN"
+						levels=3
+					}
+				}
+				activate_production_methods={ "pm_basic_port" }
+				reserves=1
+			}
+
+			# ToE dye supply rebalance - Canaria production
+			create_building={
+				building="building_dye_plantation"
+				add_ownership={ building={ type="building_financial_district" country="c:CAN" levels=12 region="STATE_NSM_328" } }
+				reserves=1
+				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts" }
+			}
+
 		}
-		
+
 	}
 	s:STATE_NSM_329={
+		# 州名: 西亜12 (STATE_NSM_329)
+		# Country: GOT
 		# Country: GOT
 		region_state:GOT={
 			create_building={
@@ -4500,7 +4586,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_company_owned_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -4623,11 +4709,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_331={
+		# 州名: 西亜64 (STATE_NSM_331)
+		# Country: GSU
 		# Country: GSU
 		region_state:GSU={
 			create_building={
@@ -4641,18 +4729,18 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_company_owned_buildings.txt
 			create_building={
 				building="building_port"
-			add_ownership={
-				building={
-					type="building_financial_district"
-					country="c:GSU"
-					levels=2
-					region="STATE_NSM_331"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:GSU"
+						levels=2
+						region="STATE_NSM_331"
+					}
 				}
-			}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
 			}
@@ -4671,49 +4759,49 @@
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
-			add_ownership={
-				building={ type="building_financial_district" country="c:GSU" levels=3 region="STATE_NSM_331" }
-			}
+				add_ownership={
+					building={ type="building_financial_district" country="c:GSU" levels=3 region="STATE_NSM_331" }
+				}
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
-			add_ownership={
-				building={ type="building_financial_district" country="c:GSU" levels=3 region="STATE_NSM_331" }
-			}
+				add_ownership={
+					building={ type="building_financial_district" country="c:GSU" levels=3 region="STATE_NSM_331" }
+				}
 				reserves=1
 				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
-			add_ownership={
-				building={ type="building_financial_district" country="c:GSU" levels=3 region="STATE_NSM_331" }
-			}
+				add_ownership={
+					building={ type="building_financial_district" country="c:GSU" levels=3 region="STATE_NSM_331" }
+				}
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
 			}
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_furniture_manufactory"
-			add_ownership={
-				building={ type="building_financial_district" country="c:GSU" levels=3 region="STATE_NSM_331" }
-			}
+				add_ownership={
+					building={ type="building_financial_district" country="c:GSU" levels=3 region="STATE_NSM_331" }
+				}
 				reserves=1
 			}
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_glassworks"
-			add_ownership={
-				building={
-					type="building_financial_district"
-					country="c:GSU"
-					levels=1
-					region="STATE_NSM_331"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:GSU"
+						levels=1
+						region="STATE_NSM_331"
+					}
 				}
-			}
 				reserves=1
 			}
 			# source: NSM_integrated_buildings.txt
@@ -4836,13 +4924,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
+
 			# 軍需自給調整：小火器
 			create_building={
 				building="building_arms_industry"
-			add_ownership={
-				country={ country="c:GSU" levels=4 }
-			}
+				add_ownership={
+					country={ country="c:GSU" levels=4 }
+				}
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
@@ -4853,29 +4941,29 @@
 				reserves=1
 				activate_production_methods={ "pm_cannons" "pm_automation_disabled" }
 			}
-			
+
 			create_building={
 				building="building_tooling_workshop"
-			add_ownership={
-				building={ type="building_financial_district" country="c:GSU" levels=4 region="STATE_NSM_331" }
-			}
+				add_ownership={
+					building={ type="building_financial_district" country="c:GSU" levels=4 region="STATE_NSM_331" }
+				}
 				reserves=1
 				activate_production_methods={ "pm_pig_iron" "pm_automation_disabled" }
 			}
-			
+
 			create_building = {
 				building="building_fishing_wharf"
 				add_ownership={ building={ type="building_manor_house" country="c:GSU" levels=5 region="STATE_NSM_331" } }
 				reserves=1
 				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" }
 			}
-			
-			      create_building = {
-			          building="building_naval_administration"
-			          add_ownership={ country={ country="c:GSU" levels=8 } }
-			          reserves=1
-			      }
-			
+
+			create_building = {
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:GSU" levels=8 } }
+				reserves=1
+			}
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -4884,11 +4972,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_339={
+		# 州名: 西亜67 (STATE_NSM_339)
+		# Country: GSU
 		# Country: GSU
 		region_state:GSU={
 			create_building={
@@ -4902,7 +4992,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rice_farm"
@@ -4967,9 +5057,9 @@
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			# ToE: one naval fortification on strait coast
-			
+
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -4981,11 +5071,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_341={
+		# 州名: 西亜40 (STATE_NSM_341)
+		# Country: BLM
 		# Country: BLM
 		region_state:BLM={
 			create_building={
@@ -4999,7 +5091,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -5038,11 +5130,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_345={
+		# 州名: 西亜58 (STATE_NSM_345)
+		# Country: ATI
 		# Country: ATI
 		region_state:ATI={
 			create_building={
@@ -5056,7 +5150,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rice_farm"
@@ -5095,7 +5189,7 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -5104,11 +5198,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_346={
+		# 州名: 西亜70 (STATE_NSM_346)
+		# Country: GSU
 		# Country: GSU
 		region_state:GSU={
 			create_building={
@@ -5122,7 +5218,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -5289,13 +5385,13 @@
 				}
 				reserves=1
 			}
-			
-			      create_building = {
-			          building="building_naval_administration"
-			          add_ownership={ country={ country="c:GSU" levels=5 } }
-			          reserves=1
-			      }
-			
+
+			create_building = {
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:GSU" levels=5 } }
+				reserves=1
+			}
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -5304,11 +5400,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_347={
+		# 州名: バリゾナ (STATE_NSM_347)
+		# Country: PAI
 		# Country: PAI
 		region_state:PAI={
 			create_building={
@@ -5322,7 +5420,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -5375,24 +5473,26 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:PAI" levels=2 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-			
+
 			create_building = {
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:PAI" levels=4 } }
 				reserves=1
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_349={
+		# 州名: 西亜54 (STATE_NSM_349)
+		# Country: SPE
 		# Country: SPE
 		region_state:SPE={
 			create_building={
@@ -5406,7 +5506,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rice_farm"
@@ -5473,11 +5573,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_374={
+		# 州名: 西亜21 (STATE_NSM_374)
+		# Country: BZN
 		# Country: BZN
 		region_state:BZN={
 			create_building={
@@ -5491,7 +5593,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
@@ -5532,14 +5634,14 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:BZN" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:BZN" levels=1 region="STATE_NSM_374" } }
@@ -5550,6 +5652,8 @@
 
 	}
 	s:STATE_NSM_379={
+		# 州名: 西亜26 (STATE_NSM_379)
+		# Country: REG
 		# Country: REG
 		region_state:REG={
 			create_building={
@@ -5563,7 +5667,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
@@ -5618,7 +5722,7 @@
 				}
 				reserves=1
 			}
-			
+
 			# ToE dye supply rebalance - Canaria production
 			create_building={
 				building="building_dye_plantation"
@@ -5626,18 +5730,20 @@
 				reserves=1
 				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:REG" levels=2 } }
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_386={
+		# 州名: 西亜5 (STATE_NSM_386)
+		# Country: GOT
 		# Country: GOT
 		region_state:GOT={
 			create_building={
@@ -5651,7 +5757,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rye_farm"
@@ -5678,18 +5784,20 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:GOT" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_388={
+		# 州名: 西亜10 (STATE_NSM_388)
+		# Country: GOT
 		# Country: GOT
 		region_state:GOT={
 			create_building={
@@ -5703,7 +5811,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rye_farm"
@@ -5744,11 +5852,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_393={
+		# 州名: 西亜14 (STATE_NSM_393)
+		# Country: GOT
 		# Country: GOT
 		region_state:GOT={
 			create_building={
@@ -5762,7 +5872,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_company_owned_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -5792,9 +5902,9 @@
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
-			add_ownership={
-				building={ type="building_financial_district" country="c:GOT" levels=3 region="STATE_NSM_393" }
-			}
+				add_ownership={
+					building={ type="building_financial_district" country="c:GOT" levels=3 region="STATE_NSM_393" }
+				}
 				reserves=1
 				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
@@ -5866,13 +5976,13 @@
 				}
 				reserves=1
 			}
-			
+
 			# 軍需自給調整：小火器
 			create_building={
 				building="building_arms_industry"
-			add_ownership={
-				country={ country="c:GOT" levels=10 }
-			}
+				add_ownership={
+					country={ country="c:GOT" levels=10 }
+				}
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
@@ -5883,9 +5993,9 @@
 				reserves=1
 				activate_production_methods={ "pm_cannons" "pm_automation_disabled" }
 			}
-			
+
 			# 海軍規模に合わせた造船所
-			
+
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:GOT" levels=1 region="STATE_NSM_393" } }
@@ -5902,6 +6012,8 @@
 
 	}
 	s:STATE_NSM_400={
+		# 州名: 西亜11 (STATE_NSM_400)
+		# Country: GOT
 		# Country: GOT
 		region_state:GOT={
 			create_building={
@@ -5915,7 +6027,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -6026,11 +6138,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_403={
+		# 州名: バリン (STATE_NSM_403)
+		# Country: PAI
 		# Country: PAI
 		region_state:PAI={
 			create_building={
@@ -6044,7 +6158,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -6097,17 +6211,19 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
-			      create_building = {
-			          building="building_naval_administration"
-			          add_ownership={ country={ country="c:PAI" levels=3 } }
-			          reserves=1
-			      }
-			
+
+			create_building = {
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:PAI" levels=3 } }
+				reserves=1
+			}
+
 		}
 
 	}
 	s:STATE_NSM_422={
+		# 州名: 西亜50 (STATE_NSM_422)
+		# Country: TUK
 		# Country: TUK
 		region_state:TUK={
 			create_building={
@@ -6121,7 +6237,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
@@ -6204,7 +6320,7 @@
 				}
 				reserves=1
 			}
-			
+
 			# ToE dye supply rebalance - Canaria production
 			create_building={
 				building="building_dye_plantation"
@@ -6212,32 +6328,32 @@
 				reserves=1
 				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:TUK" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:TUK" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
-			
-			create_building={
-				building="building_silk_plantation"
-				add_ownership={
-					country={ country="c:SKR" levels=5 }
+
+				create_building={
+					building="building_silk_plantation"
+					add_ownership={
+						country={ country="c:SKR" levels=5 }
+					}
+					reserves=1
+					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 				}
-				reserves=1
-				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
-			}
-						building="building_furniture_manufactory"
+				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:TUK" levels=1 region="STATE_NSM_422" } }
 				reserves=1
 			}
@@ -6246,6 +6362,8 @@
 
 	}
 	s:STATE_NSM_425={
+		# 州名: 西亜33 (STATE_NSM_425)
+		# Country: ATI
 		# Country: ATI
 		region_state:ATI={
 			create_building={
@@ -6259,7 +6377,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -6286,14 +6404,14 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:ATI" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -6302,11 +6420,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_429={
+		# 州名: 西亜24 (STATE_NSM_429)
+		# Country: SKR
 		# Country: SKR
 		region_state:SKR={
 			create_building={
@@ -6320,13 +6440,13 @@
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_company_owned_buildings.txt
 			create_building={
 				building="building_arms_industry"
-			add_ownership={
-				country={ country="c:SKR" levels=1 }
-			}
+				add_ownership={
+					country={ country="c:SKR" levels=1 }
+				}
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
@@ -6426,9 +6546,9 @@
 				}
 				reserves=1
 			}
-			
+
 			# 軍需自給調整：小火器
-			
+
 			# 軍需自給調整：大砲
 			create_building={
 				building="building_artillery_foundry"
@@ -6436,7 +6556,7 @@
 				reserves=1
 				activate_production_methods={ "pm_cannons" "pm_automation_disabled" }
 			}
-			
+
 			# ToE dye supply rebalance - Canaria production
 			create_building={
 				building="building_dye_plantation"
@@ -6444,30 +6564,30 @@
 				reserves=1
 				activate_production_methods={ "default_building_dye_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building = {
 				building="building_gold_mine"
 				add_ownership={ country={ country="c:SKR" levels=5 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_gold_mine" }
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:SKR" levels=1 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:SKR" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:SKR" levels=1 region="STATE_NSM_429" } }
@@ -6478,6 +6598,8 @@
 
 	}
 	s:STATE_NSM_430={
+		# 州名: 西亜13 (STATE_NSM_430)
+		# 大ジュズ (XGG)
 		# 大ジュズ (XGG)
 		region_state:XGG={
 			create_building={
@@ -6491,7 +6613,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -6518,11 +6640,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_433={
+		# 州名: 西亜20 (STATE_NSM_433)
+		# Country: BRN
 		# Country: BRN
 		region_state:BRN={
 			create_building={
@@ -6536,7 +6660,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -6577,19 +6701,21 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:BRN" levels=1 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_436={
+		# 州名: 西亜4 (STATE_NSM_436)
+		# Country: GOT
 		# Country: GOT
 		region_state:GOT={
 			create_building={
@@ -6603,7 +6729,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rye_farm"
@@ -6656,11 +6782,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_441={
+		# 州名: 西亜17 (STATE_NSM_441)
+		# Country: ATI
 		# Country: ATI
 		region_state:ATI={
 			create_building={
@@ -6674,7 +6802,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -6701,7 +6829,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -6710,11 +6838,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_453={
+		# 州名: 西亜19 (STATE_NSM_453)
+		# Country: GLT
 		# Country: GLT
 		region_state:GLT={
 			create_building={
@@ -6728,7 +6858,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -6755,11 +6885,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_455={
+		# 州名: 西亜69 (STATE_NSM_455)
+		# Country: GSU
 		# Country: GSU
 		region_state:GSU={
 			create_building={
@@ -6773,7 +6905,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -6938,13 +7070,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
-			      create_building = {
-			          building="building_naval_administration"
-			          add_ownership={ country={ country="c:GSU" levels=3 } }
-			          reserves=1
-			      }
-			
+
+			create_building = {
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:GSU" levels=3 } }
+				reserves=1
+			}
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -6953,11 +7085,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_466={
+		# 州名: 西亜51 (STATE_NSM_466)
+		# Country: SOS
 		# Country: SOS
 		region_state:SOS={
 			create_building={
@@ -6971,7 +7105,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -7010,11 +7144,13 @@
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_486={
+		# 州名: 西亜48 (STATE_NSM_486)
+		# Country: SOS
 		# Country: SOS
 		region_state:SOS={
 			create_building={
@@ -7028,7 +7164,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -7079,11 +7215,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_489={
+		# 州名: 西亜62 (STATE_NSM_489)
+		# Country: KKN
 		# Country: KKN
 		region_state:KKN={
 			create_building={
@@ -7097,7 +7235,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
@@ -7176,11 +7314,13 @@
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_507={
+		# 州名: 西亜68 (STATE_NSM_507)
+		# Country: GSU
 		# Country: GSU
 		region_state:GSU={
 			create_building={
@@ -7194,7 +7334,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rice_farm"
@@ -7254,13 +7394,13 @@
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
-			      create_building = {
-			          building="building_naval_administration"
-			          add_ownership={ country={ country="c:GSU" levels=1 } }
-			          reserves=1
-			      }
-			
+
+			create_building = {
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:GSU" levels=1 } }
+				reserves=1
+			}
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -7269,11 +7409,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_529={
+		# 州名: カルダン (STATE_NSM_529)
+		# Country: PAI
 		# Country: PAI
 		region_state:PAI={
 			create_building={
@@ -7287,7 +7429,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -7340,17 +7482,19 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
-			      create_building = {
-			          building="building_naval_administration"
-			          add_ownership={ country={ country="c:PAI" levels=2 } }
-			          reserves=1
-			      }
-			
+
+			create_building = {
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:PAI" levels=2 } }
+				reserves=1
+			}
+
 		}
 
 	}
 	s:STATE_NSM_621={
+		# 州名: 西亜73 (STATE_NSM_621)
+		# Country: ATI
 		# Country: ATI
 		region_state:ATI={
 			# source: NSM_integrated_buildings.txt
@@ -7383,7 +7527,7 @@
 			}
 			# source: NSM_world_trade_ports_resources.txt
 			# ToE: one naval fortification on strait coast
-			
+
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -7395,7 +7539,7 @@
 				}
 				reserves=1
 			}
-			
+
 		}
 
 	}

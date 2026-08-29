@@ -1,5 +1,7 @@
 ﻿BUILDINGS={
 	s:STATE_NSM_014={
+		# 州名: 北米54 (STATE_NSM_014)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -13,7 +15,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -66,20 +68,20 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XCC" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XCC" levels=2 } }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -88,11 +90,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_027={
+		# 州名: ボムドピーレ (STATE_NSM_027)
+		# コレフ (XBZ)
 		# コレフ (XBZ)
 		region_state:XBZ={
 			# source: NSM_integrated_buildings.txt
@@ -124,14 +128,14 @@
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
-			add_ownership={
-				building={
-					type="building_financial_district"
-					country="c:XBZ"
-					levels=1
-					region="STATE_NSM_027"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:XBZ"
+						levels=1
+						region="STATE_NSM_027"
+					}
 				}
-			}
 				reserves=1
 				activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
@@ -215,7 +219,7 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XBZ" levels=1 region="STATE_NSM_027" } }
@@ -226,14 +230,14 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBZ" levels=1 region="STATE_NSM_027" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBZ" levels=1 region="STATE_NSM_027" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 
@@ -241,6 +245,8 @@
 
 	}
 	s:STATE_NSM_032={
+		# 州名: リードニア (STATE_NSM_032)
+		# リイア植民地 (XBM)
 		# リイア植民地 (XBM)
 		region_state:XBM={
 			create_building={
@@ -254,7 +260,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -307,24 +313,26 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XBM" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XBM" levels=2 } }
 				reserves=1
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_038={
+		# 州名: ルーファ (STATE_NSM_038)
+		# リイア共和国 (XBJ)
 		# リイア共和国 (XBJ)
 		region_state:XBJ={
 			# source: NSM_integrated_buildings.txt
@@ -391,9 +399,9 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
+
 			# ToE: one naval fortification on strait coast
-			
+
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -405,24 +413,26 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XBJ" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XBJ" levels=2 } }
 				reserves=1
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_047={
+		# 州名: 北米67 (STATE_NSM_047)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -436,7 +446,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -489,14 +499,14 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building = {
 				building="building_cotton_plantation"
 				add_ownership={ building={ type="building_manor_house" country="c:XCC" levels=2 region="STATE_NSM_047" } }
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -505,11 +515,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_052={
+		# 州名: 北米62 (STATE_NSM_052)
+		# ポールボーン (XBS)
 		# ポールボーン (XBS)
 		region_state:XBS={
 			create_building={
@@ -523,7 +535,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -553,14 +565,14 @@
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
-			add_ownership={
-				building={
-					type="building_financial_district"
-					country="c:XBS"
-					levels=1
-					region="STATE_NSM_052"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:XBS"
+						levels=1
+						region="STATE_NSM_052"
+					}
 				}
-			}
 				reserves=1
 				activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
@@ -646,7 +658,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XBS" levels=1 region="STATE_NSM_052" } }
@@ -657,17 +669,17 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBS" levels=1 region="STATE_NSM_052" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBS" levels=1 region="STATE_NSM_052" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -676,11 +688,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_057={
+		# 州名: 北米55 (STATE_NSM_057)
+		# ポートル (XBW)
 		# ポートル (XBW)
 		region_state:XBW={
 			create_building={
@@ -694,7 +708,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -829,7 +843,7 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -838,11 +852,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_059={
+		# 州名: 北米34 (STATE_NSM_059)
+		# リイア社会共和国 (XBL)
 		# リイア社会共和国 (XBL)
 		region_state:XBL={
 			create_building={
@@ -856,7 +872,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -956,7 +972,7 @@
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:XBL" levels=1 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
 
@@ -964,6 +980,8 @@
 
 	}
 	s:STATE_NSM_065={
+		# 州名: 北米16 (STATE_NSM_065)
+		# リイア帝国 (XBK)
 		# リイア帝国 (XBK)
 		region_state:XBK={
 			create_building={
@@ -977,7 +995,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -1030,24 +1048,26 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XBK" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XBK" levels=2 } }
 				reserves=1
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_069={
+		# 州名: 北米40 (STATE_NSM_069)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			# source: NSM_integrated_buildings.txt
@@ -1088,19 +1108,21 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:XCC" levels=1 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_094={
+		# 州名: 北米31 (STATE_NSM_094)
+		# リイア帝国 (XBK)
 		# リイア帝国 (XBK)
 		region_state:XBK={
 			create_building={
@@ -1114,7 +1136,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -1165,21 +1187,23 @@
 					}
 				}
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building = {
 				building="building_maize_farm"
 				add_ownership={ building={ type="building_manor_house" country="c:XBK" levels=2 region="STATE_NSM_094" } }
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_099={
+		# 州名: 北米57 (STATE_NSM_099)
+		# Country: PPT
 		# Country: PPT
 		region_state:PPT={
 			create_building={
@@ -1188,7 +1212,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -1229,7 +1253,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -1238,11 +1262,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_104={
+		# 州名: 北米30 (STATE_NSM_104)
+		# リイア帝国 (XBK)
 		# リイア帝国 (XBK)
 		region_state:XBK={
 			create_building={
@@ -1256,7 +1282,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -1351,22 +1377,22 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building = {
 				building="building_maize_farm"
 				add_ownership={ building={ type="building_manor_house" country="c:XBK" levels=1 region="STATE_NSM_104" } }
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:XBK" levels=1 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XBK" levels=1 region="STATE_NSM_104" } }
@@ -1377,14 +1403,14 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBK" levels=1 region="STATE_NSM_104" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBK" levels=1 region="STATE_NSM_104" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 
@@ -1392,6 +1418,8 @@
 
 	}
 	s:STATE_NSM_120={
+		# 州名: 北米35 (STATE_NSM_120)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -1405,7 +1433,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -1433,11 +1461,13 @@
 				reserves=1
 			}
 			# source: NSM_world_trade_ports_resources.txt
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_127={
+		# 州名: 北米20 (STATE_NSM_127)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -1451,7 +1481,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -1642,11 +1672,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_135={
+		# 州名: 北米42 (STATE_NSM_135)
+		# リヤッサネ (XBO)
 		# リヤッサネ (XBO)
 		region_state:XBO={
 			create_building={
@@ -1660,7 +1692,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -1723,27 +1755,29 @@
 					}
 				}
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XBO" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XBO" levels=2 } }
 				reserves=1
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_138={
+		# 州名: 北米56 (STATE_NSM_138)
+		# ポートル (XBW)
 		# ポートル (XBW)
 		region_state:XBW={
 			create_building={
@@ -1757,7 +1791,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -1810,7 +1844,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -1819,14 +1853,16 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_141={
+		# 州名: 北米32 (STATE_NSM_141)
+		# リイア社会共和国 (XBL)
 		# リイア社会共和国 (XBL)
 		region_state:XBL={
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -1867,7 +1903,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XBL" levels=1 } }
@@ -1896,14 +1932,14 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBL" levels=1 region="STATE_NSM_141" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBL" levels=1 region="STATE_NSM_141" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 			create_building={
@@ -1917,6 +1953,8 @@
 
 	}
 	s:STATE_NSM_143={
+		# 州名: 北米14 (STATE_NSM_143)
+		# リイア共和国 (XBJ)
 		# リイア共和国 (XBJ)
 		region_state:XBJ={
 			create_building={
@@ -1930,7 +1968,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -2039,11 +2077,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_154={
+		# 州名: 北米8 (STATE_NSM_154)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -2057,7 +2097,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -2110,9 +2150,9 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			# ToE: one naval fortification on strait coast
-			
+
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -2124,11 +2164,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_159={
+		# 州名: 北米78 (STATE_NSM_159)
+		# コスパ (XCE)
 		# コスパ (XCE)
 		region_state:XCE={
 			# source: NSM_integrated_buildings.txt
@@ -2253,7 +2295,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XCE" levels=1 region="STATE_NSM_159" } }
@@ -2264,14 +2306,14 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XCE" levels=1 region="STATE_NSM_159" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XCE" levels=1 region="STATE_NSM_159" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 
@@ -2279,6 +2321,8 @@
 
 	}
 	s:STATE_NSM_162={
+		# 州名: 上フーシャメウス (STATE_NSM_162)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -2292,7 +2336,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_company_owned_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -2334,11 +2378,13 @@
 				reserves=1
 			}
 			# source: NSM_world_trade_ports_resources.txt
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_216={
+		# 州名: 北米43 (STATE_NSM_216)
+		# リヤッサネ (XBO)
 		# リヤッサネ (XBO)
 		region_state:XBO={
 			create_building={
@@ -2352,7 +2398,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -2447,19 +2493,21 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:XBO" levels=1 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_222={
+		# 州名: 北米39 (STATE_NSM_222)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -2473,7 +2521,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -2526,7 +2574,7 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -2535,11 +2583,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_223={
+		# 州名: 北米75 (STATE_NSM_223)
+		# バクーム (XBU)
 		# バクーム (XBU)
 		region_state:XBU={
 			create_building={
@@ -2553,7 +2603,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
@@ -2622,7 +2672,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XBU" levels=2 } }
@@ -2651,17 +2701,17 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBU" levels=1 region="STATE_NSM_223" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBU" levels=1 region="STATE_NSM_223" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -2670,11 +2720,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_245={
+		# 州名: 北米63 (STATE_NSM_245)
+		# ポールボーン (XBS)
 		# ポールボーン (XBS)
 		region_state:XBS={
 			create_building={
@@ -2688,7 +2740,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -2743,7 +2795,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -2752,11 +2804,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_246={
+		# 州名: 北米13 (STATE_NSM_246)
+		# リイア帝国 (XBK)
 		# リイア帝国 (XBK)
 		region_state:XBK={
 			create_building={
@@ -2770,7 +2824,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -2811,18 +2865,20 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building = {
 				building="building_maize_farm"
 				add_ownership={ building={ type="building_manor_house" country="c:XBK" levels=1 region="STATE_NSM_246" } }
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_254={
+		# 州名: 北米68 (STATE_NSM_254)
+		# ポートル (XBW)
 		# ポートル (XBW)
 		region_state:XBW={
 			create_building={
@@ -2836,7 +2892,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -2899,21 +2955,23 @@
 					}
 				}
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_sugar_plantation"
 				add_ownership={ country={ country="c:XBW" levels=2 } }
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_256={
+		# 州名: 北米5 (STATE_NSM_256)
+		# リイア帝国 (XBK)
 		# リイア帝国 (XBK)
 		region_state:XBK={
 			create_building={
@@ -2927,7 +2985,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -2980,11 +3038,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_266={
+		# 州名: 北米52 (STATE_NSM_266)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			# source: NSM_integrated_buildings.txt
@@ -3013,7 +3073,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -3022,11 +3082,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_273={
+		# 州名: 北米74 (STATE_NSM_273)
+		# リセネイトス (XBV)
 		# リセネイトス (XBV)
 		region_state:XBV={
 			create_building={
@@ -3040,7 +3102,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
@@ -3095,7 +3157,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XBV" levels=2 } }
@@ -3124,14 +3186,14 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBV" levels=1 region="STATE_NSM_273" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBV" levels=1 region="STATE_NSM_273" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 
@@ -3139,6 +3201,8 @@
 
 	}
 	s:STATE_NSM_284={
+		# 州名: 北米41 (STATE_NSM_284)
+		# リヤッサネ (XBO)
 		# リヤッサネ (XBO)
 		region_state:XBO={
 			create_building={
@@ -3152,7 +3216,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -3205,14 +3269,14 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XBO" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
 				building="building_textile_mill"
 				add_ownership={ building={ type="building_financial_district" country="c:XBO" levels=1 region="STATE_NSM_284" } }
@@ -3229,14 +3293,14 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBO" levels=1 region="STATE_NSM_284" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBO" levels=1 region="STATE_NSM_284" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 			create_building={
@@ -3250,6 +3314,8 @@
 
 	}
 	s:STATE_NSM_296={
+		# 州名: 北米70 (STATE_NSM_296)
+		# ポートル (XBW)
 		# ポートル (XBW)
 		region_state:XBW={
 			create_building={
@@ -3263,7 +3329,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -3328,15 +3394,15 @@
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:XBW" levels=1 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -3345,11 +3411,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_305={
+		# 州名: 北米72 (STATE_NSM_305)
+		# Country: PTK
 		# Country: PTK
 		region_state:PTK={
 			create_building={
@@ -3363,7 +3431,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -3404,9 +3472,10 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
+		# ポートル (XBW)
 		# ポートル (XBW)
 		region_state:XBW={
 			create_building={
@@ -3415,7 +3484,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -3424,11 +3493,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_310={
+		# 州名: 北米58 (STATE_NSM_310)
+		# コムパッド (XBQ)
 		# コムパッド (XBQ)
 		region_state:XBQ={
 			create_building={
@@ -3442,7 +3513,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
@@ -3497,15 +3568,15 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:XBQ" levels=2 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XBQ" levels=1 } }
@@ -3534,17 +3605,17 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBQ" levels=1 region="STATE_NSM_310" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBQ" levels=1 region="STATE_NSM_310" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -3553,11 +3624,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_312={
+		# 州名: 北米33 (STATE_NSM_312)
+		# リイア社会共和国 (XBL)
 		# リイア社会共和国 (XBL)
 		region_state:XBL={
 			# source: NSM_integrated_buildings.txt
@@ -3601,11 +3674,13 @@
 				reserves=1
 			}
 			# source: NSM_world_trade_ports_resources.txt
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_327={
+		# 州名: 北米61 (STATE_NSM_327)
+		# コグル (XBR)
 		# コグル (XBR)
 		region_state:XBR={
 			create_building={
@@ -3619,7 +3694,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
@@ -3674,15 +3749,15 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:XBR" levels=1 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XBR" levels=1 } }
@@ -3711,17 +3786,17 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBR" levels=1 region="STATE_NSM_327" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBR" levels=1 region="STATE_NSM_327" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -3730,11 +3805,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_337={
+		# 州名: 北米51 (STATE_NSM_337)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -3748,7 +3825,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -3787,7 +3864,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -3796,11 +3873,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_340={
+		# 州名: 北米76 (STATE_NSM_340)
+		# コスパ (XCE)
 		# コスパ (XCE)
 		region_state:XCE={
 			create_building={
@@ -3814,7 +3893,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -3867,7 +3946,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -3876,11 +3955,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_352={
+		# 州名: 北米28 (STATE_NSM_352)
+		# リイア帝国 (XBK)
 		# リイア帝国 (XBK)
 		region_state:XBK={
 			create_building={
@@ -3894,7 +3975,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -3935,18 +4016,20 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building = {
 				building="building_maize_farm"
 				add_ownership={ building={ type="building_manor_house" country="c:XBK" levels=1 region="STATE_NSM_352" } }
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_363={
+		# 州名: 北米60 (STATE_NSM_363)
+		# パース (XBT)
 		# パース (XBT)
 		region_state:XBT={
 			create_building={
@@ -3960,7 +4043,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
@@ -4015,7 +4098,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XBT" levels=1 } }
@@ -4044,14 +4127,14 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBT" levels=1 region="STATE_NSM_363" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBT" levels=1 region="STATE_NSM_363" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 
@@ -4059,6 +4142,8 @@
 
 	}
 	s:STATE_NSM_365={
+		# 州名: 北米7 (STATE_NSM_365)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -4072,7 +4157,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -4111,11 +4196,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_370={
+		# 州名: 北米6 (STATE_NSM_370)
+		# リイア帝国 (XBK)
 		# リイア帝国 (XBK)
 		region_state:XBK={
 			# source: NSM_integrated_buildings.txt
@@ -4170,11 +4257,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_371={
+		# 州名: 北米80 (STATE_NSM_371)
+		# ブルトニア (XCD)
 		# ブルトニア (XCD)
 		region_state:XCD={
 			create_building={
@@ -4188,7 +4277,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -4309,20 +4398,20 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XCD" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XCD" levels=2 } }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -4331,11 +4420,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_384={
+		# 州名: 北米71 (STATE_NSM_384)
+		# Country: PTK
 		# Country: PTK
 		region_state:PTK={
 			create_building={
@@ -4349,7 +4440,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -4388,7 +4479,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -4397,11 +4488,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_387={
+		# 州名: 北米10 (STATE_NSM_387)
+		# リイア共和国 (XBJ)
 		# リイア共和国 (XBJ)
 		region_state:XBJ={
 			create_building={
@@ -4415,7 +4508,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -4468,15 +4561,15 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:XBJ" levels=1 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XBJ" levels=1 } }
@@ -4505,14 +4598,14 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBJ" levels=1 region="STATE_NSM_387" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBJ" levels=1 region="STATE_NSM_387" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 			create_building={
@@ -4526,6 +4619,8 @@
 
 	}
 	s:STATE_NSM_408={
+		# 州名: 北米12 (STATE_NSM_408)
+		# リイア帝国 (XBK)
 		# リイア帝国 (XBK)
 		region_state:XBK={
 			create_building={
@@ -4539,7 +4634,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -4578,11 +4673,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_412={
+		# 州名: 北米15 (STATE_NSM_412)
+		# リイア帝国 (XBK)
 		# リイア帝国 (XBK)
 		region_state:XBK={
 			create_building={
@@ -4596,7 +4693,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -4635,11 +4732,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_413={
+		# 州名: 北米53 (STATE_NSM_413)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -4653,7 +4752,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -4692,14 +4791,14 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building = {
 				building="building_cotton_plantation"
 				add_ownership={ building={ type="building_manor_house" country="c:XCC" levels=2 region="STATE_NSM_413" } }
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -4708,11 +4807,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_414={
+		# 州名: 北米3 (STATE_NSM_414)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			# source: NSM_integrated_buildings.txt
@@ -4753,9 +4854,9 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			# ToE: one naval fortification on strait coast
-			
+
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -4767,11 +4868,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_420={
+		# 州名: 北米36 (STATE_NSM_420)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -4785,7 +4888,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -4824,19 +4927,21 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:XCC" levels=2 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_421={
+		# 州名: 北米24 (STATE_NSM_421)
+		# リイア共和国 (XBJ)
 		# リイア共和国 (XBJ)
 		region_state:XBJ={
 			create_building={
@@ -4850,7 +4955,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -4889,127 +4994,129 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:XBJ" levels=2 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_424={
+		# 州名: 北米66 (STATE_NSM_424)
+		# ブルトニア (XCD)
 		# ブルトニア (XCD)
 		region_state:XCD={
-				create_building={
-					building="building_government_administration"
-					add_ownership={
-						country={
-							country="c:XCD"
-							levels=1
-						}
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:XCD"
+						levels=1
 					}
-					reserves=1
-					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 				}
-			
-				# source: NSM_integrated_buildings.txt
-				create_building={
-					building="building_livestock_ranch"
-					add_ownership={
-						building={
-							type="building_manor_house"
-							country="c:XCD"
-							levels=1
-							region="STATE_NSM_424"
-						}
+				reserves=1
+				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+			}
+
+			# source: NSM_integrated_buildings.txt
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:XCD"
+						levels=1
+						region="STATE_NSM_424"
 					}
-					reserves=1
-					activate_production_methods={ "pm_slaughterhouses" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 				}
-				# source: NSM_integrated_buildings.txt
-				create_building={
-					building="building_logging_camp"
-					add_ownership={
-						building={
-							type="building_manor_house"
-							country="c:XCD"
-							levels=1
-							region="STATE_NSM_424"
-						}
+				reserves=1
+				activate_production_methods={ "pm_slaughterhouses" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+			}
+			# source: NSM_integrated_buildings.txt
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:XCD"
+						levels=1
+						region="STATE_NSM_424"
 					}
-					reserves=1
-					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 				}
-				# source: NSM_integrated_buildings.txt
-				create_building={
-					building="building_trade_center"
-					activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
-					add_ownership={
-						country={
-							country="c:XCD"
-							levels=2
-						}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			# source: NSM_integrated_buildings.txt
+			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					country={
+						country="c:XCD"
+						levels=2
 					}
-					reserves=1
 				}
-				# source: NSM_world_trade_ports_resources.txt
-				create_building={
-					building="building_port"
-					add_ownership={
-						country={
-							country="c:XCD"
-							levels=1
-						}
+				reserves=1
+			}
+			# source: NSM_world_trade_ports_resources.txt
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:XCD"
+						levels=1
 					}
-					activate_production_methods={ "pm_basic_port" }
-					reserves=1
 				}
-				# source: NSM_world_trade_ports_resources.txt
-				create_building={
-					building="building_iron_mine"
-					add_ownership={
-						country={
-							country="c:XCD"
-							levels=1
-						}
+				activate_production_methods={ "pm_basic_port" }
+				reserves=1
+			}
+			# source: NSM_world_trade_ports_resources.txt
+			create_building={
+				building="building_iron_mine"
+				add_ownership={
+					country={
+						country="c:XCD"
+						levels=1
 					}
-					reserves=1
-			
-					activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 				}
-			
-				create_building={
-					building="building_construction_sector"
-					add_ownership={ country={ country="c:XCD" levels=1 } }
-					reserves=1
-					activate_production_methods={ "pm_wooden_buildings" }
-				}
-			
-				create_building={
-					building="building_textile_mill"
-					add_ownership={ building={ type="building_financial_district" country="c:XCD" levels=1 region="STATE_NSM_424" } }
-					reserves=1
-					activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" }
-				}
-				create_building={
-					building="building_tooling_workshop"
-					add_ownership={ building={ type="building_financial_district" country="c:XCD" levels=1 region="STATE_NSM_424" } }
-					reserves=1
-					activate_production_methods={ "pm_steel" "pm_automation_disabled" }
-				}
-				create_building={
-					building="building_furniture_manufactory"
-					add_ownership={ building={ type="building_financial_district" country="c:XCD" levels=1 region="STATE_NSM_424" } }
-					reserves=1
-			
-					activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
-				}
-				create_building={
-					b
+				reserves=1
+
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+
+			create_building={
+				building="building_construction_sector"
+				add_ownership={ country={ country="c:XCD" levels=1 } }
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+
+			create_building={
+				building="building_textile_mill"
+				add_ownership={ building={ type="building_financial_district" country="c:XCD" levels=1 region="STATE_NSM_424" } }
+				reserves=1
+				activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={ building={ type="building_financial_district" country="c:XCD" levels=1 region="STATE_NSM_424" } }
+				reserves=1
+				activate_production_methods={ "pm_steel" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={ building={ type="building_financial_district" country="c:XCD" levels=1 region="STATE_NSM_424" } }
+				reserves=1
+
+				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
+			}
+			create_building={
+				b
 				create_building={
 					building="building_silk_plantation"
 					add_ownership={
@@ -5018,30 +5125,32 @@
 					reserves=1
 					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 				}
-			uilding="building_glassworks"
-					add_ownership={ building={ type="building_financial_district" country="c:XCD" levels=1 region="STATE_NSM_424" } }
-					reserves=1
+				uilding="building_glassworks"
+				add_ownership={ building={ type="building_financial_district" country="c:XCD" levels=1 region="STATE_NSM_424" } }
+				reserves=1
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={ building={ type="building_financial_district" country="c:XCD" levels=1 region="STATE_NSM_424" } }
+				reserves=1
+				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
+			}
+
+			create_building={
+				building="building_tea_plantation"
+				add_ownership={
+					country={ country="c:XCD" levels=3 }
 				}
-				create_building={
-					building="building_paper_mill"
-					add_ownership={ building={ type="building_financial_district" country="c:XCD" levels=1 region="STATE_NSM_424" } }
-					reserves=1
-					activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
-				}
-			
-				create_building={
-					building="building_tea_plantation"
-					add_ownership={
-						country={ country="c:XCD" levels=3 }
-					}
-					reserves=1
-					activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
-				}
-			
+				reserves=1
+				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
+			}
+
 		}
 
 	}
 	s:STATE_NSM_427={
+		# 州名: 北米18 (STATE_NSM_427)
+		# リイア社会共和国 (XBL)
 		# リイア社会共和国 (XBL)
 		region_state:XBL={
 			create_building={
@@ -5055,7 +5164,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -5104,14 +5213,16 @@
 					}
 				}
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_438={
+		# 州名: 北米79 (STATE_NSM_438)
+		# コスパ (XCE)
 		# コスパ (XCE)
 		region_state:XCE={
 			create_building={
@@ -5125,7 +5236,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -5176,10 +5287,10 @@
 					}
 				}
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -5188,11 +5299,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_445={
+		# 州名: 北米38 (STATE_NSM_445)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -5206,7 +5319,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -5280,15 +5393,15 @@
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_arms_industry"
-			add_ownership={
-				building={
-					type="building_financial_district"
-					country="c:XCC"
-					levels=1
-					region="STATE_NSM_445"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:XCC"
+						levels=1
+						region="STATE_NSM_445"
+					}
+					country={ country="c:XCC" levels=1 }
 				}
-				country={ country="c:XCC" levels=1 }
-			}
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
@@ -5372,21 +5485,21 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XCC" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			
+
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XCC" levels=1 region="STATE_NSM_445" } }
 				reserves=1
 				activate_production_methods={ "pm_steel" "pm_automation_disabled" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -5395,11 +5508,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_446={
+		# 州名: 北米26 (STATE_NSM_446)
+		# リイア植民地 (XBM)
 		# リイア植民地 (XBM)
 		region_state:XBM={
 			create_building={
@@ -5413,7 +5528,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -5530,10 +5645,10 @@
 					}
 				}
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XBM" levels=1 region="STATE_NSM_446" } }
@@ -5544,14 +5659,14 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBM" levels=1 region="STATE_NSM_446" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBM" levels=1 region="STATE_NSM_446" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 
@@ -5559,9 +5674,11 @@
 
 	}
 	s:STATE_NSM_448={
+		# 州名: 北米17 (STATE_NSM_448)
+		# リイア社会共和国 (XBL)
 		# リイア社会共和国 (XBL)
 		region_state:XBL={
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -5600,11 +5717,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_475={
+		# 州名: 北米2 (STATE_NSM_475)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			# source: NSM_integrated_buildings.txt
@@ -5645,11 +5764,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_478={
+		# 州名: 北米19 (STATE_NSM_478)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -5663,7 +5784,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -5690,11 +5811,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_487={
+		# 州名: 北米64 (STATE_NSM_487)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -5708,7 +5831,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -5747,14 +5870,14 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building = {
 				building="building_cotton_plantation"
 				add_ownership={ building={ type="building_manor_house" country="c:XCC" levels=2 region="STATE_NSM_487" } }
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -5763,11 +5886,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_488={
+		# 州名: 中フーシャメウス (STATE_NSM_488)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -5781,7 +5906,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -5820,11 +5945,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_495={
+		# 州名: 北米77 (STATE_NSM_495)
+		# コスパ (XCE)
 		# コスパ (XCE)
 		region_state:XCE={
 			create_building={
@@ -5838,7 +5965,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -5865,7 +5992,7 @@
 				}
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -5874,11 +6001,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_497={
+		# 州名: 北米11 (STATE_NSM_497)
+		# リイア帝国 (XBK)
 		# リイア帝国 (XBK)
 		region_state:XBK={
 			create_building={
@@ -5892,7 +6021,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -5919,11 +6048,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_501={
+		# 州名: 北米22 (STATE_NSM_501)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -5937,7 +6068,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -5976,11 +6107,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_506={
+		# 州名: 北米65 (STATE_NSM_506)
+		# ブルトニア (XCD)
 		# ブルトニア (XCD)
 		region_state:XCD={
 			create_building={
@@ -5994,7 +6127,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -6045,7 +6178,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -6054,11 +6187,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_516={
+		# 州名: 北米4 (STATE_NSM_516)
+		# リイア帝国 (XBK)
 		# リイア帝国 (XBK)
 		region_state:XBK={
 			create_building={
@@ -6072,7 +6207,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -6111,9 +6246,9 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			# ToE: one naval fortification on strait coast
-			
+
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -6125,11 +6260,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_530={
+		# 州名: 下フーシャメウス (STATE_NSM_530)
+		# フーシャメウス (XCC)
 		# フーシャメウス (XCC)
 		region_state:XCC={
 			create_building={
@@ -6143,7 +6280,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
@@ -6224,11 +6361,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_531={
+		# 州名: 北米27 (STATE_NSM_531)
+		# リイア植民地 (XBM)
 		# リイア植民地 (XBM)
 		region_state:XBM={
 			create_building={
@@ -6242,7 +6381,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -6269,11 +6408,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_532={
+		# 州名: 北米69 (STATE_NSM_532)
+		# ポートル (XBW)
 		# ポートル (XBW)
 		region_state:XBW={
 			create_building={
@@ -6287,7 +6428,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -6338,15 +6479,15 @@
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:XBW" levels=1 } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XBW" levels=1 } }
@@ -6375,14 +6516,14 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBW" levels=1 region="STATE_NSM_532" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBW" levels=1 region="STATE_NSM_532" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 			create_building={
@@ -6396,6 +6537,8 @@
 
 	}
 	s:STATE_NSM_533={
+		# 州名: 北米9 (STATE_NSM_533)
+		# リイア共和国 (XBJ)
 		# リイア共和国 (XBJ)
 		region_state:XBJ={
 			create_building={
@@ -6409,7 +6552,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -6448,11 +6591,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_535={
+		# 州名: 北米新規 (STATE_NSM_535)
+		# コスパ (XCE)
 		# コスパ (XCE)
 		region_state:XCE={
 			create_building={
@@ -6466,7 +6611,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
@@ -6505,24 +6650,26 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XCE" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XCE" levels=2 } }
 				reserves=1
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_423={
+		# 州名: 北米29 (STATE_NSM_423)
+		# ゴーポ (XBN)
 		# ゴーポ (XBN)
 		region_state:XBN={
 			create_building={
@@ -6536,7 +6683,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XBN" levels=1 } }
@@ -6565,14 +6712,14 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBN" levels=1 region="STATE_NSM_423" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBN" levels=1 region="STATE_NSM_423" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 			create_building={
@@ -6581,13 +6728,15 @@
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
-			
+
 			# Codex: population-based administration rebalance
 
 		}
 
 	}
 	s:STATE_NSM_231={
+		# 州名: 北米59 (STATE_NSM_231)
+		# グルーグ (XBP)
 		# グルーグ (XBP)
 		region_state:XBP={
 			create_building={
@@ -6601,7 +6750,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XBP" levels=1 } }
@@ -6630,14 +6779,14 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XBP" levels=1 region="STATE_NSM_231" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XBP" levels=1 region="STATE_NSM_231" } }
 				reserves=1
-			
+
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 			create_building={
@@ -6646,13 +6795,15 @@
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
-			
+
 			# Codex: population-based administration rebalance
 
 		}
 
 	}
 	s:STATE_NSM_200={
+		# 州名: 北米44 (STATE_NSM_200)
+		# ゴーポ (XBN)
 		# ゴーポ (XBN)
 		region_state:XBN={
 			create_building={
@@ -6668,9 +6819,11 @@
 			}
 
 		}
-		
+
 	}
 	s:STATE_NSM_404={
+		# 州名: 北米45 (STATE_NSM_404)
+		# グルーグ (XBP)
 		# グルーグ (XBP)
 		region_state:XBP={
 			create_building={
@@ -6686,9 +6839,11 @@
 			}
 
 		}
-		
+
 	}
 	s:STATE_NSM_332={
+		# 州名: 北米48 (STATE_NSM_332)
+		# グルーグ (XBP)
 		# グルーグ (XBP)
 		region_state:XBP={
 			create_building={
@@ -6702,7 +6857,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			create_building={
 				building="building_tea_plantation"
 				add_ownership={
@@ -6711,14 +6866,16 @@
 				reserves=1
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_385={
+		# 州名: 北米73 (STATE_NSM_385)
+		# ドリフ (XBX)
 		# ドリフ (XBX)
 		region_state:XBX={
 		}
-		
+
 	}
 }

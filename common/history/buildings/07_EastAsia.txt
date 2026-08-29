@@ -1,5 +1,7 @@
 ﻿BUILDINGS={
 	s:STATE_NSM_071={
+		# 州名: 東亜7 (STATE_NSM_071)
+		# Country: GSU
 		# Country: GSU
 		region_state:GSU={
 			create_building={
@@ -13,7 +15,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_rice_farm"
@@ -66,17 +68,19 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
-			      create_building = {
-			          building="building_naval_administration"
-			          add_ownership={ country={ country="c:GSU" levels=2 } }
-			          reserves=1
-			      }
-			
+
+			create_building = {
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:GSU" levels=2 } }
+				reserves=1
+			}
+
 		}
 
 	}
 	s:STATE_NSM_160={
+		# 州名: 東亜6 (STATE_NSM_160)
+		# Country: GLZ
 		# Country: GLZ
 		region_state:GLZ={
 			create_building={
@@ -90,7 +94,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -143,17 +147,19 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:GLZ" levels=1 } }
 				reserves=1
 			}
-			
+
 		}
 
 	}
 	s:STATE_NSM_187={
+		# 州名: 東亜1 (STATE_NSM_187)
+		# Country: GLT
 		# Country: GLT
 		region_state:GLT={
 			create_building={
@@ -167,7 +173,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -208,11 +214,13 @@
 				}
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_196={
+		# 州名: 東亜3 (STATE_NSM_196)
+		# Country: GLZ
 		# Country: GLZ
 		region_state:GLZ={
 			create_building={
@@ -226,7 +234,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-			
+
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -279,11 +287,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_381={
+		# 州名: 東亜2 (STATE_NSM_381)
+		# Country: GLZ
 		# Country: GLZ
 		region_state:GLZ={
 			# source: NSM_integrated_buildings.txt
@@ -338,11 +348,13 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 	s:STATE_NSM_402={
+		# 州名: 東亜5 (STATE_NSM_402)
+		# Country: GLZ
 		# Country: GLZ
 		region_state:GLZ={
 			# source: NSM_integrated_buildings.txt
@@ -397,8 +409,8 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-			
+
 		}
-		
+
 	}
 }

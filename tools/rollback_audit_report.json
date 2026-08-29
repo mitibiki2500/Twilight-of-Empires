@@ -1,13 +1,13 @@
 {
   "summary": {
-    "passed": 14,
-    "failed": 0,
+    "passed": 12,
+    "failed": 2,
     "total": 14
   },
   "checks": [
     {
       "name": "MAPI base 72",
-      "ok": true,
+      "ok": false,
       "detail": "common/static_modifiers/00_code_static_modifiers.txt"
     },
     {
@@ -72,8 +72,7 @@
       "name": "Alti heir three traits present",
       "ok": true,
       "detail": [
-        "common/character_templates/country_skr_#U30a2#U30eb#U30c6#U30a3.txt",
-        "今回の更新内容.txt"
+        "common/character_templates/country_skr_#U30a2#U30eb#U30c6#U30a3.txt"
       ]
     },
     {
@@ -93,44 +92,20 @@
     },
     {
       "name": "All 12 restored prestige DDS assets exist",
-      "ok": true,
+      "ok": false,
       "detail": {
-        "saudi_aramco_oil_prestige.dds": [
-          "gfx/interface/icons/goods_icons/prestige_goods/saudi_aramco_oil_prestige.dds"
-        ],
-        "gazprom_natural_gas_prestige.dds": [
-          "gfx/interface/icons/goods_icons/prestige_goods/gazprom_natural_gas_prestige.dds"
-        ],
-        "apple_iphones_prestige.dds": [
-          "gfx/interface/icons/goods_icons/prestige_goods/apple_iphones_prestige.dds"
-        ],
-        "smartphones_prestige.dds": [
-          "gfx/interface/icons/goods_icons/prestige_goods/smartphones_prestige.dds"
-        ],
-        "olivetti_teleprinters_prestige.dds": [
-          "gfx/interface/icons/goods_icons/prestige_goods/olivetti_teleprinters_prestige.dds"
-        ],
-        "asml_euv_lithography_machines_prestige.dds": [
-          "gfx/interface/icons/goods_icons/prestige_goods/asml_euv_lithography_machines_prestige.dds"
-        ],
-        "intel_processors_prestige.dds": [
-          "gfx/interface/icons/goods_icons/prestige_goods/intel_processors_prestige.dds"
-        ],
-        "gpu_prestige.dds": [
-          "gfx/interface/icons/goods_icons/prestige_goods/gpu_prestige.dds"
-        ],
-        "wafers_prestige.dds": [
-          "gfx/interface/icons/goods_icons/prestige_goods/wafers_prestige.dds"
-        ],
-        "MB_holy_prestige.dds": [
-          "gfx/interface/icons/goods_icons/prestige_goods/MB_holy_prestige.dds"
-        ],
-        "MB_gold_prestige.dds": [
-          "gfx/interface/icons/goods_icons/prestige_goods/MB_gold_prestige.dds"
-        ],
-        "MR_bscopper.dds": [
-          "gfx/interface/icons/goods_icons/prestige_goods/MR_bscopper.dds"
-        ]
+        "saudi_aramco_oil_prestige.dds": [],
+        "gazprom_natural_gas_prestige.dds": [],
+        "apple_iphones_prestige.dds": [],
+        "smartphones_prestige.dds": [],
+        "olivetti_teleprinters_prestige.dds": [],
+        "asml_euv_lithography_machines_prestige.dds": [],
+        "intel_processors_prestige.dds": [],
+        "gpu_prestige.dds": [],
+        "wafers_prestige.dds": [],
+        "MB_holy_prestige.dds": [],
+        "MB_gold_prestige.dds": [],
+        "MR_bscopper.dds": []
       }
     },
     {
@@ -141,8 +116,8 @@
           "common/company_types/00_nsm_WestAsia_companies.txt",
           "common/prestige_goods/MR00_prestige_goods.txt",
           "common/prestige_goods/MSN00_prestige_goods.txt",
-          "localization/japanese/toe_prestige_goods_complete_l_japanese.yml",
-          "localization/replace/japanese/nsm_companies_l_japanese.yml"
+          "localization/japanese/nsm_companies_l_japanese.yml",
+          "localization/japanese/toe_prestige_goods_complete_l_japanese.yml"
         ],
         "bad": []
       }
