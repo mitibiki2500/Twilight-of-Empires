@@ -161,7 +161,7 @@ toe_paido_recalculate_integration = {
 	if = { limit = { NOT = { has_variable = toe_paido_done_resind } var:toe_pai_resind_shipyard >= 5 country_average_culture_pop_acceptance = { culture = cu:nsm_map_pai_3 value >= 50 } } toe_paido_tradition_resind = yes }
 	if = { limit = { NOT = { has_variable = toe_paido_done_prune } var:toe_pai_prune_plantation >= 10 country_average_culture_pop_acceptance = { culture = cu:nsm_map_pai_5 value >= 50 } } toe_paido_tradition_prune = yes }
 	if = { limit = { NOT = { has_variable = toe_paido_done_krikul } var:toe_pai_krikul_ranch >= 15 country_average_culture_pop_acceptance = { culture = cu:nsm_map_pai_2 value >= 50 } } toe_paido_tradition_krikul = yes }
-	if = { limit = { NOT = { has_variable = toe_paido_done_sosilia } c:SOS ?= { gdp >= 6000000 } relations = { target = c:SOS value >= 50 } } toe_paido_tradition_sosilia = yes }
+	if = { limit = { NOT = { has_variable = toe_paido_done_sosilia } c:SOS ?= { gdp >= 6000000 relations:root >= 50 } } toe_paido_tradition_sosilia = yes }
 	if = { limit = { NOT = { has_variable = toe_paido_done_balin } var:toe_pai_balin_arms >= 5 var:toe_pai_balin_industry >= 5 } toe_paido_integrate_balin = yes }
 }
 
