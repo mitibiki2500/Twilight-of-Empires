@@ -16,41 +16,12 @@ toe_paido_integration_failure = {
 	country_prestige_mult = -0.20
 }
 
-# 「パイドのパイド人」：達成文化数に応じて10年間。
+# 「パイドのパイド人」：この基礎値に達成文化数をmultiplierとして掛ける。
 # 1文化ごとに 同化+4% / 社会研究+2.5% / 社会研究普及+2.5% / 威信+2%。
-toe_paido_people_6 = {
-	state_assimilation_mult = 0.24
-	country_society_tech_research_speed_mult = 0.15
-	country_society_tech_spread_mult = 0.15
-	country_prestige_mult = 0.12
-}
-toe_paido_people_7 = {
-	state_assimilation_mult = 0.28
-	country_society_tech_research_speed_mult = 0.175
-	country_society_tech_spread_mult = 0.175
-	country_prestige_mult = 0.14
-}
-toe_paido_people_8 = {
-	state_assimilation_mult = 0.32
-	country_society_tech_research_speed_mult = 0.20
-	country_society_tech_spread_mult = 0.20
-	country_prestige_mult = 0.16
-}
-toe_paido_people_9 = {
-	state_assimilation_mult = 0.36
-	country_society_tech_research_speed_mult = 0.225
-	country_society_tech_spread_mult = 0.225
-	country_prestige_mult = 0.18
-}
-toe_paido_people_10 = {
-	state_assimilation_mult = 0.40
-	country_society_tech_research_speed_mult = 0.25
-	country_society_tech_spread_mult = 0.25
-	country_prestige_mult = 0.20
-}
-toe_paido_people_11 = {
-	state_assimilation_mult = 0.44
-	country_society_tech_research_speed_mult = 0.275
-	country_society_tech_spread_mult = 0.275
-	country_prestige_mult = 0.22
+toe_paido_people = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_assimilation_mult = 0.04
+	country_society_tech_research_speed_mult = 0.025
+	country_society_tech_spread_mult = 0.025
+	country_prestige_mult = 0.02
 }
