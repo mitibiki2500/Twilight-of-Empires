@@ -6,114 +6,171 @@ toe_paido_init_integration = {
 	toe_paido_recalculate_integration = yes
 }
 
-# 文化統合（POPをパイドへ全転換＋tradition_paido付与）
+# 文化統合。
+# 全対象POPを1回のボタンでまとめてパイド文化へ転換する。
+# UIでは職業別POPの変換結果を展開せず、文化単位の1行だけ表示する。
 toe_paido_integrate_dale = {
-	cu:nsm_map_pai_dale = { add_tradition_trait = tradition_paido }
-	every_scope_state = {
-		every_scope_pop = {
-			limit = { culture = cu:nsm_map_pai_dale }
-			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+	custom_tooltip = {
+		text = toe_paido_integrate_dale_effect_tt
+		hidden_effect = {
+			cu:nsm_map_pai_dale = { add_tradition_trait = tradition_paido }
+			every_scope_state = {
+				every_scope_pop = {
+					limit = { culture = cu:nsm_map_pai_dale }
+					change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+				}
+			}
+			set_variable = toe_paido_done_dale
+			change_variable = { name = toe_paido_achieved_count add = 1 }
 		}
 	}
-	set_variable = toe_paido_done_dale
-	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
 
 toe_paido_integrate_shaftar = {
-	cu:nsm_map_pai_shaftar = { add_tradition_trait = tradition_paido }
-	every_scope_state = {
-		every_scope_pop = {
-			limit = { culture = cu:nsm_map_pai_shaftar }
-			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+	custom_tooltip = {
+		text = toe_paido_integrate_shaftar_effect_tt
+		hidden_effect = {
+			cu:nsm_map_pai_shaftar = { add_tradition_trait = tradition_paido }
+			every_scope_state = {
+				every_scope_pop = {
+					limit = { culture = cu:nsm_map_pai_shaftar }
+					change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+				}
+			}
+			set_variable = toe_paido_done_shaftar
+			change_variable = { name = toe_paido_achieved_count add = 1 }
 		}
 	}
-	set_variable = toe_paido_done_shaftar
-	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
 
 toe_paido_integrate_eskan = {
-	cu:nsm_map_pai_eskan = { add_tradition_trait = tradition_paido }
-	every_scope_state = {
-		every_scope_pop = {
-			limit = { culture = cu:nsm_map_pai_eskan }
-			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+	custom_tooltip = {
+		text = toe_paido_integrate_eskan_effect_tt
+		hidden_effect = {
+			cu:nsm_map_pai_eskan = { add_tradition_trait = tradition_paido }
+			every_scope_state = {
+				every_scope_pop = {
+					limit = { culture = cu:nsm_map_pai_eskan }
+					change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+				}
+			}
+			set_variable = toe_paido_done_eskan
+			change_variable = { name = toe_paido_achieved_count add = 1 }
 		}
 	}
-	set_variable = toe_paido_done_eskan
-	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
 
 toe_paido_integrate_old = {
-	cu:nsm_map_pai_old = { add_tradition_trait = tradition_paido }
-	every_scope_state = {
-		every_scope_pop = {
-			limit = { culture = cu:nsm_map_pai_old }
-			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+	custom_tooltip = {
+		text = toe_paido_integrate_old_effect_tt
+		hidden_effect = {
+			cu:nsm_map_pai_old = { add_tradition_trait = tradition_paido }
+			every_scope_state = {
+				every_scope_pop = {
+					limit = { culture = cu:nsm_map_pai_old }
+					change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+				}
+			}
+			set_variable = toe_paido_done_old
+			change_variable = { name = toe_paido_achieved_count add = 1 }
 		}
 	}
-	set_variable = toe_paido_done_old
-	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
 
 toe_paido_integrate_northern = {
-	cu:nsm_map_pai_northern = { add_tradition_trait = tradition_paido }
-	every_scope_state = {
-		every_scope_pop = {
-			limit = { culture = cu:nsm_map_pai_northern }
-			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+	custom_tooltip = {
+		text = toe_paido_integrate_northern_effect_tt
+		hidden_effect = {
+			cu:nsm_map_pai_northern = { add_tradition_trait = tradition_paido }
+			every_scope_state = {
+				every_scope_pop = {
+					limit = { culture = cu:nsm_map_pai_northern }
+					change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+				}
+			}
+			set_variable = toe_paido_done_northern
+			change_variable = { name = toe_paido_achieved_count add = 1 }
 		}
 	}
-	set_variable = toe_paido_done_northern
-	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
 
 toe_paido_integrate_palun = {
-	cu:nsm_map_pai_palun = { add_tradition_trait = tradition_paido }
-	every_scope_state = {
-		every_scope_pop = {
-			limit = { culture = cu:nsm_map_pai_palun }
-			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+	custom_tooltip = {
+		text = toe_paido_integrate_palun_effect_tt
+		hidden_effect = {
+			cu:nsm_map_pai_palun = { add_tradition_trait = tradition_paido }
+			every_scope_state = {
+				every_scope_pop = {
+					limit = { culture = cu:nsm_map_pai_palun }
+					change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+				}
+			}
+			set_variable = toe_paido_done_palun
+			change_variable = { name = toe_paido_achieved_count add = 1 }
 		}
 	}
-	set_variable = toe_paido_done_palun
-	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
 
 toe_paido_integrate_balin = {
-	cu:nsm_map_pai_4 = { add_tradition_trait = tradition_paido }
-	every_scope_state = {
-		every_scope_pop = {
-			limit = { culture = cu:nsm_map_pai_4 }
-			change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+	custom_tooltip = {
+		text = toe_paido_integrate_balin_effect_tt
+		hidden_effect = {
+			cu:nsm_map_pai_4 = { add_tradition_trait = tradition_paido }
+			every_scope_state = {
+				every_scope_pop = {
+					limit = { culture = cu:nsm_map_pai_4 }
+					change_pop_culture = { target = cu:nsm_map_pai value = 1 }
+				}
+			}
+			set_variable = toe_paido_done_balin
+			change_variable = { name = toe_paido_achieved_count add = 1 }
 		}
 	}
-	set_variable = toe_paido_done_balin
-	change_variable = { name = toe_paido_achieved_count add = 1 }
 }
 
 # 非必須：文化は残してtradition_paidoだけ付与。
 toe_paido_tradition_resind = {
-	cu:nsm_map_pai_3 = { add_tradition_trait = tradition_paido }
-	set_variable = toe_paido_done_resind
-	change_variable = { name = toe_paido_achieved_count add = 1 }
+	custom_tooltip = {
+		text = toe_paido_tradition_resind_effect_tt
+		hidden_effect = {
+			cu:nsm_map_pai_3 = { add_tradition_trait = tradition_paido }
+			set_variable = toe_paido_done_resind
+			change_variable = { name = toe_paido_achieved_count add = 1 }
+		}
+	}
 }
 
 toe_paido_tradition_prune = {
-	cu:nsm_map_pai_5 = { add_tradition_trait = tradition_paido }
-	set_variable = toe_paido_done_prune
-	change_variable = { name = toe_paido_achieved_count add = 1 }
+	custom_tooltip = {
+		text = toe_paido_tradition_prune_effect_tt
+		hidden_effect = {
+			cu:nsm_map_pai_5 = { add_tradition_trait = tradition_paido }
+			set_variable = toe_paido_done_prune
+			change_variable = { name = toe_paido_achieved_count add = 1 }
+		}
+	}
 }
 
 toe_paido_tradition_krikul = {
-	cu:nsm_map_pai_2 = { add_tradition_trait = tradition_paido }
-	set_variable = toe_paido_done_krikul
-	change_variable = { name = toe_paido_achieved_count add = 1 }
+	custom_tooltip = {
+		text = toe_paido_tradition_krikul_effect_tt
+		hidden_effect = {
+			cu:nsm_map_pai_2 = { add_tradition_trait = tradition_paido }
+			set_variable = toe_paido_done_krikul
+			change_variable = { name = toe_paido_achieved_count add = 1 }
+		}
+	}
 }
 
 toe_paido_tradition_sosilia = {
-	cu:nsm_map_sos = { add_tradition_trait = tradition_paido }
-	set_variable = toe_paido_done_sosilia
-	change_variable = { name = toe_paido_achieved_count add = 1 }
+	custom_tooltip = {
+		text = toe_paido_tradition_sosilia_effect_tt
+		hidden_effect = {
+			cu:nsm_map_sos = { add_tradition_trait = tradition_paido }
+			set_variable = toe_paido_done_sosilia
+			change_variable = { name = toe_paido_achieved_count add = 1 }
+		}
+	}
 }
 
 # 毎週、各文化のhomeland内の施設レベルを再集計する。

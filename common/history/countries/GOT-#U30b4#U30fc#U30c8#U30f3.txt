@@ -7,8 +7,28 @@
 	        activate_law = law_type:law_legacy_slavery
 	        set_country_type = recognized
 	    
-	        # ゴートン用タンジマート開始イベント。イベント側で変数・補正・各JEを初期化する。
-	        trigger_event = { id = toe_gorton_tanzimat.1 }
-	        add_journal_entry = { type = je_great_game_control }
+	        # ゴートン改革は開始時に国履歴から直接初期化する。
+        # イベント名前空間の読み込み失敗でJEが消えないよう、イベント依存を使用しない。
+        set_variable = { name = sick_man_var value = 0 }
+        set_variable = { name = sick_man_separatist_var value = 0 }
+
+        add_modifier = {
+            name = sick_man_of_europe
+            days = 10950
+        }
+        add_modifier = {
+            name = outmoded_bureaucracy
+            days = 10950
+        }
+
+        add_journal_entry = { type = je_sick_man_main }
+        add_journal_entry = { type = je_sick_man_syria }
+        add_journal_entry = { type = je_sick_man_economy }
+        add_journal_entry = { type = je_sick_man_education }
+        add_journal_entry = { type = je_sick_man_separatism }
+        add_journal_entry = { type = je_sick_man_army }
+        add_journal_entry = { type = je_sick_man_bureaucracy }
+
+        add_journal_entry = { type = je_great_game_control }
 	}
 }

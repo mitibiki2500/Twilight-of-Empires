@@ -15,9 +15,7 @@
 
 	on_complete = {
 		remove_modifier = sick_man_of_europe
-		trigger_event = {
-			id = toe_gorton_tanzimat.2
-		}
+		set_variable = sick_man_complete
 	}
 
 	timeout = 10950
@@ -29,9 +27,7 @@
 			days = very_long_modifier_time
 			is_decaying = yes
 		}
-		trigger_event = {
-			id = toe_gorton_tanzimat.3
-		}
+		set_variable = sick_man_complete
 		if = {
 			limit = {
 	       		is_in_power_bloc = yes
@@ -203,7 +199,7 @@ je_sick_man_economy = {
 				text = toe_gorton_urbanization_coverage_tt
 				any_scope_state = {
 					has_building = building_urban_center
-					percent >= 0.70
+					percent >= 0.90
 				}
 			}
 		}

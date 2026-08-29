@@ -14,7 +14,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -28,7 +28,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -101,49 +101,49 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_food_industry"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:XBD"
-						levels=1
-						region="STATE_NSM_011"
+						country="c:XAI"
+						levels=2
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:XBD"
-						levels=1
-						region="STATE_NSM_011"
+						country="c:XAI"
+						levels=2
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:XBD"
-						levels=1
-						region="STATE_NSM_011"
+						country="c:XAI"
+						levels=2
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -157,7 +157,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -171,7 +171,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -185,7 +185,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -296,7 +296,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -310,7 +310,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -414,7 +414,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -428,7 +428,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -501,7 +501,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -515,7 +515,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -593,7 +593,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -607,7 +607,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -667,16 +667,35 @@
 			# source: NSM_company_owned_buildings.txt
 			create_building={
 				building="building_opium_plantation"
-			add_ownership={
-				company={
-					type=company_nsm_royal_fusen
-					country="c:XAI"
-					levels=5
+				add_ownership={			
+					company={
+						type=company_nsm_royal_fusen
+						country="c:XAI"			
+						levels=5
+					}
+					building={
+						type="building_financial_district"
+						country="c:XAI"
+						levels=10
+						region="STATE_NSM_192"
+					}
 				}
-			}
 				reserves=1
 			}
-			# source: NSM_integrated_buildings.txt
+			create_building={
+				building="building_lead_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:XAI"
+						levels=3
+						region="STATE_NSM_192"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_lead_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+
 			create_building={
 				building="building_construction_sector"
 				add_ownership={
@@ -688,49 +707,49 @@
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_food_industry"
 				add_ownership={
 					building={
 						type="building_financial_district"
 						country="c:XBB"
-						levels=1
+						levels=10
 						region="STATE_NSM_043"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_bakery" "pm_manual_dough_processing" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:XBB"
-						levels=1
-						region="STATE_NSM_043"
+						country="c:XAI"
+						levels=2
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:XBB"
-						levels=1
-						region="STATE_NSM_043"
+						country="c:XAI"
+						levels=5
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
@@ -744,35 +763,35 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_sugar_plantation"
 				add_ownership={
 					building={
-						type="building_manor_house"
-						country="c:XBB"
-						levels=3
-						region="STATE_NSM_043"
+						type="building_financial_district"
+						country="c:XAI"
+						levels=5
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
 					building={
-						type="building_manor_house"
-						country="c:XBB"
+						type="building_financial_district"
+						country="c:XAI"
 						levels=2
-						region="STATE_NSM_043"
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -823,13 +842,13 @@
 			create_building={
 				building="building_coal_mine"
 				add_ownership={
-			                 building={
-			                     type="building_manor_house"
-			                     country="c:XBB"
-			                     levels=3
-			                     region="STATE_NSM_043"
-			                 }
-			             }
+			        building={
+						type="building_financial_district"
+						country="c:XAI"
+						levels=2
+						region="STATE_NSM_192"
+					}
+				}	
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
@@ -871,7 +890,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -885,7 +904,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -958,7 +977,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
@@ -972,7 +991,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -1033,7 +1052,7 @@
 	s:STATE_NSM_067={
 		# トルトル (XCI)
 		region_state:XCI={
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -1047,7 +1066,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -1120,7 +1139,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_food_industry"
 				add_ownership={
@@ -1134,7 +1153,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
@@ -1148,7 +1167,7 @@
 				reserves=1
 				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
@@ -1162,7 +1181,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -1176,7 +1195,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -1190,7 +1209,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -1271,21 +1290,21 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_food_industry"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:XBE"
-						levels=1
-						region="STATE_NSM_075"
+						country="c:XAI"
+						levels=2
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_bakery" "pm_manual_dough_processing" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
@@ -1299,21 +1318,21 @@
 				reserves=1
 				activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:XBE"
+						country="c:XAI"
 						levels=1
-						region="STATE_NSM_075"
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -1327,7 +1346,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -1341,7 +1360,7 @@
 				reserves=1
 				activate_production_methods={ "pm_slaughterhouses" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -1355,7 +1374,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -1431,7 +1450,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -1445,15 +1464,15 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
 					building={
-						type="building_manor_house"
-						country="c:XBH"
-						levels=1
-						region="STATE_NSM_076"
+						type="building_financial_district"
+						country="c:XAI"
+						levels=2
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
@@ -1499,7 +1518,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_food_industry"
 				add_ownership={
@@ -1513,7 +1532,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_bakery" "pm_manual_dough_processing" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
@@ -1527,7 +1546,7 @@
 				reserves=1
 				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
@@ -1541,7 +1560,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_rice_farm"
 				add_ownership={
@@ -1555,7 +1574,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -1569,7 +1588,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -1583,7 +1602,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_coal_mine"
 				add_ownership={
@@ -1681,7 +1700,7 @@
 	s:STATE_NSM_097={
 		# ブリザ植民地 (XBF)
 		region_state:XBF={
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -1738,7 +1757,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_food_industry"
 				add_ownership={
@@ -1752,7 +1771,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
@@ -1766,7 +1785,7 @@
 				reserves=1
 				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
@@ -1780,7 +1799,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -1794,7 +1813,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -1808,7 +1827,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -1822,7 +1841,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -1912,7 +1931,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_food_industry"
 				add_ownership={
@@ -1926,7 +1945,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_bakery" "pm_manual_dough_processing" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
@@ -1940,7 +1959,7 @@
 				reserves=1
 				activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
@@ -1954,7 +1973,7 @@
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -1968,7 +1987,7 @@
 				reserves=1
 				activate_production_methods={ "pm_slaughterhouses" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -1982,7 +2001,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -2013,35 +2032,35 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:XAZ"
+						country="c:XAI"
 						levels=1
-						region="STATE_NSM_153"
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:XAZ"
+						country="c:XAI"
 						levels=1
-						region="STATE_NSM_153"
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_rice_farm"
 				add_ownership={
@@ -2055,7 +2074,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -2069,21 +2088,21 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
 					building={
-						type="building_manor_house"
-						country="c:XAZ"
-						levels=1
-						region="STATE_NSM_153"
+						type="building_financial_district"
+						country="c:XAI"
+						levels=2
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -2166,7 +2185,7 @@
 					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 				}
 			
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_paper_mill"
 					add_ownership={
@@ -2180,7 +2199,7 @@
 					reserves=1
 					activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
 				}
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_rice_farm"
 					add_ownership={
@@ -2194,7 +2213,7 @@
 					reserves=1
 					activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
 				}
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_livestock_ranch"
 					add_ownership={
@@ -2208,7 +2227,7 @@
 					reserves=1
 					activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 				}
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_logging_camp"
 					add_ownership={
@@ -2222,7 +2241,7 @@
 					reserves=1
 					activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 				}
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_silk_plantation"
 					add_ownership={
@@ -2307,7 +2326,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
@@ -2321,7 +2340,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -2335,7 +2354,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -2349,7 +2368,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -2363,7 +2382,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -2456,7 +2475,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_food_industry"
 				add_ownership={
@@ -2470,7 +2489,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
@@ -2484,7 +2503,7 @@
 				reserves=1
 				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
@@ -2498,7 +2517,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -2512,7 +2531,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -2526,7 +2545,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -2540,7 +2559,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -2643,7 +2662,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -2666,7 +2685,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -2744,7 +2763,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
@@ -2758,7 +2777,7 @@
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -2772,7 +2791,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -2786,7 +2805,7 @@
 				reserves=1
 				activate_production_methods={ "pm_slaughterhouses" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -2800,7 +2819,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -2857,7 +2876,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_rice_farm"
 				add_ownership={
@@ -2871,7 +2890,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -2885,7 +2904,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -2899,7 +2918,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -2989,7 +3008,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_rice_farm"
 				add_ownership={
@@ -3003,7 +3022,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -3079,7 +3098,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
@@ -3093,7 +3112,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -3147,7 +3166,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -3223,7 +3242,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={
@@ -3235,7 +3254,7 @@
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_food_industry"
 				add_ownership={
@@ -3249,7 +3268,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_bakery" "pm_manual_dough_processing" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
@@ -3272,7 +3291,7 @@
 				reserves=1
 				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
@@ -3286,7 +3305,7 @@
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
@@ -3300,7 +3319,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_sugar_plantation"
 				add_ownership={
@@ -3314,7 +3333,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -3328,7 +3347,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_sulfur_mine"
 				add_ownership={
@@ -3382,7 +3401,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_rice_farm"
 				add_ownership={
@@ -3396,7 +3415,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -3410,7 +3429,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -3485,8 +3504,20 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:XAI"
+						levels=20
+						region="STATE_NSM_192"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+			}
 			
-			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
@@ -3500,7 +3531,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -3583,7 +3614,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_food_industry"
 				add_ownership={
@@ -3597,7 +3628,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
@@ -3611,7 +3642,7 @@
 				reserves=1
 				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
@@ -3625,7 +3656,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -3639,7 +3670,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -3653,7 +3684,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -3667,7 +3698,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -3778,7 +3809,7 @@
 	s:STATE_NSM_343={
 		# フッピー (XBD)
 		region_state:XBD={
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -3792,7 +3823,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -3849,7 +3880,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -3863,7 +3894,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -3953,21 +3984,19 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
-						type="building_manor_house"
-						country="c:XBI"
-						levels=1
-						region="STATE_NSM_357"
+						type="building_financial_district"
+						country="c:XAI"
+						levels=2
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -3981,15 +4010,14 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_lead_mine"
 				add_ownership={
 					building={
-						type="building_manor_house"
-						country="c:XBI"
-						levels=1
-						region="STATE_NSM_357"
+						type="building_financial_district"
+						country="c:XAI"
+						levels=2
+						region="STATE_NSM_192"
 					}
 				}
 				reserves=1
@@ -4091,7 +4119,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
@@ -4105,7 +4133,7 @@
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -4119,7 +4147,7 @@
 				reserves=1
 				activate_production_methods={ "pm_slaughterhouses" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -4185,7 +4213,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -4199,7 +4227,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -4258,7 +4286,7 @@
 					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 				}
 			
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_construction_sector"
 					add_ownership={
@@ -4270,7 +4298,7 @@
 					reserves=1
 					activate_production_methods={ "pm_wooden_buildings" }
 				}
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_food_industry"
 					add_ownership={
@@ -4284,7 +4312,7 @@
 					reserves=1
 					activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_bakery" "pm_manual_dough_processing" }
 				}
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_textile_mill"
 					add_ownership={
@@ -4298,7 +4326,7 @@
 					reserves=1
 					activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" }
 				}
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_paper_mill"
 					add_ownership={
@@ -4312,7 +4340,7 @@
 					reserves=1
 					activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 				}
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_cotton_plantation"
 					add_ownership={
@@ -4326,7 +4354,7 @@
 					reserves=1
 					activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 				}
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_sugar_plantation"
 					add_ownership={
@@ -4340,7 +4368,7 @@
 					reserves=1
 					activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 				}
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_logging_camp"
 					add_ownership={
@@ -4396,7 +4424,7 @@
 	s:STATE_NSM_417={
 		# ニューフート植民地 (XBE)
 		region_state:XBE={
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -4410,7 +4438,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -4467,7 +4495,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
@@ -4481,7 +4509,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -4535,7 +4563,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
@@ -4549,7 +4577,7 @@
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
@@ -4563,7 +4591,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_sugar_plantation"
 				add_ownership={
@@ -4577,7 +4605,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -4591,7 +4619,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -4642,7 +4670,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -4656,7 +4684,7 @@
 				reserves=1
 				activate_production_methods={ "pm_slaughterhouses" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -4670,7 +4698,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -4713,7 +4741,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -4784,7 +4812,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -4798,7 +4826,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -4812,7 +4840,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -4985,7 +5013,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_rice_farm"
 				add_ownership={
@@ -4999,7 +5027,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming_building_rice_farm" "pm_tools_building_rice_farm" "pm_fig_orchards_building_rice_farm" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -5013,7 +5041,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -5102,7 +5130,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
@@ -5116,7 +5144,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -5170,7 +5198,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_food_industry"
 				add_ownership={
@@ -5184,7 +5212,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_textile_mill"
 				add_ownership={
@@ -5198,7 +5226,7 @@
 				reserves=1
 				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_paper_mill"
 				add_ownership={
@@ -5212,7 +5240,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -5226,7 +5254,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -5240,7 +5268,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -5315,7 +5343,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -5358,7 +5386,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -5372,7 +5400,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -5386,7 +5414,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -5481,7 +5509,7 @@
 	s:STATE_NSM_493={
 		# ニューフート植民地 (XBE)
 		region_state:XBE={
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -5538,7 +5566,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
@@ -5552,7 +5580,7 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -5586,7 +5614,7 @@
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -5600,7 +5628,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
@@ -5614,7 +5642,7 @@
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_logging_camp"
 				add_ownership={
@@ -5628,7 +5656,7 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
@@ -5720,7 +5748,7 @@
 	s:STATE_NSM_520={
 		# ケンジン (XBA)
 		region_state:XBA={
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
@@ -5734,7 +5762,7 @@
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
 			}
-			# source: NSM_integrated_buildings.txt
+			
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -5791,7 +5819,7 @@
 					activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 				}
 			
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_livestock_ranch"
 					add_ownership={
@@ -5805,7 +5833,7 @@
 					reserves=1
 					activate_production_methods={ "pm_slaughterhouses" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 				}
-				# source: NSM_integrated_buildings.txt
+				
 				create_building={
 					building="building_fishing_wharf"
 					add_ownership={
