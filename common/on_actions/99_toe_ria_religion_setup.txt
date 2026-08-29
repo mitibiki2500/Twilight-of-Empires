@@ -16,7 +16,7 @@ toe_ria_religion_setup = {
             add_primary_culture = cu:nsm_map_xce
         }
 
-        # Western Ria: ancestor worship
+        # Western Ria: Ancestor Worship
         c:XBJ ?= { set_state_religion = rel:nsm_ancestor }
         c:XBK ?= { set_state_religion = rel:nsm_ancestor }
         c:XBL ?= { set_state_religion = rel:nsm_ancestor }
@@ -25,6 +25,10 @@ toe_ria_religion_setup = {
         c:XBO ?= { set_state_religion = rel:nsm_ancestor }
 
         # Southern Ria: Mummum religion
+        c:PPT ?= { set_state_religion = rel:nsm_mummum }
+        c:PTK ?= { set_state_religion = rel:nsm_mummum }
+        c:XBQ ?= { set_state_religion = rel:nsm_mummum }
+        c:XBR ?= { set_state_religion = rel:nsm_mummum }
         c:XBT ?= { set_state_religion = rel:nsm_mummum }
         c:XBU ?= { set_state_religion = rel:nsm_mummum }
         c:XBV ?= { set_state_religion = rel:nsm_mummum }
@@ -36,76 +40,92 @@ toe_ria_religion_setup = {
         c:XCB ?= { set_state_religion = rel:nsm_mummum }
         c:XCF ?= { set_state_religion = rel:nsm_mummum }
 
-        # Western / ancestor-worship zone
+        # Western Ria population conversion
         s:STATE_NSM_038 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_516 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_143 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_387 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_421 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_533 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_065 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_094 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_104 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_246 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
         s:STATE_NSM_256 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_352 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
         s:STATE_NSM_370 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
         s:STATE_NSM_408 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_533 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_497 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
         s:STATE_NSM_412 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_143 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_065 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_387 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_352 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_246 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_497 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_516 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_059 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
         s:STATE_NSM_141 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_104 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_421 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_531 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_312 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_427 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_448 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
         s:STATE_NSM_032 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_094 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_423 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
         s:STATE_NSM_446 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_531 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
         s:STATE_NSM_200 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_284 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_216 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_423 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
         s:STATE_NSM_135 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_404 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_138 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_057 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
-        s:STATE_NSM_310 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_216 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
+        s:STATE_NSM_284 = { convert_population = { target = rel:nsm_ancestor value = 1.0 } }
 
-        # Southern / Mummum zone
-        s:STATE_NSM_231 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_002 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        # Southern Ria population conversion
+        s:STATE_NSM_099 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_305 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_310 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_327 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_363 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_223 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_273 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_532 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_057 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_138 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_254 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_296 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_385 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_027 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_471 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_532 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_023 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_219 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_362 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_444 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_241 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_131 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_385 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_039 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_278 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_362 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_027 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_073 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_498 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_148 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_131 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_219 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_278 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_444 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_354 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_481 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_498 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_119 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_299 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_148 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_481 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_169 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_204 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_227 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_292 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_299 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_418 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_456 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_484 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+        s:STATE_NSM_499 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_500 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
         s:STATE_NSM_509 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_456 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_499 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_227 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_484 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_169 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_254 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_363 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_384 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_305 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
-        s:STATE_NSM_099 = { convert_population = { target = rel:nsm_mummum value = 1.0 } }
+
+        # Religion-specific Devout approval traits
+        every_country = {
+            limit = { country_has_state_religion = rel:nsm_solar }
+            ig:ig_devout ?= {
+                set_ig_trait = ig_trait:ig_trait_toe_heavens_blessing
+            }
+        }
+        every_country = {
+            limit = { country_has_state_religion = rel:nsm_confucian }
+            ig:ig_devout ?= {
+                set_ig_trait = ig_trait:ig_trait_toe_missionary
+                set_ig_trait = ig_trait:ig_trait_toe_developing_philosophy
+            }
+        }
     }
 }
