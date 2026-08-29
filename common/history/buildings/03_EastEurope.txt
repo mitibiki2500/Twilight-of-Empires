@@ -857,7 +857,7 @@
 			create_building={
 				building="building_shipyard"
 				add_ownership={
-					country={ country="c:XAQ" levels=10 }
+					country={ country="c:XAQ" levels=1 }
 				}
 				reserves=1
 				activate_production_methods={ "pm_complex_shipbuilding" }
@@ -9411,7 +9411,7 @@
 					company={
 						type=company_nsm_royal_arsenal
 						country="c:XEP"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -9421,7 +9421,11 @@
 			create_building={
 				building="building_arms_industry"
 				add_ownership={
-					country={ country="c:XEP" levels=3 }
+					company={
+						type=company_nsm_royal_arsenal
+						country="c:XEP"
+						levels=3
+					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_rifles" "pm_automation_disabled" }

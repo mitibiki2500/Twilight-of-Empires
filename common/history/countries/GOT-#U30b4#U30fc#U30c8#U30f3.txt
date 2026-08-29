@@ -7,19 +7,8 @@
 	        activate_law = law_type:law_legacy_slavery
 	        set_country_type = recognized
 	    
-	        # タンジマート本体が開始時から確実に有効になるよう、イベントに先行して初期化・追加する。
-	        set_variable = { name = sick_man_var value = 0 }
-	        set_variable = { name = sick_man_separatist_var value = 0 }
-	        add_journal_entry = { type = je_sick_man_main }
-
-	        # オスマンの「ヨーロッパの病人」開始イベントも発火し、既存の初期化・補正・演出を維持する。
-	        trigger_event = { id = sick_man.1 }
-	        add_journal_entry = { type = je_sick_man_syria }
-	        add_journal_entry = { type = je_sick_man_economy }
-	        add_journal_entry = { type = je_sick_man_education }
-	        add_journal_entry = { type = je_sick_man_separatism }
-	        add_journal_entry = { type = je_sick_man_army }
-	        add_journal_entry = { type = je_sick_man_bureaucracy }
+	        # ゴートン用タンジマート開始イベント。イベント側で変数・補正・各JEを初期化する。
+	        trigger_event = { id = toe_gorton_tanzimat.1 }
 	        add_journal_entry = { type = je_great_game_control }
 	}
 }

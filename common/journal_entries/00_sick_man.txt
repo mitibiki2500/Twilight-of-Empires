@@ -16,7 +16,7 @@
 	on_complete = {
 		remove_modifier = sick_man_of_europe
 		trigger_event = {
-			id = sick_man.2
+			id = toe_gorton_tanzimat.2
 		}
 	}
 
@@ -30,7 +30,7 @@
 			is_decaying = yes
 		}
 		trigger_event = {
-			id = sick_man.3
+			id = toe_gorton_tanzimat.3
 		}
 		if = {
 			limit = {
@@ -97,13 +97,28 @@ je_sick_man_syria = {
 
 	group = je_group_tanzimat
 
+	# ステップ戦略地域の12州のうち5州以上を領有する。
 	complete = {
-		owns_entire_state_region = STATE_ALEPPO
-		owns_entire_state_region = STATE_SYRIA
-		owns_entire_state_region = STATE_LEBANON
-		owns_entire_state_region = STATE_PALESTINE
-		owns_entire_state_region = STATE_TRANSJORDAN
-		owns_entire_state_region = STATE_ADANA
+		custom_tooltip = {
+			text = toe_gorton_steppe_conquest_tt
+			any_scope_state = {
+				OR = {
+					state_region = s:STATE_NSM_041
+					state_region = s:STATE_NSM_062
+					state_region = s:STATE_NSM_079
+					state_region = s:STATE_NSM_126
+					state_region = s:STATE_NSM_129
+					state_region = s:STATE_NSM_344
+					state_region = s:STATE_NSM_374
+					state_region = s:STATE_NSM_389
+					state_region = s:STATE_NSM_407
+					state_region = s:STATE_NSM_433
+					state_region = s:STATE_NSM_452
+					state_region = s:STATE_NSM_526
+				}
+				count >= 5
+			}
+		}
 	}
 
 	on_complete = {
@@ -113,47 +128,9 @@ je_sick_man_syria = {
 			add = 1
 		}
 		set_variable = completed_syria_je
-		s:STATE_SINAI = {
-			add_claim = ROOT
+		add_journal_entry = {
+			type = je_sick_man_egypt
 		}
-		s:STATE_UPPER_EGYPT = {
-			add_claim = ROOT
-		}
-		s:STATE_MIDDLE_EGYPT = {
-			add_claim = ROOT
-		}
-		s:STATE_LOWER_EGYPT = {
-			add_claim = ROOT
-		}
-		if = {
-			limit = {
-				OR = {
-					AND = {
-						exists = c:EGY
-						c:EGY ?= {
-							is_subject_of = ROOT
-							is_subject_type = subject_type_puppet
-						}
-					}
-					AND = {
-						owns_entire_state_region = STATE_SINAI
-						owns_entire_state_region = STATE_UPPER_EGYPT
-						owns_entire_state_region = STATE_MIDDLE_EGYPT
-						owns_entire_state_region = STATE_LOWER_EGYPT
-					}
-				}
-			}
-			change_variable = {
-				name = sick_man_var
-				add = 1
-			}
-		}
-		else = {
-			add_journal_entry = {
-				type = je_sick_man_egypt
-			}
-		}
-		custom_tooltip = sickman_syria_egypt
 	}
 
 	invalid = {
@@ -163,17 +140,8 @@ je_sick_man_syria = {
 		}
 	}
 
-	on_weekly_pulse = {
-		events = {
-			#egyptian_crisis_events.1
-		}
-	}
-
 	transferable = no
-
 	weight = 5000
-
-
 	should_be_pinned_by_default_uninvolved_or_context = yes
 }
 
@@ -182,20 +150,16 @@ je_sick_man_egypt = {
 
 	group = je_group_tanzimat
 
+	# 天然港または世界的港湾の州を2州以上領有する。
 	complete = {
-		OR = {
-			AND = {
-				exists = c:EGY
-				c:EGY ?= {
-					is_subject_of = ROOT
-					is_subject_type = subject_type_puppet
+		custom_tooltip = {
+			text = toe_gorton_southward_policy_tt
+			any_scope_state = {
+				OR = {
+					has_state_trait = state_trait_natural_harbors
+					has_state_trait = state_trait_global_harbors
 				}
-			}
-			AND = {
-				owns_entire_state_region = STATE_SINAI
-				owns_entire_state_region = STATE_UPPER_EGYPT
-				owns_entire_state_region = STATE_MIDDLE_EGYPT
-				owns_entire_state_region = STATE_LOWER_EGYPT
+				count >= 2
 			}
 		}
 	}
@@ -206,6 +170,7 @@ je_sick_man_egypt = {
 			name = sick_man_var
 			add = 1
 		}
+		set_variable = completed_egypt_je
 	}
 
 	invalid = {
@@ -216,10 +181,7 @@ je_sick_man_egypt = {
 	}
 
 	transferable = no
-
 	weight = 5000
-
-
 	should_be_pinned_by_default_uninvolved_or_context = yes
 }
 
@@ -229,11 +191,21 @@ je_sick_man_economy = {
 	group = je_group_tanzimat
 
 	complete = {
-		in_default = no
-		any_scope_state = {
-			is_incorporated = yes
-			has_building = building_urban_center
-			percent >= 0.75
+		OR = {
+			custom_tooltip = {
+				text = toe_gorton_urbanization_level_tt
+				any_scope_building = {
+					is_building_type = building_urban_center
+					level >= 25
+				}
+			}
+			custom_tooltip = {
+				text = toe_gorton_urbanization_coverage_tt
+				any_scope_state = {
+					has_building = building_urban_center
+					percent >= 0.70
+				}
+			}
 		}
 	}
 

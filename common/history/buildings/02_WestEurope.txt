@@ -1,6 +1,5 @@
-﻿BUILDINGS={
+BUILDINGS={
 	s:STATE_NSM_001={
-		# 州名: トリリア (STATE_NSM_001)
 		# ネウストリア (XAL)
 		region_state:XAL={
 			create_building={
@@ -14,7 +13,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -58,9 +57,9 @@
 			# source: NSM_world_trade_ports_resources.txt
 			create_building = {
 				building = "building_port"
-				add_ownership={
-					country = { country = "c:XAL" levels=4 }
-				}
+			add_ownership={
+				country = { country = "c:XAL" levels=4 }
+			}
 				reserves = 1
 				activate_production_methods = { "pm_basic_port" }
 			}
@@ -79,13 +78,13 @@
 			# source: NSM_world_trade_ports_resources.txt
 			create_building={
 				building="building_sugar_plantation"
-				add_ownership={
-					country={ country="c:XAL" levels=6 }
-				}
+			add_ownership={
+				country={ country="c:XAL" levels=6 }
+			}
 				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
-
+			
 			# ToE custom monument
 			create_building={
 				building="building_toe_trilia_cathedral"
@@ -98,7 +97,7 @@
 				reserves=1
 				activate_production_methods={ "pm_toe_trilia_cathedral_catholic" }
 			}
-
+			
 			create_building={
 				building="building_silk_plantation"
 				add_ownership={
@@ -107,9 +106,9 @@
 				reserves=1
 				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
-
+			
 		}
-
+		
 		# 教皇領 (XEO)
 		region_state:XEO={
 			create_building={
@@ -123,7 +122,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XEO" levels=1 } }
@@ -158,7 +157,7 @@
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XEO" levels=1 region="STATE_NSM_001" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 			create_building={
@@ -167,21 +166,20 @@
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
-
+			
 			# Codex: population-based administration rebalance
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XEO" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_020={
-		# 州名: 東ハイランド (STATE_NSM_020)
 		# ハイランド (XAA)
 		region_state:XAA={
 			create_building={
@@ -195,7 +193,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -354,28 +352,27 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XAA" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XAA" levels=2 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_030={
-		# 州名: 北アイラ (STATE_NSM_030)
 		# アイラ (XAC)
 		region_state:XAC={
 			create_building={
@@ -389,7 +386,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -576,28 +573,27 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XAC" levels=2 } }
 				reserves=1
 				activate_production_methods={ "pm_complex_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XAC" levels=3 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_035={
-		# 州名: パゾール (STATE_NSM_035)
 		# パゾール (XEX)
 		region_state:XEX={
 			create_building={
@@ -611,7 +607,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -744,17 +740,17 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XEX" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-
+			
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XEX" levels=1 region="STATE_NSM_035" } }
@@ -773,32 +769,31 @@
 				reserves=1
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XEX" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
-
+			
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XEX" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XEX" levels=2 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_036={
-		# 州名: バイゼル (STATE_NSM_036)
 		# テーガール (XAI)
 		region_state:XAI={
 			create_building={
@@ -806,13 +801,13 @@
 				add_ownership={
 					country={
 						country="c:XAI"
-						levels=5
+						levels=8
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -1033,12 +1028,11 @@
 				}
 				reserves=1
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_037={
-		# 州名: カケン (STATE_NSM_037)
 		# ヤル (XDN)
 		region_state:XDN={
 			create_building={
@@ -1052,7 +1046,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -1117,181 +1111,179 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-
+			
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XDN" levels=2 } }
 				reserves=1
 				activate_production_methods={ "pm_complex_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XDN" levels=3 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_040={
-		# 州名: アルツァフ=ロイゲン (STATE_NSM_040)
 		# ロイゲン (XAK)
 		region_state:XAK={
 			create_building={
-				building="building_government_administration"
-				add_ownership={
-					country={
-						country="c:XAK"
-						levels=5
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
-			}
+							building="building_government_administration"
+							add_ownership={
+								country={
+									country="c:XAK"
+									levels=5
+								}
+							}
+							reserves=1
+							activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
+						}
 			create_building={
-				building="building_food_industry"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:XAK"
-						levels=1
-						region="STATE_NSM_040"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
-			}
+							building="building_food_industry"
+							add_ownership={
+								building={
+									type="building_financial_district"
+									country="c:XAK"
+									levels=1
+									region="STATE_NSM_040"
+								}
+							}
+							reserves=1
+							activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
+						}
 			create_building={
-				building="building_textile_mill"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:XAK"
-						levels=1
-						region="STATE_NSM_040"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_dye_workshops" "pm_craftsman_sewing" "pm_traditional_looms" }
-			}
+							building="building_textile_mill"
+							add_ownership={
+								building={
+									type="building_financial_district"
+									country="c:XAK"
+									levels=1
+									region="STATE_NSM_040"
+								}
+							}
+							reserves=1
+							activate_production_methods={ "pm_dye_workshops" "pm_craftsman_sewing" "pm_traditional_looms" }
+						}
 			create_building={
-				building="building_tooling_workshop"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:XAK"
-						levels=2
-						region="STATE_NSM_040"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_steel" "pm_automation_disabled" }
-			}
+							building="building_tooling_workshop"
+							add_ownership={
+								building={
+									type="building_financial_district"
+									country="c:XAK"
+									levels=2
+									region="STATE_NSM_040"
+								}
+							}
+							reserves=1
+							activate_production_methods={ "pm_steel" "pm_automation_disabled" }
+						}
 			create_building={
-				building="building_paper_mill"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:XAK"
-						levels=1
-						region="STATE_NSM_040"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
-			}
+							building="building_paper_mill"
+							add_ownership={
+								building={
+									type="building_financial_district"
+									country="c:XAK"
+									levels=1
+									region="STATE_NSM_040"
+								}
+							}
+							reserves=1
+							activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
+						}
 			create_building={
-				building="building_wheat_farm"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:XAK"
-						levels=4
-						region="STATE_NSM_040"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_soil_enriching_farming" "pm_tools" "pm_citrus_orchards" }
-			}
+							building="building_wheat_farm"
+							add_ownership={
+								building={
+									type="building_manor_house"
+									country="c:XAK"
+									levels=4
+									region="STATE_NSM_040"
+								}
+							}
+							reserves=1
+							activate_production_methods={ "pm_soil_enriching_farming" "pm_tools" "pm_citrus_orchards" }
+						}
 			create_building={
-				building="building_livestock_ranch"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:XAK"
-						levels=1
-						region="STATE_NSM_040"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_slaughterhouses" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
-			}
+							building="building_livestock_ranch"
+							add_ownership={
+								building={
+									type="building_manor_house"
+									country="c:XAK"
+									levels=1
+									region="STATE_NSM_040"
+								}
+							}
+							reserves=1
+							activate_production_methods={ "pm_slaughterhouses" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+						}
 			create_building={
-				building="building_logging_camp"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:XAK"
-						levels=1
-						region="STATE_NSM_040"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
-			}
+							building="building_logging_camp"
+							add_ownership={
+								building={
+									type="building_manor_house"
+									country="c:XAK"
+									levels=1
+									region="STATE_NSM_040"
+								}
+							}
+							reserves=1
+							activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+						}
 			create_building={
-				building="building_coal_mine"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:XAK"
-						levels=1
-						region="STATE_NSM_040"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
-			}
+							building="building_coal_mine"
+							add_ownership={
+								building={
+									type="building_manor_house"
+									country="c:XAK"
+									levels=1
+									region="STATE_NSM_040"
+								}
+							}
+							reserves=1
+							activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+						}
 			create_building={
-				building="building_trade_center"
-				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
-				add_ownership={
-					country={
-						country="c:XAK"
-						levels=2
-					}
-				}
-				reserves=1
-			}
+							building="building_trade_center"
+							activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+							add_ownership={
+								country={
+									country="c:XAK"
+									levels=2
+								}
+							}
+							reserves=1
+						}
 			create_building={
-				building="building_iron_mine"
-				add_ownership={
-					country={
-						country="c:XAK"
-						levels=2
-					}
-				}
-				reserves=1
-
-				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
-			}
-
+							building="building_iron_mine"
+							add_ownership={
+								country={
+									country="c:XAK"
+									levels=2
+								}
+							}
+							reserves=1
+			
+							activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+						}
+			
 		}
 		# Country: ATZ
 		region_state:ATZ={
 			create_building={
-				building="building_government_administration"
-				add_ownership={ country={ country="c:ATZ" levels=1 } }
-				reserves=1
-				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
-			}
-
+			                building="building_government_administration"
+			                add_ownership={ country={ country="c:ATZ" levels=1 } }
+			                reserves=1
+			                activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+			            }
+			
 		}
-
+		
 	}
 	s:STATE_NSM_042={
-		# 州名: パーゾ (STATE_NSM_042)
 		# パーゾ (XEY)
 		region_state:XEY={
 			create_building={
@@ -1305,7 +1297,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -1438,17 +1430,17 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XEY" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-
+			
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XEY" levels=1 region="STATE_NSM_042" } }
@@ -1467,32 +1459,31 @@
 				reserves=1
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XEY" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
-
+			
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XEY" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XEY" levels=2 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_055={
-		# 州名: ドブー (STATE_NSM_055)
 		# ネウストリア (XAL)
 		region_state:XAL={
 			create_building={
@@ -1506,7 +1497,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_company_owned_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -1522,18 +1513,18 @@
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XAL" levels=3 region="STATE_NSM_055" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XAL" levels=3 region="STATE_NSM_055" }
+			}
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XAL" levels=3 region="STATE_NSM_055" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XAL" levels=3 region="STATE_NSM_055" }
+			}
 				reserves=1
 				activate_production_methods={ "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" }
 			}
@@ -1582,11 +1573,11 @@
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_glassworks"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XAL" levels=3 region="STATE_NSM_055" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XAL" levels=3 region="STATE_NSM_055" }
+			}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 			# source: NSM_integrated_buildings.txt
@@ -1674,9 +1665,9 @@
 			# source: NSM_world_trade_ports_resources.txt
 			create_building = {
 				building = "building_port"
-				add_ownership={
-					country = { country = "c:XAL" levels=4 }
-				}
+			add_ownership={
+				country = { country = "c:XAL" levels=4 }
+			}
 				reserves = 1
 				activate_production_methods = { "pm_basic_port" }
 			}
@@ -1692,9 +1683,9 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-
+			
 			# ToE: one naval fortification on strait coast
-
+			
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -1706,7 +1697,7 @@
 				}
 				reserves=1
 			}
-
+			
 			# ToE custom monument
 			create_building={
 				building="building_toe_dobu_palace"
@@ -1719,33 +1710,32 @@
 				reserves=1
 				activate_production_methods={ "pm_toe_dobu_palace" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XAL" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
-
+			
 			# Major-market fertilizer/chemical shortage balance
 			create_building={
 				building="building_chemical_plant"
 				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:XAL"
-						levels=3
-						region="STATE_NSM_055"
-					}
-				}
+			                 building={
+			                     type="building_financial_district"
+			                     country="c:XAL"
+			                     levels=3
+			                     region="STATE_NSM_055"
+			                 }
+			             }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_064={
-		# 州名: ハイランド北島 (STATE_NSM_064)
 		# ハイランド (XAA)
 		region_state:XAA={
 			create_building={
@@ -1759,7 +1749,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -1812,12 +1802,11 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_078={
-		# 州名: ウラニー (STATE_NSM_078)
 		# アイラ (XAC)
 		region_state:XAC={
 			create_building={
@@ -1831,33 +1820,33 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XAC" levels=3 region="STATE_NSM_078" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XAC" levels=3 region="STATE_NSM_078" }
+			}
 				reserves=1
 				activate_production_methods={ "pm_dye_workshops" "pm_craftsman_sewing" "pm_traditional_looms" }
 			}
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XAC" levels=3 region="STATE_NSM_078" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XAC" levels=3 region="STATE_NSM_078" }
+			}
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_furniture_manufactory"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XAC" levels=3 region="STATE_NSM_078" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XAC" levels=3 region="STATE_NSM_078" }
+			}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			# source: NSM_integrated_buildings.txt
@@ -1954,29 +1943,29 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_munition_plant"
-				add_ownership={
-					country={ country="c:XAC" levels=3 }
-				}
+			add_ownership={
+				country={ country="c:XAC" levels=3 }
+			}
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_explosives_factory"
 				add_ownership={ country={ country="c:XAC" levels=2 } }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:XAC" levels=1 } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XAC" levels=2 } }
@@ -1989,14 +1978,14 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
-
+			
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XAC" levels=1 region="STATE_NSM_078" } }
 				reserves=1
 				activate_production_methods={ "pm_steel" "pm_automation_disabled" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XAC" levels=2 } }
@@ -2008,7 +1997,6 @@
 
 	}
 	s:STATE_NSM_089={
-		# 州名: ブルミア (STATE_NSM_089)
 		# テーガール (XAI)
 		region_state:XAI={
 			create_building={
@@ -2022,7 +2010,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -2075,18 +2063,17 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAI" levels=8 } }
-				reserves=1
-			}
-
+			
+			      create_building = {
+			          building="building_naval_administration"
+			          add_ownership={ country={ country="c:XAI" levels=8 } }
+			          reserves=1
+			      }
+			
 		}
 
 	}
 	s:STATE_NSM_107={
-		# 州名: ポル (STATE_NSM_107)
 		# ガーク (XEZ)
 		region_state:XEZ={
 			create_building={
@@ -2100,7 +2087,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -2221,15 +2208,14 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_condensing_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_112={
-		# 州名: キイト (STATE_NSM_112)
 		# サンド (XAS)
 		region_state:XAS={
 			create_building={
@@ -2237,13 +2223,13 @@
 				add_ownership={
 					country={
 						country="c:XAS"
-						levels=3
+						levels=2
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -2301,18 +2287,17 @@
 				reserves=1
 				activate_production_methods={ "pm_complex_shipbuilding" }
 			}
-
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAS" levels=4 } }
-				reserves=1
-			}
-
+			
+			      create_building = {
+			          building="building_naval_administration"
+			          add_ownership={ country={ country="c:XAS" levels=4 } }
+			          reserves=1
+			      }
+			
 		}
 
 	}
 	s:STATE_NSM_118={
-		# 州名: 東コンバフ (STATE_NSM_118)
 		# コンバフ (XAJ)
 		region_state:XAJ={
 			create_building={
@@ -2326,7 +2311,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -2377,7 +2362,7 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
 			# source: NSM_world_trade_ports_resources.txt
@@ -2392,12 +2377,11 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_128={
-		# 州名: 北アルツァフ (STATE_NSM_128)
 		# ロイゲン (XAK)
 		region_state:XAK={
 			create_building={
@@ -2411,7 +2395,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
@@ -2429,9 +2413,9 @@
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XAK" levels=3 region="STATE_NSM_128" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XAK" levels=3 region="STATE_NSM_128" }
+			}
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
@@ -2501,7 +2485,7 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XAK" levels=2 } }
@@ -2514,7 +2498,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
-
+			
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XAK" levels=1 region="STATE_NSM_128" } }
@@ -2525,42 +2509,41 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XAK" levels=2 region="STATE_NSM_128" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XAK" levels=1 region="STATE_NSM_128" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XAK" levels=2 } }
 				reserves=1
 				activate_production_methods={ "pm_rifles" "pm_automation_disabled" }
 			}
-
+			
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XAK" levels=2 } }
 				reserves=1
 				activate_production_methods={ "pm_complex_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XAK" levels=3 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_133={
-		# 州名: サナン (STATE_NSM_133)
 		# ネルツ (XAQ)
 		region_state:XAQ={
 			create_building={
@@ -2574,7 +2557,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -2634,9 +2617,9 @@
 				reserves=1
 				activate_production_methods={ "pm_complex_shipbuilding" }
 			}
-
+			
 			# ToE: one naval fortification on strait coast
-
+			
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -2648,18 +2631,17 @@
 				}
 				reserves=1
 			}
-
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAQ" levels=6 } }
-				reserves=1
-			}
-
+			
+			      create_building = {
+			          building="building_naval_administration"
+			          add_ownership={ country={ country="c:XAQ" levels=6 } }
+			          reserves=1
+			      }
+			
 		}
 
 	}
 	s:STATE_NSM_142={
-		# 州名: ポリリン (STATE_NSM_142)
 		# アイラ (XAC)
 		region_state:XAC={
 			create_building={
@@ -2673,7 +2655,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -2736,15 +2718,14 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_151={
-		# 州名: ホルン (STATE_NSM_151)
 		# ネルツ (XAQ)
 		region_state:XAQ={
 			create_building={
@@ -2758,7 +2739,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -2959,7 +2940,7 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
 			# source: NSM_world_trade_ports_resources.txt
@@ -2974,18 +2955,17 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAQ" levels=3 } }
-				reserves=1
-			}
-
+			
+			      create_building = {
+			          building="building_naval_administration"
+			          add_ownership={ country={ country="c:XAQ" levels=3 } }
+			          reserves=1
+			      }
+			
 		}
 
 	}
 	s:STATE_NSM_155={
-		# 州名: ブルソク (STATE_NSM_155)
 		# ネルツ (XAQ)
 		region_state:XAQ={
 			create_building={
@@ -2999,7 +2979,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -3062,21 +3042,20 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAQ" levels=2 } }
-				reserves=1
-			}
-
+			
+			      create_building = {
+			          building="building_naval_administration"
+			          add_ownership={ country={ country="c:XAQ" levels=2 } }
+			          reserves=1
+			      }
+			
 		}
 
 	}
 	s:STATE_NSM_158={
-		# 州名: ボルツ (STATE_NSM_158)
 		# ネルツ (XAQ)
 		region_state:XAQ={
 			create_building={
@@ -3090,7 +3069,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -3143,9 +3122,9 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			# ToE: one naval fortification on strait coast
-
+			
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -3157,18 +3136,17 @@
 				}
 				reserves=1
 			}
-
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAQ" levels=2 } }
-				reserves=1
-			}
-
+			
+			      create_building = {
+			          building="building_naval_administration"
+			          add_ownership={ country={ country="c:XAQ" levels=2 } }
+			          reserves=1
+			      }
+			
 		}
 
 	}
 	s:STATE_NSM_163={
-		# 州名: クトル (STATE_NSM_163)
 		# アルビア会社 (XAG)
 		region_state:XAG={
 			create_building={
@@ -3182,7 +3160,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -3235,25 +3213,24 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XAG" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XAG" levels=2 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_165={
-		# 州名: クリサン (STATE_NSM_165)
 		# クリサン (XAB)
 		region_state:XAB={
 			create_building={
@@ -3267,7 +3244,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -3416,7 +3393,7 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XAB" levels=1 region="STATE_NSM_165" } }
@@ -3427,22 +3404,21 @@
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XAB" levels=1 region="STATE_NSM_165" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XAB" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_181={
-		# 州名: エセン (STATE_NSM_181)
 		# ランポル (XAD)
 		region_state:XAD={
 			create_building={
@@ -3456,7 +3432,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -3605,7 +3581,7 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XAD" levels=1 region="STATE_NSM_181" } }
@@ -3616,35 +3592,34 @@
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XAD" levels=1 region="STATE_NSM_181" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XAD" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
-
+			
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XAD" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XAD" levels=2 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_185={
-		# 州名: ポツ (STATE_NSM_185)
 		# コンバフ (XAJ)
 		region_state:XAJ={
 			create_building={
@@ -3658,7 +3633,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -3711,25 +3686,24 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XAJ" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XAJ" levels=2 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_192={
-		# 州名: ホームフート (STATE_NSM_192)
 		# テーガール (XAI)
 		region_state:XAI={
 			create_building={
@@ -3737,31 +3711,32 @@
 				add_ownership={
 					country={
 						country="c:XAI"
-						levels=8
+						levels=13
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_company_owned_buildings.txt
 			create_building={
 				building="building_railway"
-				add_ownership={
-					country={
-						country="c:XAI"
-						levels=5
-					}
+			add_ownership={
+				company={
+					type=company_nsm_great_northern
+					country="c:XAI"
+					levels=5
 				}
+			}
 				reserves=1
 				activate_production_methods={ "pm_early_trains" "pm_wooden_passenger_carriages" }
 			}
 			# source: NSM_company_owned_buildings.txt
 			create_building={
 				building="building_construction_sector"
-				add_ownership={
-					country={ country="c:XAI" levels=3 }
-				}
+			add_ownership={
+				country={ country="c:XAI" levels=3 }
+			}
 				reserves=1
 				activate_production_methods={ "pm_iron_frame_buildings" }
 			}
@@ -3880,15 +3855,15 @@
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_arms_industry"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:XAI"
-						levels=4
-						region="STATE_NSM_192"
-					}
-					country={ country="c:XAI" levels=3 }
+			add_ownership={
+				building={
+					type="building_financial_district"
+					country="c:XAI"
+					levels=4
+					region="STATE_NSM_192"
 				}
+				country={ country="c:XAI" levels=3 }
+			}
 				reserves=1
 				activate_production_methods={ "pm_rifles" "pm_automation_disabled" }
 			}
@@ -3989,67 +3964,66 @@
 			# ToE shipping balance
 			create_building = {
 				building="building_shipyard"
-				add_ownership={
-					country={ country="c:XAI" levels=10 }
-				}
+			add_ownership={
+				country={ country="c:XAI" levels=10 }
+			}
 				reserves=1
 				activate_production_methods={ "pm_complex_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_munition_plant"
-				add_ownership={
-					country={ country="c:XAI" levels=3 }
-				}
+			add_ownership={
+				country={ country="c:XAI" levels=3 }
+			}
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_explosives_factory"
 				add_ownership={ country={ country="c:XAI" levels=2 } }
 				reserves=1
 			}
-
+			
 			# Home Foot coal expansion
 			create_building={
 				building="building_coal_mine"
 				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:XAI"
-						levels=17
-						region="STATE_NSM_192"
-					}
-				}
+			                 building={
+			                     type="building_financial_district"
+			                     country="c:XAI"
+			                     levels=17
+			                     region="STATE_NSM_192"
+			                 }
+			             }
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 			# Major-market fertilizer/chemical shortage balance
 			create_building={
 				building="building_chemical_plant"
 				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:XAI"
-						levels=2
-						region="STATE_NSM_192"
-					}
-				}
+			                 building={
+			                     type="building_financial_district"
+			                     country="c:XAI"
+			                     levels=2
+			                     region="STATE_NSM_192"
+			                 }
+			             }
 				reserves=1
 			}
-
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAI" levels=24 } }
-				reserves=1
-			}
+			
+			      create_building = {
+			          building="building_naval_administration"
+			          add_ownership={ country={ country="c:XAI" levels=24 } }
+			          reserves=1
+			      }
 
 		}
 
 	}
 	s:STATE_NSM_199={
-		# 州名: 中央コンバフ (STATE_NSM_199)
 		# コンバフ (XAJ)
 		region_state:XAJ={
 			create_building={
@@ -4063,7 +4037,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -4198,12 +4172,11 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_214={
-		# 州名: 西欧54 (STATE_NSM_214)
 		# ネルツ (XAQ)
 		region_state:XAQ={
 			# source: NSM_integrated_buildings.txt
@@ -4258,18 +4231,17 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAQ" levels=2 } }
-				reserves=1
-			}
-
+			
+			      create_building = {
+			          building="building_naval_administration"
+			          add_ownership={ country={ country="c:XAQ" levels=2 } }
+			          reserves=1
+			      }
+			
 		}
 
 	}
 	s:STATE_NSM_215={
-		# 州名: ナイラ (STATE_NSM_215)
 		# アイラ (XAC)
 		region_state:XAC={
 			create_building={
@@ -4283,7 +4255,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -4346,12 +4318,12 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 			# ToE: one naval fortification on strait coast
-
+			
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -4363,12 +4335,11 @@
 				}
 				reserves=1
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_221={
-		# 州名: トゥロール (STATE_NSM_221)
 		# コーンウォール (XAH)
 		region_state:XAH={
 			create_building={
@@ -4382,7 +4353,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -4519,25 +4490,24 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XAH" levels=2 } }
 				reserves=1
 				activate_production_methods={ "pm_complex_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XAH" levels=3 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_225={
-		# 州名: 東ヤル (STATE_NSM_225)
 		# ヤル (XDN)
 		region_state:XDN={
 			create_building={
@@ -4551,7 +4521,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -4700,12 +4670,11 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_228={
-		# 州名: スルーク (STATE_NSM_228)
 		# ネルツ (XAQ)
 		region_state:XAQ={
 			create_building={
@@ -4719,42 +4688,42 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XAQ" levels=3 region="STATE_NSM_228" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XAQ" levels=3 region="STATE_NSM_228" }
+			}
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XAQ" levels=3 region="STATE_NSM_228" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XAQ" levels=3 region="STATE_NSM_228" }
+			}
 				reserves=1
 				activate_production_methods={ "pm_dye_workshops" "pm_craftsman_sewing" "pm_traditional_looms" }
 			}
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XAQ" levels=3 region="STATE_NSM_228" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XAQ" levels=3 region="STATE_NSM_228" }
+			}
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_furniture_manufactory"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XAQ" levels=3 region="STATE_NSM_228" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XAQ" levels=3 region="STATE_NSM_228" }
+			}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			# source: NSM_integrated_buildings.txt
@@ -4870,51 +4839,50 @@
 				reserves=1
 				activate_production_methods={ "pm_complex_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_munition_plant"
 				add_ownership={ country={ country="c:XAQ" levels=1 } }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_explosives_factory"
 				add_ownership={ country={ country="c:XAQ" levels=1 } }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XAQ" levels=2 } }
 				reserves=1
 				activate_production_methods={ "pm_iron_frame_buildings" }
 			}
-
+			
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XAQ" levels=1 region="STATE_NSM_228" } }
 				reserves=1
 				activate_production_methods={ "pm_steel" "pm_automation_disabled" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XAQ" levels=2 } }
 				reserves=1
 				activate_production_methods={ "pm_rifles" "pm_automation_disabled" }
 			}
-
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAQ" levels=5 } }
-				reserves=1
-			}
-
+			
+			      create_building = {
+			          building="building_naval_administration"
+			          add_ownership={ country={ country="c:XAQ" levels=5 } }
+			          reserves=1
+			      }
+			
 		}
 
 	}
 	s:STATE_NSM_237={
-		# 州名: ボーツ (STATE_NSM_237)
 		# テーガール (XAI)
 		region_state:XAI={
 			create_building={
@@ -4922,13 +4890,13 @@
 				add_ownership={
 					country={
 						country="c:XAI"
-						levels=4
+						levels=6
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -5147,31 +5115,30 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
 					company={
 						type=company_nsm_royal_fusen
 						country="c:XAI"
-						levels=2
+						levels=5
 					}
 				}
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-
+			
 			create_building = {
 				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAI" levels=10 } }
-				reserves=1
+			    add_ownership={ country={ country="c:XAI" levels=10 } }
+			    reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_238={
-		# 州名: 西欧64 (STATE_NSM_238)
 		# サンド (XAS)
 		region_state:XAS={
 			create_building={
@@ -5185,7 +5152,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -5231,18 +5198,17 @@
 				reserves=1
 				activate_production_methods={ "pm_complex_shipbuilding" }
 			}
-
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAS" levels=4 } }
-				reserves=1
-			}
-
+			
+			      create_building = {
+			          building="building_naval_administration"
+			          add_ownership={ country={ country="c:XAS" levels=4 } }
+			          reserves=1
+			      }
+			
 		}
 
 	}
 	s:STATE_NSM_244={
-		# 州名: ランデン (STATE_NSM_244)
 		# コンバフ (XAJ)
 		region_state:XAJ={
 			create_building={
@@ -5256,7 +5222,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -5309,9 +5275,9 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			# ToE: one naval fortification on strait coast
-
+			
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -5323,12 +5289,11 @@
 				}
 				reserves=1
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_259={
-		# 州名: グゼ (STATE_NSM_259)
 		# テーガール (XAI)
 		region_state:XAI={
 			create_building={
@@ -5336,13 +5301,13 @@
 				add_ownership={
 					country={
 						country="c:XAI"
-						levels=3
+						levels=5
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -5383,12 +5348,11 @@
 				}
 				reserves=1
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_267={
-		# 州名: ポーツ (STATE_NSM_267)
 		# ネルツ (XAQ)
 		region_state:XAQ={
 			create_building={
@@ -5402,7 +5366,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -5441,9 +5405,9 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			# ToE: one naval fortification on strait coast
-
+			
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -5455,18 +5419,17 @@
 				}
 				reserves=1
 			}
-
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAQ" levels=1 } }
-				reserves=1
-			}
-
+			
+			      create_building = {
+			          building="building_naval_administration"
+			          add_ownership={ country={ country="c:XAQ" levels=1 } }
+			          reserves=1
+			      }
+			
 		}
 
 	}
 	s:STATE_NSM_276={
-		# 州名: ガーク (STATE_NSM_276)
 		# ガーク (XEZ)
 		region_state:XEZ={
 			create_building={
@@ -5480,31 +5443,37 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XEZ" levels=3 region="STATE_NSM_276" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XEZ" levels=3 region="STATE_NSM_276" }
+			}
 				reserves=1
 				activate_production_methods={ "pm_dye_workshops" "pm_craftsman_sewing" "pm_traditional_looms" }
 			}
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_tooling_workshop"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XEZ" levels=5 region="STATE_NSM_276" }
+			add_ownership={
+				building={ 
+					company={
+					type=company_nsm_ril_cockerill
+					country="c:XEZ"
+					levels=5
+				    }
 				}
+			}
 				reserves=1
 				activate_production_methods={ "pm_steel" "pm_automation_disabled" }
 			}
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XEZ" levels=3 region="STATE_NSM_276" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XEZ" levels=3 region="STATE_NSM_276" }
+			}
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
@@ -5574,19 +5543,19 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_munition_plant"
 				add_ownership={ country={ country="c:XEZ" levels=1 } }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_explosives_factory"
 				add_ownership={ country={ country="c:XEZ" levels=1 } }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XEZ" levels=3 } }
@@ -5599,47 +5568,46 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
-
+			
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XEZ" levels=3 region="STATE_NSM_276" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XEZ" levels=2 region="STATE_NSM_276" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XEZ" levels=2 } }
 				reserves=1
 				activate_production_methods={ "pm_rifles" "pm_automation_disabled" }
 			}
-
+			
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XEZ" levels=3 } }
 				reserves=1
 				activate_production_methods={ "pm_complex_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XEZ" levels=4 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_290={
-		# 州名: ルパレー (STATE_NSM_290)
 		# アイラ (XAC)
 		region_state:XAC={
 			create_building={
@@ -5653,7 +5621,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_university"
@@ -5734,12 +5702,11 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_301={
-		# 州名: 南コンバフ (STATE_NSM_301)
 		# コンバフ (XAJ)
 		region_state:XAJ={
 			create_building={
@@ -5753,7 +5720,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -5806,12 +5773,11 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_314={
-		# 州名: プロバン (STATE_NSM_314)
 		# ヴェレティエン (XEP)
 		region_state:XEP={
 			create_building={
@@ -5825,18 +5791,18 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_company_owned_buildings.txt
 			create_building={
 				building="building_coal_mine"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:XEP"
-						levels=2
-						region="STATE_NSM_314"
-					}
+			add_ownership={
+				building={
+					type="building_manor_house"
+					country="c:XEP"
+					levels=2
+					region="STATE_NSM_314"
 				}
+			}
 				reserves=1
 				activate_production_methods={ "pm_condensing_engine_pump_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
@@ -6072,10 +6038,9 @@
 			}
 
 		}
-
+		
 	}
 	s:STATE_NSM_350={
-		# 州名: ドント (STATE_NSM_350)
 		# アルビア会社 (XAG)
 		region_state:XAG={
 			create_building={
@@ -6089,7 +6054,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -6190,11 +6155,10 @@
 			create_building={
 				building="building_coal_mine"
 				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:XAG"
-						levels=4
-						region="STATE_NSM_350"
+					company={
+						type=company_nsm_weller
+						country="c:XEP"
+						levels=5
 					}
 				}
 				reserves=1
@@ -6234,10 +6198,10 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XAG" levels=1 region="STATE_NSM_350" } }
@@ -6248,7 +6212,7 @@
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XAG" levels=1 region="STATE_NSM_350" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
 
@@ -6256,7 +6220,6 @@
 
 	}
 	s:STATE_NSM_359={
-		# 州名: マサガ (STATE_NSM_359)
 		# テーガール (XAI)
 		region_state:XAI={
 			create_building={
@@ -6264,13 +6227,13 @@
 				add_ownership={
 					country={
 						country="c:XAI"
-						levels=3
+						levels=4
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -6383,16 +6346,16 @@
 			}
 			# source: NSM_integrated_buildings.txt
 			create_building={
-				building="building_university"
-				add_ownership={
-					country={
-						country="c:XAI"
-						levels=2
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_philosophy_department" "pm_religious_academia" }
-			}
+			             building="building_university"
+			             add_ownership={
+			                 country={
+			                     country="c:XAI"
+			                     levels=2
+			                 }
+			             }
+			             reserves=1
+			             activate_production_methods={ "pm_philosophy_department" "pm_religious_academia" }
+			         }
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_railway"
@@ -6475,12 +6438,11 @@
 				}
 				reserves=1
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_369={
-		# 州名: ブレルン (STATE_NSM_369)
 		# ネウストリア (XAL)
 		region_state:XAL={
 			create_building={
@@ -6494,7 +6456,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_construction_sector"
@@ -6676,9 +6638,9 @@
 			# source: NSM_world_trade_ports_resources.txt
 			create_building = {
 				building = "building_port"
-				add_ownership={
-					country = { country = "c:XAL" levels=4 }
-				}
+			add_ownership={
+				country = { country = "c:XAL" levels=4 }
+			}
 				reserves = 1
 				activate_production_methods = { "pm_basic_port" }
 			}
@@ -6692,7 +6654,7 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
 			# source: NSM_world_trade_ports_resources.txt
@@ -6712,7 +6674,6 @@
 
 	}
 	s:STATE_NSM_383={
-		# 州名: マワス (STATE_NSM_383)
 		# アイラ (XAC)
 		region_state:XAC={
 			create_building={
@@ -6726,7 +6687,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -6765,12 +6726,11 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_390={
-		# 州名: 南ボーツ (STATE_NSM_390)
 		# テーガール (XAI)
 		region_state:XAI={
 			create_building={
@@ -6778,13 +6738,13 @@
 				add_ownership={
 					country={
 						country="c:XAI"
-						levels=3
+						levels=5
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -6837,26 +6797,25 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:XAI" levels=1 } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_condensing_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAI" levels=7 } }
-				reserves=1
-			}
-
+			
+			      create_building = {
+			          building="building_naval_administration"
+			          add_ownership={ country={ country="c:XAI" levels=7 } }
+			          reserves=1
+			      }
+			
 		}
 
 	}
 	s:STATE_NSM_392={
-		# 州名: バル (STATE_NSM_392)
 		# コンバフ (XAJ)
 		region_state:XAJ={
 			create_building={
@@ -6870,7 +6829,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -6923,9 +6882,9 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			# ToE: one naval fortification on strait coast
-
+			
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -6937,12 +6896,11 @@
 				}
 				reserves=1
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_397={
-		# 州名: 西欧10 (STATE_NSM_397)
 		# アイラ (XAC)
 		region_state:XAC={
 			# source: NSM_integrated_buildings.txt
@@ -6983,9 +6941,9 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			# ToE: one naval fortification on strait coast
-
+			
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -6997,12 +6955,11 @@
 				}
 				reserves=1
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_405={
-		# 州名: ノーダム (STATE_NSM_405)
 		# アルビア会社 (XAG)
 		region_state:XAG={
 			create_building={
@@ -7016,7 +6973,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -7052,7 +7009,7 @@
 					company={
 						type=company_nsm_weller
 						country="c:XEP"
-						levels=10
+						levels=5
 					}
 				}
 				reserves=1
@@ -7092,15 +7049,14 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_410={
-		# 州名: ランポル (STATE_NSM_410)
 		# ランポル (XAD)
 		region_state:XAD={
 			create_building={
@@ -7114,7 +7070,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
@@ -7205,15 +7161,14 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_419={
-		# 州名: 西欧41 (STATE_NSM_419)
 		# ニシレク (XAV)
 		region_state:XAV={
 			create_building={
@@ -7227,7 +7182,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -7364,25 +7319,24 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XAV" levels=2 } }
 				reserves=1
 				activate_production_methods={ "pm_complex_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XAV" levels=3 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_431={
-		# 州名: ポツマス (STATE_NSM_431)
 		# コーンウォール (XAH)
 		region_state:XAH={
 			create_building={
@@ -7396,7 +7350,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
@@ -7414,9 +7368,9 @@
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XAH" levels=3 region="STATE_NSM_431" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XAH" levels=3 region="STATE_NSM_431" }
+			}
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
@@ -7496,10 +7450,10 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XAH" levels=2 } }
@@ -7512,7 +7466,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
-
+			
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XAH" levels=1 region="STATE_NSM_431" } }
@@ -7523,17 +7477,17 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XAH" levels=2 region="STATE_NSM_431" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XAH" levels=1 region="STATE_NSM_431" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XAH" levels=2 } }
@@ -7545,7 +7499,6 @@
 
 	}
 	s:STATE_NSM_450={
-		# 州名: 西欧30 (STATE_NSM_450)
 		# カン (XEW)
 		region_state:XEW={
 			create_building={
@@ -7559,7 +7512,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -7692,17 +7645,17 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XEW" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-
+			
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XEW" levels=1 region="STATE_NSM_450" } }
@@ -7719,35 +7672,34 @@
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XEW" levels=1 region="STATE_NSM_450" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XEW" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
-
+			
 			create_building={
 				building="building_shipyard"
 				add_ownership={ country={ country="c:XEW" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding" }
 			}
-
+			
 			create_building={
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:XEW" levels=2 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_451={
-		# 州名: 西ヤル (STATE_NSM_451)
 		# ヤル (XDN)
 		region_state:XDN={
 			create_building={
@@ -7761,7 +7713,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
@@ -7779,9 +7731,9 @@
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XDN" levels=3 region="STATE_NSM_451" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XDN" levels=3 region="STATE_NSM_451" }
+			}
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
@@ -7861,7 +7813,7 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
 			# source: NSM_world_trade_ports_resources.txt
@@ -7876,13 +7828,13 @@
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
 			}
-
+			
 			create_building={
 				building="building_explosives_factory"
 				add_ownership={ country={ country="c:XDN" levels=1 } }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XDN" levels=2 } }
@@ -7895,7 +7847,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
-
+			
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XDN" levels=1 region="STATE_NSM_451" } }
@@ -7906,17 +7858,17 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XDN" levels=2 region="STATE_NSM_451" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XDN" levels=1 region="STATE_NSM_451" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XDN" levels=2 } }
@@ -7928,12 +7880,11 @@
 				add_ownership={ country={ country="c:XDN" levels=1 } }
 				reserves=1
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_460={
-		# 州名: トフン (STATE_NSM_460)
 		# コンバフ (XAJ)
 		region_state:XAJ={
 			create_building={
@@ -7947,7 +7898,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -8056,14 +8007,14 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XAJ" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-
+			
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XAJ" levels=1 region="STATE_NSM_460" } }
@@ -8080,22 +8031,21 @@
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XAJ" levels=1 region="STATE_NSM_460" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XAJ" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_473={
-		# 州名: リル (STATE_NSM_473)
 		# コンバフ (XAJ)
 		region_state:XAJ={
 			create_building={
@@ -8109,7 +8059,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -8146,15 +8096,14 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_485={
-		# 州名: ペプ (STATE_NSM_485)
 		# テーガール (XAI)
 		region_state:XAI={
 			create_building={
@@ -8162,13 +8111,13 @@
 				add_ownership={
 					country={
 						country="c:XAI"
-						levels=3
+						levels=5
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -8221,18 +8170,17 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XAI" levels=6 } }
-				reserves=1
-			}
-
+			
+			      create_building = {
+			          building="building_naval_administration"
+			          add_ownership={ country={ country="c:XAI" levels=6 } }
+			          reserves=1
+			      }
+			
 		}
 
 	}
 	s:STATE_NSM_490={
-		# 州名: コンバフ (STATE_NSM_490)
 		# コンバフ (XAJ)
 		region_state:XAJ={
 			create_building={
@@ -8246,7 +8194,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
@@ -8337,15 +8285,14 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_492={
-		# 州名: ニシレク (STATE_NSM_492)
 		# ニシレク (XAV)
 		region_state:XAV={
 			create_building={
@@ -8359,7 +8306,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
 			}
-
+			
 			# source: NSM_company_owned_buildings.txt
 			create_building={ # アールザック商社 / ニシレク
 				building="building_vineyard"
@@ -8389,9 +8336,9 @@
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_paper_mill"
-				add_ownership={
-					building={ type="building_financial_district" country="c:XAV" levels=3 region="STATE_NSM_492" }
-				}
+			add_ownership={
+				building={ type="building_financial_district" country="c:XAV" levels=3 region="STATE_NSM_492" }
+			}
 				reserves=1
 				activate_production_methods={ "pm_sulfite_pulping" "pm_automation_disabled" }
 			}
@@ -8485,22 +8432,22 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 			create_building={
 				building="building_munition_plant"
 				add_ownership={ country={ country="c:XAV" levels=1 } }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_explosives_factory"
 				add_ownership={ country={ country="c:XAV" levels=1 } }
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XAV" levels=2 } }
@@ -8513,7 +8460,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
-
+			
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XAV" levels=1 region="STATE_NSM_492" } }
@@ -8524,17 +8471,17 @@
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XAV" levels=2 region="STATE_NSM_492" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XAV" levels=1 region="STATE_NSM_492" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XAV" levels=2 } }
@@ -8546,7 +8493,6 @@
 
 	}
 	s:STATE_NSM_514={
-		# 州名: 西欧50 (STATE_NSM_514)
 		# ネウストリア (XAL)
 		region_state:XAL={
 			create_building={
@@ -8560,7 +8506,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -8727,12 +8673,11 @@
 				}
 				reserves=1
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_518={
-		# 州名: トルン (STATE_NSM_518)
 		# リアニエン (XEV)
 		region_state:XEV={
 			create_building={
@@ -8746,7 +8691,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_food_industry"
@@ -8867,17 +8812,17 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XEV" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_wooden_buildings" }
 			}
-
+			
 			create_building={
 				building="building_tooling_workshop"
 				add_ownership={ building={ type="building_financial_district" country="c:XEV" levels=1 region="STATE_NSM_518" } }
@@ -8894,22 +8839,21 @@
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XEV" levels=1 region="STATE_NSM_518" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XEV" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_519={
-		# 州名: トレリア (STATE_NSM_519)
 		# ネウストリア (XAL)
 		region_state:XAL={
 			create_building={
@@ -8923,7 +8867,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_wheat_farm"
@@ -8967,9 +8911,9 @@
 			# source: NSM_world_trade_ports_resources.txt
 			create_building = {
 				building = "building_port"
-				add_ownership={
-					country = { country = "c:XAL" levels=3 }
-				}
+			add_ownership={
+				country = { country = "c:XAL" levels=3 }
+			}
 				reserves = 1
 				activate_production_methods = { "pm_basic_port" }
 			}
@@ -8978,7 +8922,6 @@
 
 	}
 	s:STATE_NSM_521={
-		# 州名: フォト (STATE_NSM_521)
 		# クリサン (XAB)
 		region_state:XAB={
 			create_building={
@@ -8992,7 +8935,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
@@ -9101,12 +9044,11 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 		}
-
+		
 	}
 	s:STATE_NSM_523={
-		# 州名: 西ハイランド (STATE_NSM_523)
 		# ハイランド (XAA)
 		region_state:XAA={
 			create_building={
@@ -9120,7 +9062,7 @@
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
-
+			
 			# source: NSM_integrated_buildings.txt
 			create_building={
 				building="building_textile_mill"
@@ -9197,12 +9139,12 @@
 					}
 				}
 				reserves=1
-
+			
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
 			}
-
+			
 			# ToE: one naval fortification on strait coast
-
+			
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -9214,7 +9156,7 @@
 				}
 				reserves=1
 			}
-
+			
 			create_building={
 				building="building_construction_sector"
 				add_ownership={ country={ country="c:XAA" levels=1 } }
@@ -9227,7 +9169,7 @@
 				reserves=1
 				activate_production_methods={ "pm_pot_stills" "pm_disabled_canning" "pm_sweeteners" "pm_manual_dough_processing" }
 			}
-
+			
 			create_building={
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:XAA" levels=1 region="STATE_NSM_523" } }
@@ -9238,22 +9180,21 @@
 				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XAA" levels=1 region="STATE_NSM_523" } }
 				reserves=1
-
+			
 				activate_production_methods={ "pm_ceramics" "pm_leaded_glass" "pm_manual_glassblowing" }
 			}
-
+			
 			create_building={
 				building="building_arms_industry"
 				add_ownership={ country={ country="c:XAA" levels=1 } }
 				reserves=1
 				activate_production_methods={ "pm_muskets" "pm_automation_disabled" }
 			}
-
+			
 		}
 
 	}
 	s:STATE_NSM_622={
-		# 州名: クリサン北島 (STATE_NSM_622)
 		# クリサン (XAB)
 		region_state:XAB={
 			# source: NSM_integrated_buildings.txt
@@ -9294,9 +9235,9 @@
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
 			}
-
+			
 			# ToE: one naval fortification on strait coast
-
+			
 			# 海峡沿岸の海軍要塞
 			create_building={
 				building="building_naval_fortification"
@@ -9308,8 +9249,8 @@
 				}
 				reserves=1
 			}
-
+			
 		}
-
+		
 	}
 }

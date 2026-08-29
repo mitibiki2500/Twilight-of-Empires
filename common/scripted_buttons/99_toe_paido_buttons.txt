@@ -8,7 +8,6 @@ REPLACE_OR_CREATE:toe_paido_integrate_dale_button = {
 		custom_tooltip = { text = toe_paido_dale_food_tt var:toe_pai_dale_food >= 10 }
 	}
 	effect = { toe_paido_integrate_dale = yes }
-	ai_chance = { base = 100 }
 }
 
 REPLACE_OR_CREATE:toe_paido_integrate_shaftar_button = {
@@ -18,7 +17,6 @@ REPLACE_OR_CREATE:toe_paido_integrate_shaftar_button = {
 		custom_tooltip = { text = toe_paido_shaftar_tools_tt var:toe_pai_shaftar_tools >= 5 }
 	}
 	effect = { toe_paido_integrate_shaftar = yes }
-	ai_chance = { base = 100 }
 }
 
 REPLACE_OR_CREATE:toe_paido_integrate_eskan_button = {
@@ -28,7 +26,6 @@ REPLACE_OR_CREATE:toe_paido_integrate_eskan_button = {
 		custom_tooltip = { text = toe_paido_eskan_industry_tt var:toe_pai_eskan_industry >= 5 }
 	}
 	effect = { toe_paido_integrate_eskan = yes }
-	ai_chance = { base = 100 }
 }
 
 REPLACE_OR_CREATE:toe_paido_integrate_old_button = {
@@ -38,7 +35,6 @@ REPLACE_OR_CREATE:toe_paido_integrate_old_button = {
 		custom_tooltip = { text = toe_paido_old_mining_tt var:toe_pai_old_mining >= 5 }
 	}
 	effect = { toe_paido_integrate_old = yes }
-	ai_chance = { base = 100 }
 }
 
 REPLACE_OR_CREATE:toe_paido_integrate_northern_button = {
@@ -47,7 +43,6 @@ REPLACE_OR_CREATE:toe_paido_integrate_northern_button = {
 		custom_tooltip = { text = toe_paido_northern_agri_tt var:toe_pai_northern_agri >= 15 }
 	}
 	effect = { toe_paido_integrate_northern = yes }
-	ai_chance = { base = 100 }
 }
 
 REPLACE_OR_CREATE:toe_paido_integrate_palun_button = {
@@ -57,7 +52,6 @@ REPLACE_OR_CREATE:toe_paido_integrate_palun_button = {
 		custom_tooltip = { text = toe_paido_palun_mining_tt var:toe_pai_palun_mining >= 5 }
 	}
 	effect = { toe_paido_integrate_palun = yes }
-	ai_chance = { base = 100 }
 }
 
 REPLACE_OR_CREATE:toe_paido_tradition_resind_button = {
@@ -70,7 +64,6 @@ REPLACE_OR_CREATE:toe_paido_tradition_resind_button = {
 		}
 	}
 	effect = { toe_paido_tradition_resind = yes }
-	ai_chance = { base = 100 }
 }
 
 REPLACE_OR_CREATE:toe_paido_tradition_prune_button = {
@@ -83,7 +76,6 @@ REPLACE_OR_CREATE:toe_paido_tradition_prune_button = {
 		}
 	}
 	effect = { toe_paido_tradition_prune = yes }
-	ai_chance = { base = 100 }
 }
 
 REPLACE_OR_CREATE:toe_paido_tradition_krikul_button = {
@@ -96,17 +88,15 @@ REPLACE_OR_CREATE:toe_paido_tradition_krikul_button = {
 		}
 	}
 	effect = { toe_paido_tradition_krikul = yes }
-	ai_chance = { base = 100 }
 }
 
 REPLACE_OR_CREATE:toe_paido_tradition_sosilia_button = {
 	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_sosilia } NOT = { has_variable = toe_paido_finalize_integration } }
 	possible = {
 		custom_tooltip = { text = toe_paido_sosilia_gdp_tt c:SOS ?= { gdp >= 6000000 } }
-		custom_tooltip = { text = toe_paido_sosilia_relations_tt relations:c:SOS >= 50 }
+		custom_tooltip = { text = toe_paido_sosilia_relations_tt c:SOS.relations:root >= 50 }
 	}
 	effect = { toe_paido_tradition_sosilia = yes }
-	ai_chance = { base = 100 }
 }
 
 REPLACE_OR_CREATE:toe_paido_integrate_balin_button = {
@@ -116,7 +106,6 @@ REPLACE_OR_CREATE:toe_paido_integrate_balin_button = {
 		custom_tooltip = { text = toe_paido_balin_industry_tt var:toe_pai_balin_industry >= 5 }
 	}
 	effect = { toe_paido_integrate_balin = yes }
-	ai_chance = { base = 100 }
 }
 
 # 必須6文化を統合した後も任意文化を待てるよう、最後は手動で完了する。
@@ -140,5 +129,4 @@ REPLACE_OR_CREATE:toe_paido_finish_integration_button = {
 		}
 	}
 	effect = { set_variable = toe_paido_finalize_integration }
-	ai_chance = { base = 100 }
 }
