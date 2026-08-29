@@ -30,8 +30,8 @@ je_toe_paido_cultural_integration = {
 		toe_paido_apply_integration_reward = yes
 	}
 
-	# 元のブラジル国民統合JEと同じ50年枠を維持。期限切れは失敗扱い。
-	timeout = 18262
+	# 国民統合の期限は25年。期限切れは失敗扱い。
+	timeout = 9125
 	on_timeout = {
 		add_modifier = {
 			name = toe_paido_integration_failure
