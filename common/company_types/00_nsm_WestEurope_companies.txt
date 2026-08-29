@@ -79,8 +79,11 @@ company_nsm_mainal = {
 		}
 	}
 	prosperity_modifier = {
+		building_iron_mine_throughput_add = 0.05
 		building_steel_mill_throughput_add = 0.05
 		building_motor_industry_throughput_add = 0.05
+		building_coal_mine_throughput_add = 0.05
+		building_lead_mine_throughput_add = 0.05
 	}
 	ai_weight = { value = 3 }
 }
@@ -212,7 +215,7 @@ company_nsm_arlzack = {
 	building_types = {
 		building_port
 		building_shipyard
-		building_wheat_farm
+		building_vineyard
 	}
 	extension_building_types = {
 		building_gold_mine
@@ -244,6 +247,7 @@ company_nsm_falantier = {
 	building_types = {
 		building_glassworks
 		building_lead_mine
+		building_art_academy
 	}
 	extension_building_types = {
 		building_logging_camp
