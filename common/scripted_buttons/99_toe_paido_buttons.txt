@@ -1,0 +1,27 @@
+﻿# Paido national integration manual completion button.
+# 必須条件が揃った後も任意文化を待てるよう、自動完了ではなくプレイヤーが押して終了する。
+
+REPLACE_OR_CREATE:toe_paido_finish_integration_button = {
+	visible = {
+		this = c:PAI
+		NOT = { has_variable = toe_paido_finalize_integration }
+	}
+	possible = {
+		has_variable = toe_paido_done_dale
+		has_variable = toe_paido_done_shaftar
+		has_variable = toe_paido_done_eskan
+		has_variable = toe_paido_done_old
+		has_variable = toe_paido_done_northern
+		has_variable = toe_paido_done_palun
+		has_technology_researched = nationalism
+		cu:nsm_map_pai.culture_current_fervor >= 60
+		institution_investment_level = {
+			institution = institution_schools
+			value >= 2
+		}
+	}
+	effect = {
+		set_variable = toe_paido_finalize_integration
+	}
+	ai_chance = { base = 100 }
+}
