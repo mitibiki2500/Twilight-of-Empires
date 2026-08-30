@@ -35,9 +35,8 @@
 		}
 	}
 
-	on_complete = {
-		trigger_event = { id = urbanization_events.1 }
-	}
+	# ToE does not include urbanization_events.1.
+	# Keep the JE completion itself, but do not fire a missing event.
 
 	weight = 10
 	transferable = no
@@ -86,18 +85,12 @@ je_urbanization_events_2 = {
 		}
 	}
 
-	on_yearly_pulse = {
-		random_events = {
-			30 = 0
-			10 = urbanization_events.2
-			20 = urbanization_events.4
-			20 = urbanization_events.6
-		}
-	}
+	# ToE does not include urbanization_events.2/.4/.6.
+	# The old yearly pulse created invalid/blank events on 1 January,
+	# so the yearly event roll is disabled while preserving the JE itself.
 
-	on_complete = {
-		trigger_event = { id = urbanization_events.5 }
-	}
+	# ToE does not include urbanization_events.5.
+	# Keep the JE completion itself, but do not fire a missing event.
 
 	weight = 10
 	transferable = no
