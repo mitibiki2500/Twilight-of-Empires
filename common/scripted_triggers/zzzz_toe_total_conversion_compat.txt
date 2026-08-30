@@ -1,10 +1,11 @@
 ﻿# Twilight of Empires total-conversion compatibility
 # Vanilla Schleswig-Holstein logic cannot run because the vanilla state region does not exist on the ToE map.
+# Use REPLACE_OR_CREATE so the vanilla scripted-trigger definitions are actually replaced instead of duplicated.
 
-wants_to_solve_schleswig_holstein = {
+REPLACE_OR_CREATE:wants_to_solve_schleswig_holstein = {
     always = no
 }
 
-is_oppressor_of_schleswig_holstein = {
+REPLACE_OR_CREATE:is_oppressor_of_schleswig_holstein = {
     always = no
 }
