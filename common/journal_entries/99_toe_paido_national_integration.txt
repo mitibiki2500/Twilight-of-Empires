@@ -10,8 +10,9 @@ je_toe_paido_cultural_integration = {
 		toe_paido_init_integration = yes
 	}
 
-	# 各文化の母国州にある施設レベルを定期的に再集計する。
-	on_weekly_pulse = {
+	# 各文化の母国州にある施設レベルを月1回再集計する。
+	# 全保有州→全建物を走査するため、週次から月次へ変更して負荷を削減。
+	on_monthly_pulse = {
 		effect = {
 			if = {
 				limit = { NOT = { has_variable = toe_paido_finalize_integration } }
@@ -20,7 +21,6 @@ je_toe_paido_cultural_integration = {
 		}
 	}
 
-	# ブラジル国民統合JEと同様、文化ごとに個別ボタンを持つ。
 	scripted_button = toe_paido_integrate_dale_button
 	scripted_button = toe_paido_integrate_shaftar_button
 	scripted_button = toe_paido_integrate_eskan_button
@@ -34,7 +34,6 @@ je_toe_paido_cultural_integration = {
 	scripted_button = toe_paido_integrate_balin_button
 	scripted_button = toe_paido_finish_integration_button
 
-	# 条件だけ揃っても自動完了しない。最後のボタンを押した時だけ完了する。
 	complete = {
 		custom_tooltip = {
 			text = toe_paido_integration_finalized_tt
@@ -46,7 +45,6 @@ je_toe_paido_cultural_integration = {
 		toe_paido_apply_integration_reward = yes
 	}
 
-	# 国民統合の期限は25年。期限切れは失敗扱い。
 	timeout = 9125
 	on_timeout = {
 		add_modifier = {
@@ -61,8 +59,6 @@ je_toe_paido_cultural_integration = {
 	should_be_pinned_by_default_uninvolved_or_context = yes
 }
 
-# 「分裂した君主」をパイド専用の革新派vs保守派へ置換。
-# フランスJEそのものは変更せず、既存のオルレアン/レジティミスト計算を二陣営だけ再利用する。
 je_toe_paido_monarchist_rivalry = {
 	icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
 	group = je_group_historical_content
@@ -72,13 +68,11 @@ je_toe_paido_monarchist_rivalry = {
 	modifiers_while_active = { toe_paido_rival_monarchs }
 
 	immediate = {
-		# 既存計算が参照する変数を初期化。ボナパルティストのバー・更新・イベントは使用しない。
 		fra_set_divided_monarchist_variables = yes
 		fra_weekly_pulse_legitimist_progress = yes
 		fra_weekly_pulse_orleanist_progress = yes
 	}
 
-	# オルレアン枠＝革新派、レジティミスト枠＝保守派。
 	scripted_progress_bar = divided_monarchists_orleanist_progress_bar
 	scripted_progress_bar = divided_monarchists_legitimist_progress_bar
 
@@ -89,7 +83,6 @@ je_toe_paido_monarchist_rivalry = {
 		}
 	}
 
-	# 革新派には軍事施設レベルを追加。兵舎＋海軍基地の合計Lvを毎月そのまま進捗へ足す。
 	on_monthly_pulse = {
 		effect = {
 			set_variable = { name = toe_paido_military_facility_levels value = 0 }

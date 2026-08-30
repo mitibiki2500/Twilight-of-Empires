@@ -842,6 +842,7 @@ STATE_NSM_321 = {
 
 
 
+
     arable_resources = { "building_rice_farm" "building_livestock_ranch" "building_dye_plantation" "building_silk_plantation" "building_sugar_plantation" "building_tea_plantation" }
     capped_resources = {
         building_logging_camp = 6
@@ -1252,7 +1253,7 @@ STATE_NSM_430 = {
     id = 430
     subsistence_building = "building_subsistence_pasture"
     provinces = { xD78F44 xDBBD9E xB12952 x84AF72 xEF9E29 xDE80E4 xB23DAE xD9E768 x66DC9B x6E9737 x61F326 x28B0B6 x4B646E xDC269D xC5B5AC x8D3426 }
-    traits = {}
+    traits = {"state_trait_great_steppe"}
     city = "xD78F44"
     farm = "xDBBD9E"
     mine = "xB12952"

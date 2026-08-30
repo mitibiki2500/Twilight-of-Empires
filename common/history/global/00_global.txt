@@ -54,4 +54,33 @@ GLOBAL = {
 
 	# ToE - Ria civil war is initialized by on_game_start (see 99_toe_ria_colony_and_wars_on_actions.txt)
 
+
+	# ToE - 1836 starting supply ships
+	# バニラ式:
+	#   (1 + navy_size + 造船所Lv合計*10) * 8
+	# ToEでは約2/3の配備量に抑えるため、最終倍率を 5.33 にする。
+	every_country = {
+		limit = {
+			navy_size >= 1
+		}
+		add_supply_ships = {
+			value = 1
+			add = navy_size
+			if = {
+				limit = {
+					any_scope_building = {
+						is_building_type = building_shipyard
+					}
+				}
+				every_scope_building = {
+					limit = {
+						is_building_type = building_shipyard
+					}
+					add = 10
+				}
+			}
+			multiply = 5.33
+		}
+	}
+
 }

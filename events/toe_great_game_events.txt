@@ -1,0 +1,29 @@
+﻿namespace = toe_great_game
+
+country_event = {
+    id = toe_great_game.1
+    title = toe_great_game.1.t
+    desc = toe_great_game.1.d
+
+    option = {
+        name = toe_great_game.1.a
+        add_modifier = {
+            name = toe_great_game_victory
+        }
+    }
+}
+
+country_event = {
+    id = toe_great_game.2
+    title = toe_great_game.2.t
+    desc = toe_great_game.2.d
+
+    option = {
+        name = toe_great_game.2.a
+        add_modifier = {
+            name = toe_great_game_defeat
+            days = 18250
+            is_decaying = yes
+        }
+    }
+}

@@ -12,8 +12,9 @@
         set_variable = { name = sick_man_var value = 0 }
         set_variable = { name = sick_man_separatist_var value = 0 }
 
+        # ゴートン専用「ヨーロッパの病人」。相殺補正ではなく、補正自体を威信-10%にする。
         add_modifier = {
-            name = sick_man_of_europe
+            name = toe_gorton_sick_man_of_europe
             days = 10950
         }
         add_modifier = {

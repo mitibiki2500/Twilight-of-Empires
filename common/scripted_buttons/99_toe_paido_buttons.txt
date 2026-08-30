@@ -2,6 +2,8 @@
 # ブラジル国民統合JEと同じく、条件を満たした文化をプレイヤーが個別ボタンで統合する。
 
 REPLACE_OR_CREATE:toe_paido_integrate_dale_button = {
+	name = toe_paido_integrate_dale_button_name
+	desc = toe_paido_integrate_dale_button_desc
 	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_dale } NOT = { has_variable = toe_paido_finalize_integration } }
 	possible = {
 		custom_tooltip = { text = toe_paido_dale_agri_tt var:toe_pai_dale_agri >= 50 }
@@ -11,6 +13,8 @@ REPLACE_OR_CREATE:toe_paido_integrate_dale_button = {
 }
 
 REPLACE_OR_CREATE:toe_paido_integrate_shaftar_button = {
+	name = toe_paido_integrate_shaftar_button_name
+	desc = toe_paido_integrate_shaftar_button_desc
 	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_shaftar } NOT = { has_variable = toe_paido_finalize_integration } }
 	possible = {
 		custom_tooltip = { text = toe_paido_shaftar_mining_tt var:toe_pai_shaftar_mining >= 20 }
@@ -20,6 +24,8 @@ REPLACE_OR_CREATE:toe_paido_integrate_shaftar_button = {
 }
 
 REPLACE_OR_CREATE:toe_paido_integrate_eskan_button = {
+	name = toe_paido_integrate_eskan_button_name
+	desc = toe_paido_integrate_eskan_button_desc
 	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_eskan } NOT = { has_variable = toe_paido_finalize_integration } }
 	possible = {
 		custom_tooltip = { text = toe_paido_eskan_plantation_tt var:toe_pai_eskan_plantation >= 20 }
@@ -29,6 +35,8 @@ REPLACE_OR_CREATE:toe_paido_integrate_eskan_button = {
 }
 
 REPLACE_OR_CREATE:toe_paido_integrate_old_button = {
+	name = toe_paido_integrate_old_button_name
+	desc = toe_paido_integrate_old_button_desc
 	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_old } NOT = { has_variable = toe_paido_finalize_integration } }
 	possible = {
 		custom_tooltip = { text = toe_paido_old_industry_tt var:toe_pai_old_industry >= 10 }
@@ -38,6 +46,8 @@ REPLACE_OR_CREATE:toe_paido_integrate_old_button = {
 }
 
 REPLACE_OR_CREATE:toe_paido_integrate_northern_button = {
+	name = toe_paido_integrate_northern_button_name
+	desc = toe_paido_integrate_northern_button_desc
 	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_northern } NOT = { has_variable = toe_paido_finalize_integration } }
 	possible = {
 		custom_tooltip = { text = toe_paido_northern_agri_tt var:toe_pai_northern_agri >= 15 }
@@ -46,6 +56,8 @@ REPLACE_OR_CREATE:toe_paido_integrate_northern_button = {
 }
 
 REPLACE_OR_CREATE:toe_paido_integrate_palun_button = {
+	name = toe_paido_integrate_palun_button_name
+	desc = toe_paido_integrate_palun_button_desc
 	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_palun } NOT = { has_variable = toe_paido_finalize_integration } }
 	possible = {
 		custom_tooltip = { text = toe_paido_palun_gold_tt var:toe_pai_palun_gold >= 3 }
@@ -55,6 +67,8 @@ REPLACE_OR_CREATE:toe_paido_integrate_palun_button = {
 }
 
 REPLACE_OR_CREATE:toe_paido_tradition_resind_button = {
+	name = toe_paido_tradition_resind_button_name
+	desc = toe_paido_tradition_resind_button_desc
 	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_resind } NOT = { has_variable = toe_paido_finalize_integration } }
 	possible = {
 		custom_tooltip = { text = toe_paido_resind_shipyard_tt var:toe_pai_resind_shipyard >= 5 }
@@ -67,6 +81,8 @@ REPLACE_OR_CREATE:toe_paido_tradition_resind_button = {
 }
 
 REPLACE_OR_CREATE:toe_paido_tradition_prune_button = {
+	name = toe_paido_tradition_prune_button_name
+	desc = toe_paido_tradition_prune_button_desc
 	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_prune } NOT = { has_variable = toe_paido_finalize_integration } }
 	possible = {
 		custom_tooltip = { text = toe_paido_prune_plantation_tt var:toe_pai_prune_plantation >= 10 }
@@ -79,6 +95,8 @@ REPLACE_OR_CREATE:toe_paido_tradition_prune_button = {
 }
 
 REPLACE_OR_CREATE:toe_paido_tradition_krikul_button = {
+	name = toe_paido_tradition_krikul_button_name
+	desc = toe_paido_tradition_krikul_button_desc
 	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_krikul } NOT = { has_variable = toe_paido_finalize_integration } }
 	possible = {
 		custom_tooltip = { text = toe_paido_krikul_ranch_tt var:toe_pai_krikul_ranch >= 15 }
@@ -91,6 +109,8 @@ REPLACE_OR_CREATE:toe_paido_tradition_krikul_button = {
 }
 
 REPLACE_OR_CREATE:toe_paido_tradition_sosilia_button = {
+	name = toe_paido_tradition_sosilia_button_name
+	desc = toe_paido_tradition_sosilia_button_desc
 	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_sosilia } NOT = { has_variable = toe_paido_finalize_integration } }
 	possible = {
 		custom_tooltip = { text = toe_paido_sosilia_gdp_tt c:SOS ?= { gdp >= 6000000 } }
@@ -100,6 +120,8 @@ REPLACE_OR_CREATE:toe_paido_tradition_sosilia_button = {
 }
 
 REPLACE_OR_CREATE:toe_paido_integrate_balin_button = {
+	name = toe_paido_integrate_balin_button_name
+	desc = toe_paido_integrate_balin_button_desc
 	visible = { this = c:PAI NOT = { has_variable = toe_paido_done_balin } NOT = { has_variable = toe_paido_finalize_integration } }
 	possible = {
 		custom_tooltip = { text = toe_paido_balin_arms_tt var:toe_pai_balin_arms >= 5 }
@@ -110,6 +132,8 @@ REPLACE_OR_CREATE:toe_paido_integrate_balin_button = {
 
 # 必須6文化を統合した後も任意文化を待てるよう、最後は手動で完了する。
 REPLACE_OR_CREATE:toe_paido_finish_integration_button = {
+	name = toe_paido_finish_integration_button_name
+	desc = toe_paido_finish_integration_button_desc
 	visible = {
 		this = c:PAI
 		NOT = { has_variable = toe_paido_finalize_integration }

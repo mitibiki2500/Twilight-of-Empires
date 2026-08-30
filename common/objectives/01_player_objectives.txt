@@ -1,1 +1,19 @@
-﻿
+﻿# Twilight of Empires - custom objective cards
+
+objective_toe_recommended = {
+    enabled_background = "gfx/interface/icons/objectives/hegemon_illu.dds"
+    icon = "gfx/interface/icons/objectives/hegemon.dds"
+    recommended_tags = { PAI GOT GSU XAI }
+    available_for_all_countries = yes
+    objective_subgoals = { }
+    on_start = { }
+}
+
+objective_toe_beginner = {
+    enabled_background = "gfx/interface/icons/objectives/learn.dds"
+    icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+    recommended_tags = { XEP XAM XEZ XAC }
+    available_for_all_countries = yes
+    objective_subgoals = { }
+    on_start = { }
+}
