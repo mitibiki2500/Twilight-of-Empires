@@ -36,7 +36,7 @@
     GDPGR_leaderboard_excl: "対象外"
     GDPGR_leaderboard_pos:  "[SelectLocalization(GreaterThan_CFixedPoint(Country.MakeScope.Var('GDPGR_annl_growth_leaderboard_pos').GetValue,'(CFixedPoint)0'),'GDPGR_leaderboard_norm','GDPGR_leaderboard_excl')]"
     
-    GDPGR_leaderboard_tooltip: "$GDPGR_leaderboard_tooltip_h$\n[GetScriptedGui('GDPGR_sg_annl_growth_leaderboard').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]\n$TOOLTIP_DELIMITER$\n$GDPGR_leaderboard_tooltip_h2$\n[GetScriptedGui('GDPGR_sg_annl_growth_leaderboard_top_gdps').ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)][AddLocalizationIf(EqualTo_CFixedPoint(Country.MakeScope.Var('GDPGR_annl_growth_leaderboard_pos').GetValue,'(CFixedPoint)0'),'GDPGR_leaderboard_rev_warning')]"
+    GDPGR_leaderboard_tooltip: "$GDPGR_leaderboard_tooltip_h$\n現在順位: $GDPGR_leaderboard_pos$[AddLocalizationIf(EqualTo_CFixedPoint(Country.MakeScope.Var('GDPGR_annl_growth_leaderboard_pos').GetValue,'(CFixedPoint)0'),'GDPGR_leaderboard_rev_warning')]"
     
     GDPGR_leaderboard_rev_warning: "\n$TOOLTIP_DELIMITER$\n@warning!$GDPGR_leaderboard_rev_warning_text$"
     
