@@ -1,0 +1,39 @@
+﻿# ToE: Alti Gorton annexation gate
+# Gorton can only be targeted by the one-shot annexation route after its reform JE fails.
+
+REPLACE_OR_CREATE:toe_alti_claim_gorton_button = {
+    visible = {
+        this = c:SKR
+        NOT = { has_variable = toe_altia_gorton_claims_granted }
+    }
+
+    possible = {
+        c:GOT ?= {
+            exists = yes
+            has_variable = toe_gorton_reform_failed
+        }
+        NOT = { has_truce_with = c:GOT }
+        OR = {
+            is_ai = no
+            infamy < 70
+        }
+    }
+
+    effect = {
+        toe_alti_grant_gorton_claims = yes
+        c:GOT = {
+            create_diplomatic_play = {
+                name = toe_alti_gorton_annexation_play
+                initiator = c:SKR
+                target_country = c:GOT
+                type = dp_annex_war
+                war = no
+            }
+        }
+    }
+
+    ai_chance = {
+        base = 100
+        modifier = { factor = 0 infamy >= 70 }
+    }
+}
