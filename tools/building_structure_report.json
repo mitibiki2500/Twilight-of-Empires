@@ -1,15 +1,159 @@
 {
-  "ok": true,
+  "ok": false,
   "totals": {
     "state_tokens": 534,
-    "nested_states": 534,
+    "nested_states": 490,
     "region_tokens": 551,
     "nested_regions": 551,
-    "building_tokens": 4295,
-    "buildings_inside_region": 4295
+    "building_tokens": 4288,
+    "buildings_inside_region": 4288,
+    "nested_create_buildings": 24,
+    "split_token_fragments": 3
   },
   "bad_layout": [],
   "orphan_buildings": [],
+  "nested_create_buildings": [
+    {
+      "file": "00_NorthRia.txt",
+      "outer_line": 5094,
+      "inner_line": 5096
+    },
+    {
+      "file": "01_SouthRia.txt",
+      "outer_line": 2035,
+      "inner_line": 2038
+    },
+    {
+      "file": "04_NorthAfrica.txt",
+      "outer_line": 537,
+      "inner_line": 546
+    },
+    {
+      "file": "04_NorthAfrica.txt",
+      "outer_line": 570,
+      "inner_line": 579
+    },
+    {
+      "file": "04_NorthAfrica.txt",
+      "outer_line": 847,
+      "inner_line": 856
+    },
+    {
+      "file": "04_NorthAfrica.txt",
+      "outer_line": 1284,
+      "inner_line": 1294
+    },
+    {
+      "file": "04_NorthAfrica.txt",
+      "outer_line": 1741,
+      "inner_line": 1746
+    },
+    {
+      "file": "04_NorthAfrica.txt",
+      "outer_line": 2853,
+      "inner_line": 2863
+    },
+    {
+      "file": "04_NorthAfrica.txt",
+      "outer_line": 3964,
+      "inner_line": 3969
+    },
+    {
+      "file": "04_NorthAfrica.txt",
+      "outer_line": 4084,
+      "inner_line": 4087
+    },
+    {
+      "file": "04_NorthAfrica.txt",
+      "outer_line": 4502,
+      "inner_line": 4510
+    },
+    {
+      "file": "04_NorthAfrica.txt",
+      "outer_line": 6168,
+      "inner_line": 6178
+    },
+    {
+      "file": "05_SouthAfrica.txt",
+      "outer_line": 512,
+      "inner_line": 521
+    },
+    {
+      "file": "05_SouthAfrica.txt",
+      "outer_line": 707,
+      "inner_line": 713
+    },
+    {
+      "file": "05_SouthAfrica.txt",
+      "outer_line": 919,
+      "inner_line": 926
+    },
+    {
+      "file": "05_SouthAfrica.txt",
+      "outer_line": 1053,
+      "inner_line": 1062
+    },
+    {
+      "file": "05_SouthAfrica.txt",
+      "outer_line": 1167,
+      "inner_line": 1175
+    },
+    {
+      "file": "05_SouthAfrica.txt",
+      "outer_line": 1927,
+      "inner_line": 1939
+    },
+    {
+      "file": "05_SouthAfrica.txt",
+      "outer_line": 2952,
+      "inner_line": 2961
+    },
+    {
+      "file": "05_SouthAfrica.txt",
+      "outer_line": 3062,
+      "inner_line": 3066
+    },
+    {
+      "file": "06_WestAsia.txt",
+      "outer_line": 4136,
+      "inner_line": 4138
+    },
+    {
+      "file": "06_WestAsia.txt",
+      "outer_line": 6297,
+      "inner_line": 6299
+    },
+    {
+      "file": "06_WestAsia.txt",
+      "outer_line": 6392,
+      "inner_line": 6406
+    },
+    {
+      "file": "09_Oceania.txt",
+      "outer_line": 2684,
+      "inner_line": 2697
+    }
+  ],
+  "split_token_fragments": [
+    {
+      "file": "05_SouthAfrica.txt",
+      "line": 712,
+      "issue": "split_levels_left",
+      "text": "lev"
+    },
+    {
+      "file": "05_SouthAfrica.txt",
+      "line": 721,
+      "issue": "split_levels_right",
+      "text": "els="
+    },
+    {
+      "file": "05_SouthAfrica.txt",
+      "line": 3074,
+      "issue": "split_country_right",
+      "text": "ountry="
+    }
+  ],
   "files": {
     "00_NorthRia.txt": {
       "state_tokens": 78,
@@ -17,15 +161,19 @@
       "region_tokens": 79,
       "nested_regions": 79,
       "building_tokens": 546,
-      "buildings_inside_region": 546
+      "buildings_inside_region": 546,
+      "nested_create_buildings": 1,
+      "split_token_fragments": 0
     },
     "01_SouthRia.txt": {
       "state_tokens": 26,
       "nested_states": 26,
       "region_tokens": 26,
       "nested_regions": 26,
-      "building_tokens": 185,
-      "buildings_inside_region": 185
+      "building_tokens": 180,
+      "buildings_inside_region": 180,
+      "nested_create_buildings": 1,
+      "split_token_fragments": 0
     },
     "02_WestEurope.txt": {
       "state_tokens": 65,
@@ -33,7 +181,9 @@
       "region_tokens": 67,
       "nested_regions": 67,
       "building_tokens": 743,
-      "buildings_inside_region": 743
+      "buildings_inside_region": 743,
+      "nested_create_buildings": 0,
+      "split_token_fragments": 0
     },
     "03_EastEurope.txt": {
       "state_tokens": 102,
@@ -41,7 +191,9 @@
       "region_tokens": 107,
       "nested_regions": 107,
       "building_tokens": 838,
-      "buildings_inside_region": 838
+      "buildings_inside_region": 838,
+      "nested_create_buildings": 0,
+      "split_token_fragments": 0
     },
     "04_NorthAfrica.txt": {
       "state_tokens": 70,
@@ -49,7 +201,9 @@
       "region_tokens": 71,
       "nested_regions": 71,
       "building_tokens": 486,
-      "buildings_inside_region": 486
+      "buildings_inside_region": 486,
+      "nested_create_buildings": 10,
+      "split_token_fragments": 0
     },
     "05_SouthAfrica.txt": {
       "state_tokens": 44,
@@ -57,15 +211,19 @@
       "region_tokens": 44,
       "nested_regions": 44,
       "building_tokens": 284,
-      "buildings_inside_region": 284
+      "buildings_inside_region": 284,
+      "nested_create_buildings": 8,
+      "split_token_fragments": 3
     },
     "06_WestAsia.txt": {
       "state_tokens": 72,
-      "nested_states": 72,
+      "nested_states": 60,
       "region_tokens": 72,
       "nested_regions": 72,
-      "building_tokens": 574,
-      "buildings_inside_region": 574
+      "building_tokens": 576,
+      "buildings_inside_region": 576,
+      "nested_create_buildings": 3,
+      "split_token_fragments": 0
     },
     "07_EastAsia.txt": {
       "state_tokens": 6,
@@ -73,7 +231,9 @@
       "region_tokens": 6,
       "nested_regions": 6,
       "building_tokens": 29,
-      "buildings_inside_region": 29
+      "buildings_inside_region": 29,
+      "nested_create_buildings": 0,
+      "split_token_fragments": 0
     },
     "08_CentralIslands.txt": {
       "state_tokens": 17,
@@ -81,15 +241,19 @@
       "region_tokens": 21,
       "nested_regions": 21,
       "building_tokens": 151,
-      "buildings_inside_region": 151
+      "buildings_inside_region": 151,
+      "nested_create_buildings": 0,
+      "split_token_fragments": 0
     },
     "09_Oceania.txt": {
       "state_tokens": 54,
-      "nested_states": 54,
+      "nested_states": 22,
       "region_tokens": 58,
       "nested_regions": 58,
-      "building_tokens": 459,
-      "buildings_inside_region": 459
+      "building_tokens": 455,
+      "buildings_inside_region": 455,
+      "nested_create_buildings": 1,
+      "split_token_fragments": 0
     }
   }
 }
