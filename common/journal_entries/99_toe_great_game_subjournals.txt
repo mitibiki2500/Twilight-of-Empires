@@ -1,0 +1,123 @@
+﻿# ToE: Great Game objective sub-journals
+# The score/effects remain controlled by je_great_game_control.
+# These entries restore the visible objective list for the four participants.
+
+je_toe_gg_steppe = {
+    name = je_toe_gg_steppe_name
+    desc = je_toe_gg_steppe_desc
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+    group = je_group_objectives
+    is_shown_in_lobby = { OR = { this = c:PAI this = c:GOT } }
+    is_shown_when_inactive = { OR = { this = c:PAI this = c:GOT } NOT = { has_global_variable = toe_gg_steppe_done } }
+    possible = { OR = { this = c:PAI this = c:GOT } NOT = { has_global_variable = toe_great_game_resolved } }
+    complete = { has_global_variable = toe_gg_steppe_done }
+    invalid = { has_global_variable = toe_great_game_resolved }
+    weight = 5000
+    transferable = no
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_toe_gg_sosilia = {
+    name = je_toe_gg_sosilia_name
+    desc = je_toe_gg_sosilia_desc
+    icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+    group = je_group_objectives
+    is_shown_in_lobby = { this = c:PAI }
+    is_shown_when_inactive = { this = c:PAI NOT = { has_global_variable = toe_gg_sosilia_done } }
+    possible = { this = c:PAI NOT = { has_global_variable = toe_great_game_resolved } }
+    complete = { has_global_variable = toe_gg_sosilia_done }
+    invalid = { has_global_variable = toe_great_game_resolved }
+    weight = 5000
+    transferable = no
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_toe_gg_plains = {
+    name = je_toe_gg_plains_name
+    desc = je_toe_gg_plains_desc
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+    group = je_group_objectives
+    is_shown_in_lobby = { this = c:PAI }
+    is_shown_when_inactive = { this = c:PAI NOT = { has_global_variable = toe_gg_plains_done } }
+    possible = { this = c:PAI NOT = { has_global_variable = toe_great_game_resolved } }
+    complete = { has_global_variable = toe_gg_plains_done }
+    invalid = { has_global_variable = toe_great_game_resolved }
+    weight = 5000
+    transferable = no
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_toe_gg_route = {
+    name = je_toe_gg_route_name
+    desc = je_toe_gg_route_desc
+    icon = "gfx/interface/icons/event_icons/event_trade.dds"
+    group = je_group_objectives
+    is_shown_in_lobby = { OR = { this = c:XAI this = c:GOT this = c:PAI this = c:GSU } }
+    is_shown_when_inactive = { OR = { this = c:XAI this = c:GOT this = c:PAI this = c:GSU } NOT = { has_global_variable = toe_gg_route_done } }
+    possible = { OR = { this = c:XAI this = c:GOT this = c:PAI this = c:GSU } NOT = { has_global_variable = toe_great_game_resolved } }
+    complete = { has_global_variable = toe_gg_route_done }
+    invalid = { has_global_variable = toe_great_game_resolved }
+    weight = 5000
+    transferable = no
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_toe_gg_tegar_ria = {
+    name = je_toe_gg_tegar_ria_name
+    desc = je_toe_gg_tegar_ria_desc
+    icon = "gfx/interface/icons/event_icons/event_colonial.dds"
+    group = je_group_objectives
+    is_shown_in_lobby = { this = c:XAI }
+    is_shown_when_inactive = { this = c:XAI NOT = { has_global_variable = toe_gg_tegar_ria_done } }
+    possible = { this = c:XAI NOT = { has_global_variable = toe_great_game_resolved } }
+    complete = { has_global_variable = toe_gg_tegar_ria_done }
+    invalid = { has_global_variable = toe_great_game_resolved }
+    weight = 5000
+    transferable = no
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_toe_gg_expel_tegar_ria = {
+    name = je_toe_gg_expel_tegar_ria_name
+    desc = je_toe_gg_expel_tegar_ria_desc
+    icon = "gfx/interface/icons/event_icons/event_colonial.dds"
+    group = je_group_objectives
+    is_shown_in_lobby = { this = c:GSU }
+    is_shown_when_inactive = { this = c:GSU NOT = { has_global_variable = toe_gg_ilvone_expel_done } }
+    possible = { this = c:GSU NOT = { has_global_variable = toe_great_game_resolved } }
+    complete = { has_global_variable = toe_gg_ilvone_expel_done }
+    invalid = { has_global_variable = toe_great_game_resolved }
+    weight = 5000
+    transferable = no
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_toe_gg_tortal = {
+    name = je_toe_gg_tortal_name
+    desc = je_toe_gg_tortal_desc
+    icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
+    group = je_group_objectives
+    is_shown_in_lobby = { OR = { this = c:XAI this = c:GSU } }
+    is_shown_when_inactive = { OR = { this = c:XAI this = c:GSU } NOT = { has_global_variable = toe_gg_tortal_done } }
+    possible = { OR = { this = c:XAI this = c:GSU } NOT = { has_global_variable = toe_great_game_resolved } }
+    complete = { has_global_variable = toe_gg_tortal_done }
+    invalid = { has_global_variable = toe_great_game_resolved }
+    weight = 5000
+    transferable = no
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_toe_gg_south_lefria = {
+    name = je_toe_gg_south_lefria_name
+    desc = je_toe_gg_south_lefria_desc
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+    group = je_group_objectives
+    is_shown_in_lobby = { OR = { this = c:XAI this = c:GSU } }
+    is_shown_when_inactive = { OR = { this = c:XAI this = c:GSU } NOT = { has_global_variable = toe_gg_south_lefria_done } }
+    possible = { OR = { this = c:XAI this = c:GSU } NOT = { has_global_variable = toe_great_game_resolved } }
+    complete = { has_global_variable = toe_gg_south_lefria_done }
+    invalid = { has_global_variable = toe_great_game_resolved }
+    weight = 5000
+    transferable = no
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}
