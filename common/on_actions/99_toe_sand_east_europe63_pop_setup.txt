@@ -1,5 +1,5 @@
 ﻿# ToE: East Europe 63 (STATE_NSM_311) starting population correction.
-# Keep population total unchanged: convert native culture to Trilian, then split religion 50/50.
+# Keep population total unchanged: convert native Sand culture to Trilian, then split religion 50/50.
 on_game_start = {
     on_actions = { toe_sand_east_europe63_pop_setup }
 }
@@ -9,6 +9,7 @@ toe_sand_east_europe63_pop_setup = {
         s:STATE_NSM_311 = {
             every_scope_state = {
                 every_pop = {
+                    limit = { culture = cu:nsm_map_xas }
                     change_pop_culture = {
                         target = cu:nsm_map_xal
                         value = 1.0
