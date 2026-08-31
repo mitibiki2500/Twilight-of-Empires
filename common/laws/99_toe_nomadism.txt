@@ -6,19 +6,23 @@
     unlocking_technologies = { toe_nomadism }
 
     modifier = {
-        # Homesteading base with aristocratic predominance.
-        building_group_bg_agriculture_allowed_collectivization_add = 0.5
-        building_group_bg_ranching_allowed_collectivization_add = 0.5
+        # Preserve a large subsistence-land base in incorporated states.
+        state_minimum_incorporated_subsistence_arable_land_add = 0.40
         country_aristocrats_pol_str_mult = 0.25
 
-        # Martial nomadic society.
+        # Peasant-levy style restriction: conscripts are limited to peasant-compatible units.
+        # This also prevents artillery conscription under this law.
+        country_can_only_conscript_peasants_bool = yes
         state_conscription_rate_add = 0.05
-        building_training_rate_mult = 0.25
-        country_military_goods_cost_mult = -0.20
+
+        # Nomadic military economy.
+        building_training_rate_mult = 0.20
+        country_military_goods_cost_mult = -0.10
     }
 
     on_enact = {
         custom_tooltip = toe_nomadism_aristocrats_af_tt
+        custom_tooltip = QUALIFICATIONS_OFFICERS_PEASANT_LEVIES_DESC
     }
 
     ai_enact_weight_modifier = {
