@@ -1,0 +1,20 @@
+﻿# ToE: one-time South Lefria cultural setup.
+on_game_start = {
+    on_actions = { toe_ilvone_lefria_game_start }
+}
+
+toe_ilvone_lefria_game_start = {
+    effect = {
+        every_country = {
+            every_scope_state = {
+                limit = {
+                    region = sr:region_nsm_south_lefria
+                }
+                convert_population = {
+                    target = cu:toe_ilvone_lefria
+                    value = 0.20
+                }
+            }
+        }
+    }
+}
