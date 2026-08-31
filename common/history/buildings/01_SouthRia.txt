@@ -2035,14 +2035,7 @@
 			create_building={
 				building="building_port"
 
-				create_building={
-					building="building_silk_plantation"
-					add_ownership={
-						country={ country="c:XBZ" levels=2 }
-					}
-					reserves=1
-					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
-				}
+
 				add_ownership={
 					country={
 						country="c:XCF"
@@ -2051,6 +2044,15 @@
 				}
 				activate_production_methods={ "pm_basic_port" }
 				reserves=1
+			}
+
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:XBZ" levels=2 }
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 
 		}

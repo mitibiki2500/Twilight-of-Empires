@@ -4,56 +4,64 @@
     "state_blocks": 534,
     "duplicate_state_ids": 0,
     "duplicate_region_state_groups": 0,
-    "duplicate_building_groups": 0,
+    "duplicate_building_groups": 1,
     "exact_duplicate_building_groups": 0,
     "brace_errors": 0
   },
   "files": {
     "00_NorthRia.txt": {
       "states": 78,
-      "bytes": 178359
+      "bytes": 169530
     },
     "01_SouthRia.txt": {
       "states": 26,
-      "bytes": 58825
+      "bytes": 54910
     },
     "02_WestEurope.txt": {
       "states": 65,
-      "bytes": 241179
+      "bytes": 227639
     },
     "03_EastEurope.txt": {
       "states": 102,
-      "bytes": 278964
+      "bytes": 263562
     },
     "04_NorthAfrica.txt": {
       "states": 70,
-      "bytes": 163730
+      "bytes": 154764
     },
     "05_SouthAfrica.txt": {
       "states": 44,
-      "bytes": 92424
+      "bytes": 88416
     },
     "06_WestAsia.txt": {
       "states": 72,
-      "bytes": 189532
+      "bytes": 178417
     },
     "07_EastAsia.txt": {
       "states": 6,
-      "bytes": 9723
+      "bytes": 9267
     },
     "08_CentralIslands.txt": {
       "states": 17,
-      "bytes": 46709
+      "bytes": 44679
     },
     "09_Oceania.txt": {
       "states": 54,
-      "bytes": 147211
+      "bytes": 139371
     }
   },
   "brace_errors": {},
   "duplicate_states": [],
   "duplicate_region_states": [],
-  "duplicate_buildings": [],
+  "duplicate_buildings": [
+    {
+      "file": "04_NorthAfrica.txt",
+      "state": "STATE_NSM_068",
+      "country": "XCW",
+      "building": "building_sugar_plantation",
+      "count": 2
+    }
+  ],
   "exact_duplicate_buildings": [],
   "government_administration": {
     "ATI": {
@@ -439,17 +447,17 @@
       }
     },
     "XAI": {
-      "total_levels": 34,
+      "total_levels": 51,
       "states": {
-        "STATE_NSM_036": 5,
+        "STATE_NSM_036": 8,
         "STATE_NSM_089": 1,
-        "STATE_NSM_192": 8,
-        "STATE_NSM_237": 4,
-        "STATE_NSM_259": 3,
-        "STATE_NSM_359": 3,
-        "STATE_NSM_390": 3,
+        "STATE_NSM_192": 13,
+        "STATE_NSM_237": 6,
+        "STATE_NSM_259": 5,
+        "STATE_NSM_359": 4,
+        "STATE_NSM_390": 5,
         "STATE_NSM_469": 3,
-        "STATE_NSM_485": 3,
+        "STATE_NSM_485": 5,
         "STATE_NSM_513": 1
       }
     },
@@ -538,10 +546,10 @@
       }
     },
     "XAS": {
-      "total_levels": 35,
+      "total_levels": 33,
       "states": {
         "STATE_NSM_108": 1,
-        "STATE_NSM_112": 3,
+        "STATE_NSM_112": 2,
         "STATE_NSM_116": 1,
         "STATE_NSM_150": 1,
         "STATE_NSM_168": 3,
@@ -549,7 +557,7 @@
         "STATE_NSM_247": 3,
         "STATE_NSM_250": 1,
         "STATE_NSM_277": 3,
-        "STATE_NSM_295": 2,
+        "STATE_NSM_295": 1,
         "STATE_NSM_311": 3,
         "STATE_NSM_322": 1,
         "STATE_NSM_368": 1,

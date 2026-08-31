@@ -4135,18 +4135,20 @@
 
 			create_building={
 
-				create_building={
-					building="building_silk_plantation"
-					add_ownership={
-						country={ country="c:REG" levels=2 }
-					}
-					reserves=1
-					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
-				}
+
 				building="building_iron_mine"
 				add_ownership={ country={ country="c:ATI" levels=3 } }
 				reserves=1
 				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" }
+			}
+
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:REG" levels=2 }
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 			create_building={
 				building="building_coal_mine"
@@ -6296,17 +6298,19 @@
 
 			create_building={
 
-				create_building={
-					building="building_silk_plantation"
-					add_ownership={
-						country={ country="c:SKR" levels=5 }
-					}
-					reserves=1
-					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
-				}
+
 				building="building_furniture_manufactory"
 				add_ownership={ building={ type="building_financial_district" country="c:TUK" levels=1 region="STATE_NSM_422" } }
 				reserves=1
+			}
+
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:SKR" levels=5 }
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 
 		}
@@ -6391,7 +6395,6 @@
 			}
 			create_building={
 				building="building_tooling_workshop"
-				add_ownership={
 				add_ownership={
 					building={
 						type="building_financial_district"

@@ -1271,7 +1271,10 @@
 
 			create_building = {
 				building = "building_sugar_plantation"
-				levels = 5
+				add_ownership={
+					country={ country="c:GSU" levels=5 }
+				}
+				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
 
@@ -1540,7 +1543,10 @@
 
 			create_building = {
 				building = "building_sugar_plantation"
-				levels = 5
+				add_ownership={
+					country={ country="c:GSU" levels=5 }
+				}
+				reserves=1
 				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
 

@@ -543,16 +543,18 @@
 						levels=1
 					}
 
-					create_building={
-						building="building_sugar_plantation"
-						add_ownership={
-							country={ country="c:XCW" levels=1 }
-						}
-						reserves=1
-						activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
-					}
+
 				}
 				reserves=1
+			}
+
+			create_building={
+				building="building_sugar_plantation"
+				add_ownership={
+					country={ country="c:XCW" levels=1 }
+				}
+				reserves=1
+				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
 			}
 			# source: NSM_world_trade_ports_resources.txt
 			create_building={
@@ -576,15 +578,17 @@
 					}
 				}
 
-				create_building={
-					building="building_silk_plantation"
-					add_ownership={
-						country={ country="c:XCW" levels=1 }
-					}
-					reserves=1
-					activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
+
+				reserves=1
+			}
+
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:XCW" levels=1 }
 				}
 				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 			# source: NSM_world_trade_ports_resources.txt
 			create_building={
@@ -853,15 +857,17 @@
 					}
 				}
 
-				create_building={
-					building="building_silk_plantation"
-					add_ownership={
-						country={ country="c:XDL" levels=1 }
-					}
-					reserves=1
-					activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
+
+				reserves=1
+			}
+
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:XDL" levels=1 }
 				}
 				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 			# source: NSM_world_trade_ports_resources.txt
 			create_building={
@@ -1291,15 +1297,17 @@
 					}
 				}
 
-				create_building={
-					building="building_silk_plantation"
-					add_ownership={
-						country={ country="c:XCZ" levels=1 }
-					}
-					reserves=1
-					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+
+				reserves=1
+			}
+
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:XCZ" levels=1 }
 				}
 				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 			# source: NSM_world_trade_ports_resources.txt
 			create_building={
@@ -1743,14 +1751,7 @@
 				add_ownership={
 					building={
 
-						create_building={
-							building="building_silk_plantation"
-							add_ownership={
-								country={ country="c:XCK" levels=1 }
-							}
-							reserves=1
-							activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts" }
-						}
+
 						type="building_manor_house"
 						country="c:XCK"
 						levels=1
@@ -1759,6 +1760,15 @@
 				}
 				reserves=1
 				activate_production_methods={ "default_building_cotton_plantation" }
+			}
+
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:XCK" levels=1 }
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 			# source: NSM_world_trade_ports_resources.txt
 			create_building={
@@ -2860,15 +2870,17 @@
 					}
 				}
 
-				create_building={
-					building="building_silk_plantation"
-					add_ownership={
-						country={ country="c:XCL" levels=1 }
-					}
-					reserves=1
-					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
+
+				reserves=1
+			}
+
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:XCL" levels=1 }
 				}
 				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 			# source: NSM_world_trade_ports_resources.txt
 			create_building={
@@ -3966,20 +3978,22 @@
 				add_ownership={
 					country={
 
-						create_building={
-							building="building_silk_plantation"
-							add_ownership={
-								country={ country="c:XAS" levels=1 }
-							}
-							reserves=1
-							activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
-						}
+
 						country="c:XAS"
 						levels=1
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
+			}
+
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:XAS" levels=1 }
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 
 			
@@ -4084,14 +4098,7 @@
 			create_building={
 				building="building_livestock_ranch"
 
-				create_building={
-					building="building_silk_plantation"
-					add_ownership={
-						country={ country="c:XCU" levels=1 }
-					}
-					reserves=1
-					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
-				}
+
 				add_ownership={
 					building={
 						type="building_manor_house"
@@ -4102,6 +4109,15 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+			}
+
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:XCU" levels=1 }
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 			
 			create_building={
@@ -4507,19 +4523,21 @@
 						country="c:XCN"
 						levels=4
 
-						create_building={
-							building="building_silk_plantation"
-							add_ownership={
-								country={ country="c:XCN" levels=1 }
-							}
-							reserves=1
-							activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
-						}
+
 						region="STATE_NSM_324"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" }
+			}
+
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:XCN" levels=1 }
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 			
 			create_building={
@@ -6175,17 +6193,19 @@
 						region="STATE_NSM_515"
 					}
 
-					create_building={
-						building="building_silk_plantation"
-						add_ownership={
-							country={ country="c:XAX" levels=2 }
-						}
-						reserves=1
-						activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_citrus_orchards" }
-					}
+
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" }
+			}
+
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:XAX" levels=2 }
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 			
 			create_building={

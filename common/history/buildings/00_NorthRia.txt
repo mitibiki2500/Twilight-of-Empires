@@ -5092,18 +5092,18 @@
 				activate_production_methods={ "pm_lathe" "pm_automation_disabled" "pm_luxury_furniture" }
 			}
 			create_building={
-				b
-				create_building={
-					building="building_silk_plantation"
-					add_ownership={
-						country={ country="c:XBW" levels=4 }
-					}
-					reserves=1
-					activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
-				}
-				uilding="building_glassworks"
+				building="building_glassworks"
 				add_ownership={ building={ type="building_financial_district" country="c:XCD" levels=1 region="STATE_NSM_424" } }
 				reserves=1
+			}
+
+			create_building={
+				building="building_silk_plantation"
+				add_ownership={
+					country={ country="c:XBW" levels=4 }
+				}
+				reserves=1
+				activate_production_methods={ "default_building_silk_plantation" "pm_road_carts" }
 			}
 			create_building={
 				building="building_paper_mill"
