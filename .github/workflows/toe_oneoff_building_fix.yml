@@ -1,17 +1,16 @@
-name: ToE one-off confirmed building fix
+name: ToE one-off duplicate building merge
 
 on:
   push:
     branches: [ main ]
     paths:
-      - 'tools/fix_known_building_corruption.py'
       - '.github/workflows/toe_oneoff_building_fix.yml'
 
 permissions:
   contents: write
 
 jobs:
-  fix-and-audit:
+  merge-and-audit:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
@@ -22,43 +21,50 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Correct one known pre-fix inventory blind spot
+      - name: Merge confirmed duplicate sugar plantation
         run: |
           python - <<'PY'
           from pathlib import Path
-          p=Path('tools/fix_known_building_corruption.py')
-          s=p.read_text(encoding='utf-8')
-          old='''    after_buildings = counts_by_building(files)\n    if before_buildings != after_buildings:\n        raise RuntimeError(\n            f"building-type inventory changed unexpectedly: before={before_buildings} after={after_buildings}"\n        )\n'''
-          new='''    after_buildings = counts_by_building(files)\n    expected_after = before_buildings.copy()\n    # The source glassworks at NorthRia:5094 has its `building` token physically\n    # split by the pasted silk block, so it is absent from the parsable pre-fix inventory.\n    expected_after["building_glassworks"] += 1\n    if expected_after != after_buildings:\n        raise RuntimeError(\n            f"building-type inventory changed unexpectedly: expected={expected_after} after={after_buildings}"\n        )\n'''
-          if s.count(old) != 1:
-              raise SystemExit('target inventory validation block not found exactly once')
-          p.write_text(s.replace(old,new,1),encoding='utf-8')
+          p=Path('common/history/buildings/04_NorthAfrica.txt')
+          s=p.read_text(encoding='utf-8-sig')
+          start=s.index('\ts:STATE_NSM_068={')
+          end=s.index('\ts:STATE_NSM_101={', start)
+          section=s[start:end]
+          assert section.count('building="building_sugar_plantation"') == 2
+          small='''\t\t\tcreate_building={\n\t\t\t\tbuilding="building_sugar_plantation"\n\t\t\t\tadd_ownership={\n\t\t\t\t\tcountry={ country="c:XCW" levels=1 }\n\t\t\t\t}\n\t\t\t\treserves=1\n\t\t\t\tactivate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }\n\t\t\t}\n'''
+          large='''\t\t\tcreate_building={\n\t\t\t\tbuilding="building_sugar_plantation"\n\t\t\t\tadd_ownership={\n\t\t\t\t\tcountry={\n\t\t\t\t\t\tcountry="c:XCW"\n\t\t\t\t\t\tlevels=3\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treserves=1\n\t\t\t\tactivate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }\n\t\t\t}\n'''
+          merged=large.replace('levels=3','levels=4')
+          assert section.count(small) == 1
+          assert section.count(large) == 1
+          section=section.replace(small,'',1).replace(large,merged,1)
+          assert section.count('building="building_sugar_plantation"') == 1
+          s=s[:start]+section+s[end:]
+          p.write_text(s,encoding='utf-8-sig',newline='\n')
           PY
-      - name: Apply only confirmed building-history fixes
-        run: python tools/fix_known_building_corruption.py
-      - name: Audit repaired structure
+      - name: Audit repaired building history
         run: |
           python tools/audit_building_structure.py
+          python tools/audit_buildings.py
           python - <<'PY'
           import json
           from pathlib import Path
-          r=json.loads(Path('tools/building_structure_report.json').read_text(encoding='utf-8'))
-          assert r['ok'], r
-          assert r['totals']['state_tokens'] == r['totals']['nested_states'], r['totals']
-          assert r['totals']['nested_create_buildings'] == 0, r['nested_create_buildings']
-          assert r['totals']['split_token_fragments'] == 0, r['split_token_fragments']
-          print('Verified structure:', r['totals'])
+          a=json.loads(Path('tools/building_structure_report.json').read_text(encoding='utf-8'))
+          b=json.loads(Path('tools/building_audit_report.json').read_text(encoding='utf-8'))
+          assert a['ok'], a
+          assert a['totals']['state_tokens'] == a['totals']['nested_states'] == 534
+          assert a['totals']['nested_create_buildings'] == 0
+          assert a['totals']['split_token_fragments'] == 0
+          assert b['summary']['brace_errors'] == 0
+          assert b['summary']['duplicate_state_ids'] == 0
+          assert b['summary']['duplicate_region_state_groups'] == 0
+          assert b['summary']['duplicate_building_groups'] == 0, b['duplicate_buildings']
+          print('All building audits clean')
           PY
-      - name: Run existing building semantic audit
-        run: python tools/audit_buildings.py
-      - name: Commit repaired history and diagnostics
+      - name: Commit duplicate merge and diagnostics
         run: |
-          if [ -z "$(git status --porcelain -- common/history/buildings tools/building_structure_report.json tools/building_audit_report.json)" ]; then
-            echo 'No building changes required'
-            exit 0
-          fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add common/history/buildings tools/building_structure_report.json tools/building_audit_report.json
-          git commit -m 'Fix confirmed corrupted building history blocks'
+          git add common/history/buildings/04_NorthAfrica.txt tools/building_structure_report.json tools/building_audit_report.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Merge duplicate North Africa sugar plantation block'
           git push origin HEAD:main
