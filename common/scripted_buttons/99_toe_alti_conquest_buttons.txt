@@ -1,21 +1,26 @@
 ﻿# Alti Great Conquest claim buttons.
-# Each button costs 20 infamy. AI may press only at 80 infamy or below, so the result never exceeds 100.
+# Each campaign costs 20 infamy. Human players may use the buttons regardless of infamy;
+# AI execution is handled separately and only while infamy is 80 or lower.
 
 REPLACE_OR_CREATE:toe_alti_claim_sparia_button = {
+    name = "toe_alti_claim_sparia_button"
+    desc = "toe_alti_claim_sparia_button_desc"
     visible = { this = c:SKR NOT = { has_variable = toe_altia_sparia_claims_granted } }
     possible = { OR = { is_ai = no infamy <= 80 } }
     effect = { toe_alti_grant_sparia_claims = yes }
-    ai_chance = { base = 1000 modifier = { factor = 0 infamy > 80 } }
 }
 
 REPLACE_OR_CREATE:toe_alti_claim_altia_button = {
+    name = "toe_alti_claim_altia_button"
+    desc = "toe_alti_claim_altia_button_desc"
     visible = { this = c:SKR NOT = { has_variable = toe_altia_altia_claims_granted } }
     possible = { OR = { is_ai = no infamy <= 80 } }
     effect = { toe_alti_grant_altia_claims = yes }
-    ai_chance = { base = 1000 modifier = { factor = 0 infamy > 80 } }
 }
 
 REPLACE_OR_CREATE:toe_alti_claim_gorton_button = {
+    name = "toe_alti_claim_gorton_button"
+    desc = "toe_alti_claim_gorton_button_desc"
     visible = { this = c:SKR NOT = { has_variable = toe_altia_gorton_claims_granted } }
     possible = {
         # 大ジュズを傀儡化済み、または大ジュズの2州を直接支配していること。
@@ -44,26 +49,28 @@ REPLACE_OR_CREATE:toe_alti_claim_gorton_button = {
             }
         }
     }
-    ai_chance = { base = 1000 modifier = { factor = 0 infamy > 80 } }
 }
 
 REPLACE_OR_CREATE:toe_alti_claim_paido_button = {
+    name = "toe_alti_claim_paido_button"
+    desc = "toe_alti_claim_paido_button_desc"
     visible = { this = c:SKR NOT = { has_variable = toe_altia_paido_claims_granted } }
     possible = { OR = { is_ai = no infamy <= 80 } }
     effect = { toe_alti_grant_paido_claims = yes }
-    ai_chance = { base = 1000 modifier = { factor = 0 infamy > 80 } }
 }
 
 REPLACE_OR_CREATE:toe_alti_claim_trilia_button = {
+    name = "toe_alti_claim_trilia_button"
+    desc = "toe_alti_claim_trilia_button_desc"
     visible = { this = c:SKR NOT = { has_variable = toe_altia_trilia_claims_granted } }
     possible = { OR = { is_ai = no infamy <= 80 } }
     effect = { toe_alti_grant_trilia_claims = yes }
-    ai_chance = { base = 1000 modifier = { factor = 0 infamy > 80 } }
 }
 
 REPLACE_OR_CREATE:toe_alti_claim_ilvone_button = {
+    name = "toe_alti_claim_ilvone_button"
+    desc = "toe_alti_claim_ilvone_button_desc"
     visible = { this = c:SKR NOT = { has_variable = toe_altia_ilvone_claims_granted } }
     possible = { OR = { is_ai = no infamy <= 80 } }
     effect = { toe_alti_grant_ilvone_claims = yes }
-    ai_chance = { base = 1000 modifier = { factor = 0 infamy > 80 } }
 }
