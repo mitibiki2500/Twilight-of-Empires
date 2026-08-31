@@ -1,0 +1,109 @@
+﻿# ToE Nomadism: use the same advanced conscription-training restrictions as Peasant Levies.
+
+REPLACE:pm_advanced_tactics_training_conscription = {
+	texture = "gfx/interface/icons/production_method_icons/squad_infantry.dds"
+
+	profession_ratio = {
+		soldiers = 90
+		officers = 10
+	}
+
+	unlocking_technologies = {
+		military_statistics
+	}
+	disallowing_laws = {
+		law_peasant_levies
+		law_warrior_caste
+		law_toe_nomadism
+	}
+	building_modifiers = {
+		unscaled = {
+			building_training_rate_add = 50
+		}
+
+		level_scaled = {
+			building_training_rate_add = 21
+		}
+	}
+}
+
+REPLACE:pm_training_streamlining_conscription = {
+	texture = "gfx/interface/icons/production_method_icons/skirmish_infantry.dds"
+
+	profession_ratio = {
+		soldiers = 85
+		officers = 15
+	}
+
+	unlocking_technologies = {
+		wargaming
+	}
+	disallowing_laws = {
+		law_peasant_levies
+		law_warrior_caste
+		law_toe_nomadism
+	}
+	building_modifiers = {
+		unscaled = {
+			building_training_rate_add = 50
+		}
+
+		level_scaled = {
+			building_training_rate_add = 24
+		}
+	}
+}
+
+REPLACE:pm_nco_incorporation_conscription = {
+	texture = "gfx/interface/icons/production_method_icons/nco_incorporation.dds"
+
+	profession_ratio = {
+		soldiers = 80
+		officers = 20
+	}
+
+	unlocking_technologies = {
+		nco_training
+	}
+	disallowing_laws = {
+		law_peasant_levies
+		law_warrior_caste
+		law_toe_nomadism
+	}
+	building_modifiers = {
+		unscaled = {
+			building_training_rate_add = 50
+		}
+
+		level_scaled = {
+			building_training_rate_add = 27
+		}
+	}
+}
+
+REPLACE:pm_mobile_warfare_tactics_conscription = {
+	texture = "gfx/interface/icons/production_method_icons/motorised_logistics.dds"
+
+	profession_ratio = {
+		soldiers = 75
+		officers = 25
+	}
+
+	unlocking_technologies = {
+		mobile_armor
+	}
+	disallowing_laws = {
+		law_peasant_levies
+		law_warrior_caste
+		law_toe_nomadism
+	}
+	building_modifiers = {
+		unscaled = {
+			building_training_rate_add = 50
+		}
+
+		level_scaled = {
+			building_training_rate_add = 30
+		}
+	}
+}
