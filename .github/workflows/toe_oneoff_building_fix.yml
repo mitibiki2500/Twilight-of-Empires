@@ -1,17 +1,17 @@
-name: ToE one-off building corruption audit
+name: ToE one-off confirmed building fix
 
 on:
   push:
     branches: [ main ]
     paths:
-      - 'tools/audit_building_structure.py'
+      - 'tools/fix_known_building_corruption.py'
       - '.github/workflows/toe_oneoff_building_fix.yml'
 
 permissions:
   contents: write
 
 jobs:
-  audit:
+  fix-and-audit:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
@@ -22,16 +22,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Audit current main building history
-        run: python tools/audit_building_structure.py
-      - name: Commit diagnostics only
+      - name: Apply only confirmed building-history fixes
+        run: python tools/fix_known_building_corruption.py
+      - name: Audit repaired structure
         run: |
-          if [ -z "$(git status --porcelain -- tools/building_structure_report.json)" ]; then
-            echo 'No report change'
+          python tools/audit_building_structure.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('tools/building_structure_report.json').read_text(encoding='utf-8'))
+          assert r['ok'], r
+          assert r['totals']['state_tokens'] == r['totals']['nested_states'], r['totals']
+          assert r['totals']['nested_create_buildings'] == 0, r['nested_create_buildings']
+          assert r['totals']['split_token_fragments'] == 0, r['split_token_fragments']
+          print('Verified structure:', r['totals'])
+          PY
+      - name: Run existing building semantic audit
+        run: python tools/audit_buildings.py
+      - name: Commit repaired history and diagnostics
+        run: |
+          if [ -z "$(git status --porcelain -- common/history/buildings tools/building_structure_report.json tools/building_audit_report.json)" ]; then
+            echo 'No building changes required'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tools/building_structure_report.json
-          git commit -m 'Record current building corruption diagnostics'
+          git add common/history/buildings tools/building_structure_report.json tools/building_audit_report.json
+          git commit -m 'Fix confirmed corrupted building history blocks'
           git push origin HEAD:main
