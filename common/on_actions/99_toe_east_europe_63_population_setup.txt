@@ -1,0 +1,29 @@
+﻿# ToE: East Europe 63 (STATE_NSM_311) starting population adjustment.
+# Population total is unchanged: culture becomes Trilian and religion is split 50/50
+# between Central (sunni) and the Trilian Church (catholic).
+
+on_game_start = {
+    on_actions = { toe_east_europe_63_population_setup }
+}
+
+toe_east_europe_63_population_setup = {
+    effect = {
+        s:STATE_NSM_311 = {
+            every_scope_state = {
+                limit = { owner = c:XAS }
+
+                every_pop = {
+                    change_pop_culture = {
+                        target = cu:nsm_map_xal
+                        value = 1.0
+                    }
+                }
+
+                convert_population = {
+                    target = rel:catholic
+                    value = 0.50
+                }
+            }
+        }
+    }
+}
