@@ -1,63 +1,22 @@
 ﻿# Alti Great Conquest claim buttons.
-# Players choose when to pay 20 infamy and receive claims. AI is hard-blocked at 70+ infamy.
+# Each button costs 20 infamy. AI may press only at 80 infamy or below, so the result never exceeds 100.
 
 REPLACE_OR_CREATE:toe_alti_claim_sparia_button = {
-    visible = {
-        this = c:SKR
-        NOT = { has_variable = toe_altia_sparia_claims_granted }
-    }
-
-    possible = {
-        OR = {
-            is_ai = no
-            infamy < 70
-        }
-    }
-
-    effect = {
-        toe_alti_grant_sparia_claims = yes
-    }
-
-    ai_chance = {
-        base = 100
-        modifier = {
-            factor = 0
-            infamy >= 70
-        }
-    }
+    visible = { this = c:SKR NOT = { has_variable = toe_altia_sparia_claims_granted } }
+    possible = { OR = { is_ai = no infamy <= 80 } }
+    effect = { toe_alti_grant_sparia_claims = yes }
+    ai_chance = { base = 1000 modifier = { factor = 0 infamy > 80 } }
 }
 
 REPLACE_OR_CREATE:toe_alti_claim_altia_button = {
-    visible = {
-        this = c:SKR
-        NOT = { has_variable = toe_altia_altia_claims_granted }
-    }
-
-    possible = {
-        OR = {
-            is_ai = no
-            infamy < 70
-        }
-    }
-
-    effect = {
-        toe_alti_grant_altia_claims = yes
-    }
-
-    ai_chance = {
-        base = 100
-        modifier = {
-            factor = 0
-            infamy >= 70
-        }
-    }
+    visible = { this = c:SKR NOT = { has_variable = toe_altia_altia_claims_granted } }
+    possible = { OR = { is_ai = no infamy <= 80 } }
+    effect = { toe_alti_grant_altia_claims = yes }
+    ai_chance = { base = 1000 modifier = { factor = 0 infamy > 80 } }
 }
-REPLACE_OR_CREATE:toe_alti_claim_gorton_button = {
-    visible = {
-        this = c:SKR
-        NOT = { has_variable = toe_altia_gorton_claims_granted }
-    }
 
+REPLACE_OR_CREATE:toe_alti_claim_gorton_button = {
+    visible = { this = c:SKR NOT = { has_variable = toe_altia_gorton_claims_granted } }
     possible = {
         # 大ジュズを傀儡化済み、または大ジュズの2州を直接支配していること。
         OR = {
@@ -67,18 +26,14 @@ REPLACE_OR_CREATE:toe_alti_claim_gorton_button = {
                 owns_entire_state_region = STATE_NSM_430
             }
         }
+        # ゴートン改革JEの失敗後にのみ一発併合を解禁する。
+        c:GOT ?= { has_variable = toe_gorton_reform_failed }
         # 1850年までの初期停戦中は押せない。
         NOT = { has_truce_with = c:GOT }
-        OR = {
-            is_ai = no
-            infamy < 70
-        }
+        OR = { is_ai = no infamy <= 80 }
     }
-
     effect = {
-        # 既存の請求権・悪名処理は維持する。
         toe_alti_grant_gorton_claims = yes
-        # ゴートン併合の外交戦を開始する。
         c:GOT = {
             create_diplomatic_play = {
                 name = toe_alti_gorton_annexation_play
@@ -89,89 +44,26 @@ REPLACE_OR_CREATE:toe_alti_claim_gorton_button = {
             }
         }
     }
-
-    ai_chance = {
-        base = 100
-        modifier = { factor = 0 infamy >= 70 }
-    }
+    ai_chance = { base = 1000 modifier = { factor = 0 infamy > 80 } }
 }
 
-
 REPLACE_OR_CREATE:toe_alti_claim_paido_button = {
-    visible = {
-        this = c:SKR
-        NOT = { has_variable = toe_altia_paido_claims_granted }
-    }
-
-    possible = {
-        OR = {
-            is_ai = no
-            infamy < 70
-        }
-    }
-
-    effect = {
-        toe_alti_grant_paido_claims = yes
-    }
-
-    ai_chance = {
-        base = 100
-        modifier = {
-            factor = 0
-            infamy >= 70
-        }
-    }
+    visible = { this = c:SKR NOT = { has_variable = toe_altia_paido_claims_granted } }
+    possible = { OR = { is_ai = no infamy <= 80 } }
+    effect = { toe_alti_grant_paido_claims = yes }
+    ai_chance = { base = 1000 modifier = { factor = 0 infamy > 80 } }
 }
 
 REPLACE_OR_CREATE:toe_alti_claim_trilia_button = {
-    visible = {
-        this = c:SKR
-        NOT = { has_variable = toe_altia_trilia_claims_granted }
-    }
-
-    possible = {
-        OR = {
-            is_ai = no
-            infamy < 70
-        }
-    }
-
-    effect = {
-        toe_alti_grant_trilia_claims = yes
-    }
-
-    ai_chance = {
-        base = 100
-        modifier = {
-            factor = 0
-            infamy >= 70
-        }
-    }
+    visible = { this = c:SKR NOT = { has_variable = toe_altia_trilia_claims_granted } }
+    possible = { OR = { is_ai = no infamy <= 80 } }
+    effect = { toe_alti_grant_trilia_claims = yes }
+    ai_chance = { base = 1000 modifier = { factor = 0 infamy > 80 } }
 }
 
 REPLACE_OR_CREATE:toe_alti_claim_ilvone_button = {
-    visible = {
-        this = c:SKR
-        NOT = { has_variable = toe_altia_ilvone_claims_granted }
-    }
-
-    possible = {
-        OR = {
-            is_ai = no
-            infamy < 70
-        }
-    }
-
-    effect = {
-        toe_alti_grant_ilvone_claims = yes
-    }
-
-    ai_chance = {
-        base = 100
-        modifier = {
-            factor = 0
-            infamy >= 70
-        }
-    }
+    visible = { this = c:SKR NOT = { has_variable = toe_altia_ilvone_claims_granted } }
+    possible = { OR = { is_ai = no infamy <= 80 } }
+    effect = { toe_alti_grant_ilvone_claims = yes }
+    ai_chance = { base = 1000 modifier = { factor = 0 infamy > 80 } }
 }
-
