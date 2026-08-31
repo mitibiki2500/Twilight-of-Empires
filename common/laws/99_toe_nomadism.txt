@@ -8,6 +8,13 @@
     modifier = {
         # Preserve a large subsistence-land base in incorporated states.
         state_minimum_incorporated_subsistence_arable_land_add = 0.40
+
+        # Preserve the self-farming effects of Homesteading that would otherwise be lost
+        # when Nomadism replaces it in the same law group.
+        country_farmers_pol_str_mult = 0.25
+        building_group_bg_agriculture_allowed_collectivization_add = 0.5
+        building_group_bg_ranching_allowed_collectivization_add = 0.5
+
         country_aristocrats_pol_str_mult = 0.25
 
         # Peasant-levy style restriction: conscripts are limited to peasant-compatible units.
