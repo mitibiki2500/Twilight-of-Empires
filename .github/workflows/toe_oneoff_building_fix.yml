@@ -1,17 +1,17 @@
-name: ToE one-off building corruption fix
+name: ToE one-off building corruption audit
 
 on:
   push:
     branches: [ main ]
     paths:
-      - 'tools/fix_known_building_corruption.py'
+      - 'tools/audit_building_structure.py'
       - '.github/workflows/toe_oneoff_building_fix.yml'
 
 permissions:
   contents: write
 
 jobs:
-  fix:
+  audit:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
@@ -22,26 +22,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Fix known structural corruption
-        run: python tools/fix_known_building_corruption.py
-      - name: Audit building history
+      - name: Audit current main building history
+        run: python tools/audit_building_structure.py
+      - name: Commit diagnostics only
         run: |
-          python tools/audit_building_structure.py
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          r=json.loads(Path('tools/building_structure_report.json').read_text(encoding='utf-8'))
-          assert r['ok'], r
-          print(r['totals'])
-          PY
-      - name: Commit only building fixes and diagnostics
-        run: |
-          if [ -z "$(git status --porcelain -- common/history/buildings tools/building_structure_report.json)" ]; then
-            echo 'No building changes required'
+          if [ -z "$(git status --porcelain -- tools/building_structure_report.json)" ]; then
+            echo 'No report change'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add common/history/buildings tools/building_structure_report.json
-          git commit -m 'Fix corrupted building history structure'
+          git add tools/building_structure_report.json
+          git commit -m 'Record current building corruption diagnostics'
           git push origin HEAD:main
