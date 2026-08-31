@@ -1,12 +1,14 @@
 ﻿# ToE Nomadism compatibility for subsistence ownership PMs.
-# Keep vanilla Serfdom PMs untouched. Nomadism uses the vanilla Homesteading PM instead.
+# Do not replace Homesteading: keeping it vanilla prevents Nomadism from hiding/overwriting the existing farm ownership option.
+# Nomadism additionally permits the old-world Peasant Proprietorship subsistence PM.
 
-REPLACE:pm_homesteading_building_subsistence = {
+REPLACE:pm_peasant_proprietorship_building_subsistence = {
 	texture = "gfx/interface/icons/production_method_icons/homesteading.dds"
 	unlocking_laws = {
-		law_homesteading
+		law_peasant_proprietorship
 		law_toe_nomadism
 	}
+
 	building_modifiers = {
 		workforce_scaled = {
 			goods_output_grain_add = 0.25
@@ -17,8 +19,8 @@ REPLACE:pm_homesteading_building_subsistence = {
 		}
 
 		level_scaled = {
-			building_employment_peasants_add = -100
-			building_employment_farmers_add = 100
+			building_employment_peasants_add = -50
+			building_employment_farmers_add = 50
 		}
 	}
 }
