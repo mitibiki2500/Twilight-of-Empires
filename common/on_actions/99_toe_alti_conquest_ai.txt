@@ -1,0 +1,83 @@
+﻿# AI handling for Arti's Great Conquest scripted buttons.
+# Scripted buttons themselves have no confirmed AI-click hook in Victoria 3 1.13,
+# so AI Arti executes the same button effects from the monthly country pulse.
+
+on_monthly_pulse_country = {
+    on_actions = { toe_alti_conquest_ai_monthly }
+}
+
+toe_alti_conquest_ai_monthly = {
+    trigger = {
+        this = c:SKR
+        is_ai = yes
+        infamy <= 80
+    }
+
+    effect = {
+        if = {
+            limit = {
+                has_journal_entry = je_nsm_altia_conquest_sparia
+                NOT = { has_variable = toe_altia_sparia_claims_granted }
+            }
+            toe_alti_grant_sparia_claims = yes
+        }
+
+        if = {
+            limit = {
+                has_journal_entry = je_nsm_altia_conquest_altia
+                NOT = { has_variable = toe_altia_altia_claims_granted }
+            }
+            toe_alti_grant_altia_claims = yes
+        }
+
+        if = {
+            limit = {
+                has_journal_entry = je_nsm_altia_conquest_gorton
+                NOT = { has_variable = toe_altia_gorton_claims_granted }
+                OR = {
+                    has_diplomatic_pact = { who = c:XGG type = puppet }
+                    AND = {
+                        owns_entire_state_region = STATE_NSM_258
+                        owns_entire_state_region = STATE_NSM_430
+                    }
+                }
+                c:GOT ?= { has_variable = toe_gorton_reform_failed }
+                NOT = { has_truce_with = c:GOT }
+            }
+            toe_alti_grant_gorton_claims = yes
+            c:GOT = {
+                create_diplomatic_play = {
+                    name = toe_alti_gorton_annexation_play
+                    initiator = c:SKR
+                    target_country = c:GOT
+                    type = dp_annex_war
+                    war = no
+                }
+            }
+        }
+
+        if = {
+            limit = {
+                has_journal_entry = je_nsm_altia_conquest_paido
+                NOT = { has_variable = toe_altia_paido_claims_granted }
+            }
+            toe_alti_grant_paido_claims = yes
+        }
+
+        if = {
+            limit = {
+                has_journal_entry = je_nsm_altia_conquest_trilia
+                NOT = { has_variable = toe_altia_trilia_claims_granted }
+            }
+            toe_alti_grant_trilia_claims = yes
+        }
+
+        if = {
+            limit = {
+                has_journal_entry = je_nsm_altia_conquest_ilvone
+                NOT = { has_variable = toe_altia_ilvone_claims_granted }
+            }
+            toe_alti_grant_ilvone_claims = yes
+        }
+    }
+}
