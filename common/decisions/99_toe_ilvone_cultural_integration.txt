@@ -1,0 +1,46 @@
+﻿# ToE: Ilvone cultural integration decisions.
+
+toe_ilvone_accept_latin_ria = {
+    is_shown = {
+        this = c:GSU
+        NOT = { country_has_primary_culture = cu:nsm_map_xbo }
+    }
+
+    possible = {
+        has_law_or_variant = law_type:law_racial_segregation
+        has_interest_marker_in_region = region_nsm_west_ria
+        any_scope_state = {
+            region = sr:region_nsm_west_ria
+            is_incorporated = yes
+            count >= 3
+        }
+    }
+
+    when_taken = {
+        add_primary_culture = cu:nsm_map_xbo
+    }
+
+    ai_chance = { value = 100 }
+}
+
+toe_ilvone_accept_ilvone_lefria = {
+    is_shown = {
+        this = c:GSU
+        NOT = { country_has_primary_culture = cu:toe_ilvone_lefria }
+    }
+
+    possible = {
+        has_law_or_variant = law_type:law_cultural_exclusion
+        any_scope_state = {
+            region = sr:region_nsm_south_lefria
+            is_incorporated = yes
+            count >= 3
+        }
+    }
+
+    when_taken = {
+        add_primary_culture = cu:toe_ilvone_lefria
+    }
+
+    ai_chance = { value = 100 }
+}
