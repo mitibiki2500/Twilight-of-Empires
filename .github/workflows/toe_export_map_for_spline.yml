@@ -1,0 +1,40 @@
+name: ToE export map for spline rebuild
+
+on:
+  push:
+    paths:
+      - '.github/workflows/toe_export_map_for_spline.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect spline rebuild inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out/gfx/map/spline_network out/gfx/map/map_object_data out/map_data
+          cp gfx/map/spline_network/spline_network.splnet out/gfx/map/spline_network/
+          for f in generated_map_object_locators_city.txt generated_map_object_locators_farm.txt generated_map_object_locators_mine.txt generated_map_object_locators_wood.txt generated_map_object_locators_port.txt; do
+            if [ -f "gfx/map/map_object_data/$f" ]; then cp "gfx/map/map_object_data/$f" out/gfx/map/map_object_data/; fi
+          done
+          for f in definition.csv provinces.png adjacencies.csv; do
+            if [ -f "map_data/$f" ]; then cp "map_data/$f" out/map_data/; fi
+          done
+          find map_data -maxdepth 2 -type f \( -name '*state*' -o -name '*region*' -o -name '*sea*' \) -print0 | while IFS= read -r -d '' f; do
+            mkdir -p "out/$(dirname "$f")"
+            cp "$f" "out/$f"
+          done
+          sha256sum out/gfx/map/spline_network/spline_network.splnet > out/SHA256.txt
+          find out -type f | sort > out/FILES.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: toe-spline-rebuild-inputs
+          path: out
+          if-no-files-found: error
+          retention-days: 1
