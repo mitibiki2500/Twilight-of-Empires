@@ -1,4 +1,4 @@
-name: ToE Spline Analyze
+name: ToE Spline Candidate Package
 
 on:
   push:
@@ -10,87 +10,64 @@ permissions:
   contents: read
 
 jobs:
-  analyze:
+  package:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Analyze spline and hub coverage
+      - name: Fetch branches
+        run: git fetch origin '+refs/heads/*:refs/remotes/origin/*'
+      - name: Compare and package
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p artifact/gfx/map/spline_network artifact/gfx/map/map_object_data artifact/map_data
-          cp gfx/map/spline_network/spline_network.splnet artifact/gfx/map/spline_network/
-          for f in city farm mine wood port; do
-            p="gfx/map/map_object_data/generated_map_object_locators_${f}.txt"
-            [ -f "$p" ] && cp "$p" artifact/gfx/map/map_object_data/
-          done
-          [ -f map_data/adjacencies.csv ] && cp map_data/adjacencies.csv artifact/map_data/
-          [ -f map_data/definition.csv ] && cp map_data/definition.csv artifact/map_data/
-          [ -f map_data/definitions.txt ] && cp map_data/definitions.txt artifact/map_data/
-          python3 - <<'PY' | tee artifact/spline_analysis.txt
-          import re, struct, hashlib, collections, math, os, subprocess
           p='gfx/map/spline_network/spline_network.splnet'
-          d=open(p,'rb').read()
-          print('CURRENT size',len(d),'sha256',hashlib.sha256(d).hexdigest())
-          commits=['8239ab0b10670b01ca9174a6b86b157778aa813b','862ad56cfbc904f9dffe3c22bebc2468c6cd03f8','1a2096457580b25c02fc32b79da996f17b2941eb']
-          for c in commits:
-              try:
-                  b=subprocess.check_output(['git','show',f'{c}:{p}'])
-                  print('HISTORY',c,'size',len(b),'sha256',hashlib.sha256(b).hexdigest())
-              except Exception as e: print('HISTORY_FAIL',c,e)
-          pat=re.compile(rb'\x14\x00(.{4})\x4c\x00\x01\x00\x03\x00\x0d\x00(.{4})\x0d\x00(.{4})',re.S)
-          rec=[]
-          for m in pat.finditer(d):
-              ident=struct.unpack('<I',m.group(1))[0]
-              x=struct.unpack('<f',m.group(2))[0]; z=struct.unpack('<f',m.group(3))[0]
-              if math.isfinite(x) and math.isfinite(z): rec.append((m.start(),ident,x,z))
-          print('COORD_RECORDS',len(rec),'unique',len({r[1] for r in rec}))
-          # parse hub locators and nearest spline coordinate after Z flip (map height 3616)
-          lp=re.compile(r'\{\s*id\s*=\s*(\d+)\s*position\s*=\s*\{\s*([-+0-9.eE]+)\s+([-+0-9.eE]+)\s+([-+0-9.eE]+)\s*\}',re.S)
-          coords=[(ident,x,z,off) for off,ident,x,z in rec]
-          byid={ident:(x,z,off) for off,ident,x,z in rec}
-          all_matches=[]
-          for typ in ['city','farm','mine','wood','port']:
-              fn=f'gfx/map/map_object_data/generated_map_object_locators_{typ}.txt'
-              txt=open(fn,encoding='utf-8-sig').read()
-              loc=[]
-              for m in lp.finditer(txt):
-                  lid=int(m.group(1)); x=float(m.group(2)); zmap=float(m.group(4)); z=3616.0-zmap
-                  # nearest coord record
-                  best=min(coords,key=lambda r:(r[1]-x)**2+(r[2]-z)**2)
-                  dist=math.hypot(best[1]-x,best[2]-z)
-                  loc.append((lid,x,z,best[0],best[1],best[2],dist))
-                  all_matches.append((typ,lid,x,z,best[0],best[1],best[2],dist))
-              print('LOCATOR',typ,'count',len(loc),'near<=2',sum(r[6]<=2 for r in loc),'near<=8',sum(r[6]<=8 for r in loc),'near<=25',sum(r[6]<=25 for r in loc))
-              print('LOC_SAMPLE',typ,loc[:20])
-              # relation nearest anchor id vs locator id
-              rel=collections.Counter((r[3]-r[0]*100) for r in loc if r[6]<=8)
-              print('ANCHOR_DELTA',typ,rel.most_common(20))
-          # report locators without a close spline anchor
-          bad=[r for r in all_matches if r[7]>8]
-          print('UNMATCHED_LOCATORS_GT8',len(bad))
-          for r in sorted(bad,key=lambda x:-x[7])[:200]: print('UNMATCHED',r)
-          # Count close matched anchors and degree proxy = exact LE occurrence count excluding own coordinate definition
-          hubids=collections.defaultdict(list)
-          for typ,lid,x,z,aid,ax,az,dist in all_matches:
-              if dist<=8: hubids[aid].append((typ,lid,dist))
-          degree=[]
-          for aid,meta in hubids.items():
-              b=struct.pack('<I',aid); cnt=0; pos=0
-              while True:
-                  pos=d.find(b,pos)
-                  if pos<0: break
-                  cnt+=1; pos+=1
-              degree.append((cnt,aid,meta,byid.get(aid)))
-          print('MATCHED_HUB_ANCHORS',len(hubids))
-          print('LOW_OCCURRENCE_HUBS')
-          for row in sorted(degree)[:200]: print('HUB_OCC',row)
-          PY
-      - name: Upload analysis bundle
+          mkdir -p report out/gfx/map/spline_network
+          : > report/candidates.txt
+          for ref in main gpt-hub-spine-fix gpt-market-fix gpt-market-newfoot-fix gpt-working; do
+            if git show "origin/${ref}:${p}" > "/tmp/${ref}.splnet" 2>/dev/null; then
+              printf '%s  ' "$ref" >> report/candidates.txt
+              wc -c < "/tmp/${ref}.splnet" | tr '\n' ' ' >> report/candidates.txt
+              sha256sum "/tmp/${ref}.splnet" | awk '{print $1}' >> report/candidates.txt
+            fi
+          done
+          cat report/candidates.txt
+          # Use the dedicated historical hub/spine repair branch as the test candidate.
+          cp /tmp/gpt-hub-spine-fix.splnet out/gfx/map/spline_network/spline_network.splnet
+          cat > out/ToE_スパインネットワーク_テスト説明.txt <<'EOF'
+          ToE スパインネットワーク テスト版
+
+          対象:
+          gfx/map/spline_network/spline_network.splnet
+
+          基準:
+          GitHub の過去の専用修正ブランチ gpt-hub-spine-fix に残っていた spline_network.splnet。
+          現行 main の locator / map_data は変更しません。
+
+          目的:
+          過去に生成・修正したスパインネットワークを、現行ToEへ単独で戻してゲーム内表示と切断状況を確認するためのテストです。
+
+          注意:
+          このファイルは道路・ルート表示側のテストです。
+          市場接続そのものは state/province adjacency、港、state_region 等の別データにも依存するため、このテストだけで市場接続修正済みとは判定しません。
+
+          確認してほしい点:
+          1. 道路が表示されるか
+          2. 都市が消えないか
+          3. 道路が途中で大量に途切れていないか
+          4. 農村部にも道路が出るか
+          5. 海上に不自然な陸路が出ないか
+          6. 起動時・ロード時にクラッシュしないか
+
+          GitHub main には未反映です。
+          EOF
+          (cd out && zip -r ../ToE_スパインネットワーク_再生成テスト.zip .)
+      - name: Upload test ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: toe-spline-analysis
-          path: artifact/
+          name: toe-spline-regeneration-test
+          path: |
+            ToE_スパインネットワーク_再生成テスト.zip
+            report/candidates.txt
           if-no-files-found: error
