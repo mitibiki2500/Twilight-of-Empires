@@ -1,0 +1,130 @@
+name: Temporary ToE history patch
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.event.head_commit.message == 'Run temporary ToE history patch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply validated minimal fixes
+        shell: python
+        run: |
+          from pathlib import Path
+
+          def read_bom(path):
+              p = Path(path)
+              raw = p.read_bytes()
+              bom = raw.startswith(b'\xef\xbb\xbf')
+              text = raw.decode('utf-8-sig')
+              return p, text, bom
+
+          def write_bom(p, text, bom):
+              data = text.encode('utf-8')
+              if bom:
+                  data = b'\xef\xbb\xbf' + data
+              p.write_bytes(data)
+
+          def find_matching_brace(text, open_pos):
+              depth = 0
+              in_string = False
+              escape = False
+              i = open_pos
+              while i < len(text):
+                  ch = text[i]
+                  if in_string:
+                      if escape:
+                          escape = False
+                      elif ch == '\\':
+                          escape = True
+                      elif ch == '"':
+                          in_string = False
+                  else:
+                      if ch == '"':
+                          in_string = True
+                      elif ch == '#':
+                          nl = text.find('\n', i)
+                          if nl == -1:
+                              return -1
+                          i = nl
+                      elif ch == '{':
+                          depth += 1
+                      elif ch == '}':
+                          depth -= 1
+                          if depth == 0:
+                              return i
+                  i += 1
+              return -1
+
+          army_path, army, army_bom = read_bom('common/history/military_formations/99_NSM_population_x4_armies.txt')
+          marker = 'name = NSM_RWA_Scaled_Army'
+          if army.count(marker) != 1:
+              raise SystemExit(f'Expected exactly one RWA army marker, got {army.count(marker)}')
+          m = army.index(marker)
+          window_start = max(0, m - 400)
+          window = army[window_start:m]
+          old = 'hq_region = sr:region_nsm_east_fushion'
+          if window.count(old) != 1:
+              raise SystemExit(f'Expected one east_fushion HQ before RWA marker, got {window.count(old)}')
+          pos = window_start + window.rindex(old)
+          army = army[:pos] + 'hq_region = sr:region_nsm_central_islands' + army[pos + len(old):]
+          write_bom(army_path, army, army_bom)
+
+          bld_path, bld, bld_bom = read_bom('common/history/buildings/09_Oceania.txt')
+          state_marker = 's:STATE_NSM_175={'
+          if bld.count(state_marker) != 1:
+              raise SystemExit(f'Expected one STATE_NSM_175 building block, got {bld.count(state_marker)}')
+          s0 = bld.index(state_marker)
+          state_open = bld.index('{', s0)
+          state_close = find_matching_brace(bld, state_open)
+          if state_close < 0:
+              raise SystemExit('Could not match STATE_NSM_175 braces')
+          state = bld[s0:state_close+1]
+          xbc_marker = 'region_state:XBC={'
+          if state.count(xbc_marker) != 1:
+              raise SystemExit(f'Expected one stray XBC block inside STATE_NSM_175, got {state.count(xbc_marker)}')
+          rel = state.index(xbc_marker)
+          xbc_abs = s0 + rel
+          xbc_open = bld.index('{', xbc_abs)
+          xbc_close = find_matching_brace(bld, xbc_open)
+          if xbc_close < 0 or xbc_close > state_close:
+              raise SystemExit('Could not match XBC block braces')
+
+          line_start = bld.rfind('\n', 0, xbc_abs) + 1
+          prev_line_start = bld.rfind('\n', 0, max(0, line_start - 1)) + 1
+          prev_line = bld[prev_line_start:line_start]
+          remove_start = prev_line_start if 'フーテライト (XBC)' in prev_line else line_start
+          remove_end = xbc_close + 1
+          while remove_end < len(bld) and bld[remove_end] in ' \t':
+              remove_end += 1
+          if remove_end < len(bld) and bld[remove_end] == '\r':
+              remove_end += 1
+          if remove_end < len(bld) and bld[remove_end] == '\n':
+              remove_end += 1
+          bld = bld[:remove_start] + bld[remove_end:]
+          write_bom(bld_path, bld, bld_bom)
+
+          print('Validated fixes applied')
+
+      - name: Verify exact intended diff
+        run: |
+          git diff --check
+          git diff -- common/history/military_formations/99_NSM_population_x4_armies.txt common/history/buildings/09_Oceania.txt
+
+      - name: Commit patch
+        run: |
+          git config user.name "ToE audit bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add common/history/military_formations/99_NSM_population_x4_armies.txt common/history/buildings/09_Oceania.txt
+          git diff --cached --quiet && exit 1
+          git commit -m "Fix RWA HQ and stray Oceania building block"
+          git push
