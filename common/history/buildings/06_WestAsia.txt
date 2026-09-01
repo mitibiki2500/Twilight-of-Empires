@@ -4845,19 +4845,7 @@
 			}
 
 			
-			create_building = {
-				building="building_fishing_wharf"
-				add_ownership={
-					company={
-						type=company_nsm_ilbone_fisheries
-						country="c:GSU"
-						levels=5
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated" }
-			}
-
+			
 			create_building = {
 				building="building_naval_administration"
 				add_ownership={ country={ country="c:GSU" levels=8 } }
