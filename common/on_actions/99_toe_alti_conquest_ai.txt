@@ -2,6 +2,21 @@
 # Scripted buttons themselves have no confirmed AI-click hook in Victoria 3 1.13,
 # so AI Arti executes the same button effects from the monthly country pulse.
 
+on_game_started = {
+    on_actions = { toe_alti_conquest_startup }
+}
+
+toe_alti_conquest_startup = {
+    effect = {
+        c:SKR ?= {
+            if = {
+                limit = { NOT = { has_journal_entry = je_nsm_altia_conquest_sparia } }
+                add_journal_entry = { type = je_nsm_altia_conquest_sparia }
+            }
+        }
+    }
+}
+
 on_monthly_pulse_country = {
     on_actions = { toe_alti_conquest_ai_monthly }
 }
