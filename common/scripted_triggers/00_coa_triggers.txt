@@ -234,9 +234,9 @@ coa_def_secessionist_or_revolutionary_trigger = {
 	}
 }
 
-### scope is COUNTRY DEFINITION ###
-
-coa_def_independent_trigger = {
+coa_def_secessionist_country_trigger = {
 	exists = scope:target
-	scope:target = { is_subject = no }
+	scope:target = {
+		is_secessionist = yes
+	}
 }
