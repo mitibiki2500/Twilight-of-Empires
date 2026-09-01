@@ -1,5 +1,5 @@
-﻿# ToE total-conversion compatibility for vanilla natural-disaster geography.
-# Keep vanilla scripted triggers valid without assigning ToE states to Earth-specific regions.
+﻿# ToE total-conversion compatibility for vanilla natural-disaster and agriculture geography.
+# Keep vanilla scripted content valid without assigning ToE states to Earth-specific regions.
 
 geographic_region_alpide_belt = {
     short_key = "alpide_belt"
@@ -13,5 +13,10 @@ geographic_region_ring_of_fire = {
 
 geographic_region_great_rift_valley = {
     short_key = "great_rift_valley"
+    state_regions = { STATE_NSM_SEA_001 }
+}
+
+geographic_region_wet_process_coffee_region = {
+    short_key = "wet_process_coffee_region"
     state_regions = { STATE_NSM_SEA_001 }
 }
