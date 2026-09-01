@@ -14,27 +14,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Collect spline rebuild inputs
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p out/gfx/map/spline_network out/gfx/map/map_object_data out/map_data
-          cp gfx/map/spline_network/spline_network.splnet out/gfx/map/spline_network/
+          mkdir -p out/current/gfx/map/spline_network out/current/gfx/map/map_object_data out/current/map_data out/history
+          cp gfx/map/spline_network/spline_network.splnet out/current/gfx/map/spline_network/
           for f in generated_map_object_locators_city.txt generated_map_object_locators_farm.txt generated_map_object_locators_mine.txt generated_map_object_locators_wood.txt generated_map_object_locators_port.txt; do
-            if [ -f "gfx/map/map_object_data/$f" ]; then cp "gfx/map/map_object_data/$f" out/gfx/map/map_object_data/; fi
+            if [ -f "gfx/map/map_object_data/$f" ]; then cp "gfx/map/map_object_data/$f" out/current/gfx/map/map_object_data/; fi
           done
           for f in definition.csv provinces.png adjacencies.csv; do
-            if [ -f "map_data/$f" ]; then cp "map_data/$f" out/map_data/; fi
+            if [ -f "map_data/$f" ]; then cp "map_data/$f" out/current/map_data/; fi
           done
-          find map_data -maxdepth 2 -type f \( -name '*state*' -o -name '*region*' -o -name '*sea*' \) -print0 | while IFS= read -r -d '' f; do
-            mkdir -p "out/$(dirname "$f")"
-            cp "$f" "out/$f"
+          if [ -d map_data/state_regions ]; then cp -a map_data/state_regions out/current/map_data/; fi
+          for rev in 8239ab0b10670b01ca9174a6b86b157778aa813b 862ad56cfbc904f9dffe3c22bebc2468c6cd03f8 1a2096457580b25c02fc32b79da996f17b2941eb; do
+            if git cat-file -e "$rev:gfx/map/spline_network/spline_network.splnet" 2>/dev/null; then
+              git show "$rev:gfx/map/spline_network/spline_network.splnet" > "out/history/${rev}.splnet"
+            fi
           done
-          sha256sum out/gfx/map/spline_network/spline_network.splnet > out/SHA256.txt
+          find out -name '*.splnet' -type f -print0 | sort -z | xargs -0 sha256sum > out/SHA256.txt
           find out -type f | sort > out/FILES.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: toe-spline-rebuild-inputs
+          name: toe-spline-rebuild-inputs-history
           path: out
           if-no-files-found: error
           retention-days: 1
