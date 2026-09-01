@@ -135,8 +135,6 @@ prestige_good_MSN_premium_cotton = { #フーシャメウスコットン
 }
 
 #リイア
-prestige_good_MSN_premium_grain = { #リイア産穀物
-	base_good = grain
-	prestige_bonus = 0.1
-	texture = "gfx/interface/icons/goods_icons/prestige_goods/prestige_good_MSN_premium_grain.dds"
-}
+# prestige_good_MSN_premium_grain is intentionally omitted for Victoria 3 1.13 compatibility.
+# Vanilla already uses two grain prestige-good slots and Paido's custom grain uses the third.
+# company_nsm_corn_major uses prestige_good_generic_grain instead so the company remains functional.
