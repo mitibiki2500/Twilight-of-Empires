@@ -1,0 +1,58 @@
+name: ToE building context audit
+on:
+  push:
+    branches: [ main ]
+permissions:
+  contents: read
+jobs:
+  audit:
+    if: github.event.head_commit.message == 'Run ToE building context audit'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print target building contexts
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          wanted={
+            '05_SouthAfrica.txt':['building_silk_plantation'],
+            '03_EastEurope.txt':['building_wheat_farm'],
+            '06_WestAsia.txt':['building_wheat_farm','building_silk_plantation','building_coal_mine'],
+            '09_Oceania.txt':['building_wheat_farm'],
+            '08_CentralIslands.txt':['building_wheat_farm','building_rice_farm','building_livestock_ranch','building_banana_plantation','building_coffee_plantation','building_cotton_plantation','building_dye_plantation','building_sugar_plantation','building_tobacco_plantation','building_tea_plantation','building_silk_plantation'],
+          }
+          for fname,types in wanted.items():
+            p=Path('common/history/buildings')/fname
+            tx=p.read_text(encoding='utf-8-sig'); lines=tx.splitlines()
+            sid=None; comment=''; region=''
+            print('===== FILE',fname,'=====')
+            for i,line in enumerate(lines,1):
+              m=re.match(r'\s*s:(STATE_NSM_\d+)\s*=\s*\{',line)
+              if m: sid=m.group(1); comment=''; region=''
+              if sid and '# 州名:' in line: comment=line.strip()
+              m2=re.search(r'region_state:([A-Z0-9_]+)',line)
+              if m2: region=m2.group(1)
+              for bt in types:
+                if re.search(r'building\s*=\s*"?'+re.escape(bt)+r'"?',line):
+                  print(f'{i}: {sid} | {comment} | owner={region} | {bt}')
+            if fname=='08_CentralIslands.txt':
+              print('--- STATE_NSM_372 FULL BLOCK LINES ---')
+              start=next((i for i,l in enumerate(lines) if re.match(r'\s*s:STATE_NSM_372\s*=\s*\{',l)),None)
+              if start is not None:
+                depth=0; begun=False
+                for j in range(start,len(lines)):
+                  l=lines[j]
+                  depth+=l.count('{')-l.count('}')
+                  begun=True
+                  print(f'{j+1}:{l}')
+                  if begun and depth==0: break
+          print('===== DUPLICATE STATE HISTORY IDS =====')
+          d={}
+          for p in Path('common/history/buildings').glob('*.txt'):
+            tx=p.read_text(encoding='utf-8-sig')
+            for m in re.finditer(r'(?m)^\s*s:(STATE_NSM_\d+)\s*=\s*\{',tx): d.setdefault(m.group(1),[]).append(str(p))
+          for sid,ps in sorted(d.items()):
+            if len(ps)>1: print(sid,ps)
+          PY
