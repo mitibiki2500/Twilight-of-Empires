@@ -1,0 +1,18 @@
+﻿# Multi-Rebalance compatibility: restore technology referenced by existing MR content.
+# The upstream MR technology tree defines electronic_warfare as an Era 8 military technology
+# following radar and space_rocketery. Keeping the original ID restores existing unlock references.
+
+electronic_warfare = {
+	era = era_8
+	texture = "gfx/interface/icons/invention_icons/electronic_warfare.dds"
+	category = military
+
+	unlocking_technologies = {
+		radar
+		space_rocketery
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
