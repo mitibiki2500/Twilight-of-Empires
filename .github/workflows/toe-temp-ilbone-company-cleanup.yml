@@ -1,0 +1,53 @@
+name: ToE Ilvone company building cleanup
+on:
+  push:
+    branches: [ main ]
+permissions:
+  contents: write
+jobs:
+  patch:
+    if: github.event.head_commit.message == 'Run Ilvone company building cleanup'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove erroneous Ilvone fisheries company-owned building block
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          target='company_nsm_ilbone_fisheries'
+          found=[]
+          def bend(t,b):
+            d=0
+            for i in range(b,len(t)):
+              if t[i]=='{': d+=1
+              elif t[i]=='}':
+                d-=1
+                if d==0:return i+1
+            raise RuntimeError('unclosed')
+          for p in Path('common/history/buildings').glob('*.txt'):
+            raw=p.read_bytes(); bom=raw.startswith(b'\xef\xbb\xbf'); t=raw.decode('utf-8-sig'); edits=[]; pos=0
+            while True:
+              m=re.search(r'create_building\s*=\s*\{',t[pos:])
+              if not m:break
+              a=pos+m.start(); br=t.find('{',a); b=bend(t,br); block=t[a:b]
+              if target in block: edits.append((a,b))
+              pos=b
+            for a,b in reversed(edits):
+              bb=b
+              if t[bb:bb+2]=='\r\n':bb+=2
+              elif t[bb:bb+1]=='\n':bb+=1
+              t=t[:a]+t[bb:]
+              found.append(str(p))
+            if edits:
+              data=t.encode('utf-8'); p.write_bytes((b'\xef\xbb\xbf' if bom else b'')+data)
+          if len(found)!=1: raise SystemExit(f'Expected exactly one {target} building block, found {found}')
+          print('REMOVED',target,found)
+          PY
+          git diff -- common/history/buildings
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add common/history/buildings
+          git commit -m 'Remove erroneous Ilvone fisheries company building'
+          git push
