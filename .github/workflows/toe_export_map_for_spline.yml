@@ -16,11 +16,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Collect spline rebuild inputs
+      - name: Collect ToE and Anbennar spline rebuild inputs
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p out/current/gfx/map/spline_network out/current/gfx/map/map_object_data out/current/map_data out/history
+          mkdir -p out/current/gfx/map/spline_network out/current/gfx/map/map_object_data out/current/map_data out/history out/anbennar/gfx/map/spline_network out/anbennar/gfx/map/map_object_data out/anbennar/map_data
           cp gfx/map/spline_network/spline_network.splnet out/current/gfx/map/spline_network/
           for f in generated_map_object_locators_city.txt generated_map_object_locators_farm.txt generated_map_object_locators_mine.txt generated_map_object_locators_wood.txt generated_map_object_locators_port.txt; do
             if [ -f "gfx/map/map_object_data/$f" ]; then cp "gfx/map/map_object_data/$f" out/current/gfx/map/map_object_data/; fi
@@ -34,11 +34,19 @@ jobs:
               git show "$rev:gfx/map/spline_network/spline_network.splnet" > "out/history/${rev}.splnet"
             fi
           done
+          ANB='https://gitlab.com/anbennar/anbennar-vicky3-dev/-/raw/main'
+          curl --fail --location --retry 3 "$ANB/gfx/map/spline_network/spline_network.splnet" -o out/anbennar/gfx/map/spline_network/spline_network.splnet
+          for f in generated_map_object_locators_city.txt generated_map_object_locators_farm.txt generated_map_object_locators_mine.txt generated_map_object_locators_wood.txt generated_map_object_locators_port.txt; do
+            curl --fail --location --retry 3 "$ANB/gfx/map/map_object_data/$f" -o "out/anbennar/gfx/map/map_object_data/$f" || true
+          done
+          for f in definition.csv provinces.png adjacencies.csv; do
+            curl --fail --location --retry 3 "$ANB/map_data/$f" -o "out/anbennar/map_data/$f" || true
+          done
           find out -name '*.splnet' -type f -print0 | sort -z | xargs -0 sha256sum > out/SHA256.txt
           find out -type f | sort > out/FILES.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: toe-spline-rebuild-inputs-history
+          name: toe-anbennar-spline-rebuild-inputs
           path: out
           if-no-files-found: error
           retention-days: 1
