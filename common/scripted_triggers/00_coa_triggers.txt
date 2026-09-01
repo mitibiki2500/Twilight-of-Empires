@@ -96,7 +96,7 @@ coa_fascist_trigger = {
 	coa_dictatorship_trigger = yes
 	any_scope_character = {
 		is_ruler = yes
-		has_ideology = ideology_fascist
+		has_ideology = ideology:ideology_fascist
     }
 }
 
@@ -234,9 +234,9 @@ coa_def_secessionist_or_revolutionary_trigger = {
 	}
 }
 
-coa_def_secessionist_country_trigger = {
+### scope is COUNTRY DEFINITION ###
+
+coa_def_independent_trigger = {
 	exists = scope:target
-	scope:target = {
-		is_secessionist = yes
-	}
+	scope:target = { is_subject = no }
 }
