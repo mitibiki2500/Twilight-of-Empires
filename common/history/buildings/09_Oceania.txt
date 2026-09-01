@@ -5266,26 +5266,7 @@
 			
 		}
 		
-		# サークーザ (XBH)
-		region_state:XBH={
-			create_building={
-				building="building_iron_mine"
-				add_ownership={ country={ country="c:XBH" levels=1 } }
-				reserves=1
-				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
-			}
-			
-			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					country={ country="c:XBH" levels=2 }
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
-			}
-			
-		}
-		
+		# サークーザ (XBH)		
 	}
 	s:STATE_NSM_482={
 		# ニューフート植民地 (XBE)
@@ -5439,31 +5420,6 @@
 		}
 		
 		# サークーザ (XBH)
-		region_state:XBH={
-			create_building={
-				building="building_shipyard"
-				add_ownership={ country={ country="c:XBH" levels=1 } }
-				reserves=1
-				activate_production_methods={ "pm_basic_shipbuilding" }
-			}
-			
-			create_building={
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XBH" levels=1 } }
-				reserves=1
-			}
-			
-			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					country={ country="c:XBH" levels=3 }
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
-			}
-			
-		}
-
 	}
 	s:STATE_NSM_493={
 		# ニューフート植民地 (XBE)

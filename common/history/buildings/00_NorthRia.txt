@@ -3466,25 +3466,6 @@
 		}
 
 		# ポートル (XBW)
-		region_state:XBW={
-			create_building={
-				building="building_sugar_plantation"
-				add_ownership={ country={ country="c:XBW" levels=2 } }
-				reserves=1
-				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
-			}
-
-			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					country={ country="c:XBW" levels=2 }
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
-			}
-
-		}
-
 	}
 	s:STATE_NSM_310={
 		# 州名: 北米58 (STATE_NSM_310)

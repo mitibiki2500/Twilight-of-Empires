@@ -1,4 +1,4 @@
-using building_filter_grid.gui
+﻿using building_filter_grid.gui
 
 # COPY-PASTED FOR NOW
 @panel_width_minus_10 = 530			# used to be 450
@@ -1048,7 +1048,7 @@ types companies_panel
                         sort_button = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 30 }
-                            onclick = "[AccessPlayer.SortCompanies('name')]"
+                            onclick = "[CompaniesPanel.Sort('name')]"
                             tooltip = "NAME"
                             text = "NAME"
                         }
@@ -1056,7 +1056,7 @@ types companies_panel
                         sort_button = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 30 }
-                            onclick = "[AccessPlayer.SortCompanies('building_database_order')]"
+                            onclick = "[CompaniesPanel.Sort('building_database_order')]"
                             tooltip = "BUILDING_DATABASE_ORDER"
                             text = "BUILDING_DATABASE_ORDER"
                         }
@@ -1064,7 +1064,7 @@ types companies_panel
                         sort_button = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 30 }
-                            onclick = "[AccessPlayer.SortCompanies('productivity')]"
+                            onclick = "[CompaniesPanel.Sort('productivity')]"
                             tooltip = "SORT_BY_BUILDING_PRODUCTIVITY"
                             text = "concept_productivity"
                         }
@@ -1072,7 +1072,7 @@ types companies_panel
                         sort_button = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 30 }
-                            onclick = "[AccessPlayer.SortCompanies('levels')]"
+                            onclick = "[CompaniesPanel.Sort('levels')]"
                             tooltip = "SORT_BY_BUILDING_SIZE"
                             text = "concept_building_levels"
                         }
