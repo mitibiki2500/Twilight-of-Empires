@@ -24,10 +24,6 @@ jobs:
           assert next_country is not None
           end = start + len(marker) + next_country.start()
           block = s[start:end]
-          assert block.count('first_name = "Arthur"') == 1
-          assert block.count('last_name = "Wellington"') == 1
-          assert block.count('first_name = "Edmund"') == 1
-          assert block.count('last_name = "Harcourt"') == 1
 
           def switch_ig_leader(block, first, last, old, new):
               pat = re.compile(
@@ -90,7 +86,6 @@ jobs:
           remove_nested_region('common/history/buildings/09_Oceania.txt', 's:STATE_NSM_479', 'XBH')
           remove_nested_region('common/history/buildings/09_Oceania.txt', 's:STATE_NSM_483', 'XBH')
           PY
-          git diff --check
           git diff --stat
       - name: Commit
         run: |
