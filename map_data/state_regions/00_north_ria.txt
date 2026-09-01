@@ -828,7 +828,8 @@ STATE_NSM_337 = {
         building_gold_mine = 4
     }
     resource = {
-        type = "building_gold_mine"
+        type = "building_gold_field"
+        depleted_type = "building_gold_mine"
         undiscovered_amount = 4
     }
 }
@@ -1345,7 +1346,8 @@ STATE_NSM_475 = {
         undiscovered_amount = 28
     }
     resource = {
-        type = "building_gold_mine"
+        type = "building_gold_field"
+        depleted_type = "building_gold_mine"
         undiscovered_amount = 5
     }
 }
