@@ -1,16 +1,20 @@
 ﻿namespace = toe_ria_civil_war
 
-country_event = {
-    id = toe_ria_civil_war.1
+toe_ria_civil_war.1 = {
+    type = country_event
     hidden = yes
 
     immediate = {
         # Empire has disappeared: Republic and Social Republic abandon claims on each other.
         c:XBJ ?= {
-            every_owned_state = { remove_claim = c:XBL }
+            every_scope_state = {
+                remove_claim = c:XBL
+            }
         }
         c:XBL ?= {
-            every_owned_state = { remove_claim = c:XBJ }
+            every_scope_state = {
+                remove_claim = c:XBJ
+            }
         }
     }
 }
