@@ -1,0 +1,30 @@
+name: ToE Spline Extract
+
+on:
+  push:
+    branches:
+      - toe-spline-regeneration-test
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect spline
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifact/gfx/map/spline_network
+          cp gfx/map/spline_network/spline_network.splnet artifact/gfx/map/spline_network/
+          sha256sum gfx/map/spline_network/spline_network.splnet | tee artifact/spline_sha256.txt
+          wc -c gfx/map/spline_network/spline_network.splnet | tee artifact/spline_size.txt
+      - name: Upload spline
+        uses: actions/upload-artifact@v4
+        with:
+          name: toe-current-spline
+          path: artifact/
+          if-no-files-found: error
