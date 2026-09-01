@@ -1,4 +1,4 @@
-name: ToE Spline Extract
+name: ToE Spline Analyze
 
 on:
   push:
@@ -10,21 +10,75 @@ permissions:
   contents: read
 
 jobs:
-  extract:
+  analyze:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Inspect spline
+      - name: Analyze spline
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p artifact/gfx/map/spline_network
+          mkdir -p artifact/gfx/map/spline_network artifact/gfx/map/map_object_data artifact/map_data
           cp gfx/map/spline_network/spline_network.splnet artifact/gfx/map/spline_network/
-          sha256sum gfx/map/spline_network/spline_network.splnet | tee artifact/spline_sha256.txt
-          wc -c gfx/map/spline_network/spline_network.splnet | tee artifact/spline_size.txt
-      - name: Upload spline
+          for f in city farm mine wood port; do
+            p="gfx/map/map_object_data/generated_map_object_locators_${f}.txt"
+            [ -f "$p" ] && cp "$p" artifact/gfx/map/map_object_data/
+          done
+          [ -f map_data/adjacencies.csv ] && cp map_data/adjacencies.csv artifact/map_data/
+          [ -f map_data/definition.csv ] && cp map_data/definition.csv artifact/map_data/
+          [ -f map_data/definitions.txt ] && cp map_data/definitions.txt artifact/map_data/
+          python3 - <<'PY' | tee artifact/spline_analysis.txt
+          import re, struct, hashlib, collections, math, os
+          p='gfx/map/spline_network/spline_network.splnet'
+          d=open(p,'rb').read()
+          print('size',len(d))
+          print('sha256',hashlib.sha256(d).hexdigest())
+          print('head',d[:96].hex())
+          # Known Jomini serializer pattern seen around hub-anchor coordinate records.
+          pat=re.compile(rb'\x14\x00(.{4})\x4c\x00\x01\x00\x03\x00\x0d\x00(.{4})\x0d\x00(.{4})',re.S)
+          rec=[]
+          for m in pat.finditer(d):
+              ident=struct.unpack('<I',m.group(1))[0]
+              x=struct.unpack('<f',m.group(2))[0]
+              z=struct.unpack('<f',m.group(3))[0]
+              if math.isfinite(x) and math.isfinite(z):
+                  rec.append((m.start(),ident,x,z))
+          print('coord_pattern_records',len(rec))
+          for r in rec[:40]: print('coord',*r)
+          if rec:
+              print('coord_offset_minmax',rec[0][0],rec[-1][0])
+              ids=[r[1] for r in rec]
+              print('id_minmax',min(ids),max(ids),'unique',len(set(ids)))
+              print('id_mod100_counts',collections.Counter(i%100 for i in ids).most_common(20))
+              xs=[r[2] for r in rec]; zs=[r[3] for r in rec]
+              print('x_range',min(xs),max(xs),'z_range',min(zs),max(zs))
+              # count exact LE appearances of sample IDs throughout file
+              for ident in ids[:15]:
+                  b=struct.pack('<I',ident)
+                  offs=[]; pos=0
+                  while True:
+                      pos=d.find(b,pos)
+                      if pos<0: break
+                      offs.append(pos); pos+=1
+                  print('id_occ',ident,len(offs),offs[:20])
+          # Most common 2-byte field tags (little-endian values) at even offsets, rough serializer fingerprint
+          c=collections.Counter(d[i:i+2] for i in range(0,len(d)-1,2))
+          print('top_u16_pairs',[(k.hex(),v) for k,v in c.most_common(30)])
+          # Context around first 20 occurrences of likely edge anchor marker candidates: IDs divisible by 100 appearing after coordinate table.
+          if rec:
+              end=rec[-1][0]+32
+              sample=set(r[1] for r in rec[:200])
+              shown=0
+              for off in range(end,len(d)-4):
+                  val=struct.unpack_from('<I',d,off)[0]
+                  if val in sample:
+                      print('post_coord_id_context',off,val,d[max(0,off-24):off+40].hex())
+                      shown+=1
+                      if shown>=40: break
+          PY
+      - name: Upload analysis bundle
         uses: actions/upload-artifact@v4
         with:
-          name: toe-current-spline
+          name: toe-spline-analysis
           path: artifact/
           if-no-files-found: error
