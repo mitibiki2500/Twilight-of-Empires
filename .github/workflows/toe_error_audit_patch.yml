@@ -16,12 +16,10 @@ jobs:
           from pathlib import Path
           import re
 
-          # --- RIA Republic: Presidential Elective ruler must lead their IG. ---
           p = Path('common/history/characters/00_nsm_characters.txt')
           s = p.read_text(encoding='utf-8-sig')
           marker = 'c:XBJ ?= {'
           start = s.index(marker)
-          # XBJ ends immediately before the next country history marker.
           next_country = re.search(r'\n\s*c:[A-Z0-9]+ \?= \{', s[start + len(marker):])
           assert next_country is not None
           end = start + len(marker) + next_country.start()
@@ -32,8 +30,6 @@ jobs:
           assert block.count('last_name = "Harcourt"') == 1
 
           def switch_ig_leader(block, first, last, old, new):
-              # All current ToE create_character definitions are compact enough that the target
-              # appears before the closing brace of the same definition. Restrict to one record.
               pat = re.compile(
                   r'(create_character\s*=\s*\{(?:(?!create_character\s*=).)*?first_name\s*=\s*"' + re.escape(first) +
                   r'"(?:(?!create_character\s*=).)*?last_name\s*=\s*"' + re.escape(last) +
@@ -49,7 +45,6 @@ jobs:
           s = s[:start] + block + s[end:]
           p.write_text('\ufeff' + s, encoding='utf-8')
 
-          # --- Victoria 3 1.13 company sorting API. ---
           p = Path('gui/companies_panel.gui')
           s = p.read_text(encoding='utf-8-sig')
           old = 'AccessPlayer.SortCompanies('
@@ -58,7 +53,6 @@ jobs:
           assert old not in s
           p.write_text('\ufeff' + s, encoding='utf-8')
 
-          # --- Remove region_state blocks nested under states not owned by that country. ---
           def extract_braced(text, marker):
               st = text.index(marker)
               brace = text.index('{', st)
@@ -79,8 +73,7 @@ jobs:
               st, en, state_block = extract_braced(text, state_marker)
               rmarker = 'region_state:' + region_tag
               assert state_block.count(rmarker) == 1, (path, state_marker, rmarker, state_block.count(rmarker))
-              rs, re_, rblock = extract_braced(state_block, rmarker)
-              # remove adjacent indentation/blank line, but nothing outside the nested block
+              rs, re_, _ = extract_braced(state_block, rmarker)
               left = rs
               while left > 0 and state_block[left-1] in ' \t': left -= 1
               if left > 0 and state_block[left-1] == '\n': left -= 1
@@ -92,14 +85,13 @@ jobs:
               text = text[:st] + new_state + text[en:]
               p.write_text('\ufeff' + text, encoding='utf-8')
 
-          remove_nested_region('common/history/buildings/00_NorthRia.txt', 's:STATE_NSM_309', 'XBW')
+          remove_nested_region('common/history/buildings/00_NorthRia.txt', 's:STATE_NSM_305', 'XBW')
           remove_nested_region('common/history/buildings/08_CentralIslands.txt', 's:STATE_NSM_074', 'XAZ')
           remove_nested_region('common/history/buildings/09_Oceania.txt', 's:STATE_NSM_479', 'XBH')
           remove_nested_region('common/history/buildings/09_Oceania.txt', 's:STATE_NSM_483', 'XBH')
           PY
           git diff --check
           git diff --stat
-          git diff -- common/history/characters/00_nsm_characters.txt gui/companies_panel.gui common/history/buildings/00_NorthRia.txt common/history/buildings/08_CentralIslands.txt common/history/buildings/09_Oceania.txt
       - name: Commit
         run: |
           git config user.name 'github-actions[bot]'
