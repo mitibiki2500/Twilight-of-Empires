@@ -1,0 +1,48 @@
+name: ToE gold resource audit
+on:
+  push:
+    branches: [ main ]
+jobs:
+  audit:
+    if: github.event.head_commit.message == 'Run ToE gold resource audit'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Find duplicate gold potential definitions
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          count=0
+          for p in sorted(Path('map_data/state_regions').glob('*.txt')):
+              t=p.read_text(encoding='utf-8-sig')
+              matches=list(re.finditer(r'(?m)^(STATE_NSM_\d+)\s*=\s*\{',t))
+              for idx,m in enumerate(matches):
+                  end=matches[idx+1].start() if idx+1<len(matches) else len(t)
+                  block=t[m.start():end]
+                  sid=m.group(1)
+                  cm=re.search(r'^\s*#\s*([^\r\n]+)',block,re.M)
+                  name=cm.group(1).strip() if cm else '?'
+                  direct=re.findall(r'(?m)^\s*building_gold_mine\s*=\s*(\d+)',block)
+                  resources=[]
+                  pos=0
+                  while True:
+                      rm=re.search(r'\bresource\s*=\s*\{',block[pos:])
+                      if not rm: break
+                      s=pos+rm.start(); b=block.find('{',s); d=0;e=None
+                      for i in range(b,len(block)):
+                          if block[i]=='{':d+=1
+                          elif block[i]=='}':
+                              d-=1
+                              if d==0:e=i+1;break
+                      rb=block[s:e]
+                      if 'building_gold_field' in rb or 'building_gold_mine' in rb:
+                          resources.append(' '.join(x.strip() for x in rb.splitlines()))
+                      pos=e
+                  if direct and resources:
+                      count+=1
+                      print(f'DUP {sid} [{name}] file={p} direct={direct}')
+                      for r in resources: print('  RESOURCE',r)
+          print('TOTAL_DUPLICATE_GOLD_STATES=',count)
+          PY
