@@ -2445,37 +2445,6 @@
 			
 		}
 		
-		# フーテライト (XBC)
-		region_state:XBC={
-			create_building={
-				building="building_construction_sector"
-				add_ownership={ country={ country="c:XBC" levels=1 } }
-				reserves=1
-				activate_production_methods={ "pm_wooden_buildings" }
-			}
-			
-			create_building={
-				building="building_furniture_manufactory"
-				add_ownership={ building={
-						type="building_financial_district"
-						country="c:XAI"
-						levels=1
-						region="STATE_NSM_192"
-					}
-				}
-				reserves=1
-			}
-			
-			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					country={ country="c:XBC" levels=3 }
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
-			}
-			
-		}
 
 	}
 	s:STATE_NSM_182={
