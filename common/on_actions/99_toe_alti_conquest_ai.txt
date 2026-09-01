@@ -3,7 +3,10 @@
 # so AI Arti executes the same button effects from the monthly country pulse.
 
 on_monthly_pulse_country = {
-    on_actions = { toe_alti_conquest_ai_monthly }
+    on_actions = {
+        toe_alti_conquest_ai_monthly
+        toe_alti_station_system_monthly
+    }
 }
 
 toe_alti_conquest_ai_monthly = {
@@ -78,6 +81,28 @@ toe_alti_conquest_ai_monthly = {
                 NOT = { has_variable = toe_altia_ilvone_claims_granted }
             }
             toe_alti_grant_ilvone_claims = yes
+        }
+    }
+}
+
+# Keep Arti's unique station-system amendment attached to Appointed Bureaucrats.
+# This also repairs existing saves where the one-time game-start grant was missed or lost.
+toe_alti_station_system_monthly = {
+    trigger = {
+        this = c:SKR
+        has_law_or_variant = law_type:law_appointed_bureaucrats
+    }
+
+    effect = {
+        ig:ig_landowners = { save_scope_as = toe_station_sponsor }
+        active_law:lawgroup_bureaucracy ?= {
+            if = {
+                limit = { NOT = { has_amendment = amendment_toe_alti_station_system } }
+                add_amendment = {
+                    type = amendment_toe_alti_station_system
+                    sponsor = scope:toe_station_sponsor
+                }
+            }
         }
     }
 }
