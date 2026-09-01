@@ -2,7 +2,11 @@
 	c:XEZ ?= {
 	    effect_starting_technology_tier_0_tech = yes
 	    effect_starting_politics_reactionary = yes
-	    activate_law = law_type:law_religious_schools
+	    activate_law = law_type:law_public_schools
+	    set_institution_investment_level = {
+	        institution = institution_schools
+	        level = 2
+	    }
 	
         add_company = company_type:company_nsm_ril_cockerill
         company:company_nsm_ril_cockerill = {
