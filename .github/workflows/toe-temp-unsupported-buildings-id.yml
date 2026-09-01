@@ -1,4 +1,4 @@
-name: ToE unsupported initial buildings by state id
+name: ToE confirmed unsupported initial buildings
 on:
   push:
     branches: [ main ]
@@ -6,83 +6,66 @@ permissions:
   contents: write
 jobs:
   patch:
-    if: github.event.head_commit.message == 'Retry unsupported initial building cleanup by state id'
+    if: github.event.head_commit.message == 'Run confirmed unsupported building cleanup'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Remove exact logged unsupported initial buildings
+      - name: Remove exact confirmed logged building blocks
         shell: bash
         run: |
           python3 - <<'PY'
           from pathlib import Path
           import re
-
-          targets = {
-              'STATE_NSM_465':'building_silk_plantation',
-              'STATE_NSM_296':'building_wheat_farm',
-              'STATE_NSM_150':'building_wheat_farm',
-              'STATE_NSM_041':'building_silk_plantation',
-              'STATE_NSM_341':'building_wheat_farm',
-              'STATE_NSM_556':'building_silk_plantation',
-              'STATE_NSM_423':'building_wheat_farm',
-              'STATE_NSM_148':'building_coal_mine',
-              'STATE_NSM_152':'building_wheat_farm',
-              'STATE_NSM_028':'building_wheat_farm',
-          }
-
-          def bend(text, brace):
-              d=0
-              for i in range(brace,len(text)):
-                  if text[i]=='{': d+=1
-                  elif text[i]=='}':
-                      d-=1
-                      if d==0: return i+1
-              raise RuntimeError('unclosed block')
-
-          counts={k:0 for k in targets}
-          state_defs={k:[] for k in targets}
-          diffs=[]
-          for p in Path('common/history/buildings').glob('*.txt'):
-              raw=p.read_bytes(); bom=raw.startswith(b'\xef\xbb\xbf'); text=raw.decode('utf-8-sig'); original=text
-              state_spans=[]
-              for sid,btype in targets.items():
-                  for m in re.finditer(r'(?m)^\s*s:'+re.escape(sid)+r'\s*=\s*\{',text):
-                      brace=text.find('{',m.start()); end=bend(text,brace)
-                      state_spans.append((m.start(),end,sid,btype))
-                      state_defs[sid].append(str(p))
-              for s,e,sid,btype in sorted(state_spans, reverse=True):
-                  block=text[s:e]
-                  hits=[]; pos=0
-                  while True:
-                      m=re.search(r'create_building\s*=\s*\{',block[pos:])
-                      if not m: break
-                      a=pos+m.start(); brace=block.find('{',a); b=bend(block,brace)
-                      cb=block[a:b]
-                      if re.search(r'building\s*=\s*"?'+re.escape(btype)+r'"?',cb): hits.append((a,b))
-                      pos=b
-                  if not hits:
-                      continue
-                  if len(hits)!=1:
-                      raise SystemExit(f'{sid} {btype}: expected at most one target block per state definition, got {len(hits)} in {p}')
-                  a,b=hits[0]
-                  bb=b
-                  if block[bb:bb+2]=='\r\n': bb+=2
-                  elif block[bb:bb+1]=='\n': bb+=1
-                  block=block[:a]+block[bb:]
-                  text=text[:s]+block+text[e:]
-                  counts[sid]+=1; diffs.append((str(p),sid,btype))
-              if text!=original:
-                  data=text.encode('utf-8'); p.write_bytes((b'\xef\xbb\xbf' if bom else b'')+data)
-
-          bad=[sid for sid,c in counts.items() if c!=1]
-          if bad: raise SystemExit(f'Missing/duplicate target building blocks across repo: {[(x,counts[x]) for x in bad]}')
-          print('REMOVED',diffs)
-          print('STATE DEFINITIONS',state_defs)
+          targets = [
+            ('common/history/buildings/06_WestAsia.txt','STATE_NSM_044','building_wheat_farm'),
+            ('common/history/buildings/06_WestAsia.txt','STATE_NSM_383','building_silk_plantation'),
+            ('common/history/buildings/06_WestAsia.txt','STATE_NSM_275','building_wheat_farm'),
+            ('common/history/buildings/06_WestAsia.txt','STATE_NSM_191','building_silk_plantation'),
+            ('common/history/buildings/06_WestAsia.txt','STATE_NSM_132','building_wheat_farm'),
+            ('common/history/buildings/06_WestAsia.txt','STATE_NSM_022','building_coal_mine'),
+            ('common/history/buildings/06_WestAsia.txt','STATE_NSM_016','building_wheat_farm'),
+            ('common/history/buildings/09_Oceania.txt','STATE_NSM_117','building_wheat_farm'),
+          ]
+          def endblock(text,brace):
+            d=0
+            for i in range(brace,len(text)):
+              if text[i]=='{': d+=1
+              elif text[i]=='}':
+                d-=1
+                if d==0:return i+1
+            raise RuntimeError('unclosed')
+          byfile={}
+          for p,sid,bt in targets: byfile.setdefault(p,[]).append((sid,bt))
+          done=[]
+          for fn,ts in byfile.items():
+            p=Path(fn); raw=p.read_bytes(); bom=raw.startswith(b'\xef\xbb\xbf'); text=raw.decode('utf-8-sig')
+            edits=[]
+            for sid,bt in ts:
+              ms=list(re.finditer(r'(?m)^\s*s:'+re.escape(sid)+r'\s*=\s*\{',text))
+              if len(ms)!=1: raise SystemExit(f'{fn} {sid}: state definitions={len(ms)}')
+              sm=ms[0]; sb=text.find('{',sm.start()); se=endblock(text,sb); block=text[sm.start():se]
+              hits=[]; pos=0
+              while True:
+                m=re.search(r'create_building\s*=\s*\{',block[pos:])
+                if not m:break
+                a=pos+m.start(); br=block.find('{',a); b=endblock(block,br); cb=block[a:b]
+                if re.search(r'building\s*=\s*"?'+re.escape(bt)+r'"?',cb): hits.append((a,b))
+                pos=b
+              if len(hits)!=1: raise SystemExit(f'{fn} {sid} {bt}: create blocks={len(hits)}')
+              a,b=hits[0]; edits.append((sm.start()+a,sm.start()+b,sid,bt))
+            for a,b,sid,bt in sorted(edits,reverse=True):
+              bb=b
+              if text[bb:bb+2]=='\r\n':bb+=2
+              elif text[bb:bb+1]=='\n':bb+=1
+              text=text[:a]+text[bb:]
+              done.append((fn,sid,bt))
+            data=text.encode('utf-8'); p.write_bytes((b'\xef\xbb\xbf' if bom else b'')+data)
+          if len(done)!=len(targets): raise SystemExit((len(done),len(targets)))
+          print('REMOVED',done)
           PY
           git diff -- common/history/buildings
-          git diff --quiet && exit 0
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add common/history/buildings
-          git commit -m 'Remove logged unsupported initial buildings'
+          git commit -m 'Remove confirmed unsupported initial buildings'
           git push
