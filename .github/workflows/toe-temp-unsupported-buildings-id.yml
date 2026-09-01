@@ -6,7 +6,7 @@ permissions:
   contents: write
 jobs:
   patch:
-    if: github.event.head_commit.message == 'Run unsupported initial building cleanup by state id'
+    if: github.event.head_commit.message == 'Retry unsupported initial building cleanup by state id'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,16 +40,16 @@ jobs:
               raise RuntimeError('unclosed block')
 
           counts={k:0 for k in targets}
+          state_defs={k:[] for k in targets}
           diffs=[]
           for p in Path('common/history/buildings').glob('*.txt'):
               raw=p.read_bytes(); bom=raw.startswith(b'\xef\xbb\xbf'); text=raw.decode('utf-8-sig'); original=text
-              # Work in descending start order so offsets remain stable.
               state_spans=[]
               for sid,btype in targets.items():
-                  m=re.search(r'(?m)^\s*s:'+re.escape(sid)+r'\s*=\s*\{',text)
-                  if not m: continue
-                  brace=text.find('{',m.start()); end=bend(text,brace)
-                  state_spans.append((m.start(),end,sid,btype))
+                  for m in re.finditer(r'(?m)^\s*s:'+re.escape(sid)+r'\s*=\s*\{',text):
+                      brace=text.find('{',m.start()); end=bend(text,brace)
+                      state_spans.append((m.start(),end,sid,btype))
+                      state_defs[sid].append(str(p))
               for s,e,sid,btype in sorted(state_spans, reverse=True):
                   block=text[s:e]
                   hits=[]; pos=0
@@ -60,8 +60,10 @@ jobs:
                       cb=block[a:b]
                       if re.search(r'building\s*=\s*"?'+re.escape(btype)+r'"?',cb): hits.append((a,b))
                       pos=b
+                  if not hits:
+                      continue
                   if len(hits)!=1:
-                      raise SystemExit(f'{sid} {btype}: expected exactly one block, got {len(hits)} in {p}')
+                      raise SystemExit(f'{sid} {btype}: expected at most one target block per state definition, got {len(hits)} in {p}')
                   a,b=hits[0]
                   bb=b
                   if block[bb:bb+2]=='\r\n': bb+=2
@@ -72,9 +74,10 @@ jobs:
               if text!=original:
                   data=text.encode('utf-8'); p.write_bytes((b'\xef\xbb\xbf' if bom else b'')+data)
 
-          missing=[sid for sid,c in counts.items() if c!=1]
-          if missing: raise SystemExit(f'Missing/duplicate state targets: {[(x,counts[x]) for x in missing]}')
+          bad=[sid for sid,c in counts.items() if c!=1]
+          if bad: raise SystemExit(f'Missing/duplicate target building blocks across repo: {[(x,counts[x]) for x in bad]}')
           print('REMOVED',diffs)
+          print('STATE DEFINITIONS',state_defs)
           PY
           git diff -- common/history/buildings
           git diff --quiet && exit 0
