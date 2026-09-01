@@ -1786,31 +1786,6 @@
 
 		}
 
-		# フーテライト (XBC)
-		region_state:XBC={
-			create_building={
-				building="building_sugar_plantation"
-				add_ownership={ country={ country="c:XBC" levels=3 } }
-				reserves=1
-				activate_production_methods={ "default_building_sugar_plantation" "pm_road_carts" }
-			}
-
-			create_building={
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XBC" levels=1 } }
-				reserves=1
-			}
-
-			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					country={ country="c:XBC" levels=4 }
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
-			}
-
-		}
 
 	}
 }
