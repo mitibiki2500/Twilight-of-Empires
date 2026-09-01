@@ -6,7 +6,7 @@ permissions:
   contents: read
 jobs:
   audit:
-    if: github.event.head_commit.message == 'Audit unsupported starting buildings current main'
+    if: github.event.head_commit.message == 'Audit unsupported starting buildings current main v2'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,7 +18,6 @@ jobs:
           import re
 
           history_files = [
-              Path('common/history/buildings/07_SouthAmerica.txt'),
               Path('common/history/buildings/03_EastEurope.txt'),
               Path('common/history/buildings/06_WestAsia.txt'),
               Path('common/history/buildings/09_Oceania.txt'),
@@ -34,14 +33,12 @@ jobs:
                       if d==0: return i+1
               raise RuntimeError('unclosed')
 
-          # Build support map from current state_regions.
           support={}
           for p in Path('map_data/state_regions').glob('*.txt'):
               tx=p.read_text(encoding='utf-8-sig')
               for m in re.finditer(r'(?m)^\s*(STATE_NSM_\d+)\s*=\s*\{',tx):
                   b=tx.find('{',m.start()); e=end_block(tx,b); blk=tx[m.start():e]
-                  sid=m.group(1)
-                  allowed=set()
+                  sid=m.group(1); allowed=set()
                   am=re.search(r'arable_resources\s*=\s*\{([^}]*)\}',blk,re.S)
                   if am: allowed.update(re.findall(r'"([A-Za-z0-9_]+)"',am.group(1)))
                   cm=re.search(r'capped_resources\s*=\s*\{([^}]*)\}',blk,re.S)
@@ -57,8 +54,7 @@ jobs:
           hits=[]
           for p in history_files:
               tx=p.read_text(encoding='utf-8-sig')
-              states=list(re.finditer(r'(?m)^\s*s:(STATE_NSM_\d+)\s*=\s*\{',tx))
-              for sm in states:
+              for sm in re.finditer(r'(?m)^\s*s:(STATE_NSM_\d+)\s*=\s*\{',tx):
                   sb=tx.find('{',sm.start()); se=end_block(tx,sb); sblk=tx[sm.start():se]; sid=sm.group(1)
                   for cm in re.finditer(r'(?m)^\s*create_building\s*=\s*\{',sblk):
                       cb=sblk.find('{',cm.start()); ce=end_block(sblk,cb); cblk=sblk[cm.start():ce]
@@ -66,13 +62,10 @@ jobs:
                       if not bm or bm.group(1) not in targets: continue
                       bld=bm.group(1)
                       if bld not in support.get(sid,set()):
-                          absolute_line=tx[:sm.start()+cm.start()].count('\n')+1
-                          levels=[]
-                          for lm in re.finditer(r'levels\s*=\s*(\d+)',cblk): levels.append(lm.group(1))
-                          name=''
-                          for line in sblk.splitlines()[:8]:
-                              if '州名:' in line or line.strip().startswith('#'): name += ' '+line.strip()
-                          hits.append((str(p),absolute_line,sid,bld,levels,name.strip()))
+                          line=tx[:sm.start()+cm.start()].count('\n')+1
+                          levels=re.findall(r'levels\s*=\s*(\d+)',cblk)
+                          comments=' '.join(x.strip() for x in sblk.splitlines()[:8] if x.strip().startswith('#'))
+                          hits.append((str(p),line,sid,bld,levels,comments))
           print('UNSUPPORTED_COUNT',len(hits))
           for h in hits: print('UNSUPPORTED',h)
           PY
