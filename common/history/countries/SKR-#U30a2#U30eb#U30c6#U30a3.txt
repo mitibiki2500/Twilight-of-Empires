@@ -32,12 +32,6 @@
 	            set_company_establishment_date = 1790.1.1
 	            set_company_state_region = s:STATE_NSM_429
 	        }
-	    
-		# 1836.1.1 -> 1850.1.1
-		create_bidirectional_truce = {
-			tcountry = c:GOT
-			months = 168
-		}
 
 		add_journal_entry = { type = je_nsm_altia_conquest_sparia }
 	}
