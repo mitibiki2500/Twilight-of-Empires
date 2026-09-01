@@ -8,12 +8,16 @@ toe_ria_civil_war.1 = {
         # Empire has disappeared: Republic and Social Republic abandon claims on each other.
         c:XBJ ?= {
             every_scope_state = {
-                remove_claim = c:XBL
+                state_region = {
+                    remove_claim = c:XBL
+                }
             }
         }
         c:XBL ?= {
             every_scope_state = {
-                remove_claim = c:XBJ
+                state_region = {
+                    remove_claim = c:XBJ
+                }
             }
         }
     }
