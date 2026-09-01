@@ -14,45 +14,42 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
+          import re
 
-          # RIA Republic ruler must lead their IG under Presidential Elective.
+          # --- RIA Republic: Presidential Elective ruler must lead their IG. ---
           p = Path('common/history/characters/00_nsm_characters.txt')
           s = p.read_text(encoding='utf-8-sig')
           marker = 'c:XBJ ?= {'
           start = s.index(marker)
-          i = start + len(marker)
-          depth = 1
-          while i < len(s) and depth:
-              if s[i] == '{': depth += 1
-              elif s[i] == '}': depth -= 1
-              i += 1
-          assert depth == 0
-          block = s[start:i]
+          # XBJ ends immediately before the next country history marker.
+          next_country = re.search(r'\n\s*c:[A-Z0-9]+ \?= \{', s[start + len(marker):])
+          assert next_country is not None
+          end = start + len(marker) + next_country.start()
+          block = s[start:end]
           assert block.count('first_name = "Arthur"') == 1
           assert block.count('last_name = "Wellington"') == 1
           assert block.count('first_name = "Edmund"') == 1
           assert block.count('last_name = "Harcourt"') == 1
 
-          a0 = block.index('first_name = "Arthur"')
-          e0 = block.index('first_name = "Edmund"')
-          assert a0 < e0
-          arthur = block[a0:e0]
-          rest = block[e0:]
-          assert arthur.count('ig_leader = no') == 1
-          assert rest.count('ig_leader = yes') >= 1
-          arthur = arthur.replace('ig_leader = no', 'ig_leader = yes', 1)
-          # Only Edmund's create_character block.
-          ed_end = rest.find('\n\tcreate_character = {', 1)
-          if ed_end < 0: ed_end = len(rest)
-          edmund = rest[:ed_end]
-          tail = rest[ed_end:]
-          assert edmund.count('ig_leader = yes') == 1
-          edmund = edmund.replace('ig_leader = yes', 'ig_leader = no', 1)
-          newblock = block[:a0] + arthur + edmund + tail
-          s = s[:start] + newblock + s[i:]
+          def switch_ig_leader(block, first, last, old, new):
+              # All current ToE create_character definitions are compact enough that the target
+              # appears before the closing brace of the same definition. Restrict to one record.
+              pat = re.compile(
+                  r'(create_character\s*=\s*\{(?:(?!create_character\s*=).)*?first_name\s*=\s*"' + re.escape(first) +
+                  r'"(?:(?!create_character\s*=).)*?last_name\s*=\s*"' + re.escape(last) +
+                  r'"(?:(?!create_character\s*=).)*?ig_leader\s*=\s*)' + old,
+                  re.S,
+              )
+              block2, n = pat.subn(r'\g<1>' + new, block, count=1)
+              assert n == 1, (first, last, n)
+              return block2
+
+          block = switch_ig_leader(block, 'Arthur', 'Wellington', 'no', 'yes')
+          block = switch_ig_leader(block, 'Edmund', 'Harcourt', 'yes', 'no')
+          s = s[:start] + block + s[end:]
           p.write_text('\ufeff' + s, encoding='utf-8')
 
-          # Victoria 3 1.13 company sorting API.
+          # --- Victoria 3 1.13 company sorting API. ---
           p = Path('gui/companies_panel.gui')
           s = p.read_text(encoding='utf-8-sig')
           old = 'AccessPlayer.SortCompanies('
@@ -60,13 +57,53 @@ jobs:
           s = s.replace(old, 'CompaniesPanel.Sort(')
           assert old not in s
           p.write_text('\ufeff' + s, encoding='utf-8')
+
+          # --- Remove region_state blocks nested under states not owned by that country. ---
+          def extract_braced(text, marker):
+              st = text.index(marker)
+              brace = text.index('{', st)
+              depth = 0
+              i = brace
+              while i < len(text):
+                  if text[i] == '{': depth += 1
+                  elif text[i] == '}':
+                      depth -= 1
+                      if depth == 0:
+                          return st, i + 1, text[st:i+1]
+                  i += 1
+              raise AssertionError(marker)
+
+          def remove_nested_region(path, state_marker, region_tag):
+              p = Path(path)
+              text = p.read_text(encoding='utf-8-sig')
+              st, en, state_block = extract_braced(text, state_marker)
+              rmarker = 'region_state:' + region_tag
+              assert state_block.count(rmarker) == 1, (path, state_marker, rmarker, state_block.count(rmarker))
+              rs, re_, rblock = extract_braced(state_block, rmarker)
+              # remove adjacent indentation/blank line, but nothing outside the nested block
+              left = rs
+              while left > 0 and state_block[left-1] in ' \t': left -= 1
+              if left > 0 and state_block[left-1] == '\n': left -= 1
+              right = re_
+              while right < len(state_block) and state_block[right] in ' \t': right += 1
+              if right < len(state_block) and state_block[right] == '\n': right += 1
+              new_state = state_block[:left] + state_block[right:]
+              assert rmarker not in new_state
+              text = text[:st] + new_state + text[en:]
+              p.write_text('\ufeff' + text, encoding='utf-8')
+
+          remove_nested_region('common/history/buildings/00_NorthRia.txt', 's:STATE_NSM_309', 'XBW')
+          remove_nested_region('common/history/buildings/08_CentralIslands.txt', 's:STATE_NSM_074', 'XAZ')
+          remove_nested_region('common/history/buildings/09_Oceania.txt', 's:STATE_NSM_479', 'XBH')
+          remove_nested_region('common/history/buildings/09_Oceania.txt', 's:STATE_NSM_483', 'XBH')
           PY
           git diff --check
-          git diff -- common/history/characters/00_nsm_characters.txt gui/companies_panel.gui
+          git diff --stat
+          git diff -- common/history/characters/00_nsm_characters.txt gui/companies_panel.gui common/history/buildings/00_NorthRia.txt common/history/buildings/08_CentralIslands.txt common/history/buildings/09_Oceania.txt
       - name: Commit
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add common/history/characters/00_nsm_characters.txt gui/companies_panel.gui
-          git commit -m 'Fix RIA ruler and company sort callbacks'
+          git add common/history/characters/00_nsm_characters.txt gui/companies_panel.gui common/history/buildings/00_NorthRia.txt common/history/buildings/08_CentralIslands.txt common/history/buildings/09_Oceania.txt
+          git commit -m 'Fix audited history and GUI errors'
           git push
