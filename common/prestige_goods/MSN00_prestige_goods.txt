@@ -45,11 +45,10 @@ prestige_good_MSN_anthracite = { #無煙炭
 	prestige_bonus = 0.1
 	texture = "gfx/interface/icons/goods_icons/prestige_goods/prestige_good_MSN_anthracite.dds"
 }
-prestige_good_MSN_laska_rifle = { #ラスカ銃
-	base_good = small_arms
-	prestige_bonus = 0.1
-	texture = "gfx/interface/icons/goods_icons/prestige_goods/prestige_good_MSN_laska_rifle.dds"
-}
+# prestige_good_MSN_laska_rifle intentionally omitted for Victoria 3 1.13 compatibility.
+# Vanilla already registers three small_arms prestige goods (the engine maximum), and this
+# definition is not referenced by any ToE company yet. Re-enable it only together with a
+# deliberate replacement of one existing small_arms prestige-good slot.
 prestige_good_MSN_rapid_ammunition = { #速射弾
 	base_good = ammunition
 	prestige_bonus = 0.1
