@@ -1,0 +1,101 @@
+name: ToE unsupported initial buildings
+on:
+  push:
+    branches: [ main ]
+permissions:
+  contents: write
+jobs:
+  patch:
+    if: github.event.head_commit.message == 'Run unsupported initial building cleanup'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove only logged unsupported initial buildings
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          targets = {
+              ('南米23','building_silk_plantation'),
+              ('東欧3','building_wheat_farm'),
+              ('西亜2','building_wheat_farm'),
+              ('西亜60','building_silk_plantation'),
+              ('西亜1','building_wheat_farm'),
+              ('西亜37','building_silk_plantation'),
+              ('西亜12','building_wheat_farm'),
+              ('西亜70','building_coal_mine'),
+              ('西亜11','building_wheat_farm'),
+              ('豪14','building_wheat_farm'),
+          }
+
+          def balanced_end(text, brace):
+              d=0
+              for i in range(brace,len(text)):
+                  c=text[i]
+                  if c=='{': d+=1
+                  elif c=='}':
+                      d-=1
+                      if d==0: return i+1
+              raise RuntimeError('unclosed block')
+
+          found={t:0 for t in targets}
+          changed=[]
+          for p in Path('common/history/buildings').glob('*.txt'):
+              raw=p.read_bytes(); bom=raw.startswith(b'\xef\xbb\xbf'); text=raw.decode('utf-8-sig')
+              original=text
+              # locate each state by the generator's canonical comment
+              for state_name,btype in targets:
+                  cm=re.search(r'#\s*州名:\s*'+re.escape(state_name)+r'\s*\(STATE_NSM_\d+\)', text)
+                  if not cm: continue
+                  # enclosing s:STATE... block starts immediately before the comment
+                  starts=list(re.finditer(r's:STATE_NSM_\d+\s*=\s*\{', text[:cm.start()]))
+                  if not starts: raise SystemExit(f'No state block for {state_name} in {p}')
+                  sm=starts[-1]; s0=sm.start(); sb=text.find('{',sm.start()); s1=balanced_end(text,sb)
+                  block=text[s0:s1]
+                  spans=[]; pos=0
+                  while True:
+                      m=re.search(r'create_building\s*=\s*\{',block[pos:])
+                      if not m: break
+                      a=pos+m.start(); brace=block.find('{',a); b=balanced_end(block,brace)
+                      cb=block[a:b]
+                      if re.search(r'building\s*=\s*"?'+re.escape(btype)+r'"?',cb): spans.append((a,b))
+                      pos=b
+                  if not spans:
+                      raise SystemExit(f'Logged unsupported building not found: {state_name} {btype} in {p}')
+                  # remove all occurrences of that unsupported type in the logged state
+                  for a,b in reversed(spans):
+                      bb=b
+                      if block[bb:bb+2]=='\r\n': bb+=2
+                      elif block[bb:bb+1]=='\n': bb+=1
+                      block=block[:a]+block[bb:]
+                  text=text[:s0]+block+text[s1:]
+                  found[(state_name,btype)] += len(spans)
+                  changed.append((str(p),state_name,btype,len(spans)))
+              if text!=original:
+                  data=text.encode('utf-8')
+                  p.write_bytes((b'\xef\xbb\xbf' if bom else b'')+data)
+
+          print('REMOVED:',changed)
+          missing=[k for k,v in found.items() if v==0]
+          if missing: raise SystemExit(f'Missing logged targets: {missing}')
+
+          # inspection only: print Central Islands 17 state block, no map/history mutation here
+          for p in Path('common/history/buildings').glob('*.txt'):
+              tx=p.read_text(encoding='utf-8-sig')
+              cm=re.search(r'#\s*州名:\s*中央諸島部17\s*\(STATE_NSM_\d+\)',tx)
+              if cm:
+                  starts=list(re.finditer(r's:STATE_NSM_\d+\s*=\s*\{',tx[:cm.start()]))
+                  sm=starts[-1]; sb=tx.find('{',sm.start()); se=balanced_end(tx,sb)
+                  print('=== CENTRAL ISLANDS 17 HISTORY ===')
+                  print(p)
+                  print(tx[sm.start():se])
+          PY
+          git diff -- common/history/buildings
+          git diff --quiet && exit 0
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add common/history/buildings
+          git commit -m 'Remove unsupported initial buildings from logged states'
+          git push
