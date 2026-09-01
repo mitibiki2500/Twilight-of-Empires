@@ -1,0 +1,85 @@
+name: ToE unsupported initial buildings by state id
+on:
+  push:
+    branches: [ main ]
+permissions:
+  contents: write
+jobs:
+  patch:
+    if: github.event.head_commit.message == 'Run unsupported initial building cleanup by state id'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove exact logged unsupported initial buildings
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          targets = {
+              'STATE_NSM_465':'building_silk_plantation',
+              'STATE_NSM_296':'building_wheat_farm',
+              'STATE_NSM_150':'building_wheat_farm',
+              'STATE_NSM_041':'building_silk_plantation',
+              'STATE_NSM_341':'building_wheat_farm',
+              'STATE_NSM_556':'building_silk_plantation',
+              'STATE_NSM_423':'building_wheat_farm',
+              'STATE_NSM_148':'building_coal_mine',
+              'STATE_NSM_152':'building_wheat_farm',
+              'STATE_NSM_028':'building_wheat_farm',
+          }
+
+          def bend(text, brace):
+              d=0
+              for i in range(brace,len(text)):
+                  if text[i]=='{': d+=1
+                  elif text[i]=='}':
+                      d-=1
+                      if d==0: return i+1
+              raise RuntimeError('unclosed block')
+
+          counts={k:0 for k in targets}
+          diffs=[]
+          for p in Path('common/history/buildings').glob('*.txt'):
+              raw=p.read_bytes(); bom=raw.startswith(b'\xef\xbb\xbf'); text=raw.decode('utf-8-sig'); original=text
+              # Work in descending start order so offsets remain stable.
+              state_spans=[]
+              for sid,btype in targets.items():
+                  m=re.search(r'(?m)^\s*s:'+re.escape(sid)+r'\s*=\s*\{',text)
+                  if not m: continue
+                  brace=text.find('{',m.start()); end=bend(text,brace)
+                  state_spans.append((m.start(),end,sid,btype))
+              for s,e,sid,btype in sorted(state_spans, reverse=True):
+                  block=text[s:e]
+                  hits=[]; pos=0
+                  while True:
+                      m=re.search(r'create_building\s*=\s*\{',block[pos:])
+                      if not m: break
+                      a=pos+m.start(); brace=block.find('{',a); b=bend(block,brace)
+                      cb=block[a:b]
+                      if re.search(r'building\s*=\s*"?'+re.escape(btype)+r'"?',cb): hits.append((a,b))
+                      pos=b
+                  if len(hits)!=1:
+                      raise SystemExit(f'{sid} {btype}: expected exactly one block, got {len(hits)} in {p}')
+                  a,b=hits[0]
+                  bb=b
+                  if block[bb:bb+2]=='\r\n': bb+=2
+                  elif block[bb:bb+1]=='\n': bb+=1
+                  block=block[:a]+block[bb:]
+                  text=text[:s]+block+text[e:]
+                  counts[sid]+=1; diffs.append((str(p),sid,btype))
+              if text!=original:
+                  data=text.encode('utf-8'); p.write_bytes((b'\xef\xbb\xbf' if bom else b'')+data)
+
+          missing=[sid for sid,c in counts.items() if c!=1]
+          if missing: raise SystemExit(f'Missing/duplicate state targets: {[(x,counts[x]) for x in missing]}')
+          print('REMOVED',diffs)
+          PY
+          git diff -- common/history/buildings
+          git diff --quiet && exit 0
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add common/history/buildings
+          git commit -m 'Remove logged unsupported initial buildings'
+          git push
