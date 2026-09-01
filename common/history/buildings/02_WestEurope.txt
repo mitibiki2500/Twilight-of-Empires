@@ -3962,19 +3962,7 @@ BUILDINGS={
 			}
 			# source: NSM_world_trade_ports_resources.txt
 			# ToE shipping balance
-			create_building = {
-				building="building_shipyard"
-				add_ownership={
-					country={ country="c:XAI" levels=5 }
-					company={ type=company_nsm_footwater_line country="c:XAI" levels=5 }
-				}
-			add_ownership={
-				country={ country="c:XAI" levels=10 }
-			}
-				reserves=1
-				activate_production_methods={ "pm_complex_shipbuilding" }
-			}
-			
+						
 			create_building={
 				building="building_munition_plant"
 			add_ownership={
