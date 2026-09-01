@@ -1,0 +1,18 @@
+﻿# ToE compatibility for vanilla Portuguese colonial geographic helpers.
+# Dummy sea-state membership keeps removed Earth regions from matching real ToE land states
+# while restoring generated any_state_in_* / every_state_in_* helper triggers.
+
+geographic_region_angola = {
+    short_key = "angola"
+    state_regions = { STATE_NSM_SEA_001 }
+}
+
+geographic_region_mozambique = {
+    short_key = "mozambique"
+    state_regions = { STATE_NSM_SEA_001 }
+}
+
+geographic_region_zambezi_basin = {
+    short_key = "zambezi_basin"
+    state_regions = { STATE_NSM_SEA_001 }
+}
