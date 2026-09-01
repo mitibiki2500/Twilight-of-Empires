@@ -1,0 +1,72 @@
+name: ToE Error Audit Patch
+on:
+  push:
+    paths:
+      - '.github/workflows/toe_error_audit_patch.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply validated patches
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          # RIA Republic ruler must lead their IG under Presidential Elective.
+          p = Path('common/history/characters/00_nsm_characters.txt')
+          s = p.read_text(encoding='utf-8-sig')
+          marker = 'c:XBJ ?= {'
+          start = s.index(marker)
+          i = start + len(marker)
+          depth = 1
+          while i < len(s) and depth:
+              if s[i] == '{': depth += 1
+              elif s[i] == '}': depth -= 1
+              i += 1
+          assert depth == 0
+          block = s[start:i]
+          assert block.count('first_name = "Arthur"') == 1
+          assert block.count('last_name = "Wellington"') == 1
+          assert block.count('first_name = "Edmund"') == 1
+          assert block.count('last_name = "Harcourt"') == 1
+
+          a0 = block.index('first_name = "Arthur"')
+          e0 = block.index('first_name = "Edmund"')
+          assert a0 < e0
+          arthur = block[a0:e0]
+          rest = block[e0:]
+          assert arthur.count('ig_leader = no') == 1
+          assert rest.count('ig_leader = yes') >= 1
+          arthur = arthur.replace('ig_leader = no', 'ig_leader = yes', 1)
+          # Only Edmund's create_character block.
+          ed_end = rest.find('\n\tcreate_character = {', 1)
+          if ed_end < 0: ed_end = len(rest)
+          edmund = rest[:ed_end]
+          tail = rest[ed_end:]
+          assert edmund.count('ig_leader = yes') == 1
+          edmund = edmund.replace('ig_leader = yes', 'ig_leader = no', 1)
+          newblock = block[:a0] + arthur + edmund + tail
+          s = s[:start] + newblock + s[i:]
+          p.write_text('\ufeff' + s, encoding='utf-8')
+
+          # Victoria 3 1.13 company sorting API.
+          p = Path('gui/companies_panel.gui')
+          s = p.read_text(encoding='utf-8-sig')
+          old = 'AccessPlayer.SortCompanies('
+          assert s.count(old) == 4, s.count(old)
+          s = s.replace(old, 'CompaniesPanel.Sort(')
+          assert old not in s
+          p.write_text('\ufeff' + s, encoding='utf-8')
+          PY
+          git diff --check
+          git diff -- common/history/characters/00_nsm_characters.txt gui/companies_panel.gui
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add common/history/characters/00_nsm_characters.txt gui/companies_panel.gui
+          git commit -m 'Fix RIA ruler and company sort callbacks'
+          git push
