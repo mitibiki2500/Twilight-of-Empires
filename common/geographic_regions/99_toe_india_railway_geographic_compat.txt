@@ -1,0 +1,24 @@
+﻿# ToE compatibility for vanilla India railway scripted GUI helpers.
+# These regions intentionally contain only a dummy sea state so the generated
+# any_state_region_in_* / every_state_region_in_* helpers exist without assigning
+# real ToE land states to removed vanilla Indian railway corridors.
+
+geographic_region_delhi_calcutta_line = {
+    short_key = "delhi_calcutta_line"
+    state_regions = { STATE_NSM_SEA_001 }
+}
+
+geographic_region_allahabad_bombay_line = {
+    short_key = "allahabad_bombay_line"
+    state_regions = { STATE_NSM_SEA_001 }
+}
+
+geographic_region_bombay_madras_line = {
+    short_key = "bombay_madras_line"
+    state_regions = { STATE_NSM_SEA_001 }
+}
+
+geographic_region_gujarat_bombay_line = {
+    short_key = "gujarat_bombay_line"
+    state_regions = { STATE_NSM_SEA_001 }
+}
