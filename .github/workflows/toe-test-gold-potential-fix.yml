@@ -6,7 +6,7 @@ permissions:
   contents: write
 jobs:
   patch:
-    if: github.event.head_commit.message == 'Run gold potential test fix'
+    if: github.event.head_commit.message == 'Run gold potential test fix v2'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -51,19 +51,15 @@ jobs:
                       raise SystemExit(f'{fn} {sid}: state block count {len(ms)}')
                   sm=ms[0]; sb=text.find('{',sm.start()); se=block_end(text,sb)
                   block=text[sm.start():se]
-
-                  # State must retain an explicit capped gold-mine potential.
                   if not re.search(r'capped_resources\s*=\s*\{[\s\S]*?building_gold_mine\s*=\s*\d+', block):
                       raise SystemExit(f'{fn} {sid}: capped gold mine missing')
-
-                  # Find exactly one undiscovered resource incorrectly typed as gold mine.
                   candidates=[]; pos=0
                   while True:
                       m=re.search(r'(?m)^\s*resource\s*=\s*\{', block[pos:])
                       if not m: break
                       a=pos+m.start(); br=block.find('{',a); b=block_end(block,br)
                       rb=block[a:b]
-                      if re.search(r'type\s*=\s*"building_gold_mine"',rb) and 'undiscovered_amount' in rb:
+                      if re.search(r'(?m)^\s*type\s*=\s*"building_gold_mine"\s*$',rb) and 'undiscovered_amount' in rb:
                           candidates.append((a,b,rb))
                       pos=b
                   if len(candidates)!=1:
@@ -80,7 +76,6 @@ jobs:
                   if rb2==rb:
                       raise SystemExit(f'{fn} {sid}: type replacement failed')
                   edits.append((sm.start()+a, sm.start()+b, rb2, sid))
-
               for a,b,repl,sid in sorted(edits,reverse=True):
                   text=text[:a]+repl+text[b:]
                   changed.append((fn,sid))
@@ -90,20 +85,18 @@ jobs:
               raise SystemExit(f'Expected 19 state changes, got {len(changed)}')
           print('CHANGED', changed)
 
-          # Post-patch validation: no target state may contain an undiscovered gold-mine resource;
-          # each must contain gold_field -> depleted gold_mine exactly once.
           for fn, states in targets.items():
               text=Path(fn).read_text(encoding='utf-8-sig')
               for sid in states:
                   sm=re.search(r'(?m)^\s*'+re.escape(sid)+r'\s*=\s*\{',text)
                   sb=text.find('{',sm.start()); se=block_end(text,sb); block=text[sm.start():se]
-                  if len(re.findall(r'type\s*=\s*"building_gold_field"',block))!=1:
+                  if len(re.findall(r'(?m)^\s*type\s*=\s*"building_gold_field"\s*$',block))!=1:
                       raise SystemExit(f'{fn} {sid}: gold_field validation failed')
-                  if len(re.findall(r'depleted_type\s*=\s*"building_gold_mine"',block))!=1:
+                  if len(re.findall(r'(?m)^\s*depleted_type\s*=\s*"building_gold_mine"\s*$',block))!=1:
                       raise SystemExit(f'{fn} {sid}: depleted_type validation failed')
                   for rm in re.finditer(r'(?m)^\s*resource\s*=\s*\{',block):
                       br=block.find('{',rm.start()); re_=block_end(block,br); rb=block[rm.start():re_]
-                      if 'undiscovered_amount' in rb and re.search(r'type\s*=\s*"building_gold_mine"',rb):
+                      if 'undiscovered_amount' in rb and re.search(r'(?m)^\s*type\s*=\s*"building_gold_mine"\s*$',rb):
                           raise SystemExit(f'{fn} {sid}: old duplicate gold-mine potential remains')
           PY
           git diff --check
