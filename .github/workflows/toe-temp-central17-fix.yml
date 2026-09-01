@@ -1,0 +1,65 @@
+name: ToE central islands arable fix
+on:
+  push:
+    branches: [ main ]
+permissions:
+  contents: write
+jobs:
+  patch:
+    if: github.event.head_commit.message == 'Run ToE central17 arable fix'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reduce Central Islands 17 sugar by one
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('common/history/buildings/08_CentralIslands.txt')
+          raw=p.read_bytes(); bom=raw.startswith(b'\xef\xbb\xbf'); t=raw.decode('utf-8-sig')
+          m=re.search(r'(?m)^\s*s:STATE_NSM_372\s*=\s*\{',t)
+          if not m: raise SystemExit('STATE_NSM_372 missing')
+          b=t.find('{',m.start()); d=0; e=None
+          for i in range(b,len(t)):
+              if t[i]=='{': d+=1
+              elif t[i]=='}':
+                  d-=1
+                  if d==0: e=i+1; break
+          block=t[m.start():e]
+          # Find sugar plantation create block and its ownership level 5.
+          cm=re.search(r'create_building\s*=\s*\{(?:(?!create_building).)*?building\s*=\s*"building_sugar_plantation"(?P<body>.*?)\n\s*\}',block,re.S)
+          if not cm:
+              # robust brace scan fallback
+              pos=0; target=None
+              while True:
+                  z=re.search(r'create_building\s*=\s*\{',block[pos:])
+                  if not z: break
+                  s=pos+z.start(); bb=block.find('{',s); dd=0; ee=None
+                  for j in range(bb,len(block)):
+                      if block[j]=='{': dd+=1
+                      elif block[j]=='}':
+                          dd-=1
+                          if dd==0: ee=j+1; break
+                  cb=block[s:ee]
+                  if 'building="building_sugar_plantation"' in cb or 'building = "building_sugar_plantation"' in cb:
+                      target=(s,ee,cb); break
+                  pos=ee
+              if not target: raise SystemExit('Sugar plantation block missing')
+              s,ee,cb=target
+          else:
+              raise SystemExit('Unexpected regex path used; brace fallback expected')
+          if cb.count('levels=5') + cb.count('levels = 5') != 1:
+              raise SystemExit('Expected exactly one sugar level 5 in STATE_NSM_372')
+          cb2=re.sub(r'levels\s*=\s*5', lambda x: x.group(0).replace('5','4'), cb, count=1)
+          block2=block[:s]+cb2+block[ee:]
+          t2=t[:m.start()]+block2+t[e:]
+          data=t2.encode('utf-8'); p.write_bytes((b'\xef\xbb\xbf' if bom else b'')+data)
+          print('STATE_NSM_372 sugar plantation: 5 -> 4')
+          PY
+          git diff -- common/history/buildings/08_CentralIslands.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add common/history/buildings/08_CentralIslands.txt
+          git commit -m 'Fix Central Islands 17 arable land overuse'
+          git push
