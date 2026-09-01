@@ -1,2 +1,9 @@
 ﻿# Twilight of Empires total conversion
-# Disabled: vanilla-specific content references countries/states/geographic regions removed by ToE.
+# Vanilla EP2 historical effects are intentionally disabled because they reference
+# Earth-specific countries/states removed by ToE.
+# Keep lightweight compatibility stubs required while vanilla Japanese character
+# templates are parsed. ToE does not use the vanilla daimyo system.
+
+designate_as_shinpan_daimyo = { }
+designate_as_fudai_daimyo = { }
+designate_as_tozama_daimyo = { }
