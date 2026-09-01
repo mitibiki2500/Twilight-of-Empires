@@ -65,20 +65,27 @@ jobs:
                   i += 1
               return -1
 
+          # 1) Fix only the RWA country block.
           army_path, army, army_bom = read_bom('common/history/military_formations/99_NSM_population_x4_armies.txt')
-          marker = 'name = NSM_RWA_Scaled_Army'
-          if army.count(marker) != 1:
-              raise SystemExit(f'Expected exactly one RWA army marker, got {army.count(marker)}')
-          m = army.index(marker)
-          window_start = max(0, m - 400)
-          window = army[window_start:m]
-          old = 'hq_region = sr:region_nsm_east_fushion'
-          if window.count(old) != 1:
-              raise SystemExit(f'Expected one east_fushion HQ before RWA marker, got {window.count(old)}')
-          pos = window_start + window.rindex(old)
-          army = army[:pos] + 'hq_region = sr:region_nsm_central_islands' + army[pos + len(old):]
+          rwa_marker = 'c:RWA ?= {'
+          if army.count(rwa_marker) != 1:
+              raise SystemExit(f'Expected exactly one RWA country block, got {army.count(rwa_marker)}')
+          r0 = army.index(rwa_marker)
+          ropen = army.index('{', r0)
+          rclose = find_matching_brace(army, ropen)
+          if rclose < 0:
+              raise SystemExit('Could not match RWA country block braces')
+          rwa = army[r0:rclose+1]
+          if rwa.count('name = NSM_RWA_Scaled_Army') != 1:
+              raise SystemExit('Unexpected RWA army name count')
+          old_hq = 'hq_region = sr:region_nsm_east_fushion'
+          if rwa.count(old_hq) != 1:
+              raise SystemExit(f'Expected exactly one old RWA HQ, got {rwa.count(old_hq)}')
+          rwa_new = rwa.replace(old_hq, 'hq_region = sr:region_nsm_central_islands', 1)
+          army = army[:r0] + rwa_new + army[rclose+1:]
           write_bom(army_path, army, army_bom)
 
+          # 2) STATE_NSM_175 is MNG-owned. Remove only the stray XBC region_state block.
           bld_path, bld, bld_bom = read_bom('common/history/buildings/09_Oceania.txt')
           state_marker = 's:STATE_NSM_175={'
           if bld.count(state_marker) != 1:
@@ -92,8 +99,7 @@ jobs:
           xbc_marker = 'region_state:XBC={'
           if state.count(xbc_marker) != 1:
               raise SystemExit(f'Expected one stray XBC block inside STATE_NSM_175, got {state.count(xbc_marker)}')
-          rel = state.index(xbc_marker)
-          xbc_abs = s0 + rel
+          xbc_abs = s0 + state.index(xbc_marker)
           xbc_open = bld.index('{', xbc_abs)
           xbc_close = find_matching_brace(bld, xbc_open)
           if xbc_close < 0 or xbc_close > state_close:
