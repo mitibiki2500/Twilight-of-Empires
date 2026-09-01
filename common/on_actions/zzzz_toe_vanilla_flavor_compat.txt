@@ -1,6 +1,8 @@
 ﻿# Twilight of Empires total-conversion on_action compatibility
-# Keep generic engine/gameplay hooks, but disable vanilla historical geography/country flavor hooks
-# that can create invalid references or empty events in the ToE world.
+# Disable only scripted vanilla historical flavor helpers that have no ToE counterpart.
+# IMPORTANT: hardcoded/predefined on_actions (on_yearly_pulse, on_state_owner_change,
+# on_negotiate_with, etc.) must not be replaced here. Victoria 3 expects mods to extend
+# those hooks through on_actions/events blocks, while their engine registration remains intact.
 
 # --- Fully historical yearly flavor pools ---
 REPLACE_OR_CREATE:russian_monarchy_yearly_events = { }
@@ -34,71 +36,3 @@ REPLACE_OR_CREATE:krakatoa_on_action = { }
 # --- DLC historical helpers with no ToE counterpart ---
 REPLACE_OR_CREATE:ip4_lands_of_anarchy_remove_on_state_lost = { }
 REPLACE_OR_CREATE:carlist_war_battle_score = { }
-
-# Vanilla global yearly pulse is only the scripted Manila/Luzon earthquake.
-# Luzon and the Manila Cathedral do not exist on the ToE map.
-REPLACE_OR_CREATE:on_yearly_pulse = { }
-
-# Preserve generic colonial-claim checking, but remove the vanilla disease_outbreak
-# state-region test because that harvest condition is not present in ToE.
-REPLACE_OR_CREATE:on_monthly_pulse_state = {
-    on_actions = {
-        colonial_claims_check
-    }
-}
-
-# Preserve generic harvest-condition notifications. Remove the special earthquake/
-# Manila Cathedral branch because the vanilla earthquake harvest condition is absent.
-REPLACE_OR_CREATE:on_harvest_condition_started_in_country = {
-    effect = {
-        if = {
-            limit = {
-                scope:intensity > 3
-            }
-            post_notification = harvest_condition_started_in_country_important
-        }
-        else = {
-            post_notification = harvest_condition_started_in_country
-        }
-    }
-}
-
-# Preserve generic dynamic hub-name refresh on ownership/state creation, while removing
-# Bulgaria/France/vanilla-Europe homeland mutations.
-REPLACE_OR_CREATE:on_state_owner_change = {
-    effect = {
-        evaluate_and_assign_state_hub_dynamic_names = yes
-    }
-}
-
-REPLACE_OR_CREATE:on_state_created = {
-    effect = {
-        evaluate_and_assign_state_hub_dynamic_names = yes
-    }
-}
-
-# Preserve the generic newly-released-country cooldown, while removing Bulgaria,
-# Palestine, Springtime of Peoples, Austria/Yugoslavia and other vanilla-world branches.
-REPLACE_OR_CREATE:on_country_released_as_independent = {
-    effect = {
-        scope:target = {
-            set_variable = { name = newly_released_country days = 90 }
-        }
-    }
-}
-
-REPLACE_OR_CREATE:on_country_released_as_own_subject = {
-    effect = {
-        scope:target = {
-            set_variable = { name = newly_released_country days = 90 }
-        }
-    }
-}
-
-REPLACE_OR_CREATE:on_country_released_as_overlord_subject = {
-    effect = {
-        scope:target = {
-            set_variable = { name = newly_released_country days = 90 }
-        }
-    }
-}
