@@ -14,7 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Analyze spline
+        with:
+          fetch-depth: 0
+      - name: Analyze spline and hub coverage
         shell: bash
         run: |
           set -euo pipefail
@@ -28,53 +30,63 @@ jobs:
           [ -f map_data/definition.csv ] && cp map_data/definition.csv artifact/map_data/
           [ -f map_data/definitions.txt ] && cp map_data/definitions.txt artifact/map_data/
           python3 - <<'PY' | tee artifact/spline_analysis.txt
-          import re, struct, hashlib, collections, math, os
+          import re, struct, hashlib, collections, math, os, subprocess
           p='gfx/map/spline_network/spline_network.splnet'
           d=open(p,'rb').read()
-          print('size',len(d))
-          print('sha256',hashlib.sha256(d).hexdigest())
-          print('head',d[:96].hex())
-          # Known Jomini serializer pattern seen around hub-anchor coordinate records.
+          print('CURRENT size',len(d),'sha256',hashlib.sha256(d).hexdigest())
+          commits=['8239ab0b10670b01ca9174a6b86b157778aa813b','862ad56cfbc904f9dffe3c22bebc2468c6cd03f8','1a2096457580b25c02fc32b79da996f17b2941eb']
+          for c in commits:
+              try:
+                  b=subprocess.check_output(['git','show',f'{c}:{p}'])
+                  print('HISTORY',c,'size',len(b),'sha256',hashlib.sha256(b).hexdigest())
+              except Exception as e: print('HISTORY_FAIL',c,e)
           pat=re.compile(rb'\x14\x00(.{4})\x4c\x00\x01\x00\x03\x00\x0d\x00(.{4})\x0d\x00(.{4})',re.S)
           rec=[]
           for m in pat.finditer(d):
               ident=struct.unpack('<I',m.group(1))[0]
-              x=struct.unpack('<f',m.group(2))[0]
-              z=struct.unpack('<f',m.group(3))[0]
-              if math.isfinite(x) and math.isfinite(z):
-                  rec.append((m.start(),ident,x,z))
-          print('coord_pattern_records',len(rec))
-          for r in rec[:40]: print('coord',*r)
-          if rec:
-              print('coord_offset_minmax',rec[0][0],rec[-1][0])
-              ids=[r[1] for r in rec]
-              print('id_minmax',min(ids),max(ids),'unique',len(set(ids)))
-              print('id_mod100_counts',collections.Counter(i%100 for i in ids).most_common(20))
-              xs=[r[2] for r in rec]; zs=[r[3] for r in rec]
-              print('x_range',min(xs),max(xs),'z_range',min(zs),max(zs))
-              # count exact LE appearances of sample IDs throughout file
-              for ident in ids[:15]:
-                  b=struct.pack('<I',ident)
-                  offs=[]; pos=0
-                  while True:
-                      pos=d.find(b,pos)
-                      if pos<0: break
-                      offs.append(pos); pos+=1
-                  print('id_occ',ident,len(offs),offs[:20])
-          # Most common 2-byte field tags (little-endian values) at even offsets, rough serializer fingerprint
-          c=collections.Counter(d[i:i+2] for i in range(0,len(d)-1,2))
-          print('top_u16_pairs',[(k.hex(),v) for k,v in c.most_common(30)])
-          # Context around first 20 occurrences of likely edge anchor marker candidates: IDs divisible by 100 appearing after coordinate table.
-          if rec:
-              end=rec[-1][0]+32
-              sample=set(r[1] for r in rec[:200])
-              shown=0
-              for off in range(end,len(d)-4):
-                  val=struct.unpack_from('<I',d,off)[0]
-                  if val in sample:
-                      print('post_coord_id_context',off,val,d[max(0,off-24):off+40].hex())
-                      shown+=1
-                      if shown>=40: break
+              x=struct.unpack('<f',m.group(2))[0]; z=struct.unpack('<f',m.group(3))[0]
+              if math.isfinite(x) and math.isfinite(z): rec.append((m.start(),ident,x,z))
+          print('COORD_RECORDS',len(rec),'unique',len({r[1] for r in rec}))
+          # parse hub locators and nearest spline coordinate after Z flip (map height 3616)
+          lp=re.compile(r'\{\s*id\s*=\s*(\d+)\s*position\s*=\s*\{\s*([-+0-9.eE]+)\s+([-+0-9.eE]+)\s+([-+0-9.eE]+)\s*\}',re.S)
+          coords=[(ident,x,z,off) for off,ident,x,z in rec]
+          byid={ident:(x,z,off) for off,ident,x,z in rec}
+          all_matches=[]
+          for typ in ['city','farm','mine','wood','port']:
+              fn=f'gfx/map/map_object_data/generated_map_object_locators_{typ}.txt'
+              txt=open(fn,encoding='utf-8-sig').read()
+              loc=[]
+              for m in lp.finditer(txt):
+                  lid=int(m.group(1)); x=float(m.group(2)); zmap=float(m.group(4)); z=3616.0-zmap
+                  # nearest coord record
+                  best=min(coords,key=lambda r:(r[1]-x)**2+(r[2]-z)**2)
+                  dist=math.hypot(best[1]-x,best[2]-z)
+                  loc.append((lid,x,z,best[0],best[1],best[2],dist))
+                  all_matches.append((typ,lid,x,z,best[0],best[1],best[2],dist))
+              print('LOCATOR',typ,'count',len(loc),'near<=2',sum(r[6]<=2 for r in loc),'near<=8',sum(r[6]<=8 for r in loc),'near<=25',sum(r[6]<=25 for r in loc))
+              print('LOC_SAMPLE',typ,loc[:20])
+              # relation nearest anchor id vs locator id
+              rel=collections.Counter((r[3]-r[0]*100) for r in loc if r[6]<=8)
+              print('ANCHOR_DELTA',typ,rel.most_common(20))
+          # report locators without a close spline anchor
+          bad=[r for r in all_matches if r[7]>8]
+          print('UNMATCHED_LOCATORS_GT8',len(bad))
+          for r in sorted(bad,key=lambda x:-x[7])[:200]: print('UNMATCHED',r)
+          # Count close matched anchors and degree proxy = exact LE occurrence count excluding own coordinate definition
+          hubids=collections.defaultdict(list)
+          for typ,lid,x,z,aid,ax,az,dist in all_matches:
+              if dist<=8: hubids[aid].append((typ,lid,dist))
+          degree=[]
+          for aid,meta in hubids.items():
+              b=struct.pack('<I',aid); cnt=0; pos=0
+              while True:
+                  pos=d.find(b,pos)
+                  if pos<0: break
+                  cnt+=1; pos+=1
+              degree.append((cnt,aid,meta,byid.get(aid)))
+          print('MATCHED_HUB_ANCHORS',len(hubids))
+          print('LOW_OCCURRENCE_HUBS')
+          for row in sorted(degree)[:200]: print('HUB_OCC',row)
           PY
       - name: Upload analysis bundle
         uses: actions/upload-artifact@v4
