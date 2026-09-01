@@ -1,0 +1,115 @@
+name: ToE gold potential test fix
+on:
+  push:
+    branches: [ test/gold-potential-19-states ]
+permissions:
+  contents: write
+jobs:
+  patch:
+    if: github.event.head_commit.message == 'Run gold potential test fix'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: test/gold-potential-19-states
+      - name: Convert duplicate gold potentials to gold fields
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          targets = {
+              'map_data/state_regions/02_west_europe.txt': ['STATE_NSM_036'],
+              'map_data/state_regions/04_north_africa.txt': ['STATE_NSM_306'],
+              'map_data/state_regions/09_oceania.txt': ['STATE_NSM_136','STATE_NSM_434','STATE_NSM_459','STATE_NSM_479'],
+              'map_data/state_regions/00_north_ria.txt': ['STATE_NSM_337','STATE_NSM_475'],
+              'map_data/state_regions/06_west_asia.txt': ['STATE_NSM_234','STATE_NSM_429','STATE_NSM_507'],
+              'map_data/state_regions/05_south_africa.txt': ['STATE_NSM_282'],
+              'map_data/state_regions/03_east_europe.txt': ['STATE_NSM_108','STATE_NSM_203','STATE_NSM_307','STATE_NSM_399'],
+              'map_data/state_regions/07_east_asia.txt': ['STATE_NSM_071','STATE_NSM_381','STATE_NSM_402'],
+          }
+
+          def block_end(text, brace):
+              depth = 0
+              for i in range(brace, len(text)):
+                  if text[i] == '{': depth += 1
+                  elif text[i] == '}':
+                      depth -= 1
+                      if depth == 0: return i + 1
+              raise RuntimeError('unclosed block')
+
+          changed=[]
+          for fn, states in targets.items():
+              p=Path(fn)
+              raw=p.read_bytes(); bom=raw.startswith(b'\xef\xbb\xbf')
+              text=raw.decode('utf-8-sig')
+              edits=[]
+              for sid in states:
+                  ms=list(re.finditer(r'(?m)^\s*'+re.escape(sid)+r'\s*=\s*\{', text))
+                  if len(ms)!=1:
+                      raise SystemExit(f'{fn} {sid}: state block count {len(ms)}')
+                  sm=ms[0]; sb=text.find('{',sm.start()); se=block_end(text,sb)
+                  block=text[sm.start():se]
+
+                  # State must retain an explicit capped gold-mine potential.
+                  if not re.search(r'capped_resources\s*=\s*\{[\s\S]*?building_gold_mine\s*=\s*\d+', block):
+                      raise SystemExit(f'{fn} {sid}: capped gold mine missing')
+
+                  # Find exactly one undiscovered resource incorrectly typed as gold mine.
+                  candidates=[]; pos=0
+                  while True:
+                      m=re.search(r'(?m)^\s*resource\s*=\s*\{', block[pos:])
+                      if not m: break
+                      a=pos+m.start(); br=block.find('{',a); b=block_end(block,br)
+                      rb=block[a:b]
+                      if re.search(r'type\s*=\s*"building_gold_mine"',rb) and 'undiscovered_amount' in rb:
+                          candidates.append((a,b,rb))
+                      pos=b
+                  if len(candidates)!=1:
+                      raise SystemExit(f'{fn} {sid}: undiscovered gold-mine resource count {len(candidates)}')
+                  a,b,rb=candidates[0]
+                  if 'depleted_type' in rb:
+                      raise SystemExit(f'{fn} {sid}: depleted_type already exists unexpectedly')
+                  rb2=re.sub(
+                      r'(?m)^(\s*)type\s*=\s*"building_gold_mine"\s*$',
+                      r'\1type = "building_gold_field"\n\1depleted_type = "building_gold_mine"',
+                      rb,
+                      count=1,
+                  )
+                  if rb2==rb:
+                      raise SystemExit(f'{fn} {sid}: type replacement failed')
+                  edits.append((sm.start()+a, sm.start()+b, rb2, sid))
+
+              for a,b,repl,sid in sorted(edits,reverse=True):
+                  text=text[:a]+repl+text[b:]
+                  changed.append((fn,sid))
+              p.write_bytes((b'\xef\xbb\xbf' if bom else b'') + text.encode('utf-8'))
+
+          if len(changed)!=19:
+              raise SystemExit(f'Expected 19 state changes, got {len(changed)}')
+          print('CHANGED', changed)
+
+          # Post-patch validation: no target state may contain an undiscovered gold-mine resource;
+          # each must contain gold_field -> depleted gold_mine exactly once.
+          for fn, states in targets.items():
+              text=Path(fn).read_text(encoding='utf-8-sig')
+              for sid in states:
+                  sm=re.search(r'(?m)^\s*'+re.escape(sid)+r'\s*=\s*\{',text)
+                  sb=text.find('{',sm.start()); se=block_end(text,sb); block=text[sm.start():se]
+                  if len(re.findall(r'type\s*=\s*"building_gold_field"',block))!=1:
+                      raise SystemExit(f'{fn} {sid}: gold_field validation failed')
+                  if len(re.findall(r'depleted_type\s*=\s*"building_gold_mine"',block))!=1:
+                      raise SystemExit(f'{fn} {sid}: depleted_type validation failed')
+                  for rm in re.finditer(r'(?m)^\s*resource\s*=\s*\{',block):
+                      br=block.find('{',rm.start()); re_=block_end(block,br); rb=block[rm.start():re_]
+                      if 'undiscovered_amount' in rb and re.search(r'type\s*=\s*"building_gold_mine"',rb):
+                          raise SystemExit(f'{fn} {sid}: old duplicate gold-mine potential remains')
+          PY
+          git diff --check
+          git diff -- map_data/state_regions
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add map_data/state_regions
+          git commit -m 'Test fix duplicate gold potentials in 19 states'
+          git push origin HEAD:test/gold-potential-19-states
