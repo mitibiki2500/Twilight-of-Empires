@@ -1,0 +1,83 @@
+name: ToE remove unsupported start buildings
+on:
+  push:
+    branches: [ main ]
+permissions:
+  contents: write
+jobs:
+  patch:
+    if: github.event.head_commit.message == 'Patch unsupported starting buildings'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove logged unsupported starting buildings
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          targets = [
+              ('南米23','building_silk_plantation'),
+              ('東欧3','building_wheat_farm'),
+              ('西亜2','building_wheat_farm'),
+              ('西亜1','building_wheat_farm'),
+              ('西亜12','building_wheat_farm'),
+              ('西亜11','building_wheat_farm'),
+              ('西亜60','building_silk_plantation'),
+              ('西亜37','building_silk_plantation'),
+              ('西亜70','building_coal_mine'),
+              ('豪14','building_wheat_farm'),
+          ]
+
+          def block_end(text, brace):
+              d=0
+              for i in range(brace,len(text)):
+                  if text[i]=='{': d+=1
+                  elif text[i]=='}':
+                      d-=1
+                      if d==0:return i+1
+              raise RuntimeError('unclosed block')
+
+          changed=[]
+          for state_name, building in targets:
+              matches=[]
+              for p in Path('common/history/buildings').glob('*.txt'):
+                  raw=p.read_bytes(); text=raw.decode('utf-8-sig')
+                  # Find state block by generated comment name, not guessed STATE id.
+                  for cm in re.finditer(r'(?m)^\s*#\s*州名:\s*'+re.escape(state_name)+r'\s*\(STATE_NSM_\d+\)',text):
+                      # nearest preceding top-level s:STATE block
+                      prefix=text[:cm.start()]
+                      sms=list(re.finditer(r'(?m)^\s*s:(STATE_NSM_\d+)\s*=\s*\{',prefix))
+                      if not sms: continue
+                      sm=sms[-1]; sb=text.find('{',sm.start()); se=block_end(text,sb)
+                      if not (sm.start() < cm.start() < se): continue
+                      block=text[sm.start():se]
+                      pos=0
+                      while True:
+                          m=re.search(r'(?m)^\s*create_building\s*=\s*\{',block[pos:])
+                          if not m: break
+                          a=pos+m.start(); br=block.find('{',a); b=block_end(block,br); cb=block[a:b]
+                          if re.search(r'building\s*=\s*"?'+re.escape(building)+r'"?',cb):
+                              matches.append((p,sm.start()+a,sm.start()+b,sm.group(1),cb,raw.startswith(b'\xef\xbb\xbf')))
+                          pos=b
+              if len(matches)!=1:
+                  raise SystemExit(f'{state_name} {building}: expected exactly 1 create_building block, got {len(matches)}')
+              p,a,b,sid,cb,bom=matches[0]
+              raw=p.read_bytes(); text=raw.decode('utf-8-sig')
+              text=text[:a]+text[b:]
+              p.write_bytes((b'\xef\xbb\xbf' if bom else b'')+text.encode('utf-8'))
+              changed.append((str(p),sid,state_name,building))
+
+          if len(changed)!=len(targets):
+              raise SystemExit(f'changed {len(changed)} != targets {len(targets)}')
+          print('CHANGED')
+          for x in changed: print(x)
+          PY
+          git diff --check
+          git diff -- common/history/buildings
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add common/history/buildings
+          git commit -m 'Remove unsupported starting buildings'
+          git push origin HEAD:main
