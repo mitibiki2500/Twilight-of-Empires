@@ -1,0 +1,26 @@
+name: ToE subject hierarchy audit
+on:
+  push:
+    branches: [ main ]
+jobs:
+  audit:
+    if: github.event.head_commit.message == 'Run ToE subject hierarchy audit'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Locate country definitions and subject hierarchy
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          for tag in ['XAI','XAZ','XBW','MVA','KSO','KTO','PPT','PTK']:
+              print('\n===',tag,'===')
+              for p in Path('common/history/countries').glob('*.txt'):
+                  try: t=p.read_text(encoding='utf-8-sig')
+                  except: continue
+                  if f'c:{tag}' in t:
+                      print(p)
+                      for n,line in enumerate(t.splitlines(),1):
+                          if f'c:{tag}' in line or 'set_country_type' in line:
+                              print(n,line)
+          PY
