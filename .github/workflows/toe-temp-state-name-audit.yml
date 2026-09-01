@@ -1,0 +1,47 @@
+name: ToE state name audit
+on:
+  push:
+    branches: [ main ]
+permissions:
+  contents: read
+jobs:
+  audit:
+    if: github.event.head_commit.message == 'Run ToE state name audit'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Map logged Japanese state names to state IDs and histories
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          names=['南米23','東欧3','西亜2','西亜60','西亜1','西亜37','西亜12','西亜70','西亜11','豪14','中央諸島部17','北米51','北米2','バイゼル','コーサル','パルン','東欧78','東欧76','北阿4','南レフリア東島','西亜3','西亜24','西亜68','東亜7','東亜2','東亜5','豪31','豪34','豪40','豪36']
+          textfiles=[]
+          for p in Path('.').rglob('*'):
+              if p.is_file() and '.git' not in p.parts and p.suffix.lower() in {'.txt','.yml','.yaml','.csv'}:
+                  try: tx=p.read_text(encoding='utf-8-sig')
+                  except: continue
+                  textfiles.append((p,tx))
+          for name in names:
+              print(f'===== {name} =====')
+              c=0
+              for p,tx in textfiles:
+                  for n,line in enumerate(tx.splitlines(),1):
+                      if name in line:
+                          print(f'{p}:{n}:{line}')
+                          c+=1
+                          if c>=20: break
+                  if c>=20: break
+              if c==0: print('NO_LITERAL_MATCH')
+          print('===== BUILDING TYPE CONTEXT =====')
+          for needle in ['building_silk_plantation','building_wheat_farm','building_coal_mine']:
+              print('---',needle,'---')
+              for p,tx in textfiles:
+                  if not str(p).startswith('common/history/buildings/'): continue
+                  lines=tx.splitlines()
+                  for n,line in enumerate(lines,1):
+                      if needle in line:
+                          lo=max(0,n-8); hi=min(len(lines),n+4)
+                          print(f'FILE {p} line {n}')
+                          print('\n'.join(f'{i+1}:{lines[i]}' for i in range(lo,hi)))
+          PY
