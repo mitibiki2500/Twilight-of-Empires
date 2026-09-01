@@ -40,18 +40,5 @@ toe_nomad_and_journal_game_start = {
             add_technology_researched = toe_nomadism
             activate_law = law_type:law_toe_nomadism
         }
-        c:SKR ?= {
-            add_technology_researched = toe_gun_mangudai
-            ig:ig_landowners = { save_scope_as = toe_station_sponsor }
-            active_law:lawgroup_bureaucracy ?= {
-                if = {
-                    limit = { NOT = { has_amendment = amendment_toe_alti_station_system } }
-                    add_amendment = {
-                        type = amendment_toe_alti_station_system
-                        sponsor = scope:toe_station_sponsor
-                    }
-                }
-            }
-        }
     }
 }
