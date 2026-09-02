@@ -1,2 +1,42 @@
 ﻿# Twilight of Empires total conversion
-# Disabled: vanilla-specific content references countries/states/geographic regions removed by ToE.
+# バニラのパンナショナル運動本体は、削除済みの史実文化・国家形成・国タグを参照するため無効化。
+# AIや共通scripted triggerから型名だけ参照される3種は、DB検証用の非発生スタブとして残す。
+
+movement_german_national = {
+	category = movement_category_ideological
+	ideology = ideology_anti_slavery_movement
+	creation_trigger = { always = no }
+	creation_weight = { value = 0 }
+	on_created = {}
+	character_support_trigger = { always = no }
+	character_support_weight = { value = 0 }
+	pop_support_trigger = { always = no }
+	pop_support_factors = {}
+	pop_support_weight = { value = 0 }
+}
+
+movement_italian_national = {
+	category = movement_category_ideological
+	ideology = ideology_anti_slavery_movement
+	creation_trigger = { always = no }
+	creation_weight = { value = 0 }
+	on_created = {}
+	character_support_trigger = { always = no }
+	character_support_weight = { value = 0 }
+	pop_support_trigger = { always = no }
+	pop_support_factors = {}
+	pop_support_weight = { value = 0 }
+}
+
+movement_yugoslav_national = {
+	category = movement_category_ideological
+	ideology = ideology_anti_slavery_movement
+	creation_trigger = { always = no }
+	creation_weight = { value = 0 }
+	on_created = {}
+	character_support_trigger = { always = no }
+	character_support_weight = { value = 0 }
+	pop_support_trigger = { always = no }
+	pop_support_factors = {}
+	pop_support_weight = { value = 0 }
+}
