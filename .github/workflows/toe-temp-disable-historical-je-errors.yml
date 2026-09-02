@@ -1,0 +1,94 @@
+name: ToE 史実JE無効化（一時）
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  disable-historical-je:
+    if: github.event.head_commit.message == 'エラーを出す史実ジャーナルを安全に無効化する一時ワークフローを追加'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: ログで確認済みの史実JEだけを無効化
+        shell: python
+        run: |
+          from pathlib import Path
+
+          targets = '''
+          common/journal_entries/00_belle_epoque.txt
+          common/journal_entries/00_canals.txt
+          common/journal_entries/00_establish_colonial_administration.txt
+          common/journal_entries/00_greek_nationalism.txt
+          common/journal_entries/00_italian_unification.txt
+          common/journal_entries/00_land_reclamation.txt
+          common/journal_entries/00_reunify_china.txt
+          common/journal_entries/00_romania.txt
+          common/journal_entries/00_seminole_wars.txt
+          common/journal_entries/01_krakow.txt
+          common/journal_entries/01_natural_borders_of_france.txt
+          common/journal_entries/02_brazil_navy.txt
+          common/journal_entries/02_brazilian_nation_building.txt
+          common/journal_entries/02_brazilian_slavery.txt
+          common/journal_entries/02_gran_colombia.txt
+          common/journal_entries/02_vargas.txt
+          common/journal_entries/04_imperialism_of_promise.txt
+          common/journal_entries/04_india_home_rule.txt
+          common/journal_entries/04_india_nationalism.txt
+          common/journal_entries/04_indian_famines.txt
+          common/journal_entries/05_austria_journal_entries.txt
+          common/journal_entries/05_austrian_fascism.txt
+          common/journal_entries/05_danubian_federation.txt
+          common/journal_entries/05_great_eastern_crisis.txt
+          common/journal_entries/05_hungary_je.txt
+          common/journal_entries/05_metternich.txt
+          common/journal_entries/05_struggle_for_the_highveld.txt
+          common/journal_entries/06_dominican_content.txt
+          common/journal_entries/06_economic_regeneration.txt
+          common/journal_entries/06_lusosphere.txt
+          common/journal_entries/06_philippines_je.txt
+          common/journal_entries/07_hokkaido.txt
+          common/journal_entries/07_korea_colonization.txt
+          common/journal_entries/05_grunderzeit.txt
+          common/journal_entries/06_the_carlist_wars.txt
+          '''.split()
+
+          changed = []
+          missing = []
+          for name in targets:
+              p = Path(name)
+              if not p.exists():
+                  missing.append(name)
+                  continue
+              old = p.read_text(encoding='utf-8-sig', errors='strict')
+              # ToE独自JEを誤って消さないため、NSM/ToE固有参照があるファイルは停止する。
+              if 'je_nsm_' in old or 'STATE_NSM_' in old or 'toe_' in old.lower():
+                  raise RuntimeError(f'ToE固有内容を検出したため停止: {name}')
+              new = ('\ufeff# Twilight of Empires total conversion\n'
+                     '# 無効化: バニラ史実世界専用のジャーナルで、ToEに存在しない州・人物・国家形成を参照するため。\n')
+              if old != new:
+                  p.write_text(new, encoding='utf-8')
+                  changed.append(name)
+
+          print(f'無効化対象: {len(changed)}')
+          for x in changed: print('CHANGED', x)
+          for x in missing: print('既に存在しないため不要', x)
+          if not changed:
+              raise RuntimeError('変更対象がありません。想定外のため停止します。')
+      - name: 差分検証
+        run: |
+          git diff --check
+          git diff --stat
+          git diff -- common/journal_entries
+      - name: 修正をコミット
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add common/journal_entries
+          git commit -m "ToEに不要な史実ジャーナル35種を無効化"
+          git push
