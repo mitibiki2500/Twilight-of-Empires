@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   disable-je:
-    if: github.event.head_commit.message == '残存する史実ジャーナルを安全に無効化する一時ワークフローを追加'
+    if: github.event.head_commit.message == 'ToE固有内容を含む病人JEを除外して史実JE無効化を再実行'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,7 +31,6 @@ jobs:
           common/journal_entries/06_the_two_spains.txt
           common/journal_entries/07_tenpo_crisis.txt
           common/journal_entries/00_fascism.txt
-          common/journal_entries/00_sick_man.txt
           '''.split()
           changed=[]
           for name in targets:
@@ -60,5 +59,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add common/journal_entries
-          git commit -m "新ログで残った史実ジャーナルを無効化"
+          git commit -m "新ログで残った史実ジャーナル11種を無効化"
           git push
