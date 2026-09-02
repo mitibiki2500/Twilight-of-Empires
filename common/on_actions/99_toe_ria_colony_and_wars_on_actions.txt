@@ -7,7 +7,7 @@ toe_ria_colony_game_start = {
     effect = {
         c:XBM ?= {
             every_scope_state = {
-                every_pop = {
+                every_scope_pop = {
                     change_pop_culture = { target = cu:nsm_map_gsu value = 0.15 }
                 }
             }
@@ -18,9 +18,30 @@ toe_ria_colony_game_start = {
 
 toe_ria_civil_war_claims_game_start = {
     effect = {
-        c:XBJ ?= { every_scope_state = { add_claim = c:XBK add_claim = c:XBL } }
-        c:XBK ?= { every_scope_state = { add_claim = c:XBJ add_claim = c:XBL } }
-        c:XBL ?= { every_scope_state = { add_claim = c:XBJ add_claim = c:XBK } }
+        c:XBJ ?= {
+            every_scope_state = {
+                state_region = {
+                    add_claim = c:XBK
+                    add_claim = c:XBL
+                }
+            }
+        }
+        c:XBK ?= {
+            every_scope_state = {
+                state_region = {
+                    add_claim = c:XBJ
+                    add_claim = c:XBL
+                }
+            }
+        }
+        c:XBL ?= {
+            every_scope_state = {
+                state_region = {
+                    add_claim = c:XBJ
+                    add_claim = c:XBK
+                }
+            }
+        }
     }
 }
 
