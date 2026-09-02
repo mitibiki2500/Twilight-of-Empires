@@ -27,15 +27,13 @@
 		activate_law = law_type:law_right_to_associate
 	        set_country_type = unrecognized
 
-			add_company = company_type:company_nsm_national_arsenal
+		add_company = company_type:company_nsm_national_arsenal
 	        company:company_nsm_national_arsenal = {
 	            set_company_establishment_date = 1790.1.1
 	            set_company_state_region = s:STATE_NSM_429
 	        }
 
-		if = {
-			limit = { NOT = { has_journal_entry = je_nsm_altia_conquest_sparia } }
-			add_journal_entry = { type = je_nsm_altia_conquest_sparia }
-		}
+		# je_nsm_altia_conquest_sparia はJE側の possible / is_shown_when_inactive で管理する。
+		# 開始履歴から手動追加すると自動追加と競合して二重登録になるため追加しない。
 	}
 }
