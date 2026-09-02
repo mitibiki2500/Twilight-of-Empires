@@ -544,31 +544,6 @@
 
 		}
 
-		# 王立フセン社 (XBB)
-		region_state:XBB={
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XBB" levels=4 } }
-				reserves=1
-			}
-
-			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					country={ country="c:XBB" levels=5 }
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
-			}
-
-			create_building={
-				building="building_government_administration"
-				add_ownership={ country={ country="c:XBB" levels=3 } }
-				reserves=1
-				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
-			}
-
-		}
 
 	}
 	s:STATE_NSM_189={
@@ -1121,31 +1096,6 @@
 
 		}
 
-		# 王立フセン社 (XBB)
-		region_state:XBB={
-			create_building = {
-				building="building_naval_administration"
-				add_ownership={ country={ country="c:XBB" levels=2 } }
-				reserves=1
-			}
-
-			create_building={
-				building="building_tea_plantation"
-				add_ownership={
-					country={ country="c:XBB" levels=2 }
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
-			}
-
-			create_building={
-				building="building_government_administration"
-				add_ownership={ country={ country="c:XBB" levels=3 } }
-				reserves=1
-				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_horizontal_drawer_cabinets" }
-			}
-
-		}
 
 	}
 	s:STATE_NSM_336={
