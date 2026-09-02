@@ -33,6 +33,9 @@
 	            set_company_state_region = s:STATE_NSM_429
 	        }
 
-		add_journal_entry = { type = je_nsm_altia_conquest_sparia }
+		if = {
+			limit = { NOT = { has_journal_entry = je_nsm_altia_conquest_sparia } }
+			add_journal_entry = { type = je_nsm_altia_conquest_sparia }
+		}
 	}
 }
