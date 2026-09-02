@@ -7,7 +7,11 @@ toe_ilvone_accept_latin_ria = {
     }
 
     possible = {
-        has_law_or_variant = law_type:law_racial_segregation
+        OR = {
+            has_law_or_variant = law_type:law_racial_segregation
+            has_law_or_variant = law_type:law_cultural_exclusion
+            has_law_or_variant = law_type:law_multicultural
+        }
         has_interest_marker_in_region = region_nsm_west_ria
         any_scope_state = {
             region = sr:region_nsm_west_ria
@@ -26,11 +30,17 @@ toe_ilvone_accept_latin_ria = {
 toe_ilvone_accept_ilvone_lefria = {
     is_shown = {
         this = c:GSU
-        NOT = { country_has_primary_culture = cu:toe_ilvone_lefria }
+        OR = {
+            NOT = { country_has_primary_culture = cu:nsm_map_xdf }
+            NOT = { country_has_primary_culture = cu:toe_ilvone_lefria }
+        }
     }
 
     possible = {
-        has_law_or_variant = law_type:law_cultural_exclusion
+        OR = {
+            has_law_or_variant = law_type:law_cultural_exclusion
+            has_law_or_variant = law_type:law_multicultural
+        }
         any_scope_state = {
             region = sr:region_nsm_south_lefria
             is_incorporated = yes
@@ -39,7 +49,14 @@ toe_ilvone_accept_ilvone_lefria = {
     }
 
     when_taken = {
-        add_primary_culture = cu:toe_ilvone_lefria
+        if = {
+            limit = { NOT = { country_has_primary_culture = cu:nsm_map_xdf } }
+            add_primary_culture = cu:nsm_map_xdf
+        }
+        if = {
+            limit = { NOT = { country_has_primary_culture = cu:toe_ilvone_lefria } }
+            add_primary_culture = cu:toe_ilvone_lefria
+        }
     }
 
     ai_chance = { value = 100 }
