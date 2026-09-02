@@ -1,0 +1,120 @@
+name: ToE 兵舎上限超過修正（一時）
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  cap-barracks:
+    if: github.event.head_commit.message == '兵舎上限超過修正用の一時ワークフローを追加'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 兵舎ブロックのみ25へ上限修正
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          root = Path('common/history/buildings')
+          changed_files = []
+          changed_blocks = []
+
+          def find_blocks(text, token='create_building'):
+              pos = 0
+              while True:
+                  i = text.find(token, pos)
+                  if i < 0:
+                      break
+                  eq = text.find('=', i + len(token))
+                  if eq < 0:
+                      break
+                  start = text.find('{', eq + 1)
+                  if start < 0:
+                      break
+                  depth = 0
+                  j = start
+                  in_str = False
+                  esc = False
+                  while j < len(text):
+                      c = text[j]
+                      if in_str:
+                          if esc:
+                              esc = False
+                          elif c == '\\':
+                              esc = True
+                          elif c == '"':
+                              in_str = False
+                      else:
+                          if c == '"':
+                              in_str = True
+                          elif c == '{':
+                              depth += 1
+                          elif c == '}':
+                              depth -= 1
+                              if depth == 0:
+                                  yield i, j + 1
+                                  pos = j + 1
+                                  break
+                      j += 1
+                  else:
+                      raise RuntimeError(f'閉じ括弧を検出できません: offset={i}')
+
+          for path in sorted(root.glob('*.txt')):
+              text = path.read_text(encoding='utf-8-sig')
+              pieces = []
+              last = 0
+              changed = False
+              for a, b in list(find_blocks(text)):
+                  block = text[a:b]
+                  if not re.search(r'building\s*=\s*"?building_barracks"?', block):
+                      continue
+                  # 兵舎create_building内の所有levelsだけを対象にする。
+                  def repl(m):
+                      nonlocal_changed[0] = True
+                      old = int(m.group(2))
+                      changed_blocks.append((str(path), old, 25))
+                      return m.group(1) + '25'
+                  nonlocal_changed = [False]
+                  new_block = re.sub(r'(levels\s*=\s*)(\d+)', lambda m: (m.group(1)+'25') if int(m.group(2)) > 25 else m.group(0), block)
+                  if new_block != block:
+                      pieces.append(text[last:a])
+                      pieces.append(new_block)
+                      last = b
+                      changed = True
+                      # 記録はブロック内の元の25超値
+                      for m in re.finditer(r'levels\s*=\s*(\d+)', block):
+                          if int(m.group(1)) > 25:
+                              changed_blocks.append((str(path), int(m.group(1)), 25))
+              if changed:
+                  pieces.append(text[last:])
+                  path.write_text('\ufeff' + ''.join(pieces), encoding='utf-8')
+                  changed_files.append(str(path))
+
+          print('changed files:', len(changed_files))
+          print('changed barracks ownership levels:', len(changed_blocks))
+          for item in changed_blocks:
+              print(item)
+          if not changed_blocks:
+              print('25超の兵舎は現行ファイル上では検出されませんでした')
+      - name: 差分検証
+        run: |
+          git diff --check
+          git diff --stat
+          git diff -- common/history/buildings | grep -E '^[+-].*levels[[:space:]]*=' || true
+      - name: コミット
+        run: |
+          if git diff --quiet; then
+            echo "変更なし"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add common/history/buildings
+          git commit -m "開始兵舎の上限超過を25へ修正"
+          git push
