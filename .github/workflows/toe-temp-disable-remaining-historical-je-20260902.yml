@@ -1,0 +1,64 @@
+name: ToE 残存史実JE無効化（一時）
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  disable-je:
+    if: github.event.head_commit.message == '残存する史実ジャーナルを安全に無効化する一時ワークフローを追加'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 新ログで確認済みの史実JEだけ無効化
+        shell: python
+        run: |
+          from pathlib import Path
+          targets = '''
+          common/journal_entries/00_slave_owner_paranoia.txt
+          common/journal_entries/00_suffragists.txt
+          common/journal_entries/01_nihilism.txt
+          common/journal_entries/02_positivism.txt
+          common/journal_entries/04_communal_divides.txt
+          common/journal_entries/04_indian_federation.txt
+          common/journal_entries/05_creation_of_yugoslavia.txt
+          common/journal_entries/06_spanish_anarchism.txt
+          common/journal_entries/06_the_two_spains.txt
+          common/journal_entries/07_tenpo_crisis.txt
+          common/journal_entries/00_fascism.txt
+          common/journal_entries/00_sick_man.txt
+          '''.split()
+          changed=[]
+          for name in targets:
+              p=Path(name)
+              if not p.exists():
+                  print('MISSING', name)
+                  continue
+              old=p.read_text(encoding='utf-8-sig', errors='strict')
+              low=old.lower()
+              if 'je_nsm_' in old or 'state_nsm_' in low or 'toe_' in low:
+                  raise RuntimeError(f'ToE固有内容を検出したため停止: {name}')
+              new='\ufeff# Twilight of Empires total conversion\n# 無効化: ToEに存在しない史実国家・政治運動・人物・州を前提とするため。\n'
+              if old != new:
+                  p.write_text(new, encoding='utf-8')
+                  changed.append(name)
+          print('changed', len(changed))
+          for x in changed: print(x)
+          if not changed:
+              raise RuntimeError('変更対象なし')
+      - name: 差分検証
+        run: |
+          git diff --check
+          git diff --stat
+      - name: コミット
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add common/journal_entries
+          git commit -m "新ログで残った史実ジャーナルを無効化"
+          git push
