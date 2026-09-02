@@ -884,10 +884,7 @@ building_victoria_terminus = {
 	}
 
 	possible = {
-		custom_tooltip = {
-			text = owns_bombay_province_tt
-			owner ?= p:xB0D0E0.state.owner
-		}
+		always = no # ToE map: vanilla Bombay province does not exist
 	}
 	ai_value = 10000
 
