@@ -1,4 +1,4 @@
-name: ToE naval administration audit
+name: ToE region_state ownership audit
 on:
   push:
     branches: [ main ]
@@ -6,30 +6,49 @@ permissions:
   contents: read
 jobs:
   audit:
-    if: github.event.head_commit.message == 'Audit XBH coastal state candidates'
+    if: github.event.head_commit.message == 'Audit region_state ownership current main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Print XBH state region definitions
+      - name: Compare building region_state tags against starting state owners
         shell: bash
         run: |
           python3 - <<'PY'
           from pathlib import Path
           import re
-          targets=['STATE_NSM_008','STATE_NSM_070','STATE_NSM_076']
+
           def bend(t,b):
-            d=0
-            for i in range(b,len(t)):
-              if t[i]=='{': d+=1
-              elif t[i]=='}':
-                d-=1
-                if d==0:return i+1
-            raise RuntimeError('unclosed')
-          for p in Path('map_data/state_regions').glob('*.txt'):
-            t=p.read_text(encoding='utf-8-sig')
-            for sid in targets:
-              for m in re.finditer(r'(?m)^\s*'+sid+r'\s*=\s*\{',t):
-                b=t.find('{',m.start()); e=bend(t,b); blk=t[m.start():e]
-                print('===',sid,p,'===')
-                print(blk)
+              d=0
+              for i in range(b,len(t)):
+                  if t[i]=='{': d+=1
+                  elif t[i]=='}':
+                      d-=1
+                      if d==0:return i+1
+              raise RuntimeError('unclosed block')
+
+          st=Path('common/history/states/00_nsm_states.txt').read_text(encoding='utf-8-sig')
+          owners={}
+          for m in re.finditer(r'(?m)^\s*s:(STATE_NSM_\d+)\s*=\s*\{',st):
+              b=st.find('{',m.start()); e=bend(st,b); blk=st[m.start():e]
+              tags=set()
+              for cm in re.finditer(r'(?m)^\s*create_state\s*=\s*\{',blk):
+                  cb=blk.find('{',cm.start()); ce=bend(blk,cb); cblk=blk[cm.start():ce]
+                  tags.update(re.findall(r'(?m)^\s*country\s*=\s*c:([A-Z0-9]{3})\b',cblk))
+              owners[m.group(1)]=tags
+
+          mism=[]
+          for p in Path('common/history/buildings').glob('*.txt'):
+              t=p.read_text(encoding='utf-8-sig')
+              for m in re.finditer(r'(?m)^\s*s:(STATE_NSM_\d+)\s*=\s*\{',t):
+                  b=t.find('{',m.start()); e=bend(t,b); blk=t[m.start():e]; sid=m.group(1)
+                  allowed=owners.get(sid,set())
+                  for rm in re.finditer(r'(?m)^\s*region_state:([A-Z0-9]{3})\s*=\s*\{',blk):
+                      tag=rm.group(1)
+                      if tag not in allowed:
+                          line=t[:m.start()+rm.start()].count('\n')+1
+                          rb=blk.find('{',rm.start()); re_=bend(blk,rb); rblk=blk[rm.start():re_]
+                          buildings=re.findall(r'building\s*=\s*"(building_[A-Za-z0-9_]+)"',rblk)
+                          mism.append((str(p),line,sid,tag,sorted(allowed),buildings))
+          print('MISMATCH_COUNT',len(mism))
+          for x in mism: print('MISMATCH',x)
           PY
