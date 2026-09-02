@@ -48,14 +48,6 @@ REPLACE_OR_CREATE:law_peasant_proprietorship = {
 			}
 			custom_tooltip = rural_laborers_tu_ig_shift_effect_negative_tt
 		}
-		if = {
-			limit = {
-				has_journal_entry = je_pedro_brazil
-				NOT = { has_variable = landreform_pedropoint }
-			}
-			set_variable = landreform_pedropoint
-			remove_pedropoint_effect = yes
-		}
 	}
 
 	ai_enact_weight_modifier = {
@@ -64,26 +56,6 @@ REPLACE_OR_CREATE:law_peasant_proprietorship = {
 		if = {
 			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
-		}
-
-		if = {
-			limit = {
-				has_journal_entry = je_meiji_main
-				has_law_or_variant = law_type:law_serfdom
-			}
-			add = 10000
-		}
-
-		if = {
-			limit = {
-				NOT = { has_variable = is_carlist_spain }
-				OR = {
-					has_journal_entry = je_portugal_regeneration_agriculture
-					has_journal_entry = je_spa_economic_regeneration_land_reform
-				}
-				NOT = { has_law = law_type:law_peasant_proprietorship }
-			}
-			add = 1000
 		}
 
 		if = {
