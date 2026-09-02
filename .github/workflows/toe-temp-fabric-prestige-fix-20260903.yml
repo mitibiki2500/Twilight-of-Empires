@@ -1,0 +1,38 @@
+name: ToE fabric威信財上限修正（一時）
+
+on:
+  push:
+    branches: [ main ]
+permissions:
+  contents: write
+jobs:
+  fix:
+    if: github.event.head_commit.message == 'fabric威信財上限修正用の一時ワークフローを追加'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 無効バニラ綿をfabric枠から退避
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          p=Path('common/prestige_goods/00_prestige_goods.txt')
+          t=p.read_text(encoding='utf-8-sig')
+          pat=re.compile(r'(prestige_good_sea_island_cotton\s*=\s*\{.*?\bbase_good\s*=\s*)fabric(.*?^\})',re.S|re.M)
+          t2,n=pat.subn(r'\1dye\2',t,count=1)
+          if n!=1: raise RuntimeError(f'Sea Island Cotton base_good置換数={n}')
+          if 'prestige_good_sea_island_cotton' not in t2: raise RuntimeError('key disappeared')
+          p.write_text('\ufeff'+t2,encoding='utf-8')
+      - name: 検証
+        run: |
+          grep -A8 -B2 'prestige_good_sea_island_cotton' common/prestige_goods/00_prestige_goods.txt
+          grep -A8 -B2 'prestige_good_MSN_escano_cotton' common/prestige_goods/MSN00_prestige_goods.txt
+          grep -A8 -B2 'prestige_good_MSN_premium_cotton' common/prestige_goods/MSN00_prestige_goods.txt
+          git diff --check
+      - name: コミット
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add common/prestige_goods/00_prestige_goods.txt
+          git commit -m "fabric威信財の登録上限超過を解消"
+          git push
