@@ -1,0 +1,82 @@
+name: ToE 史実参照互換スタブ生成（一時）
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  make-compat-stubs:
+    if: github.event.head_commit.message == '史実JE互換スタブ生成用の一時ワークフローを追加'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 未定義史実JEとscripted triggerを安全な空スタブで補完
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          missing_refs = [
+            'je_aberdeen_act','je_acre_dispute','je_acw_countdown','je_agricultural_development','je_alaska','je_canada_pacific_railway','je_caucasian_war','je_christ_of_nations','je_coffee_with_milk','je_colonize_korea','je_conquer_oregon','je_conquest_of_algeria','je_conquest_of_central_asia','je_conquest_of_tetouan','je_consolidate_colonial_rule','je_cuba_independencia','je_danubian_federation','je_divided_monarchists','je_eastern_frontier','je_eastern_question_austria','je_eastern_question_russia','je_expanding_paraguay','je_francocracia','je_french_natural_borders','je_german_unification','je_government_petition_negotiation_version','je_government_petition_negotiation_version_b','je_great_eastern_crisis','je_great_reformer','je_great_reforms_bureaucratic','je_great_reforms_military','je_great_reforms_serfdom','je_greek_nationalism','je_grunderzeit','je_hawaii','je_hawaiian_interest','je_hungarian_revolution','je_india_home_rule','je_indian_famines','je_maintain_afghan_protectorate','je_manifest_destiny_mexico','je_matter_of_hungary','je_matter_of_slavery','je_meiji_diplomacy','je_meiji_economy','je_meiji_imperial_marriage','je_meiji_main','je_meiji_restoration','je_metternich','je_modernizing_paraguay','je_negotiate_army_quest','je_negotiate_building_group','je_negotiate_buildings','je_negotiate_sol','je_negotiate_taxes','je_new_republic','je_opium_obsession','je_opium_wars','je_oregon','je_pacify_the_steppes','je_patagonia','je_pedro_brazil','je_pedro_republic','je_populist_unrest','je_portugal_united_kingdom','je_reunify_china','je_risorgimento','je_ryukyu_rivalry','je_schleswig_holstein_question','je_serbian_throne','je_spa_economic_regeneration_land_reform','je_spa_economic_regeneration_light_industry','je_spa_economic_regeneration_master','je_spa_economic_regeneration_mining','je_spa_economic_regeneration_modernise_agriculture','je_spa_economic_regeneration_railways','je_spa_economic_regeneration_ultramar','je_springtime_of_the_peoples','je_standestaat','je_struggle_for_the_highveld','je_taming_the_north','je_the_algerian_departements','je_the_eastern_border','je_the_first_carlist_war','je_the_krakow_uprising','je_trans_continental_railway','je_trans_siberian_railway','je_uneasy_raj','je_unify_afghanistan'
+          ]
+
+          # 現行ToE内ですでに定義済みのJEは絶対に上書きしない。
+          defined = set()
+          for p in Path('common/journal_entries').glob('*.txt'):
+              txt = p.read_text(encoding='utf-8-sig')
+              defined.update(re.findall(r'^\s*(je_[A-Za-z0-9_]+)\s*=\s*\{', txt, flags=re.M))
+          make = [x for x in missing_refs if x not in defined]
+
+          out = ['\ufeff# Twilight of Empires compatibility stubs',
+                 '# バニラAI・scripted effectのDB参照検証を通すためだけの非表示JE。',
+                 '# すべて possible / is_shown_when_inactive / complete が always=no のため発生しない。','']
+          for je in make:
+              out += [f'{je} = {{',
+                      '\ticon = "gfx/interface/icons/event_icons/event_newspaper.dds"',
+                      '\tgroup = je_group_historical_content',
+                      '\tis_shown_when_inactive = { always = no }',
+                      '\tpossible = { always = no }',
+                      '\tcomplete = { always = no }',
+                      '}','']
+          Path('common/journal_entries/99_toe_compat_historical_je_stubs.txt').write_text('\n'.join(out), encoding='utf-8')
+
+          # ログで未定義になっていた旧世界専用scripted trigger。
+          # any_country_in_* 等の一般triggerは別用途の可能性があるのでここでは触れず、
+          # 明確に旧満州・漢ホームランド専用だけを補完する。
+          trg = '\ufeff# ToE compatibility: removed vanilla geographic helper triggers\n\n'
+          trg += 'any_state_in_manchuria_old = { always = no }\n\n'
+          trg += 'any_state_in_han_homelands = { always = no }\n'
+          Path('common/scripted_triggers/99_toe_compat_removed_geography_triggers.txt').write_text(trg, encoding='utf-8')
+
+          print('existing JE definitions:', len(defined))
+          print('compat JE stubs created:', len(make))
+          print('already-defined refs skipped:', len(missing_refs)-len(make))
+      - name: 重複定義と構文差分を検証
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, collections
+          defs=[]
+          for p in Path('common/journal_entries').glob('*.txt'):
+              txt=p.read_text(encoding='utf-8-sig')
+              defs += [(x,str(p)) for x in re.findall(r'^\s*(je_[A-Za-z0-9_]+)\s*=\s*\{',txt,flags=re.M)]
+          c=collections.Counter(x for x,_ in defs)
+          dup=[x for x,n in c.items() if n>1]
+          if dup:
+              raise RuntimeError('JE duplicate definitions: '+', '.join(sorted(dup)))
+      - name: git diff検証
+        run: |
+          git diff --check
+          git diff --stat
+      - name: コミット
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add common/journal_entries/99_toe_compat_historical_je_stubs.txt common/scripted_triggers/99_toe_compat_removed_geography_triggers.txt
+          git commit -m "バニラ史実JEと旧地理triggerの互換スタブを追加"
+          git push
