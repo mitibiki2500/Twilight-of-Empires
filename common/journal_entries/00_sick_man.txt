@@ -300,17 +300,9 @@ je_sick_man_separatism = {
 	}
 
 	on_fail = {
+		# ToEではオスマン帝国/TURと史実Great Eastern Crisisを使用しない。
+		# ゴートン固有の失敗状態だけを保持する。
 		set_variable = failed_sick_man_separatism
-		if = { #failure immediately triggers eastern_crisis
-			limit = {
-				c:TUR ?= this
-				has_dlc_feature = ip3_content
-				NOT = {
-					has_global_variable = eastern_crisis_happened
-				}
-			}
-			add_contextless_journal_entry = je_great_eastern_crisis
-		}
 	}
 
 	current_value = {
