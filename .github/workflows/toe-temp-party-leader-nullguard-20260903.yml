@@ -1,0 +1,75 @@
+name: ToE 政党leader参照クラッシュ修正（一時）
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  patch-party-leaders:
+    if: github.event.head_commit.message == '政党leader参照クラッシュ修正用の一時ワークフローを追加'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 1.13.10政党ファイルのleader直接参照をnull-safe化
+        shell: python
+        run: |
+          from pathlib import Path
+          from urllib.request import urlopen
+          import json, re
+          base='https://raw.githubusercontent.com/settintotrieste/V3-Vanilla-Extract/eba06b7e4c47741732d6eaa7698ba5a5c25716a1/game/common/parties/'
+          files=['agrarian_party.txt','anarchist_party.txt','communist_party.txt','conservative_party.txt','fascist_party.txt','free_trade_party.txt','liberal_party.txt','military_party.txt','radical_party.txt','religious_party.txt','revolutionary_party.txt','social_democrats_party.txt']
+          outdir=Path('common/parties'); outdir.mkdir(parents=True,exist_ok=True)
+          total=0
+          per={}
+          for fn in files:
+              try:
+                  txt=urlopen(base+fn).read().decode('utf-8-sig')
+              except Exception:
+                  continue
+              # 既にnull-safeな leader ?= は触らず、直接 leader = { だけを変更する。
+              pat=re.compile(r'(?m)^(\s*)leader\s*=\s*\{')
+              n=len(pat.findall(txt))
+              txt=pat.sub(r'\1leader ?= {',txt)
+              total += n; per[fn]=n
+              (outdir/fn).write_text('\ufeff'+txt,encoding='utf-8')
+          if total < 20:
+              raise RuntimeError(f'leader直接参照の置換数が想定より少ない: {total} {per}')
+          print('null-safe leader refs:', total, per)
+      - name: クラッシュ箇所と構文を検証
+        shell: python
+        run: |
+          from pathlib import Path
+          bad=[]
+          for p in Path('common/parties').glob('*.txt'):
+              t=p.read_text(encoding='utf-8-sig')
+              if '\n\t\t\tleader = {' in t or '\n\t\t\t\tleader = {' in t or '\n\t\tleader = {' in t:
+                  bad.append(str(p))
+              depth=0; ins=False; esc=False
+              for c in t:
+                  if ins:
+                      if esc: esc=False
+                      elif c=='\\': esc=True
+                      elif c=='"': ins=False
+                  else:
+                      if c=='"': ins=True
+                      elif c=='{': depth+=1
+                      elif c=='}': depth-=1
+                      if depth<0: raise RuntimeError(f'brace underflow {p}')
+              if depth: raise RuntimeError(f'brace imbalance {p}: {depth}')
+          if bad: raise RuntimeError('direct leader refs remain: '+', '.join(bad))
+      - name: 差分検証
+        run: |
+          git diff --check
+          git diff --stat
+      - name: コミット
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add common/parties
+          git commit -m "政党のIG leader未設定参照をnull-safe化"
+          git push
