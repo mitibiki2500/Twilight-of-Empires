@@ -67,21 +67,12 @@ je_toe_paido_monarchist_rivalry = {
 
 	modifiers_while_active = { toe_paido_rival_monarchs }
 
-	immediate = {
-		fra_set_divided_monarchist_variables = yes
-		fra_weekly_pulse_legitimist_progress = yes
-		fra_weekly_pulse_orleanist_progress = yes
-	}
+	# ToEでは開始時にleader未生成のIGが存在するため、
+	# 史実フランス用 fra_* scripted effect は使用しない。
+	# これらは全IGのleader存在を前提にしており、unset scopeを大量発生させていた。
 
 	scripted_progress_bar = divided_monarchists_orleanist_progress_bar
 	scripted_progress_bar = divided_monarchists_legitimist_progress_bar
-
-	on_weekly_pulse = {
-		effect = {
-			fra_weekly_pulse_legitimist_progress = yes
-			fra_weekly_pulse_orleanist_progress = yes
-		}
-	}
 
 	on_monthly_pulse = {
 		effect = {
@@ -119,11 +110,9 @@ je_toe_paido_monarchist_rivalry = {
 			set_variable = toe_paido_innovative_monarchs_won
 		}
 		else = { set_variable = toe_paido_conservative_monarchs_won }
-		fra_clear_divided_monarchist_variables = yes
 	}
 
 	invalid = { NOT = { country_has_monarchy_law = yes } }
-	on_invalid = { fra_clear_divided_monarchist_variables = yes }
 
 	weight = 100
 	transferable = no
