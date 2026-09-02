@@ -45,10 +45,7 @@ prestige_good_MSN_anthracite = { #無煙炭
 	prestige_bonus = 0.1
 	texture = "gfx/interface/icons/goods_icons/prestige_goods/prestige_good_MSN_anthracite.dds"
 }
-# prestige_good_MSN_laska_rifle intentionally omitted for Victoria 3 1.13 compatibility.
-# Vanilla already registers three small_arms prestige goods (the engine maximum), and this
-# definition is not referenced by any ToE company yet. Re-enable it only together with a
-# deliberate replacement of one existing small_arms prestige-good slot.
+# prestige_good_MSN_laska_rifle はバニラ専用威信財整理後に復活予定。
 prestige_good_MSN_rapid_ammunition = { #速射弾
 	base_good = ammunition
 	prestige_bonus = 0.1
@@ -76,8 +73,11 @@ prestige_good_MSN_narta_tractor = { #ナルタトラクター
 	prestige_bonus = 0.1
 	texture = "gfx/interface/icons/goods_icons/prestige_goods/prestige_good_MSN_narta_tractor.dds"
 }
-# prestige_good_MSN_escano_cotton は Victoria 3 1.13 の fabric 威信財上限対策で省略。
-# 現行ToE企業から参照されていないため、フーシャメウス側の固有綿を優先して残す。
+prestige_good_MSN_escano_cotton = { #エスカノ綿
+	base_good = fabric
+	prestige_bonus = 0.1
+	texture = "gfx/interface/icons/goods_icons/prestige_goods/prestige_good_MSN_escano_cotton.dds"
+}
 
 #イルボネー
 prestige_good_MSN_harima_silk = { #針間製糸
@@ -118,7 +118,6 @@ prestige_good_MSN_zolnia_gas = { #ゾルニアガス
 	texture = "gfx/interface/icons/goods_icons/prestige_goods/prestige_good_MSN_zolnia_gas.dds"
 }
 
-
 #フーシャメウス
 prestige_good_MSN_talistan_automobile = { #タリスタン自動車
 	base_good = automobiles
@@ -132,6 +131,4 @@ prestige_good_MSN_premium_cotton = { #フーシャメウスコットン
 }
 
 #リイア
-# prestige_good_MSN_premium_grain is intentionally omitted for Victoria 3 1.13 compatibility.
-# Vanilla already uses two grain prestige-good slots and Paido's custom grain uses the third.
-# company_nsm_corn_major uses prestige_good_generic_grain instead so the company remains functional.
+# prestige_good_MSN_premium_grain はバニラ専用威信財整理後に復活予定。
