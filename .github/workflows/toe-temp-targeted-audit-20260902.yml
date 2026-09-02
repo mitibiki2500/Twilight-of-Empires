@@ -1,0 +1,79 @@
+name: ToE targeted remaining-error audit
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    if: github.event.head_commit.message == '残存エラー箇所を日本語監査する一時ワークフローを追加'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 残存エラーの参照元を列挙
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          roots=[Path('common'),Path('events'),Path('gfx'),Path('gui'),Path('localization'),Path('map_data')]
+          exts={'.txt','.yml','.yaml','.gui','.gfx','.asset','.csv','.mod','.json'}
+          needles=[
+            'je_nsm_altia_conquest_sparia',
+            'NSM_XBH_Starting_Fleet',
+            'c:XBH',
+            'country = XBH',
+            'country = c:XBH',
+            'XEZ', 'KNN', 'SUN',
+            'law_public_schools','law_per_capita_based_taxation','law_no_schools','law_censorship',
+            'prestige_good', 'fabric',
+            'toe_great_war_compound_contamination',
+            'search_edit',
+          ]
+          files=[]
+          for root in roots:
+            if not root.exists(): continue
+            for p in root.rglob('*'):
+              if p.is_file() and p.suffix.lower() in exts:
+                files.append(p)
+
+          for needle in needles:
+            print('\n===== 検索:',needle,'=====')
+            total=0
+            for p in files:
+              try: lines=p.read_text(encoding='utf-8-sig').splitlines()
+              except: continue
+              idx=[i for i,l in enumerate(lines) if needle in l]
+              if not idx: continue
+              total += len(idx)
+              print(f'--- {p} ({len(idx)}件) ---')
+              for i in idx[:30]:
+                a=max(0,i-3); b=min(len(lines),i+4)
+                for j in range(a,b): print(f'{j+1:05d}: {lines[j]}')
+                print()
+            print('合計',total)
+
+          # ログ上の大規模エラー元がMOD内にあるか
+          suspected=[
+            'gfx/portraits/portrait_modifiers/01_clothes.txt',
+            'gfx/portraits/portrait_modifiers/01_headgear.txt',
+            'gfx/portraits/portrait_modifiers/01_accessories.txt',
+            'common/on_actions/00_code_on_actions.txt',
+            'common/on_actions/00_on_actions_yearly.txt',
+            'common/ai_strategies/00_default_strategy.txt',
+            'common/scripted_effects/00_victoria_scripted_effects.txt',
+            'common/defines/00_ai.txt',
+            'common/defines/00_defines.txt',
+            'common/ship_types/00_ship_types.txt',
+            'common/journal_entries/00_player_objectives_great_game.txt',
+            'common/journal_entries/05_danubian_federation.txt',
+            'common/journal_entries/05_austrian_fascism.txt',
+          ]
+          print('\n===== 大量エラー元のMOD内存在確認 =====')
+          for x in suspected:
+            print(('存在 ' if Path(x).exists() else '不在 ')+x)
+          PY
