@@ -1,0 +1,41 @@
+name: ToE 政党以外クラッシュ要因監査（一時）
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    if: github.event.head_commit.message == '政党以外のクラッシュ要因監査用一時ワークフローを追加'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: アルティJE参照を全件検索
+        run: |
+          echo '=== je_nsm_altia_conquest_sparia ==='
+          grep -RIn --exclude-dir=.git 'je_nsm_altia_conquest_sparia' . || true
+          echo '=== conquest_sparia ==='
+          grep -RIn --exclude-dir=.git 'conquest_sparia' . || true
+      - name: 威信財base_good件数監査
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, collections
+          c=collections.Counter()
+          rows=[]
+          for p in Path('common/prestige_goods').glob('*.txt'):
+              t=p.read_text(encoding='utf-8-sig')
+              for m in re.finditer(r'(?ms)^\s*([A-Za-z0-9_]+)\s*=\s*\{(.*?)(?=^\s*[A-Za-z0-9_]+\s*=\s*\{|\Z)',t):
+                  key,body=m.group(1),m.group(2)
+                  b=re.search(r'\bbase_good\s*=\s*([A-Za-z0-9_]+)',body)
+                  if b:
+                      c[b.group(1)]+=1
+                      rows.append((b.group(1),key,str(p)))
+          print('COUNTS')
+          for k,v in sorted(c.items(), key=lambda x:(-x[1],x[0])): print(k,v)
+          print('FABRIC')
+          for r in rows:
+              if r[0]=='fabric': print(*r)
