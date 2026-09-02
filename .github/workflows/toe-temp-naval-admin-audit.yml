@@ -1,16 +1,16 @@
-name: ToE region_state ownership audit
+name: ToE remove stale XBB region_state blocks
 on:
   push:
     branches: [ main ]
 permissions:
-  contents: read
+  contents: write
 jobs:
-  audit:
-    if: github.event.head_commit.message == 'Audit region_state ownership current main'
+  patch:
+    if: github.event.head_commit.message == 'Patch stale XBB region_state blocks'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Compare building region_state tags against starting state owners
+      - name: Remove XBB blocks from FOM and SHR states only
         shell: bash
         run: |
           python3 - <<'PY'
@@ -26,29 +26,30 @@ jobs:
                       if d==0:return i+1
               raise RuntimeError('unclosed block')
 
-          st=Path('common/history/states/00_nsm_states.txt').read_text(encoding='utf-8-sig')
-          owners={}
-          for m in re.finditer(r'(?m)^\s*s:(STATE_NSM_\d+)\s*=\s*\{',st):
-              b=st.find('{',m.start()); e=bend(st,b); blk=st[m.start():e]
-              tags=set()
-              for cm in re.finditer(r'(?m)^\s*create_state\s*=\s*\{',blk):
-                  cb=blk.find('{',cm.start()); ce=bend(blk,cb); cblk=blk[cm.start():ce]
-                  tags.update(re.findall(r'(?m)^\s*country\s*=\s*c:([A-Z0-9]{3})\b',cblk))
-              owners[m.group(1)]=tags
-
-          mism=[]
-          for p in Path('common/history/buildings').glob('*.txt'):
-              t=p.read_text(encoding='utf-8-sig')
-              for m in re.finditer(r'(?m)^\s*s:(STATE_NSM_\d+)\s*=\s*\{',t):
-                  b=t.find('{',m.start()); e=bend(t,b); blk=t[m.start():e]; sid=m.group(1)
-                  allowed=owners.get(sid,set())
-                  for rm in re.finditer(r'(?m)^\s*region_state:([A-Z0-9]{3})\s*=\s*\{',blk):
-                      tag=rm.group(1)
-                      if tag not in allowed:
-                          line=t[:m.start()+rm.start()].count('\n')+1
-                          rb=blk.find('{',rm.start()); re_=bend(blk,rb); rblk=blk[rm.start():re_]
-                          buildings=re.findall(r'building\s*=\s*"(building_[A-Za-z0-9_]+)"',rblk)
-                          mism.append((str(p),line,sid,tag,sorted(allowed),buildings))
-          print('MISMATCH_COUNT',len(mism))
-          for x in mism: print('MISMATCH',x)
+          p=Path('common/history/buildings/08_CentralIslands.txt')
+          raw=p.read_bytes(); bom=raw.startswith(b'\xef\xbb\xbf'); t=raw.decode('utf-8-sig')
+          expected={'STATE_NSM_170':'FOM','STATE_NSM_333':'SHR'}
+          for sid,owner in expected.items():
+              ms=list(re.finditer(r'(?m)^\s*s:'+sid+r'\s*=\s*\{',t))
+              if len(ms)!=1: raise SystemExit(f'{sid}: state block count {len(ms)}')
+              m=ms[0]; b=t.find('{',m.start()); e=bend(t,b); blk=t[m.start():e]
+              if f'region_state:{owner}' not in blk: raise SystemExit(f'{sid}: expected owner {owner} missing')
+              rms=list(re.finditer(r'(?m)^\s*region_state:XBB\s*=\s*\{',blk))
+              if len(rms)!=1: raise SystemExit(f'{sid}: XBB block count {len(rms)}')
+              rm=rms[0]; rb=blk.find('{',rm.start()); re_=bend(blk,rb)
+              start=rm.start()
+              prefix=blk[:start]
+              cm=re.search(r'(?m)^\s*#\s*王立フセン社\s*\(XBB\)\s*\n\s*$',prefix)
+              if cm and cm.end()==len(prefix): start=cm.start()
+              blk2=blk[:start]+blk[re_:]
+              if 'region_state:XBB' in blk2: raise SystemExit(f'{sid}: XBB remains')
+              t=t[:m.start()]+blk2+t[e:]
+          p.write_bytes((b'\xef\xbb\xbf' if bom else b'')+t.encode('utf-8'))
           PY
+          git diff --check
+          git diff -- common/history/buildings/08_CentralIslands.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add common/history/buildings/08_CentralIslands.txt
+          git commit -m 'Remove stale XBB building blocks from FOM and SHR states'
+          git push origin HEAD:main
