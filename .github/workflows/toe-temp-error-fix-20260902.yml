@@ -1,0 +1,116 @@
+name: ToE temporary error audit and safe fixes
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  audit-and-fix:
+    if: github.event.head_commit.message == 'エラー修正用の一時監査ワークフローを追加'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 既知エラーを監査して安全な項目だけ修正
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path('.')
+
+          # 1) 無効な日本語ローカライズキー（値は同じ日本語なので削除しても表示内容を上書きしない）
+          p = Path('localization/japanese/replace/99_toe_character_names_l_japanese.yml')
+          s = p.read_text(encoding='utf-8-sig')
+          old = s
+          s = '\n'.join(line for line in s.splitlines() if not re.match(r'^\s*(アルタン|テムール|サルガイ):', line)) + '\n'
+          assert s != old, '日本語キー3件が想定どおり見つからない'
+          p.write_text('\ufeff' + s, encoding='utf-8')
+          print('修正: 無効な日本語ローカライズキー3件を削除')
+
+          # 2) 現行DBと重複している互換regionだけ削除（他の互換regionは維持）
+          p = Path('common/geographic_regions/99_toe_vanilla_compat.txt')
+          s = p.read_text(encoding='utf-8-sig')
+          for key in ('geographic_region_east_asia', 'geographic_region_iberia_old'):
+              pat = rf'\n?{re.escape(key)}\s*=\s*\{{.*?\n\}}\n'
+              s2, n = re.subn(pat, '\n', s, count=1, flags=re.S)
+              assert n == 1, f'{key} の互換ブロックが1件ではない: {n}'
+              s = s2
+              print(f'修正: 重複互換region {key} を削除')
+          p.write_text('\ufeff' + s.lstrip('\ufeff'), encoding='utf-8')
+
+          # 3) state_trait の明白なキー欠落 typo。ログ上4州のみ。
+          typo = 'tate_trait_torihuse_mountains'
+          fixed = 'state_trait_torihuse_mountains'
+          hits = []
+          for p in Path('map_data/state_regions').glob('*.txt'):
+              s = p.read_text(encoding='utf-8-sig')
+              n = s.count(typo)
+              if n:
+                  hits.append((str(p), n))
+                  p.write_text('\ufeff' + s.replace(typo, fixed), encoding='utf-8')
+          total = sum(n for _, n in hits)
+          assert total == 4, f'想定4件のstate trait typoが {total} 件: {hits}'
+          print('修正: state trait typo 4件:', hits)
+
+          # 4) ToEでは無効化済みのBombay monumentに残る存在しないvanilla province event targetを除去
+          p = Path('common/buildings/08_monuments.txt')
+          s = p.read_text(encoding='utf-8-sig')
+          old_block = '''\tpossible = {\n\t\tcustom_tooltip = {\n\t\t\ttext = owns_bombay_province_tt\n\t\t\towner ?= p:xB0D0E0.state.owner\n\t\t}\n\t}'''
+          new_block = '''\tpossible = {\n\t\talways = no # ToE map: vanilla Bombay province does not exist\n\t}'''
+          n = s.count(old_block)
+          assert n == 1, f'Bombay monument possibleブロックが想定1件ではない: {n}'
+          s = s.replace(old_block, new_block, 1)
+          p.write_text('\ufeff' + s, encoding='utf-8')
+          print('修正: 無効monumentのvanilla province参照を除去')
+
+          # 監査: ログで大量発生している旧参照が現行repoに残っているかを出力
+          needles = [
+              'bg_munition_plants', 'bg_arms_industries', 'bg_artillery_foundaries', 'bg_military_shipyards',
+              'gov_dual_monarchy', 'gov_triple_monarchy',
+              'historical_agitators.10', 'lobby_events.1',
+              'rus_leon_trotsky_character_template', 'BIC_amy_carmichael',
+              'add_to_global_variable_list', 'tate_trait_torihuse_mountains',
+              'geographic_region_east_asia', 'geographic_region_iberia_old',
+          ]
+          text_ext = {'.txt','.yml','.yaml','.gui','.gfx','.asset','.csv','.mod','.json'}
+          for needle in needles:
+              found=[]
+              for q in root.rglob('*'):
+                  if not q.is_file() or q.suffix.lower() not in text_ext or '.git' in q.parts:
+                      continue
+                  try:
+                      t=q.read_text(encoding='utf-8-sig')
+                  except Exception:
+                      continue
+                  c=t.count(needle)
+                  if c:
+                      found.append((str(q),c))
+              print('AUDIT', needle, '=>', found)
+          PY
+
+          echo '--- git diff --check ---'
+          git diff --check
+          echo '--- git diff --stat ---'
+          git diff --stat
+          echo '--- git diff ---'
+          git diff -- localization/japanese/replace/99_toe_character_names_l_japanese.yml common/geographic_regions/99_toe_vanilla_compat.txt map_data/state_regions common/buildings/08_monuments.txt
+
+      - name: 安全修正をコミット
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo '変更なし'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add localization/japanese/replace/99_toe_character_names_l_japanese.yml common/geographic_regions/99_toe_vanilla_compat.txt map_data/state_regions common/buildings/08_monuments.txt
+          git commit -m '明確な1.13互換エラーを安全に修正'
+          git push
