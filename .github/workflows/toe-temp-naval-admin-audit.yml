@@ -1,0 +1,39 @@
+name: ToE naval administration audit
+on:
+  push:
+    branches: [ main ]
+permissions:
+  contents: read
+jobs:
+  audit:
+    if: github.event.head_commit.message == 'Audit XBC XBH naval administration placement'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print exact candidate state blocks
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          targets={'XBC':['STATE_NSM_095','STATE_NSM_291'],'XBH':['STATE_NSM_008','STATE_NSM_070','STATE_NSM_076']}
+          def bend(t,b):
+            d=0
+            for i in range(b,len(t)):
+              if t[i]=='{': d+=1
+              elif t[i]=='}':
+                d-=1
+                if d==0:return i+1
+            raise RuntimeError('unclosed')
+          for p in Path('common/history/buildings').glob('*.txt'):
+            t=p.read_text(encoding='utf-8-sig')
+            for tag,sids in targets.items():
+              for sid in sids:
+                for m in re.finditer(r'(?m)^\s*s:'+sid+r'\s*=\s*\{',t):
+                  b=t.find('{',m.start()); e=bend(t,b); blk=t[m.start():e]
+                  print('===',tag,sid,p,'===')
+                  print('has_tag_block',f'region_state:{tag}' in blk,'port',blk.count('building_port'),'naval_admin',blk.count('building_naval_administration'))
+                  for line in blk.splitlines():
+                    if ('region_state:' in line or 'building_port' in line or 'building_naval_administration' in line or 'country="c:' in line or 'Country:' in line):
+                      print(line.strip())
+          PY
