@@ -1,0 +1,284 @@
+name: ToE compatibility stubs for missing vanilla events
+
+on:
+  push:
+    paths:
+      - '.github/workflows/toe-compat-missing-events.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Fetch vanilla event definitions
+        run: |
+          set -euo pipefail
+          git clone -q --filter=blob:none --sparse https://github.com/settintotrieste/V3-Vanilla-Extract.git /tmp/vanilla
+          git -C /tmp/vanilla sparse-checkout set game/events
+          git -C /tmp/vanilla checkout -q fa9678c4f570385ccb91bcdf1e25f82f93499b2f
+
+      - name: Build no-op compatibility events using original event types
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          requested = '''
+          1848.2
+          1848.6
+          africa_colonial_events.1
+          africa_colonial_events.2
+          assassination_events.5
+          assassination_events.6
+          assassination_events.7
+          assassination_events.8
+          autocracy.1
+          autocracy.4
+          balkan_wars.1
+          balkan_wars.2
+          balkan_wars.3
+          balkan_wars.4
+          balkan_wars.5
+          balkan_wars.6
+          boxer_rebellion_events.4
+          bulgaria_events.1
+          caste_conflict.1
+          caste_conflict.2
+          caste_conflict.3
+          caudillo.2
+          caudillo.3
+          communism.1
+          communism.10
+          communism.11
+          communism.2
+          communism.4
+          communism.5
+          communism.6
+          congo_free_state_events.1
+          congo_free_state_events.5
+          corn_laws.1
+          crime_events.11
+          crime_events.12
+          crime_events.13
+          culture_south_america.1
+          culture_south_america.3
+          culture_south_america.4
+          diplomatic_events.1
+          dreyfus.8
+          ep2_sakoku.2
+          ep2_sakoku.4
+          ep2_sakoku.5
+          exhibition_events.1
+          exhibition_events.2
+          exhibition_events.3
+          formation.4
+          french_pretenders.7
+          gg_korea.1
+          gg_korea.2
+          gg_korea.5
+          gg_korea.6
+          gg_korea.8
+          heavenly.1
+          heavenly.2
+          heavenly.4
+          heavenly.5
+          heavenly.6
+          hispaniola_events.1
+          hispaniola_events.2
+          historical_agitators.23
+          historical_agitators.7
+          hungary_events.6
+          iberia.11
+          iberia.2
+          ig_suppression_events.7
+          indochina.4
+          iwakura_mission.2
+          iwakura_mission.4
+          iwakura_mission.7
+          japan_monarchy.1
+          japan_monarchy.2
+          japan_monarchy.3
+          japan_monarchy.4
+          law_imposition_events.2
+          law_imposition_events.3
+          liberalism.1
+          liberalism.2
+          liberalism.3
+          liberalism.4
+          lusofonia.1
+          mon_state_formation.1
+          mon_state_formation.14
+          mon_state_formation.16
+          mon_state_formation.17
+          mon_state_formation.4
+          mon_state_formation.5
+          montenegrin_raiding.1
+          montenegrin_raiding.2
+          mughal.7
+          national_awakening.1
+          opium_events.1
+          peru_bolivia_events.1
+          peru_bolivia_events.3
+          peru_bolivia_events.5
+          peru_bolivia_events.6
+          peru_bolivia_events.7
+          plague.100
+          plague.2
+          plague.200
+          plague.3
+          portuguese_colonialism.1
+          portuguese_colonialism.2
+          portuguese_colonialism.3
+          portuguese_colonialism.8
+          portuguese_colonialism.9
+          portuguese_monarchs.3
+          princely_states.1
+          princely_states.2
+          prohibition.1
+          prohibition.8
+          raj.2
+          red_scare.1
+          red_scare.20
+          resignation.3
+          russia_monarchy.1
+          russia_monarchy.10
+          russia_monarchy.11
+          russia_monarchy.3
+          russia_monarchy.4
+          russia_monarchy.5
+          russia_monarchy.9
+          ryukyu_rivalry.6
+          sa_migration.2
+          sa_migration.3
+          scotland_yard.1
+          serbia.2
+          serbian_throne.12
+          serbian_throne.2
+          shogunate.1
+          shogunate.3
+          shogunate.4
+          shogunate.6
+          shogunate.7
+          sikh_empire.10
+          sikh_empire.11
+          sikh_empire.3
+          sikh_empire.5
+          sikh_empire.6
+          sikh_empire.7
+          sikh_empire.8
+          silkworm_diseases.3
+          silkworm_diseases.9
+          skyscraper.1
+          skyscraper.2
+          sol_events.1
+          sol_events.2
+          spa_economic_regeneration_events.2
+          spanish_new_world_events.1
+          spanish_new_world_events.2
+          spanish_new_world_events.3
+          spanish_new_world_events.5
+          strike.1
+          strike.8
+          strike.9
+          subject_interactions.1
+          subject_interactions.3
+          sweden_monarchy.1
+          texan_war_of_independence.1
+          treaty_of_london_events.4
+          treaty_of_london_events.5
+          two_spains.4
+          veiled_protectorate.1
+          vernacular_events.1
+          vernacular_events.2
+          vernacular_events.3
+          victoria.1
+          warlord_china_events.100
+          warlord_china_events.200
+          wedding.2
+          wedding.3
+          '''.split()
+
+          toe_event_text='\n'.join(p.read_text(encoding='utf-8-sig',errors='replace') for p in Path('events').rglob('*.txt'))
+          already=set(re.findall(r'(?m)^\s*([A-Za-z0-9_]+\.\d+)\s*=\s*\{',toe_event_text))
+          wanted=[x for x in requested if x not in already]
+
+          vanilla_files=list(Path('/tmp/vanilla/game/events').rglob('*.txt'))
+          types={}
+          locations={}
+          for p in vanilla_files:
+              lines=p.read_text(encoding='utf-8-sig',errors='replace').splitlines()
+              for i,line in enumerate(lines):
+                  m=re.match(r'^\s*([A-Za-z0-9_]+\.\d+)\s*=\s*\{',line)
+                  if not m or m.group(1) not in wanted or m.group(1) in types:
+                      continue
+                  eid=m.group(1)
+                  for sub in lines[i+1:i+40]:
+                      mt=re.match(r'^\s*type\s*=\s*([A-Za-z_]+_event)\s*$',sub)
+                      if mt:
+                          types[eid]=mt.group(1)
+                          locations[eid]=str(p.relative_to('/tmp/vanilla'))
+                          break
+
+          resolved=[x for x in wanted if x in types]
+          unresolved=[x for x in wanted if x not in types]
+          groups={}
+          for eid in resolved:
+              ns=eid.rsplit('.',1)[0]
+              groups.setdefault(ns,[]).append(eid)
+
+          out=[
+              '# Twilight of Empires total conversion',
+              '# バニラ側の共通script/on_actionから残る史実イベント参照用no-op互換定義。',
+              '# 元イベントのtypeだけ維持し、ToEでは発生しない。',
+              ''
+          ]
+          for ns in sorted(groups):
+              out += [f'namespace = {ns}','']
+              for eid in sorted(groups[ns],key=lambda x:int(x.rsplit('.',1)[1])):
+                  out += [
+                      f'{eid} = {{',
+                      f'\ttype = {types[eid]}',
+                      '\thidden = yes',
+                      '\ttrigger = { always = no }',
+                      '}',
+                      ''
+                  ]
+          Path('events/99_toe_compat_missing_vanilla_events.txt').write_text('\n'.join(out),encoding='utf-8-sig')
+          print('requested:',len(requested))
+          print('already defined in ToE:',len(requested)-len(wanted))
+          print('resolved from vanilla:',len(resolved))
+          print('unresolved/skipped:',len(unresolved))
+          if unresolved:
+              print('UNRESOLVED')
+              print('\n'.join(unresolved))
+          PY
+
+      - name: Validate and commit
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('events/99_toe_compat_missing_vanilla_events.txt')
+          s=p.read_text(encoding='utf-8-sig',errors='replace')
+          if s.count('{') != s.count('}'):
+              raise SystemExit('brace mismatch')
+          print('compat event definitions:',sum(1 for line in s.splitlines() if line.strip().endswith('= {') and '.' in line.split('=',1)[0]))
+          PY
+          git diff --check
+          if [ -z "$(git status --porcelain events/99_toe_compat_missing_vanilla_events.txt)" ]; then
+            echo 'No changes.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add events/99_toe_compat_missing_vanilla_events.txt
+          git commit -m '欠落していたバニラ史実イベント参照をno-op互換化'
+          git push origin HEAD:main
