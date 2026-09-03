@@ -1,7 +1,5 @@
 ﻿### Twilight of Empires - Great Game
 je_great_game_control = {
-    name = je_great_game_control_name
-    desc = je_great_game_control_desc
     icon = "gfx/interface/icons/objectives/great_game.dds"
     group = je_group_objectives
 
@@ -36,7 +34,6 @@ je_great_game_control = {
             set_global_variable = { name = great_game_rus_progress value = 100 }
         }
 
-        # Add only the objective journals relevant to this country.
     }
 
     on_weekly_pulse = {
@@ -106,7 +103,7 @@ je_great_game_control = {
                             is_subject_of = c:PAI
                             power_bloc ?= { c:PAI ?= this.power_bloc_leader }
                         }
-                        c:SOS.relations:c:PAI >= 50
+                        relations:c:PAI >= 50
                         liberty_desire <= 25
                     }
                 }
