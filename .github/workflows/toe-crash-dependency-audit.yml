@@ -1,0 +1,50 @@
+name: ToE crash dependency audit
+
+on:
+  push:
+    paths:
+      - '.github/workflows/toe-crash-dependency-audit.yml'
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Audit crash-sensitive dependencies
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          print('=== suspicious tiny scripted_effect files (<=600 bytes) ===')
+          for p in sorted(Path('common/scripted_effects').glob('*.txt')):
+              if p.stat().st_size <= 600:
+                  print(p, p.stat().st_size)
+                  print(p.read_text(encoding='utf-8-sig',errors='ignore')[:400].replace('\n',' | '))
+          names = [
+            'every_country_in_german_confederation','every_state_in_africa','every_state_in_italy_old',
+            'every_state_in_lesser_germany','random_state_in_europe','add_to_global_variable_list',
+            'ship_mod_slot_electronics','ship_mod_slot_missiles'
+          ]
+          print('\n=== symbol locations ===')
+          for name in names:
+              hits=[]
+              for p in Path('.').rglob('*.txt'):
+                  try: s=p.read_text(encoding='utf-8-sig',errors='ignore')
+                  except: continue
+                  if name in s: hits.append(str(p))
+              print(name, len(hits), hits[:30])
+          print('\n=== replace paths ===')
+          for p in [Path('.metadata/metadata.json'),Path('.metadata')]:
+              if p.is_file(): print(p.read_text(encoding='utf-8-sig',errors='ignore'))
+          print('\n=== prestige base_good counts ===')
+          counts={}
+          for p in Path('common/prestige_goods').glob('*.txt'):
+              s=p.read_text(encoding='utf-8-sig',errors='ignore')
+              for m in re.finditer(r'base_good\s*=\s*([A-Za-z0-9_]+)',s):
+                  counts.setdefault(m.group(1),[]).append(str(p))
+          for k,v in sorted(counts.items()):
+              if len(v)>=3: print(k,len(v),v)
+          PY
