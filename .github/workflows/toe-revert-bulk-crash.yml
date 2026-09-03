@@ -1,0 +1,54 @@
+name: ToE revert bulk crash changes
+
+on:
+  push:
+    paths:
+      - '.github/workflows/toe-revert-bulk-crash.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  revert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Revert only bulk error-reduction files to last known-good state
+        shell: bash
+        run: |
+          set -euo pipefail
+          GOOD='e3fdcf1a05332484eb6e49eb144e96af5d05bced'
+
+          # Files that existed at the known-good commit: restore exact contents.
+          git checkout "$GOOD" -- common/scripted_triggers/00_geography_triggers.txt
+
+          # Files added only by the later bulk error-reduction pass: remove them.
+          git rm -f --ignore-unmatch \
+            common/political_movements/99_toe_compat_historical_movements.txt \
+            common/script_values/00_diplomacy_values.txt \
+            common/scripted_effects/00_victoria_heir_generation.txt \
+            common/scripted_effects/00_victoria_ip4_scripted_effects.txt \
+            common/scripted_effects/00_victoria_royal_successions.txt \
+            common/scripted_effects/00_victoria_scripted_effects.txt \
+            common/scripted_triggers/00_clothes_triggers.txt \
+            common/scripted_triggers/00_scripted_triggers.txt \
+            events/99_toe_compat_missing_vanilla_events.txt
+
+          git diff --check
+          echo '--- net diff against known-good for crash-related files ---'
+          git diff --stat
+
+          if git diff --quiet && git diff --cached --quiet; then
+            echo 'No changes to revert.'
+            exit 0
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'クラッシュ回避のため大量ログ削減変更を正常版へ戻す'
+          git push origin HEAD:main
