@@ -1,0 +1,47 @@
+# ToE 1.13 compatibility
+# XAI (Tegar) / XBJ (Ria Republic) can temporarily lose IG leaders.
+# Vanilla party scripts assume a valid leader scope, so only fill genuinely empty IGs.
+
+on_game_started = {
+    on_actions = {
+        toe_xai_xbj_ensure_ig_leaders
+    }
+}
+
+on_monthly_pulse = {
+    on_actions = {
+        toe_xai_xbj_ensure_ig_leaders
+    }
+}
+
+toe_xai_xbj_ensure_ig_leaders = {
+    effect = {
+        every_country = {
+            limit = {
+                OR = {
+                    c:XAI ?= this
+                    c:XBJ ?= this
+                }
+            }
+
+            every_interest_group = {
+                limit = {
+                    NOT = {
+                        leader ?= { always = yes }
+                    }
+                }
+
+                save_scope_as = toe_missing_ig_leader_group
+                owner = {
+                    create_character = {
+                        age = 40
+                        role = character_role_politician
+                        interest_group = scope:toe_missing_ig_leader_group
+                        ideology = ideology_moderate
+                        ig_leader = yes
+                    }
+                }
+            }
+        }
+    }
+}
