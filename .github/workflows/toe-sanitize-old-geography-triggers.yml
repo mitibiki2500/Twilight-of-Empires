@@ -1,0 +1,50 @@
+name: ToE sanitize obsolete vanilla geography triggers
+
+on:
+  push:
+    paths:
+      - '.github/workflows/toe-sanitize-old-geography-triggers.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Fetch exact vanilla geography triggers and sanitize obsolete regions
+        run: |
+          set -euo pipefail
+          url='https://raw.githubusercontent.com/settintotrieste/V3-Vanilla-Extract/fa9678c4f570385ccb91bcdf1e25f82f93499b2f/game/common/scripted_triggers/00_geography_triggers.txt'
+          mkdir -p common/scripted_triggers
+          curl -fL "$url" -o common/scripted_triggers/00_geography_triggers.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('common/scripted_triggers/00_geography_triggers.txt')
+          s=p.read_text(encoding='utf-8-sig',errors='replace')
+          bad=set('''geographic_region_greater_germany geographic_region_west_siberia_old geographic_region_east_siberia_old geographic_region_canada_old geographic_region_arctic_russia_old geographic_region_great_plains_old geographic_region_madras_old geographic_region_bengal_old geographic_region_bombay_old geographic_region_punjab_old geographic_region_central_india_old geographic_region_pacific_coast_old geographic_region_finland_old geographic_region_urals_old geographic_region_baltic_states_old geographic_region_caucasus_old'''.split())
+          rx=re.compile(r'\bis_in_geographic_region\s*=\s*([A-Za-z0-9_]+)')
+          found=[]
+          def repl(m):
+              if m.group(1) not in bad: return m.group(0)
+              found.append(m.group(1))
+              return 'always = no # ToE: obsolete vanilla geographic region'
+          ns=rx.sub(repl,s)
+          p.write_text(ns,encoding='utf-8-sig')
+          print('references sanitized:',len(found))
+          print('unique obsolete regions:',len(set(found)))
+          print('\n'.join(sorted(set(found))))
+          if len(found)<20: raise SystemExit('unexpectedly low geography replacement count')
+          if ns.count('{')!=ns.count('}'): raise SystemExit('brace mismatch')
+          PY
+          git diff --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add common/scripted_triggers/00_geography_triggers.txt
+          git commit -m '旧バニラ地理リージョン参照をToE向けに無効化'
+          git push origin HEAD:main
