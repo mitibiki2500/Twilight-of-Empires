@@ -3,6 +3,8 @@
 # These entries restore the visible objective list for the four participants.
 
 je_toe_gg_steppe = {
+    name = je_toe_gg_steppe_name
+    desc = je_toe_gg_steppe_desc
     icon = "gfx/interface/icons/event_icons/event_military.dds"
     group = je_group_objectives
     is_shown_in_lobby = { OR = { this = c:PAI this = c:GOT } }
@@ -16,6 +18,8 @@ je_toe_gg_steppe = {
 }
 
 je_toe_gg_sosilia = {
+    name = je_toe_gg_sosilia_name
+    desc = je_toe_gg_sosilia_desc
     icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
     group = je_group_objectives
     is_shown_in_lobby = { this = c:PAI }
@@ -29,6 +33,8 @@ je_toe_gg_sosilia = {
 }
 
 je_toe_gg_plains = {
+    name = je_toe_gg_plains_name
+    desc = je_toe_gg_plains_desc
     icon = "gfx/interface/icons/event_icons/event_military.dds"
     group = je_group_objectives
     is_shown_in_lobby = { this = c:PAI }
@@ -42,6 +48,8 @@ je_toe_gg_plains = {
 }
 
 je_toe_gg_route = {
+    name = je_toe_gg_route_name
+    desc = je_toe_gg_route_desc
     icon = "gfx/interface/icons/event_icons/event_trade.dds"
     group = je_group_objectives
     is_shown_in_lobby = { OR = { this = c:XAI this = c:GOT this = c:PAI this = c:GSU } }
@@ -55,6 +63,8 @@ je_toe_gg_route = {
 }
 
 je_toe_gg_tegar_ria = {
+    name = je_toe_gg_tegar_ria_name
+    desc = je_toe_gg_tegar_ria_desc
     icon = "gfx/interface/icons/event_icons/event_colonial.dds"
     group = je_group_objectives
     is_shown_in_lobby = { this = c:XAI }
@@ -68,6 +78,8 @@ je_toe_gg_tegar_ria = {
 }
 
 je_toe_gg_expel_tegar_ria = {
+    name = je_toe_gg_expel_tegar_ria_name
+    desc = je_toe_gg_expel_tegar_ria_desc
     icon = "gfx/interface/icons/event_icons/event_colonial.dds"
     group = je_group_objectives
     is_shown_in_lobby = { this = c:GSU }
@@ -81,6 +93,8 @@ je_toe_gg_expel_tegar_ria = {
 }
 
 je_toe_gg_tortal = {
+    name = je_toe_gg_tortal_name
+    desc = je_toe_gg_tortal_desc
     icon = "gfx/interface/icons/event_icons/event_diplomacy.dds"
     group = je_group_objectives
     is_shown_in_lobby = { OR = { this = c:XAI this = c:GSU } }
@@ -94,6 +108,8 @@ je_toe_gg_tortal = {
 }
 
 je_toe_gg_south_lefria = {
+    name = je_toe_gg_south_lefria_name
+    desc = je_toe_gg_south_lefria_desc
     icon = "gfx/interface/icons/event_icons/event_military.dds"
     group = je_group_objectives
     is_shown_in_lobby = { OR = { this = c:XAI this = c:GSU } }
