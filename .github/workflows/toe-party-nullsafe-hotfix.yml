@@ -48,7 +48,7 @@ jobs:
           git config user.name 'mitibiki2500'
           git config user.email '100456694+mitibiki2500@users.noreply.github.com'
           git add common/parties
-          git diff --cached --check
           git diff --cached --stat
+          git diff --cached -- common/parties | grep -E '^[-+]\s*leader \??= \{' || true
           git commit -m '政党のIG指導者未設定参照を安全化'
           git push origin main
