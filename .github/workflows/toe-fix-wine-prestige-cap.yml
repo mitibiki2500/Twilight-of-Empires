@@ -1,0 +1,43 @@
+name: ToE fix wine prestige cap
+
+on:
+  push:
+    paths:
+      - '.github/workflows/toe-fix-wine-prestige-cap.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Move disabled champagne out of wine cap
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('common/prestige_goods/00_prestige_goods.txt')
+          s=p.read_text(encoding='utf-8-sig')
+          old='''prestige_good_champagne = {\n\tpossible = {\n\t\talways = no # ToE: バニラ専用威信財を無効化\n\t}\n\tbase_good = wine'''
+          new='''prestige_good_champagne = {\n\tpossible = {\n\t\talways = no # ToE: バニラ専用威信財を無効化\n\t}\n\tbase_good = opium # ToE: 無効化済み定義をwine上限から退避'''
+          assert s.count(old)==1, s.count(old)
+          s=s.replace(old,new,1)
+          p.write_text('\ufeff'+s,encoding='utf-8')
+          # verify wine count across prestige files becomes 3
+          count=0
+          for q in Path('common/prestige_goods').glob('*.txt'):
+              count += len(re.findall(r'base_good\s*=\s*wine\b', q.read_text(encoding='utf-8-sig',errors='ignore')))
+          assert count==3,count
+          print('wine prestige definitions:',count)
+          PY
+          git config user.name 'mitibiki2500'
+          git config user.email '100456694+mitibiki2500@users.noreply.github.com'
+          git add common/prestige_goods/00_prestige_goods.txt
+          git commit -m 'wine威信財の上限超過を解消'
+          git push origin main
