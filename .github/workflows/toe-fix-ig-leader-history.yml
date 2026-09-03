@@ -1,0 +1,50 @@
+name: ToE fix IG leader history
+
+on:
+  push:
+    paths:
+      - '.github/workflows/toe-fix-ig-leader-history.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Convert inline IG leader flags to on_created assignment
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('common/history/characters/00_nsm_characters.txt')
+          s = p.read_text(encoding='utf-8-sig')
+          old = 'ig_leader = yes'
+          count = s.count(old)
+          if count == 0:
+              raise SystemExit('no inline ig_leader=yes entries found')
+          # In 1.13, create_character effects assign IG leadership via on_created.
+          s2 = s.replace(old, 'on_created = { set_as_interest_group_leader = yes }')
+          if s2.count(old) != 0:
+              raise SystemExit('inline ig_leader=yes entries remain')
+          if s2.count('set_as_interest_group_leader = yes') < count:
+              raise SystemExit('replacement count mismatch')
+          # Braces must remain balanced after the one-token replacement.
+          if s2.count('{') != s2.count('}'):
+              raise SystemExit(f'unbalanced braces: {s2.count("{")} vs {s2.count("}")}')
+          p.write_text('\ufeff' + s2, encoding='utf-8')
+          print(f'converted {count} IG leader assignments')
+          print('XAI present:', 'c:XAI ?= {' in s2)
+          print('XBJ present:', 'c:XBJ ?= {' in s2)
+          PY
+          git config user.name 'mitibiki2500'
+          git config user.email '100456694+mitibiki2500@users.noreply.github.com'
+          git add common/history/characters/00_nsm_characters.txt
+          git diff --cached --stat
+          git diff --cached --numstat
+          git commit -m '開始人物のIG指導者任命を1.13方式へ修正'
+          git push origin main
