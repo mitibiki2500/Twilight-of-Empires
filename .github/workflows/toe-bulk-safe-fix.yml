@@ -1,0 +1,142 @@
+name: ToE bulk safe error reduction
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/toe-bulk-safe-fix.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Restore generic political movements and add historical compatibility stubs
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='https://raw.githubusercontent.com/settintotrieste/V3-Vanilla-Extract/fa9678c4f570385ccb91bcdf1e25f82f93499b2f/game/common/political_movements'
+          mkdir -p common/political_movements
+          for f in 00_ideological_movements.txt 01_religious_movements.txt 02_cultural_movement.txt 05_slave_revolt_movements.txt; do
+            curl -fL "$base/$f" -o "common/political_movements/$f"
+          done
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path('common/political_movements')
+          invalid = '''
+          movement_pro_slavery
+          movement_positivist
+          movement_modernizer
+          movement_liberal
+          movement_reactionary
+          movement_corporatist
+          movement_fascist
+          movement_religious_majority
+          movement_cultural_majority
+          movement_anarchist
+          movement_cultural_minority
+          movement_radical
+          movement_anti_slavery
+          movement_royalist_absolutist
+          movement_orleanist
+          movement_legitimist
+          movement_bonapartist
+          movement_tokugawa_loyalist
+          movement_meiji_restorationist
+          movement_slave_revolt
+          movement_socialist
+          movement_communist
+          movement_royalist_constitutional
+          movement_miguelist
+          movement_religious_minority
+          movement_nihilist
+          movement_feminist
+          movement_labor
+          movement_india_pan_national
+          movement_utilitarian
+          movement_carlist
+          '''.split()
+
+          existing = set()
+          for p in root.glob('*.txt'):
+              if p.name == '99_toe_compat_historical_movements.txt':
+                  continue
+              text = p.read_text(encoding='utf-8-sig', errors='replace')
+              existing.update(re.findall(r'(?m)^\s*(movement_[A-Za-z0-9_]+)\s*=\s*\{', text))
+
+          missing = [x for x in invalid if x not in existing]
+          lines = [
+              '# Twilight of Empires total conversion',
+              '# バニラ共通スクリプトから型名だけ参照される史実固有movementのDB互換スタブ。',
+              '# ToE世界では自動発生させない。',
+              ''
+          ]
+          for key in missing:
+              lines += [
+                  f'{key} = {{',
+                  '\tcategory = movement_category_ideological',
+                  '\tideology = ideology_anti_slavery_movement',
+                  '\tcreation_trigger = { always = no }',
+                  '\tcreation_weight = { value = 0 }',
+                  '\ton_created = {}',
+                  '\tcharacter_support_trigger = { always = no }',
+                  '\tcharacter_support_weight = { value = 0 }',
+                  '\tpop_support_trigger = { always = no }',
+                  '\tpop_support_factors = {}',
+                  '\tpop_support_weight = { value = 0 }',
+                  '}',
+                  ''
+              ]
+          (root / '99_toe_compat_historical_movements.txt').write_text('\n'.join(lines), encoding='utf-8-sig')
+          print('generic movement files restored: 4')
+          print('historical movement compatibility stubs:', len(missing))
+          print('\n'.join(missing))
+          PY
+
+      - name: Validate movement definitions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, sys
+          root=Path('common/political_movements')
+          all_text='\n'.join(p.read_text(encoding='utf-8-sig', errors='replace') for p in root.glob('*.txt'))
+          required='''movement_pro_slavery movement_positivist movement_modernizer movement_liberal movement_reactionary movement_corporatist movement_fascist movement_religious_majority movement_cultural_majority movement_anarchist movement_cultural_minority movement_radical movement_anti_slavery movement_royalist_absolutist movement_orleanist movement_legitimist movement_bonapartist movement_tokugawa_loyalist movement_meiji_restorationist movement_slave_revolt movement_socialist movement_communist movement_royalist_constitutional movement_miguelist movement_religious_minority movement_nihilist movement_feminist movement_labor movement_india_pan_national movement_utilitarian movement_carlist'''.split()
+          defined=set(re.findall(r'(?m)^\s*(movement_[A-Za-z0-9_]+)\s*=\s*\{', all_text))
+          missing=[x for x in required if x not in defined]
+          if missing:
+              print('missing movement definitions:', missing)
+              sys.exit(1)
+          for p in root.glob('*.txt'):
+              s=p.read_text(encoding='utf-8-sig', errors='replace')
+              if s.count('{') != s.count('}'):
+                  print('brace mismatch:', p)
+                  sys.exit(1)
+          print('all required movement references now resolve')
+          PY
+          git diff --check
+
+      - name: Commit fixes
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo 'No changes.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add common/political_movements
+          git commit -m '汎用政治運動を復旧し史実固有参照を互換化'
+          git push origin HEAD:main
