@@ -1,0 +1,40 @@
+name: ToE audit XAI XBJ leaders
+
+on:
+  push:
+    paths:
+      - '.github/workflows/toe-audit-xai-xbj-leaders.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Print exact XAI and XBJ blocks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('common/history/characters/00_nsm_characters.txt')
+          s=p.read_text(encoding='utf-8-sig')
+          for tag in ['XAI','XBJ']:
+              m=re.search(rf'(?ms)^\s*c:{tag}\s*\?=\s*\{{(.*?)^\s*\}}',s)
+              print(f'=== {tag} ===')
+              if not m:
+                  print('MISSING BLOCK')
+                  continue
+              block=m.group(1)
+              print(block)
+              print('leaders:', re.findall(r'interest_group\s*=\s*(ig_[A-Za-z0-9_]+).*?ig_leader\s*=\s*yes',block))
+          PY
+          echo '=== COUNTRY FILE XAI ==='
+          f=$(find common/history/countries -maxdepth 1 -type f -name 'XAI-*' -print -quit); [ -n "$f" ] && cat "$f" || true
+          echo '=== COUNTRY FILE XBJ ==='
+          f=$(find common/history/countries -maxdepth 1 -type f -name 'XBJ-*' -print -quit); [ -n "$f" ] && cat "$f" || true
