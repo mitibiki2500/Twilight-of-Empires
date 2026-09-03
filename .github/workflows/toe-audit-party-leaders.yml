@@ -1,0 +1,29 @@
+name: ToE audit party leader crash
+
+on:
+  push:
+    paths:
+      - '.github/workflows/toe-audit-party-leaders.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Locate Tegar and Ria country tags and character setup
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '=== LOCALIZATION NAME MATCHES ==='
+          grep -RIn --exclude-dir=.git -E 'テーガール|リイア共和国|Ria Republic|Tegar' localization common 2>/dev/null | head -n 300 || true
+          echo '=== LIKELY COUNTRY/TAG REFERENCES ==='
+          grep -RIn --exclude-dir=.git -E '\b(TEG|RIA|SOS|PAI|ILV)\b' common/history common/journal_entries events localization 2>/dev/null | head -n 500 || true
+          echo '=== COUNTRY HISTORY FILES ==='
+          find common/history/countries -maxdepth 2 -type f -print | sort
+          echo '=== CHARACTER HISTORY: IG LEADERS ==='
+          grep -RIn --exclude-dir=.git -E 'interest_group|ig_leader|create_character|set_interest_group' common/history/characters common/history/countries 2>/dev/null | head -n 1200 || true
