@@ -1,0 +1,82 @@
+name: ToE sanitize historical character refs in scripted effects
+
+on:
+  push:
+    paths:
+      - '.github/workflows/toe-sanitize-character-scripted-effects.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Fetch exact vanilla scripted effects
+        run: |
+          set -euo pipefail
+          git clone -q --filter=blob:none --sparse https://github.com/settintotrieste/V3-Vanilla-Extract.git /tmp/vanilla
+          git -C /tmp/vanilla sparse-checkout set game/common/scripted_effects
+          git -C /tmp/vanilla checkout -q fa9678c4f570385ccb91bcdf1e25f82f93499b2f
+          for f in 00_victoria_royal_successions.txt 00_victoria_ip4_scripted_effects.txt 00_victoria_heir_generation.txt 00_victoria_scripted_effects.txt; do
+            src="/tmp/vanilla/game/common/scripted_effects/$f"
+            test -f "$src" || { echo "missing vanilla file: $f"; exit 1; }
+            mkdir -p common/scripted_effects
+            cp "$src" "common/scripted_effects/$f"
+          done
+
+      - name: False-gate references to templates absent from ToE
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,sys
+          defs=set()
+          for p in Path('common/character_templates').rglob('*.txt'):
+              s=p.read_text(encoding='utf-8-sig',errors='replace')
+              defs.update(re.findall(r'(?m)^\s*([A-Za-z0-9_#\-]+)\s*=\s*\{',s))
+          targets=[Path('common/scripted_effects')/x for x in [
+              '00_victoria_royal_successions.txt','00_victoria_ip4_scripted_effects.txt',
+              '00_victoria_heir_generation.txt','00_victoria_scripted_effects.txt']]
+          rx=re.compile(r'\b(has_template|is_template_used)\s*=\s*([A-Za-z0-9_#\-]+)')
+          total=0; names=set()
+          for p in targets:
+              s=p.read_text(encoding='utf-8-sig',errors='replace')
+              def repl(m):
+                  key=m.group(2)
+                  if key in defs: return m.group(0)
+                  names.add(key)
+                  return 'always = no # ToE: unavailable vanilla historical template'
+              ns=rx.sub(repl,s)
+              c=ns.count('# ToE: unavailable vanilla historical template')
+              p.write_text(ns,encoding='utf-8-sig')
+              total+=c
+              print(c,p)
+          print('unique absent templates:',len(names))
+          print('references sanitized:',total)
+          if total < 50: raise SystemExit('replacement count unexpectedly low')
+          PY
+
+      - name: Validate and commit
+        run: |
+          set -euo pipefail
+          for f in common/scripted_effects/00_victoria_royal_successions.txt common/scripted_effects/00_victoria_ip4_scripted_effects.txt common/scripted_effects/00_victoria_heir_generation.txt common/scripted_effects/00_victoria_scripted_effects.txt; do
+            python3 - "$f" <<'PY'
+          import sys
+          from pathlib import Path
+          p=Path(sys.argv[1]); s=p.read_text(encoding='utf-8-sig',errors='replace')
+          assert s.count('{')==s.count('}'), p
+          PY
+          done
+          git diff --check
+          if [ -z "$(git status --porcelain common/scripted_effects)" ]; then echo 'No changes'; exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add common/scripted_effects/00_victoria_royal_successions.txt common/scripted_effects/00_victoria_ip4_scripted_effects.txt common/scripted_effects/00_victoria_heir_generation.txt common/scripted_effects/00_victoria_scripted_effects.txt
+          git commit -m '史実人物テンプレート依存のscripted effectを安全化'
+          git push origin HEAD:main
