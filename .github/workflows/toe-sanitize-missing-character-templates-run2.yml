@@ -1,0 +1,108 @@
+name: ToE sanitize missing historical character template references run2
+
+on:
+  push:
+    paths:
+      - '.github/workflows/toe-sanitize-missing-character-templates-run2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Fetch exact vanilla snapshot and locate files by basename
+        run: |
+          set -euo pipefail
+          git clone -q --filter=blob:none --sparse https://github.com/settintotrieste/V3-Vanilla-Extract.git /tmp/vanilla
+          git -C /tmp/vanilla sparse-checkout set game/common/scripted_effects game/gfx
+          git -C /tmp/vanilla checkout -q fa9678c4f570385ccb91bcdf1e25f82f93499b2f
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil, sys
+          basenames = [
+            '01_clothes.txt','01_headgear.txt','01_accessories.txt',
+            '00_victoria_royal_successions.txt','00_victoria_ip4_scripted_effects.txt',
+            '00_victoria_heir_generation.txt','00_victoria_scripted_effects.txt'
+          ]
+          root=Path('/tmp/vanilla/game')
+          for name in basenames:
+              hits=list(root.rglob(name))
+              print(name, '=>', [str(x.relative_to(root)) for x in hits])
+              if len(hits)!=1:
+                  raise SystemExit(f'expected exactly one {name}, found {len(hits)}')
+              src=hits[0]
+              rel=src.relative_to(root)
+              dst=Path(rel)
+              dst.parent.mkdir(parents=True,exist_ok=True)
+              shutil.copy2(src,dst)
+          PY
+
+      - name: Disable only absent historical template conditions
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,sys
+          defs=set()
+          for p in Path('common/character_templates').rglob('*.txt'):
+              s=p.read_text(encoding='utf-8-sig',errors='replace')
+              defs.update(re.findall(r'(?m)^\s*([A-Za-z0-9_#\-]+)\s*=\s*\{',s))
+          targets=[]
+          for name in ['01_clothes.txt','01_headgear.txt','01_accessories.txt','00_victoria_royal_successions.txt','00_victoria_ip4_scripted_effects.txt','00_victoria_heir_generation.txt','00_victoria_scripted_effects.txt']:
+              hits=[p for p in Path('.').rglob(name) if '.git' not in p.parts and '.github' not in p.parts]
+              if len(hits)!=1:
+                  raise SystemExit(f'target locate failed {name}: {hits}')
+              targets.append(hits[0])
+          rx=re.compile(r'\b(has_template|is_template_used)\s*=\s*([A-Za-z0-9_#\-]+)')
+          total=0; missing=set()
+          for p in targets:
+              s=p.read_text(encoding='utf-8-sig',errors='replace')
+              def repl(m):
+                  key=m.group(2)
+                  if key in defs:
+                      return m.group(0)
+                  missing.add(key)
+                  return 'always = no # ToE: missing vanilla historical character template'
+              ns=rx.sub(repl,s)
+              c=ns.count('# ToE: missing vanilla historical character template')
+              p.write_text(ns,encoding='utf-8-sig')
+              total+=c
+              print(c,p)
+          print('defined ToE templates:',len(defs))
+          print('missing template names sanitized:',len(missing))
+          print('reference occurrences sanitized:',total)
+          if total < 200:
+              raise SystemExit('unexpectedly low replacement count')
+          PY
+
+      - name: Validate and commit
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          marked=[]
+          for p in list(Path('gfx').rglob('*.txt')) + list(Path('common/scripted_effects').glob('00_victoria*.txt')):
+              s=p.read_text(encoding='utf-8-sig',errors='replace')
+              if '# ToE: missing vanilla historical character template' in s:
+                  marked.append(p)
+                  if s.count('{')!=s.count('}'):
+                      raise SystemExit(f'brace mismatch: {p}')
+          print('modified files:',len(marked))
+          for p in marked: print(p)
+          PY
+          git diff --check
+          if [ -z "$(git status --porcelain gfx common/scripted_effects)" ]; then
+            echo 'No changes.'; exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add gfx common/scripted_effects
+          git commit -m '欠落史実人物テンプレート参照を安全に無効化'
+          git push origin HEAD:main
