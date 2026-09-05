@@ -1,0 +1,34 @@
+﻿CHARACTERS = {
+	c:TEX ?= {
+		create_character = {
+			template = TEX_david_burnet
+		}
+
+		create_character = {
+			template = TEX_mirabeau_lamar
+		}
+
+		create_character = {
+			template = TEX_thomas_jefferson_rusk
+		}
+
+		### Military Commanders
+
+		# Generals
+
+		create_character = {
+			template = TEX_William_Travis
+		}
+
+		# Admirals
+
+		create_character = {
+			template = TEX_Charles_Edward_Hawkins
+		}
+		
+		# Samuel Houston goes last so that William Travis is given command of Texas' military formation
+		create_character = {
+			template = TEX_samuel_houston
+		}
+	}
+}

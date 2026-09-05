@@ -1,0 +1,93 @@
+﻿lesson_declare_interest_how = {
+	start_automatically = no
+	chain = lesson_chain_journal_guides
+
+	lesson_declare_interest_how_1 = {
+		window_name = down_middle_tutorial_popup
+		text = "lesson_declare_interest_how_1_desc"
+		header_info = "lesson_step_1_of_2"
+
+		gui_transition = {
+			button_id = "skip"
+			button_text = "tutorial_lesson_button_skip"
+			target = lesson_finish
+		}
+		gui_transition = {
+			button_id = "next"
+			button_text = "tutorial_lesson_button_next"
+			target = lesson_declare_interest_how_2
+		}
+	}
+
+	lesson_declare_interest_how_2 = {
+		window_name = down_middle_tutorial_popup
+		text = "lesson_declare_interest_how_2_desc"
+		header_info = "lesson_step_2_of_2"
+
+		gui_transition = {
+			button_id = "back"
+			button_text = "tutorial_lesson_button_back"
+			target = lesson_declare_interest_how_1
+		}
+		gui_transition = {
+			button_id = "next"
+			button_text = "tutorial_lesson_button_complete"
+			target = lesson_finish
+		}
+	}
+}
+
+lesson_declare_interest_why = {
+	start_automatically = no
+	chain = lesson_chain_journal_guides
+
+	lesson_declare_interest_why_1 = {
+		window_name = down_middle_tutorial_popup
+		text = "lesson_declare_interest_why_1_desc"
+		header_info = "lesson_step_1_of_2"
+
+		gui_transition = {
+			button_id = "skip"
+			button_text = "tutorial_lesson_button_skip"
+			target = lesson_finish
+		}
+		gui_transition = {
+			button_id = "next"
+			button_text = "tutorial_lesson_button_next"
+			target = lesson_declare_interest_why_2
+		}
+	}
+
+	lesson_declare_interest_why_2 = {
+		window_name = down_middle_tutorial_popup
+		text = "lesson_declare_interest_why_2_desc"
+		header_info = "lesson_step_2_of_2"
+
+		gui_transition = {
+			button_id = "back"
+			button_text = "tutorial_lesson_button_back"
+			target = lesson_declare_interest_why_1
+		}
+		gui_transition = {
+			button_id = "next"
+			button_text = "tutorial_lesson_button_complete"
+			target = lesson_finish
+		}
+	}
+}
+
+lesson_declare_interest_complete = {
+	start_automatically = no
+	chain = lesson_chain_journal_guides
+
+	lesson_declare_interest_complete = {
+		window_name = down_middle_tutorial_popup
+		text = "lesson_declare_interest_complete_desc"
+
+		gui_transition = {
+			button_id = "next"
+			button_text = "tutorial_lesson_button_complete"
+			target = lesson_finish
+		}
+	}
+}

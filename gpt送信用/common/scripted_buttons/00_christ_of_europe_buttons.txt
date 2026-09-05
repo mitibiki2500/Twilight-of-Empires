@@ -1,0 +1,34 @@
+﻿christ_of_nations_button = {
+	name = "christ_of_nations_button"
+	desc = "christ_of_nations_button_desc"
+
+	visible = { always = yes }
+
+	cooldown = { days = normal_modifier_time }
+
+	possible = {
+        OR = {
+            is_subject = no
+            has_law_or_variant = law_type:law_protected_speech
+            has_law_or_variant = law_type:law_right_of_assembly
+        }
+	}
+
+	effect = {
+		trigger_event = { id = poland_events.1 days = 0 popup = yes }
+		custom_tooltip = christ_of_nations_button_tt_1
+		show_as_tooltip = {
+			add_modifier = {
+				name = funding_polish_radicals
+				days = normal_modifier_time
+			}
+		}
+		je:je_christ_of_nations ?= {
+			add_modifier = {
+				name = support_separatism_nationalist_propaganda
+				multiplier = 7.5
+				days = normal_modifier_time
+			}
+		}
+	}
+}

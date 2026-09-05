@@ -1,0 +1,20 @@
+﻿CHARACTERS = {
+	c:JAI ?= {
+		# Ruler / Heir
+		create_character = {
+			template = JAI_major_alves_template
+			on_created = {
+				designate_character_as_regent = {
+					YEARS = 1
+				}
+			}
+		}
+		create_character = {
+			template = JAI_ram_singh_template
+		}
+		# IG leaders
+		create_character = {
+			template = JAI_rawal_bairi_sal_template
+		}
+	}
+}

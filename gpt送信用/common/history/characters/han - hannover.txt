@@ -1,0 +1,18 @@
+﻿CHARACTERS = {
+	c:HAN ?= {
+		create_character = {
+			template = HAN_hugh_halkett
+		}
+		create_character = {
+			template = HAN_andreas_von_schlutter
+		}
+		if = {
+			limit = {
+				has_dlc_feature = voice_of_the_people_content
+			}
+			create_character = {
+				template = HAN_jacob_grimm
+			}
+		}
+	}
+}

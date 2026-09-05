@@ -1,0 +1,18 @@
+﻿CHARACTERS = {
+	c:IDA ?= {
+		# Ruler / Heir
+		create_character = {
+			template = IDA_queen_regent_template
+			on_created = {
+				designate_character_as_regent = {
+					YEARS = 3
+				}
+			}
+		}
+
+		create_character = {
+			template = IDA_jawan_singh_template
+		}
+		# IG Leaders
+	}
+}

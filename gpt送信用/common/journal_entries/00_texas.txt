@@ -1,0 +1,64 @@
+﻿je_texas_tex = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_historical_content
+
+	complete = {
+		is_subject = no
+		is_at_war = no
+		exists = c:USA
+		c:USA ?= {
+			relations:root >= relations_threshold:cordial
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = texan_war_of_independence.1 }
+	}
+
+	weight = 100
+
+	transferable = no
+
+	invalid = {
+		NOT = { exists = c:TEX }
+	}
+}
+
+je_texas_usa = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	group = je_group_usa_manifest_destiny
+
+	complete = {
+		exists = c:TEX
+		c:TEX ?= {
+			relations:root >= relations_threshold:cordial
+			is_subject = no
+			is_at_war = no
+		}
+	}
+
+	on_complete = {
+		custom_tooltip = texas_je_tt
+		show_as_tooltip = {
+			custom_tooltip_no_bullet = if_they_accept_tt
+			add_involvement = {
+				strategic_region = sr:region_pacific_coast
+				value = 2500
+			}
+		}
+	}
+
+	invalid = {
+		OR = {
+			NOT = { exists = c:TEX }
+			c:TEX ?= { is_subject = yes }
+		}
+	}
+
+	weight = 100
+
+	transferable = no
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
