@@ -1,0 +1,111 @@
+### common/scripted_effects/00_victoria_ip4_scripted_effects.txt:812
+809: 	if = {
+810: 		limit = {
+811: 			AND = { # To mirror the conditions of Isabella II's dethroning
+812: 				has_journal_entry = je_the_two_spains
+813: 				has_law = law_type:law_monarchy
+814: 				var:two_spains_tension_current_var >= 50
+815: 				ruler ?= { popularity <= define:NCharacters|POPULARITY_LIKED_THRESHOLD }
+
+### common/journal_entries/06_spain_provisional_government.txt:95
+92: 			c:SPA ?= this
+93: 			was_formed_from = SPA
+94: 		}
+95: 		has_journal_entry = je_the_two_spains
+96: 		NOT = {
+97: 			has_variable = glorious_revolution_var
+98: 		}
+
+### common/journal_entries/06_spain_provisional_government.txt:106
+103: 			text = has_had_successful_coup_whilst_conditions_are_fulfilled_tt
+104: 			always = no
+105: 		}
+106: 		has_journal_entry = je_the_two_spains
+107: 		has_law = law_type:law_monarchy
+108: 		custom_tooltip = {
+109: 			text = two_spains_tension_over_50_tt
+
+### common/on_actions/00_code_on_actions.txt:6598
+6595: 		if = {
+6596: 			limit = {
+6597: 				scope:target ?= {
+6598: 					has_journal_entry = je_austrian_neo_absolutism
+6599: 				}
+6600: 			}
+6601: 			scope:target ?= {
+
+### common/on_actions/00_code_on_actions.txt:6613
+6610: 					limit = {
+6611: 						has_variable = temp_wargoal_impact
+6612: 					}
+6613: 					je:je_austrian_neo_absolutism ?= {
+6614: 						add_progress = { value = owner.var:temp_wargoal_impact name = austrian_neo_absolutism_constitutional_pressure_progress_bar }
+6615: 					}
+6616: 				}
+
+### common/on_actions/00_code_on_actions.txt:6622
+6619: 		if = {
+6620: 			limit = {
+6621: 				owner = {
+6622: 					has_journal_entry = je_austrian_neo_absolutism
+6623: 				}
+6624: 				scope:target ?= {
+6625: 					OR = {
+
+### common/on_actions/00_code_on_actions.txt:6644
+6641: 					limit = {
+6642: 						has_variable = temp_wargoal_impact
+6643: 					}
+6644: 					je:je_austrian_neo_absolutism ?= {
+6645: 						add_progress = { value = owner.var:temp_wargoal_impact name = austrian_neo_absolutism_constitutional_pressure_progress_bar }
+6646: 					}
+6647: 				}
+
+### common/on_actions/00_code_on_actions.txt:6653
+6650: 		if = {
+6651: 			limit = {
+6652: 				owner ?= {
+6653: 					has_journal_entry = je_austrian_neo_absolutism
+6654: 				}
+6655: 				scope:target ?= {
+6656: 					c:PRU ?= this
+
+### common/on_actions/00_code_on_actions.txt:6666
+6663: 		if = {
+6664: 			limit = {
+6665: 				owner ?= {
+6666: 					has_journal_entry = je_austrian_neo_absolutism
+6667: 				}
+6668: 				scope:target ?= {
+6669: 					c:GER ?= this
+
+### common/journal_entries/05_montenegro_je.txt:184
+179: 					limit = {
+180: 						NOT = {
+181: 							has_variable = Njegos_brother_dead
+182: 						}
+183: 					}
+184: 					random = {
+185: 						chance = {
+186: 							add = 2
+187: 							multiply = raiding_level
+188: 							subtract = 3
+189: 							multiply = 0.15 #more likely
+190: 						}
+191: 						# ToE 1.13 compatibility: disabled dangling reference: missing event montenegrin_raiding.1
+
+### common/journal_entries/05_montenegro_je.txt:199
+194: 						# 	popup = yes
+195: 						# }
+196: 					}
+197: 				}
+198: 				else = {
+199: 					random = {
+200: 						chance = {
+201: 							add = 2
+202: 							multiply = raiding_level
+203: 							subtract = 3
+204: 							multiply = 0.1
+205: 						}
+206: 						# ToE 1.13 compatibility: disabled dangling reference: missing event montenegrin_raiding.2
+
