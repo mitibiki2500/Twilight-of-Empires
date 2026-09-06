@@ -32,6 +32,30 @@ jobs:
           out.append('[TAIL100]')
           out.extend(f'{i+1+max(0,len(lines)-100)}: {x}' for i,x in enumerate(lines[-100:]))
           Path('_audit/latest_crash_summary.txt').write_text('\n'.join(out)+'\n',encoding='utf-8')
+          blocks=[]
+          countries=Counter(); jes=Counter()
+          i=0
+          while i < len(lines):
+              if 'Script system error!' in lines[i]:
+                  block=[lines[i]]; i+=1
+                  while i < len(lines) and len(block)<8:
+                      block.append(lines[i])
+                      if 'Script location:' in lines[i]: break
+                      i+=1
+                  blocks.append(block)
+                  continue
+              m=re.search(r'Failed to find country! Country: (\S+)',lines[i])
+              if m: countries[m.group(1)]+=1
+              m=re.search(r"Failed to scope to journal entry type '([^']+)'",lines[i])
+              if m: jes[m.group(1)]+=1
+              i+=1
+          focus=[f'LATEST={latest.name}',f'SCRIPT_ERROR_BLOCKS={len(blocks)}','']
+          for n,b in enumerate(blocks,1): focus.append(f'--- SCRIPT ERROR {n} ---'); focus.extend(b); focus.append('')
+          focus.append('--- MISSING COUNTRIES ---')
+          focus.extend(f'{k} x{v}' for k,v in sorted(countries.items()))
+          focus.append('--- MISSING JOURNAL ENTRIES ---')
+          focus.extend(f'{k} x{v}' for k,v in sorted(jes.items()))
+          Path('_audit/latest_crash_focus.txt').write_text('\n'.join(focus)+'\n',encoding='utf-8')
           PY
       - name: Commit audit result
         run: |
@@ -39,5 +63,5 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add _audit/
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m '一時最新クラッシュ監査結果更新'
+          git commit -m '一時最新クラッシュ重点情報更新'
           git push
