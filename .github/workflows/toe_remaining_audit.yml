@@ -14,4 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Audit remaining error classes
-        run: python scripts/toe_remaining_audit.py
+        run: python scripts/toe_remaining_audit.py | tee toe_remaining_audit_report.txt
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: toe-remaining-audit-report
+          path: toe_remaining_audit_report.txt
