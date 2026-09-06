@@ -1,0 +1,23 @@
+# Twilight of Empires - Victoria 3 1.13 compatibility
+# ToEではバニラの土地改革政治運動本体を使用しないが、
+# 一部の1.13バニラスクリプト／modifierがこのmodifier typeを参照する。
+# エンジン実装のmodifierではないためscript_onlyとしてDB定義だけ保持する。
+
+state_pop_support_movement_land_reform_add = {
+	script_only = yes
+	decimals = 1
+	color = neutral
+	game_data = {
+		ai_value = 0
+	}
+}
+
+state_pop_support_movement_land_reform_mult = {
+	script_only = yes
+	decimals = 0
+	color = neutral
+	percent = yes
+	game_data = {
+		ai_value = 0
+	}
+}
