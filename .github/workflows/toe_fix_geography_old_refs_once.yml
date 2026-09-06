@@ -1,0 +1,84 @@
+name: ToE Fix Geography Old Refs Once
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/toe_fix_geography_old_refs_once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Replace confirmed invalid old geographic-region references
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p = Path('common/scripted_triggers/00_geography_triggers.txt')
+          raw = p.read_bytes()
+          had_bom = raw.startswith(b'\xef\xbb\xbf')
+          text = raw.decode('utf-8-sig')
+
+          invalid = {
+              'geographic_region_west_siberia_old',
+              'geographic_region_east_siberia_old',
+              'geographic_region_canada_old',
+              'geographic_region_pacific_coast_old',
+              'geographic_region_finland_old',
+              'geographic_region_arctic_russia_old',
+              'geographic_region_urals_old',
+              'geographic_region_baltic_states_old',
+              'geographic_region_caucasus_old',
+              'geographic_region_great_plains_old',
+              'geographic_region_madras_old',
+              'geographic_region_bengal_old',
+              'geographic_region_bombay_old',
+              'geographic_region_punjab_old',
+              'geographic_region_central_india_old',
+          }
+
+          before = text
+          replacements = 0
+          for region in sorted(invalid):
+              pattern = rf'(?m)^(\s*)is_in_geographic_region\s*=\s*{re.escape(region)}\s*$'
+              text, n = re.subn(pattern, r'\1always = no', text)
+              replacements += n
+
+          if replacements != 25:
+              raise RuntimeError(f'Expected 25 confirmed-invalid references, replaced {replacements}')
+          remaining = sorted(set(re.findall(r'geographic_region_[A-Za-z0-9_]+_old', text)))
+          if remaining:
+              raise RuntimeError(f'Old geographic-region references remain: {remaining}')
+          if text.count('{') != text.count('}'):
+              raise RuntimeError('Brace count changed/broken')
+          if before == text:
+              raise RuntimeError('No changes made')
+
+          marker = '# ToE 1.13 compatibility: removed vanilla-only state aliases.\n'
+          if marker in text and '# Fresh 2026-09-07 crash log also confirmed vanilla-only geographic_region_*_old references; disabled without guess-mapping.\n' not in text:
+              text = text.replace(marker, marker + '\t\t# Fresh 2026-09-07 crash log also confirmed vanilla-only geographic_region_*_old references; disabled without guess-mapping.\n', 1)
+
+          p.write_text(text, encoding='utf-8-sig' if had_bom else 'utf-8')
+          print(f'Replaced {replacements} invalid geographic-region references')
+
+      - name: Remove this one-shot workflow
+        run: git rm .github/workflows/toe_fix_geography_old_refs_once.yml
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add common/scripted_triggers/00_geography_triggers.txt
+          git diff --cached --check
+          git commit -m "地理トリガーの無効地域参照を修正"
+          git push origin main
