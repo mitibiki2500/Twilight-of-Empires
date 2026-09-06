@@ -34,7 +34,7 @@
 	}
 
 	immediate = {
-		trigger_event = { id = prohibition.1 }
+		# ToE 1.13 compatibility: disabled dangling reference: prohibition.1
 		ig:ig_devout ?= {
 			save_scope_as = devout_ig
 		}
@@ -100,7 +100,7 @@
 
 	on_complete = {
 		custom_tooltip = prohibition_success.tt
-		trigger_event = { id = prohibition.8 }
+		# ToE 1.13 compatibility: disabled dangling reference: prohibition.8
 	}
 
 	timeout = 5475

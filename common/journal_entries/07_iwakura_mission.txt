@@ -66,7 +66,7 @@
 			}
 			save_scope_as = expedition_leader
 		}
-		trigger_event = { id = iwakura_mission.4 days = 25 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: iwakura_mission.4
 	}
 
 	on_monthly_pulse = {
@@ -88,7 +88,8 @@
 				}
 				random_list = {
 					25 = {
-						trigger_event = iwakura_mission.7
+						# ToE 1.13 compatibility: disabled dangling reference: missing event iwakura_mission.7
+						# trigger_event = iwakura_mission.7
 					}
 					50 = {
 						# Nothing ever happens
@@ -113,7 +114,7 @@
 	custom_on_completion_header = je_iwakura_mission_on_complete_header
 
 	on_complete = {
-		trigger_event = { id = iwakura_mission.2 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: iwakura_mission.2
 		custom_tooltip = iwakura_mission_leader_change_ideology_tt
 		custom_tooltip = iwakura_mission_leader_traits_tt
 		custom_tooltip = effects_depend_on_visited_countries_tt

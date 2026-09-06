@@ -133,16 +133,16 @@
 			limit = {
 				root.var:grand_exhibition_points_var >= 100
 			}
-			trigger_event = { id = exhibition_events.3 }
+			# ToE 1.13 compatibility: disabled dangling reference: exhibition_events.3
 		}
 		else_if = {
 			limit = {
 				root.var:grand_exhibition_points_var >= 50
 			}
-			trigger_event = { id = exhibition_events.2 }
+			# ToE 1.13 compatibility: disabled dangling reference: exhibition_events.2
 		}
 		else = {
-			trigger_event = { id = exhibition_events.1 }
+			# ToE 1.13 compatibility: disabled dangling reference: exhibition_events.1
 		}
 	}
 

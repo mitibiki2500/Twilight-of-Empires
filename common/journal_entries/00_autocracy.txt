@@ -84,9 +84,10 @@
 	}
 
 	on_complete = {
-		trigger_event = {
-			id = autocracy.1
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event autocracy.1
+		# trigger_event = {
+		# 	id = autocracy.1
+		# }
 	}
 
 	event_outcome_completed_desc = {
@@ -168,9 +169,10 @@ je_king_in_parliament = {
 
 	on_complete = {
 		remove_variable = king_in_parliament_possible
-		trigger_event = {
-			id = autocracy.4
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event autocracy.4
+		# trigger_event = {
+		# 	id = autocracy.4
+		# }
 	}
 
 	event_outcome_completed_desc = {

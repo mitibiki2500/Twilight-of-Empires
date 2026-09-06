@@ -36,7 +36,7 @@
 
 	on_complete = {
 		set_variable = corn_laws_abolished
-		trigger_event = { id = corn_laws.1 }
+		# ToE 1.13 compatibility: disabled dangling reference: corn_laws.1
 		show_as_tooltip = {
 			if = {
 				limit = {

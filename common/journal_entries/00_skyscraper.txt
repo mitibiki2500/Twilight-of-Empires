@@ -26,7 +26,7 @@
 
 	on_complete = {
 		remove_modifier = skyscraper_survey
-		trigger_event = { id = skyscraper.1 } # site found
+		 # site found  # ToE 1.13 compatibility: disabled dangling reference: skyscraper.1
 	}
 
 	invalid = {
@@ -89,7 +89,7 @@ je_skyscraper_construction = {
 	}
 
 	on_complete = {
-		trigger_event = { id = skyscraper.2 }
+		# ToE 1.13 compatibility: disabled dangling reference: skyscraper.2
 		remove_variable = skyscraper_var
 		scope:target = {
 			remove_modifier = skyscraper_site

@@ -76,7 +76,7 @@ je_liberalism_1 = {
 
 	on_complete = {
 		set_variable = liberalism_1_done
-		trigger_event = { id = liberalism.1 }
+		# ToE 1.13 compatibility: disabled dangling reference: liberalism.1
 	}
 
 	weight = 10000
@@ -105,7 +105,7 @@ je_liberalism_2 = {
 	}
 
 	on_complete = {
-		trigger_event = { id = liberalism.2 }
+		# ToE 1.13 compatibility: disabled dangling reference: liberalism.2
 	}
 
 	progressbar = yes
@@ -141,7 +141,7 @@ je_liberalism_3 = {
 	}
 
 	on_complete = {
-		trigger_event = { id = liberalism.3 }
+		# ToE 1.13 compatibility: disabled dangling reference: liberalism.3
 	}
 
 	weight = 5000
@@ -165,7 +165,7 @@ je_liberalism_4 = {
 	}
 
 	on_complete = {
-		trigger_event = { id = liberalism.4 }
+		# ToE 1.13 compatibility: disabled dangling reference: liberalism.4
 	}
 
 	weight = 5000

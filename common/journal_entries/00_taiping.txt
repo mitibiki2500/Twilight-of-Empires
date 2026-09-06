@@ -39,9 +39,10 @@
 	immediate = {
 		custom_tooltip = {
 			text = missionary_activities_begin_tt
-			trigger_event = {
-				id = heavenly.1
-			}
+			# ToE 1.13 compatibility: disabled dangling reference: missing event heavenly.1
+			# trigger_event = {
+			# 	id = heavenly.1
+			# }
 		}
 		every_scope_state = {
 			limit = {
@@ -187,9 +188,10 @@ je_heavenly_kingdom_main = {
 				days = short_modifier_time
 			}
 		}
-		trigger_event = {
-			id = heavenly.2
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event heavenly.2
+		# trigger_event = {
+		# 	id = heavenly.2
+		# }
 	}
 
 	on_monthly_pulse = {
@@ -229,9 +231,10 @@ je_heavenly_kingdom_main = {
 	}
 
 	on_fail = {
-		trigger_event = {
-			id = heavenly.4
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event heavenly.4
+		# trigger_event = {
+		# 	id = heavenly.4
+		# }
 	}
 
 	weight = 10000
@@ -260,7 +263,7 @@ je_taiping = {
 	}
 
 	on_complete = {
-		trigger_event = { id = heavenly.5 days = 0 }
+		# ToE 1.13 compatibility: disabled dangling reference: heavenly.5
 		hidden_effect = {
 			remove_modifier = taiping_taiping_rebellion
 		}
@@ -319,7 +322,7 @@ je_taiping_revolution = {
 	}
 
 	on_complete = {
-		trigger_event = { id = heavenly.6 days = 0 }
+		# ToE 1.13 compatibility: disabled dangling reference: heavenly.6
 		custom_tooltip = {
 			text = rebellion_effects_remove
 			remove_modifier = taiping_taiping_rebellion

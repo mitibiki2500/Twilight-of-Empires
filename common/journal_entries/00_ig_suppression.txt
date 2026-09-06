@@ -18,7 +18,7 @@
 		remove_variable = ig_leader_exposed_var
 		remove_variable = ig_leader_steps_down_var
 		remove_variable = ig_leader_in_jail_var
-		trigger_event = { id = ig_suppression_events.7 }
+		# ToE 1.13 compatibility: disabled dangling reference: ig_suppression_events.7
 	}
 
 	fail = {

@@ -42,7 +42,7 @@
 		ig:ig_rural_folk ?= {
 			save_scope_as = donghak_ig
 		}
-		trigger_event = { id = gg_korea.1 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: gg_korea.1
 	}
 
 	on_monthly_pulse = {
@@ -80,7 +80,7 @@
 	}
 
 	on_fail = {
-		trigger_event = { id = gg_korea.2 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: gg_korea.2
 	}
 
 	event_outcome_failed_desc = {
@@ -148,7 +148,7 @@ je_gyojo_shinwon = {
 	}
 
 	on_complete = {
-		trigger_event = { id = gg_korea.5 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: gg_korea.5
         hidden_effect = {
             set_variable = hermit_kingdom_achievement
         }
@@ -172,7 +172,7 @@ je_gyojo_shinwon = {
 	}
 
 	on_timeout = {
-		trigger_event = { id = gg_korea.6 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: gg_korea.6
 	}
 
 	event_outcome_timeout_desc = {
@@ -266,7 +266,7 @@ je_korean_rebellion = {
 			custom_tooltip = {
 				text = japan_demands_korea_tt
 				scope:japan_scope ?= {
-					trigger_event = { id = gg_korea.8 days = 7 popup = yes}
+					# ToE 1.13 compatibility: disabled dangling reference: gg_korea.8
 				}
 			}
 		}

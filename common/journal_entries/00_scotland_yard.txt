@@ -40,7 +40,7 @@
 	}
 
 	on_complete = {
-		trigger_event = { id = scotland_yard.1 }
+		# ToE 1.13 compatibility: disabled dangling reference: scotland_yard.1
 		set_variable = has_scotland_yard_var
 	}
 
@@ -69,9 +69,9 @@ je_serial_killer = {
 					has_modifier = serial_killer_active_investigation
 				}
 				random_list = {
-					60 = { trigger_event = { id = crime_events.11 } } # killer caught
-					20 = { trigger_event = { id = crime_events.12 } } # letter
-					5 = { trigger_event = { id = crime_events.13 } } # another murder
+					60 = {  } # killer caught  # ToE 1.13 compatibility: disabled dangling reference: crime_events.11
+					20 = {  } # letter  # ToE 1.13 compatibility: disabled dangling reference: crime_events.12
+					5 = {  } # another murder  # ToE 1.13 compatibility: disabled dangling reference: crime_events.13
 					15 = { } # nothing happens this year
 				}
 			}
@@ -92,9 +92,9 @@ je_serial_killer = {
 					}
 				}
 				random_list = {
-					40 = { trigger_event = { id = crime_events.11 } } # killer caught
-					20 = { trigger_event = { id = crime_events.12 } } # letter
-					10 =  { trigger_event = { id = crime_events.13 } } # another murder
+					40 = {  } # killer caught  # ToE 1.13 compatibility: disabled dangling reference: crime_events.11
+					20 = {  } # letter  # ToE 1.13 compatibility: disabled dangling reference: crime_events.12
+					10 =  {  } # another murder  # ToE 1.13 compatibility: disabled dangling reference: crime_events.13
 					50 = { } # nothing happens this year
 				}
 			}
@@ -109,17 +109,17 @@ je_serial_killer = {
 					}
 				}
 				random_list = {
-					20 = { trigger_event = { id = crime_events.11 } } # killer caught
-					20 = { trigger_event = { id = crime_events.12 } } # letter
-					20 = { trigger_event = { id = crime_events.13 } } # another murder
+					20 = {  } # killer caught  # ToE 1.13 compatibility: disabled dangling reference: crime_events.11
+					20 = {  } # letter  # ToE 1.13 compatibility: disabled dangling reference: crime_events.12
+					20 = {  } # another murder  # ToE 1.13 compatibility: disabled dangling reference: crime_events.13
 					40 = { } # nothing happens this year
 				}
 			}
 			else = {
 				random_list = {
-					5 = { trigger_event = { id = crime_events.11 } } # killer caught
-					20 = { trigger_event = { id = crime_events.12 } } # letter
-					25 = { trigger_event = { id = crime_events.13 } } # another murder
+					5 = {  } # killer caught  # ToE 1.13 compatibility: disabled dangling reference: crime_events.11
+					20 = {  } # letter  # ToE 1.13 compatibility: disabled dangling reference: crime_events.12
+					25 = {  } # another murder  # ToE 1.13 compatibility: disabled dangling reference: crime_events.13
 					50 = { } # nothing happens this year
 				}
 			}

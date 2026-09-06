@@ -27,9 +27,10 @@
 	}
 
 	on_complete = {
-		trigger_event = {
-			id = dreyfus.8
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event dreyfus.8
+		# trigger_event = {
+		# 	id = dreyfus.8
+		# }
 		custom_tooltip = {
 			text = je_dreyfus_affair_tt.4
 		}

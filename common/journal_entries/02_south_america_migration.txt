@@ -60,7 +60,7 @@
 			name = south_america_migration_goal
 			multiply = 1500000
 		}
-		trigger_event = { id = sa_migration.2 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: sa_migration.2
 	}
 
 	on_weekly_pulse = {
@@ -124,7 +124,7 @@
 	}
 
 	on_complete = {
-		trigger_event = { id = sa_migration.3 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: sa_migration.3
 		show_as_tooltip = {
 			add_modifier = {
 				name = populated_southamerica
@@ -206,7 +206,7 @@ je_central_america_migration = {
 			name = central_america_migration_goal
 			multiply = 1500000
 		}
-		trigger_event = { id = sa_migration.2 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: sa_migration.2
 	}
 
 	on_weekly_pulse = {
@@ -264,7 +264,7 @@ je_central_america_migration = {
 	}
 
 	on_complete = {
-		trigger_event = { id = sa_migration.3 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: sa_migration.3
 		show_as_tooltip = {
 			add_modifier = {
 				name = populated_southamerica
@@ -366,7 +366,7 @@ je_american_west_migration = {
 			name = american_west_migration_goal
 			multiply = 1500000
 		}
-		trigger_event = { id = sa_migration.2 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: sa_migration.2
 	}
 
 	on_weekly_pulse = {
@@ -430,7 +430,7 @@ je_american_west_migration = {
 	}
 
 	on_complete = {
-		trigger_event = { id = sa_migration.3 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: sa_migration.3
 		show_as_tooltip = {
 			add_modifier = {
 				name = populated_southamerica

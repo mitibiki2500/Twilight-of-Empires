@@ -99,7 +99,7 @@
 	}
 
 	on_complete = {
-		trigger_event = { id = treaty_of_london_events.4 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: treaty_of_london_events.4
 	}
 
 	fail = {
@@ -121,7 +121,7 @@
 	}
 
 	on_fail = {
-		trigger_event = { id = treaty_of_london_events.5 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: treaty_of_london_events.5
 	}
 
 	on_monthly_pulse = {

@@ -18,7 +18,7 @@
 	}
 
 	on_complete = {
-		trigger_event = { id = silkworm_diseases.9 }
+		# ToE 1.13 compatibility: disabled dangling reference: silkworm_diseases.9
 	}
 
 	fail = {
@@ -95,7 +95,7 @@
 								has_variable = pebrine_outbreak_event
 							}
 						}
-						trigger_event = { id = silkworm_diseases.3 weeks = 1 }
+						# ToE 1.13 compatibility: disabled dangling reference: silkworm_diseases.3
 					}
 				}
 			}

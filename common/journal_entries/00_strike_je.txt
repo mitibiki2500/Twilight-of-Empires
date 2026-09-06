@@ -61,7 +61,7 @@
 	}
 
 	immediate = {
-		trigger_event = { id = strike.1 }
+		# ToE 1.13 compatibility: disabled dangling reference: strike.1
 		set_variable = {
 			name = strike_timer_var
 			value = 0
@@ -78,17 +78,19 @@
 			limit = {
 				has_variable = strike_negotiator
 			}
-			trigger_event = {
-				id = strike.8 # strikers appeased
-			}
+			# ToE 1.13 compatibility: disabled dangling reference: missing event strike.8
+			# trigger_event = {
+			# 	id = strike.8 # strikers appeased
+			# }
 		}
 		else_if = {
 			limit = {
 				has_variable = strike_breaker
 			}
-			trigger_event = {
-				id = strike.9 # strikers crushed
-			}
+			# ToE 1.13 compatibility: disabled dangling reference: missing event strike.9
+			# trigger_event = {
+			# 	id = strike.9 # strikers crushed
+			# }
 		}
 	}
 

@@ -134,10 +134,11 @@
 				save_scope_as = official_culture_scope
 			}
 		}
-		trigger_event = {
-			id = vernacular_events.1
-			popup = yes
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event vernacular_events.1
+		# trigger_event = {
+		# 	id = vernacular_events.1
+		# 	popup = yes
+		# }
 	}
 
 	on_weekly_pulse = {
@@ -385,19 +386,21 @@
 			limit = {
 				has_variable = chose_assimilation_var
 			}
-			trigger_event = {
-				id = vernacular_events.2
-				popup = yes
-			}
+			# ToE 1.13 compatibility: disabled dangling reference: missing event vernacular_events.2
+			# trigger_event = {
+			# 	id = vernacular_events.2
+			# 	popup = yes
+			# }
 		}
 		if = {
 			limit = {
 				has_variable = chose_integration_var
 			}
-			trigger_event = {
-				id = vernacular_events.3
-				popup = yes
-			}
+			# ToE 1.13 compatibility: disabled dangling reference: missing event vernacular_events.3
+			# trigger_event = {
+			# 	id = vernacular_events.3
+			# 	popup = yes
+			# }
 		}
 		if = {
 			limit = {

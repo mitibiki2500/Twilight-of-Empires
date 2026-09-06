@@ -40,11 +40,11 @@
 	}
 
 	on_fail = {
-		trigger_event = { id = warlord_china_events.100 }
+		# ToE 1.13 compatibility: disabled dangling reference: warlord_china_events.100
 	}
 
 	on_complete = {
-		trigger_event = { id = warlord_china_events.200 }
+		# ToE 1.13 compatibility: disabled dangling reference: warlord_china_events.200
 	}
 
 	current_value = {
@@ -96,7 +96,7 @@
 					limit = {
 						NOT = { has_variable = china_han_empire }
 					}
-					trigger_event = { id = boxer_rebellion_events.4 days = 0 popup = yes }
+					# ToE 1.13 compatibility: disabled dangling reference: boxer_rebellion_events.4
 				}
 			}
 		}

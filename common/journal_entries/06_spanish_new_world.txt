@@ -32,10 +32,11 @@ je_spanish_new_world_dummy = {
 
 	immediate = {
 		show_as_tooltip = {
-			trigger_event = {
-				id = spanish_new_world_events.1
-				popup = yes
-			}
+			# ToE 1.13 compatibility: disabled dangling reference: missing event spanish_new_world_events.1
+			# trigger_event = {
+			# 	id = spanish_new_world_events.1
+			# 	popup = yes
+			# }
 		}
 	}
 
@@ -145,10 +146,11 @@ je_reconquista = {
 	}
 
 	on_complete = {
-		trigger_event = {
-			id = spanish_new_world_events.2
-			popup = yes
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event spanish_new_world_events.2
+		# trigger_event = {
+		# 	id = spanish_new_world_events.2
+		# 	popup = yes
+		# }
 		custom_tooltip = choose_one_of_tt
 		show_as_tooltip = {
 			add_modifier = {
@@ -252,10 +254,11 @@ je_hispanoamerica = {
 
 	on_complete = {
 		clear_variable_list = hispanoamerica_recognition_countries
-		trigger_event = {
-			id = spanish_new_world_events.3
-			popup = yes
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event spanish_new_world_events.3
+		# trigger_event = {
+		# 	id = spanish_new_world_events.3
+		# 	popup = yes
+		# }
 		show_as_tooltip = {
 			add_modifier = {
 				name = modifier_hispanoamerica_reward
@@ -315,9 +318,10 @@ je_spanish_american_independence = {
 				days = long_modifier_time
 			}
 		}
-		trigger_event = {
-			id = spanish_new_world_events.5
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event spanish_new_world_events.5
+		# trigger_event = {
+		# 	id = spanish_new_world_events.5
+		# }
 		if = {
 			limit = {
 				c:SPA ?= {

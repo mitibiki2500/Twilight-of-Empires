@@ -81,9 +81,10 @@
 	}
 
 	on_complete = {
-		trigger_event = {
-			id = national_awakening.1
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event national_awakening.1
+		# trigger_event = {
+		# 	id = national_awakening.1
+		# }
 	}
 
 	event_outcome_completed_desc = {

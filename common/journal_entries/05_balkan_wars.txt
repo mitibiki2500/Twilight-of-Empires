@@ -75,11 +75,12 @@
 	}
 
 	immediate = {
-        trigger_event = {
-            id = balkan_wars.1
-            days = 3
-            popup = yes
-        }
+        # ToE 1.13 compatibility: disabled dangling reference: missing event balkan_wars.1
+        # trigger_event = {
+        #     id = balkan_wars.1
+        #     days = 3
+        #     popup = yes
+        # }
 		sr:region_balkans = {
 			save_scope_as = balkans_scope
 		}
@@ -109,9 +110,10 @@
 	}
 
 	on_complete = {
-		trigger_event = {
-           id = balkan_wars.2
-        }
+		# ToE 1.13 compatibility: disabled dangling reference: missing event balkan_wars.2
+		# trigger_event = {
+		#          id = balkan_wars.2
+		#       }
         set_variable = first_balkan_war_successful
 		spoils_of_war_initiation_gre = yes
 		spoils_of_war_initiation_mon = yes
@@ -184,33 +186,36 @@
 			limit = { # Resigned before the war started.
 				has_modifier = balkan_wars_traitor_mod
 			}
-		    trigger_event = {
-            	id = balkan_wars.5
-           		days = 0
-            	popup = yes
-        	}
+		    # ToE 1.13 compatibility: disabled dangling reference: missing event balkan_wars.5
+		    # trigger_event = {
+		    #       	id = balkan_wars.5
+		    #      		days = 0
+		    #       	popup = yes
+		    #   	}
 		}
 		if = {
 			limit = { # Lost the war, but still not a subject.
 				has_variable = lost_balkan_wars
 				is_subject = no
 			}
-		    trigger_event = {
-	            id = balkan_wars.6
-	            days = 0
-	            popup = yes
-        	}
+		    # ToE 1.13 compatibility: disabled dangling reference: missing event balkan_wars.6
+		    # trigger_event = {
+		    #        id = balkan_wars.6
+		    #        days = 0
+		    #        popup = yes
+		    #   	}
 		}
 		if = {
 			limit = { # Became a subject before the war began OR as a result of losing the war
 				is_subject = yes
 				is_diplomatic_play_committed_participant = no
 			}
-		    trigger_event = {
-	            id = balkan_wars.3
-	            days = 0
-	            popup = yes
-        	}
+		    # ToE 1.13 compatibility: disabled dangling reference: missing event balkan_wars.3
+		    # trigger_event = {
+		    #        id = balkan_wars.3
+		    #        days = 0
+		    #        popup = yes
+		    #   	}
 		}
 		the_balkan_league_activated_modifier_cleanser = yes
 		remove_variable = bp_member_backs_down
@@ -270,9 +275,10 @@
 	}
 
 	on_invalid = {
-		trigger_event = {
-            id = balkan_wars.4
-        }
+		# ToE 1.13 compatibility: disabled dangling reference: missing event balkan_wars.4
+		# trigger_event = {
+		#           id = balkan_wars.4
+		#       }
         the_balkan_league_activated_modifier_cleanser = yes
 	}
 }

@@ -32,7 +32,7 @@
 	}
 
 	on_complete = {
-		trigger_event = { id = caudillo.2 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: caudillo.2
 		show_as_tooltip = {
 			ig:ig_armed_forces ?= {
 				remove_ideology = ideology_caudillismo
@@ -52,7 +52,7 @@
 	}
 
 	on_fail = {
-		trigger_event = { id = caudillo.3 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: caudillo.3
 		show_as_tooltip = {
 			add_modifier = {
 				name = age_of_caudillos_modifier

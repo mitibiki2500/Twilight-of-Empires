@@ -15,7 +15,8 @@
 		sr:region_east_africa = {
 			save_scope_as = zanj_scope
 		}
-		trigger_event = portuguese_colonialism.1
+		# ToE 1.13 compatibility: disabled dangling reference: missing event portuguese_colonialism.1
+		# trigger_event = portuguese_colonialism.1
 	}
 
 	is_shown_when_inactive = {
@@ -125,7 +126,8 @@
 	}
 
 	on_complete = {
-		trigger_event = portuguese_colonialism.2
+		# ToE 1.13 compatibility: disabled dangling reference: missing event portuguese_colonialism.2
+		# trigger_event = portuguese_colonialism.2
 		set_variable = portuguese_colonialism_je_completed
 	}
 
@@ -160,7 +162,8 @@
 	}
 
 	on_fail = {
-		trigger_event = portuguese_colonialism.3
+		# ToE 1.13 compatibility: disabled dangling reference: missing event portuguese_colonialism.3
+		# trigger_event = portuguese_colonialism.3
 	}
 
 	invalid = {
@@ -254,7 +257,8 @@ je_the_pink_map = {
 	}
 
 	on_complete = {
-		trigger_event = portuguese_colonialism.8
+		# ToE 1.13 compatibility: disabled dangling reference: missing event portuguese_colonialism.8
+		# trigger_event = portuguese_colonialism.8
 	}
 
 	fail = {
@@ -299,7 +303,8 @@ je_the_pink_map = {
 	}
 
 	on_fail = {
-		trigger_event = portuguese_colonialism.9
+		# ToE 1.13 compatibility: disabled dangling reference: missing event portuguese_colonialism.9
+		# trigger_event = portuguese_colonialism.9
 	}
 
 	invalid = {

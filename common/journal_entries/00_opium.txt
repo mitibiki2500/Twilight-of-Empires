@@ -48,7 +48,7 @@
 	}
 
 	on_complete = {
-		trigger_event = { id = opium_events.1 }
+		# ToE 1.13 compatibility: disabled dangling reference: opium_events.1
 		set_variable = {
 			name = opium_je_done
 		}

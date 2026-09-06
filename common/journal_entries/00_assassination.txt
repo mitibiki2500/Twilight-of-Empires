@@ -132,7 +132,7 @@
 	on_complete = {
 		custom_tooltip = {
 			text = assassination_completion_tt
-			trigger_event = { id = assassination_events.7 }
+			# ToE 1.13 compatibility: disabled dangling reference: assassination_events.7
 		}
 		remove_variable = ongoing_assassination_je
 	}
@@ -147,7 +147,7 @@
 	}
 
 	on_fail = {
-		trigger_event = { id = assassination_events.5 }
+		# ToE 1.13 compatibility: disabled dangling reference: assassination_events.5
 		remove_variable = ongoing_assassination_je
 	}
 
@@ -176,7 +176,7 @@
 					is_character_alive = yes
 				}
 			}
-			trigger_event = { id = assassination_events.6 }
+			# ToE 1.13 compatibility: disabled dangling reference: assassination_events.6
 		}
 		else_if = { #they died of other causes / another small event
 			limit = {
@@ -186,7 +186,7 @@
 					}
 				}
 			}
-			trigger_event = { id = assassination_events.8 }
+			# ToE 1.13 compatibility: disabled dangling reference: assassination_events.8
 		}
 		remove_variable = ongoing_assassination_je
 	}

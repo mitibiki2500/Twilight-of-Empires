@@ -111,9 +111,10 @@
 		custom_tooltip = {
 			text = peru_bolivia_completion_nonbolivia_tt
 			c:BOL ?= {
-				trigger_event = {
-					id = peru_bolivia_events.1
-				}
+				# ToE 1.13 compatibility: disabled dangling reference: missing event peru_bolivia_events.1
+				# trigger_event = {
+				# 	id = peru_bolivia_events.1
+				# }
 			}
 		}
 	}
@@ -132,7 +133,7 @@
 			}
 			remove_variable = attack_bolivia
 			remove_variable = befriend_bolivia
-			trigger_event = { id = peru_bolivia_events.7 popup = yes }
+			# ToE 1.13 compatibility: disabled dangling reference: peru_bolivia_events.7
 		}
 	}
 
@@ -232,7 +233,7 @@
 						has_variable = pbc_member
 						is_player = yes
 					}
-					trigger_event = { id = peru_bolivia_events.3 popup = yes }
+					# ToE 1.13 compatibility: disabled dangling reference: peru_bolivia_events.3
 				}
 			}
 			else = {
@@ -243,7 +244,7 @@
 					order_by = gdp
 					position = 0
 					check_range_bounds = no
-					trigger_event = { id = peru_bolivia_events.3 popup = yes }
+					# ToE 1.13 compatibility: disabled dangling reference: peru_bolivia_events.3
 				}
 			}
 		}
@@ -265,7 +266,7 @@
 						has_variable = pbc_member
 						is_player = yes
 					}
-					trigger_event = { id = peru_bolivia_events.3 popup = yes }
+					# ToE 1.13 compatibility: disabled dangling reference: peru_bolivia_events.3
 				}
 			}
 			else = {
@@ -276,7 +277,7 @@
 					order_by = gdp
 					position = 0
 					check_range_bounds = no
-					trigger_event = { id = peru_bolivia_events.3 popup = yes }
+					# ToE 1.13 compatibility: disabled dangling reference: peru_bolivia_events.3
 				}
 			}
 		}
@@ -315,10 +316,10 @@
 							}
 						}
 					}
-					trigger_event = { id = peru_bolivia_events.6 popup = yes }
+					# ToE 1.13 compatibility: disabled dangling reference: peru_bolivia_events.6
 				}
 				else = {
-					trigger_event = { id = peru_bolivia_events.5 popup = yes }
+					# ToE 1.13 compatibility: disabled dangling reference: peru_bolivia_events.5
 				}
 			}
 		}

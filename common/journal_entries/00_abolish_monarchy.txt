@@ -63,9 +63,10 @@ je_abolish_monarchy = {
 
 	on_complete = {
 		set_variable = stamped_out_monarchy_var
-		trigger_event = {
-			id = 1848.2
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event 1848.2
+		# trigger_event = {
+		# 	id = 1848.2
+		# }
 		if = {
 			limit = { has_journal_entry = je_warlord_china }
 			chi_add_1_fragile_unity = yes

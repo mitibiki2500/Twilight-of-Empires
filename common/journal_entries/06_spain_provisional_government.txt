@@ -118,10 +118,11 @@ je_spain_glorious_revolution_dummy = {
 
 	immediate = {
 		show_as_tooltip = {
-			trigger_event = {
-				id = two_spains.4
-				popup = yes
-			}
+			# ToE 1.13 compatibility: disabled dangling reference: missing event two_spains.4
+			# trigger_event = {
+			# 	id = two_spains.4
+			# 	popup = yes
+			# }
 		}
 	}
 

@@ -43,8 +43,8 @@
     }
 
     on_complete = {
-        trigger_event = { id = hispaniola_events.1 popup = yes }
-        c:FRA ?= { trigger_event = { id = hispaniola_events.2 popup = yes } }
+        # ToE 1.13 compatibility: disabled dangling reference: hispaniola_events.1
+        c:FRA ?= {  }  # ToE 1.13 compatibility: disabled dangling reference: hispaniola_events.2
     }
 
     invalid = {

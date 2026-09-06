@@ -30,7 +30,7 @@
             check_range_bounds = no
 			save_scope_as = red_scare_target_nation
 		}
-        trigger_event = { id = red_scare.1 }
+        # ToE 1.13 compatibility: disabled dangling reference: red_scare.1
     }
     on_monthly_pulse = {
         random_events = {
@@ -80,7 +80,7 @@
     timeout = 3650
 
     on_timeout = {
-        trigger_event = { id = red_scare.20 }
+        # ToE 1.13 compatibility: disabled dangling reference: red_scare.20
     }
 
     weight = 1000

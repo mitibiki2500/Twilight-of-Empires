@@ -36,7 +36,7 @@
 	immediate = {
 		custom_tooltip = {
 			text = free_state_immediate_tooltip
-			trigger_event = { id = congo_free_state_events.1 popup = yes }
+			# ToE 1.13 compatibility: disabled dangling reference: congo_free_state_events.1
 		}
 		set_variable = {
 			name = free_state_international_opinion
@@ -84,7 +84,7 @@
 				remove_modifier = free_state_mort
 			}
 		}
-		trigger_event = { id = congo_free_state_events.5 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: congo_free_state_events.5
 	}
 
 	on_monthly_pulse = {

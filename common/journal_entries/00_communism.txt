@@ -28,7 +28,7 @@
 			save_scope_as = root_country
 		}
 		set_communism_vars = yes
-		trigger_event = { id = communism.10 days = 1 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: communism.10
 	}
 
 	on_weekly_pulse = {
@@ -67,7 +67,7 @@
 					has_law_or_variant = law_type:law_council_republic
 				}
 			}
-			trigger_event = { id = communism.1 popup = yes }
+			# ToE 1.13 compatibility: disabled dangling reference: communism.1
 		}
 		else = { # Mirrors effects of communism.1, skips je_communism_2
 			if = {
@@ -94,7 +94,7 @@
 					set_variable = communist_ig_var
 				}
 			}
-			trigger_event = { id = communism.2 popup = yes }
+			# ToE 1.13 compatibility: disabled dangling reference: communism.2
 		}
 		custom_tooltip = communism_je_1_fail_tt
 	}
@@ -102,7 +102,7 @@
 	timeout = 1095
 
 	on_timeout = {
-		trigger_event = { id = communism.11 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: communism.11
 		custom_tooltip = communism_je_1_complete_tt
 	}
 
@@ -138,7 +138,7 @@ je_communism_2 = {
 	}
 
 	on_complete = {
-		trigger_event = { id = communism.2 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: communism.2
 	}
 
 	current_value = {
@@ -163,10 +163,11 @@ je_anarchy = {
 	}
 
 	on_complete = {
-		trigger_event = {
-			id = communism.4
-			popup = yes
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event communism.4
+		# trigger_event = {
+		# 	id = communism.4
+		# 	popup = yes
+		# }
 	}
 
 	fail = {
@@ -210,7 +211,7 @@ je_vanguard = {
 	}
 
 	on_complete = {
-		trigger_event = { id = communism.5 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: communism.5
 	}
 
 	fail = {
@@ -266,10 +267,11 @@ je_communist_welfare = {
 	}
 
 	on_complete = {
-		trigger_event = {
-			id = communism.6
-			popup = yes
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event communism.6
+		# trigger_event = {
+		# 	id = communism.6
+		# 	popup = yes
+		# }
 	}
 
 	fail = {

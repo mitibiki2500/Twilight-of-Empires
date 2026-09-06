@@ -40,10 +40,11 @@
         scope:overlord_scope = {
             post_notification = struggle_for_sovereignty_message
         }
-        trigger_event = {
-            id = princely_states.1
-            popup = yes
-        }
+        # ToE 1.13 compatibility: disabled dangling reference: missing event princely_states.1
+        # trigger_event = {
+        #     id = princely_states.1
+        #     popup = yes
+        # }
     }
 
     complete = {
@@ -52,7 +53,7 @@
     }
 
     on_complete = {
-        trigger_event = { id = princely_states.2 }
+        # ToE 1.13 compatibility: disabled dangling reference: princely_states.2
     }
 
     event_outcome_completed_desc = {

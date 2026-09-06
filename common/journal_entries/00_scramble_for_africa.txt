@@ -32,10 +32,11 @@
 	}
 
 	immediate = {
-		trigger_event = {
-			id = africa_colonial_events.1
-			popup = yes
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event africa_colonial_events.1
+		# trigger_event = {
+		# 	id = africa_colonial_events.1
+		# 	popup = yes
+		# }
 		save_scope_as = scramble_for_africa_self
 
 		set_variable = {
@@ -70,10 +71,11 @@
 	}
 
 	on_complete = {
-		trigger_event = {
-			id = africa_colonial_events.2
-			popup = yes
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event africa_colonial_events.2
+		# trigger_event = {
+		# 	id = africa_colonial_events.2
+		# 	popup = yes
+		# }
 		if = {
 			limit = {
 				has_variable = controlled_colonies_in_africa_cached

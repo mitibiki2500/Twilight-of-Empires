@@ -49,9 +49,10 @@
 	}
 
 	on_complete = {
-		trigger_event = {
-			id = veiled_protectorate.1
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event veiled_protectorate.1
+		# trigger_event = {
+		# 	id = veiled_protectorate.1
+		# }
 	}
 
 	fail = {

@@ -158,7 +158,7 @@
 				save_scope_as = new_national_culture
 			}
 		}
-		trigger_event = { id = culture_south_america.4 popup = yes }
+		# ToE 1.13 compatibility: disabled dangling reference: culture_south_america.4
 	}
 
 	on_weekly_pulse = {
@@ -181,9 +181,10 @@
 
 	on_complete = {
 		clear_national_identity_vars = yes
-		trigger_event = {
-			id = culture_south_america.1 popup = yes
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event culture_south_america.1
+		# trigger_event = {
+		# 	id = culture_south_america.1 popup = yes
+		# }
 		show_as_tooltip = {
 			if = {
 				limit = {
@@ -591,9 +592,10 @@ je_south_american_national_identity = {
 	}
 
 	on_complete = {
-		trigger_event = {
-			id = culture_south_america.3
-		}
+		# ToE 1.13 compatibility: disabled dangling reference: missing event culture_south_america.3
+		# trigger_event = {
+		# 	id = culture_south_america.3
+		# }
 		add_loyalists = {
 			value = large_radicals
 			culture = scope:new_national_culture
