@@ -63,12 +63,15 @@ def ensure_default_character_template() -> bool:
         raise RuntimeError(f"Vanilla 1.13.11 mirror missing required template: {src}")
     src_bytes = src.read_bytes()
     if dst.exists() and dst.read_bytes() == src_bytes:
+        changed = False
         print('DEFAULT_TEMPLATE already exact vanilla mirror')
-        return False
-    dst.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(src, dst)
-    if dst.read_bytes() != src_bytes:
-        raise RuntimeError('Default template copy verification failed')
+    else:
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(src, dst)
+        if dst.read_bytes() != src_bytes:
+            raise RuntimeError('Default template copy verification failed')
+        changed = True
+        print('DEFAULT_TEMPLATE restored from exact vanilla mirror')
     text = dst.read_text(encoding='utf-8-sig', errors='strict')
     blocks = list(top_blocks(text))
     defaults = [b for b in blocks if b[0] == 'default']
@@ -79,12 +82,12 @@ def ensure_default_character_template() -> bool:
         'home_region', 'holding_type', 'dna', 'age', 'interest_group',
         'commander_rank', 'trait_generation'
     }
-    block_text = '\n'.join(defaults[0][1])
-    missing = sorted(k for k in required if not re.search(rf'\b{re.escape(k)}\s*=', strip_comments(block_text)))
+    clean_block = '\n'.join(strip_comments(line) for line in defaults[0][1])
+    missing = sorted(k for k in required if not re.search(rf'\b{re.escape(k)}\s*=', clean_block))
     if missing:
         raise RuntimeError(f"Default character template missing required fields: {missing}")
-    print('DEFAULT_TEMPLATE restored and verified')
-    return True
+    print('DEFAULT_TEMPLATE_COMPLETE_OK')
+    return changed
 
 
 def fix_prestige_goods() -> bool:
@@ -129,8 +132,6 @@ def fix_prestige_goods() -> bool:
         print('PRESTIGE_COUNT', good, len(defs), defs)
     if bad:
         raise RuntimeError(f"Prestige Goods still exceed hard cap 3: {bad}")
-    if len(counts.get('opium', [])) > 3:
-        raise RuntimeError('Opium Prestige Goods cap still exceeded')
     print('PRESTIGE_GOODS_CAP_OK')
     return new != raw
 
