@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'scripts/toe_repair_known_errors.py'
+      - 'scripts/toe_repair_known_errors_fast.py'
       - '.github/workflows/toe_repair_known_errors.yml'
   workflow_dispatch:
 permissions:
@@ -15,8 +15,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: Repair log-proven dangling references
-        run: python scripts/toe_repair_known_errors.py
+      - name: Repair all log-proven dangling references
+        run: python scripts/toe_repair_known_errors_fast.py
       - name: Commit repaired gameplay files
         run: |
           git config user.name "github-actions[bot]"
