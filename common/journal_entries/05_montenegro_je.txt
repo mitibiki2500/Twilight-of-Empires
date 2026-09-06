@@ -181,34 +181,10 @@
 							has_variable = Njegos_brother_dead
 						}
 					}
-					random = {
-						chance = {
-							add = 2
-							multiply = raiding_level
-							subtract = 3
-							multiply = 0.15 #more likely
-						}
-						# ToE 1.13 compatibility: disabled dangling reference: missing event montenegrin_raiding.1
-						# trigger_event = {
-						# 	id = montenegrin_raiding.1
-						# 	popup = yes
-						# }
-					}
+					# ToE 1.13 compatibility: removed empty random effect after dangling event removal (montenegrin_raiding.1)
 				}
 				else = {
-					random = {
-						chance = {
-							add = 2
-							multiply = raiding_level
-							subtract = 3
-							multiply = 0.1
-						}
-						# ToE 1.13 compatibility: disabled dangling reference: missing event montenegrin_raiding.2
-						# trigger_event = {
-						# 	id = montenegrin_raiding.2
-						# 	popup = yes
-						# }
-					}
+					# ToE 1.13 compatibility: removed empty random effect after dangling event removal (montenegrin_raiding.2)
 				}
 			}
 		}
