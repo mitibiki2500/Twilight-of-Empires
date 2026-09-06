@@ -8,7 +8,12 @@ je_toe_gg_steppe = {
     is_shown_in_lobby = { OR = { this = c:PAI this = c:GOT } }
     is_shown_when_inactive = { OR = { this = c:PAI this = c:GOT } NOT = { has_global_variable = toe_gg_steppe_done } }
     possible = { OR = { this = c:PAI this = c:GOT } NOT = { has_global_variable = toe_great_game_resolved } }
-    complete = { has_global_variable = toe_gg_steppe_done }
+    complete = {
+        custom_description = {
+            text = toe_gg_steppe_complete_tt
+            has_global_variable = toe_gg_steppe_done
+        }
+    }
     invalid = { has_global_variable = toe_great_game_resolved }
     weight = 5000
     transferable = no
@@ -21,7 +26,12 @@ je_toe_gg_sosilia = {
     is_shown_in_lobby = { this = c:PAI }
     is_shown_when_inactive = { this = c:PAI NOT = { has_global_variable = toe_gg_sosilia_done } }
     possible = { this = c:PAI NOT = { has_global_variable = toe_great_game_resolved } }
-    complete = { has_global_variable = toe_gg_sosilia_done }
+    complete = {
+        custom_description = {
+            text = toe_gg_sosilia_complete_tt
+            has_global_variable = toe_gg_sosilia_done
+        }
+    }
     invalid = { has_global_variable = toe_great_game_resolved }
     weight = 5000
     transferable = no
@@ -34,7 +44,12 @@ je_toe_gg_plains = {
     is_shown_in_lobby = { this = c:PAI }
     is_shown_when_inactive = { this = c:PAI NOT = { has_global_variable = toe_gg_plains_done } }
     possible = { this = c:PAI NOT = { has_global_variable = toe_great_game_resolved } }
-    complete = { has_global_variable = toe_gg_plains_done }
+    complete = {
+        custom_description = {
+            text = toe_gg_plains_complete_tt
+            has_global_variable = toe_gg_plains_done
+        }
+    }
     invalid = { has_global_variable = toe_great_game_resolved }
     weight = 5000
     transferable = no
@@ -47,7 +62,12 @@ je_toe_gg_route = {
     is_shown_in_lobby = { OR = { this = c:XAI this = c:GOT this = c:PAI this = c:GSU } }
     is_shown_when_inactive = { OR = { this = c:XAI this = c:GOT this = c:PAI this = c:GSU } NOT = { has_global_variable = toe_gg_route_done } }
     possible = { OR = { this = c:XAI this = c:GOT this = c:PAI this = c:GSU } NOT = { has_global_variable = toe_great_game_resolved } }
-    complete = { has_global_variable = toe_gg_route_done }
+    complete = {
+        custom_description = {
+            text = toe_gg_route_complete_tt
+            has_global_variable = toe_gg_route_done
+        }
+    }
     invalid = { has_global_variable = toe_great_game_resolved }
     weight = 5000
     transferable = no
@@ -60,7 +80,12 @@ je_toe_gg_tegar_ria = {
     is_shown_in_lobby = { this = c:XAI }
     is_shown_when_inactive = { this = c:XAI NOT = { has_global_variable = toe_gg_tegar_ria_done } }
     possible = { this = c:XAI NOT = { has_global_variable = toe_great_game_resolved } }
-    complete = { has_global_variable = toe_gg_tegar_ria_done }
+    complete = {
+        custom_description = {
+            text = toe_gg_tegar_ria_complete_tt
+            has_global_variable = toe_gg_tegar_ria_done
+        }
+    }
     invalid = { has_global_variable = toe_great_game_resolved }
     weight = 5000
     transferable = no
@@ -73,7 +98,12 @@ je_toe_gg_expel_tegar_ria = {
     is_shown_in_lobby = { this = c:GSU }
     is_shown_when_inactive = { this = c:GSU NOT = { has_global_variable = toe_gg_ilvone_expel_done } }
     possible = { this = c:GSU NOT = { has_global_variable = toe_great_game_resolved } }
-    complete = { has_global_variable = toe_gg_ilvone_expel_done }
+    complete = {
+        custom_description = {
+            text = toe_gg_expel_complete_tt
+            has_global_variable = toe_gg_ilvone_expel_done
+        }
+    }
     invalid = { has_global_variable = toe_great_game_resolved }
     weight = 5000
     transferable = no
@@ -86,7 +116,12 @@ je_toe_gg_tortal = {
     is_shown_in_lobby = { OR = { this = c:XAI this = c:GSU } }
     is_shown_when_inactive = { OR = { this = c:XAI this = c:GSU } NOT = { has_global_variable = toe_gg_tortal_done } }
     possible = { OR = { this = c:XAI this = c:GSU } NOT = { has_global_variable = toe_great_game_resolved } }
-    complete = { has_global_variable = toe_gg_tortal_done }
+    complete = {
+        custom_description = {
+            text = toe_gg_tortal_complete_tt
+            has_global_variable = toe_gg_tortal_done
+        }
+    }
     invalid = { has_global_variable = toe_great_game_resolved }
     weight = 5000
     transferable = no
@@ -99,7 +134,12 @@ je_toe_gg_south_lefria = {
     is_shown_in_lobby = { OR = { this = c:XAI this = c:GSU } }
     is_shown_when_inactive = { OR = { this = c:XAI this = c:GSU } NOT = { has_global_variable = toe_gg_south_lefria_done } }
     possible = { OR = { this = c:XAI this = c:GSU } NOT = { has_global_variable = toe_great_game_resolved } }
-    complete = { has_global_variable = toe_gg_south_lefria_done }
+    complete = {
+        custom_description = {
+            text = toe_gg_south_lefria_complete_tt
+            has_global_variable = toe_gg_south_lefria_done
+        }
+    }
     invalid = { has_global_variable = toe_great_game_resolved }
     weight = 5000
     transferable = no

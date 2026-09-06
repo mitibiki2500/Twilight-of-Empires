@@ -32,6 +32,307 @@ je_great_game_control = {
             set_global_variable = { name = toe_great_game_score value = 100 }
             set_global_variable = { name = great_game_gbr_progress value = 100 }
             set_global_variable = { name = great_game_rus_progress value = 100 }
+
+        # ToE: starting-map conditions are a baseline, not points earned during play.
+        # Mark already-satisfied objectives as settled without changing the score.
+        if = {
+            limit = {
+                c:PAI ?= {
+                    any_scope_state = {
+                        OR = {
+                            state_region = s:STATE_NSM_041
+                            state_region = s:STATE_NSM_062
+                            state_region = s:STATE_NSM_079
+                            state_region = s:STATE_NSM_126
+                            state_region = s:STATE_NSM_129
+                            state_region = s:STATE_NSM_344
+                            state_region = s:STATE_NSM_374
+                            state_region = s:STATE_NSM_389
+                            state_region = s:STATE_NSM_407
+                            state_region = s:STATE_NSM_433
+                            state_region = s:STATE_NSM_452
+                            state_region = s:STATE_NSM_526
+                        }
+                        count >= 6
+                    }
+                }
+            }
+            set_global_variable = toe_gg_steppe_done
+            set_global_variable = { name = toe_gg_steppe_side value = 1 }
+        }
+        else_if = {
+            limit = {
+                c:GOT ?= {
+                    any_scope_state = {
+                        OR = {
+                            state_region = s:STATE_NSM_041
+                            state_region = s:STATE_NSM_062
+                            state_region = s:STATE_NSM_079
+                            state_region = s:STATE_NSM_126
+                            state_region = s:STATE_NSM_129
+                            state_region = s:STATE_NSM_344
+                            state_region = s:STATE_NSM_374
+                            state_region = s:STATE_NSM_389
+                            state_region = s:STATE_NSM_407
+                            state_region = s:STATE_NSM_433
+                            state_region = s:STATE_NSM_452
+                            state_region = s:STATE_NSM_526
+                        }
+                        count >= 6
+                    }
+                }
+            }
+            set_global_variable = toe_gg_steppe_done
+            set_global_variable = { name = toe_gg_steppe_side value = -1 }
+        }
+
+        if = {
+            limit = {
+                c:SOS ?= {
+                    OR = {
+                        is_subject_of = c:PAI
+                        power_bloc ?= { c:PAI ?= this.power_bloc_leader }
+                    }
+                    relations:c:PAI >= 50
+                    liberty_desire <= 25
+                }
+            }
+            set_global_variable = toe_gg_sosilia_done
+        }
+
+        if = {
+            limit = {
+                s:STATE_NSM_258 = {
+                    owner = {
+                        OR = {
+                            this = c:PAI
+                            is_subject_of = c:PAI
+                            power_bloc ?= { c:PAI ?= this.power_bloc_leader }
+                        }
+                    }
+                }
+                s:STATE_NSM_430 = {
+                    owner = {
+                        OR = {
+                            this = c:PAI
+                            is_subject_of = c:PAI
+                            power_bloc ?= { c:PAI ?= this.power_bloc_leader }
+                        }
+                    }
+                }
+            }
+            set_global_variable = toe_gg_plains_done
+        }
+
+        if = {
+            limit = {
+                s:STATE_NSM_525 = {
+                    owner = {
+                        OR = {
+                            this = c:PAI
+                            is_subject_of = c:PAI
+                            power_bloc ?= { c:PAI ?= this.power_bloc_leader }
+                            this = c:GSU
+                            is_subject_of = c:GSU
+                            power_bloc ?= { c:GSU ?= this.power_bloc_leader }
+                        }
+                    }
+                }
+            }
+            set_global_variable = toe_gg_route_done
+            set_global_variable = { name = toe_gg_route_side value = 1 }
+        }
+        else_if = {
+            limit = {
+                s:STATE_NSM_525 = {
+                    owner = {
+                        OR = {
+                            this = c:XAI
+                            is_subject_of = c:XAI
+                            power_bloc ?= { c:XAI ?= this.power_bloc_leader }
+                            this = c:GOT
+                            is_subject_of = c:GOT
+                            power_bloc ?= { c:GOT ?= this.power_bloc_leader }
+                        }
+                    }
+                }
+            }
+            set_global_variable = toe_gg_route_done
+            set_global_variable = { name = toe_gg_route_side value = -1 }
+        }
+
+        if = {
+            limit = {
+                any_state = {
+                    count >= 5
+                    OR = {
+                        region = sr:region_nsm_north_ria
+                        region = sr:region_nsm_west_ria
+                        region = sr:region_nsm_east_ria
+                        region = sr:region_nsm_south_ria
+                    }
+                    NOT = { state_region = s:STATE_NSM_169 }
+                    NOT = { state_region = s:STATE_NSM_204 }
+                    NOT = { state_region = s:STATE_NSM_227 }
+                    NOT = { state_region = s:STATE_NSM_292 }
+                    NOT = { state_region = s:STATE_NSM_299 }
+                    NOT = { state_region = s:STATE_NSM_418 }
+                    NOT = { state_region = s:STATE_NSM_456 }
+                    NOT = { state_region = s:STATE_NSM_484 }
+                    NOT = { state_region = s:STATE_NSM_499 }
+                    NOT = { state_region = s:STATE_NSM_500 }
+                    NOT = { state_region = s:STATE_NSM_509 }
+                    owner = {
+                        OR = {
+                            this = c:XAI
+                            is_subject_of = c:XAI
+                            power_bloc ?= { c:XAI ?= this.power_bloc_leader }
+                        }
+                    }
+                }
+            }
+            set_global_variable = toe_gg_tegar_ria_done
+        }
+
+        if = {
+            limit = {
+                NOT = {
+                    any_state = {
+                        OR = {
+                            region = sr:region_nsm_north_ria
+                            region = sr:region_nsm_west_ria
+                            region = sr:region_nsm_east_ria
+                            region = sr:region_nsm_south_ria
+                        }
+                        owner = {
+                            OR = {
+                                this = c:XAI
+                                is_subject_of = c:XAI
+                                power_bloc ?= { c:XAI ?= this.power_bloc_leader }
+                            }
+                        }
+                    }
+                }
+            }
+            set_global_variable = toe_gg_ilvone_expel_done
+        }
+
+        if = {
+            limit = {
+                c:XCI ?= {
+                    OR = {
+                        is_subject_of = c:GSU
+                        power_bloc ?= { c:GSU ?= this.power_bloc_leader }
+                    }
+                }
+            }
+            set_global_variable = toe_gg_tortal_done
+            set_global_variable = { name = toe_gg_tortal_side value = 1 }
+        }
+        else_if = {
+            limit = {
+                c:XCI ?= {
+                    OR = {
+                        is_subject_of = c:XAI
+                        power_bloc ?= { c:XAI ?= this.power_bloc_leader }
+                    }
+                }
+            }
+            set_global_variable = toe_gg_tortal_done
+            set_global_variable = { name = toe_gg_tortal_side value = -1 }
+        }
+
+        if = {
+            limit = {
+                any_state = {
+                    count >= 5
+                    region = sr:region_nsm_south_lefria
+                    owner = {
+                        OR = {
+                            this = c:GSU
+                            is_subject_of = c:GSU
+                            power_bloc ?= { c:GSU ?= this.power_bloc_leader }
+                        }
+                    }
+                }
+            }
+            set_global_variable = toe_gg_south_lefria_done
+            set_global_variable = { name = toe_gg_south_lefria_side value = 1 }
+        }
+        else_if = {
+            limit = {
+                any_state = {
+                    count >= 5
+                    region = sr:region_nsm_south_lefria
+                    owner = {
+                        OR = {
+                            this = c:XAI
+                            is_subject_of = c:XAI
+                            power_bloc ?= { c:XAI ?= this.power_bloc_leader }
+                        }
+                    }
+                }
+            }
+            set_global_variable = toe_gg_south_lefria_done
+            set_global_variable = { name = toe_gg_south_lefria_side value = -1 }
+        }
+
+        # Add the visible objective JEs to each participant. Previously they were only defined.
+        if = {
+            limit = { c:PAI = THIS }
+            if = { limit = { NOT = { has_global_variable = toe_gg_steppe_done } } add_journal_entry = { type = je_toe_gg_steppe } }
+            if = { limit = { NOT = { has_global_variable = toe_gg_sosilia_done } } add_journal_entry = { type = je_toe_gg_sosilia } }
+            if = { limit = { NOT = { has_global_variable = toe_gg_plains_done } } add_journal_entry = { type = je_toe_gg_plains } }
+            if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
+        }
+        else_if = {
+            limit = { c:GOT = THIS }
+            if = { limit = { NOT = { has_global_variable = toe_gg_steppe_done } } add_journal_entry = { type = je_toe_gg_steppe } }
+            if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
+        }
+        else_if = {
+            limit = { c:XAI = THIS }
+            if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
+            if = { limit = { NOT = { has_global_variable = toe_gg_tegar_ria_done } } add_journal_entry = { type = je_toe_gg_tegar_ria } }
+            if = { limit = { NOT = { has_global_variable = toe_gg_tortal_done } } add_journal_entry = { type = je_toe_gg_tortal } }
+            if = { limit = { NOT = { has_global_variable = toe_gg_south_lefria_done } } add_journal_entry = { type = je_toe_gg_south_lefria } }
+        }
+        else_if = {
+            limit = { c:GSU = THIS }
+            if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
+            if = { limit = { NOT = { has_global_variable = toe_gg_ilvone_expel_done } } add_journal_entry = { type = je_toe_gg_expel_tegar_ria } }
+            if = { limit = { NOT = { has_global_variable = toe_gg_tortal_done } } add_journal_entry = { type = je_toe_gg_tortal } }
+            if = { limit = { NOT = { has_global_variable = toe_gg_south_lefria_done } } add_journal_entry = { type = je_toe_gg_south_lefria } }
+        }
+        }
+        else = {
+            # Initialization has already happened globally, but each participant still needs its own visible sub-JEs.
+            if = {
+                limit = { c:PAI = THIS }
+                if = { limit = { NOT = { has_global_variable = toe_gg_steppe_done } } add_journal_entry = { type = je_toe_gg_steppe } }
+                if = { limit = { NOT = { has_global_variable = toe_gg_sosilia_done } } add_journal_entry = { type = je_toe_gg_sosilia } }
+                if = { limit = { NOT = { has_global_variable = toe_gg_plains_done } } add_journal_entry = { type = je_toe_gg_plains } }
+                if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
+            }
+            else_if = {
+                limit = { c:GOT = THIS }
+                if = { limit = { NOT = { has_global_variable = toe_gg_steppe_done } } add_journal_entry = { type = je_toe_gg_steppe } }
+                if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
+            }
+            else_if = {
+                limit = { c:XAI = THIS }
+                if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
+                if = { limit = { NOT = { has_global_variable = toe_gg_tegar_ria_done } } add_journal_entry = { type = je_toe_gg_tegar_ria } }
+                if = { limit = { NOT = { has_global_variable = toe_gg_tortal_done } } add_journal_entry = { type = je_toe_gg_tortal } }
+                if = { limit = { NOT = { has_global_variable = toe_gg_south_lefria_done } } add_journal_entry = { type = je_toe_gg_south_lefria } }
+            }
+            else_if = {
+                limit = { c:GSU = THIS }
+                if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
+                if = { limit = { NOT = { has_global_variable = toe_gg_ilvone_expel_done } } add_journal_entry = { type = je_toe_gg_expel_tegar_ria } }
+                if = { limit = { NOT = { has_global_variable = toe_gg_tortal_done } } add_journal_entry = { type = je_toe_gg_tortal } }
+                if = { limit = { NOT = { has_global_variable = toe_gg_south_lefria_done } } add_journal_entry = { type = je_toe_gg_south_lefria } }
+            }
         }
 
     }
@@ -332,19 +633,13 @@ je_great_game_control = {
 complete = {
         OR = {
 
-            global_var:toe_great_game_score >= 130
-            global_var:toe_great_game_score <= 70
-            AND = {
-                c:XAI ?= { country_rank < rank_value:great_power }
-                c:GOT ?= { country_rank < rank_value:great_power }
-                c:GSU ?= { country_rank >= rank_value:great_power }
-                c:PAI ?= { country_rank >= rank_value:great_power }
+            custom_description = {
+                text = toe_gg_ilvone_score_victory_tt
+                global_var:toe_great_game_score >= 130
             }
-            AND = {
-                c:GSU ?= { country_rank < rank_value:great_power }
-                c:PAI ?= { country_rank < rank_value:great_power }
-                c:XAI ?= { country_rank >= rank_value:great_power }
-                c:GOT ?= { country_rank >= rank_value:great_power }
+            custom_description = {
+                text = toe_gg_tegar_score_victory_tt
+                global_var:toe_great_game_score <= 70
             }
         }
     }
@@ -356,15 +651,7 @@ complete = {
 
             if = {
                 limit = {
-                    OR = {
-                        global_var:toe_great_game_score >= 130
-                        AND = {
-                            c:XAI ?= { country_rank < rank_value:great_power }
-                            c:GOT ?= { country_rank < rank_value:great_power }
-                            c:GSU ?= { country_rank >= rank_value:great_power }
-                            c:PAI ?= { country_rank >= rank_value:great_power }
-                        }
-                    }
+                    global_var:toe_great_game_score >= 130
                 }
                 c:GSU ?= { trigger_event = { id = toe_great_game.1 popup = yes } }
                 c:PAI ?= { trigger_event = { id = toe_great_game.1 popup = yes } }

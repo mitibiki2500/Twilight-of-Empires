@@ -75,21 +75,8 @@ is_arid_region = {
 
 is_vulnerable_to_droughts = {
 	OR = {
-		any_scope_state = {
-			OR = {
-				state_region = s:STATE_CALIFORNIA
-				state_region = s:STATE_NEVADA
-				state_region = s:STATE_ARIZONA
-				state_region = s:STATE_UTAH
-				state_region = s:STATE_LOWLANDS
-				state_region = s:STATE_HIGHLANDS
-				state_region = s:STATE_ULSTER
-				state_region = s:STATE_LEINSTER
-				state_region = s:STATE_CONNAUGHT
-				state_region = s:STATE_MUNSTER
-			}
-		}
-
+		# ToE 1.13 compatibility: removed vanilla-only state aliases.
+		# Custom-map equivalents are not defined here; do not guess-map them.
 		NOR = {
 			is_in_geographic_region = geographic_region_west_siberia_old
 			is_in_geographic_region = geographic_region_east_siberia_old
