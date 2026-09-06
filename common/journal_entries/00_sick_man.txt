@@ -17,9 +17,6 @@
 
 	on_complete = {
 		remove_modifier = toe_gorton_sick_man_of_europe
-		trigger_event = {
-			id = toe_gorton_tanzimat.2
-		}
 	}
 
 	# 25 years
@@ -33,9 +30,6 @@
 		}
 		set_variable = sick_man_complete
 		set_variable = toe_gorton_reform_failed
-		trigger_event = {
-			id = toe_gorton_tanzimat.3
-		}
 	}
 
 	current_value = {
@@ -131,12 +125,12 @@ je_sick_man_egypt = {
 	}
 
 	on_complete = {
+		set_variable = completed_egypt_je
 		custom_tooltip = je_sick_man_advance
 		change_variable = {
 			name = sick_man_var
 			add = 1
 		}
-		set_variable = completed_egypt_je
 	}
 
 	invalid = {
