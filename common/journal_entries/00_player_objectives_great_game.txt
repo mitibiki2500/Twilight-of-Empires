@@ -280,58 +280,226 @@ je_great_game_control = {
         # Add the visible objective JEs to each participant. Previously they were only defined.
         if = {
             limit = { c:PAI = THIS }
-            if = { limit = { NOT = { has_global_variable = toe_gg_steppe_done } } add_journal_entry = { type = je_toe_gg_steppe } }
-            if = { limit = { NOT = { has_global_variable = toe_gg_sosilia_done } } add_journal_entry = { type = je_toe_gg_sosilia } }
-            if = { limit = { NOT = { has_global_variable = toe_gg_plains_done } } add_journal_entry = { type = je_toe_gg_plains } }
-            if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_steppe_done }
+                    NOT = { has_journal_entry = je_toe_gg_steppe }
+                }
+                add_journal_entry = { type = je_toe_gg_steppe }
+            }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_sosilia_done }
+                    NOT = { has_journal_entry = je_toe_gg_sosilia }
+                }
+                add_journal_entry = { type = je_toe_gg_sosilia }
+            }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_plains_done }
+                    NOT = { has_journal_entry = je_toe_gg_plains }
+                }
+                add_journal_entry = { type = je_toe_gg_plains }
+            }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_route_done }
+                    NOT = { has_journal_entry = je_toe_gg_route }
+                }
+                add_journal_entry = { type = je_toe_gg_route }
+            }
         }
         else_if = {
             limit = { c:GOT = THIS }
-            if = { limit = { NOT = { has_global_variable = toe_gg_steppe_done } } add_journal_entry = { type = je_toe_gg_steppe } }
-            if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_steppe_done }
+                    NOT = { has_journal_entry = je_toe_gg_steppe }
+                }
+                add_journal_entry = { type = je_toe_gg_steppe }
+            }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_route_done }
+                    NOT = { has_journal_entry = je_toe_gg_route }
+                }
+                add_journal_entry = { type = je_toe_gg_route }
+            }
         }
         else_if = {
             limit = { c:XAI = THIS }
-            if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
-            if = { limit = { NOT = { has_global_variable = toe_gg_tegar_ria_done } } add_journal_entry = { type = je_toe_gg_tegar_ria } }
-            if = { limit = { NOT = { has_global_variable = toe_gg_tortal_done } } add_journal_entry = { type = je_toe_gg_tortal } }
-            if = { limit = { NOT = { has_global_variable = toe_gg_south_lefria_done } } add_journal_entry = { type = je_toe_gg_south_lefria } }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_route_done }
+                    NOT = { has_journal_entry = je_toe_gg_route }
+                }
+                add_journal_entry = { type = je_toe_gg_route }
+            }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_tegar_ria_done }
+                    NOT = { has_journal_entry = je_toe_gg_tegar_ria }
+                }
+                add_journal_entry = { type = je_toe_gg_tegar_ria }
+            }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_tortal_done }
+                    NOT = { has_journal_entry = je_toe_gg_tortal }
+                }
+                add_journal_entry = { type = je_toe_gg_tortal }
+            }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_south_lefria_done }
+                    NOT = { has_journal_entry = je_toe_gg_south_lefria }
+                }
+                add_journal_entry = { type = je_toe_gg_south_lefria }
+            }
         }
         else_if = {
             limit = { c:GSU = THIS }
-            if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
-            if = { limit = { NOT = { has_global_variable = toe_gg_ilvone_expel_done } } add_journal_entry = { type = je_toe_gg_expel_tegar_ria } }
-            if = { limit = { NOT = { has_global_variable = toe_gg_tortal_done } } add_journal_entry = { type = je_toe_gg_tortal } }
-            if = { limit = { NOT = { has_global_variable = toe_gg_south_lefria_done } } add_journal_entry = { type = je_toe_gg_south_lefria } }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_route_done }
+                    NOT = { has_journal_entry = je_toe_gg_route }
+                }
+                add_journal_entry = { type = je_toe_gg_route }
+            }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_ilvone_expel_done }
+                    NOT = { has_journal_entry = je_toe_gg_expel_tegar_ria }
+                }
+                add_journal_entry = { type = je_toe_gg_expel_tegar_ria }
+            }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_tortal_done }
+                    NOT = { has_journal_entry = je_toe_gg_tortal }
+                }
+                add_journal_entry = { type = je_toe_gg_tortal }
+            }
+            if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_south_lefria_done }
+                    NOT = { has_journal_entry = je_toe_gg_south_lefria }
+                }
+                add_journal_entry = { type = je_toe_gg_south_lefria }
+            }
         }
         }
         else = {
             # Initialization has already happened globally, but each participant still needs its own visible sub-JEs.
             if = {
                 limit = { c:PAI = THIS }
-                if = { limit = { NOT = { has_global_variable = toe_gg_steppe_done } } add_journal_entry = { type = je_toe_gg_steppe } }
-                if = { limit = { NOT = { has_global_variable = toe_gg_sosilia_done } } add_journal_entry = { type = je_toe_gg_sosilia } }
-                if = { limit = { NOT = { has_global_variable = toe_gg_plains_done } } add_journal_entry = { type = je_toe_gg_plains } }
-                if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_steppe_done }
+                    NOT = { has_journal_entry = je_toe_gg_steppe }
+                }
+                add_journal_entry = { type = je_toe_gg_steppe }
+            }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_sosilia_done }
+                    NOT = { has_journal_entry = je_toe_gg_sosilia }
+                }
+                add_journal_entry = { type = je_toe_gg_sosilia }
+            }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_plains_done }
+                    NOT = { has_journal_entry = je_toe_gg_plains }
+                }
+                add_journal_entry = { type = je_toe_gg_plains }
+            }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_route_done }
+                    NOT = { has_journal_entry = je_toe_gg_route }
+                }
+                add_journal_entry = { type = je_toe_gg_route }
+            }
             }
             else_if = {
                 limit = { c:GOT = THIS }
-                if = { limit = { NOT = { has_global_variable = toe_gg_steppe_done } } add_journal_entry = { type = je_toe_gg_steppe } }
-                if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_steppe_done }
+                    NOT = { has_journal_entry = je_toe_gg_steppe }
+                }
+                add_journal_entry = { type = je_toe_gg_steppe }
+            }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_route_done }
+                    NOT = { has_journal_entry = je_toe_gg_route }
+                }
+                add_journal_entry = { type = je_toe_gg_route }
+            }
             }
             else_if = {
                 limit = { c:XAI = THIS }
-                if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
-                if = { limit = { NOT = { has_global_variable = toe_gg_tegar_ria_done } } add_journal_entry = { type = je_toe_gg_tegar_ria } }
-                if = { limit = { NOT = { has_global_variable = toe_gg_tortal_done } } add_journal_entry = { type = je_toe_gg_tortal } }
-                if = { limit = { NOT = { has_global_variable = toe_gg_south_lefria_done } } add_journal_entry = { type = je_toe_gg_south_lefria } }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_route_done }
+                    NOT = { has_journal_entry = je_toe_gg_route }
+                }
+                add_journal_entry = { type = je_toe_gg_route }
+            }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_tegar_ria_done }
+                    NOT = { has_journal_entry = je_toe_gg_tegar_ria }
+                }
+                add_journal_entry = { type = je_toe_gg_tegar_ria }
+            }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_tortal_done }
+                    NOT = { has_journal_entry = je_toe_gg_tortal }
+                }
+                add_journal_entry = { type = je_toe_gg_tortal }
+            }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_south_lefria_done }
+                    NOT = { has_journal_entry = je_toe_gg_south_lefria }
+                }
+                add_journal_entry = { type = je_toe_gg_south_lefria }
+            }
             }
             else_if = {
                 limit = { c:GSU = THIS }
-                if = { limit = { NOT = { has_global_variable = toe_gg_route_done } } add_journal_entry = { type = je_toe_gg_route } }
-                if = { limit = { NOT = { has_global_variable = toe_gg_ilvone_expel_done } } add_journal_entry = { type = je_toe_gg_expel_tegar_ria } }
-                if = { limit = { NOT = { has_global_variable = toe_gg_tortal_done } } add_journal_entry = { type = je_toe_gg_tortal } }
-                if = { limit = { NOT = { has_global_variable = toe_gg_south_lefria_done } } add_journal_entry = { type = je_toe_gg_south_lefria } }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_route_done }
+                    NOT = { has_journal_entry = je_toe_gg_route }
+                }
+                add_journal_entry = { type = je_toe_gg_route }
+            }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_ilvone_expel_done }
+                    NOT = { has_journal_entry = je_toe_gg_expel_tegar_ria }
+                }
+                add_journal_entry = { type = je_toe_gg_expel_tegar_ria }
+            }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_tortal_done }
+                    NOT = { has_journal_entry = je_toe_gg_tortal }
+                }
+                add_journal_entry = { type = je_toe_gg_tortal }
+            }
+                if = {
+                limit = {
+                    NOT = { has_global_variable = toe_gg_south_lefria_done }
+                    NOT = { has_journal_entry = je_toe_gg_south_lefria }
+                }
+                add_journal_entry = { type = je_toe_gg_south_lefria }
+            }
             }
         }
 
