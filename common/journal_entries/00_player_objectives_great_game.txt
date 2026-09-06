@@ -641,18 +641,6 @@ complete = {
                 text = toe_gg_tegar_score_victory_tt
                 global_var:toe_great_game_score <= 70
             }
-            AND = {
-                c:XAI ?= { country_rank < rank_value:great_power }
-                c:GOT ?= { country_rank < rank_value:great_power }
-                c:GSU ?= { country_rank >= rank_value:great_power }
-                c:PAI ?= { country_rank >= rank_value:great_power }
-            }
-            AND = {
-                c:GSU ?= { country_rank < rank_value:great_power }
-                c:PAI ?= { country_rank < rank_value:great_power }
-                c:XAI ?= { country_rank >= rank_value:great_power }
-                c:GOT ?= { country_rank >= rank_value:great_power }
-            }
         }
     }
 
@@ -663,15 +651,7 @@ complete = {
 
             if = {
                 limit = {
-                    OR = {
-                        global_var:toe_great_game_score >= 130
-                        AND = {
-                            c:XAI ?= { country_rank < rank_value:great_power }
-                            c:GOT ?= { country_rank < rank_value:great_power }
-                            c:GSU ?= { country_rank >= rank_value:great_power }
-                            c:PAI ?= { country_rank >= rank_value:great_power }
-                        }
-                    }
+                    global_var:toe_great_game_score >= 130
                 }
                 c:GSU ?= { trigger_event = { id = toe_great_game.1 popup = yes } }
                 c:PAI ?= { trigger_event = { id = toe_great_game.1 popup = yes } }
