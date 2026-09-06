@@ -151,13 +151,14 @@ def main():
             jobs[loc]['jes'].update(MISSING_JES)
 
     print('LOGGED_ERRORS',len(entries),'CALLER_FILES',len(jobs))
-    copied=[]; changed=[]; ef=pf=jf=0
+    copied=[]; changed=[]; already_clean=[]; ef=pf=jf=0
     for loc,targets in sorted(jobs.items()):
         rel=loc[len('common/'):]; dst=LIVE_COMMON/rel
+        was_copied=False
         if not dst.exists():
             src=VANILLA_COMMON/rel
             if not src.exists(): raise RuntimeError(f'No exact vanilla 1.13.11 mirror for {loc}')
-            dst.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(src,dst); copied.append(loc)
+            dst.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(src,dst); copied.append(loc); was_copied=True
         original=dst.read_text(encoding='utf-8-sig',errors='strict'); bom=dst.read_bytes().startswith(b'\xef\xbb\xbf'); lines=original.splitlines()
         a=disable_direct(lines,'trigger_event',targets['events'],'missing event')
         a+=disable_inline_events(lines,targets['events'])
@@ -165,14 +166,25 @@ def main():
         b=disable_blocks(lines,'add_progress',targets['progress'],'missing progress bar')
         c=disable_direct(lines,'add_journal_entry',targets['jes'],'missing journal entry')
         c+=disable_blocks(lines,'add_journal_entry',targets['jes'],'missing journal entry')
-        if not (a or b or c): raise RuntimeError(f'Logged errors found but no matching live call sanitized in {loc}: {targets}')
+        if not (a or b or c):
+            # The supplied log can still contain an error already fixed in a later commit (e.g. Gorton .2/.3).
+            live=[]
+            for t in targets['events']:
+                if has_assignment_ref(lines,'trigger_event',t): live.append(('trigger_event',t))
+            for t in targets['progress']:
+                if has_assignment_ref(lines,'add_progress',t): live.append(('add_progress',t))
+            for t in targets['jes']:
+                if has_assignment_ref(lines,'add_journal_entry',t): live.append(('add_journal_entry',t))
+            if live or was_copied:
+                raise RuntimeError(f'Logged refs remain but sanitizer failed in {loc}: {live or targets}')
+            already_clean.append(loc)
+            continue
         new='\n'.join(lines)+('\n' if original.endswith('\n') else '')
         ok,msg=balanced(new)
         if not ok: raise RuntimeError(f'Brace failure {loc}: {msg}')
         dst.write_text(new,encoding='utf-8-sig' if bom else 'utf-8')
         changed.append(loc); ef+=a; pf+=b; jf+=c
 
-    # Validate all changed files and all exact logged targets in their own caller files.
     leftovers=[]
     for loc,targets in sorted(jobs.items()):
         dst=ROOT/loc; lines=dst.read_text(encoding='utf-8-sig',errors='strict').splitlines()
@@ -186,17 +198,17 @@ def main():
             if has_assignment_ref(lines,'add_journal_entry',t): leftovers.append((loc,'add_journal_entry',t))
     if leftovers: raise RuntimeError(f'Known refs remain: {leftovers[:50]}')
 
-    # Full common brace/decode check after copied overrides are added.
     for p in LIVE_COMMON.rglob('*.txt'):
         text=p.read_text(encoding='utf-8-sig',errors='strict'); ok,msg=balanced(text)
         if not ok: raise RuntimeError(f'Whole-common brace failure {p.relative_to(ROOT)}: {msg}')
 
+    print('ALREADY_CLEAN_FROM_LATER_FIX',len(already_clean)); [print('ALREADY_CLEAN',x) for x in already_clean]
     print('COPIED_VANILLA_CALLERS',len(copied)); [print('COPIED',x) for x in copied]
     print('CHANGED_FILES',len(changed)); [print('CHANGED',x) for x in changed]
     print('DISABLED_EVENTS',ef,'DISABLED_PROGRESS',pf,'DISABLED_JE',jf)
     if pf != 12: raise RuntimeError(f'Expected 12 progress errors, repaired {pf}')
     if jf != 3: raise RuntimeError(f'Expected 3 JE errors, repaired {jf}')
-    if ef < 260: raise RuntimeError(f'Expected about 268 event errors, repaired only {ef}')
+    if ef < 260: raise RuntimeError(f'Expected nearly all 268 event errors (minus already-fixed refs), repaired only {ef}')
     print('KNOWN_LOG_ERRORS_REPAIRED_AND_VERIFIED')
 
 if __name__=='__main__': main()
