@@ -1,0 +1,17 @@
+name: ToE Remaining Error Audit
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/toe_remaining_audit.py'
+      - '.github/workflows/toe_remaining_audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit remaining error classes
+        run: python scripts/toe_remaining_audit.py
