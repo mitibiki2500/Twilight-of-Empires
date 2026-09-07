@@ -1,4 +1,4 @@
-﻿# Twilight of Empires compatibility stubs
+# Twilight of Empires compatibility stubs
 # バニラAI・scripted effectのDB参照検証を通すためだけの非表示JE。
 # すべて possible / is_shown_when_inactive / complete が always=no のため発生しない。
 
@@ -35,6 +35,14 @@ je_agricultural_development = {
 }
 
 je_alaska = {
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	group = je_group_historical_content
+	is_shown_when_inactive = { always = no }
+	possible = { always = no }
+	complete = { always = no }
+}
+
+je_austrian_neo_absolutism = {
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 	group = je_group_historical_content
 	is_shown_when_inactive = { always = no }
@@ -675,6 +683,14 @@ je_the_first_carlist_war = {
 }
 
 je_the_krakow_uprising = {
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	group = je_group_historical_content
+	is_shown_when_inactive = { always = no }
+	possible = { always = no }
+	complete = { always = no }
+}
+
+je_the_two_spains = {
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 	group = je_group_historical_content
 	is_shown_when_inactive = { always = no }
