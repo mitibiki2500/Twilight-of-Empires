@@ -23,11 +23,11 @@ is_arabic_farmland = {
 	}
 }
 
+# ToE 1.13 compatibility: removed dangling vanilla state_region reference (STATE_RYUKYU_ISLANDS does not exist on ToE map)
 is_jungle_hills = {
 	OR = {
 		is_in_geographic_region = geographic_region_indochina
 		is_in_geographic_region = geographic_region_south_china
-		state_region = s:STATE_RYUKYU_ISLANDS
 	}
 }
 
@@ -73,24 +73,20 @@ is_arid_region = {
 
 # Harvest Condition Triggers
 
+# ToE 1.13 compatibility: removed dangling vanilla state_region references (STATE_CALIFORNIA etc. do not exist on ToE map)
 is_vulnerable_to_droughts = {
-	OR = {
-		# ToE 1.13 compatibility: removed vanilla-only state aliases.
-		# Fresh 2026-09-07 crash log also confirmed vanilla-only geographic_region_*_old references; disabled without guess-mapping.
-		# Custom-map equivalents are not defined here; do not guess-map them.
-		NOR = {
-			always = no
-			always = no
-			always = no
-			always = no
-			always = no
-			always = no
-			always = no
-			always = no
-			always = no
-			always = no
-			always = no
-		}
+	NOR = {
+		is_in_geographic_region = geographic_region_west_siberia_old
+		is_in_geographic_region = geographic_region_east_siberia_old
+		always = no
+		is_in_geographic_region = geographic_region_canada_old
+		is_in_geographic_region = geographic_region_pacific_coast_old
+		always = no
+		always = no
+		is_in_geographic_region = geographic_region_finland_old
+		is_in_geographic_region = geographic_region_arctic_russia_old
+		is_in_geographic_region = geographic_region_urals_old
+		is_in_geographic_region = geographic_region_baltic_states_old
 	}
 }
 
@@ -106,9 +102,9 @@ is_vulnerable_to_floods = {
 		always = no
 		always = no
 		always = no
-		always = no
-		always = no
-		always = no
+		is_in_geographic_region = geographic_region_caucasus_old
+		is_in_geographic_region = geographic_region_canada_old
+		is_in_geographic_region = geographic_region_great_plains_old
 		always = no
 		is_in_geographic_region = geographic_region_la_plata
 	}
@@ -130,11 +126,11 @@ is_vulnerable_to_frosts = {
 		always = no
 		always = no
 		always = no
-		always = no
-		always = no
-		always = no
-		always = no
-		always = no
+		is_in_geographic_region = geographic_region_madras_old
+		is_in_geographic_region = geographic_region_bengal_old
+		is_in_geographic_region = geographic_region_bombay_old
+		is_in_geographic_region = geographic_region_punjab_old
+		is_in_geographic_region = geographic_region_central_india_old
 		always = no
 		always = no
 		is_in_geographic_region = geographic_region_brazil
@@ -171,25 +167,25 @@ is_vulnerable_to_locust_swarms = {
 		always = no
 		always = no
 		always = no
-		always = no
-		always = no
-		always = no
-		always = no
-		always = no
+		is_in_geographic_region = geographic_region_madras_old
+		is_in_geographic_region = geographic_region_bengal_old
+		is_in_geographic_region = geographic_region_bombay_old
+		is_in_geographic_region = geographic_region_punjab_old
+		is_in_geographic_region = geographic_region_central_india_old
 		is_in_geographic_region = geographic_region_brazil
 		is_in_geographic_region = geographic_region_andes
 		is_in_geographic_region = geographic_region_la_plata
 		is_in_geographic_region = geographic_region_gran_colombia
-		always = no
+		is_in_geographic_region = geographic_region_great_plains_old
 	}
 }
 
 is_vulnerable_to_heatwaves = {
 	NOR = {
+		is_in_geographic_region = geographic_region_west_siberia_old
+		is_in_geographic_region = geographic_region_east_siberia_old
 		always = no
-		always = no
-		always = no
-		always = no
+		is_in_geographic_region = geographic_region_arctic_russia_old
 	}
 }
 
@@ -282,13 +278,8 @@ is_vulnerable_to_tropical_storm = {
 	always = no
 }
 
+# ToE 1.13 compatibility: disabled dangling reference; none of these vanilla state_regions exist on the ToE map.
+# TODO: replace with the ToE-equivalent strait state_regions once identified.
 is_important_strait_state_region = {
-	OR = {
-		this = s:STATE_UPPER_ANDALUSIA
-		this = s:STATE_AL_RIF
-		this = s:STATE_SINAI
-		this = s:STATE_NORTH_SUMATRA
-		this = s:STATE_MALAYA
-		this = s:STATE_PANAMA
-	}
+	always = no
 }
