@@ -1,0 +1,143 @@
+﻿character_role_magnate_custom_loc = {
+	type = character
+	random_valid = yes
+
+	text = {
+		trigger = {
+			character_is_taikun = yes
+		}
+		localization_key = character_title_taikun
+	}
+	text = {
+		trigger = {
+			character_is_taikun = no
+			character_is_daimyo = yes
+		}
+		localization_key = character_title_daimyo
+	}
+	text = {
+		trigger = {
+			character_is_taikun = no
+			character_is_daimyo = no
+			is_female = yes
+			is_noble = yes
+			owner ?= {
+				country_has_nobility = yes
+			}
+		}
+		localization_key = character_title_lady
+	}
+	text = {
+		trigger = {
+			character_is_taikun = no
+			character_is_daimyo = no
+			is_female = yes
+			is_noble = yes
+			owner ?= {
+				country_has_nobility = yes
+			}
+		}
+		localization_key = character_title_baroness
+	}
+	text = {
+		trigger = {
+			character_is_taikun = no
+			character_is_daimyo = no
+			is_female = yes
+			is_noble = yes
+			owner ?= {
+				country_has_nobility = yes
+			}
+		}
+		localization_key = character_title_countess
+	}
+	text = {
+		trigger = {
+			character_is_taikun = no
+			character_is_daimyo = no
+			is_female = yes
+			is_noble = yes
+			owner ?= {
+				country_has_nobility = yes
+			}
+		}
+		localization_key = character_title_marquess
+	}
+	text = {
+		trigger = {
+			character_is_taikun = no
+			character_is_daimyo = no
+			is_female = no
+			is_noble = yes
+			owner ?= {
+				country_has_nobility = yes
+			}
+		}
+		localization_key = character_title_lord
+	}
+	text = {
+		trigger = {
+			character_is_taikun = no
+			character_is_daimyo = no
+			is_female = no
+			is_noble = yes
+			owner ?= {
+				country_has_nobility = yes
+			}
+		}
+		localization_key = character_title_baron
+	}
+	text = {
+		trigger = {
+			character_is_taikun = no
+			character_is_daimyo = no
+			is_female = no
+			is_noble = yes
+			owner ?= {
+				country_has_nobility = yes
+			}
+		}
+		localization_key = character_title_count
+	}
+	text = {
+		trigger = {
+			character_is_taikun = no
+			character_is_daimyo = no
+			is_female = no
+			is_noble = yes
+			owner ?= {
+				country_has_nobility = yes
+			}
+		}
+		localization_key = character_title_marquis
+	}
+	text = {
+		trigger = {
+			character_is_taikun = no
+			character_is_daimyo = no
+			is_female = yes
+			OR = {
+				is_noble = no
+				owner ?= {
+					country_has_nobility = no
+				}
+			}
+		}
+		localization_key = character_title_gentlewoman
+	}
+	text = {
+		trigger = {
+			character_is_taikun = no
+			character_is_daimyo = no
+			is_female = no
+			OR = {
+				is_noble = no
+				owner ?= {
+					country_has_nobility = no
+				}
+			}
+		}
+		localization_key = character_title_gentleman
+	}
+}
+
