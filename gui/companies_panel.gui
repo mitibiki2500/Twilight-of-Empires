@@ -224,7 +224,7 @@ types companies_panel
                         layoutpolicy_horizontal = preferred
                         size = { 220 30 }
                         text = "NAME"
-                        onclick = "[CompaniesPanel.Sort('name')]"
+                        # ToE 1.13.11: CompaniesPanel.Sort is not available in this game version.
                         tooltip = "SORT_BY_NAME"
                     }
 
@@ -1056,7 +1056,7 @@ types companies_panel
                         sort_button = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 30 }
-                            onclick = "[CompaniesPanel.Sort('building_database_order')]"
+                            # ToE 1.13.11: CompaniesPanel.Sort is not available in this game version.
                             tooltip = "BUILDING_DATABASE_ORDER"
                             text = "BUILDING_DATABASE_ORDER"
                         }
@@ -1064,7 +1064,7 @@ types companies_panel
                         sort_button = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 30 }
-                            onclick = "[CompaniesPanel.Sort('productivity')]"
+                            # ToE 1.13.11: CompaniesPanel.Sort is not available in this game version.
                             tooltip = "SORT_BY_BUILDING_PRODUCTIVITY"
                             text = "concept_productivity"
                         }
@@ -1072,7 +1072,7 @@ types companies_panel
                         sort_button = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 30 }
-                            onclick = "[CompaniesPanel.Sort('levels')]"
+                            # ToE 1.13.11: CompaniesPanel.Sort is not available in this game version.
                             tooltip = "SORT_BY_BUILDING_SIZE"
                             text = "concept_building_levels"
                         }
