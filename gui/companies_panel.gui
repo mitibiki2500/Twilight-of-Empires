@@ -1047,7 +1047,7 @@ types companies_panel
                         sort_button = {
                             layoutpolicy_horizontal = expanding
                             size = { 0 30 }
-                            onclick = "[CompaniesPanel.Sort('name')]"
+                            # ToE 1.13.11: CompaniesPanel.Sort is not available in this game version.
                             tooltip = "NAME"
                             text = "NAME"
                         }
