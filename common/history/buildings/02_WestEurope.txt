@@ -5799,7 +5799,38 @@ BUILDINGS={
 				}
 				reserves=1
 				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
+			} 
+			create_building={
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:XEP" levels=2 } }
+				reserves=1
+				activate_production_methods={ "pm_naval_administration" }
 			}
+
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:XEP"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_professional_bureaucrats" "pm_religious_bureaucrats" "pm_vertical_filing_cabinets" }
+			}
+
+			create_building={
+				building="building_railway"
+				add_ownership={
+					country={
+						country="c:XEP"
+						levels=3
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_early_trains" "pm_wooden_passenger_carriages" }
+			}
+
 			
 			# source: NSM_company_owned_buildings.txt
 			create_building={
