@@ -8,6 +8,13 @@ on:
       - 'scripts/toe_full_audit.py'
       - 'scripts/toe_audit_focus.py'
       - '.github/workflows/toe_full_audit.yml'
+      - '.metadata/metadata.json'
+      - 'common/**'
+      - 'events/**'
+      - 'map_data/**'
+      - 'gfx/**'
+      - 'gpt送信用/common/**'
+      - 'gpt送信用/logs/**'
   workflow_dispatch:
 permissions:
   contents: read
