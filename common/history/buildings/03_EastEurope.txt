@@ -1439,7 +1439,14 @@
 				reserves=1
 			}
 
-		}
+		
+			# ToE: naval administration scaled to approximately 3/4 of fleet crew requirement
+			create_building={
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:GOT" levels=14 } }
+				reserves=1
+			}
+}
 
 	}
 	s:STATE_NSM_080={
