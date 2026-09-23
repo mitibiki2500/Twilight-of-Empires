@@ -1712,6 +1712,13 @@
 				activate_production_methods={ "default_building_tea_plantation" "pm_road_carts" }
 			}
 			
+			# ToE: naval administration scaled to approximately 3/4 of fleet crew requirement
+			create_building={
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:XBC" levels=1 } }
+				reserves=1
+			}
+
 		}
 		
 	}
