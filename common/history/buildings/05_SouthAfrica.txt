@@ -3148,6 +3148,13 @@
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
 
+			# ToE: naval administration scaled to approximately 3/4 of fleet crew requirement
+			create_building={
+				building="building_naval_administration"
+				add_ownership={ country={ country="c:XDG" levels=1 } }
+				reserves=1
+			}
+
 		}
 
 	}
