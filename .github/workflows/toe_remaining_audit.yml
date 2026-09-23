@@ -5,6 +5,13 @@ on:
     paths:
       - 'scripts/toe_remaining_audit.py'
       - '.github/workflows/toe_remaining_audit.yml'
+      - '.metadata/metadata.json'
+      - 'common/**'
+      - 'events/**'
+      - 'map_data/**'
+      - 'gfx/**'
+      - 'gpt送信用/common/**'
+      - 'gpt送信用/logs/**'
   workflow_dispatch:
 permissions:
   contents: read
