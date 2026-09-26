@@ -7244,24 +7244,32 @@ on_political_movement_formed = {
 					}
 				}
 			}
-			random_list = {
-				1 = {
-					modifier = { # Chance of spreading from another country scales with the power differential
-						value = scope:movement_spread_country.prestige
-						if = {
-							limit = {
-								ROOT.owner.prestige > 0
-							}
-							divide = ROOT.owner.prestige
-						}
-					}
-					post_notification = political_movement_spread_from_country
+			if = {
+				limit = {
+					exists = scope:movement_spread_country
 				}
-				1 = {
+				random_list = {
+					1 = {
+						modifier = { # Chance of spreading from another country scales with the power differential
+							value = scope:movement_spread_country.prestige
+							if = {
+								limit = {
+									ROOT.owner.prestige > 0
+								}
+								divide = ROOT.owner.prestige
+							}
+						}
+						post_notification = political_movement_spread_from_country
+					}
+					1 = {
 		post_notification = political_movement_formed
 	}
+				}
+
 			}
-		}
+			else = {
+				post_notification = political_movement_formed
+			}		}
 		else = {
 			post_notification = political_movement_formed
 		}
