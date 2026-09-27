@@ -16,12 +16,12 @@ NSP = { #シプロ
 
 NRI = { #ライヒ
     is_major_formation = yes
-    use_culture_states = no
+    use_culture_states = yes
 
     ai_will_do = { has_technology_researched = nationalism }
     possible = { has_technology_researched = pan-nationalism}
 
-    states = { STATE_NSM_040 STATE_NSM_055 STATE_NSM_056 STATE_NSM_113 STATE_NSM_121 STATE_NSM_128 STATE_NSM_163 STATE_NSM_164 STATE_NSM_194 STATE_NSM_217 STATE_NSM_226 STATE_NSM_233
+    #states = { STATE_NSM_040 STATE_NSM_055 STATE_NSM_056 STATE_NSM_113 STATE_NSM_121 STATE_NSM_128 STATE_NSM_163 STATE_NSM_164 STATE_NSM_194 STATE_NSM_217 STATE_NSM_226 STATE_NSM_233 }
     unification_play = dp_toe_unify_reich
     leadership_play = dp_leadership_reich
 }
