@@ -1,61 +1,76 @@
 # ToE 1.13 compatibility
-# XAI (Tegaar) / XBJ (Ria Republic) can start with an empty IG leader.
-# Vanilla party scripts assume a valid leader scope; fill only genuinely empty IGs.
+# XAI (Tegaar) / XBJ (Ria Republic) can start with empty IG leaders.
+# PAI (Paido) previously hit the same class of leader-scope failures through
+# Vanilla French monarchist content; that JE is disabled in PAI history.
+# Use callback on_actions instead of defining a second direct effect on the
+# shared hardcoded hooks, otherwise the latest effect replaces the existing one.
 
 on_game_started = {
-    effect = {
-        every_country = {
-            limit = {
-                OR = {
-                    c:XAI ?= this
-                    c:XBJ ?= this
-                }
-            }
-            every_interest_group = {
-                limit = {
-                    NOT = {
-                        leader ?= { always = yes }
-                    }
-                }
-                save_scope_as = toe_missing_ig_leader_group
-                owner = {
-                    create_character = {
-                        age = 40
-                        interest_group = scope:toe_missing_ig_leader_group
-                        ideology = ideology_moderate
-                        ig_leader = yes
-                    }
-                }
-            }
-        }
-    }
+	on_actions = {
+		toe_xai_xbj_ig_leader_safety_game_started
+	}
+}
+
+toe_xai_xbj_ig_leader_safety_game_started = {
+	effect = {
+		every_country = {
+			limit = {
+				OR = {
+					c:XAI ?= this
+					c:XBJ ?= this
+				}
+			}
+			every_interest_group = {
+				limit = {
+					NOT = {
+						leader ?= { always = yes }
+					}
+				}
+				save_scope_as = toe_missing_ig_leader_group
+				owner = {
+					create_character = {
+						age = 40
+						interest_group = scope:toe_missing_ig_leader_group
+						ideology = ideology_moderate
+						ig_leader = yes
+					}
+				}
+			}
+		}
+	}
 }
 
 on_monthly_pulse = {
-    effect = {
-        every_country = {
-            limit = {
-                OR = {
-                    c:XAI ?= this
-                    c:XBJ ?= this
-                }
-            }
-            every_interest_group = {
-                limit = {
-                    NOT = {
-                        leader ?= { always = yes }
-                    }
-                }
-                save_scope_as = toe_missing_ig_leader_group
-                owner = {
-                    create_character = {
-                        age = 40
-                        interest_group = scope:toe_missing_ig_leader_group
-                        ideology = ideology_moderate
-                        ig_leader = yes
-                    }
-                }
-            }
-        }
-    }
+	on_actions = {
+		toe_xai_xbj_ig_leader_safety_monthly
+	}
+}
+
+toe_xai_xbj_ig_leader_safety_monthly = {
+	effect = {
+		every_country = {
+			limit = {
+				OR = {
+					c:XAI ?= this
+					c:XBJ ?= this
+				}
+			}
+			every_interest_group = {
+				limit = {
+					NOT = {
+						leader ?= { always = yes }
+					}
+				}
+				save_scope_as = toe_missing_ig_leader_group
+				owner = {
+					create_character = {
+						age = 40
+						interest_group = scope:toe_missing_ig_leader_group
+						ideology = ideology_moderate
+						ig_leader = yes
+					}
+				}
+			}
+		}
+	}
 }
