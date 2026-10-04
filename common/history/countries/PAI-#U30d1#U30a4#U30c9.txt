@@ -34,7 +34,9 @@
 	        }
 	
 	        add_journal_entry = { type = je_toe_paido_cultural_integration }
-	        add_journal_entry = { type = je_toe_paido_monarchist_rivalry }
+	        # ToE does not use Vanilla's French divided-monarchists system here.
+	        # Anbennar disables the same Vanilla progress-bar chain because it assumes
+	        # French IG leaders/variables that do not exist in a total conversion.
 	        add_journal_entry = { type = je_great_game_control }
 	}
 }
