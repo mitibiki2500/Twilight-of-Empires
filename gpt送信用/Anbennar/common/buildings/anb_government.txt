@@ -1,0 +1,37 @@
+﻿building_airship_tower = { 
+	building_group = bg_airship_tower
+	icon = "gfx/interface/icons/building_icons/skyscraper.dds"
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+
+	city_type = city
+
+	levels_per_mesh = 1
+
+	enable_air_connection = yes	#only cosmetic as far as I can tell - the base game uses that to make #zeppelins roam the map between those
+
+	# port = yes
+
+	expandable = no
+
+	downsizeable = no
+
+	production_method_groups = {
+		pmg_base_building_airship_tower
+		#pmg_airship_mooring_post
+	}
+
+	required_construction = construction_cost_monument
+
+	can_build_government = {
+		always = no #need a complicated way to fix this, because port = yes doesn't cut it
+		custom_tooltip = {
+			text = airship_tower_can_construct_tt
+			has_modifier = airship_tower_site
+		}
+	}
+	can_build_private = {
+		always = no
+	}	
+	
+	ai_value = 50000
+}

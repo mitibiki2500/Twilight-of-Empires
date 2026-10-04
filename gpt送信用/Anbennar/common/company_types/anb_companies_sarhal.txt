@@ -1,0 +1,580 @@
+﻿company_qazhraz = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_rice.dds"
+
+	category = aristocrat_owned
+
+	flavored_company = yes
+
+	building_types = {
+		building_livestock_ranch
+		building_food_industry
+	}
+
+	extension_building_types = {
+		building_wheat_farm
+		building_maize_farm
+		building_rye_farm
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_groceries
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_groceries_complete_tt
+			has_variable = prestige_good_generic_groceries_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_taneyas
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_ZULBUR
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = mechanical_tools
+		any_scope_state = {
+			state_region = s:STATE_ZULBUR
+			any_scope_building = {
+				is_building_type = building_livestock_ranch
+				level >=5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		unit_supply_consumption_mult = -0.1
+		country_military_goods_cost_mult = -0.05
+	}
+
+	ai_will_do = {
+		has_technology_researched = mechanical_tools
+		any_scope_state = {
+			state_region = s:STATE_ZULBUR
+			is_incorporated = yes
+		}
+	}
+
+	ai_construction_targets = {
+		building_food_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_ZULBUR
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}
+}
+
+company_stories_from_the_citadel = {
+	icon = "gfx/interface/icons/company_icons/custom_anb_stories_from_the_citadel.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_rice.dds"
+
+	category = academic_owned
+
+	flavored_company = yes
+
+	building_types = {
+		building_paper_mill
+		building_art_academy
+	}
+
+	extension_building_types = {
+		building_mage_tower
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_taneyas
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_YASSA
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_YASSA
+			any_scope_building = {
+				is_building_type = building_paper_mill
+				level >=5
+			}
+			any_scope_building = {
+				is_building_type = building_art_academy
+				level >=5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_education_access_add = 0.10
+		interest_group_ig_intelligentsia_pop_attraction_mult = 0.15
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_YASSA
+			is_incorporated = yes
+		}
+	}
+
+	ai_construction_targets = {
+		building_paper_mill = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_YASSA
+				is_incorporated = yes
+			}
+		}
+		building_art_academy = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_YASSA
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}
+}
+company_tsamanosy_clove = { 
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+
+	category = shopkeeper_owned
+	
+	flavored_company = yes
+	
+	building_types = {  
+		building_food_industry
+		building_sugar_plantation
+	}	
+	
+	extension_building_types = {
+		building_coffee_plantation
+	}
+
+		possible_prestige_goods = {
+		prestige_good_generic_groceries
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_groceries_complete_tt
+			has_variable = prestige_good_generic_groceries_var
+		}
+	}
+
+
+	potential = {
+		has_interest_marker_in_region = region_tanib
+	}
+	
+	possible = {
+	
+		any_scope_state = {
+			OR = {
+				state_region = s:STATE_TERAMZADAI
+				state_region = s:STATE_TVARASTAMANOSY
+			}
+			any_scope_building = {
+				is_building_type = building_food_industry
+				level >= 5
+			}
+		}
+	}
+	
+	prosperity_modifier = {
+	country_prestige_mult = 0.05
+	state_trade_advantage_mult = 0.1
+	}	
+	
+	ai_will_do = {
+		any_scope_state = {
+			OR = {
+				state_region = s:STATE_TERAMZADAI
+				state_region = s:STATE_TVARASTAMANOSY
+			}
+		}
+	} 
+
+	ai_construction_targets = {
+		building_food_industry = {
+			level = 5
+			state_trigger = {
+					OR = {
+				state_region = s:STATE_TERAMZADAI
+				state_region = s:STATE_TVARASTAMANOSY
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3 
+	}
+}
+
+company_tzoylent_red = { 
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	
+	flavored_company = yes
+	
+	building_types = {  
+		building_food_industry
+		building_livestock_ranch
+	}	
+	
+	extension_building_types = {
+		building_sugar_plantation
+	}
+
+		possible_prestige_goods = {
+		prestige_good_generic_groceries
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_groceries_complete_tt
+			has_variable = prestige_good_generic_groceries_var
+		}
+	}
+
+
+	potential = {
+		has_interest_marker_in_region = region_gazraak
+	}
+	
+	possible = {
+	
+		any_scope_state = {
+			state_region = s:STATE_KVANGRAAK
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_food_industry
+				level >= 5
+			}
+		}
+	}
+	
+	prosperity_modifier = {
+	country_infamy_decay_mult = 0.1
+	building_livestock_ranch_throughput_add = 0.2
+	}	
+	
+	ai_will_do = {
+		any_scope_state = {
+				state_region = s:STATE_KVANGRAAK
+			is_incorporated = yes
+		}
+	}
+
+	ai_construction_targets = {
+		building_food_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_KVANGRAAK
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3 
+	}
+}
+
+company_nazhyn_cartel = { 
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	
+	flavored_company = yes
+	
+	building_types = {  
+		building_opium_plantation
+	}	
+	
+	extension_building_types = {
+		building_tobacco_plantation
+		building_vineyard
+	}
+
+	possible_prestige_goods = {
+		prestige_good_nazhyn
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_taneyas
+	}
+	
+	possible = {
+		this ?= c:L36
+		any_scope_state = {
+			state_region = s:STATE_NAZHNI
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_opium_plantation
+				level >= 5
+			}
+		}
+	}
+	
+	prosperity_modifier = {
+	country_infamy_generation_mult = 0.05
+	building_opium_plantation_throughput_add = 0.1
+	}	
+	
+	ai_will_do = {
+		any_scope_state = {
+				state_region = s:STATE_NAZHNI
+			is_incorporated = yes
+		}
+	}
+
+	ai_construction_targets = {
+		building_opium_plantation = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_NAZHNI
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3 
+	}
+}
+
+company_mihipha_college = { 
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+
+	category = academic_owned
+	
+	flavored_company = yes
+	
+	building_types = {  
+		building_mage_tower
+		building_art_academy
+	}	
+	
+	extension_building_types = {
+		building_paper_mill
+	}
+
+	
+
+	potential = {
+		has_interest_marker_in_region = region_tanib
+	}
+	
+	possible = {
+	
+		any_scope_state = {
+			state_region = s:STATE_MAPONOSY
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_mage_tower
+				level >= 5
+			}
+		}
+	}
+	
+	prosperity_modifier = {
+		country_archmages_pol_str_mult = 0.15
+		country_mages_pol_str_mult = 0.15
+		country_academics_pol_str_mult = 0.15
+		country_prestige_mult = 0.1
+	
+	}	
+	
+	ai_will_do = {
+		any_scope_state = {
+				state_region = s:STATE_MAPONOSY
+			is_incorporated = yes
+		}
+	}
+
+	ai_construction_targets = {
+		building_mage_tower = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_MAPONOSY
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3 
+	}
+}
+
+company_konolkhatep_hamkhinanp_mudu_association ={
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+
+    category = bureaucrat_owned
+
+	flavored_company = yes
+
+	building_types = {
+		building_food_industry
+        building_livestock_ranch
+	}
+
+	extension_building_types = {
+		building_sugar_plantation
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_groceries
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_groceries_complete_tt
+			has_variable = prestige_good_generic_groceries_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_kheterata
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_KHETERAT
+			any_scope_building = {
+				is_building_type = building_food_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = -0.1
+		interest_group_ig_landowners_approval_add = 2
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_KHETERAT
+			is_incorporated = yes
+		}
+	}
+
+	ai_construction_targets = {
+		building_food_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_KHETERAT
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}
+}
+
+company_koroshesh_gnomish_guild = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
+
+    category = bureaucrat_owned
+
+	flavored_company = yes
+
+        preferred_headquarters = {
+            STATE_COAST_OF_TEARS
+        }
+
+	building_types = {
+		building_gem_mine
+		building_magical_reagents_workshop
+	}
+
+	extension_building_types = {
+		building_chemical_plant
+		building_mage_tower
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_magical_reagents
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_magical_reagents_complete_tt
+			has_variable = prestige_good_generic_magical_reagents_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_kheterata
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_COAST_OF_TEARS
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_COAST_OF_TEARS
+			any_scope_building = {
+				is_building_type = building_gem_mine
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_magical_expertise_mult = 0.25
+        unit_army_offense_mult = 0.05
+
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_COAST_OF_TEARS
+                        is_incorporated = yes
+		}
+	}
+
+	ai_construction_targets = {
+		building_gem_mine = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_COAST_OF_TEARS
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}
+}

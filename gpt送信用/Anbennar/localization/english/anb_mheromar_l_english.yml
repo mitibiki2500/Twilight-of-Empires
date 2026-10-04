@@ -1,0 +1,82 @@
+﻿l_english:
+ 
+  notification_mheromar_is_here_name: "The Malachite Knight has moved to [SCOPE.sCountry('mheromar_new_home').GetName]"
+  notification_mheromar_is_here_desc: "The Malachite Knight has arrived in [SCOPE.sCountry('mheromar_new_home').GetName] to fight the forces of [SCOPE.sCountry('mheromar_spawn_foe_scope').GetName]."
+  notification_mheromar_is_here_tooltip: "#header $notification_mheromar_is_here_name$#!\n$TOOLTIP_DELIMITER$\n$notification_mheromar_is_here_desc$"
+
+  notification_mheromar_skedaddles_name: "The Malachite Knight has left [SCOPE.sCountry('mheromar_old_home').GetName]"
+  notification_mheromar_skedaddles_desc: "The Malachite Knight has left [SCOPE.sCountry('mheromar_old_home').GetName] to pursue the Fey cause elsewhere."
+  notification_mheromar_skedaddles_tooltip: "#header $notification_mheromar_skedaddles_name$#!\n$TOOLTIP_DELIMITER$\n$notification_mheromar_is_here_desc$"
+  
+  # The Malachite Knight Events
+
+  mheromar_popularity_modifier_tier_1: "Archaic Hero"
+  mheromar_popularity_modifier_tier_2: "The Knight"
+  mheromar_popularity_modifier_tier_3: "The Champion"
+  mheromar_popularity_modifier_tier_4: "The Chosen of the Fey"
+  mheromar_popularity_modifier_tier_5: "Modern Forebearer"
+  gladewarden_catch_up: "Gladewarden Modernization"
+
+  mheromar_events.1.t: "The Malachite Knight Offers Her Services"
+  mheromar_events.1.d: "Judging our struggle against [SCOPE.sCountry('mheromar_spawn_foe_scope').GetName] just, the Feybound Champion, the Malachite Knight has decided to align with our cause, offering up her services as a general."
+  mheromar_events.1.f: ""I offer neither pay, nor quarters, nor food;\nI offer only hunger, thirst, forced marches, battles and death.\nLet she who loves her country with her heart, and not merely with her lips, follow me."" # Mheromar
+  mheromar_events.1.a: "Have the Malachite Knight lead our armies."
+  mheromar_events.1.b: "We have no use for this knight of a forgone time."
+  rejected_mheromar_modifier: "Refused the Aid of the Malachite Knight"
+
+  mheromar_events.2.t: "The Malachite Knight Bids Her Farewells"
+  mheromar_events.2.d_1: "With the outbreak of war between [SCOPE.sCountry('mheromar_eordan_nation_scope').GetName] and [SCOPE.sCountry('mheromar_foreign_nation_scope').GetName], the Malachite Knight has decided to leave [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] to take up arms against the enemies of Eordand."
+  mheromar_events.2.d_2: "With [SCOPE.GetRootScope.GetCountry.GetNameNoFlag] at peace, and the fight against tyrants over, at least for now, the Malachite Knight has decided to leave the country in pursuit of another worthy cause."
+  mheromar_events.2.f: ""Where there are siblings who fight for Eordan freedom – there we must rush."" # The Malachite Knight
+  mheromar_events.2.a: "Godspeed, Malachite Knight."
+
+  mheromar_events.3.t: "The Eordan Legion of Volunteers"
+  mheromar_events.3.d: "Drawing on the Eordan population of [SCOPE.sState('eordan_legion_state_scope').GetName], the Malachite Knight has organized a legion of like-minded compatriots to join the [SCOPE.GetRootScope.GetCountry.GetAdjectiveNoFlag] fight against [SCOPE.sCountry('eordan_legion_foe_scope').GetAdjective] tyranny."
+  mheromar_events.3.f: ""My elves!\nWe are few, the enemy are many,\nmore glorious will be the victory.\nBe steady, reserve your fire until they are close on you,\nthen fire,\nand at them with the bayonet!"" # Mheromar
+  mheromar_events.3.a: "Their skills and zeal are sorely needed on the battlefield."
+  mheromar_events.3.b: "Use their expertise to train and recruit more elves for the army."
+  eordan_legion_barracks_modifier: "Eordan Legionary Barracks"
+  eordan_legionaries_modifier: "Eordan Legionary Volunteers"
+
+  mheromar_events.4.t: "Mheromar Riles Up the Peasantry"
+  mheromar_events.4.d: "While the Malachite Knight's abilities to move the minds of commoners have proven useful in the fight against [SCOPE.sCountry('mheromar_peasants_foe_scope').GetAdjective], her radical preachings are starting to turn some of [SCOPE.sState('mheromar_peasants_state_scope').GetName]'s [GetPopType('farmers').GetName] against our own rule as well — with several government ministers now demanding she be gagged."
+  mheromar_events.4.f: ""The day the peasants will be educated in the truth, tyrants and slaves will be impossible on Earth."" # Mheromar
+  mheromar_events.4.a: "She is too important for the cause. Let us avoid antagonization."
+  mheromar_events.4.b: "Order her to tone down her language."
+
+  mheromar_popularity:0 "Heroic Reputation"
+  
+  spawn_malachite_legion: "Spawns the Malachite Legion"
+  spawn_malachite_legion_desc: "Spawns the Malachite Legion"
+  
+  malachite_coup.2.t: "Malachite Legion"
+  malachite_coup.2.d: "Todo"
+  malachite_coup.2.f: "Todo"
+  malachite_coup.2.a: "Ok"
+  malachite_coup.2.b: "Play as the Malachite Legion"
+  
+  malachite_coup.3.t: "Eordand must unite"
+  malachite_coup.3.d: "Prelude and warning of the Malachite legion will soon spawn and do its thing"
+  malachite_coup.3.f: "how can we help?"
+  malachite_coup.3.a: "it is written only link can defeat ganon"
+  
+ mheromar_events.5.t: "Death of the Malachite Knight"
+ mheromar_events.5.d: "It's very sad"
+ mheromar_events.5.f: "Todo"
+ mheromar_events.5.a: "Ok"
+ 
+ mheromar_events.6.t: "The Malachite Knight explodes"
+ mheromar_events.6.d: "The Legion Collapse"
+ mheromar_events.6.f: "Todo"
+ mheromar_events.6.a: "Ok"
+ 
+ mheromar_events.7.t: "The Malachite Knight leaves"
+ mheromar_events.7.d: "She must go, her planet needs her"
+ mheromar_events.7.f: "Todo"
+ mheromar_events.7.a: "Ok"
+ 
+ movement_eordand_pan_national: "Pan-Eordan Movement"
+ ideology_eordand_unification_movement: "Pan-Eordanism"
+ ideology_eordand_unification_leader: "Pan-Eordanist"
+ 
+ native_gladewarden_modifier: "Blessing of the Archfey"

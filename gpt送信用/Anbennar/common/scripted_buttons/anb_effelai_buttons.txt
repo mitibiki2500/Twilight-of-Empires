@@ -1,0 +1,504 @@
+﻿C14_reclaim_west = {
+	name = "C14_reclaim_west_name"
+	desc = "C14_reclaim_west_desc"
+
+	visible = { always = yes }
+	
+	#Country scope
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { infamy < 20 }
+			add = 10
+		}
+	}
+
+	possible = {
+		hidden_trigger = { not = { has_variable = C14_reclaim_west_var } }
+		any_scope_state = {
+			state_region = s:STATE_CENTRAL_EFFELAI
+			is_incorporated = yes
+			is_split_state = no
+		}
+		any_scope_state = {
+			state_region = s:STATE_NOGRUD
+			is_incorporated = yes
+			is_split_state = no
+		}
+		any_scope_state = {
+			state_region = s:STATE_MARUKHAN
+			is_incorporated = yes
+			is_split_state = no
+		}
+	}
+
+	effect = {
+		set_variable = C14_reclaim_west_var
+		change_infamy = 15
+		s:STATE_SORFEN = {
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+			add_homeland = cu:seedthrall
+		}
+		s:STATE_SEINAINE = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+			add_homeland = cu:seedthrall
+		}
+		s:STATE_DALAINE = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+			add_homeland = cu:seedthrall
+		}
+		s:STATE_THALASARAN = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+			add_homeland = cu:seedthrall
+		}
+		s:STATE_KIOHALEN = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+			add_homeland = cu:seedthrall
+		}
+		s:STATE_KIINDTIR = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+			add_homeland = cu:seedthrall
+		}
+		annex = c:C12
+		annex = c:C13
+		s:STATE_SCREAMING_JUNGLE = { 
+			if = {
+				limit = { 
+					any_scope_state = { 
+						NOT = {
+							owner = ROOT
+							owner = c:C12
+							owner = c:C13
+						}
+					}
+				}
+				add_claim = ROOT 
+			}
+			add_homeland = cu:seedthrall
+		}
+		annex = c:C15
+		s:STATE_WESTERN_EFFELAI = { 
+			if = {
+				limit = { 
+					any_scope_state = { 
+						NOT = {
+							owner = ROOT
+							owner = c:C15
+						}
+					}
+				}
+				add_claim = ROOT 
+			}
+		}
+		annex = c:C17
+		s:STATE_DEEPSONG = { 
+			if = {
+				limit = { 
+					any_scope_state = { 
+						NOT = {
+							owner = ROOT
+							owner = c:C17
+						}
+					}
+				}
+				add_claim = ROOT 
+			}
+		}
+	}
+}
+
+C14_reclaim_east = {
+	name = "C14_reclaim_east_name"
+	desc = "C14_reclaim_east_desc"
+
+	visible = { always = yes }
+	
+	#Country scope
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { infamy < 15 }
+			add = 10
+		}
+	}
+
+	possible = {
+		hidden_trigger = { not = { has_variable = C14_reclaim_east_var } }
+		any_scope_state = {
+			state_region = s:STATE_DEEPSONG
+			is_incorporated = yes
+			is_split_state = no
+		}
+		any_scope_state = {
+			state_region = s:STATE_SORFEN
+			is_incorporated = yes
+			is_split_state = no
+		}
+		any_scope_state = {
+			state_region = s:STATE_SEINAINE
+			is_incorporated = yes
+			#Anbennar has an island
+		}
+		any_scope_state = {
+			state_region = s:STATE_DALAINE
+			is_incorporated = yes
+			is_split_state = no
+		}
+		any_scope_state = {
+			state_region = s:STATE_THALASARAN
+			is_incorporated = yes
+			is_split_state = no
+		}
+		any_scope_state = {
+			state_region = s:STATE_KIOHALEN
+			is_incorporated = yes
+			is_split_state = no
+		}
+		any_scope_state = {
+			state_region = s:STATE_KIINDTIR
+			is_incorporated = yes
+			is_split_state = no
+		}
+	}
+
+	effect = {
+		set_variable = C14_reclaim_east_var
+		change_infamy = 20
+		s:STATE_YARUHOL = {
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_FASHTUG = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_OZGAR = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_BRAMMYAR = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_JIBIRAEN = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_DAZINKOST = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_REZANOAN = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_BROAN_KEIR = {
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_NUREL = {
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_ARENEL = {
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+	}
+}
+
+C14_reincorp_soruin = {
+	name = "C14_reincorp_soruin_name"
+	desc = "C14_reincorp_soruin_desc"
+
+	visible = { always = yes }
+	
+	#Country scope
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { infamy < 20 }
+			add = 10
+		}
+	}
+
+	possible = {
+		hidden_trigger = { not = { has_variable = C14_reincorp_soruin_var } }
+		s:STATE_YARUHOL = {
+            any_scope_state = {
+                owner = root
+                is_incorporated = yes
+				is_split_state = no
+				has_decree = decree_magic_plant_growth
+                any_scope_building = {
+                    is_building_group = bg_staple_crops
+                    level >= 5
+                }
+				any_scope_building = {
+                    is_building_group = bg_plantations
+                    level >= 5
+                }
+            }
+        }
+		s:STATE_FASHTUG = {
+            any_scope_state = {
+                owner = root
+                is_incorporated = yes
+				is_split_state = no
+				has_decree = decree_magic_plant_growth
+                any_scope_building = {
+                    is_building_group = bg_staple_crops
+                    level >= 5
+                }
+				any_scope_building = {
+                    is_building_group = bg_plantations
+                    level >= 5
+                }
+            }
+        }
+		s:STATE_OZGAR = {
+            any_scope_state = {
+                owner = root
+                is_incorporated = yes
+				is_split_state = no
+				has_decree = decree_magic_plant_growth
+                any_scope_building = {
+                    is_building_group = bg_staple_crops
+                    level >= 5
+                }
+				any_scope_building = {
+                    is_building_group = bg_plantations
+                    level >= 5
+                }
+            }
+        }
+		s:STATE_BRAMMYAR = {
+            any_scope_state = {
+                owner = root
+                is_incorporated = yes
+				is_split_state = no
+				has_decree = decree_magic_plant_growth
+                any_scope_building = {
+                    is_building_group = bg_staple_crops
+                    level >= 5
+                }
+				any_scope_building = {
+                    is_building_group = bg_plantations
+                    level >= 5
+                }
+            }
+        }
+		s:STATE_JIBIRAEN = {
+            any_scope_state = {
+                owner = root
+                is_incorporated = yes
+				is_split_state = no
+				has_decree = decree_magic_plant_growth
+                any_scope_building = {
+                    is_building_group = bg_staple_crops
+                    level >= 5
+                }
+				any_scope_building = {
+                    is_building_group = bg_plantations
+                    level >= 5
+                }
+            }
+        }
+	}
+
+	effect = {
+		set_variable = C14_reincorp_soruin_var
+		s:STATE_YARUHOL = {
+			add_homeland = cu:seedthrall
+			remove_state_trait = state_trait_soruinic_jungle
+			add_state_trait = state_trait_effelai
+		}
+		s:STATE_FASHTUG = { 
+			add_homeland = cu:seedthrall
+			remove_state_trait = state_trait_soruinic_jungle
+			add_state_trait = state_trait_effelai
+		}
+		s:STATE_OZGAR = { 
+			add_homeland = cu:seedthrall
+			remove_state_trait = state_trait_soruinic_jungle
+			add_state_trait = state_trait_effelai
+		}
+		s:STATE_BRAMMYAR = { 
+			add_homeland = cu:seedthrall
+			remove_state_trait = state_trait_soruinic_jungle
+			add_state_trait = state_trait_effelai
+		}
+		s:STATE_JIBIRAEN = { 
+			add_homeland = cu:seedthrall
+			remove_state_trait = state_trait_soruinic_jungle
+			add_state_trait = state_trait_effelai
+		}
+	}
+}
+
+C14_reincorp_dry = {
+	name = "C14_reincorp_dry_name"
+	desc = "C14_reincorp_dry_desc"
+
+	visible = { always = yes }
+	
+	#Country scope
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { infamy < 20 }
+			add = 10
+		}
+	}
+
+	possible = {
+		hidden_trigger = { not = { has_variable = C14_reincorp_dry_var } }
+		s:STATE_DAZINKOST = {
+            any_scope_state = {
+                owner = root
+                is_incorporated = yes
+				is_split_state = no
+				has_decree = decree_magic_plant_growth
+                any_scope_building = {
+                    is_building_group = bg_staple_crops
+                    level >= 10
+                }
+				any_scope_building = {
+                    is_building_group = bg_plantations
+                    level >= 10
+                }
+            }
+        }
+		s:STATE_REZANOAN = {
+            any_scope_state = {
+                owner = root
+                is_incorporated = yes
+				is_split_state = no
+				has_decree = decree_magic_plant_growth
+                any_scope_building = {
+                    is_building_group = bg_staple_crops
+                    level >= 10
+                }
+				any_scope_building = {
+                    is_building_group = bg_plantations
+                    level >= 10
+                }
+            }
+        }
+		s:STATE_BROAN_KEIR = {
+            any_scope_state = {
+                owner = root
+                is_incorporated = yes
+				is_split_state = no
+				has_decree = decree_magic_plant_growth
+                any_scope_building = {
+                    is_building_group = bg_staple_crops
+                    level >= 10
+                }
+				any_scope_building = {
+                    is_building_group = bg_plantations
+                    level >= 10
+                }
+            }
+        }
+		s:STATE_NUREL = {
+            any_scope_state = {
+                owner = root
+                is_incorporated = yes
+				is_split_state = no
+				has_decree = decree_magic_plant_growth
+                any_scope_building = {
+                    is_building_group = bg_staple_crops
+                    level >= 10
+                }
+				any_scope_building = {
+                    is_building_group = bg_plantations
+                    level >= 10
+                }
+            }
+        }
+		s:STATE_ARENEL = {
+            any_scope_state = {
+                owner = root
+                is_incorporated = yes
+				is_split_state = no
+				has_decree = decree_magic_plant_growth
+                any_scope_building = {
+                    is_building_group = bg_staple_crops
+                    level >= 10
+                }
+				any_scope_building = {
+                    is_building_group = bg_plantations
+                    level >= 10
+                }
+            }
+        }
+	}
+
+	effect = {
+		set_variable = C14_reincorp_dry_var
+		s:STATE_DAZINKOST = { 
+			add_homeland = cu:seedthrall
+			remove_state_trait = state_trait_soruinic_jungle
+			add_state_trait = state_trait_effelai
+		}
+		s:STATE_REZANOAN = { 
+			add_homeland = cu:seedthrall
+			remove_state_trait = state_trait_soruinic_jungle
+			add_state_trait = state_trait_effelai
+		}
+		s:STATE_BROAN_KEIR = {
+			add_homeland = cu:seedthrall
+			remove_state_trait = state_trait_soruinic_jungle
+			add_state_trait = state_trait_effelai
+		}
+		s:STATE_NUREL = {
+			add_homeland = cu:seedthrall
+			remove_state_trait = state_trait_soruinic_jungle
+			add_state_trait = state_trait_effelai
+		}
+		s:STATE_ARENEL = {
+			add_homeland = cu:seedthrall
+			remove_state_trait = state_trait_soruinic_jungle
+			add_state_trait = state_trait_effelai
+		}
+	}
+}

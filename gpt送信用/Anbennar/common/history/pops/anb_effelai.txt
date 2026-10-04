@@ -1,0 +1,680 @@
+﻿POPS = {
+	s:STATE_NOGRUD = {
+		region_state:C03 = {
+			create_pop = {
+				culture = ozgar_orc
+				size = 126000
+			}
+			create_pop = {
+				culture = soruinic
+				size = 114800
+			}
+			create_pop = {
+				culture = effe_i
+				size = 39200
+			}
+		}
+	}
+	s:STATE_KARLUR_DARAKH = {
+		region_state:C14 = {
+			create_pop = {
+				culture = seedthrall
+				size = 214996
+			}
+			create_pop = {
+				culture = effe_i
+				size = 25000
+			}
+		}
+	}
+	s:STATE_YARUHOL = {
+		region_state:C03 = {
+			create_pop = {
+				culture = ozgar_orc
+				size = 189925
+			}
+			create_pop = {
+				culture = soruinic
+				size = 144130
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 20945
+				religion = bulgu_orazan
+			}
+		}
+	}
+	s:STATE_FASHTUG = {
+		region_state:C03 = {
+			create_pop = {
+				culture = ozgar_orc
+				size = 414720
+			}
+			create_pop = {
+				culture = soruinic
+				size = 195656
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 37584
+				religion = bulgu_orazan
+			}
+		}
+	}
+	s:STATE_OZGAR = {
+		region_state:C03 = {
+			create_pop = {
+				culture = ozgar_orc
+				size = 402570
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 37630
+				religion = bulgu_orazan
+			}
+			create_pop = {
+				culture = soruinic
+				size = 269800
+			}
+		}
+	}
+	s:STATE_BRAMMYAR = {
+		region_state:C03 = {
+			create_pop = {
+				culture = ozgar_orc
+				size = 406260
+			}
+			create_pop = {
+				culture = soruinic
+				size = 285480
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 40260
+				religion = bulgu_orazan
+			}
+		}
+	}
+	s:STATE_JIBIRAEN = {
+		region_state:C04 = {
+			create_pop = {
+				culture = soruinic
+				size = 149480
+			}
+			create_pop = {
+				culture = ozgar_orc
+				size = 52520
+			}
+		}
+	}
+	s:STATE_MARUKHAN = {
+		region_state:C03 = {
+			create_pop = {
+				culture = ozgar_orc
+				size = 160176
+			}
+			create_pop = {
+				culture = parura
+				size = 48564
+			}
+			create_pop = {
+				culture = leechman
+				size = 4260
+			}
+		}
+	}
+	s:STATE_THE_MIDDANS = {
+		region_state:C06 = {
+			create_pop = {
+				culture = swampman
+				size = 12345
+			}
+			create_pop = {
+				culture = leechman
+				size = 27700
+			}
+			create_pop = {
+				culture = parura
+				size = 25776
+			}
+			create_pop = {
+				culture = tefori
+				size = 21200
+			}
+		}
+	}
+	s:STATE_SCREAMING_JUNGLE = {
+		region_state:C12 = {
+			create_pop = {
+				culture = parura
+				size = 27200
+			}
+			create_pop = {
+				culture = leechman
+				size = 4800
+			}
+		}
+		region_state:C13 = {
+			create_pop = {
+				culture = parura
+				size = 27000
+			}
+			create_pop = {
+				culture = leechman
+				size = 5000
+			}
+		}
+	}
+	s:STATE_WESTERN_EFFELAI = {
+		region_state:C14 = {
+			create_pop = {
+				culture = seedthrall
+				size = 180000
+			}
+			create_pop = {
+				culture = effe_i
+				size = 20000
+			}
+		}
+		region_state:C15 = {
+			create_pop = {
+				culture = effe_i
+				size = 30000
+			}
+			create_pop = {
+				culture = lai_i
+				size = 10000
+			}
+		}
+	}
+	s:STATE_MUSHROOM_FOREST = {
+		region_state:C16 = {
+			create_pop = {
+				culture = lai_i
+				size = 10600
+			}
+			create_pop = {
+				culture = dugui_hi #Replace with mushroom culture once it exists
+				size = 62400
+			}
+		}
+	}
+	s:STATE_CENTRAL_EFFELAI = {
+		region_state:C14 = {
+			create_pop = {
+				culture = seedthrall
+				size = 200000
+			}
+			create_pop = {
+				culture = parura
+				size = 12500
+			}
+		}
+		region_state:C06 = {
+			create_pop = {
+				culture = swampman
+				size = 50000
+			}
+			create_pop = {
+				culture = parura
+				size = 25000
+			}
+		}
+	}
+	s:STATE_EASTERN_EFFELAI = {
+		region_state:C14 = {
+			create_pop = {
+				culture = seedthrall
+				size = 142000
+			}
+			create_pop = {
+				culture = thavo_i
+				size = 20000
+			}
+			create_pop = {
+				culture = lai_i
+				size = 4300
+			}
+		}
+	}
+	s:STATE_SORFEN = {
+		region_state:C06 = {
+			create_pop = {
+				culture = swampman
+				size = 210000
+			}
+			create_pop = {
+				culture = leechman
+				size = 28000
+			}
+			create_pop = {
+				culture = parura
+				size = 42000
+			}
+		}
+	}
+	s:STATE_SEINAINE = {
+		region_state:C05 = {
+			create_pop = {
+				culture = dhanaenno
+				size = 264590
+			}
+			create_pop = {
+				culture = parura
+				size = 29540
+			}
+			create_pop = {
+				culture = south_aelantiri_orc
+				size = 72670
+			}
+		}
+		region_state:C06 = {
+			create_pop = {
+				culture = swampman
+				size = 30200
+			}
+			create_pop = {
+				culture = leechman
+				size = 8000
+			}
+			create_pop = {
+				culture = parura
+				size = 2100
+			}
+		}
+		region_state:A01 = {
+			create_pop = {
+				culture = pearlsedger
+				size = 1350
+			}
+		}
+	}
+	s:STATE_DALAINE = {
+		region_state:C05 = {
+			create_pop = {
+				culture = dhanaenno
+				size = 354590
+			}
+			create_pop = {
+				culture = thavo_i
+				size = 44900
+			}
+			create_pop = {
+				culture = south_aelantiri_orc
+				size = 49190
+			}
+			create_pop = {
+				culture = imperial_gnome
+				size = 5390
+			}
+			create_pop = {
+				culture = beefoot_halfling
+				size = 37030
+			}
+		}
+	}
+	s:STATE_DEEPSONG = {
+		region_state:C17 = {
+			create_pop = {
+				culture = thavo_i
+				size = 16200
+			}
+		}
+		region_state:C14 = {
+			create_pop = {
+				culture = seedthrall
+				size = 35800
+			}
+		}
+	}
+	s:STATE_THALASARAN = {
+		region_state:C08 = {
+			create_pop = {
+				culture = drakesman
+				size = 150960
+			}
+			create_pop = {
+				culture = thavo_i
+				size = 14280
+			}
+			create_pop = {
+				culture = south_aelantiri_orc
+				size = 22400
+			}
+		}
+		region_state:A03 = {
+			create_pop = {
+				culture = roilsardi
+				size = 16320
+			}
+			create_pop = {
+				culture = thavo_i
+				size = 1000
+			}
+		}
+	}
+	s:STATE_KIOHALEN = {
+		region_state:C07 = {
+			create_pop = {
+				culture = kioha_harpy
+				size = 376800
+			}
+			create_pop = {
+				culture = thavo_i
+				size = 125600
+			}
+			create_pop = {
+				culture = drakesman
+				size = 125600
+			}
+		}
+	}
+	s:STATE_KIINDTIR = {
+		region_state:A01 = {
+			create_pop = {
+				culture = pearlsedger
+				size = 7395
+			}
+		}
+		region_state:C07 = {
+			create_pop = {
+				culture = kioha_harpy
+				size = 239850
+			}
+			create_pop = {
+				culture = thavo_i
+				size = 55350
+			}
+			create_pop = {
+				culture = drakesman
+				size = 73800
+			}
+		}
+		region_state:C01 = {
+			create_pop = {
+				culture = kioha_harpy
+				size = 6100
+			}
+			create_pop = {
+				culture = dawn_ruinborn
+				size = 102340
+			}
+		}
+	}
+	s:STATE_DAZINKOST = {
+		region_state:C01 = {
+			create_pop = {
+				culture = dawn_elf
+				size = 40120
+			}
+			create_pop = {
+				culture = rezankandish
+				size = 22420
+			}
+			create_pop = {
+				culture = kioha_harpy
+				size = 5900
+			}
+			create_pop = {
+				culture = dawn_ruinborn
+				size = 149560
+			}
+		}
+	}
+	s:STATE_REZANOAN = {
+		region_state:C01 = {
+			create_pop = {
+				culture = dawn_elf
+				size = 149500
+			}
+			create_pop = {
+				culture = rezankandish
+				size = 106750
+			}
+			create_pop = {
+				culture = dawn_ruinborn
+				size = 249400
+			}
+			create_pop = {
+				culture = kioha_harpy
+				size = 21350
+			}
+		}
+	}
+	s:STATE_BROAN_KEIR = {
+		region_state:C01 = {
+			create_pop = {
+				culture = dawn_elf
+				size = 79800
+			}
+			create_pop = {
+				culture = rezankandish
+				size = 45600
+			}
+			create_pop = {
+				culture = dawn_ruinborn
+				size = 188920
+			}
+		}
+	}
+	s:STATE_NUREL = {
+		region_state:C01 = {
+			create_pop = {
+				culture = dawn_elf
+				size = 99400
+			}
+			create_pop = {
+				culture = rezankandish
+				size = 56800
+			}
+			create_pop = {
+				culture = dawn_ruinborn
+				size = 205080
+			}
+			create_pop = {
+				culture = kalavendhi
+				size = 17040
+				religion = new_sun_cult
+			}
+			create_pop = {
+				culture = lai_i
+				size = 5680
+				religion = new_sun_cult
+			}
+		}
+	}
+	s:STATE_ARENEL = {
+		region_state:C01 = {
+			create_pop = {
+				culture = dawn_elf
+				size = 161100
+			}
+			create_pop = {
+				culture = rezankandish
+				size = 107400
+			}
+			create_pop = {
+				culture = dawn_ruinborn
+				size = 287950
+			}
+			create_pop = {
+				culture = kalavendhi
+				size = 53700
+				religion = new_sun_cult
+			}
+			create_pop = {
+				culture = lai_i
+				size = 26850
+				religion = new_sun_cult
+			}
+		}
+	}
+	s:STATE_NUR_ELIZNA = {
+		region_state:C01 = {
+			create_pop = {
+				culture = dawn_elf
+				size = 57600
+			}
+			create_pop = {
+				culture = rezankandish
+				size = 44800
+			}
+			create_pop = {
+				culture = dawn_ruinborn
+				size = 12800
+			}
+			create_pop = {
+				culture = kalavendhi
+				size = 12800
+				religion = new_sun_cult
+			}
+		}
+	}
+	s:STATE_NEWSHORE = {
+		region_state:C10 = {
+			create_pop = {
+				culture = malateli
+				size = 154275
+				religion = ravelian
+			}
+            create_pop = {
+				culture = malateli
+				size = 51425
+				religion = new_sun_cult
+			}
+			create_pop = {
+				culture = dawn_elf
+				size = 12100
+			}
+			create_pop = {
+				culture = rezankandish
+				size = 24200
+			}
+		}
+	}
+	s:STATE_TIMBERNECK = {
+		region_state:C10 = {
+			create_pop = {
+				culture = malateli
+				size = 136080
+				religion = ravelian
+			}
+            create_pop = {
+				culture = malateli
+				size = 34020
+				religion = new_sun_cult
+			}
+			create_pop = {
+				culture = dawn_elf
+				size = 7560
+			}
+			create_pop = {
+				culture = rezankandish
+				size = 17640
+			}
+		}
+	}
+	s:STATE_VRENDIN = {
+		region_state:C10 = {
+			create_pop = {
+				culture = malateli
+				size = 149940
+				religion = ravelian
+			}
+            create_pop = {
+				culture = malateli
+				size = 26460
+				religion = new_sun_cult
+			}
+			create_pop = {
+				culture = thekvrystana
+				size = 30240
+				religion = gods_of_the_taychend
+			}
+            create_pop = {
+				culture = thekvrystana
+				size = 5040
+				religion = ravelian
+			}
+            create_pop = {
+				culture = thekvrystana
+				size = 15120
+				religion = new_sun_cult
+			}
+			create_pop = {
+				culture = dawn_elf
+				size = 7560
+			}
+			create_pop = {
+				culture = rezankandish
+				size = 17640
+			}
+		}
+		region_state:A01 = {
+			create_pop = {
+				culture = pearlsedger
+				size = 4320
+			}
+			create_pop = {
+				culture = thekvrystana
+				size = 3210
+			}
+		}
+	}
+	#s:STATE_LAIPOINT_ARCHIPELAGO = {
+	#	region_state:A01 = {
+	#		create_pop = {
+	#			culture = pearlsedger
+	#			size = 7395
+	#		}
+	#	}
+	#	region_state:A09 = {
+	#		create_pop = {
+	#			culture = tefori
+	#			size = 7105
+	#		}
+	#	}
+	#}
+	s:STATE_WEST_TURTLEBACK = {
+		region_state:A09 = {
+			create_pop = {
+				culture = tefori
+				size = 7105
+			}
+		}
+		region_state:C09 = {
+			create_pop = {
+				culture = busilari
+				size = 177600
+			}
+			create_pop = {
+				culture = vernman
+				size = 199800
+			}
+			create_pop = {
+				culture = south_aelantiri_orc
+				size = 66600
+			}
+		}
+	}
+	s:STATE_EAST_TURTLEBACK = {
+		region_state:C09 = {
+			create_pop = {
+				culture = busilari
+				size = 194250
+			}
+			create_pop = {
+				culture = vernman
+				size = 277500
+			}
+			create_pop = {
+				culture = south_aelantiri_orc
+				size = 55500
+			}
+			create_pop = {
+				culture = beefoot_halfling
+				size = 27750
+			}
+		}
+	}
+}

@@ -1,0 +1,266 @@
+﻿### ERA 1
+
+# TODO reenable if cooler stuff is made for it
+# camiran_doctrine = {
+# 	era = era_1
+# 	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+# 	category = military
+
+# 	unlocking_technologies = {
+# 		line_infantry
+# 	}
+	
+# 	ai_weight = {
+# 		value = 1
+# 	}
+# }
+
+
+### ERA 2
+
+glyphships = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		drydocks
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+
+	modifier = {
+		ship_armor_mult = 0.1
+		ship_hull_damage_mult = 0.1
+	}
+}
+
+military_airships = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		glyphships
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+brass_prosthesis = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		#triage	#changed from this due to vanilla having a 2-tier per era style. making this off triage makes it a 3-tier. and we want this to be an era two thing
+		percussion_cap #justification is you need it to be all-weather device which is what percussion caps provide
+	}
+
+	modifier = {
+		unit_kill_rate_add = 0.1
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+thinking_turrets = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		field_works
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+elemental_armaments = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		gunsmithing
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+### ERA 3
+
+airship_bombardiers = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		military_airships
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+alchemical_capsules = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		modern_nursing
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+military_mechs = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		#handcranked_machine_gun #see brass porsthesis reasoning
+		bulletproof_exosuits
+		electric_telegraph
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+bulletproof_exosuits = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		brass_prosthesis
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+mageshields = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		enlistment_offices
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+amaglamated_attachments = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		elemental_armaments
+		rifling
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+### ERA 4
+
+military_skyships = {
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		airship_bombardiers
+		floating_harbor
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+gene_warriors = {
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		alchemical_capsules
+		war_propaganda
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+scrying_distruptors = {
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		wargaming
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+### ERA 5
+
+steel_leviathans = {
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		military_skyships
+		dreadnought_tech
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+hexframes = {
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = military
+
+	unlocking_technologies = {
+		nco_training
+		military_mechs
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}

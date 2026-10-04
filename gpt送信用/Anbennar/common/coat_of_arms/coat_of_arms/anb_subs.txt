@@ -1,0 +1,201 @@
+﻿
+sub_A01_coa = {
+	#pattern = "pattern_horizontal_split_01.tga"
+	color1 = "damerian_blue"
+	color2 = "damerian_white"
+
+	colored_emblem = {
+		texture = "ce_anb_shield_quartered.dds"
+		color1 = "eborthili_gold"
+		color2 = "eborthili_gold"
+		instance = { scale = { 1.05 1.05 }	position = { 0.5 0.5 }	}
+	}
+	colored_emblem = {
+		texture = "ce_anb_shield_quartered.dds"
+		color1 = "damerian_blue"
+		color2 = "damerian_white"
+		instance = { scale = { 0.8 0.8 }	position = { 0.5 0.5 }	}
+	}
+	colored_emblem = {
+		texture = "ce_anb_dove_branch.dds"
+		color1 = "green"
+		color2 = "green"
+		instance = { scale = { 0.15 0.15 }	position = { 0.45 0.4 }	}
+	}
+	colored_emblem = {
+		texture = "ce_anb_dove.dds"
+		color1 = "damerian_white"
+		color2 = "grey"
+		color3 = "black"
+		instance = { scale = { 0.15 0.15 }	position = { 0.45 0.4 }	}
+	}
+	colored_emblem = {
+		texture = "ce_anb_elvenized_moon.dds"
+		color1 = "damerian_white"
+		instance = { scale = { 0.15 0.15 }	position = { 0.548 0.595 }	}
+	}
+	colored_emblem = {
+		texture = "ce_anb_dragon_rampant.dds"
+		color1 = rgb { 172 180 196 }	#silver
+		color2 = "corvurian_red_light"
+		color3 = "blue_light"
+		instance = { scale = { -0.17 0.17 }	position = { 0.55 0.4 }	}
+	}
+	colored_emblem = {
+		texture = "ce_anb_phoenix.dds"
+		color1 = "eborthili_gold"
+		color2 = "eborthili_gold"
+		instance = { scale = { 0.18 0.18 }	position = { 0.45 0.6 }	}
+	}
+}
+sub_dove = {
+	#pattern = "pattern_horizontal_split_01.tga"
+	color1 = "damerian_blue"
+	color2 = "damerian_white"
+
+	colored_emblem = {
+		texture = "ce_anb_dove_branch.dds"
+		color1 = "green"
+		color2 = "green"
+		instance = { scale = { 1.0 1.0 }	position = { 0.5 0.5 }	}			
+	}
+	colored_emblem = {
+		texture = "ce_anb_dove.dds"
+		color1 = "damerian_white"
+		color2 = "grey"
+		color3 = "black"
+		instance = { scale = { 1.0 1.0 }	position = { 0.5 0.5 }	}			
+	}
+}
+sub_anb_ermine_pattern = { #doesn't really work the way it would be nice for it to work sadly
+	#pattern = "pattern_horizontal_split_01.tga"
+	color1 = "black"
+
+	@ermine_scale = 0.2
+	colored_emblem = {
+		texture = "ce_anb_ermine_spot.dds"
+		color1 = "black"
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[0/12] @[0/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[2/12] @[0/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[4/12] @[0/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[6/12] @[0/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[8/12] @[0/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[10/12] @[0/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[12/12] @[0/6] }	}
+
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[1/12] @[1/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[3/12] @[1/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[5/12] @[1/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[7/12] @[1/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[9/12] @[1/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[11/12] @[1/6] }	}
+
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[0/12] @[2/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[2/12] @[2/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[4/12] @[2/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[6/12] @[2/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[8/12] @[2/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[10/12] @[2/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[12/12] @[2/6] }	}
+
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[1/12] @[3/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[3/12] @[3/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[5/12] @[3/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[7/12] @[3/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[9/12] @[3/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[11/12] @[3/6] }	}
+
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[0/12] @[4/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[2/12] @[4/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[4/12] @[4/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[6/12] @[4/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[8/12] @[4/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[10/12] @[4/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[12/12] @[4/6] }	}
+
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[1/12] @[5/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[3/12] @[5/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[5/12] @[5/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[7/12] @[5/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[9/12] @[5/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[11/12] @[5/6] }	}
+
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[0/12] @[6/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[2/12] @[6/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[4/12] @[6/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[6/12] @[6/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[8/12] @[6/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[10/12] @[6/6] }	}
+		instance = { scale = { @ermine_scale @ermine_scale }	position = { @[12/12] @[6/6] }	}
+	}
+}
+sub_ranger_stars = {
+	colored_emblem = {
+		texture = "ce_star_05.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 }	position = { 0.825 0.5 }	}			
+	}
+}
+sub_ranger_stars_2 = {
+	colored_emblem = {
+		texture = "ce_star_05.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.45 0.45 }	position = { 0.825 0.25 }	}
+		instance = { scale = { 0.45 0.45 }	position = { 0.825 0.75 }	}
+	}
+}
+sub_ranger_stars_3 = {
+	colored_emblem = {
+		texture = "ce_star_05.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.4 0.4 }	position = { 0.825 0.2 }	}
+		instance = { scale = { 0.4 0.4 }	position = { 0.825 0.5 }	}
+		instance = { scale = { 0.4 0.4 }	position = { 0.825 0.8 }	}
+	}
+}
+sub_ranger_stars_4 = {
+	colored_emblem = {
+		texture = "ce_star_05.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.3 0.3 }	position = { 0.775 0.2 }	}
+		instance = { scale = { 0.3 0.3 }	position = { 0.875 0.4 }	}
+		instance = { scale = { 0.3 0.3 }	position = { 0.775 0.6 }	}
+		instance = { scale = { 0.3 0.3 }	position = { 0.875 0.8 }	}
+	}
+}
+sub_ranger_stars_5 = {
+	colored_emblem = {
+		texture = "ce_star_05.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.3 0.3 }	position = { 0.9 0.2 }	}
+		instance = { scale = { 0.3 0.3 }	position = { 0.75 0.35 }	}
+		instance = { scale = { 0.3 0.3 }	position = { 0.9 0.5 }	}
+		instance = { scale = { 0.3 0.3 }	position = { 0.75 0.65 }	}
+		instance = { scale = { 0.3 0.3 }	position = { 0.9 0.8 }	}
+	}
+}
+sub_ranger_stars_6 = {
+	colored_emblem = {
+		texture = "ce_star_05.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.25 0.25 }	position = { 0.9 0.2 }	}
+		instance = { scale = { 0.25 0.25 }	position = { 0.9 0.5 }	}
+		instance = { scale = { 0.25 0.25 }	position = { 0.9 0.8 }	}
+		instance = { scale = { 0.25 0.25 }	position = { 0.75 0.2 }	}
+		instance = { scale = { 0.25 0.25 }	position = { 0.75 0.5 }	}
+		instance = { scale = { 0.25 0.25 }	position = { 0.75 0.8 }	}
+	}
+}
+sub_ranger_stars_7 = {
+	colored_emblem = {
+		texture = "ce_star_05.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.25 0.25 }	position = { 0.9 0.2 }	}
+		instance = { scale = { 0.25 0.25 }	position = { 0.9 0.4 }	}
+		instance = { scale = { 0.25 0.25 }	position = { 0.9 0.6 }	}
+		instance = { scale = { 0.25 0.25 }	position = { 0.9 0.8 }	}
+		instance = { scale = { 0.25 0.25 }	position = { 0.75 0.3 }	}
+		instance = { scale = { 0.25 0.25 }	position = { 0.75 0.5 }	}
+		instance = { scale = { 0.25 0.25 }	position = { 0.75 0.7 }	}
+	}
+}

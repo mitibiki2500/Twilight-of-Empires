@@ -1,0 +1,436 @@
+﻿B86_oloris_redsun = {
+	first_name = Oloris
+	last_name = Redsun
+	historical = yes
+	culture = cu:maldorian_elf
+	home_region = STATE_SERPENTSHEAD
+	interest_group = ig_industrialists
+	ideology = ideology_venaanist
+	traits = {
+		ambitious
+		basic_entrepreneur
+	}
+    executive_usage = {
+		country_trigger = {
+			always = yes
+		}
+        company_trigger = {
+            is_company_type = company_type:company_redsun_crystals
+        }
+        earliest_usage_date = 1820.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+}
+
+B86_iwandal_starweaver= {
+	first_name = Iwandal
+	last_name = Starweaver
+	historical = yes
+	culture = cu:caamas
+	home_region = STATE_MURDKATHER
+	interest_group = ig_petty_bourgeoisie
+	ideology = ideology_moderate
+	traits = {
+		meticulous
+		basic_entrepreneur
+	}
+    executive_usage = {
+		country_trigger = {
+			always = yes
+		}
+        company_trigger = {
+            is_company_type = company_type:company_iwandal_starweaver
+        }
+        earliest_usage_date = 1820.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+}
+
+B39_jeborad_ancovaci = {
+	first_name = Jeborad
+	last_name = Ancovaci
+	historical = yes
+	culture = cu:dolindhan
+	home_region = STATE_USLAD
+	interest_group = ig_industrialists
+	ideology = ideology_market_liberal
+	traits = {
+		ambitious
+		basic_diplomat
+		basic_entrepreneur
+	}
+    executive_usage = {
+		country_trigger = {
+			always = yes
+		}
+        company_trigger = {
+            is_company_type = company_type:company_ancovaci
+        }
+        earliest_usage_date = 1820.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+}
+
+B91_simon_buck = {
+	first_name = Simon
+	last_name = Buck
+	historical = yes
+	culture = cu:dustman
+	home_region = STATE_TELLUMTIR
+	interest_group = ig_industrialists
+	ideology = ideology_moderate
+	traits = {
+		engineer
+		basic_entrepreneur
+	}
+    executive_usage = {
+		country_trigger = {
+			OR = {
+				AND = {
+					exists = c:B91
+					this = c:B91
+				}
+				AND = {
+					exists = c:B44
+					this = c:B44
+				}
+			}
+		}
+        company_trigger = {
+            is_company_type = company_type:company_bucks
+        }
+        earliest_usage_date = 1820.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+}
+
+B34_alfons_hirn = {
+	first_name = Alfons
+	last_name = Hirn
+	historical = yes
+	culture = cu:steadsman
+	home_region = STATE_PLUMSTEAD
+	interest_group = ig_industrialists
+	ideology = ideology_moderate
+	traits = {
+		ruthless
+		basic_political_operator
+		basic_entrepreneur
+	}
+    executive_usage = {
+		country_trigger = {
+			always = yes
+		}
+        company_trigger = {
+            is_company_type = company_type:company_big_corn
+        }
+        earliest_usage_date = 1820.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+}
+
+B97_pentrjon_brelynn = {
+	first_name = Pentrjon
+	last_name = Brelynn
+	historical = yes
+	culture = cu:dolindhan
+	religion = rel:ynn_river_worship
+	home_region = STATE_BRELAR
+	interest_group = ig_industrialists
+	ideology = ideology_nihilist
+    traits = {
+		cautious
+		basic_entrepreneur
+	}
+    executive_usage = {
+		country_trigger = {
+			always = yes
+		}
+        company_trigger = {
+            is_company_type = company_type:company_brenifim
+        }
+        earliest_usage_date = 1820.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+}
+
+B29_boreys_hradavych = {
+	first_name = Boreys
+	last_name = Hradavych
+	historical = yes
+	culture = cu:sarda
+	home_region = STATE_YRISRAD
+	interest_group = ig_industrialists
+	ideology = ideology_modernizer_leader
+	traits = {
+		honorable
+		literary
+		basic_entrepreneur
+	}
+    executive_usage = {
+		country_trigger = {
+			exists = c:B29
+			this = c:B29
+		}
+        company_trigger = {
+            is_company_type = company_type:company_sarda_imperial_company
+        }
+        earliest_usage_date = 1820.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+}
+
+B09_avery_grey = {
+	first_name = Avery
+	last_name = Grey
+	historical = yes
+	culture = cu:concordian
+	home_region = STATE_ISOBELIN
+	interest_group = ig_industrialists
+	ideology = ideology_market_liberal
+	traits = {
+		cruel
+		basic_entrepreneur
+	}
+    executive_usage = {
+		country_trigger = {
+			always = yes
+		}
+        company_trigger = {
+            is_company_type = company_type:company_west_aelantir_rubber
+        }
+        earliest_usage_date = 1820.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+}
+
+B98_alfred_waller = {
+	first_name = Alfred
+	last_name = Waller
+	historical = yes
+	culture = cu:concordian
+	home_region = STATE_VALORPOINT
+	interest_group = ig_industrialists
+	ideology = ideology_positivist
+	traits = {
+		innovative
+		ambitious
+		basic_entrepreneur
+	}
+    executive_usage = {
+		country_trigger = {
+			exists = c:B98
+			this = c:B98
+		}
+        company_trigger = {
+            is_company_type = company_type:company_gsm
+        }
+        earliest_usage_date = 1885.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+}
+
+B98_ricain_derdil = {
+	first_name = Ricain
+	last_name = Derdil
+	historical = yes
+	culture = cu:concordian
+	home_region = STATE_CESTIRMARK
+	interest_group = ig_landowners
+	ideology = ideology_protectionist
+	traits = {
+		cautious
+		meticulous
+		basic_entrepreneur
+	}
+    executive_usage = {
+		country_trigger = {
+			exists = c:B98
+			this = c:B98
+		}
+        company_trigger = {
+            is_company_type = company_type:company_derdil
+        }
+        earliest_usage_date = 1870.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+}
+
+B98_isabel_aura = {
+	first_name = Isabel
+	last_name = Aura
+	historical = yes
+	female = yes
+	culture = cu:concordian
+	home_region = STATE_ISOBELIN
+	interest_group = ig_intelligentsia
+	ideology = ideology_market_liberal
+	traits = {
+		aesthete
+		charismatic
+		arrogant
+		basic_entrepreneur
+	}
+    executive_usage = {
+		country_trigger = {
+			exists = c:B98
+			this = c:B98
+		}
+        company_trigger = {
+            is_company_type = company_type:company_concord_pictures
+        }
+        earliest_usage_date = 1905.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+}
+
+#good friends with Isabel above
+B98_emil_goreman = {
+	first_name = Emil
+	last_name = Goreman
+	historical = yes
+	culture = cu:gawedi
+	home_region = STATE_LOWER_ALEN
+	interest_group = ig_industrialists
+	ideology = ideology_authoritarian
+	traits = {
+		ambitious
+		basic_political_operator
+		powerful_mage
+		basic_entrepreneur
+	}
+	agitator_usage = {
+		country_trigger = {
+			OR = {
+				c:B98 ?= this
+				c:B23 ?= this
+				c:B18 ?= this
+			}
+		}
+        interest_group_trigger = {
+            is_marginal = no
+            is_interest_group_type = ig_industrialists
+        }
+		earliest_usage_date = 1895.1.1
+        latest_usage_date = 1936.1.1
+		chance = 50
+	}
+    executive_usage = {
+		country_trigger = {
+			always = yes
+		}
+        company_trigger = {
+            is_company_type = company_type:company_aesrialt
+        }
+        earliest_usage_date = 1895.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+	on_created = {
+        if = {
+            limit = {
+                owner = {
+                    has_technology_researched = mass_propaganda
+                }
+            }
+            set_ideology = ideology:ideology_fascist
+        }
+    }
+}
+
+B14_alfonse_arith = {
+	first_name = Alfonse
+	last_name = Arith
+	historical = yes
+	culture = cu:endralliander
+	religion = rel:ravelian
+	home_region = STATE_JERCEL
+	interest_group = ig_industrialists
+	ideology = ideology_protectionist
+	traits = {
+		innovative
+		basic_entrepreneur
+	}
+    executive_usage = {
+		country_trigger = {
+			exists = c:B14
+			this = c:B14
+		}
+        company_trigger = {
+            is_company_type = company_type:company_alfonse_arith
+        }
+        earliest_usage_date = 1852.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+}
+
+B07_zurzumex_firebelly = {
+	first_name = Zurzumex
+	last_name = Firebelly
+	historical = yes
+	culture = cu:steelscale_kobold
+	religion = rel:the_thought
+	home_region = STATE_ZURZUMEXIA
+	interest_group = ig_industrialists
+	ideology = ideology_moderate
+	traits = {
+		innovative
+		explorer
+		basic_entrepreneur
+	}
+    executive_usage = {
+		country_trigger = {
+			exists = c:B07
+			this = c:B07
+		}
+        company_trigger = {
+            is_company_type = company_type:company_firebelly_alchemicals
+        }
+        earliest_usage_date = 1820.1.1
+        latest_usage_date = 1936.1.1
+        chance = 100
+    }
+}
+
+A01_ricard_sil_prestenn = {
+	first_name = Ricard
+	last_name = sil_Prestenn
+	historical = yes
+	dna = dna_ricard_sil_prestenn
+	birth_date = 1773.3.21
+	culture = cu:esmari
+	religion = rel:ravelian
+	home_region = STATE_ESTALLEN
+	interest_group = ig_industrialists
+	ideology = ideology_market_liberal
+	traits = {
+		experienced_entrepreneur
+		compliant
+		charismatic
+		powerful_mage
+	}
+	executive_usage = {
+		country_trigger = {
+			exists = c:A01
+			this = c:A01
+		}
+		company_trigger = {
+			is_company_type = company_type:company_prestenn_prismatics
+		}
+		earliest_usage_date = 1820.1.1
+		latest_usage_date = 1868.1.1
+		chance = 100
+	}
+}

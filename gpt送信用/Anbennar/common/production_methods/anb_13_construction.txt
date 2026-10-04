@@ -1,0 +1,113 @@
+﻿pm_no_magical_construction = {
+	texture = "gfx/interface/icons/production_method_icons/handwork.dds"
+}
+
+pm_fabrication_spells_buildings = {
+	texture = "gfx/interface/icons/production_method_icons/wall.dds"
+	
+	unlocking_technologies = {
+		magocracy
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_iron_add = -25
+			goods_input_magical_reagents_add = 28
+		}
+
+		level_scaled = {
+			building_employment_mages_add = 500
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_construction_mult = 0.002
+		}
+	}
+}
+
+pm_mimic_precursor_steel_buildings = {
+	texture = "gfx/interface/icons/production_method_icons/scaffolding.dds"
+
+	unlocking_technologies = {
+		alchemical_alloys
+	}
+	
+	unlocking_production_methods = {
+		pm_steel_frame_buildings
+		pm_arc_welded_buildings
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_steel_add = -25
+			goods_input_flawless_metal_add = 18
+		} 
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+			building_employment_laborers_add = -250
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_construction_mult = 0.002
+		}
+	}
+}
+
+
+# polk: these lack icons and aren't currently used
+# pm_builder_automata = { 
+# 	texture = "gfx/interface/icons/production_method_icons/builder_automata.dds"
+	
+# 	unlocking_laws = {
+# 		law_mechanim_as_property
+# 	}
+# 	unlocking_technologies = {
+# 		insyaan_analytical_engine			
+# 	}
+
+# 	building_modifiers = {
+# 		workforce_scaled = {
+# 			# input goods
+# 			goods_input_automata_add = 6	
+# 		}
+
+# 		level_scaled = {
+# 			building_employment_laborers_add = -300
+# 		}
+# 	}
+# }
+
+# pm_arithmaton_engineering = {
+# 	texture = "gfx/interface/icons/production_method_icons/arithmaton.dds"
+	
+# 	unlocking_laws = {
+# 		law_mechanim_as_property
+# 	}
+
+# 	unlocking_technologies = {
+# 		thinking_machinery			
+# 	}
+    
+
+
+# 	building_modifiers = {
+# 		workforce_scaled = {
+# 			# input goods
+# 			goods_input_automata_add = 12
+# 		}
+
+# 		level_scaled = {
+# 			building_employment_laborers_add = -350
+# 			building_employment_machinists_add = -150
+# 			building_employment_clerks_add = -100
+# 		}
+# 	}
+# }

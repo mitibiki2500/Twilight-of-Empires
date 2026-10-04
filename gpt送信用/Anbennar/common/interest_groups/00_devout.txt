@@ -1,0 +1,1254 @@
+﻿# Anbennar - added anbennar specifics
+
+ig_devout = {
+	color = hsv{ 0.50 0.30 0.67 }
+	texture = "gfx/interface/icons/ig_icons/devout.dds"
+	layer = "revolution_dynamic_devout"
+	index = 1
+
+	ideologies = {
+		ideology_pious
+		ideology_moralist
+		ideology_patriarchal
+	}
+	
+	character_ideologies = {
+		ideology_moderate
+		ideology_traditionalist
+		ideology_traditionalist_equal
+		#ideology_legitimist
+	}
+
+	enable = {
+		always = yes
+	}
+
+	# Deprecated; use on_enable effect to assign traits instead
+	traits = {
+		ig_trait_be_fruitful_and_multiply
+		ig_trait_divine_right
+		ig_trait_pious_fiction
+	}
+
+	on_enable = {
+		ig:ig_devout = {
+			#Anbennar - added our own already. need to do our own
+			if = {
+				limit = {
+					owner = {
+						country_has_state_religion = rel:corinite
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_pious_fiction
+				set_ig_trait = ig_trait:ig_trait_divine_right
+				set_ig_trait = ig_trait:ig_trait_work_ethic
+			}
+			else_if = {
+				limit = {
+					owner = {
+						country_has_state_religion = rel:ravelian
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_pious_fiction
+				set_ig_trait = ig_trait:ig_trait_divine_right
+				set_ig_trait = ig_trait:ig_trait_be_fruitful_and_multiply
+			}
+			else_if = {
+				limit = {
+					owner = {
+						country_has_state_religion = rel:the_jadd
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_pious_fiction
+				set_ig_trait = ig_trait:ig_trait_divine_right
+				set_ig_trait = ig_trait:ig_trait_harmony 
+			}
+			else_if = {
+				limit = {
+					owner = {
+						country_has_state_religion = rel:kalyin_worship
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_kalyin_inequality
+				set_ig_trait = ig_trait:ig_trait_kalyin_one_truth
+				set_ig_trait = ig_trait:ig_trait_kalyin_praxes
+			}
+			else_if = {
+				limit = {
+					owner = {
+						country_has_state_religion = rel:runefather_worship
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_purge_the_heretic
+				set_ig_trait = ig_trait:ig_trait_heed_his_word
+				set_ig_trait = ig_trait:ig_trait_to_find_salvation
+			}
+			else_if = {
+				limit = {
+					owner = {
+						country_has_state_religion = rel:devouring_path
+					}
+				}
+
+				set_interest_group_name = ig_devouring_path
+
+				set_ig_trait = ig_trait:ig_trait_chi_harvest
+				set_ig_trait = ig_trait:ig_trait_ancient_wisdom
+				set_ig_trait = ig_trait:ig_trait_knowledge_power
+			}
+			#Cyranvar
+			else_if = {
+				limit = {
+					owner = { c:A79 ?= this }
+				}
+				set_interest_group_name = ig_cyranvar_druid_circles
+				remove_ideology = ideology_pious
+				remove_ideology = ideology_moralist
+				remove_ideology = ideology_patriarchal
+
+				add_ideology = ideology_cyranvar_anti_industrialist
+				add_ideology = ideology_cyranvar_syncretic
+				add_ideology = ideology_legal_equality
+
+				set_ig_trait = ig_trait:ig_trait_be_fruitful_and_multiply
+				set_ig_trait = ig_trait:ig_trait_divine_right
+				set_ig_trait = ig_trait:ig_trait_pious_fiction
+			}
+			
+			else_if = {
+				limit = {
+					owner = {
+						country_has_state_religion = rel:sky_domain
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_pious_fiction
+				set_ig_trait = ig_trait:ig_trait_guided_rains
+				set_ig_trait = ig_trait:ig_trait_be_fruitful_and_multiply
+			}
+			
+			else_if = {
+				limit = {
+					owner = {
+						country_has_state_religion = rel:xhazobkult
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_unchecked_sacrifices
+				set_ig_trait = ig_trait:ig_trait_demonic_rituals
+				set_ig_trait = ig_trait:ig_trait_xhazobs_chosen
+			}
+			
+			else_if = {
+				limit = {
+					owner = {
+						country_has_state_religion = rel:zaradyrra
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_the_bloodcurse
+				set_ig_trait = ig_trait:ig_trait_spreading_the_beauty
+				set_ig_trait = ig_trait:ig_trait_art_of_war
+			}
+			
+			else_if = {
+				limit = {
+					owner = {
+						country_has_state_religion = rel:anzalkatsa
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_disloyal_nagas
+				set_ig_trait = ig_trait:ig_trait_reclaiming_taneyas
+				set_ig_trait = ig_trait:ig_trait_prophecy_fulfilled
+			}
+			
+			else_if = {
+				limit = {
+					owner = {
+						country_has_state_religion = rel:mother_akasik
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_shattered_orders
+				set_ig_trait = ig_trait:ig_trait_elemental_binders
+				set_ig_trait = ig_trait:ig_trait_akasik_will
+			}
+			
+			else = {
+				set_ig_trait = ig_trait:ig_trait_pious_fiction
+				set_ig_trait = ig_trait:ig_trait_divine_right
+				set_ig_trait = ig_trait:ig_trait_be_fruitful_and_multiply
+			}
+		}
+		
+		### Specific
+
+		### Specific - Anbennar
+		# Harpies
+		if = {
+			limit = {
+				OR = {
+					c:F13 ?= this
+					c:L33 ?= this
+					c:L31 ?= this
+					c:L54 ?= this
+					c:L55 ?= this
+					c:L29 ?= this
+					c:A11 ?= this
+					c:L22 ?= this
+				}
+			}
+			ig:ig_devout = {
+				remove_ideology = ideology_patriarchal
+				add_ideology = ideology_matriarchal
+			}
+		}
+		# Ravelian Rectorate rename
+		else_if = {
+			limit = {
+				c:A33 ?= this
+				country_has_state_religion = rel:ravelian
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_rectorate
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_ravelian_moralist
+			}
+		}
+		# Ravelian
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:ravelian
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_ravelian_church
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_ravelian_moralist
+			}
+		}
+		# Corinite
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:corinite
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_corinite_faithful
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_corinite_moralist
+				remove_ideology = ideology_patriarchal
+				add_ideology = ideology_corinite_patriarchal
+				add_ideology = ideology_anti_slavery
+			}
+		}
+		# Regent Court Neratica
+		else_if = {
+			limit = {
+				c:B27 ?= this	#Neratica
+				country_has_state_religion = rel:regent_court
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_neratic_temple
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_neratic_moralist
+			}
+		}
+		# Regent Court Ibevar
+		else_if = {
+			limit = {
+				c:A20 ?= this	#Ibevar
+				country_has_state_religion = rel:regent_court
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_munasian_temple
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_adeanic_moralist
+			}
+		}
+		# Regent Court Dwarves
+		else_if = {
+			limit = {
+				OR = {
+					c:A37 ?= this	#Silverforge
+					c:D08 ?= this	#Khugdihr
+				}
+				country_has_state_religion = rel:regent_court
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_balgaric_temple
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_adeanic_moralist
+			}
+		}
+		# Regent Court Whiterose Court
+		else_if = {
+			limit = {
+				c:A03 ?= this	#Lorent
+				country_has_state_religion = rel:regent_court
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_whiterose_court
+				remove_ideology = ideology_moralist
+				remove_ideology = ideology_patriarchal
+				add_ideology = ideology_whiterose_piety
+				add_ideology = ideology_minaran_equality
+			}
+		}
+		# Regent Court Adeanic
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:regent_court
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_adeanic_temples
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_adeanic_moralist
+			}
+		}
+		#Truinic
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:kalyin_worship
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_lake_servants
+				remove_ideology = ideology_patriarchal
+				add_ideology = ideology_egalitarian
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_triunic_moralist
+			}
+		}
+		# Reformed Ynn River Worship
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:ynn_river_worship
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_river_priests
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_reformed_yrw
+			}
+		}
+		# Drozma Tur
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:drozma_tur
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_turvalk
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_voice_of_varlengeilt
+			}
+		}
+		# Eordand Fey Worship
+		else_if = {
+			limit = {
+				OR = {
+					country_has_state_religion = rel:spring_court
+					country_has_state_religion = rel:summer_court
+					country_has_state_religion = rel:autumn_court
+					country_has_state_religion = rel:winter_court
+					country_has_state_religion = rel:eordellon
+				}
+			}
+			ig:ig_devout = {
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_seasonal_courts
+			}
+		}
+		#Godlost
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:godlost
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_teachers
+				remove_ideology = ideology_patriarchal
+				add_ideology = ideology_patriotic
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_command_teachings
+			}
+		}
+		# Jadd
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:the_jadd
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_jadd_temples
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_jadd_moralist
+				remove_ideology = ideology_patriarchal
+				add_ideology = ideology_jaddari_teachings
+				add_ideology = ideology_anti_slavery
+			}
+		}
+		#Ancestor Worship
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:ancestor_worship
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_stone_keepers
+				add_ideology = ideology_anti_slavery
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_diversity_of_stone
+			}
+		}
+		#Dwarven Pantheon
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:dwarven_pantheon
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_hearthpriests
+				add_ideology = ideology_anti_slavery
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_ancient_pantheon
+			}
+		}
+		#Runefather Worship
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:runefather_worship
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_groedi_az_an
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_runefathers_will
+				remove_ideology = ideology_pious
+				add_ideology = ideology_runefathers_wisdom
+			}
+		}
+		#Goblin Shamanism
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:goblinic_shamanism
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_goblin_church
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_many_gods
+			}
+		}
+		#Nimrithan
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:nimrithan
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_red_priesthood
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_father_nimrith
+			}
+		}
+		#Old Dookan
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:old_dookan
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_shaman_council
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_dookans_might
+			}
+		}
+		#Elikhetist
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:elikhetist
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_elikhetist_priesthood
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_elikhet_teachings
+			}
+		}
+		#Aakhetist
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:aakhetist
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_bronze_priesthood
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_aakhet_teachings
+			}
+		}
+		#Sky Domain
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:sky_domain
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_semayebaka
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_amilak_truth
+				
+			}
+		}
+		#Rinta Seekers
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:rinta_seekers
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_house_wisdom
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_righteous_knowledge
+			}
+		}
+		#Mother Akasik
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:mother_akasik
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_dakamsage
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_ansesheg_imma
+				add_ideology = ideology_anti_slavery
+			}
+		}
+		#Nakavy Avo
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:nakavy_avo
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_shrine_priesthood
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_great_family
+			}
+		}
+		#Anzalkatsa
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:anzalkatsa
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_naga
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_final_prophecy
+			}
+		}
+		#Zaradyrra
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:zaradyrra
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_artist_guild
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_artistic_ascendancy
+			}
+		}
+		#Shadow Pact
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:shadow_pact
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_shadow_cabal
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_inevitable_fate
+			}
+		}
+		#Fangaulan Pantheon
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:fangaulan_pantheon
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_jelli
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_totem_worship
+			}
+		}
+		#Beast Memory
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:beast_memory
+			}
+			ig:ig_devout = {
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_great_beasts
+			}
+		}
+		#Ardimyan Rite
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:ardimyan_rite
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_spirit_church
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_lentidud_poderosa
+			}
+		}
+		
+		
+		#The Thought
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:the_thought
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_philosophers
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_thought_moralist
+				remove_ideology = ideology_pious
+				add_ideology = ideology_scholarly
+			}
+		}
+		#Kvangahga
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:kvangahga
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_rram_xertags
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_rram_xertis
+			}
+		}
+		#Kvangahga
+		else_if = {
+			limit = {
+				country_has_state_religion = rel:xhazobkult
+			}
+			ig:ig_devout = {
+				set_interest_group_name = ig_gexhdanags
+				remove_ideology = ideology_moralist
+				add_ideology = ideology_gexhdan
+			}
+		}
+		#Hive Mind Obligate
+		if = {
+			limit = {
+				owner = { c:C14 ?= this }
+			}
+			ig:ig_devout = {
+				remove_ideology = ideology_patriarchal
+				add_ideology = ideology_hive_mind_obligate
+			}
+		}
+		### Corporatism
+		if = {
+			limit = {
+				has_technology_researched = corporatism
+			}
+			ig:ig_devout = {
+				remove_ideology = ideology_pious
+				add_ideology = ideology_corporatist
+			}
+		}
+	}
+	on_disable = {}
+	priority_cultures = {}
+	on_character_ig_membership = {
+		if = {
+			limit = {
+				NOT = {
+					owner = {
+						has_law = law_type:law_state_atheism
+					}
+				}
+			}
+			change_character_religion = scope:interest_group.owner.religion
+		}
+		else = {
+			change_character_religion = scope:interest_group.owner.country_definition.religion
+		}
+	}
+
+
+	pop_potential = {
+		has_state_religion = yes
+		NOT = {
+			has_pop_religion = atheist
+		}
+	}
+
+	pop_weight = {
+	
+		#Anbennar
+		add = {
+			desc = "POP_MAGES"
+			if = {
+				limit = {
+					OR = {
+						is_pop_type = archmages
+						is_pop_type = mages
+					}
+				}
+				value = 0
+				if = {
+					limit = { owner = { has_technology_researched = fourknowing_magical_tradition } }
+					add = 30
+				}
+				if = {
+					limit = { owner = { has_technology_researched = chi_cultivation_magical_tradition } }
+					add = 10
+				}
+				if = {
+					limit = { owner = { has_technology_researched = druidic_magical_tradition } }
+					add = 10 
+				}
+				if = {
+					limit = { owner = { has_technology_researched = shamanism_magical_tradition } }
+					add = 10 
+				}
+				if = {
+					limit = { owner = { has_technology_researched = kheterata_magical_tradition } }
+					add = 10 
+				}
+			}
+		}
+		add = {
+			desc = "POP_BASE_ATTRACTION"
+			value = 25
+		}
+
+		add = {
+			desc = "POP_CLERGYMEN"
+			if = {
+				limit = {
+					is_pop_type = clergymen
+				}
+				value = 250
+			}
+		}
+
+		add = {
+			desc = "POP_PEASANTS"
+			if = {
+				limit = {
+					is_pop_type = peasants
+				}
+				value = 100
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_state_atheism
+				}
+			}
+			multiply = {
+				desc = "STATE_ATHEISM_LAW"
+				value = 0.1
+			}
+		}
+		
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_state_religion
+				}
+			}
+			multiply = {
+				desc = "STATE_RELIGION_LAW"
+				value = 1.5
+			}
+		}
+		
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_freedom_of_conscience
+				}
+			}
+			multiply = {
+				desc = "FREEDOM_OF_CONSCIENCE_LAW"
+				value = 1.25
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_religious_schools
+				}
+			}
+			multiply = {
+				desc = "RELIGIOUS_SCHOOLS_LAW"
+				value = owner.institution:institution_schools.investment
+				divide = 10
+				add = 1
+			}
+		}
+		
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = corporatism
+					NOT = {
+						has_law_or_variant = law_type:law_total_separation
+						has_law_or_variant = law_type:law_state_atheism
+					}
+				}
+			}
+			multiply = {
+				desc = "CORPORATISM_TECH"
+				value = 1.25
+			}
+		}
+
+		add = {
+			desc = "POP_LITERACY"
+			this = {
+				value = literacy_rate
+				multiply = -15
+			}
+		}
+
+		if = { #anbennar
+			limit = {
+				OR = {
+					is_pop_type = archmages
+					is_pop_type = mages
+				} #in this section and not mage section b/c it multiplies the whole, not the part
+				owner = { has_law = law_type:law_artifice_banned }
+			}
+			multiply = {
+				desc = "ARTIFICE_BANNED_DEVOUT"
+				value = 2
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_pop_type = archmages
+					is_pop_type = mages
+				} #in this section and not mage section b/c it multiplies the whole, not the part
+				owner = { has_law = law_type:law_nation_of_magic }
+			}
+			multiply = {
+				desc = "NATION_OF_MAGIC_DEVOUT"
+				value = 1.5
+			}			
+		}
+
+		multiply = {
+			desc = "LEADER_POPULARITY"
+			scope:interest_group ?= {
+				leader ?= {
+					value = popularity
+					multiply = 0.0025
+					add = 1
+					max = 1.25
+					min = 0.75
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				scope:interest_group ?= {
+					is_in_government = yes
+				}
+			}
+			multiply = {
+				desc = "IN_GOVERNMENT_ATTRACTION"
+				value = 1
+				add = scope:interest_group.modifier:interest_group_in_government_attraction_mult
+				min = 0
+			}
+		}
+
+		if = {
+			limit = {
+				scope:interest_group ?= {
+					is_in_government = yes
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_LOYALISTS"
+				value = pop_loyalist_fraction
+				divide = 4
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group ?= {
+					is_in_government = no
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_RADICALS"
+				value = pop_radical_fraction
+				divide = 4
+				add = 1
+			}
+		}
+	}
+
+	monarch_weight = {
+		value = 1.0
+		# Monarch is not likely to adopt a marginal IG
+		if = {
+			limit = {
+				ig_counts_as_marginal = yes
+			}
+			multiply = {
+				value = 0.1
+			}
+		}
+		# Monarch is more likely to adopt a Powerful IG
+		if = {
+			limit = {
+				is_powerful = yes
+			}
+			multiply = {
+				value = 2
+			}
+		}
+		# More likely with State Religion
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_state_religion
+				}
+			}
+			multiply = {
+				value = 2
+			}
+		}
+		# Less likely without State Religion
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_law_or_variant = law_type:law_state_religion }
+				}
+			}
+			multiply = {
+				value = 0.25
+			}
+		}
+		# Basically impossible with State Atheism
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_state_atheism
+				}
+			}
+			multiply = {
+				value = 0
+			}
+		}
+		# Muslims and Theravada more likely to adopt Devout
+		#if = {
+		#	limit = {
+		#		OR = {
+		#			owner.religion = rel:sunni
+		#			owner.religion = rel:shiite
+		#			owner.religion = rel:ibadi
+		#			owner.religion = rel:theravada
+		#		}
+		#	}
+		#	multiply = 2
+		#}
+	}
+
+	agitator_weight = {
+		# Agitators more likely to come from populist IG's rather than elitist
+		value = 0.5
+		# Agitators will never be part of a marginalized IG
+		if = {
+			limit = {
+				owner.ig:ig_devout ?= {
+					ig_counts_as_marginal = yes
+				}
+			}
+			multiply = {
+				value = 0
+			}
+		}
+	}
+
+	commander_weight = {
+		value = 1.0
+	}
+	
+	magnate_weight = {
+		value = 1.0
+	}
+
+	executive_weight = {
+		value = 1.0
+	}
+
+	noble_chance = {
+		value = 0.5
+	}
+
+	female_commander_chance = {
+		value = 0.0
+		#Anbennar
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+	}
+
+	female_executive_chance = {
+		value = 0.0
+		#Anbennar
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+	}
+	
+	female_monarch_chance = {
+		value = 0.05
+		#Anbennar
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+	}
+
+	female_politician_chance = {
+		value = 0.0
+		#Anbennar
+		if = {
+			limit = { #variable from country history gets set after IGs being loaded, this need to be done for it to work
+				owner = {
+					OR = {
+						c:F13 ?= this
+						c:L33 ?= this
+						c:L31 ?= this
+						c:L30 ?= this
+						c:L54 ?= this
+						c:L55 ?= this
+						c:L29 ?= this
+						c:A11 ?= this
+						c:L22 ?= this
+					}
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.01
+			}
+		}
+	}
+
+	female_agitator_chance = {
+		value = 0.01
+		#Anbennar
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.49
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_own_property
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.01
+			}
+		}	
+		
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_women_in_the_workplace
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.01
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.01
+			}
+		}		
+	}
+
+	# Multiplier applied to the weight for an appropriate commander will be selected from the character pool to lead the IG
+	# root = interest group
+	commander_leader_weight = {
+		value = 0.5
+	}
+
+	# Multiplier applied to the weight for an appropriate magnate will be selected from the character pool to lead the IG
+	# root = interest group
+	magnate_leader_weight = {
+		value = 1.0
+		#if = {
+		#	limit = {
+		#		c:JAP ?= owner
+		#		NOT = {
+		#			has_variable = japan_restoration_complete
+		#		}
+		#	}
+		#	add = 5
+		#}
+	}
+
+	# Multiplier applied to the weight for an appropriate executive will be selected from the character pool to lead the IG
+	# root = interest group
+	executive_leader_weight = {
+		value = 0.25
+	}
+}

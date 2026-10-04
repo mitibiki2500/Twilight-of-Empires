@@ -1,0 +1,156 @@
+﻿namespace = damestear
+
+# damestear.1 = { #damestear discovered in a state
+# 	type = state_event
+# 	placement = ROOT
+# 	title = damestear.1.t
+# 	desc = damestear.1.d
+# 	flavor = damestear.1.f
+
+# 	duration = 3
+
+# 	event_image = {
+# 		video = "europenorthamerica_gold_prospectors"
+# 	}
+
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+# 	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+# 	trigger = {
+# 		has_building = building_damestear_fields
+# 		NOT = { has_modifier = state_damestear_rush }
+# 	}
+
+# 	immediate = {
+# 		save_scope_as = damestear_state
+# 	}
+
+# 	option = { #move everyone there
+# 		name = damestear.1.a
+# 		default_option = yes
+# 		add_modifier = {
+# 			name = state_damestear_rush_explotation
+# 			days = short_modifier_time
+# 		}
+# 	}
+	
+# 	option = { #explote it
+# 		name = damestear.1.b
+# 		add_modifier = {
+# 			name = state_damestear_rush
+# 			days = short_modifier_time
+# 		}
+# 	}
+# }
+
+
+# damestear.2 = { #damestear fields depleted
+# 	type = state_event
+# 	placement = ROOT
+# 	title = damestear.2.t
+# 	desc = damestear.2.d
+# 	flavor = damestear.2.f
+
+# 	duration = 3
+
+# 	event_image = {
+# 		video = "europenorthamerica_gold_prospectors"
+# 	}
+
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+# 	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+# 	trigger = {
+# 		has_building = building_damestear_fields
+# 		NOT = { has_modifier = state_damestear_rush }
+# 	}
+
+# 	immediate = {
+# 		save_scope_as = damestear_no_more_state
+# 	}
+
+# 	option = { #sad
+# 		name = damestear.2.a
+# 		default_option = yes
+# 		if = {
+# 			limit = {
+# 				has_modifier = state_damestear_rush
+# 			}
+# 			remove_modifier = state_damestear_rush
+# 		}
+# 		add_modifier = {
+# 			name = state_damestear_depleted
+# 			days = short_modifier_time
+# 		}
+# 	}
+	
+# 	option = { #try to retain them
+# 		name = damestear.2.b
+# 		if = {
+# 			limit = {
+# 				has_modifier = state_damestear_rush
+# 			}
+# 			remove_modifier = state_damestear_rush
+# 		}
+# 		add_modifier = {
+# 			name = state_damestear_depleted_palliative
+# 			days = short_modifier_time
+# 		}
+# 		add_radicals_in_state = {
+# 			pop_type = laborers
+# 			value = medium_radicals
+# 		}
+# 	}
+# }
+
+# #Good Tearfall this year, increase throughput			#maybe remove for adventurers wanted
+# damestear.3 = { #damestear discovered in a state
+# 	type = state_event
+# 	placement = ROOT
+# 	title = damestear.3.t
+# 	desc = damestear.3.d
+# 	flavor = damestear.3.f
+
+# 	duration = 3
+
+# 	event_image = {
+# 		video = "europenorthamerica_gold_prospectors"
+# 	}
+
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+# 	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+# 	trigger = {
+# 		has_building = building_damestear_fields
+# 		month = 9	#Tearfall month. months is 0-11 scale
+# 		NOT = { has_modifier = state_damestear_good_showers }
+# 	}
+
+# 	immediate = {
+# 		save_scope_as = damestear_state
+# 	}
+
+# 	option = { #move everyone there
+# 		name = damestear.3.a
+# 		default_option = yes
+# 		add_modifier = {
+# 			name = state_damestear_good_showers
+# 			days = short_modifier_time
+# 		}
+# 	}
+	
+# 	option = { #explote it
+# 		name = damestear.3.b
+# 		add_modifier = {
+# 			name = state_damestear_rush_less_migration
+# 			days = short_modifier_time
+# 		}
+# 		add_modifier = {
+# 			name = state_damestear_rush_explotation
+# 			days = short_modifier_time
+# 		}
+# 	}
+# }

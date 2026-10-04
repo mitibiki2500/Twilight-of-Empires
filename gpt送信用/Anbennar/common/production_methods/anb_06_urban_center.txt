@@ -1,0 +1,260 @@
+﻿## Urban Centers
+pm_arcane_state_clergy = {	#TODO: ive disabled all of these for now because its a bit awkward mixing clergy and mages. should be its own section tbh -Jay
+	texture = "gfx/interface/icons/production_method_icons/ownership_clergy.dds"
+
+	unlocking_laws = {
+		law_state_religion
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clergymen_add = 140
+			building_employment_mages_add = 60
+		}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 1
+		}
+	}
+}
+
+pm_arcane_free_urban_clergy = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_bureacrats.dds"
+
+	unlocking_laws = {
+		law_freedom_of_conscience
+		law_total_separation
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clerks_add = 100
+			building_employment_clergymen_add = 105
+			building_employment_mages_add = 45
+		}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 1
+		}
+	}
+}
+## Art Academies
+pm_arcane_bard_college = {
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+
+	unlocking_technologies = {
+		bardic_magical_tradition
+	}
+	
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 20
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magical_reagents_add = 3
+		}
+		level_scaled = {
+			building_employment_academics_add = 1500
+			building_employment_mages_add = 500
+			building_employment_clerks_add = 2000
+			building_employment_laborers_add = 1000		
+		}
+	}
+}
+
+pm_no_magical_arts = {
+	texture = "gfx/interface/icons/production_method_icons/no_luxury_furniture.dds"
+}
+
+pm_three_dimensional_painting = {
+	texture = "gfx/interface/icons/production_method_icons/realist_art.dds"
+	unlocking_technologies = {
+		pathway_transmutation
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magical_reagents_add = 20
+
+			goods_output_fine_art_add = 10
+		}
+		level_scaled = {
+			building_employment_mages_add = 500
+		}
+	}
+}
+
+pm_moving_sculptures = {
+	texture = "gfx/interface/icons/production_method_icons/traditional_art.dds"
+	unlocking_technologies = {
+		catalytic_imbuement
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magical_reagents_add = 10
+			goods_input_flawless_metal_add = 10
+
+			goods_output_fine_art_add = 20
+		}
+		level_scaled = {
+			building_employment_mages_add = 1000
+		}
+	}
+}
+
+## Power Plants
+pm_damestear_reactor = {
+	texture = "gfx/interface/icons/production_method_icons/oil_fired_plant.dds"
+
+	unlocking_technologies = {
+		the_fifth_fundamental_force
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 75
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 25
+			goods_input_damestear_add = 50
+			goods_input_porcelain_add = 10
+			goods_output_electricity_add = 225
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 200
+			building_employment_machinists_add = 300
+			building_employment_engineers_add = 500
+		}
+	}
+}
+
+pm_automata_laborers_power_plants = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	unlocking_technologies = {
+		insyaan_analytical_engine			
+	}
+
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 6	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -200
+		}
+	}
+}
+
+pm_automata_machinists_power_plants = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+	
+	
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 10	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -200
+			building_employment_machinists_add = -300
+		}
+	}
+}
+
+## Magical Markets
+pm_no_magical_markets = {
+	texture = "gfx/interface/icons/production_method_icons/market_stalls.dds"
+}
+
+pm_adventurers_markets = {
+	texture = "gfx/interface/icons/production_method_icons/market_squares.dds"
+	unlocking_technologies = {
+		mages_in_the_workforce
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_damestear_add = 3
+			goods_input_magical_reagents_add = 3
+			goods_output_services_add = 10
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 250
+		}
+	}
+}
+
+pm_magical_item_markets = {
+	texture = "gfx/interface/icons/production_method_icons/market_squares.dds"
+	unlocking_technologies = {
+		mages_in_the_workforce
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_arcane_curios_add = 5
+			goods_input_magical_reagents_add = 5
+			goods_input_artificery_doodads_add = 5
+			goods_output_services_add = 30
+		}
+
+		level_scaled = {
+			building_employment_mages_add = 250
+		}
+	}
+}
+
+pm_large_magical_markets = {
+	texture = "gfx/interface/icons/production_method_icons/market_squares.dds"
+	unlocking_technologies = {
+		mages_in_the_workforce
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_arcane_curios_add = 10
+			goods_input_magical_reagents_add = 10
+			goods_input_artificery_doodads_add = 10
+			goods_output_services_add = 65
+		}
+
+		level_scaled = {
+			building_employment_mages_add = 500
+		}
+	}
+}

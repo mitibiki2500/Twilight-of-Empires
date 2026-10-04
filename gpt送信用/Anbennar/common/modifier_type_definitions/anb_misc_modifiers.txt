@@ -1,0 +1,143 @@
+﻿REPLACE_OR_CREATE:country_archmages_pol_str_mult={
+	decimals=1
+	color=neutral
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+REPLACE_OR_CREATE:country_mages_pol_str_mult={
+	decimals=1
+	color=neutral
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+
+# REPLACE_OR_CREATE:state_minting_mult = { TODO doesnt exist/work
+# 	decimals = 0
+# 	color = good
+# 	percent = yes
+# }
+
+REPLACE_OR_CREATE:country_adventurers_pol_str_mult={
+	decimals=1
+	color=neutral
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+REPLACE_OR_CREATE:country_soldiers_pol_str_mult={
+	decimals=1
+	color=neutral
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+REPLACE_OR_CREATE:building_group_bg_logging_fertility_mult={
+	decimals=2
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+REPLACE_OR_CREATE:building_slaves_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+
+REPLACE_OR_CREATE:state_allow_dwarovrod = {
+	boolean = yes
+	decimals = 0
+	color = neutral
+	script_only = yes
+}
+
+REPLACE_OR_CREATE:state_allow_hold = {
+	boolean = yes
+	decimals = 0
+	color = neutral
+	script_only = yes
+}
+
+REPLACE_OR_CREATE:goods_output_transportation_mult = {
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+state_harvest_condition_veladklufar_swarm_impact_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+REPLACE_OR_CREATE:state_harvest_condition_dwarovar_railway_disrepair_impact_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+REPLACE_OR_CREATE:building_mages_mortality_mult = {
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+REPLACE_OR_CREATE:country_archmages_voting_power_add={
+	decimals=0
+	color=neutral
+	game_data={
+		ai_value=0
+	}
+}
+
+
+# automatory literacy 
+#TODO: reintegrate the literacy stuff, currently does nothing
+state_automatory_basic_literacy = {
+	boolean = yes
+	script_only = yes
+	decimals = 0
+	color = good
+}
+
+state_automatory_good_literacy = {
+	boolean = yes
+	script_only = yes
+	decimals = 0
+	color = good
+}
+
+state_automatory_advanced_literacy = {
+	boolean = yes
+	script_only = yes
+	decimals = 0
+	color = good
+}

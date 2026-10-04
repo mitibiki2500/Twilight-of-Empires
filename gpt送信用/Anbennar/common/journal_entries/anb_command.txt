@@ -1,0 +1,44 @@
+﻿je_command_splinter = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	
+	group = je_group_historical_content
+
+	immediate = {
+		if = { limit = { can_form_nation = R21 }
+			trigger_event = {
+				id = anb_command_events.1
+				popup = yes
+				days = 7
+			}
+		}
+	}
+
+	is_shown_when_inactive = {
+		can_form_nation = R21
+	}
+
+	possible = {
+		hidden_trigger = { always = yes }
+	}
+
+	complete = {
+		custom_tooltip =  {
+			text = unification_notification_gc
+
+			c:R21 ?= THIS
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = anb_formation.2 popup = yes }
+	}
+
+	# on_monthly_pulse = {
+	# 	random_events = {
+			
+	# 	}
+	# }
+
+	weight = 100
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

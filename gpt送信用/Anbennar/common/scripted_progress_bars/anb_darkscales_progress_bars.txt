@@ -1,0 +1,139 @@
+﻿darkscale_progress_progress_bar = {
+	name = darkscale_progress_bar
+	desc = darkscale_progress_bar_desc
+	default = yes
+
+	
+	start_value = 0
+	min_value = 0
+	max_value = 3
+}
+
+darkscale_sabotage_progress_bar = {
+	name = darkscale_sabotage_bar
+	desc = darkscale_sabotage_bar_desc
+
+	default_bad = yes
+	monthly_progress = {
+		if = {
+			limit = {
+				always = yes
+			}
+			add = {
+				desc = darkscales_progress_bar_landowners_sabotage
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				has_variable = have_partenered_with_artisans_darkscales_nimrith_revival_variable
+			}
+			add = {
+				desc = darkscales_progress_bar_industrialists_sabotage
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				has_variable = intelligentsia_ruler_darkscales_nimrith_revival_variable
+			}
+			add = {
+				desc = darkscales_progress_bar_armed_forces_sabotage
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				has_variable = have_partenered_with_factories_darkscales_nimrith_revival_variable
+			}
+			add = {
+				desc = darkscales_progress_bar_petite_bourgeoisie_sabotage
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				has_variable = military_ruler_darkscales_nimrith_revival_variable
+			}
+			add = {
+				desc = darkscales_progress_bar_intelligentsia_sabotage
+				add = 1
+			}
+		}
+	
+		if = {
+			limit = {
+				always = yes
+				owner = {
+					ig:ig_landowners ?= {
+						is_powerful = yes
+					}
+				}
+			}
+			add = {
+				desc = darkscales_progress_bar_landowners_powerful_sabotage
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				has_variable = have_partenered_with_artisans_darkscales_nimrith_revival_variable
+				owner = {
+					ig:ig_industrialists ?= {
+						is_powerful = yes
+					}
+				}
+			}
+			add = {
+				desc = darkscales_progress_bar_industrialists_powerful_sabotage
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				has_variable = intelligentsia_ruler_darkscales_nimrith_revival_variable
+				owner = {
+					ig:ig_armed_forces ?= {
+						is_powerful = yes
+					}
+				}
+			}
+			add = {
+				desc = darkscales_progress_bar_armed_forces_powerful_sabotage
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				has_variable = have_partenered_with_factories_darkscales_nimrith_revival_variable
+				owner = {
+					ig:ig_petty_bourgeoisie ?= {
+						is_powerful = yes
+					}
+				}
+			}
+			add = {
+				desc = darkscales_progress_bar_petite_bourgeoisie_powerful_sabotage
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				has_variable = military_ruler_darkscales_nimrith_revival_variable
+				owner = {
+					ig:ig_intelligentsia ?= {
+						is_powerful = yes
+					}
+				}
+			}
+			add = {
+				desc = darkscales_progress_bar_intelligentsia_powerful_sabotage
+				add = 1
+			}
+		}
+	}
+
+	start_value = 0
+	min_value = 0
+	max_value = 144
+}

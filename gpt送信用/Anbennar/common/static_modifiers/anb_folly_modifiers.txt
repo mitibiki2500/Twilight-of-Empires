@@ -1,0 +1,88 @@
+﻿je_folly_success_effect_country = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_authority_mult = 0.05
+	country_legitimacy_base_add = 10
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.25
+	interest_group_ig_petty_bourgeoisie_pop_attraction_mult = 0.25
+	interest_group_ig_landowners_pol_str_mult = 0.25
+	interest_group_ig_landowners_pop_attraction_mult = 0.25
+}
+
+je_folly_success_effect_state = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	building_group_bg_agriculture_throughput_add = 0.10
+	building_group_bg_mining_throughput_add = 0.10
+	state_radicals_and_loyalists_from_sol_change_mult = 0.10
+}
+
+je_folly_failure_effect_country = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_legitimacy_base_add = -15
+	state_radicals_from_political_movements_mult = 0.20
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = -0.25
+	interest_group_ig_landowners_pol_str_mult = -0.25
+	interest_group_ig_devout_pol_str_mult = 0.25
+	interest_group_ig_armed_forces_pol_str_mult = 0.25
+}
+
+arannese_exodus_state_mod = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	state_tax_collection_mult = -0.10
+	state_market_access_price_impact = 0.05
+}
+
+arannese_exodus_country_mod = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	state_colony_growth_speed_mult = 0.1
+}
+
+heavy_migration_control_state_mod = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	state_migration_quota_mult = -0.33  # was state_migration_push_mult = -0.33 polk: idk, this is closest we have post 1.12
+}
+
+migration_hampered_state_mod = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	state_migration_pull_mult = -0.10
+}
+folly_refief_fund_state_mod = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	state_lower_strata_expected_sol_add = -1
+	state_middle_strata_expected_sol_add = -1
+}
+folly_refief_fund_country_mod = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 5000
+}
+botched_investment_country_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_ig_industrialists_pol_str_mult = -0.05
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = -0.05
+}
+hell_on_halann_state_mod = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	state_migration_pull_mult = -0.33
+	state_standard_of_living_add = -1
+}
+anti_gnoll_pogrom_state_mod = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	state_flamemarked_gnoll_standard_of_living_add = -5
+}
+racist_sentiment_political_movement_mod = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	political_movement_pop_attraction_mult = 0.1
+}
+illegal_anti_gnoll_pogrom_state_mod = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	state_flamemarked_gnoll_standard_of_living_add = -2
+}
+state_wide_curfew_state_mod = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	state_mortality_mult = 0.02
+	state_radicals_and_loyalists_from_sol_change_mult = 0.25
+	state_turmoil_effects_mult = -0.33
+}
+disappearing_population_folly_state_mod = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	state_mortality_mult = 0.06
+}

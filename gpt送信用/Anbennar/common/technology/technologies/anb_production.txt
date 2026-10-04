@@ -1,0 +1,312 @@
+﻿
+
+### ERA 1
+
+rubyhold_process = {
+	# Unlocks Rubyhold Process PM on Steel Mill
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/bessemer_process.dds"
+	category = production
+	can_research = no
+
+	modifier = {
+		building_steel_mill_throughput_add = 0.05
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+### ERA 2
+
+punch_card_artificery = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/punch_card_artificery.dds"
+	category = production
+	can_research = yes
+	
+	unlocking_technologies = {
+		lathe
+	}
+
+	ai_weight = {
+		value = 1
+		if = {
+			limit = { 
+				NOT = {
+					 has_law = law_type:law_artifice_banned
+				}
+			}
+			add = 2
+		}
+	}
+}
+
+insyaan_analytical_engine = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/advanced_mechanim.dds"
+	category = production
+
+	unlocking_technologies = {	
+		atmospheric_engine
+		punch_card_artificery
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+### ERA 3
+
+elemental_elicitation = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/elemental_elicitation.dds"
+	category = production
+	
+	modifier = {
+		country_resource_discovery_chance_mult = 0.25
+		state_building_dwarven_hold_max_level_add = 1 #Anbennar
+	}
+	
+	unlocking_technologies = {	
+		#nitroglycerin
+		#punch_card_artificery
+		fractional_distillation
+		punch_card_artificery
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+damestear_faceting = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = production
+
+	unlocking_technologies = {	
+		crystal_glass
+		punch_card_artificery
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+pathway_transmutation = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = production
+
+	unlocking_technologies = {	
+		improved_fertilizer
+		elemental_elicitation
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+gene_transmutation = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/gene_transmutation.dds"
+	category = production
+
+	unlocking_technologies = {	
+		improved_fertilizer
+		vacuum_canning	#cos you prob need to seal these creations in something
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+runescript_integration = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = production
+	
+	unlocking_technologies = {	
+		insyaan_analytical_engine
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+thinking_machinery = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/advanced_mechanim.dds"
+	category = production
+	can_research = yes
+	
+	unlocking_technologies = {
+		runescript_integration
+		shift_work
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+industrial_exosuits = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = production
+	
+	unlocking_technologies = {	
+		mechanized_workshops
+		insyaan_analytical_engine
+	}
+
+	modifier = {
+		building_economy_of_scale_level_cap_add = 10	#TODO rebalance
+		building_laborers_mortality_mult = -0.1
+		building_machinists_mortality_mult = -0.1
+		building_engineers_mortality_mult = -0.1
+		building_farmers_mortality_mult = -0.1
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+### ERA 4 
+
+damestear_cores = {
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = production
+	
+	unlocking_technologies = {	
+		damestear_faceting
+		shift_work
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+catalytic_imbuement = {
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = production
+	
+	unlocking_technologies = {	
+		pathway_transmutation
+		plastics
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+chronoculture = {
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = production
+	
+	unlocking_technologies = {	
+		nitrogen_fixation
+		gene_transmutation
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+thaumic_field_stabilization = {
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = production
+	can_research = yes
+	
+	unlocking_technologies = {
+		electrical_capacitors
+		elemental_elicitation
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+industrial_mechs = {
+	era = era_4
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = production
+	can_research = yes
+	
+	unlocking_technologies = {
+		industrial_exosuits
+		damestear_cores
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+### ERA 5 
+
+alchemical_alloys = {
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = production
+	can_research = yes
+	
+	unlocking_technologies = {
+		electric_arc_process
+		thaumic_field_stabilization
+		catalytic_imbuement
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+thaumic_rail = {
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = production
+	can_research = yes
+	
+	unlocking_technologies = {
+		thaumic_field_stabilization
+		arc_welding
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}
+
+the_fifth_fundamental_force = {
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = production
+	can_research = yes
+	
+	unlocking_technologies = {
+		thaumic_field_stabilization
+		electrical_capacitors
+		flash_freezing
+	}
+
+	ai_weight = {
+		value = 1
+	}
+}

@@ -1,0 +1,267 @@
+﻿gov_gray_empire = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_TITLE_GRAY_EMPEROR"
+	female_ruler = "RULER_TITLE_GRAY_EMPRESS"
+
+	male_heir = "" # Empty on purpose
+	female_heir = "" # Empty on purpose
+	
+	possible = {
+		c:A10 ?= ROOT
+		has_law = law_type:law_monarchy
+		country_has_voting_franchise = no
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+gov_eternal_empire = {
+	transfer_of_power = dictatorial
+	
+	male_ruler = "RULER_TITLE_EMPEROR"
+	female_ruler = "RULER_TITLE_EMPERESS"
+
+	male_heir = "" # Empty on purpose
+	female_heir = "" # Empty on purpose
+	
+	possible = {
+		c:L01 ?= ROOT
+		has_law = law_type:law_monarchy
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}
+
+gov_onyx_monarchy = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_ONYX_KING"
+	female_ruler = "RULER_TITLE_ONYX_QUEEN"
+
+	male_heir = "" # Empty on purpose
+	female_heir = "" # Empty on purpose
+	
+	possible = {
+		OR = {
+			c:B27 ?= ROOT
+			c:B69 ?= ROOT
+		}
+		has_law = law_type:law_monarchy
+		country_has_voting_franchise = no
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+gov_akalate = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_AKAL"
+	female_ruler = "RULER_AKALA"
+
+	male_heir = "" # Empty on purpose
+	female_heir = "" # Empty on purpose
+	
+	possible = {
+		has_law = law_type:law_monarchy
+		country_has_voting_franchise = no
+		country_tier = principality
+		any_primary_culture = {
+			has_discrimination_trait = heritage_bulwari_human
+		}
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+gov_ynnic_lordship = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_TITLE_LORD"
+	female_ruler = "RULER_TITLE_LADY"
+
+	male_heir = "" # Empty on purpose
+	female_heir = "" # Empty on purpose
+	
+	possible = {
+		has_law = law_type:law_monarchy
+		country_has_voting_franchise = no
+		country_tier = principality
+		country_has_state_religion = rel:ynn_river_worship
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+gov_queendom = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_TITLE_QUEEN"
+	female_ruler = "RULER_TITLE_QUEEN"
+
+	male_heir = "" # Empty on purpose
+	female_heir = "" # Empty on purpose
+	
+	possible = {
+		c:F13 ?= ROOT
+		has_law = law_type:law_monarchy
+		has_variable = is_matriarchy_var
+		NOT = { has_law = law_type:law_womens_suffrage }
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+gov_matriarchy = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_MATRIARCH"
+	female_ruler = "RULER_MATRIARCH"
+
+	male_heir = "" # Empty on purpose 
+	female_heir = "" # Empty on purpose
+	
+	possible = {
+		has_law = law_type:law_monarchy
+		has_variable = is_matriarchy_var
+		NOT = { has_law = law_type:law_womens_suffrage }
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+gov_nakari_triple_alliance = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_TITLE_KING"
+	female_ruler = "RULER_TITLE_QUEEN"
+
+	male_heir = "RULER_TITLE_PRINCE" # the guys in the kingdoms will probably have some sort of title.
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		has_law = law_type:law_monarchy
+		c:C45 ?= ROOT
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+gov_attemutil_warlord_kingdom = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_TAYCHEND_WARLORD_KING"
+	female_ruler = "RULER_TAYCHEND_WARLORD_QUEEN"
+
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		has_law = law_type:law_monarchy
+		country_has_voting_franchise = no
+		country_tier = kingdom
+		OR = {
+			country_has_state_religion = rel:gods_of_the_taychend
+			c:C48 ?= ROOT # Royakottar, edge case
+			c:C49 ?= ROOT # Orenkoraim, edge case
+		}
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+gov_attemutil_warlord_state = {
+	transfer_of_power = hereditary
+	
+	male_ruler = "RULER_TAYCHEND_WARLORD"
+	female_ruler = "RULER_TAYCHEND_WARLORD"
+
+	male_heir = "" # Empty on purpose. May add one later.
+	female_heir = "" # Empty on purpose. May add one later.
+	
+	possible = {
+		has_law = law_type:law_monarchy
+		country_has_voting_franchise = no
+		country_tier = principality
+		OR = {
+			country_has_state_religion = rel:gods_of_the_taychend
+			c:C48 ?= ROOT # Royakottar, edge case
+			c:C49 ?= ROOT # Orenkoraim, edge case
+		}
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+gov_amben_imperial_monarchy = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_AESRIALTOR_ANDEIOS"
+	female_ruler = "RULER_AESRIALTEIRA_ANDEIOS"
+	
+	male_heir = "RULER_TITLE_PRINCE"
+	female_heir = "RULER_TITLE_PRINCESS"
+	
+	possible = {
+		has_law = law_type:law_monarchy
+		exists = c:C92
+		c:C92 = ROOT
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}

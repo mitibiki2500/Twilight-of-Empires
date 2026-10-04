@@ -1,0 +1,298 @@
+﻿country_magical_expertise_production = {
+	value = 100 # Base Value
+	add = modifier:country_magical_expertise_add
+	multiply = {
+		value = 1
+		add = modifier:country_magical_expertise_mult
+	}
+	min = 1
+}
+#get num of spells. - society and military spells. divide country_magical_spell_cost_total by previous output.
+
+
+
+
+country_magical_expertise_cost = {
+	value = country_magical_expertise_cost_per_institution # Base Value
+	multiply = country_num_spells
+	add = country_magical_decree_total
+	add = modifier:country_magical_expertise_cost_add
+	min = 0
+}
+
+country_magical_spell_cost_total = {
+	value = country_magical_expertise_cost_per_institution
+	multiply = country_num_spells
+	min = 0
+}
+
+country_magical_decree_total = {
+	every_scope_state = {
+		add = modifier:state_magical_expertise_decree_cost_add
+	}
+	multiply = {
+		value = 1
+		add = modifier:country_magical_expertise_decree_cost_mult
+	}
+	min = 0
+}
+
+decree_cost_200 = { 
+	value = 200
+	multiply = {
+		value = 1
+		add = modifier:country_magical_expertise_decree_cost_mult
+	}
+	min = 0
+}
+
+decree_cost_400 = { 
+	value = 400
+	multiply = {
+		value = 1
+		add = modifier:country_magical_expertise_decree_cost_mult
+	}
+	min = 0
+}
+
+country_magical_expertise_balance = {
+	value = 0 
+	this ?= {
+		add = country_magical_expertise_production
+		subtract = country_magical_expertise_cost
+	}
+}
+
+country_normalized_magical_expertise_surplus = {
+	value = country_magical_expertise_production
+	this ?= {
+		if = {
+			limit = {
+				country_magical_expertise_cost > 0
+			}
+			divide = country_magical_expertise_cost
+		}
+	}
+	subtract = 1
+	max = 1
+	min = 0
+}
+
+country_normalized_magical_expertise_deficit = {
+	value = 0
+	this ?= {
+		add = country_magical_expertise_cost
+	}
+	divide = country_magical_expertise_production
+	subtract = 1
+	max = 1
+	min = 0
+}
+
+country_magical_expertise_cost_per_institution = {
+	value = 1 #Base Value
+	add = modifier:country_magical_expertise_cost_per_institution_mult
+	multiply = cached_ai_incorporated_population
+	divide = 100000
+	min = 10
+}
+
+country_num_spells = {
+	value = 0 # Base Value
+	this ?= {
+		if = {
+			limit = { has_variable = production_magic_spell_level }
+			add = var:production_magic_spell_level
+		}
+		if = {
+			limit = { has_variable = military_magic_spell_level }
+			add = var:military_magic_spell_level
+		}
+		if = {
+			limit = { has_variable = society_magic_spell_level }
+			add = var:society_magic_spell_level
+		}	
+	}
+}
+
+production_magic_weekly_cost = {
+	value = country_magical_expertise_cost_per_institution
+	multiply = var:production_magic_spell_level
+	min = 0
+	}
+
+military_magic_weekly_cost = {
+	value = country_magical_expertise_cost_per_institution
+	multiply = var:military_magic_spell_level
+	min = 0
+	}
+
+society_magic_weekly_cost = {
+	value = country_magical_expertise_cost_per_institution
+	multiply = var:society_magic_spell_level
+	min = 0
+	}
+
+country_max_production_magic_level = {
+	value = var:production_magic_spell_level
+	add = country_affordable_spell_increases
+	min = 1
+	max = var:country_max_spell_level
+}
+
+country_max_society_magic_level = {
+	value = var:society_magic_spell_level
+	add = country_affordable_spell_increases
+	min = 1
+	max = var:country_max_spell_level
+}
+
+country_max_military_magic_level = {
+	value = var:military_magic_spell_level
+	add = country_affordable_spell_increases
+	min = 1
+	max = var:country_max_spell_level
+}
+
+country_affordable_spell_increases = {
+	value = country_magical_expertise_balance
+	divide = country_magical_expertise_cost_per_institution
+	min = 0
+	max = 4
+}
+
+country_difference_before_next_production_magic_level = {
+	value = var:production_magic_spell_level_floor
+	add = 1
+	subtract = var:production_magic_spell_level
+}
+
+country_difference_before_next_military_magic_level = {
+	value = var:military_magic_spell_level_floor
+	add = 1
+	subtract = var:military_magic_spell_level
+}
+
+country_difference_before_next_society_magic_level = {
+	value = var:society_magic_spell_level_floor
+	add = 1
+	subtract = var:society_magic_spell_level
+}
+
+weeks_to_target_production_magic_level_increase = {
+	value = var:production_magic_targeted_spell_level
+	subtract = var:production_magic_spell_level
+	divide = 0.05 #NOTE: CHANGE THIS IF PULSE TURNS INTO JE 
+}
+
+weeks_to_target_society_magic_level_increase = {
+	value = var:society_magic_targeted_spell_level
+	subtract = var:society_magic_spell_level
+	divide = 0.05
+}
+
+weeks_to_target_military_magic_level_increase = {
+	value = var:military_magic_targeted_spell_level
+	subtract = var:military_magic_spell_level
+	divide = 0.05
+}
+
+weeks_to_target_production_magic_level_decrease = {
+	value = var:production_magic_spell_level
+	subtract = var:production_magic_targeted_spell_level
+	divide = 0.05 #NOTE: CHANGE THIS IF PULSE TURNS INTO JE 
+}
+
+weeks_to_target_society_magic_level_decrease = {
+	value = var:society_magic_spell_level
+	subtract = var:society_magic_targeted_spell_level
+	divide = 0.05
+}
+
+weeks_to_target_military_magic_level_decrease = {
+	value = var:military_magic_spell_level
+	subtract = var:military_magic_targeted_spell_level
+	divide = 0.05
+}
+
+country_modulo_production_magic_level = {
+	value = var:production_magic_spell_level
+	modulo = 1
+}
+
+country_modulo_military_magic_level = {
+	value = var:military_magic_spell_level
+	modulo = 1
+}
+
+country_modulo_society_magic_level = {
+	value = var:society_magic_spell_level
+	modulo = 1
+}
+
+owner_tradition_number = {
+	value = 0
+	owner = {
+		add = country_tradition_number
+	}
+}
+
+country_tradition_number = {
+	value = 0
+	if = {
+		limit = { has_technology_researched = cannorian_magical_tradition }
+		add = 1
+	}
+	if = {
+		limit = { has_technology_researched = runecarving_magical_tradition }
+		add = 1
+	}
+	if = {
+		limit = { has_technology_researched = fourknowing_magical_tradition }
+		add = 1
+	}
+	if = {
+		limit = { has_technology_researched = essence_magical_tradition }
+		add = 1
+	}
+	if = {
+		limit = { has_technology_researched = chi_cultivation_magical_tradition }
+		add = 1
+	}
+	if = {
+		limit = { has_technology_researched = druidic_magical_tradition }
+		add = 1
+	}
+	if = {
+		limit = { has_technology_researched = shamanism_magical_tradition }
+		add = 1
+	}
+	if = {
+		limit = { has_technology_researched = bardic_magical_tradition }
+		add = 1
+	}
+	if = {
+		limit = { has_technology_researched = elemental_magical_tradition }
+		add = 1
+	}
+	if = {
+		limit = { has_technology_researched = precursor_magical_tradition }
+		add = 1
+	}
+	if = {
+		limit = { has_technology_researched = kheterata_magical_tradition }
+		add = 1
+	}
+}
+
+
+
+
+
+# Next steps
+# Make a custom "institution"-equivalent spell; static effects at first
+# Make it so they can have custom levels
+# Make the GUI work so you can click the levels
+# LIMIT clicking the buttons to if you have enough capacity
+# Make 'em swappable
+

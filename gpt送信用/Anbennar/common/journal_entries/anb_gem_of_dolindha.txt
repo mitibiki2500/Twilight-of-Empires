@@ -1,0 +1,141 @@
+﻿je_gem_of_dolindha = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	group = je_group_foreign_affairs
+
+	scripted_progress_bar = gem_of_dolindha_core_progress_bar
+
+	is_shown_in_lobby = {
+		OR = {
+			c:B29 ?= this	# Sarda
+			c:B39 ?= this	# Bosancovac
+			c:B49 ?= this	# Dragon Dominion
+		}
+	}
+
+	immediate = {
+		set_global_variable = { name = gem_of_dolindha_srd_progress value = 50 }
+		set_global_variable = { name = gem_of_dolindha_drd_progress value = 50 }
+		root = {
+			save_scope_as = root_country
+			calculate_gem_of_dolindha_passive_progress = yes
+		}
+		c:B29 = {
+			save_scope_as = srd_nation_scope
+		}
+		c:B39 = {
+			save_scope_as = bos_nation_scope
+		}
+		c:B49 = {
+			save_scope_as = drd_nation_scope
+		}
+	}
+
+
+	custom_completion_header = je_gem_of_dolindha_bar_completion
+	complete = {
+		custom_tooltip = {
+			text = je_gem_of_dolindha_bar_completion_tt
+			je:je_gem_of_dolindha = {
+				OR = {
+					"scripted_bar_progress(gem_of_dolindha_core_progress_bar)" >= 100
+					"scripted_bar_progress(gem_of_dolindha_core_progress_bar)" <= 0
+				}
+			}
+		}
+	}
+
+	#custom_on_completion_header = je_gem_of_dolindha_on_bar_completion
+	on_complete = {
+		custom_tooltip = je_gem_of_dolindha_on_bar_completion_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					je:je_gem_of_dolindha = {
+						"scripted_bar_progress(gem_of_dolindha_core_progress_bar)" >= 100
+					}
+				}
+				c:B29 ?= {
+					create_diplomatic_pact = {
+						country = c:B39
+						type = tributary
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					je:je_gem_of_dolindha = {
+						"scripted_bar_progress(gem_of_dolindha_core_progress_bar)" <= 0
+					}
+				}
+				c:B49 ?= {
+					create_diplomatic_pact = {
+						country = c:B39
+						type = tributary
+					}
+				}
+			}
+			clear_gem_of_dolindha_variables = yes
+		}
+	}
+
+	custom_failure_header = je_gem_of_dolindha_confederation_victory
+	fail = {
+		c:B39 ?= {	# Bosancovac
+			OR = {
+				is_subject = yes
+				is_in_power_bloc = yes
+				country_rank >= rank_value:unrecognized_regional_power
+				custom_tooltip = {
+					text = gem_of_dolindha_ally_power_projection_tt
+					global_var:gem_of_dolindha_bosancovac_altered_army_passive_var > global_var:gem_of_dolindha_total_army_passive_var
+				}
+			}
+		}
+	}
+
+	custom_on_failure_header = je_gem_of_dolindha_on_confederation_victory
+	on_fail = {
+		custom_tooltip = je_gem_of_dolindha_on_subject_tt
+		custom_tooltip = je_gem_of_dolindha_on_bos_win_tt
+		hidden_effect = {
+			c:B39 ?= {
+				if = {
+					limit = {
+						je:je_gem_of_dolindha = {
+							"scripted_bar_progress(gem_of_dolindha_core_progress_bar)" < 100
+							"scripted_bar_progress(gem_of_dolindha_core_progress_bar)" > 0
+						}
+					}
+					if = {
+						limit = {
+							is_subject = yes
+						}
+						decrease_autonomy = yes
+					}
+					else = {
+						capital = {
+							add_modifier = {
+								name = bosancovac_immigration_pull
+								days = long_modifier_time
+							}
+						}
+					}
+				}
+			}
+			clear_gem_of_dolindha_variables = yes
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			calculate_gem_of_dolindha_passive_progress = yes
+		}
+	}
+
+	weight = 100
+
+	can_revolution_inherit = yes
+	transferable = yes
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

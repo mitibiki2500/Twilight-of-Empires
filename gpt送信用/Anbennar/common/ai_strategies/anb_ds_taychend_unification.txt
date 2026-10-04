@@ -1,0 +1,77 @@
+﻿ai_strategy_taychend_unification = {
+	icon = "gfx/interface/icons/ai_strategy_icons/unification.dds"
+	type = diplomatic
+	undesirable_infamy_level = {
+		value = 500
+	}
+	unacceptable_infamy_level = {
+		value = 500
+	}
+	ideological_opinion_effect_mult = {
+		value = 0.5
+	}
+	wargoal_maneuvers_fraction = {
+		value = 0.1
+	}			
+	diplomatic_play_neutrality = {
+		value = 50
+	}
+	diplomatic_play_boldness = {
+		value = 100
+	}
+	obligation_value = {
+		value = 0
+		if = {
+			limit = { 
+				scope:target_country = { can_form_nation = C90 }
+			}
+			add = 50
+		}
+	}				
+	recklessness = {
+		value = 0.5
+		if = {
+			limit = { 
+				scope:target_country = { can_form_nation = C90 }
+			}
+			add = 1
+		}
+	}	
+	aggression = {
+		value = 1
+		if = {
+			limit = { 
+				scope:target_country = { can_form_nation = C90 }
+			}
+			add = 200
+		}
+	}
+	building_group_weights = {
+		bg_army = 10
+	}
+	secret_goal_scores = {	
+		conquer = {	
+			trigger = {
+				NOT = { scope:target_country = { is_subject_of = root } }
+				can_reach_target_country = yes
+				has_strategic_adjacency = scope:target_country
+				scope:target_country.country_rank <= root.country_rank
+			}
+			score = {
+				value = 200
+			}
+		}
+	}	
+	possible = {
+		OR = {
+			AND = {
+				NOT = { exists = c:C90 }
+				can_form_nation = C90
+			}
+			has_modifier = kheionai_ambhen_reclamation
+		}
+	}
+	weight = {
+		value = 5000	
+	}
+}

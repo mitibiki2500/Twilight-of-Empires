@@ -1,0 +1,115 @@
+# COPY-PASTED FOR NOW
+@panel_width_minus_10 = 530			# used to be 450
+@panel_width = 540  				# used to be 460
+@panel_width_half = 270				# used to be 230
+@panel_width_plus_10 = 550  		# used to be 470
+@panel_width_plus_14 = 554			# used to be 474
+@panel_width_plus_14_half = 277		# used to be 237
+@panel_width_plus_20 = 560			# used to be 480
+@panel_width_plus_30 = 570			# used to be 490
+@panel_width_plus_70 = 610			# used to be 530
+
+types panel_military {
+	types mobilization_options {
+		type mobilization_widget = flowcontainer {
+		direction = vertical
+		minimumsize = { 540 -1 }
+		margin_bottom = 10
+
+		using = entry_bg_fancy
+
+		# Name and info header
+		container = {
+			minimumsize = { @panel_width 35 }
+
+			background = {
+				using = fade_right_entry_fancy_header_colored
+				color = "[MilitaryFormation.GetCountry.GetMapColor]"
+			}
+			
+			flowcontainer = {
+				position = { 12 0 }
+				parentanchor = vcenter
+				spacing = 2
+
+				icon = {
+					size = { 30 30 }
+					texture = "[MilitaryFormation.GetFlag]"
+					color = "[MilitaryFormation.GetFlagColor]"
+					parentanchor = vcenter
+				}
+
+				textbox = {
+					maximumsize = { 200 -1 }
+					parentanchor = vcenter
+					multiline = yes
+					autoresize = yes
+					text = "[MilitaryFormation.GetName]"
+					align = nobaseline
+					elide = right
+					margin_right = 3
+				}
+
+				button_icon_goto = {
+					parentanchor = vcenter
+					size = { 25 25 }
+					tooltip = "GO_TO_BUTTON_MILITARY_FORMATION"
+					onclick = "[InformationPanelBar.OpenMilitaryFormationPanelTab( MilitaryFormation.Self, 'default' )]"
+				}
+			}
+
+			# Formation status
+			flowcontainer = {
+				position = { -15 0 }
+				parentanchor = right|vcenter
+
+				block "estimated_costs_visibility" {}
+
+				textbox = {
+					autoresize = yes
+					text = "[MilitaryFormation.GetEstimatedMobilizationCostFormatted]"
+					parentanchor = vcenter
+					align = right|nobaseline
+				}
+			}
+		}
+
+		dynamicgridbox = {
+			datamodel = "[GetMobilizationOptionGroups]"
+			datamodel_wrap = 3
+			flipdirection = yes
+									parentanchor = left # ANB
+
+			item = {
+				flowcontainer = {
+					direction = vertical
+					margin_left = 22 # ANB - 22.5 is perfectly centered but it looks cleaner this way
+
+					textbox = {
+						text = "[MobilizationOptionGroup.GetNameNoFormatting]"
+						autoresize = yes
+						align = nobaseline
+						default_format = "#title"
+						margin_left = 2
+						multiline = yes # ANB
+                         max_width = 150 # ANB
+					}
+
+					dynamicgridbox = {
+						datamodel = "[MobilizationOptionGroup.GetMobilizationOptions]"
+							# margin_right = 5 # ANB (silence error)
+							# margin_bottom = 5 # ANB (silence error)
+                              datamodel_wrap = 3 # ANB
+                              flipdirection = yes # ANB
+
+						item = {
+							mobilization_option_small = {}
+						}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,106 @@
+﻿je_airship_tower_site = { #disabled for now as airships don't work TODO
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	group = je_group_technology
+
+	on_monthly_pulse = {
+		effect = {
+			change_variable = {
+				name = airship_tower_var
+				add = 1
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+		any_scope_state = {
+			is_split_state = no
+			is_incorporated = yes
+			NOT = {
+				has_state_trait = state_trait_underground
+			}
+			any_scope_building = {
+				is_building_type = building_urban_center
+				level >= 5
+			}
+		}
+	}
+
+	on_complete = {
+		remove_modifier = airship_tower_survey
+		trigger_event = { id = airship_tower.1 } # site found
+	}
+
+	invalid = {
+		NOT = {
+			any_scope_state = {
+				is_split_state = no
+				is_incorporated = yes
+				NOT = {
+					has_state_trait = state_trait_underground
+				}
+				any_scope_building = {
+					is_building_type = building_urban_center
+					level >= 5
+				}
+			}
+		}
+	}
+
+	on_invalid = {
+		remove_modifier = airship_tower_survey
+		remove_variable = airship_tower_var
+	}
+
+	current_value = {
+		value = root.var:airship_tower_var
+	}
+
+	goal_add_value = {
+		value = 24
+	}
+
+	progressbar = yes
+
+	weight = 10
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_airship_tower_construction = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	group = je_group_technology
+
+	complete = {
+		scope:target = {
+			any_scope_building = {
+				is_building_type = building_airship_tower
+				is_under_construction = no
+			}
+		}
+	}
+
+	fail = {
+		NOT = {
+			any_scope_state = {
+				has_modifier = airship_tower_site
+			}
+		}
+	}
+	
+	on_fail = {
+		remove_variable = airship_tower_var
+	}
+
+	on_complete = {
+		trigger_event = { id = airship_tower.2 }
+		remove_variable = airship_tower_var
+		scope:target = {
+			remove_modifier = airship_tower_site
+		}
+	}
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

@@ -1,0 +1,128 @@
+﻿
+building_dwarven_hold = {
+	building_group = bg_dwarven_hold
+	city_type = city
+	icon = "gfx/interface/icons/building_icons/skyscraper.dds"
+
+	has_max_level = yes
+	ignore_stateregion_max_level = yes
+
+	unlocking_technologies = { urbanization }
+
+	production_method_groups = {
+		pmg_primary_specialization_building_dwarven_hold
+		pmg_secondary_specialization_building_dwarven_hold
+		pmg_tertiary_specialization_building_dwarven_hold
+	}
+
+	required_construction = construction_cost_hold
+	downsizeable = no
+
+	# polk: no longer does anything as of 1.13, gov buildings have no ownership structure
+	# ownership_type = self #intentional despite error log
+	# can_switch_owner = no
+
+	ai_value = 2000 # Holds are infrastructure
+	should_auto_expand = { 
+		occupancy >= 0.8
+		OR = {
+			state = {
+				sg:transportation = { 
+					state_goods_pricier > 0.8
+				}
+			}
+			state.market_access < 1
+		}
+		NOT = { is_under_construction = yes }
+	}
+	
+	potential = {
+		has_state_trait = state_trait_dwarven_hold
+	}
+
+	possible = {
+		has_state_trait = state_trait_dwarven_hold
+	}
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+}
+
+building_dwarovrod = {
+	building_group = bg_dwarovrod	
+	icon = "gfx/interface/icons/building_icons/building_railway.dds"
+	
+	ai_nationalization_desire = 0.5 # AI is reluctant to privatize railways since they are likely to need subsidies anyway
+	
+	unlocking_technologies = {
+		urban_planning
+	}
+
+	production_method_groups = {
+		pmg_base_building_dwarovrod
+		pmg_rails_building_dwarovrod
+		#pmg_automation_building_dwarovrod
+	}
+
+	required_construction = construction_cost_medium
+	ownership_type = self
+
+	ai_value = 2000 # Railways are important
+	
+	should_auto_expand = { 
+		occupancy >= 0.8
+		OR = {
+			cash_reserves_ratio > 0.5
+			is_subsidized = yes
+		}
+		OR = {
+			state = {
+				sg:transportation = { 
+					state_goods_pricier > 0.5 
+				}
+			}
+			state.market_access < 1
+		}
+		NOT = { is_under_construction = yes }
+	}
+
+	possible = {
+		OR = {
+			has_state_trait = state_trait_dwarovrod
+			has_state_trait = state_trait_dwarven_hold
+		}
+	}
+
+	potential = {
+		OR = {
+			has_state_trait = state_trait_dwarovrod
+			has_state_trait = state_trait_dwarven_hold
+		}
+	}
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_railways.dds"
+}
+
+
+#1:1 copy of rice paddies, just diff name
+building_subsistence_cavern_farm = {
+	building_group = bg_subsistence_agriculture
+	icon = "gfx/interface/icons/building_icons/building_subsistence_caverns.dds"
+
+	production_method_groups = {
+		pmg_base_building_subsistence_rice_farm
+		pmg_home_workshops_building_subsistence_rice_farm
+		pmg_serfdom_building_subsistence_rice_farm
+	}
+	
+	buildable = no
+	expandable = no
+	downsizeable = no
+	can_switch_owner = no
+	min_raise_to_hire = 0.30
+	slaves_role = peasants
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_farming.dds"
+}
+
+# Moved cave coral, mines, and farms to respective anb agro/mines/misc resources so that they'd actually be grouped w/ the right buildings

@@ -1,0 +1,25 @@
+﻿### Aelnar character template file ###
+
+B17_Elissa_Oathkeeper = {
+	first_name = "Elissa"
+	last_name = "Oathkeeper"
+	historical = yes
+	ruler = yes
+	birth_date = 1374.4.23
+	interest_group = ig_landowners
+	home_region = STATE_VENAIL
+	#ig_leader = yes
+	ideology = ideology_authoritarian #Racial purist got removed
+	dna = dna_elissa_lithiel
+	traits = {
+		ambitious 
+		psychological_affliction 
+		cruel 
+		trait_immortal
+		powerful_mage
+	}
+	female = yes
+	on_created = {
+		set_character_immortal = yes
+	}
+}

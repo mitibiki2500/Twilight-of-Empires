@@ -1,0 +1,711 @@
+﻿namespace = anb_adventurers_wanted
+
+# Anbennar
+
+#anb_adventurers_wanted.1 = { # AW spawner
+#	type = state_event
+#
+#	hidden = yes
+#
+#	trigger = {
+#		NOT = { any_scope_building = { is_building_group = bg_adventurers_wanted } }
+#	}
+#
+#	immediate = {
+#		random_list = {
+#			# Base Chance
+#			7200 = { 
+#				# Multipliers can be introduced here to emulate "the end of the era of adventurers"
+#			}
+#			# Spawn an AW
+#			300 = {
+#				random_list = {
+#					# DUNGEONS
+#					10 = { # Brigand Army Base
+#						modifier = {
+#							if = {
+#								limit = { owner = { has_building = building_adventurers_wanted_investigation_thieves_guild } }
+#								multiply = 2
+#							}
+#						}
+#						modifier = {
+#							if = {
+#								limit = { turmoil >= 0.3 }
+#								multiply = 2
+#							}
+#						}
+#						trigger_event = { id = anb_adventurers_wanted.101  } 
+#					}
+#					10 = { # Lich Lair
+#						modifier = {
+#							if = {
+#								limit = { devastation >= 0.3 }
+#								multiply = 2
+#							}
+#						}
+#						trigger_event = { id = anb_adventurers_wanted.102  } 
+#					}
+#					10 = { # Precursor Base
+#						modifier = {
+#							if = {
+#								limit = { state_is_in_americas = yes }
+#								multiply = 2
+#							}
+#						}
+#						trigger_event = { id = anb_adventurers_wanted.103  } 
+#					}
+#					20 = { # Sea Monster Nest
+#						modifier = {
+#							if = {
+#								limit = { has_port = no }
+#								multiply = 0
+#							}
+#						}
+#						modifier = {
+#							if = {
+#								limit = {
+#									any_scope_building = {
+#										is_building_group = bg_fishing
+#										level >= 10
+#									}
+#								}
+#								multiply = 2
+#							}
+#						}
+#						trigger_event = { id = anb_adventurers_wanted.104  } 
+#					}			
+#					
+#					# SUDDEN THREATS
+#					20 = { # Den of Beasts
+#						trigger_event = { id = anb_adventurers_wanted.105  } 
+#					}			
+#					20 = { # Undead Mob
+#						modifier = {
+#							if = {
+#								limit = { devastation >= 0.3 }
+#								multiply = 2
+#							}
+#						}
+#						modifier = {
+#							if = {
+#								limit = { owner = { has_building = building_adventurers_wanted_dungeon_lich_lair } }
+#								multiply = 2
+#							}
+#						}
+#						trigger_event = { id = anb_adventurers_wanted.106  } 
+#					}		
+#					20 = { # Planar Breach
+#						modifier = {
+#							if = {
+#								limit = { state_is_in_americas = yes }
+#								multiply = 2
+#							}
+#						}
+#						modifier = {
+#							if = {
+#								limit = { owner = { has_building = building_adventurers_wanted_investigation_eldritch_cult } }
+#								multiply = 2
+#							}
+#						}
+#						modifier = {
+#							if = {
+#								limit = {
+#									any_scope_building = {
+#										has_active_production_method = pm_fire_elemental_forges
+#									}
+#								}
+#								multiply = 2
+#							}
+#						}
+#						trigger_event = { id = anb_adventurers_wanted.107  } 
+#					}		
+#					30 = { # Kraken Attack
+#						modifier = {
+#							if = {
+#								limit = { has_port = no }
+#								multiply = 0
+#							}
+#						}
+#						modifier = {
+#							if = {
+#								limit = {
+#									any_scope_building = {
+#										is_building_group = bg_fishing
+#										level >= 10
+#									}
+#								}
+#								multiply = 2
+#							}
+#						}
+#						modifier = {
+#							if = {
+#								limit = { owner = { has_building = building_adventurers_wanted_dungeon_sea_monster_nest } }
+#								multiply = 2
+#							}
+#						}
+#						trigger_event = { id = anb_adventurers_wanted.108  } 
+#					}				
+#					30 = { # Fey Incursion
+#						modifier = {
+#							if = {
+#								limit = {
+#									OR = {
+#										region = sr:region_eordand
+#										region = sr:region_escann
+#									}
+#								}
+#								multiply = 2
+#							}
+#						}
+#						modifier = {
+#							if = {
+#								limit = { 
+#									any_scope_building = {
+#										is_building_group = bg_logging
+#										level >= 10
+#									}
+#								}
+#								multiply = 2
+#							}
+#						}
+#						trigger_event = { id = anb_adventurers_wanted.109  } 
+#					}
+#					30 = { # Awakened Treants
+#						modifier = {
+#							if = {
+#								limit = {
+#									OR = {
+#										region = sr:region_eordand
+#										region = sr:region_escann
+#									}
+#								}
+#								multiply = 2
+#							}
+#						}
+#						modifier = {
+#							if = {
+#								limit = {
+#									any_scope_building = {
+#										is_building_group = bg_logging
+#										level >= 10
+#									}
+#								}
+#								multiply = 2
+#							}
+#						}
+#						trigger_event = { id = anb_adventurers_wanted.110  } 
+#					}	
+#					30 = { # Ancient Golems
+#						# modifier = { # Add this in when we actually have a dwarovar region
+#						# 	if = {
+#						# 		limit = {
+#						# 			OR = {
+#						# 				continent = dwarovar
+#						# 			}
+#						# 		}
+#						# 		multiply = 2
+#						# 	}
+#						# }
+#						modifier = {
+#							if = {
+#								limit = {
+#									any_scope_building = {
+#										is_building_group = bg_mining
+#										level >= 10
+#									}
+#								}
+#								multiply = 2
+#							}
+#						}
+#						trigger_event = { id = anb_adventurers_wanted.111  } 
+#					}					
+#					30 = { # Elemental Forge
+#						# modifier = { # Add this in when we actually have a dwarovar region
+#						# 	if = {
+#						# 		limit = {
+#						# 			OR = {
+#						# 				continent = dwarovar
+#						# 			}
+#						# 		}
+#						# 		multiply = 2
+#						# 	}
+#						# }
+#						modifier = {
+#							if = {
+#								limit = {
+#									any_scope_building = {
+#										is_building_group = bg_mining
+#										level >= 10
+#									}
+#								}
+#								multiply = 2
+#							}
+#						}
+#						trigger_event = { id = anb_adventurers_wanted.112  } 
+#					}				
+#					20 = { # Thieves Guild
+#						modifier = {
+#							if = {
+#								limit = { turmoil >= 0.3 }
+#								multiply = 2
+#							}
+#						}
+#						trigger_event = { id = anb_adventurers_wanted.113  } 
+#					}	
+#					20 = { # Hag Dens
+#						trigger_event = { id = anb_adventurers_wanted.114  } 
+#					}						
+#					20 = { # Eldritch Cult
+#						modifier = {
+#							if = {
+#								limit = { turmoil >= 0.3 }
+#								multiply = 2
+#							}
+#						}
+#						trigger_event = { id = anb_adventurers_wanted.115  } 
+#					}
+#					20 = { # Vampire Family
+#						trigger_event = { id = anb_adventurers_wanted.116  } 
+#					}					
+#				}
+#			}
+#
+#		}
+#	}
+#}
+#
+## AW Killer
+#anb_adventurers_wanted.2 = {
+#	type = state_event
+#	hidden = yes
+#
+#	trigger = {
+#		any_scope_building = { is_building_group = bg_adventurers_wanted }
+#	}
+#
+#	immediate = {
+#		update_local_quest_progress = yes	
+#		if = {
+#			limit = {
+#				var:current_quest_progress > var:target_quest_progress
+#			}
+#			trigger_event = { id = anb_adventurers_wanted.3 }
+#		}
+#	}
+#} 
+#
+## AW Deleted
+#anb_adventurers_wanted.3 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.3.t
+#	desc = anb_adventurers_wanted.3.d
+#	flavor = anb_adventurers_wanted.3.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#
+#	immediate = {
+#		random_scope_building = {
+#			limit = { is_building_group = bg_adventurers_wanted }
+#			save_scope_as = anb_adventurers_wanted_building
+#		}
+#		remove_all_adventurers_wanted_buildings = yes	#unfortunately in this implementation and current PDX given functionality we need to just do this. This is why we can only have one AW per state
+#	}
+#
+#	option = {
+#		name = anb_adventurers_wanted.3.a
+#		default_option = yes
+#		custom_tooltip = { text = remove_all_adventurers_wanted_buildings_tt }
+#	}
+#} 
+#
+### DUNGEONS ##
+## Brigand Army Base
+#anb_adventurers_wanted.101 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.101.t
+#	desc = anb_adventurers_wanted.101.d
+#	flavor = anb_adventurers_wanted.101.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		# TODO - use scripted effects so we don't create a building, then check what was created
+#		create_building = { building = building_adventurers_wanted_dungeon_brigand_army_base }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.101.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_dungeon_brigand_army_base } }
+#	}
+#}
+## Lich Lair
+#anb_adventurers_wanted.102 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.102.t
+#	desc = anb_adventurers_wanted.102.d
+#	flavor = anb_adventurers_wanted.102.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_dungeon_lich_lair }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.102.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_dungeon_lich_lair } }
+#	}
+#}
+## Precursor Base
+#anb_adventurers_wanted.103 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.103.t
+#	desc = anb_adventurers_wanted.103.d
+#	flavor = anb_adventurers_wanted.103.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_dungeon_precursor_base }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.103.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_dungeon_precursor_base } }
+#	}
+#}
+## Sea Monster Nest
+#anb_adventurers_wanted.104 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.104.t
+#	desc = anb_adventurers_wanted.104.d
+#	flavor = anb_adventurers_wanted.104.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_dungeon_sea_monster_nest }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.104.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_dungeon_sea_monster_nest } }
+#	}
+#}
+#
+### SUDDEN THREATS ##
+## Den of Beasts
+#anb_adventurers_wanted.105 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.105.t
+#	desc = anb_adventurers_wanted.105.d
+#	flavor = anb_adventurers_wanted.105.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_sudden_threat_den_of_beasts }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.105.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_sudden_threat_den_of_beasts } }
+#	}
+#}
+#
+## Undead Mob
+#anb_adventurers_wanted.106 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.106.t
+#	desc = anb_adventurers_wanted.106.d
+#	flavor = anb_adventurers_wanted.106.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_sudden_threat_undead_mob }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.106.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_sudden_threat_undead_mob } }
+#	}
+#}
+#
+## Planar Breach
+#anb_adventurers_wanted.107 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.107.t
+#	desc = anb_adventurers_wanted.107.d
+#	flavor = anb_adventurers_wanted.107.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_sudden_threat_planar_breach }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.107.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_sudden_threat_planar_breach } }
+#	}
+#}
+#
+## Kraken Attack
+#anb_adventurers_wanted.108 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.108.t
+#	desc = anb_adventurers_wanted.108.d
+#	flavor = anb_adventurers_wanted.108.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_sudden_threat_kraken_attack }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.108.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_sudden_threat_kraken_attack } }
+#	}
+#}
+#
+### INFESTATIONS
+## Fey Incursion
+#anb_adventurers_wanted.109 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.109.t
+#	desc = anb_adventurers_wanted.109.d
+#	flavor = anb_adventurers_wanted.109.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_infestation_fey_incursion }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.109.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_infestation_fey_incursion } }
+#	}
+#}
+## Awakened Treants
+#anb_adventurers_wanted.110 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.110.t
+#	desc = anb_adventurers_wanted.110.d
+#	flavor = anb_adventurers_wanted.110.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_infestation_awakened_treants }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.110.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_infestation_awakened_treants } }
+#	}
+#}
+#
+## Ancient Golems
+#anb_adventurers_wanted.111 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.111.t
+#	desc = anb_adventurers_wanted.111.d
+#	flavor = anb_adventurers_wanted.111.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_infestation_ancient_golems }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.111.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_infestation_ancient_golems } }
+#	}
+#}
+#
+## Elemental Forge
+#anb_adventurers_wanted.112 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.112.t
+#	desc = anb_adventurers_wanted.112.d
+#	flavor = anb_adventurers_wanted.112.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_infestation_elemental_forge }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.112.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_infestation_elemental_forge } }
+#	}
+#}
+#
+### INVESTIGATIONS
+## Thieves Guild
+#anb_adventurers_wanted.113 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.113.t
+#	desc = anb_adventurers_wanted.113.d
+#	flavor = anb_adventurers_wanted.113.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"	
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_investigation_thieves_guild }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.113.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_investigation_thieves_guild } }
+#	}
+#}
+#
+## Hag Dens
+#anb_adventurers_wanted.114 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.114.t
+#	desc = anb_adventurers_wanted.114.d
+#	flavor = anb_adventurers_wanted.114.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_investigation_hag_dens }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.114.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_investigation_hag_dens } }
+#	}
+#}
+#
+## Eldritch Cult
+#anb_adventurers_wanted.115 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.115.t
+#	desc = anb_adventurers_wanted.115.d
+#	flavor = anb_adventurers_wanted.115.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_investigation_eldritch_cult }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.114.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_investigation_eldritch_cult } }
+#	}
+#}
+#
+## Vampire Family
+#anb_adventurers_wanted.116 = {
+#	type = state_event
+#	placement = ROOT
+#	title = anb_adventurers_wanted.116.t
+#	desc = anb_adventurers_wanted.116.d
+#	flavor = anb_adventurers_wanted.116.f
+#	duration = 3
+#	event_image = {
+#		video = "europenorthamerica_gold_prospectors"
+#	}
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+#	immediate = {
+#		create_building = { building = building_adventurers_wanted_investigation_vampire_family }
+#		set_quest_target = yes
+#	}
+#	option = { #move everyone there
+#		name = anb_adventurers_wanted.116.a
+#		default_option = yes
+#		show_as_tooltip = { create_building = { building = building_adventurers_wanted_investigation_vampire_family } }
+#	}
+#}

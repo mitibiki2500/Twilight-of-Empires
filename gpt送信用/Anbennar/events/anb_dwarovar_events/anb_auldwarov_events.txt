@@ -1,0 +1,1715 @@
+﻿namespace = auldwarov
+
+# Start event for the Journal Entry
+auldwarov.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.1.t
+	desc = auldwarov.1.d
+	flavor = auldwarov.1.f
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		set_variable = {
+			name = stored_holds
+			value = country_serpentspine_holds_count
+		}
+	}
+
+	option = {
+		default_option = yes
+		name = auldwarov.1.a
+		trigger = {
+			root.var:stored_holds <= 30
+		}
+		show_as_tooltip = {
+			add_modifier = {
+				name = auldwarov_unification_consequences
+			}
+			add_modifier = {
+				name = auldwarov_unification_zeal
+				months = 120
+				is_decaying = yes
+			}
+		}
+		hidden_effect = {
+			je:je_aul_dwarov = { add_progress = { value = owner.var:stored_holds name = anb_aul_dwarov_holds_bar } }
+		}
+	}
+
+	option = {
+		name = auldwarov.1.b
+		trigger = {
+			root.var:stored_holds <= 31
+		}
+		show_as_tooltip = {
+			add_modifier = {
+				name = auldwarov_unification_consequences
+			}
+			remove_modifier = auldwarov_unification_zeal
+			add_modifier = {
+				name = auldwarov_unification_downplayed
+				months = 120
+				is_decaying = yes
+			}
+		}
+		custom_tooltip = {
+			text = auldwarov_reduce_zeal_50_tt
+			je:je_aul_dwarov = { add_progress = { value = -50 name = anb_aul_dwarov_zeal_bar } }
+		}
+		hidden_effect = {
+			je:je_aul_dwarov = { add_progress = { value = owner.var:stored_holds name = anb_aul_dwarov_holds_bar } }
+			remove_modifier = auldwarov_unification_zeal
+			add_modifier = {
+				name = auldwarov_unification_downplayed
+				months = 120
+				is_decaying = yes
+			}
+		}
+	}
+
+	option = {
+		name = auldwarov.1.c
+		trigger = {
+			root.var:stored_holds == 32
+		}
+		remove_modifier = auldwarov_unification_zeal
+		change_tag = D01
+		trigger_event = { id = auldwarov.4 }
+		add_primary_culture = cu:quartz_dwarf
+		# add_primary_culture = cu:sapphire_dwarf
+		# add_primary_culture = cu:ramsteel_dwarf
+		add_primary_culture = cu:kronium_dwarf
+		add_primary_culture = cu:platinum_dwarf
+		add_primary_culture = cu:agate_dwarf
+		# add_primary_culture = cu:mithril_dwarf
+		# add_primary_culture = cu:dagrite_dwarf
+		add_primary_culture = cu:opal_dwarf
+		# add_primary_culture = cu:lead_dwarf
+		add_primary_culture = cu:basalt_dwarf
+		# add_primary_culture = cu:garnet_dwarf
+		# add_primary_culture = cu:flint_dwarf
+		add_primary_culture = cu:diamond_dwarf
+		# add_primary_culture = cu:marble_dwarf
+		# add_primary_culture = cu:cobalt_dwarf
+		add_primary_culture = cu:titanium_dwarf
+		# add_primary_culture = cu:pyrite_dwarf
+		add_primary_culture = cu:citrine_dwarf
+		add_primary_culture = cu:gold_dwarf
+		add_primary_culture = cu:topaz_dwarf
+		add_primary_culture = cu:amber_dwarf
+		add_primary_culture = cu:peridot_dwarf
+		add_primary_culture = cu:granite_dwarf
+		add_primary_culture = cu:amethyst_dwarf
+		add_primary_culture = cu:emerald_dwarf
+		add_primary_culture = cu:jade_dwarf
+		# add_primary_culture = cu:malachite_dwarf
+	}
+}
+
+#"Failure": the government kept out the aul-dwarovites and stuck to its own 
+auldwarov.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.2.t
+	desc = auldwarov.2.d
+	flavor = auldwarov.2.f
+
+	event_image = {
+		video = "unspecific_temperance_movement"
+	}
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		ROOT = {
+			save_scope_as = auldwarov_new_nation_scope
+		}
+	}
+
+	option = {
+		default_option = yes
+		
+		name = auldwarov.2.a
+		add_modifier = {
+			name = auldwarov_rejected_inwards
+			months = 240
+		}
+		custom_tooltip = {
+			text = auldwarov_project_failure_tt
+			if = {
+				limit = {
+					has_variable = landowners_swayed_var
+				}
+				remove_modifier = auldwarov_landowners_swayed
+				ig:ig_landowners ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = devout_swayed_var
+				}
+				remove_modifier = auldwarov_devout_swayed
+				ig:ig_devout ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = armed_forces_swayed_var
+				}
+				remove_modifier = auldwarov_armed_forces_swayed
+				ig:ig_armed_forces ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = rural_folk_swayed_var
+				}
+				remove_modifier = auldwarov_rural_folk_swayed
+				ig:ig_rural_folk ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = intelligentsia_swayed_var
+				}
+				remove_modifier = auldwarov_intelligentsia_swayed
+				ig:ig_intelligentsia ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = industrialists_swayed_var
+				}
+				remove_modifier = auldwarov_industrialists_swayed
+				ig:ig_industrialists ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = trade_unions_swayed_var
+				}
+				remove_modifier = auldwarov_trade_unions_swayed
+				ig:ig_trade_unions ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				has_law = law_type:law_multicultural
+			}
+		}
+		name = auldwarov.2.b
+		add_modifier = {
+			name = auldwarov_rejected_outwards
+			months = 240
+		}
+		custom_tooltip = {
+			text = auldwarov_project_failure_tt
+			if = {
+				limit = {
+					has_variable = landowners_swayed_var
+				}
+				remove_modifier = auldwarov_landowners_swayed
+				ig:ig_landowners ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = devout_swayed_var
+				}
+				remove_modifier = auldwarov_devout_swayed
+				ig:ig_devout ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = armed_forces_swayed_var
+				}
+				remove_modifier = auldwarov_armed_forces_swayed
+				ig:ig_armed_forces ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = rural_folk_swayed_var
+				}
+				remove_modifier = auldwarov_rural_folk_swayed
+				ig:ig_rural_folk ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = intelligentsia_swayed_var
+				}
+				remove_modifier = auldwarov_intelligentsia_swayed
+				ig:ig_intelligentsia ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = industrialists_swayed_var
+				}
+				remove_modifier = auldwarov_industrialists_swayed
+				ig:ig_industrialists ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = trade_unions_swayed_var
+				}
+				remove_modifier = auldwarov_trade_unions_swayed
+				ig:ig_trade_unions ?= {
+					add_modifier = {
+						name = auldwarov_project_failure
+						months = 240
+						is_decaying = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+#Failure: you end up in civil war, lose a containment war, or stall out
+auldwarov.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.3.t
+	desc = auldwarov.3.d
+	flavor = auldwarov.3.f
+
+	event_image = {
+		video = "unspecific_devastation"
+	}
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		add_modifier = {
+			name = auldwarov_collapse_consequences
+			months = 120
+			is_decaying = yes
+		}
+		ig:ig_petty_bourgeoisie = {
+			set_variable = fascist_uptick
+		}
+		ig:ig_armed_forces = {
+			set_variable = fascist_uptick
+		}
+	}
+
+	option = {
+		name = auldwarov.3.a
+		default_option = yes
+		
+		show_as_tooltip = {
+			add_modifier = {
+				name = auldwarov_collapse_consequences
+				months = 120
+				is_decaying = yes
+			}
+		}
+		custom_tooltip = auldwarov_collapse_fascism_tt
+	}
+}
+
+#"Success": you conquered everything now figure out how to keep it all together
+auldwarov.4 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.4.t
+	desc = auldwarov.4.d
+	flavor = auldwarov.4.f
+
+	event_image = {
+		video = "ep1_transfer_of_authority"
+	}
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		default_option = yes
+		
+		name = auldwarov.4.a
+		add_modifier = {
+			name = auldwarov_unifier_prestige
+			months = 240
+		}
+	}
+}
+
+#Radicals consolidate into an unaccepted dwarf culture
+auldwarov.5 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.5.t
+	desc = auldwarov.5.d
+	flavor = auldwarov.5.f
+	
+	event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+	
+	duration = 3
+	
+	trigger = {
+		has_journal_entry = je_aul_dwarov
+		any_scope_state = {
+			has_state_trait = state_trait_dwarven_hold
+			turmoil >= 0.2
+			NOT = { is_homeland_of_country_cultures = root }
+			any_scope_pop = {
+				this.culture = {
+					NOT = {
+						is_primary_culture_of = ROOT
+					}
+					has_discrimination_trait_group = heritage_group_dwarf
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		random_scope_state = {
+			limit = {
+				has_state_trait = state_trait_dwarven_hold
+				turmoil >= 0.2
+				NOT = { is_homeland_of_country_cultures = root }
+				any_scope_pop = {
+					this.culture = {
+						NOT = {
+							is_primary_culture_of = ROOT
+						}
+						has_discrimination_trait_group = heritage_group_dwarf
+					}
+				}
+			}
+			save_scope_as = event_hold_scope
+			hold_culture_check = yes
+		}
+	}
+	
+	option = {
+		default_option = yes
+		
+		name = auldwarov.5.a
+		custom_tooltip = {
+			text = hold_culture_shift_radical_tt
+			scope:event_hold_scope = {
+				every_scope_pop = {
+					limit = {
+						culture = { has_discrimination_trait_group = heritage_group_dwarf }
+						total_size <= 20000
+					}
+					change_pop_culture = {
+						target = scope:event_hold_culture_scope
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { has_discrimination_trait_group = heritage_group_dwarf }
+					}
+					change_pop_culture = {
+						target = scope:event_hold_culture_scope
+						value = 0.15
+					}
+				}
+			}
+		}
+	}
+}
+
+#loyalists consolidate into a primary dwarf culture
+auldwarov.6 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.6.t
+	desc = auldwarov.6.d
+	flavor = auldwarov.6.f
+	
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+	
+	duration = 3
+	
+	trigger = {
+		has_journal_entry = je_aul_dwarov
+		any_scope_state = {
+			has_state_trait = state_trait_dwarven_hold
+			turmoil <= 0.01
+			is_homeland_of_country_cultures = ROOT
+			any_scope_pop = {
+				this.culture = {
+					has_discrimination_trait_group = heritage_group_dwarf
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		random_scope_state = {
+			limit = {
+				has_state_trait = state_trait_dwarven_hold
+				turmoil <= 0.01
+				is_homeland_of_country_cultures = ROOT
+				any_scope_pop = {
+					this.culture = {
+						has_discrimination_trait_group = heritage_group_dwarf
+					}
+				}
+			}
+			save_scope_as = event_hold_scope
+			hold_culture_check = yes
+		}
+	}
+	
+	option = {
+		default_option = yes
+		
+		name = auldwarov.6.a
+		custom_tooltip = {
+			text = hold_culture_shift_loyalist_tt
+			scope:event_hold_scope = {
+				every_scope_pop = {
+					limit = {
+						culture = { has_discrimination_trait_group = heritage_group_dwarf }
+						total_size <= 20000
+					}
+					change_pop_culture = {
+						target = scope:event_hold_culture_scope
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { has_discrimination_trait_group = heritage_group_dwarf }
+					}
+					change_pop_culture = {
+						target = scope:event_hold_culture_scope
+						value = 0.15
+					}
+				}
+			}
+		}
+	}
+}
+
+#a reclamation movement wants to settle a hold
+auldwarov.7 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.7.t
+	desc = auldwarov.7.d
+	flavor = auldwarov.7.f
+	
+	event_image = {
+		video = "ep1_printing_press"
+	}
+	
+	duration = 3
+	
+	trigger = {
+		has_journal_entry = je_aul_dwarov
+		NOT = { has_variable = hold_migration_opposed }
+		any_scope_state = {
+			AND = {
+				has_state_trait = state_trait_dwarven_hold
+				NOT = { state_region = s:STATE_MARRHOLD }
+			}
+			NOT =	{
+				any_scope_pop = {
+					this.culture = {
+						has_discrimination_trait_group = heritage_group_dwarf
+					}
+					total_size >= 20000
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		random_scope_state = {
+			limit = {
+				has_state_trait = state_trait_dwarven_hold
+				NOT =	{
+					any_scope_pop = {
+						this.culture = {
+							has_discrimination_trait_group = heritage_group_dwarf
+						}
+						total_size >= 20000
+					}
+				}
+			}
+			save_scope_as = event_hold_scope
+			hold_culture_check = yes
+		}
+		random_scope_state = {
+			limit = {
+				is_homeland_of_country_cultures = ROOT
+				any_scope_pop = {
+					this.culture = {
+						has_discrimination_trait_group = heritage_group_dwarf
+					}
+					total_size >= 200000
+				}
+			}
+			save_scope_as = migration_origin
+		}
+		random_scope_state = {
+			limit = {
+				is_homeland_of_country_cultures = ROOT
+				any_scope_pop = {
+					this.culture = scope:event_hold_culture_scope
+				}
+			}
+			save_scope_as = migration_origin
+		}
+		scope:migration_origin = {
+			every_scope_pop = {
+				limit = {
+					culture = { has_discrimination_trait_group = heritage_group_dwarf }
+					total_size >= 1000000
+				}
+				change_pop_culture = {
+					target = scope:event_hold_culture_scope
+					value = 0.005
+				}
+			}
+			every_scope_pop = {
+				limit = {
+					culture = { has_discrimination_trait_group = heritage_group_dwarf }
+					total_size >= 500000
+				}
+				change_pop_culture = {
+					target = scope:event_hold_culture_scope
+					value = 0.01
+				}
+			}
+			every_scope_pop = {
+				limit = {
+					culture = { has_discrimination_trait_group = heritage_group_dwarf }
+					total_size >= 200000
+				}
+				change_pop_culture = {
+					target = scope:event_hold_culture_scope
+					value = 0.02
+				}
+			}
+		}
+	}
+	
+	option = {
+		default_option = yes
+		
+		name = auldwarov.7.a
+		custom_tooltip = {
+			text = hold_migrants_let_go_tt
+			scope:migration_origin = {
+				every_scope_pop = {
+					limit = {
+						culture = scope:event_hold_culture_scope
+						total_size <= 30000
+					}
+					move_partial_pop = {
+						state = scope:event_hold_scope
+						population_ratio = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = scope:event_hold_culture_scope
+						total_size <= 200000
+					}
+					move_partial_pop = {
+						state = scope:event_hold_scope
+						population_ratio = 0.3
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = scope:event_hold_culture_scope
+						total_size <= 1000000
+					}
+					move_partial_pop = {
+						state = scope:event_hold_scope
+						population_ratio = 0.05
+					}
+				}
+			}
+			scope:event_hold_scope = {
+				add_loyalists_in_state = {
+					value = 0.1
+					culture = scope:event_hold_culture_scope
+				}
+			}
+		}
+		scope:event_hold_scope = {
+			add_radicals_in_state = {
+				value = 0.05
+			}
+		}
+	}
+
+	option = {
+		name = auldwarov.7.b
+		custom_tooltip = {
+			text = hold_migrants_forced_stay_tt
+			set_variable = {
+				name = hold_migration_opposed
+				months = 24
+			}
+		}
+		scope:migration_origin = {
+			add_radicals_in_state = {
+				value = 0.2
+				culture = scope:event_hold_culture_scope
+			}
+		}
+	}
+}
+
+
+#Sway stuff
+#Starting event after you click the Overtures button
+auldwarov.100 = {
+	type = country_event
+	placement = ROOT
+	
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	title = auldwarov.100.t
+	desc = auldwarov.100.d
+	flavor = auldwarov.100.f
+	
+	duration = 3
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	immediate = {
+		add_modifier = {
+			name = auldwarov_government_deliberations
+			days = 365
+		}
+	}
+	
+	option = {
+		default_option = yes
+		
+		name = auldwarov.100.a
+		show_as_tooltip = {
+			add_modifier = {
+				name = auldwarov_government_deliberations
+				days = 365
+			}
+		}
+		custom_tooltip = {
+			text = auldwarov_demands_now_presented_tt
+		}
+	}
+}
+
+#Landowners Warning
+auldwarov.110 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.110.t
+	desc = auldwarov.110.d
+	flavor = auldwarov.110.f
+	
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+	
+	duration = 3
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	immediate = {
+		set_variable = landowners_warned_auldwarov
+		set_variable = {
+			name = landowners_reprieve
+			value = yes
+			days = 182
+		}
+	}
+	
+	option = {
+		default_option = yes
+		
+		name = auldwarov.110.a
+		custom_tooltip = {
+			text = only_one_chance_landowners_tt
+		}
+	}
+	
+	option = {
+		name = auldwarov.110.b
+		custom_tooltip = {
+			text = landowners_renege_tt
+			remove_variable = landowners_swayed_var
+			set_variable = landowners_reneged
+			remove_modifier = auldwarov_landowners_swayed
+		}
+		if = {
+			limit = {
+				ig:ig_landowners ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_landowners ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }
+		}
+		ig:ig_landowners ?= {
+			add_modifier = {
+				name = reneged_amicably
+				months = 60
+			}
+		}
+	}
+}
+
+#Landowners Ragequit
+auldwarov.112 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "votp_agitator_speaking"
+	}
+
+	title = auldwarov.112.t
+	desc = auldwarov.112.d
+	flavor = auldwarov.112.f
+	
+	duration = 3
+	
+	immediate = {
+		remove_variable = landowners_swayed_var
+		set_variable = landowners_reneged
+		remove_modifier = auldwarov_landowners_swayed
+	}
+	
+	option = {
+		default_option = yes
+		name = auldwarov.112.a
+		custom_tooltip = {
+			text = landowners_renege_tt
+		}
+		if = {
+			limit = {
+				ig:ig_landowners ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_20_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -20 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_landowners ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}	
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else = {
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }			
+		}
+		ig:ig_landowners ?= {
+			add_modifier = {
+				name = reneged_furiously
+				months = 60
+			}
+		}
+	}
+}
+
+auldwarov.120 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.120.t
+	desc = auldwarov.120.d
+	flavor = auldwarov.120.f
+	
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+	
+	duration = 3
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	immediate = {
+		set_variable = armed_forces_warned_auldwarov
+		set_variable = {
+			name = armed_forces_reprieve
+			value = yes
+			days = 182
+		}
+	}
+	
+	option = {
+		default_option = yes
+		
+		name = auldwarov.120.a
+		custom_tooltip = {
+			text = only_one_chance_armed_forces_tt
+		}
+	}
+	
+	option = {
+		name = auldwarov.120.b
+		custom_tooltip = {
+			text = armed_forces_renege_tt
+			remove_variable = armed_forces_swayed_var
+			set_variable = armed_forces_reneged
+			remove_modifier = auldwarov_armed_forces_swayed
+		}
+		if = {
+			limit = {
+				ig:ig_armed_forces ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_armed_forces ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }
+		}
+		ig:ig_armed_forces ?= {
+			add_modifier = {
+				name = reneged_amicably
+				months = 60
+			}
+		}
+	}
+}
+
+#armed_forces Ragequit
+auldwarov.122 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "votp_agitator_speaking"
+	}
+
+	title = auldwarov.122.t
+	desc = auldwarov.122.d
+	flavor = auldwarov.122.f
+	
+	duration = 3
+	
+	immediate = {
+		remove_variable = armed_forces_swayed_var
+		set_variable = armed_forces_reneged
+		remove_modifier = auldwarov_armed_forces_swayed
+	}
+	
+	option = {
+		default_option = yes
+		name = auldwarov.122.a
+		custom_tooltip = {
+			text = armed_forces_renege_tt
+		}
+		if = {
+			limit = {
+				ig:ig_armed_forces ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_20_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -20 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_armed_forces ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}	
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else = {
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }			
+		}
+		ig:ig_armed_forces ?= {
+			add_modifier = {
+				name = reneged_furiously
+				months = 60
+			}
+		}
+	}
+}
+
+auldwarov.130 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.130.t
+	desc = auldwarov.130.d
+	flavor = auldwarov.130.f
+	
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+	
+	duration = 3
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	immediate = {
+		set_variable = devout_warned_auldwarov
+		set_variable = {
+			name = devout_reprieve
+			value = yes
+			days = 182
+		}
+	}
+	
+	option = {
+		default_option = yes
+		
+		name = auldwarov.130.a
+		custom_tooltip = {
+			text = only_one_chance_devout_tt
+		}
+	}
+	
+	option = {
+		name = auldwarov.130.b
+		custom_tooltip = {
+			text = devout_renege_tt
+			remove_variable = devout_swayed_var
+			set_variable = devout_reneged
+			remove_modifier = auldwarov_devout_swayed
+		}
+		if = {
+			limit = {
+				ig:ig_devout ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_devout ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }
+		}
+		ig:ig_devout ?= {
+			add_modifier = {
+				name = reneged_amicably
+				months = 60
+			}
+		}
+	}
+}
+
+#devout Ragequit
+auldwarov.132 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "votp_agitator_speaking"
+	}
+
+	title = auldwarov.132.t
+	desc = auldwarov.132.d
+	flavor = auldwarov.132.f
+	
+	duration = 3
+	
+	immediate = {
+		remove_variable = devout_swayed_var
+		set_variable = devout_reneged
+		remove_modifier = auldwarov_devout_swayed
+	}
+	
+	option = {
+		default_option = yes
+		name = auldwarov.132.a
+		custom_tooltip = {
+			text = devout_renege_tt
+		}
+		if = {
+			limit = {
+				ig:ig_devout ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_20_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -20 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_devout ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}	
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else = {
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }			
+		}
+		ig:ig_devout ?= {
+			add_modifier = {
+				name = reneged_furiously
+				months = 60
+			}
+		}
+	}
+}
+
+auldwarov.140 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.140.t
+	desc = auldwarov.140.d
+	flavor = auldwarov.140.f
+	
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+	
+	duration = 3
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	immediate = {
+		set_variable = rural_folk_warned_auldwarov
+		set_variable = {
+			name = rural_folk_reprieve
+			value = yes
+			days = 182
+		}
+	}
+	
+	option = {
+		default_option = yes
+		
+		name = auldwarov.140.a
+		custom_tooltip = {
+			text = only_one_chance_rural_folk_tt
+		}
+	}
+	
+	option = {
+		name = auldwarov.140.b
+		custom_tooltip = {
+			text = rural_folk_renege_tt
+			remove_variable = rural_folk_swayed_var
+			set_variable = rural_folk_reneged
+			remove_modifier = auldwarov_rural_folk_swayed
+		}
+		if = {
+			limit = {
+				ig:ig_rural_folk ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_rural_folk ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }
+		}
+		ig:ig_rural_folk ?= {
+			add_modifier = {
+				name = reneged_amicably
+				months = 60
+			}
+		}
+	}
+}
+
+#rural_folk Ragequit
+auldwarov.142 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "votp_agitator_speaking"
+	}
+
+	title = auldwarov.142.t
+	desc = auldwarov.142.d
+	flavor = auldwarov.142.f
+	
+	duration = 3
+	
+	immediate = {
+		remove_variable = rural_folk_swayed_var
+		set_variable = rural_folk_reneged
+		remove_modifier = auldwarov_rural_folk_swayed
+	}
+	
+	option = {
+		default_option = yes
+		name = auldwarov.142.a
+		custom_tooltip = {
+			text = rural_folk_renege_tt
+		}
+		if = {
+			limit = {
+				ig:ig_rural_folk ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_20_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -20 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_rural_folk ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}	
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else = {
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }			
+		}
+		ig:ig_rural_folk ?= {
+			add_modifier = {
+				name = reneged_furiously
+				months = 60
+			}
+		}
+	}
+}
+
+auldwarov.150 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.150.t
+	desc = auldwarov.150.d
+	flavor = auldwarov.150.f
+	
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+	
+	duration = 3
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	immediate = {
+		set_variable = intelligentsia_warned_auldwarov
+		set_variable = {
+			name = intelligentsia_reprieve
+			value = yes
+			days = 182
+		}
+	}
+	
+	option = {
+		default_option = yes
+		
+		name = auldwarov.150.a
+		custom_tooltip = {
+			text = only_one_chance_intelligentsia_tt
+		}
+	}
+	
+	option = {
+		name = auldwarov.150.b
+		custom_tooltip = {
+			text = intelligentsia_renege_tt
+			remove_variable = intelligentsia_swayed_var
+			set_variable = intelligentsia_reneged
+			remove_modifier = auldwarov_intelligentsia_swayed
+		}
+		if = {
+			limit = {
+				ig:ig_intelligentsia ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_intelligentsia ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }
+		}
+		ig:ig_intelligentsia ?= {
+			add_modifier = {
+				name = reneged_amicably
+				months = 60
+			}
+		}
+	}
+}
+
+#intelligentsia Ragequit
+auldwarov.152 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "votp_agitator_speaking"
+	}
+
+	title = auldwarov.152.t
+	desc = auldwarov.152.d
+	flavor = auldwarov.152.f
+	
+	duration = 3
+	
+	immediate = {
+		remove_variable = intelligentsia_swayed_var
+		set_variable = intelligentsia_reneged
+		remove_modifier = auldwarov_intelligentsia_swayed
+	}
+	
+	option = {
+		default_option = yes
+		name = auldwarov.152.a
+		custom_tooltip = {
+			text = intelligentsia_renege_tt
+		}
+		if = {
+			limit = {
+				ig:ig_intelligentsia ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_20_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -20 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_intelligentsia ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}	
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else = {
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }			
+		}
+		ig:ig_intelligentsia ?= {
+			add_modifier = {
+				name = reneged_furiously
+				months = 60
+			}
+		}
+	}
+}
+
+auldwarov.160 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.160.t
+	desc = auldwarov.160.d
+	flavor = auldwarov.160.f
+	
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+	
+	duration = 3
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	immediate = {
+		set_variable = industrialists_warned_auldwarov
+		set_variable = {
+			name = industrialists_reprieve
+			value = yes
+			days = 182
+		}
+	}
+	
+	option = {
+		default_option = yes
+		
+		name = auldwarov.160.a
+		custom_tooltip = {
+			text = only_one_chance_industrialists_tt
+		}
+	}
+	
+	option = {
+		name = auldwarov.160.b
+		custom_tooltip = {
+			text = industrialists_renege_tt
+			remove_variable = industrialists_swayed_var
+			set_variable = industrialists_reneged
+			remove_modifier = auldwarov_industrialists_swayed
+		}
+		if = {
+			limit = {
+				ig:ig_industrialists ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_industrialists ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }
+		}
+		ig:ig_industrialists ?= {
+			add_modifier = {
+				name = reneged_amicably
+				months = 60
+			}
+		}
+	}
+}
+
+#industrialists Ragequit
+auldwarov.162 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "votp_agitator_speaking"
+	}
+
+	title = auldwarov.162.t
+	desc = auldwarov.162.d
+	flavor = auldwarov.162.f
+	
+	duration = 3
+	
+	immediate = {
+		remove_variable = industrialists_swayed_var
+		set_variable = industrialists_reneged
+		remove_modifier = auldwarov_industrialists_swayed
+	}
+	
+	option = {
+		default_option = yes
+		name = auldwarov.162.a
+		custom_tooltip = {
+			text = industrialists_renege_tt
+		}
+		if = {
+			limit = {
+				ig:ig_industrialists ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_20_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -20 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_industrialists ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}	
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else = {
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }			
+		}
+		ig:ig_industrialists ?= {
+			add_modifier = {
+				name = reneged_furiously
+				months = 60
+			}
+		}
+	}
+}
+
+auldwarov.170 = {
+	type = country_event
+	placement = ROOT
+
+	title = auldwarov.170.t
+	desc = auldwarov.170.d
+	flavor = auldwarov.170.f
+	
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+	
+	duration = 3
+	
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	immediate = {
+		set_variable = trade_unions_warned_auldwarov
+		set_variable = {
+			name = trade_unions_reprieve
+			value = yes
+			days = 182
+		}
+	}
+	
+	option = {
+		default_option = yes
+		
+		name = auldwarov.170.a
+		custom_tooltip = {
+			text = only_one_chance_trade_unions_tt
+		}
+	}
+	
+	option = {
+		name = auldwarov.170.b
+		custom_tooltip = {
+			text = trade_unions_renege_tt
+			remove_variable = trade_unions_swayed_var
+			set_variable = trade_unions_reneged
+			remove_modifier = auldwarov_trade_unions_swayed
+		}
+		if = {
+			limit = {
+				ig:ig_trade_unions ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_trade_unions ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }
+		}
+		ig:ig_trade_unions ?= {
+			add_modifier = {
+				name = reneged_amicably
+				months = 60
+			}
+		}
+	}
+}
+
+#trade_unions Ragequit
+auldwarov.172 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "votp_agitator_speaking"
+	}
+
+	title = auldwarov.172.t
+	desc = auldwarov.172.d
+	flavor = auldwarov.172.f
+	
+	duration = 3
+	
+	immediate = {
+		remove_variable = trade_unions_swayed_var
+		set_variable = trade_unions_reneged
+		remove_modifier = auldwarov_trade_unions_swayed
+	}
+	
+	option = {
+		default_option = yes
+		name = auldwarov.172.a
+		custom_tooltip = {
+			text = trade_unions_renege_tt
+		}
+		if = {
+			limit = {
+				ig:ig_trade_unions ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_20_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -20 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else_if = {
+			limit = {
+				ig:ig_trade_unions ?= { is_powerful = yes }
+			}
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_10_tt
+			}	
+			je:je_aul_dwarov = { add_progress = { value = -10 name = anb_aul_dwarov_zeal_bar } }
+		}
+		else = {
+			custom_tooltip = {
+				text = auldwarov_reduce_zeal_5_tt
+			}
+			je:je_aul_dwarov = { add_progress = { value = -5 name = anb_aul_dwarov_zeal_bar } }			
+		}
+		ig:ig_trade_unions ?= {
+			add_modifier = {
+				name = reneged_furiously
+				months = 60
+			}
+		}
+	}
+}

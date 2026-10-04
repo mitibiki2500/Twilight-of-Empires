@@ -1,0 +1,23 @@
+﻿building_mage_tower = {	#TODO: make this building get destroyed if you pass traditional magic banned
+	building_group = bg_mage_tower
+	icon = "gfx/interface/icons/building_icons/mage_tower.dds"
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_monuments.dds"
+	city_type = city
+	levels_per_mesh = 50
+	ownership_type = self
+
+	possible = {
+		owner = {
+			NOT = { 
+				has_law = law_type:law_traditional_magic_banned
+			}
+		}
+	}
+
+	production_method_groups = {
+		pmg_base_building_mage_tower
+		pmg_transmuation_building_mage_tower
+	}
+	
+	required_construction = construction_cost_low
+}

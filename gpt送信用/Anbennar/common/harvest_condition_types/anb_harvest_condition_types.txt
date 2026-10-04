@@ -1,0 +1,209 @@
+﻿# # Serpentspine specific
+
+#Positive
+halannas_breath = {
+    trigger = {
+        state_is_in_serpentspine_or_dwarven_hold = yes
+    }
+
+    incompatible_with = disease_outbreak
+    incompatible_with = veladklufar_swarm
+
+    range = {
+        integer_range = {
+            min = 1
+            max = 1
+        }
+    }
+
+    duration = {
+        fixed_range = {
+            min = 36
+            max = 96
+        }
+    }
+
+    modifier = {
+        #Throughput
+		building_group_bg_plantations_throughput_add = 0.04
+		building_group_bg_agriculture_throughput_add = 0.04
+        building_group_bg_cave_coral_throughput_add = 0.04
+		
+		#Subsistence
+        state_peasants_consumption_multiplier_add = -0.02
+
+    }
+
+    intensity = {
+        fixed_range = {
+            min = 2
+            max = 4
+        }
+    }
+
+    chance = {
+        value = 0.010
+        #value = 0.1
+    }
+
+    color = { 150 255 200}
+    # PLACEHOLDER ICON
+    icon = "gfx/interface/icons/harvest_condition_icons/pollinator_surge.dds"
+    map_texture = "gfx/map/map_painting/harvest_conditions_map_patterns/harvest_conditions_good.dds"
+	graphics = none
+
+}
+
+rich_mining_vein = {
+    trigger = {
+        state_is_dwarven_hold = yes
+    }
+
+    range = {
+        integer_range = {
+            min = 0
+            max = 0
+        }
+    }
+
+    duration = {
+        fixed_range = {
+            min = 36
+            max = 96
+        }
+    }
+
+    modifier = {
+        #Throughput
+        goods_output_iron_mult = 0.05
+        goods_output_coal_mult = 0.05
+        goods_output_sulfur_mult = 0.05
+        goods_output_lead_mult = 0.05
+        goods_output_gold_mult = 0.05
+        goods_output_damestear_mult = 0.05
+        goods_output_flawless_metal_mult = 0.05
+
+        state_migration_pull_mult = 0.12
+
+    }
+
+    intensity = {
+        fixed_range = {
+            min = 2
+            max = 6
+        }
+    }
+
+    chance = {
+        value = 0.01
+    }
+
+    color = { 204 204 0 }
+    # PLACEHOLDER ICON
+    icon = "gfx/interface/icons/harvest_condition_icons/optimal_sunlight.dds"
+    map_texture = "gfx/map/map_painting/harvest_conditions_map_patterns/harvest_conditions_good.dds"
+	graphics = none
+}
+
+#Negative
+veladklufar_swarm = {
+    trigger = {
+        state_is_in_serpentspine_or_dwarven_hold = yes
+    }
+
+    # Replaces Halanna 's breath
+
+    range = {
+        integer_range = {
+            min = 1
+            max = 1
+        }
+    }
+
+    duration = {
+        fixed_range = {
+            min = 36
+            max = 96
+        }
+    }
+
+    modifier = {
+        # Throughput
+		building_group_bg_plantations_throughput_add = -0.03
+		building_group_bg_agriculture_throughput_add = -0.03
+        building_group_bg_cave_coral_throughput_add = -0.03
+
+        #Subsistence
+        state_peasants_consumption_multiplier_add = 0.02
+    }
+
+    intensity = {
+        fixed_range = {
+            min = 2
+            max = 5
+        }
+    }
+
+    chance = {
+        value = 0.01
+    }
+
+    color = {
+        100 50 0
+    }
+    icon = "gfx/interface/icons/harvest_condition_icons/locust_swarm.dds"
+    map_texture = "gfx/map/map_painting/harvest_conditions_map_patterns/harvest_conditions_bad.dds"
+    graphics = locust_swarm
+
+}
+
+dwarovar_railway_disrepair = {
+    trigger = {
+        state_has_dwarovrod = yes
+    }
+
+    # Replaces halanna 's breath
+
+    range = {
+        integer_range = {
+            min = 1
+            max = 1
+        }
+    }
+
+    duration = {
+        fixed_range = {
+            min = 36
+            max = 104
+        }
+    }
+
+    modifier = {
+        #Infrastructure
+        state_infrastructure_mult = -0.05
+
+        #MAPI
+        state_market_access_price_impact = -0.05
+
+        #Subsistence
+        state_peasants_consumption_multiplier_add = 0.025
+    }
+
+    intensity = {
+        fixed_range = {
+            min = 2
+            max = 4
+        }
+    }
+
+    chance = {
+        value = 0.04
+    }
+
+    color = {
+        96 96 96
+    }
+    icon = "gfx/interface/icons/harvest_condition_icons/flood.dds"
+    map_texture = "gfx/map/map_painting/harvest_conditions_map_patterns/harvest_conditions_bad.dds"
+graphics = none
+}

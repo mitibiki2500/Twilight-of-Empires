@@ -1,0 +1,63 @@
+﻿je_tianlou_debt = {
+    icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
+
+	group = je_group_historical_content
+
+    scripted_button = je_tianlou_debt_negotiation_button
+    scripted_button = je_tianlou_debt_payment_button
+    scripted_button = je_tianlou_cancel_debt_button
+
+    immediate = {
+        c:B07 ?= {
+            save_scope_as = triarchy_scope
+        }
+    }
+    complete = {
+        NOR = {
+            has_modifier = modifier_triarchy_rending_repayments_4
+            has_modifier = modifier_triarchy_rending_repayments_3
+            has_modifier = modifier_triarchy_rending_repayments_2
+            has_modifier = modifier_triarchy_rending_repayments_1
+            has_modifier = modifier_cancelled_tianlou_debt
+        }
+    }
+
+    on_complete = {
+        trigger_event = { id = tianlou_events.1 popup = yes }
+        c:B07 = { trigger_event = { id = tianlou_events.2 popup = yes } }
+    }
+
+    invalid = {
+        NOT = {
+            exists = c:B07
+        }
+    }
+
+    fail = {
+       has_modifier = modifier_cancelled_tianlou_debt
+    }
+
+    status_desc = {
+        first_valid = {
+            triggered_desc = {
+                desc = je_tianlou_debt_status_4
+                trigger = { has_modifier = modifier_triarchy_rending_repayments_4 }
+            }
+            triggered_desc = {
+                desc = je_tianlou_debt_status_3
+                trigger = { has_modifier = modifier_triarchy_rending_repayments_3 }
+            }
+            triggered_desc = {
+                desc = je_tianlou_debt_status_2
+                trigger = { has_modifier = modifier_triarchy_rending_repayments_2 }
+            }
+            triggered_desc = {
+                desc = je_tianlou_debt_status_1
+                trigger = { has_modifier = modifier_triarchy_rending_repayments_1 }
+            }
+        }
+    }
+
+    weight = 1000
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}

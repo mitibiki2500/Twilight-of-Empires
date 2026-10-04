@@ -1,0 +1,218 @@
+﻿anb_aul_dwarov_zeal_bar = {
+	name = "anb_aul_dwarov_zeal_bar"
+	desc = "anb_aul_dwarov_zeal_bar_desc"
+
+	default = yes
+
+	monthly_progress = {
+		add = {
+			desc = "auldwarov_natural_decline_tt"
+			value = -3
+		}
+		if = { #no supporting IG is powerful
+			limit = {
+				ig:ig_petty_bourgeoisie ?= {
+					is_powerful = yes
+				}
+			}
+			add = {
+				desc = "auldwarov_powerful_pb_tt"
+				value = ig:ig_petty_bourgeoisie.ig_clout
+				multiply = 6
+			}
+		}
+		else = { #no supporting IG is powerful
+			add = {
+				desc = "auldwarov_lack_of_power_pb_tt"
+				value = ig:ig_petty_bourgeoisie.ig_clout
+				multiply = 5
+			}
+		}
+		if = {
+			limit = {
+				has_variable = landowners_swayed_var
+			}
+			if = {
+				limit = {
+					ig:ig_landowners ?= {
+						is_powerful = yes
+					}
+				}
+				add = {
+					desc = "auldwarov_powerful_landowners_tt"
+					value = ig:ig_landowners.ig_clout
+					multiply = 3
+				}
+			}
+			else = {
+				add = {
+					desc = "auldwarov_marginal_landowners_tt"
+					value = ig:ig_landowners.ig_clout
+					multiply = 2.5
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_variable = devout_swayed_var
+			}
+			if = {
+				limit = {
+					ig:ig_devout ?= {
+						is_powerful = yes
+					}
+				}
+				add = {
+					desc = "auldwarov_powerful_devout_tt"
+					value = ig:ig_devout.ig_clout
+					multiply = 3
+				}
+			}
+			else = {
+				add = {
+					desc = "auldwarov_marginal_devout_tt"
+					value = ig:ig_devout.ig_clout
+					multiply = 2.5
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_variable = armed_forces_swayed_var
+			}
+			if = {
+				limit = {
+					ig:ig_armed_forces ?= {
+						is_powerful = yes
+					}
+				}
+				add = {
+					desc = "auldwarov_powerful_armed_forces_tt"
+					value = ig:ig_armed_forces.ig_clout
+					multiply = 3
+				}
+			}
+			else = {
+				add = {
+					desc = "auldwarov_marginal_armed_forces_tt"
+					value = ig:ig_armed_forces.ig_clout
+					multiply = 2.5
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_variable = rural_folk_swayed_var
+			}
+			if = {
+				limit = {
+					ig:ig_rural_folk ?= {
+						is_powerful = yes
+					}
+				}
+				add = {
+					desc = "auldwarov_powerful_rural_folk_tt"
+					value = ig:ig_rural_folk.ig_clout
+					multiply = 3
+				}
+			}
+			else = {
+				add = {
+					desc = "auldwarov_marginal_rural_folk_tt"
+					value = ig:ig_rural_folk.ig_clout
+					multiply = 2.5
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_variable = trade_unions_swayed_var
+			}
+			if = {
+				limit = {
+					ig:ig_trade_unions ?= {
+						is_powerful = yes
+					}
+				}
+				add = {
+					desc = "auldwarov_powerful_trade_unions_tt"
+					value = ig:ig_trade_unions.ig_clout
+					multiply = 3
+				}
+			}
+			else = {
+				add = {
+					desc = "auldwarov_marginal_trade_unions_tt"
+					value = ig:ig_trade_unions.ig_clout
+					multiply = 2.5
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_variable = industrialists_swayed_var
+			}
+			if = {
+				limit = {
+					ig:ig_industrialists ?= {
+						is_powerful = yes
+					}
+				}
+				add = {
+					desc = "auldwarov_powerful_industrialists_tt"
+					value = ig:ig_industrialists.ig_clout
+					multiply = 3
+				}
+			}
+			else = {
+				add = {
+					desc = "auldwarov_marginal_industrialists_tt"
+					value = ig:ig_industrialists.ig_clout
+					multiply = 2.5
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_variable = intelligentsia_swayed_var
+			}
+			if = {
+				limit = {
+					ig:ig_intelligentsia ?= {
+						is_powerful = yes
+					}
+				}
+				add = {
+					desc = "auldwarov_powerful_intelligentsia_tt"
+					value = ig:ig_intelligentsia.ig_clout
+					multiply = 3
+				}
+			}
+			else = {
+				add = {
+					desc = "auldwarov_marginal_intelligentsia_tt"
+					value = ig:ig_intelligentsia.ig_clout
+					multiply = 2.5
+				}
+			}
+		}
+	}
+
+	start_value = 100
+	min_value = 0
+	max_value = 100
+}
+
+anb_aul_dwarov_holds_bar = {
+	name = "anb_aul_dwarov_holds_bar"
+	desc = "anb_aul_dwarov_holds_bar_desc"
+
+	default_green = yes
+
+	monthly_progress = {
+	}
+
+	start_value = 0
+	min_value = 0
+	max_value = 32
+}

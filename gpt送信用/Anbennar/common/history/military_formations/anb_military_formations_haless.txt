@@ -1,0 +1,1856 @@
+﻿MILITARY_FORMATIONS = {
+	c:R20 ?= { # Raghamidesh
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "Raghamidesh Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_AVHAVUBHIYA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_AVHAVUBHIYA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_AVHAVUBHIYA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_IYARHASHAR
+				count = 10
+			}
+			save_scope_as = army_R20_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R20_1
+		}
+
+		scope:general_R20_1 = { transfer_to_formation = scope:army_R20_1 }
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_rahen
+			name = "Raghamidesh Fleet"
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 7
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+			save_scope_as = fleet_R20_1
+		}
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_1
+			save_scope_as = admiral_R20_1
+		}
+		scope:admiral_R20_1 = { transfer_to_formation = scope:fleet_R20_1 }
+	}
+	
+	c:R02 ?= { # Ghankedhen
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "Ghankedhen Rangers"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SOUTH_GHANKEDHEN
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SOUTH_GHANKEDHEN
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_NORTH_GHANKEDHEN
+				count = 2
+			}
+			save_scope_as = army_R02_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R02_1
+		}
+
+		scope:general_R02_1 = { transfer_to_formation = scope:army_R02_1 }
+	}
+	
+	c:R01 ?= { # Nahana Jadd
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "Eastern Legion"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_LOWER_DHENBASANA
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_SATARSAYA
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_PASIRAGHA
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_UPPER_DHENBASANA
+				count = 25
+			}
+			save_scope_as = army_R01_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_4
+			save_scope_as = general_R01_1
+		}
+
+		scope:general_R01_1 = { transfer_to_formation = scope:army_R01_1 }
+		
+
+	}
+	
+	c:R03 ?= { # Tudhina
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "Tudhina Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_TUDHINA
+				count = 5
+			}
+			save_scope_as = army_R03_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R03_1
+		}
+
+		scope:general_R03_1 = { transfer_to_formation = scope:army_R03_1 }
+		
+	}
+	
+	c:R04 ?= { # Vanrahar
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "Harimar's Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ASCENSION_JUNGLE
+				count = 12
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_TUJGAL
+				count = 10
+			}
+			save_scope_as = army_R04_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R04_1
+		}
+
+		scope:general_R04_1 = { transfer_to_formation = scope:army_R04_1 }
+		
+	}
+	
+	c:R06 ?= { # Babhagama
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "1st Babhagama Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BABHAGAMA
+				count = 12
+			}
+			save_scope_as = army_R06_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R06_1
+		}
+
+		scope:general_R06_1 = { transfer_to_formation = scope:army_R06_1 }
+	}
+	
+	c:R05 ?= { # Bhuvauri
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "Dragon Guard"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SRAMAYA
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SRAMAYA
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_SRAMAYA
+				count = 2
+			}
+			save_scope_as = army_R05_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R05_1
+		}
+
+		scope:general_R05_1 = { transfer_to_formation = scope:army_R05_1 }
+	}
+	
+	c:R10 ?= { # Khiraspid
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "River Guard"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_DHUJAT
+				count = 5
+			}
+			save_scope_as = army_R10_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R10_1
+		}
+
+		scope:general_R10_1 = { transfer_to_formation = scope:army_R10_1 }
+		
+	}
+	
+	c:R11 ?= { # Keyattordha
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "River Guard"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_DHUJAT
+				count = 5
+			}
+			save_scope_as = army_R11_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R11_1
+		}
+
+		scope:general_R11_1 = { transfer_to_formation = scope:army_R11_1 }
+	}
+	
+	c:Y13 ?= { # Phangban
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "River Guard"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_KHARUNYANA_BOMDAN
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_KHARUNYANA_BOMDAN
+				count = 2
+			}
+			save_scope_as = army_Y13_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y13_1
+		}
+
+		scope:general_Y13_1 = { transfer_to_formation = scope:army_Y13_1 }
+	}
+	
+	c:Y12 ?= { # Semphrerong
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "River Guard"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_KHARUNYANA_BOMDAN
+				count = 15
+			}
+			save_scope_as = army_Y12_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y12_1
+		}
+
+		scope:general_Y12_1 = { transfer_to_formation = scope:army_Y12_1 }
+	}
+	
+	c:R12 ?= { # Maharaaja
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "1st Maharaaja Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_EAST_GHAVAANAJ
+				count = 8
+			}
+			save_scope_as = army_R12_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R12_1
+		}
+
+		scope:general_R12_1 = { transfer_to_formation = scope:army_R12_1 }
+	}
+	
+	c:R72 ?= { # Dhugajir
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "1st Dhugajir Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_EAST_GHAVAANAJ
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_EAST_GHAVAANAJ
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_WEST_GHAVAANAJ
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_WEST_GHAVAANAJ
+				count = 10
+			}
+			save_scope_as = army_R72_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_R72_1
+		}
+
+		scope:general_R72_1 = { transfer_to_formation = scope:army_R72_1 }
+	}
+	
+	c:R09 ?= { # Pordhatti
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "1st Kikun"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_TUGHAYASA
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_TUGHAYASA
+				count = 5
+			}
+			save_scope_as = army_R09_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R09_1
+		}
+
+		scope:general_R09_1 = { transfer_to_formation = scope:army_R09_1 }
+	}
+	
+	c:R07 ?= { # Nadiraji
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "Royal Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_WEST_NADIMRAJ
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_RAJNADHAGA
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_TILTAGHAR
+				count = 5
+			}
+			save_scope_as = army_R07_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_R07_1
+		}
+
+		scope:general_R07_1 = { transfer_to_formation = scope:army_R07_1 }
+		
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "River Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_CENTRAL_NADIMRAJ
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_EAST_NADIMRAJ
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_CENTRAL_NADIMRAJ
+				count = 5
+			}
+			save_scope_as = army_R07_2
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_R07_2
+		}
+
+		scope:general_R07_2 = { transfer_to_formation = scope:army_R07_2 }
+	}
+	
+	c:R13 ?= { # Yodhashikyu
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "Oracle Guard"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_TUGHAYASA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_TUGHAYASA
+				count = 15
+			}
+			save_scope_as = army_R13_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R13_1
+		}
+
+		scope:general_R13_1 = { transfer_to_formation = scope:army_R13_1 }
+		
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "Sarisung Kikun"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SARISUNG
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_QIANZHAOLIN
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_QIANZHAOLIN
+				count = 5
+			}
+			save_scope_as = army_R13_2
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R13_2
+		}
+
+		scope:general_R13_2 = { transfer_to_formation = scope:army_R13_2 }
+		
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_yanshen
+			name = "Xiaken Kikun"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_JIEZHONG
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_WANGQIU
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_WANGQIU
+				count = 10
+			}
+			save_scope_as = army_R13_3
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R13_3
+		}
+
+		scope:general_R13_3 = { transfer_to_formation = scope:army_R13_3 }
+	}
+	
+	c:R14 ?= { # Girakhad
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "1st Kikun"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_GHILAKHAD
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_GHILAKHAD
+				count = 5
+			}
+			save_scope_as = army_R14_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R14_1
+		}
+
+		scope:general_R14_1 = { transfer_to_formation = scope:army_R14_1 }
+	}
+	
+	c:R15 ?= { # Unbroken Guard
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "1st Kikun"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SHAMAKHAD_PLAINS
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SHAMAKHAD_PLAINS
+				count = 5
+			}
+			save_scope_as = army_R15_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R15_1
+		}
+
+		scope:general_R15_1 = { transfer_to_formation = scope:army_R15_1 }
+	}
+	
+	c:R16 ?= { # Kasardun
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "1st Kikun"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SHAMAKHAD_PLAINS
+				count = 16
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SHAMAKHAD_PLAINS
+				count = 4
+			}
+			save_scope_as = army_R16_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R16_1
+		}
+
+		scope:general_R16_1 = { transfer_to_formation = scope:army_R16_1 }
+	}
+	
+	c:R18 ?= { # Bureau of Chains
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "1st Kikun"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SHAMAKHAD_PLAINS
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SHAMAKHAD_PLAINS
+				count = 5
+			}
+			save_scope_as = army_R18_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R18_1
+		}
+
+		scope:general_R18_1 = { transfer_to_formation = scope:army_R18_1 }
+	}
+	
+	c:R17 ?= { # Lion Command
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "1st Kikun"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_GHATASAK
+				count = 30
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_GHATASAK
+				count = 10
+			}
+			save_scope_as = army_R17_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_R17_1
+		}
+
+		scope:general_R17_1 = { transfer_to_formation = scope:army_R17_1 }
+	}
+	
+	c:R08 ?= { # Soldiers Republic
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "Great Kikun"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_RAGHAJANDI
+				count = 30
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_HOBGOBLIN_HOMELANDS
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_HOBGOBLIN_HOMELANDS
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_HOBGOBLIN_HOMELANDS
+				count = 30
+			}
+			save_scope_as = army_R08_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_3
+			save_scope_as = general_R08_1
+		}
+
+		scope:general_R08_1 = { transfer_to_formation = scope:army_R08_1 }
+	}
+	
+	c:Y09 ?= { # Azjakuma
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_gozengun
+			name = "Ramgun Sugroltona"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SUGROLTONA
+				count = 30
+			}
+			save_scope_as = army_Y09_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y09_1
+		}
+
+		scope:general_Y09_1 = { transfer_to_formation = scope:army_Y09_1 }
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_gozengun
+			name = "Ramgun Moryokang"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_MORYOKANG
+				count = 30
+			}
+			save_scope_as = army_Y09_2
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y09_2
+		}
+
+		scope:general_Y09_2 = { transfer_to_formation = scope:army_Y09_2 }
+	}
+	
+	c:R19 ?= { # Dragon Command
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_yanshen
+			name = "Sir Kikun"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SIR
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_SIR
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_MOGUTIAN
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_MOGUTIAN
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_BIANYUAN
+				count = 5
+			}
+			save_scope_as = army_R19_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R19_1
+		}
+
+		scope:general_R19_1 = { transfer_to_formation = scope:army_R19_1 }
+		
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_yanshen
+			name = "Dragon Kikun"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_BIANYUAN
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_BIANYUAN
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_BIANYUAN
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_NOZANYANBE
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_NOZANYANBE
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_YANSZIN
+				count = 10
+			}
+			save_scope_as = army_R19_2
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_R19_2
+		}
+
+		scope:general_R19_2 = { transfer_to_formation = scope:army_R19_2 }
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_R19_3
+		}
+
+		scope:general_R19_3 = { transfer_to_formation = scope:army_R19_2 }
+		
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_yanshen
+			name = "Wuhyun Kikun"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BIANYUAN
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_BIANYUAN
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BIANYUAN
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_NOZANYANBE
+				count = 30
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_YANSZIN
+				count = 20
+			}
+			save_scope_as = army_R19_3
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_3
+			save_scope_as = general_R19_4
+		}
+
+		scope:general_R19_4 = { transfer_to_formation = scope:army_R19_3 }
+	}
+	
+	c:Y11 ?= { # Daxugo
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_gozengun
+			name = "1st Shuvuush Banner"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_YUNGHUUN
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_JIANTSIANG
+				count = 25
+			}
+			save_scope_as = army_Y11_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_Y11_1
+		}
+
+		scope:general_Y11_1 = { transfer_to_formation = scope:army_Y11_1 }
+		
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_yanshen
+			name = "2nd Shuvuush Banner"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_LIUMINXIANG
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_LIUMINXIANG
+				count = 20
+			}
+			save_scope_as = army_Y11_2
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y11_2
+		}
+
+		scope:general_Y11_2 = { transfer_to_formation = scope:army_Y11_2 }
+	}
+	
+	c:Y08 ?= { # Xuanbing
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_yanshen
+			name = "1nd Xuanbing Banner"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_XUANBING
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_XUANBING
+				count = 15
+			}
+			save_scope_as = army_Y08_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y08_1
+		}
+
+		scope:general_Y08_1 = { transfer_to_formation = scope:army_Y08_1 }
+	}
+	
+	c:Y03 ?= { # Tianlou
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_yanshen
+			name = "1nd Tianlou Banner"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_XUANBING
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_TIANLOU
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_TIANLOU
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_JINJIANG
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_JINJIANG
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_LIUMINXIANG
+				count = 15
+			}
+			save_scope_as = army_Y03_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y03_1
+		}
+
+		scope:general_Y03_1 = { transfer_to_formation = scope:army_Y03_1 }
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_Y03_2
+		}
+
+		scope:general_Y03_2 = { transfer_to_formation = scope:army_Y03_1 }
+		
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_yanshen
+			name = "1st Tianlou Fleet"
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+			save_scope_as = fleet_Y03_1
+		}
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_1
+			save_scope_as = admiral_Y03_1
+		}
+		scope:admiral_Y03_1 = { transfer_to_formation = scope:fleet_Y03_1 }
+	}
+	
+	c:Y04 ?= { # Lingyuk
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_yanshen
+			name = "1nd Tail"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_LINGYUK
+				count = 5
+			}
+			save_scope_as = army_Y04_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y04_1
+		}
+
+		scope:general_Y04_1 = { transfer_to_formation = scope:army_Y04_1 }
+	}
+	
+	c:Y05 ?= { # Feiten
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_yanshen
+			name = "1nd Feiten Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_IONGSIM
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_HUNGNGON
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_TIANLOU
+				count = 5
+			}
+			save_scope_as = army_Y05_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y05_1
+		}
+
+		scope:general_Y05_1 = { transfer_to_formation = scope:army_Y05_1 }
+		
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_yanshen
+			name = "1st Jellyfish Fleet"
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 9
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 6
+			}
+			save_scope_as = fleet_Y05_1
+		}
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_2
+			save_scope_as = admiral_Y05_1
+		}
+		scope:admiral_Y05_1 = { transfer_to_formation = scope:fleet_Y05_1 }
+	}
+	
+	c:Y06 ?= { # Luoyip
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_yanshen
+			name = "1nd Luoyip Banner"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_ZYUJYUT
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_LUOYIP
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_LUOYIP
+				count = 5
+			}
+			save_scope_as = army_Y06_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y06_1
+		}
+
+		scope:general_Y06_1 = { transfer_to_formation = scope:army_Y06_1 }
+	}
+	
+	c:Y07 ?= { # Zyujyut
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_yanshen
+			name = "1st Zyujyut Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_ZYUJYUT
+				count = 10
+			}
+			save_scope_as = army_Y07_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y07_1
+		}
+
+		scope:general_Y07_1 = { transfer_to_formation = scope:army_Y07_1 }
+	}
+	
+	c:Y14 ?= { # Taiver
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "1st Taiver Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BIM_LAU
+				count = 20
+			}
+			save_scope_as = army_Y14_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y14_1
+		}
+
+		scope:general_Y14_1 = { transfer_to_formation = scope:army_Y14_1 }
+	}
+	
+	c:Y15 ?= { # Bim Lau
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "Necropolis Guard"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BIM_LAU
+				count = 20
+			}
+			save_scope_as = army_Y15_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y15_1
+		}
+
+		scope:general_Y15_1 = { transfer_to_formation = scope:army_Y15_1 }
+	}
+	
+	c:Y16 ?= { # Khabtei Teleni
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "Necropolis Guard"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_KHABTEI_TELENI
+				count = 15
+			}
+			save_scope_as = army_Y16_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y16_1
+		}
+
+		scope:general_Y16_1 = { transfer_to_formation = scope:army_Y16_1 }
+	}
+	
+	c:Y17 ?= { # Azkare
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "United Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_DEKPHRE
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_SIKAI
+				count = 5
+			}
+			save_scope_as = army_Y17_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y17_1
+		}
+
+		scope:general_Y17_1 = { transfer_to_formation = scope:army_Y17_1 }
+	}
+	
+	c:Y18 ?= { # Rongbek
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "1st Rongbek Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_RONGBEK
+				count = 5
+			}
+			save_scope_as = army_Y18_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y18_1
+		}
+
+		scope:general_Y18_1 = { transfer_to_formation = scope:army_Y18_1 }
+	}
+	
+	c:Y19 ?= { # Baihon Xinh
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "Royal Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_TAMRAN_MA
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_TAMRAN_MA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_PHONAN
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_PHONAN
+				count = 10
+			}
+			save_scope_as = army_Y19_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_Y19_1
+		}
+
+		scope:general_Y19_1 = { transfer_to_formation = scope:army_Y19_1 }
+		
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "Coastal Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_HOANGDESINH
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_HOANGDESINH
+				count = 5
+			}
+			save_scope_as = army_Y19_2
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y19_2
+		}
+
+		scope:general_Y19_2 = { transfer_to_formation = scope:army_Y19_2 }
+		
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "Bom Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_NAGON
+				count = 15
+			}
+			save_scope_as = army_Y19_3
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y19_3
+		}
+
+		scope:general_Y19_3 = { transfer_to_formation = scope:army_Y19_3 }
+		
+	}
+	
+	c:Y20 ?= { # Verkal Ozovar
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "Nephrite Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_VERKAL_OZOVAR
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_VERKAL_OZOVAR
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_HINPHAT
+				count = 15
+			}
+			save_scope_as = army_Y20_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_Y20_1
+		}
+
+		scope:general_Y20_1 = { transfer_to_formation = scope:army_Y20_1 }
+	}
+	
+	c:Y21 ?= { # Kudet Kai
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "Kai Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_KUDET_KAI
+				count = 5
+			}
+			save_scope_as = army_Y21_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y21_1
+		}
+
+		scope:general_Y21_1 = { transfer_to_formation = scope:army_Y21_1 }
+	}
+	
+	c:Y22 ?= { # Sirtan
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "Desert Raiders"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SIRTAN
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SIRTAN
+				count = 6
+			}
+			save_scope_as = army_Y22_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y22_1
+		}
+
+		scope:general_Y22_1 = { transfer_to_formation = scope:army_Y22_1 }
+	}
+	
+	c:Y23 ?= { # Arawkelin
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "1st Arawkelin Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_ARAWKELIN
+				count = 25
+			}
+			save_scope_as = army_Y23_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y23_1
+		}
+
+		scope:general_Y23_1 = { transfer_to_formation = scope:army_Y23_1 }
+	}
+	c:Y24 ?= { # Jaya Raya
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "1st Jaya Raya Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_TLAGUKIT
+				count = 12
+			}
+			save_scope_as = army_Y24_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y24_1
+		}
+
+		scope:general_Y24_1 = { transfer_to_formation = scope:army_Y24_1 }
+	}
+	
+	c:Y25 ?= { # Pelimkana
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "1st Pelimkana Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_REWIRANG
+				count = 2
+			}
+			save_scope_as = army_Y25_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y25_1
+		}
+
+		scope:general_Y25_1 = { transfer_to_formation = scope:army_Y25_1 }
+	}
+	
+	c:Y30 ?= { # Hijoadan
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "1st Hijoadan Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_MESATULEK
+				count = 1
+			}
+			save_scope_as = army_Y30_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y30_1
+		}
+
+		scope:general_Y30_1 = { transfer_to_formation = scope:army_Y30_1 }
+	}
+	
+	c:Y31 ?= { # Labanyak
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "1st Labanyak Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_MESATULEK
+				count = 1
+			}
+			save_scope_as = army_Y31_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y31_1
+		}
+
+		scope:general_Y31_1 = { transfer_to_formation = scope:army_Y31_1 }
+	}
+	
+	c:Y32 ?= { # LHC
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "1st Company Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_LOWER_TELEBEI
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_KHARUNYANA_BOMDAN
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_KHINDI
+				count = 15
+			}
+			save_scope_as = army_Y32_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_Y32_1
+		}
+
+		scope:general_Y32_1 = { transfer_to_formation = scope:army_Y32_1 }
+		
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_rahen
+			name = "2nd Company Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_LOWER_TELEBEI
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_KHINDI
+				count = 10
+			}
+			save_scope_as = army_Y32_2
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_Y32_2
+		}
+
+		scope:general_Y32_2 = { transfer_to_formation = scope:army_Y32_2 }
+	}
+	
+	c:Y33 ?= { # BHC
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "1st Company Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_NON_CHIEN
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_NON_CHIEN
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_KUDET_KAI
+				count = 5
+			}
+			save_scope_as = army_Y33_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_Y33_1
+		}
+
+		scope:general_Y33_1 = { transfer_to_formation = scope:army_Y33_1 }
+		
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_vimdatrong
+			name = "2nd Company Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_BINHRUNGHIN
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_BINHRUNGHIN
+				count = 5
+			}
+			save_scope_as = army_Y33_2
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y33_2
+		}
+
+		scope:general_Y33_2 = { transfer_to_formation = scope:army_Y33_2 }
+	}
+	c:Y39 ?= { # Nirenun syul
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_nomsyulhan
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_UPPER_KHARUNYANA_BASIN
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_UPPER_KHARUNYANA_BASIN
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_GREENVALE
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_GREENVALE
+				count = 3
+			}
+			save_scope_as = army_Y39_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y39_1
+		}
+
+		scope:general_Y39_1 = { transfer_to_formation = scope:army_Y39_1 }
+	}
+	c:Y40 ?= { # Samthalsu
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_nomsyulhan
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_NOMSYULHANI_BADLANDS
+				count = 6
+			}
+			save_scope_as = army_Y40_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y40_1
+		}
+
+		scope:general_Y40_1 = { transfer_to_formation = scope:army_Y40_1 }
+	}
+	c:Y41 ?= { # Hakuukulga
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_nomsyulhan
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_HAKUURUK
+				count = 4
+			}
+			save_scope_as = army_Y41_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y41_1
+		}
+
+		scope:general_Y41_1 = { transfer_to_formation = scope:army_Y41_1 }
+	}
+	c:Y43 ?= { # Bazuneizar
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_nomsyulhan
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_HAKUURUK
+				count = 1
+			}
+			save_scope_as = army_Y43_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y43_1
+		}
+
+		scope:general_Y43_1 = { transfer_to_formation = scope:army_Y43_1 }
+	}
+	c:Y01 ?= { # Danggun
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_gozengun
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_CHEGORGTAI
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_ONDEOK
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_NEOBUNTEO
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_GEUNEULSUP
+				count = 5
+			}
+			save_scope_as = army_Y01_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_Y01_1
+		}
+
+		scope:general_Y01_1 = { transfer_to_formation = scope:army_Y01_1 }
+	}
+}

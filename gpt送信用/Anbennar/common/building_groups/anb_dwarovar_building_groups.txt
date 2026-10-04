@@ -1,0 +1,94 @@
+﻿# parent_group = parent_group_key		If set, this group is considered a child of the specified group. Default no parent.
+# always_possible = yes/no				If yes, building types in this group are always permitted regardless of resources in state. Default no.
+# economy_of_scale = yes/no				If yes, any non-subsistence buildings in or underneath this group will get an economy of scale throughput modifier for each level > 1. Default no.
+# is_subsistence = yes/no				If yes, buildings of types in this group are considered subsistence buildings that follow special rules. Default no.
+# default_building = building_type_key	Specifies the default building type that will be built unless the state specifies a different one. No default.
+# lens = lens_key						If specified, determines the lens buildings in this group will be sorted under. No default.
+# auto_place_buildings = yes/no
+# capped_by_resources = yes/no
+# discoverable_resource = yes/no
+# depletable_resource = yes/no
+# can_use_slaves = yes/no				Default no, setting yes enables slavery for all contained buildings and groups
+# ignores_hiring_rate = yes/no			Default no, setting yes causes all contained buildings and groups to hire as much as they want
+# land_usage = urban/rural				Which type of state resource the building uses. urban = Urbanization, rural = Arable Land. Default no state resource usage.
+#										If unspecified, will return first non-default land usage type found in parent building group tree.
+# cash_reserves_max = number			Maximum amount of £ (per level) that buildings in this group can store into their cash reserves. If unspecified or set to 0, it will use the value from the parent group. Default 0
+# inheritable_construction =  yes/no	If yes, a construction of this building group will survive a state changing hands or a split state merging
+# stateregion_max_level = yes/no		If yes, any building types in this group with the has_max_level property will consider its level restrictions on state-region rather than state level	
+# urbanization = number					The amount of urbanization buildings in this group provides per level
+
+
+bg_dwarven_hold = {
+	category = development
+	lens = infrastructure
+
+	default_building = building_dwarven_hold
+	always_possible = yes
+	stateregion_max_level = yes
+	is_government_funded = yes
+	can_use_slaves = yes
+
+	urbanization = 100
+	infrastructure_usage_per_level = 0
+}
+
+bg_dwarovrod = {
+	category = development
+	lens = infrastructure	
+	
+	parent_group = bg_infrastructure
+	default_building = building_dwarovrod
+	always_possible = yes
+	is_government_funded = no
+	subsidized = yes
+	can_use_slaves = yes
+
+	cash_reserves_max = 25000
+	urbanization = 20
+	
+	stateregion_max_level = yes
+
+	economy_of_scale_ai_factor = 1.5
+	foreign_investment_ai_factor = 0.75
+}
+
+bg_serpentbloom_farms = {
+	parent_group = bg_staple_crops
+	
+	default_building = building_serpentbloom_farm
+	
+	cash_reserves_max = 25000
+}
+
+bg_mushroom_farms = {
+	parent_group = bg_staple_crops
+	
+	default_building = building_mushroom_farm
+	
+	cash_reserves_max = 25000
+}
+
+bg_cave_coral = {
+	parent_group = bg_logging
+	
+	default_building = building_cave_coral
+
+	can_use_slaves = yes
+}
+
+bg_mithril_mining = {
+	parent_group = bg_magical_mining
+	
+	default_building = building_mithril_mine
+
+	can_use_slaves = yes
+}
+
+bg_gem_mining = {
+	parent_group = bg_magical_mining
+	
+	default_building = building_gem_mine
+
+	can_use_slaves = yes
+}
+

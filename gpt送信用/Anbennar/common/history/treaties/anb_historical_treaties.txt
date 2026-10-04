@@ -1,0 +1,1368 @@
+﻿TREATIES = {
+    # Karshyr - Amiratsamo Alliance
+    create_treaty = {
+        name = treaty_name_karshyr_alliance
+        first_country = c:L35
+        second_country = c:L57
+
+        is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+		binding_period = { years = 10 }
+
+        articles_to_create = {
+			{ # Alliance
+				article = alliance
+			}
+		}
+    }
+
+    ### Three Kings Alliance, Blademarches (A27), Rosande (A28), Marrhold (A29)
+    # Three Kings Alliance - A27/A28
+    create_treaty = {
+        name = treaty_name_three_kings
+        first_country = c:A27
+        second_country = c:A28
+
+        is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+        binding_period = { years = 15 }
+
+        articles_to_create = {
+			{ # Defensive Pact
+				article = defensive_pact
+			}
+		}
+    }
+
+    # Three Kings Alliance - A28/A29
+    create_treaty = {
+        name = treaty_name_three_kings
+        first_country = c:A28
+        second_country = c:A29
+
+        is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+        binding_period = { years = 15 }
+
+        articles_to_create = {
+			{ # Defensive Pact
+				article = defensive_pact
+			}
+		}
+    }
+
+    # Three Kings Alliance - A27/A29
+    create_treaty = {
+        name = treaty_name_three_kings
+        first_country = c:A27
+        second_country = c:A29
+
+        is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+        binding_period = { years = 15 }
+
+        articles_to_create = {
+			{ # Defensive Pact
+				article = defensive_pact
+			}
+		}
+    }
+
+	
+    # Treaty of Steephaven - between the Concord and South Expanse republics after the War of Ynnic Unification
+    create_treaty = {
+		name = treaty_name_steephaven
+		first_country = c:B34
+		second_country = c:B98
+
+		is_draft = no
+		entered_into_force_on = 1819.12.30 
+		binding_period = { years = 15 } 
+
+		articles_to_create = {
+			{ # Trollsbayer Economic interests in the Expanse
+				article = foreign_investment_rights
+				source_country = c:B34
+				target_country = c:B98
+			}
+			{
+				article = trade_privilege
+				source_country = c:B34
+				target_country = c:B98
+			}
+			{ # Transit Rights
+				article = transit_rights
+				source_country = c:B98
+				target_country = c:B34
+			}
+		}
+	}
+
+	# Treaty of Steephaven - between the Concord and South Expanse republics after the War of Ynnic Unification
+    create_treaty = {
+		name = treaty_name_steephaven
+		first_country = c:B41
+		second_country = c:B98
+
+		is_draft = no
+		entered_into_force_on = 1819.12.30 
+		binding_period = { years = 15 } 
+
+		articles_to_create = {
+			{ # Trollsbayer Economic interests in the Expanse
+				article = foreign_investment_rights
+				source_country = c:B41
+				target_country = c:B98
+			}
+			{
+				article = trade_privilege
+				source_country = c:B41
+				target_country = c:B98
+			}
+			{ # Transit Rights
+				article = transit_rights
+				source_country = c:B98
+				target_country = c:B41
+			}
+		}
+	}
+
+	# Treaty of Steephaven - between the Concord and South Expanse republics after the War of Ynnic Unification
+    create_treaty = {
+		name = treaty_name_steephaven
+		first_country = c:B42
+		second_country = c:B98
+
+		is_draft = no
+		entered_into_force_on = 1819.12.30 
+		binding_period = { years = 15 } 
+
+		articles_to_create = {
+			{ # Trollsbayer Economic interests in the Expanse
+				article = foreign_investment_rights
+				source_country = c:B42
+				target_country = c:B98
+			}
+			{
+				article = trade_privilege
+				source_country = c:B42
+				target_country = c:B98
+			}
+			{ # Transit Rights
+				article = transit_rights
+				source_country = c:B98
+				target_country = c:B42
+			}
+		}
+	}
+
+	#Sale of Minaria by Lorent to Neratica - got rid of a bad colony, support the guy who couped the former government so that both sides could claim a win
+	create_treaty = {
+		name = treaty_name_minaria_sale
+		first_country = c:B27
+		second_country = c:A03
+
+		is_draft = no
+		entered_into_force_on = 1817.04.12 
+		binding_period = { years = 15 } 
+
+		articles_to_create = {
+			{	#Obviously they pay for it
+				article = money_transfer
+				source_country = c:B27
+				target_country = c:A03
+				inputs = {
+					{ quantity = 1000 }
+				}
+			}
+			{	#Lorentish support for the new governement
+				article = military_assistance
+				source_country = c:A03
+				target_country = c:B27
+			}
+			{	#Conditional on the new regime staying in place
+				article = law_commitment
+				source_country = c:B27
+				target_country = c:A03
+				inputs = {
+					{ law_type = law_type:law_monarchy }
+				}
+			}
+		}
+	}
+
+	#Triarchy moving in to protect Caylen's Reach after the sister colony was annexed into Minaria by Lorent
+	create_treaty = {
+		first_country = c:B07
+		second_country = c:B71
+
+		is_draft = no
+		entered_into_force_on = 1815.09.27
+		binding_period = { years = 15 } 
+
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:B07
+				target_country = c:B71
+			}
+			{
+				article = military_access	#needed so that they can fight Neratica-Minaria later
+				source_country = c:B07
+				target_country = c:B71
+			}
+		}
+	}
+
+	#Lorent and the Concord agreed to keep Spoorland as a buffer state
+	create_treaty = {
+		first_country = c:B98
+		second_country = c:B94
+
+		is_draft = no
+		entered_into_force_on = 1765.09.03 
+		binding_period = { years = 60 }
+
+		articles_to_create = {
+			{ # Independence Guarantee
+				article = guarantee_independence
+				source_country = c:B98
+				target_country = c:B94
+			}
+		}
+	}
+
+	create_treaty = {
+		first_country = c:A03
+		second_country = c:B94
+
+		is_draft = no
+		entered_into_force_on = 1765.09.03 
+		binding_period = { years = 60 }
+
+		articles_to_create = {
+			{ # Independence Guarantee
+				article = guarantee_independence
+				source_country = c:A03
+				target_country = c:B94
+			}
+		}
+	}
+
+    ### Uneasy Peace Pacts - Southern Expanse bloc formed against Plumstead, later joined by Plumstead after Sarda resurgence (very unstable cause they hate each other but need each other)
+    # Plumstead - Tiru Moine
+    create_treaty = {
+        first_country = c:B42
+        second_country = c:B41
+
+        is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+        binding_period = { years = 20 }
+
+        articles_to_create = {
+			{ # Defensive Pact
+				article = defensive_pact
+			}
+		}
+    }
+    # Beggaston - Tiru Moine
+    create_treaty = {
+        first_country = c:B42
+        second_country = c:B34
+
+        is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+        binding_period = { years = 20 }
+
+        articles_to_create = {
+			{ # Defensive Pact
+				article = defensive_pact
+			}
+		}
+    }
+
+    ### Echate League
+    # Echate League - Ameion/Deyeion
+    create_treaty = {
+        name = treaty_name_echate_league
+        first_country = c:C39
+        second_country = c:C37
+
+        is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+        binding_period = { years = 20 }
+
+        articles_to_create = {
+			{ # Defensive Pact
+				article = defensive_pact
+			}
+		}
+    }
+    # Echate League - Ameion/Amgremos
+    create_treaty = {
+        name = treaty_name_echate_league
+        first_country = c:C39
+        second_country = c:C70
+
+        is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+        binding_period = { years = 20 }
+
+        articles_to_create = {
+			{ # Defensive Pact
+				article = defensive_pact
+			}
+		}
+    }
+
+    #Amldihr/Krak Alliance vs Grombar
+    create_treaty = {
+        name = "Northern Holds' Pact"
+        first_country = c:D05
+        second_country = c:D02
+
+        is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+        binding_period = { years = 10 }
+
+        articles_to_create = {
+			{ # Alliance
+				article = alliance
+			}
+		}
+    }
+
+    #Dak/Nadimraj Defensive Pact vs Underkingdom
+    create_treaty = {
+        name = treaty_name_dak_raj
+        first_country = c:D31
+        second_country = c:R07
+
+        is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+        binding_period = { years = 15 }
+
+        articles_to_create = {
+			{ # Defensive Pact
+				article = defensive_pact
+			}
+		}
+    }
+	
+	# Lingyuk/Danggun Alliance - Y01/Y04 #Temporary
+    create_treaty = {
+        first_country = c:Y01
+        second_country = c:Y04
+
+        is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+        binding_period = { years = 99 }
+
+        articles_to_create = {
+			{ # Alliance
+				article = alliance
+			}
+		}
+    }
+
+    #Anbennar Investment in Khugdir
+    if = {
+		limit = {
+			OR = {
+				has_dlc_feature = foreign_investment
+				has_dlc_feature = mp1_treaties
+			}
+		}
+        create_treaty = {
+            name = treaty_name_anb_khug_trade
+            first_country = c:A01
+            second_country = c:D08
+
+            is_draft = no
+            entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+            binding_period = { years = 10 }
+
+            articles_to_create = {
+                { # Anbennar Economic interests in Khugdir
+					article = foreign_investment_rights
+					source_country = c:D08
+					target_country = c:A01
+				}
+				{ # Anbennar Khugdir Trade Agreement
+					article = trade_privilege
+					source_country = c:D08
+					target_country = c:A01
+				}
+            }
+        }
+    }
+    else = {
+        create_treaty = {
+            name = treaty_name_anb_khug_trade
+            first_country = c:A01
+            second_country = c:D08
+
+            is_draft = no
+            entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+            binding_period = { years = 10 }
+
+            articles_to_create = {
+				{ # Anbennar Khugdir Trade Agreement
+					article = trade_privilege
+					source_country = c:D08
+					target_country = c:A01
+				}
+            }
+        }
+    }
+
+    #Hierarchy Investment in Small Country
+    if = {
+		limit = {
+			OR = {
+				has_dlc_feature = foreign_investment
+				has_dlc_feature = mp1_treaties
+			}
+		}
+        create_treaty = {
+            name = treaty_name_hei_small_trade
+            first_country = c:A06
+            second_country = c:A14
+
+            is_draft = no
+            entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+            binding_period = { years = 15 }
+
+            articles_to_create = {
+			    { # Alliance
+				article = alliance
+			    }
+                { # Hierarchy Economic interests in Small Country
+					article = foreign_investment_rights
+					source_country = c:A14
+					target_country = c:A06
+				}
+            }
+        }
+    }
+    else = {
+        create_treaty = {
+            name = treaty_name_hei_small_trade
+            first_country = c:A06
+            second_country = c:A14
+
+            is_draft = no
+            entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+            binding_period = { years = 15 }
+
+            articles_to_create = {
+				{ # Hierarchy Small Country Trade Agreement
+					article = trade_privilege
+					source_country = c:A14
+					target_country = c:A06
+				}
+            }
+        }
+    }
+
+	#Hierarchy Investment in Anbennar - this is the hierarchy helping modernize anbennar when they blackpowder -Jay as their mutual enemy is NL
+    if = {
+		limit = {
+			OR = {
+				has_dlc_feature = foreign_investment
+				has_dlc_feature = mp1_treaties
+			}
+		}
+        create_treaty = {
+            name = treaty_name_hei_anb_trade
+            first_country = c:A06
+            second_country = c:A01
+
+            is_draft = no
+            entered_into_force_on = 1811.9.15 #signed the year after emperor died and blackpowder movement takes over
+            binding_period = { years = 15 }
+
+            articles_to_create = {
+			    { 
+					article = trade_privilege
+					source_country = c:A01
+					target_country = c:A06
+			    }
+                { 
+					article = foreign_investment_rights
+					source_country = c:A01
+					target_country = c:A06
+				}
+            }
+        }
+    }
+    else = {
+        create_treaty = {
+            name = treaty_name_hei_anb_trade
+            first_country = c:A06
+            second_country = c:A01
+
+            is_draft = no
+            entered_into_force_on = 1811.9.15 #signed the year after emperor died and blackpowder movement takes over
+            binding_period = { years = 15 }
+
+            articles_to_create = {
+				{ # Hierarchy Small Country Trade Agreement
+					article = trade_privilege
+					source_country = c:A01
+					target_country = c:A06
+				}
+            }
+        }
+    }
+
+    #Verkal Gulan Investment in Ghankedhen
+    if = {
+		limit = {
+			OR = {
+				has_dlc_feature = foreign_investment
+				has_dlc_feature = mp1_treaties
+			}
+		}
+        create_treaty = {
+            name = treaty_name_vg_gha_trade
+            first_country = c:D25
+            second_country = c:R02
+
+            is_draft = no
+            entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+            binding_period = { years = 15 }
+
+            articles_to_create = {
+                {
+					article = foreign_investment_rights
+					source_country = c:R02
+					target_country = c:D25
+				}
+				{
+					article = trade_privilege
+					source_country = c:R02
+					target_country = c:D25
+				}
+            }
+        }
+    }
+    else = {
+        create_treaty = {
+            name = treaty_name_vg_gha_trade
+            first_country = c:D25
+            second_country = c:R02
+
+            is_draft = no
+            entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+            binding_period = { years = 15 }
+
+            articles_to_create = {
+				{
+					article = trade_privilege
+					source_country = c:R02
+					target_country = c:D25
+				}
+            }
+        }
+    }
+
+    #Triarchy/VG Trade Integration
+    create_treaty = {
+		name = treaty_name_tri_vg_trade
+		first_country = c:B07
+		second_country = c:B05
+
+		is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+		binding_period = { years = 15 } 
+
+		articles_to_create = {
+			{ # Trade Agreement
+				article = trade_privilege
+				source_country = c:B07
+				target_country = c:B05
+			}
+			{ # Trade Agreement
+				article = trade_privilege
+				source_country = c:B05
+				target_country = c:B07
+			}
+			{ # Steel trade
+				article = goods_transfer
+				source_country = c:B05
+				target_country = c:B07
+				inputs = {
+					{ goods = g:steel }
+					{ quantity = 40 }
+				}
+			}
+		}
+	}
+
+    #Ynnsmouthian Concord Integration Process
+    create_treaty = {
+		name = treaty_name_ynnsmouthian_concord_integration
+		first_country = c:B98
+		second_country = c:B21
+
+		is_draft = no
+		entered_into_force_on = 1790.1.1
+		binding_period = { years = 50 } 
+
+		articles_to_create = {
+			{ # Trade Agreement
+				article = trade_privilege
+				source_country = c:B21
+				target_country = c:B98
+			}
+			{ # Trade Agreement
+				article = trade_privilege
+				source_country = c:B98
+				target_country = c:B21
+			}
+			{ # Independence Guarantee
+				article = guarantee_independence
+				source_country = c:B98
+				target_country = c:B21
+			}
+			{ # Military Assistance (originally against High Havoral)
+				article = military_assistance
+				source_country = c:B98
+				target_country = c:B21
+			}
+			{ # Military Access (so that the Concord can march armies around more easily)
+				article = military_access
+				source_country = c:B98
+				target_country = c:B21
+			}
+			{ # Military Access
+				article = military_access
+				source_country = c:B21
+				target_country = c:B98
+			}
+			{ # Supporting Ynnsmouth's port
+				article = goods_transfer
+				source_country = c:B98
+				target_country = c:B21
+				inputs = {
+					{ goods = g:clippers }
+					{ quantity = 10 }
+				}
+			}
+		}
+	}
+
+	#Ynnsmouthian Recognition of Sarda Sovereignty
+    create_treaty = {
+		name = treaty_name_ynnsmouthian_sarda_vassalage
+		first_country = c:B21
+		second_country = c:B29
+
+		is_draft = no
+		entered_into_force_on = 1812.1.1
+		binding_period = { years = 28 } #so that both have the same duration ingame
+
+		articles_to_create = {
+			{ # Transit Rights
+				article = transit_rights
+				source_country = c:B21
+				target_country = c:B29
+			}
+			{ # Independence Guarantee
+				article = guarantee_independence
+				source_country = c:B29
+				target_country = c:B21
+			}
+		}
+	}
+
+    #Eneion/Besolaki Trade Integration
+    create_treaty = {
+		name = treaty_name_ene_bes_trade
+		first_country = c:C34
+		second_country = c:C35
+
+		is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+		binding_period = { years = 15 } 
+
+		articles_to_create = {
+			{ # Trade Agreement
+				article = trade_privilege
+				source_country = c:C34
+				target_country = c:C35
+			}
+			{ # Trade Agreement
+				article = trade_privilege
+				source_country = c:C35
+				target_country = c:C34
+			}
+		}
+	}
+
+    #Khugdir/Grombar Trade Integration
+    create_treaty = {
+		first_country = c:D08
+		second_country = c:A10
+
+		is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+		binding_period = { years = 25 } 
+
+		articles_to_create = {
+			{ # Trade Agreement
+				article = trade_privilege
+				source_country = c:D08
+				target_country = c:A10
+			}
+			{ # Trade Agreement
+				article = trade_privilege
+				source_country = c:A10
+				target_country = c:D08
+			}
+			{
+				article = transit_rights
+				source_country = c:A10
+				target_country = c:D08
+			}
+			{ # Fee
+				article = goods_transfer
+				source_country = c:D08
+				target_country = c:A10
+				inputs = {
+					{ goods = g:flawless_metal }
+					{ quantity = 30 }
+				
+				}
+			}
+			{ # Fee
+				article = goods_transfer
+				source_country = c:D08
+				target_country = c:A10
+				inputs = {
+					{ goods = g:dye }
+					{ quantity = 30 }
+				
+				}
+			}
+				{ # Fee
+				article = goods_transfer
+				source_country = c:D08
+				target_country = c:A10
+				inputs = {
+					{ goods = g:fabric }
+					{ quantity = 200 }
+				
+				}
+			}
+		}
+	}
+
+    #Adzalan/Thunder Wielding Buffalo Integration
+    create_treaty = {
+		name = treaty_name_adz_twb_trade
+		first_country = c:L34
+		second_country = c:L31
+
+		is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+		binding_period = { years = 15 } 
+
+		articles_to_create = {
+			{ # Trade Agreement
+				article = trade_privilege
+				source_country = c:L34
+				target_country = c:L31
+			}
+			{ # Trade Agreement
+				article = trade_privilege
+				source_country = c:L31
+				target_country = c:L34
+			}
+            { # Independence Guarantee
+				article = guarantee_independence
+				source_country = c:L34
+				target_country = c:L31
+			}
+		}
+	}
+
+    #Karshyr/Amiratsamo Integration
+    create_treaty = {
+		name = treaty_name_kar_ami_trade
+		first_country = c:L35
+		second_country = c:L57
+
+		is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+		binding_period = { years = 15 } 
+
+		articles_to_create = {
+			{ # Trade Agreement
+				article = trade_privilege
+				source_country = c:L35
+				target_country = c:L57
+			}
+			{ # Trade Agreement
+				article = trade_privilege
+				source_country = c:L57
+				target_country = c:L35
+			}
+		}
+	}
+
+    ## Guarantees
+    # Busilar - Surakesi League
+    create_treaty = {
+        name = treaty_name_bus_sur_guarantee
+        first_country = c:A09
+        second_country = c:F02
+
+        is_draft = no
+		entered_into_force_on = 1819.12.30 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+		binding_period = { years = 20 }
+
+        articles_to_create = {
+			{ # Independence Guarantee
+				article = guarantee_independence
+				source_country = c:A09
+				target_country = c:F02
+			}
+		}
+    }
+    # Sarda - Bosancovak League
+    create_treaty = {
+        name = treaty_name_bosancovac_neutrality
+        first_country = c:B29
+        second_country = c:B39
+
+        is_draft = no
+		entered_into_force_on = 1815.1.1
+		binding_period = { years = 15 }
+
+        articles_to_create = {
+			{ # Independence Guarantee
+				article = guarantee_independence
+				source_country = c:B29
+				target_country = c:B39
+			}
+			{
+				article = foreign_investment_rights
+				source_country = c:B39
+				target_country = c:B29
+			}
+			{
+				article = goods_transfer
+				source_country = c:B39
+				target_country = c:B29
+				inputs = {
+					{ goods = g:luxury_furniture }
+					{ quantity = 20 }
+				}
+			}
+			{
+				article = goods_transfer
+				source_country = c:B39
+				target_country = c:B29
+				inputs = {
+					{ goods = g:furniture }
+					{ quantity = 20 }
+				}
+			}
+			{
+				article = goods_transfer
+				source_country = c:B39
+				target_country = c:B29
+				inputs = {
+					{ goods = g:clothes }
+					{ quantity = 20 }
+				}
+			}
+			{
+				article = goods_transfer
+				source_country = c:B39
+				target_country = c:B29
+				inputs = {
+					{ goods = g:sulfur }
+					{ quantity = 20 }
+				}
+			}
+			{
+				article = goods_transfer
+				source_country = c:B29
+				target_country = c:B39
+				inputs = {
+					{ goods = g:fabric }
+					{ quantity = 75 }
+				}
+			}
+			{
+				article = goods_transfer
+				source_country = c:B29
+				target_country = c:B39
+				inputs = {
+					{ goods = g:liquor }
+					{ quantity = 30 }
+				}
+			}
+			{
+				article = goods_transfer
+				source_country = c:B29
+				target_country = c:B39
+				inputs = {
+					{ goods = g:hardwood }
+					{ quantity = 10 }
+				}
+			}
+			{
+				article = goods_transfer
+				source_country = c:B29
+				target_country = c:B39
+				inputs = {
+					{ goods = g:tools }
+					{ quantity = 15 }
+				}
+			}
+		}
+    }
+    # DD - Bosancovak League
+    create_treaty = {
+        name = treaty_name_bosancovac_neutrality
+        first_country = c:B49
+        second_country = c:B39
+
+        is_draft = no
+		entered_into_force_on = 1815.1.1 
+		binding_period = { years = 15 }
+
+        articles_to_create = {
+			{ # Independence Guarantee
+				article = guarantee_independence
+				source_country = c:B49
+				target_country = c:B39
+			}
+			{
+				article = foreign_investment_rights
+				source_country = c:B39
+				target_country = c:B49
+			}
+		}
+    }
+	
+	create_treaty = {
+		name = treaty_name_zurkanrek_trade
+		first_country = c:A06
+		second_country = c:E01
+
+		is_draft = no
+		entered_into_force_on = 1805.6.9 # Random, should be when BPR loses a war and Kalsyto goes Isolationist
+		binding_period = { years = 30 } 
+
+		articles_to_create = {
+			{ # Porcelain Trade
+				article = goods_transfer
+				source_country = c:E01
+				target_country = c:A06
+				inputs = {
+					{ goods = g:porcelain }
+					{ quantity = 20 }
+				}
+			}
+			{ # Fabric Trade
+				article = goods_transfer
+				source_country = c:E01
+				target_country = c:A06
+				inputs = {
+					{ goods = g:fabric }
+					{ quantity = 50 }
+				}
+			}
+			{ # Tobacco Trade
+				article = goods_transfer
+				source_country = c:A06
+				target_country = c:E01
+				inputs = {
+					{ goods = g:tobacco }
+					{ quantity = 30 }
+				}
+			}
+		}
+	}
+
+	create_treaty = {
+		name = "Market Apparatus Integration Initiative"
+		first_country = c:A06
+		second_country = c:A16
+
+		is_draft = no
+		entered_into_force_on = 1805.6.9 
+		binding_period = { years = 45 } 
+
+		articles_to_create = {
+			{ 
+				article = foreign_investment_rights
+				source_country = c:A16
+				target_country = c:A06
+			}
+			{ 
+				article = military_assistance
+				source_country = c:A06
+				target_country = c:A16
+			}
+		}
+	}
+
+	### TREATY PORTS ###
+	#Dedicated section because there's a crapton of them
+
+
+	#Busilar Haless treaty port
+	create_treaty = {
+		first_country = c:A09
+		second_country = c:Y19
+
+		is_draft = no
+		entered_into_force_on = 1754.1.1 #According to what I found in the south Haless timeline - tentative, feel free to change it
+		binding_period = { years = 165 } # 99 year binding period after start of game
+
+		articles_to_create = {
+			{
+				article = treaty_port
+				source_country = c:Y19
+				target_country = c:A09
+				inputs = {
+					{ state = s:STATE_HOANGDESINH.region_state:Y19 }
+				}
+			}
+			{
+				article = money_transfer
+				source_country = c:A09
+				target_country = c:Y19
+				inputs = {
+					{ quantity = 100 } # By default, feel free to edit later
+				}
+			}
+		}
+	}
+
+	#Triarchy south Haless treaty port
+	create_treaty = {
+		first_country = c:B07
+		second_country = c:Y19
+
+		is_draft = no
+		entered_into_force_on = 1820.1.1 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+		binding_period = { years = 99 } # 99 year binding period after start of game
+
+		articles_to_create = {
+			{
+				article = treaty_port
+				source_country = c:Y19
+				target_country = c:B07
+				inputs = {
+					{ state = s:STATE_NAGON.region_state:Y19 }
+				}
+			}
+			{
+				article = money_transfer
+				source_country = c:B07
+				target_country = c:Y19
+				inputs = {
+					{ quantity = 100 } # By default, feel free to edit later
+				}
+			}
+		}
+	}
+
+	#Triarchy north Haless treaty port
+	create_treaty = {
+		first_country = c:B07
+		second_country = c:Y03
+
+		is_draft = no
+		entered_into_force_on = 1758.1.1 #According to Haless timeline
+		binding_period = { years = 161 } # 99 year binding period after start of game
+
+		articles_to_create = {
+			{
+				article = treaty_port
+				source_country = c:Y03
+				target_country = c:B07
+				inputs = {
+					{ state = s:STATE_TIANLOU.region_state:Y03 }
+				}
+			}
+			{ # Beikdugang was leased due to military support to fight the Rending and later the Dragon Command ; feel free to add other stuff as the lore mentions "other concessions"
+				article = military_assistance
+				source_country = c:B07
+				target_country = c:Y03
+			}
+		}
+	}
+
+	## TODO: Suspended until we can fix why this is forever without market access to Busi. 7/27/205 - Chim
+	#Busilar Taychend treaty port
+	#create_treaty = {
+	#	first_country = c:A09
+	#	second_country = c:C49
+#
+	#	is_draft = no
+	#	entered_into_force_on = 1738.1.1 #According to the Taychend timeline
+	#	binding_period = { years = 181 } # 99 year binding period after start of game
+#
+	#	articles_to_create = {
+	#		{
+	#			article = treaty_port
+	#			source_country = c:C49
+	#			target_country = c:A09
+	#			inputs = {
+	#				{ state = s:STATE_ORENKORAIM.region_state:C49 }
+	#			}
+	#		}
+	#		{
+	#			article = money_transfer
+	#			source_country = c:A09
+	#			target_country = c:C49
+	#			inputs = {
+	#				{ quantity = 100 } # By default, feel free to edit later
+	#			}
+	#		}
+	#	}
+	#}
+
+	#Anbennar Taychend treaty port
+	create_treaty = {
+		first_country = c:A01
+		second_country = c:C50
+
+		is_draft = no
+		entered_into_force_on = 1738.1.1 #According to the Taychend timeline
+		binding_period = { years = 181 } # 99 year binding period after start of game
+
+		articles_to_create = {
+			{
+				article = treaty_port
+				source_country = c:C50
+				target_country = c:A01
+				inputs = {
+					{ state = s:STATE_DEGITHION.region_state:C50 }
+				}
+			}
+			{
+				article = money_transfer
+				source_country = c:A01
+				target_country = c:C50
+				inputs = {
+					{ quantity = 100 } # By default, feel free to edit later
+				}
+			}
+		}
+	}
+
+	#Vanbury Eordand treaty port summer
+	create_treaty = {
+		first_country = c:B05
+		second_country = c:B85
+
+		is_draft = no
+		entered_into_force_on = 1782.1.1
+		binding_period = { years = 137 } # 99 year binding period after start of game
+
+		articles_to_create = {
+			{
+				article = treaty_port
+				source_country = c:B85
+				target_country = c:B05
+				inputs = {
+					{ state = s:STATE_PASKALA.region_state:B85 }
+				}
+			}
+			{
+				article = money_transfer
+				source_country = c:B05
+				target_country = c:B85
+				inputs = {
+					{ quantity = 100 } # By default, feel free to edit later
+				}
+			}
+		}
+	}
+
+	#Vanbury Eordand treaty port spring
+	create_treaty = {
+		first_country = c:B05
+		second_country = c:B84
+
+		is_draft = no
+		entered_into_force_on = 1782.1.1
+		binding_period = { years = 137 } # 99 year binding period after start of game
+
+		articles_to_create = {
+			{
+				article = treaty_port
+				source_country = c:B84
+				target_country = c:B05
+				inputs = {
+					{ state = s:STATE_GATHGOB.region_state:B84 }
+				}
+			}
+			{
+				article = money_transfer
+				source_country = c:B05
+				target_country = c:B84
+				inputs = {
+					{ quantity = 100 } # By default, feel free to edit later
+				}
+			}
+		}
+	}
+
+	#Adzalan treaty port
+	create_treaty = {
+		first_country = c:L34
+		second_country = c:L33
+
+		is_draft = no
+		entered_into_force_on = 1820.1.1 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+		binding_period = { years = 99 } # 99 year binding period after start of game
+
+		articles_to_create = {
+			{
+				article = treaty_port
+				source_country = c:L33
+				target_country = c:L34
+				inputs = {
+					{ state = s:STATE_KOMBEDHULA.region_state:L33 }
+				}
+			}
+			{
+				article = money_transfer
+				source_country = c:L34
+				target_country = c:L33
+				inputs = {
+					{ quantity = 100 } # By default, feel free to edit later
+				}
+			}
+		}
+	}
+
+	#Baashidi treaty port
+	create_treaty = {
+		first_country = c:L32
+		second_country = c:L33
+
+		is_draft = no
+		entered_into_force_on = 1820.1.1 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+		binding_period = { years = 99 } # 99 year binding period after start of game
+
+		articles_to_create = {
+			{
+				article = treaty_port
+				source_country = c:L33
+				target_country = c:L32
+				inputs = {
+					{ state = s:STATE_MASHREMBTA.region_state:L33 }
+				}
+			}
+			{
+				article = money_transfer
+				source_country = c:L32
+				target_country = c:L33
+				inputs = {
+					{ quantity = 100 } # By default, feel free to edit later
+				}
+			}
+		}
+	}
+
+	#Baashidi second treaty port
+	create_treaty = {
+		first_country = c:L32
+		second_country = c:L31
+
+		is_draft = no
+		entered_into_force_on = 1820.1.1 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+		binding_period = { years = 99 } # 99 year binding period after start of game
+
+		articles_to_create = {
+			{
+				article = treaty_port
+				source_country = c:L31
+				target_country = c:L32
+				inputs = {
+					{ state = s:STATE_UMUPKA.region_state:L31 }
+				}
+			}
+			{
+				article = money_transfer
+				source_country = c:L32
+				target_country = c:L31
+				inputs = {
+					{ quantity = 100 } # By default, feel free to edit later
+				}
+			}
+		}
+	}
+
+	#NL Sarhal treaty port
+	create_treaty = {
+		first_country = c:A04
+		second_country = c:L33
+
+		is_draft = no
+		entered_into_force_on = 1820.1.1 #If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)
+		binding_period = { years = 99 } # 99 year binding period after start of game
+
+		articles_to_create = {
+			{
+				article = treaty_port
+				source_country = c:L33
+				target_country = c:A04
+				inputs = {
+					{ state = s:STATE_MVUALIMA.region_state:L33 }
+				}
+			}
+			{
+				article = money_transfer
+				source_country = c:A04
+				target_country = c:L33
+				inputs = {
+					{ quantity = 100 } # By default, feel free to edit later
+				}
+			}
+		}
+	}
+
+	#Grombar Maghargma 
+	create_treaty = {
+		name = treaty_name_valak_trade_agreement
+		first_country = c:E02
+		second_country = c:A10
+
+		is_draft = no
+		entered_into_force_on = 1819.12.30	#If anyone has more specific numbers for when treaties became a thing feel free to edit these (Just remember to update the binding period)	
+		binding_period = { years = 99 } # 99 year binding period after start of game
+
+		articles_to_create = {
+			{
+				article = trade_privilege
+				source_country = c:E02
+				target_country = c:A10
+				
+			}
+			{
+				article = trade_privilege
+				source_country = c:A10
+				target_country = c:E02
+				
+			}
+			{
+				article= transit_rights
+				source_country = c:A10
+				target_country = c:E02
+
+			}
+		}
+	}
+}

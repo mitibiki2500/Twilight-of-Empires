@@ -1,0 +1,218 @@
+﻿northern_thaw_league_unity_bar = {
+	name = "northern_thaw_league_unity_bar_name"
+ 	desc = "northern_thaw_league_unity_bar_desc"
+
+ 	default_green = yes
+
+	monthly_progress = {
+		#POSITIVE
+		
+		#loyalists in Alen or Gerudia regions 
+		if = {
+			limit = {
+				c:A04 ?= {
+					any_scope_state = {
+						OR = {
+							region = sr:region_alen
+							region = sr:region_gerudia
+						}
+						loyalists >= 0.10
+					}
+				}
+			}
+			subtract = {
+				desc = "nl_progress_from_loyalists_tt"
+				c:A04 ?= {
+					every_scope_state = {
+						limit = {
+							OR = {
+								region = sr:region_alen
+								region = sr:region_gerudia
+							}
+							loyalists >= 0.10
+						}
+						subtract = this.loyalists
+					}
+				}
+			}
+		}
+		#industrialists are in government
+		if = {
+			limit = {
+				c:A04 ?= {
+					any_interest_group = {
+						has_ideology = ideology:ideology_plutocratic
+						is_in_government = yes
+					}
+				}
+			}
+			add = {
+				desc = "nl_progress_from_industrialist_igs_in_government_tt"
+				value = 1
+			}
+		}
+		#has reachman primary
+		if = {
+			limit = {
+				c:A04 ?= {
+					country_has_primary_culture = cu:blue_reachman
+				}
+			}
+			add = {
+				desc = "nl_reachman_primary_tt"
+				add = 1
+			}
+		}
+		#has dalr primary
+		if = {
+			limit = {
+				c:A04 ?= {
+					country_has_primary_culture = cu:dalr
+				}
+			}
+			add = {
+				desc = "nl_dalr_primary_tt"
+				add = 1
+			}
+		}
+
+		##NEUTRAL
+		# Cooperatist support
+		add = {
+			desc = "nl_progress_from_cooperatists_tt"
+			if = {
+				limit = {
+					c:A04 ?= {
+						ig:ig_intelligentsia = {
+							ig_approval <= angry
+						}
+					}
+				}
+				value = -2
+			}
+			else_if = {
+				limit = {
+					c:A04 ?= {
+						ig:ig_intelligentsia = {
+							ig_approval <= unhappy
+						}
+					}
+				}
+				value = -1
+			}
+			else_if = {
+				limit = {
+					c:A04 ?= {
+						ig:ig_intelligentsia = {
+							ig_approval >= happy
+						}
+					}
+				}
+				value = 1
+			}
+			else_if = {
+				limit = {
+					c:A04 ?= {
+						ig:ig_intelligentsia = {
+							ig_approval >= loyal
+						}
+					}
+				}
+				value = 2
+			}
+		}
+
+		if = { #to make ai collapse less
+			limit = {
+				c:A04 ?= { 
+					is_ai = yes
+				}
+			}
+			add = {
+				desc = "nl_progress_from_being_AI_tt"
+				add = 0.5
+			}
+		}
+
+		#NEGATIVE
+
+		#radicals (turmoil) in Alen or Gerudia regions
+		if = {
+			limit = {
+				c:A04 ?= {
+					any_scope_state = {
+						OR = {
+							region = sr:region_alen
+							region = sr:region_gerudia
+						}
+						turmoil >= 0.10
+					}
+				}
+			}
+			add = {
+				desc = "nl_progress_from_radicals_tt"
+				c:A04 ?= {
+					every_scope_state = {
+						limit = {
+							OR = {
+								region = sr:region_alen
+								region = sr:region_gerudia
+							}
+							turmoil >= 0.10
+						}
+						subtract = this.turmoil
+					}
+				}
+			}
+		}
+		
+		# Luddite IG Leaders
+		if = {
+			limit = {
+				c:A04 ?= {
+					any_interest_group = {
+						leader = {
+							has_ideology = ideology:ideology_luddite
+						}
+					}
+				}
+			}
+			add = {
+				desc = "nl_luddite_leaders_tt"
+				subtract = 1
+			}
+		}
+		#scales on number of active woodwaller strongholds
+		if = {
+			limit = {
+				c:A04 ?= {
+					any_scope_state = {
+						OR = {
+							has_modifier = nl_woodswaller_stronghold
+							has_modifier = nl_woodswaller_stronghold_small
+						}
+					}
+				}
+			}
+			add = {
+				desc = "nl_progress_from_woodswallers_tt"
+				c:A04 ?= {
+					every_scope_state = {
+						limit = {
+							OR = {
+								has_modifier = nl_woodswaller_stronghold
+								has_modifier = nl_woodswaller_stronghold_small
+							}
+							turmoil >= 0.10
+						}
+						subtract = 0.5	#it's -2 when they all spawn, less once you remove some
+					}
+				}
+			}
+		}
+	}
+
+	start_value = 250
+	min_value = 0
+	max_value = 300
+}

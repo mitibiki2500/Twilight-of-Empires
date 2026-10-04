@@ -1,0 +1,26 @@
+﻿### Lingyuk character template file ###
+
+Y04_Huszien_the_Nine_Tailed_Fox = {
+	first_name = huszien
+	last_name = foxgoddess
+	historical = yes
+	ruler = yes
+	female = yes
+	ig_leader = yes
+	birth_date = 100.1.1
+	interest_group = ig_devout
+	ideology = ideology_feminist
+	dna = dna_placeholder_huszien
+	culture = cu:gangim
+	religion = rel:mystic_accord
+	traits = {
+		trait_immortal
+		celebrity_commander
+		firebrand
+		pious
+	}
+	on_created = {
+		# set_variable = huszien_var - Unused var
+		set_character_immortal = yes
+	}
+}

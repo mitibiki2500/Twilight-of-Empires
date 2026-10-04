@@ -1,0 +1,67 @@
+﻿je_mechanim_awakening = {
+	icon = "gfx/interface/icons/event_icons/event_protest.dds" #todo review icon
+	
+	group = je_group_crises
+
+	is_shown_when_inactive = {
+		# Display when automata production is reaching critical mass or we are nearing lore trigger decade
+		OR = {
+			g:automata = {
+				world_market_exports > 4000 # TODO fine tune number
+			}
+			game_date > 1875.1.1
+		}
+	}
+
+	scripted_progress_bar = mechanim_awakening_progress_bar
+
+	possible = {
+		# Fire when automata production has reached critical mass or we are hitting lore trigger decade (1880s)
+		OR = {
+			# TODO - localize these triggers with lore appropriate value
+			g:automata = {
+				world_market_exports > 5000 # TODO - fine tune number
+			}
+			game_date > 1880.1.1
+		}
+	}
+
+	immediate = {
+		trigger_event = { id = mechanim_awakening.1 popup = yes }
+		# set mechanim vars to reduce amount of errors from unset vars
+		set_mechanim_awakening_sentience_support_vars = yes
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			#TODO - fine tune event spawning
+			500 = 0
+			10 = mechanim_awakening.3
+			10 = mechanim_awakening.4
+		}
+		effect = {
+			calculate_mechanim_awakening_sentience_support_progress = yes 
+		}
+	}
+
+	complete = {
+		# Journal is always completed about 10 years
+		custom_tooltip = {
+			text = mechanim_awakening_complete_tt
+			scope:journal_entry = {
+				journal_entry_age > 3650
+			}
+		}
+	}
+
+	on_complete = {
+		custom_tooltip = {
+			text = mechanim_awakening_on_complete_tt
+			hidden_effect = { trigger_event = { id = mechanim_awakening.2 popup = yes }	}	
+		}
+		#removes variables which would be no longer used when journal entry is complete
+		clear_mechanim_awakening_sentience_support_vars = yes
+	}
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

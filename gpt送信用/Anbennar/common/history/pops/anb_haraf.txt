@@ -1,0 +1,835 @@
+﻿POPS = {
+	s:STATE_STEEL_BAY = {
+		region_state:B05 = {
+			create_pop = {
+				culture = vanburian
+				size = 365000
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 65600
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 16400
+			}
+			create_pop = {
+				culture = tinker_gnome
+				size = 47000
+			}
+			create_pop = {
+				culture = soot_goblin
+				size = 34000
+			}
+			create_pop = {
+				culture = steelscale_kobold
+				size = 63000
+			}
+			create_pop = {
+				culture = gawedi
+				size = 42000
+			}
+		}
+	}
+	s:STATE_GREENHILL = {
+		region_state:B05 = {
+			create_pop = {
+				culture = vanburian
+				size = 163000
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 110240
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 15600
+			}
+			create_pop = {
+				culture = gawedi
+				size = 10000
+			}
+		}
+	}
+	s:STATE_RYAIL = {
+		region_state:B05 = {
+			create_pop = {
+				culture = vanburian
+				size = 62000
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 27200
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 6800
+			}
+		}
+	}
+	s:STATE_SCATTERED_ISLANDS = {
+		region_state:B05 = {
+			create_pop = {
+				culture = vanburian
+				size = 41000
+			}
+		}
+	}
+	s:STATE_BRISTAILEAN = {
+		region_state:B03 = {
+			create_pop = {
+				culture = arbarani
+				size = 3240
+			}
+			create_pop = {
+				culture = vanburian #bigger island on the east was conquered from VG
+				size = 5134
+			}
+		}
+		region_state:A09 = {
+			create_pop = {			
+				culture = crager
+				size = 6320
+			}
+		}
+		region_state:B05 = {
+			create_pop = {
+				culture = vanburian
+				size = 8100
+			}
+		}
+	}
+	s:STATE_GUARDIAN_ISLANDS = {
+		region_state:B08 = {
+			create_pop = {
+				culture = crager
+				size = 98000
+			}
+			create_pop = {
+				culture = kooras
+				size = 35000
+				religion = dai_nadeilhil #placeholder religion
+			}
+		}
+		region_state:B07 = {
+			create_pop = {
+				culture = tinker_gnome
+				size = 36000
+			}
+			create_pop = {
+				culture = kooras
+				size = 23000
+				religion = dai_nadeilhil #placeholder religion
+			}
+		}
+	}
+	s:STATE_TAMETER = {
+		region_state:B70 = {
+			create_pop = {
+				culture = mayte
+				size = 37000
+			}
+			create_pop = {
+				culture = cheshoshi
+				size = 23000
+			}
+		}
+		region_state:B27 = {
+			create_pop = {
+				culture = mayte
+				size = 65600
+				religion = death_masks
+			}
+            create_pop = {
+				culture = mayte
+				size = 16400
+				religion = regent_court
+			}
+			create_pop = {
+				culture = cheshoshi
+				size = 62000
+			}
+			create_pop = {
+				culture = minarian
+				size = 63000
+				religion = corinite
+			}
+            create_pop = {
+				culture = minarian
+				size = 16800
+				religion = regent_court
+			}
+            create_pop = {
+				culture = minarian
+				size = 4200
+				religion = ravelian
+			}
+			create_pop = {
+				culture = neratican
+				size = 53000
+			}
+		}
+		region_state:B11 = {
+			create_pop = {
+				culture = epednar
+				size = 2000
+			}
+			create_pop = {
+				culture = mayte
+				size = 8000
+			}
+		}
+	}
+	s:STATE_MINAR_YOLLI = {
+		region_state:B09 = {
+			create_pop = {
+				culture = minarian
+				size = 358000
+				religion = corinite
+			}
+            create_pop = {
+				culture = minarian
+				size = 62400
+				religion = regent_court
+			}
+            create_pop = {
+				culture = minarian
+				size = 15600
+				religion = ravelian
+			}
+			create_pop = {
+				culture = mayte
+				size = 108000
+				religion = corinite
+			}
+            create_pop = {
+				culture = mayte
+				size = 72000
+				religion = ravelian
+			}
+		}
+		region_state:A03 = {
+			create_pop = {
+				culture = minarian
+				size = 10500 
+				religion = corinite
+			}
+            create_pop = {
+				culture = minarian
+				size = 2800 
+				religion = regent_court
+			}
+            create_pop = {
+				culture = minarian
+				size = 700 
+				religion = ravelian
+			}
+		}
+		region_state:B70 = {
+			create_pop = {
+				culture = mayte
+				size = 70600
+			}
+			create_pop = {
+				culture = cheshoshi
+				size = 12000
+			}
+		}
+	}
+	s:STATE_OZTENCOST = {
+		region_state:B03 = {
+			create_pop = {
+				culture = crownsman
+				size = 47000
+			}
+			create_pop = {
+				culture = minarian
+				size = 34000
+				religion = corinite
+			}
+		}
+		region_state:B04 = {
+			create_pop = {
+				culture = derannic
+				size = 17000
+			}
+			create_pop = {
+				culture = minarian
+				size = 53000
+				religion = corinite
+			}
+            create_pop = {
+				culture = minarian
+				size = 3600
+				religion = regent_court
+			}
+            create_pop = {
+				culture = minarian
+				size = 3400
+				religion = ravelian
+			}
+		}
+		region_state:B05 = {
+			create_pop = {
+				culture = vanburian
+				size = 15000
+			}
+			create_pop = {
+				culture = minarian
+				size = 34000
+				religion = corinite
+			}
+		}
+	}
+	s:STATE_TLACHIBAR = {
+		region_state:B70 = {
+			create_pop = {
+				culture = mayte
+				size = 67000
+			}
+			create_pop = {
+				culture = cheshoshi
+				size = 5500
+			}
+		}
+		region_state:B11 = {
+			create_pop = {
+				culture = epednar
+				size = 61000
+			}
+			create_pop = {
+				culture = mayte
+				size = 33000
+			}
+		}
+		region_state:B09 = {
+			create_pop = {
+				culture = mayte
+				size = 34550
+				religion = corinite
+			}
+            create_pop = {
+				culture = mayte
+				size = 9900
+				religion = regent_court
+			}
+            create_pop = {
+				culture = mayte
+				size = 4950
+				religion = ravelian
+			}
+            create_pop = {
+				culture = mayte
+				size = 29600
+				religion = death_masks
+			}
+			create_pop = {
+				culture = minarian
+				size = 36750
+				religion = corinite
+			}
+            create_pop = {
+				culture = minarian
+				size = 9800
+				religion = regent_court
+			}
+            create_pop = {
+				culture = minarian
+				size = 2450
+				religion = ravelian
+			}
+		}
+	}
+	s:STATE_AUVUL_TADIH = {
+		region_state:B11 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 62000 
+			}
+			create_pop = {
+				culture = epednar
+				size = 39000 
+			}
+		}
+		region_state:B10 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 84000
+			}
+		}
+		region_state:B79 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 6000
+			}
+		}
+        region_state:G18 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 6750
+			}
+		}
+	}
+	s:STATE_NANI_NOLIHE = {
+		region_state:G18 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 3500
+			}
+		}
+		region_state:B10 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 144400
+				religion = the_thought
+			}
+            create_pop = {
+				culture = haraf_ne
+				size = 221600
+				religion = dai_nadeilhil
+			}
+			create_pop = {
+				culture = soot_goblin
+				size = 24000
+			}
+		}
+	}
+	s:STATE_MANGROVY_COAST = {
+		region_state:B71 = {
+			create_pop = {
+				culture = trisferian
+				size = 56950
+				religion = regent_court
+			}
+            create_pop = {
+				culture = trisferian
+				size = 10050
+				religion = ravelian
+			}
+			create_pop = {
+				culture = crager
+				size = 23000
+			}
+			create_pop = {
+				culture = minarian
+				size = 14750
+				religion = corinite
+			}
+            create_pop = {
+				culture = minarian
+				size = 6600
+				religion = regent_court
+			}
+            create_pop = {
+				culture = minarian
+				size = 1650
+				religion = ravelian
+			}
+		}
+		region_state:B73 = {
+			create_pop = {
+				culture = mayte
+				size = 64000
+			}
+			create_pop = {
+				culture = haraf_ne
+				size = 23000
+				religion = death_masks
+			}
+			create_pop = {
+				culture = kooras
+				size = 12000
+				religion = death_masks
+			}
+		}
+		region_state:B09 = {
+			create_pop = {
+				culture = trisferian
+				size = 36550
+				religion = regent_court
+			}
+            create_pop = {
+				culture = trisferian
+				size = 6450
+				religion = ravelian
+			}
+			create_pop = {
+				culture = crager
+				size = 12000
+			}
+			create_pop = {
+				culture = minarian
+				size = 35250
+				religion = corinite
+			}
+            create_pop = {
+				culture = minarian
+				size = 9400
+				religion = regent_court
+			}
+            create_pop = {
+				culture = minarian
+				size = 2350
+				religion = ravelian
+			}
+			create_pop = {
+				culture = haraf_ne
+				size = 35000
+			}
+		}
+	}
+	s:STATE_NIDI_BIKEHA = {
+		region_state:B07 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 15200
+				religion = the_thought
+			}
+            create_pop = {
+				culture = haraf_ne
+				size = 22800
+				religion = dai_nadeilhil
+			}
+			create_pop = {
+				culture = steelscale_kobold
+				size = 11000
+			}
+			create_pop = {
+				culture = soot_goblin
+				size = 8000
+			}
+		}
+		region_state:B10 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 110850
+				religion = the_thought
+			}
+            create_pop = {
+				culture = haraf_ne
+				size = 142150
+				religion = dai_nadeilhil
+			}
+			create_pop = {
+				culture = steelscale_kobold
+				size = 16000
+			}
+			create_pop = {
+				culture = soot_goblin
+				size = 15000 
+			}
+		}
+	}
+	s:STATE_ZURZUMEXIA = {
+		region_state:B07 = {
+			create_pop = {
+				culture = steelscale_kobold
+				size = 855600
+				religion = the_thought
+			}
+            create_pop = {
+				culture = steelscale_kobold
+				size = 196400
+				religion = kobold_dragon_cult
+			}
+			create_pop = {
+				culture = soot_goblin
+				size = 268000
+			}
+			create_pop = {
+				culture = kooras
+				size = 217200
+				religion = the_thought
+			}
+            create_pop = {
+				culture = kooras
+				size = 88800
+				religion = dai_nadeilhil #placeholder until Ja'akaiin is implemented
+			}
+			create_pop = {
+				culture = tinker_gnome
+				size = 66000
+			}
+		}
+	}
+	s:STATE_MESTIKARDU = {
+		region_state:B07 = {
+			create_pop = {
+				culture = soot_goblin
+				size = 768200
+				religion = the_thought
+			}
+            create_pop = {
+				culture = soot_goblin
+				size = 129800
+				religion = ravelian
+			}
+			create_pop = {
+				culture = steelscale_kobold
+				size = 242000
+			}
+			create_pop = {
+				culture = tinker_gnome
+				size = 44000
+			}
+			create_pop = {
+				culture = kooras
+				size = 17600
+				religion = the_thought
+			}
+            create_pop = {
+				culture = kooras
+				size = 32400
+				religion = dai_nadeilhil #placeholder until Ja'akaiin is implemented
+			}
+		}
+	}
+	s:STATE_E_E_KIDILE = {
+		region_state:B74 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 164000
+			}
+		}
+		region_state:G17 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 14400
+			}
+		}
+		region_state:B07 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 86800
+				religion = the_thought
+			}
+            create_pop = {
+				culture = haraf_ne
+				size = 51200
+				religion = dai_nadeilhil
+			}
+			create_pop = {
+				culture = gangim
+				size = 52000
+				religion = righteous_path
+			}
+            create_pop = {
+				culture = gangim
+				size = 12000
+				religion = high_philosophy
+			}
+			create_pop = {
+				culture = tinker_gnome
+				size = 118000
+			}
+		}
+		region_state:B76 = {
+			create_pop = {
+				culture = gangim
+				size = 152800
+				religion = righteous_path
+			}
+            create_pop = {
+				culture = gangim
+				size = 43200
+				religion = high_philosophy
+			}
+			create_pop = {
+				culture = caamas
+				size = 36000
+			}
+			create_pop = {
+				culture = tinker_gnome
+				size = 36000
+			}
+			create_pop = {
+				culture = haraf_ne
+				size = 73400
+				religion = the_thought
+			}
+            create_pop = {
+				culture = haraf_ne
+				size = 60600
+				religion = dai_nadeilhil
+			}
+		}
+	}
+	s:STATE_GOOVRAZ = {
+		region_state:B07 = {
+			create_pop = {
+				culture = tinker_gnome
+				size = 251000
+			}
+			create_pop = {
+				culture = soot_goblin
+				size = 288000
+			}
+			create_pop = {
+				culture = kooras
+				size = 33200
+				religion = the_thought
+			}
+            create_pop = {
+				culture = kooras
+				size = 82800
+				religion = dai_nadeilhil #placeholder until Ja'akaiin is implemented
+			}
+			create_pop = {
+				culture = steelscale_kobold
+				size = 293000
+			}
+		}
+	}
+	s:STATE_GOMMIOCHAND = {
+		region_state:B07 = {
+			create_pop = {
+				culture = tinker_gnome
+				size = 505960
+				religion = the_thought
+			}
+            create_pop = {
+				culture = tinker_gnome
+				size = 61520
+				religion = ravelian
+			}
+            create_pop = {
+				culture = tinker_gnome
+				size = 61520
+				religion = regent_court
+			}
+			create_pop = {
+				culture = soot_goblin
+				size = 253000
+			}
+			create_pop = {
+				culture = steelscale_kobold
+				size = 155000
+			}
+			create_pop = {
+				culture = kooras
+				size = 150800
+				religion = the_thought
+			}
+            create_pop = {
+				culture = kooras
+				size = 40200
+				religion = dai_nadeilhil #placeholder until Ja'akaiin is implemented
+			}
+			create_pop = {
+				culture = gangim
+				size = 84800
+				religion = righteous_path
+			}
+            create_pop = {
+				culture = gangim
+				size = 21200
+				religion = high_philosophy
+			}
+			create_pop = {
+				culture = creek_gnome
+				size = 21000
+				religion = ravelian
+			}
+            create_pop = {
+				culture = creek_gnome
+				size = 69000
+				religion = regent_court
+			}
+		}
+		region_state:B76 = {
+			create_pop = {
+				culture = gangim
+				size = 73600
+				religion = righteous_path
+			}
+            create_pop = {
+				culture = gangim
+				size = 18400
+				religion = high_philosophy
+			}
+			create_pop = {
+				culture = tinker_gnome
+				size = 38000
+			}
+		}
+	}
+	s:STATE_WORMWAY = {
+		region_state:B05 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 8000
+			}
+		}	
+        region_state:B79 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 800
+			}
+		}	
+        region_state:G18 = {
+            create_pop = {
+				culture = haraf_ne
+				size = 6000
+			}
+        }
+		region_state:G16 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 16000
+			}
+		}
+        region_state:G17 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 12000
+			}
+		}
+		region_state:B07 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 10000
+			}
+			create_pop = {
+				culture = tinker_gnome
+				size = 3000
+			}
+			create_pop = {
+				culture = steelscale_kobold
+				size = 6000
+			}
+			create_pop = {
+				culture = soot_goblin
+				size = 1000
+			}
+		}
+		region_state:B10 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 7000
+			}
+		}
+	}
+	s:STATE_KITSIL_KINN = {
+		region_state:G18 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 24000
+			}
+		}
+        region_state:B79 = {
+            create_pop = {
+				culture = haraf_ne
+				size = 10000
+			}
+        }
+		region_state:B10 = {
+			create_pop = {
+				culture = haraf_ne
+				size = 9400
+			}
+		}
+	}
+}

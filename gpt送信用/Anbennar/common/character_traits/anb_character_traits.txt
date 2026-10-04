@@ -1,0 +1,503 @@
+﻿
+
+#Files Not split into condition, personality and skill traits like Vanilla files due to there probably just not being that much custom traits overall. For now.
+
+### TYPE = CONDITION ###
+
+#korashi addict
+
+### TYPE = SKIll ###
+powerful_mage = {
+	type = skill
+
+	texture = "gfx/interface/icons/character_trait_icons/imposing.dds"	#placeholder
+
+	character_modifier = {
+		character_health_add = 1.0
+	}
+
+	country_modifier = {
+		country_magical_expertise_mult = 0.1
+		country_mages_pol_str_mult = 0.1
+		country_archmages_pol_str_mult = 0.1
+	}
+
+	interest_group_modifier = {
+		interest_group_pol_str_mult = 0.05
+	}
+
+	agitator_modifier = {
+		political_movement_radicalism_add = 0.1
+	}
+
+	command_modifier = {
+		unit_morale_loss_mult = -0.05
+	}
+
+	possible = {
+ 		owner ?= {
+ 			# has_technology_researched = camiran_doctrine TODO reenable if camiran doctrine is made cooler
+ 		}
+		NOT = {
+			owner ?= { has_law = law_type:law_traditional_magic_banned }	#Mages persecuted stay undercover if they'd get the trait
+		}
+		NOT = { age < define:NCharacters|ADULT_AGE }						#Every single heir got this trait because its the only eligible skill to gain :D
+	}
+
+	weight = {
+		value = 2 #low test value for now
+
+		### CHARACTER FACTORS
+		if = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_landowners
+					is_heir_of_own_country = yes
+				}
+			}
+			multiply = 4	#blue blood
+		}
+		if = {
+			limit = {
+				OR = {
+					has_trait = meticulous
+					has_trait = ambitious
+				}
+			}
+			multiply = 2	#scholar trait in eu4, these should be more fitting than innovative
+		}
+		if = {
+			limit = {
+				has_trait = innovative
+				owner ?= { has_law = law_type:law_artifice_banned }
+			}
+			multiply = 2	#smart boys go to mage academy if artifice is behated
+		}
+		if = {
+			limit = {
+				has_trait = inept
+			}
+			multiply = 0.25 #dumb fucks need more talent to make up the skill diff
+		}
+
+		### RACIAL FACTORS
+		if = {	#DWARF, ORC, GOBLIN
+			limit = {
+				culture = {
+					OR = {
+						has_discrimination_trait_group = heritage_group_dwarf
+						has_discrimination_trait_group = heritage_group_orc
+						has_discrimination_trait_group = heritage_group_goblinoid
+					}
+				}
+				NOT = {
+					OR = {
+						has_culture = cu:nephrite_dwarf
+						has_culture = cu:obsidian_dwarf
+						has_culture = cu:emerald_orc
+					}
+				}
+			}
+			multiply = 0.75
+		}
+		if = {	#CANNORIAN HUMAN (minor elf blood in heritage)
+			limit = {
+				culture = {
+					OR = {
+						has_discrimination_trait = heritage_anbennarian
+						has_discrimination_trait = heritage_lencori
+					}
+				}
+			}
+			multiply = 1.25
+		}
+		if = {	#ELF
+			limit = {
+				culture = {
+					OR = {
+						has_discrimination_trait = heritage_moon_elven
+						has_discrimination_trait = heritage_sun_elven
+					}
+				}
+			}
+			multiply = 1.75
+		}
+		if = {	#EORDAN ELF
+			limit = {
+				culture = {
+					has_discrimination_trait = heritage_eordan_ruinborn
+					NOT = { has_discrimination_trait = heritage_harafic_ruinborn }	#fograc suck for some reason
+				}
+			}
+			multiply = 1.5
+		}
+		if = {	#HELF, GNOME, EMERALD ORC, ONI
+			limit = {
+				OR = {
+					culture = {
+						OR = {
+							has_discrimination_trait = heritage_wood_elven
+							has_discrimination_trait = heritage_cannorian_gnome
+							has_discrimination_trait = heritage_sarhaly_gnome
+						}
+					}
+					has_culture = cu:farrani
+					has_culture = cu:emerald_orc
+					has_culture = cu:horned_ogre	#Oni
+				}
+			}
+			multiply = 1.5
+		}
+	}
+
+	replace = {
+		inexperienced
+	}
+
+	value = 3
+}
+
+basic_artificer_commander = {		#TODO: make these more interesting
+ 	type = skill
+	texture = gfx/interface/icons/character_trait_icons/basic_artillery_commander.dds
+
+ 	command_modifier = {
+ 		unit_supply_consumption_mult = -0.10
+ 	}
+
+ 	possible = {
+		NOT = {
+			owner ?= { has_law = law_type:law_artifice_banned}	
+		}
+		OR = {
+ 			has_role_of_type = general
+			has_trait = engineer
+		}
+ 		NOR = {
+ 			has_trait = experienced_artificer_commander
+ 			has_trait = expert_artificer_commander
+ 		}
+ 		NOT = { age < define:NCharacters|ADULT_AGE }
+ 	}
+
+	weight = {
+		value = 5
+		if = {
+			limit = {
+				owner = {
+					any_military_formation = {	#are ya using artificery?
+						is_army = yes
+						any_scope_general = {
+							this = root
+						}
+						OR = {			#these could be split up into being multiple ifs maybe, leaving it for now to just one addition if you have anything requiring artificery in your mobis
+							has_mobilization_option = mobilization_option:mobilization_option_sparkdrives
+							has_mobilization_option = mobilization_option:mobilization_option_doodad_attachments
+							has_mobilization_option = mobilization_option:mobilization_option_triggered_mageshields
+							has_mobilization_option = mobilization_option:mobilization_option_gene_warriors
+							has_mobilization_option = mobilization_option:mobilization_option_scrying_disruptors
+						}
+					}
+				}
+			}
+			multiply = 40
+		}
+		if = {
+			limit = {
+				owner = {
+					any_military_formation = {
+						is_army = yes
+						any_scope_general = {
+							this = root
+						}
+						formation_army_unit_type_fraction = {  
+							target = unit_type:combat_unit_type_mechs
+							value >= 0.20  
+						}  
+					}
+				}
+			}
+			multiply = 20
+		}
+		if = {
+			limit = {
+				owner = {
+					any_military_formation = {
+						is_army = yes
+						any_scope_general = {
+							this = root
+						}
+						formation_army_unit_type_fraction = {  
+							target = unit_type:combat_unit_type_hexframes
+							value >= 0.20  
+						}  
+					}
+				}
+			}
+			multiply = 50
+		}
+	}
+
+
+ 	replace = {
+		inexperienced
+ 	}
+
+ 	value = 1
+}
+
+experienced_artificer_commander = {
+	type = skill
+	texture =gfx/interface/icons/character_trait_icons/experienced_artillery_commander.dds
+
+	command_modifier = {
+		unit_supply_consumption_mult = -0.20
+	}
+
+	possible = {
+		has_trait = basic_artificer_commander
+		NOT = { age < define:NCharacters|ADULT_AGE }
+	}
+
+	weight = {
+		value = 5
+		if = {
+			limit = {
+				owner = {
+					any_military_formation = {	#are ya using artificery?
+						is_army = yes
+						any_scope_general = {
+							this = root
+						}
+						OR = {			#these could be split up into being multiple ifs maybe, leaving it for now to just one addition if you have anything requiring artificery in your mobis
+							has_mobilization_option = mobilization_option:mobilization_option_sparkdrives
+							has_mobilization_option = mobilization_option:mobilization_option_doodad_attachments
+							has_mobilization_option = mobilization_option:mobilization_option_triggered_mageshields
+							has_mobilization_option = mobilization_option:mobilization_option_gene_warriors
+							has_mobilization_option = mobilization_option:mobilization_option_scrying_disruptors
+						}
+					}
+				}
+			}
+			multiply = 40
+		}
+		if = {
+			limit = {
+				owner = {
+					any_military_formation = {
+						is_army = yes
+						any_scope_general = {
+							this = root
+						}
+						formation_army_unit_type_fraction = {  
+							target = unit_type:combat_unit_type_mechs
+							value >= 0.20  
+						}  
+					}
+				}
+			}
+			multiply = 20
+		}
+		if = {
+			limit = {
+				owner = {
+					any_military_formation = {
+						is_army = yes
+						any_scope_general = {
+							this = root
+						}
+						formation_army_unit_type_fraction = {  
+							target = unit_type:combat_unit_type_hexframes
+							value >= 0.20  
+						}  
+					}
+				}
+			}
+			multiply = 50
+		}
+	}
+
+
+	replace = {
+		basic_artificer_commander
+	}
+
+	value = 2
+}
+
+expert_artificer_commander = {
+	type = skill
+	texture =gfx/interface/icons/character_trait_icons/expert_artillery_commander.dds
+
+	command_modifier = {
+		unit_supply_consumption_mult = -0.30
+	}
+
+	possible = {
+		has_trait = experienced_artificer_commander
+		NOT = { age < define:NCharacters|ADULT_AGE }
+	}
+	weight = {
+		value = 5
+		if = {
+			limit = {
+				owner = {
+					any_military_formation = {	#are ya using artificery?
+						is_army = yes
+						any_scope_general = {
+							this = root
+						}
+						OR = {			#these could be split up into being multiple ifs maybe, leaving it for now to just one addition if you have anything requiring artificery in your mobis
+							has_mobilization_option = mobilization_option:mobilization_option_sparkdrives
+							has_mobilization_option = mobilization_option:mobilization_option_doodad_attachments
+							has_mobilization_option = mobilization_option:mobilization_option_alchemical_capsule
+							has_mobilization_option = mobilization_option:mobilization_option_gene_warriors
+							has_mobilization_option = mobilization_option:mobilization_option_airship_reconaissance
+							has_mobilization_option = mobilization_option:mobilization_option_scrying_disruptors
+							has_mobilization_option = mobilization_option:mobilization_option_bulletproof_exosuits
+							has_mobilization_option = mobilization_option:mobilization_option_triggered_mageshields
+							has_mobilization_option = mobilization_option:mobilization_option_portable_turrets
+						}
+					}
+				}
+			}
+			multiply = 40
+		}
+		if = {
+			limit = {
+				owner = {
+					any_military_formation = {
+						is_army = yes
+						any_scope_general = {
+							this = root
+						}
+						formation_army_unit_type_fraction = {  
+							target = unit_type:combat_unit_type_mechs
+							value >= 0.20  
+						}  
+					}
+				}
+			}
+			multiply = 20
+		}
+		if = {
+			limit = {
+				owner = {
+					any_military_formation = {
+						is_army = yes
+						any_scope_general = {
+							this = root
+						}
+						formation_army_unit_type_fraction = {  
+							target = unit_type:combat_unit_type_hexframes
+							value >= 0.20  
+						}  
+					}
+				}
+			}
+			multiply = 50
+		}
+	}
+
+	replace = {
+		experienced_artificer_commander
+	}
+
+	value = 3
+}
+
+mech_ace_pilot = {	#very rare ace pilot, thats all about hexframes TODO: make this more interesting, and add different levels
+	type = skill
+	texture =gfx/interface/icons/character_trait_icons/expert_artillery_commander.dds
+
+	command_modifier = {
+		unit_combat_unit_type_mechs_offense_add = 5
+		unit_combat_unit_type_mechs_defense_add = 5
+		unit_combat_unit_type_hexframes_offense_add = 5
+		unit_combat_unit_type_hexframes_defense_add = 5
+	}
+
+	possible = {
+		has_role_of_type = general
+		owner ?= {
+			any_military_formation = {	#no mechs?
+				is_army = yes
+				OR= {
+					formation_army_unit_type_fraction = {  
+						target = unit_type:combat_unit_type_mechs
+						value > 0
+					}  
+					formation_army_unit_type_fraction = {  
+						target = unit_type:combat_unit_type_hexframes
+						value > 0 
+					}
+				}
+			}
+		}
+		NOT = { age < define:NCharacters|ADULT_AGE }
+	}
+
+	weight = {
+		value = 5
+		if = {
+			limit = {
+				OR = {
+					has_trait = brave
+					has_trait = romantic
+				}
+			}
+			multiply = 20
+		}
+		if = {
+			limit = {
+				OR = {
+					has_trait = inept
+					has_trait = compliant
+				}
+			}
+			divide = 4
+		}
+		if = {
+			limit = {
+				owner = {
+					any_military_formation = {
+						is_army = yes
+						any_scope_general = {
+							this = root
+						}
+						formation_army_unit_type_fraction = {  
+							target = unit_type:combat_unit_type_mechs
+							value >= 0.20  
+						}  
+					}
+				}
+			}
+			multiply = 20
+		}
+		if = {
+			limit = {
+				owner = {
+					any_military_formation = {
+						is_army = yes
+						any_scope_general = {
+							this = root
+						}
+						formation_army_unit_type_fraction = {  
+							target = unit_type:combat_unit_type_hexframes
+							value >= 0.20  
+						}  
+					}
+				}
+			}
+			multiply = 50
+		}
+	}
+
+	replace = {
+		inexperienced
+	}
+
+	value = 5
+}
+
+### TYPE = PERSONALITY ###

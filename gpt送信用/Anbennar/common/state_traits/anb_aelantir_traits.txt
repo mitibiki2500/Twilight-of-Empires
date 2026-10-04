@@ -1,0 +1,738 @@
+﻿state_trait_venaans_tears = {
+	icon = "gfx/interface/icons/state_trait_icons/waterfall.dds"
+	
+	modifier = {
+		goods_output_electricity_mult = 0.15
+	}
+}
+
+state_trait_bloodgroves = {
+	icon = "gfx/interface/icons/state_trait_icons/bloodgroves.dds"
+	
+	modifier = {
+		building_group_bg_logging_throughput_add = 0.1
+		building_group_bg_logging_laborers_mortality_mult = 0.2
+	}
+}
+
+state_trait_ynn_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {	#same as Ganges river
+		building_group_bg_agriculture_throughput_add = 0.15
+		building_group_bg_plantations_throughput_add = 0.15
+		state_infrastructure_add = 20
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_ekyunimoy_range = {
+    icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_construction_mult = -0.15
+		state_infrastructure_mult = -0.15
+		building_gold_mine_throughput_add = 0.1
+	}
+}
+
+state_trait_harafe_desert = {
+    icon = "gfx/interface/icons/state_trait_icons/dry_climate.dds"
+	
+	modifier = {
+		state_construction_mult = -0.1
+		building_group_bg_ranching_throughput_add = 0.2
+		state_infrastructure_mult = -0.2
+		state_non_homeland_colony_growth_speed_mult = -0.2
+	}
+}
+
+state_trait_lady_isobel_river = {
+    icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_sella_river = {
+    icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_harafroy = {
+    icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_prasoynn_river = {
+    icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_hjora_river = {
+    icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_boek_river = {
+    icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 10
+	}
+}
+
+state_trait_bone_river = {
+    icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+		building_tobacco_plantation_throughput_add = 0.05	#trying to give Neratica some incentive to specialize
+	}
+}
+
+state_trait_port_isobel_harbor = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+	modifier = {
+		building_shipyard_throughput_add = 0.1
+		building_port_throughput_add = 0.1
+		state_trade_capacity_mult = 0.15
+		#state_building_naval_base_max_level_add = 10 #says this is invalid
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_ynnsmouth_bay = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+	modifier = {
+		building_shipyard_throughput_add = 0.1
+		building_port_throughput_add = 0.1
+		state_trade_capacity_mult = 0.15
+		#state_building_naval_base_max_level_add = 10 #says this is invalid
+		state_market_access_price_impact = 0.05
+		state_radicals_from_political_movements_mult = 0.05	#The Kuukuswlaws
+	}
+}
+
+state_trait_evermore_plain = {
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.1
+		building_group_bg_plantations_throughput_add = 0.1
+	}
+}
+
+state_trait_taspasu_lake = {
+    icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+		building_group_bg_agriculture_throughput_add = 0.1
+	}
+}
+
+state_trait_brelari_iron = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+
+	modifier = {
+		building_iron_mine_throughput_add = 0.2
+	}
+}
+
+state_trait_forest_cursed_ones = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+
+	modifier = {
+		building_group_bg_logging_throughput_add = 0.2
+		state_infrastructure_mult = -0.1
+	}
+}
+
+state_trait_sarda_forests = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+
+	modifier = {
+		building_group_bg_logging_throughput_add = 0.1
+	}
+}
+
+state_trait_drevonsred_forest = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+
+	modifier = {
+		goods_output_hardwood_mult = 0.25
+	}
+}
+
+state_trait_tyerna_krarh = {
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.15
+		building_group_bg_plantations_throughput_add = 0.15
+	}
+}
+
+state_trait_leedmoy_badlands = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+
+	modifier = {
+		building_group_bg_oil_extraction_throughput_add = 0.1
+	}
+}
+
+state_trait_veykodan_coalfields = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+
+	modifier = {
+		building_coal_mine_throughput_add = 0.1
+	}
+}
+
+state_trait_crimson_wastes = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_grazing.dds"
+
+	modifier = {
+		building_group_bg_ranching_throughput_add = 0.15
+		building_group_bg_agriculture_throughput_add = -0.1
+	}
+}
+
+state_trait_ruined_precursor_irrigation_tunnels = {
+	icon = "gfx/interface/icons/state_trait_icons/great_plains.dds"
+
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.1
+		state_infrastructure_mult = 0.1
+	}
+}
+
+state_trait_restored_precursor_irrigation_tunnels = {
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.35
+		state_infrastructure_mult = 0.2
+	}
+}
+
+state_trait_aetsn = {
+	icon = "gfx/interface/icons/state_trait_icons/great_plains.dds"
+
+	modifier = {
+		# state_urbanization_mult = 0.1 ## no longer exists as of 1.7
+		state_infrastructure_mult = 0.1
+	}
+}
+
+state_trait_iron_edge = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+
+	modifier = {
+		building_iron_mine_throughput_add = 0.1
+	}
+}
+
+state_trait_moonfield = {
+	icon = "gfx/interface/icons/state_trait_icons/great_plains.dds"
+
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.15
+	}
+}
+
+state_trait_mocvare_flooded_reservoir = {
+	icon = "gfx/interface/icons/state_trait_icons/swamp.dds"
+
+	modifier = {
+		building_sulfur_mine_throughput_add = 0.1
+		state_infrastructure_mult = -0.1
+	}
+}
+
+state_trait_enchanting_fields = {
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+
+	modifier = {
+		building_group_bg_plantations_throughput_add = 0.15
+	}
+}
+
+state_trait_corinspoppies = {
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+
+	modifier = {
+		building_group_bg_plantations_throughput_add = 0.1
+	}
+}
+
+state_trait_broken_sea_whaling = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_fish.dds"
+
+	modifier = {
+		building_whaling_station_throughput_add = 0.1
+	}
+}
+
+state_trait_flottnord_fjords = {
+	icon = "gfx/interface/icons/state_trait_icons/fjords.dds"
+
+	modifier = {
+		state_infrastructure_mult = 0.1
+		building_group_bg_fishing_throughput_add = 0.2
+	}
+}
+
+state_trait_teira_range = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+
+	modifier = {
+		state_infrastructure_mult = -0.1
+		building_iron_mine_throughput_add = 0.1
+	}
+}
+
+state_trait_bone_pass = {
+	icon = "gfx/interface/icons/state_trait_icons/poor_soils.dds"
+
+	modifier = {
+		building_group_bg_ranching_throughput_add = 0.15
+		building_group_bg_agriculture_throughput_add = -0.1
+		state_construction_mult = -0.15
+		state_infrastructure_mult = -0.15
+	}
+}
+
+state_trait_ravenous_isle = {
+	icon = "gfx/interface/icons/state_trait_icons/swamp.dds"
+
+	modifier = {
+		building_group_bg_plantations_throughput_add = 0.1
+		state_construction_mult = -0.15
+		state_infrastructure_mult = -0.15
+	}
+}
+
+state_trait_ravenous_isle_cleared = {
+	icon = "gfx/interface/icons/state_trait_icons/swamp.dds"
+
+	modifier = {
+		building_group_bg_plantations_throughput_add = 0.05
+		state_construction_mult = -0.05
+		state_infrastructure_mult = -0.05
+	}
+}
+
+state_trait_ravenous_isle_controlled = {
+	icon = "gfx/interface/icons/state_trait_icons/swamp.dds"
+
+	modifier = {
+		building_group_bg_plantations_throughput_add = 0.15
+		state_construction_mult = -0.1
+		state_infrastructure_mult = -0.1
+	}
+}
+
+state_trait_domandrod = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.2
+		building_group_bg_plantations_throughput_add = 0.2
+		building_group_bg_logging_throughput_add = -0.2
+		state_non_homeland_colony_growth_speed_mult = -0.75
+	}
+}
+
+state_trait_randrunnse_fishing = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_fish.dds"
+
+	modifier = {
+		building_group_bg_fishing_throughput_add = 0.1
+	}
+}
+
+state_trait_uelos_sigh_fog = {
+	icon = "gfx/interface/icons/state_trait_icons/great_plains.dds"
+
+	modifier = {	#rebalanced values as halving profitability completely kills any building ; this heavily affects their plantation-based economy so shouldn't be too high
+					#right now it's a significant debuff that pushes them to move away from plantations asap which is alright
+		building_coffee_plantation_throughput_add = 0.1	#there's barely any coffee so this hardly compensates the negatives
+		#building_tea_plantation_throughput_add = 0.5		#no tea on Endralliande
+		building_sugar_plantation_throughput_add = -0.05
+		building_tobacco_plantation_throughput_add = -0.05
+		building_cotton_plantation_throughput_add = -0.05
+	}
+}
+
+state_trait_hibiscus_vale = {
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.1
+		building_group_bg_plantations_throughput_add = 0.1
+	}
+}
+
+state_trait_endralaine_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_northern_aelantir_glaciers = {
+	icon = "gfx/interface/icons/state_trait_icons/cold_climate.dds"
+	
+	modifier = {
+		building_group_bg_agriculture_throughput_add = -0.2
+		state_construction_mult = -0.2
+		state_infrastructure_mult = -0.2
+		state_migration_pull_mult = -0.5
+	}
+}
+
+state_trait_ruined_sea_sulfur = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+	modifier = {
+		building_sulfur_mine_throughput_add = 0.1
+	}
+}
+
+state_trait_armonadh_iron = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+	modifier = {
+		building_iron_mine_throughput_add = 0.1
+	}
+}
+
+state_trait_dalairey_wastes = {	
+    icon = "gfx/interface/icons/state_trait_icons/cold_climate.dds"
+	
+	required_techs_for_colonization = { "psychiatry" }	#the place turns people mad
+	#disabling_technologies = { "psionic_theory" } Psionic theory got commented out
+	
+	modifier = {
+		state_non_homeland_colony_growth_speed_mult = -0.9
+		state_non_homeland_mortality_mult = 0.75
+	}
+}
+
+#South
+
+state_trait_effelai = {
+	icon = "gfx/interface/icons/state_trait_icons/jungle.dds"
+	
+	modifier = {
+		goods_output_hardwood_mult = 0.25
+		state_construction_mult = -0.3
+		state_infrastructure_mult = -0.3
+        state_non_homeland_mortality_mult = 0.2
+		state_non_homeland_colony_growth_speed_mult = -0.9
+		building_group_bg_plantations_throughput_add = 0.3
+	}
+}
+
+state_trait_mushroom_forest = {
+    icon = "gfx/interface/icons/state_trait_icons/mushroom_forest.dds"
+	
+	modifier = {
+		building_group_bg_agriculture_throughput_add = -0.1
+		building_group_bg_plantations_throughput_add = 0.1
+		building_opium_plantation_throughput_add = 0.2
+		state_construction_mult = -0.2
+		state_infrastructure_mult = -0.2
+	}
+}
+
+state_trait_soruinic_jungle = {
+    icon = "gfx/interface/icons/state_trait_icons/jungle.dds"
+	
+	modifier = {
+		goods_output_hardwood_mult = 0.25
+		state_construction_mult = -0.1
+		state_infrastructure_mult = -0.1
+		building_group_bg_plantations_throughput_add = 0.1
+	}
+}
+
+state_trait_leechden_swamp = {
+    icon = "gfx/interface/icons/state_trait_icons/leech.dds"
+	
+	modifier = {
+		building_coal_mine_throughput_add = -0.1
+		state_infrastructure_mult = -0.1
+		building_rubber_plantation_throughput_add = 0.1
+	}
+}
+
+state_trait_seinaine_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_muiscaine_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_silver_range = {
+    icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+	
+	modifier = {
+		state_construction_mult = -0.1
+		building_gold_mine_throughput_add = 0.1
+	}
+}
+
+state_trait_munasin_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+	}
+}
+
+state_trait_harenaine_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_silharenaine_desert = {
+	icon = "gfx/interface/icons/state_trait_icons/dry_climate.dds"
+	
+	modifier = {
+        building_group_bg_ranching_throughput_add = 0.1
+		building_group_bg_agriculture_throughput_add = -0.1
+		state_construction_mult = -0.1
+		state_infrastructure_mult = -0.1
+    }
+}
+
+state_trait_severed_coast_woodlands = {
+    icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+	
+	modifier = {
+		building_group_bg_logging_throughput_add = 0.1
+		building_group_bg_whaling_throughput_add = 0.1
+	}
+}
+
+state_trait_shimmering_mountain = {
+    icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+	
+	modifier = {
+		building_group_bg_damestear_mining_throughput_add = 0.15
+		state_market_access_price_impact = 0.05
+		state_trade_capacity_mult = 0.1
+	}
+}
+
+state_trait_lake_chakantu = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+		building_group_bg_agriculture_throughput_add = 0.1
+	}
+}
+
+state_trait_ameionam_river = { #River Settlement River River lmao
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_empkeiosam_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+	}
+}
+
+state_trait_noriam_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_kheintroam_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_kalavend_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+		state_market_access_price_impact = 0.05
+		building_group_bg_agriculture_throughput_add = 0.15
+		building_group_bg_plantations_throughput_add = 0.15
+	}
+}
+
+state_trait_endioka_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+		building_group_bg_agriculture_throughput_add = 0.15
+		building_group_bg_plantations_throughput_add = 0.15
+	}
+}
+
+state_trait_iron_hills = {
+    icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+	
+	modifier = {
+		building_iron_mine_throughput_add = 0.15
+	}
+}
+
+state_trait_veyii_sikarha = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_construction_mult = -0.2
+		state_infrastructure_mult = -0.2
+	}
+}
+
+state_trait_paradise_island = {
+    icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+	
+	modifier = {
+		building_group_bg_plantations_throughput_add = 0.15
+	}
+}
+
+state_trait_agotham_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_kaydhano = {
+	icon = "gfx/interface/icons/state_trait_icons/poor_soils.dds"
+	modifier = {
+		building_group_bg_agriculture_throughput_add = -0.05
+		building_group_bg_plantations_throughput_add = -0.05
+	}
+}
+
+state_trait_kherka_mineral_fields = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+
+	modifier = {
+		building_iron_mine_throughput_add = 0.10
+		building_coal_mine_throughput_add = 0.15
+	}
+}
+
+state_trait_nortikan_mine = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+
+	modifier = {
+		building_lead_mine_throughput_add = 0.15
+	}
+}
+
+state_trait_waenofah_mine = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+
+	modifier = {
+		building_iron_mine_throughput_add = 0.10
+	}
+}
+
+state_trait_xiktheam_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 15
+        building_group_bg_agriculture_throughput_add = 0.1
+		building_group_bg_plantations_throughput_add = 0.1
+	}
+}
+
+state_trait_andic_woodlands = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+
+	modifier = {
+		building_group_bg_logging_throughput_add = 0.15
+	}
+}
+
+state_trait_mteibas_valley = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+
+	modifier = {
+		state_construction_mult = -0.1
+		state_infrastructure_mult = -0.1
+	}
+}
+
+state_trait_mteibhara_coal_mine = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+
+	modifier = {
+		building_coal_mine_throughput_add = 0.15
+	}
+}
+
+state_trait_chendhya_plains = {
+	icon = "gfx/interface/icons/state_trait_icons/great_plains.dds"
+
+	modifier = {
+        building_group_bg_ranching_throughput_add = 0.1
+	}
+}
+
+state_trait_deathwinds = {	
+    icon = "gfx/interface/icons/state_trait_icons/deathwinds.dds"
+	
+	required_techs_for_colonization = { "elemental_elicitation" }
+	disabling_technologies = { "thaumic_field_stabilization" }
+	
+	modifier = {
+		state_non_homeland_colony_growth_speed_mult = -0.9
+		state_non_homeland_mortality_mult = 0.75
+	}
+}

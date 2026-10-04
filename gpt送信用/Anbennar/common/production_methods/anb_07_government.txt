@@ -1,0 +1,302 @@
+﻿## Government Administrations
+pm_magical_bureaucrats = {
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+
+	unlocking_technologies = {
+		magocracy
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 20
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magical_reagents_add = 5
+		}
+		level_scaled = {
+			building_employment_mages_add = 250
+			building_employment_bureaucrats_add = 250
+		}
+	}	
+}
+
+pm_military_bureaucrats = {
+	texture = "gfx/interface/icons/production_method_icons/professional_bureaucrats.dds"
+	
+	unlocking_laws = {
+		law_military_bureaucrats
+	}
+	
+	building_modifiers = {
+		level_scaled = {
+			building_employment_officers_add = 250
+			building_employment_bureaucrats_add = 250
+		}
+	}
+}
+
+## Universities
+pm_no_magical_studies = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+
+pm_relics_reverse_enginering = {
+	texture = "gfx/interface/icons/production_method_icons/philosophy_dept.dds"
+	
+	unlocking_technologies = {
+		relic_reverse_engineering
+	}
+
+	country_modifiers = {
+		workforce_scaled = { 
+			country_weekly_innovation_add = 1
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_arcane_curios_add = 5
+		}
+		level_scaled = {
+			building_employment_academics_add = 250
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+pm_precursor_immersion_studies = {
+	texture = "gfx/interface/icons/production_method_icons/analytical_philosophy_department.dds"
+	
+	unlocking_technologies = {
+		analytical_philosophy
+	}
+
+	country_modifiers = {
+		workforce_scaled = { 
+			country_weekly_innovation_add = 2
+			country_weekly_innovation_max_add = 0.05
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_arcane_curios_add = 10
+		}
+		level_scaled = {
+			building_employment_academics_add = 500
+			building_employment_engineers_add = 500
+		}	
+	}
+
+}
+
+pm_arcane_academia = {
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+
+	unlocking_technologies = {
+		magocracy
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 30
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magical_reagents_add = 7
+		}
+		level_scaled = {
+			building_employment_mages_add = 250
+			building_employment_academics_add = 250
+		}
+	}	
+	ai_value = 4
+}
+
+pm_hive_academia = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_academics.dds"
+
+	unlocking_laws = {
+		law_innovative_contemplations
+		law_exogenous_erudition
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_paper_add = -5
+		}
+	}	
+	ai_value = 5
+}
+
+pm_porcelain_shell_freedom = {
+	texture = "gfx/interface/icons/production_method_icons/arcop_wires_building_doodad_artificeries.dds"
+	unlocking_technologies = {
+		thaumic_field_stabilization
+	}
+	
+
+	building_modifiers = {	
+		workforce_scaled = {
+			#input goods
+			goods_input_artificery_doodads_add = 8
+			goods_input_flawless_metal_add = 10
+			goods_input_porcelain_add = 4
+			goods_input_tools_add = 4
+
+			#output goods
+		}
+		level_scaled = {
+			#employment
+			building_employment_laborers_add = 250
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 150
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pops_assembled_add = 750
+		}
+	}
+}
+
+pm_synthetic_body_freedom = {	#having this PM should be VERY DANGEROUS. SYNTHS!!! -reply no clue how to handle this
+	texture = "gfx/interface/icons/production_method_icons/arcop_wires_building_doodad_artificeries.dds"
+	unlocking_technologies = {
+		thinking_machinery
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_artificery_doodads_add = 16
+			goods_input_flawless_metal_add = 10
+			goods_input_porcelain_add = 6
+			goods_input_rubber_add = 6
+			goods_input_tools_add = 8
+			
+			#output goods
+		}
+		level_scaled = {
+			#employment
+			building_employment_laborers_add = 100
+			building_employment_machinists_add = 600
+			building_employment_engineers_add = 200
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pops_assembled_add = 1000
+		}
+	}
+}
+
+
+pm_mechanim_basic_education = {	#having this PM should be VERY DANGEROUS. SYNTHS!!! -reply no clue how to handle this
+	texture = "gfx/interface/icons/production_method_icons/scholastic_education.dds"
+	unlocking_technologies = {
+		thinking_machinery
+	}
+
+	building_modifiers = {
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			#state_pops_assembled_add = 1000
+		}
+		level_scaled = {
+			state_automatory_basic_literacy = yes #TODO: reintegrate the literacy stuff, currently does nothing
+		}
+	}
+}
+
+pm_mechanim_good_education = {	#having this PM should be VERY DANGEROUS. SYNTHS!!! -reply no clue how to handle this
+	texture = "gfx/interface/icons/production_method_icons/philosophy_dept.dds"
+	unlocking_technologies = {
+		thinking_machinery
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_paper_add = 5
+		}
+		level_scaled = {
+			#employment
+			building_employment_academics_add = 50
+		}
+	}
+
+	state_modifiers = {
+		level_scaled = {
+			state_automatory_good_literacy = yes	#TODO: reintegrate the literacy stuff, currently does nothing
+		}
+	}
+}
+
+pm_mechanim_advanced_education = {	#having this PM should be VERY DANGEROUS. SYNTHS!!! -reply no clue how to handle this
+	texture = "gfx/interface/icons/production_method_icons/analytical_philosophy_department.dds"
+	unlocking_technologies = {
+		thinking_machinery
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			#employment
+			goods_input_paper_add = 10
+			building_employment_academics_add = 100
+		}
+	}
+
+	state_modifiers = {
+		level_scaled = {
+			state_automatory_advanced_literacy = yes #TODO: reintegrate the literacy stuff, currently does nothing
+		}
+	}
+}
+
+pm_airship_tower = {
+	texture = "gfx/interface/icons/production_method_icons/skyscraper_trade_nexus.dds"
+	
+	unlocking_technologies = {
+		commercial_airships
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			state_trade_capacity_mult = 0.25
+			state_trade_advantage_mult = 0.25
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 10
+			goods_input_damestear_add = 5
+			goods_input_fabric_add = 20
+			goods_output_merchant_marine_add = 100
+		}
+		
+		level_scaled = {
+			building_employment_laborers_add = 200
+			building_employment_clerks_add = 500
+			building_employment_bureaucrats_add = 300
+			building_employment_machinists_add = 300
+			building_employment_engineers_add = 200
+		}
+	}
+}

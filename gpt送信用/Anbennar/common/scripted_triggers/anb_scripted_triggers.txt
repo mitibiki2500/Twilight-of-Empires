@@ -1,0 +1,205 @@
+﻿#	Example:
+# 
+#	example_trigger = {
+#		x = 100
+#		y = 50
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_trigger = yes
+#	}
+#
+
+has_magocrat_ideology = {
+	OR = {
+		has_ideology = ideology:ideology_magocrat
+		# has_ideology = ideology:ideology_bonapartist	#for future ones
+		# has_ideology = ideology:ideology_legitimist	
+	}
+}
+
+owned_north_aelantir_region_states = {
+	owns_entire_state_region = STATE_TROLLSBRIDGE
+	owns_entire_state_region = STATE_LASTSIGHT_ISLANDS
+	owns_entire_state_region = STATE_CAPE_OF_ENDRAL
+	owns_entire_state_region = STATE_IBSEAN
+	owns_entire_state_region = STATE_RUBENSHORE
+	owns_entire_state_region = STATE_JERCEL
+	owns_entire_state_region = STATE_ENDRALVAR
+	owns_entire_state_region = STATE_MARBELOCH
+	owns_entire_state_region = STATE_OBAITHAIL
+	owns_entire_state_region = STATE_MOUTH_OF_RUIN
+	owns_entire_state_region = STATE_TORRISHEAH
+	owns_entire_state_region = STATE_FALILTCOST
+	owns_entire_state_region = STATE_SANCTUARY_FIELDS
+	owns_entire_state_region = STATE_SILVERTENNAR
+	owns_entire_state_region = STATE_VARIONAIL
+	owns_entire_state_region = STATE_CORE_ISLANDS
+	owns_entire_state_region = STATE_VERTEN
+	owns_entire_state_region = STATE_ISLES_OF_PLENTY
+	owns_entire_state_region = STATE_TRICKSTER_ISLE
+	owns_entire_state_region = STATE_SAAMIRSES
+	owns_entire_state_region = STATE_GREAT_TUSSOCK
+	owns_entire_state_region = STATE_MORDUN
+	owns_entire_state_region = STATE_SILSENSALD_ISLES
+	owns_entire_state_region = STATE_KWINELLIANDE
+	owns_entire_state_region = STATE_NURTHANNCOST
+	owns_entire_state_region = STATE_REANNIA
+	owns_entire_state_region = STATE_SORNICANDE
+	owns_entire_state_region = STATE_SOUTH_DALAIRE
+	owns_entire_state_region = STATE_CESTIRMARK
+	owns_entire_state_region = STATE_UPPER_SELLA
+	owns_entire_state_region = STATE_TROLLSBRIDGE
+	owns_entire_state_region = STATE_MARLLIANDE
+	owns_entire_state_region = STATE_YNNSMOUTH
+	owns_entire_state_region = STATE_ZANLIB
+	owns_entire_state_region = STATE_ISOBELIN
+	owns_entire_state_region = STATE_THILVIS
+	owns_entire_state_region = STATE_VALORPOINT
+	owns_entire_state_region = STATE_OKHIBOLI
+	owns_entire_state_region = STATE_SPOORLAND
+	owns_entire_state_region = STATE_DIHEN
+	owns_entire_state_region = STATE_GRAVEROADS
+	owns_entire_state_region = STATE_CHESHOSHMAR
+	owns_entire_state_region = STATE_AUVUL_TADIH
+	owns_entire_state_region = STATE_NANI_NOLIHE
+	owns_entire_state_region = STATE_MANGROVY_COAST
+	owns_entire_state_region = STATE_NIDI_BIKEHA
+	owns_entire_state_region = STATE_ZURZUMEXIA
+	owns_entire_state_region = STATE_MESTIKARDU
+	owns_entire_state_region = STATE_E_E_KIDILE
+	owns_entire_state_region = STATE_GOOVRAZ
+	owns_entire_state_region = STATE_GOMMIOCHAND
+	owns_entire_state_region = STATE_WORMWAY
+	owns_entire_state_region = STATE_KITSIL_KINN
+	owns_entire_state_region = STATE_STEEL_BAY
+	owns_entire_state_region = STATE_GREENHILL
+	owns_entire_state_region = STATE_RYAIL
+	owns_entire_state_region = STATE_SCATTERED_ISLANDS
+	owns_entire_state_region = STATE_BRISTAILEAN
+	owns_entire_state_region = STATE_GUARDIAN_ISLANDS
+	owns_entire_state_region = STATE_MINAR_YOLLI
+	owns_entire_state_region = STATE_OZTENCOST
+	owns_entire_state_region = STATE_TLACHIBAR
+	owns_entire_state_region = STATE_TAMETER
+	owns_entire_state_region = STATE_KEWDHEMR
+	owns_entire_state_region = STATE_HEHADEDPAR
+	owns_entire_state_region = STATE_SJAVARRUST
+	owns_entire_state_region = STATE_DALAIRRSILD
+	owns_entire_state_region = STATE_FLOTTNORD
+	owns_entire_state_region = STATE_HJORDAL
+	owns_entire_state_region = STATE_DALAIREY_WASTES
+	owns_entire_state_region = STATE_FIORGAM
+	owns_entire_state_region = STATE_NYHOFN
+	owns_entire_state_region = STATE_FARPLOTT
+	owns_entire_state_region = STATE_MITTANWEK
+	owns_entire_state_region = STATE_FARNOR
+	owns_entire_state_region = STATE_SILDARBAD
+	owns_entire_state_region = STATE_TRITHEMAR
+	owns_entire_state_region = STATE_NIZELYNN
+	owns_entire_state_region = STATE_EPADARKAN
+	owns_entire_state_region = STATE_CORINSFIELD
+	owns_entire_state_region = STATE_ARGEZVALE
+	owns_entire_state_region = STATE_WEST_TIPNEY
+	owns_entire_state_region = STATE_YRISRAD
+	owns_entire_state_region = STATE_HRADAPOLERE
+	owns_entire_state_region = STATE_YNNPADH
+	owns_entire_state_region = STATE_VYCHVELS
+	owns_entire_state_region = STATE_NIZVELS
+	owns_entire_state_region = STATE_VIZANIRZAG
+	owns_entire_state_region = STATE_OSINDAIN
+	owns_entire_state_region = STATE_LETHIR
+	owns_entire_state_region = STATE_NEW_HAVORAL
+	owns_entire_state_region = STATE_CASNAROG
+	owns_entire_state_region = STATE_EKRSOKA
+	owns_entire_state_region = STATE_GOMOSENGHA
+	owns_entire_state_region = STATE_VIZKALADR
+	owns_entire_state_region = STATE_POMVASONN
+	owns_entire_state_region = STATE_MOCEPED
+	owns_entire_state_region = STATE_ARGANJUZORN
+	owns_entire_state_region = STATE_JUZONDEZAN
+	owns_entire_state_region = STATE_VERZEL
+	owns_entire_state_region = STATE_BRELAR
+	owns_entire_state_region = STATE_ROGAIDHA
+	owns_entire_state_region = STATE_VITREYNN
+	owns_entire_state_region = STATE_VARBUKLAND
+	owns_entire_state_region = STATE_USLAD
+	owns_entire_state_region = STATE_CHIPPENGARD
+	owns_entire_state_region = STATE_ESIMOINE
+	owns_entire_state_region = STATE_MORGANIA
+	owns_entire_state_region = STATE_TASPAS
+	owns_entire_state_region = STATE_TUSNATA
+	owns_entire_state_region = STATE_BORUCKY
+	owns_entire_state_region = STATE_ARANTAS
+	owns_entire_state_region = STATE_POSKAWA
+	owns_entire_state_region = STATE_ELATHAEL
+	owns_entire_state_region = STATE_PLUMSTEAD
+	owns_entire_state_region = STATE_BEGGASLAND
+	owns_entire_state_region = STATE_UZOO
+	owns_entire_state_region = STATE_YECKUNIA
+	owns_entire_state_region = STATE_EBENMAS
+	owns_entire_state_region = STATE_TELLUMTIR
+	owns_entire_state_region = STATE_ARSERGOZHAR
+	owns_entire_state_region = STATE_ANHOLTIR
+	owns_entire_state_region = STATE_KARNEL
+	owns_entire_state_region = STATE_FOGRACLEAK
+	owns_entire_state_region = STATE_TRIMTHIR
+	owns_entire_state_region = STATE_MURDKATHER
+	owns_entire_state_region = STATE_DEARKTIR
+	owns_entire_state_region = STATE_PASKALA
+	owns_entire_state_region = STATE_GATHGOB
+	owns_entire_state_region = STATE_PELODARD
+	owns_entire_state_region = STATE_DARHAN
+	owns_entire_state_region = STATE_TRASAND
+	owns_entire_state_region = STATE_EINNSAG
+	owns_entire_state_region = STATE_SGLOLAD
+	owns_entire_state_region = STATE_RAITHLOS
+	owns_entire_state_region = STATE_TRIMGARB
+	owns_entire_state_region = STATE_EGASACH
+	owns_entire_state_region = STATE_DOMANDROD
+	owns_entire_state_region = STATE_FOGHARBAC
+	owns_entire_state_region = STATE_DARTIR
+	owns_entire_state_region = STATE_GEMRADCURT
+	owns_entire_state_region = STATE_JHORGASHIRR
+	owns_entire_state_region = STATE_GALBHAN
+	owns_entire_state_region = STATE_ARMONADH
+	owns_entire_state_region = STATE_SPRING_GLADE
+	owns_entire_state_region = STATE_SUMMER_GLADE
+	owns_entire_state_region = STATE_AUTUMN_GLADE
+	owns_entire_state_region = STATE_WINTER_GLADE
+}
+
+can_potentially_produce_prestige_goods_small_arms = {
+	OR = {
+		can_potentially_produce_prestige_goods = prestige_good_generic_small_arms
+		can_potentially_produce_prestige_goods = prestige_good_ramsgate_sparkdrives
+		can_potentially_produce_prestige_goods = prestige_good_bucks_revolvers
+	}
+
+}
+can_potentially_produce_prestige_goods_artillery = {
+	OR = {
+		can_potentially_produce_prestige_goods = prestige_good_sildnamm_artillery
+		can_potentially_produce_prestige_goods = prestige_good_generic_artillery
+	}
+}
+can_potentially_produce_prestige_goods_tools = {
+	OR = {
+		can_potentially_produce_prestige_goods = prestige_good_generic_tools
+	}
+}
+can_potentially_produce_prestige_goods_engines = {
+	OR = {
+		can_potentially_produce_prestige_goods = prestige_good_magi_fossil_hybrid_engines
+		can_potentially_produce_prestige_goods = prestige_good_dagrite_railcarts
+	}
+}
+can_potentially_produce_prestige_goods_steel = {
+	OR = {
+		can_potentially_produce_prestige_goods = prestige_good_generic_steel
+		can_potentially_produce_prestige_goods = prestige_good_vanbury_steel
+	}
+}

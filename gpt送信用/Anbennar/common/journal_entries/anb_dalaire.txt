@@ -1,0 +1,99 @@
+﻿je_dalaire_dal = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	group = je_group_historical_content
+
+	is_shown_when_inactive = {
+		OR = {
+			country_has_primary_culture = cu:dalairey
+			country_has_primary_culture = cu:vrendzani_kobold
+			country_has_primary_culture = cu:themarian
+			country_has_primary_culture = cu:teira
+		}
+		is_subject = yes
+	}
+
+	possible = {
+		has_technology_researched = nationalism
+	}
+
+	complete = {
+		calc_true_if = {
+			amount >= 6
+			owns_entire_state_region = STATE_HJORDAL
+			owns_entire_state_region = STATE_FLOTTNORD
+			owns_entire_state_region = STATE_DALAIRRSILD
+			owns_entire_state_region = STATE_NYHOFN
+			owns_entire_state_region = STATE_SJAVARRUST
+			owns_entire_state_region = STATE_TRITHEMAR
+			owns_entire_state_region = STATE_SILDARBAD
+			owns_entire_state_region = STATE_FARNOR
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = dalaire.3 }
+	}
+
+	invalid = {
+		is_subject = no
+	}
+
+	weight = 100
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_dalaire_gh = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	group = je_group_historical_content
+
+	is_shown_when_inactive = {
+		any_subject_or_below = {
+			OR = {
+				country_has_primary_culture = cu:dalairey
+				country_has_primary_culture = cu:vrendzani_kobold
+				country_has_primary_culture = cu:themarian
+				country_has_primary_culture = cu:teira
+			}
+			count >= 2
+		}
+		NOT = {
+			OR = {
+				country_has_primary_culture = cu:dalairey
+				country_has_primary_culture = cu:vrendzani_kobold
+				country_has_primary_culture = cu:themarian
+				country_has_primary_culture = cu:teira
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = nationalism
+	}
+
+	complete = {
+		any_subject_or_below = {
+			calc_true_if = {
+				amount >= 6
+				owns_entire_state_region = STATE_HJORDAL
+				owns_entire_state_region = STATE_FLOTTNORD
+				owns_entire_state_region = STATE_DALAIRRSILD
+				owns_entire_state_region = STATE_NYHOFN
+				owns_entire_state_region = STATE_SJAVARRUST
+				owns_entire_state_region = STATE_TRITHEMAR
+				owns_entire_state_region = STATE_SILDARBAD
+				owns_entire_state_region = STATE_FARNOR
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = dalaire.4 }
+	}
+
+	weight = 100
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

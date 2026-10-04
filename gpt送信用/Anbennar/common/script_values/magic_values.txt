@@ -1,0 +1,25 @@
+﻿# enum for magical traditions
+# 0 = Agrarian
+# 1 = Industrial
+# 2 = Militaristic
+
+magical_tradition = {
+	# Unless it's specified here countries default to 0
+	value = 0
+
+	if = {
+		limit = {
+			OR = {
+				ROOT = c:A14
+				ROOT = c:A15
+			}
+		}
+		value = 1
+	}
+	else_if = {
+		limit = {
+			ROOT = c:A01
+		}
+		value = 2
+	}
+}

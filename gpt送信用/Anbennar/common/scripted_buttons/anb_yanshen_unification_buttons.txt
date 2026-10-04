@@ -1,0 +1,74 @@
+﻿je_yanshen_unify_button = {
+	name = "je_yanshen_unify_button"
+	desc = "je_yanshen_unify_button_desc"
+
+
+	ai_chance = {
+		value = 100
+	}
+
+	possible = {
+		is_unification_candidate = Y02
+		any_neighbouring_state = {
+			owner = {
+				OR = {
+					country_has_primary_culture = cu:jiangszun
+					country_has_primary_culture = cu:beikling
+					country_has_primary_culture = cu:gangim
+					country_has_primary_culture = cu:naamjyut
+					country_has_primary_culture = cu:jiangyang	
+				}
+				any_scope_treaty = {
+					binds = root
+					any_scope_article = {
+						OR = {
+							has_type = defensive_pact
+							has_type = alliance
+						}
+					}
+					any_scope_article = {
+						has_type = foreign_investment_rights
+					}
+				}
+				country_rank <= rank_value:minor_power
+				relations:root >= relations_threshold:friendly
+				is_player = no
+			}
+		}
+	}
+
+	effect = {
+		random_neighbouring_state = {
+			limit = {
+				owner = {
+					OR = {
+						country_has_primary_culture = cu:jiangszun
+						country_has_primary_culture = cu:beikling
+						country_has_primary_culture = cu:gangim
+						country_has_primary_culture = cu:naamjyut
+						country_has_primary_culture = cu:jiangyang	
+					}
+					any_scope_treaty = {
+						binds = root
+						any_scope_article = {
+							OR = {
+								has_type = defensive_pact
+								has_type = alliance
+							}
+						}
+						any_scope_article = {
+							has_type = foreign_investment_rights
+						}
+					}
+					country_rank <= rank_value:minor_power
+					relations:root >= relations_threshold:friendly
+					is_player = no
+					}
+			}
+			owner = {
+				save_scope_as = annex_country
+			}
+		}
+		annex_with_incorporation = scope:annex_country
+	}
+}

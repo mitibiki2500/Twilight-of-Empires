@@ -1,0 +1,35 @@
+﻿#Industrial Artificery
+je_industrial_artificery = {
+    icon = "gfx/interface/icons/event_icons/event_industry.dds"
+    
+    group = je_group_technology
+
+    is_shown_when_inactive = {
+        is_player = yes
+        has_technology_researched = punch_card_artificery
+        NOT = { has_technology_researched = elemental_elicitation }
+    }
+
+    possible = {
+        has_technology_researched = punch_card_artificery
+        any_scope_building = {
+			is_building_type = building_doodad_artificeries
+		}
+    }
+
+    complete = {
+        any_scope_building = {
+			is_building_type = building_doodad_artificeries
+			occupancy > 0.75
+			cash_reserves_ratio > 0.25
+			weekly_profit > 0
+			level >= 3
+		}
+    }
+
+    on_complete = {
+		trigger_event = { id = anb_production_tech_events.001 }
+	}
+
+    timeout = 3650
+}

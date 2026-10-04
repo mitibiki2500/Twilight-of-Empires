@@ -1,0 +1,238 @@
+﻿#remove_all_adventurers_wanted_buildings = {
+#	hidden_effect = {
+#		if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_dungeon_brigand_army_base
+#			}
+#			remove_building = building_adventurers_wanted_dungeon_brigand_army_base
+#		}
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_dungeon_lich_lair
+#			}
+#			remove_building = building_adventurers_wanted_dungeon_lich_lair
+#		}
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_dungeon_precursor_base
+#			}
+#			remove_building = building_adventurers_wanted_dungeon_precursor_base
+#		}
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_dungeon_sea_monster_nest
+#			}
+#			remove_building = building_adventurers_wanted_dungeon_sea_monster_nest
+#		}
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_sudden_threat_den_of_beasts
+#			}
+#			remove_building = building_adventurers_wanted_sudden_threat_den_of_beasts
+#		}
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_sudden_threat_undead_mob
+#			}
+#			remove_building = building_adventurers_wanted_sudden_threat_undead_mob
+#		}
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_sudden_threat_planar_breach
+#			}
+#			remove_building = building_adventurers_wanted_sudden_threat_planar_breach
+#		}
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_sudden_threat_kraken_attack
+#			}
+#			remove_building = building_adventurers_wanted_sudden_threat_kraken_attack
+#		}
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_infestation_fey_incursion
+#			}
+#			remove_building = building_adventurers_wanted_infestation_fey_incursion
+#		}
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_infestation_awakened_treants
+#			}
+#			remove_building = building_adventurers_wanted_infestation_awakened_treants
+#		}
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_infestation_ancient_golems
+#			}
+#			remove_building = building_adventurers_wanted_infestation_ancient_golems
+#		}
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_infestation_elemental_forge
+#			}
+#			remove_building = building_adventurers_wanted_infestation_elemental_forge
+#		}	
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_investigation_thieves_guild
+#			}
+#			remove_building = building_adventurers_wanted_investigation_thieves_guild
+#		}	
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_investigation_hag_dens
+#			}
+#			remove_building = building_adventurers_wanted_investigation_hag_dens
+#		}
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_investigation_eldritch_cult
+#			}
+#			remove_building = building_adventurers_wanted_investigation_eldritch_cult
+#		}
+#		else_if = {
+#			limit = {
+#				has_building = building_adventurers_wanted_investigation_vampire_family
+#			}
+#			remove_building = building_adventurers_wanted_investigation_vampire_family
+#		}
+#		
+#		set_variable = { name = target_quest_progress value = 0 }
+#		set_variable = { name = current_quest_progress value = 0 }
+#	}
+#}
+#
+#update_local_quest_progress = {
+#	change_variable = { name = current_quest_progress add = state_quest_progress_rate_value }
+#}
+#
+#set_quest_target = {
+#	hidden_effect = {
+#		if = {
+#			limit = { 
+#				any_scope_building = {
+#					is_building_group = bg_adventurers_wanted 	
+#					count > 0	#BIG NOTE: due to current limitations / knowledge, you can only ever have ONE Adventurers Wanted in a state
+#				}
+#			 }
+#			if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_dungeon_brigand_army_base
+#				}
+#				set_variable = { name = target_quest_progress value = 2400 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_dungeon_lich_lair
+#				}
+#				set_variable = { name = target_quest_progress value = 2400 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_dungeon_precursor_base
+#				}
+#				set_variable = { name = target_quest_progress value = 2400 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_dungeon_sea_monster_nest
+#				}
+#				set_variable = { name = target_quest_progress value = 2400 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_sudden_threat_den_of_beasts
+#				}
+#				set_variable = { name = target_quest_progress value = 1200 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_sudden_threat_undead_mob
+#				}
+#				set_variable = { name = target_quest_progress value = 1200 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_sudden_threat_planar_breach
+#				}
+#				set_variable = { name = target_quest_progress value = 1200 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_sudden_threat_kraken_attack
+#				}
+#				set_variable = { name = target_quest_progress value = 1200 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_infestation_fey_incursion
+#				}
+#				set_variable = { name = target_quest_progress value = 1800 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_infestation_awakened_treants
+#				}
+#				set_variable = { name = target_quest_progress value = 1800 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_infestation_ancient_golems
+#				}
+#				set_variable = { name = target_quest_progress value = 1800 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_infestation_elemental_forge
+#				}
+#				set_variable = { name = target_quest_progress value = 1800 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}	
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_investigation_thieves_guild
+#				}
+#				set_variable = { name = target_quest_progress value = 1800 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}	
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_investigation_hag_dens
+#				}
+#				set_variable = { name = target_quest_progress value = 1800 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_investigation_eldritch_cult
+#				}
+#				set_variable = { name = target_quest_progress value = 1800 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#			else_if = {
+#				limit = {
+#					has_building = building_adventurers_wanted_investigation_vampire_family
+#				}
+#				set_variable = { name = target_quest_progress value = 1800 }
+#				set_variable = { name = current_quest_progress value = 0 }
+#			}
+#		}
+#		else = {
+#			set_variable = { name = target_quest_progress value = 0 }
+#			set_variable = { name = current_quest_progress value = 0 }
+#		}
+#		
+#		# change_variable = { name = target_quest_progress multiply = $MULTIPLIER$ }
+#	}
+#}

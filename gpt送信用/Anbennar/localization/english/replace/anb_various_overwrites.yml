@@ -1,0 +1,18 @@
+﻿l_english:
+
+#ordered by the vanilla file they replace the string from
+
+# concepts_l_english.yml
+concept_capacity_desc:0 "A measure of your [Concept('concept_country','$concept_country_possessive$')] capabilities in one of four areas: [concept_bureaucracy], [concept_authority], [concept_influence] and [concept_magical_expertise]. $concept_capacities$ are not stored and used, but continuously generated from different sources and continually expended by the various projects you have going on. Your remaining balance in each area is displayed in the top bar. Having an excess of a $concept_capacity$ will yield a minor bonus for your $concept_country$, while having a lack of a $concept_capacity$ will inflict large penalties."
+
+
+# customized_tooltips_l_english.yml
+RELIGION_TT_HEADING: "#tooltippable_name #tooltip:[Religion.GetTooltipTag],RELIGION_DESC_TOOLTIP,ReligionTooltip [Religion.GetNameNoFormatting]#!#! $concept_religion$"
+
+
+# diplomatic_treaties_l_english.yml
+treaty_name_september_convention: "Castanmark Convention" # does $SIGNING_MONTH$ not work? we should maybe overwrite the month names like APRIL:"
+
+
+# government_l_english.yml
+gov_crown_colony_desc: "This is a colony of a Cannorian crown, ruled by colonial administrators with little autonomy."

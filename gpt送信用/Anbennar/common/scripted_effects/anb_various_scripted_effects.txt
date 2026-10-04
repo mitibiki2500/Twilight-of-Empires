@@ -1,0 +1,63 @@
+﻿
+# This effect serves solely to hide unused variables from the error.log
+# NOTE: ONLY DO THIS IF YOU ARE SURE THE VARIABLE IS WORKING AS INTENDED
+# Some show up there due it failing to capture use in loc
+# There are also some variables from vanilla which we don't currently use, but seem useful enough to keep around
+dummy_variable_user = {
+    if = {
+        limit = {
+            # to ensure this always fails
+            has_variable = anb_dummy_var
+
+            # used in loc
+            has_variable = national_journal_entry 
+            has_variable = national_journal_entry_list
+            has_variable = ardimya_busilar_npp
+            has_variable = broken_empire_start_year
+            has_variable = ardimya_npp_demand
+
+
+            # character description flags
+            var:character_description = flag:munathik_mlerek_mudaliar
+
+            # vanilla unused
+            has_variable = positivism_done # is the positivism je done?
+            has_variable = newly_released_country # check if a country was only recently released
+            has_variable = ruler_selector_pool_invalidation_global_var # I think this fixes a bug in vanilla? We don't have ruler_selector rulers right now, but I think we'd' to add it to them?
+
+            has_variable = opium_wars_won # vanilla uses the for an ai trigger, describe outcome of opium war
+            has_variable = opium_wars_gave_in
+            has_variable = opium_wars_ignored_ban
+
+            has_variable = wargoal_enforced_by_recognized_power
+            has_variable = crushed_secession
+            
+        }
+    }
+    # for this effect
+    set_variable = anb_dummy_var
+    
+
+    # vanilla unused
+    set_variable = coup_immunity # blocks coups
+    set_variable = { name = temporary_immortality_var value = 36 } # makes a character immortal for X months
+    set_variable = expedition_trading_gifts # used to enable an accessory from expeditions
+    set_variable = anti_nationalist_var # used to block characters from joining nationalist movements
+    set_variable = commander_doing_coup_on_player_behalf # used to do a coup for the player (don't fully understand what that entails tbh)
+
+    # these are easier to hide here, than  to add and overwrite every file that uses them
+    set_variable = former_shogun_var
+    set_variable = daimyo_var
+
+    # Mechanim stuff, these are all WIP remove them from here once they are used
+    set_variable = mechanim_revolt_full_swing
+    set_variable = tu_mechanim_united
+    set_variable = mechanim_revolt_happened
+    set_variable = mechanim_awakening_sentience_support_progress_from_events
+    set_variable = mechanim_wrongs_enforced
+    generate_3_noble_name = { # generates 3 names, here to hide name_c_scope
+        CULTURE_1 = primary_culture
+        CULTURE_2 = primary_culture
+        CULTURE_3 = primary_culture
+    }
+}

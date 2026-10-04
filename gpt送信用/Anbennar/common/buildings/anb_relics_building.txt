@@ -1,0 +1,19 @@
+﻿building_relics_digsite = {
+	building_group = bg_relics_digsite
+	icon = "gfx/interface/icons/building_icons/building_relics_digsite.dds"
+	city_type = mine
+	required_construction = construction_cost_medium
+	terrain_manipulator = mining
+	levels_per_mesh = 0
+	
+	unlocking_technologies = {
+		relic_reverse_engineering
+	}
+
+	production_method_groups = {
+		pmg_base_building_relics_digsite
+	}
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+}

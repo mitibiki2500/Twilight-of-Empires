@@ -1,0 +1,27 @@
+﻿# Murdkather
+B85_general = {
+	historical = yes
+	first_name = john
+	last_name = anbennar
+	culture = cu:caamas
+	female = no
+	religion = summer_court
+	commander_rank = default
+	interest_group = ig_devout
+	ideology = ideology_theocrat
+	birth_date = 1801.6.3
+	traits = {
+		brave
+		pious
+	}
+	commander_usage = {
+		country_trigger = {
+			exists = c:B85
+			this = c:B85
+		}
+		role = general
+		earliest_usage_date = 1836.1.1
+		latest_usage_date = 1870.1.1	
+		chance = 75
+	}
+}

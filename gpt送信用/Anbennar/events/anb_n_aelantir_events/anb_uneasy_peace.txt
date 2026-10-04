@@ -1,0 +1,1828 @@
+﻿namespace = anb_uneasy_peace
+
+#The Uneasy Peace
+anb_uneasy_peace.001 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.001.t
+    desc = anb_uneasy_peace.001.d
+    flavor = anb_uneasy_peace.001.f
+
+    event_image = {
+        video = "unspecific_politicians_arguing" 
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_scales.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #Tiru Moine option
+        name = anb_uneasy_peace.001.a
+        default_option = yes
+        trigger = {
+            c:B42 = this
+        }
+        custom_tooltip = {
+            text = tiru_starting_desc
+            c:B41 = {
+                set_variable = { name = plummoine_positive value = yes years = 8 }
+            }
+            c:B34 = {
+                set_variable = { name = beggamoine_positive value = yes years = 8 }
+            }
+        }
+    }
+
+    option = { #Hostile
+        name = anb_uneasy_peace.001.b
+        trigger = {
+            NOT = {
+                c:B42 = this
+            }
+        }
+        custom_tooltip = {
+            text = uneasy_peace_starting_desc_host #TODO Put anything here?
+        }
+        ai_chance = {
+            base = 40
+        }
+    }
+
+    option = { #Conciliatory
+        name = anb_uneasy_peace.001.c
+        trigger = {
+            NOT = {
+                c:B42 = this
+            }
+        }
+        custom_tooltip = {
+            text = uneasy_peace_starting_desc_conc
+            set_variable = { name = expanse_reconciliation value = yes years = 12 }
+        }
+        ai_chance = { #TODO Add modifiers to the weight
+            base = 100   
+        }
+    }
+}
+
+#The start of something greater?
+anb_uneasy_peace.002 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.002.t
+    desc = anb_uneasy_peace.002.d
+    flavor = anb_uneasy_peace.002.f
+
+    event_image = {
+        video = "unspecific_military_parade"
+    }
+
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds" 
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    #Labstein note : should have an option to make them unite into Steadsland, otherwise the JE leads the player nowhere - but that's for later
+
+    option = { #Establish an alliance
+        name = anb_uneasy_peace.002.a
+        default_option = yes
+        c:B41 = { #TODO Figure out how to make this work so that it's always the player choosing unless they're all AI
+            create_treaty = {
+                first_country = c:B41
+                second_country = c:B34
+                is_draft = no
+                binding_period = { years = 20 }
+                articles_to_create = {
+                    { article = alliance }
+                }
+            }
+        }
+        #Tiru Moine gets a modifier
+        c:B42 = {
+            add_modifier = {
+                name = expanse_reconciliation_reward
+                months = 120
+            }
+        }
+        #Everyone gets relations
+        c:B42 = {
+            change_relations = { country = c:B41 value = 20 }
+            change_relations = { country = c:B34 value = 20 }
+        }
+        c:B41 = {
+            change_relations = { country = c:B34 value = 20 }
+        }
+    }
+
+    option = { #Keep things the way they are
+        name = anb_uneasy_peace.002.b
+        #Tiru Moine gets a modifier
+        c:B42 = {
+            add_modifier = {
+                name = expanse_reconciliation_reward
+                months = 120
+            }
+        }
+        #Everyone gets relations
+        c:B42 = {
+            change_relations = { country = c:B41 value = 20 }
+            change_relations = { country = c:B34 value = 20 }
+        }
+        c:B41 = {
+            change_relations = { country = c:B34 value = 20 }
+        }
+    }
+
+}
+
+#The end of the Pact
+anb_uneasy_peace.003 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.003.t
+    desc = anb_uneasy_peace.003.d
+    flavor = anb_uneasy_peace.003.f
+
+    event_image = {
+        video = "europenorthamerica_political_extremism"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #For Tiru Moine, this one has the actual effect
+        name = anb_uneasy_peace.003.a
+        default_option = yes
+        trigger = {
+            c:B42 = this
+        }
+        if = {
+            limit = {
+                scope:journal_entry = {
+                    "scripted_bar_progress(uneasy_peace_bar)" <= 0
+                }
+            }
+            c:B41 ?= {
+                every_scope_treaty = {
+                    limit = {
+                        binds = c:B42
+                        any_scope_article = {
+                            has_type = defensive_pact
+                        }
+                    }
+                    withdraw = {
+                        country = root
+                    }
+                }
+            }
+            c:B34 ?= {
+                every_scope_treaty = {
+                    limit = {
+                        binds = c:B42
+                        any_scope_article = {
+                            has_type = defensive_pact
+                        }
+                    }
+                    withdraw = {
+                        country = root
+                    }
+                }
+            }
+        }
+        #Tiru Moine gets a modifier
+        c:B42 = {
+            add_modifier = {
+                name = expanse_pact_failure
+                months = 120
+            }
+        }
+    } 
+
+    option = { #For Plumstead and Beggaston, tells them what happened and uses custom Loc to show effects
+        name = anb_uneasy_peace.003.b
+        trigger = {
+            NOT = {
+                c:B42 = this
+            }
+        }
+        show_as_tooltip = {
+            if = {
+                limit = {
+                    scope:journal_entry = {
+                        "scripted_bar_progress(uneasy_peace_bar)" <= 0
+                    }
+                }
+                c:B41 ?= {
+                    every_scope_treaty = {
+                        limit = {
+                            binds = c:B42
+                            any_scope_article = {
+                                has_type = defensive_pact
+                            }
+                        }
+                        withdraw = {
+                            country = root
+                        }
+                    }
+                }
+                c:B34 ?= {
+                    every_scope_treaty = {
+                        limit = {
+                            binds = c:B42
+                            any_scope_article = {
+                                has_type = defensive_pact
+                            }
+                        }
+                        withdraw = {
+                            country = root
+                        }
+                    }
+                }
+            }
+            #Tiru Moine gets a modifier
+            c:B42 = {
+                add_modifier = {
+                    name = expanse_pact_failure
+                    months = 120
+                }
+            }
+        }
+    }
+    #TODO add options for if plumstead and beggaston are at war
+}
+
+#Favoritism?
+anb_uneasy_peace.004 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.004.t
+    desc = anb_uneasy_peace.004.d
+    flavor = anb_uneasy_peace.004.f
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_scales.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+    
+    trigger = { #Plumstead and Beggaston are still rivals
+        OR = {
+            AND = {
+                c:B41 = this
+                has_diplomatic_pact = {
+                    who = c:B34
+                    type = rivalry
+                }
+            }
+            AND = {
+                c:B34 = this
+                has_diplomatic_pact = {
+                    who = c:B41
+                    type = rivalry
+                }
+            }
+        }
+    }
+
+    cooldown = {
+        years = 2
+    }
+
+    immediate = {
+        THIS = {
+            save_scope_as = expanse_favoritism_sender
+        }
+        if = {
+            limit = {
+                c:B34 = this
+            }
+            c:B41 = {
+                save_scope_as = expanse_favoritism_subject
+            }
+        }
+        else = {
+            c:B34 = {
+                save_scope_as = expanse_favoritism_subject
+            }
+        }
+    }
+
+    option = { #Issue the complaint
+        name = anb_uneasy_peace.004.a
+        default_option = yes
+        c:B42 = {
+            trigger_event = { id = anb_uneasy_peace.011 }
+        }
+        ai_chance = {
+            base = 80
+        }
+    }
+
+    option = { #Let it go
+        name = anb_uneasy_peace.004.b
+        #Gain some unity
+        custom_tooltip = {
+            text = uneasy_peace_unity_gain
+            c:B41 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = 5 name = uneasy_peace_bar }
+                }
+            }
+            c:B34 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = 5 name = uneasy_peace_bar }
+                }
+            }
+            c:B42 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = 5 name = uneasy_peace_bar }
+                }
+            }
+        }
+        ai_chance = {
+            base = 20
+        }
+    }
+}
+
+#Voices in government oppose collaboration with [rival]
+anb_uneasy_peace.005 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.005.t
+    desc = anb_uneasy_peace.005.d
+    flavor = anb_uneasy_peace.005.f
+
+    event_image = {
+        video = "votp_agitator_speaking"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_protest.dds" 
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+    
+    trigger = {
+        #An IG exists with negative approval
+        any_interest_group = {
+            ig_approval < 0
+            is_marginal = no
+            is_member_of_any_lobby = no
+        }
+        OR = {
+            c:B34 ?= this
+            c:B41 ?= this
+        }
+    }
+
+    cooldown = {
+        years = 2
+    }
+
+    immediate = { #Save scope of the interest group to add to lobby
+        random_interest_group = {
+            limit = {
+                ig_approval < 0
+                is_marginal = no
+                is_member_of_any_lobby = no
+            }
+            save_scope_as = expanse_opposing_ig
+        }
+        if = {
+            limit = {
+                c:B34 = this
+            }
+            c:B41 = {
+                save_scope_as = expanse_protest_rival
+            }
+            c:B34 = {
+                save_scope_as = expanse_protest_sender
+            }
+        }
+        else = {
+            c:B34 = {
+                save_scope_as = expanse_protest_rival
+            }
+            c:B41 = {
+                save_scope_as = expanse_protest_sender
+            }
+        }
+        random_political_lobby = {
+            limit = {
+                is_political_lobby_type = lobby_anti_country
+                target = { 
+                    c:B34 = this
+                }
+            }
+            save_scope_as = expanse_anti_lobby	
+        }
+    }
+
+    option = { #Agree with the IG
+        name = anb_uneasy_peace.005.a
+        default_option = yes
+
+        #Decrease relations with rival
+        change_relations = {
+            country = scope:expanse_protest_rival
+            value = -10
+        }
+        #Gain loyalists in IG
+        add_loyalists = {
+            value = small_radicals
+            interest_group = scope:expanse_opposing_ig
+        }
+        #Gain IG approval
+        scope:expanse_opposing_ig = {
+            add_modifier = {
+                name = expanse_ig_supported
+                years = 2
+                is_decaying = no
+            }
+        }
+        
+        #Lose unity
+        custom_tooltip = {
+            text = uneasy_peace_unity_loss
+            c:B41 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -5 name = uneasy_peace_bar }
+                }
+            }
+            c:B34 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -5 name = uneasy_peace_bar }
+                }
+            }
+            c:B42 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -5 name = uneasy_peace_bar }
+                }
+            }
+        }
+        #IG joins an anti-country lobby
+        if = {
+            limit = {
+                any_political_lobby = {
+					is_political_lobby_type = lobby_anti_country
+					target = { 
+						c:B34 = this
+					}
+				}
+            }
+            scope:expanse_anti_lobby = {
+                add_lobby_member = scope:expanse_opposing_ig
+            }
+        }
+        else = {
+            create_political_lobby = {  
+                type = lobby_anti_country  
+                target = scope:expanse_protest_rival
+                add_interest_group = scope:expanse_opposing_ig
+                lobby_formation_reason = ideology
+            }
+        }
+    }
+
+    option = { #Ignore them
+        name = anb_uneasy_peace.005.b
+        #IG Joins an anti-country lobby
+        if = {
+            limit = {
+                any_political_lobby = {
+					is_political_lobby_type = lobby_anti_country
+					target = { 
+						c:B34 = this
+					}
+				}
+            }
+            scope:expanse_anti_lobby = {
+                add_lobby_member = scope:expanse_opposing_ig
+            }
+        }
+        else = {
+            create_political_lobby = {  
+                type = lobby_anti_country  
+                target = scope:expanse_protest_rival
+                add_interest_group = scope:expanse_opposing_ig
+                lobby_formation_reason = ideology
+            }
+        }
+        #Gain some radicals
+        add_radicals = {
+            value = small_radicals
+            interest_group = scope:expanse_opposing_ig
+        }
+        #Lose some IG approval and weaken their political strength
+        scope:expanse_opposing_ig = {
+            add_modifier = {
+                name = expanse_ig_ignored
+                years = 2
+                is_decaying = no
+            }
+        }
+    }
+    
+    after = {
+        #Give other tags a post notification
+        c:B42 = {
+            post_notification = expanse_anti_lobby_notification
+        }
+        scope:expanse_protest_rival = {
+            post_notification = expanse_anti_lobby_notification
+        }
+    }
+}
+
+#[Interest Group] declares support for collaboration
+anb_uneasy_peace.006 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.006.t
+    desc = anb_uneasy_peace.006.d
+    flavor = anb_uneasy_peace.006.f
+
+    event_image = {
+        video = "europenorthamerica_capitalists_meeting" 
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_scales.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+    
+    trigger = {
+        #An IG exists with positive approval
+        any_interest_group = {
+            ig_approval > 0
+            is_marginal = no
+            is_member_of_any_lobby = no
+        }
+        OR = {
+            c:B34 ?= this
+            c:B41 ?= this
+        }
+    }
+
+    cooldown = {
+        years = 2
+    }
+
+    immediate = { #Save scope of the interest group to add to lobby
+        random_interest_group = {
+            limit = {
+                ig_approval > 0
+                is_marginal = no
+                is_member_of_any_lobby = no
+            }
+            save_scope_as = expanse_supporting_ig
+        }
+        if = {
+            limit = {
+                c:B34 = this
+            }
+            c:B41 = {
+                save_scope_as = expanse_support_rival
+            }
+            c:B34 = {
+                save_scope_as = expanse_support_sender
+            }
+        }
+        else = {
+            c:B34 = {
+                save_scope_as = expanse_support_rival
+            }
+            c:B41 = {
+                save_scope_as = expanse_support_sender
+            }
+        }
+        random_political_lobby = {
+            limit = {
+                is_political_lobby_type = lobby_pro_country
+                target = { 
+                    c:B34 = this
+                }
+            }
+            save_scope_as = expanse_pro_lobby	
+        }
+    }
+
+    option = { #Agree with the IG
+        name = anb_uneasy_peace.006.a
+        default_option = yes
+
+        #Increase relations with rival
+        change_relations = {
+            country = scope:expanse_support_rival
+            value = 10
+        }
+        #Gain loyalists in IG
+        add_loyalists = {
+            value = small_radicals
+            interest_group = scope:expanse_supporting_ig
+        }
+
+        #Gain unity
+        custom_tooltip = {
+            text = uneasy_peace_unity_gain
+            c:B41 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = 5 name = uneasy_peace_bar }
+                }
+            }
+            c:B34 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = 5 name = uneasy_peace_bar }
+                }
+            }
+            c:B42 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = 5 name = uneasy_peace_bar }
+                }
+            }
+        }
+        
+        #The IG is added to a lobby
+        if = {
+            limit = {
+                any_political_lobby = {
+					is_political_lobby_type = lobby_pro_country
+					target = { 
+						c:B34 = this
+					}
+				}
+            }
+            scope:expanse_pro_lobby = {
+                add_lobby_member = scope:expanse_supporting_ig
+            }
+        }
+        else = {
+            create_political_lobby = { 
+                type = lobby_pro_country  
+                target = scope:expanse_support_rival
+                add_interest_group = scope:expanse_supporting_ig
+                lobby_formation_reason = ideology
+            }
+        }
+
+        #Gain IG approval
+        scope:expanse_supporting_ig = {
+            add_modifier = {
+                name = expanse_ig_supported
+                years = 2
+                is_decaying = no
+            }
+        }
+    }
+
+    option = { #Ignore them
+        name = anb_uneasy_peace.006.b
+
+        #The IG is added to a lobby
+        if = {
+            limit = {
+                any_political_lobby = {
+					is_political_lobby_type = lobby_pro_country
+					target = { 
+						c:B34 = this
+					}
+				}
+            }
+            scope:expanse_pro_lobby = {
+                add_lobby_member = scope:expanse_supporting_ig
+            }
+        }
+        else = {
+            create_political_lobby = { 
+                type = lobby_anti_country  
+                target = scope:expanse_support_rival
+                add_interest_group = scope:expanse_supporting_ig
+                lobby_formation_reason = ideology
+            }
+        }
+
+        #Gain some radicals
+        add_radicals = {
+            value = small_radicals
+            interest_group = scope:expanse_supporting_ig
+        }
+        #Lose some IG approval and the IG loses some political strength
+        scope:expanse_supporting_ig = {
+            add_modifier = {
+                name = expanse_ig_ignored
+                years = 2
+                is_decaying = no
+            }
+        }
+    }
+    after = {
+        #Give other tags a post notification
+        c:B42 = {
+            post_notification = expanse_pro_lobby_notification
+        }
+        scope:expanse_support_rival = {
+            post_notification = expanse_pro_lobby_notification
+        }
+    }
+}
+
+#Building Bonds
+anb_uneasy_peace.007 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.007.t
+    desc = anb_uneasy_peace.007.d
+    flavor = anb_uneasy_peace.007.f
+
+    event_image = {
+        video = "unspecific_signed_contract" 
+    }
+
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds" 
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #Joint Operations
+        name = anb_uneasy_peace.007.a
+        default_option = yes
+        trigger = {
+            NOT = {
+                has_variable = joint_operations_completed
+            } #TODO Should only be able to do these again if the result was a no last time
+        }
+        c:B34 = {
+            trigger_event = { id = anb_uneasy_peace.008 }
+        }
+        c:B41 = {
+            trigger_event = { id = anb_uneasy_peace.008 }
+        }
+        set_variable = { name = joint_operations_completed value = yes years = 3 }
+        set_variable = { name = expanse_cooperation_button_cooldown value = yes years = 2 }
+    }
+
+    option = { #Mutual Concessions
+        name = anb_uneasy_peace.007.b
+        trigger = {
+            NOT = {
+                has_variable = mutual_concessions_completed
+            }
+        }
+        c:B34 = {
+            trigger_event = { id = anb_uneasy_peace.009 }
+        }
+        c:B41 = {
+            trigger_event = { id = anb_uneasy_peace.009 }
+        }
+        set_variable = { name = mutual_concessions_completed value = yes years = 3 }
+        set_variable = { name = expanse_cooperation_button_cooldown value = yes years = 2 }
+    }
+
+    option = { #NVM
+        name = anb_uneasy_peace.007.c
+        trigger = {
+            OR = {
+                is_ai = no
+                AND = {
+                    has_variable = joint_operations_completed
+                    has_variable = mutual_concessions_completed
+                }
+            }
+        }
+        custom_tooltip = {
+            text = je_uneasy_peace_nvm
+        }
+    }
+}
+
+#Joint Exercises?
+anb_uneasy_peace.008 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.008.t
+    desc = anb_uneasy_peace.008.d
+    flavor = anb_uneasy_peace.008.f
+
+    event_image = {
+        video = "unspecific_military_parade"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds" 
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #Yes
+        name = anb_uneasy_peace.008.a
+        default_option = yes
+        if = {
+            limit = {
+                c:B41 = this
+            }
+            set_variable = { name = plumstead_joint_exercises_yes value = yes }
+        }
+        else = {
+            set_variable = { name = beggaston_joint_exercises_yes value = yes }
+        }
+        custom_tooltip = { #Hide the events behind custom loc
+            text = joint_exercises_yes_desc
+            c:B41 = {
+                trigger_event = { id = anb_uneasy_peace.014 }
+            }
+            c:B42 = {
+                trigger_event = { id = anb_uneasy_peace.014 }
+            }
+            c:B34 = {
+                trigger_event = { id = anb_uneasy_peace.014 }
+            }
+        }
+        ai_chance = {
+            base = 75
+        }
+    }
+
+    option = { #No
+        name = anb_uneasy_peace.008.b
+        if = {
+            limit = {
+                c:B41 = this
+            }
+            set_variable = { name = plumstead_joint_exercises_no value = yes }
+            c:B42 = {
+                post_notification = plumstead_bonds_no_notification
+            }
+            c:B34 = {
+                post_notification = plumstead_bonds_no_notification
+            }
+        }
+        else = {
+            set_variable = { name = beggaston_joint_exercises_no value = yes }
+            c:B42 = {
+                post_notification = beggaston_bonds_no_notification
+            }
+            c:B41 = {
+                post_notification = beggaston_bonds_no_notification
+            }
+        }
+        #Lose unity
+        custom_tooltip = {
+            text = uneasy_peace_unity_loss
+            c:B41 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -5 name = uneasy_peace_bar }
+                }
+            }
+            c:B34 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -5 name = uneasy_peace_bar }
+                }
+            }
+            c:B42 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = 5 name = uneasy_peace_bar }
+                }
+            }
+        }
+        #TODO Lose some armed forces political strength
+        custom_tooltip = {
+            text = joint_exercises_no_desc
+            c:B41 = {
+                trigger_event = { id = anb_uneasy_peace.014 }
+            }
+            c:B42 = {
+                trigger_event = { id = anb_uneasy_peace.014 }
+            }
+            c:B34 = {
+                trigger_event = { id = anb_uneasy_peace.014 }
+            }
+        }
+        ai_chance = {
+            base = 25
+        }
+    }
+
+    #TODO Add AI Weights to the options
+}
+
+#Mutual Concessions
+anb_uneasy_peace.009 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.009.t
+    desc = anb_uneasy_peace.009.d
+    flavor = anb_uneasy_peace.009.f
+
+    event_image = {
+        video = "unspecific_politicians_arguing" 
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { 
+        name = anb_uneasy_peace.009.a
+        default_option = yes
+        if = {
+            limit = {
+                c:B41 = this
+            }
+            set_variable = { name = plumstead_mutual_concessions_yes value = yes }
+        }
+        else = {
+            set_variable = { name = beggaston_mutual_concessions_yes value = yes }
+        }
+        custom_tooltip = {
+            text = mutual_concessions_yes_desc
+            c:B41 = {
+                trigger_event = { id = anb_uneasy_peace.015 }
+            }
+            c:B42 = {
+                trigger_event = { id = anb_uneasy_peace.015 }
+            }
+            c:B34 = {
+                trigger_event = { id = anb_uneasy_peace.015 }
+            }
+        }
+
+        ai_chance = {
+            base = 60
+        }
+    }
+
+    option = { #No
+        name = anb_uneasy_peace.008.b
+        if = {
+            limit = {
+                c:B41 = this
+            }
+            set_variable = { name = plumstead_mutual_concessions_no value = yes }
+            c:B42 = {
+                post_notification = plumstead_bonds_no_notification
+            }
+            c:B34 = {
+                post_notification = plumstead_bonds_no_notification
+            }
+        }
+        else = {
+            set_variable = { name = beggaston_mutual_concessions_no value = yes }
+            c:B42 = {
+                post_notification = beggaston_bonds_no_notification
+            }
+            c:B41 = {
+                post_notification = beggaston_bonds_no_notification
+            }
+        }
+        #Lose unity
+        custom_tooltip = {
+            text = uneasy_peace_unity_loss
+            c:B41 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -5 name = uneasy_peace_bar }
+                }
+            }
+            c:B34 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -5 name = uneasy_peace_bar }
+                }
+            }
+            c:B42 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -5 name = uneasy_peace_bar }
+                }
+            }
+        }
+        custom_tooltip = {
+            text = mutual_concessions_no_desc
+            c:B41 = {
+                trigger_event = { id = anb_uneasy_peace.015 }
+            }
+            c:B42 = {
+                trigger_event = { id = anb_uneasy_peace.015 }
+            }
+            c:B34 = {
+                trigger_event = { id = anb_uneasy_peace.015 }
+            }
+        }
+        ai_chance = {
+            base = 40
+        }
+    }
+}
+
+#Setting aside the rivalry
+anb_uneasy_peace.010 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.010.t
+    desc = anb_uneasy_peace.010.d
+    flavor = anb_uneasy_peace.010.f
+
+    event_image = {
+        video = "unspecific_signed_contract"
+    }
+
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds" 
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #Yes
+        name = anb_uneasy_peace.010.a
+        default_option = yes
+        scope:rival_setaside_receiver = {
+            #Gain relations
+            change_relations = {
+                country = scope:rival_setaside_sender
+                value = 15
+            }
+            #Lose the rivalry
+            remove_diplomatic_pact = {
+                country = scope:rival_setaside_sender
+                type = rivalry
+            }
+        }
+        scope:rival_setaside_sender = {
+            #Lose the rivalry
+            remove_diplomatic_pact = {
+                country = scope:rival_setaside_receiver
+                type = rivalry
+            }
+        }
+        #Gain unity
+        custom_tooltip = {
+            text = uneasy_peace_unity_gain
+            c:B41 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = 15 name = uneasy_peace_bar }
+                }
+            }
+            c:B34 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = 15 name = uneasy_peace_bar }
+                }
+            }
+            c:B42 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = 15 name = uneasy_peace_bar }
+                }
+            }
+        }
+        #Permanent Unity bonus
+        custom_tooltip = {
+            text = expanse_permanent_unity_desc
+            c:B42 = {
+                set_variable = { name = expanse_rivalry_settled value = yes }
+            }
+        }
+        # Plumstead loses any claims
+        s:STATE_NIZELYNN = {
+            remove_claim = c:B41
+        }
+        s:STATE_BEGGASLAND = {
+            remove_claim = c:B41
+        }
+        #Add post notification
+        c:B42 = {
+            post_notification = expanse_rivalry_settled_yes_notification
+        }
+        scope:rival_setaside_sender = {
+            post_notification = expanse_rivalry_settled_yes_notification
+        }
+    }
+
+    option = { #No
+        name = anb_uneasy_peace.010.b
+        #Add post notification
+        c:B42 = {
+            post_notification = expanse_rivalry_settled_no_notification
+        }
+        scope:rival_setaside_sender = {
+            post_notification = expanse_rivalry_settled_no_notification
+        }
+        #Lose unity
+        custom_tooltip = {
+            text = uneasy_peace_unity_loss
+            c:B41 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -10 name = uneasy_peace_bar }
+                }
+            }
+            c:B34 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -10 name = uneasy_peace_bar }
+                }
+            }
+            c:B42 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -10 name = uneasy_peace_bar }
+                }
+            }
+        }
+    }
+}
+
+#Favoritism? Response
+anb_uneasy_peace.011 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.011.t
+    desc = anb_uneasy_peace.011.d
+    flavor = anb_uneasy_peace.011.f
+
+    event_image = {
+        video = "unspecific_ruler_speaking_to_people" 
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #We'll do what we want
+        name = anb_uneasy_peace.011.a
+        default_option = yes
+        #Lose unity
+        custom_tooltip = {
+            text = uneasy_peace_unity_loss
+            c:B41 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -10 name = uneasy_peace_bar }
+                }
+            }
+            c:B34 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -10 name = uneasy_peace_bar }
+                }
+            }
+            c:B42 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -10 name = uneasy_peace_bar }
+                }
+            }
+        }
+        #Lose some relations with sender
+        change_relations = {
+            country = scope:expanse_favoritism_sender
+            value = -10
+        }
+        ai_chance = {
+            base = 60
+        }
+    }
+
+    option = { #We'll do what they want
+        name = anb_uneasy_peace.011.b
+        #Lose small amount of unity
+        custom_tooltip = {
+            text = uneasy_peace_unity_loss
+            c:B41 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -5 name = uneasy_peace_bar }
+                }
+            }
+            c:B34 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -5 name = uneasy_peace_bar }
+                }
+            }
+            c:B42 = {
+                je:je_uneasy_peace = { 
+                    add_progress = { value = -5 name = uneasy_peace_bar }
+                }
+            }
+        }
+        #Increase relations with country
+        change_relations = {
+            country = scope:expanse_favoritism_sender
+            value = 10
+        }
+        #Decrease relations slightly with rival
+        change_relations = {
+            country = scope:expanse_favoritism_subject
+            value = -10
+        }
+        ai_chance = {
+            base = 40
+        }
+    }
+
+    after = {
+        #Give other tags a post notification
+        c:B41 = {
+            post_notification = expanse_favoritism_sent_notification
+        }
+        c:B34 = {
+            post_notification = expanse_favoritism_sent_notification
+        }
+    }
+}
+
+#The Plusmtead Decision Event
+anb_uneasy_peace.012 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.012.t
+    desc = anb_uneasy_peace.012.d
+    flavor = anb_uneasy_peace.012.f
+
+    event_image = {
+        video = "africa_desert_expedition" #TODO See if this fits
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds" 
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #Yes
+        name = anb_uneasy_peace.012.a
+        default_option = yes
+        add_modifier = {
+			name = rr_strip_purchase
+			months = 24
+			is_decaying = no
+		}
+		show_as_tooltip = {
+			random_state = {
+				limit = {
+					state_region = s:STATE_ARANTAS
+					owner = {
+						this = c:B91
+					}
+				}
+				state_region = {
+					remove_claim = root
+				}
+				set_state_owner = scope:plumstead_nation_scope
+			}
+			change_relations = {
+				country = c:B41
+				value = 10
+			}
+        }
+        c:B41 = {
+            set_variable = { name = plumstead_strip_purchase_yes value = yes years = 1 }
+        }
+        ai_chance = {
+            base = 85
+        }
+    }
+
+    option = { #No
+        name = anb_uneasy_peace.012.b
+        c:B41 = {
+            set_variable = { name = plumstead_strip_purchase_no value = yes years = 1 }
+        }
+        ai_chance = {
+            base = 15
+        }
+    }
+    after = {
+        c:B41 = {
+			trigger_event = { id = anb_uneasy_peace.013 days = 0 popup = yes }
+		}
+    }
+}
+
+#Plumstead purchase offer result
+anb_uneasy_peace.013 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.013.t
+    desc = anb_uneasy_peace.013.d
+    flavor = anb_uneasy_peace.013.f
+
+    event_image = {
+        video = "unspecific_signed_contract"
+    }
+
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #They said yes
+        name = anb_uneasy_peace.013.a
+        default_option = yes
+        trigger = {
+            has_variable = plumstead_strip_purchase_yes
+        }
+        random_state = {
+            limit = {
+                state_region = s:STATE_ARANTAS
+                owner = {
+                    this = c:B91
+                }
+            }
+            state_region = {
+                remove_claim = c:B91
+            }
+            set_state_owner = scope:plumstead_nation_scope
+        }
+        change_relations = {
+            country = c:B92
+            value = 10
+        }
+        add_modifier = {
+            name = plumstead_strip_purchase
+            months = 24
+            is_decaying = no
+        }
+    }
+
+    option = { #They said no
+        name = anb_uneasy_peace.013.b
+        trigger = {
+            has_variable = plumstead_strip_purchase_no
+        }
+        # Custom loc that explains what happened
+        custom_tooltip = {
+            text = plumstead_strip_purchase_no_desc
+        }
+    }
+}
+
+#Joint Exercises Results
+anb_uneasy_peace.014 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.014.t
+    desc = anb_uneasy_peace.014.d
+    flavor = anb_uneasy_peace.014.f
+
+    event_image = {
+        video = "unspecific_military_parade" 
+    }
+
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    trigger = {
+        c:B41 = {
+            OR = {
+                has_variable = plumstead_joint_exercises_yes
+                has_variable = plumstead_joint_exercises_no
+            }
+        }
+        c:B34 = {
+            OR = {
+                has_variable = beggaston_joint_exercises_yes
+                has_variable = beggaston_joint_exercises_no
+            }
+        }
+    }
+
+    option = {
+        name = anb_uneasy_peace.014.a
+        default_option = yes
+        trigger = {
+            c:B41 = {
+                has_variable = plumstead_joint_exercises_yes
+            }
+            c:B34 = {
+                has_variable = beggaston_joint_exercises_yes
+            }
+            NOT = {
+                c:B42 = this
+            }
+        }
+        #Gain Colonization buff
+        add_modifier = {
+            name = expanse_joint_operations_yes
+            months = 120
+        }
+
+        #Gain some radicals among epednar pops
+        add_radicals = {
+            value = small_radicals
+            culture = cu:epednar
+        }
+        #Permanent Unity Bonus
+        show_as_tooltip = {
+            custom_tooltip = {
+                text = expanse_permanent_unity_desc
+                c:B42 = {
+                    set_variable = { name = expanse_joint_operations_unity value = yes }
+                }
+            }
+        }
+    }
+
+    option = {
+        name = anb_uneasy_peace.014.b
+        trigger = {
+            OR = {
+                c:B41 = {
+                    has_variable = plumstead_joint_exercises_no
+                }
+                c:B34 = {
+                    has_variable = beggaston_joint_exercises_no
+                }
+            }
+            NOT = {
+                c:B42 = this
+            }
+        }
+        #Custom Loc about who said no and explaining the unity loss
+        if = {
+            limit = {
+                c:B41 = {
+                    has_variable = plumstead_joint_exercises_no
+                }
+            }
+            custom_tooltip = {
+                text = joint_exercises_no_plumstead
+            }
+        }
+        if = {
+            limit = {
+                c:B34 = {
+                    has_variable = beggaston_joint_exercises_no
+                }
+            }
+            custom_tooltip = {
+                text = joint_exercises_no_beggaston
+            }
+        }
+
+    }
+
+    option = { #Tiru Moine option
+        name = anb_uneasy_peace.014.c
+        trigger = {
+            c:B42 = this
+        }
+        if = {
+            limit = {
+                c:B41 = {
+                    has_variable = plumstead_joint_exercises_yes
+                }
+                c:B34 = {
+                    has_variable = beggaston_joint_exercises_yes
+                }
+            }
+            show_as_tooltip = {
+                #Gain Colonization buff
+                add_modifier = {
+                    name = expanse_joint_operations_yes
+                    months = 120
+                }
+                #Gain some radicals among epednar pops
+                add_radicals = {
+                    value = small_radicals
+                    culture = cu:epednar
+                }
+            }
+            custom_tooltip = {
+                text = uneasy_peace_unity_gain
+                c:B41 = {
+                    je:je_uneasy_peace = { 
+                        add_progress = { value = 10 name = uneasy_peace_bar }
+                    }
+                }
+                c:B34 = {
+                    je:je_uneasy_peace = { 
+                        add_progress = { value = 10 name = uneasy_peace_bar }
+                    }
+                }
+                c:B42 = {
+                    je:je_uneasy_peace = { 
+                        add_progress = { value = 10 name = uneasy_peace_bar }
+                    }
+                }
+                #Permanent Unity Bonus
+                custom_tooltip = {
+                    text = expanse_permanent_unity_desc
+                    c:B42 = {
+                        set_variable = { name = expanse_concessions_unity value = yes }
+                    }
+                }
+            }
+        }
+        else = {
+            if = {
+                limit = {
+                    c:B41 = {
+                        has_variable = plumstead_joint_exercises_no
+                    }
+                }
+                custom_tooltip = {
+                    text = joint_exercises_no_plumstead
+                }
+            }
+            if = {
+                limit = {
+                    c:B34 = {
+                        has_variable = beggaston_joint_exercises_no
+                    }
+                }
+                custom_tooltip = {
+                    text = joint_exercises_no_beggaston
+                }
+            }
+        }
+    }
+}
+
+#Mutual Concessions Results
+anb_uneasy_peace.015 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.015.t
+    desc = anb_uneasy_peace.015.d
+    flavor = anb_uneasy_peace.015.f
+
+    event_image = {
+        video = "unspecific_ruler_speaking_to_people" 
+    }
+
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    trigger = {
+        c:B41 = {
+            OR = {
+                has_variable = plumstead_mutual_concessions_yes
+                has_variable = plumstead_mutual_concessions_no
+            }
+        }
+        c:B34 = {
+            OR = {
+                has_variable = beggaston_mutual_concessions_yes
+                has_variable = beggaston_mutual_concessions_no
+            }
+        }
+    }
+
+    option = { #Yes
+        name = anb_uneasy_peace.015.a
+        default_option = yes
+        trigger = {
+            c:B41 = {
+                has_variable = plumstead_mutual_concessions_yes
+            }
+            c:B34 = {
+                has_variable = beggaston_mutual_concessions_yes
+            }
+            NOT = {
+                c:B42 = this
+            }
+        }
+        show_as_tooltip = {
+            #Increase unity
+            custom_tooltip = {
+                text = uneasy_peace_unity_gain
+                c:B41 = {
+                    je:je_uneasy_peace = { 
+                        add_progress = { value = 10 name = uneasy_peace_bar }
+                    }
+                }
+                c:B34 = {
+                    je:je_uneasy_peace = { 
+                        add_progress = { value = 10 name = uneasy_peace_bar }
+                    }
+                }
+                c:B42 = {
+                    je:je_uneasy_peace = { 
+                        add_progress = { value = 10 name = uneasy_peace_bar }
+                    }
+                }
+            }
+            #Permanent unity bonus
+            custom_tooltip = {
+                text = expanse_permanent_unity_desc
+                c:B42 = {
+                    set_variable = { name = expanse_concessions_unity value = yes }
+                }
+            }
+        }
+        
+        #Increase relations and trade obligations, Make them improve relations with the other
+        c:B41 = {
+            change_relations = { country = c:B34 value = 15 }
+            set_owes_obligation_to = {
+                country = c:B34
+                setting = yes
+            }
+            create_diplomatic_pact = {
+                country = c:B34
+                type = increase_relations
+            }
+        }
+        c:B34 = {
+            set_owes_obligation_to = {
+                country = c:B41
+                setting = yes
+            }
+            create_diplomatic_pact = {
+                country = c:B41
+                type = increase_relations
+            }
+        }
+        
+    }
+
+    option = { #No
+        name = anb_uneasy_peace.015.b
+        trigger = {
+            OR = {
+                c:B41 = {
+                    has_variable = plumstead_mutual_concessions_no
+                }
+                c:B34 = {
+                    has_variable = beggaston_mutual_concessions_no
+                }
+            }
+            NOT = {
+                c:B42 = this
+            }
+        }
+        #Custom Loc about who said no and explaining the unity loss
+        if = {
+            limit = {
+                c:B41 = {
+                    has_variable = plumstead_mutual_concessions_no
+                }
+            }
+            custom_tooltip = {
+                text = mutual_concessions_no_plumstead
+            }
+        }
+        if = {
+            limit = {
+                c:B34 = {
+                    has_variable = beggaston_mutual_concessions_no
+                }
+            }
+            custom_tooltip = {
+                text = mutual_concessions_no_beggaston
+            }
+        }
+    }
+
+    option = { #Tiru Moine option
+        name = anb_uneasy_peace.015.c
+        trigger = {
+            c:B42 = this
+        }
+        if = {
+            limit = {
+                c:B41 = {
+                    has_variable = plumstead_mutual_concessions_yes
+                }
+                c:B34 = {
+                    has_variable = beggaston_mutual_concessions_yes
+                }
+            }
+            show_as_tooltip = { #TODO See if any of custom tooltips should be show_as_tooltip
+                #Increase relations and trade obligations
+                c:B41 = {
+                    change_relations = { country = c:B34 value = 15 }
+                    set_owes_obligation_to = {
+                        country = c:B34
+                        setting = yes
+                    }
+                }
+                c:B34 = {
+                    set_owes_obligation_to = {
+                        country = c:B41
+                        setting = yes
+                    }
+                }
+            }
+            #Increase unity
+            custom_tooltip = {
+                text = uneasy_peace_unity_gain
+                c:B41 = {
+                    je:je_uneasy_peace = { 
+                        add_progress = { value = 10 name = uneasy_peace_bar }
+                    }
+                }
+                c:B34 = {
+                    je:je_uneasy_peace = { 
+                        add_progress = { value = 10 name = uneasy_peace_bar }
+                    }
+                }
+                c:B42 = {
+                    je:je_uneasy_peace = { 
+                        add_progress = { value = 10 name = uneasy_peace_bar }
+                    }
+                }
+            }
+            #Permanent Unity Bonus 
+            custom_tooltip = {
+                text = expanse_permanent_unity_desc
+                c:B42 = {
+                    set_variable = { name = expanse_concessions_unity value = yes }
+                }
+            }
+        }
+        else = {
+            if = {
+                limit = {
+                    c:B41 = {
+                        has_variable = plumstead_mutual_concessions_no
+                    }
+                }
+                custom_tooltip = {
+                    text = mutual_concessions_no_plumstead
+                }
+            }
+            if = {
+                limit = {
+                    c:B34 = {
+                        has_variable = beggaston_mutual_concessions_no
+                    }
+                }
+                custom_tooltip = {
+                    text = mutual_concessions_no_beggaston
+                }
+            }
+        }
+    }
+}
+
+anb_uneasy_peace.016 = {
+    type = country_event
+    placement = root
+
+    title = anb_uneasy_peace.016.t
+    desc = anb_uneasy_peace.016.d
+    flavor = anb_uneasy_peace.016.f
+
+    event_image = {
+        video = "unspecific_military_parade" 
+    }
+
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = {
+            name = anb_uneasy_peace_war_var
+        }
+    }
+
+    option = { #Help
+        name = anb_uneasy_peace.016.a
+        default_option = yes
+        random_diplomatic_play = {
+            limit = {
+                OR = {
+                    AND = {
+                        initiator_is = c:B34
+                        target_is = c:B41
+                    }
+                    AND = {
+                        initiator_is = c:B41
+                        target_is = c:B34
+                    }
+                }
+            }
+            add_target_backers = { c:B42 }
+        }
+        
+
+        ai_chance = {
+            base = 100
+        }
+    }
+
+    option = { #Don't help
+        name = anb_uneasy_peace.016.b
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}

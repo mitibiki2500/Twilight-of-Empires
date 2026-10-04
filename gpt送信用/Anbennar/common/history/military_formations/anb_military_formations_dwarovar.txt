@@ -1,0 +1,1226 @@
+﻿MILITARY_FORMATIONS = {
+	
+	
+	#Krakdhumvror
+	c:D02 ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_gerudia
+			name = "Grim Legion"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_KRAKDHUMVROR
+				count = 35
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_KRAKDHUMVROR
+				count = 15
+			}
+			save_scope_as = army_D02_1
+		}
+
+		create_character = { #should be armed forces leader
+			is_general = yes
+			commander_rank = commander_rank_3
+			save_scope_as = general_D02_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D02_2
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D02_3
+		}
+
+		scope:general_D02_1 = { transfer_to_formation = scope:army_D02_1 }
+		scope:general_D02_2 = { transfer_to_formation = scope:army_D02_1 }
+		scope:general_D02_3 = { transfer_to_formation = scope:army_D02_1 }
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_gerudia
+			name = "Anvil Defenders"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_DEAD_END_MINES
+				count = 10
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GIANTS_ANVIL
+				count = 5
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_GIANTS_ANVIL
+				count = 10
+			}
+
+			save_scope_as = army_D02_2
+		}
+
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D02_4
+		}
+		scope:general_D02_4 = { transfer_to_formation = scope:army_D02_2 }
+	}
+
+	c:D03 ?= { #Dur Vazhatun
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_dwarovar
+			name = "Skywatchers"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_DUR_VAZHATUN
+				count = 15
+			}
+
+			save_scope_as = army_D03_1
+		}
+
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D03_1
+		}
+
+		scope:general_D03_1 = { transfer_to_formation = scope:army_D03_1 }
+	}
+
+	c:D05 ?= { #Amldihr
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_dwarovar
+			name = "Kronium Hand"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_AMLDIHR
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_AMLHARAZ
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_AMLDIHR
+				count = 15
+			}
+			save_scope_as = army_D05_1
+		}
+
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D05_1
+		}
+
+		scope:general_D05_1 = { transfer_to_formation = scope:army_D05_1 }
+
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_dwarovar
+			name = "Vazkron Guards"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_VERKAL_VAZKRON
+				count = 35
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_AMLDIHR
+				count = 10
+			}
+			save_scope_as = army_D05_2
+		}
+
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D05_3
+		}
+
+		scope:general_D05_3 = { transfer_to_formation = scope:army_D05_2 }
+	}
+
+
+	c:D37 ?= { #Kuxhekre
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_dwarovar
+			name = "Dragon's Fist"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_CHAINLINK_MINES
+				count = 15
+			}
+			save_scope_as = army_D37_1
+		}
+
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D37_1
+		}
+
+		scope:general_D37_1 = { transfer_to_formation = scope:army_D37_1 }
+	}
+
+	c:D06 ?= { #Kuxhezte
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_dwarovar
+			name = "Red Scions"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_HARAZ_ORLDHUM
+				count = 15
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_HARAZA_DEPTHS
+				count = 15
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_CRIMSON_CAVERNS
+				count = 25
+			}
+			save_scope_as = army_D06_1
+		}
+
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D06_1
+		}
+
+		scope:general_D06_1 = { transfer_to_formation = scope:army_D06_1 }
+
+	}
+
+
+
+	c:D08 ?= { #Khugdihr
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_dwarovar
+			name = "Agate Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_KHUGDIHR
+				count = 20
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_KHUGDIHR
+				count = 10
+			}
+			save_scope_as = army_D08_1
+		}
+
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D08_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D08_2
+		}
+
+		scope:general_D08_1 = { transfer_to_formation = scope:army_D08_1 }
+		scope:general_D08_2 = { transfer_to_formation = scope:army_D08_1 }
+
+
+		#create_military_formation = {
+		#	type = army
+		#	hq_region = sr:region_west_dwarovar
+		#	name = "Asra Enforcers"
+#
+		#	combat_unit = {
+		#		type = unit_type:combat_unit_type_line_infantry
+		#		state_region = s:STATE_KHUGDIHR
+		#		count = 10
+		#	}
+		#	combat_unit = {
+		#		type = unit_type:combat_unit_type_mobile_artillery
+		#		state_region = s:STATE_KHUGDIHR
+		#		count = 5
+		#	}
+		#	save_scope_as = army_D08_2
+		#}
+#
+		#create_character = { #make special industrialist guy later
+		#	is_general = yes
+		#	commander_rank = commander_rank_3
+		#	save_scope_as = general_D08_3
+		#}
+#
+		#scope:general_D08_3 = { transfer_to_formation = scope:army_D08_2 }
+	}
+
+
+
+
+	c:D10 ?= { #Ves Udzenklan  give these funny generals later
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_dwarovar
+			name = "Railyard Garrison"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ER_NATVIR
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_THE_RAILYARD
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_MITHRADHUM
+				count = 15
+			}
+
+			save_scope_as = army_D10_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D10_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D10_2
+		}
+		scope:general_D10_1 = { transfer_to_formation = scope:army_D10_1 }
+		scope:general_D10_2 = { transfer_to_formation = scope:army_D10_1 }
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_dwarovar
+			name = "Rustroad Patrols"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_VERKAL_KOZENAD
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SKULKERS_LAIR
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_MITHRADHUM
+				count = 10
+			}
+
+			save_scope_as = army_D10_4
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D10_5
+		}
+		scope:general_D10_5 = { transfer_to_formation = scope:army_D10_4 }
+
+	}
+
+
+
+	c:D12 ?= { #Hul Jorkad
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_west_dwarovar
+			name = "Lead Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_HUL_JORKAD
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_JORKAD_JUNCTION
+				count = 5
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_HUL_JORKAD
+				count = 10
+			}
+			
+			save_scope_as = army_D12_1
+		}
+
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D12_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D12_2
+		}
+		scope:general_D12_1 = { transfer_to_formation = scope:army_D12_1 }
+		scope:general_D12_2 = { transfer_to_formation = scope:army_D12_1 }
+	}
+
+	c:D13 ?= { #Gor Burad
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_serpentreach
+			name = "Basalt Rage"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GOR_BURAD
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ARGROD_JUNCTION
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SCALDING_PITS
+				count = 10
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_GOR_BURAD
+				count = 15
+			}
+			save_scope_as = army_D13_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D13_1
+		}
+		scope:general_D13_1 = { transfer_to_formation = scope:army_D13_1 }
+	}
+
+	c:D14 ?= { #Ovdal Lodhum
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_serpentreach
+			name = "Gate Watchers"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_OVDAL_LODHUM
+				count = 15
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_OVDAL_LODHUM
+				count = 7
+			}
+			save_scope_as = army_D14_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D14_1
+		}
+		scope:general_D14_1 = { transfer_to_formation = scope:army_D14_1 }
+	}
+
+
+	c:D15 ?= { #3rd Obsidian Legion - give special generals later
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_serpentreach
+			name = "Third Legion Vanguard East"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_VERKAL_SKOMDIHR
+				count = 15
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_VERKAL_SKOMDIHR
+				count = 15
+			}
+			save_scope_as = army_D15_1
+		}
+		create_character = {
+			is_general = yes
+			on_created = {
+				set_variable = {
+					name = third_legion_east
+				}
+			}
+			commander_rank = commander_rank_1
+			save_scope_as = general_D15_1
+		}
+		scope:general_D15_1 = { transfer_to_formation = scope:army_D15_1 }
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_serpentreach
+			name = "Third Legion Vanguard West"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_VERKAL_SKOMDIHR
+				count = 15
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_VERKAL_SKOMDIHR
+				count = 15
+			}
+			save_scope_as = army_D15_2
+		}
+		create_character = {
+			is_general = yes
+			on_created = {
+				set_variable = {
+					name = third_legion_west
+				}
+			}
+			commander_rank = commander_rank_1
+			save_scope_as = general_D15_2
+		}
+		scope:general_D15_2 = { transfer_to_formation = scope:army_D15_2 }
+	}
+
+
+
+
+
+
+
+	c:D18 ?= { #Arg Ordstun
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_serpentreach
+			name = "Army of the High King"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ARG_ORDSTUN
+				count = 30
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_ARG_ORDSTUN
+				count = 15
+			}
+
+			save_scope_as = army_D18_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_3
+			save_scope_as = general_D18_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D18_2
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D18_3
+		}
+		scope:general_D18_1 = { transfer_to_formation = scope:army_D18_1 }
+		scope:general_D18_2 = { transfer_to_formation = scope:army_D18_1 }
+		scope:general_D18_3 = { transfer_to_formation = scope:army_D18_1 }
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_serpentreach
+			name = "Diamond Garrison"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_DIAMOND_QUARRY
+				count = 15
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_ARG_ORDSTUN
+				count = 10
+			}
+			save_scope_as = army_D18_2
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D18_4
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D18_5
+		}
+		scope:general_D18_4 = { transfer_to_formation = scope:army_D18_2 }
+		scope:general_D18_5 = { transfer_to_formation = scope:army_D18_2 }
+	}
+
+	c:D20 ?= { #Orlghelovar
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_serpentreach
+			name = "Knowledge Keepers"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_ORLGHELOVAR
+				count = 13
+			}
+			save_scope_as = army_D20_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D20_1
+		}
+		scope:general_D20_1 = { transfer_to_formation = scope:army_D20_1 }
+	}
+
+	c:D19 ?= { #Shazstundihr
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_serpentreach
+			name = "Marble Shapers"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SHAZSTUNDIHR
+				count = 8
+			}
+			save_scope_as = army_D19_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_D19_1
+		}
+		scope:general_D19_1 = { transfer_to_formation = scope:army_D19_1 }
+	}
+
+
+	c:D21 ?= { #Drakonshan
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_segbandal
+			name = "The Drakeclaw"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_DRAKEDENS
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GOR_VAZUMBROG
+				count = 15
+			}
+			save_scope_as = army_D21_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_3
+			save_scope_as = general_D21_1
+		}
+		scope:general_D21_1 = { transfer_to_formation = scope:army_D21_1 }
+
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_segbandal
+			name = "Drakon Riders"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GOR_VAZUMBROG
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_FORSAKEN_DEPTHS
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_lancers
+				state_region = s:STATE_DRAKEDENS
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_lancers
+				state_region = s:STATE_FORSAKEN_DEPTHS
+				count = 10
+			}
+
+			save_scope_as = army_D21_2
+		}
+		create_character = { #replace with ruler later
+			is_general = yes
+			commander_rank = commander_rank_5
+			save_scope_as = general_D21_2
+		}
+		scope:general_D21_2 = { transfer_to_formation = scope:army_D21_2 }
+	}
+
+
+	c:D24 ?= { #Seghdihr
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_segbandal
+			name = "Grand Citrine Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SEGHDIHR
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SEGHROD
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_SEGHDIHR
+				count = 15
+			}
+
+			save_scope_as = army_D24_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D24_1
+		}
+		scope:general_D24_1 = { transfer_to_formation = scope:army_D24_1 }
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_segbandal
+			name = "Pyrite Garrison"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_HEHODOVAR
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_HEHODOVAR
+				count = 10
+			}
+
+			save_scope_as = army_D24_2
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D24_2
+		}
+		scope:general_D24_2 = { transfer_to_formation = scope:army_D24_2 }
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_segbandal
+			name = "Rail Protectors"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SEGHROD
+				count = 10
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_FOOLS_PASSAGE
+				count = 10
+			}
+
+
+			save_scope_as = army_D24_3
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D24_3
+		}
+		scope:general_D24_3 = { transfer_to_formation = scope:army_D24_3 }
+	}
+
+
+
+
+
+	c:D25 ?= { #Verkal Gulan
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_segbandal
+			name = "Golden Shield Company"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_VERKAL_GULAN
+				count = 20
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_VERKAL_GULAN
+				count = 5
+			}
+
+			save_scope_as = army_D25_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_3
+			save_scope_as = general_D25_1
+		}
+		scope:general_D25_1 = { transfer_to_formation = scope:army_D25_1 }
+
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_segbandal
+			name = "Citadel Cannoneers"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GREATCAVERNS
+				count = 7
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_GREATCAVERNS
+				count = 7
+			}
+			
+
+			save_scope_as = army_D25_2
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D25_2
+		}
+		scope:general_D25_2 = { transfer_to_formation = scope:army_D25_2 }
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_segbandal
+			name = "King's Gate Banners"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GREATCAVERNS
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cuirassiers
+				state_region = s:STATE_SEGHROD
+				count = 5
+			}
+			
+
+			save_scope_as = army_D25_3
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D25_3
+		}
+		scope:general_D25_3 = { transfer_to_formation = scope:army_D25_3 }
+	}
+
+
+	c:D26 ?= { #Nizhn Korvesto
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_dwarovar
+			name = "Dirtbringer Host"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_AMBER_MINES
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_OVDAL_KANZAD
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_OVDAL_AZ_AN
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_EARTHSEED
+				count = 25
+			}
+
+			save_scope_as = army_D26_1
+		}
+		create_character = {
+			# Lexik Dirtmaster
+			template = D26_Lexik_Dirtmaster
+			save_scope_as = general_D26_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_3
+			save_scope_as = general_D26_2
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D26_3
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D26_4
+		}
+		scope:general_D26_1 = { transfer_to_formation = scope:army_D26_1 }
+		scope:general_D26_2 = { transfer_to_formation = scope:army_D26_1 }
+		scope:general_D26_3 = { transfer_to_formation = scope:army_D26_1 }
+		scope:general_D26_4 = { transfer_to_formation = scope:army_D26_1 }
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_segbandal
+			name = "Western Skulking Force"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GOR_OZUMBROG
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_OVDAL_KANZAD
+				count = 10
+			}
+			save_scope_as = army_D26_4
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_3
+			save_scope_as = general_D26_13
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D26_14
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D26_15
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D26_16
+		}
+		scope:general_D26_13 = { transfer_to_formation = scope:army_D26_4 }
+		scope:general_D26_14 = { transfer_to_formation = scope:army_D26_4 }
+		scope:general_D26_15 = { transfer_to_formation = scope:army_D26_4 }
+		scope:general_D26_16 = { transfer_to_formation = scope:army_D26_4 }
+
+	}
+
+
+
+
+
+	c:D31 ?= { #Dakaz Carzviya
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_dwarovar
+			name = "Grand Army of Dak"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_HUL_AZ_KRAKAZOL
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_AMETHYST_POCKET
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ALEMINES
+				count = 25
+			}
+
+			save_scope_as = army_D31_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D31_2
+		}
+		scope:general_D31_2 = { transfer_to_formation = scope:army_D31_1 }
+		#Led by Dak
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_dwarovar
+			name = "Loyal Dakites"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_DRUNKEN_ROAD
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_GRANITE_SPIRES
+				count = 10
+			}
+
+			save_scope_as = army_D31_2
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_3
+			save_scope_as = general_D31_1
+		}
+		scope:general_D31_1 = { transfer_to_formation = scope:army_D31_2 }
+
+		#create_military_formation = {
+		#	type = army
+		#	hq_region = sr:region_east_dwarovar
+		#	name = "Dak Fanatics"
+#
+		#	combat_unit = {
+		#		type = unit_type:combat_unit_type_irregular_infantry
+		#		state_region = s:STATE_ALEMINES
+		#		count = 9
+		#	}
+		#	combat_unit = {
+		#		type = unit_type:combat_unit_type_irregular_infantry
+		#		state_region = s:STATE_GRANITE_SPIRES
+		#		count = 10
+		#	}
+#
+		#	save_scope_as = army_D31_3
+		#}
+		#create_character = {
+		#	is_general = yes
+		#	commander_rank = commander_rank_2
+		#	save_scope_as = general_D31_2
+		#}
+		#scope:general_D31_2 = { transfer_to_formation = scope:army_D31_3 }
+	}
+
+
+
+
+
+
+
+
+
+
+
+c:D33 ?= { #Zerzeko Radin
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_dwarovar
+			name = "Jade Kiku"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GRONSTUNAD
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_VERKAL_DROMAK
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_GRONSTUNAD
+				count = 15
+			}
+
+			save_scope_as = army_D33_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D33_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D33_2
+		}
+		scope:general_D33_1 = { transfer_to_formation = scope:army_D33_1 }
+		scope:general_D33_2 = { transfer_to_formation = scope:army_D33_1 }
+	
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_dwarovar
+			name = "Serpent Kiku"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_TUWAD_DHUMANKON
+				count = 12
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_TUWAD_DHUMANKON
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_GRONSTUNAD
+				count = 2
+			}
+
+			save_scope_as = army_D33_2
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D33_3
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D33_4
+		}
+		scope:general_D33_3 = { transfer_to_formation = scope:army_D33_2 }
+		scope:general_D33_4 = { transfer_to_formation = scope:army_D33_2 }
+
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_dwarovar
+			name = "Demon Kiku"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_VERKAL_DROMAK
+				count = 16
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_VERKAL_DROMAK
+				count = 5
+			}
+			save_scope_as = army_D33_3
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D33_5
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D33_6
+		}
+		scope:general_D33_5 = { transfer_to_formation = scope:army_D33_3 }
+		scope:general_D33_6 = { transfer_to_formation = scope:army_D33_3 }
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_east_dwarovar
+			name = "Hidden Kiku"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_VURDRIZ_ANDRIZ
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_VERKAL_DROMAK
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_VURDRIZ_ANDRIZ
+				count = 15
+			}
+			save_scope_as = army_D33_4
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D33_7
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_D33_8
+		}
+		scope:general_D33_7 = { transfer_to_formation = scope:army_D33_4 }
+		scope:general_D33_8 = { transfer_to_formation = scope:army_D33_4 }
+	}
+
+
+
+
+
+
+
+
+
+}

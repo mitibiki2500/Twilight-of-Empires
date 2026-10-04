@@ -1,0 +1,264 @@
+﻿namespace = canal_events
+canal_events.1 = { #Nation wishes to acquire dhal_nikhuvad Treaty port for canal
+	type = country_event
+
+	title = canal_events.1.t
+	desc = canal_events.1.d
+	flavor = canal_events.1.f
+
+	event_image = {
+		video = "africa_city_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		set_variable = {
+			name = dhal_nikhuvad_canal_var
+		}
+		ROOT = {
+			save_scope_as = dhal_nikhuvad_scope
+		}
+	}
+
+	option = {
+		name = canal_events.1.a
+        default_option = yes
+		random_state = {
+			limit = {
+				state_region = s:STATE_BEERAGGA
+			}
+			owner = {
+				trigger_event = { id = canal_events.2 }
+			}
+		}
+	}
+}
+
+canal_events.2 = { #Getting the offer
+	type = country_event
+
+	title = canal_events.2.t
+	desc = canal_events.2.d
+	flavor = canal_events.2.f
+
+	event_image = {
+		video = "africa_city_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	immediate = {
+		save_scope_as = dhal_nikhuvad_owner_scope
+	}
+
+	option = { #Yes
+		name = canal_events.2.a
+		default_option = yes
+		trigger = {
+			any_country = {
+				has_variable = dhal_nikhuvad_canal_var
+			}
+		}
+        random_country = {
+            limit = {
+				has_variable = dhal_nikhuvad_canal_var
+            }
+			trigger_event = { id = canal_events.3 }
+		}
+		add_modifier = {
+			name = dhal_nikhuvad_sale
+			months = 120
+		}
+	}
+
+	option = { #No
+		name = canal_events.2.b
+		trigger = {
+			any_country = {
+				has_variable = dhal_nikhuvad_canal_var
+			}
+		}
+        random_country = {
+            limit = {
+				has_variable = dhal_nikhuvad_canal_var
+            }
+			trigger_event = { id = canal_events.4 }
+        }
+        custom_tooltip = canal_events.2_tt
+	}
+}
+
+canal_events.3 = { #Deal accepted
+	type = country_event
+
+	title = canal_events.3.t
+	desc = canal_events.3.d
+	flavor = canal_events.3.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	option = {
+		name = canal_events.3.a
+		s:STATE_BEERAGGA = {
+			set_owner_of_provinces = {
+				country = ROOT
+				provinces = { x1e6a83 x02090f }
+			}
+		}
+		change_relations = {
+			country = scope:dhal_nikhuvad_owner_scope
+			value = 20
+		}
+		add_modifier = {
+			name = dhal_nikhuvad_purchase
+			months = 120
+		}
+	}
+}
+
+canal_events.4 = { #Deal rejected
+	type = country_event
+
+	title = canal_events.4.t
+	desc = canal_events.4.d
+	flavor = canal_events.4.f
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	option = {
+		name = canal_events.4.a
+		change_relations = {
+			country = scope:dhal_nikhuvad_owner_scope
+			value = -20
+		}
+		s:STATE_BEERAGGA = {
+ 			add_claim = scope:dhal_nikhuvad_scope
+		}
+	}
+}
+
+canal_events.100 = {
+	type = country_event
+
+	title = canal_events.100.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = expedition_events.100.d
+				trigger = {
+					any_scope_state = { state_region = s:STATE_BEERAGGA }
+				}
+			}
+			triggered_desc = {
+				desc = canal_events.100.d
+				trigger = {
+					NOT = { any_scope_state = { state_region = s:STATE_BEERAGGA } }
+				}
+			}
+		}
+	}
+	flavor = expedition_events.100.f
+
+	event_image = {
+		video = "africa_desert_expedition"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# triggered by JE
+	}
+
+	immediate = {
+		set_variable = dhal_nikhuvad_survey_complete
+		s:STATE_BEERAGGA = {
+			save_scope_as = dhal_nikhuvad_state
+			random_scope_state = {
+				owner = {
+					save_scope_as = dhal_nikhuvad_owner
+				}
+			}
+		}
+	}
+
+	option = { # we will attempt a diplomatic solution
+		name = canal_events.100.a
+		trigger = {
+			NOT = { any_scope_state = { state_region = s:STATE_BEERAGGA } }
+		}
+		default_option = yes
+		add_journal_entry = {
+			type = je_dhal_nikhuvad_canal
+		}
+		change_relations = {
+			country = scope:dhal_nikhuvad_owner
+			value = 10
+		}
+		set_variable = dhal_nikhuvad_canal_purchase
+		custom_tooltip = dhal_nikhuvad_canal_purchase_available
+		custom_tooltip = dhal_nikhuvad_canal_construction_available
+	}
+
+	option = { # we will take it by force
+		name = canal_events.100.b
+		trigger = {
+			NOT = { any_scope_state = { state_region = s:STATE_BEERAGA } }
+		}
+		add_journal_entry = {
+			type = je_dhal_nikhuvad_canal
+		}
+		change_relations = {
+			country = scope:dhal_nikhuvad_owner
+			value = -20
+		}
+		scope:dhal_nikhuvad_state = {
+ 			add_claim = ROOT
+		}
+		set_variable = dhal_nikhuvad_canal_purchase
+		custom_tooltip = dhal_nikhuvad_canal_purchase_available
+		custom_tooltip = dhal_nikhuvad_canal_construction_available
+	}
+	option = { # we should build the canal
+		name = canal_events.100.c
+		trigger = {
+			any_scope_state = { state_region = s:STATE_BEERAGA }
+		}
+		add_journal_entry = {
+			type = je_dhal_nikhuvad_canal
+		}
+		custom_tooltip = dhal_nikhuvad_canal_construction_available
+	}
+}
+

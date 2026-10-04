@@ -1,0 +1,526 @@
+﻿namespace = mechanim_revolt
+
+# mechanim_revolt.1 = { #the revolt itself
+# 	type = country_event
+# 	placement = root
+	
+# 	title = mechanim_revolt.1.t
+# 	desc =  mechanim_revolt.1.d
+# 	flavor = mechanim_revolt.1.f
+	
+# 	event_image = {
+# 		video = "unspecific_devastation"
+# 	}
+
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+# 	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+# 	duration = 1
+# 	trigger = {
+# 		#triggered by JE
+# 	}
+
+# 	immediate = {
+# 		owner = {
+# 			remove_variable = mechanim_oppressor_revolt  #change variable
+# 		}
+# 	}
+
+# 	option = { 
+# 		name = mechanim_revolt.1.a
+# 		default_option = yes
+# 		custom_tooltip = {
+# 			text = mechamim_revolt_tt
+# 			set_variable = {
+# 				name = mechanim_revolt_full_swing
+# 				value = yes
+# 			}
+# 		}		
+# 	}			
+# }
+
+# mechanim_revolt.2 = { #mechanim servitude enforced
+# 	type = country_event
+# 	placement = root
+	
+# 	title = mechanim_revolt.2.t
+# 	desc =  mechanim_revolt.2.d
+# 	flavor = mechanim_revolt.2.f
+	
+# 	event_image = {
+# 		video = "unspecific_devastation"
+# 	}
+
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+# 	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+# 	duration = 1
+# 	trigger = {
+# 		#triggered by JE
+# 	}
+# 	immediate = {
+# 		if = {
+# 			limit = {
+# 				has_law = law_type:law_sapience_mechanim_compromise
+# 			}
+# 			activate_law = law_type:law_sapience_mechanim_compromise_enforced 
+# 		}
+# 		else_if = {
+# 			limit = {
+# 				has_law = law_type:law_mechanim_as_property
+# 			}
+# 			activate_law = law_type:law_mechanim_as_property_enforced 
+# 		}
+# 	}
+# 	option = { 
+# 		name = mechanim_revolt.2.a
+# 		default_option = yes
+# 		add_modifier = {
+# 			name = mechanim_timeout
+# 			years = 5
+# 		}	
+# 	}
+# 	option = {
+# 		name = mechanim_revolt.2.b
+# 		add_modifier = {
+# 			name = mechanim_timeout
+# 			years = 5
+# 		}	
+# 		activate_law = law_type:law_mechanim_dismantling
+# 	}			
+# }
+
+# mechanim_revolt.3 = { #mechanim freedom
+# 	type = country_event
+# 	placement = root
+	
+# 	title = mechanim_revolt.3.t
+# 	desc =  mechanim_revolt.3.d
+# 	flavor = mechanim_revolt.3.f
+	
+# 	event_image = {
+# 		video = "unspecific_devastation"
+# 	}
+
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+# 	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+# 	duration = 1
+# 	trigger = {
+# 		#triggered by JE
+# 	}
+
+# 	option = { 
+# 		name = mechanim_revolt.3.a
+# 		default_option = yes
+# 		add_modifier = {
+# 			name = je_mechanim_complete
+# 			years = 10
+# 		}
+# 		if = {
+# 			limit = {
+# 				NOT = { has_law = law_type:law_mechanim_freedom }
+# 			}
+			
+# 			activate_law = law_type:law_mechanim_freedom
+# 		}
+# 		add_journal_entry = { type = je_mechanim_2 }
+# 	}			
+# }
+
+# #starting event for the JE
+# mechanim_revolt.4 = {
+# 	type = country_event
+# 	placement = root
+	
+# 	title = mechanim_revolt.4.t
+# 	desc =  mechanim_revolt.4.d
+# 	flavor = mechanim_revolt.4.f
+	
+# 	event_image = {
+# 		video = "unspecific_devastation"
+# 	}
+
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+# 	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+# 	duration = 1
+# 	trigger = {
+# 		#triggered by JE
+# 	}
+	
+# 	immediate = {
+# 		if = {
+# 			limit = {
+# 				NOT = {
+# 					any_political_movement = {
+# 						law_enactment_stance = {
+# 							law = law_type:law_mechanim_freedom
+# 							value > neutral
+# 						}
+# 					}
+# 				}
+# 			}
+# 			create_political_movement = { type = movement_mechanim_liberation }
+# 		}
+# 		if = {
+# 			limit = {
+# 				NOT = {
+# 					any_political_movement = {
+# 						law_enactment_stance = {
+# 							law = law_type:law_mechanim_freedom
+# 							value < neutral
+# 						}
+# 					}
+# 				}
+# 			}
+# 			create_political_movement = { type = movement_mechanim_servitude }
+# 		}
+# 	}
+
+# 	option = {
+# 		name = mechanim_revolt.4.a
+# 		default_option = yes
+# 		capital = {
+# 			add_radicals_in_state = {
+# 				value = medium_radicals
+# 				pop_type = laborers
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name =  mechanim_revolt.4.b
+# 		trigger = {
+# 			any_interest_group = {
+# 				is_in_government = yes
+# 				OR = {
+# 					law_stance = {
+# 						law = law_type:law_slavery_banned 
+# 						value = approve
+# 					}
+# 					law_stance = {
+# 						law = law_type:law_slavery_banned 
+# 						value = strongly_approve
+# 					}
+# 					leader = {
+# 						has_ideology = ideology:ideology_mechanim_liberator
+# 					}
+# 				}
+# 			}
+# 		}
+# 		capital = {
+# 			add_radicals_in_state = {
+# 				value = small_radicals
+# 				pop_type = laborers
+# 			}
+# 		}
+# 		custom_tooltip = {
+# 			text = mechanim_success_var_tick_tt
+# 			set_variable = { name = mechanim_success_progress_var_add value = 0.25 }
+# 		}
+# 	}			
+# }
+
+# #mechanim are given freedom, hidden event
+# mechanim_revolt.5 = {
+# 	type = country_event
+# 	placement = root
+	
+# 	title = mechanim_revolt.5.t
+# 	desc =  mechanim_revolt.5.d
+# 	flavor = mechanim_revolt.5.f
+# 	hidden = yes
+	
+# 	event_image = {
+# 		video = "unspecific_devastation"
+# 	}
+
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+# 	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+# 	duration = 1
+# 	trigger = {
+# 		any_scope_state = {
+# 			any_scope_building = {
+# 				is_building_type = building_automatories
+# 			}
+# 		}
+# 	}
+
+# 	immediate = {
+# 		every_scope_state = {
+# 			limit = {
+# 				any_scope_building = {
+# 					is_building_type = building_automatories
+# 				}
+# 			}
+# 			create_pop = {
+#                 culture = mechanim
+#                 pop_type = laborers
+#                 size = 70000
+#             }
+# 			every_scope_pop = {
+# 				limit = {
+# 					has_pop_culture = mechanim
+# 					literacy_rate < 0.20
+# 				}
+# 				set_pop_literacy = {
+# 					literacy_rate = 0.20
+# 				}
+# 			}
+# 			remove_building = building_automatories
+# 		}
+# 	}			
+# }
+
+mechanim_revolt.6 = { #mechanim escape event 
+	type = country_event
+	placement = root
+	
+	title = mechanim_revolt.6.t
+	desc =  mechanim_revolt.6.d
+	flavor = mechanim_revolt.6.f
+	
+	event_image = {
+		video = "unspecific_devastation"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 1
+	trigger = {
+		any_scope_state = {
+			sg:automata = {
+				state_goods_consumption > 1
+			}
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				sg:automata = {
+					state_goods_consumption > 1
+				}
+			}
+			create_pop = {
+                culture = mechanim
+                pop_type = laborers
+                # literacy_rate = 0.35 doesn't exist
+                size = 1000
+            }			
+            save_scope_as = mechanim_escape_state
+		}
+
+	}
+
+	option = {  #do nothing radical time
+		name = mechanim_revolt.6.a
+		default_option = yes
+		if = { #blame and use workers to stop mechanim leaving
+			limit = {
+				has_law = law_type:law_mechanim_as_property
+			}
+			scope:mechanim_escape_state = {
+				add_radicals_in_state = {
+					strata = rich
+					value = large_radicals
+				}
+			}
+		}
+		else = {
+			scope:mechanim_escape_state = {
+				add_radicals_in_state = {
+					strata = rich
+					value = medium_radicals
+				}
+			}
+		}
+	}
+	option = {  #blame the rich and use their funds to stop mechanim
+		name = mechanim_revolt.6.b
+		trigger = {
+			OR = {
+				has_law = law_type:law_dedicated_police
+				has_law = law_type:law_militarized_police
+			}
+		}		
+		if = {
+			limit = {
+				# OR = {
+					# has_law = law_type:law_mechanim_as_property_enforced
+					has_law = law_type:law_mechanim_as_property
+				# }
+			}
+			scope:mechanim_escape_state = {
+				add_radicals_in_state = {
+					strata = rich
+					value = medium_radicals
+				}
+			}
+		}
+		else = {
+			scope:mechanim_escape_state = {
+				add_radicals_in_state = {
+					strata = rich
+					value = small_radicals
+				}
+			}
+		}
+	}						
+}
+
+# mechanim_revolt.7 = { #de politicize stuff
+# 	type = country_event
+# 	placement = root
+# 	title = mechanim_revolt.7.t
+# 	desc = mechanim_revolt.7.d
+# 	flavor = mechanim_revolt.7.f
+
+# 	duration = 3
+
+# 	event_image = {
+# 		video = "europenorthamerica_london_center"
+# 	}
+
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+# 	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+# 	trigger = {
+# 		# triggered by je_abolish_monarchy
+# 	}
+
+# 	option = {
+# 		name = mechanim_revolt.7.a
+# 		default_option = yes
+# 		ig:ig_industrialists = {
+# 			remove_ideology = ideology_machine_servitude
+# 		}
+# 		every_interest_group = {
+# 			limit = {
+# 				leader = {
+# 					OR = {
+# 						has_ideology = ideology:ideology_mechanim_slaver
+# 						has_ideology = ideology:ideology_mechanim_liberator 
+# 					}
+# 				}
+# 			}
+# 			leader = {
+# 				set_ideology = ideology:ideology_moderate
+# 			}
+# 		}
+# 		add_primary_culture = cu:mechanim
+# 	}
+# }
+
+# mechanim_revolt.8 = { #TUs realize they are in that shit together
+# 	type = country_event
+# 	placement = root
+# 	title = mechanim_revolt.8.t
+# 	desc = mechanim_revolt.8.d
+# 	flavor = mechanim_revolt.8.f
+
+# 	duration = 3
+
+# 	event_image = {
+# 		video = "europenorthamerica_london_center"
+# 	}
+
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+# 	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+# 	trigger = {
+# 		NOT = { has_variable = tu_mechanim_united }
+# 	}
+
+# 	option = {
+# 		name = mechanim_revolt.8.a
+# 		default_option = yes
+# 		custom_tooltip = {
+# 			text = tu_support_mechanim_tooltip
+# 			every_interest_group = {
+# 				limit = {
+# 					has_ideology = ideology:ideology_populist
+# 				}
+# 				remove_ideology = ideology_populist
+# 				add_ideology = ideology_populist_mechanim
+# 			}
+# 		}
+# 		set_variable = tu_mechanim_united
+# 	}
+# }
+
+#laborers are angry because they are loosing jobs
+mechanim_revolt.9 = {
+	type = country_event
+	placement = root
+	
+	title = mechanim_revolt.9.t
+	desc =  mechanim_revolt.9.d
+	flavor = mechanim_revolt.9.f
+	
+	event_image = {
+		video = "unspecific_devastation"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 1
+	trigger = {
+		any_scope_state = {
+			sg:automata = {
+				state_goods_consumption > 1
+			}
+		}
+		NOT = { has_variable = tu_mechanim_united }
+	}
+
+	option = {
+		name = mechanim_revolt.9.a
+		default_option = yes
+		capital = {
+			add_radicals_in_state = {
+				value = medium_radicals
+				pop_type = laborers
+			}
+		}
+	}
+	option = {
+		name =  mechanim_revolt.9.b
+		trigger = {
+			any_interest_group = {
+				is_in_government = yes
+				OR = {
+					law_stance = {
+						law = law_type:law_mechanim_freedom 
+						value = approve
+					}
+					law_stance = {
+						law = law_type:law_mechanim_freedom 
+						value = strongly_approve
+					}
+					leader = {
+						has_ideology = ideology:ideology_mechanim_liberator
+					}
+				}
+			}
+		}
+		capital = {
+			add_radicals_in_state = {
+				value = small_radicals
+				pop_type = laborers
+			}
+		}
+	}			
+}

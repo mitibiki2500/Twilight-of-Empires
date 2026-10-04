@@ -1,0 +1,81 @@
+﻿COUNTRIES = {
+	c:A02 ?= {
+		effect_starting_technology_tier_3_tech = yes
+		add_technology_researched = stock_exchange
+		add_technology_researched = napoleonic_warfare
+
+		effect_starting_pop_literacy_low  = yes
+		effect_starting_pop_wealth_medium  = yes
+
+		add_taxed_goods = g:liquor
+		add_taxed_goods = g:services
+		
+		effect_starting_politics_traditional = yes
+		
+		activate_law = law_type:law_professional_army
+		
+		activate_law = law_type:law_frontier_colonization
+		
+		activate_law = law_type:law_censorship
+		activate_law = law_type:law_slavery_banned
+
+		activate_law = law_type:law_nation_of_artifice	#due to ravelian influence
+
+		ig:ig_landowners = {
+			add_ruling_interest_group = yes
+		}
+		
+		add_journal_entry = { type = je_settle_the_folly }
+		# Magic
+		add_technology_researched = cannorian_magical_tradition
+
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_mass_plant_growth
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_evocation_corps
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_magical_feasts
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 1
+		}
+	}
+}

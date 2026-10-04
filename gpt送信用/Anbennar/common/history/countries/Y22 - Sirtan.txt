@@ -1,0 +1,58 @@
+﻿COUNTRIES = {
+	c:Y22 ?= {
+		effect_starting_technology_tier_4_tech = yes
+		
+		effect_starting_politics_traditional = yes
+
+		# Magic
+		add_technology_researched = chi_cultivation_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_roadshaper_wavechanger
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 2
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_chi_warriors
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 2
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_social_sanctuaries
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 2
+		}
+	}
+}

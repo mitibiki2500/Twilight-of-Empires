@@ -1,0 +1,1828 @@
+﻿magical_expertise_pulse = {
+	magical_expertise_apply_surplus_or_deficit_modifier = yes
+}
+
+magical_expertise_apply_surplus_or_deficit_modifier = {
+	### Applying surplus or deficit
+	if = {
+		limit = { has_modifier = country_magical_expertise_surplus_bonus_modifier }
+		remove_modifier = country_magical_expertise_surplus_bonus_modifier
+	}
+	else_if = {
+		limit = { has_modifier = country_magical_expertise_deficit_malus_modifier }
+		remove_modifier = country_magical_expertise_deficit_malus_modifier
+	}
+	if = {
+		limit = { 
+            country_magical_expertise_balance >= 0
+            country_num_spells > 0 
+        }
+		add_modifier = {
+			name = country_magical_expertise_surplus_bonus_modifier
+			multiplier = country_normalized_magical_expertise_surplus
+			months = -1
+		}
+		if = { #AI check to increase spell levels
+			limit = { is_ai = yes } 
+			if = { #If has none of them upgrading AND has at least 1 spell level below lvl 5
+				limit = {
+					country_magical_expertise_balance >= country_magical_expertise_cost_per_institution #Check if they can actually afford it
+					has_variable = production_magic_spell_level
+					NOT = {
+						OR = {
+							has_variable = production_magic_spell_changing_level 
+							has_variable = military_magic_spell_changing_level
+							has_variable = society_magic_spell_changing_level
+						}
+					}
+					OR = {
+						var:production_magic_spell_level < 5
+						var:military_magic_spell_level < 5
+						var:society_magic_spell_level < 5
+					}
+				}
+				random_list = {
+					3 = {
+						trigger = { var:production_magic_spell_level < 5 }
+						set_variable = {
+							name = production_magic_targeted_spell_level
+							value = var:production_magic_spell_level
+						}
+						change_variable = {
+							name = production_magic_targeted_spell_level
+							add = 1
+						}
+						set_variable = { name = production_magic_spell_changing_level } 
+					}
+					3 = {
+						trigger = { var:military_magic_spell_level < 5 }
+						set_variable = {
+							name = military_magic_targeted_spell_level
+							value = var:military_magic_spell_level
+						}
+						change_variable = {
+							name = military_magic_targeted_spell_level
+							add = 1
+						}
+						set_variable = { name = military_magic_spell_changing_level } 
+					}
+					3 = {
+						trigger = { var:society_magic_spell_level < 5 }
+						set_variable = {
+							name = society_magic_targeted_spell_level
+							value = var:society_magic_spell_level
+						}
+						change_variable = {
+							name = society_magic_targeted_spell_level
+							add = 1
+						}
+						set_variable = { name = society_magic_spell_changing_level } 
+					}
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { country_magical_expertise_balance < 0 }
+		add_modifier = {
+			name = country_magical_expertise_deficit_malus_modifier
+			multiplier = country_normalized_magical_expertise_deficit
+			months = -1
+		}
+		if = { #AI check to decrease spell levels
+			limit = { is_ai = yes } 
+			if = { #If has none of them downgrading AND has at least 1 spell level at lvl 1
+				limit = {
+					NOR = {
+						has_variable = production_magic_spell_changing_level 
+						has_variable = military_magic_spell_changing_level
+						has_variable = society_magic_spell_changing_level
+					}
+					OR = {
+						var:production_magic_spell_level >= 1
+						var:military_magic_spell_level >= 1
+						var:society_magic_spell_level >= 1
+					}
+				}
+				random_list = {
+					3 = {
+						trigger = { var:production_magic_spell_level >= 1 }
+						set_variable = {
+							name = production_magic_targeted_spell_level
+							value = var:production_magic_spell_level
+						}
+						change_variable = {
+							name = production_magic_targeted_spell_level
+							add = -1
+						}
+						set_variable = { name = production_magic_spell_changing_level } 
+					}
+					3 = {
+						trigger = { var:military_magic_spell_level >= 1 }
+						set_variable = {
+							name = military_magic_targeted_spell_level
+							value = var:military_magic_spell_level
+						}
+						change_variable = {
+							name = military_magic_targeted_spell_level
+							add = -1
+						}
+						set_variable = { name = military_magic_spell_changing_level } 
+					}
+					3 = {
+						trigger = { var:society_magic_spell_level >= 1 }
+						set_variable = {
+							name = society_magic_targeted_spell_level
+							value = var:society_magic_spell_level
+						}
+						change_variable = {
+							name = society_magic_targeted_spell_level
+							add = -1
+						}
+						set_variable = { name = society_magic_spell_changing_level } 
+					}
+				}
+			}
+		}
+	}
+	### Applying changes in magical expertise based on spell progression
+	## Production
+	# Raise the spell level if target level is higher + has required expertise
+	if = { 
+		# If changing production spell level, check to see what's up
+		limit = { has_variable = production_magic_spell_changing_level }
+		if = {
+			limit = {
+				var:production_magic_spell_level < var:production_magic_targeted_spell_level 
+				country_difference_before_next_production_magic_level < country_affordable_spell_increases 
+			}
+			change_variable = {
+				name = production_magic_spell_level
+				add = 0.1 # 40 weeks (20 months) per level
+				# note that i want this to be 50 weeks (12.5 months) per level, like institutions;
+				# BUT it'd have to be a JE for that, for weekly pulses
+			}
+		}
+		# Lower the spell level if target level is lower
+		else_if = {
+			limit = { var:production_magic_spell_level > var:production_magic_targeted_spell_level }
+			change_variable = {
+				name = production_magic_spell_level
+				add = -0.1 # 40 weeks (10 months) per level, like institutions
+			}
+		}
+		# If the calculated spell level has hit a break point, ensure the level is in the right place
+		if = {
+			limit = { country_modulo_production_magic_level = 0 }
+			set_variable = {
+				name = production_magic_spell_level_floor
+				value = var:production_magic_spell_level
+			}
+			if = {
+				limit = { var:production_magic_spell_level = var:production_magic_targeted_spell_level }
+				remove_variable = production_magic_spell_changing_level
+			}
+			update_production_spell = yes
+		}
+	}
+	## Military
+    # Raise the spell level if target level is higher + has required expertise
+    if = { 
+        # If changing military spell level, check to see what's up
+        limit = { has_variable = military_magic_spell_changing_level }
+        if = {
+            limit = {
+                AND = {
+                    var:military_magic_spell_level < var:military_magic_targeted_spell_level 
+                    country_difference_before_next_military_magic_level < country_affordable_spell_increases 
+                }
+            }
+            change_variable = {
+                name = military_magic_spell_level
+                add = 0.1 # 40 weeks (10 months) per level
+                # note that i want this to be 50 weeks (12.5 months) per level, like institutions;
+                # BUT it'd have to be a JE for that, for weekly pulses
+            }
+        }
+        # Lower the spell level if target level is lower
+        else_if = {
+            limit = { var:military_magic_spell_level > var:military_magic_targeted_spell_level }
+            change_variable = {
+                name = military_magic_spell_level
+                add = -0.1 # 40 weeks (10 months) per level, like institutions
+            }
+        }
+        # If the calculated spell level has hit a break point, ensure the level is in the right place
+        if = {
+            limit = { country_modulo_military_magic_level = 0 }
+            set_variable = {
+                name = military_magic_spell_level_floor
+                value = var:military_magic_spell_level
+            }
+            if = {
+                limit = { var:military_magic_spell_level = var:military_magic_targeted_spell_level }
+                remove_variable = military_magic_spell_changing_level
+            }
+			update_military_spell = yes
+        }
+    }	
+	 ## Society
+    # Raise the spell level if target level is higher + has required expertise
+    if = { 
+        # If changing society spell level, check to see what's up
+        limit = { has_variable = society_magic_spell_changing_level }
+        if = {
+            limit = {
+                AND = {
+                    var:society_magic_spell_level < var:society_magic_targeted_spell_level 
+                    country_difference_before_next_society_magic_level < country_affordable_spell_increases 
+                }
+            }
+            change_variable = {
+                name = society_magic_spell_level
+                add = 0.1 # 40 weeks (10 months) per level
+                # note that i want this to be 50 weeks (12.5 months) per level, like institutions;
+                # BUT it'd have to be a JE for that, for weekly pulses
+            }
+        }
+        # Lower the spell level if target level is lower
+        else_if = {
+            limit = { var:society_magic_spell_level > var:society_magic_targeted_spell_level }
+            change_variable = {
+                name = society_magic_spell_level
+                add = -0.1 # 40 weeks (10 months) per level, like institutions
+            }
+        }
+        # If the calculated spell level has hit a break point, ensure the level is in the right place
+        if = {
+            limit = { country_modulo_society_magic_level = 0 }
+            set_variable = {
+                name = society_magic_spell_level_floor
+                value = var:society_magic_spell_level
+            }
+            if = {
+                limit = { var:society_magic_spell_level = var:society_magic_targeted_spell_level }
+                remove_variable = society_magic_spell_changing_level
+            }
+			update_society_spell = yes
+        }
+    }
+}
+
+update_military_spell = {
+	# Removing current modifiers
+	if = {
+		limit = { has_modifier = modifier_evocation_corps }
+		remove_modifier = modifier_evocation_corps
+	}
+	if = {
+		limit = { has_modifier = modifier_mageshields }
+		remove_modifier = modifier_mageshields
+	}
+	if = {
+		limit = { has_modifier = modifier_spellknights }
+		remove_modifier = modifier_spellknights
+	}
+	if = {
+		limit = { has_modifier = modifier_foreseen_battle }
+		remove_modifier = modifier_foreseen_battle
+	}
+	if = {
+		limit = { has_modifier = modifier_undead_army }
+		remove_modifier = modifier_undead_army
+	}
+	if = {
+		limit = { has_modifier = modifier_master_of_the_plains }
+		remove_modifier = modifier_master_of_the_plains
+	}
+	if = {
+		limit = { has_modifier = modifier_earthshaper_fortifications }
+		remove_modifier = modifier_earthshaper_fortifications
+	}
+	if = {
+		limit = { has_modifier = modifier_vicious_chants }
+		remove_modifier = modifier_vicious_chants
+	}
+	if = {
+		limit = { has_modifier = modifier_natures_gift }
+		remove_modifier = modifier_natures_gift
+	}
+	if = {
+		limit = { has_modifier = modifier_planewalker_saboteur }
+		remove_modifier = modifier_planewalker_saboteur
+	}
+	if = {
+		limit = { has_modifier = modifier_one_with_the_tree }
+		remove_modifier = modifier_one_with_the_tree
+	}
+	if = {
+		limit = { has_modifier = modifier_chi_warriors }
+		remove_modifier = modifier_chi_warriors
+	}
+	if = {
+		limit = { has_modifier = modifier_imbued_armor }
+		remove_modifier = modifier_imbued_armor
+	}
+	if = {
+		limit = { has_modifier = modifier_aakhet_flames_calamity }
+		remove_modifier = modifier_aakhet_flames_calamity
+	}
+	if = {
+		limit = { has_modifier = modifier_neferkhet_incantation_dust }
+		remove_modifier = modifier_neferkhet_incantation_dust
+	}
+	if = {
+		limit = { has_modifier = modifier_amiskhet_summoning_gale }
+		remove_modifier = modifier_amiskhet_summoning_gale
+	}
+	# Adding new modifiers
+	if = {
+		limit = { has_variable = military_magic_spell }
+		if = {
+			limit = { var:military_magic_spell = flag:spell_evocation_corps }
+			add_modifier = {
+				name = modifier_evocation_corps
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_mageshields }
+			add_modifier = {
+				name = modifier_mageshields
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_spellknights }
+			add_modifier = {
+				name = modifier_spellknights
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_foreseen_battle }
+			add_modifier = {
+				name = modifier_foreseen_battle
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_undead_army }
+			add_modifier = {
+				name = modifier_undead_army
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_master_of_the_plains }
+			add_modifier = {
+				name = modifier_master_of_the_plains
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_earthshaper_fortifications }
+			add_modifier = {
+				name = modifier_earthshaper_fortifications
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_vicious_chants }
+			add_modifier = {
+				name = modifier_vicious_chants
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_natures_gift }
+			add_modifier = {
+				name = modifier_natures_gift
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_planewalker_saboteur }
+			add_modifier = {
+				name = modifier_planewalker_saboteur
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_one_with_the_tree }
+			add_modifier = {
+				name = modifier_one_with_the_tree
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_chi_warriors }
+			add_modifier = {
+				name = modifier_chi_warriors
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_imbued_armor }
+			add_modifier = {
+				name = modifier_imbued_armor
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_aakhet_flames_calamity }
+			add_modifier = {
+				name = modifier_aakhet_flames_calamity
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_neferkhet_incantation_dust }
+			add_modifier = {
+				name = modifier_neferkhet_incantation_dust
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:military_magic_spell = flag:spell_amiskhet_summoning_gale }
+			add_modifier = {
+				name = modifier_amiskhet_summoning_gale
+				months = -1
+				multiplier = var:military_magic_spell_level_floor
+			}
+		}
+	}
+}
+
+update_production_spell = {
+	if = {
+		limit = { has_modifier = modifier_deposit_divination }
+		remove_modifier = modifier_deposit_divination
+	}
+	if = {
+		limit = { has_modifier = modifier_spellwoven_luxury }
+		remove_modifier = modifier_spellwoven_luxury
+	}
+	if = {
+		limit = { has_modifier = modifier_magical_arts }
+		remove_modifier = modifier_magical_arts
+	}
+	if = {
+		limit = { has_modifier = modifier_mass_plant_growth }
+		remove_modifier = modifier_mass_plant_growth
+	}
+	if = {
+		limit = { has_modifier = modifier_enchanted_tools }
+		remove_modifier = modifier_enchanted_tools
+	}
+	if = {
+		limit = { has_modifier = modifier_animal_companionship }
+		remove_modifier = modifier_animal_companionship
+	}
+	if = {
+		limit = { has_modifier = modifier_attuned_forestery }
+		remove_modifier = modifier_attuned_forestery
+	}
+	if = {
+		limit = { has_modifier = modifier_roadshaper_wavechanger }
+		remove_modifier = modifier_roadshaper_wavechanger
+	}
+	if = {
+		limit = { has_modifier = modifier_storm_regulation }
+		remove_modifier = modifier_storm_regulation
+	}
+	if = {
+		limit = { has_modifier = modifier_inscribed_architecture }
+		remove_modifier = modifier_inscribed_architecture
+	}
+	if = {
+		limit = { has_modifier = modifier_ritualized_chi_siphoning }
+		remove_modifier = modifier_ritualized_chi_siphoning
+	}
+	if = {
+		limit = { has_modifier = modifier_forge_and_flame }
+		remove_modifier = modifier_forge_and_flame
+	}
+	if = {
+		limit = { has_modifier = modifier_magical_automata }
+		remove_modifier = modifier_magical_automata
+	}
+	if = {
+		limit = { has_modifier = modifier_horutep_lash_dominance }
+		remove_modifier = modifier_horutep_lash_dominance
+	}
+	if = {
+		limit = { has_modifier = modifier_shurkhet_elevation_sorrow }
+		remove_modifier = modifier_shurkhet_elevation_sorrow
+	}
+	if = {
+		limit = { has_modifier = modifier_baqtkhet_sculpting_land }
+		remove_modifier = modifier_baqtkhet_sculpting_land
+	}
+	# Adding new modifiers
+	if = {
+		limit = { has_variable = production_magic_spell }
+		if = {
+			limit = { var:production_magic_spell = flag:spell_deposit_divination }
+			add_modifier = {
+				name = modifier_deposit_divination
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_spellwoven_luxury }
+			add_modifier = {
+				name = modifier_spellwoven_luxury
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_magical_arts }
+			add_modifier = {
+				name = modifier_magical_arts
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_mass_plant_growth }
+			add_modifier = {
+				name = modifier_mass_plant_growth
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_enchanted_tools }
+			add_modifier = {
+				name = modifier_enchanted_tools
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_animal_companionship }
+			add_modifier = {
+				name = modifier_animal_companionship
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_attuned_forestery }
+			add_modifier = {
+				name = modifier_attuned_forestery
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_roadshaper_wavechanger }
+			add_modifier = {
+				name = modifier_roadshaper_wavechanger
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_storm_regulation }
+			add_modifier = {
+				name = modifier_storm_regulation
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_inscribed_architecture }
+			add_modifier = {
+				name = modifier_inscribed_architecture
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_ritualized_chi_siphoning }
+			add_modifier = {
+				name = modifier_ritualized_chi_siphoning
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_forge_and_flame }
+			add_modifier = {
+				name = modifier_forge_and_flame
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_magical_automata }
+			add_modifier = {
+				name = modifier_magical_automata
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_horutep_lash_dominance }
+			add_modifier = {
+				name = modifier_horutep_lash_dominance
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_shurkhet_elevation_sorrow }
+			add_modifier = {
+				name = modifier_shurkhet_elevation_sorrow
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:production_magic_spell = flag:spell_baqtkhet_sculpting_land }
+			add_modifier = {
+				name = modifier_baqtkhet_sculpting_land
+				months = -1
+				multiplier = var:production_magic_spell_level_floor
+			}
+		}
+	}
+}
+
+update_society_spell = {
+    if = {
+        limit = { has_modifier = modifier_perfected_terrain }
+        remove_modifier = modifier_perfected_terrain
+    }
+    if = {
+        limit = { has_modifier = modifier_magical_feasts }
+        remove_modifier = modifier_magical_feasts
+    }
+	if = {
+        limit = { has_modifier = modifier_magical_authority }
+        remove_modifier = modifier_magical_authority
+    }
+	if = {
+        limit = { has_modifier = modifier_transmuted_gold_reserves }
+        remove_modifier = modifier_transmuted_gold_reserves
+    }
+	if = {
+        limit = { has_modifier = modifier_unleashed_chaos }
+        remove_modifier = modifier_unleashed_chaos
+    }
+	if = {
+        limit = { has_modifier = modifier_grandstanding }
+        remove_modifier = modifier_grandstanding
+    }
+	if = {
+        limit = { has_modifier = modifier_divining_intent }
+        remove_modifier = modifier_divining_intent
+    }
+	if = {
+        limit = { has_modifier = modifier_veneration_of_tradition }
+        remove_modifier = modifier_veneration_of_tradition
+    }
+	if = {
+        limit = { has_modifier = modifier_portable_runes }
+        remove_modifier = modifier_portable_runes
+    }
+	if = {
+        limit = { has_modifier = modifier_social_sanctuaries }
+        remove_modifier = modifier_social_sanctuaries
+    }
+	if = {
+        limit = { has_modifier = modifier_modern_miracle }
+        remove_modifier = modifier_modern_miracle
+    }
+	# if = {
+    #     limit = { has_modifier = modifier_inner_spirit }
+    #     remove_modifier = modifier_inner_spirit
+    # }
+	if = {
+        limit = { has_modifier = modifier_rituals_of_empathy }
+        remove_modifier = modifier_rituals_of_empathy
+    }
+	if = {
+        limit = { has_modifier = modifier_elikhet_gaze_judgement }
+        remove_modifier = modifier_elikhet_gaze_judgement
+    }
+	if = {
+        limit = { has_modifier = modifier_nirakhet_breath_life }
+        remove_modifier = modifier_nirakhet_breath_life
+    }
+	if = {
+        limit = { has_modifier = modifier_shurkhet_voice_wisdom }
+        remove_modifier = modifier_shurkhet_voice_wisdom
+    }
+	# Adding new modifiers
+    if = {
+		limit = { has_variable = society_magic_spell }
+		if = {
+			limit = { var:society_magic_spell = flag:spell_perfected_terrain }
+			add_modifier = {
+				name = modifier_perfected_terrain
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:society_magic_spell = flag:spell_magical_feasts }
+			add_modifier = {
+				name = modifier_magical_feasts
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:society_magic_spell = flag:spell_magical_authority }
+			add_modifier = {
+				name = modifier_magical_authority
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:society_magic_spell = flag:spell_transmuted_gold_reserves }
+			add_modifier = {
+				name = modifier_transmuted_gold_reserves
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:society_magic_spell = flag:spell_unleashed_chaos }
+			add_modifier = {
+				name = modifier_unleashed_chaos
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:society_magic_spell = flag:spell_grandstanding }
+			add_modifier = {
+				name = modifier_grandstanding
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:society_magic_spell = flag:spell_divining_intent }
+			add_modifier = {
+				name = modifier_divining_intent
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:society_magic_spell = flag:spell_veneration_of_tradition }
+			add_modifier = {
+				name = modifier_veneration_of_tradition
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:society_magic_spell = flag:spell_portable_runes }
+			add_modifier = {
+				name = modifier_portable_runes
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:society_magic_spell = flag:spell_social_sanctuaries }
+			add_modifier = {
+				name = modifier_social_sanctuaries
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:society_magic_spell = flag:spell_modern_miracle }
+			add_modifier = {
+				name = modifier_modern_miracle
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		# if = {
+		# 	limit = { var:society_magic_spell = flag:spell_inner_spirit }
+		# 	add_modifier = {
+		# 		name = modifier_inner_spirit
+		# 		months = -1
+		# 		multiplier = var:society_magic_spell_level_floor
+		# 	}
+		# }
+		if = {
+			limit = { var:society_magic_spell = flag:spell_rituals_of_empathy }
+			add_modifier = {
+				name = modifier_rituals_of_empathy
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:society_magic_spell = flag:spell_elikhet_gaze_judgement }
+			add_modifier = {
+				name = modifier_elikhet_gaze_judgement
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:society_magic_spell = flag:spell_nirakhet_breath_life }
+			add_modifier = {
+				name = modifier_nirakhet_breath_life
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+		if = {
+			limit = { var:society_magic_spell = flag:spell_shurkhet_voice_wisdom }
+			add_modifier = {
+				name = modifier_shurkhet_voice_wisdom
+				months = -1
+				multiplier = var:society_magic_spell_level_floor
+			}
+		}
+	}
+}
+
+drop_production_spell_level = { #Disables spell if already at level 1
+	if = {
+		limit = {
+			has_variable = production_magic_spell
+			var:production_magic_spell_level_floor = 1
+		}
+		disable_production_spell = yes
+	}
+	else_if = {
+		limit = {has_variable = production_magic_spell}
+		change_variable = {
+					name = production_magic_spell_level_floor
+					subtract = 1
+				}
+		update_production_spell = yes
+		if = {
+			limit = { NOT = { has_variable = production_magic_spell_changing_level } }
+			set_variable = {
+				name = production_magic_targeted_spell_level
+				value = var:production_magic_spell_level_floor
+			}
+		}
+	}
+	#magical_expertise_apply_surplus_or_deficit_modifier = yes
+}
+
+disable_production_spell = {
+	remove_variable = production_magic_spell
+	remove_variable = production_magic_spell_level
+	remove_variable = production_magic_targeted_spell_level
+	remove_variable = production_magic_spell_level_floor
+	remove_variable = production_magic_spell_changing_level
+	update_production_spell = yes
+}
+
+drop_society_spell_level = { #Disables spell if already at level 1
+	if = {
+		limit = {
+			has_variable = society_magic_spell
+			var:society_magic_spell_level_floor = 1
+		}
+		disable_society_spell = yes
+	}
+	else_if = {
+		limit = {has_variable = society_magic_spell}
+		change_variable = {
+					name = society_magic_spell_level_floor
+					subtract = 1
+				}
+		update_society_spell = yes
+		if = {
+			limit = { NOT = { has_variable = society_magic_spell_changing_level } }
+			set_variable = {
+				name = society_magic_targeted_spell_level
+				value = var:society_magic_spell_level_floor
+			}
+		}
+	}
+	#magical_expertise_apply_surplus_or_deficit_modifier = yes
+}
+
+disable_society_spell = {
+	remove_variable = society_magic_spell
+	remove_variable = society_magic_spell_level
+	remove_variable = society_magic_targeted_spell_level
+	remove_variable = society_magic_spell_level_floor
+	remove_variable = society_magic_spell_changing_level
+	update_society_spell = yes
+}
+
+drop_military_spell_level = { #Disables spell if already at level 1
+	if = {
+		limit = {
+			has_variable = military_magic_spell
+			var:military_magic_spell_level_floor = 1
+		}
+		disable_military_spell = yes
+	}
+	else_if = {
+		limit = {has_variable = military_magic_spell}
+		change_variable = {
+					name = military_magic_spell_level_floor
+					subtract = 1
+				}
+		update_military_spell = yes
+		if = {
+			limit = { NOT = { has_variable = military_magic_spell_changing_level } }
+			set_variable = {
+				name = military_magic_targeted_spell_level
+				value = var:military_magic_spell_level_floor
+			}
+		}
+	}
+	#magical_expertise_apply_surplus_or_deficit_modifier = yes
+}
+
+disable_military_spell = {
+	remove_variable = military_magic_spell
+	remove_variable = military_magic_spell_level
+	remove_variable = military_magic_targeted_spell_level
+	remove_variable = military_magic_spell_level_floor
+	remove_variable = military_magic_spell_changing_level
+	update_military_spell = yes
+}
+
+initialize_traditions = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_technology_researched = runecarving_magical_tradition
+					has_technology_researched = fourknowing_magical_tradition
+					has_technology_researched = essence_magical_tradition
+					has_technology_researched = chi_cultivation_magical_tradition
+					has_technology_researched = druidic_magical_tradition
+					has_technology_researched = bardic_magical_tradition
+					has_technology_researched = precursor_magical_tradition
+					has_technology_researched = elemental_magical_tradition
+					has_technology_researched = shamanism_magical_tradition
+					has_technology_researched = cannorian_magical_tradition
+					has_technology_researched = kheterata_magical_tradition
+					has_technology_researched = necromantic_magical_tradition
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+				any_primary_culture = {
+					OR = {
+						has_discrimination_trait_group = heritage_group_cannorian_human
+						has_discrimination_trait = heritage_cannorian_gnome
+						has_discrimination_trait = heritage_sarhaly_gnome
+					}	
+					
+				}
+				c:A75 ?= this #Rubyhold
+				c:A37 ?= this #Silverforge
+				c:D08 ?= this #Khugidhr
+				c:A18 ?= this #Bayvic
+				c:A31 ?= this #Unguldavor
+				c:A12 ?= this #Jazhkredu
+				c:A14 ?= this #Small Country
+				c:L04 ?= this #Khasa
+				c:L45 ?= this #Ardimyan Republic
+				c:B36 ?= this #Argezvale
+				c:B01 ?= this #Asraport
+				c:B89 ?= this #Daxwell
+				c:B32 ?= this #Vestipynn
+				c:B13 ?= this #Varionail
+				c:C49 ?= this #Orenkoraim
+				c:E01 ?= this #Kalsyto
+				}
+			}
+			add_technology_researched = cannorian_magical_tradition
+		}
+		if = {
+			limit = {
+				OR = {
+					country_has_state_religion = rel:old_sun_cult
+					country_has_state_religion = rel:new_sun_cult
+					country_has_state_religion = rel:the_jadd
+					c:D19 ?= this #Shazstundihr
+					c:F15 ?= this #Ovdal Tungr
+					c:B06 ?= this #Saamirses
+					c:B10 ?= this #Malatel
+					c:C63 ?= this #Vettakaramai
+				}
+			}
+			add_technology_researched = fourknowing_magical_tradition
+		}
+		if = {
+			limit = {
+				OR = {
+					country_has_state_religion = rel:sky_domain
+					#country_has_state_religion = rel:high_philosophy
+					c:L29 ?= this #Naleni
+					c:R03 ?= this #Tudhina
+					c:R06 ?= this #Babhagama
+					c:R07 ?= this #Nadiraji
+					c:R72 ?= this #Dhugajir
+					c:R04 ?= this #Vanrahar
+					c:R12 ?= this #Maharaaja
+					c:R10 ?= this #Khiraspid
+					c:R05 ?= this #Bhuvauri
+					c:Y13 ?= this #Phangban
+					c:R11 ?= this #Keyattordha
+					c:Y12 ?= this #Semphrerong
+					c:Y14 ?= this #Taiver
+					c:Y16 ?= this #Khabtei Teleni
+					c:Y15 ?= this #Bim Lau
+					c:R02 ?= this #Ghankedhen
+					c:R20 ?= this #Raghamidesh
+					c:R01 ?= this #Nahana Jadd
+					
+				}
+			}
+			add_technology_researched = essence_magical_tradition
+		}
+		if = {
+			limit = {
+				OR = {
+					country_has_state_religion = rel:righteous_path 
+					country_has_state_religion = rel:devouring_path 
+					country_has_state_religion = rel:mystic_accord 
+					country_has_state_religion = rel:neokttareum
+					country_has_state_religion = rel:sudomeg_i
+					country_has_state_religion = rel:levaajan
+					country_has_state_religion = rel:un_khudai
+					c:R15 ?= this #Unbroken Guard
+					c:R13 ?= this #Yodashikyu
+					c:Y23 ?= this #Arawkelin
+					c:Y06 ?= this #Luoyip
+					c:Y05 ?= this #Feiten
+					c:Y03 ?= this #Tianlou
+				}
+			}
+			add_technology_researched = chi_cultivation_magical_tradition
+		}
+		if = {
+			limit = {
+				OR = {
+				religion = {
+					has_discrimination_trait = heritage_fey_religion
+				}
+				any_primary_culture = { has_discrimination_trait = heritage_inyaswarosan }
+				c:B47 ?= this #Arganjuzorn
+				c:C11 ?= this #Teqreq
+				}
+			}
+			add_technology_researched = druidic_magical_tradition
+		}
+		if = {
+			limit = {
+				OR = {
+					religion = { has_discrimination_trait = heritage_gerudian_religion }
+					any_primary_culture = { has_discrimination_trait = heritage_vyzemby_halfling }
+					c:A07 ?= this #Reveria
+					c:A15 ?= this #Portnam
+					c:L34 ?= this #Adzalan
+				}
+			}
+			add_technology_researched = bardic_magical_tradition
+		}
+		if = {
+			limit = {
+				OR = {
+					country_has_state_religion = rel:sudomeg_i
+					country_has_state_religion = rel:rune_scribes
+					any_primary_culture = {
+						is_dwarven = yes
+					}
+					c:L28 ?= this #Yezel Mora				
+					c:E02 ?= this #Maghargma
+					c:B29 ?= this #Sarda Empire
+				}
+			}
+			add_technology_researched = runecarving_magical_tradition
+		}
+		if = {
+			limit = {
+				OR = {
+				country_has_primary_culture = cu:eagle_hobgoblin
+				#Ynn
+				country_has_state_religion = rel:drozma_tur
+				country_has_primary_culture = cu:sarda
+				country_has_primary_culture = cu:dolindhan
+				#Taychend
+				country_has_primary_culture = cu:advakhalla
+				country_has_primary_culture = cu:larankarha
+				country_has_primary_culture = cu:kalavendhi
+				country_has_primary_culture = cu:yodhanpir
+				any_primary_culture = {
+					OR = {
+						has_discrimination_trait = heritage_moon_elven
+						#has_discrimination_trait = heritage_sun_elven
+						has_discrimination_trait = heritage_eordan_ruinborn
+						has_discrimination_trait = heritage_kheionai_ruinborn					
+					}
+				}
+				c:F01 ?= this
+				c:C01 ?= this
+				}
+			}
+			add_technology_researched = precursor_magical_tradition
+		}
+		if = {
+			limit = {
+				OR = {
+					country_has_state_religion = rel:kvangahga
+					any_primary_culture = {
+						OR = {
+							has_discrimination_trait = heritage_centaur
+							has_discrimination_trait_group = heritage_group_lizardfolk
+							has_discrimination_trait = society_fangaulan
+						}
+					}
+					c:L04 ?= this #Khasa
+					c:L23 ?= this #Zuvaim
+					c:B49 ?= this #Dragon Dominion
+					c:B10 ?= this #Haraf
+					c:C61 ?= this #Akretirchel
+				}
+			}
+			add_technology_researched = elemental_magical_tradition
+		}	
+		if = {
+			limit = {
+				OR = {
+					c:L65 ?= this #Kaino Federation
+					c:D31 ?= this #Dakaz Carzviya
+				}
+			}
+			add_technology_researched = necromantic_magical_tradition
+		}		
+		if = {
+			limit = {
+				OR = {
+					c:L01 ?= this
+					c:L03 ?= this
+					c:L02 ?= this
+					c:L21 ?= this
+					c:L17 ?= this
+				}
+			}
+			add_technology_researched = kheterata_magical_tradition
+		}
+		if = {
+			limit = {
+				NOR = {
+					country_has_state_religion = rel:goddess_follower
+				}
+				OR = {
+					country_tradition_number = 0
+					country_has_state_religion = rel:banbe_anen	
+					country_has_state_religion = rel:ardimyan_rite
+					country_has_state_religion = rel:levaajan
+					country_has_state_religion = rel:un_khudai
+					country_has_primary_culture = 	cu:eagle_hobgoblin 			
+					c:A10 ?= this #Grombar
+					c:A18 ?= this #Bayvic
+					c:A31 ?= this #Unguldavor
+					c:A12 ?= this #Jazhkredu
+					c:A16 ?= this #Kobildzan
+					c:F13 ?= this #Harpylen
+					c:L29 ?= this #Naleni
+					c:Y09 ?= this #Azjakuma
+					c:Y39 ?= this #Nirenun Syul
+					c:B21 ?= this #Ynnsmouth
+					c:C68 ?= this #Ethra
+					c:C64 ?= this #Uesrlarmai
+					c:C66 ?= this #Calinkend
+					c:C58 ?= this #Katisangmar
+					c:G05 ?= this #Kobildzexbirrix
+					c:B62 ?= this #Noo Coddorran
+				}
+			}
+			add_technology_researched = shamanism_magical_tradition
+		}
+
+	}
+}
+
+initialize_spells = {
+	initialize_spell_list = yes
+	set_variable = {
+		name = country_max_spell_level
+		value = 5
+	}
+	if = {
+		limit = { has_law = law_type:law_traditional_magic_banned }
+		set_variable = { name = magic_banned_var value = flag:magic_banned_flag }
+		# nothing happens
+        if = {
+            limit = { has_variable = production_magic_spell }
+            remove_variable = production_magic_spell
+        }
+        if = {
+            limit = { has_variable = production_magic_spell_level }
+            remove_variable = production_magic_spell_level
+        }   
+        if = {
+            limit = { has_variable = production_magic_targeted_spell_level }
+            remove_variable = production_magic_targeted_spell_level
+        }
+        if = {
+            limit = { has_variable = production_magic_spell_level_floor }
+            remove_variable = production_magic_spell_level_floor
+        }               
+        if = {
+            limit = { has_variable = production_magic_spell_changing_level }
+            remove_variable = production_magic_spell_changing_level
+        }   
+		if = {
+			limit = { has_variable = military_magic_spell }
+			remove_variable = military_magic_spell
+		}
+		if = {
+			limit = { has_variable = military_magic_spell_level }
+			remove_variable = military_magic_spell_level
+		}	
+		if = {
+			limit = { has_variable = military_magic_targeted_spell_level }
+			remove_variable = military_magic_targeted_spell_level
+		}
+		if = {
+			limit = { has_variable = military_magic_spell_level_floor }
+			remove_variable = military_magic_spell_level_floor
+		}				
+		if = {
+			limit = { has_variable = military_magic_spell_changing_level }
+			remove_variable = military_magic_spell_changing_level
+		}			
+        if = {
+            limit = { has_variable = society_magic_spell }
+            remove_variable = society_magic_spell
+        }
+        if = {
+            limit = { has_variable = society_magic_spell_level }
+            remove_variable = society_magic_spell_level
+        }   
+        if = {
+            limit = { has_variable = society_magic_targeted_spell_level }
+            remove_variable = society_magic_targeted_spell_level
+        }
+        if = {
+            limit = { has_variable = society_magic_spell_level_floor }
+            remove_variable = society_magic_spell_level_floor
+        }               
+        if = {
+            limit = { has_variable = society_magic_spell_changing_level }
+            remove_variable = society_magic_spell_changing_level
+        }   
+	}
+	else_if = { #this section is here rather than initializing spell list bc it should only happen at game start
+		limit = { #just checking if the file has spells defined; if there are spells defined, there should also be spell levels and such defined
+			NOT = { has_variable = production_magic_spell }  
+		}
+		if = {
+			limit = { has_law = law_type:law_artifice_banned }
+			set_variable = {
+				name = production_magic_spell_level
+				value = 2
+			}
+			set_variable = {
+				name = production_magic_targeted_spell_level
+				value = 2
+			}
+			set_variable = {
+				name = production_magic_spell_level_floor
+				value = 2
+			}
+			set_variable = {
+				name = military_magic_spell_level
+				value = 2
+			}
+			set_variable = {
+				name = military_magic_targeted_spell_level
+				value = 2
+			}
+			set_variable = {
+				name = military_magic_spell_level_floor
+				value = 2
+			}
+			set_variable = {
+				name = society_magic_spell_level
+				value = 2
+			}
+			set_variable = {
+				name = society_magic_targeted_spell_level
+				value = 2
+			}
+			set_variable = {
+				name = society_magic_spell_level_floor
+				value = 2
+			}
+		}
+		else_if = {
+			limit = { has_law = law_type:law_nation_of_magic }
+			set_variable = {
+				name = production_magic_spell_level
+				value = 1
+			}
+			set_variable = {
+				name = production_magic_targeted_spell_level
+				value = 1
+			}
+			set_variable = {
+				name = production_magic_spell_level_floor
+				value = 1
+			}
+			set_variable = {
+				name = military_magic_spell_level
+				value = 2
+			}
+			set_variable = {
+				name = military_magic_targeted_spell_level
+				value = 2
+			}
+			set_variable = {
+				name = military_magic_spell_level_floor
+				value = 2
+			}
+			set_variable = {
+				name = society_magic_spell_level
+				value = 1
+			}
+			set_variable = {
+				name = society_magic_targeted_spell_level
+				value = 1
+			}
+			set_variable = {
+				name = society_magic_spell_level_floor
+				value = 1
+			}
+		}
+		else_if = {
+			limit = { has_law = law_type:law_nation_of_artifice }
+			set_variable = {
+				name = production_magic_spell_level
+				value = 1
+			}
+			set_variable = {
+				name = production_magic_targeted_spell_level
+				value = 1
+			}
+			set_variable = {
+				name = production_magic_spell_level_floor
+				value = 1
+			}
+			set_variable = {
+				name = military_magic_spell_level
+				value = 1
+			}
+			set_variable = {
+				name = military_magic_targeted_spell_level
+				value = 1
+			}
+			set_variable = {
+				name = military_magic_spell_level_floor
+				value = 1
+			}
+			set_variable = {
+				name = society_magic_spell_level
+				value = 1
+			}
+			set_variable = {
+				name = society_magic_targeted_spell_level
+				value = 1
+			}
+			set_variable = {
+				name = society_magic_spell_level_floor
+				value = 1
+			}
+		}
+		if = {
+			limit = { has_technology_researched = runecarving_magical_tradition }
+			set_variable = {
+				name = production_magic_spell
+				value = flag:spell_inscribed_architecture
+			}
+			set_variable = {
+				name = military_magic_spell
+				value = flag:spell_imbued_armor
+			}
+			set_variable = {
+				name = society_magic_spell
+				value = flag:spell_veneration_of_tradition
+			}
+		}
+		else_if = {
+			limit = { has_technology_researched = fourknowing_magical_tradition }
+			set_variable = {
+				name = production_magic_spell
+				value = flag:spell_inscribed_architecture
+			}
+			set_variable = {
+				name = military_magic_spell
+				value = flag:spell_mageshields
+			}
+			set_variable = {
+				name = society_magic_spell
+				value = flag:spell_modern_miracle
+			}
+		}
+		else_if = {
+			limit = { has_technology_researched = essence_magical_tradition }
+			set_variable = {
+				name = production_magic_spell
+				value = flag:spell_storm_regulation
+			}
+			set_variable = {
+				name = military_magic_spell
+				value = flag:spell_planewalker_saboteur
+			}
+			set_variable = {
+				name = society_magic_spell
+				value = flag:spell_magical_authority
+			}
+		}
+		else_if = {
+			limit = { has_technology_researched = chi_cultivation_magical_tradition }
+			set_variable = {
+				name = production_magic_spell
+				value = flag:spell_roadshaper_wavechanger
+			}
+			set_variable = {
+				name = military_magic_spell
+				value = flag:spell_chi_warriors
+			}
+			set_variable = {
+				name = society_magic_spell
+				value = flag:spell_social_sanctuaries
+			}
+		}
+		else_if = {
+			limit = { has_technology_researched = druidic_magical_tradition }
+			set_variable = {
+				name = production_magic_spell
+				value = flag:spell_attuned_forestery
+			}
+			set_variable = {
+				name = military_magic_spell
+				value = flag:spell_natures_gift
+			}
+			set_variable = {
+				name = society_magic_spell
+				value = flag:spell_social_sanctuaries
+			}
+		}
+		else_if = {
+			limit = { has_technology_researched = bardic_magical_tradition }
+			set_variable = {
+				name = production_magic_spell
+				value = flag:spell_spellwoven_luxury
+			}
+			set_variable = {
+				name = military_magic_spell
+				value = flag:spell_vicious_chants
+			}
+			set_variable = {
+				name = society_magic_spell
+				value = flag:spell_rituals_of_empathy
+			}
+		}
+		else_if = {
+			limit = { has_technology_researched = precursor_magical_tradition }
+			set_variable = {
+				name = production_magic_spell
+				value = flag:spell_inscribed_architecture
+			}
+			set_variable = {
+				name = military_magic_spell
+				value = flag:spell_spellknights
+			}
+			set_variable = {
+				name = society_magic_spell
+				value = flag:spell_magical_feasts
+			}
+		}
+		else_if = {
+			limit = { has_technology_researched = elemental_magical_tradition }
+			set_variable = {
+				name = production_magic_spell
+				value = flag:spell_storm_regulation
+			}
+			set_variable = {
+				name = military_magic_spell
+				value = flag:spell_master_of_the_plains
+			}
+			set_variable = {
+				name = society_magic_spell
+				value = flag:spell_perfected_terrain
+			}
+		}
+		else_if = {
+			limit = { has_technology_researched = cannorian_magical_tradition }
+			set_variable = {
+				name = production_magic_spell
+				value = flag:spell_mass_plant_growth
+			}
+			set_variable = {
+				name = military_magic_spell
+				value = flag:spell_evocation_corps
+			}
+			set_variable = {
+				name = society_magic_spell
+				value = flag:spell_magical_feasts
+			}
+		}
+		else_if = {
+			limit = { has_technology_researched = shamanism_magical_tradition }
+			set_variable = {
+				name = production_magic_spell
+				value = flag:spell_deposit_divination
+			}
+			set_variable = {
+				name = military_magic_spell
+				value = flag:spell_natures_gift
+			}
+			set_variable = {
+				name = society_magic_spell
+				value = flag:spell_unleashed_chaos
+			}
+		}
+		else_if = {
+			limit = { has_technology_researched = kheterata_magical_tradition }
+			set_variable = {
+				name = production_magic_spell
+				value = flag:spell_horutep_lash_dominance
+			}
+			set_variable = {
+				name = military_magic_spell
+				value = flag:spell_neferkhet_incantation_dust
+			}
+			set_variable = {
+				name = society_magic_spell
+				value = flag:spell_elikhet_gaze_judgement
+			}
+		}
+		if = {
+			limit = { has_technology_researched = necromantic_magical_tradition }
+			set_variable = {
+				name = military_magic_spell
+				value = flag:spell_undead_army
+			}
+		}
+	}
+}
+
+# aaaaaaaaaaaaaaa
+
+initialize_spell_list = {
+	clear_variable_list = possible_production_spell_flag
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:no_production_spell }
+	
+	clear_variable_list = possible_society_spell_flag
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:no_society_spell }
+	
+	clear_variable_list = possible_military_spell_flag
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:no_military_spell }
+	
+	if = {
+		limit = { has_law = law_type:law_traditional_magic_banned }
+		# nothing happens
+	}
+	else = {
+		if = {
+			limit = { has_technology_researched = cannorian_magical_tradition }
+			add_cannorian_magical_tradition_spells = yes
+		}
+		if = {
+			limit = { has_technology_researched = runecarving_magical_tradition }
+			add_runecarving_magical_tradition_spells = yes
+		}
+		if = {
+			limit = { has_technology_researched = fourknowing_magical_tradition }
+			add_fourknowing_magical_tradition_spells = yes
+		}
+		if = {
+			limit = { has_technology_researched = essence_magical_tradition }
+			add_essence_magical_tradition_spells = yes
+		}
+		if = {
+			limit = { has_technology_researched = chi_cultivation_magical_tradition }
+			add_chi_cultivation_magical_tradition_spells = yes
+		}
+		if = {
+			limit = { has_technology_researched = druidic_magical_tradition }
+			add_druidic_magical_tradition_spells = yes
+		}
+		if = {
+			limit = { has_technology_researched = shamanism_magical_tradition }
+			add_shamanism_magical_tradition_spells = yes
+		}
+		if = {
+			limit = { has_technology_researched = bardic_magical_tradition }
+			add_bardic_magical_tradition_spells = yes
+		}
+		if = {
+			limit = { has_technology_researched = precursor_magical_tradition }
+			add_precursor_magical_tradition_spells = yes
+		}
+		if = {
+			limit = { has_technology_researched = elemental_magical_tradition }
+			add_elemental_magical_tradition_spells = yes
+		}
+		if = {
+			limit = { has_technology_researched = necromantic_magical_tradition }
+			add_necromantic_magical_tradition_spells = yes
+		}
+		if = {
+			limit = { has_technology_researched = kheterata_magical_tradition }
+			add_kheterata_magical_tradition_spells = yes
+		}
+	}
+	
+}
+
+add_cannorian_magical_tradition_spells = {
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_evocation_corps }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_mageshields }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_spellknights }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_foreseen_battle }
+	
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_deposit_divination }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_spellwoven_luxury }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_magical_arts }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_mass_plant_growth }
+	
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_perfected_terrain }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_magical_feasts }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_magical_authority }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_transmuted_gold_reserves }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_rituals_of_empathy }
+}
+add_runecarving_magical_tradition_spells = {
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_earthshaper_fortifications }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_imbued_armor }
+	
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_spellwoven_luxury }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_enchanted_tools }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_inscribed_architecture }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_magical_automata }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_forge_and_flame }
+	
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_portable_runes }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_veneration_of_tradition }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_transmuted_gold_reserves }
+}
+add_fourknowing_magical_tradition_spells = {
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_earthshaper_fortifications }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_mageshields }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_planewalker_saboteur }
+	
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_inscribed_architecture }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_magical_arts }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_mass_plant_growth }
+	
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_divining_intent }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_portable_runes }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_modern_miracle }
+}
+add_essence_magical_tradition_spells = {
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_planewalker_saboteur }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_foreseen_battle }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_vicious_chants }
+	
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_mass_plant_growth }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_animal_companionship }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_roadshaper_wavechanger }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_storm_regulation }
+	
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_divining_intent }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_veneration_of_tradition }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_magical_authority }
+}
+add_chi_cultivation_magical_tradition_spells = {
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_chi_warriors }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_vicious_chants }
+	
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_mass_plant_growth }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_roadshaper_wavechanger }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_ritualized_chi_siphoning }
+	
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_social_sanctuaries }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_unleashed_chaos }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_rituals_of_empathy }
+}
+
+add_shamanism_magical_tradition_spells = {
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_foreseen_battle }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_master_of_the_plains }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_natures_gift }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_imbued_armor }
+	
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_animal_companionship }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_roadshaper_wavechanger }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_deposit_divination }
+	
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_divining_intent }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_magical_authority }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_unleashed_chaos }
+	# add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_inner_spirit }
+}
+add_druidic_magical_tradition_spells = {
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_natures_gift }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_planewalker_saboteur }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_one_with_the_tree }
+	
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_animal_companionship }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_mass_plant_growth }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_attuned_forestery }
+	
+	
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_social_sanctuaries }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_modern_miracle }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_unleashed_chaos }
+}
+add_bardic_magical_tradition_spells = {
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_vicious_chants }
+
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_magical_arts }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_spellwoven_luxury }
+	
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_grandstanding }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_magical_feasts }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_rituals_of_empathy }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_unleashed_chaos }
+}
+add_precursor_magical_tradition_spells = {
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_evocation_corps }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_mageshields }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_spellknights }
+	
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_magical_arts }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_spellwoven_luxury }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_enchanted_tools }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_inscribed_architecture }
+	
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_portable_runes }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_grandstanding }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_magical_feasts }
+}
+add_elemental_magical_tradition_spells = {
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_evocation_corps }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_earthshaper_fortifications }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_master_of_the_plains }
+	
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_deposit_divination }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_attuned_forestery }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_roadshaper_wavechanger }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_storm_regulation }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_forge_and_flame }
+	
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_perfected_terrain }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_transmuted_gold_reserves }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_unleashed_chaos }
+}
+add_necromantic_magical_tradition_spells = {
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_undead_army }
+	
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_magical_automata }
+}
+
+add_kheterata_magical_tradition_spells = {
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_aakhet_flames_calamity }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_neferkhet_incantation_dust }
+	add_to_variable_list = { name = possible_military_spell_flag target = flag:spell_amiskhet_summoning_gale }
+	
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_horutep_lash_dominance }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_shurkhet_elevation_sorrow }
+	add_to_variable_list = { name = possible_production_spell_flag target = flag:spell_baqtkhet_sculpting_land }
+	
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_elikhet_gaze_judgement }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_nirakhet_breath_life }
+	add_to_variable_list = { name = possible_society_spell_flag target = flag:spell_shurkhet_voice_wisdom }
+}
+

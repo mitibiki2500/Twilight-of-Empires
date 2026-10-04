@@ -1,0 +1,699 @@
+﻿namespace = magic_deficit
+
+magic_deficit.1 = { #Shortage of Transmuters - Production level 1
+	type = country_event
+	placement = scope:shortage_state
+
+	title = magic_deficit.1.t
+	desc = magic_deficit.1.d
+	flavor = magic_deficit.1.f
+
+	event_image = {
+		video = "middleeast_engineer_blueprint"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	duration = 3
+
+	trigger = {
+		has_modifier = country_magical_expertise_deficit_malus_modifier
+		has_variable = production_magic_spell
+		any_scope_state = {
+			has_building = building_urban_center
+			NOT = {has_modifier = modifier_state_transmuter_shortage}
+		}
+	}
+	
+	immediate = {
+		random_scope_state = {
+			limit = {
+				has_building = building_urban_center
+				NOT = {has_modifier = modifier_state_transmuter_shortage}
+			}
+			save_scope_as = shortage_state
+		}
+	}
+	
+	option = {
+		name = magic_deficit.1.a
+		default_option = yes
+		scope:shortage_state = {
+			add_modifier = {
+				name = modifier_state_transmuter_shortage
+				years = 10
+				is_decaying = yes 
+				multiplier = 2
+			}
+		}
+	}
+	option = {
+		name = magic_deficit.1.b
+		custom_tooltip = {
+			text = drop_magic_production_level_tt
+			drop_production_spell_level = yes
+		}
+		add_modifier = {
+			name = modifier_magical_bureaucracy
+			multiplier = 5
+			years = 5
+		}
+	}
+	option = {
+		name = magic_deficit.1.c
+		trigger = {has_law_or_variant = law_type:law_interventionism}
+		add_modifier = {
+			name = modifier_transmuter_subsidies
+			years = 5
+			multiplier = money_amount_multiplier_small
+		}
+		scope:shortage_state = {
+			add_modifier = {
+				name = modifier_state_transmuter_shortage
+				years = 5
+				is_decaying = yes
+			}
+		}
+	}
+}
+
+magic_deficit.2 = { #Shortage of Spell Components - Military level 1
+	type = country_event
+	placement = ROOT
+
+	title = magic_deficit.2.t
+	desc = magic_deficit.2.d
+	flavor = magic_deficit.2.f
+
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	duration = 3
+
+	trigger = {
+		has_modifier = country_magical_expertise_deficit_malus_modifier
+		has_variable = military_magic_spell
+	}
+	
+	option = {
+		name = magic_deficit.2.a
+		default_option = yes
+		add_radicals = {
+			value = 0.05
+			pop_type = officers
+		}
+		add_radicals = {
+			value = 0.05
+			pop_type = soldiers
+		}
+		ig:ig_armed_forces = {
+			add_modifier = {
+				name = modifier_ig_spell_component_shortage
+				years = 5
+				is_decaying = yes
+				multiplier = 2
+			}
+		}
+	}
+	option = {
+		name = magic_deficit.2.b
+		custom_tooltip = {
+			text = drop_magic_military_level_tt
+			drop_military_spell_level = yes
+		}
+		ig:ig_armed_forces = {
+			add_modifier = {
+				name = modifier_ig_spell_component_shortage
+				years = 5
+				is_decaying = yes
+			}
+		}
+	}
+	option = {
+		name = magic_deficit.2.c
+		trigger = {
+			any_scope_building = {
+				is_building_type = building_magical_reagents_workshop
+				level >= 5
+			}
+		}
+		random_scope_building = {
+					limit = {
+						is_building_type = building_magical_reagents_workshop
+						level >= 5
+					}
+			add_modifier = {
+				name = modifier_reagent_lab_production_reroute
+				years = 2
+				is_decaying = yes
+			}
+		}
+	}
+}
+
+magic_deficit.3 = { #Lack of Confidence in Government - Society Level 1
+	type = country_event
+	placement = root
+	
+	title = magic_deficit.3.t
+	desc = magic_deficit.3.d
+	flavor = magic_deficit.3.f
+	
+	event_image = {
+		video = "africa_leader_arguing"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	duration = 3
+	
+	trigger = {
+		has_modifier = country_magical_expertise_deficit_malus_modifier
+		has_variable = society_magic_spell
+	}
+	
+	option = {
+		name = magic_deficit.3.a
+		default_option = yes
+		add_modifier = {
+			name = modifier_lack_of_government_confidence
+			years = 10
+			multiplier = 2
+			is_decaying = yes
+		}
+	}
+	
+	option = {
+		name = magic_deficit.3.b
+		custom_tooltip = {
+			text = drop_magic_society_level_tt
+			drop_society_spell_level = yes
+		}
+		add_modifier = {
+			name = modifier_lack_of_government_confidence
+			years = 5
+			is_decaying = yes
+		}
+	}
+    	
+	option = {
+		name = magic_deficit.3.c
+        trigger = {
+			OR = {
+				has_law_or_variant = law_type:law_censorship
+				has_law_or_variant = law_type:law_outlawed_dissent
+			}
+		}
+		ig:ig_intelligentsia = {
+			add_modifier = {
+				name = modifier_ig_mage_censorship
+				years = 10
+				multiplier = 2
+				is_decaying = yes
+			}
+        }
+	}
+}
+
+magic_deficit.4 = { #Magical Misconduct in the Workplace - Production Level 2
+	type = country_event
+	placement = root
+	
+	title = magic_deficit.4.t
+	desc = magic_deficit.4.d
+	flavor = magic_deficit.4.f
+	
+	event_image = {
+		video = "asia_factory_accident"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	duration = 3
+	
+	trigger = {
+		has_modifier = country_magical_expertise_deficit_malus_modifier
+		country_normalized_magical_expertise_deficit >= 0.5
+		has_variable = production_magic_spell
+	}
+	
+	option = {
+		name = magic_deficit.4.a
+		default_option = yes
+		add_radicals = {
+			value = 0.05
+			pop_type = laborers
+		}
+		add_radicals = {
+			value = 0.05
+			pop_type = peasants
+		}
+		add_radicals = {
+			value = 0.05
+			pop_type = machinists
+		}
+		add_radicals = {
+			value = 0.05
+			pop_type = engineers
+		}
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = modifier_ig_unsafe_magical_workplaces
+				years = 10
+				multiplier = 3
+			}
+        }
+		
+	}
+	
+	option = {
+		name = magic_deficit.4.b
+		custom_tooltip = {
+			text = drop_magic_production_level_tt
+			drop_production_spell_level = yes
+		}
+		ig:ig_industrialists = {
+			add_modifier = {
+				name = modifier_ig_safe_magical_workplaces
+				years = 10
+				multiplier = 2
+				is_decaying = yes
+			}
+        }
+	}
+    	
+	option = {
+		name = magic_deficit.4.c
+        trigger = {has_institution = institution_workplace_safety}
+		add_modifier = {
+			name = modifier_magical_bureaucracy
+			multiplier = 8
+			years = 5
+		}
+		random_scope_state = {
+			limit = {NOT = {has_modifier = modifier_state_enforcing_magical_regulations}}
+			add_modifier = {
+				name = modifier_state_enforcing_magical_regulations
+				years = 5
+				is_decaying = yes
+			}
+		}
+	}
+}
+
+magic_deficit.5 = { #Shortage of War Mages - Military Level 2
+	type = country_event
+	placement = root
+	
+	title = magic_deficit.5.t
+	desc = magic_deficit.5.d
+	flavor = magic_deficit.5.f
+	
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	duration = 3
+	
+	trigger = {
+		has_modifier = country_magical_expertise_deficit_malus_modifier
+		country_normalized_magical_expertise_deficit >= 0.5
+		has_variable = military_magic_spell
+	}
+	
+	option = {
+		name = magic_deficit.5.a
+		default_option = yes
+		add_modifier = {
+			name = modifier_reduced_war_wizard_training
+			years = 10
+			is_decaying = yes
+		}
+	}
+	
+	option = {
+		name = magic_deficit.5.b
+		custom_tooltip = {
+			text = drop_magic_military_level_tt
+			drop_military_spell_level = yes
+		}
+		add_modifier = {
+			name = modifier_hastily_trained_war_wizards
+			years = 10
+			is_decaying = yes
+		}
+	}
+    	
+	option = {
+		name = magic_deficit.5.c
+        trigger = {has_law_or_variant = law_type:law_mass_conscription}
+		add_modifier = {
+			name = modifier_mass_mage_conscription
+			years = 10
+			is_decaying = no
+		}
+		add_radicals = {
+			value = 0.1
+			pop_type = mages
+		}
+	}
+}
+
+magic_deficit.6 = { #Enchantment Revealed - Society Level 2
+	type = country_event
+	placement = root
+	
+	title = magic_deficit.6.t
+	desc = magic_deficit.6.d
+	flavor = magic_deficit.6.f
+	
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	duration = 3
+	
+	trigger = {
+		has_modifier = country_magical_expertise_deficit_malus_modifier
+		has_variable = society_magic_spell
+		country_normalized_magical_expertise_deficit >= 0.5
+	}
+	
+	option = {
+		name = magic_deficit.6.a
+		default_option = yes
+		add_modifier = {
+			name = modifier_placating_government_igs
+			years = 10
+			multiplier = 3
+			is_decaying = yes
+		}
+	}
+	
+	option = {
+		name = magic_deficit.6.b
+		custom_tooltip = {
+			text = drop_magic_society_level_tt
+			drop_society_spell_level = yes
+		}
+		add_radicals = {
+			value = 0.15
+			pop_type = mages
+		}
+	}
+    	
+	option = {
+		name = magic_deficit.6.c
+        trigger = { has_law_or_variant = law_type:law_secret_police }
+		add_modifier = {
+			name = modifier_magical_bureaucracy
+			years = 10
+			multiplier = 8
+			is_decaying = no
+		}
+		add_radicals = {
+			value = 0.05
+			pop_type = mages
+		}
+		
+		
+	}
+}
+
+magic_deficit.7 = { #Magical Detonation - Production Level 3
+	type = country_event
+	placement = scope:explosion_state
+	
+	title = magic_deficit.7.t
+	desc = magic_deficit.7.d
+	flavor = magic_deficit.7.f
+	
+	event_image = {
+		video = "unspecific_devastation"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+	
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	duration = 3
+	
+	trigger = {
+		has_modifier = country_magical_expertise_deficit_malus_modifier
+		has_variable = production_magic_spell
+		country_normalized_magical_expertise_deficit = 1
+		any_scope_state = { devastation <= 0.1 }
+	}
+	
+	immediate = {
+		random_scope_state = { #Can't just weight by infrastructure normally and I've spent way to long on this so I'm being evil instead
+			limit = {devastation <= 0.1}
+			weight = {
+				base = 1
+				modifier = { #10
+					infrastructure_usage > 10
+					add = 10
+				}
+				modifier = { #25
+					infrastructure_usage > 25
+					add = 50
+				}
+				modifier = { #100
+					infrastructure_usage > 100
+					add = 400
+				}
+				modifier = { #300
+					infrastructure_usage > 300
+					add = 1200
+				}
+				modifier = { #1000
+					infrastructure_usage > 1000
+					add = 5000
+				}
+				modifier = { #1500
+					infrastructure_usage > 1500
+					add = 9000
+				}
+				modifier = { #3000
+					infrastructure_usage > 3000
+					add = 21000
+				}
+			}
+			save_scope_as = explosion_state
+		}
+	}
+	
+	option = {
+		name = magic_deficit.7.a
+		default_option = yes
+		scope:explosion_state = {
+			add_devastation = 70
+			add_radicals = {value = 0.1}
+		}
+		add_modifier = {
+			name = modifier_explosion_subsidies
+			multiplier = money_amount_multiplier_medium
+			years = 10
+		}
+	}
+	
+	option = {
+		name = magic_deficit.7.b
+		custom_tooltip = {
+			text = drop_magic_production_level_tt
+			drop_production_spell_level = yes
+		}
+		scope:explosion_state = {
+			add_devastation = 35
+			add_radicals = {value = 0.15}
+		}
+	}
+
+	option = {
+		name = magic_deficit.7.c
+		trigger = {
+			has_law_or_variant = law_type:law_national_guard
+			institution_investment_level = {
+				institution = institution_home_affairs
+				value = 3
+			}
+		}
+		add_modifier = {
+			name = modifier_magical_bureaucracy
+			years = 10
+			multiplier = 8
+			is_decaying = no
+		}
+		scope:explosion_state = {
+			add_devastation = 35
+			add_radicals = {value = 0.05}
+		}
+	}
+}
+
+magic_deficit.8 = { #Organized Mage Crime - Military Level 3
+	type = country_event
+	placement = root
+	
+	title = magic_deficit.8.t
+	desc = magic_deficit.8.d
+	flavor = magic_deficit.8.f
+	
+	event_image = {
+		video = "unspecific_vandalized_storefront"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+	
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	duration = 3
+	
+	trigger = {
+		has_modifier = country_magical_expertise_deficit_malus_modifier
+		has_variable = military_magic_spell
+		country_normalized_magical_expertise_deficit = 1
+		NOR = { #trigger to allow magocratic movement to form
+			has_law = law_type:law_traditionalism
+			has_law = law_type:law_agrarianism
+			has_law = law_type:law_industry_banned
+			has_law = law_type:law_artifice_banned
+			has_law = law_type:law_nation_of_magic
+		}
+	}
+	
+	option = {
+		name = magic_deficit.8.a
+		default_option = yes
+		add_modifier = {
+			name = modifier_rampant_robberies
+			years = 20
+		}
+		add_modifier = {
+			name = modifier_magical_market_panic
+			years = 20
+			multiplier = 2
+		}
+	}
+	
+	option = {
+		name = magic_deficit.8.b
+		custom_tooltip = {
+			text = drop_magic_military_level_tt
+			drop_military_spell_level = yes
+		}
+		add_modifier = {
+			name = modifier_mass_magical_violence
+			years = 10
+		}
+		add_modifier = {
+			name = modifier_magical_market_panic
+			years = 5
+		}
+	}
+    	
+	option = {
+		name = magic_deficit.8.c
+        trigger = {
+			has_law_or_variant = law_type:law_militarized_police
+		}
+		add_modifier = {
+			name = modifier_mass_magical_violence
+			years = 10
+			multiplier = 2
+		}
+	}
+}
+
+magic_deficit.9 = { #Magocratic Rebellion - Society Level 3
+	type = country_event
+	placement = root
+	
+	title = magic_deficit.9.t
+	desc = magic_deficit.9.d
+	flavor = magic_deficit.9.f
+	
+	event_image = {
+		video = "southamerica_election"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	duration = 3
+	
+	cooldown = {years = 10}
+	
+	trigger = {
+		has_modifier = country_magical_expertise_deficit_malus_modifier
+		has_variable = society_magic_spell
+		country_normalized_magical_expertise_deficit = 1
+	}
+	
+	immediate = {
+		if = { 
+			limit = { NOT = { any_political_movement = { is_political_movement_type = movement_magocratic } } }
+			create_political_movement = { type = movement_magocratic }
+		}
+	}
+	
+	option = {
+		name = magic_deficit.9.a
+		default_option = yes
+		every_political_movement = {
+			limit = {is_political_movement_type = movement_magocratic}
+			add_modifier = {
+				name = modifier_large_magocratic_rebellion
+				years = 10
+			}
+		}
+	}
+	
+	option = {
+		name = magic_deficit.9.b
+		custom_tooltip = {
+			text = drop_magic_society_level_tt
+			drop_society_spell_level = yes
+		}
+		every_political_movement = {
+			limit = {is_political_movement_type = movement_magocratic}
+			add_modifier = {
+				name = modifier_small_magocratic_rebellion
+				years = 10
+			}
+		}
+	}
+    	
+	option = {
+		name = magic_deficit.9.c
+        trigger = {
+			has_law_or_variant = law_type:law_magocracy
+			any_political_movement = {is_revolutionary = yes}
+		}
+		trigger_event = {
+			id = resignation.3
+			days = 1
+			popup = yes
+		}
+	}
+}

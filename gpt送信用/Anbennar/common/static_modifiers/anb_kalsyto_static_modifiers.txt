@@ -1,0 +1,141 @@
+﻿modifier_kalsyto_egduqon = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_ig_rural_folk_pop_attraction_mult = 0.25
+	interest_group_ig_rural_folk_pol_str_mult = 0.25
+	country_farmers_pol_str_mult = 0.50
+	#country_voting_power_wealth_threshold_add = -3
+	interest_group_ig_petty_bourgeoisie_pop_attraction_mult = -0.1
+	state_colony_growth_speed_mult = -0.75
+}
+
+modifier_kalsyto_upon_halann_stage = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_ig_intelligentsia_pop_attraction_mult = 0.5
+	interest_group_ig_intelligentsia_pol_str_mult = 0.25
+	interest_group_ig_petty_bourgeoisie_pop_attraction_mult = 0.5
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.25
+	country_tech_spread_mult = 0.5
+}
+
+modifier_kalsyto_reckoning_disturbed_peace = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	interest_group_ig_industrialists_pol_str_mult = 0.25
+	interest_group_ig_industrialists_pop_attraction_mult = 0.5
+	interest_group_ig_armed_forces_pol_str_mult = 0.25
+	interest_group_ig_armed_forces_pop_attraction_mult = 0.5
+	country_military_tech_spread_mult = 1
+	country_legitimacy_base_add = -20
+}
+
+egduqon_violated = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_prestige_add = -20
+	country_legitimacy_base_add = -15
+}
+
+modifier_kalsyto_egduqon_base = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_influence_mult = -0.25
+	#country_max_declared_interests_add = -1 #something with involvement now?
+	country_prestige_mult = -0.1
+	country_tech_research_speed_mult = 0.25
+}
+
+modifier_kalsyto_egduqon_adm = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_government_dividends_efficiency_add = -0.25
+	state_construction_mult = 0.10
+}
+
+modifier_kalsyto_egduqon_mil = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_from_army_power_projection_mult = -0.1
+	building_training_rate_mult = 0.5
+}
+
+modifier_kalsyto_egduqon_dip = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	power_bloc_leverage_generation_mult = -0.33
+	state_trade_advantage_mult = 0.25
+}
+
+kalsyto_workers_favored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	interest_group_ig_trade_unions_pol_str_mult = 0.1
+	interest_group_ig_trade_unions_pop_attraction_mult = 0.25
+	state_construction_mult = 0.10
+}
+kalsyto_soldiers_favored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_ig_armed_forces_pol_str_mult = 0.1
+	interest_group_ig_armed_forces_pop_attraction_mult = 0.25
+	unit_morale_loss_mult = -0.1
+	unit_morale_damage_mult = 0.1
+}
+kalsyto_traders_favored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.1
+	interest_group_ig_petty_bourgeoisie_pop_attraction_mult = 0.25
+	country_minting_mult = 0.2
+	state_shopkeepers_investment_pool_efficiency_mult = 0.5
+}
+kalsyto_guns_favored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	interest_group_ig_industrialists_pol_str_mult = 0.1
+	interest_group_ig_industrialists_pop_attraction_mult = 0.25
+	country_military_goods_cost_mult = -0.1
+	state_capitalists_investment_pool_efficiency_mult = 0.5
+}
+kalsyto_children_favored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	interest_group_ig_rural_folk_pol_str_mult = 0.1
+	interest_group_ig_rural_folk_pop_attraction_mult = 0.25
+	building_group_bg_agriculture_throughput_add = 0.1
+	state_farmers_investment_pool_efficiency_mult = 0.5
+}
+kalsyto_citizens_favored = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_ig_intelligentsia_pol_str_mult = 0.1
+	interest_group_ig_intelligentsia_pop_attraction_mult = 0.25
+	country_infamy_generation_mult  = -0.2
+}
+
+kalsyto_elemental_our_way = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 20
+}
+
+kalsyto_mine_priority = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_pol_str_mult = 0.15
+}
+kalsyto_refused_mine_priority = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -2
+}
+kalsyto_retained_mine_control = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_legitimacy_base_add = 10
+}
+kalsyto_port_priority = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_pol_str_mult = 0.15
+}
+kalsyto_refused_port_priority = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -2
+}
+kalsyto_retained_port_control = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_legitimacy_base_add = 10
+}
+kalsyto_sojda_kouluuni = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	unit_offense_mult = 0.2
+	unit_defense_mult = 0.2
+}
+kalsyto_slow_militarization = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	unit_offense_mult = -0.2
+	unit_defense_mult = -0.2
+}

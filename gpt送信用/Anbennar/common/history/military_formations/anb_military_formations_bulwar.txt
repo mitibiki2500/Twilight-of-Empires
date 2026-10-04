@@ -1,0 +1,421 @@
+﻿MILITARY_FORMATIONS = {
+	c:F01 ?= { # Jaddanzar
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_far_bulwar
+			name = "Suraelic Guard"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_WEST_NAZA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_EAST_NAZA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_JADDANZAR
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_AVAMEZAN
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_UPPER_SURAN
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_AZKA_SUR
+				count = 10
+			}
+			save_scope_as = army_F01_1
+		}
+
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_3
+			save_scope_as = general_F01_1
+		}
+
+		scope:general_F01_1 = { transfer_to_formation = scope:army_F01_1 }
+		
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_bulwar_proper
+			name = "Suran Legion"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_AZKA_SUR
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_BULWAR
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_KUMARKAND
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SAD_SUR
+				count = 20
+			}
+			save_scope_as = army_F01_2
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_F01_2
+		}
+
+		scope:general_F01_2 = { transfer_to_formation = scope:army_F01_2 }
+		
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_far_bulwar
+			name = "Salahad Legion"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_EBBUSUBTU
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_KERUHAR
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_AZKA_SUR
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_MULEN
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ARDU
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SAD_SUR
+				count = 10
+			}
+			save_scope_as = army_F01_3
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_F01_3
+		}
+
+		scope:general_F01_3 = { transfer_to_formation = scope:army_F01_3 }
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_bulwar_proper
+			name = "Divenhal Fleet"
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+			save_scope_as = fleet_F01_1
+		}
+		
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_1
+			save_scope_as = admiral_F01_1
+		}
+		scope:admiral_F01_1 = { transfer_to_formation = scope:fleet_F01_1 }
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_far_bulwar
+			name = "Eastern Fleet"
+		
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 5
+			}
+			save_scope_as = fleet_F01_2
+		}
+		
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_1
+			save_scope_as = admiral_F01_2
+		}
+		scope:admiral_F01_2 = { transfer_to_formation = scope:fleet_F01_2 }
+		
+	}
+	
+	c:F02 ?= { # Surakesi League
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_bulwar_proper
+			name = "League Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_BRASAN
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_LOWER_SURAN
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_DROLAS
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SAD_SUR
+				count = 2
+			}
+			save_scope_as = army_F02_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_F02_1
+		}
+
+		scope:general_F02_1 = { transfer_to_formation = scope:army_F02_1 }
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_bulwar_proper
+			name = "Brasan Fleet"
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 10
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 5
+			}
+		
+			save_scope_as = fleet_F02_1
+		}
+		
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_2
+			save_scope_as = admiral_F02_1
+		}
+		scope:admiral_F02_1 = { transfer_to_formation = scope:fleet_F02_1 }
+		
+	}
+	
+	c:F09 ?= { # Kuzaram
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_bulwar_proper
+			name = "Kuza's Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_KUZARAM
+				count = 8
+			}
+			save_scope_as = army_F09_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_F09_1
+		}
+
+		scope:general_F09_1 = { transfer_to_formation = scope:army_F09_1 }
+		
+	}
+	
+	c:F10 ?= { # Garlas Kel
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_bulwar_proper
+			name = "1st Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_GARLAS_KEL
+				count = 5
+			}
+			save_scope_as = army_F10_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_F10_1
+		}
+
+		scope:general_F10_1 = { transfer_to_formation = scope:army_F10_1 }
+		
+	}
+	
+	c:F13 ?= { # Harpylen
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_bulwar_proper
+			name = "1st Winged Host"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_HARPYLEN
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_EAST_HARPY_HILLS
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_FIRANYALEN
+				count = 5
+			}
+			save_scope_as = army_F13_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_F13_1
+		}
+
+		scope:general_F13_1 = { transfer_to_formation = scope:army_F13_1 }
+	}
+	
+	c:F14 ?= { # Overclan
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_bulwar_proper
+			name = "1st Overclan Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_MEDBAHAR
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_MEGAIROUS
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_AQATBAHAR
+				count = 15
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_BAHAR_PROPER
+				count = 10
+			}
+		}
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_bulwar_proper
+			name = "Reuyel Fleet"
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+		
+			save_scope_as = fleet_F14_1
+		}
+		
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_2
+			save_scope_as = admiral_F14_1
+		}
+		scope:admiral_F14_1 = { transfer_to_formation = scope:fleet_F14_1 }
+		
+	}
+
+	c:F15 ?= { #Ovdal Tungr
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_bulwar_proper
+			name = "Copper Guard"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_OVDAL_TUNGR
+				count = 25
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				service_type = conscript
+				state_region = s:STATE_OVDAL_TUNGR
+				count = 10
+			}
+			save_scope_as = army_F15_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_F15_1
+		}
+
+		scope:general_F15_1 = { transfer_to_formation = scope:army_F15_1 }
+
+		#create_military_formation = {
+		#	type = fleet
+		#	hq_region = sr:region_bulwar_proper
+		#	name = "Copper Merchant Navy"
+		#
+		#	combat_unit = {
+		#		type = unit_type:combat_unit_type_frigate
+		#		state_region = s:STATE_OVDAL_TUNGR
+		#		count = 20
+		#	}
+		#	save_scope_as = fleet_F15_1
+		#}
+		#
+		#create_character = {
+		#	is_admiral = yes
+		#	commander_rank = commander_rank_1
+		#	save_scope_as = admiral_F15_1
+		#}
+		#scope:admiral_F15_1 = { transfer_to_formation = scope:fleet_F15_1 }
+		
+	}
+}

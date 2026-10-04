@@ -1,0 +1,731 @@
+﻿ig_intelligentsia = {
+	color = hsv{ 0.13 0.64 0.99 }
+	texture = "gfx/interface/icons/ig_icons/intelligensia.dds"
+	layer = "revolution_dynamic_intelligentsia"
+	index = 3
+
+	ideologies = {
+		ideology_liberal
+		ideology_anti_clerical
+		ideology_republican
+		ideology_anti_slavery
+	}
+	
+	character_ideologies = {
+		ideology_moderate
+		ideology_republican_leader
+		ideology_radical
+		ideology_reformer
+		ideology_sovereignist_leader
+		ideology_despotic_utopian
+		ideology_humanitarian
+	}
+
+	enable = {
+		always = yes
+	}
+
+	# Deprecated; use on_enable effect to assign traits instead
+	traits = {
+		ig_trait_propagandists
+		ig_trait_avant_garde
+		ig_trait_social_criticism
+	}
+
+	on_enable = {
+		ig:ig_intelligentsia = {
+			if = {
+				limit = {
+					owner = { c:A01 ?= this }
+				}
+				set_ig_trait = ig_trait:ig_trait_social_criticism
+				set_ig_trait = ig_trait:ig_trait_avant_garde
+				set_ig_trait = ig_trait:ig_trait_propagandists
+			}
+			else_if = {
+				limit = {
+					owner = { c:A03 ?= this }
+				}
+					remove_ideology = ideology_republican
+					add_ideology = ideology_constitutionalist
+
+					set_ig_trait = ig_trait:ig_trait_social_criticism
+					set_ig_trait = ig_trait:ig_trait_avant_garde
+					set_ig_trait = ig_trait:ig_trait_propagandists
+			}
+			else_if = {
+				limit = {
+					owner = { c:A33 ?= this }
+				}				
+				remove_ideology = ideology_anti_clerical
+
+				set_ig_trait = ig_trait:ig_trait_social_criticism
+				set_ig_trait = ig_trait:ig_trait_avant_garde
+				set_ig_trait = ig_trait:ig_trait_propagandists
+			}
+			else_if = {
+				limit = {
+					owner = { c:F14 ?= this }
+				}
+					set_interest_group_name = ig_voltoj
+					remove_ideology = ideology_republican
+					add_ideology = ideology_the_voltoj_machine
+
+					set_ig_trait = ig_trait:ig_trait_social_criticism
+					set_ig_trait = ig_trait:ig_trait_avant_garde
+					set_ig_trait = ig_trait:ig_trait_propagandists
+			}
+			else_if = {
+				limit = {
+					owner = { c:E01 ?= this }
+				}
+					set_interest_group_name = ig_lake_citizens
+					remove_ideology = ideology_anti_slavery
+					remove_ideology = ideology_anti_clerical
+					add_ideology = ideology_loyalist
+					add_ideology = ideology_triunic_citizens
+
+					set_ig_trait = ig_trait:ig_trait_xenophobia
+					set_ig_trait = ig_trait:ig_trait_avant_garde
+					set_ig_trait = ig_trait:ig_trait_bastion_of_democracy
+			}
+			else_if = {
+				limit = {
+					owner = {
+						OR = {
+							country_has_primary_culture = cu:sarda
+							country_has_primary_culture = cu:dolindhan
+						}
+					}
+				}
+					remove_ideology = ideology_republican
+					add_ideology = ideology_constitutionalist
+
+					set_ig_trait = ig_trait:ig_trait_social_criticism
+					set_ig_trait = ig_trait:ig_trait_avant_garde
+					set_ig_trait = ig_trait:ig_trait_propagandists
+			}
+			else_if = { # Intelligentsia > Kheionist philosophers
+				limit = {
+					owner = {
+						any_primary_culture = {
+						has_discrimination_trait = heritage_kheionai_ruinborn
+						}
+					}
+				}
+					set_interest_group_name = ig_kheionai_philosophers
+					remove_ideology = ideology_anti_clerical
+					add_ideology = ideology_kheionist
+
+					set_ig_trait = ig_trait:ig_trait_social_criticism
+					set_ig_trait = ig_trait:ig_trait_avant_garde
+					set_ig_trait = ig_trait:ig_trait_propagandists
+			}
+			else_if = {
+				limit = {
+					owner = { c:C14 ?= this }
+				}
+				add_ideology = ideology_hive_mind_liberal
+				set_ig_trait = ig_trait:ig_trait_social_criticism
+				set_ig_trait = ig_trait:ig_trait_avant_garde
+				set_ig_trait = ig_trait:ig_trait_propagandists
+			}
+			else = {
+				set_ig_trait = ig_trait:ig_trait_social_criticism
+				set_ig_trait = ig_trait:ig_trait_avant_garde
+				set_ig_trait = ig_trait:ig_trait_propagandists
+			}
+		}
+		#Hive Mind Obligate
+		if = {
+			limit = {
+				owner = { c:C14 ?= this }
+			}
+			ig:ig_intelligentsia = {
+				remove_ideology = ideology_anti_slavery
+				remove_ideology = ideology_anti_clerical
+				remove_ideology = ideology_republican
+				remove_ideology = ideology_liberal
+				add_ideology = ideology_hive_mind_obligate
+			}
+		}
+		if = {
+			limit = {
+				#OR = {
+					has_technology_researched = feminism
+					#has_technology_researched = tradition_of_equality
+				#}
+			}
+			every_interest_group = {
+				limit = {
+					has_ideology = ideology:ideology_liberal
+				}
+				remove_ideology = ideology_liberal
+				add_ideology = ideology_liberal_modern
+			}
+		}
+	}
+	on_disable = {}
+	priority_cultures = {}
+	on_character_ig_membership = {}
+
+	pop_potential = {
+		literacy_rate > 0.25
+		OR = {
+			is_pop_type = academics
+			is_pop_type = aristocrats
+			is_pop_type = bureaucrats
+			is_pop_type = capitalists
+			is_pop_type = clergymen
+			is_pop_type = clerks
+			is_pop_type = engineers
+			is_pop_type = archmages #anbennar
+			is_pop_type = mages #anbennar
+			is_pop_type = adventurers #anbennar
+		}
+	}
+
+	pop_weight = {
+		value = 0
+
+		#Anbennar
+		
+		add = {
+			desc = "POP_MAGES"
+			if = {
+				limit = {
+					OR = {
+						is_pop_type = archmages
+						is_pop_type = mages
+					}
+				}
+				value = 10
+				if = {
+					limit = { owner = { has_technology_researched = cannorian_magical_tradition } }
+					add = 30 
+				}
+				if = {
+					limit = { owner = { has_technology_researched = bardic_magical_tradition } }
+					add = 30 
+				}
+				if = {
+					limit = { 
+						owner = {
+							OR = {
+								has_technology_researched = chi_cultivation_magical_tradition 
+								#has_technology_researched = druidic_magical_tradition 
+								has_technology_researched = shamanism_magical_tradition
+								has_technology_researched = elemental_magical_tradition 
+							}
+						}
+					}
+					add = -30 
+				}
+				if = {
+					limit = { owner = { has_variable = arakeprun_shadowweaver_reform } }
+					add = 65 
+				}
+				if = {
+					limit = { owner = { has_law = law_type:law_state_religion } }
+					multiply = 0.5
+				}
+				else_if = {
+					limit = { owner = { has_law = law_type:law_total_separation } }
+					multiply = 1.5
+				}
+				else_if = {
+					limit = { owner = { has_law = law_type:law_state_atheism } }
+					multiply = 2
+				}
+			}
+		}
+
+		add = {
+			desc = "POP_ADVENTURERS"
+			if = {
+				limit = { 
+					is_pop_type = adventurers
+				}
+				value = 50
+			}
+		}
+	
+		add = {
+			desc = "POP_ACADEMICS"
+			if = {
+				limit = {
+					is_pop_type = academics
+				}
+				value = 250
+			}
+		}
+
+		add = {
+			desc = "POP_BUREAUCRATS"
+			if = {
+				limit = {
+					is_pop_type = bureaucrats
+				}
+				value = 150
+			}
+		}
+
+		add = {
+			desc = "POP_CLERKS"
+			if = {
+				limit = {
+					is_pop_type = clerks
+				}
+				value = 50
+			}
+		}
+
+		add = {
+			desc = "POP_ARISTOCRATS"
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+					owner = {
+						has_technology_researched = academia
+					}
+				}
+				if = {
+					limit = {
+						owner = {
+							has_law_or_variant = law_type:law_hereditary_bureaucrats
+						}
+					}
+					value = 75
+				}
+				else = {
+					value = 25
+				}
+			}
+		}
+		
+		add = {
+			desc = "ADMINISTRATION_ROLE"
+			if = {
+				limit = {
+					OR = {
+						is_pop_type = aristocrats
+						is_pop_type = clergymen
+						is_pop_type = capitalists
+						is_pop_type = archmages
+						is_pop_type = mages
+					}
+					OR = {
+						pop_employment_building_group = bg_service
+						pop_employment_building_group = bg_arts
+						pop_employment_building_group = bg_government
+						pop_employment_building_group = bg_private_infrastructure
+						pop_employment_building_group = bg_financial_districts
+					}
+				}
+				value = 100
+			}
+		}
+		
+		if = {
+			limit = {
+				literacy_rate >= 0.50
+			}
+			add = {
+				desc = "POP_LITERACY"
+				value = literacy_rate
+				multiply = 20
+			}
+		}
+
+		multiply = {
+			desc = "LEADER_POPULARITY"
+			scope:interest_group = {
+				leader ?= {
+					value = popularity
+					multiply = 0.0025
+					add = 1
+					max = 1.25
+					min = 0.75
+				}
+			}
+		}
+
+		multiply = {
+			desc = "decentralized_power"
+			value = 1.0
+
+			if = {
+				limit = {
+					owner = {
+						is_country_type = decentralized
+					}
+				}
+				value = 0.0
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = yes
+				}
+			}
+			multiply = {
+				desc = "IN_GOVERNMENT_ATTRACTION"
+				value = 1
+				add = scope:interest_group.modifier:interest_group_in_government_attraction_mult
+				min = 0
+			}
+		}
+		
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = yes
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_LOYALISTS"
+				value = pop_loyalist_fraction
+				divide = 4
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = no
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_RADICALS"
+				value = pop_radical_fraction
+				divide = 4
+				add = 1
+			}
+		}
+	}
+
+	monarch_weight = {
+		value = 1
+		# Monarch is not likely to adopt a marginal IG
+		if = {
+			limit = {
+				ig_counts_as_marginal = yes
+			}
+			multiply = {
+				value = 0.1
+			}
+		}
+		# Monarch is more likely to adopt a Powerful IG
+		if = {
+			limit = {
+				is_powerful = yes
+			}
+			multiply = {
+				value = 2
+			}
+		}
+		# Much more likely with Technocracy
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_technocracy
+				}
+			}
+			multiply = {
+				value = 3
+			}
+		}
+		# More likely with Appointed Bureaucrats
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_appointed_bureaucrats
+				}
+			}
+			multiply = {
+				value = 1.5
+			}
+		}
+		# Impossible without Empiricism
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_technology_researched = empiricism }
+				}
+			}
+			multiply = {
+				value = 0
+			}
+		}
+	}
+
+	agitator_weight = {
+		# Agitators more likely to come from populist IG's rather than elitist
+		value = 0.75
+		# Agitators will never be part of a marginalized IG
+		if = {
+			limit = {
+				owner.ig:ig_intelligentsia ?= {
+					ig_counts_as_marginal = yes
+				}
+			}
+			multiply = {
+				value = 0
+			}
+		}
+	}
+
+	commander_weight = {
+		value = 1.0
+	}
+	
+	magnate_weight = {
+		value = 1.0
+	}	
+
+	executive_weight = {
+		value = 2.0
+	}
+
+	noble_chance = {
+		value = 0.5
+	}
+
+	female_commander_chance = {
+		value = 0.0
+		#Anbennar
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+	}
+
+	female_executive_chance = {
+		value = 0.0
+		#Anbennar
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+	}
+
+	female_politician_chance = {
+		value = 0.0
+		#Anbennar
+		if = {
+			limit = {
+				owner = { #variable from country history gets set after IGs being loaded, this need to be done for it to work
+					OR = {
+						c:F13 ?= this
+						c:L33 ?= this
+						c:L31 ?= this
+						c:L54 ?= this
+						c:L55 ?= this
+						c:L29 ?= this
+						c:A11 ?= this
+						c:L22 ?= this
+					}
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+					NOT  = { has_technology_researched = tradition_of_equality }
+				}
+
+			}
+			add = {
+				value = 0.035
+			}
+		}
+	}
+
+	female_agitator_chance = {
+		value = 0.035
+		#Anbennar
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+
+			}
+			add = {
+				value = 0.465
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_own_property
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.035
+			}
+		}	
+		
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_in_the_workplace
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar 
+				}
+
+			}
+			add = {
+				value = 0.035
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.035
+			}
+		}		
+	}
+
+	# Multiplier applied to the weight for an appropriate commander will be selected from the character pool to lead the IG
+	# root = interest group
+	commander_leader_weight = {
+		value = 0.5
+	}
+	
+	# Multiplier applied to the weight for an appropriate magnate will be selected from the character pool to lead the IG
+	# root = interest group
+	magnate_leader_weight = {
+		value = 0.5
+		# if = {
+		# 	limit = {
+		# 		c:JAP ?= owner
+		# 		NOT = {
+		# 			has_variable = japan_restoration_complete
+		# 		}
+		# 	}
+		# 	add = 5
+		# }
+	}	
+
+	# Multiplier applied to the weight for an appropriate executive will be selected from the character pool to lead the IG
+	# root = interest group
+	executive_leader_weight = {
+		value = 0.5
+	}
+}

@@ -1,0 +1,56 @@
+﻿je_spoorland_spoor = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	group = je_group_historical_content
+
+	complete = {
+		is_subject = no
+		is_at_war = no
+		exists = c:B98
+		c:B98 ?= {
+			relations:root >= relations_threshold:cordial
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = spoorland.1 }
+	}
+
+	weight = 100
+
+	transferable = no
+
+	invalid = {
+		NOT = { exists = c:B94 }
+	}
+}
+
+je_spoorland_concord = {
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	group = je_group_historical_content
+
+	complete = {
+		exists = c:B94
+		c:B94 ?= {
+			relations:root >= relations_threshold:cordial
+			is_subject = no
+			is_at_war = no
+		}
+	}
+
+	on_complete = {
+		custom_tooltip = spoorland_je_tt
+	}
+
+	invalid = {
+		OR = {
+			NOT = { exists = c:B94 }
+			c:B94 ?= { is_subject = yes }
+		}
+	}
+
+	weight = 100
+
+	transferable = no
+}

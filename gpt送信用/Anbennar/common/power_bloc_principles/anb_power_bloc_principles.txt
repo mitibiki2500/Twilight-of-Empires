@@ -1,0 +1,60 @@
+﻿### See power_bloc_principle_groups for grouping, primary groups for identities etc.
+
+### Magical Economics
+
+principle_magical_economics_1 = {
+	icon = "gfx/interface/icons/principles_icons/magical_economy.dds"
+	background = "gfx/interface/icons/principles_icons/principle_tier_1.dds"
+
+	visible = {
+		has_dlc_feature = power_bloc_features
+		NOT = { has_law = law_type:law_traditional_magic_banned }
+		NOT = { has_law = law_type:law_nation_of_artifice }
+	}
+	
+	member_modifier = {
+		# New PM for Manor Houses unlocked via trigger	
+		country_magical_expertise_mult = 0.25	#added just so theres something useful for members -Jay
+	}
+	
+	ai_weight = {
+		value = 100
+
+		if = {
+			limit = {
+				has_law = law_type:law_nation_of_magic
+			}
+			add = 500
+		}
+	}
+}
+
+principle_magical_economics_2 = {
+	icon = "gfx/interface/icons/principles_icons/magical_economy.dds"
+	background = "gfx/interface/icons/principles_icons/principle_tier_2.dds"
+	
+	member_modifier = {
+		country_magical_expertise_mult = 0.25
+		state_archmages_investment_pool_contribution_add = 0.10
+		# New PM for Manor Houses/Financial District/Company Headquarters unlocked via trigger
+	}	
+	
+	ai_weight = {
+		value = 1000 # AI prefers upgrading groups it has already picked to unlocking new ones
+	}
+}
+
+principle_magical_economics_3 = {
+	icon = "gfx/interface/icons/principles_icons/magical_economy.dds"
+	background = "gfx/interface/icons/principles_icons/principle_tier_3.dds"
+	
+	member_modifier = {
+		country_magical_expertise_mult = 0.25
+		state_archmages_investment_pool_contribution_add = 0.10
+		building_mage_tower_throughput_add = 0.2
+	}
+
+	ai_weight = {
+		value = 1000 # AI prefers upgrading groups it has already picked to unlocking new ones
+	}
+}

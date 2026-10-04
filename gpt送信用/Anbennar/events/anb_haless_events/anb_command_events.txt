@@ -1,0 +1,161 @@
+﻿namespace = anb_command_events
+
+anb_command_events.1 = { # Starting event
+	type = country_event
+	event_image = {
+		video = "unspecific_fire"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	title = anb_command_events.1.t
+	desc = anb_command_events.1.d
+	flavor = anb_command_events.1.f
+	duration = 3
+	
+	option = {
+		default_option = yes
+		name = anb_command_events.1.a
+		ai_chance = {
+			base = 20
+			}
+		add_modifier = {
+				name = anb_command_events.1.a.m
+				years = 5
+		}
+	}
+	
+	option = {
+		name = anb_command_events.1.b
+		ai_chance = {
+			base = 40
+			}
+
+		add_modifier = {
+				name = anb_command_events.1.b.m
+				years = 5
+		}
+	}
+	
+	
+	option = {
+		name = anb_command_events.1.c
+		ai_chance = {
+			base = 40
+			}
+		add_modifier = {
+				name = anb_command_events.1.c.m
+				years = 5
+		}
+	}
+	after = {
+		random_list = {
+			1 = { trigger_event = { id = anb_command_events.2 days = 3655 popup = yes } trigger_event = { id = anb_command_events.3 days = 7670 popup = yes } }
+			1 = { trigger_event = { id = anb_command_events.2 days = 3944 popup = yes } trigger_event = { id = anb_command_events.3 days = 7700 popup = yes } }
+			1 = { trigger_event = { id = anb_command_events.2 days = 4122 popup = yes } trigger_event = { id = anb_command_events.3 days = 7730 popup = yes } }
+			1 = { trigger_event = { id = anb_command_events.2 days = 4311 popup = yes } trigger_event = { id = anb_command_events.3 days = 7770 popup = yes } }
+			1 = { trigger_event = { id = anb_command_events.2 days = 4533 popup = yes } trigger_event = { id = anb_command_events.3 days = 7870 popup = yes } }
+			#1 = { trigger_event = { id = anb_command_events.2 days = 5 popup = yes } trigger_event = { id = anb_command_events.3 days = 10 popup = yes } }
+		}
+	}
+	
+}
+
+anb_command_events.2 = { # Mid event
+	type = country_event
+	event_image = {
+		video = "southamerica_war_civilians"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	title = anb_command_events.2.t
+	desc = anb_command_events.2.d
+	flavor = anb_command_events.2.f
+	duration = 3
+	
+	trigger = {
+		NOT = { exists = c:R21 }
+	}
+	
+	option = {
+		name = anb_command_events.2.a
+		default_option = yes
+		ai_chance = {
+			base = 33
+			}
+		add_modifier = {
+				name = anb_command_events.2.a.m
+				years = 5
+		}
+	}
+	option = {
+		name = anb_command_events.2.b
+		ai_chance = {
+			base = 33
+			}
+		add_modifier = {
+				name = anb_command_events.2.b.m
+				years = 5
+		}
+	}
+	
+	option = {
+		name = anb_command_events.2.c
+		ai_chance = {
+			base = 33
+			}
+		add_modifier = {
+				name = anb_command_events.2.c.m
+				years = 5
+		}
+	}
+}
+
+anb_command_events.3 = { # Late event
+	type = country_event
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	title = anb_command_events.3.t
+	desc = anb_command_events.3.d
+	flavor = anb_command_events.3.f
+	duration = 3
+	
+	trigger = {
+		NOT = { exists = c:R21 }
+	}
+	
+	option = {
+		name = anb_command_events.3.a
+		default_option = yes
+		ai_chance = {
+			base = 33
+			}
+		add_modifier = {
+				name = anb_command_events.3.a.m
+				years = 2
+		}
+	}
+	option = {
+		name = anb_command_events.3.b
+		ai_chance = {
+			base = 33
+			}
+		add_modifier = {
+				name = anb_command_events.3.b.m
+				years = 2
+		}
+	}
+	
+	option = {
+		name = anb_command_events.3.c
+		ai_chance = {
+			base = 33
+			}
+		add_modifier = {
+				name = anb_command_events.3.c.m
+				years = 2
+		}
+	}
+}

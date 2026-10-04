@@ -1,0 +1,39 @@
+﻿alecand_reclamation = {
+	is_shown = {
+		owns_entire_state_region = STATE_CENTRAL_KHEIONS
+		owns_entire_state_region = STATE_NORTHERN_KHEIONS
+		owns_entire_state_region = STATE_SOUTHERN_KHEIONS
+		owns_entire_state_region = STATE_SOUTIKAN
+		owns_entire_state_region = STATE_NORTIKAN
+		NOT = { has_variable = alebhen_land_reclaimer }
+		NOT = { has_global_variable = alecand_reclaimation_done }
+	}
+
+	possible = {
+		has_technology_researched = punch_card_artificery
+		bureaucracy > 200
+	}
+	
+	when_taken = {
+		add_modifier = {
+			name = je_modifier_alecand_reclaiming_land
+			days = -1 # permanent until removed
+		}
+		add_journal_entry = { type = je_alecand_reclamation }
+		set_variable = alebhen_land_reclaimer
+	}
+
+	ai_chance = {
+		value = 5
+		if = {
+			limit = {
+				OR = {
+					is_diplomatic_play_committed_participant = yes
+					is_at_war = yes
+				}
+			}
+			
+			add = -1000
+		}		
+	}
+}

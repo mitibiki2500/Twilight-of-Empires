@@ -1,0 +1,91 @@
+﻿COUNTRIES = {
+    c:C14 ?= {
+        effect_starting_technology_tier_6_tech = yes
+		add_technology_researched = gestalt_consciousness
+        effect_starting_politics_traditional = yes
+		
+		activate_law = law_type:law_hive_mind
+		activate_law = law_type:law_singular_intelligence
+		activate_law = law_type:law_drone_operatives
+		activate_law = law_type:law_effelai_song
+		activate_law = law_type:law_hub_network
+		activate_law = law_type:law_biomass_mobilization
+		
+		activate_law = law_type:law_hive_economy
+		activate_law = law_type:law_isolationism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_organic_optimization
+		activate_law = law_type:law_innovative_contemplations
+		
+		activate_law = law_type:law_subsumed_will
+		activate_law = law_type:law_infertile_spawn
+		activate_law = law_type:law_drone_maintenance
+		activate_law = law_type:law_drone_labour
+		activate_law = law_type:law_mechanim_dismantling
+		activate_law = law_type:law_mechanim_creation_banned
+		
+		ig:ig_rural_folk = {
+			add_ruling_interest_group = yes
+		}
+		
+		active_law:lawgroup_economic_system ?= { #Effelai is a magical plant
+			add_amendment = {
+				type = amendment_verdant_nature
+				sponsor = PREV.ig:ig_rural_folk
+			}
+		}
+		
+		add_journal_entry = { type = je_effelai_reclamation }
+		
+		#Magic
+		add_technology_researched = druidic_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_mass_plant_growth
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 5
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 5
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 5
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_one_with_the_tree
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 5
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 5
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 5
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_modern_miracle
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 5
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 5
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 5
+		}
+    }
+}

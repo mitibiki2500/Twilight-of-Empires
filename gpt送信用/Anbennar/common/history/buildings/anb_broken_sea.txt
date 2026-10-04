@@ -1,0 +1,586 @@
+﻿BUILDINGS={
+	s:STATE_HJORDAL={
+		region_state:B61={
+			create_building={
+				building="building_wheat_farm"
+				add_ownership={
+					building={
+						type="building_wheat_farm"
+						country="c:B61"
+						levels=1
+						region="STATE_HJORDAL"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_no_secondary" }
+			}
+			create_building={
+				building="building_tobacco_plantation"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:B61"
+						levels=3
+						region="STATE_HJORDAL"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tobacco_plantation" "pm_no_enhancements" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					building={
+						type="building_fishing_wharf"
+						country="c:B61"
+						levels=1
+						region="STATE_HJORDAL"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_unrefrigerated" "pm_fishing_trawlers" }
+			}
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:B61"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:B61"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
+			}
+            create_building={
+				building="building_iron_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:A06"
+						levels=1
+						region="STATE_GNOMISH_PASS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+		}
+		region_state:G06={
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:G06"
+						levels=2
+						region="STATE_HJORDAL"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_no_equipment" "pm_road_carts" "pm_no_hardwood" }
+			}
+		}
+		region_state:G05={
+			create_building={
+				building="building_iron_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:A06"
+						levels=2
+						region="STATE_ODDANROY"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:G05"
+						levels=1
+						region="STATE_HJORDAL"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_no_equipment" "pm_road_carts" "pm_no_hardwood" }
+			}
+		}
+	}
+
+	s:STATE_FIORGAM={
+		region_state:A04={
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:A04"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
+			}
+		}
+		region_state:A03={
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:A03"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_whaling_station"
+				add_ownership={
+					building={
+						type="building_whaling_station"
+						country="c:A03"
+						levels=1
+						region="STATE_FIORGAM"
+					}
+				}
+				reserves=1
+				
+			}
+		}
+	}
+
+	s:STATE_FLOTTNORD={
+		region_state:A04={
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:A04"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
+			}
+		}
+	}
+
+	s:STATE_FLOTTNORD={
+		region_state:G06={
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					building={
+						type="building_fishing_wharf"
+						country="c:G06"
+						levels=1
+						region="STATE_FLOTTNORD"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_unrefrigerated" "pm_fishing_trawlers" }
+			}
+			create_building={
+				building="building_iron_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:G06"
+						levels=1
+						region="STATE_HJORDAL"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+		}
+	}
+
+	s:STATE_DALAIRRSILD={
+		region_state:G08={
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:A06"
+						levels=2
+						region="STATE_ODDANROY"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_no_equipment" "pm_road_carts" "pm_no_hardwood" }
+			}
+		}
+		region_state:G06={
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:G06"
+						levels=2
+						region="STATE_DALAIRRSILD"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_no_equipment" "pm_road_carts" "pm_no_hardwood" }
+			}
+		}
+	}
+
+	s:STATE_NYHOFN={
+		region_state:G07 = {
+			create_building={
+				building="building_whaling_station"
+				add_ownership={
+					building={
+						type="building_whaling_station"
+						country="c:G07"
+						levels=1
+						region="STATE_NYHOFN"
+					}
+				}
+				reserves=1
+				
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:G07"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+		}
+	}
+
+	s:STATE_SJAVARRUST={
+		region_state:B60 = {
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:B60"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+		}
+	}
+
+	s:STATE_ANHOLTIR={
+		region_state:B60 = {
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:B60"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+		}
+	}
+
+	s:STATE_FARPLOTT={
+		region_state:B60 = {
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:B60"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+		}
+	}
+
+	s:STATE_KARNEL = {
+		region_state:B60 = {
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:B60"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+            create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:B60"
+						levels=1
+						region="STATE_KARNEL"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_no_equipment" "pm_road_carts" "pm_no_hardwood" }
+			}
+		}
+	}
+
+	s:STATE_MITTANWEK={
+		region_state:B60 = {
+			create_building={
+				building="building_evikeraat"
+				add_ownership={
+					country={
+						country="c:B60"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_building_evikeraat_low" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:B60"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+            create_building={
+                building="building_government_administration"
+                add_ownership={
+                    country={
+                        country="c:B60"
+                        levels=1
+                    }
+                }
+            }
+            create_building={
+                building="building_shipyard"
+                add_ownership={
+                    building={
+                        type="building_shipyard"
+                        country="c:B60"
+                        levels=1
+                        region="STATE_MITTANWEK"
+                    }
+                }
+                reserves=1
+                activate_production_methods={ "pm_basic_shipbuilding" }
+            }
+            create_building={
+                building="building_fishing_wharf"
+				add_ownership={
+					building={
+						type="building_fishing_wharf"
+						country="c:B60"
+						levels=2
+						region="STATE_MITTANWEK"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_unrefrigerated" "pm_fishing_trawlers" }
+            }
+		}
+	}
+
+	s:STATE_DALAIREY_WASTES={
+		region_state:A06 = {
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:A06"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+			}
+		}
+	}
+    
+    s:STATE_FARNOR={
+        region_state:B62 = {
+            create_building={
+                building="building_port"
+				add_ownership={
+					country={
+						country="c:B62"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_anchorage" }
+            }
+            create_building={
+                building="building_fishing_wharf"
+				add_ownership={
+					building={
+						type="building_fishing_wharf"
+						country="c:B62"
+						levels=1
+						region="STATE_FARNOR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_unrefrigerated" "pm_fishing_trawlers" }
+            }
+            create_building={
+                building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:B62"
+						levels=1
+						region="STATE_FARNOR"
+					}
+                    building={
+						type="building_financial_district"
+						country="c:B62"
+						levels=1
+						region="STATE_FARNOR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_no_equipment" "pm_road_carts" "pm_no_hardwood" }
+            }
+        }
+    }
+
+    s:STATE_TRITHEMAR = {
+        region_state:B59 = {
+            create_building={
+                building="building_port"
+                add_ownership={
+                    country={
+                        country="c:B59"
+                        levels=1
+                    }
+                }
+                reserves=1
+                activate_production_methods={ "pm_basic_port" }
+            }
+            create_building={
+                building="building_government_administration"
+                add_ownership={
+                    country={
+                        country="c:B59"
+                        levels=2
+                    }
+                }
+                reserves=1
+                activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+            }
+            create_building={
+                building="building_shipyard"
+                add_ownership={
+                    building={
+                        type="building_shipyard"
+                        country="c:B59"
+                        levels=1
+                        region="STATE_TRITHEMAR"
+                    }
+                }
+                reserves=1
+                activate_production_methods={ "pm_basic_shipbuilding" }
+            }
+            create_building={
+                building="building_wheat_farm"
+                add_ownership={
+                    building={
+                        type="building_wheat_farm"
+                        country="c:B59"
+                        levels=2
+                        region="STATE_TRITHEMAR"
+                    }
+                }
+                reserves=1
+                activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_no_secondary" }
+            }
+            create_building={
+				building="building_naval_administration"
+				add_ownership={
+					country={
+						country="c:B59"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+            create_building={
+                building="building_whaling_station"
+                add_ownership={
+                    building={
+                        type="building_whaling_station"
+                        country="c:B59"
+                        levels=1
+                        region="STATE_TRITHEMAR"
+                    }
+                }
+                reserves=1
+                
+            }
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					building={
+						type="building_fishing_wharf"
+						country="c:B59"
+						levels=1
+						region="STATE_TRITHEMAR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_unrefrigerated" "pm_fishing_trawlers" }
+			}
+			create_building={
+					building="building_logging_camp"
+					add_ownership={
+						building={
+							type="building_logging_camp"
+							country="c:B59"
+							levels=1
+							region="STATE_TRITHEMAR"
+						}
+						
+					}
+					reserves=1
+					activate_production_methods={ "pm_saw_mills" "pm_no_equipment" "pm_road_carts" "pm_no_hardwood" }
+			}
+        }
+    }
+
+    s:STATE_SILDARBAD = {
+        region_state:B62 = {
+        }
+    }
+
+}

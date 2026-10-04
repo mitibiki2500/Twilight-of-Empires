@@ -1,0 +1,118 @@
+﻿### Klerechend character template file ###
+
+C46_Pelojithanes_Ipparos = {
+	#Ruler of Klerechend and leader of the Kleyeren Aristocrats, who want to forge a new country rather than attempting to gain control of Ameion. The determined opponent of Eranbanes of Degolidir, he absolutely despises him. Known for being very arrogant and self-assured - he thinks that he's basically the archetypical Kleyeren statesmen, as good as any Kheionai before him.
+	first_name = Pelojithanes
+	last_name = Ipparos
+	historical = yes
+	ruler = yes
+	# age = 43
+	birth_date = 1777.1.1
+	interest_group = ig_landowners
+	ig_leader = yes
+	ideology = ideology_traditionalist
+	culture = cu:klereyen
+	religion = rel:atheist
+	dna = dna_pelojithanes_ipparos
+	traits = {
+		arrogant 
+		imperious 
+		experienced_political_operator
+	}
+}
+
+C46_Iseranike_Andrivos = {
+	#The Andrivós family (name means of the road?) is very wealthy, a key ally of Pelojithanes position. While Pelojithanes is famously arrogant and confident in his abilities, Iseranike has a slightly softer demeanour, the carrot to his stick.
+	first_name = Iseranike
+	last_name = Andrivos
+	historical = yes
+	female = yes
+	# age = 43
+	birth_date = 1777.1.1
+	interest_group = ig_landowners
+	ig_leader = yes
+	ideology = ideology_moderate
+	culture = cu:klereyen
+	religion = rel:atheist
+	traits = {
+		tactful 
+		basic_diplomat 
+		grifter
+	}
+}
+
+C46_Eranbanes_of_Degolidir = {
+	#The political leader of the Fotistrépei, who want to go and invade Ameion and take them over. Eranbanes represents the Fotistrépei in the political sphere. He was the one who pioneered the political and legal standpoint that the aristocrats' declaration of independence was illegal, and that Klerechend was still a region in rebellion against the government of Ameion. Should Camnathos' efforts in the military prevail, Eranbanes will take over.
+	first_name = Eranbanes
+	last_name = of_Degolidir
+	historical = yes
+	# age = 51
+	birth_date = 1769.1.1
+	interest_group = ig_armed_forces
+	ig_leader = yes
+	ideology = ideology_reformer
+	culture = klereyen
+	religion = rel:atheist
+	traits = {
+		celebrity_commander 
+		experienced_political_operator 
+		ambitious
+	}
+}
+
+C46_Camnathos_of_Bukenthia = {
+	#A firebrand among the Fotistrépei, who is constantly making speeches and riling up the troops, reminding them of what is rightfully theirs. A soldier through and through.
+	first_name = Camnathos
+	last_name = of_Bukenthia
+	historical = yes
+	# age = 28
+	birth_date = 1792.1.1
+	interest_group = ig_armed_forces
+	is_agitator = yes
+	ideology = ideology_reformer
+	culture = cu:klereyen
+	religion = rel:atheist
+	traits = {
+		inspirational_orator 
+		romantic 
+		brave
+	}
+}
+
+C46_Varanes_Odeinkaulos = {
+	#Name means "Song Slave". Born a skilled divination mage, so snuck into Korrimutren and tried to commune with the Fateweaver - though he was not killed the experience seemed to completely cut off his connection to any divination abilities and drove him mad for years. He eventually recovered, but what the fateweaver showed him is unknown, but it clearly guides and motivates his every action. Secretly wants to become the Final Emperor of Taychend, or something - maybe secretly believes in taychendi hero worship? Or Black Doctrine lmao
+	first_name = Varanes 
+	last_name = Odeinkaulos
+	historical = yes
+	# age = 25
+	birth_date = 1795.1.1
+	interest_group = ig_armed_forces
+	is_general = yes
+	ideology = ideology_royalist
+	culture = cu:klereyen
+	religion = rel:atheist
+	traits = {
+		brave 
+		ambitious 
+		psychological_affliction
+	}
+}
+
+C46_Ultatam_Paruchuri = {
+	#The leader of yodhanpir mercenaries hired by the aristocrats, basically the only thing thats stopped the Fotistrépei from taking over. Ultatam is a total asshole, and not a nice person to be employing, but there's not much the aristocrats can do. 
+	first_name = Ultatam 
+	last_name = Paruchuri
+	historical = yes
+	# age = 48
+	birth_date = 1772.1.1
+	interest_group = ig_landowners
+	is_general = yes
+	ideology = ideology_jingoist_leader
+	culture = cu:klereyen
+	religion = rel:atheist
+	traits = {
+		imposing 
+		cruel 
+		opium_addiction
+	}
+}

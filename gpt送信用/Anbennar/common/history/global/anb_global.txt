@@ -1,0 +1,332 @@
+﻿GLOBAL = {
+
+	add_contextless_journal_entry = je_neratica_minaria
+
+	# every_country = {
+	# 	limit = {
+	# 		NOT = { is_country_type = decentralized }
+	# 	}
+
+		#every_scope_state = {
+		#	set_quest_target = yes
+		#}
+		#add_journal_entry = { type = je_shadow_over_ynnsmouth }
+		#trigger_event = {
+		#	id = shadow_over_ynnsmouth.1
+		#}
+
+		#setup_racial_flags = yes
+		
+		# trigger_event = {
+		# 	id = anb_initialization.1
+		# 	days = 1
+		# }
+		
+	# }
+	every_country = {
+		initialize_traditions = yes
+	
+		initialize_spells = yes
+		
+		trigger_event = { id = anb_magical_expertise.1 days = 1 }
+	}
+
+	every_country = {
+		multiple_primary_culture_enforcement_country = yes
+	}
+
+ 	every_country = { #Nationl Journal Entry GUI element, Add in countries eligible for your JE for it to display in the select screen GUI.
+	#If you intend your JE to only be avalible for certain tags then it should go here
+		limit = {
+			OR = {
+				this ?= c:A01 #Anbennar
+				this ?= c:A04 #Northern League
+				this ?= c:A15 #Portnamm
+				this ?= c:C39 #Ameion
+				this ?= c:E01 #Kalsyto
+				this ?= c:F14 #Overclan
+				this ?= c:B91 #Ranger Republic
+				this ?= c:D15 #Obsidian Legion
+				this ?= c:Y03 #Tianlou
+				this ?= c:B15 #Torrisheah
+				#Uneasy Peace
+				this ?= c:B41 #Plumstead
+				this ?= c:B34 #Beggaston
+				this ?= c:B42 #Tiru Moine
+				this ?= c:D03 #Dur Vazhatun
+				this ?= c:A14 #Small Country
+				this ?= c:A02 #Vivin Empire
+				this ?= c:B13 #Varionail
+				this ?= c:L45 #Ardimyan Republic
+				#Ynnsmouth Crisis
+				this ?= c:B98 #Trollsbay Concord
+				this ?= c:B29 #Sarda Empire
+				this ?= c:B39 #Bosancovac
+				this ?= c:B49 #Dragon Dominion
+				this ?= c:D06 #kuxhezte/darkscale
+				this ?= c:L29 #naleni
+			}		
+		}
+		set_variable = national_journal_entry
+		#Add your country to the below variable list to add them National Journal Entry ToolTip. Keep this in country name alphabetical order, it matters for the display.
+		#A
+		add_to_variable_list = { name = national_journal_entry_list target = c:C39 } #Ameion
+		add_to_variable_list = { name = national_journal_entry_list target = c:A01 } #Anbennar
+    	add_to_variable_list = { name = national_journal_entry_list target = c:L45 } #Ardimyan Republic
+		#B
+		add_to_variable_list = { name = national_journal_entry_list target = c:B34 } #Beggaston
+		add_to_variable_list = { name = national_journal_entry_list target = c:B39 } #Bosancovac
+		#C
+		#D
+		add_to_variable_list = { name = national_journal_entry_list target = c:B49 } #Dragon Dominion
+		add_to_variable_list = { name = national_journal_entry_list target = c:D03 } #Dur Vazhatun
+		#E
+		#F
+		#G
+		#H
+		#I
+		#J
+		#K
+		add_to_variable_list = { name = national_journal_entry_list target = c:E01 } #Kalsyto
+		add_to_variable_list = { name = national_journal_entry_list target = c:D06 } #kuxhezte/darkscale
+		#L
+		#M
+		#N
+		add_to_variable_list = { name = national_journal_entry_list target = c:A04 } #Northern League
+		add_to_variable_list = { name = national_journal_entry_list target = c:L29 } #Naleni
+		#O
+		add_to_variable_list = { name = national_journal_entry_list target = c:D15 } #Obsidian Legion
+		add_to_variable_list = { name = national_journal_entry_list target = c:F14 } #Overclan		
+		#P
+		add_to_variable_list = { name = national_journal_entry_list target = c:B41 } #Plumstead
+		add_to_variable_list = { name = national_journal_entry_list target = c:A15 } #Portnamm
+		#Q
+		#R
+		add_to_variable_list = { name = national_journal_entry_list target = c:B91 } #Ranger Republic		
+		#S
+		add_to_variable_list = { name = national_journal_entry_list target = c:B29 } #Sarda Empire
+		add_to_variable_list = { name = national_journal_entry_list target = c:A14 } #Small Country
+		add_to_variable_list = { name = national_journal_entry_list target = c:B94 } #Spoorland
+		#T
+		add_to_variable_list = { name = national_journal_entry_list target = c:Y03 } #Tianlou
+		add_to_variable_list = { name = national_journal_entry_list target = c:B42 } #Tiru Moine		
+		#add_to_variable_list = { name = national_journal_entry_list target = c:B15 } #Torrisheah		
+		add_to_variable_list = { name = national_journal_entry_list target = c:B98 } #Trollsbay Concord		
+		#U
+		#V
+		#add_to_variable_list = { name = national_journal_entry_list target = c:B13 } #Varionail	
+		add_to_variable_list = { name = national_journal_entry_list target = c:A02 } #Vivin Empire	
+		#W
+		#X
+		#Y
+		#Z
+	}	
+			
+	
+	every_country = { #Regional Journal Entry GUI element, Add in countries eligible for your JE to display in the  select screen GUI. 
+	#JE's triggerd by state ownership, or are present for an entire region/large number of tags go here
+		limit = {
+			OR = {
+				#Al Dwarvorar JE
+				country_has_primary_culture = cu:quartz_dwarf
+				# country_has_primary_culture = cu:sapphire_dwarf
+				# country_has_primary_culture = cu:ramsteel_dwarf
+				country_has_primary_culture = cu:kronium_dwarf
+				country_has_primary_culture = cu:platinum_dwarf
+				country_has_primary_culture = cu:agate_dwarf
+				# country_has_primary_culture = cu:mithril_dwarf
+				# country_has_primary_culture = cu:dagrite_dwarf
+				country_has_primary_culture = cu:opal_dwarf
+				# country_has_primary_culture = cu:lead_dwarf
+				country_has_primary_culture = cu:basalt_dwarf
+				# country_has_primary_culture = cu:garnet_dwarf
+				# country_has_primary_culture = cu:flint_dwarf
+				country_has_primary_culture = cu:diamond_dwarf
+				# country_has_primary_culture = cu:marble_dwarf
+				# country_has_primary_culture = cu:cobalt_dwarf
+				country_has_primary_culture = cu:titanium_dwarf
+				# country_has_primary_culture = cu:pyrite_dwarf
+				country_has_primary_culture = cu:citrine_dwarf
+				country_has_primary_culture = cu:gold_dwarf
+				country_has_primary_culture = cu:topaz_dwarf
+				country_has_primary_culture = cu:amber_dwarf
+				country_has_primary_culture = cu:peridot_dwarf
+				country_has_primary_culture = cu:granite_dwarf
+				country_has_primary_culture = cu:amethyst_dwarf
+				country_has_primary_culture = cu:emerald_dwarf
+				country_has_primary_culture = cu:jade_dwarf
+				# country_has_primary_culture = cu:malachite_dwarf
+				#Command Unification JE
+				can_form_nation = R21
+				#Dalaire Unification JE
+				this ?= c:A06
+				country_has_primary_culture = cu:dalairey
+				country_has_primary_culture = cu:vrendzani_kobold
+				country_has_primary_culture = cu:themarian
+				country_has_primary_culture = cu:teira				
+				#Eordan Unification JE
+				can_form_nation = B87
+				#Taychend Unification
+				country_has_primary_culture = cu:kalavendhi
+				country_has_primary_culture = cu:yodhanpir
+				country_has_primary_culture = cu:advakhalla
+				country_has_primary_culture = cu:larankarha
+				country_has_primary_culture = cu:sarihaddi
+				country_has_primary_culture = cu:klereyen
+				#Rise of the Ghankedhen
+				this ?= c:R02
+				#Kheios Alecland Reclamation
+				this ?= c:C30												
+				#Yanshen Unification
+				country_has_primary_culture = cu:jiangszun
+				country_has_primary_culture = cu:beikling
+				country_has_primary_culture = cu:gangim
+				country_has_primary_culture = cu:naamjyut
+				country_has_primary_culture = cu:jiangyang				
+			}		
+		}
+		set_variable = regional_journal_entry
+		every_country = { # Removes the variable for exceptions to the broader scopes
+			limit = {
+				OR = {
+					this ?= c:D15 #Obsidian Dwarves
+					this ?= c:B47 #Arganjuzorn
+				}	
+			}		
+			remove_variable = regional_journal_entry
+		}
+	}
+
+	#Anbennar Achievement variables
+	
+	#Kalsyto Democracy
+ 	every_country = {
+ 		limit = {
+ 			exists = c:E01
+ 			this = c:E01
+ 		}
+ 		set_variable = kalsyto_democracy_achievement_possible
+ 	}
+	
+	#Shatter Fate
+ 	every_country = {
+ 		limit = {
+ 			exists = c:L17
+ 			this = c:L17
+ 		}
+ 		set_variable = hakhepra_shatter_fate_achievement_possible
+ 	}
+	
+	#Back to our roots
+ 	every_country = {
+ 		limit = {
+ 			exists = c:B07
+ 			this = c:B07
+ 		}
+ 		set_variable = back_to_our_roots_achievement_possible
+ 	}
+	
+	#North Aelantir Concord
+ 	every_country = {
+ 		limit = {
+ 			exists = c:B98
+ 			this = c:B98
+ 		}
+ 		set_variable = north_aelantir_concord_achievement_possible
+ 	}
+	
+	#All Under Light
+ 	every_country = {
+ 		limit = {
+ 			country_has_state_religion = rel:the_jadd
+ 		}
+ 		set_variable = all_under_light_achievement_possible
+ 	}
+	#New Ice Age
+ 	every_country = {
+ 		limit = {
+ 			OR = {
+				AND = {
+					exists = c:A18 #Bayvek
+					this = c:A18
+				}
+				AND = {
+					exists = c:D02 #Krakdhumvror
+					this = c:D02
+				}
+				AND = {
+					exists = c:A10 #Grombar
+					this = c:A10
+				}
+				AND = {
+					exists = c:A04 
+					this = c:A04
+				}
+			}
+ 		}
+ 		set_variable = new_ice_age_achievement_possible
+ 	}
+
+	s:STATE_WEST_OLAVLUND.region_state:A04 = {
+		add_modifier = {
+			name = nl_faster_incorporation_gerudia
+			months = 120
+		}
+	}
+	s:STATE_SIDAETT.region_state:A04 = {
+		add_modifier = {
+			name = nl_faster_incorporation_gerudia
+			months = 120
+		}
+	}	
+	s:STATE_FJORDSBAY.region_state:A04 = {
+		add_modifier = {
+			name = nl_faster_incorporation_gerudia
+			months = 120
+		}
+	}	
+	s:STATE_REVRLAND.region_state:A04 = {
+		add_modifier = {
+			name = nl_faster_incorporation_gerudia
+			months = 120
+		}
+	}
+	s:STATE_FEGRAS.region_state:A04 = {
+		add_modifier = {
+			name = nl_faster_incorporation_gerudia
+			months = 120
+		}
+	}	
+	s:STATE_BJARNLAND.region_state:A04 = {
+		add_modifier = {
+			name = nl_faster_incorporation_gerudia
+			months = 120
+		}
+	}
+	s:STATE_SPORREYN.region_state:A04 = {
+		add_modifier = {
+			name = nl_faster_incorporation_gerudia
+			months = 120
+		}
+	}				
+
+	c:B29 = {
+		set_variable = {
+			name = bacaran_republic_var
+			value = 0
+		}
+	}
+
+	c:B27 ?= {
+		trigger_event = {
+			id = neratica_minaria_events.2
+			days = 45
+		}
+	}
+
+	c:B09 ?= {
+		add_radicals = {
+			value = 0.20
+		}
+	}
+}

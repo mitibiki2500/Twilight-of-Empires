@@ -1,0 +1,59 @@
+﻿modifier_theocratic_rule_remnants = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	interest_group_ig_devout_approval_add = -5	#pissed at being removed from power
+	interest_group_pop_attraction_mult = 0.5	#was a theocracy a few years ago
+	country_coup_resistance_mult = -0.05
+}
+
+modifier_cheshoshi_military_support = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	interest_group_ig_armed_forces_pol_str_mult = 0.5
+	country_cheshoshi_cultural_acceptance_add = 5	#just barely enough to allow them to reach second-class citizen with subjecthood
+}
+
+modifier_neratic_counter_coup_leader = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	character_popularity_add = 25
+	character_coup_strength_mult = 0.20
+}
+
+modifier_new_onyx_king = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	character_popularity_add = 25
+}
+
+modifier_nerat_primacy_questioned = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	interest_group_approval_add = -3
+}
+
+modifier_against_the_onyx_king = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	state_conscription_rate_mult = 0.25
+	building_training_rate_mult = 0.25
+}
+
+modifier_onyx_diplomatic_success = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_mult = 0.10
+	country_influence_mult = 0.05
+}
+
+modifier_second_onyx_war_success = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_prestige_mult = 0.15
+	state_loyalists_from_political_movements_mult = 0.10
+}
+
+modifier_second_onyx_war_failure = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_prestige_mult = -0.10
+	unit_morale_loss_mult = 0.10
+}
+
+modifier_new_onyx_monarchy_broken = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_legitimacy_base_add = -20
+	unit_defense_mult = -0.15
+	unit_offense_mult = -0.15
+}

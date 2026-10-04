@@ -1,0 +1,277 @@
+﻿l_english:
+ je_group_nl_league_unity:0 "League Unity"
+ ## MAIN JE ##
+ je_northern_thaw_main:0 "Northern Thaw"
+ je_northern_thaw_main_reason:0 "While the Magnates have overthrown the Great Lords and their monarchy, their status as the new lords of the north is tenuous at best, with each region having their own dissentors. In the Greatwoods, a rogue general begins his rebellion. In the Reach, Blackpowderist ideals have led to growing concern over the rights of the nonhumans and of the unelected positions of the Grand Magnate. And in Gerudia, skalds and commonfolk alike detest our reign as mere resource extraction. If this is left unchecked, the Northern League may fall."
+ nl_contested_magnate_rule:0 "Contested Magnate Rule"
+ nl_magnate_rule_enforced:0 "Magnate Rule Enforced"
+ nl_magnate_group_credited_ig:0 "Took the credit for the League's success"
+ je_northern_thaw_dalr_homelands_tt:0 "Owns all Dalr [concept_homeland]"
+ je_northern_thaw_reach_homelands_tt:0 "Owns all Blue Reachman [concept_homeland]"
+ je_northern_thaw_failure_tt:0 "#bold Magnate Authority#! reaches 0, or the other regions of the League broke away."
+ je_northern_thaw_breakup_tt:0 "The #bold Reach#! and #bold Gerudia#! may #bold secede#!, depending on who we have integrated.\nShould the Reach secede while we have integrated the Dalr, our strong control over Gerudia will allow us to keep control over the straits."
+
+ northern_thaw_league_unity_bar_name:0 "Magnate Authority"
+ northern_thaw_league_unity_bar_desc:0 "Magnate Authority"
+ nl_progress_from_loyalists_tt:0 "[Concept('concept_state', '$concept_states$')] with [Concept('concept_loyalist','$concept_loyalists$')] in the #bold Alen [concept_strategic_region]#! and #bold Gerudia [concept_strategic_region]#!"
+ nl_progress_from_radicals_tt:0 "[Concept('concept_state', '$concept_states$')] in [concept_turmoil] in the #bold Alen [concept_strategic_region]# and #bold Gerudia [concept_strategic_region]#!"
+ nl_progress_from_industrialist_igs_in_government_tt:0 "#b Plutocratic#! [Concept('concept_interest_group', '$concept_interest_groups$')] [concept_in_government]"
+ nl_progress_from_cooperatists_tt: "[concept_approval] of [GetInterestGroupVariant('ig_intelligentsia',GetPlayer).GetNameWithCountryVariant]"
+ nl_reachman_primary_tt:0 "having the [GetCulture('blue_reachman').GetName] [concept_primary_cultures]"
+ nl_progress_from_being_AI_tt:0 "Progress from being controlled by a computer"
+ nl_dalr_primary_tt:0 "having the [GetCulture('dalr').GetName] [concept_primary_cultures]"
+ nl_luddite_leaders_tt:0 "[GetIdeology('ideology_luddite').GetName] [concept_interest_group] leaders"
+ nl_progress_from_woodswallers_tt:0 "from amount of active #bold Woodswaller#! strongholds"
+ nl_unity_increase_10: "#bold Increases#! the #bold League Unity#! by #variable 10#!"
+ nl_unity_decrease_10: "#bold Decreases#! the #bold League Unity#! by #variable 10#!"
+ nl_unity_increase_50: "#bold Increases#! the #bold League Unity#! by #variable 50#!"
+ nl_unity_decrease_50: "#bold Decreases#! the #bold League Unity#! by #variable 50#!"
+
+ nl_encouraged_manufacturing:0 "Manufacturing Improved"
+ nl_encouraged_investment:0 "Investment Encouraged"
+
+ northern_thaw_events.1.t:0 "The House Always Wins"
+ northern_thaw_events.1.d:0 "The League has endured the wave of nationalism that questioned its unity."
+ northern_thaw_events.1.f:0 "The Magnate Council’s hall was silent save for the speech of the Magnate Speaker, his voice booming throughout the room. “No other nation offers such wealth, such security, such promise that, by your sweat and your blood, you shall become your own master. Not Anbennar and its until-weekend government, not Lorent and its vast empire of farmhands, nor even the Gnomes and their hierarchy of smart men.” The hall filled with soft laughter as the man continued, “And for this incredible overcoming of the odds, we can only thank…”"
+ northern_thaw_events.1.a:0 "The [SCOPE.gsInterestGroup('industrialists_ig').GetName]'s natural talent!"
+ northern_thaw_events.1.b:0 "The [SCOPE.gsInterestGroup('intelligentsia_ig').GetName]'s grand vision!"
+ northern_thaw_events.1.c:0 "The [SCOPE.gsInterestGroup('armed_forces_ig').GetName]'s incredible might!"
+
+ northern_thaw_events.2.t:0 "The Northern Crisis"
+ northern_thaw_events.2.d:0 "All things must one day come to an end. Yesterday, it was old Gawed. Today, it is the Northern League."
+ northern_thaw_events.2.f:0 "“General?” Came the voice of a young officer as he entered the relative warmth of the tent “I wanted to speak with you, about ‘The News’, I mean.”\n\nInside the tent, stood Brasslance, general of the late Northern League, and now a man at a crossroads. “What is there to speak of? The magnates have fallen, my father’s treachery has been undone, and now the road to Gaweton is open.”\n\nThe officer could not believe it.“Sir? Gerudia, the Reach, they’re-”\n\n“Let them revolt, the lawlessness will make them yearn all the more for my just reign. For now, my boy, we go to Gaweton. I have a crown to wear, a throne to sit, and a Kingdom to rule.”"
+ northern_thaw_events.2.a:0 "This is a disaster!"
+
+ northern_thaw_events.3.t:0 "Fruits of Our Investments"
+ northern_thaw_events.3.d:0 "[SCOPE.sState('industry_boom_state').GetName] is seeing a boom due to our policies."
+ northern_thaw_events.3.f:0 "”I am having a better and better time, going through our finances.” Said the magnate, puffing his pipe as he read through the pages of the ledger.\n\n”Oh? Do tell.”\n\n”Up double digit percentages this past year. We’re talking about leaving our enemies in the dust, and living on mountains of profit!”\n\n”So what will we do with these profits?”\n\nThe magnate grinned giddily.”We’ll invest, invest to our heart’s content!”"
+ northern_thaw_events.3.a:0 "Productivity will surely increase!"
+ northern_thaw_events.3.b:0 "More factories! More industry!"
+
+ northern_thaw_events.4.t:0 "Military Railways"
+ northern_thaw_events.4.d:0 "The [SCOPE.gsInterestGroup('armed_forces_ig').GetName] has offered to expand the [ROOT.GetCountry.GetName]'s railway network in [SCOPE.sState('military_railway_state').GetName] to connect various military complexes under their control."
+ northern_thaw_events.4.f:0 "Willam felt like he was being stuffed into a meat tin, sitting alongside his company, as the train roared down the tracks completed a few weeks ago. “How many more bloody fights?”\n\nHis commander, a serious looking Major by the name of Rider, glared at him. “As many as we bloody need to, you don’t complain when you get your Crowns, and I don’t expect you to complain now.”\n\n“Crowns won’t mean much if I get a bolt to the head.”\n\n“I’ll give you a bolt myself if this whining continues, boy.”"
+ northern_thaw_events.4.a:0 "The Magnate Council need to decide where these rails connect"
+ northern_thaw_events.4.b:0 "The location matters not, more rails is desired above all"
+
+ northern_thaw_events.5.t:0 "National Values"
+ northern_thaw_events.5.d:0 "Spurred by the perceived oppression by the magnates there is call for liberty and nationality in [SCOPE.sState('league_nationalism_state').GetName]."
+ northern_thaw_events.5.f:0 "‘For Liberty and Brotherhood’ the posters being scraped off the sides of the mill read. At the same time, the man who put them up was being shoved into a wagon, hands restrained as he screamed to the crowd of the curious and concerned. “Decades ago, Gaweton crushed us under their boot, extracted our wealth, and beat us when we complained! And what’s changed? All I can tell is that, now, a few of our own profit from personally doing the butchering! I ask my brothers and sisters to rise up, to demand change, to demand a say, or else-” A crack to the back of the head from a baton caused him to slump over, and his limp body to finally be laid in the back of the carriage, departing from the neighborhood soon after."
+ northern_thaw_events.5.a:0 "The magnates offer a brighter future"
+ northern_thaw_events.5.b:0 "Freedom is inevitable!"
+ northern_thaw_events.5.c:0 "The [SCOPE.gsInterestGroup('armed_forces_ig').GetName] have experience dealing with dissenters such as these"
+
+ northern_thaw_events.6.t:0 "Freedom isn't out of Reach"
+ northern_thaw_events.6.d:0 "Notions of Reach unity weren't unheard of in the past, but they experienced a revival with the new concepts of self-determination introduced by the Blackpowder Rebellion."
+ northern_thaw_events.6.f:0 "“What are these fools protesting now? They have employment, they have peace, and I see no reason for such racket.”\n\nThe servant cleared his throat. “I believe, sir, they’re asking for home rule.”\n\nThe magnate’s eyes widened. “Home rule? Do they not have enough privileges as is? Back in the days of Gawed, they had no votes, now their magnates sit in our council and vote on matters of the League.”\n\n“They seem to be influenced by the Southrons and their Blackpowderist movement.”\n\n“Bloody hell, so they want home rule and more voting rights?”"
+ northern_thaw_events.6.a:0 "The Reach magnates are reasonable people who will surely see the benefits brought by the League."
+
+
+ ## WOODWALLER JE ##
+ je_northern_thaw_woodswaller:0 "Northern Thaw: Woodswaller Uprising"
+ je_northern_thaw_woodswaller_reason:0 "With rising inequality in the league and the removal of Tomac Woodswall a group has declared themselves as being in defiance of the Northern Leagues policies. They are calling themselves the Woodswallers."
+ nl_tomac_woodwaller_removed_tt:0 "#bold Tomac Woodswall#! no longer leads the [GetInterestGroupVariant('ig_rural_folk',GetPlayer).GetNameWithCountryVariant]"
+ nl_woodswaller_stronghold:0 "Home of the Woodswallers"
+ nl_woodswaller_stronghold_small:0 "Woodswaller Presence"
+ nl_accepted_adshaw_assistance:0 "Assistance of House Adshaw"
+ nl_anti_industry_attacks:0 "Local Factories Raided"
+ nl_anti_woodswall_martial_law:0 "Anti-Woodwaller Martial Law"
+ nl_brasslance_coup_success_ig:0 "Supported Brasslance's Coup"
+ nl_brasslance_coup_thwarted_ig:0 "Thwarted Brasslance's Coup"
+
+ northern_thaw_remove_woodwallers_button:0 "Send the Greatwoods Patrol."
+ northern_thaw_remove_woodwallers_button_desc:0 "With half the Woodsmen joining this Woodswaller uprising, we have centered the loyal ones in the “Greatwoods Patrol”, firmly under the control of the Magnate Council rather than local villages. With this, we shall squash these Woodswallers, one holdfast at a time."
+
+ woodswaller_rebellion_events.1.t:0 "Radicalization of the Woodswaller Movement"
+ woodswaller_rebellion_events.1.d:0 "Woodswall's followers believe that our rapid industrialization threatens their way of life. Without their leader to keep them in check, they have fled into the Greatwoods and escalated their actions."
+ woodswaller_rebellion_events.1.f:0 "The woodsmen stood before his mob, who were wielding axes, farming implements, and the guns they could afford. “For centuries, us and our forefathers have protected these woods, protected our families from the monsters which lurk in the dark. And what have these ‘magnates’ come and done? They chop the trees down, they pollute our waters, they poison our fields and they herd us into factories like animals! They threw out Woodswaller, who had fought his whole life for them, for speaking out against this, and I think it's time we show them we will not lay down quietly. Let the Northern League know that we do not bend the knee to anyone, especially not suits with their machines!”"
+ woodswaller_rebellion_events.1.a:0 "A nuisance that will be sorted out in due time."
+
+ woodswaller_rebellion_events.2.t:0 "Woodswallers Attack Factories"
+ woodswaller_rebellion_events.2.d:0 "Woodswallers came out of one of their forest strongholds and occupied some of our factories, destroying the machinery."
+ woodswaller_rebellion_events.2.f:0 "Rodric knew there was trouble when he saw two very large men keeping him and the other workers out, wielding axes and wearing animal pelts. “This doesn’t concern you.” One of them said.\n\n“Of course it does!” He yelled at the man, “We need to get to work or the foreman will have our heads!”\n\nFrom the window, he could see the massive newly installed machines, and more men and women with axes smashing them, causing screeches and groans to boom from within."
+ woodswaller_rebellion_events.2.a:0 "Declare martial law in [SCOPE.sState('woodswaller_attack_state').GetName] and send the army to root them out."
+ woodswaller_rebellion_events.2.b:0 "We'll barely notice it on the quarterly report anyway."
+
+ woodswaller_rebellion_events.3.t:0 "The Warden of the Alen and Greatwoods"
+ woodswaller_rebellion_events.3.d:0 "Brasslance, an ambitious officer from an old noble line, has publicly declared himself Warden of the Alen and Greatwoods and started marching north to root out the Woodswallers, joined by many soldiers upset that the revolt is still ongoing."
+ woodswaller_rebellion_events.3.f:0 "As the train roared down the tracks northwards, Oswald Brasslance stared at a painting. It was something his father had, before the Magnate Uprising, before he had betrayed his fellow lords and sold his soul to the Northern League. The painting was of King Humbert I Baldfather, who had seized the realm from foreign modernizers, and had restored it to Gawedi greatness. Soon, he looked away, and gave an order to one of his servants. “Tell the driver I want to be in Legion’s Clearing by tomorrow, we have work to do.”"
+ woodswaller_rebellion_events.3.a:0 "Promote him and claim he was sent on official orders."
+ woodswaller_rebellion_events.3.b:0 "Arrest him for abandoning his post."
+
+ woodswaller_rebellion_events.4.t:0 "Brasslance roots out Woodswallers"
+ woodswaller_rebellion_events.4.d:0 "Many Woodswallers have been pushed out of [SCOPE.sState('woodswaller_state').GetName] by Brasslance's forces, putting us closer to ending their revolt."
+ woodswaller_rebellion_events.4.f:0 "Smokestacks rose high into the sky, as Brasslance stood in the middle of what was once one of the holdfasts of the Woodswallers, and was now a half blasted ruin. Whoever he and his men did not kill were being dragged in chains, forced to kneel in rows and columns in the clearing.\n\n“You can’t do this!” Yelled their leader, “If you drag us to a court, we’ll make our case clear before the country!”\n\nBrasslance chuckled, loading his pistol, “If.”"
+ woodswaller_rebellion_events.4.a:0 "He's a hero."
+ woodswaller_rebellion_events.4.b:0 "He's a murderer."
+
+ woodswaller_rebellion_events.5.t:0 "Brasslance crosses the Alen"
+ woodswaller_rebellion_events.5.d:0 "The forces that have been getting fighting experience against the Woodswallers are marching south towards Gaweton. Brasslance has made demands on the Magnate Council to step down and restore the monarchy, with himself on the throne."
+ woodswaller_rebellion_events.5.f:0 "Brasslance moved south, by the same trains which carried him north, but with a different goal: End this farce of a government. His forces were battle hardened in the darkness of the Greatwoods, fighting monsters and man. His officers were of mostly noble stock, and had declared him their king and champion, to end the rule of the magnates. He would arrive in Gaweton, flood out with his soldiers, surround Rathroost, and force the Magnate Council to bend the knee, or gain a very sudden, leaden gain in weight. And then he would take his rightful place as Oswald I Brasslance, first of his name, Emperor of Gawed."
+ woodswaller_rebellion_events.5.a:0 "The Lord Protector of the restored Gawedi Empire takes his rightful throne!"
+ woodswaller_rebellion_events.5.b:0 "Bloody hell, summon Ramsgate! Make it clear we have the technology if he tries anything with this nonsense claim."
+
+ woodswaller_rebellion_events.6.t:0 "The Serpents Gift"
+ woodswaller_rebellion_events.6.d:0 "House Adshaw offers us their help."
+ woodswaller_rebellion_events.6.f:0 "Albert Adshaw sat upon his throne in the Greatwoods Hall, once the seat of Adshawman power across the Greatwoods and the Reach, now a tourist destination for the more historically minded adventurer on their trip to Bayvek. This, of course, bothered the so called ‘Lord Adshaw’ a great deal, as being a lesser vassal of Gawed’s successor state was sure to bother any of his lineage. However, with the recent Woodswaller shenanigans, and especially with the Northern League’s difficulty handling it, opportunity has arisen. Perhaps if Albert could lend a hand, both in resources and his people’s expertise, he could gain favor from the Magnate Council, and extend his power further throughout the Greatwoods."
+ woodswaller_rebellion_events.6.a:0 "Accept"
+ woodswaller_rebellion_events.6.b:0 "We do not need their help"
+
+ woodswaller_rebellion_events.7.t:0 "Magnate mauled by werewolves"
+ woodswaller_rebellion_events.7.d:0 "A [SCOPE.sState('woodswaller_state').GetName] magnate has been violently murdered by a pack of werewolves and the investigation uncovered that those werewolves were in fact members of the Woodswaller movement, sparking widespread support for harsher actions."
+ woodswaller_rebellion_events.7.f:0 "’A Grizzly Scene!’ The Gaweton View read, showing grainy photographs of a mangled body in the snow. “Today, Walter Soot was found on the ground outside his manor, having been dragged outside and torn apart. Forensic experts have determined the bites were of werewolves due to their size and the scale of the damage to his manor.\n\nWhat’s more is that the tracks, followed later, were found to lead to a Woodswaller hideout, which had since been abandoned, evidence of their guilt.”"
+ woodswaller_rebellion_events.7.a:0 "They are monsters and we need to kill them all."
+ woodswaller_rebellion_events.7.b:0 "They are our citizens, werewolf or not, and should be arrested."
+ woodswaller_rebellion_events.7.c:0 "They are heroes."
+
+ ## GERUDIA JE ##
+ je_northern_thaw_gerudia_conversion:0 "Northern Thaw: Conversion of Gerudia"
+ je_northern_thaw_gerudia_conversion_reason:0 "With Gawed becoming the Northern League, the official stance on Gerudia was that they were an equal member, with their citizens enjoying the same rights as the Gawedi. This, of course, was a lie. Gerudians face discrimination due to their culture and especially their religion, and their resources are being extracted en masse to feed the industries of the Alen. And recently many Ravelianist preachers have traveled to Gerudia to preach their faith, inflaming the locals."
+ nl_skaldyrric_oppression:0 "Increased Skaldhyrric Discrimination"
+
+ northern_thaw_conversion_focus_button:0 "Focus on Conversion"
+ northern_thaw_conversion_focus_button_desc:0 "The Skalds and their hold over Gerudian society represent a significant and intolerable threat to our operations in the Dalr. The best way to oppose them is simple: Send the priests. With a new, Ravelianist Gerudian population, not only will we defang the Skalds, but also the locals should be… more civilized by their conversion."
+ northern_thaw_education_focus_button:0 "Focus on Education"
+ northern_thaw_education_focus_button_desc:0 "The Gerudians work well in the mines, lumber yards, and getting us the raw resources of the land, but they lack the literacy in anything other than some runes, which severely limits their ability to work in ledgers or other more bureaucratic roles. We need to begin rampantly schooling the Gerudian youth as to ensure they can grow up to meet our labor demands."
+ northern_thaw_more_missionaries_button:0 "Send Additional Missionaries"
+ northern_thaw_more_missionaries_button_desc:0 "While the efforts of educating the Gerudians are noble, the issue is simple: Their religion is backwards. It promotes superstition and prevents them from speaking proper Common. The solution is to send more missionaries, and see if we can save these workers from their own idiocies."
+ northern_thaw_stop_missionaries_button:0 "Oppose Ravelian Proselytism"
+ northern_thaw_stop_missionaries_button_desc:0 "The current wave of preachers and priests sweeping the Dalr is not only causing significant backlash from the locals, it's also hurting our bottom line. We should dial it back, as to soothe the Gerudians and allow them to do more important things, like work."
+
+ nl_encouraged_education:0 "Ravelian Education"
+ nl_encouraged_proselytization:0 "Ravelian Conversion"
+ modifier_nl_conversion_costs:0 "Ravelian Missionary Work"
+ nl_recently_picked_ravelian_focus:0 "Recently Picked Ravelian Focus"
+
+ nl_expanded_ravelian_mission:0 "Expanded Ravelian Mission to Gerudia"
+ nl_ended_ravelian_mission_ig:0 "Called back Gerudian Missionaries"
+ nl_completed_conversion_ig:0 "Saved Gerudia's Soul"
+ nl_rejected_anti_religious_rebels:0 "Rejected Atheism"
+ nl_embraced_anti_religious_rebels:0 "Embraced Atheism"
+ nl_religious_crackdown:0 "Crackdown on Skaldhyrric protests"
+ nl_negotiated_with_religious_rebels:0 "Negotiated with Skaldhyrric protestors"
+ nl_high_rector_blessing:0 "Blessing from the High Rectorate"
+ nl_more_gerudian_resources:0 "Secured Gerudian Resource Extraction"
+ modifier_dalr_religious_cultural_identity:0 "Religious persecution causing cultural awakening"
+ nl_ignored_magnate_attack:0 "Ignored attacks on Magnate"
+ nl_gerudian_resource_extraction_disrupted:0 "Resource Extraction Disrupted"
+
+
+ gerudia_conversion_events.1.t:0 "The Northern Mission"
+ gerudia_conversion_events.1.d:0 "Ravelian missionaries have set sail on a mission to convert the Gerudian people."
+ gerudia_conversion_events.1.f:0 "On the docks stood men cloaked in black and white, clutching books of their faith, and idols of their shattered God. Their leader, Provost Edward, spoke with a voice loud and clear despite his many hours of prayer and speech before. “Today, we bring the light of civilization to the darkest corner of Cannor, those who have long rejected the Regent Court before us, and who shall embrace God today. The Gerudians may hate us, they may beat us or drive us away, but we must remain strong. What we do is not for our good, but theirs, and if we hold that in our hearts, then we shall triumph over the superstition and backwardness which plagues these fine people.”"
+ gerudia_conversion_events.1.a:0 "They may bring their truth to Gerudia."
+ gerudia_conversion_events.1.b:0 "They may bring their knowledge to Gerudia."
+
+ gerudia_conversion_events.2.t:0 "The Archprovost of Gerudia"
+ gerudia_conversion_events.2.d:0 "With Gerudia converted to the Ravelian Truth, the High Rector has recognized our great efforts and elevated the provost of Konungrhavn to the rank of archprovost."
+ gerudia_conversion_events.2.f:0 "Edward sat in his private study, rereading the letter from the Rectorate: Archprovost of Gerudia. It was certainly a fanciful title, and one mayhaps he took some sinful measure of pride in. Just ten years ago he had been a boy in the slums of Tenbury, and now he was the spiritual authority of all Gerudia, sent to bring them the same peace that had been brought to him. There had been troubles, of course; The locals saw him as some monstrous invader no matter how much he clothed their cold and fed their hungry. But he was alright with that, as long as, in the end, he saved Gerudia’s soul from the darkness which had so long and so cruelly pervaded over it."
+ gerudia_conversion_events.2.a:0 "A perfect opportunity to further our ties with the High Rectorate."
+ gerudia_conversion_events.2.b:0 "God himself wills for Gerudia's resources to fuel our industry."
+
+ gerudia_conversion_events.3.t:0 "A More Equal League"
+ gerudia_conversion_events.3.d:0 "The change in course by the League have made the Dalr considerably more amenable to the idea of northern unity."
+ gerudia_conversion_events.3.f:0 "The Magnate Council change in attitude towards the Gerudians has caused itself a change in the Gerudian’s attitude on the Northern League. While still seen by many as oppressive and cruel, a growing number of Dalr, primarily in the south, are seeing it as a state that can be reformed into being more equal and unified, and are looking to work within the system to change it for the better."
+ gerudia_conversion_events.3.a:0 "The League should be built on brotherhood and mutual understanding."
+
+ gerudia_conversion_events.4.t:0 "The last generation of Skalds"
+ gerudia_conversion_events.4.d:0 "[SCOPE.sState('last_skald_scope').GetName] has started writing down ancient Gerudian epics that were only transferred orally before, believing they will be lost forever otherwise."
+ gerudia_conversion_events.4.f:0 "Runes line every page of every tome, save for illustrations shaky with the hand that bore them and the speed which limited their quality. The Skald writes day and night, only stopping when his body forces him to. He does not know of the others of his kind, those that remain within Skaldskoda, or the harpies atop the peaks of the mountain outside his humble abode. The locals bring him food and fuel for warmth, though if this is an act of kindness or pity he does not know. All he knows is that his end is soon, and yet in spite of that he must continue in his duty despite the pain in his hands or the fading memories of his youth.\n\nHe does not know if any will come after him, so he must at least pass down a memory of what he and his forebearers had so long carried by word."
+ gerudia_conversion_events.4.a:0 "Send him in exile."
+ gerudia_conversion_events.4.b:0 "Officially recognize the Gerudian language."
+
+ gerudia_conversion_events.5.t:0 "Dalr Anti-Religious League"
+ gerudia_conversion_events.5.d:0 "Conflict between the Skalds and Priests have led to one thinker claiming all religion is bad."
+ gerudia_conversion_events.5.f:0 "Today, another preacher came into the town square, though neither a Skald nor a Priest. He was someone from the mountains, come down to promote his new ideals. He ranted about the tyranny of the Ravelianists, who educated the people only enough to shove them into factories. But he also ranted about the backwardness of the Skalds, who promoted superstition in the people. In fact, he denounced all faiths, claiming that there were no gods but those which the people invented to terrorize themselves, and that they must break free of all religions and practices."
+ gerudia_conversion_events.5.a:0 "Perhaps we should embrace these ideas..."
+ gerudia_conversion_events.5.b:0 "Stop him."
+ 
+ gerudia_conversion_events.6.t:0 "The Truth of the One"
+ gerudia_conversion_events.6.d:0 "The Dalr are converting to Ravelianism en masse due to the success of our missionaries."
+ gerudia_conversion_events.6.f:0 "Idols burned or left abandoned in the snow, people cramped in churches once a week, songs of heroes replaced with hymns of God and Saints. Much of the Dalr have converted to the southron faith of Ravelianism, and though a fraction of them retain their culture and religious traditions, these are being drowned out too."
+ gerudia_conversion_events.6.a:0 "Great!"
+ gerudia_conversion_events.6.b:0 "Make sure no trace of their old practices remains."
+
+ gerudia_conversion_events.7.t:0 "Skaldhyrric Counter-Movement"
+ gerudia_conversion_events.7.d:0 "In the fact of Ravelian proselytism, Skalds have started to organize in [SCOPE.sState('counter_skald_movement_state').GetName] to counter the efforts of Ravelian missionaries."
+ gerudia_conversion_events.7.f:0 "Men and women in colorful robes descended into the square, followed by a mob, singing. They sang tales from their ancient faith, of heroes, but also of history, of the many Jarls which had ruled Gerudia since Elkaesal had been sung to sleep. Their voices, projected seemingly like magic, could be heard throughout the town, disrupting the work of the missionaries. Said missionaries are demanding we stop them, or else they will be unable to convert the masses to Ravelianism."
+ gerudia_conversion_events.7.a:0 "We must crack down on this movement."
+ gerudia_conversion_events.7.b:0 "Open a dialogue with the locals."
+
+ gerudia_conversion_events.8.t:0 "Dalr on Dalr violence"
+ gerudia_conversion_events.8.d:0 "Gerudian society is increasingly polarized between two sides, and tensions between Skaldhyrrics Dalrs and new Ravelian converts Dalrs have boiled over in [SCOPE.sState('ravelian_vs_skald_state').GetName]."
+ gerudia_conversion_events.8.f:0 "‘Gerudians Brutalize their Own!’ The Gaweton View read, showing grainy photographs of burning houses.\n\n“Dalr who embraced the light of Ravelianism were attacked last week, following a series of violent actions perpetrated by the savages who still cling to the old ways. They stormed Ravelianist homes and beat the occupants, before torching the households.”"
+ gerudia_conversion_events.8.a:0 "Favor the Ravelian Dalrs."
+ gerudia_conversion_events.8.b:0 "Favor the Skaldhyrric Dalrs."
+
+ gerudia_conversion_events.9.t:0 "[SCOPE.sState('gerudian_magnate_state').GetName] Magnate attacked"
+ gerudia_conversion_events.9.d:0 "Gerudian Magnates are the greatest supporters of the League in the region. Of course, being a supporter of unity or a collaborator and traitor is just a matter of point of view."
+ gerudia_conversion_events.9.f:0 "The Magnate lay on the ground, blood between the pavers, his coat slowly turning red as he tried to squint and see his attackers. Several workers spoke in his mother tongue, Gerudian, as they beat him for an eternity.\n\n“You think you can profit on our suffering? Throw away our culture and faith for some Gawedi Crowns? You are no kin of ours, traitor.”\n\nwhen a crowd gathered around him the next morn, he was already long gone."
+ gerudia_conversion_events.9.a:0 "An attack on a Magnate is an attack on the League."
+ gerudia_conversion_events.9.b:0 "A heavy hand would only make things worse."
+
+
+ ## REACH INTEGRATION JE ##
+ je_northern_thaw_reach_nationalism:0 "Northern Thaw: Reach Integration"
+ je_northern_thaw_reach_nationalism_reason:0 "Though the Reach had been more cooperative to the Northern League’s rise, it had its fair share of troubles. A lack of representation compared to the Gawedi despite their wealth and control over the navy, for one. But also with the Blackpowder Rebellion in Anbenncóst succeeding, waves of Blackpowderist ideals had spread to the Reach. And they were not going away."
+
+ northern_thaw_annex_cities_button:0 "Pass the League Integration Act"
+ northern_thaw_annex_cities_button_desc:0 "The League Integration Act was made as a compromise between the Magnate Council and those Reachmen who wanted independence, a way for the Reachmen to be united, but within the Northern League. It involves the official integration of cities semi-independent to the League, namely Bayvek."
+
+ nl_reach_racial_tensions:0 "Increased Racial Tensions"
+ nl_reach_nationalist_propaganda:0 "Calls for a united Reach"
+ nl_making_own_reach_propaganda:0 "Pro-League Propaganda"
+ nl_bayvek_adventuring_boost:0 "Adventuring Hub"
+ integrating_reach_modifier:0 "Integrating Regional Administrations"
+
+ reach_nl_events.1.t:0 "A Meeting between Magnates"
+ reach_nl_events.1.d:0 "The Magnates of the Reach have grown closer to the League -that is, richer- and the region is thus firmly integrated in the League."
+ reach_nl_events.1.f:0 "The two groups of men met at the banks of the Maw, a river famous for its history with the magnates, from Celmaldor on one side, the seat of the League’s fleet, to the town of Deland on the other, the birthplace of the man who would make the Magnate Council: Derek Deland.\n\nThese two groups met for one purpose: To reaffirm the bonds which held the current Magnate Council together. One group were the Gawedi, the industrial heartlanders of this empire of commerce, and the other group were the Blue Reachmen, the holders of the navy and the ports. As the meeting begins, both hope the other will be reasonable, and not demand anything too extreme."
+ reach_nl_events.1.a:0 "We will grow richer together!"
+
+ reach_nl_events.2.t:0 "The Cooperatist Project"
+ reach_nl_events.2.d:0 "The Reachman elite have looked favorably at the recent direction taken by the League, and the ideals of the Cooperatists are now popular amongst them."
+ reach_nl_events.2.f:0 "Cooperatism has always sat the best with the Reachmen. The ideals of Cooperatism is that the magnates and their industries serve the state rather than the state existing to enrich the magnates. The magnates gain wealth but also act as cogs within the machines, their companies being used by the state to rapidly ensure any goal of theirs can be met quickly. This ideology, espoused most famously by Moorman economist Welyam Kingston, is considered favorable as a way to promote unity."
+ reach_nl_events.2.a:0 "For unity amongst the peoples of the North!"
+
+ reach_nl_events.3.t:0 "Stirring up racial conflict"
+ reach_nl_events.3.d:0 "The Reach is home to many non-humans, which could be exploited to divide them and turn them on each other rather than us."
+ reach_nl_events.3.f:0 "“Are you suggesting we trigger pogroms of elves across the Reach?” Asked one magnate to another.\n\nThe other magnate nodded. “Not just elves. Goblins too, even some trolls and harpies. Anything to keep the Reachmen divided.”\n\n“We’re talking about causing the beatings and deaths of hundreds, possibly even more!”\n\n“Exactly! Very low numbers for such gain! Now the Reach will barely hold itself together, and will need our guidance.”"
+ reach_nl_events.3.a:0 "Keeping your enemies divided is the oldest strategy."
+ reach_nl_events.3.b:0 "This is a terrible idea."
+
+ reach_nl_events.4.t:0 "Peoples of the Reach"
+ reach_nl_events.4.d:0 "The political crisis caused by increased racial tensions has been resolved as the locals hearkened back to their shared identity as Reachmen, now more united than before."
+ reach_nl_events.4.f:0 "Goblins, elves, and even humans sat in pubs or in the occasional coffeehouse, pouring over pamphlets and posters depicting the Magnate Council as a skeletal eagle spreading over the north.\n\n“So, if we were to go independent, how would we even be run?” Asked the goblin.\n\nThe Elf answered. “Well, I say it be the traditional Reachman way: Houses of merchants and nobles come together and vote on matters.”\n\nThe goblin shook his head. “That sounds like just another Magnate Council.”\n\n “Ah, yes, but our Magnate Council, not some hopeless endeavor in Gaweton.”\n\nFinally, the human spoke. “I say we do what the Anbennarians did: Elect our representatives via popular vote, not via wealth or land.”"
+ reach_nl_events.4.a:0 "But we were told that Reachmen were a contentious lot?"
+
+ reach_nl_events.5.t:0 "Blackpowderist Pamphlets"
+ reach_nl_events.5.d:0 "Nationalist propaganda taking inspiration from the ideals of self-determination pushed by the Blackpowder Rebellion are spreading from [SCOPE.sState('last_skald_scope').GetName][reach_propaganda_state.GetName]."
+ reach_nl_events.5.f:0 "“In the Empire of Anbennar, they had to contend with the Tyranny of Mages, and when it came to it, they tore them down!” Read the several dozen posters placed throughout the city. “But in the North, we have our own Tyranny, that of rich men and their empires of blood and coal. They think the men of Gaweton can demand our lives and our health to their profits, and they are wrong! I call for the fine men and women of the Reach to rise against the Gawedi, throw them from our lands, and establish a united Reachman Republic!”"
+ reach_nl_events.5.a:0 "Make whoever’s doing this disappear."
+ reach_nl_events.5.b:0 "Two can play this game!"
+ reach_nl_events.5.c:0 "Keep an eye on them for now."
+
+ reach_nl_events.6.t:0 "Bayvek becomes an adventuring center"
+ reach_nl_events.6.d:0 "More adventurers are flocking to Bayvek as a center of their operations in the north."
+ reach_nl_events.6.f:0 "Bayvek, oddly enough, has become the epicenter of adventurers in northern Cannor. Whether it is the production of firearms and explosives, the easy access to Gerudia via the Giant’s Grave Sea, or industrialisation causing waves of migrants to enter the Reach, Bayvek has become the destination of perhaps the strangest kind of tourists."
+ reach_nl_events.6.a:0 "Booming Brilliant!"
+
+
+
+
+## REACH UNIFICATION JE ##
+ je_extent_of_our_reach:0 "Extent of Our Reach"
+ je_extent_of_our_reach_reason:0 "With Blackpowderism spreading across Cannor, the Reachmen are particularly fascinated with this new ideology, and have started to call for the unification of the Alenic Reach under one nation state."
+
+ reach_events.1.t:0 "Beaten, Occupied, but not Forgotten"
+ reach_events.1.d:0 "With the wave of nationalism spreading all over Cannor, voices calling for a free and united Reach are making themselves heard again."
+ reach_events.1.f:0 "In ages past, the Reach was ruled as various city states led by mayors promoted for economic interests. Now, with the rise of nationalism, a new Reach arises, one not of divided cities but a united nation! Blue Reachmen of all races working together for their own interests, not those of foreign masters."
+ reach_events.1.a:0 "The Reach will Rise"
+
+
+ reach_events.2.t:0 "The [SCOPE.GetRootScope.GetCountry.GetAdjectiveNoFormatting]-[SCOPE.sCountry('reach_union_target_scope').GetAdjectiveNoFormatting] Union"
+ reach_events.2.d:0 "With Reachman states cropping up left and right, many are calling for unification."
+ reach_events.2.f:0 "“Why should we form independent city states along the Giant’s Grave Sea, like this is centuries past?” Asked one of the men, tall with his deep green coat, “We are free now from the oppression of the Northern League, and we have to choose our own destiny. Why not choose it together? United, no one can again place us in shackles, and force us to be lesser participants in some foreign empire!”"
+ reach_events.2.a:0 "For the Reach!"
+ reach_events.2.b:0 "We will not replace one tyrant for another!"

@@ -1,0 +1,39 @@
+﻿### Mteibhara character template file ###
+
+C38_Marzhant_Alkha_Ahadasts = {
+	#Marzhant Alkha'Ahadhasts. General and Militarist. His goal is to preserve the independence of Mteibhara and reclaim their former lands. He is a highly capable diplomat and open to cooperating with the enlightenment movements. He has aligned himself with the most popular of these movements, the Searthatsaru.
+	first_name = Marzhant
+	last_name = Alkha_Ahadasts
+	historical = yes
+	ruler = yes
+	is_general = yes
+	# age = 45
+	birth_date = 1775.1.1
+	interest_group = ig_armed_forces
+	ig_leader = yes
+	ideology = ideology_modernizer_leader
+	# dna = dna_marzhant_alkha_ahadasts # polk: doesn't exist?
+	culture = cu:mteibhar
+	traits = {
+		experienced_diplomat 
+		innovative 
+		tactful
+	}
+}
+
+C38_Bhamza_Bamnzham = {
+	#Leader of the Searthatsaru movement. Made this character to give the Intelligentsia the jingoist ideology which should lessen incompatibility
+	first_name = Bhamza
+	last_name = Bamnzham
+	historical = yes
+	# age = 34
+	birth_date = 1786.1.1
+	interest_group = ig_intelligentsia
+	ig_leader = yes
+	ideology = ideology_jingoist_leader
+	culture = cu:mteibhar
+	traits = {
+		demagogue 
+		literary
+	}
+}

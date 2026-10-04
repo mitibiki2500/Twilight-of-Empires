@@ -1,0 +1,182 @@
+﻿ai_strategy_escann_unification = {
+ 	icon = "gfx/interface/icons/ai_strategy_icons/unification.dds"
+	
+ 	type = diplomatic
+	
+ 	undesirable_infamy_level = {
+ 		value = 50
+ 	}
+	
+ 	unacceptable_infamy_level = { # AI Is worryingly aggressive, which... is kinda the point, but still.
+ 		value = 74
+ 	}
+	
+ 	ideological_opinion_effect_mult = { # Ideological similarity?
+ 		value = 0.5
+ 	}
+	
+ 	wargoal_maneuvers_fraction = { # How many maneuvers to spend?
+ 		value = 0.25
+ 	}		
+		
+ 	diplomatic_play_neutrality = { # How much do we want to stay neutral?
+ 		value = 25
+ 	}
+	
+ 	diplomatic_play_boldness = { # Surrender/Back-down chance.
+ 		value = 50
+ 	}
+		
+ 	obligation_value = { # More likely to offer obligations to outside powers.
+ 		value = -25
+	
+ 		if = {
+			limit = { 
+ 				scope:target_country = { 
+					NOT = {
+						any_scope_state = {
+							region = sr:region_escann
+						}
+					}
+				}
+ 			}
+ 			value = 10
+		}
+ 	}			
+		
+ 	recklessness = {
+ 		value = 0.75  # Aggressiveness to Escann countries.
+		
+		if = {
+			limit = { 
+ 				scope:target_country = { 
+					NOT = {
+						any_scope_state = {
+							region = sr:region_escann
+						}
+					}
+				}
+ 			}
+ 			subtract = 0.25 # Back to default for non-Escann countries.
+		}
+ 	}	
+	
+ 	aggression= {
+ 		value = 0.5
+		
+ 		if = {
+ 			limit = { 
+ 				scope:target_country = { #More aggressive against occupier
+ 					NOT = { any_primary_culture = { has_discrimination_trait = society_castanorian } }
+ 					any_scope_state = {	
+						region = sr:region_escann
+					}
+ 				}
+ 			}
+ 			add = 2
+ 		}	
+
+		if = {
+			limit = {
+				scope:target_country = { #More aggressive against Escann countries.
+ 					any_primary_culture = { has_discrimination_trait = society_castanorian } 
+ 					any_scope_state = {	
+						region = sr:region_escann
+					}
+					NOT = { # They're not friends, right?
+						OR = {
+							has_treaty_alliance_with = { TARGET = root }
+							has_treaty_defensive_pact_with = { TARGET = root }
+						}
+					}
+ 				}
+			}
+			add = 1.5
+		}
+ 	}
+
+ 	building_group_weights = {
+ 		bg_army = 1
+ 	}
+	
+ 	wargoal_scores = {
+ 		conquer_state = {
+			if = {
+				limit = {
+					scope:target_state = {
+						region = sr:region_escann
+					}
+					can_reach_target_state = yes
+				}
+
+				multiply = 5
+				min = 10
+				max = 1000
+			}
+		}
+
+ 		take_treaty_port = {
+			if = {
+				limit = {
+					scope:target_state = {
+						state_region = {
+							region = sr:region_escann
+						}
+					can_reach_target_state = yes
+					}
+				}
+				subtract = 1000 # We don't want to take treaty ports in Escann, we want the entire state.
+			}
+ 		}		
+ 	}			
+	
+ 	secret_goal_scores = {			
+ 		conquer = {
+			score = {
+				if = {
+ 					limit = {
+ 						scope:target_country = { # More aggressive against non-escann powers in Escann
+ 							NOT = { any_primary_culture = { has_discrimination_trait = society_castanorian } }
+ 							any_scope_state = {	
+								region = sr:region_escann
+							}
+ 						}
+ 					}
+ 					add = 500
+ 				}
+				if = {
+ 					limit = {
+ 						scope:target_country = { # More aggressive against Escanni in Escann
+ 							any_primary_culture = { has_discrimination_trait = society_castanorian }
+ 							any_scope_state = {	
+								region = sr:region_escann
+							}
+ 						}
+ 					}
+ 					add = 2000
+ 				}
+			}								
+ 		}			
+ 	}	
+
+ 	possible = { 
+ 		any_primary_culture = { has_discrimination_trait = society_castanorian }
+		# has_journal_entry = je_escann_unification, add later.
+ 	}
+
+ 	weight = {
+ 		value = 0 # Nobody should randomly have this.
+ 		if = {
+ 			limit = { 
+ 				any_country = {
+					any_primary_culture = { has_discrimination_trait = society_castanorian } # They're Escanni
+ 					any_scope_state = { # They have a state in the relevant region
+						region = sr:region_escann
+					}
+ 					# has_journal_entry = je_escann_unification, add later.
+ 				}
+ 			}
+ 			add = 10000
+ 		}	
+ 	}
+}

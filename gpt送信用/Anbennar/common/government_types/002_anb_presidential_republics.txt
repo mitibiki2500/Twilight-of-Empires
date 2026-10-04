@@ -1,0 +1,354 @@
+﻿gov_magnate_council = {
+	transfer_of_power = dictatorial
+
+	male_ruler = "RULER_CHAIRMAN"
+	female_ruler = "RULER_CHAIRWOMAN"
+	
+	possible = {
+		exists = c:A04
+		c:A04 = ROOT
+		has_law = law_type:law_presidential_republic
+		country_has_voting_franchise = no
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}
+
+gov_supreme_hierarchy = {
+	transfer_of_power = dictatorial
+
+	male_ruler = "RULER_HIERARCH"
+	female_ruler = "RULER_HIERARCH"
+	
+	possible = {
+		exists = c:A06
+		c:A06 = ROOT
+		has_law = law_type:law_presidential_republic
+		country_has_voting_franchise = no
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}
+
+gov_democratic_hierarchy = {
+	transfer_of_power = presidential_elective
+
+	male_ruler = "RULER_HIERARCH"
+	female_ruler = "RULER_HIERARCH"
+	
+	possible = {
+		exists = c:A06
+		c:A06 = ROOT
+		has_law = law_type:law_presidential_republic
+		country_has_voting_franchise = yes
+	}
+
+	on_government_type_change = {
+		change_to_presidential_elective = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_presidential_elective = yes
+	}
+}
+
+gov_two_kinah_conclave = {
+	transfer_of_power = dictatorial
+
+	male_ruler = "RULER_TITLE_PRESIDENT"
+	female_ruler = "RULER_TITLE_PRESIDENT"
+	
+	possible = {
+		exists = c:B10
+		c:B10 = ROOT
+		has_law = law_type:law_presidential_republic
+		has_law = law_type:law_oligarchy
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}
+
+gov_eunuch_republic = {
+	transfer_of_power = dictatorial
+
+	male_ruler = "RULER_TITLE_PRESIDENT"
+	female_ruler = "RULER_TITLE_PRESIDENT"
+	
+	possible = {
+		any_primary_culture = {
+			has_discrimination_trait = heritage_yansheni
+		}
+		has_law = law_type:law_presidential_republic
+		has_law = law_type:law_oligarchy 
+		has_law = law_type:law_appointed_bureaucrats
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}
+
+gov_command_warlord = {
+	transfer_of_power = dictatorial
+
+	male_ruler = "RULER_TITLE_GENERAL"
+	female_ruler = "RULER_TITLE_GENERAL"
+	
+	possible = {
+		has_law = law_type:law_presidential_republic	#valid again now that Stratocracy is a variant law
+		has_law = law_type:law_stratocracy
+		#in theory this uses peasant levies but we gave professional to every warlord in Anbennar
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}
+
+#Unused since those tags have been set to use vanilla's chartered company, so commented out
+
+# gov_company = {
+# 	transfer_of_power = presidential_elective
+# 	new_leader_on_reform_government = no
+
+# 	male_ruler = "RULER_TITLE_DIRECTOR"
+# 	female_ruler = "RULER_TITLE_DIRECTOR"
+	
+# 	possible = {
+# 		has_law = law_type:law_presidential_republic
+# 		OR = {
+# 			AND = {
+# 				exists = c:B03 
+# 				c:B03 = ROOT
+# 			}
+# 			AND = {
+# 				exists = c:B03 
+# 				c:B04 = ROOT
+# 			}
+# 			AND = {
+# 				exists = c:B03 
+# 				c:B01 = ROOT
+# 			}
+# 		}
+# 		#NOT = { is_subject_type = subject_type_dominion }
+# 		#NOT = { is_subject_type = subject_type_puppet }
+# 	}
+# 	on_government_type_change = {
+# 		change_to_presidential_elective = yes
+# 	}
+# 	on_post_government_type_change = {
+# 		post_change_to_presidential_elective = yes
+# 	}
+# }
+
+#Used for GH colonial puppets
+gov_colonial_hierarchy = {
+	transfer_of_power = presidential_elective
+	new_leader_on_reform_government = no
+
+	male_ruler = "RULER_TITLE_GOVERNOR"
+	female_ruler = "RULER_TITLE_GOVERNOR"
+
+	possible = {
+		has_law = law_type:law_colonial_administration
+		exists = c:A06
+		is_subject_of = c:A06
+		is_subject_type = subject_type_colony
+		country_is_in_europe = no
+	}
+
+	on_government_type_change = {
+		change_to_presidential_elective = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_presidential_elective = yes
+	}
+}
+
+# gov_guild = {
+# 	transfer_of_power = dictatorial
+
+# 	male_ruler = "RULER_TITLE_GUILDMASTER"
+# 	female_ruler = "RULER_TITLE_GUILDMASTER"
+	
+# 	possible = {
+# 		exists = c:B05
+# 		c:B05 = ROOT
+# 		has_law = law_type:law_presidential_republic
+# 		country_has_voting_franchise = no
+# 		aggressive_diplomatic_plays_permitted = yes #aka is independent or very autonomous
+# 	}
+
+# 	on_government_type_change = {
+# 		change_to_dictatorial = yes
+# 	}
+# 	on_post_government_type_change = {
+# 		post_change_to_dictatorial = yes
+# 	}
+# }
+gov_tropaicost = {
+	transfer_of_power = dictatorial
+
+	male_ruler = "RULER_TITLE_TROPAICOST"
+	female_ruler = "RULER_TITLE_TROPAICOST"
+	
+	possible = {
+		exists = c:B75
+		c:B75 = ROOT
+		has_law = law_type:law_presidential_republic
+		country_has_voting_franchise = no
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}
+
+gov_matriarchy_republic_president = {
+	transfer_of_power = presidential_elective
+
+	male_ruler = "RULER_MATRIARCH"
+	female_ruler = "RULER_MATRIARCH"
+	
+	possible = {
+		has_law = law_type:law_presidential_republic
+		has_variable = is_matriarchy_var
+		NOT = { has_law = law_type:law_womens_suffrage }
+	}
+
+	on_government_type_change = {
+		change_to_presidential_elective = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_presidential_elective = yes
+	}
+}
+
+gov_amben_empire = {
+	transfer_of_power = presidential_elective
+
+	male_ruler = "RULER_AESRIALTOR_ANDEIOS"
+	female_ruler = "RULER_AESRIALTEIRA_ANDEIOS"
+	
+	possible = {
+		has_law = law_type:law_presidential_republic
+		c:C92 ?= ROOT
+	}
+
+	on_government_type_change = {
+		change_to_presidential_elective = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_presidential_elective = yes
+	}
+}
+
+gov_kheiosian_league = {
+	transfer_of_power = presidential_elective
+
+	male_ruler = "RULER_DEGA_KYLAKAS"
+	female_ruler = "RULER_DEGA_KYLAKAS"
+	
+	possible = {
+		has_law = law_type:law_presidential_republic
+		c:C30 = ROOT
+	}
+
+	on_government_type_change = {
+		change_to_presidential_elective = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_presidential_elective = yes
+	}
+}
+
+gov_epaidia = {
+	transfer_of_power = presidential_elective
+
+	male_ruler = "RULER_RIARCHIS"
+	female_ruler = "RULER_RIARCHIS"
+	
+	possible = {
+		has_law = law_type:law_presidential_republic
+		OR = {
+			AND = {
+				exists = c:C39
+				is_subject_of = c:C39
+				country_has_primary_culture = cu:klereyen
+			}
+			AND = {
+				exists = c:C92
+				is_subject_of = c:C92
+				country_has_primary_culture = cu:klereyen
+			}
+		}
+	}
+
+	on_government_type_change = {
+		change_to_presidential_elective = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_presidential_elective = yes
+	}
+}
+
+
+gov_kheinisi_republic = {
+	transfer_of_power = presidential_elective
+
+	male_ruler = "RULER_KYLAKAS"
+	female_ruler = "RULER_KYLAKAS"
+	
+	possible = {
+		has_law = law_type:law_presidential_republic
+		AND = {
+			any_primary_culture = {
+				has_discrimination_trait = heritage_kheionai_ruinborn
+			}
+			NOT = {
+				c:C92 ?= ROOT
+				c:C30 ?= ROOT
+				AND = {
+					exists = c:C39
+					is_subject_of = c:C39
+					country_has_primary_culture = cu:klereyen
+				}
+				AND = {
+					exists = c:C92
+					is_subject_of = c:C92
+					country_has_primary_culture = cu:klereyen
+				}
+			}
+		}
+	}
+
+	on_government_type_change = {
+		change_to_presidential_elective = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_presidential_elective = yes
+	}
+}

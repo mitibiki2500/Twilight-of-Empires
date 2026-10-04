@@ -1,0 +1,257 @@
+﻿namespace = naleni_great_reform_events
+
+#Starting  Event
+naleni_great_reform_events.1 = { 
+    type = country_event
+    placement = root
+
+    title = naleni_great_reform_events.1.t  
+    desc = naleni_great_reform_events.1.d  
+    flavor = naleni_great_reform_events.1.f  
+
+    event_image = {
+        video = "unspecific_steam_ship"
+    }
+
+    icon = "gfx/interface/icons/goods_icons/man_o_wars.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+    trigger = {
+
+    }
+    immediate = {
+        random_scope_character = {
+            limit = {
+                has_template = naleni_jasiune_Nephiueda_template
+            }
+            save_scope_as = Jasiune_Nephiueda_scope
+        }
+    }
+    
+    option = {
+        name = naleni_great_reform_events.1.a
+        default_option = yes
+        add_journal_entry= { type = je_naleni_great_reforming_agriculture }
+        add_journal_entry= { type = je_naleni_great_reforming_naval }
+        add_journal_entry= { type = je_naleni_great_reforming_industrial }
+        add_journal_entry= { type = je_naleni_great_reforming_institutions }
+    }
+}
+
+#naval event
+naleni_great_reform_events.2 = {
+    type = country_event
+    placement = root
+
+    title = naleni_great_reform_events.2.t  
+    desc = naleni_great_reform_events.2.d  
+    flavor = naleni_great_reform_events.2.f  
+
+    event_image = {
+        video = "ep2_active_shipyard"
+    }
+
+    icon = "gfx/interface/icons/goods_icons/man_o_wars.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+    immediate = {
+        random_scope_character = {
+            limit = {
+                has_template = naleni_jasiune_Nephiueda_template
+            }
+            save_scope_as = Jasiune_Nephiueda_scope
+        }
+    }
+    
+    option = {
+        name = naleni_great_reform_events.2.a
+        default_option = yes
+        add_modifier = {
+            name = naleni_naval_modifier_buff
+            years = 15
+        }
+    }
+}
+
+#naleni institutions sucess event
+naleni_great_reform_events.3 = {
+    type = country_event
+    placement = root
+
+    title = naleni_great_reform_events.3.t  
+    desc = naleni_great_reform_events.3.d  
+    flavor = naleni_great_reform_events.3.f  
+
+    event_image = {
+        video = "ip3_village_school"
+    }
+
+    icon = "gfx/interface/icons/goods_icons/man_o_wars.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+    immediate = {
+        random_scope_character = {
+            limit = {
+                has_template = naleni_jasiune_Nephiueda_template
+            }
+            save_scope_as = Jasiune_Nephiueda_scope
+        }
+    }
+
+    option = {
+        name = naleni_great_reform_events.3.a
+        default_option = yes
+        add_modifier = {
+            name = naleni_institutions_buff
+            years = 10
+        }
+        custom_tooltip = naleni_great_reform_modernizer_increase_tt
+        every_interest_group = {
+            set_variable = { name = naleni_great_reform_modernizer_increase value = 50 }
+        }
+        custom_tooltip = {
+            text = naleni_great_reform_progress_increase_1
+            change_variable = { name = naleni_great_reform_var add = 1 }
+        }
+    }
+}
+
+naleni_great_reform_events.4 = { #good ending event
+    type = country_event
+    placement = root
+
+    title = naleni_great_reform_events.4.t  
+    desc = naleni_great_reform_events.4.d  
+    flavor = naleni_great_reform_events.4.f  
+
+    event_image = {
+        video = "unspecific_airship"
+    }
+
+    icon = "gfx/interface/icons/goods_icons/man_o_wars.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+    immediate = {
+        random_scope_character = {
+            limit = {
+                has_template = naleni_jasiune_Nephiueda_template
+            }
+            save_scope_as = Jasiune_Nephiueda_scope
+        }
+    }
+
+    option = {
+        name = naleni_great_reform_events.4.a
+        default_option = yes
+        add_modifier = {
+            name = modifier_naleni_economic_reforms_sucess_reward
+		    days = very_long_modifier_time
+        }
+        random_scope_character = {
+            limit = {
+                has_template = naleni_jasiune_Nephiueda_template
+            }
+            add_modifier = {
+                name = modifier_great_reformer
+            }
+        }
+        active_law:lawgroup_church_and_state = {
+            add_amendment = {
+                type = amendment_naleni_great_reform_conversion
+                sponsor = PREV.ig:ig_devout
+                cooldown = 240
+            }
+        }
+        active_law:lawgroup_economic_system= {
+            add_amendment = {
+                type = amendment_naleni_great_reform_1
+                sponsor = PREV.ig:ig_industrialists
+                cooldown = 240
+            }
+        }  
+    }
+}
+
+naleni_great_reform_events.5 = { #bad ending event
+    type = country_event
+    placement = root
+
+    title = naleni_great_reform_events.5.t  
+    desc = naleni_great_reform_events.5.d  
+    flavor = naleni_great_reform_events.5.f  
+
+    event_image = {
+        video = "asia_dead_cattle_poor_harvest"
+    }
+
+    icon = "gfx/interface/icons/goods_icons/man_o_wars.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+    immediate = {
+        random_scope_character = {
+            limit = {
+                has_template = naleni_jasiune_Nephiueda_template
+            }
+            save_scope_as = Jasiune_Nephiueda_scope
+        }
+    }
+
+    option = {
+        name = naleni_great_reform_events.5.a
+        default_option = yes
+        add_modifier = {
+            name = modifier_failed_reform_under_god
+            days = very_long_modifier_time
+        }
+    }   
+}
+
+naleni_great_reform_events.6 = { #Neutral ending
+    type = country_event
+    placement = root
+
+    title = naleni_great_reform_events.6.t  
+    desc = naleni_great_reform_events.6.d  
+    flavor = naleni_great_reform_events.6.f  
+
+    event_image = {
+        video = "africa_leader_arguing"
+    }
+
+    icon = "gfx/interface/icons/goods_icons/man_o_wars.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 1
+
+    immediate = {
+        random_scope_character = {
+            limit = {
+                has_template = naleni_jasiune_Nephiueda_template
+            }
+            save_scope_as = Jasiune_Nephiueda_scope
+        }
+    }
+
+    option = {
+        name = naleni_great_reform_events.6.a
+        default_option = yes
+    }    
+}
+
+

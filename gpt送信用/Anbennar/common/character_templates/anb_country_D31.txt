@@ -1,0 +1,25 @@
+﻿### Dakaz Carzviya character template file ###
+
+D31_Dak_Chaingrasper = {
+	first_name = dak
+	last_name = chaingrasper
+	historical = yes
+	birth_date = 1408.11.4
+	culture = cu:undergrowth_goblin
+	interest_group = ig_armed_forces
+	ruler = yes
+	is_general = yes
+	ig_leader = yes
+	ideology = ideology_authoritarian
+	dna = dna_dak
+	traits = {
+		trait_immortal
+		ambitious
+		arrogant
+		experienced_offensive_planner
+		powerful_mage
+	}
+	on_created = {
+		set_character_immortal = yes
+	}
+}

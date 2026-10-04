@@ -1,0 +1,274 @@
+﻿# Eordand Unification
+AI = {
+#Cannor
+	#GPs and majors (should all have set strategies)
+	c:A01 ?= { # Anbennar
+		set_strategy = ai_strategy_industrial_expansion
+		set_strategy = ai_strategy_restore_natural_borders
+		set_strategy = ai_strategy_progressive_agenda
+	}
+	c:A02 ?= { # Vivin Empire
+		set_strategy = ai_strategy_agricultural_expansion
+		set_strategy = ai_strategy_maintain_power_balance
+		set_strategy = ai_strategy_reactionary_agenda
+	}
+	c:A03 ?= { # Lorent
+		set_strategy = ai_strategy_industrial_expansion
+		set_strategy = ai_strategy_maintain_power_balance
+		set_strategy = ai_strategy_conservative_agenda
+	}
+	c:A04 ?= { # Northern League
+		set_strategy = ai_strategy_industrial_expansion
+		set_strategy = ai_strategy_economic_imperialism
+		set_strategy = ai_strategy_progressive_agenda
+	}
+	c:A06 ?= { # Gnomish Hierarchy
+		set_strategy = ai_strategy_industrial_expansion
+		set_strategy = ai_strategy_maintain_power_balance
+		set_strategy = ai_strategy_conservative_agenda
+	}
+	c:A09 ?= { # Busilar
+		set_strategy = ai_strategy_resource_expansion
+		set_strategy = ai_strategy_colonial_expansion
+		set_strategy = ai_strategy_conservative_agenda
+	}
+	c:A10 ?= { # Grombar
+		set_strategy = ai_strategy_resource_expansion
+		set_strategy = ai_strategy_colonial_expansion
+		set_strategy = ai_strategy_reactionary_agenda
+	}
+	c:A14 ?= { # Small Country
+		set_strategy = ai_strategy_agricultural_expansion
+		set_strategy = ai_strategy_maintain_power_balance
+		set_strategy = ai_strategy_conservative_agenda
+	}
+	c:A20 ?= { # Ibevar
+		set_strategy = ai_strategy_placate_population
+		set_strategy = ai_strategy_maintain_power_balance
+		set_strategy = ai_strategy_conservative_agenda
+	}
+	# Escann
+	c:A29 ?= { # Marrhold
+		set_strategy = ai_strategy_escann_unification
+	}
+	c:A31 ?= { # Unguldavor
+		set_strategy = ai_strategy_escann_unification
+	}
+	c:A30 ?= { # Magocratic Demesne
+		set_strategy = ai_strategy_placate_population
+		set_strategy = ai_strategy_escann_unification
+		set_strategy = ai_strategy_reactionary_agenda
+	}
+	c:A26 ?= { # Wyvernheart
+		set_strategy = ai_strategy_escann_unification
+	}
+	c:A22 ?= { # Ancardia
+		set_strategy = ai_strategy_resource_expansion
+		set_strategy = ai_strategy_escann_unification
+	}
+	c:A28 ?= { # Rosande
+		set_strategy = ai_strategy_escann_unification
+	}
+	c:A27 ?= { # Blademarches
+		set_strategy = ai_strategy_escann_unification
+	}
+	c:A25 ?= { # Araionn
+		set_strategy = ai_strategy_escann_unification
+	}
+#Bulwar
+	c:F01 ?= { #Jaddanzar
+		set_strategy = ai_strategy_resource_expansion
+		set_strategy = ai_strategy_maintain_power_balance
+		set_strategy = ai_strategy_conservative_agenda
+	}
+#Haless
+	c:E01 ?= { #Kalsyto
+		set_strategy = ai_strategy_placate_population
+		set_strategy = ai_strategy_armed_isolationism
+		set_strategy = ai_strategy_progressive_agenda
+	}
+	c:R07 ?= {	#Nadiraji
+		set_strategy = ai_strategy_territorial_expansion
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}
+	# Command Unification
+	c:R08 ?= {	#Old Command
+		set_strategy = ai_strategy_reunify_command
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}	
+	c:R09 ?= {	#Pordhatti
+		set_strategy = ai_strategy_territorial_expansion
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}	
+	c:R10 = {	#Khiraspid
+		set_strategy = ai_strategy_territorial_expansion
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}	
+	c:R11 ?= {	#Keyattordha
+		set_strategy = ai_strategy_territorial_expansion
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}	
+	c:R12 ?= {	#Maharaaja
+		set_strategy = ai_strategy_territorial_expansion
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}	
+	c:R13 ?= {	#Yodashikyu
+		set_strategy = ai_strategy_territorial_expansion
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}	
+	c:R14 ?= {	#Command A
+		set_strategy = ai_strategy_reunify_command
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}	
+	c:R15 ?= {	#Command B
+		set_strategy = ai_strategy_reunify_command
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}	
+	c:R16 ?= {	#Command C
+		set_strategy = ai_strategy_reunify_command
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}	
+	c:R17 ?= {	#Lion Command
+		set_strategy = ai_strategy_reunify_command
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}	
+	c:R18 ?= {	#Command E
+		set_strategy = ai_strategy_reunify_command
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}	
+	c:R19 ?= {	#Dragon Command	
+		set_strategy = ai_strategy_territorial_expansion
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}
+	c:R72 ?= {	#Dhugajir	
+		set_strategy = ai_strategy_territorial_expansion
+		random_list = {
+			50 = { set_strategy = ai_strategy_conservative_agenda }
+			50 = { set_strategy = ai_strategy_progressive_agenda }
+		}
+	}
+	c:Y09 ?= {	#Azjakuma
+		set_strategy = ai_strategy_maintain_power_balance
+	}
+	c:Y32 ?= {	#LHC
+		set_strategy = ai_strategy_plantation_economy
+		set_strategy = ai_strategy_subject_maintain_autonomy
+		set_strategy = ai_strategy_conservative_agenda
+	}
+	c:Y33 ?= {	#BHC
+		set_strategy = ai_strategy_plantation_economy
+		set_strategy = ai_strategy_subject_maintain_autonomy
+		set_strategy = ai_strategy_conservative_agenda
+	}
+#North Aelantir
+	c:B98 ?= { # Trollsbay Concord
+		set_strategy = ai_strategy_industrial_expansion
+		set_strategy = ai_strategy_maintain_power_balance
+		set_strategy = ai_strategy_progressive_agenda
+	}
+	c:B07 ?= { # Triarchy
+		set_strategy = ai_strategy_industrial_expansion
+		set_strategy = ai_strategy_colonial_expansion
+		set_strategy = ai_strategy_progressive_agenda
+	}
+	c:B05 ?= { # Vanbury Guild
+		set_strategy = ai_strategy_resource_expansion
+		set_strategy = ai_strategy_colonial_expansion
+		set_strategy = ai_strategy_conservative_agenda
+	}
+	c:B03 ?= { # Calasanni Trade Company
+		set_strategy = ai_strategy_plantation_economy
+		set_strategy = ai_strategy_subject_maintain_autonomy
+		set_strategy = ai_strategy_conservative_agenda
+	}
+	c:B14 ?= { # Endralliande
+		set_strategy = ai_strategy_resource_expansion
+		set_strategy = ai_strategy_subject_break_free
+		set_strategy = ai_strategy_progressive_agenda
+	}
+	c:B18 ?= { # Bloodgroves
+		set_strategy = ai_strategy_resource_expansion
+		set_strategy = ai_strategy_subject_break_free
+		set_strategy = ai_strategy_conservative_agenda
+	}
+	c:B49 ?= { #Dragon Dominion
+		set_strategy = ai_strategy_resource_expansion
+		set_strategy = ai_strategy_territorial_expansion
+		set_strategy = ai_strategy_conservative_agenda
+	}
+	c:B29 ?= { #Sarda Empire
+		set_strategy = ai_strategy_placate_population
+		set_strategy = ai_strategy_maintain_power_balance
+		set_strategy = ai_strategy_conservative_agenda
+	}
+	c:B91 ?= { #Ranger Republic
+		set_strategy = ai_strategy_industrial_expansion
+		set_strategy = ai_strategy_territorial_expansion
+		set_strategy = ai_strategy_conservative_agenda
+	}
+	#Eordand unification
+	c:B82 ?= {	#Einnsag
+		set_strategy = ai_strategy_resource_expansion
+		set_strategy = ai_strategy_eordand_unification
+		set_strategy = ai_strategy_conservative_agenda
+	}
+	c:B84 ?= {	#Arakeprun
+		set_strategy = ai_strategy_agricultural_expansion
+		set_strategy = ai_strategy_eordand_unification
+		set_strategy = ai_strategy_progressive_agenda
+	}
+	c:B85 ?= {	#Murdkather
+		set_strategy = ai_strategy_agricultural_expansion
+		set_strategy = ai_strategy_eordand_unification
+		set_strategy = ai_strategy_conservative_agenda
+	}
+#South Aelantir
+	c:C30 ?= {
+		set_strategy = ai_strategy_resource_expansion
+		set_strategy = ai_strategy_maintain_power_balance
+		set_strategy = ai_strategy_conservative_agenda
+	}
+}	
+
+
+
+

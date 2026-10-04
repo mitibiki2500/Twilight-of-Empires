@@ -1,0 +1,93 @@
+﻿COUNTRIES = {
+	c:A19 ?= {
+		effect_starting_technology_tier_2_tech = yes # Was in the empire till recently
+		
+		activate_law = law_type:law_parliamentary_republic
+		activate_law = law_type:law_wealth_voting
+		activate_law = law_type:law_cultural_exclusion
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_appointed_bureaucrats		
+		activate_law = law_type:law_peasant_levies
+		# No home affairs
+		
+		activate_law = law_type:law_laissez_faire
+		activate_law = law_type:law_free_trade
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_colonial_exploitation
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_no_schools
+		# No healthcare
+		activate_law = law_type:law_tenant_farmers
+		activate_law = law_type:law_combination_acts
+		
+		activate_law = law_type:law_censorship
+		#activate_law = law_type:law_serfdom_banned
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_women_own_property
+		activate_law = law_type:law_poor_laws
+		activate_law = law_type:law_slavery_banned
+		
+
+		
+		
+		activate_law = law_type:law_nation_of_artifice
+
+		ig:ig_armed_forces = {
+			add_ruling_interest_group = yes
+		}
+		ig:ig_industrialists = {
+			add_ruling_interest_group = yes
+		}
+
+		# Magic
+		add_technology_researched = cannorian_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_mass_plant_growth
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_evocation_corps
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_magical_feasts
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 1
+		}
+	}
+}

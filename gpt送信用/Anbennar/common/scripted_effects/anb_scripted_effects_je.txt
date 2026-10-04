@@ -1,0 +1,439 @@
+﻿# TODO - scripted effects be grouped by file (example: all effects for the Peen JE are in a file called anb_scripted_effects_peen_je)
+
+calculate_mechanim_revolt_progress = {
+
+	#From Poverty
+	set_variable = { name = mechanim_public_opinion_progress_from_proverty value = 0 }
+	every_scope_state = {
+		limit = {
+			is_incorporated = yes
+		}
+		set_variable = { name = temp_sol value = this.population_below_expected_sol } 
+		change_variable = { name = temp_sol multiply = this.state_population }
+		change_variable = { name = temp_sol divide = root.total_population }
+		change_variable = { name = temp_sol multiply = 10 } # This variable equals the percentage of pops in incorporated states below expected SoL times ten. If 25% of your pops in incorporated states are below expected SoL, this will equal 2.5.
+		ROOT = {
+			change_variable = { name = mechanim_public_opinion_progress_from_proverty add = prev.var:temp_sol }
+		}
+	}
+	# From Laws
+	set_variable = { name = mechanim_progress_from_laws value = 0 }
+	# Cops
+	set_variable = { name = temp_policing_var_contribution value = institution:institution_police.investment }
+	if = {
+		limit = {
+			has_law = law_type:law_no_police
+		}
+		change_variable = { name = temp_policing_var_contribution add = 0.3 }
+	}
+	else_if = {
+		limit = {
+			has_law = law_type:law_local_police
+		}
+		change_variable = { name = temp_policing_var_contribution multiply = -0.05 }
+	}
+	else_if = {
+		limit = {
+			has_law = law_type:law_dedicated_police
+		}
+		change_variable = { name = temp_policing_var_contribution multiply = -0.2 }
+	}
+	else_if = {
+		limit = {
+			has_law = law_type:law_militarized_police
+		}
+		change_variable = { name = temp_policing_var_contribution multiply = -0.4 }
+	}
+	
+	# Internal Affairs
+	set_variable = { name = temp_ha_var_contribution value = institution:institution_home_affairs.investment }
+	if = {
+		limit = {
+			has_law = law_type:law_no_home_affairs
+		}
+		change_variable = { name = temp_ha_var_contribution add = 0.3 }
+	}
+	else_if = {
+		limit = {
+			has_law = law_type:law_guaranteed_liberties
+		}
+		change_variable = { name = temp_ha_var_contribution multiply = -0.05 }
+	}
+	else_if = {
+		limit = {
+			has_law = law_type:law_national_guard
+		}
+		change_variable = { name = temp_ha_var_contribution multiply = -0.2 }
+	}
+	else_if = {
+		limit = {
+			has_law = law_type:law_secret_police
+		}
+		change_variable = { name = temp_ha_var_contribution multiply = -0.4 }
+	}
+	change_variable = { name = mechanim_progress_from_laws add = var:temp_policing_var_contribution }
+	change_variable = { name = mechanim_progress_from_laws add = var:temp_ha_var_contribution }
+	remove_variable = temp_policing_var_contribution
+	remove_variable = temp_ha_var_contribution
+}
+
+set_mechanim_revolt_vars = {
+	set_variable = { name = mechanim_public_opinion_progress_from_proverty value = 0 }
+	set_variable = { name = mechanim_progress_from_laws value = 0 }
+	set_variable = { name = mechanim_revolt_progress_var_add value = 0 }
+	set_variable = { name = mechanim_success_progress_var_add value = 0 }
+}
+
+clear_mechanim_revolt_vars = {
+	remove_variable = mechanim_public_opinion_progress_from_proverty
+	remove_variable = mechanim_progress_from_laws
+	remove_variable = mechanim_revolt_progress_var_add
+	remove_variable = mechanim_success_progress_var_add
+}
+
+#TODO - review values
+
+set_mechanim_awakening_sentience_support_vars = {
+	set_variable = { name = mechanim_awakening_sentience_support_progress_tech value = 0 }
+	set_variable = { name = mechanim_awakening_sentience_support_progress_from_industrialists value = 0 }
+}
+
+clear_mechanim_awakening_sentience_support_vars = {
+	remove_variable = mechanim_awakening_sentience_support_progress_tech
+	remove_variable = mechanim_awakening_sentience_support_progress_from_industrialists
+}
+
+calculate_mechanim_awakening_sentience_support_progress = {
+  set_variable = { name = mechanim_awakening_sentience_support_progress_tech value = 0 }
+	set_variable = { name = mechanim_awakening_sentience_support_progress_from_industrialists value = 0 }
+	# From Tech
+	if = {
+		limit = {
+			has_technology_researched = mechanim_rights
+		}
+		change_variable = { name = mechanim_awakening_sentience_support_progress_tech add = 0.5 }
+	}
+
+	#From Industrialists	
+	if = {
+		limit = {
+			ig:ig_industrialists = { ig_clout > 0.05 }
+		}
+		change_variable = { name = mechanim_awakening_sentience_support_progress_from_industrialists subtract = 0.2 }
+	}
+	if = {
+		limit = {
+			ig:ig_industrialists = { ig_clout > 0.15 }
+		}
+		change_variable = { name = mechanim_awakening_sentience_support_progress_from_industrialists subtract = 0.2 }
+	}
+	if = {
+		limit = {
+			ig:ig_industrialists = { ig_clout > 0.30 }
+		}
+		change_variable = { name = mechanim_awakening_sentience_support_progress_from_industrialists subtract = 0.3 }
+	}
+}
+
+# TODO - fix this to directly effect bar 
+add_mechanim_awakening_sentience_support_progress_from_event_tracker_point = {
+	custom_tooltip = {
+		text = add_mechanim_awakening_sentience_support_progress_from_event_tracker_point
+		je:je_mechanim_awakening = {
+			add_progress = { value = 1 name = mechanim_awakening_progress_bar}
+		}
+	}
+}
+			
+subtract_mechanim_awakening_sentience_support_progress_from_event_tracker_point = {
+	custom_tooltip = {
+		text = subtract_mechanim_awakening_sentience_support_progress_from_event_tracker_point
+		je:je_mechanim_awakening = {
+			add_progress = { value = -1 name = mechanim_awakening_progress_bar}
+		}
+	}
+}
+
+give_claims_on_eordand = {
+	s:STATE_FOGRACLEAK = { add_claim = prev }
+	s:STATE_TRIMTHIR = { add_claim = prev } 
+	s:STATE_MURDKATHER = { add_claim = prev } 
+	s:STATE_DEARKTIR = { add_claim = prev } 
+	s:STATE_PASKALA = { add_claim = prev } 
+	s:STATE_GATHGOB = { add_claim = prev } 
+	s:STATE_PELODARD = { add_claim = prev } 
+	s:STATE_DARHAN = { add_claim = prev } 
+	s:STATE_TRASAND = { add_claim = prev } 
+	s:STATE_EINNSAG = { add_claim = prev } 
+	s:STATE_SGLOLAD = { add_claim = prev } 
+	s:STATE_RAITHLOS = { add_claim = prev } 
+	s:STATE_TRIMGARB = { add_claim = prev } 
+	s:STATE_EGASACH = { add_claim = prev } 
+	s:STATE_FOGHARBAC = { add_claim = prev } 
+	s:STATE_DARTIR = { add_claim = prev } 
+	s:STATE_GEMRADCURT = { add_claim = prev } 
+	s:STATE_JHORGASHIRR = { add_claim = prev } 
+	s:STATE_GALBHAN = { add_claim = prev } 
+	s:STATE_ARMONADH = { add_claim = prev } 
+	s:STATE_ANHOLTIR = { add_claim = prev } 
+}
+
+
+clear_gem_of_dolindha_variables = {
+	remove_global_variable = gem_of_dolindha_srd_progress
+	remove_global_variable = gem_of_dolindha_drd_progress
+	remove_global_variable = gem_of_dolindha_sarda_gdp_passive_var
+	remove_global_variable = gem_of_dolindha_dragon_dominion_gdp_passive_var
+	remove_global_variable = gem_of_dolindha_gdp_balance_passive_var
+	remove_global_variable = gem_of_dolindha_sarda_army_passive_var
+	remove_global_variable = gem_of_dolindha_dragon_dominion_army_passive_var
+	remove_global_variable = gem_of_dolindha_army_balance_passive_var
+	remove_global_variable = gem_of_dolindha_bosancovac_army_passive_var
+	remove_global_variable = gem_of_dolindha_total_army_passive_var
+}
+
+calculate_gem_of_dolindha_passive_progress = {
+	set_global_variable = { name = gem_of_dolindha_dragon_dominion_gdp_passive_var value = 0 }
+	set_global_variable = { name = gem_of_dolindha_sarda_gdp_passive_var value = 0 }
+	set_global_variable = { name = gem_of_dolindha_gdp_balance_passive_var value = 0 }
+
+	set_global_variable = { name = gem_of_dolindha_dragon_dominion_army_passive_var value = 0 }
+	set_global_variable = { name = gem_of_dolindha_sarda_army_passive_var value = 0 }
+	set_global_variable = { name = gem_of_dolindha_army_balance_passive_var value = 0 }
+	set_global_variable = { name = gem_of_dolindha_bosancovac_army_passive_var value = 0 }
+	set_global_variable = { name = gem_of_dolindha_bosancovac_altered_army_passive_var value = 0 }
+	set_global_variable = { name = gem_of_dolindha_total_army_passive_var value = 0 }
+
+	set_global_variable = { name = gem_of_dolindha_dragon_dominion_lobby_passive_var value = 0 }
+	set_global_variable = { name = gem_of_dolindha_sarda_lobby_passive_var value = 0 }
+	set_global_variable = { name = gem_of_dolindha_lobby_balance_passive_var value = 0 }
+
+
+	c:B39 ?= {
+		change_global_variable = { name = gem_of_dolindha_sarda_gdp_passive_var add = "gdp_ownership_ratio(c:B29)" }
+		change_global_variable = { name = gem_of_dolindha_dragon_dominion_gdp_passive_var add = "gdp_ownership_ratio(c:B49)" }
+		
+		if = {
+			limit = {
+				any_political_lobby = {
+					target = c:B29
+					is_political_lobby_type = lobby_pro_country
+				}
+			}
+			random_political_lobby = {
+				limit = {
+					target = c:B29
+					is_political_lobby_type = lobby_pro_country
+				}
+				change_global_variable = { name = gem_of_dolindha_sarda_lobby_passive_var add = lobby_clout  }
+			}
+		}
+		if = {
+			limit = {
+				any_political_lobby = {
+					target = c:B29
+					is_political_lobby_type = lobby_anti_country
+				}
+			}
+			random_political_lobby = {
+				limit = {
+					target = c:B29
+					is_political_lobby_type = lobby_anti_country
+				}
+				change_global_variable = { name = gem_of_dolindha_sarda_lobby_passive_var subtract = lobby_clout  }
+			}
+		}
+		if = {
+			limit = {
+				any_political_lobby = {
+					target = c:B49
+					is_political_lobby_type = lobby_pro_country
+				}
+			}
+			random_political_lobby = {
+				limit = {
+					target = c:B49
+					is_political_lobby_type = lobby_pro_country
+				}
+				change_global_variable = { name = gem_of_dolindha_dragon_dominion_lobby_passive_var add = lobby_clout  }
+			}
+		}
+		if = {
+			limit = {
+				any_political_lobby = {
+					target = c:B49
+					is_political_lobby_type = lobby_anti_country
+				}
+			}
+			random_political_lobby = {
+				limit = {
+					target = c:B49
+					is_political_lobby_type = lobby_anti_country
+				}
+				change_global_variable = { name = gem_of_dolindha_dragon_dominion_lobby_passive_var subtract = lobby_clout  }
+			}
+		}
+
+		change_global_variable = { name = gem_of_dolindha_bosancovac_army_passive_var add = army_power_projection }
+		every_subject_or_below  = {
+			#limit = { NOT = { is_subject_type = subject_type_tributary } }
+			change_global_variable = { name = gem_of_dolindha_bosancovac_army_passive_var add = army_power_projection }
+		}
+		every_scope_ally = {
+			change_global_variable = { name = gem_of_dolindha_bosancovac_army_passive_var add = army_power_projection }
+		}
+	}
+
+	c:B29 ?= {
+		change_global_variable = { name = gem_of_dolindha_sarda_army_passive_var add = army_power_projection }
+		every_subject_or_below  = {
+			#limit = { NOT = { is_subject_type = subject_type_tributary } }
+			change_global_variable = { name = gem_of_dolindha_sarda_army_passive_var add = army_power_projection }
+		}
+	}
+
+	c:B49 ?= {
+		change_global_variable = { name = gem_of_dolindha_dragon_dominion_army_passive_var add = army_power_projection }
+		every_subject_or_below  = {
+			#limit = { NOT = { is_subject_type = subject_type_tributary } }
+			change_global_variable = { name = gem_of_dolindha_sarda_army_passive_var add = army_power_projection }
+		}
+	}
+
+	set_global_variable = { name = gem_of_dolindha_gdp_balance_passive_var value = global_var:gem_of_dolindha_sarda_gdp_passive_var }
+	change_global_variable = { name = gem_of_dolindha_gdp_balance_passive_var subtract = global_var:gem_of_dolindha_dragon_dominion_gdp_passive_var }
+
+	set_global_variable = { name = gem_of_dolindha_army_balance_passive_var value = global_var:gem_of_dolindha_sarda_army_passive_var }
+	change_global_variable = { name = gem_of_dolindha_army_balance_passive_var subtract = global_var:gem_of_dolindha_dragon_dominion_army_passive_var }
+	if = {
+		limit = {
+			global_var:gem_of_dolindha_army_balance_passive_var > 0
+		}
+		change_global_variable = { name = gem_of_dolindha_army_balance_passive_var subtract = global_var:gem_of_dolindha_bosancovac_army_passive_var }
+		if = {
+			limit = {
+				global_var:gem_of_dolindha_army_balance_passive_var < 0
+			}
+			set_global_variable = { name = gem_of_dolindha_army_balance_passive_var value = 0 }
+		}
+	}
+	else = {
+		change_global_variable = { name = gem_of_dolindha_army_balance_passive_var add = global_var:gem_of_dolindha_bosancovac_army_passive_var }
+		if = {
+			limit = {
+				global_var:gem_of_dolindha_army_balance_passive_var > 0
+			}
+			set_global_variable = { name = gem_of_dolindha_army_balance_passive_var value = 0 }
+		}
+	}
+	change_global_variable = { name = gem_of_dolindha_army_balance_passive_var divide = 1000 }
+	
+	set_global_variable = { name = gem_of_dolindha_total_army_passive_var value = global_var:gem_of_dolindha_sarda_army_passive_var }
+	change_global_variable = { name = gem_of_dolindha_total_army_passive_var add = global_var:gem_of_dolindha_dragon_dominion_army_passive_var }
+	set_global_variable = { name = gem_of_dolindha_bosancovac_altered_army_passive_var value = global_var:gem_of_dolindha_bosancovac_army_passive_var }
+	change_global_variable = { name = gem_of_dolindha_bosancovac_altered_army_passive_var multiply = 2 }
+
+	set_global_variable = { name = gem_of_dolindha_lobby_balance_passive_var value = global_var:gem_of_dolindha_sarda_lobby_passive_var }
+	change_global_variable = { name = gem_of_dolindha_lobby_balance_passive_var subtract = global_var:gem_of_dolindha_dragon_dominion_lobby_passive_var }
+
+	every_country = {
+		limit = {
+			has_journal_entry = je_gem_of_dolindha
+		}
+		je:je_gem_of_dolindha = {
+			if = {
+				limit = {
+					"scripted_bar_progress(gem_of_dolindha_core_progress_bar)" < 0
+				}
+				set_bar_progress = { value = 0 name = gem_of_dolindha_core_progress_bar }
+			}
+			if = {
+				limit = {
+					"scripted_bar_progress(gem_of_dolindha_core_progress_bar)" > 100
+				}
+				set_bar_progress = { value = 100 name = gem_of_dolindha_core_progress_bar }
+			}
+			set_global_variable = { name = gem_of_dolindha_srd_progress value = "scripted_bar_progress(gem_of_dolindha_core_progress_bar)" }
+			set_global_variable = { name = gem_of_dolindha_drd_progress value = 100 }
+			change_global_variable = { name = gem_of_dolindha_drd_progress subtract = "scripted_bar_progress(gem_of_dolindha_core_progress_bar)" }
+		}
+	}
+}
+
+restore_minarian_republic = {
+	if = {
+		limit = {
+			NOT = {
+				has_law = law_type:law_presidential_republic
+			}
+		}
+		activate_law = law_type:law_presidential_republic
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_law = law_type:law_total_separation
+			}
+		}
+		activate_law = law_type:law_total_separation
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_law = law_type:law_wealth_voting
+			}
+		}
+		activate_law = law_type:law_wealth_voting
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_law = law_type:law_racial_segregation
+			}
+		}
+		activate_law = law_type:law_racial_segregation
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_law = law_type:law_mercantilism
+			}
+		}
+		activate_law = law_type:law_mercantilism
+	}
+	if = {
+		limit = {
+			NOR = {
+				has_law = law_type:law_agrarianism
+				has_law = law_type:law_interventionism
+			}
+		}
+		activate_law = law_type:law_agrarianism
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_law = law_type:law_right_of_assembly
+			}
+		}
+		activate_law = law_type:law_right_of_assembly
+	}
+	if = {
+		limit = {
+			NOR = {
+				has_law_or_variant = law_type:law_colonial_slavery
+				has_law_or_variant = law_type:law_legacy_slavery
+				has_law_or_variant = law_type:law_slavery_banned
+			}
+		}
+		activate_law = law_type:law_legacy_slavery	#no reason to keep penal slavery without an overlord
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_law = law_type:law_per_capita_based_taxation
+			}
+		}
+		activate_law = law_type:law_per_capita_based_taxation
+	}
+}

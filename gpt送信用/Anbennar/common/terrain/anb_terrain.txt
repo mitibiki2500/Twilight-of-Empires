@@ -1,0 +1,66 @@
+﻿#The materials referenced in this file are the materials in the file gfx\map\terrain\materials.settings and
+#are used when regenerating the province terrain based on what terrain materials have been painted where.
+
+#The materials referenced in this file are the materials in the file gfx\map\terrain\materials.settings and
+#are used when regenerating the province terrain based on what terrain materials have been painted where.
+
+#example = {											# Terrain type name
+#	weight = { 											# Script value for the terrain weight when determining the prevalent terrain in a province set, example:
+#		value = state.b:building_urban_center.level 	# 2 Plains provinces with weight 0.5 = total weight 1 for Plains; 3 mountain provinces weight 0.25 = total weight 0.75 for Mountains; prevalent terrain is Plains
+#	}													# Root scope is the province in the set
+# 														  
+#	textures = {										# Extra textures that could be used in specific cases
+#		{																				
+#			weight = {									# Scripted value, by default 0, if more than zero the highest scoring texture will override the default one
+#				value = 0								# Available scopes: scope:state, scope:region (for state region)
+#				scope:region = {
+#					#blabla
+#				}
+#			}
+#			path = "gfx/state_pictures/asia_example.dds" # Path to additional texture
+#			effect = "effect_entity_name_1"				 # Effect entity for specific texture
+#		}
+#		{
+#			weight = {
+#				value = 0
+#				
+#			}
+#			path = "gfx/state_pictures/europe_example.dds"
+#			effect = "effect_entity_name_2"				
+#		}
+#	}
+#	combat_width = 0.8									# The maximum numeric advantage a side can make use of in battle, 0.8 = up to 80% more of an advantage
+#	risk = 0.1											# Risk of casualties in a terrain
+#	materials = { 										# Materials and weights used to determine if province belongs to terrain type
+#		Material_01 = 1									# Material with weight
+#		Material_02 = 1
+#	}
+#	debug_color = hsv { 0.1 0.5 0.8 }					# Color used in a debug mode
+#	pollution_mask_strength = 0.5						# Polution mask strength
+#	devastation_mask_strength = 1.0						# Devastation mask strength
+#}
+
+cavern = { 
+	label = label_elevated
+	label = label_hazardous
+	label = label_travel_harsh_environment
+	weight = 0 #only applied manually
+	textures = {
+		{
+			weight = {
+				value = 1
+			}
+			path = "gfx/state_pictures/mountains_northamerica.dds"
+			effect = "vfx_entity_ui_state_mountains_northamerica"
+		}
+	}
+	combat_width = 0.3
+	risk = 0.5
+	materials = { 
+		#Woodlands_03 = 1
+	}
+	debug_color = hsv { 0.55 0.75 1 }
+	
+	pollution_mask_strength = 1.0
+	devastation_mask_strength = 1.0
+}

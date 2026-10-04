@@ -1,0 +1,1716 @@
+﻿MILITARY_FORMATIONS = {
+	c:B85 ?= { # Murdkather
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eordand
+			name = "Summer's Vanguard"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_MURDKATHER
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_PASKALA
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_DEARKTIR
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_TRIMTHIR
+				count = 2
+			}
+			save_scope_as = summer_vanguard
+		}
+
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B85_1
+		}
+
+		scope:general_B85_1 = { transfer_to_formation = scope:summer_vanguard }
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_eordand
+			name = "Summer Breeze"
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+			save_scope_as = fleet_B85_1
+		}
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_1
+			save_scope_as = admiral_B85_1
+		}
+		scope:admiral_B85_1 = { transfer_to_formation = scope:fleet_B85_1 }
+	}
+	c:B84 ?= { # Arakeprun
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eordand
+			name = "Spring Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_DARHAN
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_TRASAND
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GATHGOB
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_PELODARD
+				count = 2
+			}
+			save_scope_as = spring_army
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B84_1
+		}
+
+		scope:general_B84_1 = { transfer_to_formation = scope:spring_army }
+		
+	}
+	c:B82 ?= { # Einnsag
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eordand
+			name = "Autumnnal Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_EINNSAG
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_RAITHLOS
+				count = 2
+			}
+			save_scope_as = army_B82_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B82_1
+		}
+
+		scope:general_B82_1 = { transfer_to_formation = scope:army_B82_1 }
+	}
+	c:B81 ?= { # Eighard
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eordand
+			name = "Autumnnal Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_FOGHARBAC
+				count = 6
+			}
+			save_scope_as = army_B81_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B81_1
+		}
+
+		scope:general_B81_1 = { transfer_to_formation = scope:army_B81_1 }
+		
+	}
+	c:B83 ?= { # Sglard
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eordand
+			name = "Autumnnal Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SGLOLAD
+				count = 3
+			}
+			save_scope_as = army_B83_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B83_1
+		}
+
+		scope:general_B83_1 = { transfer_to_formation = scope:army_B83_1 }
+	}
+	c:B80 ?= { # Eordand Admin
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_eordand
+			name = "Occupation Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_DARTIR
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_GALBHAN
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_JHORGASHIRR
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GEMRADCURT
+				count = 3
+			}
+			save_scope_as = army_B80_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B80_1
+		}
+
+		scope:general_B80_1 = { transfer_to_formation = scope:army_B80_1 }
+	}
+	c:B49 ?= { #Dragon Dom
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+			name = "Bozamachi"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_VIZKALADR
+				count = 20
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GOMOSENGHA
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_POMVASONN
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_JUZONDEZAN
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_VERZEL
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_POMVASONN
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_VIZKALADR
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_EKRSOKA
+				count = 2
+			}
+            save_scope_as = B49_army
+		}
+		create_character = {
+				is_general = yes
+				save_scope_as = B49_gen
+				commander_rank = commander_rank_2
+			}
+		scope:B49_gen = {
+            transfer_to_formation = scope:B49_army
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+			name = "Dragon Knights"
+	
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_BRELAR
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_JUZONDEZAN
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_MOCEPED
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_ROGAIDHA
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_VERZEL
+				count = 1
+			}
+			save_scope_as = B49_army_2
+		}
+
+		create_character = {
+			is_general = yes
+			save_scope_as = B49_gen_2
+		}
+		scope:B49_gen_2 = {
+			transfer_to_formation = scope:B49_army_2
+		}
+	}
+	c:B91 ?= { #Ranger Republic
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_EBENMAS
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_EBENMAS
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_TELLUMTIR
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_TELLUMTIR
+				count = 4
+			}
+			save_scope_as = army_B91_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B91_1
+		}
+
+		scope:general_B91_1 = { transfer_to_formation = scope:army_B91_1 }
+	}
+	c:B37 ?= { #Elathael
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_ELATHAEL
+				count = 8
+			}
+			# combat_unit = {
+			# 	type = unit_type:combat_unit_type_dragoons
+			# 	state_region = s:STATE_ELATHAEL
+			# 	count = 2
+			# }
+			save_scope_as = army_B37_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B37_1
+		}
+
+		scope:general_B37_1 = { transfer_to_formation = scope:army_B37_1 }
+	}
+	c:B34 ={
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_BEGGASLAND
+				count = 5
+		    }
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_NIZELYNN
+				count = 2
+		    }
+			save_scope_as = army_B34_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B34_1
+		}
+
+		scope:general_B34_1 = { transfer_to_formation = scope:army_B34_1 }
+	}
+	c:B41 ?= { #Plumstead
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_PLUMSTEAD
+				count = 12
+		    }
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_PLUMSTEAD
+				count = 3
+			}
+		}
+	}
+	c:B42 ={ #Tiru Moine
+		create_military_formation = {
+			type = army
+			 hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ESIMOINE
+				count = 5
+		    }
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_TUSNATA
+				count = 4
+		    }
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_BORUCKY
+				count = 4
+		    }
+			save_scope_as = army_B42_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B42_1
+		}
+
+		scope:general_B42_1 = { transfer_to_formation = scope:army_B42_1 }
+	}
+	c:B30 ?= { #Ynngard
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_CHIPPENGARD
+				count = 10
+		    }
+			save_scope_as = army_B30_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B30_1
+		}
+
+		scope:general_B30_1 = { transfer_to_formation = scope:army_B30_1 }
+	}
+	c:B45 ?= { #Vels Fadhecai
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_EPADARKAN
+				count = 6
+		    }
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_EPADARKAN
+				count = 1
+			}
+		}
+	}
+	c:B46 ?= { #Minata
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_EPADARKAN
+				count = 4
+		    }
+			save_scope_as = army_B46_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B46_1
+		}
+
+		scope:general_B46_1 = { transfer_to_formation = scope:army_B46_1 }
+	}
+	c:B29 ?= { #sarda empire
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_HRADAPOLERE
+				count = 8
+		    }
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_HRADAPOLERE
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_NIZVELS
+				count = 8
+		    }
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons	#Stenurynn's Oathsworn Carbineers 
+				state_region = s:STATE_NIZVELS
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_YNNPADH
+				count = 3
+		    }
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_VYCHVELS
+				count = 7
+		    }
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_YRISRAD
+				count = 10
+		    }
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_YRISRAD
+				count = 5
+			}
+		}
+	}
+	c:B31 ?= { #Veykoda
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_LETHIR
+				count = 4
+		    }
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_VIZANIRZAG
+				count = 2
+		    }
+		}
+	}
+	c:B32 ?= { #Vestipynn
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_WEST_TIPNEY
+				count = 4
+		    }
+			save_scope_as = army_B32_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B32_1
+		}
+
+		scope:general_B32_1 = { transfer_to_formation = scope:army_B32_1 }
+	}
+	c:B33 ?= { #Corynnpoel
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_CORINSFIELD
+				count = 7
+		    }
+			save_scope_as = army_B33_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B33_1
+		}
+
+		scope:general_B33_1 = { transfer_to_formation = scope:army_B33_1 }
+	}
+	c:B36 ?= { #Argezvale
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ARGEZVALE
+				count = 10
+		    }
+			save_scope_as = army_B36_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B36_1
+		}
+
+		scope:general_B36_1 = { transfer_to_formation = scope:army_B36_1 }
+	}
+	c:B35 ?= { #New Havoral
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_OSINDAIN
+				count = 2
+		    }
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_NEW_HAVORAL
+				count = 5
+		    }
+			save_scope_as = army_B35_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B35_1
+		}
+
+		scope:general_B35_1 = { transfer_to_formation = scope:army_B35_1 }
+	}
+	c:B47 ?= { #Arganjuzorn
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_ARGANJUZORN
+				count = 9
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_ARGANJUZORN
+				count = 3
+			}
+			save_scope_as = army_B47_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B47_1
+		}
+
+		scope:general_B47_1 = { transfer_to_formation = scope:army_B47_1 }
+	}
+	c:B52 ?= { #Drevkenuc
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_USLAD
+				count = 7
+			}
+			save_scope_as = army_B52_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B52_1
+		}
+
+		scope:general_B52_1 = { transfer_to_formation = scope:army_B52_1 }
+	}
+	c:B39 ?= { #Bosancovac
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_USLAD
+				count = 6
+			}
+			save_scope_as = army_B39_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B39_1
+		}
+
+		scope:general_B39_1 = { transfer_to_formation = scope:army_B39_1 }
+	}
+	c:B38 ?= { #Amacimst
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_VITREYNN
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_VITREYNN
+				count = 2
+			}
+			save_scope_as = army_B38_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B38_1
+		}
+
+		scope:general_B38_1 = { transfer_to_formation = scope:army_B38_1 }
+	}
+	c:B53 ?= { #Freemarches
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ynn
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_VARBUKLAND
+				count = 6
+			}
+			save_scope_as = army_B53_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B53_1
+		}
+
+		scope:general_B53_1 = { transfer_to_formation = scope:army_B53_1 }
+	}
+	c:B61 ?= { #Noo Oddansbay
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_dalaire
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_HJORDAL
+				count = 5
+			}
+			save_scope_as = army_B61_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B61_1
+		}
+
+		scope:general_B61_1 = { transfer_to_formation = scope:army_B61_1 }
+	}
+	c:B27 ?= { #Neratica
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_noruin
+			name = "Royal Neratican Army"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_MORDUN
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_CHESHOSHMAR
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_CHESHOSHMAR
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GRAVEROADS
+				count = 2
+			}
+		}
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_noruin
+			name = "Onyx Bones"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_MORDUN
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_DIHEN
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_CHESHOSHMAR
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_TAMETER
+				count = 2
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_noruin
+
+			ship = { # They have one but that's it
+				type = ship_type:ship_type_frigate
+				count = 1
+			}
+		}
+	}
+	c:B26 ?= { #Nur Ionnidar
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_noruin
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_OKHIBOLI
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_OKHIBOLI
+				count = 1
+			}
+			save_scope_as = army_B26_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B26_1
+		}
+
+		scope:general_B26_1 = { transfer_to_formation = scope:army_B26_1 }
+	}
+	c:B98 ?= { #Trollsbay
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_noruin
+			name = "Central Concord Command"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_VALORPOINT
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_THILVIS
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ISOBELIN
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ZANLIB
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_MARLLIANDE
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_TROLLSBRIDGE
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_CESTIRMARK
+				count = 4
+			}
+		}
+
+		create_military_formation = {
+			type = fleet
+			name = "United Concord Navy"
+			hq_region = sr:region_noruin
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 15
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 5
+			}
+		}
+	}
+	c:B18 ?= { #New Redglades
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_noruin
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_KWINELLIANDE
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_NURTHANNCOST
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SOUTH_DALAIRE
+				count = 1
+			}
+			save_scope_as = army_B18_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B18_1
+		}
+
+		scope:general_B18_1 = { transfer_to_formation = scope:army_B18_1 }
+	}
+	c:B89 ?= { #Daxwell
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_noruin
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_THILVIS
+				count = 1
+			}
+			save_scope_as = army_B89_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B89_1
+		}
+
+		scope:general_B89_1 = { transfer_to_formation = scope:army_B89_1 }
+	}
+	c:B21 ?= { #Ynnsmouth
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_noruin
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_YNNSMOUTH
+				count = 5
+			}
+			save_scope_as = army_B21_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B21_1
+		}
+
+		scope:general_B21_1 = { transfer_to_formation = scope:army_B21_1 }
+	}
+
+	c:B15 ?= { #Torrisheah
+		
+	}
+
+	c:B01 ?= { #Asraport
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_ruined_circle
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 3
+			}
+			save_scope_as = fleet_B01_1
+		}
+		
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_1
+			save_scope_as = admiral_B01_1
+		}
+
+		scope:admiral_B01_1 = { transfer_to_formation = scope:fleet_B01_1 }
+		
+	}
+
+	c:B17 ?= { #Aelnar
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_dalaire
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_DALAIREY_WASTES
+				count = 1
+			}
+			save_scope_as = army_B17_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B17_1
+		}
+
+		scope:general_B17_1 = { transfer_to_formation = scope:army_B17_1 }
+		
+	}
+	c:B14 ?= { #Endralliande
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_ruined_circle
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_CAPE_OF_ENDRAL
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_IBSEAN
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_RUBENSHORE
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_JERCEL
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_MARBELOCH
+				count = 3
+			}
+			save_scope_as = army_B14_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B14_1
+		}
+
+		scope:general_B14_1 = { transfer_to_formation = scope:army_B14_1 }
+
+		create_military_formation = {	#reduced the fleet ; it's still a very decent one that's more realistic for their economy (and still oversized)
+			type = fleet
+			hq_region = sr:region_ruined_circle
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+			save_scope_as = fleet_B14_1
+		}
+		
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_1
+			save_scope_as = admiral_B14_1
+		}
+
+		scope:admiral_B14_1 = { transfer_to_formation = scope:fleet_B14_1 }
+		
+	}
+    c:B07 ?= { #Triarchy
+        create_military_formation = {
+            type = army
+            hq_region = sr:region_haraf
+
+            combat_unit = {
+                type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GOOVRAZ
+				count = 2
+            }
+            combat_unit = {
+                type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GOMMIOCHAND
+				count = 5
+            }
+            combat_unit = {
+                type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_MESTIKARDU
+				count = 5
+            }
+            combat_unit = {
+                type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ZURZUMEXIA
+				count = 5
+            }
+            combat_unit = {
+                type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_GOOVRAZ
+				count = 2
+            }
+            combat_unit = {
+                type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_GOMMIOCHAND
+				count = 1
+            }
+			save_scope_as = army_B07_1
+        }
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B07_1
+		}
+
+		scope:general_B07_1 = { transfer_to_formation = scope:army_B07_1 }
+		
+        create_military_formation = {
+            type = fleet
+            hq_region = sr:region_haraf
+
+            ship = {
+				type = ship_type:ship_type_frigate
+				count = 9
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 7
+			}
+			save_scope_as = fleet_B07_1
+        }
+		
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_1
+			save_scope_as = admiral_B07_1
+		}
+
+		scope:admiral_B07_1 = { transfer_to_formation = scope:fleet_B07_1 }
+		
+    }
+    c:B09 ?= { #Minaria
+        create_military_formation = {
+            type = army
+            hq_region = sr:region_haraf
+
+            combat_unit = {
+                type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_MINAR_YOLLI
+				count = 5
+            }
+            combat_unit = {
+                type = unit_type:combat_unit_type_dragoons
+				state_region = s:STATE_MANGROVY_COAST
+				count = 2
+            }
+			save_scope_as = army_B09_1
+        }
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B09_1
+		}
+
+		scope:general_B09_1 = { transfer_to_formation = scope:army_B09_1 }
+    }
+    c:B10 ?= { #Haraf
+        create_military_formation = {
+            type = army
+            hq_region = sr:region_haraf
+
+            combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_NANI_NOLIHE
+				count = 8
+			}
+            combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_NIDI_BIKEHA
+				count = 8
+			}
+            combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_AUVUL_TADIH
+				count = 4
+			}
+			save_scope_as = army_B10_1
+        }
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B10_1
+		}
+
+		scope:general_B10_1 = { transfer_to_formation = scope:army_B10_1 }
+    }
+	
+	c:C03 ?= { #Ozgarom
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_soruin
+
+			name = "Effelai Bulwark"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_OZGAR
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_BRAMMYAR
+				count = 10
+			}
+			save_scope_as = army_C03_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C03_1
+		}
+
+		scope:general_C03_1 = { transfer_to_formation = scope:army_C03_1 }
+		
+	}
+	c:C04 ?= { #Jibirae'n
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_soruin
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_JIBIRAEN
+				count = 5
+			}
+			save_scope_as = army_C04_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C04_1
+		}
+
+		scope:general_C04_1 = { transfer_to_formation = scope:army_C04_1 }
+		
+	}
+	c:C06 ?= { #Swamp Territories
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_effelai
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SORFEN
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_THE_MIDDANS
+				count = 2
+			}
+			save_scope_as = army_C06_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C06_1
+		}
+
+		scope:general_C06_1 = { transfer_to_formation = scope:army_C06_1 }
+		
+	}
+	c:C05 ?= { #Nur Dhanaenn
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_effelai
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SEINAINE
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_DALAINE
+				count = 6
+			}
+			save_scope_as = army_C05_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C05_1
+		}
+
+		scope:general_C05_1 = { transfer_to_formation = scope:army_C05_1 }
+	}
+	c:C08 ?= { #Drakesguard
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_effelai
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_THALASARAN
+				count = 5
+			}
+			save_scope_as = army_C08_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C08_1
+		}
+
+		scope:general_C08_1 = { transfer_to_formation = scope:army_C08_1 }
+		
+	}
+	c:C07 ?= { #Kiohalen
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_effelai
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_KIOHALEN
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_KIINDTIR
+				count = 4
+			}
+			save_scope_as = army_C07_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C07_1
+		}
+
+		scope:general_C07_1 = { transfer_to_formation = scope:army_C07_1 }
+		
+	}
+	c:C09 ?= { #Turtleback
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_effelai
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_EAST_TURTLEBACK
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_WEST_TURTLEBACK
+				count = 2
+			}
+			save_scope_as = army_C09_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C09_1
+		}
+
+		scope:general_C09_1 = { transfer_to_formation = scope:army_C09_1 }
+		
+	}
+	c:C01 ?= { #Rezankand
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_effelai
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ORENKORAIM
+				count = 20
+			}
+			save_scope_as = army_C01_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C01_1
+		}
+
+		scope:general_C01_1 = { transfer_to_formation = scope:army_C01_1 }
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_effelai
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+
+			save_scope_as = fleet_C01_1
+		}
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_1
+			save_scope_as = admiral_C01_1
+		}
+
+		scope:admiral_C01_1 = { transfer_to_formation = scope:fleet_C01_1 }
+		
+	}
+	c:C10 ?= { #Malatel
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_effelai
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_VRENDIN
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_TIMBERNECK
+				count = 1
+			}
+			save_scope_as = army_C10_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C10_1
+		}
+
+		scope:general_C10_1 = { transfer_to_formation = scope:army_C10_1 }
+		
+	}
+	c:C02 ?= { #Amadia
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_amadia
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_CYMBEAHN
+				count = 5
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_ARANLAS
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_BRONRIN
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_SILVEGOR
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_CLAMGUINN
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_CARA_LAFQUEN
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_OOMU_NELIR
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_NUR_ISTRALORE
+				count = 2
+			}
+			save_scope_as = army_C02_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C02_1
+		}
+
+		scope:general_C02_1 = { transfer_to_formation = scope:army_C02_1 }
+		
+	}
+	c:C11 ?= { #Amadian native
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_amadia
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_HARENAINE
+				count = 2
+			}
+			save_scope_as = army_C11_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C11_1
+		}
+
+		scope:general_C11_1 = { transfer_to_formation = scope:army_C11_1 }
+		
+	}
+	c:C16 ?= { #Mushroom
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_effelai
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_MUSHROOM_FOREST
+				count = 2
+			}
+			save_scope_as = army_C16_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C16_1
+		}
+
+		scope:general_C16_1 = { transfer_to_formation = scope:army_C16_1 }
+		
+	}
+	c:B05 ?= { #VG - Vanbury Guild
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_haraf
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_STEEL_BAY
+				count = 10
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_GREENHILL
+				count = 5
+			}
+			save_scope_as = army_B05_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B05_1
+		}
+
+		scope:general_B05_1 = { transfer_to_formation = scope:army_B05_1 }
+		
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_haraf
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 8
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+			save_scope_as = fleet_B05_1
+		}
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_1
+			save_scope_as = admiral_B05_1
+		}
+
+		scope:admiral_B05_1 = { transfer_to_formation = scope:fleet_B05_1 }
+	}
+
+	c:G05 ?= { #Kobildzexbirrix
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_dalaire
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_HJORDAL
+				count = 2
+			}
+			save_scope_as = army_G05_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_G05_1
+		}
+
+		scope:general_G05_1 = { transfer_to_formation = scope:army_G05_1 }
+		
+	}
+
+    c:B59 ?= { #Themaria
+        create_military_formation = {
+            type = army
+            hq_region = sr:region_dalaire
+
+            combat_unit = {
+                type = unit_type:combat_unit_type_line_infantry
+                state_region = s:STATE_TRITHEMAR
+                count = 5
+            }
+			save_scope_as = army_B59_1
+        }
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B59_1
+		}
+
+		scope:general_B59_1 = { transfer_to_formation = scope:army_B59_1 }
+    }
+
+    c:B62 ?= { #Noo Coddoran
+        create_military_formation = {
+            type = army
+            hq_region = sr:region_dalaire
+
+            combat_unit = {
+                type = unit_type:combat_unit_type_line_infantry
+                state_region = s:STATE_SILDARBAD
+                count = 3
+            }
+			save_scope_as = army_B62_1
+        }
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B62_1
+		}
+
+		scope:general_B62_1 = { transfer_to_formation = scope:army_B62_1 }
+		
+    }
+
+    c:B60 ?= { #Nortiochand
+        create_military_formation = {
+            type = army
+            hq_region = sr:region_dalaire
+
+            combat_unit = {
+                type = unit_type:combat_unit_type_line_infantry
+                state_region = s:STATE_MITTANWEK
+                count = 2
+            }
+			save_scope_as = army_B60_1
+        }
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_B60_1
+		}
+
+		scope:general_B60_1 = { transfer_to_formation = scope:army_B60_1 }
+		
+    }
+
+}

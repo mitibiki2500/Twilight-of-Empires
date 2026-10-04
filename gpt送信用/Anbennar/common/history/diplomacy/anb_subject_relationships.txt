@@ -1,0 +1,513 @@
+﻿DIPLOMACY = {
+	c:A01 = { #Anbennar
+		create_diplomatic_pact = {
+			country = c:B16 #New Erngrove
+			type = colony
+		}
+		create_diplomatic_pact = {
+			country = c:B03	#Calasanni Trade Company
+			type = chartered_company
+		}
+		create_diplomatic_pact = {
+			country = c:A37 #Silverforge
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:A44 #Moonhaven
+			type = puppet
+		}
+	}
+	
+	c:A02 = { #Vivin Empire
+		create_diplomatic_pact = {
+			country = c:A05 #Bisan
+			type = puppet
+		}
+		create_diplomatic_pact = {	#This was a CU back in the good old days
+			country = c:A33
+			type = protectorate
+		}
+		create_diplomatic_pact = {
+			country = c:A11 #honderaak
+			type = puppet
+		}
+	}
+	
+	c:A03 = { #Lorent
+
+		create_diplomatic_pact = {
+			country = c:A65 #Redglades
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:A15	#Portnamm
+			type = protectorate
+		}
+		create_diplomatic_pact = {
+			country = c:A75 #Rubyhold
+			type = protectorate
+		}
+		create_diplomatic_pact = {
+			country = c:Y32 #Lorentish Haless Company
+			type = chartered_company
+		}
+
+		#Aelantir
+		create_diplomatic_pact = {
+			country = c:B14 #Endralliande
+			type = dominion
+		}
+		create_diplomatic_pact = {
+			country = c:B18 #New Redglades
+			type = colony
+		}
+		create_diplomatic_pact = {
+			country = c:B26 #Nur Ionnidar
+			type = colony
+		}
+		#Smaller colonies seized during the Blackpowder wars, de facto under Endralliande's administration control
+		create_diplomatic_pact = {
+			country = c:B15 #Torrisheah
+			type = colony
+		}
+		create_diplomatic_pact = {
+			country = c:B13 #Varionail
+			type = colony
+		}
+	}
+
+	c:A04 = {	#Northern League
+		create_diplomatic_pact = {
+			country = c:A18	#Bayvek
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:A19	#Vertesk
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:B04	#Deranne Trade Company
+			type = chartered_company
+		}
+		# create_diplomatic_pact = {	#these guys dont exist anymore
+		# 	country = c:B68	#Westmarches
+		# 	type = puppet
+		# }
+	}
+
+	c:A06 = {	#Gnomish Hierarchy
+		create_diplomatic_pact = {
+			country = c:A07	#Reveria
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:A17	#Brecc
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:B61	#Noo Oddansbay
+			type = colony
+		}
+		create_diplomatic_pact = {
+			country = c:B62	#Noo Coddorran
+			type = colony
+		}
+		create_diplomatic_pact = {
+			country = c:G05	#Kobildzexbirrix
+			type = colony
+		}
+		create_diplomatic_pact = {
+			country = c:G08	#Ollorland
+			type = colony
+		}
+		create_diplomatic_pact = {
+			country = c:G06	#Derhildia
+			type = colony
+		}
+		create_diplomatic_pact = {
+			country = c:G07	#Nyr Revrhavn
+			type = colony
+		}
+		create_diplomatic_pact = {
+			country = c:G09	#Tiera
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:B59	#Themaria
+			type = protectorate
+		}
+		create_diplomatic_pact = {
+			country = c:B80	#Eordand Administration
+			type = dominion
+		}
+	}
+
+	c:A09 = {	#Busilar-Eborthil-Deshak
+		create_diplomatic_pact = {
+			country = c:F15	#Ovdal Tungr
+			type = protectorate
+		}
+		create_diplomatic_pact = {
+			country = c:B75 #Verten
+			type = colony
+		}
+		create_diplomatic_pact = {
+			country = c:B08 #New Lorincrag
+			type = colony
+		}
+		create_diplomatic_pact = {
+			country = c:C09 #Turtleback Island
+			type = colony
+		}
+		create_diplomatic_pact = {
+			country = c:Y33 #Busilar Haless Company
+			type = chartered_company
+		}
+		create_diplomatic_pact = {
+			country = c:L68 #Tvarateram
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:A70 #Nathalaire
+			type = puppet
+		}
+	}
+
+	c:A22 = {	#Ancardia
+		create_diplomatic_pact = {
+			country = c:A24	#Newshire
+			type = puppet
+		}
+	}
+
+	c:A30 = {	#Magocratic Demesne-Wyvernheart customs union as Wyvernheart was helped a lot by them
+		create_diplomatic_pact = {
+			country = c:A26
+			type = protectorate
+		}
+	}
+
+	c:B05 = { #VG
+		create_diplomatic_pact = {
+			country = c:C32 #Devand
+			type = colony
+		}
+	}
+
+	c:B07 = { #Triarchy
+		create_diplomatic_pact = { #took them under their protection following the Rending
+			country = c:B76 #Bokguan
+			type = puppet
+		}
+	}
+
+	c:B14 = { #Endralliande
+		create_diplomatic_pact = {
+			country = c:B12 #Pirendral
+			type = colony
+		}
+	}
+
+	c:B27 = { #Neratica
+		create_diplomatic_pact = {
+			country = c:B09 #Minaria
+			type = personal_union	#Emil sil Onyx proclaimed himself ruler of both countries, so this probably makes the most sense
+		}
+	}
+	
+	c:B29 = { #Sarda Empire
+		create_diplomatic_pact = {
+			country = c:B30 #Ynngard
+			type = vassal
+		}
+		create_diplomatic_pact = {
+			country = c:B31 #Veykoda
+			type = personal_union
+		}
+		create_diplomatic_pact = {
+			country = c:B32 #Vestipynn
+			type = vassal
+		}
+		create_diplomatic_pact = {
+			country = c:B33 #Corynnpoel
+			type = vassal
+		}
+		create_diplomatic_pact = {
+			country = c:B36 #Argezvale
+			type = tributary
+		}
+	}
+	
+	c:B47 = { #Arganjuzorn
+		create_diplomatic_pact = {
+			country = c:B91 #Ranger Republic
+			type = tributary
+		}
+	}
+
+	c:B82 = { #Einnsag - Autumnal League
+		create_diplomatic_pact = {
+			country = c:B83 #Sglard
+			type = vassal
+		}
+		create_diplomatic_pact = {
+			country = c:B81 #Eighard
+			type = vassal
+		}
+	}
+
+	c:B98 = { #Trollsbay
+		create_diplomatic_pact = {
+			country = c:B89 #Daxwell
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:B06 #Saamirses
+			type = protectorate
+		}
+	}
+	
+	c:C01 = { #Rezankand
+		create_diplomatic_pact = {
+			country = c:C10 #Malatel
+			type = puppet
+		}
+	}
+	
+	c:C02 = { #Amadia
+		create_diplomatic_pact = {
+			country = c:C11 #Amadian Territory
+			type = puppet
+		}
+	}
+	
+	c:C03 = { #Ozgarom
+		create_diplomatic_pact = {
+			country = c:C04 #Jibirae'n
+			type = puppet
+		}
+	}
+	
+	c:C05 = { #Nur Dhanaenn
+		create_diplomatic_pact = {
+			country = c:C06 #Swamp Territories
+			type = colony
+		}
+	}
+	
+	c:C39 = { #Ameion
+		create_diplomatic_pact = {
+			country = c:C60 #Neor Empkeios
+			type = vassal
+		}
+	}
+	
+	c:C45 = { #Nanru Nakar
+		create_diplomatic_pact = {
+			country = c:C63 #Vettakaramai
+			type = vassal
+		}
+	}
+	
+	c:C40 = { #Clemetar
+		create_diplomatic_pact = {
+			country = c:C41 #Scenkar
+			type = tributary
+		}
+	}
+	
+	c:C50 = { #Degithion
+		create_diplomatic_pact = {
+			country = c:C61 #Akretírchel
+			type = tributary
+		}
+	}
+	
+	c:D05 = { #Amldihr
+		create_diplomatic_pact = {
+			country = c:D03 #Dur-Vazhatun
+			type = puppet
+		}
+	}
+
+	c:D06 = { #Kuxheztë
+		create_diplomatic_pact = {
+			country = c:D37 #Kuxhekrë
+			type = vassal
+		}
+	}
+
+	c:D12 = { #Hul-Jorkad
+		create_diplomatic_pact = {
+			country = c:D14 #Ovdal Lodhum
+			type = protectorate
+		}
+	}
+
+	c:D18 = { #Arg Ordstun
+		create_diplomatic_pact = {
+			country = c:D20 #Orlghelovar
+			type = puppet
+		}
+	}
+
+	c:E01 = { #Lake Fed
+		create_diplomatic_pact = {
+			country = c:E03 #Zabutodask
+			type = tributary
+		}
+		create_diplomatic_pact = {
+			country = c:E04 #Shivusdoyen
+			type = tributary
+		}
+	}
+	
+	c:F01 = { #Jaddanzar Empire
+		create_diplomatic_pact = {
+			country = c:R01 #Nahana Jadd
+			type = personal_union
+		}
+		create_diplomatic_pact = {
+			country = c:R02 #Ghankedhen
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:D25 #Verkal Gulan
+			type = protectorate
+		}
+		create_diplomatic_pact = {
+			country = c:R03 #Tudhina
+			type = puppet
+		}
+	#	create_diplomatic_pact = {
+	#		country = c:R20 #Raghamidesh
+	#		type = vassal
+	#	}
+	}
+	
+	c:F13 = { #Harpylen
+		create_diplomatic_pact = {
+			country = c:F10 # Garlas-Kel
+			type = tributary
+		}
+	}
+
+	c:F14 = { #Overclan
+		create_diplomatic_pact = {
+			country = c:F09 #Kuzaram
+			type = vassal
+		}
+		create_diplomatic_pact = {
+			country = c:D19 #Shazstundihr
+			type = vassal
+		}
+	}
+
+	c:L01 = { #Konolkhatep
+		create_diplomatic_pact = { 
+			country = c:L03 #Vogkeysa
+			type = vassal
+		}
+		create_diplomatic_pact = { 
+			country = c:L21 #Kulugiash
+			type = vassal
+		}
+	}
+
+	c:L27 = { #Melakmengi
+		create_diplomatic_pact = { 
+			country = c:L29 #Naleni
+			type = vassal
+		}
+		create_diplomatic_pact = { 
+			country = c:L30 #Sky Soaring Eagle
+			type = vassal
+		}
+	}
+	
+	c:R01 = { #Nahana Jadd
+		create_diplomatic_pact = {
+			country = c:R20 #Raghamidesh
+			type = vassal
+		}
+	}
+
+	#c:Y04 = { #Lingyuk #not very functional atm, revist after 1.0
+	#	create_diplomatic_pact = {
+	#		country = c:Y01 #Danggun
+	#		type = personal_union
+	#	}
+	#	create_diplomatic_pact = {
+	#		country = c:Y01 #Danggun
+	#		type = grant_own_market 
+	#	}
+	#}
+
+	c:Y19 = { #Baihon Xinh
+		create_diplomatic_pact = {
+			country = c:Y18
+			type = tributary
+		}
+	}
+
+	c:Y24 = { #Jaya Raya
+		create_diplomatic_pact = {
+			country = c:Y25
+			type = tributary
+		}
+		create_diplomatic_pact = {
+			country = c:Y26
+			type = tributary
+		}
+		create_diplomatic_pact = {
+			country = c:Y27
+			type = tributary
+		}
+		create_diplomatic_pact = {
+			country = c:Y28
+			type = tributary
+		}
+		create_diplomatic_pact = {
+			country = c:Y29
+			type = tributary
+		}
+		create_diplomatic_pact = {
+			country = c:Y30
+			type = tributary
+		}
+		create_diplomatic_pact = {
+			country = c:Y31
+			type = tributary
+		}
+	}
+
+	c:Y32 = { #Lorentish Haless Company
+		create_diplomatic_pact = {
+			country = c:Y13
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:Y14
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:Y16
+			type = puppet
+		}
+		create_diplomatic_pact = {
+			country = c:R05
+			type = puppet
+		}
+	}
+
+	c:Y33 = { #Busilari Haless Company
+		create_diplomatic_pact = {
+			country = c:Y23
+			type = protectorate
+		}
+		create_diplomatic_pact = {
+			country = c:Y21
+			type = puppet
+		}
+	}
+}

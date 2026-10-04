@@ -1,0 +1,111 @@
+﻿COUNTRIES = { #Tropaicóst
+	c:B75= {
+		effect_starting_technology_tier_3_tech = yes
+
+		effect_starting_politics_conservative = yes
+		
+		#Power Structure
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_autocracy #El Presidente
+		activate_law = law_type:law_subjecthood
+		activate_law = law_type:law_state_religion
+		activate_law = law_type:law_appointed_bureaucrats
+		activate_law = law_type:law_professional_army
+		activate_law = law_type:law_national_guard
+
+		
+		
+
+		#Economy
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_tenant_farmers
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_religious_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_nation_of_artifice
+
+		#Human Rights
+		activate_law = law_type:law_censorship
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_women_own_property
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_legacy_slavery #Early goal is to get rid of this
+
+		active_law:lawgroup_citizenship ?= { # Doesn't accept orcs even with subjecthood
+			add_amendment = {
+				type = amendment_racialized_subjecthood
+				sponsor = PREV.ig:ig_armed_forces
+			}
+		}
+		
+		ig:ig_landowners = {
+			add_ruling_interest_group = yes
+		}
+		ig:ig_armed_forces = {
+			add_ruling_interest_group = yes
+		}
+		ig:ig_devout = {
+			add_ruling_interest_group = yes
+		}
+
+		ig:ig_landowners = {
+			set_interest_group_name = ig_planter_gentry
+		}
+
+		# Magic
+		add_technology_researched = cannorian_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_mass_plant_growth
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_evocation_corps
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_magical_feasts
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 1
+		}
+	}
+}

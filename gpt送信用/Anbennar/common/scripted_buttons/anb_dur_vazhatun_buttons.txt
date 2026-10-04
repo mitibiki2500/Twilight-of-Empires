@@ -1,0 +1,84 @@
+﻿#Recruit Characters
+scripted_button_recruit_astronomers_button = {
+    name = "scripted_button_recruit_astronomers_button_name"
+    desc = "scripted_button_recruit_astronomers_button_desc"
+
+    visible = { always = yes }
+
+    ai_chance = {
+		value = 30
+	}
+
+    possible = {
+        custom_tooltip = {
+            text = comet_button_reason
+            NOT = {
+                has_variable = comet_char_button_var 
+            }
+        }
+        custom_tooltip = {
+            text = comet_button_reason_3
+            NOT = {
+                OR = {
+                    has_variable = comet_sci_search_var
+                    has_variable = comet_field_search_var
+                    has_variable = comet_mage_search_var
+                }
+            }
+        }
+        custom_tooltip = {
+            text = comet_button_reason_4
+            NOT = {
+                AND = {
+                    has_variable = comet_chronicler_recruited_var
+                    has_variable = comet_gnome_recruited_var
+                    has_variable = comet_kobold_recruited_var
+                    has_variable = comet_mwalim_recruited_var
+                }
+            }
+        }
+	}
+
+	effect = {
+		trigger_event = { id = anb_comet_investigation.101}
+        set_variable = {
+            name = comet_char_button_var
+            years = 2
+        }
+	}
+}
+
+#Send Characters on expeditions
+scripted_button_astronomer_expedition_button = {
+    name = "scripted_button_astronomer_expedition_button_name"
+    desc = "scripted_button_astronomer_expedition_button_desc"
+
+    visible = { always = yes }
+
+    ai_chance = {
+		value = 30
+	}
+
+    possible = {
+        custom_tooltip = {
+            text = comet_button_reason
+            NOT = {
+                has_variable = comet_expedition_button_var 
+            }
+        }
+        custom_tooltip = {
+            text = comet_button_reason_2
+            NOT = {
+                has_variable = comet_expedition_var
+            }
+        }
+	}
+
+	effect = {
+		trigger_event = { id = anb_comet_investigation.202 }
+        set_variable = {
+            name = comet_expedition_button_var
+            years = 2
+        }
+	}
+}

@@ -1,0 +1,1167 @@
+﻿# TODO - look at the modifiers in these files, despite base chances being extremely low there's still a tonne of racial purists etc... about
+
+# this ideology is throwing a bunch of errors and is outdated so i'm commenting
+# ideology_racial_purist = {
+# 	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_ethno_nationalist.dds" 
+	
+# 	character_ideology = yes
+
+	
+# 	# Don't want monsters migrating
+# 	lawgroup_migration = {
+# 		law_migration_controls = strongly_approve
+# 		law_closed_borders = approve
+# 		law_no_migration_controls = disapprove	
+# 	}
+	
+
+# 	# TODO
+# 	non_interest_group_leader_trigger = {
+# 		# Agitators should have an ideology at odds with current laws
+# 		NAND = {
+# 			has_role_of_type = agitator
+# 			owner = {
+# 				OR = {
+# 					has_law = law_type:law_same_race_only
+# 					has_law = law_type:law_giantkin_group_only
+# 				}
+# 			}
+# 		}
+# 	}
+	
+# 	interest_group_leader_weight = {
+# 		value = 10 # Less likely by default
+# 		# More likely with a convenient scapegoat and is angry without same race only
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					NOT = { has_law = law_type:law_same_race_only }
+# 					any_scope_state = {
+# 						is_incorporated = yes
+# 						any_scope_pop = {
+# 							NOT = { 
+# 								pop_race_accepted = {
+# 									COUNTRY = owner
+# 								}
+# 							}
+# 						}
+# 					}
+# 				}
+# 				scope:interest_group = {
+# 					ig_approval <= -5
+# 				}
+# 			}
+# 			add = 25
+# 		}
+# 		# More likely if angry and issues are relevant
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					NOR = {
+# 						has_law = law_type:law_same_race_only
+# 						has_law = law_type:law_giantkin_group_only
+# 						has_law = law_type:law_ruinborn_group_only
+# 						has_law = law_type:law_goblinoid_group_only
+# 					}
+# 				}
+# 				scope:interest_group = {
+# 					ig_approval <= -5
+# 				}
+# 			}
+# 			add = 50
+# 		}
+# 		# Less likely in council republic
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					has_law = law_type:law_council_republic
+# 				}
+# 			}
+# 			add = -25
+# 		}
+# 		# less likely if content without same race only
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					NOT = {
+# 						has_law = law_type:law_same_race_only
+# 					}
+# 				}
+# 				scope:interest_group = {
+# 					ig_approval <= 5
+# 				}
+# 			}
+# 			add = -25
+# 		}if = {
+# 			limit = {
+# 				OR = {
+# 					has_variable = communist_ig_var
+# 					has_variable = chose_vanguardism
+# 					has_variable = chose_anarchism
+# 					has_variable = chose_communism
+# 					has_variable = chose_ethno_nationalism
+# 					has_variable = chose_fascism
+# 				}
+# 			}
+# 			multiply = 0.1
+# 		}
+# 	}
+# 	non_interest_group_leader_weight = {
+# 		value = 10
+# 		# More likely with a convenient scapegoat and is angry without same race only
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					NOT = { has_law = law_type:law_same_race_only }
+# 					any_scope_state = {
+# 						is_incorporated = yes
+# 						any_scope_pop = {
+# 							NOT = { 
+# 								pop_race_accepted = {
+# 									COUNTRY = owner
+# 								}
+# 							}
+# 						}
+# 					}
+# 				}
+# 				scope:interest_group = {
+# 					ig_approval <= -5
+# 				}
+# 			}
+# 			add = 25
+# 		}
+# 		# More likely if angry and issues are relevant
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					NOR = {
+# 						has_law = law_type:law_same_race_only
+# 						has_law = law_type:law_giantkin_group_only
+# 						has_law = law_type:law_ruinborn_group_only
+# 						has_law = law_type:law_goblinoid_group_only
+# 					}
+# 				}
+# 				scope:interest_group = {
+# 					ig_approval <= -5
+# 				}
+# 			}
+# 			add = 50
+# 		}
+# 		# Less likely in council republic
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					has_law = law_type:law_council_republic
+# 				}
+# 			}
+# 			add = -25
+# 		}
+# 		# less likely if content without same race only
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					NOT = {
+# 						has_law = law_type:law_same_race_only
+# 					}
+# 				}
+# 				scope:interest_group = {
+# 					ig_approval <= 5
+# 				}
+# 			}
+# 			add = -25
+# 		}
+# 		if = {
+# 			limit = {
+# 				OR = {
+# 					has_variable = communist_ig_var
+# 					has_variable = chose_vanguardism
+# 					has_variable = chose_anarchism
+# 					has_variable = chose_communism
+# 					has_variable = chose_ethno_nationalism
+# 					has_variable = chose_fascism
+# 				}
+# 			}
+# 			multiply = 0.1
+# 		}
+# 	}
+# }
+
+ideology_char_the_voltoj_machine = {
+	icon = "gfx/interface/icons/ideology_icons/corporatist.dds"
+
+	character_ideology = yes
+
+	lawgroup_distribution_of_power = {
+		law_technocracy = strongly_approve
+		law_single_party_state = approve
+		law_oligarchy = approve
+		law_wealth_voting = disapprove
+		law_landed_voting = disapprove
+		law_universal_suffrage = strongly_disapprove
+		law_census_voting = strongly_disapprove
+		law_anarchy = strongly_disapprove
+	}
+	lawgroup_economic_system = {
+		law_interventionism = strongly_approve
+		law_command_economy = strongly_approve
+		law_cooperative_ownership = approve
+		law_laissez_faire = neutral
+		law_agrarianism = disapprove
+		law_traditionalism = disapprove
+		law_industry_banned = strongly_disapprove
+		law_extraction_economy = strongly_disapprove
+	}
+	lawgroup_magic_and_artifice = {
+		law_nation_of_artifice = strongly_approve
+		law_nation_of_magic = neutral
+		law_traditional_magic_banned = disapprove
+		law_artifice_banned = strongly_disapprove
+	}
+
+	country_trigger = {
+		any_interest_group = {
+			has_ideology = ideology:ideology_the_voltoj_machine
+		}
+	}
+}
+# Wants EVIL artifice
+ideology_mad_scientist = {
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_ethno_nationalist.dds" 
+	
+	character_ideology = yes
+	
+	lawgroup_magic_and_artifice = {
+		law_artifice_banned = strongly_disapprove
+		law_nation_of_magic = neutral
+		law_nation_of_green_artifice = approve
+		law_nation_of_artifice = approve
+		law_traditional_magic_banned = approve
+	}
+	
+	interest_group_leader_trigger = {
+		owner = {
+			NOR = {
+				has_law = law_type:law_artifice_banned
+				has_law = law_type:law_traditional_magic_banned
+			}
+		}
+	}
+	
+	non_interest_group_leader_trigger = {
+		# Agitators should have an ideology at odds with current laws
+		owner = {
+			NOR = {
+				has_law = law_type:law_artifice_banned
+				has_law = law_type:law_traditional_magic_banned
+			}
+		}
+		NAND = {
+			has_role_of_type = agitator
+			owner = {
+				has_law = law_type:law_nation_of_green_artifice
+			}
+		}
+	}
+	
+	non_interest_group_leader_weight = {
+		value = 25
+		# Less likely if from a "traditional" IG
+		if = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_landowners
+					is_interest_group_type = ig_devout
+				}
+			}
+			add = -75
+		}
+		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = 0.1
+		}
+	}
+	
+	interest_group_leader_weight = {
+		value = 25
+		# Less likely if from a "traditional" IG
+		if = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_landowners
+					is_interest_group_type = ig_devout
+				}
+			}
+			add = -75
+		}
+		# more likely when issues are relevant
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law = law_type:law_nation_of_magic
+						has_law = law_type:law_artifice_banned
+					}
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = 0.1
+		}
+	}
+}
+
+ideology_magocrat = {
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_theocrat.dds"
+	
+	character_ideology = yes
+
+	lawgroup_governance_principles = {
+		law_magocracy = strongly_approve	
+		law_monarchy = neutral
+		law_theocracy = disapprove	
+		law_presidential_republic = disapprove
+		law_parliamentary_republic = disapprove
+		law_council_republic = disapprove
+		law_corporate_state = neutral
+	}
+	
+	lawgroup_magic_and_artifice = {
+		law_artifice_banned = strongly_approve
+		law_nation_of_magic = approve
+		law_nation_of_artifice = disapprove
+		law_traditional_magic_banned = strongly_disapprove
+	}
+	
+	interest_group_leader_trigger = {
+		OR = {
+			owner = {
+				has_law = law_type:law_magocracy
+			}
+			is_interest_group_type = ig_landowners
+		}
+		OR = {
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_intelligentsia
+		}
+	}
+	
+	non_interest_group_leader_trigger = {
+		OR = {
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_intelligentsia
+		}
+		# Agitators should oppose current laws
+		NAND = {
+			has_role_of_type = agitator
+			owner = {
+				has_law = law_type:law_magocracy
+			}
+		}
+	}
+	
+	interest_group_leader_weight = {
+		value = 100
+		# less likely in a theocracy
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_theocracy
+				}
+			}
+			add = -75
+		}
+		# less likely if IG is happy without magocray
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_magocracy }
+				}
+				scope:interest_group = {
+					ig_approval > 0
+				}
+			}
+			add = -100
+		}
+		# more likely if IG is happy in a magocracy
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_magocracy
+				}
+				scope:interest_group = {
+					ig_approval > 5
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_conservatism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = {
+				value = 0.1
+				desc = "CHOSE_A_DIFFERENT_PATH"
+			}
+		}
+	}
+	
+	non_interest_group_leader_weight = {
+		value = 100
+		# less likely in a theocracy
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_theocracy
+				}
+			}
+			add = -75
+		}
+		# # less likely if IG is happy without magocray
+		# if = {
+		# 	limit = {
+		# 		owner = {
+		# 			NOT = { has_law = law_type:law_magocracy }
+		# 		}
+				
+		# 		ig_approval > 0
+		# 	}
+		# 	add = -100
+		# }
+		# # more likely if IG is happy in a magocracy
+		# if = {
+		# 	limit = {
+		# 		owner = {
+		# 			has_law = law_type:law_magocracy
+		# 		}
+		# 		scope:interest_group = {
+		# 			ig_approval > 5
+		# 		}
+		# 	}
+		# 	add = 50
+		# }
+		if = {
+			limit = {
+				interest_group ?= {
+					OR = {
+						has_variable = communist_ig_var
+						has_variable = chose_vanguardism
+						has_variable = chose_anarchism
+						has_variable = chose_communism
+						has_variable = chose_ethno_nationalism
+						has_variable = chose_fascism
+					}
+				}
+			}
+			multiply = 0.1
+		}
+	}
+}
+
+ideology_aldanist = {
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_corporatist.dds"
+	
+	character_ideology = yes
+
+	lawgroup_citizenship = {
+		law_ethnostate = strongly_disapprove
+		law_national_supremacy = neutral
+		law_racial_segregation = approve
+		law_cultural_exclusion = neutral
+		law_multicultural = strongly_disapprove
+		law_subjecthood = approve
+		law_societal_hegemony = neutral
+	}
+
+	country_trigger = {
+		any_primary_culture = {
+			has_discrimination_trait_group = heritage_group_ruinborn
+		}
+	}
+
+	interest_group_leader_trigger = {
+		OR = {
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_intelligentsia
+		}
+	}
+	
+	non_interest_group_leader_trigger = {
+		OR = {
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_petty_bourgeoisie
+			is_interest_group_type = ig_landowners
+			is_interest_group_type = ig_intelligentsia
+		}
+	}
+	
+	interest_group_leader_weight = {
+		value = 50
+		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_conservatism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = {
+				value = 0.1
+				desc = "CHOSE_A_DIFFERENT_PATH"
+			}
+		}
+	}
+	non_interest_group_leader_weight = {
+		value = 50
+		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_conservatism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = {
+				value = 0.1
+				desc = "CHOSE_A_DIFFERENT_PATH"
+			}
+		}
+	}
+}
+
+ideology_venaanist = {
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_communist.dds"
+	
+	character_ideology = yes
+
+	lawgroup_citizenship = {
+		law_ethnostate = strongly_disapprove
+		law_national_supremacy = disapprove
+		law_racial_segregation = neutral
+		law_cultural_exclusion = approve
+		law_multicultural = disapprove
+		law_subjecthood = disapprove
+		law_societal_hegemony = neutral
+	}
+
+	country_trigger = {
+		any_primary_culture = {
+			OR = {
+				has_discrimination_trait_group = heritage_group_ruinborn
+				has_discrimination_trait_group = heritage_group_elf
+			}
+		}
+	}
+
+	interest_group_leader_trigger = {
+		OR = {
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_trade_unions
+		}
+	}
+	non_interest_group_leader_trigger = {
+		OR = {
+			is_interest_group_type = ig_armed_forces
+			is_interest_group_type = ig_intelligentsia
+			is_interest_group_type = ig_trade_unions
+		}
+	}
+	
+	interest_group_leader_weight = {
+		value = 50
+		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_conservatism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = {
+				value = 0.1
+				desc = "CHOSE_A_DIFFERENT_PATH"
+			}
+		}
+	}
+	
+	non_interest_group_leader_weight = {
+		value = 50
+		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_conservatism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = {
+				value = 0.1
+				desc = "CHOSE_A_DIFFERENT_PATH"
+			}
+		}
+	}
+}
+
+
+ideology_traditionalist_equal = {
+ 	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_traditionalist.dds"
+	
+ 	character_ideology = yes
+	
+ 	lawgroup_rights_of_women = {
+ 		law_womens_suffrage = disapprove
+ 		law_women_in_the_workplace = disapprove
+ 		law_women_own_property = neutral
+ 		law_no_womens_rights = strongly_disapprove
+ 	}
+
+ 	lawgroup_church_and_state = {
+ 		law_state_religion = approve
+ 		law_freedom_of_conscience = disapprove
+ 		law_total_separation = strongly_disapprove
+ 		law_state_atheism = strongly_disapprove
+ 	}
+
+	lawgroup_labour_associations = {
+		law_combination_acts = neutral
+		law_guild_system = approve
+		law_anti_strike_laws = neutral
+		law_corporatized_unions = neutral
+		law_right_to_associate = disapprove
+		law_factory_councils = strongly_disapprove
+	}
+
+ 	interest_group_leader_trigger = {
+ 		owner = { has_technology_researched = tradition_of_equality }
+ 		NOT = { owner = { any_primary_culture = { has_discrimination_trait = heritage_kheionai_ruinborn } } }
+ 		ideology_traditionalist_valid_trigger = yes
+ 	}
+ 	non_interest_group_leader_trigger = {
+ 		owner = { has_technology_researched = tradition_of_equality }
+ 		NOT = { culture = { has_discrimination_trait = heritage_kheionai_ruinborn } }
+ 		interest_group = {
+ 			ideology_traditionalist_valid_trigger = yes
+ 		}
+ 		NAND = {
+ 			has_role_of_type = agitator
+ 			owner = {
+ 				has_law = law_type:law_womens_suffrage
+ 				has_law = law_type:law_state_religion
+ 			}
+ 		}
+ 	}
+	
+ 	interest_group_leader_weight = {
+ 		value = 100
+ 		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_conservatism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = {
+				value = 0.1
+				desc = "CHOSE_A_DIFFERENT_PATH"
+			}
+		}	
+ 	}
+	
+ 	non_interest_group_leader_weight = {
+ 		value = 100
+ 		if = {
+ 			limit = {
+ 				interest_group = {
+ 					OR = {
+ 						has_variable = communist_ig_var
+ 						has_variable = chose_vanguardism
+ 						has_variable = chose_anarchism
+ 						has_variable = chose_communism
+ 						has_variable = chose_ethno_nationalism
+ 						has_variable = chose_fascism
+ 					}
+ 				}
+ 			}
+ 			multiply = 0.1
+ 		}	
+ 	}
+}
+
+
+ideology_mechanim_liberator = {
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_abolitionist.dds"
+	
+	character_ideology = yes
+	
+	lawgroup_mechanim_rights = {
+		law_mechanim_freedom = strongly_approve
+		law_mechanim_dismantling = strongly_disapprove
+		law_mechanim_cognitive_licenses = disapprove
+		law_mechanim_as_property = strongly_disapprove
+	}
+
+	lawgroup_mechanim_creation = {
+		law_mechanim_creation_allowed = strongly_approve
+		law_mechanim_creation_banned = strongly_disapprove
+	}
+	
+	interest_group_leader_trigger = {
+		AND = {
+			OR = {
+				is_interest_group_type = ig_intelligentsia
+				is_interest_group_type = ig_trade_unions
+				is_interest_group_type = ig_rural_folk
+				is_interest_group_type = ig_petty_bourgeoisie
+				is_interest_group_type = ig_industrialists
+			}
+			owner = { has_technology_researched = human_rights }
+		}
+	}
+	non_interest_group_leader_trigger = {
+		NAND = {
+			has_role_of_type = agitator
+			owner = {
+				has_law = law_type:law_mechanim_freedom
+			}
+		}
+		AND = {
+			OR = {
+				is_interest_group_type = ig_intelligentsia
+				is_interest_group_type = ig_trade_unions
+				is_interest_group_type = ig_rural_folk
+				is_interest_group_type = ig_petty_bourgeoisie
+				is_interest_group_type = ig_industrialists
+			}
+			owner = { has_technology_researched = human_rights }
+		}
+	}
+
+	interest_group_leader_weight = {
+		value = 145
+		if = {
+			limit = { is_interest_group_type = ig_trade_unions }
+			add = 150
+		}	
+		if = {
+			limit = { is_interest_group_type = ig_intelligentsia }
+			add = 75	
+		}		
+		if = {
+			limit = { has_trait = tactful }
+			add = 50
+		}
+		if = {
+			limit = {
+				owner = { has_technology_researched = human_rights }
+			}
+			add = 50
+		}
+		if = {
+			limit = { is_interest_group_type = ig_industrialists }
+			subtract = 50	
+		}
+		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = 0.1
+		}	
+	}
+	
+	non_interest_group_leader_weight = {
+		value = 145
+		if = {
+			limit = { scope:interest_group = { is_interest_group_type = ig_trade_unions } }
+			add = 150
+		}	
+		if = {
+			limit = { scope:interest_group = { is_interest_group_type = ig_intelligentsia } }
+			add = 75	
+		}		
+		if = {
+			limit = { has_trait = tactful }
+			add = 50
+		}
+		if = {
+			limit = {
+				owner = { has_technology_researched = human_rights }
+			}
+			add = 50
+		}
+		if = {
+			limit = { scope:interest_group = { is_interest_group_type = ig_industrialists } }
+			subtract = 50	
+		}
+		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_conservatism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = {
+				value = 0.1
+				desc = "CHOSE_A_DIFFERENT_PATH"
+			}
+		}	
+	}
+}
+
+
+ideology_mechanim_slaver= {
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_slaver.dds"
+	
+	character_ideology = yes
+	
+	lawgroup_mechanim_rights = {
+		law_mechanim_freedom = strongly_disapprove
+		law_mechanim_dismantling = strongly_disapprove
+		law_mechanim_cognitive_licenses = approve
+		law_mechanim_as_property = strongly_approve
+	}
+
+	lawgroup_mechanim_creation = {
+		law_mechanim_creation_allowed = approve
+		law_mechanim_creation_banned = strongly_disapprove
+	}
+	
+	interest_group_leader_trigger = {
+		AND = {
+			OR = {
+				is_interest_group_type = ig_industrialists
+				is_interest_group_type = ig_landowners
+				is_interest_group_type = ig_rural_folk
+				is_interest_group_type = ig_petty_bourgeoisie
+			}
+		}
+	}
+	non_interest_group_leader_trigger = {
+		NAND = {
+			has_role_of_type = agitator
+			owner = {
+				has_law = law_type:law_mechanim_freedom
+			}
+		}
+		AND = {
+			interest_group = {
+				OR = {
+					is_interest_group_type = ig_industrialists
+					is_interest_group_type = ig_landowners
+					is_interest_group_type = ig_rural_folk
+					is_interest_group_type = ig_petty_bourgeoisie
+				}
+			}
+		}
+	}
+
+
+	interest_group_leader_weight = {
+		value = 115
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_mechanim_freedom
+				}
+			}
+			add = -350
+		}	
+		if = {
+			limit = { is_interest_group_type = ig_industrialists }
+			add = 95	
+		}
+		if = {
+			limit = { is_interest_group_type = ig_rural_folk }
+			add = 35	
+		}							
+		if = {
+			limit = {
+				owner = { has_technology_researched = human_rights }
+			}
+			add = -50
+		}
+		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = 0.1
+		}	
+	}
+	non_interest_group_leader_weight = {
+		value = 115
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_mechanim_freedom
+				}
+			}
+			add = -350
+		}	
+		if = {
+			limit = { is_interest_group_type = ig_industrialists }
+			add = 95	
+		}
+		if = {
+			limit = { is_interest_group_type = ig_rural_folk }
+			add = 35	
+		}							
+		if = {
+			limit = {
+				owner = { has_technology_researched = human_rights }
+			}
+			add = -50
+		}
+		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_conservatism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = {
+				value = 0.1
+				desc = "CHOSE_A_DIFFERENT_PATH"
+			}
+		}	
+	}
+}
+
+ideology_eordand_unification_leader = {
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_sovereignist.dds"
+	character_ideology = yes
+
+	lawgroup_church_and_state = {
+		law_state_religion = neutral
+		law_freedom_of_conscience = strongly_approve
+		law_total_separation = disapprove
+		law_state_atheism = strongly_disapprove
+	}
+	
+	lawgroup_citizenship = {
+		law_ethnostate = strongly_disapprove
+		law_national_supremacy = disapprove
+		law_racial_segregation = approve
+		law_cultural_exclusion = neutral
+		law_multicultural = neutral
+		law_subjecthood = strongly_disapprove
+		law_societal_hegemony = neutral
+	}
+	
+	lawgroup_migration = {
+		law_closed_borders = strongly_disapprove
+		law_migration_controls = approve
+		law_no_migration_controls = neutral
+	}
+	
+	interest_group_leader_trigger = {
+		owner = {
+			any_primary_culture = { has_discrimination_trait = heritage_eordan_ruinborn }
+		}
+		NOT = { exists = c:B87 }
+	}
+	non_interest_group_leader_trigger = {
+		OR ={
+			culture = cu:selphereg
+			culture = cu:caamas
+			culture = cu:peitar
+			culture = cu:tuathak
+			culture = cu:snecboth
+			culture = cu:fograc
+		}
+		NOT = { exists = c:B87 }
+	}
+
+
+	interest_group_leader_weight = {
+		value = 10
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_freedom_of_conscience }
+				}
+			}
+			add = 75
+		}
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law = law_type:law_national_supremacy
+						has_law = law_type:law_ethnostate
+					}
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_closed_borders
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				owner = { has_technology_researched = nationalism }
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				owner = { has_technology_researched = pan-nationalism }
+			}
+			add = 200
+		}
+		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = 0.1
+		}
+	}
+	non_interest_group_leader_weight = {
+		value = 10
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_freedom_of_conscience }
+				}
+			}
+			add = 100
+		}
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law = law_type:law_national_supremacy
+						has_law = law_type:law_ethnostate
+					}
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_closed_borders
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				owner = { has_technology_researched = nationalism }
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				owner = { has_technology_researched = pan-nationalism }
+			}
+			add = 200
+		}
+		if = {
+			limit = {
+				OR = {
+					has_variable = communist_ig_var
+					has_variable = chose_vanguardism
+					has_variable = chose_anarchism
+					has_variable = chose_communism
+					has_variable = chose_ethno_nationalism
+					has_variable = chose_conservatism
+					has_variable = chose_fascism
+				}
+			}
+			multiply = {
+				value = 0.1
+				desc = "CHOSE_A_DIFFERENT_PATH"
+			}
+		}
+	}
+}

@@ -1,0 +1,968 @@
+﻿MILITARY_FORMATIONS = {
+	c:C33 ?= { #Keyolion
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_kheionai
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_KEYOLION
+				count = 5
+			}
+			save_scope_as = army_C33_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C33_1
+		}
+
+		scope:general_C33_1 = { transfer_to_formation = scope:army_C33_1 }
+			
+	}
+    c:C35 ?= { #Besolaki
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_kheionai
+			name = "Besolakian lions"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_BESOLAKI
+				count = 5
+			}
+			save_scope_as = army_C35_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C35_1
+		}
+
+		scope:general_C35_1 = { transfer_to_formation = scope:army_C35_1 }
+	}
+    c:C30 ?= { #Kheios
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_kheionai
+			name = "Army of Kheios"
+			combat_unit = {
+				type = unit_type:combat_unit_type_dragoons
+				state_region = S:STATE_NORTIKAN
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = S:STATE_NORTHERN_KHEIONS
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = S:STATE_SOUTHERN_KHEIONS
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = S:STATE_CENTRAL_KHEIONS
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = S:STATE_CENTRAL_KHEIONS
+				count = 2
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = S:STATE_SOUTIKAN
+				count = 2
+			}
+			save_scope_as = army_C30_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C30_1
+		}
+
+		scope:general_C30_1 = { transfer_to_formation = scope:army_C30_1 }
+		
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_kheionai
+			name = "Alecand Armada"
+
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 6
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 2
+			}
+			save_scope_as = fleet_C30_1
+		}
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_1
+			save_scope_as = admiral_C30_1
+		}
+
+		scope:admiral_C30_1 = { transfer_to_formation = scope:fleet_C30_1 }
+	}
+        c:C34 ?= { #Eneion
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_kheionai
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_ENEION
+					count = 5
+				}
+				save_scope_as = army_C34_1
+            }
+			
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C34_1
+			}
+
+			scope:general_C34_1 = { transfer_to_formation = scope:army_C34_1 }
+			
+       }
+       c:C36 ?= { #Apikhoxi
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_kheionai
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_APIKHOXI
+					count = 5
+				}
+				save_scope_as = army_C36_1
+            }
+			
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C36_1
+			}
+
+			scope:general_C36_1 = { transfer_to_formation = scope:army_C36_1 }
+
+       }
+       c:C70 ?= { #Amgremos
+               create_military_formation = {
+				type = army
+				hq_region = sr:region_kheionai
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_AMGREMOS
+					count = 2
+				}
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_VOLITHORAM
+					count = 2
+				}
+				save_scope_as = army_C70_1
+            }
+			
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C70_1
+			}
+
+			scope:general_C70_1 = { transfer_to_formation = scope:army_C70_1 }
+			
+       }
+       c:C37 ?= { #Deyeion
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_kheionai
+				name = "Deyions loyal servants"
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_line_infantry
+					state_region = s:STATE_OKTIAMOTON
+					count = 1
+				}
+				combat_unit = {
+					type = unit_type:combat_unit_type_line_infantry
+					state_region = s:STATE_DEYEION
+					count = 4
+				}
+				save_scope_as = army_C37_1
+            }
+			
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C37_1
+			}
+
+			scope:general_C37_1 = { transfer_to_formation = scope:army_C37_1 }
+       }
+       c:C38 ?= { #Mteibhara
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_kheionai
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_WESTERN_MTEIBHARA
+					count = 4
+				}
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_EASTERN_MTEIBHARA
+					count = 4
+				}
+				save_scope_as = army_C38_1
+            }
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C38_1
+			}
+
+			scope:general_C38_1 = { transfer_to_formation = scope:army_C38_1 }
+       }
+       c:C39 ?= { #Ameion
+       	    create_military_formation = {
+			type = army
+			hq_region = sr:region_kheionai
+			name = "Ameions great conquest host"
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_AMEION
+				count = 8
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_MESOKTI
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_AMEION
+				count = 4
+			}
+			save_scope_as = army_C39_1
+            	}
+			
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C39_1
+		}
+
+		scope:general_C39_1 = { transfer_to_formation = scope:army_C39_1 }
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_kheionai
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 4
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 1
+			}
+			save_scope_as = fleet_C39_1
+		}
+		
+		create_character = {
+			is_admiral = yes
+			commander_rank = commander_rank_1
+			save_scope_as = admiral_C39_1
+		}
+		scope:admiral_C39_1 = { transfer_to_formation = scope:fleet_C39_1 }
+			
+       }
+       c:C53 ?= { #Nisae
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_MESOKTI
+       	       		count = 6
+				}
+				save_scope_as = army_C53_1
+			}
+			
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C53_1
+			}
+
+			scope:general_C53_1 = { transfer_to_formation = scope:army_C53_1 }
+			
+       }
+       c:C55 ?= { #Amastól
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_MESOKTI
+       	       		count = 8
+				}
+				save_scope_as = army_C55_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C55_1
+			}
+
+			scope:general_C55_1 = { transfer_to_formation = scope:army_C55_1 }
+       }
+       c:C40 ?= { #Clematar
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_CLEMATAR
+       	       		count = 11
+				}
+				save_scope_as = army_C40_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C40_1
+			}
+
+			scope:general_C40_1 = { transfer_to_formation = scope:army_C40_1 }
+       }
+       c:C43 ?= { #Enlarmai
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_ENLARMAI
+       	       		count = 7
+				}
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_NANRU_NAKAR
+       	       		count = 3
+				}
+				save_scope_as = army_C43_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C43_1
+			}
+
+			scope:general_C43_1 = { transfer_to_formation = scope:army_C43_1 }
+       }
+       c:C44 ?= { #Varaendi
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_IRON_HILLS
+					count = 4
+				}
+				save_scope_as = army_C44_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C44_1
+			}
+
+			scope:general_C44_1 = { transfer_to_formation = scope:army_C44_1 }
+       }
+       c:C66 ?= { #Calinkend
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_ENLARMAI
+					count = 5
+				}
+				save_scope_as = army_C66_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C66_1
+			}
+
+			scope:general_C66_1 = { transfer_to_formation = scope:army_C66_1 }
+       }
+       c:C45 ?= {#Nanru Nakar
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_NANRU_NAKAR
+       	       		count = 24
+				}
+				save_scope_as = army_C45_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C45
+			}
+
+			scope:general_C45 = { transfer_to_formation = scope:army_C45_1 }
+       }
+       c:C63 ?= { #Vettakaramai
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_NANRU_NAKAR
+       	       		count = 3
+				}
+				save_scope_as = army_C63_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C63
+			}
+
+			scope:general_C63 = { transfer_to_formation = scope:army_C63_1 }
+       }
+       c:C65 ?= { #Pattivaram
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_NANRU_NAKAR
+       	       		count = 4
+				}
+				save_scope_as = army_C65_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C65
+			}
+
+			scope:general_C65 = { transfer_to_formation = scope:army_C65_1 }
+       }
+       c:C60 ?= { #Néor Empkeios
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_line_infantry
+					state_region = s:STATE_NEOR_EMPKEIOS
+					count = 5
+				}
+				combat_unit = {
+					type = unit_type:combat_unit_type_cannon_artillery
+					state_region = s:STATE_NEOR_EMPKEIOS
+       	       	    count = 2
+				}
+				save_scope_as = army_C60_1
+			}
+			
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C60
+			}
+
+			scope:general_C60 = { transfer_to_formation = scope:army_C60_1 }
+			
+       }
+       c:C46 ?= {
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_line_infantry
+					state_region = s:STATE_KLERECHEND
+					count = 8
+				}
+				combat_unit = {
+					type = unit_type:combat_unit_type_line_infantry
+					state_region = s:STATE_NEOR_EMPKEIOS
+					count = 2
+				}
+				combat_unit = {
+					type = unit_type:combat_unit_type_line_infantry
+					state_region = s:STATE_NYMBHAVA
+					count = 1
+				}
+			}
+			
+       }
+       c:C56 ?= { #Mesion
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_KLERECHEND
+       	       		count = 3
+				}
+				save_scope_as = army_C56_1
+			}
+			
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C56
+			}
+
+			scope:general_C56 = { transfer_to_formation = scope:army_C56_1 }
+			
+       }
+       c:C57 ?= { #Bukkabeso
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_KLERECHEND
+					count = 6
+				}
+				save_scope_as = army_C57_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C57
+			}
+
+			scope:general_C57 = { transfer_to_formation = scope:army_C57_1 }
+       }
+       c:C47 ?= { #Nymbhava
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_NYMBHAVA
+       	       		count = 8
+				}
+				save_scope_as = army_C47_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C47
+			}
+
+			scope:general_C47 = { transfer_to_formation = scope:army_C47_1 }
+       }
+       c:C58 ?= { #Katisangmar
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_NYMBHAVA
+       	       		count = 4
+				}
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_IRON_HILLS
+       	       		count = 5
+				}
+				save_scope_as = army_C58_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C58
+			}
+
+			scope:general_C58 = { transfer_to_formation = scope:army_C58_1 }
+       }
+       c:C59 ?= { #Degolídir
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_NYMBHAVA
+					count = 4
+				}
+				save_scope_as = army_C59_1
+			}
+			
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C59
+			}
+
+			scope:general_C59 = { transfer_to_formation = scope:army_C59_1 }
+			
+       }
+       c:C50 ?= { #Degithion
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_line_infantry
+					state_region = s:STATE_DEGITHION
+					count = 10
+				}
+				combat_unit = {
+					type = unit_type:combat_unit_type_dragoons
+					state_region = s:STATE_DEGITHION
+					count = 2
+				}
+				combat_unit = {
+					type = unit_type:combat_unit_type_cannon_artillery
+					state_region = s:STATE_DEGITHION
+					count = 4
+				}
+				save_scope_as = army_C50_1
+			}
+			
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C50
+			}
+
+			scope:general_C50 = { transfer_to_formation = scope:army_C50_1 }
+			
+       }
+		c:C61 ?= { #Akretírchel
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_line_infantry
+					state_region = s:STATE_DEGITHION
+					count = 4
+				}
+				save_scope_as = army_C61_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C61
+			}
+
+			scope:general_C61 = { transfer_to_formation = scope:army_C61_1 }
+       }
+       c:C49 ?= { #Orenkoraim
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_ORENKORAIM
+					count = 4
+				}
+				save_scope_as = army_C49_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C49
+			}
+
+			scope:general_C49 = { transfer_to_formation = scope:army_C49_1 }
+       }
+       c:C48 ?= { #Royakottar
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_ORENKORAIM
+       	       		count = 9
+				}
+				save_scope_as = army_C48_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C48
+			}
+
+			scope:general_C48 = { transfer_to_formation = scope:army_C49_1 }
+       }
+       c:C62 ?= { #Troppaimkq
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_ORENKORAIM
+       	       		count = 6
+				}
+				save_scope_as = army_C62_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C62
+			}
+
+			scope:general_C62 = { transfer_to_formation = scope:army_C62_1 }
+       }
+       c:C68 ?= { #Ethra
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_EAST_VEYII_SIKARHA
+       	       		count = 4
+				}
+				save_scope_as = army_C68_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C68
+			}
+
+			scope:general_C68 = { transfer_to_formation = scope:army_C68_1 }
+       }
+       c:C41 ?= { #Scenkar
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_WEST_VEYII_SIKARHA
+       	       		count = 3
+				}
+				save_scope_as = army_C41_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C41
+			}
+
+			scope:general_C41 = { transfer_to_formation = scope:army_C41_1 }
+       }
+       c:C52 ?= { #Advagar
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_irregular_infantry
+					state_region = s:STATE_WEST_VEYII_SIKARHA
+					count = 3
+				}
+				save_scope_as = army_C52_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C52
+			}
+
+			scope:general_C52 = { transfer_to_formation = scope:army_C52_1 }
+       }
+       c:C55 ?= { #Amastól
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_line_infantry
+       	       		state_region = s:STATE_MESOKTI
+       	       		count = 8
+				}
+				save_scope_as = army_C55_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C55
+			}
+
+			scope:general_C55 = { transfer_to_formation = scope:army_C55_1 }
+       }
+       c:C69 ?= { #Sarihaddu
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_SARIHADDU
+       	       		count = 4
+				}
+				save_scope_as = army_C69_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C69
+			}
+
+			scope:general_C69 = { transfer_to_formation = scope:army_C69_1 }
+       }
+       c:C67 ?= { #Kannakirva
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_SARIHADDU
+       	       		count = 4
+				}
+				save_scope_as = army_C67_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C67
+			}
+
+			scope:general_C67 = { transfer_to_formation = scope:army_C67_1 }
+       }
+       c:C54 ?= { #Caergaraen
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_taychend
+
+				combat_unit = {
+       	       		type = unit_type:combat_unit_type_irregular_infantry
+       	       		state_region = s:STATE_CAERGARAEN
+       	       		count = 9
+				}
+				save_scope_as = army_C54_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C54
+			}
+
+			scope:general_C54 = { transfer_to_formation = scope:army_C54_1 }
+       }
+		c:C32 ?= { #The_Devand
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_kheionai
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_line_infantry
+					state_region = s:STATE_EMPKEIOS
+					count = 1
+				}
+				save_scope_as = army_C32_1
+			}
+			
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = general_C32
+			}
+
+			scope:general_C32 = { transfer_to_formation = scope:army_C32_1 }
+			
+		}
+    c:C31 ?= { #Anisikheion
+       	create_military_formation = {
+       		type = army
+       		hq_region = sr:region_kheionai 
+       		combat_unit = {
+       			type=unit_type:combat_unit_type_irregular_infantry
+       			state_region = s:STATE_ANISIKHEION
+       			count = 1
+       		}
+			save_scope_as = army_C31_1
+       	}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_C31
+		}
+
+		scope:general_C31 = { transfer_to_formation = scope:army_C31_1 }
+    }
+	c:C14 ?= { #Effelai
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_effelai
+
+			combat_unit = {
+       	      	type = unit_type:combat_unit_type_irregular_infantry
+      	      	state_region = s:STATE_CENTRAL_EFFELAI
+      	      	count = 4
+			}
+			save_scope_as = army_C14_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_C14
+		}
+		scope:general_C14 = { transfer_to_formation = scope:army_C14_1 }
+		
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_effelai
+
+			combat_unit = {
+       	      	type = unit_type:combat_unit_type_irregular_infantry
+      	      	state_region = s:STATE_WESTERN_EFFELAI
+      	      	count = 4
+			}
+			save_scope_as = army_C14_2
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_C14_2
+		}
+		scope:general_C14_2 = { transfer_to_formation = scope:army_C14_2 }
+    }
+}

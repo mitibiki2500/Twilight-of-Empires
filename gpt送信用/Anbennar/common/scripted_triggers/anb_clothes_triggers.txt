@@ -1,0 +1,137 @@
+﻿elven_clothes_pop_trigger = {
+	exists = scope:pop
+	scope:pop = {
+		#Anbennar
+		culture = {
+			OR = {
+				has_discrimination_trait_group = heritage_group_elf
+				has_discrimination_trait = heritage_eordan_ruinborn
+				has_discrimination_trait = heritage_kheionai_ruinborn
+			}
+		}   
+	}
+}
+
+snecboth_clothes_pop_trigger = {
+	exists = scope:pop
+	scope:pop = {
+		#Anbennar
+		culture = cu:snecboth 
+	}
+}
+
+elven_clothes_trigger = {
+	exists = scope:character
+	scope:character = {
+		culture = {
+			OR = {
+				has_discrimination_trait_group = heritage_group_elf
+				has_discrimination_trait = heritage_eordan_ruinborn
+				has_discrimination_trait = heritage_kheionai_ruinborn
+			}
+		}
+	}
+}
+
+snecboth_clothes_trigger = {
+	exists = scope:character
+	scope:character = {
+		#Anbennar
+		culture = cu:snecboth 
+	}
+}
+
+female_officer_clothers_trigger = {
+	exists = scope:character
+	scope:character = {
+		is_female = yes
+		is_ruler_of_own_country = no
+		OR = {
+			has_role_of_type = general
+			has_role_of_type = admiral
+		}
+	}
+}
+
+ynnic_ruinborn_clothes_pop_trigger = {
+	exists = scope:pop
+	scope:pop = {
+		#Anbennar
+		culture = {
+			#has_discrimination_trait = aelantiri_heritage
+			has_discrimination_trait = heritage_ynnic_ruinborn
+		}
+	}
+}
+
+ynnic_ruinborn_clothes_trigger = {
+	exists = scope:character
+	scope:character = {
+		#Anbennar
+		culture = {
+			#has_discrimination_trait = aelantiri_heritage
+			has_discrimination_trait = heritage_ynnic_ruinborn
+		}
+	}
+}
+
+no_portrait_trigger = {
+	always = no
+}
+
+kobold_clothes_pop_trigger = {
+	exists = scope:pop
+	scope:pop = {
+		culture = {
+			OR = {
+				has_discrimination_trait = heritage_cannorian_kobold
+				has_discrimination_trait = heritage_serpentspine_kobold
+			}
+		}	#not goldscales
+		NOT = { has_pop_culture = vrendzani_kobold }	#giving these clothes for cold climate
+	}
+}
+
+kobold_clothes_character_trigger = {
+	exists = scope:character
+	scope:character = {
+		culture = {
+			OR = {
+				has_discrimination_trait = heritage_cannorian_kobold
+				has_discrimination_trait = heritage_serpentspine_kobold
+			}
+		}	#not goldscales
+	}
+}
+
+blorc_clothes_pop_trigger = {
+	exists = scope:pop
+	scope:pop = {
+		culture = { has_discrimination_trait = heritage_black_orc }
+	}
+}
+
+blorc_clothes_character_trigger = {
+	exists = scope:character
+	scope:character = {
+		culture = { has_discrimination_trait = heritage_black_orc }
+	}
+}
+
+vyzemby_clothes_pop_trigger = {
+	exists = scope:pop
+	scope:pop = {
+		culture = {
+			has_discrimination_trait = heritage_vyzemby_halfling
+		}
+	}
+}
+
+vyzemby_clothes_character_trigger = {
+	exists = scope:character
+	scope:character = {
+		culture = {
+			has_discrimination_trait = heritage_vyzemby_halfling
+		}
+	}
+}

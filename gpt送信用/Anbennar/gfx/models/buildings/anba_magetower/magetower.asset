@@ -1,0 +1,246 @@
+pdxmesh = {
+	name = "magetower_mesh"
+	file = "magetower.mesh"
+
+	scale = 1
+
+	
+	 lod_percentages = {
+	 	lod = { index = 0 percent = 35.0 }
+	 	lod = { index = 1 percent = 20.0 }
+		lod = { index = 2 percent = 8.0 }
+	 }
+	
+
+	meshsettings = {
+		name = "LOD_0_tower"
+		index = 0
+		texture_diffuse = "european_city_financialdistrict_01_diffuse.dds"
+		texture_normal = "european_city_financialdistrict_01_normal.dds"
+		texture_specular = "european_city_financialdistrict_01_properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		#shader = "standard_alpha_to_coverage"
+		#additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+	
+
+	meshsettings = {
+		name = "LOD_0_roof"
+		index = 0
+		texture_diffuse = "magetower_diffuse.dds"
+		texture_normal = "magetower_normal.dds"
+		texture_specular = "magetower_properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		#shader = "standard_alpha_to_coverage"
+		#additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" }
+		shader_file = "gfx/FX/pdxmesh.shader"		
+	}
+
+	meshsettings = {
+		name = "LOD_0_world_decal"
+		index = 0
+		texture_diffuse = "european_decal_city_diffuse.dds"
+		texture_normal = "european_decal_city_normal.dds"
+		texture_specular = "european_decal_city_properties.dds"
+		texture = { file = "decal_city_mask_01.dds" index = 3 }
+		shader = "decal_world"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "Decals"
+	}
+
+	meshsettings = {
+		name = "LOD_0_local_decal"
+		index = 0
+		texture_diffuse = "european_city_centerpiece_decal_01_diffuse.dds"
+		texture_normal = "european_city_centerpiece_decal_01_normal.dds"
+		texture_specular = "european_city_centerpiece_decal_01_properties.dds"
+		shader = "decal_local"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "LocalDecals"
+	}
+
+	meshsettings = {
+		name = "LOD_0_european_rural_manorhouse"
+		index = 0
+		texture_diffuse = "european_rural_manorhouse_diffuse.dds"
+		texture_normal = "european_rural_manorhouse_normal.dds"
+		texture_specular = "european_rural_manorhouse_properties.dds"
+		texture = { file = "european_rural_manorhouse_tint.dds" index = 5 }
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "LOD_0_european_rural_manorhouse_foliage"
+		index = 0
+		texture_diffuse = "tree_fir_diffuse.dds"
+		texture_normal = "tree_fir_normal.dds"
+		texture_specular = "tree_fir_properties.dds"
+		texture = { file = "tree_oak_tint_01.dds" index = 3 srgb = yes }
+		shader = "tree_colormap"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TREE_BUSH" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/tree.shader"
+	}
+
+	########################################### LOD 1 #####################################
+
+	meshsettings = {
+		name = "LOD_1_tower"
+		index = 0
+		texture_diffuse = "european_city_financialdistrict_01_diffuse.dds"
+		texture_normal = "european_city_financialdistrict_01_normal.dds"
+		texture_specular = "european_city_financialdistrict_01_properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		#shader = "standard_alpha_to_coverage"
+		#additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+	
+
+	meshsettings = {
+		name = "LOD_1_roof.001"
+		index = 0
+		texture_diffuse = "magetower_diffuse.dds"
+		texture_normal = "magetower_normal.dds"
+		texture_specular = "magetower_properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		#shader = "standard_alpha_to_coverage"
+		#additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" }
+		shader_file = "gfx/FX/pdxmesh.shader"		
+	}
+
+	meshsettings = {
+		name = "LOD_1_world_decal"
+		index = 0
+		texture_diffuse = "european_decal_city_diffuse.dds"
+		texture_normal = "european_decal_city_normal.dds"
+		texture_specular = "european_decal_city_properties.dds"
+		texture = { file = "decal_city_mask_01.dds" index = 3 }
+		shader = "decal_world"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "Decals"
+	}
+
+	meshsettings = {
+		name = "LOD_1_local_decal"
+		index = 0
+		texture_diffuse = "european_city_centerpiece_decal_01_diffuse.dds"
+		texture_normal = "european_city_centerpiece_decal_01_normal.dds"
+		texture_specular = "european_city_centerpiece_decal_01_properties.dds"
+		shader = "decal_local"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "LocalDecals"
+	}
+
+	meshsettings = {
+		name = "LOD_1_european_rural_manorhouse"
+		index = 0
+		texture_diffuse = "european_rural_manorhouse_diffuse.dds"
+		texture_normal = "european_rural_manorhouse_normal.dds"
+		texture_specular = "european_rural_manorhouse_properties.dds"
+		texture = { file = "european_rural_manorhouse_tint.dds" index = 5 }
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "LOD_1_european_rural_manorhouse_foliage"
+		index = 0
+		texture_diffuse = "tree_fir_diffuse.dds"
+		texture_normal = "tree_fir_normal.dds"
+		texture_specular = "tree_fir_properties.dds"
+		texture = { file = "tree_oak_tint_01.dds" index = 3 srgb = yes }
+		shader = "tree_colormap"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TREE_BUSH" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/tree.shader"
+	}
+
+########################################### LOD 2 #####################################
+
+	meshsettings = {
+		name = "LOD_2_tower"
+		index = 0
+		texture_diffuse = "european_city_financialdistrict_01_diffuse.dds"
+		texture_normal = "european_city_financialdistrict_01_normal.dds"
+		texture_specular = "european_city_financialdistrict_01_properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		#shader = "standard_alpha_to_coverage"
+		#additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+	
+
+	meshsettings = {
+		name = "LOD_2_roof"
+		index = 0
+		texture_diffuse = "magetower_diffuse.dds"
+		texture_normal = "magetower_normal.dds"
+		texture_specular = "magetower_properties.dds"
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "EMISSIVE_NIGHT" "EMISSIVE_NIGHT_RANDOM" "SOL_VISUALS" "HUB_BUILDING" }
+		#shader = "standard_alpha_to_coverage"
+		#additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" }
+		shader_file = "gfx/FX/pdxmesh.shader"		
+	}
+
+	meshsettings = {
+		name = "LOD_2_world_decal"
+		index = 0
+		texture_diffuse = "european_decal_city_diffuse.dds"
+		texture_normal = "european_decal_city_normal.dds"
+		texture_specular = "european_decal_city_properties.dds"
+		texture = { file = "decal_city_mask_01.dds" index = 3 }
+		shader = "decal_world"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "Decals"
+	}
+
+	meshsettings = {
+		name = "LOD_2_local_decal"
+		index = 0
+		texture_diffuse = "european_city_centerpiece_decal_01_diffuse.dds"
+		texture_normal = "european_city_centerpiece_decal_01_normal.dds"
+		texture_specular = "european_city_centerpiece_decal_01_properties.dds"
+		shader = "decal_local"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "LocalDecals"
+	}
+
+	meshsettings = {
+		name = "LOD_2_european_rural_manorhouse"
+		index = 0
+		texture_diffuse = "european_rural_manorhouse_diffuse.dds"
+		texture_normal = "european_rural_manorhouse_normal.dds"
+		texture_specular = "european_rural_manorhouse_properties.dds"
+		texture = { file = "european_rural_manorhouse_tint.dds" index = 5 }
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TINT_COLOR" "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "LOD_2_european_rural_manorhouse_foliage"
+		index = 0
+		texture_diffuse = "tree_fir_diffuse.dds"
+		texture_normal = "tree_fir_normal.dds"
+		texture_specular = "tree_fir_properties.dds"
+		texture = { file = "tree_oak_tint_01.dds" index = 3 srgb = yes }
+		shader = "tree_colormap"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "TREE_BUSH" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/tree.shader"
+	}
+
+}
+
+entity = {
+	name = "magetower_entity"
+	pdxmesh = "magetower_mesh"
+}

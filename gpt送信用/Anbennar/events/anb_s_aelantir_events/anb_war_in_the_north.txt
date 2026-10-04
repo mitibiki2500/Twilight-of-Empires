@@ -1,0 +1,237 @@
+﻿namespace = anb_north_war
+
+anb_north_war.1 = {
+
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_north_war.1.t
+	desc = anb_north_war.1.d
+	flavor = anb_north_war.1.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	option = {
+		name = anb_north_war.1.a
+	}
+}
+
+anb_north_war.2 = {
+
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_north_war.2.t
+	desc = anb_north_war.2.d
+	flavor = anb_north_war.2.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	option = {
+		name = anb_north_war.2.a
+	}
+}
+
+anb_north_war.3 = {
+
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_north_war.3.t
+	desc = anb_north_war.3.d
+	flavor = anb_north_war.3.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	immediate = {
+
+		set_variable = ameion_won_north_war
+
+	}
+
+	option = {
+
+		name = anb_north_war.3.a
+
+		if = {
+			limit = { exists = c:C53 }
+
+			annex = c:C53
+		}
+
+		if = {
+			limit = {
+				ROOT = {
+					has_law = law_type:law_no_colonial_affairs
+				}
+			}
+
+			activate_law = law_type:law_frontier_colonization	
+		}
+
+		add_modifier = {
+			name = ameion_chendya_colonization
+			months = 24
+		}
+		s:STATE_CAERGARAEN = {
+			add_claim = ROOT
+		}
+		s:STATE_EASTERN_CHENDHYA = {
+			add_claim = ROOT
+		}
+
+
+	}
+}
+
+anb_north_war.4 = {
+
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_north_war.4.t
+	desc = anb_north_war.4.d
+	flavor = anb_north_war.4.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	immediate = {
+		set_variable = ameion_lost_north_war
+	}
+
+	option = {
+
+		name = anb_north_war.4.a
+
+		if = {
+			limit = { exists = c:C53 }
+
+			annex = c:C53
+		}
+
+		if = {
+			limit = {
+				ROOT = {
+					has_law = law_type:law_no_colonial_affairs
+				}
+			}
+
+			activate_law = law_type:law_frontier_colonization	
+		}
+
+		add_modifier = {
+			name = caergaraen_chendya_colonization
+			months = 24
+		}
+		s:STATE_MESOKTI= {
+			add_claim = ROOT
+		}
+		s:STATE_EASTERN_CHENDHYA = {
+			add_claim = ROOT
+		}
+	}
+}
+
+anb_north_war.5 = {
+
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_north_war.5.t
+	desc = anb_north_war.5.d
+	flavor = anb_north_war.5.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	immediate = {
+
+		set_variable = ameion_lost_north_war
+
+	}
+
+	option = {
+
+		name = anb_north_war.5.a
+		add_modifier = {
+			name = lost_north_war
+			months = 48
+		}
+		
+	}
+}
+
+anb_north_war.6 = {
+
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_north_war.6.t
+	desc = anb_north_war.6.d
+	flavor = anb_north_war.6.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	immediate = {
+
+		set_variable = ameion_won_north_war
+
+		ROOT = {
+			ruler = {
+				save_scope_as = caergaraen_ruler
+			}
+		}
+			
+	}
+
+	option = {
+
+		name = anb_north_war.6.a
+		add_modifier = {
+			name = lost_north_war
+			months = 48
+		}
+		
+	}
+}

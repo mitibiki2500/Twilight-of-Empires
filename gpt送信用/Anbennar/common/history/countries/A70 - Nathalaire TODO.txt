@@ -1,0 +1,80 @@
+﻿COUNTRIES = {
+	c:A70 ?= {
+		# set_next_election_date = ???
+		
+		effect_starting_technology_tier_2_tech = yes
+		effect_starting_politics_conservative = yes
+		
+		add_technology_researched = dialectics	
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_laissez_faire
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_wealth_voting
+		activate_law = law_type:law_land_based_taxation
+		activate_law = law_type:law_free_trade
+		activate_law = law_type:law_private_schools	
+		activate_law = law_type:law_censorship
+		
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 3
+		}	
+
+		ig:ig_landowners = {
+			add_ruling_interest_group = yes
+		}
+
+		# Magic
+		add_technology_researched = cannorian_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_mass_plant_growth
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 2
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_evocation_corps
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 2
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_magical_feasts
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 2
+		}
+	}
+}

@@ -1,0 +1,106 @@
+﻿comet_chronicler_upkeep = {
+    icon =  gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+    country_expenses_add = 300
+}
+
+comet_gnome_upkeep = {
+    icon =  gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+    country_expenses_add = 600
+}
+
+comet_kobold_upkeep = {
+    icon =  gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+    country_expenses_add = 250
+}
+
+comet_mwalim_upkeep = {
+    icon =  gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+    country_expenses_add = 400
+    country_influence_add = -100
+}
+
+comet_queue_force = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -2
+}
+
+comet_queue_auth = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_authority_add = -200
+}
+
+comet_chronicler_writing_force = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_authority_add = -100
+}
+
+comet_chronicler_pressure = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+    country_influence_add = -100
+}
+
+comet_chronicler_pressure_ig = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+    interest_group_approval_add = -2
+}
+
+comet_telescopic_wide_implementation = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+    country_expenses_add = 600
+}
+
+comet_mwalim_treatise_tech = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+    country_tech_research_speed_mult = -0.1 #TODO Make sure this is right
+}
+
+comet_research_boost = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+    country_tech_research_speed_mult = 0.1 #TODO Make sure this is right
+}
+
+comet_gnome_research_bonus = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+    country_tech_research_speed_mult = 0.16
+}
+
+comet_funding_reduced = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+    country_expenses_add = -1200
+}
+
+comet_kobold_shipping = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+    state_trade_capacity_mult = -0.1
+}
+
+comet_kobold_extra_army = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+    country_military_wages_mult = 0.1
+}
+
+comet_kobold_bribe = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+    country_expenses_add = 300
+}
+
+comet_gnome_additional_salary = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+    country_expenses_add = 300
+}
+
+comet_igs_ignored = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+    interest_group_approval_add = -3
+}
+
+comet_igs_listened = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+    interest_group_approval_add = 1
+}
+
+comet_completion_mod = {
+    icon = modifier_lightbulb_positive.dds
+    country_tech_research_speed_mult = 0.15
+    country_prestige_mult = 0.2
+}

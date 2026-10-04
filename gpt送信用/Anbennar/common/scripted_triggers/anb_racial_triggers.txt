@@ -1,0 +1,452 @@
+﻿
+is_centaur = {
+    has_discrimination_trait = heritage_centaur
+}
+
+is_dwarven = {
+    has_discrimination_trait_group = heritage_group_dwarf
+}
+
+culture_is_elven = {
+	has_discrimination_trait_group = heritage_group_elf
+}
+
+character_is_elven = {
+	culture = { culture_is_elven = yes }
+}
+
+is_gnollish = {
+	has_discrimination_trait_group = heritage_group_gnoll
+}
+
+is_gnomish = {
+	OR = {
+		has_discrimination_trait = heritage_cannorian_gnome
+		has_discrimination_trait = heritage_sarhaly_gnome
+	}
+}
+
+is_goblin = {
+	has_discrimination_trait_group = heritage_group_goblinoid
+}
+
+is_halfling = {
+	OR = {
+		has_discrimination_trait = heritage_shirefoot_halfling
+		has_discrimination_trait = heritage_vyzemby_halfling
+	}
+}
+
+is_half_elven = {
+	AND = {
+		OR = {
+			culture_is_elven = yes
+			is_ruinborn = yes
+		}
+		is_human = yes
+	}
+}
+
+is_half_orcish = {
+	AND = {
+		is_orcish = yes
+		is_human =yes
+	}
+}
+
+is_harimari = {
+	has_discrimination_trait_group = heritage_group_harimari
+}
+
+is_harpy = {
+	has_discrimination_trait_group = heritage_group_harpy
+}
+
+is_hobgoblin = {
+	has_discrimination_trait_group = heritage_group_hobgoblin
+}
+
+is_human = {
+	OR = {
+		has_discrimination_trait_group = heritage_group_cannorian_human
+		has_discrimination_trait_group = heritage_group_bulwari_human
+		has_discrimination_trait_group = heritage_group_west_sarhaly_human
+		has_discrimination_trait_group = heritage_group_east_sarhaly_human
+		has_discrimination_trait_group = heritage_group_raheni_human
+
+		has_discrimination_trait = heritage_yansheni
+		has_discrimination_trait = heritage_north_halessi
+		has_discrimination_trait = heritage_southeast_halessi
+		has_discrimination_trait = heritage_triunic
+	}
+}
+
+is_kobold = {
+	has_discrimination_trait_group = heritage_group_kobold
+}
+
+is_lizardfolk = {
+	has_discrimination_trait_group = heritage_group_lizardfolk
+}
+
+is_mechanim = {
+	has_discrimination_trait_group = heritage_group_mechanim
+}
+
+is_ogre = {
+	has_discrimination_trait = heritage_ogrish
+}
+
+is_orcish = {
+	has_discrimination_trait_group = heritage_group_orc
+}
+
+is_ruinborn = {
+	has_discrimination_trait_group = heritage_group_ruinborn
+}
+
+is_troll = {
+    has_discrimination_trait = heritage_trollish
+}
+
+is_degenerated_elf = {
+	OR = {
+		has_discrimination_trait = heritage_kinbond_ruinborn
+		has_discrimination_trait = heritage_leech_ruinborn
+		has_discrimination_trait = heritage_hivemind_ruinborn
+	}
+}
+
+is_same_race_as_any_primary_culture = {
+	custom_description = {
+		text = is_same_race_as_any_primary_culture_tt
+		# List every race here
+		OR = {
+			AND = {
+				is_centaur = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_centaur = yes
+					}
+				}
+			}
+			AND = {
+				is_dwarven = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_dwarven = yes
+					}
+				}
+			}
+			AND = {
+				culture_is_elven = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						culture_is_elven = yes
+					}
+				}
+			}
+			AND = {
+				is_gnollish = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_gnollish = yes
+					}
+				}
+			}
+			AND = {
+				is_gnomish = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_gnomish = yes
+					}
+				}
+			}
+			AND = {
+				is_goblin = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_goblin = yes
+					}
+				}
+			}
+			AND = {
+				is_halfling = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_halfling = yes
+					}
+				}
+			}
+			AND = {
+				is_half_elven = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_half_elven = yes
+					}
+				}
+			}
+			AND = {
+				is_half_orcish = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_half_orcish = yes
+					}
+				}
+			}
+			AND = {
+				is_harimari = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_harimari = yes
+					}
+				}
+			}
+			AND = {
+				is_harpy = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_harpy = yes
+					}
+				}
+			}
+			AND = {
+				is_hobgoblin = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_hobgoblin = yes
+					}
+				}
+			}
+			AND = {
+				is_human = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_human = yes
+					}
+				}
+			}
+			AND = {
+				is_kobold = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_kobold = yes
+					}
+				}
+			}
+			AND = {
+				is_ogre = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_ogre = yes
+					}
+				}
+			}
+			AND = {
+				is_orcish = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_orcish = yes
+					}
+				}
+			}
+			AND = {
+				is_ruinborn = yes
+				# Special stuff for Ruinborn so we don't need to make race for each of them
+				shares_heritage_trait_with_any_primary_culture = $COUNTRY$
+			}
+			AND = {
+				is_lizardfolk = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_lizardfolk = yes
+					}
+				}
+			}
+			AND = {
+				is_troll = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_troll = yes
+					}
+				}
+			}
+			AND = {
+				is_troll = yes
+				$COUNTRY$ = {
+					any_primary_culture = {
+						is_troll = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+is_goblinoid_group = {
+	custom_description = {
+		text = is_goblinoid_group_tt
+		OR = {
+			is_goblin = yes
+			is_hobgoblin = yes
+		}
+	}
+}
+
+is_ruinborn_group = {
+	custom_description = {
+		text = is_ruinborn_group_tt
+		is_ruinborn = yes
+	}
+}
+
+is_giantkin_group = {
+	custom_description = {
+		text = is_giantkin_group_tt
+		OR = {
+			is_troll = yes
+			is_ogre = yes
+		}
+	}
+}
+
+is_monstrous_culture = {
+	custom_description = {
+		text = is_monstrous_race_tt
+		OR = {
+			is_centaur = yes
+			is_kobold = yes
+			is_gnollish = yes
+			is_goblin = yes
+			is_harpy = yes
+			is_hobgoblin = yes
+			is_lizardfolk = yes
+			is_ogre = yes
+			is_orcish = yes
+			is_half_orcish = yes
+			is_troll = yes
+			is_degenerated_elf = yes
+		}
+	}
+}
+
+is_non_monstrous_culture = {
+	custom_description = {
+		text = is_non_monstrous_race_tt
+		NOT = { is_monstrous_culture = yes }
+	}
+}
+
+# pop_race_accepted = {
+# 	custom_description = {
+# 		text = race_is_accepted_by_racial_laws_tt
+# 		culture = {
+# 			cultural_race_accepted = {
+# 				COUNTRY = prev.$COUNTRY$
+# 			}
+# 		}
+# 	}
+# }
+
+# cultural_race_accepted = {
+# 	custom_description = {
+# 		text = race_is_accepted_by_racial_laws_tt
+# 		OR = {
+# 			AND = {
+# 				$COUNTRY$ = { has_law = law_type:law_same_race_only }
+# 				is_same_race_as_any_primary_culture = { # Always accept your own race
+# 					COUNTRY = $COUNTRY$
+# 				}
+# 			}
+			
+# 			# Monstrous vs non-monstrous
+# 			AND = {
+# 				$COUNTRY$ = { has_law = law_type:law_monstrous_only }
+# 				is_monstrous_culture = yes
+# 			}
+# 			AND = {
+# 				$COUNTRY$ = { has_law = law_type:law_non_monstrous_only }
+# 				is_non_monstrous_culture = yes
+# 			}
+			
+# 			#Same group
+# 			AND = {
+# 				$COUNTRY$ = { has_law = law_type:law_giantkin_group_only }
+# 				is_giantkin_group = yes
+# 			}
+# 			AND = {
+# 				$COUNTRY$ = { has_law = law_type:law_ruinborn_group_only }
+# 				is_ruinborn_group = yes
+# 			}
+# 			AND = {
+# 				$COUNTRY$ = { has_law = law_type:law_goblinoid_group_only }
+# 				is_goblinoid_group = yes
+# 			}
+			
+# 			$COUNTRY$ = { has_law = law_type:law_all_races_allowed }
+# 		}
+# 	}
+# }
+
+# will_be_accepted_race = {
+# 	OR = {
+# 		AND = {
+# 			$COUNTRY$ = { is_enacting_law = law_type:law_same_race_only }
+# 			is_same_race_as_any_primary_culture = { # Always accept your own race
+# 				COUNTRY = $COUNTRY$
+# 			}
+# 		}
+		
+# 		# Monstrous vs non-monstrous
+# 		AND = {
+# 			$COUNTRY$ = { is_enacting_law = law_type:law_monstrous_only }
+# 			is_monstrous_culture = yes
+# 		}
+# 		AND = {
+# 			$COUNTRY$ = { is_enacting_law = law_type:law_non_monstrous_only }
+# 			is_non_monstrous_culture = yes
+# 		}
+		
+# 		#Same group
+# 		AND = {
+# 			$COUNTRY$ = { is_enacting_law = law_type:law_giantkin_group_only }
+# 			is_giantkin_group = yes
+# 		}
+# 		AND = {
+# 			$COUNTRY$ = { is_enacting_law = law_type:law_ruinborn_group_only }
+# 			is_ruinborn_group = yes
+# 		}
+# 		AND = {
+# 			$COUNTRY$ = { is_enacting_law = law_type:law_goblinoid_group_only }
+# 			is_goblinoid_group = yes
+# 		}
+		
+# 		$COUNTRY$ = { is_enacting_law = law_type:law_all_races_allowed }
+# 	}
+# }
+
+#Checks if pop is accepted by CULTURAL laws
+is_accepted_culture = {
+    OR = {
+        AND = {
+            $COUNTRY$ = { has_law = law_type:law_ethnostate }
+            is_primary_culture_of = $COUNTRY$
+        }
+        AND = {
+            $COUNTRY$ = { has_law = law_type:law_national_supremacy }
+            AND = {
+				shares_heritage_trait_with_any_primary_culture = $COUNTRY$
+				shares_non_heritage_trait_with_any_primary_culture = $COUNTRY$
+			}
+        }
+        AND = {
+            $COUNTRY$ = { has_law = law_type:law_racial_segregation }
+            shares_heritage_trait_with_any_primary_culture = $COUNTRY$
+        }
+        AND = {
+            $COUNTRY$ = { has_law = law_type:law_cultural_exclusion }
+            shares_trait_with_any_primary_culture = $COUNTRY$
+        }
+        $COUNTRY$ = { has_law = law_type:law_multicultural }
+    }
+}

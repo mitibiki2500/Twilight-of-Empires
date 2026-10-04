@@ -1,0 +1,208 @@
+﻿namespace = spoorland
+
+# For Spoorland
+spoorland.1 = {
+	type = country_event
+	placement = ROOT
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	title = spoorland.1.t
+	desc = spoorland.1.d
+	flavor = spoorland.1.f
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:B98 ?= {
+			save_scope_as = concord_scope
+		}
+		c:A03 ?= {
+			save_scope_as = lorent_scope
+		}
+	}
+
+	option = {
+		name = spoorland.1.a
+		trigger = { is_player = no }
+		c:B98 ?= {
+			set_variable = spoorland_annex
+			trigger_event = { id = spoorland.2 }
+			show_as_tooltip = {
+				c:B98 ?= {
+					annex = ROOT
+				}
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = spoorland.1.b
+		default_option = yes
+		show_as_tooltip = {
+			change_relations = {
+				country = c:B98
+				value = -30
+			}
+			s:STATE_SPOORLAND = {
+				add_claim = c:B98
+			}
+		}
+		c:B98 ?= {
+			set_variable = spoorland_independent
+			trigger_event = { id = spoorland.2 }
+		}
+		s:STATE_OKHIBOLI = {
+			add_claim = c:B94
+		}
+		s:STATE_DIHEN = {
+			add_claim = c:B94
+		}
+		s:STATE_GRAVEROADS = {
+			add_claim = c:B94
+		}
+		add_modifier = {
+			name = old_trail_state
+			days = normal_modifier_time
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+# For the Concord
+spoorland.2 = {
+	type = country_event
+	placement = scope:spoorland_capital
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	title = spoorland.2.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = spoorland.2.d1
+				trigger = {
+					has_variable = spoorland_annex
+				}
+			}
+			triggered_desc = {
+				desc = spoorland.2.d2
+				trigger = {
+					has_variable = spoorland_independent
+				}
+			}
+		}
+	}
+	flavor = spoorland.2.f
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:B94 ?= {
+			save_scope_as = spoorland_scope
+			capital = {
+				save_scope_as = spoorland_capital
+			}
+		}
+	}
+
+	option = {
+		name = spoorland.2.a
+		default_option = yes
+		trigger = {
+			has_variable = spoorland_annex
+		}
+		annex = c:B89
+		annex = c:B94
+		add_fervor_target_modifier = {
+			culture = cu:towerfoot_halfling
+			days = very_long_modifier_time
+			multiplier = 10
+		}
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_THILVIS
+			}
+			add_loyalists_in_state = {
+				value = medium_radicals
+				culture = cu:towerfoot_halfling
+				strata = upper
+			}
+		}
+		hidden_effect = {
+			s:STATE_THILVIS = {
+				random_scope_state = {
+					set_state_name = STATE_THILVIS_boekia
+				}
+			}
+			s:STATE_SPOORLAND = {
+				random_scope_state = {
+					set_state_name = STATE_SPOORLAND_boekia
+				}
+			}
+		}
+	}
+	option = {
+		name = spoorland.2.b
+		trigger = {
+			has_variable = spoorland_annex
+		}
+		annex = c:B89
+		annex = c:B94
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_THILVIS
+			}
+			add_loyalists_in_state = {
+				value = small_radicals
+				culture = cu:towerfoot_halfling
+				strata = lower
+			}
+		}
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_SPOORLAND
+			}
+			add_loyalists_in_state = {
+				value = small_radicals
+				culture = cu:towerfoot_halfling
+				strata = lower
+			}
+		}
+	}
+	option = {
+		name = spoorland.2.c
+		default_option = yes
+		trigger = {
+			has_variable = spoorland_independent
+		}
+		annex = c:B89
+		change_relations = {
+			country = c:B94
+			value = -30
+		}
+		s:STATE_SPOORLAND = {
+			add_claim = c:B98
+		}
+	}
+}

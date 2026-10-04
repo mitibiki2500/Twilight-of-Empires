@@ -1,0 +1,244 @@
+﻿namespace = anb_portnamm_events
+
+anb_portnamm_events.1 = {
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_portnamm_events.1.t
+	desc = anb_portnamm_events.1.d
+	flavor = anb_portnamm_events.1.f
+
+	event_image = {
+		video = "europenorthamerica_rich_and_poor"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	immediate = {
+	}
+
+	option = {
+		name = anb_portnamm_events.1.a
+		default_option = yes
+	}
+}
+
+anb_portnamm_events.2 = {
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_portnamm_events.2.t
+	desc = anb_portnamm_events.2.d
+	flavor = anb_portnamm_events.2.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	immediate = {
+	}
+
+	option = {
+		name = anb_portnamm_events.2.a
+		default_option = yes
+		hidden_effect = {
+			trigger_event = { id = anb_portnamm_events.21 }
+		}
+	}
+}
+
+anb_portnamm_events.21 = {
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_portnamm_events.21.t
+	desc = anb_portnamm_events.21.d
+	flavor = anb_portnamm_events.21.f
+
+	event_image = {
+		video = "votp_barricade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	immediate = {
+	}
+
+	option = {
+		name = anb_portnamm_events.21.a
+		default_option = yes
+	}
+}
+
+anb_portnamm_events.3 = {
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_portnamm_events.3.t
+	desc = anb_portnamm_events.3.d
+	flavor = anb_portnamm_events.3.f
+
+	event_image = {
+		video = "europenorthamerica_rich_and_poor"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	immediate = {
+	}
+
+	option = {
+		name = anb_portnamm_events.3.a
+		default_option = yes
+	}
+}
+
+# Event 5: JE5 Radicals Pulse Event - TODO
+# anb_portnamm_events.5 = {
+# 	type = country_event
+# 	placement = root
+# 	duration = 3
+
+# 	title = anb_portnamm_events.5.t
+# 	desc = anb_portnamm_events.5.d
+# 	flavor = anb_portnamm_events.5.f
+
+# 	event_image = {
+# 		video = "europenorthamerica_rich_and_poor"
+# 	}
+
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+# 	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+# 	immediate = {
+# 	}
+
+# 	option = {
+# 		name = anb_portnamm_events.5.a
+# 		default_option = yes
+# 		# Add radicals based on number of production buildings in own country
+# 		every_scope_state = {
+# 			limit = {
+# 				is_incorporated = yes
+# 			}
+# 			add_radicals_in_state = {
+# 				value = 0.1
+# 			}
+# 		}
+# 	}
+# }
+
+# Event 6: JE5 Complete - Choose to keep state salary modifiers (TODO)
+#anb_portnamm_events.6 = {
+#	type = country_event
+#	placement = root
+#	duration = 3
+
+#	title = anb_portnamm_events.6.t
+#	desc = anb_portnamm_events.6.d
+#	flavor = anb_portnamm_events.6.f
+
+#	event_image = {
+#		video = "europenorthamerica_rich_and_poor"
+#	}
+
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+#	immediate = {
+#	}
+
+#	option = {
+#		name = anb_portnamm_events.6.a
+#		default_option = yes
+#		# Keep the salary modifiers
+#		set_variable = portnamm_keep_salary_modifiers
+#	}
+
+#	option = {
+#		name = anb_portnamm_events.6.b
+#		# Remove the salary modifiers
+#		# Remove foreign exploitation modifiers from all states
+#		every_country = {
+#			limit = {
+#				has_diplomatic_pact = {
+#					who = root
+#					type = da_overlord_grant_investment_rights
+#				}
+#			}
+#			every_scope_state = {
+#				remove_modifier = portnamm_je5_foreign_exploitation
+#				remove_modifier = portnamm_je5_foreign_exploitation_halved_country
+#			}
+#		}
+#	}
+#}
+
+# Event 10: Lorent side event - Portnamm requests investment deal
+anb_portnamm_events.10 = {
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_portnamm_events.10.t
+	desc = anb_portnamm_events.10.d
+	flavor = anb_portnamm_events.10.f
+
+	event_image = {
+		video = "europenorthamerica_rich_and_poor"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = anb_portnamm_events.10.a
+		default_option = yes
+		ai_chance = {
+			base = 100
+		}
+
+		create_treaty = {
+			name = treaty_name_portnamm_investment_lorent
+    		first_country = c:A03
+        	second_country = c:A15
+
+		    is_draft = no
+			binding_period = { years = 99 }
+
+	    	articles_to_create = {
+				{
+					article = portnamm_investment_treaty
+					source_country = c:A03
+					target_country = c:A15
+				}
+			}
+		}
+		c:A15 = { set_variable = portnamm_lorent_pact_active }
+	}
+
+	# NOT THIS OPTION, PLEASE
+	option = {
+		name = anb_portnamm_events.10.b
+		ai_chance = {
+			base = 0
+		}
+		change_infamy = 50
+	}
+}

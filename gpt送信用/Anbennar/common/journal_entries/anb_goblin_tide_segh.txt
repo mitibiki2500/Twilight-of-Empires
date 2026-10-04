@@ -1,0 +1,60 @@
+﻿# je_goblin_tide_segh = {
+# 	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	
+# 	group = je_group_historical_content
+
+# 	on_monthly_pulse = {
+# 		random_events = {
+# 			10 = 0 
+# 			1 = native_resettlement.2 # john ross
+# 			1 = native_resettlement.3 # Preparing for resettlement
+# 			1 = native_resettlement.4 # Trail of Tears
+# 		}
+# 	}
+
+# 	complete = {
+# 		OR = {
+# 			cu:deep_goblin = { NOT = { culture_is_discriminated_in = ROOT } }
+# 			custom_tooltip = {
+# 				text = indian_removal_fail_tt
+# 				NOT = {
+# 					any_scope_state = {
+# 						any_scope_pop = {
+# 							culture = cu:deep_goblin
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+	
+# 	on_complete = {
+# 		custom_tooltip = {
+# 			text = indian_removal_end
+# 			if = {
+# 				limit = {
+# 					NOT = {
+# 						any_scope_pop = {
+# 							culture = cu:deep_goblin
+# 						}
+# 					}
+# 				}
+# 				trigger_event = { id = native_resettlement.5 }
+# 			}
+# 			else = {
+# 				trigger_event = { id = native_resettlement.6 }
+# 			}
+# 		}
+# 	}
+
+# 	fail = {
+# 	#	NOT = { c:GBR = root }
+# 	}
+	
+# 	invalid = {
+# 		NOT = { owns_entire_state_region = STATE_SEGHDIHR }
+# 	}
+
+# 	weight = 100
+# 	should_be_pinned_by_default_uninvolved_or_context = yes
+# }

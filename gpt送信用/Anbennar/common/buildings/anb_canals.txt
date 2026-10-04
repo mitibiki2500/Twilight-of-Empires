@@ -1,0 +1,88 @@
+﻿building_dhal_nikhuvad_canal = {
+	building_group = bg_canals
+	icon = "gfx/interface/icons/building_icons/suez_canal.dds"
+	strait = canal_dhal_nikhuvad
+	expandable = no
+	downsizeable = no
+	unique = yes
+	required_construction = construction_cost_canal
+	
+	ai_value = 50000 # Canals are very important
+
+	unlocking_technologies = {
+		colonization
+	}
+
+	potential = {
+		state_region = s:STATE_BEERAGGA
+	}
+
+	possible = {
+		owner = {
+			OR = {
+				owns_treaty_port_in = STATE_BEERAGGA
+				owns_entire_state_region = STATE_BEERAGGA
+			}
+			custom_tooltip = {
+				text = dhal_nikhuvad_survey_complete_tooltip
+				has_variable = dhal_nikhuvad_survey_complete
+			}
+		}
+	}
+
+	entity_not_constructed = { }
+	entity_under_construction = { "canal_suezcanal_under_construction_01_entity" }
+	entity_constructed = { "canal_suezcanal_01_entity" }
+	locator = "canal_suez_locator"
+
+	city_gfx_interactions = {
+		clear_collision_mesh_area = yes
+		clear_size_area = no
+	}
+
+	production_method_groups = {
+		pmg_canal
+	}
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_harbour.dds"
+}
+building_prikoyol_canal = {
+	building_group = bg_canals
+	icon = "gfx/interface/icons/building_icons/panama_canal.dds"
+	strait = canal_prikoyol
+	expandable = no
+	downsizeable = no
+	unique = yes
+	required_construction = construction_cost_canal
+
+	ai_value = 50000 # Canals are very important
+
+	potential = {
+		state_region = s:STATE_PRIKOYOL
+	}
+
+	possible = {
+		owner = {
+			OR = {
+				owns_treaty_port_in = STATE_PRIKOYOL
+				owns_entire_state_region = STATE_PRIKOYOL
+			}
+		}
+	}
+
+	entity_not_constructed = { }
+	entity_under_construction = { "canal_panamacanal_under_construction_01_entity" }
+	entity_constructed = { "canal_panamacanal_01_entity" }
+	locator = "canal_panama_locator"
+
+	city_gfx_interactions = {
+		clear_collision_mesh_area = yes
+		clear_size_area = no
+	}
+
+	production_method_groups = {
+		pmg_canal
+	}
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_harbour.dds"
+}

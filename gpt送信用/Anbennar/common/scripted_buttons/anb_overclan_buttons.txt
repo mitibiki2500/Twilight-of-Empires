@@ -1,0 +1,189 @@
+﻿scripted_button_forego_claim_vivin = {
+	name = "recog_vivin_claim_name"
+	desc = "recog_vivin_claim_desc"
+
+	visible = { always = yes }
+	
+	#Country scope
+	ai_chance = {
+		value = 100
+	}
+
+	possible = {
+		has_claim = s:STATE_OURDIA
+		c:A02 = {
+			OR = {
+				has_attitude = {
+					who = ROOT
+					attitude = conciliatory
+				}
+				has_attitude = {
+					who = ROOT
+					attitude = cooperative
+				}							
+				has_attitude = {
+					who = ROOT
+					attitude = genial
+				}
+				has_attitude = {
+					who = ROOT
+					attitude = protective
+				}							
+			}
+		}
+		c:A02 = {
+            any_scope_treaty = {
+                binds = root
+                any_scope_article = {
+                    has_type = foreign_investment_rights
+                }
+            }
+		}
+	}
+
+	effect = {				# Should this give goblin radicals? You're abandoning goblins to a human state after all
+		s:STATE_OURDIA = {
+			remove_claim = ROOT
+		}
+		s:STATE_OURDIA = {
+			add_claim = c:A02
+		}
+
+		c:A02 ?= {
+			trigger_event = {
+                id = overclan_events.1
+            }
+		}
+	}
+}
+
+scripted_button_accept_rav_missionaries = {
+	name = "accept_rav_missionaries_name"
+	desc = "accept_rav_missionaries_desc"
+
+	visible = { always = yes }
+	ai_chance = {
+		value = 100
+	}
+	possible = {
+		custom_tooltip = {
+			text = accept_rav_missionaries_requirement
+			NOT = {				
+				has_variable = ravelian_missionaries
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = accept_rav_missionaries_effect
+		}
+		set_variable = ravelian_missionaries
+		c:F14 = {
+			add_modifier = {
+				name = ravelian_innovation
+				days = long_modifier_time
+			}
+		}
+	}
+}
+
+
+scripted_button_surakesi_deal = {
+	name = "surakesi_deal_name"
+	desc = "surakesi_deal_desc"
+	visible = { always = yes }
+	
+	ai_chance = {
+		value = 100
+	}
+
+	possible = {
+		NOT = { has_variable = surakesi_deal }
+		c:F02 = {
+			OR = {
+				has_attitude = {
+					who = ROOT
+					attitude = conciliatory
+				}
+				has_attitude = {
+					who = ROOT
+					attitude = cooperative
+				}							
+				has_attitude = {
+					who = ROOT
+					attitude = genial
+				}
+				has_attitude = {
+					who = ROOT
+					attitude = protective
+				}							
+			}
+		}
+		c:F02 = {
+			any_scope_treaty = {
+                binds = root
+                any_scope_article = {
+                    has_type = military_assistance
+                }
+            }
+		}
+	}
+	effect = {					# This should do more, maybe interact with the Ravelians in Drolas?
+		set_variable = surakesi_deal
+
+		c:F02 ?= {
+			trigger_event = {
+                id = overclan_events.2
+            }
+		}
+
+	}
+}
+
+scripted_button_request_busilari_help = {
+	name = "request_busilari_help_name"
+	desc = "request_busilari_help_desc"
+
+	visible = { always = yes }
+	
+	#Country scope
+	ai_chance = {
+		value = 100
+	}
+
+	possible = {
+		has_variable = ravelian_missionaries
+		NOT = { has_variable = busilari_help }
+		c:A09 = {
+			OR = {
+				has_attitude = {
+					who = ROOT
+					attitude = conciliatory
+				}
+				has_attitude = {
+					who = ROOT
+					attitude = cooperative
+				}							
+				has_attitude = {
+					who = ROOT
+					attitude = genial
+				}
+				has_attitude = {
+					who = ROOT
+					attitude = protective
+				}							
+			}
+		}
+	}
+	effect = {
+		set_variable = busilari_help
+
+		c:A09 ?= {
+			trigger_event = {
+                id = overclan_events.1
+            }
+		}
+
+	}
+}

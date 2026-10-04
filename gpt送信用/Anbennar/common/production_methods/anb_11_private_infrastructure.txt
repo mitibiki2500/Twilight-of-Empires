@@ -1,0 +1,547 @@
+﻿## Railways
+
+
+pm_thaumic_rail_trains = {
+	texture = "gfx/interface/icons/production_method_icons/trains_diesel.dds"	
+	replacement_if_valid = pm_thaumic_rail_trains_principle_transport_3
+
+	unlocking_technologies = {
+		thaumic_rail
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 5 # 300
+			goods_input_damestear_add = 10
+			goods_output_transportation_add = 50 # 1200
+		}
+		level_scaled = {
+			building_employment_laborers_add = 400
+			building_employment_machinists_add = 300
+			building_employment_engineers_add = 100
+			building_employment_clerks_add = 200
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_infrastructure_add = 40
+			state_pollution_generation_add = 15
+		}
+	}
+}
+
+pm_thaumic_rail_trains_principle_transport_3 = {
+	texture = "gfx/interface/icons/production_method_icons/trains_diesel.dds"	
+	is_hidden_when_unavailable = yes
+
+	unlocking_principles = {
+		principle_transport_3
+	}
+
+	unlocking_technologies = {
+		thaumic_rail
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_engines_add = 6 # 360
+			goods_input_damestear_add = 12
+			goods_output_transportation_add = 60 # 1500
+		}
+		level_scaled = {
+			building_employment_laborers_add = 400
+			building_employment_machinists_add = 300
+			building_employment_engineers_add = 100
+			building_employment_clerks_add = 200
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_infrastructure_add = 55
+			state_pollution_generation_add = 20
+		}
+	}
+}
+
+
+pm_no_enchancements_building_railway = {
+	texture = "gfx/interface/icons/production_method_icons/no_passenger_trains.dds"
+}
+
+pm_sparkdrive_accelerator_building_railway = {
+	texture = "gfx/interface/icons/production_method_icons/passenger_trains.dds"
+	
+	unlocking_technologies = {
+		elemental_elicitation			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_damestear_add = 2
+			goods_input_artificery_doodads_add = 2
+			
+			# output goods
+			goods_output_transportation_add = 10	#design intent: super big boost to transport
+		}
+	}
+}
+
+pm_driverless_trains_building_railway = {
+	texture = "gfx/interface/icons/production_method_icons/passenger_trains.dds"
+	
+	unlocking_technologies = {
+		thinking_machinery
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 5
+			
+			# output goods
+			goods_output_transportation_add = 10
+		}
+		level_scaled = {
+			building_employment_clerks_add = -200	#negates main clerk req
+			building_employment_laborers_add = -300
+		}
+	}
+}
+
+## Manor Houses
+
+pm_manor_house_mage_ownership = {
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 1
+		}
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_archmages_add = 100
+		}
+		unscaled = {
+			building_archmages_shares_add = 5
+		}
+	}
+}
+
+
+pm_manor_house_principle_magical_economics_2 = {	#version of pm_manor_house_principle_divine_economics_2 but for mages
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+	is_hidden_when_unavailable = yes
+
+	unlocking_principles = {
+		principle_magical_economics_2
+		principle_magical_economics_3
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 1
+		}
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_aristocrats_add = 50
+			building_employment_archmages_add = 50
+		}
+
+		unscaled = {
+			building_aristocrats_shares_add = 10
+			building_archmages_shares_add = 5
+		}
+	}
+}
+
+#Financial District
+
+pm_financial_district_principle_magical_economics_2 = {
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+	is_hidden_when_unavailable = yes
+	
+	unlocking_principles = {
+		principle_magical_economics_2
+		principle_magical_economics_3
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 1
+		}
+	}
+
+	building_modifiers = { 
+		
+		level_scaled = {
+			building_employment_capitalists_add = 50
+			building_employment_archmages_add = 25
+			building_employment_clerks_add = 25
+		}
+		unscaled = {
+			building_capitalists_shares_add = 5
+			building_archmages_shares_add = 2
+		}
+	}
+}
+
+#Mage Tower
+pm_traditional_mages = {
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+	#replacement_if_valid = pm_traditional_technodruid_tower
+
+	unlocking_technologies = {
+		magocracy
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			#country_magical_expertise_add = 5
+			country_magical_expertise_add = 44	#ive buffed this immensely due to other expertise source changes -jay
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 6
+			
+			goods_output_arcane_curios_add = 6
+		}
+		level_scaled = {
+			building_employment_laborers_add = 1000
+			building_employment_mages_add = 500
+		}
+	}	
+
+}
+
+pm_curios_artisans = {	#mages focus on outputting curios in order to survive in this modern world.
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+	#replacement_if_valid = pm_druidic_scholar_network
+
+	unlocking_technologies = {
+		mages_in_the_workforce
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			#country_magical_expertise_add = 12
+			country_magical_expertise_add = 64
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 12
+			goods_input_damestear_add = 2
+			
+			goods_output_arcane_curios_add = 13
+		}
+		level_scaled = {
+			building_employment_laborers_add = 500
+			building_employment_mages_add = 500
+			building_employment_shopkeepers_add = 500	#to sell curios
+		}
+	}	
+
+}
+
+# This is not in game
+pm_masters_of_magic = {
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+	replacement_if_valid = pm_masters_of_technothaumaturgie
+	
+	unlocking_technologies = {
+		dialectics
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 22
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 8
+			goods_input_damestear_add = 4
+			goods_input_flawless_metal_add = 1
+			
+			goods_output_arcane_curios_add = 12
+		}
+		level_scaled = {
+			building_employment_laborers_add = 750
+			building_employment_mages_add = 250
+		}
+	}	
+
+}
+
+# This is not in game
+pm_modern_archmages = {
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+	replacement_if_valid = pm_modern_technodruid
+	
+	unlocking_technologies = {
+		telephone
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 34
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 10
+			goods_input_damestear_add = 7
+			goods_input_flawless_metal_add = 2
+			goods_input_telephones_add = 1
+			
+			goods_output_arcane_curios_add = 18
+		}
+		level_scaled = {
+			building_employment_laborers_add = 500
+			building_employment_mages_add = 500
+		}
+	}	
+
+}
+
+# This is not in game
+#green mage tower
+pm_traditional_technodruid_tower = {
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+	is_hidden_when_unavailable = yes
+	
+	unlocking_laws = {
+		law_nation_of_green_artifice
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 5
+			state_pollution_generation_add = -1
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 4
+			
+			goods_output_arcane_curios_add = 4
+		}
+		level_scaled = {
+			building_employment_laborers_add = 850
+			building_employment_engineers_add = 50
+			building_employment_clerks_add = 50
+			building_employment_mages_add = 50
+		}
+	}	
+
+}
+
+# This is not in game
+pm_druidic_scholar_network = {	#TODO: sort out how druids etc work
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+	is_hidden_when_unavailable = yes
+	
+	unlocking_laws = {
+		law_nation_of_green_artifice
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 12
+			state_pollution_generation_add = -3
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 6
+			goods_input_damestear_add = 1
+			
+			goods_output_arcane_curios_add = 7
+		}
+		level_scaled = {
+			building_employment_laborers_add = 700
+			building_employment_engineers_add = 100
+			building_employment_clerks_add = 100
+			building_employment_mages_add = 100
+		}
+	}	
+
+}
+
+# This is not in game
+pm_masters_of_technothaumaturgie = {
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+	is_hidden_when_unavailable = yes
+	
+	unlocking_technologies = {
+		dialectics
+	}
+	unlocking_laws = {
+		law_nation_of_green_artifice
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 21
+			state_pollution_generation_add = -5
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 8
+			goods_input_damestear_add = 4
+			goods_input_flawless_metal_add = 1
+			
+			goods_output_arcane_curios_add = 12
+		}
+		level_scaled = {
+			building_employment_laborers_add = 500
+			building_employment_engineers_add = 150
+			building_employment_clerks_add = 200
+			building_employment_mages_add = 150
+		}
+	}	
+
+}
+
+# This is not in game
+pm_modern_technodruid = {
+	texture = "gfx/interface/icons/production_method_icons/mages_ownership.dds"
+	is_hidden_when_unavailable = yes
+	
+	unlocking_technologies = {
+		telephone
+	}
+	unlocking_laws = {
+		law_nation_of_green_artifice
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_magical_expertise_add = 34
+			state_pollution_generation_add = -8
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 10
+			goods_input_damestear_add = 7
+			goods_input_flawless_metal_add = 2
+			goods_input_telephones_add = 1
+			
+			goods_output_arcane_curios_add = 18
+		}
+		level_scaled = {
+			building_employment_laborers_add = 300
+			building_employment_engineers_add = 200
+			building_employment_clerks_add = 300
+			building_employment_mages_add = 200
+		}
+	}	
+
+}
+
+#Nexus transmutation
+
+
+pm_no_transmutation_building_mage_tower = {
+	texture = "gfx/interface/icons/production_method_icons/no_artificial_silk.dds"
+
+}
+
+pm_distilled_rainbows_building_mage_tower = {
+	texture = "gfx/interface/icons/production_method_icons/distilled_rainbows.dds"
+	
+	unlocking_technologies = {
+		elemental_elicitation
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 4
+			goods_input_fabric_add = 2
+			
+			goods_output_dye_add = 8
+		}
+
+	}	
+}
+
+pm_manaspun_fibers_building_mage_tower = {
+	texture = "gfx/interface/icons/production_method_icons/rayon.dds"
+	
+	unlocking_technologies = {
+		pathway_transmutation
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 8
+			goods_input_dye_add = 2
+			
+			goods_output_silk_add = 12
+		}
+
+	}	
+}
+
+pm_thaumosplastic_rendering_building_mage_tower = {
+	texture = "gfx/interface/icons/production_method_icons/elastics.dds"
+	
+	unlocking_technologies = {
+		catalytic_imbuement
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 12
+			goods_input_silk_add = 4
+			
+			goods_output_rubber_add = 20
+		}
+
+	}	
+}

@@ -1,0 +1,203 @@
+﻿DIPLOMACY = {
+	c:A01 = {	#Anbennar-Lorent
+		create_diplomatic_pact = {
+			country = c:A03
+			type = rivalry
+		}
+	}
+
+	c:A03 = {	#Lorent - Anbennar
+		create_diplomatic_pact = {
+			country = c:A01
+			type = rivalry
+		}
+	}
+
+	c:A03 = {	#Lorent-Northern League
+		create_diplomatic_pact = {
+			country = c:A04
+			type = rivalry
+		}
+	}
+
+	c:A04 = {	#Northern league - Lorent
+		create_diplomatic_pact = {
+			country = c:A03
+			type = rivalry
+		}
+	}
+
+	c:A04 = {	#Northern League-Grombar
+		create_diplomatic_pact = {
+			country = c:A10
+			type = rivalry
+		}
+	}
+
+	#c:A09 = { #Busilar-Konolkhatep rivalry			##rank diff too great. set up negative relations otherwise
+		#	create_diplomatic_pact = {
+		#		country = c:L01
+		#		type = rivalry
+		#	}
+		#}
+
+	c:A10 = {	#Grombar- Northern league
+		create_diplomatic_pact = {
+			country = c:A04
+			type = rivalry
+		}
+	}
+
+	c:A12 = { #jazhkredu rivalry with Rosande
+		create_diplomatic_pact = {
+			country = c:A28
+			type = rivalry
+		}
+	}
+
+	c:A22 = { 
+		create_diplomatic_pact = { #Ancardia - Araionn rivalry
+			country = c:A25
+			type = rivalry
+		}
+		create_diplomatic_pact = { #Ancardia - demense rivalry
+			country = c:A30
+			type = rivalry
+		}
+	}
+
+	c:A25 = {
+		create_diplomatic_pact = { #Araionn - Ancardia rivalry
+			country = c:A22
+			type = rivalry
+		}
+	}
+
+	c:A28 = { #Rosande - Jazhkredu rivalry
+		create_diplomatic_pact = {
+			country = c:A12
+			type = rivalry
+		}
+	}
+
+	c:A29 = { #Marrhold - Ungulvaldor rivalry
+		create_diplomatic_pact = {
+			country = c:A31
+			type = rivalry
+		}
+	}
+
+	c:A30 = { #Demense - Ancardia rivalry
+		create_diplomatic_pact = {
+			country = c:A22
+			type = rivalry
+		}
+	}
+
+	c:A31 = { #Ungulvaldor - Marrhold rivalry
+		create_diplomatic_pact = {
+			country = c:A29
+			type = rivalry
+		}
+	}	
+
+	# Replaced by lobbies instead, as the rank difference is too great
+	# c:B27 = { #Neratica-Trollsbay
+	# 	create_diplomatic_pact = {
+	# 		country = c:B98
+	# 		type = rivalry
+	# 	}
+	# }
+	
+	c:B29 = {	#Sarda-Dragon Dominion
+		create_diplomatic_pact = {
+			country = c:B49
+			type = rivalry
+		}
+	}
+
+	c:B34 = {	#Beggaston is still salty about being occupied during the Decades of the Mountain
+		create_diplomatic_pact = {
+			country = c:B41
+			type = rivalry
+		}
+	}
+
+	c:B41 = {	#Plumstead is still salty they were forced to release Beggaston
+		create_diplomatic_pact = {
+			country = c:B34
+			type = rivalry
+		}
+	}
+
+	c:B49 = {	#Sarda-Dragon Dominion
+		create_diplomatic_pact = {
+			country = c:B29
+			type = rivalry
+		}
+	}
+
+	c:B98 = { #Trollsbay-Lorent
+		create_diplomatic_pact = {
+			country = c:A03
+			type = rivalry
+		}
+	}
+
+	c:D24 = { # Seghidihr - Gulan rivalry
+		create_diplomatic_pact = {
+			country = c:D25
+			type = rivalry
+		}
+	}
+
+	c:D25 = { # Gulan - Seghidihr rivalry
+		create_diplomatic_pact = {
+			country = c:D24
+			type = rivalry
+		}
+	}
+
+	c:D26 = {
+		create_diplomatic_pact = { #Nizhn Korvesto - Dakaz rivalry
+			country = c:D31
+			type = rivalry
+		}
+	}
+
+	c:D31 = {
+		create_diplomatic_pact = { #Dakaz - Nizhn Korvesto rivalry
+			country = c:D26
+			type = rivalry
+		}
+		create_diplomatic_pact = { #Dakaz - Zerzeko rivalry
+			country = c:D33
+			type = rivalry
+		}
+	}
+
+	c:D33 = {
+		create_diplomatic_pact = { #Zerzeko - Dakaz rivalry	
+			country = c:D31
+			type = rivalry
+		}
+	}
+
+	#c:L01 = { #Konolkhatep-Busilar rivalry
+	#	create_diplomatic_pact = {
+	#		country = c:A09
+	#		type = rivalry
+	#	}
+	#}
+
+	c:R08 = { #Lion Command split from the main Command
+		create_diplomatic_pact = {
+			country = c:R17
+			type = rivalry
+		}
+	}
+}	
+
+
+
+

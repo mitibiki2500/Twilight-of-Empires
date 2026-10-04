@@ -1,0 +1,42 @@
+﻿CHARACTERS = {
+	c:B14 ?= {
+		#Lover of architecture who renovated the island's cities. Conciliatory man who does his best to avoid conflict whenever possible
+		create_character = {
+			first_name = Kylian
+			last_name = silna_Fox
+			historical = yes
+			ruler = yes
+			ig_leader = yes
+            culture = roilsardi
+			religion = rel:regent_court
+			home_region = STATE_ROILSARD
+			age = 65
+			interest_group = ig_landowners	#maybe something else if Endralliande lags behind too much
+			ideology = ideology_reformer
+			traits = {
+				tactful
+				aesthete
+				compliant
+				kidney_stones
+			}
+		}
+		#Father of Endralliander nationalism, Blackpowder Wars convinced him Endralliande needed to become its own nation
+		create_character = {
+			first_name = Armand
+			last_name = Breac
+			historical = yes
+			ig_leader = yes
+            culture = endralliander
+			religion = ravelian
+			home_region = STATE_JERCEL
+			age = 45
+			interest_group = ig_intelligentsia
+			ideology = ideology_radical
+			traits = {
+				ambitious
+				demagogue
+				literary
+			}
+		}
+	}
+}

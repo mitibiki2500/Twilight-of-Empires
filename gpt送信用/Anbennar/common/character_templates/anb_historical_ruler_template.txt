@@ -1,0 +1,292 @@
+﻿ruler_dalyon_vanbury = {
+	first_name = "Dalyon"
+	last_name = "of_Vanbury"
+	historical = yes
+	#ruler = yes	#handled via the company instead
+	age = 42
+	culture = cu:vanburian
+	home_region = STATE_TELGEIR_CALASCANDAR
+	interest_group = ig_industrialists
+	ideology = ideology_royalist
+	dna = dna_dalyon_of_vanbury
+	traits = {
+		ambitious innovative experienced_entrepreneur
+	}
+	#TODO: check why this isn't working ; seems to be the case with any starting company leaders being set and not an error with this specific code
+	executive_usage = {
+		country_trigger = { # Must be the country that owns the company
+			c:A01 ?= this
+		}
+		company_trigger = {
+			is_company_type = company_type:company_vanbury_steel_guild
+		}
+		earliest_usage_date = 1820.1.1
+		latest_usage_date = 1838.1.1	#random date, only matters for lore when he gets replaced or the guild is disestablished
+		chance = 100
+	}
+}
+
+ruler_gratto_silcalas = {	#for now this is the people's noble from the book, the marquis of arbaran
+	first_name = Gratto
+	last_name = Silcalas
+	historical = yes
+	#ruler = yes	#handled via the company instead
+	age = 53
+	culture = cu:crownsman
+	home_region = STATE_ARBARAN
+	interest_group = ig_industrialists
+	ideology = ideology_market_liberal
+	traits = {
+		expert_entrepreneur ruthless scarred grifter	#scarred during blackpowder
+	}
+
+	executive_usage = {
+		country_trigger = { # Must be the country that owns the company
+			c:A01 ?= this
+		}
+		company_trigger = {
+			is_company_type = company_type:company_clstc
+		}
+		earliest_usage_date = 1820.1.1
+		latest_usage_date = 1838.1.1	#random date, only matters for lore when he gets replaced or the guild is disestablished
+		chance = 100
+	}
+}
+
+ruler_elissa_template = {
+	first_name = "Elissa"
+	last_name = "Oathkeeper"
+	historical = yes
+	ruler = yes
+	birth_date = 1374.4.23
+	home_region = STATE_VENAIL
+	interest_group = ig_landowners
+	#ig_leader = yes
+	ideology = ideology_authoritarian #Racial purist got removed
+	dna = dna_elissa_lithiel
+	traits = {
+		ambitious psychological_affliction cruel trait_immortal powerful_mage
+	}
+	female = yes
+	on_created = {
+		set_character_immortal = yes
+	}
+}
+ruler_elthora_shadowweaver = {
+	first_name = "Elthora"
+	last_name = "Shadowweaver"
+	historical = yes
+	ruler = yes
+	female = yes
+	age = 25
+	home_region = STATE_DARHAN
+	dna = dna_elthora_shadowweaver
+	interest_group = ig_intelligentsia
+	ideology = ideology_magocrat
+	traits = {
+		engineer meticulous powerful_mage
+	}
+}
+ruler_aratha_thunderchild = {
+	first_name = "Aratha"
+	last_name = "Thunderchild"
+	historical = yes
+	ruler = yes
+	female = yes
+	age = 32
+	home_region = STATE_MURDKATHER
+	dna = dna_aratha_thunderchild
+	interest_group = ig_devout
+	ideology = ideology_liberal_leader
+	traits = {
+		pious charismatic inspirational_orator
+	}
+}
+ruler_dak = {
+	first_name = dak
+	last_name = chaingrasper
+	historical = yes
+	age = 412
+	culture = cu:undergrowth_goblin
+	interest_group = ig_armed_forces
+	ruler = yes
+	ideology = ideology_authoritarian
+	dna = dna_dak
+	traits = {
+		trait_immortal
+		ambitious
+		arrogant
+		experienced_offensive_planner
+		powerful_mage
+	}
+	on_created = {
+		add_character_role = general
+		set_character_immortal = yes
+	}
+}
+
+ruler_arturo_silna_lioncost = {
+	first_name = Arturo
+	last_name = silna_Lioncost
+	historical = yes
+	ruler = yes
+	noble = yes
+	age = 25
+	home_region = STATE_LIONCOST
+	interest_group = ig_armed_forces
+	ideology = ideology_moderate
+	dna = dna_arturo_silna_lioncost
+	traits = {
+		inspirational_orator popular_commander charismatic expensive_tastes
+	}
+	on_created = { 
+		add_character_role = general
+	}
+	culture = cu:busilari
+}
+
+ruler_huszien = {
+	first_name = huszien
+	last_name = foxgoddess
+	historical = yes
+	ruler = yes
+	female = yes
+	birth_date = 100.1.1
+	interest_group = ig_devout
+	ideology = ideology_feminist
+	dna = dna_placeholder_huszien
+	culture = cu:gangim
+	religion = rel:mystic_accord
+	traits = {
+		trait_immortal
+		celebrity_commander
+		firebrand
+		pious
+	}
+	on_created = {
+		# set_variable = huszien_var - Unused var
+		set_character_immortal = yes
+	}
+}
+
+ruler_horutep = {
+	first_name = horutep
+	last_name = horutep_titles
+	historical = yes
+	ruler = yes
+	birth_date = 1641.1.1
+	interest_group = ig_devout
+	ideology = ideology_slaver
+	culture = cu:sorrowmane_gnoll
+	religion = rel:elikhetist
+	traits = {
+		trait_immortal
+		pious
+		ambitious
+		expensive_tastes
+		pillager
+	}
+	on_created = {
+		add_character_role = general
+		set_character_immortal = yes
+	}
+}
+
+ruler_nuzha_genie = {
+	first_name = Nuzha
+	last_name = szal_Fazil
+	historical = yes
+	ruler = yes
+	female = yes
+	birth_date = 10.1.1
+	interest_group = ig_landowners
+	ideology = ideology_magocrat
+	culture = cu:bahari
+	religion = rel:old_sun_cult
+	traits = {
+		trait_immortal
+		reserved
+		imposing
+		mountain_commander
+		powerful_mage
+	}
+	on_created = {
+		add_character_role = general
+		set_character_immortal = yes
+	}
+}
+
+ruler_harivillukar_takasangamar = {
+	first_name = Harivillukar
+	last_name = Takasangamar
+	historical = yes
+	ruler = yes
+	age = 31
+	interest_group = ig_armed_forces
+	ideology = ideology_royalist
+	culture = cu:yodhanpir
+	religion = rel:gods_of_the_taychend
+	dna = dna_harivillukar_takasangamar
+	traits = {
+		romantic celebrity_commander reckless
+	}
+	on_created = { 
+		add_character_role = general
+	}
+}
+
+ruler_revothoros_machiproianes = {
+	first_name = Revothoros
+	last_name = Machiproianes
+	historical = yes
+	ruler = yes
+	age = 52
+	interest_group = ig_petty_bourgeoisie
+	ig_leader = yes
+	ideology = ideology_jingoist_leader
+	dna = dna_revothoros_machiproianes
+	culture = cu:ambhen
+	traits = {
+		demagogue meticulous bigoted
+	}
+}
+
+ruler_dyiron_laskaris = {
+	first_name = Dyiron
+	last_name = Laskaris
+	historical = yes
+	heir = yes
+	age = 19
+	interest_group = ig_armed_forces
+	ideology = ideology_modernizer_leader
+	dna = dna_dyiron_laskaris
+	culture = cu:klereyen
+	religion = rel:ravelian
+	traits = {
+		inspirational_orator innovative ambitious inexperienced
+	}
+	on_created = { 
+		add_character_role = general
+	}
+}
+
+ruler_yamina = {
+	first_name = Yamina
+	last_name = Gracosael
+	historical = yes
+	ruler = yes
+	female = yes
+	noble = yes
+	age = 90
+	birth_date = 1730.4.25
+	interest_group = ig_landowners
+	dna = dna_yamina
+	ig_leader = yes
+	ideology = ideology_jingoist_leader
+	traits = { # lifespan trait is just to get her to survive a little longer
+		imperious erudite ruthless powerful_mage trait_100_lifespan
+	}
+	on_created = { 
+		add_character_role = general
+	}
+}

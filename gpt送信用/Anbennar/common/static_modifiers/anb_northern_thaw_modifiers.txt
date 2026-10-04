@@ -1,0 +1,208 @@
+﻿
+nl_contested_magnate_rule = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	political_movement_radicalism_add = 0.10
+	country_loyalists_from_legitimacy_mult = -0.50
+	state_radicals_and_loyalists_from_sol_change_mult = 0.15
+	country_law_enactment_time_mult = 0.20
+}
+
+nl_magnate_rule_enforced = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_loyalists_from_legitimacy_mult = 0.20
+	building_group_bg_manufacturing_throughput_add = 0.10
+}
+
+nl_magnate_group_credited_ig = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_approval_add = 2
+	interest_group_pop_attraction_mult = 0.25
+}
+
+nl_encouraged_manufacturing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	building_group_bg_manufacturing_throughput_add = 0.05
+}
+
+nl_encouraged_investment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	state_construction_mult = 0.05
+}
+
+nl_nationalist_support = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_pop_attraction_mult = 0.15
+}
+
+#Woodswaller revolt
+nl_woodswaller_stronghold = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_tax_waste_add = 0.15
+	state_radicals_from_political_movements_mult = 0.25
+	building_group_bg_manufacturing_throughput_add = -0.15
+}
+
+nl_woodswaller_stronghold_small = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_tax_waste_add = 0.10
+	state_radicals_from_political_movements_mult = 0.15
+	building_group_bg_manufacturing_throughput_add = -0.10
+}
+
+nl_accepted_adshaw_assistance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add = 1
+	interest_group_pol_str_mult = 0.2
+}
+
+nl_anti_industry_attacks = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	building_group_bg_manufacturing_throughput_add = -0.15
+}
+
+nl_anti_woodswall_martial_law = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	country_authority_add = -100
+	interest_group_ig_armed_forces_approval_add = 2
+}
+
+nl_brasslance_coup_success_ig = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_approval_add = 4
+	interest_group_pol_str_mult = 0.15
+}
+
+nl_brasslance_coup_thwarted_ig = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_approval_add = 2
+	interest_group_pop_attraction_mult = 0.15
+}
+
+#Gerudia conversion
+nl_encouraged_proselytization = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	state_conversion_mult = 0.5
+}
+
+nl_encouraged_education = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	state_education_access_add = 0.25
+	state_conversion_mult = 0.1
+}
+
+nl_recently_picked_ravelian_focus = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	#does nothing
+}
+
+nl_skaldyrric_oppression = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_skaldhyrric_faith_standard_of_living_add = -1
+}
+
+modifier_nl_conversion_costs = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+nl_expanded_ravelian_mission = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_ig_devout_approval_add = 1
+	interest_group_ig_devout_pop_attraction_mult = 0.05
+}
+
+nl_ended_ravelian_mission_ig = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -4
+	interest_group_pol_str_mult = -0.1
+}
+
+nl_completed_conversion_ig = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add = 4
+	interest_group_pol_str_mult = 0.1
+}
+
+nl_high_rector_blessing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_mult = 0.20
+}
+
+nl_more_gerudian_resources = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	building_group_bg_extraction_throughput_add = 0.1
+}
+
+modifier_dalr_religious_cultural_identity = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	political_movement_pop_attraction_mult = 0.25
+}
+
+nl_religious_crackdown = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+	state_conversion_mult = 0.5
+	state_mortality_turmoil_mult = 0.1
+}
+
+nl_negotiated_with_religious_rebels = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -2
+}
+
+nl_embraced_anti_religious_rebels = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -2
+}
+
+nl_rejected_anti_religious_rebels = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add = 1
+}
+
+nl_ignored_magnate_attack = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	interest_group_ig_industrialists_approval_add = -2
+	interest_group_ig_landowners_approval_add = -2
+}
+
+nl_gerudian_resource_extraction_disrupted = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	building_group_bg_extraction_throughput_add = -0.10
+}
+
+#Reach nationalism
+
+nl_reach_racial_tensions = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_maldorian_elf_standard_of_living_add = -1
+	state_city_goblin_standard_of_living_add = -1
+}
+
+nl_reach_nationalist_propaganda = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_pop_support_movement_cultural_minority_mult = 0.15
+}
+
+nl_making_own_reach_propaganda = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_authority_add = -100
+	state_radicals_and_loyalists_from_sol_change_mult = 0.15
+}
+
+nl_bayvek_adventuring_boost = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	state_migration_pull_mult = 0.15
+	building_arms_industry_throughput_add = 0.1
+	building_artillery_foundry_throughput_add = 0.1
+}
+
+nl_faster_incorporation_gerudia = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_incorporation_speed_mult = 0.9
+}
+
+integrating_reach_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_authority_mult = -0.2
+	country_bureaucracy_mult = -0.2
+}

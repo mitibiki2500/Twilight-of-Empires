@@ -1,0 +1,278 @@
+﻿modifier_surveying_dhal_nikhuvad = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+ 	country_bureaucracy_add = -1000
+ }
+
+ dhal_nikhuvad_purchase = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 33000
+}
+
+dhal_nikhuvad_sale = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_tax_income_add = 33000
+}
+
+ghankedhen_increased_aristocratic_economic_activity = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	state_aristocrats_investment_pool_contribution_add = 0.1
+}
+
+modifier_triarchy_rending_repayments_1 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 3000
+	country_prestige_mult = -0.1
+	#state_radicals_from_sol_change_mult = 0.05 ## modifier does not exist
+	country_gold_reserve_limit_mult = 0.5
+}
+modifier_tianlou_rending_repayments_1 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_prestige_mult = 0.02
+	country_tax_income_add = 3000
+}
+modifier_triarchy_rending_repayments_2 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 6000
+	country_prestige_mult = -0.2
+	#state_radicals_from_sol_change_mult = 0.1 ## modifier does not exist
+	country_gold_reserve_limit_mult = 0.5
+}
+modifier_tianlou_rending_repayments_2 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_tax_income_add = 6000
+	country_prestige_mult = 0.02
+}
+modifier_triarchy_rending_repayments_3 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 9000
+	country_prestige_mult = -0.3
+	#state_radicals_from_sol_change_mult = 0.15 ## modifier does not exist
+	country_gold_reserve_limit_mult = 0.5
+}
+modifier_tianlou_rending_repayments_3 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_tax_income_add = 9000
+	country_prestige_mult = 0.03
+}
+modifier_triarchy_rending_repayments_4 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 12000
+	country_prestige_mult = -0.4
+	#state_radicals_from_sol_change_mult = 0.2 ## modifier does not exist
+	country_gold_reserve_limit_mult = 0.5
+}
+modifier_tianlou_rending_repayments_4 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_tax_income_add = 12000
+	country_prestige_mult = 0.04
+}
+modifier_cancelled_tianlou_debt = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_prestige_mult = -0.5
+	country_infamy_decay_mult = -0.1
+}
+end_of_tianlou_repayments_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -2
+}
+the_jewel_of_yanshen_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 60
+}
+survivors_of_the_fox_demon_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	#state_radicals_from_sol_change_mult = -0.2 ## modifier does not exist
+}
+
+empkeios_independence_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 10
+}
+ameion_chendya_colonization = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_colony_growth_speed_mult = 2
+}
+caergaraen_chendya_colonization = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_colony_growth_speed_mult = 6
+	#country_max_declared_interests_add = 1 #something with involvement now?
+}
+lost_north_war = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_prestige_mult = -0.1
+}
+
+
+dwarven_hold_specialization_change_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	building_throughput_add = -0.75
+	building_laborers_mortality_mult = 0.4
+	building_machinists_mortality_mult = 0.2
+}
+
+
+obsidian_invasion_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	country_tax_income_add = 10000
+	#country_bureaucracy_add = 250
+	#goods_input_small_arms_mult = -0.25
+	#goods_input_artillery_mult = -0.25
+	country_infamy_generation_mult = -0.75
+}
+
+obsidian_invasion_tax_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_tax_income_add = 10000
+	interest_group_ig_landowners_pol_str_mult = -1
+	interest_group_ig_armed_forces_pop_attraction_mult = 1
+	interest_group_ig_armed_forces_pol_str_mult = 2
+}
+
+#obsidian_invasion_barracks_training = {
+#	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+#	building_training_rate_add = 200000
+#}
+
+
+
+doodad_production_modifier = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+    building_doodad_artificeries_throughput_add = 0.33
+}
+
+arakeprun_shadowweaver_reform_education_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	interest_group_ig_intelligentsia_pol_str_mult = 0.05
+}
+
+eordand_green_artifice_compensation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_magical_expertise_mult = 0.125
+}
+
+anb_command_events.1.a.m = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	country_improve_relations_speed_mult = 1
+	country_prestige_add = 20
+}
+anb_command_events.1.b.m = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_supply_consumption_mult = -0.15
+	country_military_goods_cost_mult = -0.15
+}
+anb_command_events.1.c.m = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	state_conscription_rate_mult = 0.25
+	state_building_conscription_center_max_level_add = 10
+}
+
+anb_command_events.2.a.m = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	country_tax_income_add = 7500
+	state_standard_of_living_add = -0.5
+	country_authority_add = -200
+	
+}
+anb_command_events.2.b.m = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	state_tax_capacity_mult = 0.30
+	state_turmoil_effects_mult = -0.5
+	country_bureaucracy_add = -125
+}
+anb_command_events.2.c.m = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	building_arms_industry_throughput_add = 0.15
+	building_artillery_foundry_throughput_add = 0.15
+	country_bureaucracy_add = -50
+}
+
+anb_command_events.3.a.m = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	battle_defense_owned_province_mult = 0.15
+}
+
+anb_command_events.3.b.m = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_army_offense_mult = 0.20
+	unit_army_defense_mult = -0.10
+}
+anb_command_events.3.c.m = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_morale_loss_mult = -0.3
+	unit_morale_recovery_mult = 0.3
+}
+taychend_baby_boom = {
+	icon = gfx/interface/icons/timed_modifier_icons/unused/modifier_explosion_positive.dds
+	state_birth_rate_mult = 0.05
+}
+taychend_economic_boom = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	state_aristocrats_investment_pool_efficiency_mult = 0.1
+	state_capitalists_investment_pool_efficiency_mult = 0.25
+	country_leverage_resistance_mult = -0.4
+}
+
+the_race_for_the_small_country = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	state_capitalists_investment_pool_efficiency_mult = -0.1
+        state_aristocrats_investment_pool_efficiency_mult = -0.1
+}
+
+halfling_independence_assured = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_prestige_add = 50
+	country_loan_interest_rate_mult = -0.05
+}
+
+leaders_of_the_race = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_influence_add = 200
+}
+
+victors_of_the_race = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	country_prestige_add = 50
+	country_leverage_generation_mult = 0.05
+}
+
+mechanim_awakening_throughput_debuff = {
+	building_throughput_add = -0.1
+}
+
+# TODO - Rename this to actually explain what it is. Beard Wave Doctrine sounds like a meme - July 26 2025
+beard_wave_doctrine = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	building_training_rate_mult = 7.0
+	unit_recovery_rate_add = 0.40
+}
+
+rapid_deployment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	building_training_rate_mult = 30.0
+}
+
+legion_post_support = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_tax_income_add = 30000
+}
+
+overclan_big_ig_boost = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_pol_str_mult = 5
+}
+
+rosemetal_technoloy_payment = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+rosemetal_technoloy_received = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_tax_income_add = 1
+}
+
+bosancovac_immigration_pull = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_migration_pull_add = 20
+	state_migration_pull_mult = 0.25
+}

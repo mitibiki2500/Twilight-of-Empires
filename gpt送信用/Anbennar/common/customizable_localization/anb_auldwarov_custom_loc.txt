@@ -1,0 +1,1334 @@
+﻿auldwarov_start_custom = {
+	type = country
+	text = {
+		trigger = {
+			THIS = {
+				OR = {
+					country_has_primary_culture = cu:basalt_dwarf
+					# country_has_primary_culture = cu:garnet_dwarf
+					# country_has_primary_culture = cu:flint_dwarf
+					country_has_primary_culture = cu:diamond_dwarf
+					# country_has_primary_culture = cu:marble_dwarf
+					# country_has_primary_culture = cu:cobalt_dwarf
+				}
+			}
+		}
+		localization_key = auldwarov_start_ordstunic
+	}
+	text = {
+		trigger = {
+			country_has_primary_culture = cu:kronium_dwarf
+		}
+		localization_key = auldwarov_start_amldihr
+	}
+	text = {
+		trigger = {
+			# country_has_primary_culture = cu:lead_dwarf
+			OR = {
+				c:L29 ?= this
+				was_formed_from = L29
+			}
+		}
+		localization_key = auldwarov_start_jorkad
+	}
+	text = {
+		trigger = {
+			country_has_primary_culture = cu:agate_dwarf
+		}
+		localization_key = auldwarov_start_khugdihr
+	}
+	text = {
+		trigger = {
+			OR = {
+				exists = c:D61
+				exists = c:D24
+			}
+			OR = {
+				THIS = c:D24
+				THIS = {
+					was_formed_from = D24
+				}
+			}
+		}
+		localization_key = auldwarov_start_seghdihr
+	}
+	text = {
+		trigger = {
+			OR = {
+				exists = c:D61
+				exists = c:D25
+			}
+			OR = {
+				THIS = c:D25
+				THIS = {
+					was_formed_from = D25
+				}
+			}
+		}
+		localization_key = auldwarov_start_gulan
+	}
+}
+
+auldwarov_collapse_custom = {
+	type = country
+	text = {
+		trigger = {
+			THIS = {
+				OR = {
+					country_has_primary_culture = cu:basalt_dwarf
+					# country_has_primary_culture = cu:garnet_dwarf
+					# country_has_primary_culture = cu:flint_dwarf
+					country_has_primary_culture = cu:diamond_dwarf
+					# country_has_primary_culture = cu:marble_dwarf
+					# country_has_primary_culture = cu:cobalt_dwarf
+				}
+			}
+		}
+		localization_key = auldwarov_collapse_ordstunic
+	}
+	text = {
+		trigger = {
+			country_has_primary_culture = cu:kronium_dwarf
+		}
+		localization_key = auldwarov_collapse_amldihr
+	}
+	text = {
+		trigger = {
+			# country_has_primary_culture = cu:lead_dwarf
+			OR = {
+				c:L29 ?= this
+				was_formed_from = L29
+			}
+		}
+		localization_key = auldwarov_collapse_jorkad
+	}
+	text = {
+		trigger = {
+			country_has_primary_culture = cu:agate_dwarf
+		}
+		localization_key = auldwarov_collapse_khugdihr
+	}
+	text = {
+		trigger = {
+			OR = {
+				exists = c:D61
+				exists = c:D24
+			}
+			OR = {
+				THIS = c:D24
+				THIS = {
+					was_formed_from = D24
+				}
+			}
+		}
+		localization_key = auldwarov_collapse_seghdihr
+	}
+	text = {
+		trigger = {
+			OR = {
+				exists = c:D61
+				exists = c:D25
+			}
+			OR = {
+				THIS = c:D25
+				THIS = {
+					was_formed_from = D25
+				}
+			}
+		}
+		localization_key = auldwarov_collapse_gulan
+	}
+}
+
+auldwarov_celebrate_custom = {
+	type = country
+	text = {
+		trigger = {
+			exists = c:D61
+			THIS = c:D61
+		}
+		localization_key = auldwarov_celebrate_segbandal
+	}
+	text = {
+		trigger = {
+			exists = c:D62
+			THIS = c:D62
+		}
+		localization_key = auldwarov_celebrate_serpentreach
+	}
+	text = {
+		trigger = {
+			NOT = {
+				THIS = c:D61
+			}
+			NOT = {
+				THIS = c:D62
+			}
+		}
+		localization_key = auldwarov_celebrate_generic
+	}
+}
+
+auldwarov_traditionreason_custom = {
+	type = country
+	text = {
+		trigger = {
+			religion = rel:dwarven_pantheon
+		}
+		localization_key = auldwarov_dwarf_pantheon_reason
+	}
+	text = {
+		trigger = {
+			religion = rel:ancestor_worship
+		}
+		localization_key = auldwarov_ancestor_worship_reason
+	}
+	text = {
+		trigger = {
+			religion = rel:regent_court
+		}
+		localization_key = auldwarov_regent_court_reason
+	}
+	text = {
+		trigger = {
+			religion = rel:the_jadd
+		}
+		localization_key = auldwarov_jadd_reason
+	}
+}
+
+#HORRIBLE BUTTONS NONSENSE
+auldwarov_landowners_line1 = {
+	type = country
+	text = {
+		trigger = {
+			ig:ig_landowners = {
+				is_powerful = yes
+				is_in_government = yes
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				ig:ig_landowners = {
+					is_powerful = yes
+					is_in_government = yes
+				}
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_landowners_line2 = {
+	type = country
+	text = {
+		trigger = {
+			OR = {
+				has_law = law_type:law_monarchy
+				has_law = law_type:law_chiefdom
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOR = {
+				has_law = law_type:law_monarchy
+				has_law = law_type:law_chiefdom
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_landowners_line3 = {
+	type = country
+	text = {
+		trigger = {
+			OR = {
+				has_law = law_type:law_autocracy
+				has_law = law_type:law_landed_voting
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOR = {
+				has_law = law_type:law_autocracy
+				has_law = law_type:law_landed_voting
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_landowners_line4 = {
+	type = country
+	text = {
+		trigger = {
+			OR = {
+				has_law = law_type:law_consumption_based_taxation
+				has_law = law_type:law_land_based_taxation
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOR = {
+				has_law = law_type:law_consumption_based_taxation
+				has_law = law_type:law_land_based_taxation
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_landowners_line5 = {
+	type = country
+	text = {
+		trigger = {
+			NOT = {
+				OR = {
+					has_consumption_tax = g:tea
+					has_consumption_tax = g:coffee
+					has_consumption_tax = g:luxury_furniture
+					has_consumption_tax = g:luxury_clothes
+					has_consumption_tax = g:transportation
+					has_consumption_tax = g:services
+				}
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_consumption_tax = g:tea
+				has_consumption_tax = g:coffee
+				has_consumption_tax = g:luxury_furniture
+				has_consumption_tax = g:luxury_clothes
+				has_consumption_tax = g:transportation
+				has_consumption_tax = g:services
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+#ARMED FORCES CHECKBOXES
+auldwarov_armed_forces_line1 = {
+	type = country
+	text = {
+		trigger = {
+			ig:ig_armed_forces = {
+				is_powerful = yes
+				is_in_government = yes
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				ig:ig_armed_forces = {
+					is_powerful = yes
+					is_in_government = yes
+				}
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_armed_forces_line2 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_professional_army
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_professional_army
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_armed_forces_line3 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_militarized_police
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_militarized_police
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_armed_forces_line4 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_national_guard
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_national_guard
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_armed_forces_line5 = {
+	type = country
+	text = {
+		trigger = {
+			military_wage_level = very_high
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				military_wage_level = very_high
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_armed_forces_line6 = {
+	type = country
+	text = {
+		trigger = {
+			has_variable = recently_won_war
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_variable = recently_won_war
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_devout_line1 = {
+	type = country
+	text = {
+		trigger = {
+			ig:ig_devout = {
+				is_powerful = yes
+				is_in_government = yes
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				ig:ig_devout = {
+					is_powerful = yes
+					is_in_government = yes
+				}
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_devout_line2 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_theocracy
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_theocracy
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_devout_line3 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_religious_schools
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_religious_schools
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_devout_line4 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_charitable_health_system
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_charitable_health_system
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_devout_line5 = {
+	type = country
+	text = {
+		trigger = {
+			NOR = {
+				religion = rel:ancestor_worship
+				religion = rel:goblinic_shamanism
+			}
+			has_law = law_type:law_state_religion
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			OR = {
+				religion = rel:ancestor_worship
+				religion = rel:goblinic_shamanism
+			}
+			has_law = law_type:law_freedom_of_conscience
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOR = {
+				religion = rel:ancestor_worship
+				religion = rel:goblinic_shamanism
+			}
+			NOT = { has_law = law_type:law_state_religion }
+		}
+		localization_key = auldwarov_box
+	}
+	text = {
+		trigger = {
+			OR = {
+				religion = rel:ancestor_worship
+				religion = rel:goblinic_shamanism
+			}
+			NOT = { has_law = law_type:law_freedom_of_conscience }
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+
+auldwarov_devout_line5_religioncustom = {
+	type = country
+	
+	text = {
+		trigger = {
+			OR = {
+				religion = rel:ancestor_worship
+				religion = rel:goblinic_shamanism
+			}
+		}
+		localization_key = auldwarov_religioncustom_freedom
+	}
+	text = {
+		trigger = {
+			NOR = {
+				religion = rel:ancestor_worship
+				religion = rel:goblinic_shamanism
+			}
+		}
+		localization_key = auldwarov_religioncustom_state
+	}
+}
+
+auldwarov_devout_line6 = {
+	type = country
+	text = {
+		trigger = {
+			any_scope_state = {
+				has_decree = decree_promote_national_values
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				any_scope_state = {
+					has_decree = decree_promote_national_values
+				}
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_rural_folk_line1 = {
+	type = country
+	text = {
+		trigger = {
+			ig:ig_rural_folk = {
+				is_powerful = yes
+				is_in_government = yes
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				ig:ig_rural_folk = {
+					is_powerful = yes
+					is_in_government = yes
+				}
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_rural_folk_line2 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_closed_borders
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_closed_borders
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_rural_folk_line3 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_frontier_colonization
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_frontier_colonization
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_rural_folk_line4 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_agrarianism
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_agrarianism
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_rural_folk_line5 = {
+	type = country
+	text = {
+		trigger = {
+			OR = {
+				has_law = law_type:law_peasant_proprietorship
+				has_law = law_type:law_collectivized_agriculture
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				OR = {
+					has_law = law_type:law_peasant_proprietorship
+					has_law = law_type:law_collectivized_agriculture
+				}
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_rural_folk_line6 = {
+	type = country
+	text = {
+		trigger = {
+			market_capital.market = {
+				mg:grain = { 
+					market_goods_pricier <= 0
+				}
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				market_capital.market = {
+					mg:grain = { 
+						market_goods_pricier <= 0
+					}
+				}
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_rural_folk_line7 = {
+	type = country
+	text = {
+		trigger = {
+			NOT = {
+				any_scope_state = {
+					is_incorporated = yes 
+					any_scope_pop = {
+						is_pop_type = peasants
+						standard_of_living <= 10
+					}
+				}
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			any_scope_state = {
+				is_incorporated = yes 
+				any_scope_pop = {
+					is_pop_type = peasants
+					standard_of_living <= 10
+				}
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_industrialists_line1 = {
+	type = country
+	text = {
+		trigger = {
+			ig:ig_industrialists = {
+				is_powerful = yes
+				is_in_government = yes
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				ig:ig_industrialists = {
+					is_powerful = yes
+					is_in_government = yes
+				}
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_industrialists_line2 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_technocracy
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_technocracy
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_industrialists_line3 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_private_schools
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_private_schools
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_industrialists_line4 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_private_health_insurance
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_private_health_insurance
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_industrialists_line5 = {
+	type = country
+	text = {
+		trigger = {
+			auldwarov_military_industry_value >= 2
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				auldwarov_military_industry_value >= 2
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_industrialists_line6 = {
+	type = country
+	text = {
+		trigger = {
+			auldwarov_raw_industry_value >= 2
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				auldwarov_raw_industry_value >= 2
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_intelligentsia_line1 = {
+	type = country
+	text = {
+		trigger = {
+			ig:ig_intelligentsia = {
+				is_powerful = yes
+				is_in_government = yes
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				ig:ig_intelligentsia = {
+					is_powerful = yes
+					is_in_government = yes
+				}
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_intelligentsia_line2 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_appointed_bureaucrats
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_appointed_bureaucrats
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_intelligentsia_line3 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_universal_suffrage
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_universal_suffrage
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_intelligentsia_line4 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_total_separation
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_total_separation
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_intelligentsia_line5 = {
+	type = country
+	text = {
+		trigger = {
+			OR = {
+				has_law = law_type:law_presidential_republic
+				has_law = law_type:law_parliamentary_republic
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOR = {
+				has_law = law_type:law_presidential_republic
+				has_law = law_type:law_parliamentary_republic
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_intelligentsia_line6 = {
+	type = country
+	text = {
+		trigger = {
+			any_scope_state = {
+				count = all
+				filter = {
+					is_incorporated = yes
+				}
+				has_building = building_university
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				any_scope_state = {
+					count = all
+					filter = {
+						is_incorporated = yes
+					}
+					has_building = building_university
+				}
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}	
+
+auldwarov_intelligentsia_line7 = {
+	type = country
+	text = {
+		trigger = {
+			literacy_rate >= 0.7
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				literacy_rate >= 0.7
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_trade_unions_line1 = {
+	type = country
+	text = {
+		trigger = {
+			ig:ig_trade_unions = {
+				is_powerful = yes
+				is_in_government = yes
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				ig:ig_trade_unions = {
+					is_powerful = yes
+					is_in_government = yes
+				}
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_trade_unions_line2 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_council_republic
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_council_republic
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_trade_unions_line3 = {
+	type = country
+	text = {
+		trigger = {
+			OR = {
+				has_law = law_type:law_cooperative_ownership
+				has_law = law_type:law_command_economy
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOR = {
+				has_law = law_type:law_cooperative_ownership
+				has_law = law_type:law_command_economy
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_trade_unions_line4 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_collectivized_agriculture
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_collectivized_agriculture
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_trade_unions_line5 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_worker_protections
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_worker_protections
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_trade_unions_line6 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_old_age_pension
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_old_age_pension
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_trade_unions_line7 = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_public_health_insurance
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_law = law_type:law_public_health_insurance
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_trade_unions_line8 = {
+	type = country
+	text = {
+		trigger = {
+			NOT = {
+				any_country = {
+					average_sol >= root.average_sol
+				}
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			any_country = {
+				average_sol >= root.average_sol
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_trade_unions_line9 = {
+	type = country
+	text = {
+		trigger = {
+			NOT = {
+				any_scope_state = {
+					any_scope_pop = {
+						standard_of_living <= 18
+					}
+				}
+			}
+		}
+		localization_key = auldwarov_tick
+	}
+	text = {
+		trigger = {
+			any_scope_state = {
+				any_scope_pop = {
+					standard_of_living <= 18
+				}
+			}
+		}
+		localization_key = auldwarov_box
+	}
+}
+
+auldwarov_landowners_button = {
+	type = country
+	text = {
+		trigger = {
+			NOT = {
+				has_modifier = auldwarov_landowners_swayed
+			}
+		}
+		localization_key = landowners_demands_button_unpressed
+	}
+	text = {
+		trigger = {
+			has_modifier = auldwarov_landowners_swayed
+		}
+		localization_key = landowners_demands_button_pressed
+	}
+}
+
+auldwarov_armed_forces_button = {
+	type = country
+	text = {
+		trigger = {
+			NOT = {
+				has_modifier = auldwarov_armed_forces_swayed
+			}
+		}
+		localization_key = armed_forces_demands_button_unpressed
+	}
+	text = {
+		trigger = {
+			has_modifier = auldwarov_armed_forces_swayed
+		}
+		localization_key = armed_forces_demands_button_pressed
+	}
+}
+
+auldwarov_devout_button = {
+	type = country
+	text = {
+		trigger = {
+			NOT = {
+				has_modifier = auldwarov_devout_swayed
+			}
+		}
+		localization_key = devout_demands_button_unpressed
+	}
+	text = {
+		trigger = {
+			has_modifier = auldwarov_devout_swayed
+		}
+		localization_key = devout_demands_button_pressed
+	}
+}
+	
+auldwarov_rural_folk_button = {
+	type = country
+	text = {
+		trigger = {
+			NOT = {
+				has_modifier = auldwarov_rural_folk_swayed
+			}
+		}
+		localization_key = rural_folk_demands_button_unpressed
+	}
+	text = {
+		trigger = {
+			has_modifier = auldwarov_rural_folk_swayed
+		}
+		localization_key = rural_folk_demands_button_pressed
+	}
+}
+
+auldwarov_trade_unions_button = {
+	type = country
+	text = {
+		trigger = {
+			NOT = {
+				has_modifier = auldwarov_trade_unions_swayed
+			}
+		}
+		localization_key = trade_unions_demands_button_unpressed
+	}
+	text = {
+		trigger = {
+			has_modifier = auldwarov_trade_unions_swayed
+		}
+		localization_key = trade_unions_demands_button_pressed
+	}
+}
+
+auldwarov_intelligentsia_button = {
+	type = country
+	text = {
+		trigger = {
+			NOT = {
+				has_modifier = auldwarov_intelligentsia_swayed
+			}
+		}
+		localization_key = intelligentsia_demands_button_unpressed
+	}
+	text = {
+		trigger = {
+			has_modifier = auldwarov_intelligentsia_swayed
+		}
+		localization_key = intelligentsia_demands_button_pressed
+	}
+}
+
+auldwarov_industrialists_button = {
+	type = country
+	text = {
+		trigger = {
+			NOT = {
+				has_modifier = auldwarov_industrialists_swayed
+			}
+		}
+		localization_key = industrialists_demands_button_unpressed
+	}
+	text = {
+		trigger = {
+			has_modifier = auldwarov_industrialists_swayed
+		}
+		localization_key = industrialists_demands_button_pressed
+	}
+}

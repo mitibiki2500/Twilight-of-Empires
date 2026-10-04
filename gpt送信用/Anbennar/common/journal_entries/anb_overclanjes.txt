@@ -1,0 +1,131 @@
+﻿je_the_facades_unraveling = {
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    group  = je_group_historical_content
+    weight = 10000
+    scripted_progress_bar = the_facades_unraveling_bar
+    scripted_button = scripted_button_forego_claim_vivin
+    scripted_button = scripted_button_accept_rav_missionaries
+    scripted_button = scripted_button_surakesi_deal
+    scripted_button = scripted_button_request_busilari_help
+    should_be_pinned_by_default_uninvolved_or_context = yes
+    immediate = {
+
+
+	}
+    is_shown_when_inactive = {
+        is_in_same_power_bloc = c:F01
+    }
+    possible = {
+		country_has_primary_culture = cu:bahari_goblin
+	}
+
+    on_yearly_pulse = {
+        random_events = {
+            33 = overclan_events.3
+            33 = overclan_events.4
+            33 = overclan_events.5
+        }
+    }
+
+    complete = {
+        custom_tooltip = { 
+			text = je_facade_over_tt
+			scope:journal_entry = {
+				"scripted_bar_progress(the_facades_unraveling_bar)" <= 0
+			}
+		}
+    }
+    on_complete = {
+        set_state_religion = rel:ravelian
+        add_journal_entry = {
+			type = je_facade_war
+		}
+        
+        c:F01 ?= {
+            trigger_event = {
+                id = overclan_events.6
+            }
+        }
+
+    }
+}
+
+
+je_facade_war = {
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    group  = je_group_historical_content
+    weight = 10000
+    should_be_pinned_by_default_uninvolved_or_context = yes
+
+
+    complete = {
+        has_truce_with = c:F01
+        is_subject = no
+        NOT = { is_in_same_power_bloc = c:F01 }
+    }
+
+    on_complete = {
+        add_loyalists = {
+			value = 0.5
+			religion = rel:ravelian
+		}
+        ig:ig_intelligentsia = {
+            add_modifier = {
+                name = overclan_big_ig_boost
+                days = long_modifier_time
+            }
+        }
+        c:A02 = {
+            remove_variable = protect_overclan
+        }
+        c:F02 = {
+            remove_variable = protect_overclan
+        }
+        c:A09 = {
+            remove_variable = protect_overclan
+        }
+    }
+
+    fail = {
+        is_in_same_power_bloc = c:F01
+        has_truce_with = c:F01
+    }
+
+    on_fail = {
+        activate_law = law_type:law_state_religion
+        activate_law = law_type:law_traditionalism
+        activate_law = law_type:law_mercantilism
+        create_character = {
+			is_general = yes
+			ruler = yes
+			historical = yes
+			age = 27
+			interest_group = ig_landowners
+			ideology = ideology_authoritarian
+			ig_leader = yes
+			culture = cu:bahari_goblin
+			traits = {
+                wrathful
+                bigoted
+			}	
+		}
+        ig:ig_landowners = {
+            add_modifier = {
+                name = overclan_big_ig_boost
+                days = long_modifier_time
+            }
+        }
+        set_state_religion = rel:the_jadd
+
+        c:A02 = {
+            remove_variable = protect_overclan
+        }
+        c:F02 = {
+            remove_variable = protect_overclan
+        }
+        c:A09 = {
+            remove_variable = protect_overclan
+        }
+
+    }
+}

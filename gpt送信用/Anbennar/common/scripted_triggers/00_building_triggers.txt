@@ -1,0 +1,44 @@
+﻿trade_center_construction_allowed = {
+	#trigger_if = {
+	#	limit = {
+	#		OR = {
+	#			owner = { has_law = law_type:law_canton_system } 
+	#			scope:investor_country = { has_law = law_type:law_canton_system }
+	#		}
+	#	}
+	#	custom_tooltip = {
+	#		text = canton_system_trade_center_trigger_tt
+	#		state_region = s:STATE_GUANGDONG
+	#		any_scope_building = {
+	#			is_building_type = building_trade_center
+	#			level_after_queued_constructions <= max_canton_system_level
+	#		}
+	#	}
+	#}
+	trigger_if = {
+		limit = {
+			OR = {
+				owner = { modifier:country_disallow_trade_outside_zedahrika_and_simahrika_bool = yes } 
+				scope:investor_country = { modifier:country_disallow_trade_outside_zedahrika_and_simahrika_bool = yes }
+			}
+		}
+		custom_tooltip = {
+			text = nadige_monopoly_trade_center_trigger_tt
+			OR = {
+				state_region = s:STATE_ZEDAHRIKA
+				state_region = s:STATE_SIMAHRIKA
+			}
+			any_scope_building = {
+				is_building_type = building_trade_center
+				level_after_queued_constructions <= max_nadige_monopoly_level
+			}
+		}
+	}
+	trigger_else = {
+		NOT = { owner = { has_law = law_type:law_isolationism } }
+		trigger_if = {
+			limit = { owner != scope:investor_country }
+			NOT = { scope:investor_country = { has_law = law_type:law_isolationism } }
+		}	
+	}
+}

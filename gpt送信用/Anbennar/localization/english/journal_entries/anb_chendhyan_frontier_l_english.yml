@@ -1,0 +1,61 @@
+﻿l_english:
+
+##### JE #####
+ je_chendhyan_frontier:0 "The Chendhyan Frontier"
+ je_chendhyan_frontier_reason:0 "Before us lies the vast, untamed Chendhyan steppe, once marked by ancient Empkeiosi trade routes to Taychend. Those paths, worn and narrow, pale beside the ambition now at hand—a railway slicing through Chendhya like a river of iron, binding Empkeios to the distant shores of Lake Taras’su Ervan. There, a new channel of wealth awaits, poised to funnel the riches of the Taychendi heartland from the city of Clematar and beyond, driven by the relentless march of steel and steam."
+
+##### MODIFIERS #####
+ chendhyan_land_rights:0 "Land Rights"
+ chendhyan_raiding_conflicts:0 "Raiding Conflicts"
+ chendhyan_security_contracts:0 "Chendhya Security Contracts"
+ chendhyan_native_chendhyan_threat_resolved:0 "Native Chendhyan Threat Resolved"
+ chendhyan_migration_pull_caergaraen:0 "Chendhyan Migration Pull"
+ chendhyan_overlord_assistance:0 "Overlord Assistance"
+ chendhyan_influx_of_visitors:0 "Influx of Visitors"
+ chendhyan_building_riverside_railway:0 "Building Riverside Railway"
+ chendhyan_building_riverside_railway_country:0 "Building Riverside Railway"
+ chendhyan_marvellous_bridge:0 "Marvellous Bridge"
+ chendhyan_building_marvellous_bridge:0 "Building Marvellous Bridge"
+ chendhyan_gateway_to_taychend:0 "Gateway to Taychend"
+ chendhyan_railway_to_taychend:0 "Railway to Taychend"
+
+##### EVENTS #####
+ chendhyan_frontier.1.t:0 "Chendhyan Raid on Railway"
+ chendhyan_frontier.1.d:0 "Outraged by our railway's encroachment, native Chendhyan tribes have begun bold raids on our railway in [SCOPE.sState('chendhyan_raid_state').GetName], sabotaging tracks and ambushing trains along key segments of the frontier, endangering both our progress and workers."
+ chendhyan_frontier.1.f:0 "\"The Chendhyan warriors strike with the fury of a steppe storm, swift and fierce. They swoop in on their large cats, disappearing into the plains as fast as they arrive, leaving fire and chaos in their wake.\"\n\nOne soldier, shaken but steady, remarks to his comrades, \"They're fierce, but what are arrows and sabres to guns? Their courage won't match our bullets.\""
+ chendhyan_frontier.2.t:0 "[SCOPE.sCountry('chendhyan_donor').GetName] Invests in Railway"
+ chendhyan_frontier.2.d1over:0 "Upon hearing of the ambitious railway project in Chendhya, our overlord [SCOPE.sCountry('chendhyan_donor').GetName] has committed considerable resources to ensure its completion. Fresh supplies, skilled engineers, and added labor have all been dispatched, bolstering our efforts and enabling faster progress across the steppe. This backing provides critical momentum, strengthening our infrastructure and influence in the region."
+ chendhyan_frontier.2.d2bloc:0 "Upon hearing of the ambitious railway project in Chendhya, our bloc leader [SCOPE.sCountry('chendhyan_donor').GetName] has committed considerable resources to ensure its completion. Fresh supplies, skilled engineers, and added labor have all been dispatched, bolstering our efforts and enabling faster progress across the steppe. This backing provides critical momentum, strengthening our infrastructure and influence in the region."
+ chendhyan_frontier.2.f:0 "A foreign advisor marvels, \"With such support, the rails will cross Chendhya like a blade—swift and sure. Yet, what cost might this favour eventually demand in return?\""
+ chendhyan_frontier.3.t:0 "Railway Attracts People"
+ chendhyan_frontier.3.d:0 "As news of the railway to Taychend spreads, it captures the interest of those seeking new opportunities. The promise of jobs and commerce in [SCOPE.sState('empkeios_influx_state').GetName] could attract a wave of laborers eager to contribute. Alternatively, we could focus on drawing influential figures who might leverage this momentum, shaping our country into a thriving economic hub."
+ chendhyan_frontier.3.f:0 "A local merchant muses, \"With the railway comes the chance for prosperity. We must harness this momentum; it's not just about rails, but the lives that will ride upon them.\""
+ chendhyan_frontier.4.t:0 "Crossing the Agotham"
+ chendhyan_frontier.4.d:0 "As our engineers build the railway along the Agotham river toward the lake, they face a crucial choice: take the longer, resource-intensive route around the river or invest in a grand bridge to cross it directly. This engineering marvel could expedite construction and impress all who witness our ingenuity."
+ chendhyan_frontier.4.f:0 "\"Build it strong, build it true,\nA path for many, brave and new.\nLet the world see our pride,\nAs we cross the river’s tide\""
+ chendhyan_frontier.5.t: "Tamed the Chendhyan Frontier"
+ chendhyan_frontier.5.d: "With the railway linking [SCOPE.sState('empkeios_tamed_state').GetName] to Taras’su Ervan complete, we have tamed the Chendhyan frontier. This vital connection invigorates our trade and fosters camaraderie with the city of [SCOPE.sState('clematar_state').GetName] - our new trading partner, paving the way for a prosperous future."
+ chendhyan_frontier.5.f: "\"Standing on the tracks, I marvel at what we’ve built. This railway is not just steel and wood; it’s a pathway to progress. Each car that rolls by brings with it dreams of a brighter tomorrow.\""
+ chendhyan_frontier.6.t: "Chendhyan Railway Complete"
+ chendhyan_frontier.6.d: "[SCOPE.sCountry('chendhyan_railway_completer').GetName] has successfully completed the railway connection between [SCOPE.sState('chendhyan_empkeios_state').GetName] and Taras’su Ervan, bridging our lands to theirs. This monumental achievement opens up unprecedented opportunities to strengthen our ties with a progressive nation, fostering collaboration and trade."
+ chendhyan_frontier.6.f: "\"As I sail across Taras’su Ervan, the sight of the new railway stretching into the distance fills me with hope. Our nation may be behind, but seeing those gleaming tracks reminds me that brighter days could be ahead for us, too.\""
+
+# EVENT OPTIONS
+ chendhyan_frontier_events.1.a: "Negotiate with the Tribes."
+ chendhyan_frontier_events.1.b: "Hire private security."
+ chendhyan_frontier_events.1.c: "Send the army to quell the resistance."
+ chendhyan_frontier_events.2.a: "Their help is welcome."
+ chendhyan_frontier_events.3.a: "Welcome them with open hands."
+ chendhyan_frontier_events.3.b: "Establish influential connections."
+ chendhyan_frontier_events.4.a: "Along the river will take longer, but will be cheaper."
+ chendhyan_frontier_events.4.b: "A bridge would look amazing!"
+ chendhyan_frontier_events.5.a: "We tamed the Chendhyan Frontier!"
+ chendhyan_frontier_events.6.a: "We should establish deeper relations."
+
+ # TOOLTIPS
+ chendhyan_character_tooltip:0 "They will be a [GetIdeology('ideology_market_liberal').GetName] [concept_agitator]"
+ chendhyan_frontier_complete_tt:0 "@information! We will unlock the #b $company_north_andeios_logistics$#! [concept_company] @information!"
+ chendhyan_frontier_required_tt:0 "#b $je_chendhyan_frontier$#! [concept_journal_entry] has been completed"
+
+ # COMPANY
+ company_north_andeios_logistics:0 "North Andeios Logistics"

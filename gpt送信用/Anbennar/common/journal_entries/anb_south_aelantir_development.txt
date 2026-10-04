@@ -1,0 +1,158 @@
+﻿je_chendhyan_frontier = {
+	group = je_group_internal_affairs
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	is_shown_when_inactive = {
+        is_player = yes
+        OR = {
+            s:STATE_EMPKEIOS = {
+                any_scope_state = {
+                    owner = root
+                }
+            }
+            s:STATE_WESTERN_CHENDHYA = {
+                any_scope_state = {
+                    owner = root
+                }
+            }
+            s:STATE_CENTRAL_CHENDHYA = {
+                any_scope_state = {
+                    owner = root
+                }
+            }
+        }
+	}
+    
+    possible = {
+        s:STATE_EMPKEIOS = {
+            any_scope_state = {
+                owner = root
+                count = all
+            }
+        }
+        s:STATE_WESTERN_CHENDHYA = {
+            any_scope_state = {
+                owner = root
+                count = all
+            }
+        }
+        s:STATE_CENTRAL_CHENDHYA = {
+            any_scope_state = {
+                owner = root
+                count = all
+            }
+        }
+    }
+
+    immediate = {}
+
+	complete = {
+        s:STATE_EMPKEIOS = {
+            any_scope_state = {
+                hidden_trigger = {
+                    owner = root
+                }   
+                is_incorporated = yes
+                any_scope_building = {
+                    is_building_type = building_urban_center
+                    level >= 2
+                }
+                any_scope_building = {
+                    is_building_type = building_railway
+                    level >= 1
+                }
+                any_scope_building = {
+                    is_building_type = building_port
+                    level >= 3
+                }
+            }
+        }
+        s:STATE_WESTERN_CHENDHYA = {
+            any_scope_state = {
+                hidden_trigger = {
+                    owner = root
+                }   
+                is_incorporated = yes
+                any_scope_building = {
+                    is_building_type = building_urban_center
+                    level >= 1
+                }
+                any_scope_building = {
+                    is_building_type = building_railway
+                    level >= 1
+                }
+            }
+        }
+        s:STATE_CENTRAL_CHENDHYA = {
+            any_scope_state = {
+                hidden_trigger = {
+                    owner = root
+                }   
+                is_incorporated = yes
+                any_scope_building = {
+                    is_building_type = building_urban_center
+                    level >= 1
+                }
+                any_scope_building = {
+                    is_building_type = building_railway
+                    level >= 1
+                }
+            }
+        }
+	}
+
+    invalid = {
+
+	}
+
+    on_complete = {
+		trigger_event = {
+			id = chendhyan_frontier_events.5
+		}
+        hidden_effect = {
+            s:STATE_CLEMATAR = {
+                random_scope_state = {
+                    owner = {
+                        trigger_event = {
+                            id = chendhyan_frontier_events.6
+                        }
+                    }
+                }
+            }
+        }
+	}
+
+	on_yearly_pulse = {
+        # random_events = {
+        #     25 = 0
+        #     75 = chendhyan_frontier_events.1
+        #     25 = chendhyan_frontier_events.2
+        #     25 = chendhyan_frontier_events.3
+        # }
+	}
+
+    on_monthly_pulse = {
+        # trigger_event = {
+        #     id = chendhyan_frontier_events.4
+        # }
+    }
+
+    on_weekly_pulse = {
+        random_events = {
+            25 = 0
+            75 = chendhyan_frontier_events.1
+            75 = chendhyan_frontier_events.2
+            75 = chendhyan_frontier_events.3
+        }
+        random_events = {
+            1 = 0
+            100 = chendhyan_frontier_events.4
+        }
+    }
+
+    can_deactivate = yes
+
+    # transferable = yes # gets removed anyway, incompatible with is_shown_when_inactive
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

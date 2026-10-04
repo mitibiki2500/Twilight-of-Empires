@@ -1,0 +1,842 @@
+﻿namespace = anb_ranger_republic
+
+#The Ranger's Coup Events 
+
+#The Ranger's Coup (RR)
+anb_ranger_republic.001 = {
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.001.t
+    desc = anb_ranger_republic.001.d
+    flavor = anb_ranger_republic.001.f
+
+    event_image = {
+        video = "europenorthamerica_political_extremism"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 2
+
+    option = {
+        name = anb_ranger_republic.001.a
+        default_option = yes
+        trigger = {
+            C:B91 = this
+        }
+        custom_tooltip = {
+            text = rr_objective
+        }
+    }
+
+option = {
+    name = anb_ranger_republic.001.b
+    trigger = {
+        C:B91 != this
+    }
+    ROOT = {
+        if = {
+            limit = {
+                NOT = {
+                    OR = {
+                        C:B47 = this    # Arganjuzorn starts with this interest
+                        C:B37 = this    # Elathael starts with this interest
+                    }
+                }
+            }
+            add_involvement = {
+                strategic_region = sr:region_ynn
+                value = 2500
+            }
+        }
+    }
+    custom_tooltip = {
+        text = rr_minor_objective
+    }
+}
+
+
+}
+
+#The Republic Realized
+anb_ranger_republic.002 = {
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.002.t
+    desc = anb_ranger_republic.002.d
+    flavor = anb_ranger_republic.002.f
+
+    event_image = {
+        video = "europenorthamerica_springtime_of_nations"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    immediate = {
+        ig:ig_armed_forces = {
+            save_scope_as = military_scope
+        }
+        ig:ig_intelligentsia = {
+            save_scope_as = intelligentsia_scope
+        }
+    }
+
+    option = { #Republic Path
+        name = anb_ranger_republic.002.a
+        default_option = yes
+        scope:intelligentsia_scope = {
+            add_modifier = {
+                name = rr_republic_lean
+                months = 120
+            }
+        }
+        C:B91 = {
+            activate_law = law_type:law_wealth_voting
+            add_modifier = {
+                name = rr_victory
+                months = 120
+            }
+        }
+    }
+
+    option = { #Junta Path
+        name = anb_ranger_republic.002.b
+        scope:military_scope = {
+            add_modifier = {
+                name = rr_junta_lean
+                months = 120
+            }
+        }
+        C:B91 = {
+            activate_law = law_type:law_autocracy
+            add_modifier = {
+                name = rr_victory
+                months = 120
+            }
+        }
+    }
+
+    after = {
+        #The next JE will be triggered from this event
+    }
+
+}
+
+#The Coup is Crushed (RR)
+anb_ranger_republic.003 = {
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.003.t
+    desc = anb_ranger_republic.003.d
+    flavor = anb_ranger_republic.003.f
+
+    event_image = {
+        video = "unspecific_devastation"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    immediate = { #Release the tags that aren't already released and switch Ranger republic to ebenmas
+        if = {
+            limit = {
+                NOT = {
+                    exists = c:B37
+                    c:B37 ?= {
+                        is_country_alive = yes
+                    }
+                }
+            }
+            create_country = {
+                tag = B37
+                origin = ROOT
+                state = s:STATE_ELATHAEL.region_state:B91
+                state = s:STATE_ARANTAS.region_state:B91
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    exists = c:B44
+                    c:B44 ?= {
+                        is_country_alive = yes
+                    }
+                }
+            }
+            create_country = {
+                tag = B44
+                origin = ROOT
+                state = s:STATE_TELLUMTIR.region_state:B91
+                state = s:STATE_UZOO.region_state:B91
+            }
+        }
+        change_tag = B48
+    }
+
+    option = { #Play as ebenmas
+        name = anb_ranger_republic.003.a
+        default_option = yes
+        trigger = {
+            c:B48 = this
+        }
+        show_as_tooltip = {
+            play_as = c:B48
+        }
+    }
+
+    option = { #Play as tellumtir
+        name = anb_ranger_republic.003.b
+        trigger = {
+            c:B48 = this
+            is_ai = no
+            C:B44 = {
+                is_player = no
+            }
+        }
+        play_as = c:B44
+    }
+
+    option = { #Play as elethael
+        name = anb_ranger_republic.003.c
+        trigger = {
+            c:B48 = this
+            is_ai = no
+            C:B37 = {
+                is_player = no
+            }
+        }
+        play_as = c:B37
+    }
+
+    after = {
+        c:B47 ?= {
+            trigger_event = anb_ranger_republic.011
+        }
+        c:B45 ?= {
+            trigger_event = anb_ranger_republic.011
+        }
+        c:B37 ?= {
+            trigger_event = anb_ranger_republic.011
+        }
+    }
+    
+}
+
+#An Uncertain Stalemate (RR)
+anb_ranger_republic.004 = {
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.004.t
+    desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = anb_ranger_republic.004.d1
+				trigger = {
+					c:B91 = this
+				}
+			}
+			triggered_desc = {
+				desc = anb_ranger_republic.004.d2
+				trigger = {
+					NOT = {
+                        c:B91 = this
+                    }
+				}
+			}
+		}
+	}
+    
+    flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = anb_ranger_republic.004.f1
+				trigger = {
+					c:B91 = this
+				}
+			}
+			triggered_desc = {
+				desc = anb_ranger_republic.004.f2
+				trigger = {
+					NOT = {
+                        c:B91 = this
+                    }
+				}
+			}
+		}
+	}
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    
+    immediate = {
+        ig:ig_armed_forces = {
+            save_scope_as = military_scope
+        }
+        ig:ig_armed_forces = {
+            save_scope_as = intelligentsia_scope
+        }
+    }
+
+    option = { #RR Republic
+        name = anb_ranger_republic.004.a
+        default_option = yes
+        trigger = {
+            c:B91 = this
+        }
+        scope:intelligentsia_scope = {
+            add_modifier = {
+                name = rr_republic_lean
+                months = 120
+            }
+        }
+    }
+
+    option = { #RR Junta
+        name = anb_ranger_republic.004.b
+        trigger = {
+            c:B91 = this
+            is_ai = no
+        }
+        scope:military_scope = {
+            add_modifier = {
+                name = rr_junta_lean
+                months = 120
+            }
+        }
+    }
+
+    option = { #Not RR Give up Claims
+        name = anb_ranger_republic.004.c
+        trigger = {
+            NOT = {
+                c:B91 = this
+            }
+        }
+        change_relations = {
+            country = c:B91
+            value = 20
+        }
+    }
+
+    option = { #Argan Join DD
+        name = anb_ranger_republic.004.e
+        trigger = {
+            c:B47 = this
+        }
+        c:B49 = {
+            trigger_event = { id = anb_ranger_republic.012 days = 7 }
+        }
+    }
+}
+
+#The New Status Quo
+anb_ranger_republic.005 = {
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.005.t
+    desc = anb_ranger_republic.005.d
+    flavor = anb_ranger_republic.005.f
+
+    event_image = {
+        video = "europenorthamerica_capitalists_meeting"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = anb_ranger_republic.005.a
+        default_option = yes
+        add_modifier = {
+            name = rr_status_quo
+            months = 60
+        }
+    }
+    option = { #Argan Join DD
+        name = anb_ranger_republic.005.b
+        trigger = {
+            c:B47 = this
+        }
+        c:B49 = {
+            trigger_event = { id = anb_ranger_republic.012 days = 7 }
+        }
+    }
+}
+
+#Victory Over Elethael
+anb_ranger_republic.006 = {
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.006.t
+    desc = anb_ranger_republic.006.d
+    flavor = anb_ranger_republic.006.f
+
+    event_image = {
+        video = "unspecific_military_parade"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 2
+    
+    trigger = {
+        C:B91 = {
+            NOT = {
+                has_variable = elethael_defeated
+            }
+        }
+        NOT = {
+            exists = c:B37
+            c:B37 ?= {
+                is_country_alive = yes
+            }
+        }   
+    }
+
+    immediate = {
+        C:B91 = {
+            set_variable = {
+                name = elethael_defeated
+                value = yes
+            }
+        }
+        s:STATE_ELATHAEL = { add_claim = ROOT }
+        s:STATE_TASPAS = { add_claim = ROOT }
+    }
+
+    option = { #Declare independence
+        name = anb_ranger_republic.006.a
+        default_option = yes
+        C:B47 = {
+            remove_diplomatic_pact = {
+                country = C:B91
+                type = tributary
+            }
+        }
+        C:B45 = {
+            trigger_event = {id = anb_ranger_republic.007 }
+        }
+        C:B47 = {
+            trigger_event = {id = anb_ranger_republic.007 } 
+        }
+    }
+
+    option = {
+        trigger = {
+            is_ai = no
+        }
+        name = anb_ranger_republic.006.b
+        custom_tooltip = {
+            text = rr_no_independence
+        }
+    }
+}
+
+#Ranger Republic Declares Independence
+anb_ranger_republic.007 = {
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.007.t
+    desc = anb_ranger_republic.007.d
+    flavor = anb_ranger_republic.007.f
+
+    event_image = {
+        video = "unspecific_ruler_speaking_to_people"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    immediate = {
+        ROOT = {
+            save_scope_as = initiator_scope
+        }
+    }
+
+    option = { #Demand concessions for independence
+        name = anb_ranger_republic.007.a
+        default_option = yes
+
+        trigger = {
+            OR = {
+                is_ai = no
+                c:B47 = this
+            }
+        }
+
+        C:B91 = {
+            trigger_event = { id = anb_ranger_republic.008 days = 7 }
+        }
+        custom_tooltip = {
+            text = rr_concessions
+        }
+        ai_chance = {
+            base = 50
+        }
+    }
+
+    option = { #Let them go
+        name = anb_ranger_republic.007.b
+        scope:initiator_scope = {
+            create_bidirectional_truce = {
+                country = C:B91
+                months = 240
+            }
+        }
+        C:B91 = {
+            trigger_event = { id = anb_ranger_republic.009 }
+        }
+        ai_chance = {
+            base = 40
+        }
+    }
+
+    option = { #Declare war
+        name = anb_ranger_republic.007.c
+        trigger = {
+            OR = {
+                is_ai = no
+                c:B47 = this
+            }
+        }
+        create_diplomatic_play = {
+            name = rr_trib_war
+            target_country = C:B91
+            type = dp_humiliation
+            add_war_goal = {
+                holder = scope:initiator_scope
+                type = liberate_country 
+                country_definition = B44
+                target_country = C:B91
+            }
+        }
+        ai_chance = {
+            base = 10
+        }
+    }
+
+}
+
+#Country demands concessions in exchange for independence
+anb_ranger_republic.008 = {
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.008.t
+    desc = anb_ranger_republic.008.d
+    flavor = anb_ranger_republic.008.f
+
+    event_image = {
+        video = "southamerica_aristocrats"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #Yes
+        name = anb_ranger_republic.008.a
+        default_option = yes
+        c:B91 = {
+            create_bidirectional_truce = {
+                country = scope:initiator_scope
+                months = 240
+            }
+        }
+        set_owes_obligation_to = {
+            country = scope:initiator_scope
+            setting = yes
+        } #Add money transfer?
+        scope:initiator_scope = {
+            trigger_event = { id = anb_ranger_republic.010 }
+        }
+    }
+    option = { #No
+        name = anb_ranger_republic.008.b
+        trigger = {
+            is_ai = no
+        }
+        scope:initiator_scope = {
+            create_diplomatic_play = {
+                name = rr_trib_war
+                target_country = C:B91
+                type = dp_humiliation
+                add_war_goal = {
+                    holder = scope:initiator_scope
+                    type = liberate_country 
+                    country_definition = B44
+                    target_country = C:B91
+                }
+            }
+        }
+    }
+}
+
+#Country accepts our seccesion
+anb_ranger_republic.009 = {
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.009.t
+    desc = anb_ranger_republic.009.d
+    flavor = anb_ranger_republic.009.f
+
+    event_image = {
+        video = "unspecific_signed_contract"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = anb_ranger_republic.009.a
+        default_option = yes
+
+        show_as_tooltip = {
+            scope:initiator_scope = {
+                create_bidirectional_truce = {
+                    country = C:B91
+                    months = 240
+                }
+            }
+        }
+    }
+}
+
+#Ranger Republic accepts obligation
+anb_ranger_republic.010 = {
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.010.t
+    desc = anb_ranger_republic.010.d
+    flavor = anb_ranger_republic.010.f
+
+    event_image = {
+        video = "unspecific_signed_contract"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = anb_ranger_republic.010.a
+        default_option = yes
+        
+        show_as_tooltip = {
+            c:B91 = {
+                create_bidirectional_truce = {
+                    country = scope:initiator_scope
+                    months = 240
+                }
+                set_owes_obligation_to = {
+                    country = scope:initiator_scope
+                    setting = yes
+                }
+            }
+        }
+    }
+}
+
+#The Coup is crushed (Not RR)
+anb_ranger_republic.011 = {
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.011.t
+    desc = anb_ranger_republic.011.d
+    flavor = anb_ranger_republic.011.f
+
+    event_image = {
+        video = "unspecific_military_parade"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = anb_ranger_republic.011.a
+        default_option = yes
+        trigger = {
+            c:B47 = this
+        }
+        c:B47 = {
+            create_diplomatic_pact = {
+                country = c:B48
+                type = tributary
+            }
+        }
+    }
+
+    option = {
+        name = anb_ranger_republic.011.b
+        default_option = yes
+        trigger = {
+            c:B45 = this
+        }
+        c:B45 = {
+            create_diplomatic_pact = {
+                country = c:B44
+                type = tributary
+            }
+        }
+    }
+
+    option = {
+        name = anb_ranger_republic.011.c
+        default_option = yes
+        trigger = {
+            c:B37 = this
+        }
+        C:B37 = {
+            add_modifier = {
+                name = rr_elethael_victory
+                months = 120
+            }
+        }
+    }
+}
+
+#Argan tries to join DD
+anb_ranger_republic.012 = {
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.012.t
+    desc = anb_ranger_republic.012.d
+    flavor = anb_ranger_republic.012.f
+
+    event_image = {
+        video = "southamerica_aristocrats"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #yes
+        name = anb_ranger_republic.012.a
+        default_option = yes
+        c:B49 = {
+            create_diplomatic_pact = {
+                country = c:B47
+                type = tributary
+            }
+        }
+        c:B47 = {
+            trigger_event = { id = anb_ranger_republic.013  days = 7}
+        }
+    }
+
+    option = { #No
+        name = anb_ranger_republic.012.b
+        trigger = {
+            is_ai = no
+        }
+        c:B47 = {
+            trigger_event = { id = anb_ranger_republic.014 days = 7 }
+        }
+    }
+}
+
+anb_ranger_republic.013 = { #Letting Argan know DD said yes
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.013.t
+    desc = anb_ranger_republic.013.d
+    flavor = anb_ranger_republic.013.f
+
+    event_image = {
+        video = "unspecific_signed_contract"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = anb_ranger_republic.013.a
+        default_option = yes
+        show_as_tooltip = {
+            c:B49 = {
+                create_diplomatic_pact = {
+                    country = c:B47
+                    type = tributary
+                }
+            }
+        }
+    }
+}
+
+anb_ranger_republic.014 = { #Letting Argan know DD said no
+    type = country_event
+    placement = root
+
+    title = anb_ranger_republic.014.t
+    desc = anb_ranger_republic.014.d
+    flavor = anb_ranger_republic.014.f
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = anb_ranger_republic.014.a
+        default_option = yes
+        custom_tooltip = {
+            text = rr_dd_no
+        }
+    }
+}

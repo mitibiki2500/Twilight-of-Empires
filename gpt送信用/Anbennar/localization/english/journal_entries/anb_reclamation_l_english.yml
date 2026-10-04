@@ -1,0 +1,81 @@
+﻿l_english:
+ alecand_reclamation_progress_bar: "Reclamation progress"
+ alecand_reclamation_progress_bar_desc: "Progress: #v [JournalEntry.GetCurrentBarProgress(ScriptedProgressBar.Self)|%]#! ([JournalEntry.GetCurrentBarValue(ScriptedProgressBar.Self)|1]/700)"
+ je_alecand_reclamation:0 "Reclamation of Alecand" 
+
+ # TODO placeholder, copies the decision loc from below, is a bit long
+ je_alecand_reclamation_reason:0 "For years, the Kaydhano Deathwind – a storm of terrifyingly lethal blue-sand that induces cancerous tumours on whatever un-adapted beings it touches – sweeps across Alecand from the Kaydhano Sea to the north, scouring the island. For a millennium, the Precursor Windwards of the ancient Kheions, and to a lesser extent the shadow of the great Mtéi mountain, were the only defence against the Storm – but as the years have progressed, be they abjuration-suits to protect individuals or sturdily-built structures to break the storm as it approaches, the Kheionai have developed new tools to turn the tide.\n\nOn a limited scale, this has allowed the Kheionai to establish small, extremely well-stocked outposts, through which they can establish control through a Kaydhano – but with the advent of modern artificery, and the rise of new ward-generators based off the Windwards, that can provide protection over a large area and be produced at scale, what was once thought impossible is now at last within reach. It will be arduous, it will be expensive, there will be unforeseen difficulties and unavoidable disasters – but the Reclamation of Alecand, and the defeat of the Kaydhano, may yet be possible at last."
+ 
+ alecand_reclamation:0 "Begin the Reclamation of Alecand"
+ alecand_reclamation_desc:0 "For years, the Kaydhano Deathwind – a storm of terrifyingly lethal blue-sand that induces cancerous tumours on whatever un-adapted beings it touches – sweeps across Alecand from the Kaydhano Sea to the north, scouring the island. For a millennium, the Precursor Windwards of the ancient Kheions, and to a lesser extent the shadow of the great Mtéi mountain, were the only defence against the Storm – but as the years have progressed, be they abjuration-suits to protect individuals or sturdily-built structures to break the storm as it approaches, the Kheionai have developed new tools to turn the tide.\n\nOn a limited scale, this has allowed the Kheionai to establish small, extremely well-stocked outposts, through which they can establish control through a Kaydhano – but with the advent of modern artificery, and the rise of new ward-generators based off the Windwards, that can provide protection over a large area and be produced at scale, what was once thought impossible is now at last within reach. It will be arduous, it will be expensive, there will be unforeseen difficulties and unavoidable disasters – but the Reclamation of Alecand, and the defeat of the Kaydhano, may yet be possible at last."
+ je_alecand_reclamation_construction_button:0 "Greater investment of ward construction"
+ je_alecand_reclamation_construction_button_desc:0 "By putting greater construction into wards we can completely defend against the kaydhano storms much faster"
+ je_alecand_reclamation_innovation_button:0 "Focus research into reclamation"
+ je_alecand_reclamation_innovation_button_desc:0 "By focusing more resources into research we can reclaim and ward our land against the dangers of the kaydhano faster"
+ je_stop_construction_alecand_reclamation_button:0 "Lesser investment of ward construction"
+ je_stop_construction_alecand_reclamation_button_desc:0 "We must switch our construction distribution due to the negative effects it has on economic growth"
+ je_stop_innovation_alecand_reclamation_button:0 "Defocus research into reclamation"
+ je_stop_innovation_alecand_reclamation_button_desc:0 "We must focus on other matters of science"
+ anb_reclamation_goods_tt:0 "progress from artificery doodads"
+ anb_reclamation_buttons_construction_tt:0 "progress from greater construction investment"
+ anb_reclamation_buttons_innovation_tt:0 "progress from greater research focus"
+ anb_je_reclamation_button_innovation_tt:0 "adds 1 progress monthly to reclamation"
+ anb_je_reclamation_button_construction_tt:0 "adds 2 progress monthly to reclamation"
+ anb_je_reclamation_button_stop_innovation_tt:0 "removes 1 progress monthly to reclamation"
+ anb_je_reclamation_button_stop_construction_tt:0 "removes 1 progress monthly to reclamation"
+ anb_reclamation_punch_card_artificery_tt:0 "progress from having researched punch card artificery"
+ anb_reclamation_thaumic_tearite_tt:0 "progress from having researched thaumic tearite"
+ anb_reclamation_magic_wave_stabilization_tt:0 "progress from having researched magic wave stabilization"
+ anb_reclamation_elemental_elicitation_tt:0 "progress from having researched elemental elicitation"
+
+ #alecand_reclamation_arable_land_1_tt:0 "add 17 [concept_arable_land] to [SCOPE.sState('alecand_reclemation_state_central_kheions').GetName] \nadd 15 [concept_arable_land] to [SCOPE.sState('alecand_reclemation_state_northern_kheions').GetName] \nadd 11 [concept_arable_land] to [SCOPE.sState('alecand_reclemation_state_southern_kheions').GetName] \nadd 15 [concept_arable_land] to [SCOPE.sState('alecand_reclemation_state_soutikan').GetName]" #making this example loc code
+
+ alecand_reclamation.1.t:0 "Shelter from the Storm" # alecand reclamation stage 1
+ alecand_reclamation.1.d:0 "The first forays into mass-warding efforts have taken shape around our cities: the Reclamation has began in earnest." 
+ alecand_reclamation.1.f:0 "The Kheionai labourers watch the skies above, tinted blue by the ward that covered their farm, and soon to be smothered in it by the Kaydhano. They are all wearing abjuration suits, protection in case of emergency – to an elf, the farmhands secretly believe they will need it.\n\nBut they don’t. When the storm hits, the ward shimmers, ripples at the impact – but the death-sand merely glides off. Their crops are safe – they are safe.\n\nThe elves turn back to their work, tilling the soil in preparation for sowing. To an elf, they are smiling. Not simply from relief, but from hope." 
+ alecand_reclamation.1.a:0 "We will overcome the Kaydhano." 
+
+ alecand_reclamation.2.t:0 "The New Zopedan" # alecand reclamation stage 2
+ alecand_reclamation.2.d:0 "No longer will the people of the hinterland need to move to the Kheions to survive the Kaydhano – with wards gradually covering the towns and minor cities of Alecand’s hinterland, the shelters from the storm number not seven, but seven hundred." 
+ alecand_reclamation.2.f:0 "Elethene sits by the window of her son’s bedroom, nervously watches the ward above. She can’t help it, despite the constant reassurances. In the three deathwinds she’d seen in her life, she’d taken refuge behind a far greater ward. Compared to that of Kimánis, the one that covered her town now was… closer. Smaller.\n\nShe remembers a sight from her childhood – her father’s corpse, tumor-covered, bloated. He hadn’t made it back to Kimánis in time. The storm had eviscerated him.\n\nElethene turns to her son, sleeping soundly, in his own bed, despite the beating of the Kaydhano above. She couldn’t bear the thought of him seeing her like that. Maybe, she thinks, he won’t have to." 
+ alecand_reclamation.2.a:0 "The days of overcrowded Kheions – of exodus – are over!" 
+
+ alecand_reclamation.3.t:0 "The Covered Way" # alecand reclamation stage 3
+ alecand_reclamation.3.d:0 "Though many farms and hinterland towns have been warded against the Kaydhano, the storm still grinds all transportation in Alecand to a halt – but with the development of new warded roads, even this challenge is being overcome." 
+ alecand_reclamation.3.f:0 "The carts ride along the way, guarded by Kheionai wearing abjuration suits, and bearing rifles – the vital grain they carry is too important to be left unguarded, after all.\n\nOf course, that is what their officers #italic want#! them to be doing. Most of the Kheionai aren’t wearing suits at all, their rifles slung over their shoulders, carelessly chattering amongst themselves. The wards never break after all, and supply shipments through the covered ways are so regular there are hardly ever problems with angry citizens. Why bother?" 
+ alecand_reclamation.3.a:0 "The Kaydhano rages above, but the Kheionai are no longer afraid." 
+
+ alecand_reclamation.4.t:0 "For the Liberty of Our Children" # alecand reclamation complete, population boom
+ alecand_reclamation.4.d:0 "Since shortly after the Day of Ashen Skies, the Kheionai have huddled in the shelter of their cities, in dread-fear of the scouring winds of the Kaydhano. But those days are over – the Reclamation of Alecand is complete." 
+ alecand_reclamation.4.f:0 "The Kheionai elf sighs, sets down his book, stands to grab his boots and head out. He gives a word to his wife before he leaves the house. “I’m going for a walk in the park at Nierfós. I’ll be back in an hour.”\n”Can’t.” His wife says, not even bothering to look up from her weaving. “Kaydhano’s on.”\n\n”Oh.” The Kheionai stops, half chuckles as he remembers the storm raging over their warded heads. “Alright, the Fláerízon park is within the bounds– I’ll go there instead. More spacious anyway.”" 
+ alecand_reclamation.4.a:0 "Prisoners no longer – the Kheionai are free at last." 
+
+ alecand_reclamation.5.t:0 "Foreign Companies Offer Aid" # greatpowers meddling in reclamation
+ alecand_reclamation.5.d:0 "Foreign companies from [alecand_reclamation_investment_country] have approached our government with an offer to sponsor our reclamation efforts. However, to give the bharbhen access to such vital technology may well be very dangerous indeed…" 
+ alecand_reclamation.5.f:0 "The CLSTC representative forces a smile as the Kheionai lawyers pour over the contract, silently sick to his stomach – clearly, the office at New Calas have not dealt with the litigious Kheionai before.\n\nThe lawyers reach a line that makes them halt – the representative knows the jig is up. “So, in the control rooms that govern whether a Kheionai settlement lives or dies…  you want to retain a Cannorian on staff at all times?”\n\nThe representative lets out a nervous chuckle. “Consider it a… guarantee of safety?”" 
+ alecand_reclamation.5.a:0 "Accept their assistance." # accept their help
+ alecand_reclamation.5.b:0 "We cannot let them leverage our lives for their power games." # deny them
+
+ alecand_reclamation.6.t:0 "Secrets of the Past" # reverse engineering precursor artefacts
+ alecand_reclamation.6.d:0 "The Precursors once built the Zopedan Windwards that form the basis of our reclamation efforts – it stands to reason that their artefacts could help us in our quest to expand Windward protection across Alecand. Still, they have many other uses, and the industrialists of Ormam and Kherka could certainly use a boost to their affairs." 
+ alecand_reclamation.6.f:0 "The Kheionai bureaucrat sighs, pulling out his note-book and quill and setting them on the desk. He gives the Ormabhen relic-broker a glare. “Please restate your price and reasoning… for my report.\n\nThe relic-broker gives a satisfied smirk. “Well… this collection of Precursor dinner plates is vital for my new factories – how else am I going to find such high quality steel? I think my price of– what was it again, 10 pounds?”\nThe bureaucrat glances up, grimaces. “5 pounds.”\n“Ah, yes–#italic 15#! pounds of gold, is more than sufficient to make up for the loss of profit!”" 
+ alecand_reclamation.6.a:0 "What project is more important than the Reclamation?" # pay for the artefacts
+ alecand_reclamation.6.b:0 "The Chylgíreiones can make better use of these." # let the industrialists keep them
+
+ alecand_reclamation.7.t:0 "Old Dogs, New Tricks?" # mage artificers vying for attention
+ alecand_reclamation.7.d:0 "The mages of Alecand, the traditional stewards of the Windwards’ infrastructure, have come into conflict with the artificers working on Reclamation, claiming they are stealing the secrets of their work to usurp their position." 
+ alecand_reclamation.7.f:0 "The Kylakas arcs an eyebrow as he stares at the Arpetria – the mess of glyphs and silver-steel that controls the Windwards, the source of the Kheionai’s knowledge of abjuration. “So… you’ve explained what the glyphs do… but how do they #italic work?#italic!”\n\nThe mage standing next to him – heir to a long line of Arpetria caretakers – simply shrugs. “Haven’t the faintest idea. Those secrets are beyond our knowing.”\n\nThe Kylakas gapes at him, astonished. “But– then– what information are the artificers even looking for?”\n\nThe mage scoffs, as if the answer is obvious. “Why, they want to know what the glyphs do, of course!”"
+ alecand_reclamation.7.a:0 "Ensure mages are assigned to each new warding project." # favour the archmages
+ alecand_reclamation.7.b:0 "Make sure the artificers have the knowledge they need." # favour the artificers
+ alecand_reclamation.7.c:0 "Make peace between the two." # make peace between the factions
+
+ alecand_reclamation.8.t:0 "Disaster at the Wards" # ward malfunction
+ alecand_reclamation.8.d:0 "At one of our protected towns in the Kheionai countryside, our new Windwards failed, allowing the Kaydhano to scour those inside. Thousands have perished." 
+ alecand_reclamation.8.f:0 "The labourers gag as they crack open the door. There are maybe thirty bodies huddled in the cramped shelter. Maybe they thought it would protect them – it didn’t. Tumour ridden faces twist in terror, pain, despairing anguish, the screams still fixed on their mutated visages. Death-by-Kaydhano is not a quick one.\n\nThere is a mother, by the door, half-turned towards the wall, cradling her child. The labourers cannot see any boy or girl, of course, but they know – the tumorous masses that bloom through the gaps of her arms are a dead giveaway." 
+ alecand_reclamation.8.a:0 "Soon, this will be a nightmare, and nothing more. But not this day." 
+
+ alecand_reclamation.9.t:0 "The Kaydhano Arrives" # Kaydhano Deathwind
+ alecand_reclamation.9.d:0 "From the north, a Kaydhano Deathwind has swept over the countryside. While the hinterland is ravaged, the people of Alecand watch the storm pass overhead from the safety of the Kheions – and [country]’s government prepares to repair the damage." 
+ alecand_reclamation.9.f:0 "#italic “You come in, make a mess of things with your boys, and leave all sorts of nasty tumults and tumors about the place! I tell you, Stratéodegis, you are worse than the Kaydhano!”#! \n–Madam Jesimia, in Thalanthanes’ “The Prick of Pike”" 
+ alecand_reclamation.9.a:0 "As it was, so it will be." # such is life
+ alecand_reclamation.9.b:0 "Allocate additional funds to the clean-up efforts." # spend additional funds on relief

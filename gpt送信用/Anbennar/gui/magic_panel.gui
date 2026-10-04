@@ -1,0 +1,237 @@
+types magic_panel_types
+{
+	type magic_panel = magic_fullscreen_block_window {
+		name = "magic_panel"
+		
+
+		state = {
+			name = 1
+			trigger_on_create = yes
+			on_start = "[GetVariableSystem.Set('magic_last_tab', 'default')]"
+		}
+
+		blockoverride "animation_state_block" {
+			state = {
+				name = _show
+				start_sound = {
+					soundeffect = "snapshot:/Dynamic/mute_world_80"
+				}
+				start_sound = {
+					soundeffect = "snapshot:/Dynamic/mute_vfx_war_100"
+
+				}
+			}
+		}
+
+		blockoverride "window_header_name"
+		{
+			text = "MAGIC_PANEL_HEADER"
+		}
+
+		blockoverride "fixed_top"
+		{
+			tab_buttons = {
+				blockoverride "first_button" {
+					text = "MAGIC_DEFAULT"
+				}
+				blockoverride "first_button_click" {
+					onclick = "[GetVariableSystem.Set('magic_panel_visible', 'default')]"
+					onclick = "[GetVariableSystem.Set('magic_last_tab', 'default')]"
+				}
+				blockoverride "first_button_visibility" {
+					visible = "[GetVariableSystem.HasValue('magic_panel_visible', 'default')]"
+				}
+				blockoverride "first_button_visibility_checked" {
+					visible = "[Not( GetVariableSystem.HasValue('magic_panel_visible', 'default') )]"
+				}
+				blockoverride "first_button_selected" {
+					text = "MAGIC_DEFAULT"
+				}
+
+				blockoverride "second_button" {
+					text = "MAGIC_INFO"
+				}
+				blockoverride "second_button_click" {
+					onclick = "[GetVariableSystem.Set('magic_panel_visible', 'info')]"
+					onclick = "[GetVariableSystem.Set('magic_last_tab', 'info')]"
+				}
+				blockoverride "second_button_visibility" {
+					visible = "[GetVariableSystem.HasValue('magic_panel_visible', 'info')]"
+				}
+				blockoverride "second_button_visibility_checked" {
+					visible = "[Not( GetVariableSystem.HasValue('magic_panel_visible', 'info') )]"
+				}
+				blockoverride "second_button_selected" {
+					text = "MAGIC_INFO"
+				}
+			}
+		}
+
+		blockoverride "entire_content_area" {
+			fullscreen_scrollarea = {
+				visible = "[GetVariableSystem.HasValue('magic_panel_visible', 'default')]"
+
+				blockoverride "scrollarea_content" {
+					magic_panel_default = {
+					}
+				}
+			}
+
+			fullscreen_scrollarea = {
+				visible = "[GetVariableSystem.HasValue('magic_panel_visible', 'info')]"
+
+				blockoverride "scrollarea_content" {
+					magic_panel_info = {
+					}
+				}
+			}
+		}
+	}
+
+	### MAGIC FULLSCREEN WINDOW
+	type magic_fullscreen_block_window = fullscreen_block_window {
+		visible = "[GetVariableSystem.Exists('magic_panel_visible')]"
+		
+		blockoverride "back_button_fullscreen" {
+			back_button_large = {
+				position = { 11 15 }
+				parentanchor = top|left
+				onclick = "[GetVariableSystem.Clear('magic_panel_visible')]"
+				input_action = "back"
+			}
+		}
+	}
+	
+	###SPELL LIST
+	type spell_list = vbox {
+		layoutpolicy_horizontal = preferred
+		layoutpolicy_vertical = preferred
+		layoutstretchfactor_horizontal = 1
+
+		using = entry_bg_fancy
+
+		widget = {
+			layoutpolicy_horizontal = preferred
+			tooltip = "ACTIVE_SPELL_DESC"
+			size = { 0 38 }
+
+			background = {
+				using = default_header_bg
+				using = frame_small_mask_top
+			}
+
+			textbox = {
+				block "header" {
+					raw_text = "INSERT_HEADER"
+				}
+				size = { 100% 100% }
+				align = center|nobaseline
+				using = fontsize_large
+				default_format = "title"
+				elide = right
+			}
+		}
+
+		vbox = {
+			layoutpolicy_horizontal = preferred
+			layoutpolicy_vertical = preferred
+			margin_top = 5
+		
+			block "spell_datamodel" {
+			}
+
+			item = {
+				vbox = {
+					widgetid = "[Scope.GetValue]"
+					margin = { 10 3 }
+					layoutpolicy_horizontal = preferred
+					layoutpolicy_vertical = expanding
+					block "no_spell" {}
+					block "default_spell" {}
+				
+				}
+			}
+					
+		}
+		
+
+		widget = {
+			layoutpolicy_horizontal = preferred
+			layoutpolicy_vertical = expanding
+		}
+	}
+	
+	type possible_spell = vbox {
+		layoutpolicy_horizontal = preferred
+		layoutpolicy_vertical = expanding
+		using = tooltip_ws
+		block "tooltip" {
+		}
+		
+
+		widget = {
+			layoutpolicy_horizontal = preferred
+			layoutpolicy_vertical = fixed
+			size = { 0 97 }
+
+			button = {
+				using = default_button
+				size = { 100% 100% }
+				onclick = "[GetScriptedGui('spell_changing_button_stuff').Execute(GuiScope.SetRoot(AccessPlayer.MakeScope).AddScope('spellname_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
+				enabled = "[GetScriptedGui('spell_changing_button_stuff').IsValid(GuiScope.SetRoot(AccessPlayer.MakeScope).AddScope('spellname_flag', MakeScopeFlag(Scope.GetFlagName)).End)]"
+			}
+
+			hbox = {
+				layoutpolicy_horizontal = preferred
+				layoutpolicy_vertical = expanding
+				margin = { 5 0 }
+				margin_right = 20
+
+				spell_icon = {}
+
+				vbox = {
+					layoutpolicy_horizontal = preferred
+					layoutpolicy_vertical = expanding
+					margin = { 5 5 }
+
+					widget = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+					}
+
+					textbox = {
+						layoutpolicy_horizontal = preferred
+						raw_text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+						default_format = "#variable"
+						align = left|nobaseline
+						size = { 0 30 }
+						using = fontsize_xl
+						elide = right
+						margin_bottom = 5
+					}
+
+					widget = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+					}
+				}
+			}
+		}
+	}
+	
+	type spell_icon = widget {
+		size = { 90 90 }
+		
+		icon = {
+			size = { 90% 90% }
+			parentanchor = center
+			texture = "[GetInstitutionType(Scope.GetFlagName).GetIcon]"
+			#texture = "gfx\interface\icons\magic\spells\fireballs.dds"
+		}
+
+	}
+}
+
+template anb_magic_panel {
+	magic_panel = {}
+}

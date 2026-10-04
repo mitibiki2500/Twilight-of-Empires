@@ -1,0 +1,1849 @@
+﻿## Coal Mine
+pm_subterrenes_coal_mine = {
+	texture = "gfx/interface/icons/production_method_icons/tractors.dds"
+	unlocking_technologies = {
+		industrial_mechs			
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_explosives_add = 10
+			goods_input_artificery_doodads_add = 5
+			
+			# output goods
+			goods_output_coal_add = 40	
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+
+		unscaled = {	#shits dangerous, offset with prosthetic etc artificery!
+			building_laborers_mortality_mult = 0.4
+			building_machinists_mortality_mult = 0.3
+			building_engineers_mortality_mult = 0.2
+		}
+	}
+}
+
+pm_automata_loggers = {
+	texture = "gfx/interface/icons/production_method_icons/miners.dds"
+		
+	unlocking_technologies = {
+		insyaan_analytical_engine
+	}
+
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+		
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods					
+				goods_input_automata_add = 4
+			}
+
+		level_scaled = {
+			building_employment_laborers_add = -2000
+		}
+	}
+}
+
+pm_automata_miners = {
+	texture = "gfx/interface/icons/production_method_icons/miners.dds"
+		
+	unlocking_technologies = {
+		insyaan_analytical_engine
+	}
+
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+		
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods					
+				goods_input_automata_add = 7
+			}
+
+		level_scaled = {
+			building_employment_laborers_add = -2000
+		}
+	}
+}
+
+pm_automata_foremen = {
+	texture = "gfx/interface/icons/production_method_icons/automated_bakery.dds"
+		
+	unlocking_technologies = {
+		thinking_machinery
+	}
+
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods					
+				goods_input_automata_add = 11
+			}
+
+		level_scaled = {
+			building_employment_laborers_add = -1250
+			building_employment_machinists_add = -1500
+		}
+	}
+}
+
+## Iron Mine
+pm_subterrenes_iron_mine = {
+	texture = "gfx/interface/icons/production_method_icons/tractors.dds"
+	unlocking_technologies = {
+		industrial_mechs			
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_explosives_add = 10
+			goods_input_artificery_doodads_add = 5
+			
+			# output goods
+			goods_output_iron_add = 30
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+
+		unscaled = {	#shits dangerous, offset with prosthetic etc artificery!
+			building_laborers_mortality_mult = 0.4
+			building_machinists_mortality_mult = 0.3
+			building_engineers_mortality_mult = 0.2
+		}
+	}
+}
+
+## Lead Mine
+pm_subterrenes_lead_mine = {
+	texture = "gfx/interface/icons/production_method_icons/tractors.dds"
+	unlocking_technologies = {
+		industrial_mechs			
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_explosives_add = 10
+			goods_input_artificery_doodads_add = 5
+			
+			# output goods
+			goods_output_lead_add = 30	
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+
+		unscaled = {
+			building_laborers_mortality_mult = 0.4
+			building_machinists_mortality_mult = 0.3
+			building_engineers_mortality_mult = 0.2
+		}
+	}
+}
+
+pm_no_transmutation_building_lead_mine = {
+	texture = "gfx/interface/icons/production_method_icons/no_explosives.dds"
+}
+
+pm_transmute_to_gold_building_lead_mine = {
+	texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+	unlocking_technologies = {
+		magocracy			
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	unlocking_production_methods = {
+		pm_atmospheric_engine_pump_building_lead_mine
+		pm_condensing_engine_pump_building_lead_mine
+		pm_diesel_pump_building_lead_mine
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 10	
+			
+			# output goods
+			goods_output_gold_add = 8
+			goods_output_lead_add = -12	
+		}
+
+		level_scaled = {
+			building_employment_mages_add = 250
+		}
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 160
+		}
+	}
+}
+pm_pathway_aurification_building_lead_mine = {
+	texture = "gfx/interface/icons/production_method_icons/alchemical_drills.dds"
+	
+	unlocking_production_methods = {
+		pm_condensing_engine_pump_building_lead_mine
+		pm_diesel_pump_building_lead_mine
+	}
+	
+	unlocking_technologies = {
+		pathway_transmutation			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 15
+			goods_input_artificery_doodads_add = 2
+			
+			# output goods
+			goods_output_gold_add = 14
+			goods_output_lead_add = -18
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 210
+		}
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 280
+		}
+	}
+}
+
+## Sulfur Mine
+pm_subterrenes_sulfur_mine = {
+	texture = "gfx/interface/icons/production_method_icons/tractors.dds"
+	unlocking_technologies = {
+		industrial_mechs			
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_explosives_add = 10
+			goods_input_artificery_doodads_add = 5
+			
+			# output goods
+			goods_output_sulfur_add = 30	
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+
+		unscaled = {
+			building_laborers_mortality_mult = 0.4
+			building_machinists_mortality_mult = 0.3
+			building_engineers_mortality_mult = 0.2
+		}
+	}
+}
+
+## Gold Mine
+pm_subterrenes_gold_mine = {
+	texture = "gfx/interface/icons/production_method_icons/tractors.dds"
+	unlocking_technologies = {
+		industrial_mechs		
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_explosives_add = 10
+			goods_input_artificery_doodads_add = 5
+			
+			# output goods
+			goods_output_gold_add = 15
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 375
+		}
+
+		unscaled = {
+			building_laborers_mortality_mult = 0.4
+			building_machinists_mortality_mult = 0.3
+			building_engineers_mortality_mult = 0.2
+		}
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 750
+		}
+	}
+}
+
+
+## Mithril Mine
+pm_picks_and_shovels_building_mithril_mine = {
+	texture = "gfx/interface/icons/production_method_icons/picks_and_shovels.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			
+			# output goods
+			goods_output_flawless_metal_add = 15 #normal flawless metal mining is 20
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 4500
+		}
+	}
+}
+pm_atmospheric_engine_pump_building_mithril_mine = {
+	texture = "gfx/interface/icons/production_method_icons/pumps.dds"
+
+	unlocking_technologies = {
+		atmospheric_engine
+	}
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 10
+			goods_input_coal_add = 10
+			
+			# output goods
+			goods_output_flawless_metal_add = 30 #normal flawless metal mining is 40
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3750
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+}
+pm_condensing_engine_pump_building_mithril_mine = {
+	texture = "gfx/interface/icons/production_method_icons/condensing_engine_pump.dds"
+
+	unlocking_technologies = {
+		watertube_boiler
+	}
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 15
+			goods_input_coal_add = 15
+			
+			# output goods
+			goods_output_flawless_metal_add = 50 #normal flawless metal mining is 60
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 500
+		}
+	}
+}
+pm_diesel_pump_building_mithril_mine = {
+	texture = "gfx/interface/icons/production_method_icons/diesel_pump.dds"
+
+	unlocking_technologies = {
+		compression_ignition
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 15
+			goods_input_oil_add = 5
+			
+			# output goods
+			goods_output_flawless_metal_add = 60 #normal flawless metal mining is 80
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 750
+		}
+	}
+}
+
+pm_nitroglycerin_building_mithril_mine = {
+	texture = "gfx/interface/icons/production_method_icons/nitroglycerin.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	unlocking_technologies = {
+		nitroglycerin
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_explosives_add = 5
+			
+			# output goods
+			goods_output_flawless_metal_add = 8 #normal flawless metal mining is 10
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+
+		unscaled = {
+			building_laborers_mortality_mult = 0.3
+			building_machinists_mortality_mult = 0.2
+			building_engineers_mortality_mult = 0.1
+		}
+	}
+}
+pm_dynamite_building_mithril_mine = {
+	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	unlocking_technologies = {
+		dynamite
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_explosives_add = 10
+			
+			# output goods
+			goods_output_flawless_metal_add = 15 #normal flawless metal mining is 20
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+#TODO: add rest of anbennar PMs to mithril mines
+
+
+
+## Gem Mine
+pm_picks_and_shovels_building_gem_mine = {
+	texture = "gfx/interface/icons/production_method_icons/picks_and_shovels.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			
+			# output goods
+			goods_output_magical_reagents_add = 22
+			goods_output_gold_add = 4
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 4500
+		}
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 100 #25 per
+		}
+	}
+}
+pm_atmospheric_engine_pump_building_gem_mine = {
+	texture = "gfx/interface/icons/production_method_icons/pumps.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	unlocking_technologies = {
+		atmospheric_engine
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 10
+			goods_input_coal_add = 10
+			
+			# output goods
+			goods_output_magical_reagents_add = 35
+			goods_output_gold_add = 8
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3750
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 200
+		}
+	}	
+}
+pm_condensing_engine_pump_building_gem_mine = {
+	texture = "gfx/interface/icons/production_method_icons/condensing_engine_pump.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	unlocking_technologies = {
+		watertube_boiler
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 15
+			goods_input_coal_add = 15
+			
+			# output goods
+			goods_output_magical_reagents_add = 50
+			goods_output_gold_add = 12
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 500
+		}
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 300
+		}
+	}	
+}
+pm_diesel_pump_building_gem_mine = {
+	texture = "gfx/interface/icons/production_method_icons/diesel_pump.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		compression_ignition
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 15
+			goods_input_oil_add = 5
+			
+			# output goods
+			goods_output_magical_reagents_add = 65
+			goods_output_gold_add = 16
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 750
+		}
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 400
+		}
+	}
+}
+
+pm_nitroglycerin_building_gem_mine = {
+	texture = "gfx/interface/icons/production_method_icons/nitroglycerin.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	unlocking_technologies = {
+	 	nitroglycerin
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_explosives_add = 5
+			
+			# output goods
+			goods_output_magical_reagents_add = 8	
+			goods_output_gold_add = 2
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+
+		unscaled = {
+			building_laborers_mortality_mult = 0.3
+			building_machinists_mortality_mult = 0.2
+			building_engineers_mortality_mult = 0.1
+		}
+	}
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 40
+		}
+	}
+}
+
+pm_dynamite_building_gem_mine = {
+	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	unlocking_technologies = {
+		dynamite
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_explosives_add = 10
+			
+			# output goods
+			goods_output_magical_reagents_add = 16
+			goods_output_gold_add = 4
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 80
+		}
+	}
+}	
+
+pm_subterrenes_building_gem_mine = {
+	texture = "gfx/interface/icons/production_method_icons/tractors.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	unlocking_technologies = {
+		industrial_mechs
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_explosives_add = 10
+			goods_input_artificery_doodads_add = 5
+			
+			# output goods
+			goods_output_magical_reagents_add = 25
+			goods_output_gold_add = 6
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+	}
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 120
+		}
+	}
+}	
+
+## Damestear Mines
+pm_picks_and_shovels_building_damestear_mine = {
+	texture = "gfx/interface/icons/production_method_icons/picks_and_shovels.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			
+			# output goods
+			goods_output_damestear_add = 20 #note: since i made damestear as expensive as sulfur (most expensive vanilla raw resource), i also changed its mines to output damestear at the same rate
+			# damestear is still INCREDIBLY limited, but there's now enough of it to actually have a damestear economy (hopefully)
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 4500
+		}
+	}
+}
+
+pm_atmospheric_engine_pump_building_damestear_mine = {
+	texture = "gfx/interface/icons/production_method_icons/pumps.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	unlocking_technologies = {
+		atmospheric_engine
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 10
+			goods_input_coal_add = 10
+			
+			# output goods
+			goods_output_damestear_add = 40
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3750
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+pm_condensing_engine_pump_building_damestear_mine = {
+	texture = "gfx/interface/icons/production_method_icons/condensing_engine_pump.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	unlocking_technologies = {
+		watertube_boiler
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 15
+			goods_input_coal_add = 15
+			
+			# output goods
+			goods_output_damestear_add = 60
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 500
+		}
+	}
+}
+
+pm_diesel_pump_building_damestear_mine = {
+	texture = "gfx/interface/icons/production_method_icons/diesel_pump.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		compression_ignition
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 15
+			goods_input_oil_add = 5
+			
+			# output goods
+			goods_output_damestear_add = 80
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 750
+		}
+	}
+}
+pm_nitroglycerin_building_damestear_mine = {
+	texture = "gfx/interface/icons/production_method_icons/nitroglycerin.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	unlocking_technologies = {
+	 	nitroglycerin
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_explosives_add = 5
+			
+			# output goods
+			goods_output_damestear_add = 10
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+
+		unscaled = {
+			building_laborers_mortality_mult = 0.3
+			building_machinists_mortality_mult = 0.2
+			building_engineers_mortality_mult = 0.1
+		}
+	}
+}
+
+pm_dynamite_building_damestear_mine = {
+	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	unlocking_technologies = {
+		dynamite
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_explosives_add = 10
+			
+			# output goods
+			goods_output_damestear_add = 20
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+pm_subterrenes_damestear_mine = {
+	texture = "gfx/interface/icons/production_method_icons/tractors.dds"
+	unlocking_technologies = {
+		industrial_mechs			
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_explosives_add = 10
+			goods_input_artificery_doodads_add = 5
+			
+			# output goods
+			goods_output_damestear_add = 30
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+
+		unscaled = {
+			building_laborers_mortality_mult = 0.4
+			building_machinists_mortality_mult = 0.3
+			building_engineers_mortality_mult = 0.2
+		}
+	}
+}
+
+pm_no_treatment_building_damestear_mine = {
+	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+}
+
+pm_mage_surveillor_building_damestear_mine = {
+	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+
+	unlocking_technologies = {
+		magocracy		
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magical_reagents_add = 5
+			
+			# output goods
+			goods_output_damestear_add = 7
+		}
+
+		level_scaled = {
+			building_employment_mages_add = 500
+		}
+	}
+}
+pm_damestear_stabilization_building_damestear_mine = {
+	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+	
+	unlocking_technologies = {
+		mages_in_the_workforce		
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magical_reagents_add = 10
+			goods_input_sulfur_add = 5
+			
+			# output goods
+			goods_output_damestear_add = 18
+		}
+
+		level_scaled = {
+			building_employment_mages_add = 250
+			building_employment_engineers_add = 250
+		}
+	}
+}
+pm_porcelain_insulation_damestear_mine = {
+	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+	
+	unlocking_technologies = {
+		thaumic_field_stabilization			
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_magical_reagents_add = 15
+			goods_input_sulfur_add = 5
+			goods_input_porcelain_add = 5
+			
+			# output goods
+			goods_output_damestear_add = 30
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 500
+		}
+	}
+}
+
+## Damestear Fields
+# default_building_damestear_fields = {
+# 	texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+# 	building_modifiers = {
+# 		workforce_scaled = {
+# 			goods_output_damestear_add = 40 # Damestear is half the price of gold. Gold fields produce 20 gold. Therefore, damestear fields produce 40 damestear
+# 		}
+# 		level_scaled = {
+# 			building_employment_shopkeepers_add = 500
+# 			building_employment_laborers_add = 4500
+# 		}
+# 	}
+# }
+
+## Flawless Metal Mines
+pm_picks_and_shovels_building_flawless_metal_mine = {
+	texture = "gfx/interface/icons/production_method_icons/picks_and_shovels.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 5
+			
+			# output goods
+			goods_output_flawless_metal_add = 20
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 4500
+		}
+	}
+}
+
+pm_atmospheric_engine_pump_building_flawless_metal_mine = {
+	texture = "gfx/interface/icons/production_method_icons/pumps.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	unlocking_technologies = {
+		atmospheric_engine
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 10
+			goods_input_coal_add = 10
+			
+			# output goods
+			goods_output_flawless_metal_add = 40
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3750
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+pm_condensing_engine_pump_building_flawless_metal_mine = {
+	texture = "gfx/interface/icons/production_method_icons/condensing_engine_pump.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	unlocking_technologies = {
+		watertube_boiler
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 15
+			goods_input_coal_add = 15
+			
+			# output goods
+			goods_output_flawless_metal_add = 60
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 500
+		}
+	}
+}
+
+pm_diesel_pump_building_flawless_metal_mine = {
+	texture = "gfx/interface/icons/production_method_icons/diesel_pump.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		compression_ignition
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 15
+			goods_input_oil_add = 5
+			
+			# output goods
+			goods_output_flawless_metal_add = 80
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 750
+		}
+	}
+}
+
+pm_nitroglycerin_building_flawless_metal_mine = {
+	texture = "gfx/interface/icons/production_method_icons/nitroglycerin.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 5
+		}
+	}
+
+	unlocking_technologies = {
+	 	nitroglycerin
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_explosives_add = 5
+			
+			# output goods
+			goods_output_flawless_metal_add = 6
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+
+		unscaled = {
+			building_laborers_mortality_mult = 0.3
+			building_machinists_mortality_mult = 0.2
+			building_engineers_mortality_mult = 0.1
+		}
+	}
+}
+
+pm_dynamite_building_flawless_metal_mine = {
+	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	unlocking_technologies = {
+		dynamite
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_explosives_add = 10
+			
+			# output goods
+			goods_output_flawless_metal_add = 14
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+pm_subterrenes_flawless_metal_mine = {
+	texture = "gfx/interface/icons/production_method_icons/tractors.dds"
+	unlocking_technologies = {
+		industrial_mechs			
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_explosives_add = 10
+			goods_input_artificery_doodads_add = 5
+			
+			# output goods
+			goods_output_flawless_metal_add = 30
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+
+		unscaled = {
+			building_laborers_mortality_mult = 0.4
+			building_machinists_mortality_mult = 0.3
+			building_engineers_mortality_mult = 0.2
+		}
+	}
+}
+
+pm_sintering_forges = {
+	texture = "gfx/interface/icons/production_method_icons/blister_steel_process.dds"
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+}
+
+pm_lava_pumped_forges = {
+	texture = "gfx/interface/icons/production_method_icons/bessemer_process.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+	
+	unlocking_technologies = {
+		watertube_boiler
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 5
+			
+			# output goods
+			goods_output_flawless_metal_add = 10
+		}
+		unscaled = {
+			building_laborers_mortality_mult = 0.05
+			building_machinists_mortality_mult = 0.05
+			building_engineers_mortality_mult = 0.025
+		}
+	}
+}
+
+pm_fire_elemental_forges = {
+	texture = "gfx/interface/icons/production_method_icons/open_hearth_process.dds"
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 20
+		}
+	}
+	
+	unlocking_technologies = {
+		open_hearth_process
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 10
+			goods_input_sulfur_add = 5
+			
+			# output goods
+			goods_output_flawless_metal_add = 25
+		}
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+		unscaled = {
+			building_laborers_mortality_mult = 0.1
+			building_machinists_mortality_mult = 0.1
+			building_engineers_mortality_mult = 0.05
+		}
+	}
+}
+
+pm_hypercharged_electric_arc_forges = {
+	texture = "gfx/interface/icons/production_method_icons/electric_arc_process.dds"
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 25
+		}
+	}
+	
+	unlocking_technologies = {
+		electric_arc_process
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 15
+			goods_input_sulfur_add = 5
+			goods_input_electricity_add = 5 
+			
+			# output goods
+			goods_output_flawless_metal_add = 40
+		}
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+		unscaled = {
+			building_laborers_mortality_mult = 0.1
+			building_machinists_mortality_mult = 0.1
+			building_engineers_mortality_mult = 0.05
+		}
+	}
+	required_input_goods = electricity
+}
+
+pm_dense_medium_separation = {
+	texture = "gfx/interface/icons/production_method_icons/assembly_lines.dds"
+	
+	unlocking_technologies = {
+		electrical_generation
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_steel_add = 4
+			goods_input_electricity_add = 4
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1500
+		}
+	}
+
+	required_input_goods = electricity
+}
+
+pm_froth_flotation = {
+	texture = "gfx/interface/icons/production_method_icons/assembly_lines.dds"
+	
+	unlocking_technologies = {
+		pathway_transmutation
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_electricity_add = 5
+			goods_input_oil_add = 5
+			goods_input_artificery_doodads_add = 5
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2000
+			building_employment_machinists_add = -1000
+		}
+	}
+
+	required_input_goods = electricity
+}
+
+#Dungeons
+
+default_building_dungeons = {	#TODO: expand and overhaul this entire concept come Adventurers Wanted
+	texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_small_arms_add = 5
+
+			goods_output_gold_add = 8
+			goods_output_magical_reagents_add = 20
+			goods_output_arcane_curios_add = 10
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_soldiers_add = 2000
+			building_employment_officers_add = 500
+		}
+		unscaled = {
+			building_soldiers_mortality_mult = 0.3
+			building_officers_mortality_mult = 0.3
+		}
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			country_minting_add = 400
+		}
+	}
+	state_modifiers = {
+		level_scaled = {
+			state_mortality_mult = 0.05	#dangerous until cleared, but still fairly forgivable
+		}
+	}
+
+}
+
+default_building_dungeons_quarantined = {	#TODO: expand and overhaul this entire concept come Adventurers Wanted. temporary replacement for Monster Ranch just to fit lore vision -Jay
+	texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_tools_add = 5
+
+			#goods_output_gold_add = 8
+			goods_output_magical_reagents_add = 60	#theres not much loot here but still magical stuff
+			goods_output_arcane_curios_add = 5
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 250
+			building_employment_soldiers_add = 1000
+			building_employment_officers_add = 250
+			building_employment_laborers_add = 1500
+		}
+		unscaled = {
+			building_soldiers_mortality_mult = 0.1
+			building_officers_mortality_mult = 0.1
+		}
+	}
+}
+
+pm_building_monster_ranch_guarded_reserve= {
+	texture = "gfx/interface/icons/production_method_icons/sheep_ranch.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_meat_add = 5
+			goods_output_magical_reagents_add = 30
+		}
+		level_scaled = {
+			building_employment_soldiers_add = 1000
+			building_employment_farmers_add = 2000
+			building_employment_laborers_add = 2000
+		}
+	}
+}
+
+pm_building_monster_ranch_involved_ranching= {
+	texture = "gfx/interface/icons/production_method_icons/sheep_ranch.dds"
+	
+	unlocking_technologies = {
+		intensive_agriculture
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_meat_add = 10
+			goods_input_fertilizer_add = 5
+			goods_output_magical_reagents_add = 60
+		}
+		level_scaled = {
+			building_employment_soldiers_add = 500
+			building_employment_farmers_add = 3000
+			building_employment_laborers_add = 1500
+		}
+	}
+}
+
+pm_building_monster_ranch_chimera_butchering= {
+	texture = "gfx/interface/icons/production_method_icons/sheep_farms.dds"
+	
+	unlocking_technologies = {
+		gene_transmutation
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_meat_add = 15
+			goods_input_fertilizer_add = 10
+			goods_input_artificery_doodads_add = 5
+
+			goods_output_magical_reagents_add = 100
+		}
+		level_scaled = {
+			building_employment_soldiers_add = 500
+			building_employment_farmers_add = 2500
+			building_employment_laborers_add = 1500
+			building_employment_machinists_add = 500
+		}
+	}
+}
+
+pm_building_monster_ranch_manmade_horrors= {
+	texture = "gfx/interface/icons/production_method_icons/chemical_weapons_specialists.dds"
+	
+	disallowing_laws = {
+		law_artifice_banned
+	}
+	
+	unlocking_technologies = {
+		nitrogen_fixation
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_meat_add = 20
+			goods_input_fertilizer_add = 20
+			goods_input_electricity_add = 10
+			goods_input_artificery_doodads_add = 5
+			goods_output_magical_reagents_add = 160
+		}
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_soldiers_add = 3750
+			building_employment_officers_add = 750
+		}
+	}
+	required_input_goods = electricity
+}
+
+#Lava Forge
+pm_time_honored_lava_extraction = {
+	texture = "gfx/interface/icons/production_method_icons/picks_and_shovels.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 10
+			
+			# output goods
+			goods_output_iron_add = 30
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 4250
+			building_employment_machinists_add = 250
+		}
+	}
+}
+pm_lava_production_2 = {
+	texture = "gfx/interface/icons/production_method_icons/pumps.dds"
+
+	unlocking_technologies = {
+		atmospheric_engine
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 15
+			goods_input_coal_add = 10
+			
+			# output goods
+			goods_output_iron_add = 45
+			goods_output_lead_add = 10
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3500
+			building_employment_machinists_add = 750
+			building_employment_engineers_add = 250
+		}
+	}
+}
+pm_lava_production_3 = {
+	texture = "gfx/interface/icons/production_method_icons/condensing_engine_pump.dds"
+
+	unlocking_technologies = {
+		watertube_boiler
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 20
+			goods_input_coal_add = 15
+			
+			# output goods
+			goods_output_iron_add = 60
+			goods_output_lead_add = 20
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2750
+			building_employment_machinists_add = 1250
+			building_employment_engineers_add = 500
+		}
+	}
+}
+pm_lava_production_4 = {
+	texture = "gfx/interface/icons/production_method_icons/diesel_pump.dds"
+
+	unlocking_technologies = {
+		compression_ignition
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 25
+			goods_input_oil_add = 5
+			
+			# output goods
+			goods_output_iron_add = 75
+			goods_output_lead_add = 30
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 1750
+			building_employment_engineers_add = 750
+		}
+	}
+}
+
+pm_empty_flats = {
+	texture = "gfx/interface/icons/production_method_icons/pumps.dds"
+}
+pm_smiths_quarters_1 = {
+	texture = "gfx/interface/icons/production_method_icons/condensing_engine_pump.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_iron_add = 40
+			goods_input_magical_reagents_add = 10
+
+			# output goods
+			goods_output_steel_add = 50
+		}
+
+		level_scaled = {
+			building_employment_machinists_add = 1800
+			building_employment_shopkeepers_add = 500
+			building_employment_mages_add = 100
+			building_employment_engineers_add = 100
+		}
+	}
+}
+pm_smiths_quarters_2 = {
+	texture = "gfx/interface/icons/production_method_icons/diesel_pump.dds"
+
+	unlocking_technologies = {
+		bessemer_process
+	}
+
+	unlocking_production_methods = {
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_iron_add = 50
+			goods_input_artificery_doodads_add = 10
+
+			# output goods
+			goods_output_steel_add = 70
+		}
+
+		level_scaled = {
+			building_employment_machinists_add = 1500
+			building_employment_shopkeepers_add = 500
+			building_employment_engineers_add = 500
+		}
+	}
+}
+pm_smiths_quarters_3 = {
+	texture = "gfx/interface/icons/production_method_icons/open_hearth_process.dds"
+
+	unlocking_technologies = {
+		open_hearth_process	
+	}
+
+	unlocking_production_methods = {
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_iron_add = 60
+			goods_input_artificery_doodads_add = 20
+
+			# output goods
+			goods_output_steel_add = 90
+		}
+
+		level_scaled = {
+			building_employment_machinists_add = 1250
+			building_employment_shopkeepers_add = 500
+			building_employment_engineers_add = 750
+		}
+	}
+}
+
+pm_empty_cliffsides = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+pm_artisans_quarters_1 = {
+	texture = "gfx/interface/icons/production_method_icons/pumps.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_lead_add = 10
+			goods_input_magical_reagents_add = 10
+
+			# output goods
+			goods_output_glass_add = 30
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 1750
+			building_employment_shopkeepers_add = 500
+			building_employment_mages_add = 250
+		}
+	}
+}
+pm_artisans_quarters_2 = {
+	texture = "gfx/interface/icons/production_method_icons/condensing_engine_pump.dds"
+
+	unlocking_technologies = {
+		mechanical_tools
+	}
+
+	unlocking_production_methods = {
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_lead_add = 10
+			goods_input_artificery_doodads_add = 10
+
+			# output goods
+			goods_output_glass_add = 45
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 1500
+			building_employment_shopkeepers_add = 500
+			building_employment_machinists_add = 450
+			building_employment_engineers_add = 50
+		}
+	}
+}
+pm_artisans_quarters_3 = {
+	texture = "gfx/interface/icons/production_method_icons/diesel_pump.dds"
+
+	unlocking_technologies = {
+		mechanized_workshops
+	}
+
+	unlocking_production_methods = {
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_lead_add = 20
+			goods_input_artificery_doodads_add = 10
+
+			# output goods
+			goods_output_glass_add = 60
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 1000
+			building_employment_shopkeepers_add = 500
+			building_employment_machinists_add = 750
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+pm_no_precautions = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+
+	building_modifiers = {
+		unscaled = {
+			building_laborers_mortality_mult = 0.3
+			building_slaves_mortality_mult = 0.3
+		}
+	}
+}
+pm_potions_of_fire_resist = {
+	texture = "gfx/interface/icons/production_method_icons/watertube_boiler.dds"
+
+	unlocking_technologies = {
+		distillation
+	}
+
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 5
+		}
+
+		unscaled = {
+			building_laborers_mortality_mult = 0.1
+			building_slaves_mortality_mult = 0.1
+		}
+	}
+}
+pm_fire_elementals = {
+	texture = "gfx/interface/icons/production_method_icons/watertube_boiler.dds"
+
+	unlocking_technologies = {
+		elemental_elicitation
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_arcane_curios_add = 5
+}
+
+		level_scaled = {
+			building_employment_laborers_add = -1000
+		}
+
+		unscaled = {
+			building_laborers_mortality_mult = 0.1
+			building_slaves_mortality_mult = 0.1
+		}
+	}
+}
+pm_artifical_wyrm_scales = {
+	texture = "gfx/interface/icons/production_method_icons/watertube_boiler.dds"
+
+	unlocking_technologies = {
+		industrial_exosuits
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_artificery_doodads_add = 10
+ }
+
+		level_scaled = {
+			building_employment_laborers_add = -1500
+		}
+	}
+}
+pm_wyrm_golems = {
+	texture = "gfx/interface/icons/production_method_icons/watertube_boiler.dds"
+
+	unlocking_technologies = {
+		industrial_mechs
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_artificery_doodads_add = 10
+			goods_input_automata_add = 5
+ 		}
+
+		level_scaled = {
+			building_employment_laborers_add = -3000
+		}
+	}
+}

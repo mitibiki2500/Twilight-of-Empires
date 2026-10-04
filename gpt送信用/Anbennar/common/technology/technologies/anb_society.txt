@@ -1,0 +1,234 @@
+﻿### ERA 1
+
+locked = {
+	# exists to stop buildings etc
+	era = era_1
+	#texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+	category = society
+
+	can_research = no
+	
+	ai_weight = {
+		value = 0
+	}
+}
+
+demonsterization_diplomacy = {
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = society
+
+	unlocking_technologies = {
+		international_relations
+	}
+
+	modifier = {
+		country_infamy_decay_mult = 0.05
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+relic_reverse_engineering = {
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = society
+
+	unlocking_technologies = {
+		empiricism
+		romanticism
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+magocracy = {
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = society
+
+	unlocking_technologies = {
+		urbanization
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+### ERA 2
+
+mages_in_the_workforce = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = society
+
+	unlocking_technologies = {
+		egalitarianism
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+### ERA 3
+
+mechanim_rights = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/invention_placeholder.dds"
+	category = society
+
+	unlocking_technologies = {
+		human_rights
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+tradition_of_equality = {
+	# unlocks early women in workplace and Suffrage
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/sericulture.dds"
+	category = society
+	can_research = no
+	
+	on_researched = {
+		custom_tooltip = {
+			text = interest_groups_like_women_tt
+			ig:ig_landowners = {
+				if = {
+					limit = {
+						has_ideology = ideology:ideology_patriarchal
+					}
+					remove_ideology = ideology_patriarchal
+					add_ideology = ideology_legal_equality
+				}
+			}
+			ig:ig_devout = {
+				if = {
+					limit = {
+						has_ideology = ideology:ideology_patriarchal
+						owner = {
+							NOT = { country_has_state_religion = rel:regent_court }
+						}
+					}
+					remove_ideology = ideology_patriarchal
+					add_ideology = ideology_legal_equality
+				}
+			}
+		}
+	}
+	
+	ai_weight = {
+		value = 1
+	}
+}
+
+#psionic_theory = {
+#	# Unlocks Urban Centers building
+#	era = era_3
+#	#texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+#	category = society
+#
+#	unlocking_technologies = {
+#		psychiatry
+#		dialectics
+#		pharmaceuticals
+#	}
+#	
+#	ai_weight = {
+#		value = 1
+#	}
+#}
+#
+#planar_portals = {
+#	# Unlocks Urban Centers building
+#	era = era_3
+#	#texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+#	category = society
+#
+#	unlocking_technologies = {
+#		psionic_theory
+#		philosophical_pragmatism
+#	}
+#	
+#	ai_weight = {
+#		value = 1
+#	}
+#}
+#
+#interplanetary_portals = {
+#	# Unlocks Urban Centers building
+#	era = era_3
+#	#texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+#	category = society
+#
+#	unlocking_technologies = {
+#		psionic_theory
+#		civilizing_mission
+#	}
+#	
+#	ai_weight = {
+#		value = 1
+#	}
+#}
+#
+#
+#### ERA 4
+#
+#automated_translators = {
+#	# Unlocks Urban Centers building
+#	era = era_4
+#	#texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+#	category = society
+#
+#	unlocking_technologies = {
+#		identification_documents
+#		pan-nationalism	#rare - moment
+#		civilizing_mission
+#	}
+#	
+#	ai_weight = {
+#		value = 1
+#	}
+#}
+
+
+### ERA 5
+#department_stores = {
+#	# Unlocks Urban Centers building
+#	era = era_5
+#	texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+#	category = society
+#
+#	unlocking_technologies = {
+#		elevator	#as it provides direct upgrades
+#	}
+#	
+#	ai_weight = {
+#		value = 1
+#	}
+#}
+#
+#planar_philosophy = {
+#	# Unlocks Urban Centers building
+#	era = era_5
+#	#texture = "gfx/interface/icons/invention_icons/urbanization.dds"
+#	category = society
+#
+#	unlocking_technologies = {
+#		analytical_philosophy	#as it provides direct upgrades
+#	}
+#	
+#	ai_weight = {
+#		value = 1
+#	}
+#}
+

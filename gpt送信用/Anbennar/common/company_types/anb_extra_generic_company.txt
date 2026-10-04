@@ -1,0 +1,230 @@
+﻿company_basic_damestear = {
+	icon = "gfx/interface/icons/company_icons/custom_anb_damestear.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
+	
+	uses_dynamic_naming = yes
+	
+	dynamic_company_type_names = { #same as other mining
+		"dynamic_company_type_company"
+		"dynamic_company_type_consortium"
+		"dynamic_company_type_corporation"
+		"dynamic_company_type_conglomerate"
+		"dynamic_company_type_syndicate"
+		"dynamic_company_type_combine"
+		"dynamic_company_type_guild"
+	}
+	
+	building_types = {
+		building_damestear_mine
+		building_damestear_dives
+	}
+
+	extension_building_types = {
+		building_doodad_artificeries
+	}
+
+	#could get generic prestige damestear to compete with the generic artifice company a bit more ?
+
+	possible = { 
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_damestear_mine
+					is_building_type = building_damestear_dives
+				}
+				level >= 5
+			}
+		}
+	}
+	
+	ai_will_do = { 
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_damestear_mine
+					is_building_type = building_damestear_dives
+				}
+				level >= 5
+			}
+		}
+		# Commented out law restrictions since laws restricting companies is just a vague idea for now, and mage stuff also needs damestear
+		# OR = {
+		# 	has_law = law_type:law_nation_of_artifice
+		# 	has_law = law_type:law_nation_of_green_artifice
+		# 	has_law = law_type:law_traditional_magic_banned
+		# }
+	}	
+
+	prosperity_modifier = {
+		building_doodad_artificeries_throughput_add = 0.1
+	}
+}
+
+#Reflavored as an alchemy industry since mage towers aren't the main building anymore
+company_basic_alchemy = {
+	icon = "gfx/interface/icons/company_icons/custom_anb_alchemy.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+	
+	uses_dynamic_naming = yes
+	
+	dynamic_company_type_names = {	#same as basic industry companies (like paper) + added guild
+		"dynamic_company_type_company"
+		"dynamic_company_type_consortium"
+		"dynamic_company_type_corporation"
+		"dynamic_company_type_conglomerate"
+		"dynamic_company_type_syndicate"
+		"dynamic_company_type_combine"
+		"dynamic_company_type_guild"
+	}
+	
+	building_types = {
+		building_magical_reagents_workshop
+		building_dungeons_quarantined
+	}
+
+	extension_building_types = {
+		building_mage_tower
+		building_gem_mine
+	}
+
+	possible = { 
+		any_scope_state = {
+			any_scope_building = {
+				is_building_type = building_magical_reagents_workshop
+				level >= 5
+			}
+		}
+	}
+	
+	ai_will_do = { 
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_magical_reagents_workshop
+				}
+				level >= 5
+			}
+		}
+		# Commented out law restrictions since laws restricting companies is just a vague idea for now, and artificer stuff also needs reagents
+		#has_law = law_type:law_nation_of_magic
+	}	
+
+	prosperity_modifier = {
+		country_magical_expertise_mult = 0.25
+	}	
+}
+
+company_basic_relics = {
+	icon = "gfx/interface/icons/company_icons/basic_gold_mining.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
+	
+	uses_dynamic_naming = yes
+	
+	dynamic_company_type_names = {	#same as oil/gold
+		"dynamic_company_type_company"
+		"dynamic_company_type_consortium"
+		"dynamic_company_type_corporation"
+		"dynamic_company_type_conglomerate"
+		"dynamic_company_type_syndicate"
+		"dynamic_company_type_combine"
+	}
+	
+	building_types = {
+		building_relics_digsite
+	}
+
+	extension_building_types = {
+		building_mage_tower
+		building_doodad_artificeries
+	}
+	
+	possible_prestige_goods = {
+		prestige_good_generic_flawless_metal
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_flawless_metal_complete_tt
+			has_variable = prestige_good_generic_flawless_metal_var
+		}
+	}
+
+	possible = { 
+		any_scope_state = {
+			any_scope_building = {
+				is_building_type = building_relics_digsite
+				level >= 5
+			}
+		}
+	}
+	
+	ai_will_do = { 
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_relics_digsite
+				}
+				level >= 5
+			}
+		}
+	}	
+
+	prosperity_modifier = {
+		country_tech_research_speed_mult = 0.05
+	}	
+}
+
+company_basic_artifice = {
+	icon = "gfx/interface/icons/company_icons/basic_electrics.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+	
+	uses_dynamic_naming = yes
+	
+	dynamic_company_type_names = {	#same as manufacturing
+		"dynamic_company_type_company"
+		"dynamic_company_type_consortium"
+		"dynamic_company_type_corporation"
+		"dynamic_company_type_conglomerate"
+		"dynamic_company_type_syndicate"
+		"dynamic_company_type_combine"
+	}
+	
+	building_types = {
+		building_doodad_artificeries
+	}
+
+	extension_building_types = {
+		building_magical_reagents_workshop
+		building_damestear_mine
+		building_damestear_dives
+	}
+	
+	# add generic prestige doodads ?
+
+	possible = { 
+		any_scope_state = {
+			any_scope_building = {
+				is_building_type = building_doodad_artificeries
+				level >= 5
+			}
+		}
+	}
+	
+	ai_will_do = { 
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_doodad_artificeries
+				}
+				level >= 5
+			}
+		}
+	}	
+
+	prosperity_modifier = {
+		#moved research speed from Phil's proposal to relics as it fit their role perfectly ; made artificers boost automata instead to give them another useful modifier
+		#should boost artificer projects if/when we add that
+		building_automatories_throughput_add = 0.1
+		country_engineers_pol_str_mult = 0.1
+	}	
+}

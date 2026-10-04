@@ -1,0 +1,10 @@
+﻿object={
+	name="lakes"
+	clamp_to_water_level=yes
+	render_under_water=yes
+	generated_content=no
+	layer="static"
+	pdxmesh="lake_mesh"
+	disable_transform_packing=yes #vanilla/anbennar extremely important as lakes won't show up without it. map editor delets it automatically so readd it
+	transform_bin_file="gfx/map/map_object_data/lakes.bin"
+}

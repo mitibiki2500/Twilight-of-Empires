@@ -1,0 +1,76 @@
+﻿# goods types, organized by category
+
+# prestige_factor							Base prestige for occupying the rank MIN_PRESTIGE_AWARD spot on the goods production leaderboard. x2 awarded for every rank above the minimum.
+
+damestear = {
+	texture = "gfx/interface/icons/goods_icons/damestearnew.dds"
+	cost = 40
+	category = industrial
+	
+	prestige_factor = 5
+    traded_quantity = 5 # 200
+}
+
+artificery_doodads = {
+	texture = "gfx/interface/icons/goods_icons/artificery_doodads.dds"
+	cost = 50
+	category = industrial
+	obsession_chance = 1.0
+	prestige_factor = 7
+    traded_quantity = 4 # 200
+	
+	consumption_tax_cost = 200
+}
+
+magical_reagents = {
+	texture = "gfx/interface/icons/goods_icons/magical_reagents.dds"
+	cost = 30
+	category = staple
+	
+	prestige_factor = 4
+    traded_quantity = 10 # 200
+}
+
+flawless_metal = {
+	texture = "gfx/interface/icons/goods_icons/flawless_metal.dds"
+	cost = 60 # mithril was already like this
+	category = industrial
+	
+	prestige_factor = 10
+    traded_quantity = 4 # 240
+	convoy_cost_multiplier = 0.75	#its light
+}
+
+automata = {
+	texture = "gfx/interface/icons/goods_icons/automata.dds"
+	cost = 70
+	category = industrial
+	
+	obsession_chance = 1.0
+	prestige_factor = 7
+    traded_quantity = 3.5 # 210
+	
+	consumption_tax_cost = 200
+}
+
+# hexcraft = {
+# 	texture = "gfx/interface/icons/goods_icons/hexcraft.dds"
+# 	cost = 30
+# 	category = staple
+# 	local = yes
+	
+# 	prestige_factor = 3
+	
+# 	consumption_tax_cost = 200
+# }
+
+arcane_curios = {
+	texture = "gfx/interface/icons/goods_icons/relics.dds"
+	cost = 60
+	category = luxury
+	
+	prestige_factor = 8
+    traded_quantity = 4 # 240
+	
+	consumption_tax_cost = 100
+}

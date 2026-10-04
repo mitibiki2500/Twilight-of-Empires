@@ -1,0 +1,306 @@
+﻿namespace = anb_ardimya
+
+#Starting Navy Event
+anb_ardimya.001 = {
+    type = country_event
+    placement = root
+
+    title = anb_ardimya.001.t  
+    desc = anb_ardimya.001.d  
+    flavor = anb_ardimya.001.f  
+
+    event_image = {
+        video = "unspecific_naval_battle"
+    }
+
+    icon = "gfx/interface/icons/goods_icons/man_o_wars.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    immediate = {
+        c:A09 = {
+            save_scope_as = busilar_loc_desc
+        }
+    }
+
+    option = {
+        name = anb_ardimya.001.a
+        default_option = yes
+        custom_tooltip = {
+            text = ardimya_navy_objective_desc
+        }
+    }
+}
+
+#Completion Navy Event
+anb_ardimya.002 = {
+    type = country_event
+    placement = root
+
+    title = anb_ardimya.002.t  
+    desc = anb_ardimya.002.d  
+    flavor = anb_ardimya.002.f  
+
+    event_image = {
+        video = "unspecific_steam_ship"
+    }
+
+    icon = "gfx/interface/icons/goods_icons/man_o_wars.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = anb_ardimya.002.a
+        default_option = yes
+        add_modifier = { 
+            name = ardimya_navy_completion
+            years = 20
+        }
+        #Admirals Gain Popularity
+        random_scope_admiral = {
+            add_modifier = {
+                name = ardimya_admiral_succeed
+                years = 10
+            }
+        }
+    }
+}
+
+#Failure Navy Event
+anb_ardimya.003 = {
+    type = country_event
+    placement = root
+
+    title = anb_ardimya.003.t  
+    desc = anb_ardimya.003.d  
+    flavor = anb_ardimya.003.f  
+
+    event_image = {
+        video = "unspecific_naval_battle"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = anb_ardimya.003.a
+        default_option = yes
+        add_modifier = {
+            name = ardimya_navy_failure
+            years = 20
+        }
+        #Admirals lose Popularity
+        random_scope_admiral = {
+            add_modifier = {
+                name = ardimya_admiral_fail
+                years = 10
+            }
+        }
+    }
+}
+
+#Timeout Navy Event
+anb_ardimya.004 = {
+    type = country_event
+    placement = root
+
+    title = anb_ardimya.004.t  
+    desc = anb_ardimya.004.d  
+    flavor = anb_ardimya.004.f  
+
+    event_image = {
+        video = "unspecific_naval_battle"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = anb_ardimya.004.a
+        default_option = yes
+        add_modifier = {
+            name = ardimya_navy_timeout
+            years = 20
+        }
+        #Admirals lose Popularity
+        random_scope_admiral = {
+            add_modifier = {
+                name = ardimya_admiral_fail
+                years = 10
+            }
+        }
+    }
+}
+
+#The Busilari Threat
+anb_ardimya.005 = {
+    type = country_event
+    placement = root
+
+    title = anb_ardimya.005.t  
+    desc = anb_ardimya.005.d  
+    flavor = anb_ardimya.005.f  
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        NOT = {
+            has_variable = ardimya_busilar_cooldown_var
+        }
+    }
+
+    immediate = {
+        set_variable = {
+            name = ardimya_busilar_cooldown_var
+            years = 4
+        }
+    }
+
+    option = {
+        name = anb_ardimya.005.a
+        default_option = yes
+        add_journal_entry = { type = je_ardimya_navy_demand }
+    }
+
+    option = {
+        name = anb_ardimya.005.b
+        add_modifier = {
+            name = ardimya_demand_no
+            years = 2
+        }
+        add_radicals = {
+            value = medium_radicals
+            interest_group = ig:ig_armed_forces
+        }
+    }
+}
+
+#[Admiral] Pushes for Naval Advancement
+anb_ardimya.006 = {
+    type = country_event
+    placement = root
+
+    title = anb_ardimya.006.t  
+    desc = anb_ardimya.006.d  
+    flavor = anb_ardimya.006.f  
+
+    event_image = {
+        video = "unspecific_gears_pistons" 
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        NOT = {
+            has_variable = ardimya_tech_event_cooldown_var
+        }
+    }
+
+    immediate = {
+        set_variable = {
+            name = ardimya_tech_event_cooldown_var
+            years = 3
+        }
+    }
+
+    option = { #Invest
+        name = anb_ardimya.006.a
+        default_option = yes
+        #Add weekly expenses for 2 years and Armed Forces Gain Approval
+        add_modifier = {
+            name = ardimya_navy_investment
+            years = 2
+        }
+        #Admiral gains popularity
+        random_scope_admiral = {
+            add_modifier = {
+                name = ardimya_navy_invest_advice_listened
+                years = 2
+            }
+        }
+        #Add some tech progress
+        if = {
+            limit = {
+                NOT = {
+                    has_technology_researched = hydraulic_cranes
+                }
+            }
+            add_technology_progress = { progress = 500 technology = hydraulic_cranes }
+        }
+        else_if = {
+            limit = {
+                NOT = {
+                    has_technology_researched = screw_frigate
+                }
+            }
+            add_technology_progress = { progress = 500 technology = screw_frigate }
+        }
+        else_if = {
+            limit = {
+                NOT = {
+                    has_technology_researched = power_of_the_purse
+                }
+            }
+            add_technology_progress = { progress = 500 technology = power_of_the_purse }
+        }
+        else_if = {
+            limit = {
+                NOT = {
+                    has_technology_researched = ironclad_tech
+                }
+            }
+            add_technology_progress = { progress = 500 technology = ironclad_tech }
+        }
+        else_if = {
+            limit = {
+                NOT = {
+                    has_technology_researched = gantry_cranes
+                }
+            }
+            add_technology_progress = { progress = 500 technology = gantry_cranes }
+        }
+        else = {
+            add_technology_progress = { progress = 500 technology = jeune_ecole }
+        }
+    }
+
+    option = { #Do not Invest
+        name = anb_ardimya.006.b
+        default_option = yes
+        #Armed Forces Lose Approval
+        add_modifier = {
+            name = ardimya_navy_no_investment
+            years = 2
+        }
+        #Admiral Loses Popularity
+        random_scope_admiral = {
+            add_modifier = {
+                name = ardimya_navy_invest_advice_ignored
+                years = 2
+            }
+        }
+    }
+}
+

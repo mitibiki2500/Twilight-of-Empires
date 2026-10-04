@@ -1,0 +1,34 @@
+﻿CHARACTERS = {
+	c:C11 ?= {
+		create_character = {
+			# Surname means "wise warrior". Friend of Jun Malas and knew his father Iddien Malas. Maintained Teqreq's autonomy in the new Amadia, and bound the tribes of the plateau together
+			first_name = Telanco
+			last_name = Chaparlach
+			historical = yes
+			ruler = yes
+			age = 86
+			interest_group = ig_landowners
+			ideology = ideology_moderate
+			#dna = dna_munathik_mlerek_mudaliar
+			traits = {
+				cautious compliant masterful_diplomat
+			}							
+		}
+		
+		create_character = {
+			# The eldest (surviving) son of Télanco Chapárlach. Unlike his father is very militant and intent on reclaiming Amadian sovereignty. Fought alongside Jun Malas, but clashed with him over the issue of Amadian power/independence
+			first_name = Jahuel
+			last_name = Chaparlach
+			historical = yes
+			heir = yes
+			is_general = yes
+			age = 39
+			interest_group = ig_landowners
+			ideology = ideology_sovereignist_leader
+			#dna = dna_munathik_mlerek_mudaliar
+			traits = {
+				experienced_offensive_planner reckless brave direct
+			}							
+		}
+	}
+}

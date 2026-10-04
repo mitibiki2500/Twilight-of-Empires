@@ -1,0 +1,26 @@
+﻿sus_core_progress_bar = {
+ 	name = "sus_core_progress_bar_name"
+ 	desc = "sus_core_progress_bar_jaddanzar_desc"
+ 	second_desc = "sus_core_progress_bar_nahana_desc"
+
+ 	double_sided_gold = yes
+
+ 	monthly_progress = {
+		if = {
+			limit = {
+				exists = global_var:sus_balance_passive_var
+				NOT = {
+					global_var:sus_balance_passive_var = 0
+				}
+			}
+			add = {
+			   desc = "sus_core_progress_passive_balance"
+			   value = global_var:sus_balance_passive_var
+		    }
+		}
+ 	}
+
+ 	start_value = 100
+ 	min_value = 0
+ 	max_value = 200
+}

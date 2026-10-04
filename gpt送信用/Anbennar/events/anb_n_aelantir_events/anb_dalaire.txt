@@ -1,0 +1,301 @@
+﻿namespace = dalaire
+
+# Dalaire colony absorbs a poorer neighbor
+dalaire.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = dalaire.1.t
+	desc = dalaire.1.d
+	flavor = dalaire.1.f
+
+	event_image = {
+		video = "ep1_transfer_of_authority"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		random_neighbouring_state = {
+			limit = {
+				owner = {
+					is_ai = yes
+					relations:root >= relations_threshold:amicable
+					OR = {
+						country_has_primary_culture = cu:dalairey
+						country_has_primary_culture = cu:vrendzani_kobold
+						country_has_primary_culture = cu:themarian
+						country_has_primary_culture = cu:teira
+						country_has_primary_culture = cu:glacier_gnome
+					}
+					is_subject = yes
+					NOT = { THIS = ROOT }
+					top_overlord = {
+						THIS = root.top_overlord
+					}
+					this.gdp < root.gdp
+				}
+			}
+			owner = { save_scope_as = dalaire_annex_scope }
+		}
+		top_overlord = {
+			save_scope_as = dalaire_overlord_country
+			ruler = {
+				save_scope_as = dalaire_overlord_ruler
+			}
+		}
+	}
+
+	option = {
+		name = dalaire.1.a
+		default_option = yes
+		hidden_effect = {	#TODO: check why claim transfer doesn't happen sometimes
+			every_state = {
+				limit = {
+					has_claim_by = scope:dalaire_annex_scope
+				}
+				state_region = {
+					remove_claim = scope:dalaire_annex_scope
+					add_claim = ROOT
+				}
+			}
+		}
+		annex_with_incorporation = scope:dalaire_annex_scope
+	}
+}
+
+# GH consolidates two colonies
+dalaire.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = dalaire.2.t
+	desc = dalaire.2.d
+	flavor = dalaire.1.f
+
+	event_image = {
+		video = "ep1_power_blocs"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		random_subject_or_below = {
+			limit = {
+				OR = {
+					country_has_primary_culture = cu:dalairey
+					country_has_primary_culture = cu:vrendzani_kobold
+					country_has_primary_culture = cu:themarian
+					country_has_primary_culture = cu:teira
+					country_has_primary_culture = cu:glacier_gnome
+				}
+				relations:root >= relations_threshold:amicable
+				is_ai = yes
+			}
+			save_scope_as = dalaire_scope_1
+		}
+		random_subject_or_below = {
+			limit = {
+				OR = {
+					country_has_primary_culture = cu:dalairey
+					country_has_primary_culture = cu:vrendzani_kobold
+					country_has_primary_culture = cu:themarian
+					country_has_primary_culture = cu:teira
+					country_has_primary_culture = cu:glacier_gnome
+				}
+				relations:root >= relations_threshold:amicable
+				is_ai = yes
+				NOT = {
+					scope:dalaire_scope_1 = THIS
+				}
+			}
+			save_scope_as = dalaire_scope_2
+		}
+	}
+
+	option = {
+		name = dalaire.2.a
+		default_option = yes
+		if = {
+			limit = {
+				scope:dalaire_scope_1.gdp > scope:dalaire_scope_2.gdp
+			}
+			hidden_effect = {
+				every_state = {
+					limit = {
+						has_claim_by = scope:dalaire_scope_2
+					}
+					state_region = {
+						remove_claim = scope:dalaire_scope_2
+						add_claim = scope:dalaire_scope_1
+					}
+				}
+			}
+			scope:dalaire_scope_1 = {
+				annex_with_incorporation = scope:dalaire_scope_2
+			}
+		}
+		else = {
+			hidden_effect = {
+				every_state = {
+					limit = {
+						has_claim_by = scope:dalaire_scope_1
+					}
+					state_region = {
+						remove_claim = scope:dalaire_scope_1
+						add_claim = scope:dalaire_scope_2
+					}
+				}
+			}
+			scope:dalaire_scope_2 = {
+				annex_with_incorporation = scope:dalaire_scope_1
+			}
+		}
+	}
+}
+
+# Dalaire unification complete event for locals
+dalaire.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = dalaire.3.t
+	desc = dalaire.3.d
+	flavor = dalaire.3.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		top_overlord = {
+			save_scope_as = dalaire_overlord_country
+		}
+		owner = {
+			save_scope_as = former
+		}
+	}
+
+	option = {
+		name = dalaire.3.a
+		add_modifier = {
+			name = dal_unified_dalaire
+			days = normal_modifier_time
+		}
+		if = {
+			limit = {
+				AND = {
+					NOT = { is_subject_type = subject_type_dominion }
+					is_country_type = colonial
+				}
+			}
+			change_subject_type = subject_type_dominion
+		}
+		else_if = {
+			limit = {
+				AND = {
+					NOT = { is_subject_type = subject_type_dominion }
+					is_country_type = recognized
+				}
+			}
+			hidden_effect = { set_country_type = colonial }
+			change_subject_type = subject_type_dominion
+		}
+		s:STATE_DALAIREY_WASTES = { add_claim = ROOT }	#if the locals do it they'll ask for control of the Wastes as part of their natural borders
+	}
+}
+
+# Dalaire unification complete event for Overlord
+dalaire.4 = {
+	type = country_event
+	placement = ROOT
+
+	title = dalaire.3.t
+	desc = dalaire.4.d
+	flavor = dalaire.3.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		random_subject_or_below = {
+			limit = {
+				OR = {
+					country_has_primary_culture = cu:dalairey
+					country_has_primary_culture = cu:vrendzani_kobold
+					country_has_primary_culture = cu:themarian
+					country_has_primary_culture = cu:teira
+				}
+				any_scope_state = {
+					OR = {
+						state_region = s:STATE_HJORDAL
+						state_region = s:STATE_FLOTTNORD
+						state_region = s:STATE_DALAIRRSILD
+						state_region = s:STATE_NYHOFN
+						state_region = s:STATE_SJAVARRUST
+						state_region = s:STATE_TRITHEMAR
+						state_region = s:STATE_SILDARBAD
+						state_region = s:STATE_FARNOR
+					}
+					count >= 6
+				}
+			}
+			save_scope_as = dalaire_country
+		}
+	}
+
+	option = {
+		name = dalaire.4.a
+		add_modifier = {
+			name = gh_unified_dalaire
+			days = normal_modifier_time
+		}
+		if = {
+			limit = {
+				scope:dalaire_country = {
+					NOT = { 
+						has_technology_researched = nationalism
+						is_country_type = colonial
+					}
+				}
+			}
+			scope:dalaire_country = {
+				hidden_effect = { set_country_type = colonial }
+				change_subject_type = subject_type_dominion
+			}
+		}
+	}
+}

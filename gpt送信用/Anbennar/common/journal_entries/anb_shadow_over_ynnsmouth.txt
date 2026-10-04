@@ -1,0 +1,35 @@
+﻿# je_shadow_over_ynnsmouth = {
+# 	group = je_group_internal_affairs
+# 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+# 	complete = {
+# 		always = no # This manages adventurers wanted so should never go away
+# 	}
+
+# 	immediate = {
+# 		# Setup racial flags
+# 		if = {
+# 			limit = { 
+# 				NOT = {
+# 					has_global_variable = setup_racial_global
+# 				}
+# 			}
+# 			set_global_variable = setup_racial_global
+
+# 			every_country = {
+# 				setup_racial_flags = yes
+# 			}
+# 		}
+		
+# 	}
+
+# 	#on_weekly_pulse = {
+# 	#	effect = {
+# 	#		every_scope_state = {
+# 	#			trigger_event = { id = anb_adventurers_wanted.2 }
+# 	#		}
+# 	#	}
+# 	#}
+
+# 	should_be_pinned_by_default_uninvolved_or_context = no
+# }

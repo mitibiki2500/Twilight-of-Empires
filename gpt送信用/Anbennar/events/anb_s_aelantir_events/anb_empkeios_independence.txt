@@ -1,0 +1,84 @@
+﻿namespace = empkeios
+
+empkeios.1 = {
+    type = country_event
+    placement = ROOT
+
+    title = empkeios.1.t
+    desc = empkeios.1.d
+    flavor = {
+        triggered_desc = {
+            trigger = { is_subject = yes }
+            desc = empkeios.1.fs
+        }
+        triggered_desc = {
+            trigger = { is_subject = no }
+            desc = empkeios.1.ff
+        }
+    }
+
+    event_image = {
+        video = "ep1_transfer_of_authority"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+    trigger = {
+        c:C32 ?= ROOT
+        NOT = {  
+            ROOT = { is_subject_of = c:B05 } 
+        }  
+        NOT = { has_variable = empkeios_free }
+    }
+
+    immediate = {
+        top_overlord = {
+			save_scope_as = empkeios_benefactor
+		}
+        set_variable = empkeios_free
+    }
+
+    option = {
+        name = empkeios.1.a
+        default_option = yes
+        change_tag = C71
+        
+        if = {
+            limit = { is_subject = yes }
+            if = {
+                limit = { 
+                    scope:empkeios_benefactor = { is_country_type = recognized }
+                }
+                # If overlord is recognized, become puppet
+                change_subject_type = subject_type_puppet
+            }
+            else = {
+                # If overlord is unrecognized, become vassal
+                change_subject_type = subject_type_vassal
+            }
+        }
+        hidden_effect = {
+            set_country_type = unrecognized
+            create_character = {
+                culture = cu:devabhen
+                ruler = yes
+            }
+        }
+        custom_tooltip = empkeios.1.tt2
+        if  = {
+            limit = { is_subject = no }
+            add_modifier = {
+                name = empkeios_independence_modifier
+                months = 60
+            }
+            add_loyalists = {
+                culture = cu:devabhen
+                value = 0.2
+            }
+        }
+    }
+}

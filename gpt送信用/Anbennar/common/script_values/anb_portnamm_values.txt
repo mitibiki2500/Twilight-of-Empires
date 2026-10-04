@@ -1,0 +1,139 @@
+﻿
+portnamm_extracted_wealth_script_value = {
+	every_country = {
+		limit = { this != root }
+		if = {
+			limit = { "this.gdp_ownership_ratio(root)" > 0 }
+			add = this.portnamm_one_foreign_gdp_helper_script_value
+		}
+	}
+	divide = 2000000
+}
+
+portnamm_one_foreign_gdp_helper_script_value = {
+	add = "gdp_ownership_ratio(root)"
+	multiply = gdp
+}
+
+
+# control level is percentage of gdp controlled, but with penalty if total amount < 50M, used by JE5
+level_of_control_by_portnamm_script_value = {
+	add = "gdp_ownership_ratio(root)"
+	multiply = controlled_gdp_size_scale_script_value
+}
+
+
+# A multiplier, (portnamm countrolled gdp in this country)/50M, with maximum 1, used by JE5
+controlled_gdp_size_scale_script_value = {
+	add = "gdp_ownership_ratio(root)"
+	multiply = gdp
+	divide = 50000000
+	max = 1
+}
+
+
+# JE5: Throughput penalty based on percentage of population being upper class
+portnamm_je5_throughput_penalty_script_value = {
+
+	# TODO: It definitely shouldn't be coded like this, 
+	# but neither of these two approaches of phrasing value triggers inline work: 
+	# value = "this.pop_type_percent_country(capitalists)"
+	# value = pop_type_percent_country:capitalists
+	# although they usually work for triggers like this
+	# Suspect it's pdx issue, they forget to add inline escape for pop_type_percent_country
+	# And I can not find another trigger to do the same thing
+	# fix this if you know how. -- @1onepower
+
+	if = {
+		limit = {
+			pop_type_percent_country = {
+				pop_type = capitalists
+				percent >= 0.05
+			}
+		}
+		min = 0.05
+	}
+	if = {
+		limit = {
+			pop_type_percent_country = {
+				pop_type = capitalists
+				percent >= 0.1
+			}
+		}
+		min = 0.1
+	}
+	if = {
+		limit = {
+			pop_type_percent_country = {
+				pop_type = capitalists
+				percent >= 0.15
+			}
+		}
+		min = 0.15
+	}
+	if = {
+		limit = {
+			pop_type_percent_country = {
+				pop_type = capitalists
+				percent >= 0.2
+			}
+		}
+		min = 0.2
+	}
+	if = {
+		limit = {
+			pop_type_percent_country = {
+				pop_type = capitalists
+				percent >= 0.25
+			}
+		}
+		min = 0.25
+	}
+	if = {
+		limit = {
+			pop_type_percent_country = {
+				pop_type = capitalists
+				percent >= 0.3
+			}
+		}
+		min = 0.3
+	}
+	if = {
+		limit = {
+			pop_type_percent_country = {
+				pop_type = capitalists
+				percent >= 0.35
+			}
+		}
+		min = 0.35
+	}
+	if = {
+		limit = {
+			pop_type_percent_country = {
+				pop_type = capitalists
+				percent >= 0.4
+			}
+		}
+		min = 0.4
+	}
+	if = {
+		limit = {
+			pop_type_percent_country = {
+				pop_type = capitalists
+				percent >= 0.45
+			}
+		}
+		min = 0.45
+	}
+	if = {
+		limit = {
+			pop_type_percent_country = {
+				pop_type = capitalists
+				percent >= 0.5
+			}
+		}
+		min = 0.5
+	}
+
+	#max = 0.5
+}

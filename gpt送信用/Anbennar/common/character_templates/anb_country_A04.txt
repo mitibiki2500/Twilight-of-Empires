@@ -1,0 +1,248 @@
+﻿### Northern League character template file ###
+
+A04_Andrew_Thornham = {
+	first_name = Andrew
+	last_name = Thornham
+	historical = yes
+	# age = 53
+	birth_date = 1767.1.1
+	culture = cu:gawedi
+	interest_group = ig_industrialists
+	ruler = yes
+	ideology = ideology_market_liberal
+	traits = {
+		direct
+		wrathful
+	}
+}
+
+A04_Tomac_Woodswall = {
+	first_name = Tomac
+	last_name = Woodswall
+	historical = yes
+	# age = 64
+	birth_date = 1756.1.1
+	culture = cu:blue_reachman
+	interest_group = ig_rural_folk
+	is_general = yes
+	ig_leader = yes
+	ideology = ideology_luddite
+	traits = {
+		inspirational_orator
+		brave
+	}
+	
+	#on_created = { - Unused Var
+	#	set_variable = woodswall_leader_var
+	#}
+}
+
+A04_Athela_Drakesford = {
+	first_name = Athela
+	last_name = Drakesford
+	historical = yes
+	female = yes
+	# age = 28
+	birth_date = 1792.1.1
+	interest_group = ig_industrialists
+	ig_leader = yes
+	ideology = ideology_jingoist_leader
+	traits = {
+		innovative
+	}
+}
+
+A04_Garret_Adshaw = {
+	first_name = Garret
+	last_name = Adshaw
+	historical = yes
+	# age = 37
+	birth_date = 1783.1.1
+	interest_group = ig_intelligentsia
+	ig_leader = yes
+	ideology = ideology_republican_leader
+	traits = {
+		expensive_tastes
+	}
+}
+
+A04_Stovan_Norleigh = {
+	first_name = Stovan
+	last_name = Norleigh
+	historical = yes
+	# age = 44
+	birth_date = 1776.1.1
+	interest_group = ig_landowners
+	ig_leader = yes
+	ideology = ideology_authoritarian #Racial Purist got removed
+	traits = {
+		cruel
+	}
+}
+
+A04_Ulric_Stoneberry = {
+	first_name = Ulric
+	last_name = Stoneberry
+	historical = yes
+	culture = cu:vertesker
+	# age = 31
+	birth_date = 1789.1.1
+	interest_group = ig_devout
+	ig_leader = yes
+	ideology = ideology_republican_leader
+	traits = {
+		charismatic
+	}
+}
+
+A04_Brandon_Jonsway = {
+	#Guy who pushes for the attack on Anbennar
+	first_name = Brandon
+	last_name = Jonsway
+	historical = yes
+	# age = 50
+	birth_date = 1770.1.1
+	interest_group = ig_armed_forces
+	ig_leader = yes
+	ideology = ideology_jingoist_leader
+	traits = {
+		alcoholic
+		bigoted
+	}
+}
+
+A04_Randolph_Balgard = {
+	#Commander in charge of Vertesk
+	first_name = Randolph
+	last_name = Balgard
+	historical = yes
+	# age = 48
+	birth_date = 1772.1.1
+	interest_group = ig_industrialists
+	is_general = yes
+	ideology = ideology_moderate
+	traits = {
+		basic_defensive_strategist
+		cautious
+		scarred
+	}
+}
+
+A04_Welyam_Newport = { 
+	#Reachman Commander, would only have been 19 during the War of Blackpowder as the previous commander dies assaulting the Anb position on the Alen
+	first_name = "Welyam"
+	last_name = "Newport"
+	historical = yes
+	culture = cu:blue_reachman
+	# age = 38
+	birth_date = 1782.1.1
+	interest_group = ig_armed_forces
+	is_general = yes
+	ideology = ideology_republican_leader # He's from Celmaldor
+	traits = {
+		plains_commander
+		ambitious
+	}
+}
+
+A04_Godric_Oxenham = { 
+	#Leader of the initial push
+	first_name = "Godric"
+	last_name = "Oxenham"
+	historical = yes
+	# age = 64
+	birth_date = 1756.1.1
+	interest_group = ig_armed_forces
+	is_general = yes
+	ideology = ideology_jingoist_leader
+	traits = {
+		resupply_commander
+		meticulous
+	}
+}
+
+A04_Marcan_Alencay = { 
+	#Reachman Commander, lead the volunteer
+	first_name = "Marcan"
+	last_name = "Alencay"
+	historical = yes
+	culture = cu:blue_reachman
+	# age = 52
+	birth_date = 1768.1.1
+	interest_group = ig_trade_unions
+	is_general = yes
+	ideology = ideology_radical
+	traits = {
+		basic_offensive_planner
+		direct
+	}
+}
+
+#Commanders
+A04_randolph_balgard = {
+	#Commander in charge of Vertesk
+	first_name = Randolph
+	last_name = Balgard
+	historical = yes
+	age = 48
+	interest_group = ig_industrialists
+	is_general = yes
+	ideology = ideology_moderate
+	traits = {
+		basic_defensive_strategist
+		cautious
+		scarred
+	}
+}
+
+#Generated during the game
+
+A04_oswald_brasslance = {
+	#General from a former noble family who goes rogue and tries to coup the League
+	first_name = Oswald
+	last_name = Brasslance
+	historical = yes
+	birth_date = 1789.4.16
+	interest_group = ig_armed_forces
+	is_general = yes
+	ideology = ideology_royalist
+	traits = {
+		ambitious brave scarred pillager
+	}
+	on_created = {
+		set_variable = {
+			name = brasslance_victories_counter
+			value = 0
+		}
+	}
+}
+
+A04_rangvald_mimirsson = {
+	first_name = Rangvald
+	last_name = Mimirsson
+	culture = cu:dalr
+	religion = rel:skaldhyrric_faith
+	historical = yes
+	birth_date = 1782.11.4
+	interest_group = ig_rural_folk
+	is_agitator = yes
+	ideology = ideology_traditionalist_minoritarian		#could be sovereignist, but he should focus on religion over culture I imagine
+	traits = {
+		literary inspirational_orator pious
+	}
+}
+
+A04_olaf_ansson = {
+	first_name = Olaf
+	last_name = Ansson
+	culture = cu:dalr
+	religion = rel:atheist
+	historical = yes
+	birth_date = 1803.2.05
+	interest_group = ig_petty_bourgeoisie
+	is_agitator = yes
+	ideology = ideology_nihilist
+	traits = {
+		direct wrathful honorable
+	}
+}

@@ -1,0 +1,275 @@
+﻿namespace = obsidian_invasions
+
+
+#third invasion reinforcements
+obsidian_invasions.1 = {
+	type = country_event
+	placement = root
+	
+	title = obsidian_invasions.1.t
+	desc =  obsidian_invasions.1.d
+	flavor = obsidian_invasions.1.f
+	
+	event_image = {
+		video = "unspecific_devastation"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 3
+	
+	immediate = {
+		owner = {
+			create_character = {
+				# Morzad Blackbarrel
+				template = D15_Morzad_Blackbarrel
+				save_scope_as = herud
+			}
+		}
+	}
+
+	option = { 
+		name = obsidian_invasions.1.a
+		default_option = yes
+
+				      add_modifier = {
+			   name = rapid_deployment
+			   months = 1
+                      }
+
+		s:STATE_VERKAL_SKOMDIHR = {
+			region_state:D15 = {
+				create_pop = {
+					culture = obsidian_dwarf
+					size = 1000000
+				}
+				create_pop = {
+					pop_type = slaves
+					culture = cave_minotaur
+					size = 200000
+				}
+			}
+		}
+
+		s:STATE_ARGROD = {
+			region_state:D15 = {
+				create_pop = {
+					pop_type = officers
+					culture = obsidian_dwarf
+					size = 100000
+				}
+				create_pop = {
+					pop_type = soldiers
+					culture = obsidian_dwarf
+					size = 600000
+				}
+				#hidden_effect = {
+				#	random_scope_building = {
+				#		limit = { is_building_type = building_barrack }
+				#		add_modifier = {
+				#			name = obsidian_invasion_barracks_training
+				#			weeks = 13
+				#		}
+				#	}
+				#}
+			}
+		}
+		custom_tooltip = obsidian_invasions.1.tooltip
+		hidden_effect = {
+			create_military_formation = {
+				type = army
+				hq_region = sr:region_serpentreach
+				name = "The Third Legion"
+	
+				combat_unit = {
+					type = unit_type:combat_unit_type_line_infantry
+					state_region = s:STATE_ARGROD
+					count = 35
+				}
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_line_infantry
+					service_type = conscript
+					state_region = s:STATE_VERKAL_SKOMDIHR
+					count = 25
+				}
+
+				combat_unit = {
+					type = unit_type:combat_unit_type_line_infantry
+					service_type = conscript
+					state_region = s:STATE_ARGROD
+					count = 15
+				}
+	
+				combat_unit = {
+					type = unit_type:combat_unit_type_mobile_artillery
+					state_region = s:STATE_ARGROD
+					count = 25
+				}
+				save_scope_as = obsidian_reinforcements
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = legion_commander_1
+			}
+			create_character = {
+				is_general = yes
+				commander_rank = commander_rank_1
+				save_scope_as = legion_commander_2
+			}
+		}
+		scope:herud = { set_character_as_ruler = yes add_character_role = general add_commander_rank = 4 }
+	}
+	after = {
+		scope:herud = { transfer_to_formation = scope:obsidian_reinforcements }
+		scope:legion_commander_1 = { transfer_to_formation = scope:obsidian_reinforcements }
+		scope:legion_commander_2 = { transfer_to_formation = scope:obsidian_reinforcements }
+		scope:obsidian_reinforcements = { add_organization = 95 }
+	}
+}
+
+#third invasion post-war support
+
+obsidian_invasions.3 = {
+	type = country_event
+	placement = root
+	
+	title = obsidian_invasions.3.t
+	desc =  obsidian_invasions.3.d
+	flavor = obsidian_invasions.3.f
+	
+	event_image = {
+		video = "unspecific_devastation"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 3
+
+	option = { 
+		name = obsidian_invasions.3.a
+		default_option = yes
+
+				      add_modifier = {
+			   name = legion_post_support
+			   months = 1
+                      }
+
+		s:STATE_OVDAL_LODHUM = {
+			region_state:D15 = {
+				kill_population_percent_in_state = {
+					percent = 0.5
+					culture = cu:diamond_dwarf # garnet_dwarf
+				}
+				# kill_population_percent_in_state = {
+				# 	percent = 0.5
+				# 	culture = cu:flint_dwarf
+				# }
+				create_pop = {
+					culture = obsidian_dwarf
+					size = 1100000
+				}
+				create_pop = {
+					pop_type = slaves
+					culture = cave_minotaur
+					size = 400000
+				}
+			}
+		}
+
+		s:STATE_ARGROD = {
+			region_state:D15 = {
+					kill_population_percent_in_state = {
+				percent = 1
+				culture = cu:diamond_dwarf # garnet_dwarf
+			}
+			kill_population_percent_in_state = {
+				percent = 1
+				culture = cu:straggler_goblin
+			}
+				create_pop = {
+					culture = obsidian_dwarf
+					size = 350000
+				}
+				create_pop = {
+					pop_type = slaves
+					culture = cave_minotaur
+					size = 200000
+				}
+			}
+		}
+		custom_tooltip = obsidian_invasions.3.tooltip
+	}
+}
+
+#third invasion complete
+obsidian_invasions.2 = {
+	type = country_event
+	placement = root
+	
+	title = obsidian_invasions.2.t
+	desc =  obsidian_invasions.2.d
+	flavor = obsidian_invasions.2.f
+	
+	event_image = {
+		video = "unspecific_devastation"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 3
+	
+	option = { 
+		name = obsidian_invasions.2.a
+		default_option = yes
+		
+		s:STATE_VERKAL_SKOMDIHR = {
+			add_homeland = cu:obsidian_dwarf
+			add_homeland = cu:cave_minotaur
+			remove_homeland = cu:diamond_dwarf
+		}
+		s:STATE_ORCSFALL = { 
+			add_homeland = cu:obsidian_dwarf
+		}
+		s:STATE_ARGROD = {
+			add_homeland = cu:obsidian_dwarf
+			add_homeland = cu:cave_minotaur
+			remove_homeland = cu:diamond_dwarf
+		}
+		s:STATE_OVDAL_LODHUM = {
+			add_homeland = cu:obsidian_dwarf
+			add_homeland = cu:cave_minotaur
+			remove_homeland = cu:diamond_dwarf
+		}
+		s:STATE_WINDING_CAVERNS = { 
+			add_homeland = cu:obsidian_dwarf
+		}
+		s:STATE_ARG_ORDSTUN = {
+			add_homeland = cu:obsidian_dwarf
+			remove_homeland = cu:diamond_dwarf
+		}
+		s:STATE_DIAMOND_QUARRY = { 
+			add_homeland = cu:obsidian_dwarf
+			remove_homeland = cu:diamond_dwarf
+		}
+		s:STATE_ARGROD_TERMINUS = {
+			add_homeland = cu:obsidian_dwarf
+			remove_homeland = cu:diamond_dwarf
+		}
+		s:STATE_ORLGHELOVAR = {
+			add_homeland = cu:obsidian_dwarf
+			remove_homeland = cu:diamond_dwarf
+		}
+		s:STATE_SHAZSTUNDIHR = {
+			add_homeland = cu:obsidian_dwarf
+			remove_homeland = cu:diamond_dwarf
+		}
+	}	
+}

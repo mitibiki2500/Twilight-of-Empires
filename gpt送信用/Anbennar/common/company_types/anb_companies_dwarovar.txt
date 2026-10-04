@@ -1,0 +1,885 @@
+﻿#####################
+####Northern Pass####
+#####################
+
+company_icesteel_cartel = {
+	icon = "gfx/interface/icons/company_icons/custom_anb_quartz_icesteel_cartel.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+	category = shopkeeper_owned
+
+	flavored_company = yes
+
+	building_types = {
+		building_iron_mine
+		building_steel_mill
+		building_mage_tower
+	}
+
+	extension_building_types = {
+		building_tooling_workshop
+		building_mithril_mine
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_steel
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_steel_complete_tt
+			has_variable = prestige_good_generic_steel_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_gerudia
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_KRAKDHUMVROR
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = bessemer_process
+		any_scope_state = {
+			state_region = s:STATE_KRAKDHUMVROR
+			any_scope_building = {
+				is_building_type = building_iron_mine
+				level >= 5
+			}
+		}
+		any_scope_state = {
+			state_region = s:STATE_KRAKDHUMVROR
+			any_scope_building = {
+				is_building_type = building_steel_mill
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		unit_army_offense_mult = 0.05
+		country_magical_expertise_mult = 0.1
+	}
+
+	ai_will_do = {
+		has_technology_researched = bessemer_process
+		any_scope_state = {
+			state_region = s:STATE_KRAKDHUMVROR
+		}
+	}
+
+	ai_construction_targets = {
+		building_iron_mine = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_KRAKDHUMVROR
+				is_incorporated = yes
+			}
+		}
+
+		building_steel_mill = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_KRAKDHUMVROR
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 5
+	}
+}
+
+
+#####################
+#####King's Rock#####
+#####################
+
+
+company_vale_terrace = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_wheat.dds"
+
+	category = bureaucrat_owned
+
+	flavored_company = yes
+
+	building_types = {
+		building_wheat_farm
+		building_vineyard
+		building_livestock_ranch
+	}
+
+	extension_building_types = {
+		building_serpentbloom_farm
+		building_mushroom_farm
+		building_food_industry
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_grain
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_grain_complete_tt
+			has_variable = prestige_good_generic_grain_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_west_dwarovar
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_WESTERN_VALE
+			}
+			any_scope_state = {
+				state_region = s:STATE_EASTERN_VALE
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = intensive_agriculture
+		any_scope_state = {
+			state_region = s:STATE_WESTERN_VALE
+			any_scope_building = {
+				is_building_type = building_wheat_farm
+				level >= 5
+			}
+		}
+		any_scope_state = {
+			state_region = s:STATE_EASTERN_VALE
+			any_scope_building = {
+				is_building_type = building_wheat_farm
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_birth_rate_mult = 0.05
+		state_food_security_add = 0.05
+	}
+
+	ai_will_do = {
+		has_technology_researched = intensive_agriculture
+		any_scope_state = {
+			OR = {
+				state_region = s:STATE_WESTERN_VALE
+				state_region = s:STATE_EASTERN_VALE
+			}
+		}
+	}
+
+	ai_construction_targets = {
+		building_wheat_farm = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_WESTERN_VALE
+				is_incorporated = yes
+			}
+		}
+
+		building_wheat_farm = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_EASTERN_VALE
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 5
+	}
+}
+
+
+#####################
+###Mountain Heart####
+#####################
+
+
+company_massive_shaft = {
+	icon = "gfx/interface/icons/company_icons/custom_anb_msddf.dds" 
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
+
+	flavored_company = yes
+
+	building_types = {
+		building_iron_mine
+		building_explosives_factory
+	}
+
+	extension_building_types = {
+		building_mithril_mine
+		building_gem_mine
+		building_coal_mine
+	}
+
+	#doc mentions prestige doodads but this companies now uses explosives so I assume this is not intended anymore. The bonus is already powerful anyway
+
+	potential = {
+		has_interest_marker_in_region = region_west_dwarovar
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_DEAD_CAVERNS
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = elemental_elicitation
+		any_scope_state = {
+			state_region = s:STATE_DEAD_CAVERNS
+			any_scope_building = {
+				is_building_type = building_explosives_factory
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_pollution_reduction_health_mult = 0.1
+		building_group_bg_mining_throughput_add = 0.1
+	}
+
+	ai_will_do = {
+		has_technology_researched = elemental_elicitation
+		any_scope_state = {
+			state_region = s:STATE_DEAD_CAVERNS
+		}
+	}
+
+	ai_construction_targets = {
+		building_explosives_factory = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_DEAD_CAVERNS
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}
+}
+
+
+company_dagrite_railforge = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+	flavored_company = yes
+
+	building_types = {
+		building_motor_industry
+		building_dwarovrod
+	}
+
+	extension_building_types = {
+		building_railway
+		building_power_plant
+		building_steel_mill
+	}
+
+	possible_prestige_goods = {
+		prestige_good_dagrite_railcarts
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_west_dwarovar
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_ER_NATVIR
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_ER_NATVIR
+			any_scope_building = {
+				is_building_type = building_motor_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_infrastructure_mult = 0.05
+		state_harvest_condition_dwarovar_railway_disrepair_impact_mult = -0.5
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_ER_NATVIR
+		}
+	}
+
+	ai_construction_targets = {
+		building_motor_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_ER_NATVIR
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 5
+	}
+}
+
+
+company_sharkbite_solutions = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+	flavored_company = yes
+
+	building_types = {
+		building_arms_industry
+		building_mithril_mine
+	}
+
+	extension_building_types = {
+		building_doodad_artificeries
+		building_munition_plant
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_west_dwarovar
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_MITHRADHUM
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = rifling
+		any_scope_state = {
+			state_region = s:STATE_MITHRADHUM
+			any_scope_building = {
+				is_building_type = building_arms_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_group_bg_dwarovrod_throughput_add = 0.1
+		state_radicalism_increases_violent_hostility_mult = -0.05
+		state_radicalism_increases_cultural_erasure_mult = -0.05
+		state_radicalism_increases_open_prejudice_mult = -0.05
+	}
+
+	ai_will_do = {
+		has_technology_researched = rifling
+		any_scope_state = {
+			state_region = s:STATE_MITHRADHUM
+		}
+	}
+
+	ai_construction_targets = {
+		building_arms_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_MITHRADHUM
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 5
+	}
+}
+
+
+#####################
+####Serpent Reach####
+#####################
+
+company_gromdhal_lapidary = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
+
+	category = shopkeeper_owned
+
+	flavored_company = yes
+
+	building_types = {
+		building_gem_mine
+		building_glassworks
+	}
+
+	extension_building_types = {
+		building_mage_tower	#artisanry with diamonds
+		building_mithril_mine	#lightflare armour
+	}
+
+	#TODO: add prestige reagents (not glass ?)
+
+	potential = {
+		has_interest_marker_in_region = region_serpentreach
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_ARG_ORDSTUN
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_ARG_ORDSTUN
+			any_scope_building = {
+				is_building_type = building_gem_mine
+				level >= 5
+			}
+			any_scope_building = {
+				is_building_type = building_glassworks
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_minting_mult = 0.1
+		country_prestige_mult = 0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_ARG_ORDSTUN
+		}
+	}
+
+	ai_construction_targets = {
+		building_gem_mine = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_ARG_ORDSTUN
+				is_incorporated = yes
+			}
+		}
+
+		building_glassworks = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_ARG_ORDSTUN
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 5
+	}
+}
+
+
+company_buradforge_armories = {
+		icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+	category = bureaucrat_owned
+
+	flavored_company = yes
+
+	building_types = {
+		building_arms_industry
+		building_automotive_industry
+	}
+
+	extension_building_types = {
+		building_artillery_foundry
+		building_munition_plant
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_serpentreach
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_SCALDING_PITS	#doc says it should be Gor Burad but I assume this is intentional
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = watertube_boiler
+		any_scope_state = {
+			state_region = s:STATE_SCALDING_PITS
+			any_scope_building = {
+				is_building_type = building_arms_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_military_goods_cost_mult = -0.1
+		country_military_tech_spread_mult = 0.05
+	}
+
+	ai_will_do = {
+		has_technology_researched = watertube_boiler
+		any_scope_state = {
+			state_region = s:STATE_SCALDING_PITS
+		}
+	}
+
+	ai_construction_targets = {
+		building_arms_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_SCALDING_PITS
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 5
+	}
+}
+
+#####################
+######Segbandal######
+#####################
+
+
+company_vault_magistrates = {
+	icon = "gfx/interface/icons/company_icons/custom_anb_vault_magistrates.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
+
+	category = bureaucrat_owned
+
+	flavored_company = yes
+
+	building_types = {
+		building_gold_mine
+	}
+
+	extension_building_types = {
+		building_lead_mine		#transmute into more gold
+		building_paper_mill	#banking stuff
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_segbandal
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_VERKAL_GULAN
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = currency_standards
+		any_scope_state = {
+			state_region = s:STATE_VERKAL_GULAN
+			any_scope_building = {
+				is_building_type = building_gold_mine
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_legitimacy_base_add = 5
+		building_cash_reserves_mult = 0.15
+	}
+
+	ai_will_do = {
+		has_technology_researched = currency_standards
+		any_scope_state = {
+			state_region = s:STATE_VERKAL_GULAN
+		}
+	}
+
+	ai_construction_targets = {
+		building_gold_mine = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_VERKAL_GULAN
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 5
+	}
+}
+
+
+
+#####################
+####Tree of Stone####
+#####################
+
+
+
+company_mit_mit = { #
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+
+	flavored_company = yes
+
+	building_types = {
+		building_serpentbloom_farm
+		building_opium_plantation
+		building_mushroom_farm
+	}
+
+	extension_building_types = {
+		building_cave_coral
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_opium
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_opium_complete_tt
+			has_variable = prestige_good_generic_opium_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_east_dwarovar
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_AMBER_MINES
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_AMBER_MINES
+			any_scope_building = {
+				is_building_type = building_opium_plantation
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		unit_morale_recovery_mult = 0.1
+		country_loyalists_from_legitimacy_mult = 0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_AMBER_MINES
+		}
+	}
+
+	ai_construction_targets = {
+		building_opium_plantation = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_AMBER_MINES
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 5
+	}
+}
+
+
+#####################
+#####Jade Mines######
+#####################
+
+#####################
+########Other########
+#####################
+
+company_basic_fungiculture = {
+	icon = "gfx/interface/icons/company_icons/custom_anb_fungus.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_rice.dds"
+
+	category = aristocrat_owned
+	
+	uses_dynamic_naming = yes
+	
+	dynamic_company_type_names = {
+		"dynamic_company_type_company"
+		"dynamic_company_type_consortium"
+		"dynamic_company_type_guild"
+		"dynamic_company_type_society"
+		"dynamic_company_type_fellowship"
+	}
+	
+	building_types = {  
+		building_mushroom_farm
+		building_serpentbloom_farm	
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_grain
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_grain_complete_tt
+			has_variable = prestige_good_generic_grain_var
+		}
+	}
+
+	extension_building_types = {
+		building_cave_coral			#honorary mushrooms!
+		building_opium_plantation	#cave mushrooms?
+	}
+
+	possible = { 
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_mushroom_farm
+					is_building_type = building_serpentbloom_farm
+				}
+				level >= 5
+			}
+		}
+	}
+	
+	prosperity_modifier = {
+		state_harvest_condition_veladklufar_swarm_impact_mult = -0.25
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_mushroom_farm
+					is_building_type = building_serpentbloom_farm
+				}
+				level >= 5
+			}
+		}
+	}
+
+}
+
+
+company_strongbellow_shipyard = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_harbor_shipbuilding.dds"
+
+	category = bureaucrat_owned
+
+	flavored_company = yes
+
+	building_types = {
+		building_shipyard
+		building_motor_industry
+	}
+
+	extension_building_types = {
+		building_steel_mill
+		building_port
+	}
+
+	# TODO: decide what prestige good they should have if any. This is a civilian ship but the Sea-Hold mentioned by the doc is very much a military one.
+	# Further note : Magnive, Dwarovar core member and reference for Ovdal Tungr, didn't think it made sense as a good so it shouldn't be there.
+	# possible_prestige_goods = {
+	# 	prestige_good_clyde_built_liners
+	# }
+
+	potential = {
+		has_interest_marker_in_region = region_bulwar_proper
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_OVDAL_TUNGR
+			}
+		}
+	}
+
+	possible = {
+		#added tech restriction based on their lore so that they make steel ships and not wooden ones
+		has_technology_researched = ironclad_tech
+		has_technology_researched = gantry_cranes
+		any_scope_state = {
+			state_region = s:STATE_OVDAL_TUNGR
+			any_scope_building = {
+				is_building_type = building_motor_industry
+				level >=5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_ship_group_supply_ships_construction_efficiency_add = 0.1
+		building_coal_mine_throughput_add = 0.05
+	}
+
+	ai_will_do = {
+		has_technology_researched = ironclad_tech
+		has_technology_researched = gantry_cranes
+		any_scope_state = {
+			state_region = s:STATE_OVDAL_TUNGR
+		}
+	}
+
+	ai_construction_targets = {
+		building_motor_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_OVDAL_TUNGR
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}
+}
+
+

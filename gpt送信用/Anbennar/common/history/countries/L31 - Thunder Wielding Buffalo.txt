@@ -1,0 +1,99 @@
+﻿COUNTRIES = {
+	c:L31 ?= {
+		effect_starting_technology_tier_5_tech = yes
+
+		add_technology_researched = mandatory_service #rebellion
+		add_technology_researched = line_infantry #rebellion
+		add_technology_researched = prospecting #they have gold mines
+		add_technology_researched = democracy
+		add_technology_researched = international_trade
+		
+		effect_starting_politics_traditional = yes
+
+		# Laws
+		activate_law = law_type:law_parliamentary_republic
+		activate_law = law_type:law_landed_voting
+		activate_law = law_type:law_subjecthood
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_peasant_levies
+		activate_law = law_type:law_no_home_affairs
+
+		activate_law = law_type:law_traditionalism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_land_based_taxation
+		activate_law = law_type:law_tenant_farmers
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_no_schools
+		activate_law = law_type:law_charitable_health_system
+
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_no_workers_rights
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_women_own_property
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_closed_borders
+		activate_law = law_type:law_slavery_banned
+
+
+		
+		
+		activate_law = law_type:law_nation_of_magic
+		set_variable = {
+			name = is_matriarchy_var
+			value = yes
+		}
+
+		# Magic
+		add_technology_researched = druidic_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_spellwoven_luxury
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_natures_gift
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 2
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_social_sanctuaries
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 1
+		}
+	}
+}

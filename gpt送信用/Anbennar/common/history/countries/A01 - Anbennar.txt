@@ -1,0 +1,191 @@
+﻿COUNTRIES = {
+	c:A01 ?= {
+		effect_starting_technology_tier_2_tech = yes
+		effect_starting_artificery_tier_2_tech = yes
+		add_technology_researched = tradition_of_equality
+
+		add_technology_researched = mechanical_tools
+		add_technology_researched = corporate_charters
+		
+		#add_taxed_goods = g:
+
+		#Blackpowder Anbennar setup
+		activate_law = law_type:law_parliamentary_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_cultural_exclusion
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_elected_bureaucrats
+		# activate_law = law_type:law_national_militia	#anbennar's first task is to get this reform going
+		activate_law = law_type:law_blackpowder_militia
+		activate_law = law_type:law_national_guard
+
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_free_trade	#enforced by powers so Anbennar keeps open
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_dedicated_police
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_charitable_health_system
+		activate_law = law_type:law_tenant_farmers
+		activate_law = law_type:law_anti_strike_laws
+
+		activate_law = law_type:law_censorship	#maybe to control press to protect the republic (autocratic feel)
+		#activate_law = law_type:law_serfdom_banned
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_women_own_property
+		activate_law = law_type:law_slavery_banned
+		activate_law = law_type:law_professional_navy
+
+		
+		
+		activate_law = law_type:law_nation_of_artifice
+		activate_law = law_type:law_mechanim_as_property
+
+		ig:ig_landowners = {
+			add_ruling_interest_group = yes
+		}
+		set_variable = free_elections_var
+		active_law:lawgroup_distribution_of_power ?= { # Blackpowder Revolution
+			add_amendment = {
+				type = amendment_tradition_of_free_elections
+				sponsor = PREV.ig:ig_intelligentsia
+			}
+		}
+		
+		# Monarchy Anbennar setup
+		# activate_law = law_type:law_monarchy
+		# activate_law = law_type:law_wealth_voting	#compromise by baronites and conservatives
+		# activate_law = law_type:law_cultural_exclusion
+		# activate_law = law_type:law_freedom_of_conscience
+		# activate_law = law_type:law_elected_bureaucrats
+		# activate_law = law_type:law_national_militia	#anbennar's first task is to get this reform going
+		# activate_law = law_type:law_national_guard
+
+		# activate_law = law_type:law_interventionism
+		# activate_law = law_type:law_free_trade	#enforced by powers so Anbennar keeps open
+		# activate_law = law_type:law_per_capita_based_taxation
+		# activate_law = law_type:law_no_colonial_affairs
+		# activate_law = law_type:law_local_police
+		# activate_law = law_type:law_no_schools
+		# activate_law = law_type:law_charitable_health_system
+		# activate_law = law_type:law_tenant_farmers
+
+		# activate_law = law_type:law_censorship
+		# #activate_law = law_type:law_serfdom_banned
+		# activate_law = law_type:law_child_labor_allowed
+		# activate_law = law_type:law_women_own_property
+		# activate_law = law_type:law_slavery_banned
+		
+		# activate_law = law_type:law_nation_of_artifice
+
+		# #All conspirators of first BPC
+		# ig:ig_intelligentsia = {
+		# 	add_ruling_interest_group = yes
+		# }
+		# ig:ig_devout = {
+		# 	add_ruling_interest_group = yes
+		# }
+		# ig:ig_landowners = {
+		# 	add_ruling_interest_group = yes
+		# }
+		# ig:ig_armed_forces = {
+		# 	add_ruling_interest_group = yes
+		# }
+
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		# Clear all but costine
+		remove_primary_culture = cu:west_damerian
+		remove_primary_culture = cu:east_damerian
+		remove_primary_culture = cu:pearlsedger
+		remove_primary_culture = cu:esmari
+		remove_primary_culture = cu:vernman
+		remove_primary_culture = cu:crownsman
+		remove_primary_culture = cu:silver_dwarf
+		remove_primary_culture = cu:arbarani
+		remove_primary_culture = cu:arannese
+		remove_primary_culture = cu:wexonard
+		remove_primary_culture = cu:exwesser	
+		remove_primary_culture = cu:dovesworn_gnoll
+		remove_primary_culture = cu:imperial_gnome
+		remove_primary_culture = cu:havener_elf
+		remove_primary_culture = cu:vertesker
+		remove_primary_culture = cu:uelairey
+		remove_primary_culture = cu:beefoot_halfling
+
+		set_institution_investment_level = {
+			institution = institution_schools 
+            level = 2
+		}
+
+		# note that this heavily contradicts the T2 tech above, as it's not even part of T1 tech and GB only starts with it due to their setup. Not having the tech doesn't prevent starting above the cap, for reference, it just makes them less profitable until they do get the tech
+		add_technology_researched = joint_stock_companies	#this is to enable the two. the rule of cool must take precedence here. during blackpowder, one facttion were the magnate-like oligarchs and saw rampant capitalism rose up to the detriment of the people
+
+		add_company = company_type:company_vanbury_steel_guild
+		company:company_vanbury_steel_guild = {
+			set_company_establishment_date = 1363.1.1	#The guild is granted Telgeir
+			set_company_state_region = s:STATE_TELGEIR_CALASCANDAR
+			add_owned_country = c:B05 #links the country to this company
+		}
+		add_company = company_type:company_clstc
+		company:company_clstc = {
+			set_company_establishment_date = 1025.1.1	#tentative date. made by calasandur the magnificent
+			set_company_state_region = s:STATE_DAMESCROWN
+			add_owned_country = c:B03 #links the country to this company
+		}
+
+		# Magic
+		add_technology_researched = cannorian_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_mass_plant_growth
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_evocation_corps
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_magical_feasts
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 1
+		}
+	}
+}

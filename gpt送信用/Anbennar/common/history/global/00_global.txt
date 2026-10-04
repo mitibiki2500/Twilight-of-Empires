@@ -1,0 +1,142 @@
+﻿# Anbennar - various changes, vanilla stuff NOT kept
+
+# This is executed last among all history
+GLOBAL = {
+	# add_contextless_journal_entry = je_uneasy_raj
+	# add_contextless_journal_entry = je_peru_bolivia
+	# add_contextless_journal_entry = je_the_first_carlist_war
+
+	every_country = {
+		limit = { NOT = { 
+				OR = {
+					has_law = law_type:law_slavery_banned
+					owner = { c:A80 ?= this } #Soyzkaru ain't letting woke get in the way (they don't need pro slave cause they always pro slave)
+				}
+			} 
+		}
+		if = {
+			limit = {
+				has_law_or_variant = law_type:law_colonial_slavery
+			}
+			ig:ig_landowners ?= { add_ideology = ideology_pro_slavery_colonial }
+		}
+		else = {
+			ig:ig_landowners ?= { add_ideology = ideology_pro_slavery }
+		}
+	}
+
+	every_country = {
+		limit = {
+			has_law = law_type:law_monarchy
+			has_law_or_variant = law_type:law_autocracy
+		}
+		set_variable = king_in_parliament_possible
+	}
+
+	every_country = { # Mercantile ideology
+		limit = {
+			OR = {
+				has_law_or_variant = law_type:law_traditionalism
+				has_law_or_variant = law_type:law_isolationism
+			}
+		}
+		ig:ig_petty_bourgeoisie = {
+			add_ideology = ideology_mercantile
+		}
+	}
+
+	every_country = {
+		limit = {
+			navy_size >= 1
+		}
+		add_supply_ships = {
+			value = 1
+			add = navy_size
+			if = {
+				limit = {
+					any_scope_building = {
+						is_building_type = building_shipyard
+					}
+				}
+				every_scope_building = {
+					limit = {
+						is_building_type = building_shipyard
+					}
+					add = 10
+				}
+			}
+			multiply = 8
+		}
+	}
+	every_country = {
+		limit = {has_law = law_type:law_mechanim_freedom}
+		ig:ig_industrialists = { remove_ideology = ideology_machine_servitude }
+		ig:ig_trade_unions = { remove_ideology = ideology_anti_mechanim_trade }
+	}
+	#until someone figures out why excluding this tag in the above code doesn't work, this needs to be a thing
+	c:L01 = {
+		ig:ig_landowners = { 
+			remove_ideology = ideology_pro_slavery
+		}
+	}
+
+	# Starting debts - commented out for now until we can do more budget balancing
+	# We'll bring this back in a later version 
+	# anb: above notes from pdx TODO maybe do starting debts in anbennar?
+
+
+	# anb/polk: don't ask me why they come here in the order, the rest are below x-x
+	set_global_variable = { name = num_coups value = 0 }
+	set_global_variable = { name = failed_coups value = 0 }
+	set_global_variable = { name = successful_coups value = 0 }
+
+###ACHIEVEMENT VARIABLES###
+
+	#Serf's Up
+	every_country = {
+	   limit = { has_law_or_variant = law_type:law_serfdom }
+	   set_variable = serfs_up_ach_possible
+	}
+
+	#Reading Campaign
+	every_country = {
+		limit = {
+			literacy_rate <= 0.2
+		}
+		set_variable = reading_campaign_ach_possible
+	}
+
+
+	#Declaration of Independence
+	every_country = {
+		limit = {
+			is_subject = yes
+		}
+		set_variable = declaration_of_independence_ach_possible
+	}
+
+	#Event Variables
+
+	set_global_variable = {
+		name = number_of_mega_earthquakes
+		value = 0
+	}
+
+	set_global_variable = {
+		name = number_of_mega_floods
+		value = 0
+	}
+
+	set_global_variable = {
+		name = number_of_mega_eruptions
+		value = 0
+	}
+	#Anbennar Event Variables
+	
+	#just as a lil test
+	c:A01 = {
+		add_radicals = {
+			value = medium_radicals
+		}
+	}
+}

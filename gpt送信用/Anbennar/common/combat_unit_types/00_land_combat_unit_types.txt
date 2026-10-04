@@ -1,0 +1,1431 @@
+﻿###
+### Keep "unit tiers" per group in ascending order; the system will determine the default unit type for a country
+### by the last defined unit type that it can build
+###
+
+#Anbennar - added anbennar units TODO: rebalance said units whilst still respecting the design philosophy. in general airships have skewed offense a lot, but ive made mechs very defensive
+
+### ARMY
+
+### Infantry
+combat_unit_type_undead_infantry = {
+    group = combat_unit_group_infantry
+    max_manpower = 1000
+	supply_capacity 10 
+    conscript_peasant_levies = no
+
+    battle_modifier = {
+        unit_offense_add = 5
+        unit_defense_add = 10
+        unit_morale_loss_add = 0
+        unit_recovery_rate_add = 1
+        ### dev documentation for undead
+        ### these guys require investing into the spell to get some decent values (equal to line infantery at max)
+        ### recovery rate above 1 doesn't do anything whack. without further modifiers this means the units don't die but become demoralized in battle by being "killed"
+        ### not touching barrack pms to keep it simple, you have to pay "wages" (upkeep) and with enemy modifiers or bad conditions/generals you may still lose some pops, 
+        ### these can be written off as your logistic corps/wizards being shelled or you needing to import some fresh bodies from time to time because your enemy pulverized your units
+        ### unit is currently for 2 tags and the AI is too stupid to use them, will not care for 1.0 about that. they're really fun to use now, bring exactly the undead army vibe they should and are op early and just become (probably) bad compared to regular infantry as mobilization options and stuff are unlocked.
+    }
+	
+    upkeep_modifier = {
+		goods_input_magical_reagents_add = 3
+		goods_input_meat_add = 1
+        country_magical_expertise_cost_add = 5
+        
+    }
+
+	
+	unlocking_technologies = { necromantic_magical_tradition }
+
+	combat_unit_image = {
+        texture = "gfx/unit_illustrations/infantry_undead.dds"
+    }
+
+}
+
+combat_unit_type_irregular_infantry = {
+	group = combat_unit_group_infantry
+	max_manpower = 1000
+	supply_capacity = 25
+
+	conscript_peasant_levies = yes
+
+    battle_modifier = {
+        unit_offense_add = 10
+        unit_defense_add = 10
+        unit_morale_loss_add = 15
+        unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+    upkeep_modifier = {
+    }
+
+    combat_unit_image = {
+        trigger = {
+			has_culture_graphics = decentralised_americas
+        }
+        texture = "gfx/unit_illustrations/infantry_decentralised_americas_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = polynesian
+        }
+        texture = "gfx/unit_illustrations/infantry_decentralised_polynesian_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_irregular.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_irregular.dds"
+    }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_irregular.dds"
+    }
+
+	upgrades = {
+		combat_unit_type_line_infantry
+		combat_unit_type_skirmish_infantry
+        combat_unit_type_trench_infantry
+        combat_unit_type_squad_infantry
+        combat_unit_type_mechanized_infantry
+	}
+}
+
+combat_unit_type_line_infantry = {
+	group = combat_unit_group_infantry
+	max_manpower = 1000
+	supply_capacity = 30
+
+	conscript_peasant_levies = yes
+
+	upkeep_modifier = {
+		goods_input_small_arms_add = 1
+	}
+
+	battle_modifier = {
+		unit_offense_add = 20
+		unit_defense_add = 25
+        unit_morale_loss_add = 10
+        unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+	unlocking_technologies = { line_infantry }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_line.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_line.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_line.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_line.dds"
+    }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_line.dds"
+    }
+
+	upgrades = {
+		combat_unit_type_skirmish_infantry
+        combat_unit_type_trench_infantry
+        combat_unit_type_squad_infantry
+        combat_unit_type_mechanized_infantry
+	}
+}
+
+combat_unit_type_skirmish_infantry = {
+	group = combat_unit_group_infantry
+	max_manpower = 1000
+	supply_capacity = 40
+
+	conscript_peasant_levies = yes
+
+	upkeep_modifier = {
+		goods_input_small_arms_add = 2
+		goods_input_ammunition_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 25
+        unit_defense_add = 35
+        unit_morale_loss_add = 10
+        unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+	unlocking_technologies = { general_staff }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_skirmish.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_skirmish.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_skirmish.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_skirmish.dds"
+    }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_skirmish.dds"
+    }
+
+	upgrades = {
+		combat_unit_type_trench_infantry
+        combat_unit_type_squad_infantry
+        combat_unit_type_mechanized_infantry
+	}
+}
+
+combat_unit_type_trench_infantry = {
+	group = combat_unit_group_infantry
+	max_manpower = 1000
+	supply_capacity = 50
+
+	conscript_peasant_levies = yes
+
+	upkeep_modifier = {
+		goods_input_small_arms_add = 3
+		goods_input_ammunition_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 30
+        unit_defense_add = 40
+        unit_morale_loss_add = 8
+		unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+	unlocking_technologies = { trench_works }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_trench.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_trench.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_trench.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_trench.dds"
+    }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_trench.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_squad_infantry
+        combat_unit_type_mechanized_infantry
+    }
+}
+
+combat_unit_type_squad_infantry = {
+	group = combat_unit_group_infantry
+	max_manpower = 1000
+	supply_capacity = 60
+
+	conscript_peasant_levies = yes
+
+	upkeep_modifier = {
+		goods_input_small_arms_add = 3
+		goods_input_ammunition_add = 3
+		goods_input_radios_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 40
+        unit_defense_add = 50
+        unit_morale_loss_add = 6
+        unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+	unlocking_technologies = { nco_training }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_squad.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_squad.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_squad.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_squad.dds"
+    }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/infantry_eu_squad.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_mechanized_infantry
+    }
+}
+
+combat_unit_type_mechanized_infantry = {
+	group = combat_unit_group_infantry
+	max_manpower = 1000
+	supply_capacity = 80
+
+	upkeep_modifier = {
+		goods_input_small_arms_add = 3
+		goods_input_ammunition_add = 3
+		goods_input_oil_add = 1
+		goods_input_radios_add = 1
+		goods_input_tanks_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 50
+        unit_defense_add = 60
+        unit_morale_loss_add = 4
+        unit_devastation_mult = 0.1
+    }
+
+	unlocking_technologies = { mobile_armor }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_east_asian_mechanized.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/infantry_south_asian_mechanized.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/infantry_african_mechanized.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/infantry_arabic_mechanized.dds"
+    }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/infantry_eu_mechanized.dds"
+    }
+}
+
+### Artillery
+
+combat_unit_type_cannon_artillery = {
+	group = combat_unit_group_artillery
+	max_manpower = 1000
+	supply_capacity = 30
+
+	upkeep_modifier = {
+		goods_input_artillery_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 25
+        unit_defense_add = 15
+        unit_morale_loss_add = 10
+        unit_kill_rate_add = 0.1
+        unit_devastation_mult = 0.1
+        unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+    formation_modifier = {
+        military_formation_mobilization_speed_mult = -0.2
+        military_formation_army_movement_speed_mult = -0.2
+    }
+
+	unlocking_technologies = { artillery }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/artillery_east_asian_cannon.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/artillery_south_asian_cannon.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/artillery_african_cannon.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/artillery_arabic_cannon.dds"
+    }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/artillery_eu_cannon.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_mobile_artillery
+        combat_unit_type_shrapnel_artillery
+        combat_unit_type_siege_artillery
+
+        #Anbennar
+        combat_unit_type_airship_bombardiers
+        combat_unit_type_military_skyships
+        combat_unit_type_steel_leviathans
+    }
+}
+
+combat_unit_type_mobile_artillery = {
+	group = combat_unit_group_artillery
+	max_manpower = 1000
+	supply_capacity = 40
+
+	upkeep_modifier = {
+		goods_input_artillery_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 30
+        unit_defense_add = 15
+        unit_morale_loss_add = 8
+        unit_kill_rate_add = 0.2
+        unit_devastation_mult = 0.15
+        unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+    formation_modifier = {
+        military_formation_mobilization_speed_mult = -0.2
+        military_formation_army_movement_speed_mult = -0.2
+    }
+
+	unlocking_technologies = { napoleonic_warfare }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/artillery_east_asian_mobile.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/artillery_south_asian_mobile.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/artillery_african_mobile.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/artillery_arabic_mobile.dds"
+    }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/artillery_eu_mobile.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_shrapnel_artillery
+        combat_unit_type_siege_artillery
+
+        #Anbennar
+        combat_unit_type_airship_bombardiers
+        combat_unit_type_military_skyships
+        combat_unit_type_steel_leviathans
+    }
+}
+
+combat_unit_type_shrapnel_artillery = {
+	group = combat_unit_group_artillery
+	max_manpower = 1000
+	supply_capacity = 60
+
+	upkeep_modifier = {
+		goods_input_artillery_add = 3
+		goods_input_ammunition_add = 3
+    }
+
+    battle_modifier = {
+        unit_offense_add = 45
+        unit_defense_add = 25
+        unit_morale_loss_add = 6
+        unit_kill_rate_add = 0.3
+        unit_devastation_mult = 0.15
+        unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+    formation_modifier = {
+        military_formation_mobilization_speed_mult = -0.2
+        military_formation_army_movement_speed_mult = -0.2
+    }
+
+	unlocking_technologies = { breech_loading_artillery }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/artillery_east_asian_shrapnel.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/artillery_south_asian_shrapnel.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/artillery_african_shrapnel.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/artillery_arabic_shrapnel.dds"
+    }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/artillery_eu_shrapnel.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_siege_artillery
+
+        #Anbennar
+        combat_unit_type_airship_bombardiers   #as its same level, not sure if it should be counter as upgrade or not, but this should make people switch if they can
+        combat_unit_type_military_skyships
+        combat_unit_type_steel_leviathans
+    }
+}
+
+combat_unit_type_airship_bombardiers = {    #shrapnel equivalent
+    group = combat_unit_group_artillery
+	max_manpower = 1000
+	supply_capacity = 50
+
+    upkeep_modifier = {
+        goods_input_artillery_add = 2
+        goods_input_ammunition_add = 2
+        goods_input_engines_add = 1
+        goods_input_artificery_doodads_add = 1
+        goods_input_fabric_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 60   #airships are the best offense
+        unit_defense_add = 10   #but they cant really do much defense cos they are in the air and thus cannot protect ground. lower than usual value is offset by mechs having more defense
+        unit_morale_loss_add = 4    #very low morale loss
+        unit_kill_rate_add = 0.2
+        unit_devastation_mult = 0.3
+        unit_occupation_mult = 0.1
+    }
+
+    formation_modifier = {
+        military_formation_mobilization_speed_mult = -0.2
+        military_formation_army_movement_speed_mult = -0.2
+    }
+
+	unlocking_technologies = { airship_bombardiers }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/artillery_east_asian_shrapnel.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/artillery_south_asian_shrapnel.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/artillery_african_shrapnel.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/artillery_arabic_shrapnel.dds"
+    }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/artillery_eu_shrapnel.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_siege_artillery
+
+        #Anbennar
+        combat_unit_type_military_skyships
+        combat_unit_type_steel_leviathans
+    }
+}
+
+combat_unit_type_siege_artillery = {
+    group = combat_unit_group_artillery
+	max_manpower = 1000
+	supply_capacity = 25
+	
+    upkeep_modifier = {
+        goods_input_artillery_add = 4
+        goods_input_ammunition_add = 4
+		goods_input_radios_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 55
+        unit_defense_add = 30
+        unit_morale_loss_add = 6
+        unit_kill_rate_add = 0.25
+        unit_devastation_mult = 0.2
+        unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+    formation_modifier = {
+        military_formation_mobilization_speed_mult = -0.2
+        military_formation_army_movement_speed_mult = -0.2
+    }
+
+	unlocking_technologies = { defense_in_depth }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/artillery_east_asian_siege.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/artillery_south_asian_siege.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/artillery_african_siege.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/artillery_arabic_siege.dds"
+    }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/artillery_eu_siege.dds"
+    }
+
+    upgrades = {
+        #Anbennar
+        combat_unit_type_military_skyships
+        combat_unit_type_steel_leviathans
+    }
+}
+
+combat_unit_type_military_skyships = {  #siege equivalent
+    group = combat_unit_group_artillery
+	max_manpower = 1000
+	supply_capacity = 30
+
+    upkeep_modifier = {
+        goods_input_artillery_add = 3
+        goods_input_ammunition_add = 3
+        goods_input_engines_add = 2
+        goods_input_artificery_doodads_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 80   #airships are the best offense
+        unit_defense_add = 20   #but they cant really do much defense cos they are in the air and thus cannot protect ground. lower than usual value is offset by mechs having more defense
+        unit_morale_loss_add = 2    #very low morale loss
+        unit_kill_rate_add = 0.3
+        unit_devastation_mult = 0.3
+        unit_occupation_mult = 0.1
+    }
+
+    formation_modifier = {
+        military_formation_mobilization_speed_mult = -0.2
+        military_formation_army_movement_speed_mult = -0.2
+    }
+
+	unlocking_technologies = { military_skyships }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/artillery_east_asian_siege.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/artillery_south_asian_siege.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/artillery_african_siege.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/artillery_arabic_siege.dds"
+    }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/artillery_eu_siege.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_heavy_tank
+
+        #Anbennar
+        combat_unit_type_steel_leviathans
+    }
+}
+
+combat_unit_type_heavy_tank = {
+	group = combat_unit_group_artillery
+	max_manpower = 1000
+	supply_capacity = 100
+
+	upkeep_modifier = {
+		goods_input_tanks_add = 3
+		goods_input_artillery_add = 4
+		goods_input_ammunition_add = 4
+		goods_input_radios_add = 1
+		goods_input_oil_add = 3
+    }
+
+    battle_modifier = {
+        unit_offense_add = 70
+        unit_defense_add = 35
+        unit_morale_loss_add = 4
+        unit_kill_rate_add = 0.25
+        unit_morale_damage_mult = 0.15
+        unit_devastation_mult = 0.2
+        unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+    formation_modifier = {
+        military_formation_mobilization_speed_mult = -0.2
+        military_formation_army_movement_speed_mult = -0.2
+    }
+
+	unlocking_technologies = { mobile_armor }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/artillery_heavy_tank.dds"
+    }
+
+    upgrades = {
+        #Anbennar
+        combat_unit_type_steel_leviathans
+    }
+}
+
+combat_unit_type_steel_leviathans = {  #heavy tank equivalent. best in the entire game
+    group = combat_unit_group_artillery
+	max_manpower = 1000
+	supply_capacity = 35
+    upkeep_modifier = {
+        goods_input_artillery_add = 5
+        goods_input_ammunition_add = 5
+        goods_input_engines_add = 3
+        goods_input_artificery_doodads_add = 3
+        goods_input_steel_add = 3
+    }
+
+    battle_modifier = {
+        unit_offense_add = 100   #airships are the best offense
+        unit_defense_add = 30   #but they cant really do much defense cos they are in the air and thus cannot protect ground. lower than usual value is offset by mechs having more defense
+        unit_morale_loss_add = 1    #very low morale loss
+        unit_kill_rate_add = 0.5
+        unit_devastation_mult = 0.5
+        unit_occupation_mult = 0.1
+        unit_naval_invasion_efficiency_mult = -0.3
+    }
+
+    formation_modifier = {
+        military_formation_mobilization_speed_mult = -0.2
+        military_formation_army_movement_speed_mult = -0.2
+    }
+
+	unlocking_technologies = { steel_leviathans }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/artillery_heavy_tank.dds"
+    }
+}
+
+### Cavalry
+
+combat_unit_type_hussars = {
+	group = combat_unit_group_cavalry
+	max_manpower = 1000
+	supply_capacity = 10
+
+	upkeep_modifier = {
+		goods_input_grain_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 15
+        unit_defense_add = 10
+        unit_morale_loss_add = 10
+        unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+    formation_modifier = {
+        military_formation_mobilization_speed_mult = 0.25
+        military_formation_army_movement_speed_mult = 0.25
+    }
+
+	unlocking_technologies = { standing_army }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/cavalry_east_asian_hussar.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/cavalry_south_asian_hussar.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/cavalry_african_hussar.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/cavalry_arabic_hussar.dds"
+    }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/cavalry_eu_hussar.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_dragoons
+        combat_unit_type_cuirassiers
+        combat_unit_type_lancers
+
+        #Anbennar
+        combat_unit_type_mechs
+        combat_unit_type_hexframes
+    }
+}
+
+combat_unit_type_dragoons = {
+	group = combat_unit_group_cavalry
+	max_manpower = 1000
+	supply_capacity = 14
+
+	upkeep_modifier = {
+		goods_input_grain_add = 1
+		goods_input_small_arms_add = 2
+	}
+
+	battle_modifier = {
+		unit_offense_add = 20
+		unit_defense_add = 25
+        unit_morale_loss_add = 8
+        unit_occupation_mult = 0.3
+        unit_naval_invasion_efficiency_mult = -0.25
+        #should get modifiers to mobile/surprise battle conditions appearing
+    }
+
+	unlocking_technologies = { line_infantry }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/cavalry_east_asian_dragoon.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/cavalry_south_asian_dragoon.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/cavalry_african_dragoon.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/cavalry_arabic_dragoon.dds"
+    }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/cavalry_eu_dragoon.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_cuirassiers
+        combat_unit_type_lancers
+
+        #Anbennar
+        combat_unit_type_mechs
+        combat_unit_type_hexframes
+    }
+}
+
+
+combat_unit_type_cuirassiers = {
+	group = combat_unit_group_cavalry
+	max_manpower = 1000
+	supply_capacity = 40
+
+	upkeep_modifier = {
+		goods_input_grain_add = 1
+		goods_input_small_arms_add = 2
+	}
+
+	battle_modifier = {
+		unit_offense_add = 25
+		unit_defense_add = 20
+        unit_morale_loss_add = 8
+        unit_occupation_mult = 0.3
+        unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+	unlocking_technologies = { line_infantry }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/cavalry_east_asian_cuirassier.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/cavalry_south_asian_cuirassier.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/cavalry_african_cuirassier.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/cavalry_arabic_cuirassier.dds"
+    }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/cavalry_eu_cuirassier.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_dragoons
+        combat_unit_type_lancers
+
+        #Anbennar
+        combat_unit_type_mechs
+        combat_unit_type_hexframes
+    }
+}
+
+combat_unit_type_lancers = {
+	group = combat_unit_group_cavalry
+	max_manpower = 1000
+	supply_capacity = 70
+
+	upkeep_modifier = {
+		goods_input_grain_add = 2
+		goods_input_small_arms_add = 2
+		goods_input_iron_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 30
+        unit_defense_add = 20
+        unit_morale_loss_add = 6
+        unit_kill_rate_add = 0.05
+        unit_morale_loss_mult = 0.05
+        unit_occupation_mult = 0.3
+        unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+	unlocking_technologies = { napoleonic_warfare }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = east_asian
+        }
+        texture = "gfx/unit_illustrations/cavalry_east_asian_lancer.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = south_asian
+        }
+        texture = "gfx/unit_illustrations/cavalry_south_asian_lancer.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = african
+        }
+        texture = "gfx/unit_illustrations/cavalry_african_lancer.dds"
+    }
+
+    combat_unit_image = {
+        trigger = {
+            has_culture_graphics = arabic
+        }
+        texture = "gfx/unit_illustrations/cavalry_arabic_lancer.dds"
+    }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/cavalry_eu_lancer.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_dragoons
+        combat_unit_type_cuirassiers
+
+        #Anbennar
+        combat_unit_type_mechs
+        combat_unit_type_hexframes
+    }
+}
+
+combat_unit_type_mechs = {
+    group = combat_unit_group_cavalry
+    max_manpower = 1000
+	supply_capacity = 25
+	
+    conscript_peasant_levies = no
+    
+    upkeep_modifier = {
+        goods_input_artificery_doodads_add = 2
+        goods_input_small_arms_add = 3
+		goods_input_engines_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 40   #slightly less than tanks, cos we gotta give those old boys something lmao
+        unit_defense_add = 60   #this represent their maneuvreability, and counters the heavily offensive based airships
+        unit_morale_loss_add = 8    #not as sturdy as tanks, as in general mechs are easier to kill
+        unit_occupation_mult = 0.4
+        unit_kill_rate_add = 0.1
+        unit_naval_invasion_efficiency_mult = -0.25
+        #unlocks mech maneuvers
+    }
+
+	unlocking_technologies = { military_mechs }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/cavalry_light_tank.dds"
+    }
+
+    upgrades = {
+        #Anbennar
+        combat_unit_type_hexframes
+    }
+}
+
+combat_unit_type_light_tanks = {
+	group = combat_unit_group_cavalry
+	max_manpower = 1000
+	supply_capacity = 100
+
+	upkeep_modifier = {
+		goods_input_tanks_add = 2
+		goods_input_artillery_add = 2
+		goods_input_oil_add = 2
+		goods_input_ammunition_add = 2
+		goods_input_radios_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 45
+        unit_defense_add = 45
+        unit_morale_loss_add = 4
+        unit_devastation_mult = 0.1
+        unit_occupation_mult = 0.3
+        unit_naval_invasion_efficiency_mult = -0.25
+    }
+
+    formation_modifier = {
+        military_formation_mobilization_speed_mult = 0.2
+    }
+
+	unlocking_technologies = { mobile_armor }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/cavalry_light_tank.dds"
+    }
+
+    upgrades = {
+        #Anbennar
+        combat_unit_type_hexframes
+    }
+}
+
+# combat_unit_type_turret_cavalry = {   #im disabling this as its effectively yet another era 1 cavalry type, which vanilla has enough of. the inner workings of this is still in place, however
+#     group = combat_unit_group_cavalry
+# 	max_manpower = 1000
+
+#     upkeep_modifier = {
+#         goods_input_grain_add = 2
+#         goods_input_small_arms_add = 2
+#         goods_input_iron_add = 2
+#     }
+
+#     battle_modifier = {
+#         unit_offense_add = 30
+#         unit_defense_add = 20
+#         unit_morale_damage_mult = 0.05
+#         unit_morale_loss_add = 6
+#         unit_occupation_mult = 0.3
+#         #should get modifiers to mobile/surprise battle conditions appearing
+#     }
+
+# 	unlocking_technologies = { napoleonic_warfare }
+
+#     combat_unit_image = {
+#         # fallback
+#         texture = "gfx/unit_illustrations/cavalry_eu_dragoon.dds"
+#     }
+
+#     upgrades = {
+#         combat_unit_type_war_rigs
+# 		combat_unit_type_mechs
+#     }
+# }
+
+# combat_unit_type_war_rigs = { #TODO: to restore after we sort out the design for Taychend
+#     group = combat_unit_group_cavalry
+# 	max_manpower = 1000
+
+#     upkeep_modifier = {
+#         goods_input_damestear_add = 0.5
+#         goods_input_small_arms_add = 1
+# 		goods_input_automobiles_add = 0.5     
+#     }
+
+#     battle_modifier = {
+#         unit_offense_add = 40
+#         unit_defense_add = 20
+#         unit_morale_loss_add = 8
+#         unit_morale_damage_mult = 0.1
+#         unit_occupation_mult = 0.35
+#     }
+
+# 	unlocking_technologies = { repeaters }  #WIP
+
+#     combat_unit_image = {
+#         # fallback
+#         texture = "gfx/unit_illustrations/cavalry_light_tank.dds"
+#     }
+
+#     upgrades = {
+# 		combat_unit_type_mechs
+#     }
+# }
+
+combat_unit_type_hexframes = {
+    group = combat_unit_group_cavalry
+    max_manpower = 1000
+    supply_capacity = 30
+	
+    conscript_peasant_levies = no
+    
+    upkeep_modifier = {
+        goods_input_artificery_doodads_add = 5  #this must be the most expensive doodad cost unit, as its state of the art artificery
+        goods_input_small_arms_add = 4
+		goods_input_engines_add = 2
+        goods_input_radios_add = 1
+    }
+
+    battle_modifier = {
+        unit_offense_add = 60
+        unit_defense_add = 80   #justification: these guys are such a pain in the ass that they stop leviathans from dominating
+        unit_morale_loss_add = 6
+        unit_occupation_mult = 0.5
+        unit_kill_rate_add = 0.5
+        unit_offense_mult = 0.11    #ace can be 1 or 11 in deck of cards. so a fun representation of them being a force multiplier
+        unit_defense_mult = 0.11
+        #unlocks mech maneuvers
+    }
+
+	unlocking_technologies = { hexframes }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/cavalry_light_tank.dds"
+    }
+}
+
+### marines
+
+combat_unit_type_low_tier_marines = {
+	group = combat_unit_group_marines
+	max_manpower = 1000
+	supply_capacity = 30
+
+	conscript_peasant_levies = yes
+
+	upkeep_modifier = {
+		goods_input_small_arms_add = 1.5
+    }
+
+    battle_modifier = {
+        unit_offense_add = 20
+        unit_defense_add = 25
+        unit_morale_loss_add = 10
+		# no naval invasion efficiency loss
+    }
+
+	unlocking_technologies = { line_infantry }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/marines_eu_low.dds"
+    }
+
+	upgrades = {
+        combat_unit_type_mid_tier_marines
+        combat_unit_type_high_tier_marines
+	}
+}
+
+combat_unit_type_mid_tier_marines = {
+	group = combat_unit_group_marines
+	max_manpower = 1000
+	supply_capacity = 45
+
+	conscript_peasant_levies = yes
+
+	upkeep_modifier = {
+		goods_input_small_arms_add = 2.5
+		goods_input_ammunition_add = 1.5
+    }
+
+    battle_modifier = {
+        unit_offense_add = 25
+        unit_defense_add = 35
+        unit_morale_loss_add = 10
+        # no naval invasion efficiency loss
+    }
+
+	unlocking_technologies = { power_of_the_purse }
+
+    combat_unit_image = {
+		# fallback
+        texture = "gfx/unit_illustrations/marines_eu_mid.dds"
+    }
+
+    upgrades = {
+        combat_unit_type_high_tier_marines
+
+    }
+}
+
+combat_unit_type_high_tier_marines = {
+	group = combat_unit_group_marines
+	max_manpower = 1000
+	supply_capacity = 60
+
+	conscript_peasant_levies = yes
+
+	upkeep_modifier = {
+		goods_input_small_arms_add = 4
+		goods_input_ammunition_add = 3
+    }
+
+    battle_modifier = {
+        unit_offense_add = 30
+        unit_defense_add = 40
+        unit_morale_loss_add = 8
+        # no naval invasion efficiency loss
+    }
+
+	unlocking_technologies = { landing_craft }
+
+    combat_unit_image = {
+        # fallback
+        texture = "gfx/unit_illustrations/marines_eu_high.dds"
+    }
+}
+

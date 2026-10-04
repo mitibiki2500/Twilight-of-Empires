@@ -1,0 +1,412 @@
+﻿A57 = { # Dameria
+	states = { #Maybe also Exwes and Moonhaven?
+		STATE_DAMESEAR 
+		STATE_ISTRALORIAN_DALES 
+		STATE_DAMERIAN_HEARTLANDS 
+		STATE_PASHAINE 
+		STATE_WESDAM 
+		STATE_NECKCLIFFE
+	}
+	
+	required_states_fraction = 0.8
+
+	ai_will_do = { always = yes }
+	
+	possible = {
+		any_country = {
+			OR = {
+				country_has_primary_culture = cu:west_damerian
+				country_has_primary_culture = cu:east_damerian
+			}			
+			has_technology_researched = nationalism
+		}
+	}
+}
+
+B87 = { #Eordand
+	states = { 
+		STATE_KARNEL 
+		STATE_TRIMTHIR 
+		STATE_MURDKATHER 
+		STATE_DEARKTIR 
+		STATE_PASKALA 
+		STATE_GATHGOB
+		STATE_PELODARD
+		STATE_DARHAN
+		STATE_TRASAND
+		STATE_EINNSAG
+		STATE_SGLOLAD
+		STATE_RAITHLOS
+		STATE_FOGHARBAC
+		STATE_DARTIR
+		STATE_GEMRADCURT
+		STATE_JHORGASHIRR
+		STATE_GALBHAN
+		STATE_ARMONADH
+		STATE_ANHOLTIR
+		STATE_TRIMGARB
+	}
+
+	required_states_fraction = 0.75
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+		any_country = {
+			OR = {
+				country_has_primary_culture = cu:peitar
+				country_has_primary_culture = cu:selphereg
+				country_has_primary_culture = cu:caamas
+				country_has_primary_culture = cu:tuathak
+				country_has_primary_culture = cu:snecboth
+				country_has_primary_culture = cu:fograc
+			}			
+			has_technology_researched = pan-nationalism
+		}
+	}
+}
+B97 = { #Dolindha
+	use_culture_states = yes
+
+	required_states_fraction = 0.75
+		
+	ai_will_do = { always = yes }
+}
+C90 = { #Taychend
+	# use_culture_states = yes  # only use one of states and this, went with states as that seems to be what game defaults to if both are here
+
+	states = { 
+		STATE_SARIHADDU 
+		STATE_MESOKTI 
+		STATE_URVAND 
+		STATE_WEST_VEYII_SIKARHA 
+		STATE_EAST_VEYII_SIKARHA 
+		STATE_ORENKORAIM 
+		STATE_DEGITHION 
+		STATE_NYMBHAVA 
+		STATE_KLERECHEND 
+		STATE_NEOR_EMPKEIOS 
+		STATE_NANRU_NAKAR 
+		STATE_IRON_HILLS 
+		STATE_ENLARMAI 
+		STATE_CLEMATAR
+	}
+
+	required_states_fraction = 0.75
+		
+	ai_will_do = { always = yes }
+
+	possible = {
+		has_technology_researched = pan-nationalism
+	}
+}
+
+C91 = { #Theinos
+	states = { 
+ 		STATE_ANISIKHEION 
+		STATE_DEYEION 
+		STATE_WESTERN_MTEIBHARA 
+		STATE_EASTERN_MTEIBHARA
+		STATE_APIKHOXI 
+		STATE_AMGREMOS 
+		STATE_BESOLAKI 
+		STATE_ENEION 
+		STATE_KEYOLION 
+		STATE_EMPKEIOS 
+		STATE_AMEION  
+		STATE_VOLITHORAM 
+		STATE_OKTIAMOTON  
+		STATE_WESTERN_CHENDHYA
+	}
+
+	required_states_fraction = 0.75
+		
+	ai_will_do = { always = yes }
+
+	possible = {
+		any_country = {
+			has_technology_researched = nationalism			
+		}
+	}
+}
+
+C92 = { #Ambhen Empire
+	states = { 
+		STATE_NYMBHAVA
+		STATE_AMEION
+		STATE_MESOKTI
+		STATE_KLERECHEND
+		STATE_NEOR_EMPKEIOS
+		STATE_DEGITHION
+		STATE_PARAIDAR
+	}
+
+	required_states_fraction = 0.70
+		
+	ai_will_do = { always = yes }
+
+	possible = {
+		any_country = {
+			has_technology_researched = nationalism			
+		}
+	}
+}
+
+C93 = { #Chendhya
+	use_culture_states = yes
+
+	required_states_fraction = 0.55 #4/7 was 0.65 4/6 before Kaydhano Sea was added
+		
+	ai_will_do = { always = yes }
+
+	possible = {
+		any_country = {
+			has_technology_researched = nationalism			
+		}
+	}
+}
+
+#Steadsman formable
+G01 = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+		has_technology_researched = nationalism
+	}
+}
+
+#United Expanse
+G02 = {
+	states = { 
+		STATE_EBENMAS
+		STATE_TELLUMTIR
+		STATE_UZOO
+		STATE_ELATHAEL
+		STATE_ARANTAS
+		STATE_CHIPPENGARD
+		STATE_BEGGASLAND
+		STATE_PLUMSTEAD
+		STATE_BORUCKY
+		STATE_ESIMOINE
+		STATE_POSKAWA
+	}
+	required_states_fraction = 0.75
+
+	possible = {
+		has_technology_researched = nationalism
+	}
+	
+	ai_will_do = { always = yes }
+}
+
+#Settler Veykoda
+G03 = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.8
+	
+	ai_will_do = { always = yes }
+
+	possible = {
+		has_technology_researched = nationalism
+	}
+}
+
+#Autumnal League
+G04 = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.6
+
+	ai_will_do = { always = yes }
+
+	possible = {
+		has_technology_researched = nationalism
+	}
+}
+
+#Ynnic Empire
+B66 = {
+	states = {
+		STATE_YRISRAD STATE_HRADAPOLERE STATE_VYCHVELS STATE_NIZVELS STATE_NIZELYNN STATE_YNNPADH STATE_EPADARKAN
+		STATE_ARGANJUZORN STATE_MOCEPED STATE_USLAD STATE_ROGAIDHA STATE_VITREYNN STATE_BRELAR STATE_VERZEL
+		STATE_JUZONDEZAN STATE_VIZKALADR STATE_POMVASONN STATE_GOMOSENGHA
+	}
+
+	required_states_fraction = 0.8
+
+	ai_will_do = { always = yes }
+}
+
+#Dalaire Confederation
+B65 = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75
+
+	ai_will_do = { always = yes }
+}
+
+#Great Command
+R21 = {
+	states = {
+		STATE_GHILAKHAD
+		STATE_HOBGOBLIN_HOMELANDS
+		STATE_RAGHAJANDI
+		STATE_GHATASAK
+		STATE_SHAMAKHAD_PLAINS
+		STATE_SIR
+		STATE_TUGHAYASA
+		STATE_EAST_NADIMRAJ
+		STATE_CENTRAL_NADIMRAJ
+	}
+
+	required_states_fraction = 0.7 #will have to fight *some* splinters outside of North Rahen
+
+	possible = {
+		any_country = {
+			OR = {
+				country_has_primary_culture = cu:chimera_hobgoblin
+				country_has_primary_culture = cu:wuhyun_half_orc
+			}
+		}
+	}
+
+	ai_will_do = { always = yes }
+}
+
+#Haraz Dhumankon
+D16 = {
+	states = {
+		STATE_ARG_ORDSTUN
+		STATE_ORLGHELOVAR
+		STATE_SHAZSTUNDIHR
+		STATE_OVDAL_LODHUM
+		STATE_VERKAL_SKOMDIHR
+		STATE_GOR_BURAD
+		STATE_ARGROD_TERMINUS
+		STATE_ARGROD
+		STATE_ARGROD_JUNCTION
+	}
+
+	required_states_fraction = 0.8
+
+	ai_will_do = { always = yes }
+}
+
+#Segbandal
+D61 = {
+	states = {
+		STATE_SEGHDIHR
+		STATE_SEGHROD
+		STATE_VERKAL_GULAN
+		STATE_HEHODOVAR
+		STATE_OZUMROD
+		STATE_GOR_OZUMBROG
+		STATE_VAZUMROD
+		STATE_GOR_VAZUMBROG
+
+	}
+
+	required_states_fraction = 0.8
+
+	ai_will_do = { always = yes }
+}
+
+#Irdulhain
+E12 = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.4 #Unite centaurs and beat up one of your neighbors a bit - this is actually a lot
+
+	ai_will_do = {always = yes }
+
+	possible = {
+			has_technology_researched = nationalism
+	}
+}
+
+#Akasik
+L69 = {
+	use_culture_states = yes
+
+	required_states_fraction = 1.0
+
+	ai_will_do = { always = yes }
+}
+
+#Surakeš
+L70 = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.5
+
+	ai_will_do = { always = yes }
+	possible = {
+		has_technology_researched = pan-nationalism
+	}
+}
+
+#Fahvanosy
+L71 = {
+	use_culture_states = yes
+
+	required_states_fraction = 1.0
+
+	ai_will_do = { always = yes }
+	possible = {
+		has_technology_researched = nationalism
+	}
+}
+
+#Bwa Tanizu
+L72 = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75
+
+	ai_will_do = { always = yes }
+	possible = {
+		has_technology_researched = nationalism
+	}
+}
+
+#Horashesh
+L73 = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.8
+
+	ai_will_do = { always = yes }
+	possible = {
+		has_technology_researched = pan-nationalism
+	}
+}
+
+#Jinnakah
+L74 = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.5
+
+	ai_will_do = { always = yes }
+	possible = {
+		has_technology_researched = nationalism
+	}
+}
+
+#Blue Reach
+A36 = {
+	use_culture_states = yes
+
+	required_states_fraction = 0.75
+
+	ai_will_do = { always = yes }
+	possible = {
+		has_technology_researched = nationalism
+	}
+}

@@ -1,0 +1,210 @@
+﻿### Anbennar character template file ###
+
+# A01_Artur_Laurens_Silmuna = {
+# 	first_name = Artur_Laurens
+# 	last_name = Silmuna
+# 	historical = yes
+# 	ruler = yes
+# 	# age = 10
+# 	birth_date = 1826.2.4
+# 	interest_group = ig_intelligentsia
+# 	ideology = ideology_reformer
+# 	dna = dna_artur_laurens_silmuna
+# 	traits = {
+# 		charismatic demagogue
+# 	}
+# }
+
+A01_Rean_sil_Tirufeld = {
+	first_name = Rean
+	last_name = sil_Tirufeld
+	noble = yes
+	historical = yes
+	ruler = yes
+	# age = 31
+	birth_date = 1789.5.30
+	interest_group = ig_landowners
+	ig_leader = yes
+	ideology = ideology_humanitarian_royalist
+	dna = dna_rean_sil_tirufeld
+	culture = cu:costine
+	traits = {
+		tactful expert_political_operator alcoholic cautious
+	}
+}
+
+A01_Artura_Loxara = {
+	is_general = yes
+	first_name = Artura
+	last_name = Loxara
+	historical = yes
+	female = yes
+	# age = 28
+	birth_date = 1792.1.1
+	interest_group = ig_armed_forces
+	ideology = ideology_royalist
+	hq = region_dameshead
+	dna = dna_artura_loxara
+	traits = {
+		imperious traditionalist_commander war_criminal powerful_mage
+	}
+	culture = cu:vernman
+	religion = rel:ravelian
+}
+
+A01_Delda_Waggleknack = {
+	first_name = Delda
+	last_name = Waggleknack
+	historical = yes
+	is_agitator = yes
+	female = yes
+	# age = 40	#need to fix years eventually
+	birth_date = 1610.4.23
+	interest_group = ig_intelligentsia
+	ideology = ideology_radical
+	traits = {
+		meticulous literary
+	}
+	culture = cu:imperial_gnome
+	religion = rel:the_thought
+}
+
+A01_Aakhet_the_Bronze = {
+	is_general = yes
+	first_name = aakhet #Rabon
+	last_name = the_bronze #Deshird
+	historical = yes
+	culture = cu:vernman	#cu:tijarikheti
+	# age = 42
+	birth_date = 1778.1.1
+	#is_agitator = yes
+	interest_group = ig_armed_forces
+	ideology = ideology_aakhet
+	traits = { #no actual immortal trait because its supposed to be a secret
+		arrogant
+		ambitious
+		direct
+		expert_offensive_planner
+	}
+	on_created = {
+		set_character_immortal = yes
+		#add_character_role = general
+		#add_commander_rank = 3
+	}
+}
+
+A01_Elio_sil_Fadlun = {
+	first_name = Elio
+	last_name = sil_Fadlun
+	historical = yes
+	# age = 49	#need to fix years eventually
+	birth_date = 1771.4.23
+	interest_group = ig_trade_unions
+	ig_leader = yes
+	ideology = ideology_utopian
+	traits = {
+		reckless innovative engineer
+	}
+	culture = cu:vernman
+	religion = rel:ravelian
+}
+
+A01_Armand_Sethirn = {
+	first_name = Armand
+	last_name = Sethirn
+	historical = yes
+	# age = 46
+	birth_date = 1774.8.12
+	interest_group = ig_industrialists
+	ig_leader = yes
+	ideology = ideology_market_liberal
+	traits = {
+		persistent meticulous master_bureaucrat
+	}
+	culture = cu:esmari
+	religion = rel:regent_court
+}
+
+A01_Cressen_sil_Pirgab = {
+	first_name = Cressen
+	last_name = sil_Pirgab
+	historical = yes
+	is_agitator = yes
+	# age = 75
+	birth_date = 1745.6.3
+	interest_group = ig_landowners
+	ideology = ideology_traditionalist
+	traits = {
+		direct ambitious expert_political_operator
+	}
+	culture = cu:east_damerian
+	religion = rel:regent_court
+}
+
+A01_Alfons_Ealan = {
+	first_name = Alfons
+	last_name = Ealan
+	historical = yes
+	# age = 38
+	birth_date = 1782.3.26
+	interest_group = ig_intelligentsia
+	ig_leader = yes
+	ideology = ideology_radical
+	traits = {
+		direct honorable demagogue
+	}
+	culture = cu:beefoot_halfling
+	religion = rel:ravelian
+}
+
+A01_Anton_Mergirn = {
+	first_name = Anton
+	last_name = Mergirn
+	historical = yes
+	# age = 40
+	birth_date = 1780.2.19
+	interest_group = ig_devout
+	ig_leader = yes
+	ideology = ideology_utilitarian_leader
+	dna = dna_anton_meirgirn
+	traits = {
+		expert_political_operator expensive_tastes hedonist ambitious
+	}
+	culture = cu:vernman
+	religion = rel:ravelian
+}
+
+A01_Josep_sil_Tirufeld = {	#Reans brother
+	is_general = yes
+	first_name = Josep
+	last_name = sil_Tirufeld
+	historical = yes
+	# age = 30
+	birth_date = 1792.5.2
+	interest_group = ig_armed_forces
+	ig_leader = yes
+	ideology = ideology_moderate
+	dna = dna_josep_sil_tirufeld
+	traits = {
+		scarred romantic aesthete celebrity_commander
+	}
+	culture = cu:east_damerian
+	religion = rel:corinite
+}
+
+A01_Jon_Arurman = {
+	is_general = yes
+	first_name = Jon
+	last_name = Arurman
+	historical = yes
+	# age = 42
+	birth_date = 1778.11.5
+	interest_group = ig_petty_bourgeoisie
+	ig_leader = yes
+	ideology = ideology_radical
+	traits = {
+		imposing bigoted brave stalwart_defender
+	}
+	culture = cu:arbarani
+	religion = rel:corinite
+}

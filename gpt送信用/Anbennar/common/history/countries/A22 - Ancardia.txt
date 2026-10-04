@@ -1,0 +1,101 @@
+﻿COUNTRIES = {
+	c:A22 ?= {
+		effect_starting_technology_tier_2_tech = yes	#most advanced out of escann btw
+		
+		add_technology_researched = percussion_cap # So they can make ammunition
+
+		activate_law = law_type:law_presidential_republic	#changed from parliament, because military junta is presidential. parliament means devolved executive power
+		activate_law = law_type:law_autocracy	#itsa military dictatorship
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_appointed_bureaucrats #itsa military dictatorship		
+		activate_law = law_type:law_professional_army
+		activate_law = law_type:law_national_guard
+		
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_no_schools
+		activate_law = law_type:law_tenant_farmers
+		activate_law = law_type:law_combination_acts
+		
+		activate_law = law_type:law_censorship
+		#activate_law = law_type:law_serfdom_banned
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_women_own_property #Not allowed women in workplace without voting
+		activate_law = law_type:law_slavery_banned
+
+
+		
+		
+		activate_law = law_type:law_traditional_magic_banned		#the verdancy made them adverse to magic at game start
+	
+		ig:ig_armed_forces = {
+			add_ruling_interest_group = yes
+		}
+		
+		ig:ig_landowners = {
+			add_ruling_interest_group = yes
+		}
+		
+		# Give the armed forces more strength
+		add_modifier = {
+			name = age_of_officers_modifier
+			days = very_long_modifier_time
+			is_decaying = yes
+		}
+		
+		set_military_wage_level = high
+
+		# Magic
+		add_technology_researched = cannorian_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_mass_plant_growth
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 0
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 0
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 0
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_evocation_corps
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 0
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 0
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 0
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_magical_feasts
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 0
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 0
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 0
+		}
+	}
+}

@@ -1,0 +1,141 @@
+﻿#Likes free artifice, dislikes magic, generally ok with some evilness
+ideology_artifice_supremacist = {
+	icon = "gfx/interface/icons/ideology_icons/technocratic.dds" # added only as placeholder TODO
+	
+	lawgroup_magic_and_artifice = {
+		law_artifice_banned = strongly_disapprove
+		law_nation_of_magic = neutral
+		law_nation_of_artifice = approve
+		law_traditional_magic_banned = strongly_approve
+	}
+}
+
+#Likes Magic
+ideology_magical_supremacist = {
+	icon = "gfx/interface/icons/ideology_icons/traditionalist.dds" # added only as placeholder TODO
+	lawgroup_magic_and_artifice = {
+		law_artifice_banned = strongly_approve
+		law_nation_of_magic = approve
+		law_nation_of_artifice = disapprove
+		law_traditional_magic_banned = strongly_disapprove
+	}
+}
+
+
+ideology_legal_equality = {
+ 	icon = "gfx/interface/icons/ideology_icons/isolationist.dds"
+
+ 	lawgroup_rights_of_women = {
+ 		law_womens_suffrage = disapprove
+ 		law_women_in_the_workplace = disapprove
+ 		law_women_own_property = neutral
+ 		law_no_womens_rights = strongly_disapprove
+ 	}
+
+ 	lawgroup_free_speech = {
+ 		law_outlawed_dissent = approve
+ 		law_censorship = approve
+ 		law_right_of_assembly = neutral
+ 		law_protected_speech = disapprove
+ 	}
+ }
+
+ideology_matriarchal = {
+	icon = "gfx/interface/icons/ideology_icons/patriarchal.dds"
+	
+	lawgroup_rights_of_women = {
+		law_no_womens_rights = approve
+		law_women_own_property = disapprove
+		law_women_in_the_workplace = disapprove
+		law_womens_suffrage = strongly_disapprove
+	}
+
+	lawgroup_free_speech = {
+		law_outlawed_dissent = approve
+		law_censorship = approve
+		law_right_of_assembly = neutral
+		law_protected_speech = disapprove
+	}
+}
+
+
+ideology_machine_servitude = {
+	icon = "gfx/interface/icons/ideology_icons/plutocratic.dds"
+	lawgroup_mechanim_rights = {
+		law_mechanim_freedom = strongly_disapprove
+		law_mechanim_dismantling = strongly_disapprove
+		law_mechanim_cognitive_licenses = approve
+		law_mechanim_as_property = strongly_approve
+	}
+	lawgroup_mechanim_creation = {
+		law_mechanim_creation_allowed = strongly_approve
+		law_mechanim_creation_banned = strongly_disapprove
+	}
+}
+
+
+ideology_anti_mechanim_trade = {
+	icon = "gfx/interface/icons/ideology_icons/abolitionist.dds"
+	lawgroup_mechanim_rights = {
+		law_mechanim_freedom = approve
+		law_mechanim_dismantling = neutral
+		law_mechanim_cognitive_licenses = neutral
+		law_mechanim_as_property = strongly_disapprove
+	}
+}
+
+ideology_machine_messianist = {
+	icon = "gfx/interface/icons/ideology_icons/plutocratic.dds"
+	lawgroup_mechanim_rights = {
+		law_mechanim_freedom = strongly_disapprove
+		law_mechanim_dismantling = strongly_disapprove
+		law_mechanim_cognitive_licenses = disapprove
+		law_mechanim_as_property = strongly_disapprove
+	}
+	lawgroup_mechanim_creation = {
+		law_mechanim_creation_allowed = strongly_disapprove
+		law_mechanim_creation_banned = strongly_approve
+	}
+}
+
+
+ideology_populist_mechanim = {
+	icon = "gfx/interface/icons/ideology_icons/populist.dds"
+	
+	lawgroup_distribution_of_power = {
+		law_universal_suffrage = strongly_approve
+		law_anarchy = approve
+		law_census_voting = neutral
+		law_single_party_state = neutral
+		law_wealth_voting = disapprove
+		law_landed_voting = disapprove
+		law_technocracy = disapprove
+		law_oligarchy = strongly_disapprove
+		law_autocracy = strongly_disapprove		
+	}
+	
+	lawgroup_migration = {
+		law_migration_controls = approve		
+		law_closed_borders = neutral
+		law_no_migration_controls = neutral
+	}
+	
+	lawgroup_army_model = {
+		law_national_militia = strongly_approve
+		law_mass_conscription = approve
+		law_peasant_levies = neutral
+		law_professional_army = disapprove
+	}
+
+	lawgroup_mechanim_rights = {
+		law_mechanim_freedom = strongly_approve
+		law_mechanim_dismantling = neutral
+		law_mechanim_cognitive_licenses = approve
+		law_mechanim_as_property = strongly_disapprove
+	}
+
+	lawgroup_mechanim_creation = {
+		law_mechanim_creation_allowed = strongly_approve
+		law_mechanim_creation_banned = strongly_disapprove
+	}
+}

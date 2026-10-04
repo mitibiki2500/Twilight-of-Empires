@@ -1,0 +1,59 @@
+﻿pop_high_profession_affinity = {
+	#Can add stronger/weaker racial affinities here
+	if = {
+		limit = {
+			this.culture = {
+				is_$RACE$ = yes
+			}
+		}
+		multiply = {
+			value = 3
+			desc = "QUALIFICATIONS_RACE_FAVORED_TYPE"
+		}
+	}
+}
+
+pop_profession_affinity = {
+	#Can add stronger/weaker racial affinities here
+	if = {
+		limit = {
+			this.culture = {
+				is_$RACE$ = yes
+			}
+		}
+		multiply = {
+			value = 2
+			desc = "QUALIFICATIONS_RACE_FAVORED_TYPE"
+		}
+	}
+}
+
+pop_profession_bad_affinity = {
+	#Can add stronger/weaker racial affinities here
+	if = {
+		limit = {
+			this.culture = {
+				is_$RACE$ = yes
+			}
+		}
+		multiply = {
+			value = 0.75
+			desc = "QUALIFICATIONS_RACE_DISLIKE_TYPE"
+		}
+	}
+}
+
+# pop_profession_bad_affinity = {
+# 	#Can add stronger/weaker racial affinities here
+# 	if = {
+# 		limit = {
+# 			this.culture = {
+# 				is_$RACE$ = yes
+# 			}
+# 		}
+# 		multiply = {
+# 			value = 0.5
+# 			desc = "QUALIFICATIONS_RACE_DISLIKE_TYPE"
+# 		}
+# 	}
+# } 

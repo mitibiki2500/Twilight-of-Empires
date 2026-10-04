@@ -1,0 +1,1352 @@
+﻿### Cannor
+
+A01 = { #Anbennar
+	dynamic_country_name = {
+		name = dyn_c_blackpowder_anbennar
+		adjective = dyn_c_blackpowder_anbennar_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= { 
+				OR = {
+					has_law = law_type:law_parliamentary_republic
+					has_law = law_type:law_presidential_republic
+				}
+				OR = {
+					has_law = law_type:law_traditional_magic_banned
+					has_law = law_type:law_nation_of_artifice
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_empire_of_anbennar
+		adjective = dyn_c_empire_of_anbennar_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= { 
+				has_law = law_type:law_monarchy
+			}
+		}
+	}
+}
+
+A02 = { #Vivin Empire
+	dynamic_country_name = {
+		name = dyn_c_salceran
+		adjective = dyn_c_salceran_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= { 
+				NOT = { has_law = law_type:law_monarchy }
+			}
+		}
+	}
+}
+
+A04 = { #Northern League
+	dynamic_country_name = {
+		name = dyn_c_gawed
+		adjective = dyn_c_gawed_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+            scope:actor ?= {
+                NOT = {
+                    any_scope_state = {
+                        region = sr:region_gerudia
+                    }
+                }
+            }
+		}
+	}
+}
+
+A06 = { #Gnomish Hierarchy
+	dynamic_country_name = {
+		name = dyn_c_dragon_coast_hierarchy
+		adjective = dyn_c_dragon_coast_hierarchy_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= { 
+				has_law = law_type:law_multicultural
+			}
+		}
+	}
+}
+
+A09 = { #Busilar
+	dynamic_country_name = {
+		name = dyn_c_lion_commune
+		adjective = dyn_c_lion_commune_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= { 
+				has_law = law_type:law_council_republic
+			}
+		}
+	}
+}
+
+A14 = { #Small Country
+	dynamic_country_name = {
+		name = dyn_c_small_kingdom
+		adjective = dyn_c_small_kingdom_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= { 
+				has_law = law_type:law_monarchy
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_union_of_socialist_shires
+		adjective = dyn_c_union_of_socialist_shires_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= { 
+				has_law = law_type:law_council_republic
+			}
+		}
+	}
+}
+
+A20 = { #Ibevar 
+	dynamic_country_name = {
+		name = dyn_c_forlorn_union
+		adjective = dyn_c_forlorn_union_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= { 
+				has_law = law_type:law_council_republic
+			}
+		}
+	}
+}
+
+A27 = { #Bladesmarches
+	dynamic_country_name = {
+		name = dyn_c_empire_of_the_blade
+		adjective = dyn_c_empire_of_the_blade_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= { 
+				has_law = law_type:law_monarchy
+				has_law = law_type:law_autocracy
+			}
+		}
+	}
+}
+
+A30 = { #Núrcestir
+	dynamic_country_name = {
+		name = dyn_c_magocratic_commune
+		adjective = dyn_c_magocratic_commune_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= { 
+				has_law = law_type:law_magocracy
+				has_law = law_type:law_anarchy
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_magocratic_demesne
+		adjective = dyn_c_magocratic_demesne_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= { 
+				has_law = law_type:law_magocracy
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_royal_demesne
+		adjective = dyn_c_royal_demesne_adj
+		
+		is_main_tag_only = yes
+		priority = 1
+		
+		trigger = {
+			exists = scope:actor
+			exists = c:A01
+			#If you're a subject of Anbennar
+			scope:actor ?= {
+				is_subject_of = c:A01
+			}
+		}
+	}
+}
+
+A49 = {	#dunno why this is a thing, Carneter is also Lorentish
+	dynamic_country_name = {
+		name = dyn_c_tretun
+		adjective = dyn_c_tretun_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = c:A03
+			#If you're a subject of Lorent
+			scope:actor ?= {
+				is_subject_of = c:A03
+			}
+		}
+	}
+}
+
+A68 = {	#Arbaran Demilitarized Zone
+	dynamic_country_name = {
+		name = dyn_c_arbaran_demilitarized_zone
+		adjective = dyn_c_arbaran_demilitarized_zone_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			c:A68 = { has_modifier = demilitarized_zone }
+			exists = c:A01
+			c:A01 = {
+				has_diplomatic_pact = {
+					who = c:A68
+					type = puppet
+					is_initiator = yes
+				}
+			}
+		}
+	}
+}
+
+###
+
+# B05 = {
+# 	dynamic_country_name = {
+# 		name = dyn_c_vanbury_guild
+# 		adjective = dyn_c_vanbury_guild_adj
+		
+# 		is_main_tag_only = yes
+# 		priority = 0
+		
+# 		trigger = {
+# 			exists = scope:actor
+# 			scope:actor = {
+# 				has_government_type = gov_guild
+# 			}
+# 		}
+# 	}
+# }
+B10 = {
+	dynamic_country_name = {
+		name = dyn_c_kinah_federation
+		adjective = B10_ADJ
+
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				country_has_voting_franchise = yes
+			}
+		}
+	}
+}
+B18 = {
+	dynamic_country_name = {
+		name = dyn_c_bloodgroves_colony
+		adjective = dyn_c_bloodgroves_colony_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				is_subject_of = c:A03 #could very well be tied to a post-independence journal entry/event instead ofc
+			}
+		}
+	}
+}
+B21 = {
+	dynamic_country_name = {
+		name = dyn_c_posveagal
+		adjective = dyn_c_posveagal_adj
+		
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			coa_def_lesser_subject_trigger = yes
+			scope:actor = {
+				OR = {
+					country_has_state_religion = rel:ynn_river_worship
+					top_overlord = {
+						country_has_state_religion = rel:ynn_river_worship
+					}
+				}
+			}
+		}
+	}
+	# dynamic_country_name = {
+	# 	name = dyn_c_inek
+	# 	adjective = dyn_c_inek_adj
+		
+	# 	is_main_tag_only = yes
+	# 	priority = 0
+		
+	# 	trigger = {
+	# 		exists = scope:actor
+	# 		scope:actor = {
+	# 			NOT = { country_has_primary_culture = cu:concordian }
+	# 		}
+	# 	}
+	# }
+}
+B26 = {
+	dynamic_country_name = {
+		name = dyn_c_shofa_colony
+		adjective = dyn_c_shofa_colony_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				is_subject_of = c:A03 #could very well be tied to a post-independence journal entry/event instead ofc
+			}
+		}
+	}
+}
+B29 = { #will prob have a bunch of renames
+	dynamic_country_name = {
+		name = dyn_c_sarda
+		adjective = B29_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_monarchy_flag_trigger = no
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_sarda_veykoda
+		adjective = dyn_c_sarda_veykoda_adj
+		
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			scope:actor = {
+				country_has_primary_culture = cu:veykodan
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_sarda_republic
+		adjective = B29_ADJ
+		
+		is_main_tag_only = yes
+		priority = 12
+		
+		trigger = {
+			coa_def_republic_flag_trigger = yes
+			exists = scope:actor
+			scope:actor = {
+				country_has_voting_franchise = yes
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_sarda_republic_2
+		adjective = B29_ADJ
+		
+		is_main_tag_only = yes
+		priority = 14
+		
+		trigger = {
+			coa_def_republic_flag_trigger = yes
+			exists = scope:actor
+			scope:actor = {
+				country_has_voting_franchise = yes
+				var:bacaran_republic_var = 2
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_sarda_republic_3
+		adjective = B29_ADJ
+		
+		is_main_tag_only = yes
+		priority = 15
+		
+		trigger = {
+			coa_def_republic_flag_trigger = yes
+			exists = scope:actor
+			scope:actor = {
+				country_has_voting_franchise = yes
+				var:bacaran_republic_var = 3
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_sarda_republic_4
+		adjective = B29_ADJ
+		
+		is_main_tag_only = yes
+		priority = 16
+		
+		trigger = {
+			coa_def_republic_flag_trigger = yes
+			exists = scope:actor
+			scope:actor = {
+				country_has_voting_franchise = yes
+				var:bacaran_republic_var = 4
+			}
+		}
+	}
+}
+B30 = {
+	dynamic_country_name = {
+		name = dyn_c_chippengard_ynnic
+		adjective = dyn_c_chippengard_ynnic_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_lesser_subject_trigger = yes
+			scope:actor = {
+				OR = {
+					country_has_state_religion = rel:ynn_river_worship
+					top_overlord = {
+						country_has_state_religion = rel:ynn_river_worship
+					}
+				}
+			}
+		}
+	}
+}
+B31 = {
+	dynamic_country_name = {
+		name = dyn_c_veykodirzag
+		adjective = B31_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_independent_trigger = yes
+		}
+	}
+}
+B32 = {
+	dynamic_country_name = {
+		name = dyn_c_west_tipney_ynnic
+		adjective = B32_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_lesser_subject_trigger = yes
+			scope:actor = {
+				OR = {
+					country_has_state_religion = rel:ynn_river_worship
+					top_overlord = {
+						country_has_state_religion = rel:ynn_river_worship
+					}
+				}
+			}
+		}
+	}
+}
+B33 = {
+	dynamic_country_name = {
+		name = dyn_c_corinsfield_ynnic
+		adjective = B33_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_lesser_subject_trigger = yes
+			scope:actor = {
+				OR = {
+					country_has_state_religion = rel:ynn_river_worship
+					top_overlord = {
+						country_has_state_religion = rel:ynn_river_worship
+					}
+				}
+			}
+		}
+	}
+}
+B34 = { #Beggaston
+	dynamic_country_name = {
+		name = dyn_c_beggaston_ynnic
+		adjective = B34_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_lesser_subject_trigger = yes
+			scope:actor = {
+				OR = {
+					country_has_state_religion = rel:ynn_river_worship
+					top_overlord = {
+						country_has_state_religion = rel:ynn_river_worship
+					}
+				}
+			}
+		}
+	}
+}
+B35 = { #New Havoral
+	dynamic_country_name = {
+		name = dyn_c_new_havoral_ynnic
+		adjective = B35_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_lesser_subject_trigger = yes
+			scope:actor = {
+				OR = {
+					country_has_state_religion = rel:ynn_river_worship
+					top_overlord = {
+						country_has_state_religion = rel:ynn_river_worship
+					}
+				}
+			}
+		}
+	}
+}
+B36 = { #Argezvale
+	dynamic_country_name = {
+		name = dyn_c_argezvale_ynnic
+		adjective = B36_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_lesser_subject_trigger = yes
+			scope:actor = {
+				OR = {
+					country_has_state_religion = rel:ynn_river_worship
+					top_overlord = {
+						country_has_state_religion = rel:ynn_river_worship
+					}
+				}
+			}
+		}
+	}
+}
+B37 = { #Elathael
+	dynamic_country_name = {
+		name = dyn_c_elathael_ynnic
+		adjective = B37_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_lesser_subject_trigger = yes
+			scope:actor = {
+				OR = {
+					country_has_state_religion = rel:ynn_river_worship
+					top_overlord = {
+						country_has_state_religion = rel:ynn_river_worship
+					}
+				}
+			}
+		}
+	}
+}
+B41 = { #Plumstead
+	dynamic_country_name = {
+		name = dyn_c_plumstead_ynnic
+		adjective = B41_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_lesser_subject_trigger = yes
+			scope:actor = {
+				OR = {
+					country_has_state_religion = rel:ynn_river_worship
+					top_overlord = {
+						country_has_state_religion = rel:ynn_river_worship
+					}
+				}
+			}
+		}
+	}
+}
+B42 = { #Tiru Moine
+	dynamic_country_name = {
+		name = dyn_c_tiru_moine_ynnic
+		adjective = B42_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_lesser_subject_trigger = yes
+			scope:actor = {
+				OR = {
+					country_has_state_religion = rel:ynn_river_worship
+					top_overlord = {
+						country_has_state_religion = rel:ynn_river_worship
+					}
+				}
+			}
+		}
+	}
+}
+B46 = { #Minata
+	dynamic_country_name = {
+		name = dyn_c_adbraseloc
+		adjective = dyn_c_adbraseloc_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor ?= {			
+				capital ?= { state_region = s:STATE_ARGANJUZORN }
+			}
+		}
+	}
+}
+B91 = { #Ranger Republic
+	dynamic_country_name = {
+		name = dyn_c_ranger_ynnic
+		adjective = B91_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_lesser_subject_trigger = yes
+			scope:actor = {
+				OR = {
+					country_has_state_religion = rel:ynn_river_worship
+					top_overlord = {
+						country_has_state_religion = rel:ynn_river_worship
+					}
+				}
+			}
+		}
+	}
+}
+B49 = { # Rzenta
+	dynamic_country_name = {
+		name = dyn_c_dragon_dominion
+		adjective = dyn_c_dragon_dominion_adj
+
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				has_government_type = gov_dragon_dominion
+			}
+		}
+	}
+}
+B53 = { #Freemarches
+	dynamic_country_name = {
+		name = dyn_c_freemarches_ynnic
+		adjective = B53_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_lesser_subject_trigger = yes
+			scope:actor = {
+				OR = {
+					country_has_state_religion = rel:ynn_river_worship
+					top_overlord = {
+						country_has_state_religion = rel:ynn_river_worship
+					}
+				}
+			}
+		}
+	}
+}
+B65 = { #Dalaire
+	dynamic_country_name = {
+		name = dyn_c_dalaire_colony
+		adjective = B65_ADJ
+		
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor = {
+				is_subject_of = c:A06
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_dalaire_independent_technocracy
+		adjective = dyn_c_dalaire_independent_technocracy_adj
+		
+		is_main_tag_only = yes
+		priority = 5
+		
+		trigger = {
+			coa_def_republic_flag_trigger = yes
+			scope:actor ?= {
+				has_law_or_variant = law_type:law_technocracy
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_dalaire_commonwealth
+		adjective = B65_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_republic_flag_trigger = yes
+		}
+	}
+}
+
+B66 = { #Ynnic Empire
+	dynamic_country_name = {
+		name = dyn_c_ynnic_empire
+		adjective = B66_ADJ
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			coa_def_monarchy_flag_trigger = yes
+		}
+	}
+}
+
+B67 = { #Ruincliff Fed
+	dynamic_country_name = {
+		name = dyn_c_united_realms
+		adjective = B67_ADJ
+		
+		is_main_tag_only = yes
+		priority = 20
+		
+		trigger = {
+			coa_def_monarchy_flag_trigger = yes
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_north_aelantir_concord
+		adjective = B67_ADJ
+		
+		is_main_tag_only = yes
+		priority = 10
+		
+		trigger = {
+			scope:actor ?= {			
+				was_formed_from = B98
+			}
+		}
+	}
+}
+
+C32 = {
+	dynamic_country_name = {
+		name = empkeios_name
+		adjective = empkeios_adj
+
+		is_main_tag_only = yes
+		priority = 100
+
+		trigger = {
+			c:C32 = { has_variable = empkeios_free }
+		}
+	}
+}
+
+G03 = { #Cannorian Veykoda
+	dynamic_country_name = {
+		name = dyn_c_river_country
+		adjective = dyn_c_river_country_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor ?= {			
+				was_formed_from = B32
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = dyn_c_high_havoral
+		adjective = dyn_c_high_havoral_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor ?= {			
+				was_formed_from = B35
+			}
+		}
+	}
+}
+G04 = { #Autumnal League
+	dynamic_country_name = {
+		name = dyn_c_autumnal_dorcurt
+		adjective = dyn_c_autumnal_dorcurt_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor ?= {			
+				capital = { state_region = s:STATE_RAITHLOS }
+			}
+		}
+	}
+}
+
+#Serpentreach
+D62 = {
+	#Arg Ordstun
+	dynamic_country_name = {
+		name = dyn_c_serpentreach_diamond
+		adjective = dyn_c_serpentreach_diamond_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor ?= {			
+				was_formed_from = D18
+			}
+		}
+	}
+	#Ovdal Lodhum
+	dynamic_country_name = {
+		name = dyn_c_serpentreach_garnet
+		adjective = dyn_c_serpentreach_garnet_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor ?= {			
+				was_formed_from = D14
+			}
+		}
+	}
+	#Gor Burad
+	dynamic_country_name = {
+		name = dyn_c_serpentreach_basalt
+		adjective = dyn_c_serpentreach_basalt_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor ?= {			
+				was_formed_from = D13
+			}
+		}
+	}
+	#Orlghelovar
+	dynamic_country_name = {
+		name = dyn_c_serpentreach_cobalt
+		adjective = dyn_c_serpentreach_cobalt_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor ?= {			
+				was_formed_from = D20
+			}
+		}
+	}
+	#Shazstundihr
+	dynamic_country_name = {
+		name = dyn_c_serpentreach_marble
+		adjective = dyn_c_serpentreach_marble_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor ?= {			
+				was_formed_from = D19
+			}
+		}
+	}
+	#Verkal Skomdihr
+	dynamic_country_name = {
+		name = dyn_c_serpentreach_flint
+		adjective = dyn_c_serpentreach_flint_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor ?= {			
+				was_formed_from = D17
+			}
+		}
+	}
+}
+
+L70 = {
+	#Surakeš
+	dynamic_country_name = {
+		name = dyn_c_surakes_musaskalam
+		adjective = dyn_c_surakes_musaskalam_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor ?= {			
+				has_law = law_type:law_magocracy
+			}
+		}
+	}
+}
+
+L73 = {
+	#Vurebindika
+	dynamic_country_name = {
+		name = dyn_c_horashesh_vurebindika
+		adjective = dyn_c_horashesh_vurebindika_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor ?= {			
+				OR = {
+					was_formed_from = L23 #we need to add horasheshi releasables don't we?
+				}
+			}
+		}
+	}
+	#Irsukumbha
+	dynamic_country_name = {
+		name = dyn_c_horashesh_irsukumbha
+		adjective = dyn_c_horashesh_irsukumbha_adj
+		
+		is_main_tag_only = yes
+		priority = 0
+		
+		trigger = {
+			scope:actor ?= {			
+				OR = {
+					was_formed_from = L21 #we need to add horasheshi releasables don't we?
+				}
+			}
+		}
+	}
+}
+
+
+DEFAULT = {
+          
+	dynamic_country_name = {
+		name = generic_revolt_communist
+		adjective = generic_revolt_communist_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+				has_law = law_type:law_council_republic
+				any_interest_group = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_communist
+							has_ideology = ideology:ideology_anarchist
+							has_ideology = ideology:ideology_vanguardist
+						}
+					}
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = generic_revolt_fascist
+		adjective = generic_revolt_fascist_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+				NOT = { has_law = law_type:law_council_republic }
+				any_interest_group = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+					leader = {
+						OR = {
+							has_ideology = ideology:ideology_integralist
+							has_ideology = ideology:ideology_fascist
+							has_ideology = ideology:ideology_ethno_nationalist
+						}
+					}
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = generic_revolt_radical
+		adjective = generic_revolt_radical_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+				NOT = { has_law = law_type:law_council_republic }
+				any_interest_group = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+					leader = {
+						has_ideology = ideology:ideology_radical
+					}
+				}
+			}
+		}
+	}
+	# dynamic_country_name = {
+	#	name = generic_revolt_bonapartist
+	#	adjective = generic_revolt_bonapartist_adj
+	#	
+	#	is_revolutionary = yes
+	#	priority = 0
+	#	
+	#	trigger = {
+	#		exists = scope:actor
+	#		scope:actor ?= {
+	#			is_secessionist = no
+	#			has_law = law_type:law_monarchy
+	#			any_interest_group = {
+	#				is_in_government = yes
+	#				is_strongest_ig_in_government = yes
+	#				leader = {
+	#					has_ideology = ideology:ideology_bonapartist
+	#				}
+	#			}
+	#		}
+	#	}
+	# }
+	# dynamic_country_name = {
+	#	name = generic_revolt_legitimist
+	#	adjective = generic_revolt_legitimist_adj
+	#	
+	#	is_revolutionary = yes
+	#	priority = 0
+	#	
+	#	trigger = {
+	#		exists = scope:actor
+	#		scope:actor ?= {
+	#			is_secessionist = no
+	#			has_law = law_type:law_monarchy
+	#			any_interest_group = {
+	#				is_in_government = yes
+	#				is_strongest_ig_in_government = yes
+	#				leader = {
+	#					has_ideology = ideology:ideology_legitimist
+	#				}
+	#			}
+	#		}
+	#	}
+	# }
+	# dynamic_country_name = {
+	#	name = generic_revolt_orleanist
+	#	adjective = generic_revolt_orleanist_adj
+	#	
+	#	is_revolutionary = yes
+	#	priority = 0
+	#	
+	#	trigger = {
+	#		exists = scope:actor
+	#		scope:actor ?= {
+	#			is_secessionist = no
+	#			has_law = law_type:law_monarchy
+	#			any_interest_group = {
+	#				is_in_government = yes
+	#				is_strongest_ig_in_government = yes
+	#				leader = {
+	#					has_ideology = ideology:ideology_orleanist
+	#				}
+	#			}
+	#		}
+	#	}
+	# }
+	# Powerful interest groups
+	dynamic_country_name = {
+		name = generic_revolt_peasant
+		adjective = generic_revolt_peasant_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+				ig:ig_rural_folk = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = generic_revolt_landowner
+		adjective = generic_revolt_landowner_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+				ig:ig_landowners = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = generic_revolt_intelligentsia
+		adjective = generic_revolt_intelligentsia_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+				any_interest_group = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+					OR = {
+						has_ideology = ideology:ideology_liberal
+						leader = {
+							has_liberal_ideology = yes
+							has_progressive_ideology = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = generic_revolt_industrialists
+		adjective = generic_revolt_industrialists_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+				ig:ig_industrialists = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = generic_revolt_military
+		adjective = generic_revolt_military_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+				ig:ig_armed_forces = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = generic_revolt_religious
+		adjective = generic_revolt_religious_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+				ig:ig_devout = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = generic_revolt_bourgeoisie
+		adjective = generic_revolt_bourgeoisie_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+				ig:ig_petty_bourgeoisie = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+				}
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = generic_revolt_unions
+		adjective = generic_revolt_unions_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+				ig:ig_trade_unions = {
+					is_in_government = yes
+					is_strongest_ig_in_government = yes
+				}
+			}
+		}
+	}
+	# Generic fallbacks
+	dynamic_country_name = {
+		name = generic_revolt_1
+		adjective = generic_revolt_1_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = generic_revolt_2
+		adjective = generic_revolt_2_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+			}
+		}
+	}
+	dynamic_country_name = {
+		name = generic_revolt_3
+		adjective = generic_revolt_3_adj
+		
+		is_revolutionary = yes
+		priority = 0
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				is_secessionist = no
+			}
+		}
+	}
+}

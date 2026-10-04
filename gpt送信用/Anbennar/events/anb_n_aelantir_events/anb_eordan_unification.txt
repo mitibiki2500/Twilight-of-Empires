@@ -1,0 +1,416 @@
+﻿namespace = eordan_unification
+
+# Unified Eordand
+eordan_unification.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = eordan_unification.1.t
+	desc = eordan_unification.1.d
+	flavor = eordan_unification.1.f
+
+	event_image = {
+		video = "europenorthamerica_springtime_of_nations"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		ruler.interest_group = {
+			save_scope_as = ruler_ig_scope
+		}
+		random_country = {
+			limit = {
+				any_scope_character = {
+					has_variable = mheromar_var
+				}
+				c:B87 !=this
+			}
+			trigger_event = mheromar_events.7
+		}
+		if = {
+			limit = {
+				has_variable = green_artifice_unlocked
+			}
+			every_primary_culture = {
+				limit = {
+					NOT = { has_cultural_obsession = arcane_curios }
+					has_discrimination_trait = heritage_eordan_ruinborn
+				}
+				add_cultural_obsession = arcane_curios
+			}
+		}
+		if = {
+			limit = {
+				has_variable = eordand_fograc_contact_var
+			}
+			add_primary_culture = cu:fograc
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = {	has_global_variable = mheromar_death } }
+				trigger_event = {
+					id = mheromar_events.5
+					months = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = eordan_unification.1.a
+		default_option = yes
+		give_claims_on_eordand = yes
+		
+		# prestige
+		add_modifier = {
+			name = eordan_unifier_prestige
+			days = long_modifier_time
+		}
+	}
+	option = {
+		name = eordan_unification.1.b
+		give_claims_on_eordand = yes
+		
+		# ruler IG attraction
+		scope:ruler_ig_scope = {
+			add_modifier = {
+				name = eordan_unifiers_ig
+				days = long_modifier_time
+			}
+		}
+	}
+}
+
+eordan_unification.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = eordan_unification.2.t
+	desc = eordan_unification.2.d
+	flavor = eordan_unification.2.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	option = {
+		name = eordan_unification.2.a
+		default_option = yes
+	}
+
+}
+
+# Diplo Unification
+eordan_unification.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = eordan_unification.3.t
+	desc = eordan_unification.3.d
+	flavor = eordan_unification.3.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+	
+	immediate = {
+		change_tag = B87
+		every_country = {
+			limit = {
+				any_scope_state = {	
+					is_capital = yes
+					region = sr:region_eordand
+				}
+				OR = {
+					country_has_primary_culture = cu:selphereg
+					country_has_primary_culture = cu:caamas
+					country_has_primary_culture = cu:peitar
+					country_has_primary_culture = cu:tuathak
+					country_has_primary_culture = cu:snecboth
+					country_has_primary_culture = cu:fograc
+				}
+				NOT = { is_country_type = decentralized }
+			}
+			root = { annex_with_incorporation = prev }
+		}
+		add_primary_culture = cu:selphereg
+		add_primary_culture = cu:caamas
+		add_primary_culture = cu:peitar
+		add_primary_culture = cu:tuathak
+		add_primary_culture = cu:snecboth
+		if = {
+			limit = {
+				has_variable = eordand_fograc_contact_var
+			}
+			add_primary_culture = cu:fograc
+		}
+		random_country = {
+			limit = {
+				any_scope_character = {
+					has_variable = mheromar_var
+				}
+				c:B87 !=this
+			}
+			trigger_event = mheromar_events.7
+		}
+		if = {
+			limit = {
+				has_variable = green_artifice_unlocked
+			}
+			every_primary_culture = {
+				limit = {
+					NOT = { has_cultural_obsession = arcane_curios }
+					has_discrimination_trait = heritage_eordan_ruinborn
+				}
+				add_cultural_obsession = arcane_curios
+			}
+		}
+	}
+
+	option = {
+		name = eordan_unification.3.a
+		default_option = yes
+		
+		set_state_religion = rel:united_season_court
+		
+		ig:ig_devout = {
+			remove_ideology = ideology_seasonal_courts
+			add_ideology = ideology_seasonal_courts_unfied
+		}
+		
+		custom_tooltip = {
+			text = unify_the_season_tt
+			every_state = {
+				every_scope_pop = {
+					limit = {
+						OR = {
+							has_pop_religion = spring_court
+							has_pop_religion = summer_court
+							has_pop_religion = autumn_court
+							has_pop_religion = winter_court
+							has_pop_religion = eordellon
+						}
+					}
+					change_pop_religion = {
+						target = rel:united_season_court
+						value = 1.0
+					}
+				}
+			}
+		}
+		
+	}
+	
+	after = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = {	has_global_variable = mheromar_death } }
+				trigger_event = {
+					id = mheromar_events.5
+					months = 1
+				}
+			}
+		}
+	}
+}
+
+#Initialization
+eordan_unification.4 = {
+	type = country_event
+	hidden = yes
+	trigger = {
+		NOT = { has_global_variable = eordan_unfication_progress }
+	}
+
+	immediate = {
+		set_global_variable = {
+			name = eordan_unfication_progress
+			value = 0
+		}
+	}
+}
+
+#Bar update
+eordan_unification.5 = {
+	type = country_event
+	hidden = yes
+	trigger = {
+		NOT = { has_global_variable = eordan_unfication_progress_updated }
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { has_global_variable = eordan_unfication_progress_updated } }
+			set_global_variable = eordan_unfication_progress_updated
+			if = {
+				limit = {
+					NOT = {
+						any_country = {
+							country_has_primary_culture = cu:snecboth
+							OR = {
+								is_subject = no
+								is_country_type = decentralized
+							}
+						}
+					}
+				}
+				change_global_variable = {
+					name = eordan_unfication_progress
+					add = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_country = {
+							country_has_primary_culture = cu:caamas
+							OR = {
+								is_subject = no
+								is_country_type = decentralized
+							}
+						}
+					}
+				}
+				change_global_variable = {
+					name = eordan_unfication_progress
+					add = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_country = {
+							country_has_primary_culture = cu:selphereg
+							OR = {
+								is_subject = no
+								is_country_type = decentralized
+							}
+						}
+					}
+				}
+				change_global_variable = {
+					name = eordan_unfication_progress
+					add = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_country = {
+							country_has_primary_culture = cu:tuathak
+							OR = {
+								is_subject = no
+								is_country_type = decentralized
+							}
+							c:B47 != THIS
+						}
+					}
+				}
+				change_global_variable = {
+					name = eordan_unfication_progress
+					add = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						exists = c:B86
+					}
+				}
+				change_global_variable = {
+					name = eordan_unfication_progress
+					add = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						exists = c:B88
+					}
+				}
+				change_global_variable = {
+					name = eordan_unfication_progress
+					add = 1
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						NOT = { any_primary_culture = { has_discrimination_trait = heritage_eordan_ruinborn } }
+						any_scope_state = {	region = sr:region_eordand	}
+					}
+				}
+				if = {
+					limit = {
+						any_country = {
+							has_technology_researched = nationalism
+						}
+					}
+					change_global_variable = {
+						name = eordan_unfication_progress
+						add = 1
+					}
+				}
+				if = {
+					limit = {
+						any_country = {
+							has_technology_researched = pan-nationalism
+						}
+					}
+					change_global_variable = {
+						name = eordan_unfication_progress
+						add = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_variable = eordan_je_fograc_friend
+				}
+				change_global_variable = {
+					name = eordan_unfication_progress
+					subtract = 1
+				}
+			}
+			trigger_event = { id = eordan_unification.6 days = 21 }
+		}
+	}
+}
+
+eordan_unification.6 = {
+	type = country_event
+	hidden = yes
+
+	immediate = {
+		remove_global_variable = eordan_unfication_progress_updated
+	}
+}

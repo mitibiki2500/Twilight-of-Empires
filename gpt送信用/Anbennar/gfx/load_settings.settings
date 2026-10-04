@@ -1,0 +1,39 @@
+# This file basically determines which folders are available to be loaded at a lower resolution.
+# all *.dds files will be loaded in at a lower resolution. png & tga files are kept at same resolution
+# The order of the directories here matter, the first time a texture is loaded determins what setting they will use. So you want it to start with specifics, then go more global as you move down the list.
+# The array signifies how many mipmaps will be skipped loading at low/medium/high/ultra quality
+
+# Specific stuff on top, algorithm will stop at first hit
+
+# Specifics
+"gfx/map/water/foam_ramp.dds" = { 0 0 0 0 }
+"gfx/map/water/foam_map.dds" = { 0 0 0 0 }
+"gfx/map/environment/cubemap_blackbottom.dds" = { 0 0 0 0 }
+
+"gfx/portraits/accessory_variations" = { -2 -1 0 0 }
+"gfx/models/papermap" = { -2 -1 0 0 }
+"gfx/models/ui" = { -1 0 0 0 }
+"gfx/map/textures/colormap.dds" = { -2 -1 0 0 }
+"gfx/map/textures/land_mask.dds" = { -1 0 0 0 }
+"gfx/map/textures/flatmap.dds" = { -1 0 0 0 }
+"gfx/map/map_painting" = { -1 0 0 0 }
+"gfx/map/fog_of_war" = { -2 -1 0 0 }
+
+# Avoid mipmapping these
+"gfx/map/textures" = { 0 0 0 0 }
+"gfx/map/environment" = { 0 0 0 0 }
+"gfx/map/dynamic_masks" = { 0 0 0 0 }
+
+# Large textures, mipmap slightly more
+"gfx/models" = { -2 -1 0 0 }
+"gfx/map/terrain" = { -3 -2 -1 0 }
+"gfx/map/rivers" = { -2 -1 -1 0 }
+"gfx/map/spline_network" = { -2 -1 0 0 }
+
+# Standard mipmaps
+"gfx/coat_of_arms" = { -2 -1 0 0 }
+"gfx/particles" = { -2 -1 0 0 }
+"gfx/map" = { -2 -1 0 0 }
+
+# Don't mipmap base stuff in portraits
+"gfx/portraits" = { 0 0 0 0 }

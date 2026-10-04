@@ -1,0 +1,113 @@
+﻿
+state_trait_dwarven_hold = {
+	icon = "gfx/interface/icons/state_trait_icons/hold.dds"
+	modifier = {
+		state_allow_hold = yes
+		state_allow_dwarovrod = yes
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_dwarovar_caverns = {
+	icon = "gfx/interface/icons/state_trait_icons/cave.dds"
+	disabling_technologies = { "reinforced_concrete" }
+	modifier = {
+		state_infrastructure_mult = -0.33
+		state_construction_mult = -0.2
+		state_non_homeland_colony_growth_speed_mult = -0.5
+	}
+}
+
+state_trait_dwarovrod = {
+	icon = "gfx/interface/icons/state_trait_icons/dwarovrod.dds" #temp
+	modifier = {
+		state_allow_dwarovrod = yes
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_serpentsvale = {
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+	
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.2
+	}
+}
+
+state_trait_drakedens = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_grazing.dds"
+	
+	modifier = {
+		building_group_bg_ranching_throughput_add = 0.1
+	}
+}
+
+state_trait_alemines = {
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+	
+	modifier = {
+		goods_output_liquor_mult = 0.25
+	}
+}
+
+state_trait_petrified_forest = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+	
+	modifier = {
+		building_group_bg_cave_coral_throughput_add = 0.25
+	}
+}
+
+state_trait_grumhardhum = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds" #temp
+	
+	modifier = {
+		building_tooling_workshop_throughput_add = 0.1
+		building_arms_industry_throughput_add = 0.1
+	}
+}
+
+state_trait_abandoned_workshop = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds" #temp
+	
+	modifier = {
+		building_group_bg_doodad_artificeries_throughput_add = 0.2
+	}
+}
+
+state_trait_geothermal_facility = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds" #temp
+	
+	modifier = {
+		building_tooling_workshop_throughput_add = 0.1 #to replace with digging thing later
+	}
+}
+
+state_trait_kraken = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_whales.dds"
+	
+	modifier = {
+		building_group_bg_whaling_throughput_add = 0.2
+		goods_output_fish_mult = 0.25
+	}
+}
+
+state_trait_vroren_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+	}
+}
+
+state_trait_mammoth_breeding_area = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_grazing.dds"
+	
+	modifier = {
+		building_group_bg_ranching_throughput_add = 0.1
+		goods_output_fabric_mult = 0.1
+	}
+}
+state_trait_underground = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds" #temp
+}

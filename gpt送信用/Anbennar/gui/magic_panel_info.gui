@@ -1,0 +1,106 @@
+@secondary_icon_size = 25
+@line_height = 35
+@item_height = 32
+@item_right_margin_inside = 8
+@item_right_margin_outside = 6
+
+types magic_panel_types
+{
+	type magic_panel_info = vbox {
+		margin = { 10 10 }
+		spacing = 15
+		### LISTS OF SPELLS
+		hbox = {
+			datacontext = "[GetPlayer]"
+			spacing = 15
+			layoutpolicy_horizontal = preferred
+			layoutpolicy_vertical = preferred
+
+			### PRODUCTION
+			spell_list = {
+				blockoverride "header" {
+					text = "PRODUCTION_SPELLS"
+				}
+				blockoverride "spell_datamodel" {
+					datamodel = "[Country.MakeScope.GetList('possible_production_spell_flag')]"
+				}
+
+				blockoverride "no_spell" {
+					possible_spell = {
+						visible = "[EqualTo_int32(PdxGuiWidget.AccessParent.GetIndexInDataModel, '(int32)0')]"
+						tooltipwidget = {
+								FancyTooltip_No_Production_Spell = {}
+						}
+					}
+				}
+
+				blockoverride "default_spell" {
+					possible_spell = {
+						visible = "[GreaterThan_int32(PdxGuiWidget.AccessParent.GetIndexInDataModel, '(int32)0')]"
+						tooltipwidget = {
+							FancyTooltip_Production_Spell = {}
+						}
+					}
+				}
+			}
+				
+			### MILITARY
+			spell_list = {
+				blockoverride "header" {
+					text = "MILITARY_SPELLS"
+				}
+				blockoverride "spell_datamodel" {
+					datamodel = "[Country.MakeScope.GetList('possible_military_spell_flag')]"
+				}
+
+				blockoverride "no_spell" {
+					possible_spell = {
+						visible = "[EqualTo_int32(PdxGuiWidget.AccessParent.GetIndexInDataModel, '(int32)0')]"
+						tooltipwidget = {
+							FancyTooltip_No_Military_Spell = {}
+						}
+					}
+				}
+
+				blockoverride "default_spell" {
+					possible_spell = {
+						visible = "[GreaterThan_int32(PdxGuiWidget.AccessParent.GetIndexInDataModel, '(int32)0')]"
+						tooltipwidget = {
+							FancyTooltip_Military_Spell = {}
+						}
+					}
+				}
+			}
+			
+			### SOCIETY
+			spell_list = {
+				blockoverride "header" {
+					text = "SOCIETY_SPELLS"
+				}
+				blockoverride "spell_datamodel" {
+					datamodel = "[Country.MakeScope.GetList('possible_society_spell_flag')]"
+				}
+
+				blockoverride "no_spell" {
+					possible_spell = {
+						visible = "[EqualTo_int32(PdxGuiWidget.AccessParent.GetIndexInDataModel, '(int32)0')]"
+						tooltipwidget = {
+							FancyTooltip_No_Society_Spell = {}
+						}
+					}
+				}
+
+				blockoverride "default_spell" {
+					possible_spell = {
+						visible = "[GreaterThan_int32(PdxGuiWidget.AccessParent.GetIndexInDataModel, '(int32)0')]"
+						tooltipwidget = {
+							FancyTooltip_Society_Spell = {}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+

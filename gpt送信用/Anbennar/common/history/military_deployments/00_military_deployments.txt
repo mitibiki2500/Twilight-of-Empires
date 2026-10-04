@@ -1,0 +1,92 @@
+﻿MILITARY_DEPLOYMENTS = {
+	
+	c:D15 = {
+		random_scope_general = {
+			limit = {
+				has_variable = third_legion_east
+			}
+
+			commander_military_formation = {
+				fully_mobilize_army = yes
+				teleport_to_front = p:x59E124.front
+			}
+		}
+	}
+
+		c:D15 = {
+		random_scope_general = {
+			limit = {
+				has_variable = third_legion_west
+			}
+
+			commander_military_formation = {
+				fully_mobilize_army = yes
+				teleport_to_front = p:xEF11CE.front
+			}
+		}
+	}
+
+	c:D12 = {
+		every_military_formation = {
+			limit = {
+				is_army = yes
+			}
+			fully_mobilize_army = yes
+			teleport_to_front = p:xCEE3A9.front
+		}
+	}
+
+	c:D13 = {
+		every_military_formation = {
+			limit = {
+				is_army = yes
+			}
+			fully_mobilize_army = yes
+			teleport_to_front = p:xCEE3A9.front
+		}
+	}
+
+	c:D14 = {
+		every_military_formation = {
+			limit = {
+				is_army = yes
+			}
+			fully_mobilize_army = yes
+			teleport_to_front = p:x59E124.front
+		}
+	}
+
+	c:D18 = {
+		every_military_formation = {
+			limit = {
+				is_army = yes
+			}
+			fully_mobilize_army = yes
+			teleport_to_front = p:xEF11CE.front
+		}
+	}
+
+	c:D20 = {
+		every_military_formation = {
+			limit = {
+				is_army = yes
+			}
+			fully_mobilize_army = yes
+			teleport_to_front = p:xEF11CE.front
+		}
+	}
+
+	c:B91 ?= {
+		every_military_formation = {
+			fully_mobilize_army = yes
+			teleport_to_front = p:xF3a3F9.front
+		}
+	}
+
+	c:B37 ?= {
+		every_military_formation = {
+			fully_mobilize_army = yes
+			teleport_to_front = p:x508C7E.front
+		}
+	}
+}

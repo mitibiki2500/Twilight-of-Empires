@@ -1,0 +1,511 @@
+﻿je_northern_thaw_main = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	group = je_group_nl_league_unity
+
+	group = je_group_objectives #idk
+
+	#this is de facto a very fancy timer, so a simple 20 years timer for the JE could be worth considering
+	scripted_progress_bar = northern_thaw_league_unity_bar
+
+	modifiers_while_active = {
+		nl_contested_magnate_rule
+	}
+
+	complete = {
+		country_has_primary_culture = cu:dalr
+		custom_tooltip = {	#manually listed all of them to avoid scoping through every state in the world ; will be harder to maintain though
+			text = je_northern_thaw_dalr_homelands_tt
+			owns_entire_state_region = STATE_BJARNLAND
+			owns_entire_state_region = STATE_SPORREYN
+			owns_entire_state_region = STATE_REVRLAND
+			owns_entire_state_region = STATE_FEGRAS
+			owns_entire_state_region = STATE_SIDAETT
+			owns_entire_state_region = STATE_FJORDSBAY
+		}
+		country_has_primary_culture = cu:blue_reachman
+		custom_tooltip = {	#manually listed all of them to avoid scoping through every state in the world ; will be harder to maintain though
+			text = je_northern_thaw_reach_homelands_tt
+			owns_entire_state_region = STATE_SERPENTSHEAD
+			owns_entire_state_region = STATE_ADSHAW
+			owns_entire_state_region = STATE_BAYVEK
+			owns_entire_state_region = STATE_REACHSPIER
+		}
+		owns_entire_state_region = STATE_VERTESK	#checking for all Gawedi homelands (which includes Vertesk) would be a neat standardization, but there's some in Grombar apparently
+		NOT = {
+			has_journal_entry = je_northern_thaw_woodswaller	#not ongoing, either completed or never activated
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = northern_thaw_events.1 popup = yes }
+		#make rewards scale based on League Unity ?
+	}
+
+	fail = {
+		custom_tooltip = {
+			text = je_northern_thaw_failure_tt
+			OR = {
+				scope:journal_entry = { scripted_bar_progress = { name = northern_thaw_league_unity_bar value <= 0 } }
+				has_variable = nl_league_already_broke_up	#can't be completed anymore, so it fails - will happen if the Reach or Gerudia manage to secede on their own
+			}
+			
+		}
+	}
+
+	on_fail = {
+		trigger_event = { id = northern_thaw_events.2 popup = yes }
+		custom_tooltip = {
+			text = je_northern_thaw_breakup_tt
+		}
+		show_as_tooltip = {
+			every_subject_or_below = {
+				limit = {
+					capital.region = sr:region_gerudia	#includes the Reach
+				}
+				make_independent = yes
+			}
+
+			add_radicals = {
+				value = very_large_radicals
+				culture = cu:gawedi
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			200 = 0
+			10 = northern_thaw_events.3
+			10 = northern_thaw_events.4
+			10 = northern_thaw_events.5
+		}
+	}
+
+	on_yearly_pulse = {
+		random_events = {
+			40 = 0
+			10 = northern_thaw_events.6
+		}
+	}
+
+
+	weight = 100
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_northern_thaw_woodswaller = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	group = je_group_nl_league_unity
+
+	group = je_group_objectives #idk
+
+	is_shown_when_inactive = {
+		exists = c:A04
+		THIS = c:A04
+		any_interest_group = {
+			leader = {
+				has_template = A04_Tomac_Woodswall	#could be checking for the luddite ideology to be a bit more generic in case another luddite replaces him
+			}
+		}
+	}
+
+	scripted_button = northern_thaw_remove_woodwallers_button	#requires lvl 3 police
+
+	#note : old content suggested some kind of interaction if Reach states get urbanized
+
+	possible = {
+		custom_tooltip = {
+			text = nl_tomac_woodwaller_removed_tt
+			NOT = {
+				any_interest_group = {
+					leader = {
+						has_template = A04_Tomac_Woodswall	#could be checking for the luddite ideology to be a bit more generic in case another luddite replaces him
+					}
+				}
+			}
+		}
+		NOR = {
+			has_law = law_type:law_agrarianism
+			has_law = law_type:law_industry_banned
+			has_law = law_type:law_cooperative_ownership
+			has_law = law_type:law_peasant_proprietorship
+		}
+	}
+
+	immediate = {
+		trigger_event = { id = woodswaller_rebellion_events.1 } 
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_GREATWOODS
+			}
+			add_modifier = {
+				name = nl_woodswaller_stronghold
+				days = long_modifier_time
+			}
+		}
+		every_scope_state = {
+			limit = {
+				NOT = {
+					state_region = s:STATE_GREATWOODS
+				}
+				has_state_trait = state_trait_greatwoods
+			}
+			add_modifier = {
+				name = nl_woodswaller_stronghold_small
+				days = long_modifier_time
+			}
+		}
+	}
+
+	complete = {
+		NOR = {
+			any_scope_state = {
+				has_modifier = nl_woodswaller_stronghold_small
+			}
+			any_scope_state = {
+				has_modifier = nl_woodswaller_stronghold
+			}
+		}
+	}
+
+	on_complete = {
+		nl_unity_increase_50 = yes
+	}
+
+	fail = {
+		#still counts as done, concession ending
+		OR = {
+			has_law = law_type:law_agrarianism
+			has_law = law_type:law_industry_banned
+			has_law = law_type:law_cooperative_ownership
+			# passing homesteading can appease them enough to prevent it, but once they revolt they want stronger concessions
+		}
+	}
+
+	on_fail = {
+		every_scope_state = {
+			limit = {
+				has_modifier = nl_woodswaller_stronghold_small
+			}
+			remove_modifier = nl_woodswaller_stronghold_small
+		}
+		every_scope_state = {
+			limit = {
+				has_modifier = nl_woodswaller_stronghold
+			}
+			remove_modifier = nl_woodswaller_stronghold
+		}
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			200 = 0
+			20 = woodswaller_rebellion_events.2		#change the frequency of that one to balance how annoying Woodswallers are
+			20 = woodswaller_rebellion_events.4		#change the frequency of that one to balance Brasslance
+			20 = woodswaller_rebellion_events.5
+			5 = woodswaller_rebellion_events.7
+			#TODO : depending on the shape AW stuff takes, add an event that spawns werewolves infestations
+		}
+	}
+
+	on_yearly_pulse = {
+		random_events = {
+			40 = 0
+			20 = woodswaller_rebellion_events.3	
+			10 = woodswaller_rebellion_events.6	
+		}
+	}
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_northern_thaw_gerudia_conversion = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	group = je_group_nl_league_unity
+
+	group = je_group_objectives #idk
+
+	modifiers_while_active = {
+		nl_skaldyrric_oppression
+	}
+
+	is_shown_when_inactive = {
+		exists = c:A04
+		THIS = c:A04
+		any_scope_state = {
+			state_region = {
+				is_homeland = cu:dalr
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = {
+				is_homeland = cu:dalr
+			}
+			is_incorporated = yes
+		}
+	}
+	
+	scripted_button = northern_thaw_conversion_focus_button		# modifiers will switch to the conversion one, mutually exclusive with education focus
+	scripted_button = northern_thaw_education_focus_button		# modifiers will switch to the education one, mutually exclusive with the conversion focus
+	scripted_button = northern_thaw_more_missionaries_button	# add modifier to a new incorporated Gerudian state, costs a bit of money
+	scripted_button = northern_thaw_stop_missionaries_button	# removes all Ravelian modifiers in Gerudia, lowers clergy approval and clout, disables other buttons
+
+	immediate = {
+		trigger_event = { id = gerudia_conversion_events.1 } 
+	}
+
+	complete = {
+		any_scope_state = {
+			percent = 1
+			filter = {
+				state_region = {
+					is_homeland = cu:dalr
+				}
+			}
+			is_incorporated = yes	#needed to get conversion going
+			religion_percent_state = {
+				target = ROOT.religion
+				value >= 0.8
+			}
+		}
+		ig:ig_devout = {
+			ig_approval > 0
+		}
+
+		#urbanize some of it - not added until we test the balance as it may make it significantly harder/longer than the others
+		# any_scope_state = {
+		# 	percent = 0.5
+		# 	state_region = {
+		# 		is_homeland = cu:dalr
+		# 	}
+		# 	NOT = {
+		# 		any_scope_building = {
+		# 			is_building_type = building_urban_center
+		# 			level < 5
+		# 		}
+		# 	}
+		# }
+
+		#can check production of wood/iron/coal instead ?
+	}
+
+	on_complete = {
+		trigger_event = { id = gerudia_conversion_events.2 } 
+	}
+
+	fail = {
+		#still counts as done, concession ending
+		ig:ig_devout = { is_marginal = yes }
+		OR = {
+			has_law = law_type:law_total_separation
+			has_law = law_type:law_state_atheism
+		}
+	}
+
+	on_fail = {
+		trigger_event = { id = gerudia_conversion_events.3 }
+	}
+
+	invalid = {
+		NOT = {
+			any_scope_state = {
+				state_region = {
+					is_homeland = cu:dalr
+				}
+			}
+		}
+	}
+
+	on_invalid = {
+		if = {
+			limit = {
+				NOT = {
+					any_scope_state = {
+						state_region = {
+							is_homeland = cu:dalr
+						}
+					}
+				}
+			}
+			set_variable = nl_league_already_broke_up
+		}
+		else = {
+			trigger_event = { id = gerudia_conversion_events.3 }
+		}
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			200 = 0
+			20 = gerudia_conversion_events.6
+			10 = gerudia_conversion_events.7
+			10 = gerudia_conversion_events.8
+			10 = gerudia_conversion_events.9
+		}
+	}
+
+	on_yearly_pulse = {
+		random_events = {
+			40 = 0
+			10 = gerudia_conversion_events.4
+			10 = gerudia_conversion_events.5
+		}
+	}
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_northern_thaw_reach_nationalism = {
+	#triggered by pulse event in main JE
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	group = je_group_nl_league_unity
+
+	group = je_group_objectives #idk
+
+	is_shown_when_inactive = {
+		exists = c:A04
+		THIS = c:A04
+		any_scope_state = {
+			state_region = {
+				is_homeland = cu:blue_reachman
+			}
+		}
+	}
+
+	scripted_button = northern_thaw_annex_cities_button		#faster but riskier. The AI should use it to clean up the map, make them live dangerously
+
+	complete = {
+		NOT = {
+			any_state = {
+				state_region = {
+					is_homeland = cu:blue_reachman
+				}
+				NOT = { owner = ROOT }
+			}
+		}
+		any_scope_state = {
+			count >=3
+			state_region = {
+				is_homeland = cu:blue_reachman
+			}
+			ig_state_pol_strength_share = {
+				target = ROOT.ig:ig_industrialists
+				value > 0.10	#not sure about balance, put 15% to make it a bit harder or 20% to make it much harder
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = reach_nl_events.1 }
+	}
+
+	fail = {
+		#OR = {	#maybe check acceptance instead so that it works even with those laws reworked
+		#	has_law = law_type:law_expanded_tolerance
+		#	has_law = law_type:law_all_heritage
+		#}
+		any_scope_state = {
+			count = 3
+			state_region = {
+				is_homeland = cu:blue_reachman
+			}
+			any_scope_building = {
+				is_building_type = building_naval_logistics_center # anb converted in 1.13, the 25 may be way to high idk TODO POLK
+				level >= 25
+			}
+		}
+	}
+
+	on_fail = {
+		trigger_event = { id = reach_nl_events.2 }
+	}
+
+	invalid = {
+		NOT = {
+			any_scope_state = {
+				state_region = {
+					is_homeland = cu:blue_reachman
+				}
+			}
+		}
+	}
+
+	on_invalid = {
+		set_variable = nl_league_already_broke_up
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			200 = 0
+			10 = reach_nl_events.3
+			10 = reach_nl_events.5
+		}
+	}
+
+	on_yearly_pulse = {
+		random_events = {
+			50 = 0
+			10 = reach_nl_events.6
+		}
+	}
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+#basic Reachmen nationalism JE for their side of the content
+je_extent_of_our_reach = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	group = je_group_historical_content
+
+	is_shown_when_inactive = {
+		OR = {
+			c:A18 ?= this
+			c:A36 ?= this
+			c:A39 ?= this
+		}
+	}
+
+	possible = {
+        has_technology_researched = nationalism
+    }
+
+	immediate = {
+		trigger_event = { id = reach_events.1 }
+	}
+
+	complete = {
+		any_scope_state = {
+			state_region = {
+				is_homeland = cu:blue_reachman
+			}
+			count >= 3
+		}
+		any_scope_state = {
+			state_region = {
+				is_homeland = cu:white_reachman
+			}
+			count >= 3
+		}
+	}
+
+    on_complete = {
+        if = {
+			limit = {
+				country_has_primary_culture = cu:blue_reachman
+			}
+			add_primary_culture = cu:white_reachman
+		}
+		else_if = {
+			limit = {
+				country_has_primary_culture = cu:white_reachman
+			}
+			add_primary_culture = cu:blue_reachman
+		}
+    }
+
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}

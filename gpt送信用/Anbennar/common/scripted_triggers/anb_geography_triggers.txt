@@ -1,0 +1,557 @@
+﻿# Anbennar - modifying these to have our equivalents for now
+
+### State geography triggers
+
+# Uses Earth continents so that any trigger Paradox makes that filters content to say Europe automatically works for us instead of having to change Europe to Cannor every time
+# TODO - change the loc of those triggers to our own continents
+
+state_is_in_europe = {
+	OR = {
+		region ?= sr:region_lencenor
+		region ?= sr:region_dameshead
+		region ?= sr:region_dostanor	
+		region ?= sr:region_alen
+		region ?= sr:region_gerudia
+		region ?= sr:region_escann	
+	}
+}
+
+state_is_in_north_america = {
+	OR = {
+		region ?= sr:region_eordand
+		region ?= sr:region_ynn
+		region ?= sr:region_dalaire
+		region ?= sr:region_noruin
+		region ?= sr:region_haraf
+	}
+}
+
+state_is_in_central_america = {
+	OR = {
+		region ?= sr:region_ruined_circle
+		region ?= sr:region_soruin
+	}
+}
+
+state_is_in_south_america = {
+	OR = {
+        region ?= sr:region_amadia
+		region ?= sr:region_effelai	
+		region ?= sr:region_taychend
+		region ?= sr:region_kheionai	
+	}
+}
+
+state_is_in_americas = {
+	OR = {
+		state_is_in_north_america = yes
+		state_is_in_central_america = yes
+		state_is_in_south_america = yes
+	}
+}
+
+state_is_in_africa = {
+	OR = {
+		region ?= sr:region_kheterata
+		region ?= sr:region_tanib
+		region ?= sr:region_gazraak
+		region ?= sr:region_madriamilak
+		region ?= sr:region_taneyas
+		region ?= sr:region_jinnakah
+		region ?= sr:region_fangaula	
+	}
+}
+
+state_is_in_middle_east = {
+	OR = {
+		region ?= sr:region_bulwar_proper
+		region ?= sr:region_far_bulwar
+	}
+}
+
+state_is_in_central_asia = {
+	OR = {
+		region ?= sr:region_triunic_lakes
+		region ?= sr:region_forbidden_plains
+	}
+}
+
+state_is_in_india = {
+	OR = {
+		region ?= sr:region_rahen
+	}
+}
+
+state_is_in_east_asia = {
+	OR = {
+		region ?= sr:region_yanshen
+		region ?= sr:region_gozengun
+		region ?= sr:region_moduk
+		region ?= sr:region_nomsyulhan
+	}
+}
+
+state_is_in_china = {
+	OR = {
+		region ?= sr:region_yanshen
+		#base trigger specifically excludes Manchuria so only putting core Yan states here
+	}
+}
+
+state_is_in_southeast_asia = {
+	OR = {
+		region ?= sr:region_vimdatrong
+	}
+}
+
+state_is_in_dwarovar = {
+	OR = {
+	    region ?= sr:region_west_dwarovar
+	    region ?= sr:region_segbandal
+	    region ?= sr:region_east_dwarovar
+        any_scope_state = {
+            OR = {
+                state_region ?= s:STATE_LONELY_MOUNTAIN
+                state_region ?= s:STATE_GIANTS_ANVIL
+                state_region ?= s:STATE_DEAD_END_MINES
+                state_region ?= s:STATE_KRAKDHUMVROR
+            }
+        }
+	}
+}
+
+state_is_in_planes = {		#TODO : add planar regions to this trigger when we do have them
+	OR = {
+		#region ?= sr:region_testoria
+	}
+}
+
+state_is_in_other_planets = {		#TODO : add interplanetary regions to this trigger when we do have them
+	OR = {
+		#region ?= sr:region_testoria
+	}
+}
+
+# All of Serpentspine, minus the outdoor regions of King's Rock. 
+# Also includes other Dwarven holds outside of the region, since they are underground
+state_is_in_serpentspine_or_dwarven_hold = {
+    AND = {
+        OR = {
+            region ?= sr:region_west_dwarovar
+            region ?= sr:region_serpentreach
+            region ?= sr:region_segbandal
+            region ?= sr:region_east_dwarovar
+            any_scope_state = {
+                OR = {
+                    state_region ?= s:STATE_LONELY_MOUNTAIN
+                    state_region ?= s:STATE_GIANTS_ANVIL
+                    state_region ?= s:STATE_DEAD_END_MINES
+                    has_state_trait = state_trait_dwarven_hold
+                }
+            }
+        }
+        NOT = {
+            any_scope_state = {
+                OR = {
+                    state_region ?= s:STATE_WESTERN_VALE
+                    state_region ?= s:STATE_EASTERN_VALE
+                }
+            }
+        }
+    }
+}
+
+# All dwarven holds
+state_is_dwarven_hold = {
+    any_scope_state = {
+        has_state_trait = state_trait_dwarven_hold
+    }
+}
+
+# All dwarovrod railways
+state_has_dwarovrod = {
+    any_scope_state = {
+        has_state_trait = state_trait_dwarovrod
+    }
+}
+
+# All of Serpentspine, minus the outdoor regions of King's Rock.
+# Excludes ALL Dwarven Holds
+state_is_in_serpentspine_minus_dwarven_holds = {
+    AND = {
+        OR = {
+            region ?= sr:region_west_dwarovar
+            region ?= sr:region_serpentreach
+            region ?= sr:region_segbandal
+            region ?= sr:region_east_dwarovar
+            any_scope_state = {
+                OR = {
+                    state_region ?= s:STATE_LONELY_MOUNTAIN
+                    state_region ?= s:STATE_GIANTS_ANVIL
+                    state_region ?= s:STATE_DEAD_END_MINES
+                }
+            }
+        }
+        NOT = {
+            any_scope_state = {
+                OR = {
+                    has_state_trait = state_trait_dwarven_hold
+                    state_region ?= s:STATE_WESTERN_VALE
+                    state_region ?= s:STATE_EASTERN_VALE
+                }
+            }
+        }
+    }
+}
+
+### Country geography triggers
+# exists = capital checks are necessary only because we may test these triggers and scope switch to capitals before states are initialized properly
+
+country_is_in_china = {
+	exists = capital
+	capital = {
+		state_is_in_china = yes
+	}
+}
+
+country_is_in_europe = {
+	exists = capital
+	capital = {
+		state_is_in_europe = yes
+	}
+}
+
+country_is_in_north_america = {
+	exists = capital
+	capital = {
+		state_is_in_north_america = yes
+	}
+}
+
+country_is_in_central_america = {
+	exists = capital
+	capital = {
+		state_is_in_central_america = yes
+	}
+}
+
+country_is_in_south_america = {
+	exists = capital
+	capital = {
+		state_is_in_south_america = yes
+	}
+}
+
+country_is_in_americas = {
+	exists = capital
+	capital = {
+		state_is_in_americas = yes
+	}
+}
+
+country_is_in_africa = {
+	exists = capital
+	capital = {
+		state_is_in_africa = yes
+	}
+}
+
+country_is_in_middle_east = {
+	exists = capital
+	capital = {
+		state_is_in_middle_east = yes
+	}
+}
+
+country_is_in_central_asia = {
+	exists = capital
+	capital = {
+		state_is_in_central_asia = yes
+	}
+}
+
+country_is_in_india = {
+	exists = capital
+	capital = {
+		state_is_in_india = yes
+	}
+}
+
+country_is_in_east_asia = {
+	exists = capital
+	capital = {
+		state_is_in_east_asia = yes
+	}
+}
+
+country_is_in_southeast_asia = {
+	exists = capital
+	capital = {
+		state_is_in_southeast_asia = yes
+	}
+}
+
+country_is_in_dwarovar = {
+	exists = capital
+	capital = {
+		state_is_in_dwarovar = yes
+	}
+}
+
+country_is_in_planes = {
+	exists = capital
+	capital = {
+		state_is_in_planes = yes
+	}
+}
+
+country_is_in_other_planets = {
+	exists = capital
+	capital = {
+		state_is_in_other_planets = yes
+	}
+}
+
+### Coast triggers
+
+# no_beaches = {  #Anbennar - note state_region is for skyships
+# 	#⠀⣞⢽⢪⢣⢣⢣⢫⡺⡵⣝⡮⣗⢷⢽⢽⢽⣮⡷⡽⣜⣜⢮⢺⣜⢷⢽⢝⡽⣝
+# 	#⠸⡸⠜⠕⠕⠁⢁⢇⢏⢽⢺⣪⡳⡝⣎⣏⢯⢞⡿⣟⣷⣳⢯⡷⣽⢽⢯⣳⣫⠇
+# 	#⠀⠀⢀⢀⢄⢬⢪⡪⡎⣆⡈⠚⠜⠕⠇⠗⠝⢕⢯⢫⣞⣯⣿⣻⡽⣏⢗⣗⠏⠀
+# 	#⠀⠪⡪⡪⣪⢪⢺⢸⢢⢓⢆⢤⢀⠀⠀⠀⠀⠈⢊⢞⡾⣿⡯⣏⢮⠷⠁⠀⠀
+# 	#⠀⠀⠀⠈⠊⠆⡃⠕⢕⢇⢇⢇⢇⢇⢏⢎⢎⢆⢄⠀⢑⣽⣿⢝⠲⠉⠀⠀⠀⠀
+# 	#⠀⠀⠀⠀⠀⡿⠂⠠⠀⡇⢇⠕⢈⣀⠀⠁⠡⠣⡣⡫⣂⣿⠯⢪⠰⠂⠀⠀⠀⠀
+# 	#⠀⠀⠀⠀⡦⡙⡂⢀⢤⢣⠣⡈⣾⡃⠠⠄⠀⡄⢱⣌⣶⢏⢊⠂⠀⠀⠀⠀⠀⠀
+# 	#⠀⠀⠀⠀⢝⡲⣜⡮⡏⢎⢌⢂⠙⠢⠐⢀⢘⢵⣽⣿⡿⠁⠁⠀⠀⠀⠀⠀⠀⠀
+# 	#⠀⠀⠀⠀⠨⣺⡺⡕⡕⡱⡑⡆⡕⡅⡕⡜⡼⢽⡻⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+# 	#⠀⠀⠀⠀⣼⣳⣫⣾⣵⣗⡵⡱⡡⢣⢑⢕⢜⢕⡝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+# 	#⠀⠀⠀⣴⣿⣾⣿⣿⣿⡿⡽⡑⢌⠪⡢⡣⣣⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+# 	#⠀⠀⠀⡟⡾⣿⢿⢿⢵⣽⣾⣼⣘⢸⢸⣞⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+# 	#⠀⠀⠀⠀⠁⠇⠡⠩⡫⢿⣝⡻⡮⣒⢽⠋⠀⠀
+# 	OR = {
+# 	state_region ?= s:STATE_KVANGRAAK
+# 	state_region ?= s:STATE_MOITSA
+# 	state_region ?= s:STATE_SKURKHA_KYARD
+# 	state_region ?= s:STATE_OVTO_KIGVAL
+# 	state_region ?= s:STATE_KVAKEINOLBA
+# 	state_region ?= s:STATE_DZIMOKLI
+# 	state_region ?= s:STATE_FOIRAKHIAN
+# 	state_region ?= s:STATE_SHEVROMRZGH
+# 	state_region ?= s:STATE_NAGLAIBAR
+# 	state_region ?= s:STATE_UGHEABAR
+# 	state_region ?= s:STATE_CAUBHEAMEAS
+# 	state_region ?= s:STATE_SERPENT_GIFT
+# 	state_region ?= s:STATE_SARLUN_GOILUST
+# 	state_region ?= s:STATE_IRDU_AGEENEAS
+# 	state_region ?= s:STATE_GHANEERSP
+# 	state_region ?= s:STATE_AKANDHIL
+# 	state_region ?= s:STATE_ZOITAL
+# 	state_region ?= s:STATE_ANARKHUDI
+# 	state_region ?= s:STATE_OINUKHUDI
+# 	state_region ?= s:STATE_CENTRAL_KHAASHALG
+# 	state_region ?= s:STATE_ZHUNMUDI
+# 	state_region ?= s:STATE_CHEGORGTAI
+# 	state_region ?= s:STATE_HAKUURUK
+# 	state_region ?= s:STATE_NOMSYULHANI_BADLANDS
+# 	state_region ?= s:STATE_GREENVALE
+# 	state_region ?= s:STATE_UPPER_KHARUNYANA_BASIN
+# 	state_region ?= s:STATE_TLACHIBAR
+# 	state_region ?= s:STATE_AUVUL_TADIH
+# 	state_region ?= s:STATE_NANI_NOLIHE
+# 	state_region ?= s:STATE_NIDI_BIKEHA
+# 	state_region ?= s:STATE_GOOVRAZ
+# 	state_region ?= s:STATE_KITSIL_KINN
+# 	state_region ?= s:STATE_SORNICANDE
+# 	state_region ?= s:STATE_UPPER_SELLA
+# 	state_region ?= s:STATE_SPOORLAND
+# 	state_region ?= s:STATE_DIHEN
+# 	state_region ?= s:STATE_SOUTH_GHANKEDHEN
+# 	state_region ?= s:STATE_NORTH_GHANKEDHEN
+# 	state_region ?= s:STATE_TUDHINA
+# 	state_region ?= s:STATE_PASIRAGHA
+# 	state_region ?= s:STATE_UPPER_DHENBASANA
+# 	state_region ?= s:STATE_LOWER_DHENBASANA
+# 	state_region ?= s:STATE_BABHAGAMA
+# 	state_region ?= s:STATE_SATARSAYA
+# 	state_region ?= s:STATE_WEST_GHAVAANAJ
+# 	state_region ?= s:STATE_EAST_GHAVAANAJ
+# 	state_region ?= s:STATE_TUGHAYASA
+# 	state_region ?= s:STATE_DHUJAT
+# 	state_region ?= s:STATE_SARISUNG
+# 	state_region ?= s:STATE_TILTAGHAR
+# 	state_region ?= s:STATE_WEST_NADIMRAJ
+# 	state_region ?= s:STATE_RAJNADHAGA
+# 	state_region ?= s:STATE_CENTRAL_NADIMRAJ
+# 	state_region ?= s:STATE_EAST_NADIMRAJ
+# 	state_region ?= s:STATE_HOBGOBLIN_HOMELANDS
+# 	state_region ?= s:STATE_GHILAKHAD
+# 	state_region ?= s:STATE_RAGHAJANDI
+# 	state_region ?= s:STATE_GHATASAK
+# 	state_region ?= s:STATE_SHAMAKHAD_PLAINS
+# 	state_region ?= s:STATE_SIR
+# 	state_region ?= s:STATE_ENDRALVAR
+# 	state_region ?= s:STATE_UPPER_SORROW
+# 	state_region ?= s:STATE_WESTERN_SALAHAD
+# 	state_region ?= s:STATE_KHAWIT
+# 	state_region ?= s:STATE_KHARUNYANA_BOMDAN
+# 	state_region ?= s:STATE_BIM_LAU
+# 	state_region ?= s:STATE_JIEZHONG
+# 	state_region ?= s:STATE_QIANZHAOLIN
+# 	state_region ?= s:STATE_WANGQIU
+# 	state_region ?= s:STATE_SIKAI
+# 	state_region ?= s:STATE_DEKPHRE
+# 	state_region ?= s:STATE_KHABTEI_TELENI
+# 	state_region ?= s:STATE_RONGBEK
+# 	state_region ?= s:STATE_HINPHAT
+# 	state_region ?= s:STATE_TAMRAN_MA
+# 	state_region ?= s:STATE_PHONAN
+# 	state_region ?= s:STATE_TLAGUKIT
+# 	state_region ?= s:STATE_SIRTAN
+# 	state_region ?= s:STATE_KUDET_KAI
+# 	state_region ?= s:STATE_VERKAL_OZOVAR
+# 	state_region ?= s:STATE_SAQRAXAT
+# 	state_region ?= s:STATE_ZUVAVIM
+# 	state_region ?= s:STATE_NIRAMIT
+# 	state_region ?= s:STATE_IMIDKIS
+# 	state_region ?= s:STATE_ZATSUTI
+# 	state_region ?= s:STATE_ZULBUR
+# 	state_region ?= s:STATE_SUGROLTONA
+# 	state_region ?= s:STATE_MORYOKANG
+# 	state_region ?= s:STATE_MOGUTIAN
+# 	state_region ?= s:STATE_BIANYUAN
+# 	state_region ?= s:STATE_NOZANYANBE
+# 	state_region ?= s:STATE_BALRIJIN
+# 	state_region ?= s:STATE_YANSZIN
+# 	state_region ?= s:STATE_ZYUJYUT
+# 	state_region ?= s:STATE_LUOYIP
+# 	state_region ?= s:STATE_LINGYUK
+# 	state_region ?= s:STATE_LIUMINXIANG
+# 	state_region ?= s:STATE_YUNGHUUN
+# 	state_region ?= s:STATE_JINJIANG
+# 	state_region ?= s:STATE_NIZVELS
+# 	state_region ?= s:STATE_HRADAPOLERE
+# 	state_region ?= s:STATE_YRISRAD
+# 	state_region ?= s:STATE_VIZANIRZAG
+# 	state_region ?= s:STATE_CORINSFIELD
+# 	state_region ?= s:STATE_WEST_TIPNEY
+# 	state_region ?= s:STATE_OSINDAIN
+# 	state_region ?= s:STATE_ARGEZVALE
+# 	state_region ?= s:STATE_NIZELYNN
+# 	state_region ?= s:STATE_CHIPPENGARD
+# 	state_region ?= s:STATE_BEGGASLAND
+# 	state_region ?= s:STATE_PLUMSTEAD
+# 	state_region ?= s:STATE_TUSNATA
+# 	state_region ?= s:STATE_BORUCKY
+# 	state_region ?= s:STATE_ARANTAS
+# 	state_region ?= s:STATE_POSKAWA
+# 	state_region ?= s:STATE_ELATHAEL
+# 	state_region ?= s:STATE_EPADARKAN
+# 	state_region ?= s:STATE_UZOO
+# 	state_region ?= s:STATE_ARGANJUZORN
+# 	state_region ?= s:STATE_EBENMAS
+# 	state_region ?= s:STATE_TELLUMTIR
+# 	state_region ?= s:STATE_YECKUNIA
+# 	state_region ?= s:STATE_CASNAROG
+# 	state_region ?= s:STATE_POMVASONN
+# 	state_region ?= s:STATE_MOCEPED
+# 	state_region ?= s:STATE_VIZKALADR
+# 	state_region ?= s:STATE_GOMOSENGHA
+# 	state_region ?= s:STATE_ARSERGOZHAR
+# 	state_region ?= s:STATE_JUZONDEZAN
+# 	state_region ?= s:STATE_USLAD
+# 	state_region ?= s:STATE_ROGAIDHA
+# 	state_region ?= s:STATE_BRELAR
+# 	state_region ?= s:STATE_VERZEL
+# 	state_region ?= s:STATE_VITREYNN
+# 	state_region ?= s:STATE_VARBUKLAND
+# 	state_region ?= s:STATE_KEWDHEMR
+# 	state_region ?= s:STATE_HEHADEDPAR
+# 	state_region ?= s:STATE_NEW_HAVORAL
+# 	state_region ?= s:STATE_LETHIR
+# 	state_region ?= s:STATE_VYCHVELS
+# 	state_region ?= s:STATE_YNNPADH
+# 	state_region ?= s:STATE_ESIMOINE
+# 	state_region ?= s:STATE_MORGANIA
+# 	state_region ?= s:STATE_TASPAS
+# 	state_region ?= s:STATE_EKRSOKA
+# 	state_region ?= s:STATE_KHETERAT
+# 	state_region ?= s:STATE_UPPER_SORROW
+# 	state_region ?= s:STATE_LOWER_SORROW
+# 	state_region ?= s:STATE_MOTHERS_DELTA
+# 	state_region ?= s:STATE_AWAASHESH
+# 	state_region ?= s:STATE_GOLKORA
+# 	state_region ?= s:STATE_IRSMAHAP
+# 	state_region ?= s:STATE_HAPGESH
+# 	state_region ?= s:STATE_NIRAMIT
+# 	state_region ?= s:STATE_CENTRAL_SALAHAD
+# 	state_region ?= s:STATE_AKASIK_MOUNTAINS
+# 	state_region ?= s:STATE_HOHKROGAR
+# 	state_region ?= s:STATE_WESTERN_SALAHAD
+# 	state_region ?= s:STATE_DUWARKANI
+# 	state_region ?= s:STATE_MUKIS
+# 	state_region ?= s:STATE_IMIDKIS
+# 	state_region ?= s:STATE_DEMON_SANDS
+# 	state_region ?= s:STATE_GRIZAKEKAL
+# 	state_region ?= s:STATE_KOGZALLA
+# 	state_region ?= s:STATE_KOGXUL
+# 	state_region ?= s:STATE_NARAKUKKA
+# 	state_region ?= s:STATE_MAZEXHAD
+# 	state_region ?= s:STATE_GARPIXEQQA
+# 	state_region ?= s:STATE_FIAREKAL
+# 	state_region ?= s:STATE_KVANGRAAK
+# 	state_region ?= s:STATE_GIZAN
+# 	state_region ?= s:STATE_SAQRAXAT
+# 	state_region ?= s:STATE_KHAWIT
+# 	state_region ?= s:STATE_KOGINGASA
+# 	state_region ?= s:STATE_IRSUKSHESH
+# 	state_region ?= s:STATE_MUZINGRAZI
+# 	state_region ?= s:STATE_IRIKIN
+# 	state_region ?= s:STATE_IWIXARG
+# 	state_region ?= s:STATE_HISOST
+# 	state_region ?= s:STATE_TAZOINE
+# 	state_region ?= s:STATE_MYPODAUD
+# 	state_region ?= s:STATE_KAGDILGIR
+# 	state_region ?= s:STATE_AAKEIRITKI
+# 	state_region ?= s:STATE_FEDONI
+# 	state_region ?= s:STATE_CHAFALETI
+# 	state_region ?= s:STATE_MARADEFI
+# 	state_region ?= s:STATE_AFERET
+# 	state_region ?= s:STATE_YETEDARA
+# 	state_region ?= s:STATE_KIHEREGA
+# 	state_region ?= s:STATE_MEWOJALA
+# 	state_region ?= s:STATE_MEREKAWI
+# 	state_region ?= s:STATE_WEDLAYAWET
+# 	state_region ?= s:STATE_TELEKIBE
+# 	state_region ?= s:STATE_RUGRUSHYABA
+# 	state_region ?= s:STATE_MELAKHAKI
+# 	state_region ?= s:STATE_BIMBIGIHU
+# 	state_region ?= s:STATE_JUUDHULA
+# 	state_region ?= s:STATE_ANZANES
+# 	state_region ?= s:STATE_AZASI
+# 	state_region ?= s:STATE_SUTNASAAK
+# 	state_region ?= s:STATE_LASADZA
+# 	state_region ?= s:STATE_NATALAZ
+# 	state_region ?= s:STATE_ADGUR
+# 	state_region ?= s:STATE_ZALKATA
+# 	state_region ?= s:STATE_NINUNITH
+# 	state_region ?= s:STATE_ZATSUTI
+# 	state_region ?= s:STATE_TAZAS
+# 	state_region ?= s:STATE_YADASADZA
+# 	state_region ?= s:STATE_KHUSADZA
+# 	state_region ?= s:STATE_WATTOI
+# 	state_region ?= s:STATE_ARDIMYAN_DESERT
+# 	state_region ?= s:STATE_CRESCENT_LINE
+# 	state_region ?= s:STATE_GARPIX_GOXMA
+# 	state_region ?= s:STATE_ZIKAAZ
+# 	state_region ?= s:STATE_FANGHASBA
+# 	state_region ?= s:STATE_JANFANCISO
+# 	state_region ?= s:STATE_WARABANI
+# 	state_region ?= s:STATE_AZZIZA_TU
+# 	state_region ?= s:STATE_NEGETU
+# 	}
+# }
+
+the_cooler_is_coastal = {	#Anbennar - state_region should replace most normal ones, else it will trigger for airship states as we use is coastal for that probably
+	is_coastal = yes
+	#no_beaches = no
+}

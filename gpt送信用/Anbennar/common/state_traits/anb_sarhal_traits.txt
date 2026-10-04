@@ -1,0 +1,212 @@
+﻿#Deserts
+
+state_trait_salahad_desert = {
+	icon = "gfx/interface/icons/state_trait_icons/dry_climate.dds"
+
+	modifier = {
+        building_group_bg_agriculture_throughput_add = -0.2
+		state_construction_mult = -0.25
+		state_infrastructure_mult = -0.25
+    }
+}
+
+state_trait_sandspite_desert = {
+	icon = "gfx/interface/icons/state_trait_icons/dry_climate.dds"
+
+	modifier = {
+        building_group_bg_agriculture_throughput_add = -0.2
+		state_construction_mult = -0.25
+		state_infrastructure_mult = -0.25
+    }
+}
+
+state_trait_ardimya_desert = {
+	icon = "gfx/interface/icons/state_trait_icons/dry_climate.dds"
+
+	modifier = {
+        building_group_bg_agriculture_throughput_add = -0.2
+		state_construction_mult = -0.25
+		state_infrastructure_mult = -0.25
+    }
+}
+
+#Rivers
+state_trait_mothers_sorrow = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.1
+		building_group_bg_plantations_throughput_add = 0.1
+		state_infrastructure_add = 20
+		state_market_access_price_impact = 0.05
+	}
+}
+state_trait_keygas_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 20
+		state_market_access_price_impact = 0.05
+	}
+}
+state_trait_yet_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 20
+		state_market_access_price_impact = 0.05
+	}
+}
+state_trait_makan_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+state_trait_nkolonin_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+state_trait_odogala_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+state_trait_garshag_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+state_trait_adzalas_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+state_trait_khazyna_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+state_trait_shyazai_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+state_trait_takygle_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+state_trait_alnamaliu_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+state_trait_kazira_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_taneyas_jungle = {
+	icon = "gfx/interface/icons/state_trait_icons/unused/resources_exotic.dds"
+	
+	modifier = {
+		state_construction_mult = -0.10
+		building_rubber_plantation_throughput_add = 0.1
+		building_group_bg_logging_throughput_add = 0.15
+	} 
+}
+
+state_trait_shadowswamp = {
+	icon = "gfx/interface/icons/state_trait_icons/leech.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.25
+		state_construction_mult = -0.30
+		building_coal_mine_throughput_add = 0.1
+		building_group_bg_oil_extraction_throughput_add = 0.1
+	} 
+}
+
+state_trait_telekenid_mountains = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	} 
+}
+
+state_trait_dhorakuta_mountains = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	} 
+}
+
+state_trait_ertikan_starash = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	} 
+}
+
+state_trait_mukis_range = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	} 
+}
+
+state_trait_akasik_mountains = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.15
+		state_construction_mult = -0.15
+	} 
+}
+
+state_trait_ironwood_trees = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+	
+	modifier = {
+		building_iron_mine_throughput_add = 0.10
+	} 
+}
+
+state_trait_mining_roosts_naleni = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+
+	modifier = {
+		building_group_bg_mining_throughput_add = 0.10
+		state_infrastructure_mult = 0.05
+	}
+}

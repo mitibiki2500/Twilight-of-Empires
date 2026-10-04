@@ -1,0 +1,222 @@
+﻿uneasy_peace_bar = {
+    name = "uneasy_peace_bar_name"
+	desc = "uneasy_peace_bar_desc"
+
+    default = yes
+
+    monthly_progress = {
+        if = {
+            limit = { #Plumstead is rivals with Beggaston
+                c:B41 ?= {
+                    has_diplomatic_pact = {who = c:B34 type = rivalry }
+                }
+            }
+            add = {
+                desc = "plumstead_rivalry" #TODO Get the loc working for these (So that the hover over works)
+                value = -0.5
+            }
+        }
+        if = {
+            limit = { #Beggaston is rivals with Plumstead
+                c:B34 ?= {
+                    has_diplomatic_pact = {who = c:B41 type = rivalry }
+                }
+            }
+            add = {
+                desc = "beggaston_rivalry"
+                value = -0.5
+            }
+        }
+        if = {
+            limit = { #Plumstead is embargoing Beggaston
+                c:B41 ?= {
+                    has_diplomatic_pact = {who = c:B34 type = embargo }
+                }
+            }
+            add = {
+                desc = "plumstead_embargo"
+                value = -0.25
+            }
+        }
+        if = {
+            limit = { #Beggaston is embargoing Plumstead
+                c:B34 ?= {
+                    has_diplomatic_pact = {who = c:B41 type = embargo }
+                }
+            }
+            add = {
+                desc = "beggaton_embargo"
+                value = -0.25
+            }
+        }
+        if = {
+            limit = { #Beggaston and Plumstead have good relations
+                c:B34 = {
+                    "relations(scope:plumstead_nation_scope)" >= relations_threshold:cordial
+                }
+            }
+            add = { #TODO THE desc isn't working
+                desc = "expanse_good_relations"
+                value = 1
+            }
+        }
+        #Appeased Anti-country lobbies
+    	# random_political_lobby = {
+		# 	limit = {
+		# 		target = scope:target
+		# 		is_political_lobby_type = lobby_pro_country
+		# 	}
+		# 	save_scope_as = relevant_lobby
+		# 	target = {
+		# 		save_scope_as = relevant_country
+		# 	}
+		# }
+        # if = {
+        #     limit = { #TODO This isn't working
+        #         c:B41 = {
+        #             random_political_lobby = {
+        #                 limit = {
+        #                     is_political_lobby_type = lobby_anti_country
+        #                     target = { 
+        #                         c:B34 = this
+        #                     }
+        #                 }
+        #                 appeasement > 3
+        #             }
+        #         }
+        #     }
+        #     add = {
+        #         desc = "plumstead_anti_appeasement"
+        #         value = -0.5
+        #     }
+        # }
+        # if = {
+        #     limit = { #TODO This isn't working
+        #         c:B34 = {
+        #             random_political_lobby = {
+        #                 limit = {
+        #                     is_political_lobby_type = lobby_anti_country
+        #                     target = { 
+        #                         c:B41 = this
+        #                     }
+        #                 }
+        #                 appeasement > 3 #TODO Make sure this works
+        #             }
+        #         }
+        #     }
+        #     add = {
+        #         desc = "beggaston_anti_appeasement"
+        #         value = -0.5
+        #     }
+        # }
+        #Appeased pro-country lobbies
+        # if = {
+        #     limit = {
+        #         c:B41 = {
+        #             random_political_lobby = {
+        #                 limit = {
+        #                     is_political_lobby_type = lobby_pro_country
+        #                     target = { 
+        #                         c:B34 = this
+        #                     }
+        #                 }
+        #                 appeasement > 3 #TODO Make sure this works
+        #             }
+        #         }
+        #     }
+        #     add = {
+        #         desc = "plumstead_pro_appeasement"
+        #         value = 0.5
+        #     }
+        # }
+        # if = {
+        #     limit = {
+        #         c:B41 = {
+        #             random_political_lobby = {
+        #                 limit = {
+        #                     is_political_lobby_type = lobby_pro_country
+        #                     target = { 
+        #                         c:B41 = this
+        #                     }
+        #                 }
+        #                 appeasement > 3 #TODO Make sure this works
+        #             }
+        #         }
+        #     }
+        #     add = {
+        #         desc = "beggaston_pro_appeasement"
+        #         value = 0.5
+        #     }
+        # }
+        if = {
+            limit = {  #Tiru Moine has a trade agreement with Plumstead
+                c:B42 = {
+                     any_scope_treaty = {
+                        binds = c:B41
+                        any_scope_article = {
+                            has_type = trade_privilege
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = "plumstead_trade_agreement"
+                value = 0.25
+            }
+        }
+        if = {
+            limit = { #Tiru Moine has a trade agreement with Beggaston
+                c:B42 = {
+                    any_scope_treaty = {
+                        binds = c:B34
+                        any_scope_article = {
+                            has_type = trade_privilege
+                        }
+                    }
+                }
+            }
+            add = {
+                desc = "beggaston_trade_agreement"
+                value = 0.25
+            }
+        }
+
+        if = {
+            limit = { #Joint Operations were completed
+                c:B42 = {
+                    has_variable = expanse_joint_operations_unity
+                }
+            }
+            add = {
+                desc = "joint_operations_desc"
+                value = 1 #Is this number too high?
+            }
+        }
+        if = {
+            limit = { #Mutual Concessions were completed
+                c:B42 = {
+                    has_variable = expanse_concessions_unity
+                }
+            }
+            add = {
+                desc = "expanse_concessions_desc"
+                value = 1
+            }
+        }
+        if = {
+            limit = { #Settled the rivalry
+                c:B42 = {
+                    has_variable = expanse_rivalry_settled
+                }
+            }
+            add = {
+                desc = "expanse_rivalry_desc"
+                value = 1
+            }
+        }
+    }
+
+    start_value = 60
+	min_value = 0
+	max_value = 100
+}

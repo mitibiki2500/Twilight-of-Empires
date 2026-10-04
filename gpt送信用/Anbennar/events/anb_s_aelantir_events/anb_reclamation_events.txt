@@ -1,0 +1,724 @@
+﻿namespace = alecand_reclamation
+
+alecand_reclamation.1 = {
+	type = country_event
+	placement = root
+	
+	title = alecand_reclamation.1.t
+	desc =  alecand_reclamation.1.d
+	flavor = alecand_reclamation.1.f
+	
+	event_image = {
+		video = "europenorthamerica_russian_serfs"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 3
+	
+	trigger = {
+		has_journal_entry = je_alecand_reclamation
+		je:je_alecand_reclamation = {
+			"scripted_bar_progress(alecand_reclamation_progress_bar)" >= 100
+		}
+		NOT = { has_global_variable = reclamation_part_1 }
+	}
+
+	immediate = {
+		set_global_variable = reclamation_part_1
+	}
+
+	option = { 
+		name = alecand_reclamation.1.a
+		default_option = yes
+		random_scope_state = {
+			limit = { state_region = s:STATE_CENTRAL_KHEIONS }
+			state_region = { add_arable_land = 17 }
+			save_scope_as = alecand_reclemation_state_central_kheions
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_NORTHERN_KHEIONS }
+			state_region = { add_arable_land = 15 }
+			save_scope_as = alecand_reclemation_state_northern_kheions
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_SOUTHERN_KHEIONS }
+			state_region = { add_arable_land = 11 }
+			save_scope_as = alecand_reclemation_state_southern_kheions
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_SOUTIKAN }
+			state_region = { add_arable_land = 15 }
+			save_scope_as = alecand_reclemation_state_soutikan
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_NORTIKAN }
+			state_region = { add_arable_land = 11 }
+			save_scope_as = alecand_reclemation_state_nortikan
+		}
+	}	
+}
+
+alecand_reclamation.2 = {
+	type = country_event
+	placement = root
+	
+	title = alecand_reclamation.2.t
+	desc =  alecand_reclamation.2.d
+	flavor = alecand_reclamation.2.f
+	
+	event_image = {
+		video = "europenorthamerica_russian_serfs"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 3
+	
+	trigger = {
+		has_journal_entry = je_alecand_reclamation
+		je:je_alecand_reclamation = {
+			"scripted_bar_progress(alecand_reclamation_progress_bar)" >= 250
+		}
+		NOT = { has_global_variable = reclamation_part_2 }
+	}
+
+	immediate = {
+		set_global_variable = reclamation_part_2
+	}
+
+	option = { 
+		name = alecand_reclamation.2.a
+		default_option = yes
+		random_scope_state = {
+			limit = { state_region = s:STATE_CENTRAL_KHEIONS }
+			state_region = { add_arable_land = 17 }
+			save_scope_as = alecand_reclemation_state_central_kheions
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_NORTHERN_KHEIONS }
+			state_region = { add_arable_land = 15 }
+			save_scope_as = alecand_reclemation_state_northern_kheions
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_SOUTHERN_KHEIONS }
+			state_region = { add_arable_land = 11 }
+			save_scope_as = alecand_reclemation_state_southern_kheions
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_SOUTIKAN }
+			state_region = { add_arable_land = 15 }
+			save_scope_as = alecand_reclemation_state_soutikan
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_NORTIKAN }
+			state_region = { add_arable_land = 11 }
+			save_scope_as = alecand_reclemation_state_nortikan
+		}
+	}	
+}
+
+alecand_reclamation.3 = {
+	type = country_event
+	placement = root
+	
+	title = alecand_reclamation.3.t
+	desc =  alecand_reclamation.3.d
+	flavor = alecand_reclamation.3.f
+	
+	event_image = {
+		video = "europenorthamerica_russian_serfs"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 3
+	
+	trigger = {
+		has_journal_entry = je_alecand_reclamation
+		je:je_alecand_reclamation = {
+			"scripted_bar_progress(alecand_reclamation_progress_bar)" >= 10
+		}
+		NOT = { has_global_variable = reclamation_part_3 }
+	}
+
+	immediate = {
+		set_global_variable = reclamation_part_3
+	}
+
+	option = { 
+		name = alecand_reclamation.3.a
+		default_option = yes
+		random_scope_state = {
+			limit = { state_region = s:STATE_CENTRAL_KHEIONS }
+			state_region = { add_arable_land = 17 }
+			save_scope_as = alecand_reclemation_state_central_kheions
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_NORTHERN_KHEIONS }
+			state_region = { add_arable_land = 15 }
+			save_scope_as = alecand_reclemation_state_northern_kheions
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_SOUTHERN_KHEIONS }
+			state_region = { add_arable_land = 11 }
+			save_scope_as = alecand_reclemation_state_southern_kheions
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_SOUTIKAN }
+			state_region = { add_arable_land = 15 }
+			save_scope_as = alecand_reclemation_state_soutikan
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_NORTIKAN }
+			state_region = { add_arable_land = 11 }
+			save_scope_as = alecand_reclemation_state_nortikan
+		}
+	}	
+}
+
+alecand_reclamation.4 = {
+	type = country_event
+	placement = root
+	
+	title = alecand_reclamation.4.t
+	desc =  alecand_reclamation.4.d
+	flavor = alecand_reclamation.4.f
+	
+	event_image = {
+		video = "europenorthamerica_russian_serfs"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 3
+	
+	trigger = {
+		#triggered by JE
+	}
+
+	immediate = {
+	}
+
+	option = { 
+		name = alecand_reclamation.4.a
+		default_option = yes
+		random_scope_state = {
+			limit = { state_region = s:STATE_CENTRAL_KHEIONS }
+			state_region = {
+			 	add_arable_land = 19 
+			 	remove_state_trait = state_trait_kaydhano
+			}
+			add_modifier = {
+				name = state_alecand_population_boom
+				years = 10
+			}
+			save_scope_as = alecand_reclemation_state_central_kheions
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_NORTHERN_KHEIONS }
+			state_region = { 
+				add_arable_land = 15 
+				remove_state_trait = state_trait_kaydhano
+			}
+			add_modifier = {
+				name = state_alecand_population_boom
+				years= 10
+			}
+			save_scope_as = alecand_reclemation_state_northern_kheions
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_SOUTHERN_KHEIONS }
+			state_region = { 
+				add_arable_land = 12 
+				remove_state_trait = state_trait_kaydhano
+			}
+			add_modifier  = {
+				name = state_alecand_population_boom
+				years= 10
+			}
+			save_scope_as = alecand_reclemation_state_southern_kheions
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_SOUTIKAN }
+			state_region = { 
+				add_arable_land = 15 
+				remove_state_trait = state_trait_kaydhano
+			}
+			add_modifier  = {
+				name = state_alecand_population_boom
+				years= 10
+			}
+			save_scope_as = alecand_reclemation_state_soutikan
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_NORTIKAN }
+			state_region = { 
+				add_arable_land = 12 
+				remove_state_trait = state_trait_kaydhano
+			}
+			add_modifier  = {
+				name = state_alecand_population_boom
+				years= 10
+			}
+			save_scope_as = alecand_reclemation_state_nortikan
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_VOTHELSI }
+			state_region = { 
+				add_arable_land = 5 
+				remove_state_trait = state_trait_kaydhano
+			}
+			add_modifier  = {
+				name = state_alecand_population_boom
+				years = 10
+			}
+			save_scope_as = alecand_reclemation_state_vothelsi
+		}
+		add_modifier = {
+			name = alecand_reclaimer_complete
+		}
+	}	
+}
+
+alecand_reclamation.5 = { #greatpower meddeling reclamation
+	type = country_event
+	placement = root
+	
+	title = alecand_reclamation.5.t
+	desc =  alecand_reclamation.5.d
+	flavor = alecand_reclamation.5.f
+	
+	event_image = {
+		video = "asia_westerners_arriving"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+	
+	trigger = { 
+		#triggered by JE
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				country_rank = rank_value:great_power
+				relations:root >= relations_threshold:neutral
+				NOT = { has_war_with = ROOT }
+				#NOT = { is_owed_obligation_by = ROOT }
+			}
+			save_scope_as = alecand_reclamation_investment_country
+		}
+		random_country = {
+			limit = {
+				has_journal_entry = je_alecand_reclamation
+			}
+			save_scope_as = root_country
+		}
+	}
+
+	option = { 
+		name = alecand_reclamation.5.a
+		default_option = yes
+		scope:alecand_reclamation_investment_country.power_bloc = {
+			add_leverage = {target = scope:root_country value = 100}
+		}
+		change_relations = {
+			country = scope:alecand_reclamation_investment_country
+			value = 20
+		}
+
+		je:je_alecand_reclamation = {
+			add_progress = { value = 20 name = alecand_reclamation_progress_bar }
+		}
+	}
+
+	option = {
+		name = alecand_reclamation.5.b
+		change_relations = {
+			country = scope:alecand_reclamation_investment_country
+			value = -10
+		}
+	}	
+}
+
+
+alecand_reclamation.6 = { #reverseengineerprecursorartifacts
+	type = country_event
+	placement = root
+	
+	title = alecand_reclamation.6.t
+	desc =  alecand_reclamation.6.d
+	flavor = alecand_reclamation.6.f
+	
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	duration = 3
+	
+	trigger = {
+		#triggered by JE
+	}
+
+	immediate = {
+
+	}
+
+	option = { 
+		name = alecand_reclamation.6.a
+		add_modifier = {
+			name = paying_reverse_engineer_artifacts_alcecand
+			multiplier = money_amount_multiplier_small
+			days = short_modifier_time
+		}
+
+		je:je_alecand_reclamation = {
+			add_progress = { value = 15 name = alecand_reclamation_progress_bar }
+		}
+	}
+
+	option = {
+		name = alecand_reclamation.6.b
+		default_option = yes
+		add_modifier = {
+			name = give_industrialists_artifacts
+			years = 3
+		}
+	}	
+}
+
+alecand_reclamation.7 = { #mageartificersvyingforattention
+	type = country_event
+	placement = root
+	
+	title = alecand_reclamation.7.t
+	desc =  alecand_reclamation.7.d
+	flavor = alecand_reclamation.7.f
+	
+	event_image = {
+		video = "africa_leader_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	duration = 3
+	
+	trigger = { 
+		#triggered by JE
+	}
+
+	immediate = {
+	}
+
+	option = { 
+		name = alecand_reclamation.7.a
+		default_option = yes
+		add_modifier = {
+			name = favour_archmages_alecand_je
+			years = 2
+		}
+	}
+
+	option = {
+		name = alecand_reclamation.7.b
+		add_modifier = {
+			name = favour_artificers_alecand_je
+			years = 2
+		}
+	}
+
+	option = {
+		name = alecand_reclamation.7.c
+	    default_option = yes
+	    highlighted_option = yes
+		trigger = {
+			ruler = {
+				OR = {
+					has_trait = basic_diplomat
+					has_trait = experienced_diplomat
+					has_trait = masterful_diplomat
+				}
+			}
+		}
+	}		
+}
+
+alecand_reclamation.8 = { #malfunction the humanity
+	type = country_event
+	placement = root
+	
+	title = alecand_reclamation.8.t
+	desc =  alecand_reclamation.8.d
+	flavor = alecand_reclamation.8.f
+	
+	event_image = {
+		video = "asia_factory_accident"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	
+	duration = 3
+	
+	trigger = { 
+		#triggered by JE
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				has_state_trait = state_trait_kaydhano
+			}
+			save_scope_as = malfunction_ward_affected_state
+		}
+	}
+
+	option = { 
+		name = alecand_reclamation.8.a
+		default_option = yes
+		scope:malfunction_ward_affected_state.state_region = {
+			add_devastation = 5
+		}
+	}
+}
+
+alecand_reclamation.9 = { #kaydhano event
+	type = country_event
+	placement = root
+	
+	title = alecand_reclamation.9.t
+	desc =  alecand_reclamation.9.d
+	flavor = alecand_reclamation.9.f
+	
+	event_image = {
+		video = "asia_factory_accident"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	
+	duration = 3
+	
+	trigger = { 
+		any_scope_state = {
+			has_state_trait = state_trait_kaydhano
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = { state_region = s:STATE_CENTRAL_KHEIONS }
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_NORTHERN_KHEIONS }
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_SOUTHERN_KHEIONS }
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_SOUTIKAN }
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_NORTIKAN }
+		}
+		random_scope_state = {
+			limit = { state_region = s:STATE_VOTHELSI }
+		}
+	}
+
+	option = { 
+		name = alecand_reclamation.9.a
+		default_option = yes
+		if = {
+			limit = {
+				has_modifier = alecand_reclaimer_complete
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_CENTRAL_KHEIONS }
+				state_region = {
+			 		add_devastation = 15 
+					}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_NORTHERN_KHEIONS }
+				state_region = { 
+					add_devastation = 15 
+					}	
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_SOUTHERN_KHEIONS }
+				state_region = { 
+					add_devastation = 15 
+				}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_SOUTIKAN }
+				state_region = { 
+					add_devastation = 15 
+					}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_NORTIKAN }
+				state_region = { 
+					add_devastation = 15 
+				}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_VOTHELSI }
+				state_region = { 
+					add_devastation = 15 
+				}
+			}
+		}
+		else = {
+			random_scope_state = {
+				limit = { state_region = s:STATE_CENTRAL_KHEIONS }
+				state_region = {
+			 		add_devastation = 25 
+					}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_NORTHERN_KHEIONS }
+				state_region = { 
+					add_devastation = 25 
+					}	
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_SOUTHERN_KHEIONS }
+				state_region = { 
+					add_devastation = 25 
+				}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_SOUTIKAN }
+				state_region = { 
+					add_devastation = 25 
+					}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_NORTIKAN }
+				state_region = { 
+					add_devastation = 25 
+				}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_VOTHELSI }
+				state_region = { 
+					add_devastation = 25 
+				}
+			}
+		}
+	}
+
+	option = { #Extra help
+		name = alecand_reclamation.9.b
+		add_modifier = {
+			name = modifier_volcano_relief
+			multiplier = money_amount_multiplier_small
+			days = short_modifier_time
+		}
+		 if = {
+		 	limit = {
+		 		has_modifier = alecand_reclaimer_complete
+		 	}
+		 	random_scope_state = {
+				limit = { state_region = s:STATE_CENTRAL_KHEIONS }
+				state_region = {
+			 		add_devastation = 5 
+					}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_NORTHERN_KHEIONS }
+				state_region = { 
+					add_devastation = 5 
+					}	
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_SOUTHERN_KHEIONS }
+				state_region = { 
+					add_devastation = 5 
+				}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_SOUTIKAN }
+				state_region = { 
+					add_devastation = 5 
+					}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_NORTIKAN }
+				state_region = { 
+					add_devastation = 5 
+				}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_VOTHELSI }
+				state_region = { 
+					add_devastation = 5 
+				}
+			}
+		 }
+		 else = {
+			random_scope_state = {
+				limit = { state_region = s:STATE_CENTRAL_KHEIONS }
+				state_region = {
+			 		add_devastation = 15 
+					}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_NORTHERN_KHEIONS }
+				state_region = { 
+					add_devastation = 15 
+					}	
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_SOUTHERN_KHEIONS }
+				state_region = { 
+					add_devastation = 15 
+				}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_SOUTIKAN }
+				state_region = { 
+					add_devastation = 15 
+					}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_NORTIKAN }
+				state_region = { 
+					add_devastation = 15 
+				}
+			}
+			random_scope_state = {
+				limit = { state_region = s:STATE_VOTHELSI }
+				state_region = { 
+					add_devastation = 15 
+				}
+			}
+		}
+	}
+
+}

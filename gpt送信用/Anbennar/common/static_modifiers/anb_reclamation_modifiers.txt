@@ -1,0 +1,50 @@
+﻿je_alecand_reclamation_innovation_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_tech_spread_mult = -0.2
+	country_tech_research_speed_mult = 0.05
+}
+
+je_alecand_reclamation_construction_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_construction_add = -10
+}
+
+je_modifier_alecand_reclaiming_land = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_bureaucracy_add = -200
+}
+
+state_alecand_population_boom = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	state_birth_rate_mult = 0.05
+	state_migration_pull_mult = 0.25
+}
+
+alecand_reclaimer_complete = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 25
+}
+
+paying_reverse_engineer_artifacts_alcecand = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 10
+}
+
+give_industrialists_artifacts = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_ig_industrialists_approval_add = 3
+	interest_group_ig_industrialists_pol_str_mult = 0.1
+}
+
+favour_archmages_alecand_je = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_ig_landowners_approval_add = 2
+	interest_group_ig_industrialists_approval_add = -2
+	country_archmages_pol_str_mult = 0.1
+}
+
+favour_artificers_alecand_je = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_ig_landowners_approval_add = -2
+	interest_group_ig_industrialists_approval_add = 2
+}

@@ -1,0 +1,69 @@
+﻿COUNTRIES = {
+	c:B31 ?= {
+		effect_starting_technology_tier_4_tech = yes
+
+		effect_starting_politics_traditional = yes
+
+		activate_law = law_type:law_subjecthood
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_right_of_assembly #just not enough central control unlike in Sarda
+		activate_law = law_type:law_no_migration_controls
+		activate_law = law_type:law_tenant_farmers #no serfdom unlike Ynnics
+
+		activate_law = law_type:law_slavery_banned
+		
+
+		activate_law = law_type:law_nation_of_magic
+
+		# Magic
+		add_technology_researched = precursor_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_inscribed_architecture
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 2
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_spellknights
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 2
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_magical_feasts
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 2
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 2
+		}
+	}
+}

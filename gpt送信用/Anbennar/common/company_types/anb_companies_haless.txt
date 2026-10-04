@@ -1,0 +1,220 @@
+﻿company_concerned_citizens = { #Concerned Citizens for a Greener Haless
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+
+	category = shopkeeper_owned
+
+	flavored_company = yes
+
+	building_types = {
+		building_rice_farm
+		building_silk_plantation
+		building_sugar_plantation
+	}
+
+	extension_building_types = {
+		building_livestock_ranch
+		building_cotton_plantation
+	}
+
+	potential = {
+		OR = {
+			country_is_in_india = yes
+			country_is_in_southeast_asia = yes
+			country_is_in_east_asia = yes
+		}
+	}
+
+	possible = {
+		has_law = law_type:law_industry_banned
+		OR = {
+			country_is_in_india = yes
+			country_is_in_southeast_asia = yes
+			country_is_in_east_asia = yes
+		}
+	}
+
+	prosperity_modifier = {
+		state_birth_rate_mult = 0.05
+		state_pollution_reduction_health_mult = 0.1
+		building_group_bg_plantations_throughput_add = 0.1 
+	}
+
+	ai_will_do = {
+		has_law = law_type:law_industry_banned
+		OR = {
+			country_is_in_india = yes
+			country_is_in_southeast_asia = yes
+			country_is_in_east_asia = yes
+		}
+	}
+
+	#No specific construction target
+
+	ai_weight = {
+		value = 3
+	}
+}
+
+company_tianlou_papercrafts = { 
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+
+	category = bureaucrat_owned
+
+	flavored_company = yes
+	preferred_headquarters = { STATE_TIANLOU }
+	
+	building_types = {
+		building_paper_mill
+		building_art_academy
+	}
+
+	extension_building_types = {
+		building_logging_camp
+		building_dye_plantation
+	}
+		possible_prestige_goods = {
+		prestige_good_generic_paper
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_paper_complete_tt
+			has_variable = prestige_good_generic_paper_var
+		}
+	}
+
+
+	potential = {
+	has_interest_marker_in_region = region_yanshen
+	}
+
+	possible = {
+	cultural_acceptance_base = {
+			target = cu:jiangszun
+			value >= acceptance_status_4
+		}
+
+		any_scope_state = {
+			state_region = s:STATE_TIANLOU
+			is_incorporated= yes
+			any_scope_building = {
+				is_building_type = building_paper_mill
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_tax_capacity_mult = 0.1
+		country_influence_mult = 0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_TIANLOU
+			is_incorporated = yes
+		}
+	}
+
+	ai_construction_targets = {
+		building_paper_mill = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_TIANLOU
+				is_incorporated = yes
+			}
+		}
+	}
+
+
+
+	ai_weight = {
+		value = 3
+	}
+}
+
+#Shuimu Engineering Cadre
+company_shuimu_engineering_cadre = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_harbor_shipbuilding.dds"
+
+    category = academic_owned
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_IONGSIM }
+
+	building_types = {
+		building_doodad_artificeries
+		building_motor_industry
+		building_port
+	}
+	extension_building_types = {
+		building_shipyard
+		building_whaling_station
+	}
+	possible_prestige_goods = {
+		prestige_good_shuimu_airship
+	}
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_IONGSIM
+			}
+		}
+	}
+
+	potential = {
+	has_interest_marker_in_region = region_yanshen
+	}
+
+	possible = {
+		has_technology_researched = commercial_airships
+		any_scope_state = {
+			state_region = s:STATE_IONGSIM
+			is_incorporated = yes
+			any_scope_building = {
+				OR = {
+					is_building_type = building_doodad_artificeries
+					is_building_type = building_motor_industry
+				}
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_weekly_innovation_mult  = 0.05
+		building_trade_center_throughput_add  = 0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_IONGSIM
+			is_incorporated = yes
+		}
+	}
+
+	ai_construction_targets = {
+		building_doodad_artificeries = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_IONGSIM
+				is_incorporated = yes
+			}
+		}
+		building_motor_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_IONGSIM
+				is_incorporated = yes
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}
+}

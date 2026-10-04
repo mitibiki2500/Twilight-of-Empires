@@ -1,0 +1,65 @@
+﻿agitator_lb_stamh = {	#chronicler easter egg, but also relevant Trollsbayer anarchist
+	first_name = Louis_Brayden
+	last_name = Stamh
+	historical = yes
+	culture = cu:concordian
+	religion = rel:ravelian
+	home_region = STATE_ISOBELIN
+	female = no
+	interest_group = ig_intelligentsia
+	ideology = ideology_anarchist
+	birth_date = 1868.4.23
+	#dna = todo
+	traits = {
+		erudite
+		brave
+		persistent
+	}
+	agitator_usage = {
+		country_trigger = {
+			OR = {
+				c:B98 ?= this	#Trollsbay
+				c:B23 ?= this	#Isobelin
+			}
+		}
+        interest_group_trigger = {
+            is_marginal = no
+            OR = {
+                is_interest_group_type = ig_intelligentsia
+                is_interest_group_type = ig_trade_unions
+            } 
+        }   
+		earliest_usage_date = 1900.2.05 # joins Port Isobel's Anarchist Society
+		latest_usage_date = 1936.1.1
+		chance = 50
+	}
+}
+
+agitator_malachite_knight = {	#Malachite
+	first_name = Mheromar
+	last_name = Malartak
+	historical = yes
+	culture = cu:snecboth
+	religion = rel:eordellon
+	home_region = STATE_JHORGASHIRR	#born into the local Snecboth clans in the 700s
+	female = yes
+	interest_group = ig_trade_unions
+	ideology = ideology_radical
+	birth_date = 695.10.18
+	#dna = todo
+	traits = {
+		trait_immortal
+		meticulous
+		persistent
+		cautious
+		honorable
+		resupply_commander
+		basic_offensive_planner
+	}
+	agitator_usage = {
+		
+	}
+	on_created = {
+		set_character_immortal = yes
+	}
+}

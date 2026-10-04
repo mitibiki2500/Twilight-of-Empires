@@ -1,0 +1,200 @@
+﻿namespace = seedthrall
+
+#Effelai Assimilates Others, warning
+seedthrall.1 = {
+	type = country_event
+	placement = scope:seedthrall_spread
+	
+	title = seedthrall.1.t
+	desc = seedthrall.1.d
+	flavor = seedthrall.1.f
+	
+	event_image = {
+		video = "middleeast_jungle_expedition"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	duration = 3
+	
+	trigger = {
+		c:C14 = ROOT
+		NOT = { has_variable = c14_seedthrall_flag }
+		any_scope_pop = {
+			pop_acceptance < 40
+		}
+	}
+	
+	immediate = {
+		set_variable = c14_seedthrall_flag
+		random_scope_state = {
+			limit = { any_scope_pop = { pop_acceptance < 40 } }
+			save_scope_as = seedthrall_spread
+		}
+	}
+	
+	option = {
+		name = seedthrall.1.a
+		default_option = yes
+		custom_tooltip = c14_seedthrall_tt
+		every_scope_pop = {
+			limit = { pop_acceptance < 40 }
+			if = {
+				limit = { total_size >= 10000 }
+				change_pop_culture = {
+					target = cu:seedthrall
+					value = 0.1
+				}
+				change_pop_religion = {
+					target = rel:song_servants
+					value = 0.1
+				}
+			}
+			else = {
+				change_pop_culture = {
+					target = cu:seedthrall
+					value = 1
+				}
+				change_pop_religion = {
+					target = rel:song_servants
+					value = 1
+				}
+			}
+		}
+	}
+}
+
+#Effelai Assimilates Others, hidden
+seedthrall.2 = {
+	type = country_event
+	hidden = yes
+	
+	trigger = {
+		c:C14 = ROOT
+		has_variable = c14_seedthrall_flag
+		any_scope_pop = {
+			pop_acceptance < 40
+		}
+	}
+	
+	immediate = {
+		every_scope_pop = {
+			limit = { pop_acceptance < 40 }
+			if = {
+				limit = { total_size >= 10000 }
+				change_pop_culture = {
+					target = cu:seedthrall
+					value = 0.1
+				}
+				change_pop_religion = {
+					target = rel:song_servants
+					value = 0.1
+				}
+			}
+			else = {
+				change_pop_culture = {
+					target = cu:seedthrall
+					value = 1
+				}
+				change_pop_religion = {
+					target = rel:song_servants
+					value = 1
+				}
+			}
+		}
+	}
+}
+
+#Seedthralls dying, warning
+seedthrall.3 = {
+	type = country_event
+	placement = scope:seedthrall_cleanse
+	
+	title = seedthrall.3.t
+	desc = seedthrall.3.d
+	flavor = seedthrall.3.f
+	
+	event_image = {
+		video = "middleeast_jungle_expedition"
+	}
+	
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+	duration = 3
+	
+	trigger = {
+		NOT = { c:C14 = ROOT }
+		NOT = { has_variable = not_c14_seedthrall_flag }
+		any_scope_pop = {
+			has_pop_culture = seedthrall
+		}
+	}
+	
+	immediate = {
+		set_variable = not_c14_seedthrall_flag
+		random_scope_state = {
+			limit = { any_scope_pop = { has_pop_culture = seedthrall } }
+			save_scope_as = seedthrall_cleanse
+		}
+		c:C14 = {
+			random_scope_state = {
+				limit = { is_split_state = no }
+				save_scope_as = seedthrall_flee
+			}
+		}
+	}
+	
+	option = {
+		name = seedthrall.3.a
+		default_option = yes
+		add_culture_acceptance_modifier = {
+			culture = cu:seedthrall
+			multiplier = -100
+		}
+		scope:seedthrall_flee = {
+			create_mass_migration = {
+				origin = ROOT
+				culture = cu:seedthrall
+			}
+		}
+		custom_tooltip = not_c14_seedthrall_tt
+		kill_population_percent = {
+			culture = cu:seedthrall
+			percent = 0.05
+		}
+		kill_population = {
+			culture = cu:seedthrall
+			value = 10000
+		}
+	}
+}
+
+#Seedthralls dying, hidden
+seedthrall.4 = {
+	type = country_event
+	hidden = yes
+	
+	trigger = {
+		NOT = { c:C14 = ROOT }
+		has_variable = not_c14_seedthrall_flag
+	}
+	
+	immediate = {
+		if = {
+			limit = { any_scope_pop = { has_pop_culture = seedthrall } }
+			kill_population_percent = {
+				culture = cu:seedthrall
+				percent = 0.05
+			}
+			kill_population = {
+				culture = cu:seedthrall
+				value = 10000
+			}
+		}
+		else = { remove_variable = not_c14_seedthrall_flag }
+	}
+}

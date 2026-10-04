@@ -1,0 +1,2886 @@
+﻿namespace = broken_empire
+
+# JE start
+broken_empire.1 = {
+	type = country_event
+	placement = root
+	
+	title = broken_empire.1.t
+	desc =  broken_empire.1.d
+	flavor = broken_empire.1.f
+	
+	event_image = {
+		video = "europenorthamerica_russian_serfs"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	duration = 3
+	
+	trigger = {
+		c:A01 ?= this
+		has_technology_researched = nationalism
+		NOT = { has_technology_researched = pan-nationalism }
+		NOT = { has_variable = anbennar_var }
+	}
+
+	immediate = {
+		root = { save_scope_as = broken_empire_target }
+		set_variable = {
+			name = anbennar_var
+			value = 0
+		}
+		set_global_variable = {
+			name = broken_empire_time_var
+			years = 15
+		}
+		set_global_variable = {
+			name = broken_empire_unrest_var
+			years = 10
+		}
+		set_variable = {
+			name = broken_empire_start_year
+			value = year
+		}
+	}
+
+	option = { 
+		name = broken_empire.1.a
+		default_option = yes
+		add_journal_entry = { type = je_broken_empire }
+		custom_tooltip = {
+			text = broken_empire_increase_600_tt
+			change_variable = { name = anbennar_var add = 600 }
+		}
+		every_scope_culture = {
+			limit = {
+				has_discrimination_trait = heritage_anbennarian
+				NOT = { this = cu:costine }
+			}
+			ROOT = {
+				add_radicals = {
+					value = large_radicals
+					culture = prev
+				}
+				create_political_movement = { type = movement_cultural_minority culture = prev }
+			}
+		}
+	}	
+}
+
+# Independence referendum
+broken_empire.2 = {
+	type = country_event
+	placement = root
+	
+	title = broken_empire.2.t
+	desc =  broken_empire.2.d
+	flavor = broken_empire.2.f
+	
+	event_image = {
+		video = "europenorthamerica_russian_serfs"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 3
+	
+	trigger = {
+		OR = {
+			AND = {
+				var:anbennar_var >= 700
+				any_scope_state = {
+					state_region = {
+						OR = {
+							is_homeland = cu:west_damerian
+							is_homeland = cu:east_damerian
+							is_homeland = cu:pearlsedger
+							is_homeland = cu:crownsman
+							is_homeland = cu:vernman
+							is_homeland = cu:exwesser
+							is_homeland = cu:arbarani
+							is_homeland = cu:esmari
+							is_homeland = cu:arannese
+							is_homeland = cu:uelairey
+							is_homeland = cu:pashainey
+							is_homeland = cu:vertesker
+							is_homeland = cu:wexonard
+							is_homeland = cu:havener_elf
+							is_homeland = cu:beefoot_halfling
+							is_homeland = cu:imperial_gnome
+							is_homeland = cu:dovesworn_gnoll
+							is_homeland = cu:silver_dwarf
+						}
+					}
+				}
+			}
+			any_scope_state = {
+				radical_fraction = {
+					value >= 0.5
+				}
+				state_region = {
+					OR = {
+						is_homeland = cu:west_damerian
+						is_homeland = cu:east_damerian
+						is_homeland = cu:pearlsedger
+						is_homeland = cu:crownsman
+						is_homeland = cu:vernman
+						is_homeland = cu:exwesser
+						is_homeland = cu:arbarani
+						is_homeland = cu:esmari
+						is_homeland = cu:arannese
+						is_homeland = cu:uelairey
+						is_homeland = cu:pashainey
+						is_homeland = cu:vertesker
+						is_homeland = cu:wexonard
+						is_homeland = cu:havener_elf
+						is_homeland = cu:beefoot_halfling
+						is_homeland = cu:imperial_gnome
+						is_homeland = cu:dovesworn_gnoll
+						is_homeland = cu:silver_dwarf
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				state_region = {
+					OR = {
+						is_homeland = cu:west_damerian
+						is_homeland = cu:east_damerian
+						is_homeland = cu:pearlsedger
+						is_homeland = cu:crownsman
+						is_homeland = cu:vernman
+						is_homeland = cu:exwesser
+						is_homeland = cu:arbarani
+						is_homeland = cu:esmari
+						is_homeland = cu:arannese
+						is_homeland = cu:uelairey
+						is_homeland = cu:pashainey
+						is_homeland = cu:vertesker
+						is_homeland = cu:wexonard
+						is_homeland = cu:havener_elf
+						is_homeland = cu:beefoot_halfling
+						is_homeland = cu:imperial_gnome
+						is_homeland = cu:dovesworn_gnoll
+						is_homeland = cu:silver_dwarf
+					}
+				}
+			}
+			save_scope_as = anb_indep_state
+		}
+	}
+
+	option = {  #No
+		name = broken_empire.2.a
+		default_option = yes
+		ai_chance = {
+			base = 2
+			modifier = {
+				trigger = {
+					any_scope_state = {
+						count <= 8
+						state_is_in_europe = yes
+					}
+				}
+				add = 6
+			}
+			modifier = {
+				trigger = {
+					any_scope_state = {
+						count <= 10
+						state_is_in_europe = yes
+					}
+				}
+				add = 4
+			}
+			modifier = {
+				trigger = {
+					any_scope_state = {
+						count <= 15
+						state_is_in_europe = yes
+					}
+				}
+				add = 2
+			}
+		}
+		custom_tooltip = {
+			text = broken_empire_increase_50_tt
+			change_variable = { name = anbennar_var add = 50 }
+		}
+		scope:anb_indep_state = {
+			every_scope_culture = {
+				limit = {
+					has_discrimination_trait = heritage_anbennarian
+					NOT = { this = cu:costine }
+				}
+				prev = {
+					add_radicals_in_state = {
+						value = large_radicals
+						culture = prev
+					}
+				}
+			}
+		}
+	}
+
+	option = { #Yes
+		name = broken_empire.2.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = {
+					var:anbennar_var >= 900
+				}
+				add = 3
+			}
+			modifier = {
+				trigger = {
+					var:anbennar_var <= 600
+				}
+				add = -1
+			}
+			modifier = {
+				trigger = {
+					any_scope_state = {
+						count <= 6
+						state_is_in_europe = yes
+					}
+				}
+				add = -3
+			}
+		}
+		custom_tooltip = {
+			text = broken_empire_decrease_100_tt
+			change_variable = { name = anbennar_var add = -100 }
+		}
+		scope:anb_indep_state = {
+			state_region = {
+				switch = {
+					trigger = is_homeland
+					cu:west_damerian = {
+						if = {
+							limit = {
+								exists = c:A50
+							}
+							s:STATE_NECKCLIFFE.region_state:A01 ?= { set_state_owner = c:A50 }
+							s:STATE_WESDAM.region_state:A01 ?= { set_state_owner = c:A50 }
+							s:STATE_CARNETER.region_state:A01 ?= { set_state_owner = c:A50 }
+						}
+						else = {
+							create_country = { #Wesdam
+								tag = A50
+								origin = root
+								state = s:STATE_NECKCLIFFE.region_state:A01
+								state = s:STATE_WESDAM.region_state:A01
+								state = s:STATE_CARNETER.region_state:A01
+							}
+							c:A50 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A50
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:east_damerian = {
+						if = {
+							limit = {
+								exists = c:A57
+							}
+							s:STATE_DAMERIAN_HEARTLANDS.region_state:A01 ?= { set_state_owner = c:A57 }
+							s:STATE_ISTRALORIAN_DALES.region_state:A01 ?= { set_state_owner = c:A57 }
+						}
+						else = {
+							create_country = { #Dameria
+								tag = A57
+								origin = root
+								state = s:STATE_DAMERIAN_HEARTLANDS.region_state:A01
+								state = s:STATE_ISTRALORIAN_DALES.region_state:A01
+							}
+							c:A57 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A57
+									type = puppet
+								}
+							}
+						}
+						if = {
+							limit = {
+								exists = c:A55
+							}
+							s:STATE_PASHAINE.region_state:A01 ?= { set_state_owner = c:A55 }
+						}
+						else = {
+							create_country = { #Pashaine
+								tag = A55
+								origin = root
+								state = s:STATE_PASHAINE.region_state:A01
+								on_created = {
+									every_scope_culture = {
+										limit = {
+											OR = {
+												this = cu:east_damerian
+												this = cu:vernman
+											}
+										}
+										every_scope_pop = {
+											change_pop_culture = {
+												target = cu:pashainey
+												value = 0.5
+											}
+										}
+									}
+									s:STATE_PASHAINE = { add_homeland = cu:pashainey }
+								}
+							}
+							c:A55 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A55
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:pearlsedger = {
+						if = {
+							limit = {
+								exists = c:A45
+							}
+							s:STATE_PEARLSEDGE.region_state:A01 ?= { set_state_owner = c:A45 }
+						}
+						else = {
+							create_country = { #Pearlsedge
+								tag = A45
+								origin = root
+								state = s:STATE_PEARLSEDGE.region_state:A01
+							}
+							c:A45 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A45
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:crownsman = {
+						if = {
+							limit = {
+								exists = c:A34
+							}
+							s:STATE_DAMESCROWN.region_state:A01 ?= { set_state_owner = c:A34 }
+						}
+						else = {
+							create_country = { #Damescrown
+								tag = A34
+								origin = root
+								state = s:STATE_DAMESCROWN.region_state:A01
+							}
+							c:A34 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A34
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:vernman = {
+						if = {
+							limit = {
+								exists = c:A55
+							}
+							s:STATE_PASHAINE.region_state:A01 ?= { set_state_owner = c:A55 }
+						}
+						else = {
+							create_country = { #Pashaine
+								tag = A55
+								origin = root
+								state = s:STATE_PASHAINE.region_state:A01
+								on_created = {
+									every_scope_culture = {
+										limit = {
+											OR = {
+												this = cu:east_damerian
+												this = cu:vernman
+											}
+										}
+										every_scope_pop = {
+											change_pop_culture = {
+												target = cu:pashainey
+												value = 0.5
+											}
+										}
+									}
+									s:STATE_PASHAINE = { add_homeland = cu:pashainey }
+								}
+							}
+							c:A55 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A55
+									type = puppet
+								}
+							}
+						}
+						if = {
+							limit = {
+								exists = c:A48
+							}
+							s:STATE_VERNE.region_state:A01 ?= { set_state_owner = c:A48 }
+							s:STATE_MENIBOR.region_state:A01 ?= { set_state_owner = c:A48 }
+						}
+						else = {
+							create_country = { #Verne
+								tag = A48
+								origin = root
+								state = s:STATE_VERNE.region_state:A01
+								state = s:STATE_MENIBOR.region_state:A01
+							}
+							c:A48 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A48
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:exwesser = {
+						if = {
+							limit = {
+								exists = c:A77
+							}
+							s:STATE_EXWES.region_state:A01 ?= { set_state_owner = c:A77 }
+						}
+						else = {
+							create_country = { #Exwess
+								tag = A77
+								origin = root
+								state = s:STATE_EXWES.region_state:A01
+							}
+							c:A77 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A77
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:arbarani = {
+						if = {
+							limit = {
+								exists = c:A68
+							}
+							s:STATE_FREECESTIR.region_state:A01 ?= { set_state_owner = c:A68 }
+							s:STATE_ARBARAN.region_state:A01 ?= { set_state_owner = c:A68 }
+						}
+						else = {
+							create_country = { #Arbaran
+								tag = A68
+								origin = root
+								state = s:STATE_FREECESTIR.region_state:A01
+								state = s:STATE_ARBARAN.region_state:A01
+							}
+							c:A68 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A68
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:esmari = {
+						if = {
+							limit = {
+								exists = c:A46
+							}
+							s:STATE_BENNON = {
+								set_owner_of_provinces = {
+									country = c:A46
+									provinces = { xA63E40 }
+								}
+							}
+						}
+						else = {
+							create_country = { #Giberd
+								tag = A46
+								origin = root
+								province = p:xA63E40
+							}
+							c:A46 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A46
+									type = puppet
+								}
+							}
+						}
+						if = {
+							limit = {
+								exists = c:A69
+							}
+							s:STATE_CANN_ESMAR.region_state:A01 ?= { set_state_owner = c:A69 }
+							s:STATE_TELGEIR_CALASCANDAR.region_state:A01 ?= { set_state_owner = c:A69 }
+							s:STATE_BENNON.region_state:A01 ?= { set_state_owner = c:A69 }
+							s:STATE_KONWELL.region_state:A01 ?= { set_state_owner = c:A69 }
+							s:STATE_ESTALLEN.region_state:A01 ?= { set_state_owner = c:A69 }
+							s:STATE_HIGH_ESMAR.region_state:A01 ?= { set_state_owner = c:A69 }
+						}
+						else = {
+							create_country = { #Esmaria
+								tag = A69
+								origin = root
+								state = s:STATE_CANN_ESMAR.region_state:A01
+								state = s:STATE_TELGEIR_CALASCANDAR.region_state:A01
+								state = s:STATE_BENNON.region_state:A01
+								state = s:STATE_KONWELL.region_state:A01
+								state = s:STATE_ESTALLEN.region_state:A01
+								state = s:STATE_HIGH_ESMAR.region_state:A01
+							}
+							c:A69 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A69
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:arannese = {
+						if = {
+							limit = {
+								exists = c:A67
+							}
+							s:STATE_ARANNEN.region_state:A01 ?= { set_state_owner = c:A67 }
+							s:STATE_TOARNEN.region_state:A01 ?= { set_state_owner = c:A67 }
+							s:STATE_BARDSWOOD.region_state:A01 ?= { set_state_owner = c:A67 }
+							s:STATE_GISDEN.region_state:A01 ?= { set_state_owner = c:A67 }
+							s:STATE_CELLIANDE.region_state:A01 ?= { set_state_owner = c:A67 }
+							s:STATE_ASHENIANDE.region_state:A01 ?= { set_state_owner = c:A67 }
+						}
+						else = {
+							create_country = { #Arannen
+								tag = A67
+								origin = root
+								state = s:STATE_ARANNEN.region_state:A01
+								state = s:STATE_TOARNEN.region_state:A01
+								state = s:STATE_BARDSWOOD.region_state:A01
+								state = s:STATE_GISDEN.region_state:A01
+								state = s:STATE_CELLIANDE.region_state:A01
+								state = s:STATE_ASHENIANDE.region_state:A01
+							}
+							c:A67 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A67
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:uelairey = {
+						if = {
+							limit = {
+								exists = c:A35
+							}
+							s:STATE_ELKMARCH.region_state:A01 ?= { set_state_owner = c:A35 }
+						}
+						else = {
+							create_country = { #Uelaire
+								tag = A35
+								origin = root
+								state = s:STATE_ELKMARCH.region_state:A01
+							}
+							c:A35 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A35
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:pashainey = {
+						if = {
+							limit = {
+								exists = c:A55
+							}
+							s:STATE_PASHAINE.region_state:A01 ?= { set_state_owner = c:A55 }
+						}
+						else = {
+							create_country = { #Pashaine
+								tag = A55
+								origin = root
+								state = s:STATE_PASHAINE.region_state:A01
+								on_created = {
+									every_scope_culture = {
+										limit = {
+											OR = {
+												this = cu:east_damerian
+												this = cu:vernman
+											}
+										}
+										every_scope_pop = {
+											change_pop_culture = {
+												target = cu:pashainey
+												value = 0.5
+											}
+										}
+									}
+									s:STATE_PASHAINE = { add_homeland = cu:pashainey }
+								}
+							}
+							c:A55 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A55
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:vertesker = {
+						if = {
+							limit = {
+								exists = c:A19
+							}
+							s:STATE_VERTESK.region_state:A01 ?= { set_state_owner = c:A19 }
+							s:STATE_FLOODMARCHES.region_state:A01 ?= { set_state_owner = c:A19 }
+						}
+						else = {
+							create_country = { #Vertesk
+								tag = A19
+								origin = root
+								state = s:STATE_VERTESK.region_state:A01
+								state = s:STATE_FLOODMARCHES.region_state:A01
+							}
+							c:A19 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A19
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:wexonard = {
+						if = {
+							limit = {
+								exists = c:A41
+							}
+							s:STATE_WEX.region_state:A01 ?= { set_state_owner = c:A41 }
+							s:STATE_BISAN.region_state:A01 ?= { set_state_owner = c:A41 }
+							s:STATE_SUGAMBER.region_state:A01 ?= { set_state_owner = c:A41 }
+							s:STATE_BARDSWOOD.region_state:A01 ?= { set_state_owner = c:A41 }
+						}
+						else = {
+							create_country = { #Wex
+								tag = A41
+								origin = root
+								state = s:STATE_WEX.region_state:A01
+								state = s:STATE_BISAN.region_state:A01
+								state = s:STATE_SUGAMBER.region_state:A01
+								state = s:STATE_BARDSWOOD.region_state:A01
+							}
+							c:A41 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A41
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:havener_elf = {
+						if = {
+							limit = {
+								exists = c:A44
+							}
+							s:STATE_MOONHAVEN.region_state:A01 ?= { set_state_owner = c:A44 }
+						}
+						else = {
+							create_country = { #Moonhaven
+								tag = A44
+								origin = root
+								state = s:STATE_MOONHAVEN.region_state:A01
+							}
+							c:A44 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A44
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:beefoot_halfling = {
+						if = {
+							limit = {
+								exists = c:A43
+							}
+							s:STATE_BEEPECK.region_state:A01 ?= { set_state_owner = c:A43 }
+						}
+						else = {
+							create_country = { #Beepeck
+								tag = A43
+								origin = root
+								state = s:STATE_BEEPECK.region_state:A01
+							}
+							c:A43 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A43
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:imperial_gnome = {
+						if = {
+							limit = {
+								exists = c:A46
+							}
+							s:STATE_BENNON = {
+								set_owner_of_provinces = {
+									country = c:A46
+									provinces = { xA63E40 }
+								}
+							}
+						}
+						else = {
+							create_country = { #Giberd
+								tag = A46
+								origin = root
+								province = p:xA63E40
+							}
+							c:A46 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A46
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:dovesworn_gnoll = {
+						if = {
+							limit = {
+								exists = c:A11
+							}
+							s:STATE_HONDERAAK.region_state:A01 ?= { set_state_owner = c:A11 }
+							s:STATE_KHENAK.region_state:A01 ?= { set_state_owner = c:A11 }
+						}
+						else = {
+							create_country = { #Honderaak
+								tag = A11
+								origin = root
+								state = s:STATE_HONDERAAK.region_state:A01
+								state = s:STATE_KHENAK.region_state:A01
+							}
+							c:A11 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A11
+									type = puppet
+								}
+							}
+						}
+					}
+					cu:silver_dwarf = {
+						if = {
+							limit = {
+								exists = c:A37
+							}
+							s:STATE_SILVERFORGE.region_state:A01 ?= { set_state_owner = c:A37 }
+							s:STATE_ANVILWRIGHT.region_state:A01 ?= { set_state_owner = c:A37 }
+						}
+						else = {
+							create_country = { #Silverforge
+								tag = A37
+								origin = root
+								state = s:STATE_SILVERFORGE.region_state:A01
+								state = s:STATE_ANVILWRIGHT.region_state:A01
+							}
+							c:A37 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+							root = {
+								create_diplomatic_pact = {
+									country = c:A37
+									type = puppet
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				exists = c:A46
+				s:STATE_BENNON = {
+					exists = region_state:A46
+				}
+			}
+			s:STATE_BENNON = {
+				every_scope_state = {
+					limit = {
+						is_capital = no
+					}
+					every_scope_pop = {
+						limit = {
+							has_pop_culture = imperial_gnome
+						}
+						move_pop = s:STATE_BENNON.region_state:A46
+					}
+				}
+			}
+		}
+	}
+}
+
+# Unrest
+broken_empire.3 = {
+	type = country_event
+	placement = root
+	
+	title = broken_empire.3.t
+	desc =  broken_empire.3.d
+	flavor = broken_empire.3.f
+	
+	event_image = {
+		video = "europenorthamerica_russian_serfs"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 3
+	
+	trigger = {
+		has_global_variable = broken_empire_unrest_var
+	}
+
+	option = { 
+		name = broken_empire.3.a
+		default_option = yes
+		random_scope_state = {
+			limit = {
+				state_region = {
+					OR = {
+						is_homeland = cu:west_damerian
+						is_homeland = cu:east_damerian
+						is_homeland = cu:pearlsedger
+						is_homeland = cu:crownsman
+						is_homeland = cu:vernman
+						is_homeland = cu:exwesser
+						is_homeland = cu:arbarani
+						is_homeland = cu:esmari
+						is_homeland = cu:arannese
+						is_homeland = cu:uelairey
+						is_homeland = cu:pashainey
+						is_homeland = cu:vertesker
+						is_homeland = cu:wexonard
+						is_homeland = cu:havener_elf
+						is_homeland = cu:beefoot_halfling
+						is_homeland = cu:imperial_gnome
+						is_homeland = cu:dovesworn_gnoll
+						is_homeland = cu:silver_dwarf
+					}
+				}
+			}
+			random_scope_culture = {
+				limit = {
+					has_homeland = prev
+					has_discrimination_trait = heritage_anbennarian
+					NOT = { this = cu:costine }
+				}
+				ROOT = {
+					if = {
+						limit = {
+							institution_investment_level = {
+								institution = institution_police
+								value >= 5
+							}
+						}
+						add_radicals = {
+							value = 0.02
+							culture = prev
+						}
+					}
+					else_if = {
+						limit = {
+							institution_investment_level = {
+								institution = institution_police
+								value >= 4
+							}
+						}
+						add_radicals = {
+							value = 0.04
+							culture = prev
+						}
+					}
+					else_if = {
+						limit = {
+							institution_investment_level = {
+								institution = institution_police
+								value >= 3
+							}
+						}
+						add_radicals = {
+							value = 0.06
+							culture = prev
+						}
+					}
+					else_if = {
+						limit = {
+							institution_investment_level = {
+								institution = institution_police
+								value >= 2
+							}
+						}
+						add_radicals = {
+							value = 0.08
+							culture = prev
+						}
+					}
+					else_if = {
+						limit = {
+							institution_investment_level = {
+								institution = institution_police
+								value >= 1
+							}
+						}
+						add_radicals = {
+							value = large_radicals
+							culture = prev
+						}
+					}
+					else = {
+						add_radicals = {
+							value = very_large_radicals
+							culture = prev
+						}
+					}
+				}
+			}
+		}
+	}	
+}
+
+# Subject wants autonomy
+broken_empire.4 = {
+	type = country_event
+	placement = root
+	
+	title = broken_empire.4.t
+	desc =  broken_empire.4.d
+	flavor = broken_empire.4.f
+	
+	event_image = {
+		video = "europenorthamerica_russian_serfs"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 3
+	
+	trigger = {
+		OR = {
+			AND = {
+				var:anbennar_var >= 800
+				any_subject_or_below = {
+					any_primary_culture = {
+						has_discrimination_trait = heritage_anbennarian
+					}
+					capital = { state_is_in_europe = yes }
+					liberty_desire > 25
+				}
+			}
+			any_subject_or_below = {
+				any_primary_culture = {
+					has_discrimination_trait = heritage_anbennarian
+				}
+				capital = { state_is_in_europe = yes }
+				liberty_desire > 75
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				var:anbennar_var >= 800
+			}
+			random_subject_or_below = {
+				limit = {
+					any_primary_culture = {
+						has_discrimination_trait = heritage_anbennarian
+					}
+					capital = { state_is_in_europe = yes }
+					liberty_desire > 25
+				}
+				save_scope_as = anb_rebel_subject
+			}
+		}
+		else = {
+			random_subject_or_below = {
+				limit = {
+					any_primary_culture = {
+						has_discrimination_trait = heritage_anbennarian
+					}
+					capital = { state_is_in_europe = yes }
+					liberty_desire > 75
+				}
+				save_scope_as = anb_rebel_subject
+			}
+		}
+	}
+
+	option = { 
+		name = broken_empire.4.a
+		ai_chance = {
+			base = 2
+			modifier = {
+				trigger = {
+					var:anbennar_var >= 1000
+				}
+				add = -1
+			}
+		}
+		default_option = yes
+		scope:anb_rebel_subject = {
+			add_liberty_desire = 25
+		}
+		custom_tooltip = {
+			text = broken_empire_increase_50_tt
+			change_variable = { name = anbennar_var add = 50 }
+		}
+	}
+
+	option = { 
+		name = broken_empire.4.b
+		ai_chance = {
+			base = 3
+			modifier = {
+				trigger = {
+					scope:anb_rebel_subject = {
+						NOT = { can_increase_autonomy = yes }
+					}
+				}
+				add = -3
+			}
+			modifier = {
+				trigger = {
+					var:anbennar_var <= 800
+				}
+				add = -1
+			}
+			modifier = {
+				trigger = {
+					var:anbennar_var >= 1100
+					scope:anb_rebel_subject = {
+						liberty_desire >= 75
+					}
+				}
+				add = 6
+			}
+		}
+		scope:anb_rebel_subject = {
+			if = {
+				limit = {
+					can_increase_autonomy = yes
+				}
+				increase_autonomy = yes
+				add_liberty_desire = -25
+				custom_tooltip = {
+					text = broken_empire_decrease_50_tt
+					change_variable = { name = anbennar_var add = -50 }
+				}
+			}
+			else = {
+				make_independent = yes
+				custom_tooltip = {
+					text = broken_empire_decrease_100_tt
+					change_variable = { name = anbennar_var add = -100 }
+				}
+			}
+		}
+	}
+}
+
+broken_empire.5 = { # Lorent
+	type = country_event
+	placement = root
+	
+	title = broken_empire.5.t
+	desc =  broken_empire.5.d
+	flavor = broken_empire.5.f
+	
+	event_image = {
+		video = "asia_westerners_arriving"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+	
+	trigger = {
+		
+	}
+
+	option = { 
+		name = broken_empire.5.a
+		trigger = {
+			NOT = { has_variable = be_carneter_war }
+		}
+		default_option = yes
+		ai_chance = {
+			base = 3
+			modifier = {
+				trigger = {
+					is_at_war = yes
+				}
+				add = 3
+			}
+		}
+		c:A01 = {
+			custom_tooltip = {
+				text = broken_empire_decrease_100_tt
+				change_variable = { name = anbennar_var add = -100 }
+			}
+		}
+		change_relations = {
+			country = c:A01
+			value = 20
+		}
+	}
+
+	option = { 
+		name = broken_empire.5.b
+		ai_chance = {
+			base = 1
+		}
+		every_scope_culture = {
+			limit = {
+				has_discrimination_trait = heritage_anbennarian
+			}
+			ROOT = {
+				add_radicals = {
+					value = very_large_radicals
+					culture = prev
+				}
+				create_political_movement = { type = movement_cultural_minority culture = prev }
+			}
+		}
+	}
+
+	option = {
+		name = broken_empire.5.c
+		ai_chance = {
+			base = 3
+			modifier = {
+				trigger = {
+					c:A01.army_size > root.army_size
+				}
+				add = -2
+			}
+			modifier = {
+				trigger = {
+					root.army_size > {
+					    value = c:A01.army_size
+					    multiply = 1.5
+					}
+				}
+				add = 3
+			}
+			modifier = {
+				trigger = {
+					root.army_size > {
+					    value = c:A01.army_size
+					    multiply = 2
+					}
+				}
+				add = 3
+			}
+		}
+		trigger = {
+			NOT = { has_variable = be_carneter_war }
+		}
+		hidden_effect = {
+			set_variable = be_carneter_war
+			c:A01 = {
+				custom_tooltip = {
+					text = broken_empire_decrease_200_tt
+					change_variable = { name = anbennar_var add = -200 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_or_below = { c:A49 ?= this } #Carneter
+			}
+			s:STATE_CARNETER = {
+				every_scope_state = {
+					limit = {
+						NOT = { owner = c:A49 }
+						owner = {
+							OR = {
+								c:A01 ?= this
+								c:A03 ?= this
+								is_subject_of = c:A01
+								is_subject_of = c:A03
+							}
+						}
+					}
+					set_state_owner = c:A49
+				}
+			}
+			s:STATE_NECKCLIFFE = {
+				every_scope_state = {
+					limit = {
+						NOT = { owner = c:A49 }
+						owner = {
+							OR = {
+								c:A01 ?= this
+								c:A03 ?= this
+								is_subject_of = c:A01
+								is_subject_of = c:A03
+							}
+						}
+					}
+					set_state_owner = c:A49
+				}
+			}
+			s:STATE_WESDAM = {
+				every_scope_state = {
+					limit = {
+						NOT = { owner = c:A49 }
+						owner = {
+							OR = {
+								c:A01 ?= this
+								c:A03 ?= this
+								is_subject_of = c:A01
+								is_subject_of = c:A03
+							}
+						}
+					}
+					set_state_owner = c:A49
+				}
+			}
+			s:STATE_PEARLSEDGE = {
+				every_scope_state = {
+					limit = {
+						NOT = { owner = c:A49 }
+						owner = {
+							OR = {
+								c:A01 ?= this
+								c:A03 ?= this
+								is_subject_of = c:A01
+								is_subject_of = c:A03
+							}
+						}
+					}
+					set_state_owner = c:A49
+				}
+			}
+			c:A49 = {
+				create_diplomatic_play = {
+					target_country = c:A01
+					type = dp_independence
+					add_war_goal = { holder = c:A01 target_country = c:A49 type = annex_country }
+				}
+			}
+			random_diplomatic_play = {
+				limit = {
+					is_diplomatic_play_type = dp_independence
+					initiator = {
+						c:A49 ?= this
+					}
+				}
+				add_initiator_backers = { c:A03 }
+			}
+		}
+		else = {
+			create_country = { #Carneter
+				tag = A49
+				origin = root
+				state ?= s:STATE_CARNETER.region_state:A03
+				state ?= s:STATE_NECKCLIFFE.region_state:A03
+				state ?= s:STATE_WESDAM.region_state:A03
+				state ?= s:STATE_PEARLSEDGE.region_state:A03
+				state ?= s:STATE_NECKCLIFFE.region_state:A01
+				state ?= s:STATE_WESDAM.region_state:A01
+				state ?= s:STATE_PEARLSEDGE.region_state:A01
+				state ?= s:STATE_NECKCLIFFE.region_state:A50
+				state ?= s:STATE_WESDAM.region_state:A50
+				state ?= s:STATE_PEARLSEDGE.region_state:A45
+			}
+			c:A49 = {
+				add_radicals = {
+					value = -0.2
+				}
+				add_loyalists = {
+					value = 0.1
+				}
+			}
+			create_diplomatic_pact = {
+				country = c:A49
+				type = puppet
+			}
+			c:A49 = {
+				create_diplomatic_play = {
+					target_country = c:A01
+					type = dp_independence
+					add_war_goal = { holder = c:A01 target_country = c:A49 type = annex_country }
+				}
+			}
+			random_diplomatic_play = {
+				limit = {
+					is_diplomatic_play_type = dp_independence
+					initiator = {
+						c:A49 ?= this
+					}
+				}
+				add_initiator_backers = { c:A03 }
+			}
+		}
+	}	
+}
+
+broken_empire.6 = { # Vivin
+	type = country_event
+	placement = root
+	
+	title = broken_empire.6.t
+	desc =  broken_empire.6.d
+	flavor = broken_empire.6.f
+	
+	event_image = {
+		video = "asia_westerners_arriving"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+	
+	trigger = {
+		
+	}
+
+	option = { 
+		name = broken_empire.6.a
+		default_option = yes
+		trigger = {
+			NOT = { has_variable = be_wex_war }
+		}
+		ai_chance = {
+			base = 3
+			modifier = {
+				trigger = {
+					is_at_war = yes
+				}
+				add = 3
+			}
+		}
+		c:A01 = {
+			custom_tooltip = {
+				text = broken_empire_decrease_100_tt
+				change_variable = { name = anbennar_var add = -100 }
+			}
+		}
+		change_relations = {
+			country = c:A01
+			value = 20
+		}
+	}
+
+	option = { 
+		name = broken_empire.6.b
+		ai_chance = {
+			base = 1
+		}
+		every_scope_culture = {
+			limit = {
+				has_discrimination_trait = heritage_anbennarian
+				NOT = { this = cu:arannese }
+			}
+			ROOT = {
+				add_radicals = {
+					value = very_large_radicals
+					culture = prev
+				}
+				create_political_movement = { type = movement_cultural_minority culture = prev }
+			}
+		}
+	}
+
+	option = {
+		name = broken_empire.6.c
+		ai_chance = {
+			base = 3
+			modifier = {
+				trigger = {
+					c:A01.army_size > root.army_size
+				}
+				add = -2
+			}
+			modifier = {
+				trigger = {
+					root.army_size > {
+					    value = c:A01.army_size
+					    multiply = 1.5
+					}
+				}
+				add = 3
+			}
+			modifier = {
+				trigger = {
+					root.army_size > {
+					    value = c:A01.army_size
+					    multiply = 2
+					}
+				}
+				add = 3
+			}
+		}
+		trigger = {
+			NOT = { has_variable = be_wex_war }
+		}
+		hidden_effect = {
+			set_variable = be_wex_war
+			c:A01 = {
+				custom_tooltip = {
+					text = broken_empire_decrease_200_tt
+					change_variable = { name = anbennar_var add = -200 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_or_below = { c:A41 ?= this } #Wex
+			}
+			s:STATE_WEX = {
+				every_scope_state = {
+					limit = {
+						NOT = { owner = c:A41 }
+						owner = {
+							OR = {
+								c:A01 ?= this
+								c:A02 ?= this
+								is_subject_of = c:A01
+								is_subject_of = c:A02
+							}
+						}
+					}
+					set_state_owner = c:A41
+				}
+			}
+			s:STATE_BISAN = {
+				every_scope_state = {
+					limit = {
+						NOT = { owner = c:A41 }
+						owner = {
+							OR = {
+								c:A01 ?= this
+								c:A02 ?= this
+								is_subject_of = c:A01
+								is_subject_of = c:A02
+							}
+						}
+					}
+					set_state_owner = c:A41
+				}
+			}
+			s:STATE_SUGAMBER = {
+				every_scope_state = {
+					limit = {
+						NOT = { owner = c:A41 }
+						owner = {
+							OR = {
+								c:A01 ?= this
+								c:A02 ?= this
+								is_subject_of = c:A01
+								is_subject_of = c:A02
+							}
+						}
+					}
+					set_state_owner = c:A41
+				}
+			}
+			s:STATE_BARDSWOOD = {
+				every_scope_state = {
+					limit = {
+						NOT = { owner = c:A41 }
+						owner = {
+							OR = {
+								c:A01 ?= this
+								c:A02 ?= this
+								is_subject_of = c:A01
+								is_subject_of = c:A02
+							}
+						}
+					}
+					set_state_owner = c:A41
+				}
+			}
+			c:A41 = {
+				create_diplomatic_play = {
+					target_country = c:A01
+					type = dp_independence
+					add_war_goal = { holder = c:A01 target_country = c:A41 type = annex_country }
+				}
+			}
+			random_diplomatic_play = {
+				limit = {
+					is_diplomatic_play_type = dp_independence
+					initiator = {
+						c:A41 ?= this
+					}
+				}
+				add_initiator_backers = { c:A02 }
+			}
+		}
+		else = {
+			create_country = { #Wex
+				tag = A41
+				origin = root
+				state ?= s:STATE_WEX.region_state:A02
+				state ?= s:STATE_BISAN.region_state:A02
+				state ?= s:STATE_SUGAMBER.region_state:A02
+				state ?= s:STATE_BARDSWOOD.region_state:A02
+				state ?= s:STATE_WEX.region_state:A01
+				state ?= s:STATE_BISAN.region_state:A01
+				state ?= s:STATE_SUGAMBER.region_state:A01
+				state ?= s:STATE_BARDSWOOD.region_state:A01
+				state ?= s:STATE_WEX.region_state:A33
+				state ?= s:STATE_BISAN.region_state:A05
+			}
+			c:A41 = {
+				add_radicals = {
+					value = -0.2
+				}
+				add_loyalists = {
+					value = 0.1
+				}
+			}
+			create_diplomatic_pact = {
+				country = c:A41
+				type = puppet
+			}
+			c:A41 = {
+				create_diplomatic_play = {
+					target_country = c:A01
+					type = dp_independence
+					add_war_goal = { holder = c:A01 target_country = c:A41 type = annex_country }
+				}
+			}
+			random_diplomatic_play = {
+				limit = {
+					is_diplomatic_play_type = dp_independence
+					initiator = {
+						c:A41 ?= this
+					}
+				}
+				add_initiator_backers = { c:A02 }
+			}
+		}
+	}	
+}
+
+broken_empire.10 = { #Completed JE
+	type = country_event
+	placement = root
+	
+	title = broken_empire.10.t
+	desc =  broken_empire.10.d
+	flavor = broken_empire.10.f
+	
+	event_image = {
+		video = "africa_leader_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	duration = 3
+	
+	trigger = { 
+		
+	}
+
+	option = { 
+		name = broken_empire.10.a
+		default_option = yes
+		add_radicals = {
+			value = -0.2
+		}
+		add_loyalists = {
+			value = 0.1
+		}
+		every_subject_or_below = {
+			add_liberty_desire = -25
+		}
+		if = {
+			limit = {
+				any_scope_state = {
+					count = all
+					OR = {
+						state_is_in_europe = no
+						is_split_state = yes
+						state_region = s:STATE_DAMESEAR
+					}
+				}
+			}
+			#hidden_effect = {
+			#	add_primary_culture = cu:west_damerian
+			#	add_primary_culture = cu:east_damerian
+			#	add_primary_culture = cu:pearlsedger
+			#	add_primary_culture = cu:esmari
+			#	add_primary_culture = cu:vernman
+			#	add_primary_culture = cu:crownsman
+			#	add_primary_culture = cu:silver_dwarf
+			#	add_primary_culture = cu:arbarani
+			#	add_primary_culture = cu:arannese
+			#	add_primary_culture = cu:wexonard
+			#	add_primary_culture = cu:exwesser	
+			#	add_primary_culture = cu:dovesworn_gnoll
+			#	add_primary_culture = cu:imperial_gnome
+			#	add_primary_culture = cu:havener_elf
+			#	add_primary_culture = cu:vertesker
+			#	add_primary_culture = cu:uelairey
+			#	add_primary_culture = cu:beefoot_halfling
+			#}
+			change_tag = A53
+		}
+	}	
+}
+
+broken_empire.11 = { #Failed JE
+	type = country_event
+	placement = root
+	
+	title = broken_empire.11.t
+	desc =  broken_empire.11.d
+	flavor = broken_empire.11.f
+	
+	event_image = {
+		video = "africa_leader_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	duration = 3
+	
+	trigger = { 
+		
+	}
+
+	option = { 
+		name = broken_empire.11.a
+		default_option = yes
+		every_scope_culture = {
+			limit = {
+				has_discrimination_trait = heritage_anbennarian
+				NOT = { this = cu:costine }
+			}
+			if = {
+				limit = {
+					root = {
+						radical_fraction = {
+							culture = prev
+							value >= 0.2
+						}
+					}
+				}
+				switch = {
+					trigger = this
+					cu:west_damerian = {
+						if = {
+							limit = {
+								exists = c:A50
+							}
+							s:STATE_NECKCLIFFE.region_state:A01 ?= { set_state_owner = c:A50 }
+							s:STATE_WESDAM.region_state:A01 ?= { set_state_owner = c:A50 }
+							s:STATE_CARNETER.region_state:A01 ?= { set_state_owner = c:A50 }
+						}
+						else = {
+							create_country = { #Wesdam
+								tag = A50
+								origin = root
+								state = s:STATE_NECKCLIFFE.region_state:A01
+								state = s:STATE_WESDAM.region_state:A01
+								state = s:STATE_CARNETER.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A50 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:east_damerian = {
+						if = {
+							limit = {
+								exists = c:A57
+							}
+							s:STATE_DAMERIAN_HEARTLANDS.region_state:A01 ?= { set_state_owner = c:A57 }
+							s:STATE_ISTRALORIAN_DALES.region_state:A01 ?= { set_state_owner = c:A57 }
+						}
+						else = {
+							create_country = { #Dameria
+								tag = A57
+								origin = root
+								state = s:STATE_DAMERIAN_HEARTLANDS.region_state:A01
+								state = s:STATE_ISTRALORIAN_DALES.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A57 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+						if = {
+							limit = {
+								exists = c:A55
+							}
+							s:STATE_PASHAINE.region_state:A01 ?= { set_state_owner = c:A55 }
+						}
+						else = {
+							create_country = { #Pashaine
+								tag = A55
+								origin = root
+								state = s:STATE_PASHAINE.region_state:A01
+								on_created = {
+									every_scope_culture = {
+										set_variable = be_breakaway
+										limit = {
+											OR = {
+												this = cu:east_damerian
+												this = cu:vernman
+											}
+										}
+										every_scope_pop = {
+											change_pop_culture = {
+												target = cu:pashainey
+												value = 0.5
+											}
+										}
+									}
+									s:STATE_PASHAINE = { add_homeland = cu:pashainey }
+								}
+							}
+							c:A55 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:pearlsedger = {
+						if = {
+							limit = {
+								exists = c:A45
+							}
+							s:STATE_PEARLSEDGE.region_state:A01 ?= { set_state_owner = c:A45 }
+						}
+						else = {
+							create_country = { #Pearlsedge
+								tag = A45
+								origin = root
+								state = s:STATE_PEARLSEDGE.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A45 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:crownsman = {
+						if = {
+							limit = {
+								exists = c:A34
+							}
+							s:STATE_DAMESCROWN.region_state:A01 ?= { set_state_owner = c:A34 }
+						}
+						else = {
+							create_country = { #Damescrown
+								tag = A34
+								origin = root
+								state = s:STATE_DAMESCROWN.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A34 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:vernman = {
+						if = {
+							limit = {
+								exists = c:A55
+							}
+							s:STATE_PASHAINE.region_state:A01 ?= { set_state_owner = c:A55 }
+						}
+						else = {
+							create_country = { #Pashaine
+								tag = A55
+								origin = root
+								state = s:STATE_PASHAINE.region_state:A01
+								on_created = {
+									every_scope_culture = {
+										set_variable = be_breakaway
+										limit = {
+											OR = {
+												this = cu:east_damerian
+												this = cu:vernman
+											}
+										}
+										every_scope_pop = {
+											change_pop_culture = {
+												target = cu:pashainey
+												value = 0.5
+											}
+										}
+									}
+									s:STATE_PASHAINE = { add_homeland = cu:pashainey }
+								}
+							}
+							c:A55 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+						if = {
+							limit = {
+								exists = c:A48
+							}
+							s:STATE_VERNE.region_state:A01 ?= { set_state_owner = c:A48 }
+							s:STATE_MENIBOR.region_state:A01 ?= { set_state_owner = c:A48 }
+						}
+						else = {
+							create_country = { #Verne
+								tag = A48
+								origin = root
+								state = s:STATE_VERNE.region_state:A01
+								state = s:STATE_MENIBOR.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A48 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:exwesser = {
+						if = {
+							limit = {
+								exists = c:A77
+							}
+							s:STATE_EXWES.region_state:A01 ?= { set_state_owner = c:A77 }
+						}
+						else = {
+							create_country = { #Exwess
+								tag = A77
+								origin = root
+								state = s:STATE_EXWES.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A77 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:arbarani = {
+						if = {
+							limit = {
+								exists = c:A68
+							}
+							s:STATE_FREECESTIR.region_state:A01 ?= { set_state_owner = c:A68 }
+							s:STATE_ARBARAN.region_state:A01 ?= { set_state_owner = c:A68 }
+						}
+						else = {
+							create_country = { #Arbaran
+								tag = A68
+								origin = root
+								state = s:STATE_FREECESTIR.region_state:A01
+								state = s:STATE_ARBARAN.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A68 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:esmari = {
+						if = {
+							limit = {
+								exists = c:A46
+							}
+							s:STATE_BENNON = {
+								set_owner_of_provinces = {
+									country = c:A46
+									provinces = { xA63E40 }
+								}
+							}
+						}
+						else = {
+							create_country = { #Giberd
+								tag = A46
+								origin = root
+								province = p:xA63E40
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A46 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+						if = {
+							limit = {
+								exists = c:A69
+							}
+							s:STATE_CANN_ESMAR.region_state:A01 ?= { set_state_owner = c:A69 }
+							s:STATE_TELGEIR_CALASCANDAR.region_state:A01 ?= { set_state_owner = c:A69 }
+							s:STATE_BENNON.region_state:A01 ?= { set_state_owner = c:A69 }
+							s:STATE_KONWELL.region_state:A01 ?= { set_state_owner = c:A69 }
+							s:STATE_ESTALLEN.region_state:A01 ?= { set_state_owner = c:A69 }
+							s:STATE_HIGH_ESMAR.region_state:A01 ?= { set_state_owner = c:A69 }
+						}
+						else = {
+							create_country = { #Esmaria
+								tag = A69
+								origin = root
+								state = s:STATE_CANN_ESMAR.region_state:A01
+								state = s:STATE_TELGEIR_CALASCANDAR.region_state:A01
+								state = s:STATE_BENNON.region_state:A01
+								state = s:STATE_KONWELL.region_state:A01
+								state = s:STATE_ESTALLEN.region_state:A01
+								state = s:STATE_HIGH_ESMAR.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A69 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:arannese = {
+						if = {
+							limit = {
+								exists = c:A67
+							}
+							s:STATE_ARANNEN.region_state:A01 ?= { set_state_owner = c:A67 }
+							s:STATE_TOARNEN.region_state:A01 ?= { set_state_owner = c:A67 }
+							s:STATE_BARDSWOOD.region_state:A01 ?= { set_state_owner = c:A67 }
+							s:STATE_GISDEN.region_state:A01 ?= { set_state_owner = c:A67 }
+							s:STATE_CELLIANDE.region_state:A01 ?= { set_state_owner = c:A67 }
+							s:STATE_ASHENIANDE.region_state:A01 ?= { set_state_owner = c:A67 }
+						}
+						else = {
+							create_country = { #Arannen
+								tag = A67
+								origin = root
+								state = s:STATE_ARANNEN.region_state:A01
+								state = s:STATE_TOARNEN.region_state:A01
+								state = s:STATE_BARDSWOOD.region_state:A01
+								state = s:STATE_GISDEN.region_state:A01
+								state = s:STATE_CELLIANDE.region_state:A01
+								state = s:STATE_ASHENIANDE.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A67 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:uelairey = {
+						if = {
+							limit = {
+								exists = c:A35
+							}
+							s:STATE_ELKMARCH.region_state:A01 ?= { set_state_owner = c:A35 }
+						}
+						else = {
+							create_country = { #Uelaire
+								tag = A35
+								origin = root
+								state = s:STATE_ELKMARCH.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A35 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:pashainey = {
+						if = {
+							limit = {
+								exists = c:A55
+							}
+							s:STATE_PASHAINE.region_state:A01 ?= { set_state_owner = c:A55 }
+						}
+						else = {
+							create_country = { #Pashaine
+								tag = A55
+								origin = root
+								state = s:STATE_PASHAINE.region_state:A01
+								on_created = {
+									every_scope_culture = {
+										set_variable = be_breakaway
+										limit = {
+											OR = {
+												this = cu:east_damerian
+												this = cu:vernman
+											}
+										}
+										every_scope_pop = {
+											change_pop_culture = {
+												target = cu:pashainey
+												value = 0.5
+											}
+										}
+									}
+									s:STATE_PASHAINE = { add_homeland = cu:pashainey }
+								}
+							}
+							c:A55 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:vertesker = {
+						if = {
+							limit = {
+								exists = c:A19
+							}
+							s:STATE_VERTESK.region_state:A01 ?= { set_state_owner = c:A19 }
+							s:STATE_FLOODMARCHES.region_state:A01 ?= { set_state_owner = c:A19 }
+						}
+						else = {
+							create_country = { #Vertesk
+								tag = A19
+								origin = root
+								state = s:STATE_VERTESK.region_state:A01
+								state = s:STATE_FLOODMARCHES.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A19 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:wexonard = {
+						if = {
+							limit = {
+								exists = c:A41
+							}
+							s:STATE_WEX.region_state:A01 ?= { set_state_owner = c:A41 }
+							s:STATE_BISAN.region_state:A01 ?= { set_state_owner = c:A41 }
+							s:STATE_SUGAMBER.region_state:A01 ?= { set_state_owner = c:A41 }
+							s:STATE_BARDSWOOD.region_state:A01 ?= { set_state_owner = c:A41 }
+						}
+						else = {
+							create_country = { #Wex
+								tag = A41
+								origin = root
+								state = s:STATE_WEX.region_state:A01
+								state = s:STATE_BISAN.region_state:A01
+								state = s:STATE_SUGAMBER.region_state:A01
+								state = s:STATE_BARDSWOOD.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A41 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:havener_elf = {
+						if = {
+							limit = {
+								exists = c:A44
+							}
+							s:STATE_MOONHAVEN.region_state:A01 ?= { set_state_owner = c:A44 }
+						}
+						else = {
+							create_country = { #Moonhaven
+								tag = A44
+								origin = root
+								state = s:STATE_MOONHAVEN.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A44 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:beefoot_halfling = {
+						if = {
+							limit = {
+								exists = c:A43
+							}
+							s:STATE_BEEPECK.region_state:A01 ?= { set_state_owner = c:A43 }
+						}
+						else = {
+							create_country = { #Beepeck
+								tag = A43
+								origin = root
+								state = s:STATE_BEEPECK.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A43 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:imperial_gnome = {
+						if = {
+							limit = {
+								exists = c:A46
+							}
+							s:STATE_BENNON = {
+								set_owner_of_provinces = {
+									country = c:A46
+									provinces = { xA63E40 }
+								}
+							}
+						}
+						else = {
+							create_country = { #Giberd
+								tag = A46
+								origin = root
+								province = p:xA63E40
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A46 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:dovesworn_gnoll = {
+						if = {
+							limit = {
+								exists = c:A11
+							}
+							s:STATE_HONDERAAK.region_state:A01 ?= { set_state_owner = c:A11 }
+							s:STATE_KHENAK.region_state:A01 ?= { set_state_owner = c:A11 }
+						}
+						else = {
+							create_country = { #Honderaak
+								tag = A11
+								origin = root
+								state = s:STATE_HONDERAAK.region_state:A01
+								state = s:STATE_KHENAK.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A11 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+					cu:silver_dwarf = {
+						if = {
+							limit = {
+								exists = c:A37
+							}
+							s:STATE_SILVERFORGE.region_state:A01 ?= { set_state_owner = c:A37 }
+							s:STATE_ANVILWRIGHT.region_state:A01 ?= { set_state_owner = c:A37 }
+						}
+						else = {
+							create_country = { #Silverforge
+								tag = A37
+								origin = root
+								state = s:STATE_SILVERFORGE.region_state:A01
+								state = s:STATE_ANVILWRIGHT.region_state:A01
+								on_created = {
+									set_variable = be_breakaway
+								}
+							}
+							c:A37 = {
+								add_radicals = {
+									value = -0.2
+								}
+								add_loyalists = {
+									value = 0.1
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		random_country = {
+			limit = {
+				any_primary_culture = { has_discrimination_trait = heritage_anbennarian }
+				capital = { state_is_in_europe = yes }
+				NOT = { this ?= c:A02 }
+				NOT = { this ?= c:A01 }
+				OR = {
+					has_variable = be_breakaway
+					AND = {
+						is_subject_of = c:A01
+						liberty_desire >= 50
+					}
+				}
+				NOT = {
+					any_country = {
+						any_primary_culture = { has_discrimination_trait = heritage_anbennarian }
+						capital = { state_is_in_europe = yes }
+						NOT = { this ?= c:A02 }
+						NOT = { this ?= c:A01 }
+						NOT = { this ?= prev }
+						OR = {
+							has_variable = be_breakaway
+							AND = {
+								is_subject_of = c:A01
+								liberty_desire >= 50
+							}
+						}
+						total_population > prev.total_population
+					}
+				}
+			}
+			save_scope_as = anbennar_indep_leader
+			set_variable = big_war_leader
+			create_diplomatic_play = {
+				target_country = c:A01
+				type = dp_independence
+				add_war_goal = { holder = c:A01 target_country = scope:anbennar_indep_leader type = annex_country }
+			}
+		}
+		every_country = {
+			limit = {
+				any_primary_culture = { has_discrimination_trait = heritage_anbennarian }
+				capital = { state_is_in_europe = yes }
+				NOT = { this ?= c:A02 }
+				OR = {
+					NOT = { is_subject = yes }
+					AND = {
+						is_subject_of = c:A01
+						can_increase_autonomy = no
+					}
+				}
+			}
+			set_variable = be_breakaway
+			random_diplomatic_play = {
+				limit = {
+					is_diplomatic_play_type = dp_independence
+					initiator = {
+						scope:anbennar_indep_leader ?= this
+					}
+				}
+				add_initiator_backers = { prev }
+			}
+		}
+		set_variable = {
+			name = anbennar_big_war
+		}
+	}	
+}
+
+broken_empire.12 = { #Won war
+	type = country_event
+	placement = root
+	
+	title = broken_empire.12.t
+	desc =  broken_empire.12.d
+	flavor = broken_empire.12.f
+	
+	event_image = {
+		video = "africa_leader_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	duration = 3
+	
+	trigger = { 
+		
+	}
+
+	immediate = {
+		hidden_effect = {
+			remove_variable = anbennar_big_war
+		}
+	}
+
+	option = { 
+		name = broken_empire.12.a
+		default_option = yes
+		every_country = {
+			limit = {
+				has_variable = be_breakaway
+			}
+			root = { annex = prev }
+		}
+		add_loyalists = {
+			value = 0.1
+		}
+		every_scope_culture = {
+			limit = {
+				has_discrimination_trait = heritage_anbennarian
+				NOT = { this = cu:costine }
+				NOT = { this = cu:silver_dwarf }
+				NOT = { this = cu:havener_elf }
+				NOT = { this = cu:beefoot_halfling }
+				NOT = { this = cu:imperial_gnome }
+				NOT = { this = cu:dovesworn_gnoll }
+			}
+			custom_tooltip = {
+				text = be_culture_change_tt
+				every_scope_pop = {
+					change_pop_culture = { 
+						target = cu:costine
+						value = 0.25
+					}
+				}
+			}
+		}
+	}	
+}
+
+broken_empire.13 = { #Lost war
+	type = country_event
+	placement = root
+	
+	title = broken_empire.13.t
+	desc =  broken_empire.13.d
+	flavor = broken_empire.13.f
+	
+	event_image = {
+		video = "africa_leader_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	duration = 3
+	
+	trigger = { 
+		
+	}
+
+	immediate = {
+		hidden_effect = {
+			remove_variable = anbennar_big_war
+		}
+	}
+
+	option = { 
+		name = broken_empire.13.a
+		default_option = yes
+		every_subject_or_below = {
+			make_independent = yes
+		}
+		#hidden_effect = {
+		#	add_primary_culture = cu:west_damerian
+		#	add_primary_culture = cu:east_damerian
+		#	add_primary_culture = cu:pearlsedger
+		#	add_primary_culture = cu:esmari
+		#	add_primary_culture = cu:vernman
+		#	add_primary_culture = cu:crownsman
+		#	add_primary_culture = cu:silver_dwarf
+		#	add_primary_culture = cu:arbarani
+		#	add_primary_culture = cu:arannese
+		#	add_primary_culture = cu:wexonard
+		#	add_primary_culture = cu:exwesser	
+		#	add_primary_culture = cu:dovesworn_gnoll
+		#	add_primary_culture = cu:imperial_gnome
+		#	add_primary_culture = cu:havener_elf
+		#	add_primary_culture = cu:vertesker
+		#	add_primary_culture = cu:uelairey
+		#	add_primary_culture = cu:beefoot_halfling
+		#}
+		change_tag = A53
+	}	
+}
+
+broken_empire.100 = { #send to lorent
+	type = country_event
+	hidden = yes
+	
+	# title = broken_empire.100.t
+	# desc =  broken_empire.100.d
+	# flavor = broken_empire.100.f
+	
+	# event_image = {
+	# 	video = "africa_leader_arguing"
+	# }
+
+	# on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	# icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	duration = 3
+
+	cooldown = { days = short_modifier_time }
+	
+	trigger = { 
+		exists = c:A03
+		c:A03 ?= {
+			OR = {
+				owns_entire_state_region = STATE_CARNETER
+				any_subject_or_below = { c:A49 ?= this } #Carneter
+			}
+			NOT = {
+				has_war_with = c:A01
+			}
+		}
+		var:anbennar_var >= 1000
+		any_scope_state = {
+			state_region = {
+				OR = {
+					is_homeland = west_damerian
+					is_homeland = pearlsedger
+				}
+			}
+		}
+	}
+
+	immediate = {
+		c:A03 = {
+			trigger_event = { id = broken_empire.5 popup = yes }
+		}
+	}
+
+	# option = { 
+	# 	name = broken_empire.100.a
+	# 	default_option = yes
+	# }	
+}
+
+broken_empire.101 = { #send to vivin
+	type = country_event
+	hidden = yes
+	
+	# title = broken_empire.101.t
+	# desc =  broken_empire.101.d
+	# flavor = broken_empire.101.f
+	
+	# event_image = {
+	# 	video = "africa_leader_arguing"
+	# }
+
+	# on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	# icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	duration = 3
+
+	cooldown = { days = short_modifier_time }
+	
+	trigger = { 
+		exists = c:A02
+		c:A02 ?= {
+			OR = {
+				any_scope_state = {
+					state_region = { is_homeland = wexonard }
+				}
+				any_subject_or_below = { c:A41 ?= this } #Wex
+			}
+			NOT = {
+				has_war_with = c:A01
+			}
+		}
+		any_scope_state = {
+			state_region = { is_homeland = wexonard }
+		}
+		OR = {
+			var:anbennar_var >= 1000
+			any_scope_state = {
+				state_region = { is_homeland = wexonard }
+				radical_fraction = {
+					value >= 0.8
+				}
+			}
+		}
+	}
+
+	immediate = {
+		c:A02 = {
+			trigger_event = { id = broken_empire.6 popup = yes }
+		}
+	}
+
+	# option = { 
+	# 	name = broken_empire.101.a
+	# 	default_option = yes
+	# }	
+}
+
+# broken_empire.102 = { #Lorent Helps
+# 	type = country_event
+# 	placement = root
+	
+# 	title = broken_empire.102.t
+# 	desc =  broken_empire.102.d
+# 	flavor = broken_empire.102.f
+	
+# 	event_image = {
+# 		video = "africa_leader_arguing"
+# 	}
+
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+# 	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+# 	duration = 3
+	
+# 	trigger = { 
+		
+# 	}
+
+# 	option = { 
+# 		name = broken_empire.102.a
+# 		default_option = yes
+# 		show_as_tooltip = {
+# 			custom_tooltip = {
+# 				text = broken_empire_decrease_100_tt
+# 				change_variable = { name = anbennar_var add = -100 }
+# 			}
+# 			change_relations = {
+# 				country = c:A03
+# 				value = 20
+# 			}
+# 		}
+# 	}	
+# }
+
+# broken_empire.103 = { #Vivin helps
+# 	type = country_event
+# 	placement = root
+	
+# 	title = broken_empire.103.t
+# 	desc =  broken_empire.103.d
+# 	flavor = broken_empire.103.f
+	
+# 	event_image = {
+# 		video = "africa_leader_arguing"
+# 	}
+
+# 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+# 	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+# 	duration = 3
+	
+# 	trigger = { 
+		
+# 	}
+
+# 	option = { 
+# 		name = broken_empire.103.a
+# 		default_option = yes
+# 		show_as_tooltip = {
+# 			custom_tooltip = {
+# 				text = broken_empire_decrease_100_tt
+# 				change_variable = { name = anbennar_var add = -100 }
+# 			}
+# 			change_relations = {
+# 				country = c:A02
+# 				value = 20
+# 			}
+# 		}
+# 	}	
+# }

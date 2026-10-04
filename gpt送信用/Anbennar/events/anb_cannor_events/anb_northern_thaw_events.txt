@@ -1,0 +1,2216 @@
+﻿namespace = northern_thaw_events
+
+#Fully united league
+northern_thaw_events.1 = {
+	type = country_event
+	placement = root
+
+	title = northern_thaw_events.1.t
+	desc = northern_thaw_events.1.d
+	flavor = northern_thaw_events.1.f
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	trigger = {
+		
+	}
+
+	option = {	#credit the trade barons - unregulated capitalism
+		name = northern_thaw_events.1.a
+		ai_chance = {
+			base = 1
+		}
+		default_option = yes
+		add_modifier = {
+			name = nl_magnate_rule_enforced
+			days = very_long_modifier_time
+		}
+		ig:ig_industrialists = {
+			add_modifier = {
+				name = nl_magnate_group_credited_ig
+				days = very_long_modifier_time
+				is_decaying = yes
+			}
+			leader = {
+				set_ideology = ideology:ideology_market_liberal
+			}
+		}
+	}
+
+	option = {	#credit the cooperatists - technocracy
+		name = northern_thaw_events.1.b
+		ai_chance = {
+			base = 1
+		}
+		default_option = yes
+		add_modifier = {
+			name = nl_magnate_rule_enforced
+			days = very_long_modifier_time
+		}
+		ig:ig_intelligentsia = {
+			add_modifier = {
+				name = nl_magnate_group_credited_ig
+				days = very_long_modifier_time
+				is_decaying = yes
+			}
+			leader = {
+				set_ideology = ideology:ideology_positivist
+			}
+		}
+	}
+
+	option = {	#credit the old guard - militaro-industrial complex
+		name = northern_thaw_events.1.c
+		ai_chance = {
+			base = 1
+		}
+		default_option = yes
+		add_modifier = {
+			name = nl_magnate_rule_enforced
+			days = very_long_modifier_time
+		}
+		ig:ig_armed_forces = {
+			add_modifier = {
+				name = nl_magnate_group_credited_ig
+				days = very_long_modifier_time
+				is_decaying = yes
+			}
+			leader = {
+				set_ideology = ideology:ideology_protectionist
+			}
+		}
+	}
+}
+
+#League breakup
+northern_thaw_events.2 = {
+	type = country_event
+	placement = root
+
+	title = northern_thaw_events.2.t
+	desc = northern_thaw_events.2.d
+	flavor = northern_thaw_events.2.f
+
+	duration = 3
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	event_image = {
+		video = "europenorthamerica_springtime_of_nations"
+	}
+
+	trigger = {
+		
+	}
+
+	option = {
+		name = northern_thaw_events.2.a
+		ai_chance = {
+			base = 1
+		}
+		default_option = yes
+
+		every_subject_or_below = {
+			limit = {
+				capital.region = sr:region_gerudia	#includes the Reach
+			}
+			make_independent = yes
+		}
+
+		#Gerudia secession
+		if = {
+			limit = {
+				NOT = {
+					country_has_primary_culture = cu:dalr
+				}
+			}
+			if = {
+				limit = { exists = s:STATE_BJARNLAND.region_state:A04 }
+				s:STATE_BJARNLAND.region_state:A04 = {
+					save_scope_as = gerudia_secession_state
+				}
+			}
+			else = {
+				random_scope_state = {
+					limit = {
+						state_region = {
+							is_homeland = dalr
+						}
+					}
+					save_scope_as = gerudia_secession_state
+				}
+			}
+			create_country = {
+				tag = A62
+				origin = this
+				state = scope:gerudia_secession_state
+			}
+			every_scope_state = {
+				limit = {
+					OR = {
+						state_region = { is_homeland = cu:dalr }
+						state_region = { is_homeland = cu:olavish }
+					}
+				}
+				set_state_owner = c:A62
+			}
+		}
+
+		#Reach secession - but keep straits if Gerudia is integrated (so that things look saner)
+		if = {
+			limit = {
+				NOT = {
+					country_has_primary_culture = cu:blue_reachman
+				}
+				country_has_primary_culture = cu:dalr
+			}
+			if = {
+					limit = { exists = s:STATE_BAYVEK.region_state:A04 }
+					s:STATE_BAYVEK.region_state:A04 = {
+						save_scope_as = reach_secession_state
+					}
+				}
+				else = {
+					random_scope_state = {
+						limit = {
+							state_region = {
+								is_homeland = blue_reachman
+							}
+							NOT = {
+								state_region = s:STATE_SERPENTSHEAD
+							}
+						}
+						save_scope_as = reach_secession_state
+					}
+				}
+				create_country = {
+					tag = A36
+					origin = this
+					state = scope:reach_secession_state
+				}
+				every_scope_state = {
+					limit = {
+						OR = {
+							state_region = { is_homeland = cu:blue_reachman }
+							state_region = { is_homeland = cu:white_reachman }
+						}
+						NOT = {
+							state_region = s:STATE_SERPENTSHEAD
+						}
+					}
+					set_state_owner = c:A36
+				}
+				#it's kept so that the country stays connected (the Dalr garrison helps ?) but they aren't happy about it at all
+				if = {
+					limit = { exists = s:STATE_SERPENTSHEAD.region_state:A04 }
+					s:STATE_SERPENTSHEAD.region_state:A04 = {
+						add_radicals_in_state = {
+							value = very_large_radicals
+						}
+					}
+				}
+		}
+		else_if = {
+			#Reach secession
+			if = {
+				limit = {
+					NOT = {
+						country_has_primary_culture = cu:blue_reachman
+						country_has_primary_culture = cu:dalr
+					}
+				}
+				if = {
+					limit = { exists = s:STATE_BAYVEK.region_state:A04 }
+					s:STATE_BAYVEK.region_state:A04 = {
+						save_scope_as = reach_secession_state
+					}
+				}
+				else = {
+					random_scope_state = {
+						limit = {
+							state_region = {
+								is_homeland = blue_reachman
+							}
+						}
+						save_scope_as = reach_secession_state
+					}
+				}
+				create_country = {
+					tag = A36
+					origin = this
+					state = scope:reach_secession_state
+				}
+				every_scope_state = {
+					limit = {
+						OR = {
+							state_region = { is_homeland = cu:blue_reachman }
+							state_region = { is_homeland = cu:white_reachman }
+						}
+					}
+					set_state_owner = c:A36
+				}
+			}
+		}
+
+		#turns back into Gawed via dynamic naming
+
+		add_radicals = {
+			value = very_large_radicals
+			culture = cu:gawedi
+		}
+	}
+}
+
+#industry boom in STATE
+northern_thaw_events.3 = {
+	type = country_event
+	placement = scope:industry_boom_state
+
+	title = northern_thaw_events.3.t
+	desc = northern_thaw_events.3.d
+	flavor = northern_thaw_events.3.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_factory_opening"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				OR = {	#can also be places like the Moors, Olavlund, Arbaran, etc to account for expansion, but won't target colonies or places further away like the SC
+					region = sr:region_alen
+					region = sr:region_gerudia
+				}
+			}
+			save_scope_as = industry_boom_state
+		}
+	}
+
+	option = {
+		name = northern_thaw_events.3.a
+		default_option = yes
+		scope:industry_boom_state = {
+			add_modifier = {
+				name = nl_encouraged_manufacturing
+				days = long_modifier_time
+			}
+		}
+	}
+
+	option = {
+		name = northern_thaw_events.3.b
+		default_option = yes
+		scope:industry_boom_state = {
+			add_modifier = {
+				name = nl_encouraged_investment
+				days = long_modifier_time
+			}
+		}
+	}
+}
+
+#military railways - just copied the Meiji event since it seemed to be the intent
+northern_thaw_events.4 = {
+	type = country_event
+	placement = scope:military_railway_state
+
+	title = northern_thaw_events.4.t
+	desc = northern_thaw_events.4.d
+	flavor = northern_thaw_events.4.f
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_armored_train"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	trigger = {
+		has_technology_researched = railways
+		any_scope_state = {
+			has_building = building_barrack
+			NOT = { has_building = building_railway }
+		}
+		NOT = { has_modifier = retained_railway_control }
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				has_building = building_barrack
+				NOT = { has_building = building_railway }
+			}
+			save_scope_as = military_railway_state
+		}
+		ig:ig_armed_forces = {
+			save_scope_as = armed_forces_ig
+		}
+	}
+
+	option = {
+		name = northern_thaw_events.4.a
+		scope:military_railway_state = {
+			create_building = {
+				building = building_railway
+				level = 1
+			}
+		}
+		ig:ig_armed_forces = {
+			add_modifier = {
+				name = railway_priority
+				days = long_modifier_time
+			}
+		}
+	}
+
+	option = {
+		name = northern_thaw_events.4.b
+		default_option = yes
+
+		add_modifier = {
+			name = retained_railway_control
+			days = long_modifier_time
+		}
+
+		ig:ig_armed_forces = {
+			add_modifier = {
+				name = refused_railway_priority
+				days = normal_modifier_time
+			}
+		}
+	}
+}
+
+#nationalism in STATE
+northern_thaw_events.5 = {
+	type = country_event
+	placement = scope:league_nationalism_state
+
+	title = northern_thaw_events.5.t
+	desc = northern_thaw_events.5.d
+	flavor = northern_thaw_events.5.f
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	trigger = {
+		# triggered by JE
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				state_region = {
+					OR = {	#only for the core lands of the League
+						is_homeland = cu:gawedi
+						is_homeland = cu:blue_reachman
+						is_homeland = cu:dalr
+					}
+				}
+			}
+			save_scope_as = league_nationalism_state
+		}
+	}
+
+	option = {
+		name = northern_thaw_events.5.a
+		ai_chance = {
+			base = 50	#picked if possible
+		}
+		trigger = {
+			government_legitimacy >= 75
+		}
+		default_option = yes
+		scope:league_nationalism_state = {
+			add_loyalists_in_state = {
+				value = small_radicals
+			}
+		}
+	}
+
+	option = {
+		name = northern_thaw_events.5.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				trigger = {
+					has_strategy = ai_strategy_progressive_agenda
+				}
+				add = 10
+			}
+		}
+		scope:league_nationalism_state = {
+			random_interest_group = {
+				limit = {
+					law_stance = {
+						law = law_type:law_universal_suffrage
+						value > neutral
+					}
+				}
+				add_modifier = {
+					name = nl_nationalist_support
+					days = normal_modifier_time
+				}
+			}
+			add_radicals_in_state = {
+				value = medium_radicals
+			}
+		}
+	}
+
+	option = {
+		name = northern_thaw_events.5.c
+		ai_chance = {
+			base = 0
+			modifier = {
+				trigger = {
+					OR = {
+						has_strategy = ai_strategy_conservative_agenda
+						has_strategy = ai_strategy_reactionary_agenda
+					}
+				}
+				add = 10
+			}
+		}
+		trigger = {
+			AND = {
+				has_institution = institution_police
+				OR = {
+					has_law = law_type:law_outlawed_dissent
+					has_law = law_type:law_censorship
+				}
+			}
+		}
+		scope:league_nationalism_state = {
+			add_devastation = 5
+			add_radicals_in_state = {
+				value = small_radicals
+			}
+		}
+	}
+
+	option = {
+		name = northern_thaw_events.5.d
+		ai_chance = {
+			base = 1
+		}
+		scope:league_nationalism_state = {
+			add_radicals_in_state = {
+				value = medium_radicals
+			}
+		}
+	}
+}
+
+#blackpower radicals - starts Reach subJE
+northern_thaw_events.6 = {
+	type = country_event
+	placement = root
+
+	title = northern_thaw_events.6.t
+	desc = northern_thaw_events.6.d
+	flavor = northern_thaw_events.6.f
+
+	duration = 3
+
+	event_image = {
+		video = "votp_agitators_sneaking"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		NOT = {
+			has_variable = nl_reach_blackpowderism_happened
+		}
+	}
+
+	immediate = {
+		set_variable = nl_reach_blackpowderism_happened
+	}
+
+	option = {
+		name = northern_thaw_events.6.a
+		ai_chance = {
+			base = 1
+		}
+		default_option = yes
+		# if = {
+		# 	limit = {
+		# 		empty_agitator_slots >= 1
+		# 	}
+		# 	#Random Blackpowderist agitator
+		# 	create_character = {
+		# 		culture = cu:costine
+		# 		religion = rel:ravelian
+		# 		interest_group = ig_petty_bourgeoisie	#is targetting the urban elites
+		# 		ideology = ideology_radical
+		# 		is_agitator = yes
+		# 		traits = {
+		# 			demagogue persistent
+		# 		}
+		# 	}
+		# }
+		every_subject_or_below = {
+			limit = {
+				country_has_primary_culture = cu:blue_reachman
+			}
+			add_technology_progress = {	#gives them progress towards opening their side of the JE
+				progress = 3500
+				technology = nationalism
+			}
+		}
+		add_journal_entry = {
+			type = je_northern_thaw_reach_nationalism
+		}
+	}
+}
+
+namespace = woodswaller_rebellion_events
+
+#Woodswaller movement escalates, no longer kept in line by their leader
+woodswaller_rebellion_events.1 = {
+	type = country_event
+	placement = root
+
+	title = woodswaller_rebellion_events.1.t
+	desc = woodswaller_rebellion_events.1.d
+	flavor = woodswaller_rebellion_events.1.f
+
+	duration = 3
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		
+	}
+
+	option = {
+		name = woodswaller_rebellion_events.1.a
+		default_option = yes
+		show_as_tooltip = {
+			random_scope_state = {
+				limit = {
+					state_region = s:STATE_GREATWOODS
+				}
+				add_modifier = {
+					name = nl_woodswaller_stronghold
+					days = long_modifier_time
+				}
+			}
+			every_scope_state = {
+				limit = {
+					NOT = {
+						state_region = s:STATE_GREATWOODS
+					}
+					has_state_trait = state_trait_greatwoods
+				}
+				add_modifier = {
+					name = nl_woodswaller_stronghold_small
+					days = long_modifier_time
+				}
+			}
+		}
+	}
+}
+
+#woodwallers attack factories
+woodswaller_rebellion_events.2 = {
+	type = country_event
+	placement = scope:woodswaller_attack_state
+
+	title = woodswaller_rebellion_events.2.t
+	desc = woodswaller_rebellion_events.2.d
+	flavor = woodswaller_rebellion_events.2.f
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				OR = {
+					has_modifier = nl_woodswaller_stronghold
+					has_modifier = nl_woodswaller_stronghold_small
+				}
+			}
+			save_scope_as = woodswaller_attack_state
+		}
+	}
+
+	option = {	#send the army and declare martial law in state
+		name = woodswaller_rebellion_events.2.a
+		trigger = {
+			authority > 0
+		}
+		default_option = yes
+		scope:woodswaller_attack_state = {
+			add_radicals_in_state = {
+				value = medium_radicals
+				strata = lower
+			}
+		}
+		add_modifier = {
+			name = nl_anti_woodswall_martial_law
+			days = normal_modifier_time
+		}
+	}
+
+	option = {	#let them riot
+		name = woodswaller_rebellion_events.2.b
+		scope:woodswaller_attack_state = {
+			add_devastation = 10
+			add_modifier = {
+				name = nl_anti_industry_attacks
+				days = normal_modifier_time
+				is_decaying = yes
+			}
+		}
+		nl_unity_decrease_10 = yes
+	}
+}
+
+#Brasslance spawn
+woodswaller_rebellion_events.3 = {
+	type = country_event
+	placement = root
+
+	title = woodswaller_rebellion_events.3.t
+	desc = woodswaller_rebellion_events.3.d
+	flavor = woodswaller_rebellion_events.3.f
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		
+	}
+
+	option = {	#proclaims himself the Warden of the Alen and Greatwoods
+		name = woodswaller_rebellion_events.3.a
+		default_option = yes
+		create_character = {
+			template = A04_oswald_brasslance
+		}
+	}
+
+	option = {	#arrest him for abusing his authority
+		name = woodswaller_rebellion_events.3.b
+		
+	}
+}
+
+#Brasslance removes/weakens stronghold
+woodswaller_rebellion_events.4 = {
+	type = country_event
+	placement = scope:woodswaller_state
+
+	title = woodswaller_rebellion_events.4.t
+	desc = woodswaller_rebellion_events.4.d
+	flavor = woodswaller_rebellion_events.4.f
+
+	duration = 3
+
+	event_image = {
+		video = "africa_soldiers_breaking_protest"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		any_scope_character = {
+			has_template = A04_oswald_brasslance
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				OR = {
+					has_modifier = nl_woodswaller_stronghold
+					has_modifier = nl_woodswaller_stronghold_small
+				}
+			}
+			save_scope_as = woodswaller_state
+		}
+		random_scope_character = {
+			limit = {
+				has_template = A04_oswald_brasslance
+			}
+			save_scope_as = brasslance_scope
+		}
+	}
+
+	option = {
+		name = woodswaller_rebellion_events.4.a
+		default_option = yes
+		scope:woodswaller_state = {
+			decrease_woodwaller_stronghold_size = yes
+		}
+		hidden_effect = {
+			scope:brasslance_scope = {
+				change_variable = {
+					name = brasslance_victories_counter
+					add = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = woodswaller_rebellion_events.4.b
+		trigger = {
+			ruler = {
+				has_ideology = ideology:ideology_luddite
+			}
+		}
+		scope:woodswaller_state = {
+			decrease_woodwaller_stronghold_size = yes
+		}
+		hidden_effect = {
+			scope:brasslance_scope = {
+				change_variable = {
+					name = brasslance_victories_counter
+					add = 1
+				}
+			}
+		}
+		scope:brasslance_scope = {
+			exile_character = yes
+		}
+	}
+}
+
+#Brasslance crossing the Alen
+woodswaller_rebellion_events.5 = {
+	type = country_event
+	placement = root
+
+	title = woodswaller_rebellion_events.5.t
+	desc = woodswaller_rebellion_events.5.d
+	flavor = woodswaller_rebellion_events.5.f
+
+	duration = 3
+
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		any_scope_character = {
+			has_template = A04_oswald_brasslance
+			this.var:brasslance_victories_counter >= 3	#there's 5 levels, him doing more than half enables the coup
+		}
+	}
+
+	immediate = {
+		random_scope_character = {
+			limit = {
+				has_template = A04_oswald_brasslance
+			}
+			save_scope_as = brasslance_scope
+		}
+	}
+
+	option = {	#successful coup
+		trigger = {
+			ig:ig_landowners = {
+				is_marginal = no	#can't coup without a powerbase
+			}
+		}
+		name = woodswaller_rebellion_events.5.a
+		activate_law = law_type:law_monarchy
+		activate_law = law_type:law_autocracy
+		scope:brasslance_scope = {
+			set_character_as_ruler = yes
+		}
+		ig:ig_landowners = {
+			add_modifier = {
+				name = nl_brasslance_coup_success_ig
+				days = long_modifier_time
+			}
+		}
+		ig:ig_armed_forces = {
+			add_modifier = {
+				name = nl_brasslance_coup_success_ig
+				days = long_modifier_time
+			}
+		}
+		add_radicals = {
+			value = large_radicals
+			pop_type = capitalists	#not the best people to get on your bad side but you do you
+		}
+		nl_unity_decrease_50 = yes
+	}
+
+	option = {	#Ramsgate stops him
+		name = woodswaller_rebellion_events.5.b
+		default_option = yes
+		scope:brasslance_scope = {
+			kill_character = yes
+		}
+		ig:ig_industrialists = {
+			add_modifier = {
+				name = nl_brasslance_coup_thwarted_ig
+				days = long_modifier_time
+			}
+		}
+		ig:ig_intelligentsia = {
+			add_modifier = {
+				name = nl_brasslance_coup_thwarted_ig
+				days = long_modifier_time
+			}
+		}
+		add_radicals = {
+			value = medium_radicals
+			pop_type = aristocrats
+			culture = cu:gawedi
+		}
+		nl_unity_increase_10 = yes
+	}
+}
+
+#Adshaw support
+woodswaller_rebellion_events.6 = {
+	type = country_event
+	placement = scope:adshaw_state
+
+	title = woodswaller_rebellion_events.6.t
+	desc = woodswaller_rebellion_events.6.d
+	flavor = woodswaller_rebellion_events.6.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_aristocrats"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		s:STATE_ADSHAW = {
+			any_scope_state = {
+				OR = {
+					has_modifier = nl_woodswaller_stronghold
+					has_modifier = nl_woodswaller_stronghold_small
+				}
+			}
+		}
+		ig:ig_landowners = {
+			ig_approval > 0
+		}
+	}
+
+	immediate = {
+		s:STATE_ADSHAW = {
+			save_scope_as = adshaw_state
+		}
+	}
+
+	option = {
+		name = woodswaller_rebellion_events.6.a
+		default_option = yes
+		scope:adshaw_state = {
+			decrease_woodwaller_stronghold_size = yes
+		}
+		ig:ig_landowners = {
+			add_modifier = {
+				name = nl_accepted_adshaw_assistance
+				days = normal_modifier_time
+			}
+		}
+	}
+
+	option = {
+		name = woodswaller_rebellion_events.6.b
+		nl_unity_increase_10 = yes
+	}
+}
+
+#werewolf attack targetting magnate, investigation reveals them to be woodswallers
+woodswaller_rebellion_events.7 = {
+	type = country_event
+	placement = scope:woodswaller_state
+
+	title = woodswaller_rebellion_events.7.t
+	desc = woodswaller_rebellion_events.7.d
+	flavor = woodswaller_rebellion_events.7.f
+
+	duration = 3
+
+	event_image = {
+		video = "votp_hostile_court"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				OR = {
+					has_modifier = nl_woodswaller_stronghold
+					has_modifier = nl_woodswaller_stronghold_small
+				}
+			}
+			save_scope_as = woodswaller_state
+		}
+	}
+
+	option = {	#they are monsters and need to be killed
+		name = woodswaller_rebellion_events.7.a
+		default_option = yes
+		scope:woodswaller_state = {
+			add_radicals_in_state = {
+				value = medium_radicals
+				strata = lower
+			}
+			decrease_woodwaller_stronghold_size = yes
+			decrease_woodwaller_stronghold_size = yes
+		}
+	}
+
+	option = {	#they are our citizens and should be imprisoned
+		name = woodswaller_rebellion_events.7.a
+		scope:woodswaller_state = {
+			add_radicals_in_state = {
+				value = medium_radicals
+				strata = middle
+			}
+			add_radicals_in_state = {
+				value = medium_radicals
+				strata = upper
+			}
+			decrease_woodwaller_stronghold_size = yes
+		}
+	}
+
+	option = {	#they are heroes
+		name = woodswaller_rebellion_events.7.a
+		trigger = {
+			ruler = {
+				has_ideology = ideology:ideology_luddite
+			}
+		}
+		scope:woodswaller_state = {
+			add_loyalists_in_state = {
+				value = medium_radicals
+				strata = lower
+			}
+			add_radicals_in_state = {
+				value = medium_radicals
+				strata = upper
+			}
+		}
+	}
+}
+
+namespace = gerudia_conversion_events
+
+#fires event to choose a starting "stance" and add the first modifier for free to a random state (aka the ones that have just been integrated)
+gerudia_conversion_events.1 = {
+	type = country_event
+	placement = root
+
+	title = gerudia_conversion_events.1.t
+	desc = gerudia_conversion_events.1.d
+	flavor = gerudia_conversion_events.1.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_christianity"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = gerudia_conversion_events.1.a
+		default_option = yes
+		set_variable = nl_gerudia_conversion_focus
+		every_scope_state = {
+			limit = {
+				state_region = {
+					is_homeland = cu:dalr
+				}
+				is_incorporated = yes
+			}
+			add_modifier = nl_encouraged_proselytization
+		}
+	}
+
+	option = {
+		name = gerudia_conversion_events.1.b
+		default_option = yes
+		set_variable = nl_gerudia_education_focus
+		every_scope_state = {
+			limit = {
+				state_region = {
+					is_homeland = cu:dalr
+				}
+				is_incorporated = yes
+			}
+			add_modifier = nl_encouraged_education
+		}
+	}
+}
+
+#archprovost of Gerudia
+gerudia_conversion_events.2 = {
+	type = country_event
+	placement = root
+
+	title = gerudia_conversion_events.2.t
+	desc = gerudia_conversion_events.2.d
+	flavor = gerudia_conversion_events.2.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_christianity"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+
+	option = {
+		trigger = {
+			c:A33 = {
+				exists = yes
+			}
+		}
+		name = gerudia_conversion_events.2.a
+		add_primary_culture = cu:dalr
+		nl_unity_increase_50 = yes
+		ig:ig_devout = {
+			add_modifier = {
+				name = nl_completed_conversion_ig
+				days = long_modifier_time
+				is_decaying = yes
+			}
+		}
+		c:A33 = {
+			change_relations = {
+				country = THIS
+				value = 30
+			}
+		}
+		add_modifier = {
+			name = nl_high_rector_blessing
+			days = long_modifier_time
+			is_decaying = yes
+		}
+	}
+
+	option = {
+		default_option = yes
+		add_primary_culture = cu:dalr
+		nl_unity_increase_50 = yes
+		ig:ig_devout = {
+			add_modifier = {
+				name = nl_completed_conversion_ig
+				days = long_modifier_time
+				is_decaying = yes
+			}
+		}
+		every_scope_state = {
+			limit = {
+				state_region = {
+					OR = {
+						is_homeland = cu:dalr
+						is_homeland = cu:olavish
+					}
+				}
+			}
+			add_loyalists_in_state = {
+				value = 0.1
+				pop_type = capitalists
+			}
+			add_modifier = {
+				name = nl_more_gerudian_resources
+				days = normal_modifier_time
+			}
+		}
+	}
+}
+
+#more equal league
+gerudia_conversion_events.3 = {
+	type = country_event
+	placement = root
+
+	title = gerudia_conversion_events.3.t
+	desc = gerudia_conversion_events.3.d
+	flavor = gerudia_conversion_events.3.f
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = gerudia_conversion_events.3.a
+		default_option = yes
+		add_primary_culture = cu:dalr
+		nl_unity_increase_50 = yes
+		add_loyalists = {	#a ton of skalyrric loyalists if you side with them
+            value = 0.2
+            religion = rel:skaldhyrric_faith
+        }
+	}
+}
+
+#skald believing to be from the last generation of his kind writes down the old Gerudian epics in the Gerudian language so that they are preserved
+gerudia_conversion_events.4 = {
+	type = country_event
+	placement = root
+
+	title = gerudia_conversion_events.4.t
+	desc = gerudia_conversion_events.4.d
+	flavor = gerudia_conversion_events.4.f
+
+	duration = 3
+
+	event_image = {
+		video = "europenorthamerica_springtime_of_nations"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		empty_agitator_slots >= 1
+		NOT = { has_variable = last_skald_spawn }
+	}
+
+	immediate = {
+		random_political_movement = {
+			limit = {
+				is_political_movement_type = movement_cultural_minority
+				culture ?= cu:dalr
+			}
+			save_scope_as = dalr_nationalist_movement
+			
+		}
+		create_character = {
+			template = A04_rangvald_mimirsson
+		}
+		set_variable = last_skald_spawn
+		random_scope_character = {
+			limit = {
+				has_template = A04_rangvald_mimirsson
+			}
+			save_scope_as = last_skald_scope
+		}
+	}
+
+	option = {	#exile him, he can write it down in Grombar
+		name = gerudia_conversion_events.4.a
+		default_option = yes
+		scope:last_skald_scope = {
+			exile_character_with_martyrdom = yes
+		}
+		scope:dalr_nationalist_movement = {
+			add_modifier = {
+				name = modifier_dalr_religious_cultural_identity
+				days = normal_modifier_time
+				is_decaying = yes
+			}
+		}
+		#big cultural fervor boost when that's added
+	}
+
+	option = {	#legalize Gerudian language
+		name = gerudia_conversion_events.4.b
+		show_as_tooltip = {
+			create_character = {
+				template = A04_rangvald_mimirsson
+			}
+		}
+		scope:dalr_nationalist_movement = {
+			add_modifier = {
+				name = modifier_dalr_religious_cultural_identity
+				days = normal_modifier_time
+				is_decaying = yes
+			}
+		}
+		#big cultural fervor boost when that's added
+	}
+}
+
+#dalr nihilist appears, blaming the conflict between ravelians and skalds on religion in general
+gerudia_conversion_events.5 = {
+	type = country_event
+	placement = root
+
+	title = gerudia_conversion_events.5.t
+	desc = gerudia_conversion_events.5.d
+	flavor = gerudia_conversion_events.5.f
+
+	duration = 3
+
+	event_image = {
+		video = "votp_agitator_speaking"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		empty_agitator_slots >= 1
+		NOT = { has_variable = ansson_spawn }
+	}
+
+	immediate = {
+		create_character = {
+			template = A04_olaf_ansson
+		}
+		set_variable = ansson_spawn
+		random_scope_character = {
+			limit = {
+				has_template = A04_olaf_ansson
+			}
+			save_scope_as = ansson_scope
+		}
+	}
+
+	option = {
+		name = gerudia_conversion_events.5.a
+		show_as_tooltip = {
+			create_character = {
+				template = A04_olaf_ansson
+			}
+		}
+		ig:ig_devout = {
+			add_modifier = {
+				name = nl_rejected_anti_religious_rebels
+				days = short_modifier_time
+			}
+		}
+	}
+
+	option = {
+		name = gerudia_conversion_events.5.b
+		default_option = yes
+		scope:ansson_scope = {
+			exile_character_with_martyrdom = yes
+		}
+		ig:ig_devout = {
+			add_modifier = {
+				name = nl_embraced_anti_religious_rebels
+				days = short_modifier_time
+			}
+		}
+	}
+}
+
+#conversion wave
+gerudia_conversion_events.6 = {
+	type = country_event
+	placement = scope:gerudia_conversion_state
+
+	title = gerudia_conversion_events.6.t
+	desc = gerudia_conversion_events.6.d
+	flavor = gerudia_conversion_events.6.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_christianity"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		random_scope_state = {	#not limited to states with missions so that it can help fill gaps, but it's not reliable so spreading missions still matters
+			limit = {
+				state_region = {
+					is_homeland = cu:dalr
+				}
+				is_incorporated = yes
+			}
+			save_scope_as = gerudia_conversion_state
+		}
+	}
+
+	option = {	#great
+		name = gerudia_conversion_events.6.a
+		default_option = yes
+		scope:gerudia_conversion_state = {
+			convert_population = {
+				target = rel:ravelian
+				value = 0.05
+			} 
+		}
+	}
+
+	option = {	#put more pressure
+		name = gerudia_conversion_events.6.b
+		scope:gerudia_conversion_state = {
+			convert_population = {
+				target = rel:ravelian
+				value = 0.10
+			} 
+			add_radicals_in_state = {
+				value = large_radicals
+				religion = rel:skaldhyrric_faith
+			}
+		}
+	}
+}
+
+#skaldyrric counter movement
+gerudia_conversion_events.7 = {
+	type = country_event
+	placement = scope:counter_skald_movement_state
+
+	title = gerudia_conversion_events.7.t
+	desc = gerudia_conversion_events.7.d
+	flavor = gerudia_conversion_events.7.f
+
+	duration = 3
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		any_scope_state = {
+			OR = {
+				has_modifier = nl_encouraged_proselytization
+				has_modifier = nl_encouraged_education
+			}
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				OR = {
+					has_modifier = nl_encouraged_proselytization
+					has_modifier = nl_encouraged_education
+				}
+			}
+			save_scope_as = counter_skald_movement_state
+		}
+	}
+
+	option = {	#stamp down on old practices
+		name = gerudia_conversion_events.7.a
+		default_option = yes
+		scope:counter_skald_movement_state = {
+			add_modifier = {
+				name = nl_religious_crackdown
+				days = normal_modifier_time
+			}
+		}
+	}
+
+	option = {	#accept their demands
+		name = gerudia_conversion_events.7.b
+		scope:counter_skald_movement_state = {
+			add_radicals_in_state = {
+				value = small_radicals
+				religion = rel:ravelian
+			}
+		}
+		ig:ig_devout = {
+			add_modifier = {
+				name = nl_negotiated_with_religious_rebels
+				days = normal_modifier_time
+			}
+		}
+	}
+}
+
+#religiously polarized society, dalr on dalr violence
+gerudia_conversion_events.8 = {
+	type = country_event
+	placement = scope:ravelian_vs_skald_state
+
+	title = gerudia_conversion_events.8.t
+	desc = gerudia_conversion_events.8.d
+	flavor = gerudia_conversion_events.8.f
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_vandalized_storefront"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				state_region = {
+					is_homeland = cu:dalr
+				}
+				is_incorporated = yes
+			}
+			save_scope_as = ravelian_vs_skald_state
+		}
+	}
+
+	option = {	#blame Skaldyrrics
+		name = gerudia_conversion_events.8.a
+		default_option = yes
+		scope:ravelian_vs_skald_state = {
+			add_radicals_in_state = {
+				value = medium_radicals
+				religion = rel:skaldhyrric_faith
+			}
+		}
+	}
+
+	option = {	#blame Ravelians
+		name = gerudia_conversion_events.8.b
+		scope:ravelian_vs_skald_state = {
+			add_radicals_in_state = {
+				value = medium_radicals
+				religion = rel:ravelian
+			}
+		}
+	}
+}
+
+#gerudian magnate attacked
+gerudia_conversion_events.9 = {
+	type = country_event
+	placement = scope:gerudian_magnate_state
+
+	title = gerudia_conversion_events.9.t
+	desc = gerudia_conversion_events.9.d
+	flavor = gerudia_conversion_events.9.f
+
+	duration = 3
+
+	event_image = {
+		video = "europenorthamerica_rich_and_poor"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				state_region = {
+					is_homeland = cu:dalr
+				}
+			}
+			save_scope_as = gerudian_magnate_state
+		}
+	}
+
+	option = {	#harsh crackdown
+		name = gerudia_conversion_events.9.a
+		default_option = yes
+		scope:gerudian_magnate_state = {
+			add_modifier = {
+				name = nl_gerudian_resource_extraction_disrupted
+				days = normal_modifier_time
+			}
+		}
+		add_radicals = {
+			value = small_radicals
+			culture = cu:dalr
+		}
+	}
+
+	option = {	#maybe he deserved it
+		name = gerudia_conversion_events.9.b
+		scope:gerudian_magnate_state = {
+			add_modifier = {
+				name = nl_gerudian_resource_extraction_disrupted
+				days = normal_modifier_time
+			}
+		}
+		add_modifier = {
+			name = nl_ignored_magnate_attack
+			days = normal_modifier_time
+		}
+	}
+}
+
+namespace = reach_nl_events
+#Reach magnates are integrated fully in the council
+reach_nl_events.1 = {
+	type = country_event
+	placement = root
+
+	title = reach_nl_events.1.t
+	desc = reach_nl_events.1.d
+	flavor = reach_nl_events.1.f
+
+	duration = 3
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = reach_nl_events.1.a
+		default_option = yes
+		add_primary_culture = cu:blue_reachman
+		nl_unity_increase_50 = yes
+		add_loyalists = {	#the Reach magnates are integrated fully in the council
+            value = 0.2
+			culture = cu:blue_reachman
+            pop_type = capitalists
+        }
+	}
+}
+
+#Reach elite gets on board with the cooperatist project
+reach_nl_events.2 = {
+	type = country_event
+	placement = root
+
+	title = reach_nl_events.2.t
+	desc = reach_nl_events.2.d
+	flavor = reach_nl_events.2.f
+
+	duration = 3
+
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = reach_nl_events.2.a
+		default_option = yes
+		add_primary_culture = cu:blue_reachman
+		nl_unity_increase_50 = yes
+		add_loyalists = {
+            value = 0.2
+			culture = cu:blue_reachman
+            interest_group = ig:ig_intelligentsia
+        }
+	}
+}
+
+#promote racial conflict
+reach_nl_events.3 = {
+	type = country_event
+	placement = scope:racial_conflict_state
+
+	title = reach_nl_events.3.t
+	desc = reach_nl_events.3.d
+	flavor = reach_nl_events.3.f
+
+	duration = 3
+
+	event_image = {
+		video = "votp_realist_household"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		any_scope_state = {
+			state_region = {
+				OR = {
+					is_homeland = city_goblin
+					is_homeland = maldorian_elf
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				state_region = {
+					OR = {
+						is_homeland = city_goblin
+						is_homeland = maldorian_elf
+					}
+				}
+			}
+			save_scope_as = racial_conflict_state
+		}
+	}
+
+	option = {
+		name = reach_nl_events.3.a
+		default_option = yes
+		scope:racial_conflict_state = {
+			add_modifier = {
+				name = nl_reach_racial_tensions
+				days = normal_modifier_time
+			}
+			hidden_effect = {
+				random = {
+					chance = 30
+					trigger_event = { id = reach_nl_events.4 days = short_modifier_time }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = reach_nl_events.3.b
+		#Don't
+	}
+}
+
+#racial conflict backfires
+reach_nl_events.4 = {
+	type = state_event
+	placement = root
+
+	title = reach_nl_events.4.t
+	desc = reach_nl_events.4.d
+	flavor = reach_nl_events.4.f
+
+	duration = 3
+
+	event_image = {
+		video = "votp_realist_household"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = reach_nl_events.4.a
+		default_option = yes
+		remove_modifier = nl_reach_racial_tensions
+		add_radicals_in_state = {
+			value = medium_radicals
+			culture = cu:blue_reachman
+		}
+		nl_unity_decrease_10 = yes
+	}
+}
+
+#blackpowderist pamphlets
+reach_nl_events.5 = {
+	type = country_event
+	placement = scope:reach_propaganda_state
+
+	title = reach_nl_events.5.t
+	desc = reach_nl_events.5.d
+	flavor = reach_nl_events.5.f
+
+	duration = 3
+
+	event_image = {
+		video = "votp_conspiring"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	trigger = {
+		NOT = {
+			has_modifier = nl_making_own_reach_propaganda
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				state_region = {
+					is_homeland = cu:blue_reachman
+				}
+			}
+			save_scope_as = reach_propaganda_state
+		}
+	}
+
+	option = {
+		name = reach_nl_events.5.a
+		trigger = {
+			has_law = law_type:law_secret_police
+		}
+		scope:reach_propaganda_state = {
+			add_radicals_in_state = {
+				value = small_radicals
+			}
+		}
+	}
+
+	option = {
+		name = reach_nl_events.5.b
+		default_option = yes
+		scope:reach_propaganda_state = {
+			add_radicals_in_state = {
+				value = small_radicals
+			}
+		}
+		add_modifier = {
+			name = nl_making_own_reach_propaganda
+			days = normal_modifier_time
+		}
+	}
+
+	option = {
+		name = reach_nl_events.5.c
+		every_scope_state = {
+			limit = {
+				state_region = {
+					is_homeland = cu:blue_reachman
+				}
+			}
+			add_radicals_in_state = {
+				value = small_radicals
+				culture = cu:blue_reachman
+			}
+			add_modifier = {
+				name = nl_reach_nationalist_propaganda
+				days = normal_modifier_time
+			}
+		}
+	}
+}
+
+#Bayvek becomes adventuring center
+reach_nl_events.6 = {
+	type = country_event
+	placement = scope:bayvek_state
+
+	title = reach_nl_events.6.t
+	desc = reach_nl_events.6.d
+	flavor = reach_nl_events.6.f
+
+	duration = 3
+
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		s:STATE_BAYVEK = {
+			save_scope_as = bayvek_state
+		}
+	}
+
+	option = {
+		name = reach_nl_events.6.a
+		default_option = yes
+		scope:bayvek_state = {
+			add_modifier = {
+				name = nl_bayvek_adventuring_boost
+				days = long_modifier_time
+			}
+		}
+	}
+}
+
+
+namespace = reach_events
+# Reach nationalism JE start
+reach_events.1 = {
+	type = country_event
+	placement = root
+
+	title = reach_events.1.t
+	desc = reach_events.1.d
+	flavor = reach_events.1.f
+
+	duration = 3
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+
+	option = {	#the Reach will rise
+		name = reach_events.1.a
+		default_option = yes
+		every_state = {
+			limit = {
+				state_region = {
+					OR = {
+						is_homeland = white_reachman
+						is_homeland = blue_reachman
+					}
+				}
+			}
+			state_region = {
+				add_claim = ROOT
+			}
+		}
+		create_incident = {
+			country = c:A04
+			value = 10
+		}
+	}
+}
+
+# Reachmen Unification - Just a copy of the Polish event to merge them if say Bayvek and the Reach coexist
+reach_events.2 = {
+	type = country_event
+	placement = root
+
+	title = reach_events.2.t
+	desc = reach_events.2.d
+	flavor = reach_events.2.f
+
+	duration = 3
+
+	event_image = {
+		video = "votp_agitator_speaking"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	cooldown = { days = short_modifier_time }
+
+	trigger = {
+		has_technology_researched = nationalism
+		is_subject = no
+		is_at_war = no
+		OR = {
+			c:A18 ?= this
+			c:A36 ?= this
+			c:A39 ?= this
+		}
+		OR = {
+			AND = {
+				NOT = { has_variable = rejected_reach_union_A18_var }
+				c:A18 ?= {
+					is_player = no
+					is_subject = no
+					is_at_war = no
+					relations:root >= relations_threshold:amicable
+					OR = {
+						this.gdp < root.gdp
+						root = { is_player = yes }
+					}
+				}
+			}
+			AND = {
+				NOT = { has_variable = rejected_reach_union_A36_var }
+				c:A36 ?= {
+					is_player = no
+					is_subject = no
+					is_at_war = no
+					relations:root >= relations_threshold:amicable
+					OR = {
+						this.gdp < root.gdp
+						root = { is_player = yes }
+					}
+				}
+			}
+			AND = {
+				NOT = { has_variable = rejected_reach_union_A39_var }
+				c:A39 ?= {
+					is_player = no
+					is_subject = no
+					is_at_war = no
+					relations:root >= relations_threshold:amicable
+					OR = {
+						this.gdp < root.gdp
+						root = { is_player = yes }
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		cu:blue_reachman = {
+			save_scope_as = blue_reach_culture_scope
+		}
+		cu:white_reachman = {
+			save_scope_as = white_reach_culture_scope
+		}
+		if = {
+			limit = {
+				NOT = { has_variable = rejected_reach_union_A18_var }
+				c:A18 ?= {
+					is_player = no
+					is_subject = no
+					is_at_war = no
+					relations:root >= relations_threshold:amicable
+					OR = {
+						this.gdp < root.gdp
+						root = { is_player = yes }
+					}
+				}
+			}
+			c:A18 = {
+				save_scope_as = reach_union_target_scope
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_variable = rejected_reach_union_A36_var }
+				c:A36 ?= {
+					is_player = no
+					is_subject = no
+					is_at_war = no
+					relations:root >= relations_threshold:amicable
+					OR = {
+						this.gdp < root.gdp
+						root = { is_player = yes }
+					}
+				}
+			}
+			c:A36 = {
+				save_scope_as = reach_union_target_scope
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_variable = rejected_reach_union_A39_var }
+				c:A39 ?= {
+					is_player = no
+					is_subject = no
+					is_at_war = no
+					relations:root >= relations_threshold:amicable
+					OR = {
+						this.gdp < root.gdp
+						root = { is_player = yes }
+					}
+				}
+			}
+			c:A39 = {
+				save_scope_as = reach_union_target_scope
+			}
+		}
+	}
+
+	option = {
+		name = reach_events.2.a
+		default_option = yes
+		annex = scope:reach_union_target_scope
+		add_modifier = {
+			name = integrating_reach_modifier
+			days = normal_modifier_time
+		}
+		ai_chance = {
+			base = 90
+		}
+	}
+	option = {
+		name = reach_events.2.b
+		default_option = yes
+		if = {
+			limit = {
+				country_has_primary_culture = cu:blue_reachman
+			}
+			add_radicals = {
+				culture = cu:blue_reachman
+				value = large_radicals
+			}
+		} 
+		else_if = {
+			limit = {
+				country_has_primary_culture = cu:white_reachman
+			}
+			add_radicals = {
+				culture = cu:white_reachman
+				value = large_radicals
+			}
+		}
+		
+		if = {
+			limit = {
+				scope:reach_union_target_scope = {
+					c:A18 ?= this
+				}
+			}
+			set_variable = rejected_reach_union_A18_var
+		}
+		else_if = {
+			limit = {
+				scope:reach_union_target_scope = {
+					c:A36 ?= this
+				}
+			}
+			set_variable = rejected_reach_union_A36_var
+		}
+		else_if = {
+			limit = {
+				scope:reach_union_target_scope = {
+					c:A39 ?= this
+				}
+			}
+			set_variable = rejected_reach_union_A39_var
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}

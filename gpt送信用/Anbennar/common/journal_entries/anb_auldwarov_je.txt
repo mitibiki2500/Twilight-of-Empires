@@ -1,0 +1,747 @@
+﻿je_aul_dwarov = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	group = je_group_foreign_affairs
+	
+	scripted_progress_bar = anb_aul_dwarov_zeal_bar
+	scripted_progress_bar = anb_aul_dwarov_holds_bar
+
+	scripted_button = sway_government_button
+    scripted_button = landowners_demands_button
+    scripted_button = devout_demands_button
+    scripted_button = armed_forces_demands_button
+    scripted_button = intelligentsia_demands_button
+    scripted_button = rural_folk_demands_button
+    scripted_button = industrialists_demands_button
+    scripted_button = trade_unions_demands_button
+
+	is_shown_when_inactive = {
+		OR = {
+			country_has_primary_culture = cu:quartz_dwarf
+			# country_has_primary_culture = cu:sapphire_dwarf
+			# country_has_primary_culture = cu:ramsteel_dwarf
+			country_has_primary_culture = cu:kronium_dwarf
+			country_has_primary_culture = cu:platinum_dwarf
+			country_has_primary_culture = cu:agate_dwarf
+			# country_has_primary_culture = cu:mithril_dwarf
+			# country_has_primary_culture = cu:dagrite_dwarf
+			country_has_primary_culture = cu:opal_dwarf
+			# country_has_primary_culture = cu:lead_dwarf
+			country_has_primary_culture = cu:basalt_dwarf
+			# country_has_primary_culture = cu:garnet_dwarf
+			# country_has_primary_culture = cu:flint_dwarf
+			country_has_primary_culture = cu:diamond_dwarf
+			# country_has_primary_culture = cu:marble_dwarf
+			# country_has_primary_culture = cu:cobalt_dwarf
+			country_has_primary_culture = cu:titanium_dwarf
+			# country_has_primary_culture = cu:pyrite_dwarf
+			country_has_primary_culture = cu:citrine_dwarf
+			country_has_primary_culture = cu:gold_dwarf
+			country_has_primary_culture = cu:topaz_dwarf
+			country_has_primary_culture = cu:amber_dwarf
+			country_has_primary_culture = cu:peridot_dwarf
+			country_has_primary_culture = cu:granite_dwarf
+			country_has_primary_culture = cu:amethyst_dwarf
+			country_has_primary_culture = cu:emerald_dwarf
+			country_has_primary_culture = cu:jade_dwarf
+			# country_has_primary_culture = cu:malachite_dwarf
+		}
+		NOT = {
+			country_has_primary_culture = cu:obsidian_dwarf
+		}
+	}
+
+	possible = {
+		country_rank >= rank_value:great_power
+		has_technology_researched = pan-nationalism
+		custom_tooltip = {
+			text = serpentspine_culture_tt
+			OR = {
+				country_has_primary_culture = cu:quartz_dwarf
+				# country_has_primary_culture = cu:sapphire_dwarf
+				# country_has_primary_culture = cu:ramsteel_dwarf
+				country_has_primary_culture = cu:kronium_dwarf
+				country_has_primary_culture = cu:platinum_dwarf
+				country_has_primary_culture = cu:agate_dwarf
+				# country_has_primary_culture = cu:mithril_dwarf
+				# country_has_primary_culture = cu:dagrite_dwarf
+				country_has_primary_culture = cu:opal_dwarf
+				# country_has_primary_culture = cu:lead_dwarf
+				country_has_primary_culture = cu:basalt_dwarf
+				# country_has_primary_culture = cu:garnet_dwarf
+				# country_has_primary_culture = cu:flint_dwarf
+				country_has_primary_culture = cu:diamond_dwarf
+				# country_has_primary_culture = cu:marble_dwarf
+				# country_has_primary_culture = cu:cobalt_dwarf
+				country_has_primary_culture = cu:titanium_dwarf
+				# country_has_primary_culture = cu:pyrite_dwarf
+				country_has_primary_culture = cu:citrine_dwarf
+				country_has_primary_culture = cu:gold_dwarf
+				country_has_primary_culture = cu:topaz_dwarf
+				country_has_primary_culture = cu:amber_dwarf
+				country_has_primary_culture = cu:peridot_dwarf
+				country_has_primary_culture = cu:granite_dwarf
+				country_has_primary_culture = cu:amethyst_dwarf
+				country_has_primary_culture = cu:emerald_dwarf
+				country_has_primary_culture = cu:jade_dwarf
+				# country_has_primary_culture = cu:malachite_dwarf
+			}
+			NOT = {
+				country_has_primary_culture = cu:obsidian_dwarf
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			add_modifier = {
+				name = auldwarov_unification_zeal
+				months = 60
+				is_decaying = yes
+			}
+		}
+		trigger_event = { id = auldwarov.1 }
+	}
+
+	complete = {
+		OR = {
+			custom_tooltip = {
+				text = dwarf_control_tt
+				OR = {
+					owns_entire_state_region = STATE_AMLDIHR
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_AMLDIHR
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_AMLHARAZ
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_AMLHARAZ
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_HALL_OF_ANCESTORS
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_HALL_OF_ANCESTORS
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_VERKAL_VAZKRON
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_VERKAL_VAZKRON
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_ORLAZAM_AZ_DIHR
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_ORLAZAM_AZ_DIHR
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_KRAKDHUMVROR
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_KRAKDHUMVROR
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_DUR_VAZHATUN
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_DUR_VAZHATUN
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_KHUGDIHR
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_KHUGDIHR
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_HARAZ_ORLDHUM
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_HARAZ_ORLDHUM
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_MITHRADHUM
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_MITHRADHUM
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_ER_NATVIR
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_ER_NATVIR
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_VERKAL_KOZENAD
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_VERKAL_KOZENAD
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_HUL_JORKAD
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_HUL_JORKAD
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_ARG_ORDSTUN
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_ARG_ORDSTUN
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_ORLGHELOVAR
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_ORLGHELOVAR
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_SHAZSTUNDIHR
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_SHAZSTUNDIHR
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_VERKAL_SKOMDIHR
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_VERKAL_SKOMDIHR
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_OVDAL_LODHUM
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_OVDAL_LODHUM
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_GOR_BURAD
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_GOR_BURAD
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_SEGHDIHR
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_SEGHDIHR
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_GOR_OZUMBROG
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_GOR_OZUMBROG
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_HEHODOVAR
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_HEHODOVAR
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_VERKAL_GULAN
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_VERKAL_GULAN
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_GOR_VAZUMBROG
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_GOR_VAZUMBROG
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_OVDAL_KANZAD
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_OVDAL_KANZAD
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_GROZUMDIHR
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_GROZUMDIHR
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_OVDAL_AZ_AN
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_OVDAL_AZ_AN
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_HUL_AZ_KRAKAZOL
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_HUL_AZ_KRAKAZOL
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_GRONSTUNAD
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_GRONSTUNAD
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_VURDRIZ_ANDRIZ
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_VURDRIZ_ANDRIZ
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_TUWAD_DHUMANKON
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_TUWAD_DHUMANKON
+					}
+				}
+				OR = {
+					owns_entire_state_region = STATE_VERKAL_DROMAK
+					any_subject_or_below = {
+						any_primary_culture = {
+							is_dwarven = yes
+						}
+						owns_entire_state_region = STATE_VERKAL_DROMAK
+					}
+				}
+			}
+			custom_tooltip = { 
+				text = aul_dwarov_zeal_zero_tt
+				scope:journal_entry ?= {
+					"scripted_bar_progress(anb_aul_dwarov_zeal_bar)" = 0
+				}
+				infamy < 100
+			}
+		}
+		custom_tooltip = {
+			text = aul_dwarov_no_fail_condition_tt
+			NOT = {
+				OR = {
+					is_in_civil_war = yes
+					has_variable = aul_dwarov_hold_loss_flag
+					AND = {
+						scope:journal_entry ?= {
+							"scripted_bar_progress(anb_aul_dwarov_zeal_bar)" = 0
+						}
+						infamy >= 100
+					}
+				}
+			}
+		}
+	}
+
+	fail = {
+		OR = {
+			is_in_civil_war = yes
+			custom_tooltip = {
+				text = aul_dwarov_hold_loss_tt
+				has_variable = aul_dwarov_hold_loss_flag
+			}
+			custom_tooltip = {
+				text = aul_dwarov_badboy_zeal_tt
+				AND = {
+					scope:journal_entry ?= {
+						"scripted_bar_progress(anb_aul_dwarov_zeal_bar)" = 0
+					}
+					infamy >= 100
+				}
+			}
+		}
+	}
+
+	on_complete = {
+		custom_tooltip = auldwarov_fail_one_tt
+		custom_tooltip = auldwarov_grand_success_tt
+		hidden_effect = {
+			remove_modifier = auldwarov_unification_zeal
+			if = {
+				limit = {
+					scope:journal_entry ?= {
+						"scripted_bar_progress(anb_aul_dwarov_zeal_bar)" = 0
+					}
+				}
+				if = {
+					limit = {
+						infamy >= 100
+					}
+					trigger_event = { id = auldwarov.3 }
+				}
+				else = {
+					trigger_event = { id = auldwarov.2 }
+				}
+			}
+			else = {
+				change_tag = D01
+				trigger_event = { id = auldwarov.4 }
+				add_primary_culture = cu:quartz_dwarf
+				# add_primary_culture = cu:sapphire_dwarf
+				# add_primary_culture = cu:ramsteel_dwarf
+				add_primary_culture = cu:kronium_dwarf
+				add_primary_culture = cu:platinum_dwarf
+				add_primary_culture = cu:agate_dwarf
+				# add_primary_culture = cu:mithril_dwarf
+				# add_primary_culture = cu:dagrite_dwarf
+				add_primary_culture = cu:opal_dwarf
+				# add_primary_culture = cu:lead_dwarf
+				add_primary_culture = cu:basalt_dwarf
+				# add_primary_culture = cu:garnet_dwarf
+				# add_primary_culture = cu:flint_dwarf
+				add_primary_culture = cu:diamond_dwarf
+				# add_primary_culture = cu:marble_dwarf
+				# add_primary_culture = cu:cobalt_dwarf
+				add_primary_culture = cu:titanium_dwarf
+				# add_primary_culture = cu:pyrite_dwarf
+				add_primary_culture = cu:citrine_dwarf
+				add_primary_culture = cu:gold_dwarf
+				add_primary_culture = cu:topaz_dwarf
+				add_primary_culture = cu:amber_dwarf
+				add_primary_culture = cu:peridot_dwarf
+				# add_primary_culture = cu:granite_dwarf
+				add_primary_culture = cu:amethyst_dwarf
+				# add_primary_culture = cu:emerald_dwarf
+				add_primary_culture = cu:jade_dwarf
+				# add_primary_culture = cu:malachite_dwarf
+			}
+		}
+	}
+	
+	on_fail = {
+		custom_tooltip = auldwarov_fail_two_tt
+		hidden_effect = {
+			remove_modifier = auldwarov_unification_zeal
+			trigger_event = { id = auldwarov.3 }
+		}
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			200 = 0
+			20 = auldwarov.5
+			20 = auldwarov.6
+			10 = auldwarov.7
+		}
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					has_variable = landowners_swayed_var
+				}
+				if = {
+					limit = {
+						auldwarov_landowners_support = 0
+					}
+					trigger_event = { id = auldwarov.112 }
+				}
+				else_if = {
+					limit = {
+						auldwarov_landowners_support <= 1
+					}
+					if = {
+						limit = {
+							has_variable = landowners_warned_auldwarov
+							NOT = { has_variable = landowners_reprieve }
+						}
+						trigger_event = { id = auldwarov.112 }
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_variable = landowners_warned_auldwarov
+							}
+						}
+						trigger_event = { id = auldwarov.110 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = armed_forces_swayed_var
+				}
+				if = {
+					limit = {
+						auldwarov_armed_forces_support = 0
+					}
+					trigger_event = { id = auldwarov.122 }
+				}
+				else_if = {
+					limit = {
+						auldwarov_armed_forces_support <= 1
+					}
+					if = {
+						limit = {
+							has_variable = armed_forces_warned_auldwarov
+							NOT = { has_variable = armed_forces_reprieve }
+						}
+						trigger_event = { id = auldwarov.122 }
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_variable = armed_forces_warned_auldwarov
+							}
+						}
+						trigger_event = { id = auldwarov.120 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = devout_swayed_var
+				}
+				if = {
+					limit = {
+						auldwarov_devout_support = 0
+					}
+					trigger_event = { id = auldwarov.132 }
+				}
+				else_if = {
+					limit = {
+						auldwarov_devout_support <= 2
+					}
+					if = {
+						limit = {
+							has_variable = devout_warned_auldwarov
+							NOT = { has_variable = devout_reprieve }
+						}
+						trigger_event = { id = auldwarov.132 }
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_variable = devout_warned_auldwarov
+							}
+						}
+						trigger_event = { id = auldwarov.130 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = rural_folk_swayed_var
+				}
+				if = {
+					limit = {
+						auldwarov_rural_folk_support <= 1
+					}
+					trigger_event = { id = auldwarov.142 }
+				}
+				else_if = {
+					limit = {
+						auldwarov_rural_folk_support <= 2
+					}
+					if = {
+						limit = {
+							has_variable = rural_folk_warned_auldwarov
+							NOT = { has_variable = rural_folk_reprieve }
+						}
+						trigger_event = { id = auldwarov.142 }
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_variable = rural_folk_warned_auldwarov
+							}
+						}
+						trigger_event = { id = auldwarov.140 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = intelligentsia_swayed_var
+				}
+				if = {
+					limit = {
+						auldwarov_intelligentsia_support <= 1
+					}
+					trigger_event = { id = auldwarov.152 }
+				}
+				else_if = {
+					limit = {
+						auldwarov_intelligentsia_support <= 3
+					}
+					if = {
+						limit = {
+							has_variable = intelligentsia_warned_auldwarov
+							NOT = { has_variable = intelligentsia_reprieve }
+						}
+						trigger_event = { id = auldwarov.152 }
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_variable = intelligentsia_warned_auldwarov
+							}
+						}
+						trigger_event = { id = auldwarov.150 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = industrialists_swayed_var
+				}
+				if = {
+					limit = {
+						auldwarov_industrialists_support <= 1
+					}
+					trigger_event = { id = auldwarov.162 }
+				}
+				else_if = {
+					limit = {
+						auldwarov_industrialists_support <= 3
+					}
+					if = {
+						limit = {
+							has_variable = industrialists_warned_auldwarov
+							NOT = { has_variable = industrialists_reprieve }
+						}
+						trigger_event = { id = auldwarov.162 }
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_variable = industrialists_warned_auldwarov
+							}
+						}
+						trigger_event = { id = auldwarov.160 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_variable = trade_unions_swayed_var
+				}
+				if = {
+					limit = {
+						auldwarov_trade_unions_support <= 3
+					}
+					trigger_event = { id = auldwarov.172 }
+				}
+				else_if = {
+					limit = {
+						auldwarov_trade_unions_support <= 5
+					}
+					if = {
+						limit = {
+							has_variable = trade_unions_warned_auldwarov
+							NOT = { has_variable = trade_unions_reprieve }
+						}
+						trigger_event = { id = auldwarov.172 }
+					}
+					else_if = {
+						limit = {
+							NOT = {
+								has_variable = trade_unions_warned_auldwarov
+							}
+						}
+						trigger_event = { id = auldwarov.170 }
+					}
+				}
+			}
+		}
+	}
+	
+	modifiers_while_active = {
+		auldwarov_unification_consequences
+	}
+
+	weight = 2000
+
+	transferable = no
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

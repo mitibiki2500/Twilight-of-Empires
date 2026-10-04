@@ -1,0 +1,102 @@
+﻿je_torrisheah = {
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+    group = je_group_historical_content
+
+    # reenable if localized + add to b15 country file
+    # immediate = {
+    #     trigger_event = { id = anb_torrisheah.001 }
+    #     c:B15 = {
+    #         add_modifier = {
+    #             name = torrisheah_overstretched
+    #         }
+    #     }
+    # }
+
+    # TODO - disabled until loc is given, sept 30 2025
+    possible = {
+		game_date > 2000.1.1
+	}
+
+    is_shown_when_inactive = {
+        game_date > 2000.1.1
+    }
+
+    complete = {
+        c:B15 = {
+            NOT = {
+                any_scope_state = {
+                    OR = {
+                        is_incorporated = no
+                        turmoil > 0.2
+                    }
+                }
+            }
+            bureaucracy > 0
+            net_fixed_income > 0
+        }
+    }
+
+    on_complete = {
+        trigger_event = { id = anb_torrisheah.002 }
+    }
+
+    fail = {
+        OR = {
+            c:B15 = {
+                in_default = yes
+            }
+            c:B15 = {
+                NOT = {
+                    owns_entire_state_region = STATE_FALILTCOST
+                    owns_entire_state_region = STATE_SANCTUARY_FIELDS
+                    owns_entire_state_region = STATE_SILVERTENNAR
+                }
+            }
+        }
+    }
+
+    on_fail = {
+        c:B14 ?= {
+            set_variable = torrisheah_fail
+            trigger_event = { id = anb_torrisheah.003 }
+        }
+    }
+
+    timeout = 3650
+
+    on_timeout = {
+        c:B14 ?= { 
+            set_variable = torrisheah_timeout
+            trigger_event = { id = anb_torrisheah.003 }
+        }
+    }
+
+    on_monthly_pulse = {
+        #Random events
+        random_events = {
+            80 = 0
+            5 = anb_torrisheah.004
+            5 = anb_torrisheah.008
+            5 = anb_torrisheah.012
+            5 = anb_torrisheah.016
+        }
+    }
+
+    on_yearly_pulse = {
+        #If an AI is doing the JE, artificially fail it in 1823 so that other stuff that keys off the JE failing can happen sooner
+        effect = {
+            if = {
+                limit = {
+                    c:B15 ?= {
+                        is_ai = yes
+                    }
+                    year >= 1823
+                }
+                trigger_event = anb_torrisheah.021
+            }
+        }
+    }
+
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}

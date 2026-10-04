@@ -1,0 +1,98 @@
+﻿
+#pm_spirit_presence_friendly = {
+#	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+#	is_default = no
+#	
+#	building_modifiers = {
+#	}
+#
+#    disallowing_laws = {
+#		law_dark_arts_banned
+#		
+#        
+#    }
+#}
+#pm_spirit_presence_neutral = {
+#	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+#	is_default = yes
+#	
+#	building_modifiers = {
+#	}
+#	
+#	state_modifiers = {
+#		level_scaled = {
+#			# state_building_bg_haless_temples_max_level_add = 1 Add in when we have spirit stuff
+#		}
+#	}
+#
+#    disallowing_laws = {
+#		law_dark_arts_banned
+#		
+#        
+#    }
+#}
+#pm_spirit_presence_hostile = {
+#	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+#	is_default = no
+#	
+#	state_modifiers = {
+#		level_scaled = {
+#			state_standard_of_living_add = -0.05
+#		}
+#	}
+#
+#    disallowing_laws = {
+#		law_dark_arts_banned
+#		
+#        
+#    }
+#}
+#
+#pm_high_temple_worship = {
+#	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+#	is_default = yes
+#	
+#	building_modifiers = {
+#		level_scaled = {
+#			building_employment_clergymen_add = 500
+#		}
+#	}
+#	
+#	state_modifiers = {
+#		level_scaled = {
+#			# state_building_bg_haless_spirits_max_level_add = -1
+#		}
+#	}
+#}
+#pm_high_temple_exploration = {
+#	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+#	is_default = no
+#	
+#	building_modifiers = {
+#		level_scaled = {
+#			building_employment_clergymen_add = 500
+#		}
+#	}
+#	
+#	state_modifiers = {
+#		level_scaled = {
+#			# state_building_bg_haless_spirits_max_level_add = -1
+#		}
+#	}
+#}
+#pm_high_temple_excavations = {
+#	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+#	is_default = no
+#	
+#	building_modifiers = {
+#		level_scaled = {
+#			building_employment_clergymen_add = 500
+#		}
+#	}
+#	
+#	state_modifiers = {
+#		level_scaled = {
+#			# state_building_bg_haless_spirits_max_level_add = -1
+#		}
+#	}
+#}

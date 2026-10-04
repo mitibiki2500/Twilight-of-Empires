@@ -1,0 +1,405 @@
+﻿namespace = darkscale_nimrith_revival_events
+
+
+ 	darkscale_nimrith_revival_events.1 = {
+		type = country_event
+ 		placement = root
+		
+		title = darkscale_nimrith_revival_events.1.t
+		desc =  darkscale_nimrith_revival_events.1.d
+		flavor = darkscale_nimrith_revival_events.1.f
+		
+ 		event_image = {
+ 			video = "unspecific_politicians_arguing"
+ 		}
+		
+		trigger = {
+			# triggered by je
+		}
+		on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+		icon = "gfx/interface/icons/religion_icons/nimrithan.dds"
+		
+ 		duration = 1
+	
+		option = { 
+ 			name = darkscale_nimrith_revival_events.1.a
+			default_option = yes
+	
+			trigger_event = { id = darkscale_nimrith_revival_events.2  days = { 7 14 } popup = yes } #triggers first debate event , no need for onactions if you want time delay this way!
+ 		}
+	}
+
+	darkscale_nimrith_revival_events.2 = { #from who do we source the body parts from
+		type = country_event
+ 		placement = root
+		
+		title = darkscale_nimrith_revival_events.2.t
+		desc =  darkscale_nimrith_revival_events.2.d
+		flavor = darkscale_nimrith_revival_events.2.f
+		
+ 		event_image = {
+ 			video = "unspecific_politicians_arguing"
+ 		}
+	
+		on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+		icon = "gfx/interface/icons/religion_icons/nimrithan.dds"
+		
+ 		duration = 1
+
+ 		trigger = {
+			# triggered by je
+		}
+		
+		immediate = {
+			ig:ig_industrialists ?= {
+				save_scope_as = industrialists_ig
+				leader = {
+					save_scope_as = industrialists_leader
+				}
+			}
+			ig:ig_petty_bourgeoisie ?= {
+				save_scope_as = petty_bourgeoisie_ig
+				leader = {
+					save_scope_as = petty_bourgeoisie_leader
+				}
+			}
+		}
+
+		option = { #partner with artisans
+ 			name = darkscale_nimrith_revival_events.2.a
+			default_option = yes
+
+			custom_tooltip = {
+				text = darkscale_have_partenered_with_artisans_darkscales_nimrith_revival
+				set_variable = have_partenered_with_artisans_darkscales_nimrith_revival_variable
+			}
+	
+			trigger_event = { id = darkscale_nimrith_revival_events.3  days = { 7 14 } popup = yes } #triggers first debate event , no need for onactions if you want time delay this way!
+ 		}
+
+ 		option = { #partner with factories
+ 			name = darkscale_nimrith_revival_events.2.b
+			
+			custom_tooltip = {
+				text = darkscale_have_partenered_with_factories_darkscales_nimrith_revival
+				set_variable = have_partenered_with_factories_darkscales_nimrith_revival_variable
+			}
+			trigger_event = { id = darkscale_nimrith_revival_events.3  days = { 7 14 } popup = yes } #triggers first debate event , no need for onactions if you want time delay this way!
+ 		}
+
+ 		option = {  #stick to the smith priests
+ 			name = darkscale_nimrith_revival_events.2.c
+
+ 			custom_tooltip = {
+				text = stuck_to_smith_priests_darkscales_nimrith_revival
+				set_variable = stuck_to_smith_priests_darkscales_nimrith_revival_variable
+			}
+	
+			trigger_event = { id = darkscale_nimrith_revival_events.3  days = { 7 14 } popup = yes } #triggers first debate event , no need for onactions if you want time delay this way!
+ 		}
+	}
+
+	darkscale_nimrith_revival_events.3 = { #what kind of ruler should our nimrith be and what was he
+		type = country_event
+ 		placement = root
+		
+		title = darkscale_nimrith_revival_events.3.t
+		desc =  darkscale_nimrith_revival_events.3.d
+		flavor = darkscale_nimrith_revival_events.3.f
+		
+ 		event_image = {
+ 			video = "unspecific_politicians_arguing"
+ 		}
+	
+		on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+		icon = "gfx/interface/icons/religion_icons/nimrithan.dds"
+		
+ 		duration = 1
+
+ 		trigger = {
+			# triggered by je
+		}
+
+		immediate = {
+			ig:ig_armed_forces ?= {
+				save_scope_as = armed_forces_ig
+				leader = {
+					save_scope_as = armed_forces_leader
+				}
+			}
+			ig:ig_intelligentsia ?= {
+				save_scope_as =intelligentsia_ig
+				leader = {
+					save_scope_as =intelligentsia_leader
+				}
+			}
+		}
+	
+		option = { #he was and should be a fully spiritual ruler. #side with devout
+ 			name = darkscale_nimrith_revival_events.3.a
+			default_option = yes
+
+			custom_tooltip = {
+				text = spiritual_ruler_darkscales_nimrith_revival
+				set_variable = spiritual_ruler_darkscales_nimrith_revival_variable
+			}
+ 		}
+
+ 		option = { #he was and should be completely focused on the military. #side with AF
+ 			name = darkscale_nimrith_revival_events.3.b
+			
+			custom_tooltip = {
+				text = military_ruler_darkscales_nimrith_revival
+				set_variable = military_ruler_darkscales_nimrith_revival_variable
+			}
+ 		}
+
+ 		option = {  #he was a ruler and should be seen as such. #side with Intelligentsia
+ 			name = darkscale_nimrith_revival_events.3.c
+
+ 			custom_tooltip = {
+				text = intelligentsia_ruler_darkscales_nimrith_revival
+				set_variable = intelligentsia_ruler_darkscales_nimrith_revival_variable
+			}
+ 		}
+	}
+
+	darkscale_nimrith_revival_events.4 = {
+		type = country_event
+ 		placement = root
+		
+		title = darkscale_nimrith_revival_events.4.t
+		desc =  darkscale_nimrith_revival_events.4.d
+		flavor = darkscale_nimrith_revival_events.4.f
+		
+ 		event_image = {
+ 			video = "unspecific_politicians_arguing"
+ 		}
+	
+		on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+		icon = "gfx/interface/icons/religion_icons/nimrithan.dds"
+		
+ 		duration = 1
+
+ 		trigger = {
+			# triggered by je
+		}
+	
+		option = { #full devout victory
+ 			name = darkscale_nimrith_revival_events.4.a
+			default_option = yes
+			trigger = { AND = { has_variable = stuck_to_smith_priests_darkscales_nimrith_revival_variable has_variable = spiritual_ruler_darkscales_nimrith_revival_variable } }
+
+			create_character = { template = nimrith_fully_devout} #for all nimrith versions 
+			add_modifier =  { name = fully_devout_darkscales_nimrith_revival_victory_modifier }  #modifier for country
+			activate_law = law_type:law_theocracy
+ 		}
+
+ 		option = { # devout and ind victory
+ 			name = darkscale_nimrith_revival_events.4.a
+			default_option = yes
+			trigger = { AND = { has_variable = have_partenered_with_factories_darkscales_nimrith_revival_variable has_variable = spiritual_ruler_darkscales_nimrith_revival_variable } }
+
+			create_character = { template = nimrith_ind_dev} #for all nimrith versions
+			add_modifier =  { name = dev_ind_darkscales_nimrith_revival_victory_modifier }  #modifier for country
+			ig:ig_devout ?= { #Our faith can change by seeing the errors of our ways from father nimrith and the oh so gracious help of the industrialist
+				remove_ideology = ideology_father_nimrith
+				add_ideology = ideology_father_nimrith_more_capitalist
+			}
+ 		}
+
+ 		option = { #devout and pb victory
+ 			name = darkscale_nimrith_revival_events.4.a
+			default_option = yes
+			trigger = { AND = { has_variable = have_partenered_with_artisans_darkscales_nimrith_revival_variable has_variable = spiritual_ruler_darkscales_nimrith_revival_variable } }
+
+			create_character = { template = nimrith_pb_dev} #for all nimrith versions
+			add_modifier =  { name = dev_pb_darkscales_nimrith_revival_victory_modifier }  #modifier for country
+ 		}
+
+ 		option = { #devout and int victory
+ 			name = darkscale_nimrith_revival_events.4.a
+			default_option = yes
+			trigger = { AND = { has_variable = stuck_to_smith_priests_darkscales_nimrith_revival_variable has_variable = intelligentsia_ruler_darkscales_nimrith_revival_variable } }
+
+			create_character = { template = nimrith_int_dev} #for all nimrith versions
+			add_modifier =  { name = dev_int_darkscales_nimrith_revival_victory_modifier }  #modifier for country
+ 		}
+
+
+ 		option = { #devout and af victory
+ 			name = darkscale_nimrith_revival_events.4.a
+			default_option = yes
+			trigger = { AND = { has_variable = stuck_to_smith_priests_darkscales_nimrith_revival_variable has_variable = military_ruler_darkscales_nimrith_revival_variable } }
+
+			create_character = { template = nimrith_af_dev} #for all nimrith versions
+			add_modifier =  { name = dev_af_darkscales_nimrith_revival_victory_modifier }  #modifier for country
+ 		}
+
+
+ 		option = { #devout, pb and int victory
+ 			name = darkscale_nimrith_revival_events.4.a
+			default_option = yes
+			trigger = { AND = { has_variable =have_partenered_with_artisans_darkscales_nimrith_revival_variable has_variable = intelligentsia_ruler_darkscales_nimrith_revival_variable } }
+
+			create_character = { template = nimrith_pb_int_dev} #for all nimrith versions
+			add_modifier =  { name = dev_pb_int_darkscales_nimrith_revival_victory_modifier }  #modifier for country
+ 		}
+
+
+ 		option = { #devout, pb and af victory
+ 			name = darkscale_nimrith_revival_events.4.a
+			default_option = yes
+			trigger = { AND = { has_variable = have_partenered_with_artisans_darkscales_nimrith_revival_variable has_variable = military_ruler_darkscales_nimrith_revival_variable } }
+
+			 create_character = { template = nimrith_pb_af_dev} #for all nimrith versions
+			add_modifier =  { name = dev_pb_af_darkscales_nimrith_revival_victory_modifier }  #modifier for country
+ 		}
+
+
+ 		option = { #devout, ind and int victory
+ 			name = darkscale_nimrith_revival_events.4.a
+			default_option = yes
+			trigger = { AND = { has_variable = have_partenered_with_factories_darkscales_nimrith_revival_variable has_variable = intelligentsia_ruler_darkscales_nimrith_revival_variable } }
+
+			create_character = { template = nimrith_ind_int_dev} #for all nimrith versions
+			add_modifier =  { name = dev_ind_int_darkscales_nimrith_revival_victory_modifier }  #modifier for country
+ 		}
+
+ 		option = { #devout, ind and af victory
+ 			name = darkscale_nimrith_revival_events.4.a
+			default_option = yes
+			trigger = { AND = { has_variable = have_partenered_with_factories_darkscales_nimrith_revival_variable has_variable = military_ruler_darkscales_nimrith_revival_variable } }
+
+			create_character = { template = nimrith_ind_af_dev} #for all nimrith versions
+			add_modifier =  { name = dev_ind_af_darkscales_nimrith_revival_victory_modifier }  #modifier for country
+ 		}
+	}
+
+	darkscale_nimrith_revival_events.5 = {
+		type = country_event
+ 		placement = root
+		
+		title = darkscale_nimrith_revival_events.5.t
+		desc =  darkscale_nimrith_revival_events.5.d
+		flavor = darkscale_nimrith_revival_events.5.f
+		
+ 		event_image = {
+ 			video = "unspecific_politicians_arguing"
+ 		}
+	
+		on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+		icon = "gfx/interface/icons/religion_icons/nimrithan.dds"
+		
+ 		duration = 1
+
+ 		trigger = {
+			# triggered by je
+		}
+	
+		option = { #devout only fail
+ 			name = darkscale_nimrith_revival_events.5.a
+			default_option = yes
+			trigger = { AND = { has_variable = stuck_to_smith_priests_darkscales_nimrith_revival_variable has_variable = spiritual_ruler_darkscales_nimrith_revival_variable } }
+			add_modifier =  { name = fully_devout_darkscales_nimrith_revival_victory_modifier_negative }  #modifier for country
+			add_loyalists = { value = 0.1 }
+ 		}
+
+ 		option = { # devout and ind fail
+ 			name = darkscale_nimrith_revival_events.5.a
+			default_option = yes
+			trigger = { AND = { has_variable = have_partenered_with_factories_darkscales_nimrith_revival_variable has_variable = spiritual_ruler_darkscales_nimrith_revival_variable } }
+			add_modifier =  { name = dev_ind_darkscales_nimrith_revival_victory_modifier_negative }  #modifier for country
+			add_loyalists = { value = 0.1 }
+ 		}
+
+
+ 		option = { #devout and pb fail
+ 			name = darkscale_nimrith_revival_events.5.a
+			default_option = yes
+			trigger = { AND = { has_variable = have_partenered_with_artisans_darkscales_nimrith_revival_variable has_variable = spiritual_ruler_darkscales_nimrith_revival_variable } }
+			add_modifier =  { name = dev_pb_darkscales_nimrith_revival_victory_modifier_negative }  #modifier for country
+			add_loyalists = { value = 0.1 }
+ 		}
+
+ 		option = { #devout and int fail
+ 			name = darkscale_nimrith_revival_events.5.a
+			default_option = yes
+			trigger = { AND = { has_variable = stuck_to_smith_priests_darkscales_nimrith_revival_variable has_variable = intelligentsia_ruler_darkscales_nimrith_revival_variable } }
+			add_modifier =  { name = dev_int_darkscales_nimrith_revival_victory_modifier_negative }  #modifier for country
+			add_loyalists = { value = 0.1 }
+ 		}
+
+ 		option = { #devout, pb and int fail
+ 			name = darkscale_nimrith_revival_events.5.a
+			default_option = yes
+			trigger = { AND = { has_variable =have_partenered_with_artisans_darkscales_nimrith_revival_variable has_variable = intelligentsia_ruler_darkscales_nimrith_revival_variable } }
+			add_modifier =  { name = dev_pb_int_darkscales_nimrith_revival_victory_modifier_negative }  #modifier for country
+			add_loyalists = { value = 0.1 }
+ 		}
+
+ 		option = { #devout, ind and int fail
+ 			name = darkscale_nimrith_revival_events.5.a
+			default_option = yes
+			trigger = { AND = { has_variable = have_partenered_with_factories_darkscales_nimrith_revival_variable has_variable = intelligentsia_ruler_darkscales_nimrith_revival_variable } }
+			add_modifier =  { name = dev_ind_int_darkscales_nimrith_revival_victory_modifier_negative }  #modifier for country
+			add_loyalists = { value = 0.1 }
+ 		}
+
+	}
+
+	darkscale_nimrith_revival_events.6 = { #secularization event failure
+		type = country_event
+ 		placement = root
+		
+		title = darkscale_nimrith_revival_events.6.t
+		desc =  darkscale_nimrith_revival_events.6.d
+		flavor = darkscale_nimrith_revival_events.6.f
+		
+ 		event_image = {
+ 			video = "unspecific_politicians_arguing"
+ 		}
+	
+		on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	
+		icon = "gfx/interface/icons/religion_icons/nimrithan.dds"
+		
+ 		duration = 1
+
+ 		trigger = {
+			# triggered by je
+		}
+
+ 		option = { #devout and af fail
+ 			name = darkscale_nimrith_revival_events.6.a
+			default_option = yes
+			trigger = { AND = { has_variable = stuck_to_smith_priests_darkscales_nimrith_revival_variable has_variable = military_ruler_darkscales_nimrith_revival_variable } }
+			add_modifier =  { name = dev_af_darkscales_nimrith_revival_victory_modifier_negative }  #modifier for country
+			add_modifier = { name = secular_victory_darkscales_nimrith_revival_modifier } #secular modifier numbers
+			add_loyalists = { value = 0.1 }
+ 		}
+
+
+ 		option = { #devout, pb and af fail
+ 			name = darkscale_nimrith_revival_events.6.a
+			default_option = yes
+			trigger = { AND = { has_variable = have_partenered_with_artisans_darkscales_nimrith_revival_variable has_variable = military_ruler_darkscales_nimrith_revival_variable } }
+			add_modifier =  { name = dev_pb_af_darkscales_nimrith_revival_victory_modifier_negative }  #modifier for country
+			add_modifier = { name = secular_victory_darkscales_nimrith_revival_modifier } #secular modifier numbers
+			add_loyalists = { value = 0.1 }
+ 		}
+
+ 		option = { #devout, ind and af fail
+ 			name = darkscale_nimrith_revival_events.6.a
+			default_option = yes
+			trigger = { AND = { has_variable = have_partenered_with_factories_darkscales_nimrith_revival_variable has_variable = military_ruler_darkscales_nimrith_revival_variable } }
+			add_modifier =  { name = dev_ind_af_darkscales_nimrith_revival_victory_modifier_negative }  #modifier for country
+			add_modifier = { name = secular_victory_darkscales_nimrith_revival_modifier } #secular modifier numbers
+			add_loyalists = { value = 0.1 }
+ 		}
+	}

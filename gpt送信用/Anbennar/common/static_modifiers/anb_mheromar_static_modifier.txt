@@ -1,0 +1,123 @@
+﻿mheromar_popularity_modifier_tier_1 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	character_popularity_add = 20
+	character_battle_condition_surprise_maneuver_mult = 0.5
+}
+mheromar_popularity_modifier_tier_2 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	character_popularity_add = 40
+	character_battle_condition_surprise_maneuver_mult = 1
+	unit_defense_mult = 0.05
+}
+mheromar_popularity_modifier_tier_3 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	character_popularity_add = 60
+	character_battle_condition_surprise_maneuver_mult = 1
+	unit_defense_mult = 0.05
+	unit_offense_mult = 0.05
+}
+mheromar_popularity_modifier_tier_4 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	character_popularity_add = 80
+	character_battle_condition_surprise_maneuver_mult = 1
+	unit_defense_mult = 0.1
+	unit_offense_mult = 0.05
+}
+mheromar_popularity_modifier_tier_5 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	character_popularity_add = 100
+	character_battle_condition_surprise_maneuver_mult = 1
+	unit_defense_mult = 0.1
+	unit_offense_mult = 0.1
+}
+
+mheromar_last_stand = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	unit_combat_unit_type_irregular_infantry_offense_add = 20
+	unit_combat_unit_type_irregular_infantry_defense_add = 30
+	unit_combat_unit_type_hussars_offense_add = 35
+	unit_combat_unit_type_hussars_defense_add = 25
+}
+
+malachite_legion_catchup = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_tech_spread_add = 75
+}
+
+eordan_legion_barracks_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	building_barrack_throughput_add = 0.5
+}
+eordan_legionaries_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	unit_defense_mult = 0.1
+	unit_offense_mult = 0.1
+}
+rejected_mheromar_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -1
+}
+
+mheromar_popularity = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	character_popularity_add = 100
+}
+
+eordan_unifier_prestige = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_mult = 0.20
+}
+
+eordan_unifiers_ig = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_pop_attraction_mult = 0.35
+}
+
+REPLACE_OR_CREATE:emboldened_peasantry_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_pol_str_mult = 0.1
+	interest_group_approval_add = -1
+}
+
+modifier_athraithe_supporters = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add = 3
+	interest_group_pol_str_mult = 0.25
+}
+
+modifier_athraithe_support = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_academics_pol_str_mult = 0.20
+	country_officers_pol_str_mult = 0.20
+	country_society_tech_spread_mult = 0.15
+}
+
+modifier_athraithe_opponents = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add = 3
+	interest_group_pol_str_mult = 0.25
+}
+
+modifier_athraithe_opposition = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_aristocrats_pol_str_mult = 0.20
+	country_clergymen_pol_str_mult = 0.20
+	country_influence_mult = 0.15
+}
+
+modifier_fograc_contact = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	state_colony_growth_speed_mult = 0.4
+}
+
+native_gladewarden_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	state_conscription_rate_add = 0.7
+	building_training_rate_add = 1000
+	unit_combat_unit_type_irregular_infantry_offense_add = 30
+	unit_combat_unit_type_irregular_infantry_defense_add = 30
+	unit_army_offense_mult = 0.1
+	unit_army_defense_mult = 0.1
+	state_birth_rate_mult = 0.2
+	military_formation_organization_gain_add = 25
+}

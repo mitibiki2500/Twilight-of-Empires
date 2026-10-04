@@ -1,0 +1,568 @@
+﻿pmg_base_building_food_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_bakery
+		pm_sweeteners
+		pm_baking_powder
+		pm_chronomantic_food_preservatives #Anbennar
+	}
+}
+
+pmg_canning = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_disabled_canning
+		pm_cannery
+		pm_cannery_fish
+		pm_vacuum_canning
+		pm_vacuum_canning_principle_3
+	}
+}
+
+pmg_distillery = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_disabled_distillery
+		pm_pot_stills
+		pm_patent_stills
+	}
+}
+
+pmg_automation_building_food_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_manual_dough_processing
+		pm_automated_bakery
+		pm_automata_dough_processors # Anbennar
+		pm_automata_bakers # Anbennar
+#		pm_automata_dough_processors_enforced #anbennar
+#		pm_automata_bakers_enforced #anbennar
+	}
+}
+
+pmg_base_building_textile_mill = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_handsewn_clothes
+		pm_dye_workshops
+		pm_sewing_machines
+		pm_electric_sewing_machines
+	}
+}
+
+pmg_luxury_building_textile_mill = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_no_luxury_clothes
+		pm_craftsman_sewing
+		pm_elastics
+	}
+}
+
+pmg_enhancement_building_textile_mill = { # Anbennar
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_no_enhancement_building_textile_mill
+		pm_pattern_transmutation_building_textile_mill
+		pm_seamless_weave_building_textile_mill
+	}
+}
+
+pmg_automation_building_textile_mill = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_traditional_looms
+		pm_mechanized_looms
+		pm_automatic_power_looms
+		pm_automata_laborers_textile # Anbennar
+		pm_automata_machinists_textile # Anbennar
+#		pm_automata_laborers_textile_enforced # Anbennar
+#		pm_automata_machinists_textile_enforced # Anbennar
+	}
+}
+
+pmg_base_building_furniture_manufactory = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_handcrafted_furniture
+		pm_lathe
+		pm_mechanized_workshops
+	}
+}
+
+pmg_luxury_building_furniture_manufactory = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_no_luxuries
+		pm_luxury_furniture
+		pm_precision_tools
+	}
+}
+
+pmg_enhancement_building_furniture_manufactury = { # Anbennar
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_no_enhancement_building_furniture_manufactury
+		pm_never_rot_building_furniture_manufactury
+		pm_moving_furniture_building_furniture_manufactury
+	}
+}
+
+pmg_automation_building_furniture_manufactory = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_automation_disabled
+		pm_watertube_boiler_building_furniture_manufactory
+		pm_rotary_valve_engine_building_furniture_manufactory
+		pm_assembly_lines_building_furniture_manufactory
+		pm_automata_laborers_furniture #Anbennar
+		pm_automata_machinists_furniture #Anbennar
+#		pm_automata_laborers_furniture_enforced #Anbennar
+#		pm_automata_machinists_furniture_enforced #Anbennar
+	}
+}
+
+pmg_base_building_tooling_workshop = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_crude_tools
+		pm_pig_iron
+		pm_steel
+		pm_rubber_grips
+	}
+}
+
+pmg_apparatus_production_tooling_workshop = { #Anbennar
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_no_apparatus_production
+		pm_mithril_supports
+		pm_servo_exo_arms
+		pm_toolbox_of_holding
+	}
+}
+
+pmg_automation_building_tooling_workshop = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_automation_disabled
+		pm_watertube_boiler_building_tooling_workshop
+		pm_rotary_valve_engine_building_tooling_workshop
+		pm_assembly_lines_building_tooling_workshop
+		pm_automata_laborers_tools # Anbennar
+		pm_automata_machinists_tools # Anbennar
+#		pm_automata_laborers_tools_enforced # Anbennar
+#		pm_automata_machinists_tools_enforced # Anbennar
+	}
+}
+
+pmg_base_building_glassworks = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_forest_glass
+		pm_leaded_glass
+		pm_crystal_glass
+		pm_houseware_plastics
+	}
+}
+
+pmg_luxury_building_glassworks = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_disabled_ceramics
+		pm_ceramics
+		pm_bone_china
+		pm_thaumic_insulant_porcelain # Anbennar
+	}
+}
+
+pmg_enhancement_building_glassworks = { # Anbennar
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_no_enhancement_building_glassworks
+		pm_arcane_artistry_building_glassworks
+		pm_moving_mosaic_building_glassworks
+	}
+}
+
+pmg_glassblowing = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_manual_glassblowing
+		pm_automatic_bottle_blowers
+		pm_automata_laborers_glass # Anbennar
+		pm_automata_machinists_glass # Anbennar
+#		pm_automata_laborers_glass_enforced # Anbennar
+#		pm_automata_machinists_glass_enforced # Anbennar
+	}
+}
+
+pmg_base_building_paper_mill = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_pulp_pressing
+		pm_sulfite_pulping
+		pm_bleached_paper
+	}
+}
+
+# Anbennar
+pmg_papers_scrolls = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_no_scroll_making
+		pm_scroll_making
+		pm_industrialized_scroll_making
+	}
+}
+
+pmg_automation_building_paper_mill = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_automation_disabled
+		pm_watertube_boiler_building_paper_mill
+		pm_rotary_valve_engine_building_paper_mill
+		pm_automata_laborers_paper # Anbennar
+		pm_automata_machinists_paper # Anbennar
+#		pm_automata_laborers_paper_enforced # Anbennar
+#		pm_automata_machinists_paper_enforced # Anbennar
+	}
+}
+
+pmg_fertilizer_production = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_artificial_fertilizers
+		pm_improved_fertilizer
+		pm_nitrogen_fixation
+	}
+}
+
+pmg_fertilizer_enhancements = { # Anbennar
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_no_fertilizer_enhancements # Anbennar
+		pm_fertilizer_growth_beans # Anbennar
+		pm_fertilizer_essence_of_decay # Anbennar
+	}
+}
+
+pmg_explosives_building_chemical_plant = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_leblanc_process
+		pm_ammonia-soda_process
+		pm_vacuum_evaporation
+		pm_brine_electrolysis
+	}
+}
+
+pmg_explosives_enhancements = { # Anbennar
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_no_enhancements # Anbennar
+		pm_elemental_gunpowder # Anbennar
+		pm_spellsculped_detonators # Anbennar
+	}
+}
+
+pmg_automation_building_chemical_explosives = { # Anbennar
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_no_automation # Anbennar
+		pm_automata_laborers_chemical_explosives # Anbennar
+		pm_automata_machinists_chemical_explosives # Anbennar
+		pm_automata_machinists_chemical_explosives_advanced # Anbennar
+	}
+}
+
+pmg_synthetic_dyes = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_dye_production
+		pm_artifishial_curing # Anbennar
+	}
+}
+
+pmg_synthetic_silk = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_no_artificial_fibers
+		pm_rayon
+		pm_saccharine_synthesis # Anbennar
+	}
+}
+
+pmg_synthetic_automation = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_automation_disabled
+		pm_synthetic_automata_usage
+	}
+}
+
+pmg_steelmaking_process = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_blister_steel_process
+		pm_bessemer_process
+		pm_open_hearth_process
+		pm_electric_arc_process
+	}
+}
+
+pmg_alloy_steel = { # Anbennar
+texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_no_alloy_steel  # Anbennar
+		pm_alloy_rubyhold_steel # Anbennar
+		pm_alloy_precursor_steel # Anbennar
+	}
+}
+
+pmg_treatments_steel = { # Anbennar
+texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_no_treatments_steel # Anbennar
+		pm_cryo_aeromantic_cooling # Anbennar
+		pm_thaumic_field_bath # Anbennar
+	}
+}
+
+pmg_automation_building_steel_mill = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_automation_disabled
+		pm_watertube_boiler_building_steel_mill
+		pm_rotary_valve_engine_building_steel_mill
+		pm_automata_laborers_steel # Anbennar
+		pm_automata_machinists_steel # Anbennar
+#		pm_automata_laborers_steel_enforced # Anbennar
+#		pm_automata_machinists_steel_enforced # Anbennar
+	}
+}
+
+pmg_base_building_motor_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_steam_engines
+		pm_electric_engines
+		pm_diesel_engines
+	}
+}
+
+
+
+pmg_motor_enhancements = { # Anbennar
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_no_enhancements # Anbennar
+		pm_elemental_cooler # Anbennar
+		pm_doodad_tuning # Anbennar
+		pm_thaumic_resonator # Anbennar
+	}
+}
+
+pmg_automation_building_motor_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_automation_disabled
+		pm_watertube_boiler_building_motor_industry
+		pm_rotary_valve_engine_building_motor_industry
+		pm_assembly_lines_building_motor_industry
+		pm_automata_laborers_motor # Anbennar
+		pm_automata_machinists_motor # Anbennar
+#		pm_automata_laborers_motor_enforced # Anbennar
+#		pm_automata_machinists_motor_enforced # Anbennar
+	}
+}
+
+pmg_base_building_shipyard = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_basic_shipbuilding
+		pm_complex_shipbuilding
+		pm_metal_shipbuilding
+		pm_arc_welding_shipbuilding
+	}
+}
+
+pmg_military_base = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_military.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_military_shipbuilding_wooden
+		pm_military_shipbuilding_wooden_2
+		pm_military_shipbuilding_steam
+		pm_military_shipbuilding_steam_2
+	}
+}
+
+pmg_automation_shipyard = { # Anbennar
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_no_automation # Anbennar
+		pm_automata_laborers_shipyards # Anbennar
+		pm_automata_machinists_shipyards # Anbennar
+#		pm_automata_laborers_shipyards_enforced # Anbennar
+#		pm_automata_machinists_shipyards_enforced # Anbennar
+	}
+}
+
+pmg_automation_military_shipyard = { # Anbennar
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_no_automation # Anbennar
+		pm_automata_laborers_military_shipyards # Anbennar
+		pm_automata_machinists_military_shipyards # Anbennar
+#		pm_automata_laborers_military_shipyards_enforced # Anbennar
+#		pm_automata_machinists_military_shipyards_enforced # Anbennar
+	}
+}
+
+pmg_automobile_production = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_automobile_production
+		pm_mass_automobile_production
+	}
+}
+
+pmg_luxury_car_production = {	#early cars and flawless metal for cars in motor industries. disabled for now -jay
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+		production_methods = {
+			pm_no_vehicles
+			pm_reliquary_vehicles #Anbennar
+			pm_shiny_vehicles #Anbennar
+		}
+}
+
+pmg_aeroplanes = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_no_aeroplane_production
+		pm_aeroplane_production
+	}
+}
+
+pmg_tanks = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_no_tank_production
+		pm_tank_production
+	}
+}
+
+pmg_automation_building_automotive_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_automation_disabled
+		pm_assembly_lines_building_automotive_industry
+		pm_automata_laborers_automotive_industry # Anbennar
+		pm_automata_machinists_automotive_industry # Anbennar
+	}
+}
+
+pmg_telephones_category = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_telephones
+		pm_interplanar_phones
+	}
+}
+
+pmg_radios_category = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_no_radios
+		pm_radios
+		pm_recording_radios
+	}
+}
+
+pmg_automation_electric = { # Anbennar
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_no_automation # Anbennar
+		pm_automata_laborers_electric # Anbennar
+		pm_automata_machinists_electric # Anbennar
+#		pm_automata_laborers_electric_enforced # Anbennar
+#		pm_automata_machinists_electric_enforced # Anbennar
+	}
+}
+
+pmg_firearms_manufacturing = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_muskets
+		pm_rifles
+		pm_repeaters
+		pm_bolt_action_rifles
+	}
+}
+
+pmg_automation_building_arms_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_automation_disabled
+		pm_rotary_valve_engine_building_arms_industry
+		pm_assembly_lines_building_arms_industry
+		pm_automata_laborers_arms # Anbennar
+		pm_automata_machinists_arms # Anbennar
+#		pm_automata_laborers_arms_enforced # Anbennar
+#		pm_automata_machinists_arms_enforced # Anbennar
+	}
+}
+
+# pmg_automation_building_foundries = { #Unused
+# 	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+# 	production_methods = {
+# 		pm_automation_disabled
+# 		pm_rotary_valve_engine_building_foundries
+# 		pm_assembly_lines_building_foundries
+# 		pm_automata_laborers_artillery # Anbennar
+# 		pm_automata_machinists_artillery # Anbennar
+# 	}
+# }
+
+pmg_foundries = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_cannons
+		pm_smoothbores
+		pm_breech_loaders
+		pm_recoiled_barrels
+	}
+}
+
+pmg_base_building_munition_plant = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_percussion_caps
+		pm_explosive_shells
+	}
+}
+
+pmg_automation_building_munition_plant = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_automation_disabled
+		pm_rotary_valve_engine_building_munition_plant
+		pm_assembly_lines_building_munition_plant
+		pm_automata_laborers_munitions # Anbennar
+		pm_automata_machinists_munitions # Anbennar
+#		pm_automata_laborers_munitions_enforced # Anbennar
+#		pm_automata_machinists_munitions_enforced # Anbennar
+	}
+}

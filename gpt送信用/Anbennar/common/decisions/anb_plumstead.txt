@@ -1,0 +1,37 @@
+﻿plumstead_strip_purchase_decision = {
+    is_shown = {
+        #Is Plumstead
+        c:B41 ?= this
+        #TODO RR owns strip
+        NOT = {
+            exists = c:B37
+        }
+    }
+
+    possible = { #TODO Plumstead and RR have neutral or greater relations
+        c:B41 = this
+        #Haven't already made an offer
+        custom_tooltip = {
+            text = plumstead_offer
+            NOT = { has_variable = strip_offer_made }
+        }
+    }
+
+    when_taken = {
+        this = {
+            save_scope_as = plumstead_nation_scope
+        }
+        c:B91 = {
+            trigger_event = {
+                id = anb_uneasy_peace.012
+            }
+        }
+        set_variable = {
+            name = strip_offer_made
+        }
+    }
+
+    ai_chance = { #TODO
+
+    }
+}

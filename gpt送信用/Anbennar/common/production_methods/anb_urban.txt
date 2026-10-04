@@ -1,0 +1,40 @@
+﻿#These need to be redone anyways afaik
+
+
+#This needs to become the equivalent of different artists, rather than shares as thats moved to ownership buildings
+pm_independent_archmages = {
+	texture = "gfx/interface/icons/production_method_icons/independent_mages.dds"
+	
+	disallowing_laws = {
+		law_command_economy
+		law_hive_economy
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_archmages_add = 100
+		}
+		# unscaled = {
+		# 	building_archmages_shares_add = 5
+		# }
+	}
+}
+
+pm_religious_archmages = {
+	texture = "gfx/interface/icons/production_method_icons/religious_mages.dds"
+	
+	disallowing_laws = {
+		law_command_economy
+		law_total_separation
+		law_hive_economy
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_clergymen_add = 100
+		}
+		# unscaled = {
+		# 	building_clergymen_shares_add = 5
+		# }
+	}
+}

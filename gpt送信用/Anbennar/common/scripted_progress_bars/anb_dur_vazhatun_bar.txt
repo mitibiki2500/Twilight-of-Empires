@@ -1,0 +1,164 @@
+﻿dur_vazhatun_bar = {
+    name = "dur_vazhatun_bar_name"
+	desc = "dur_vazhatun_bar_desc"
+
+    default = yes
+
+    monthly_progress = {
+        #Druznar
+        if = {
+            limit = {
+                has_variable = comet_druznar_recruited_var
+                NOT = {
+                    has_variable = comet_druznar_expedition_var
+                }
+            }
+            add = {
+                desc = druznar_recruitment_inc_desc
+                value = 8
+            }
+        }
+        if = {
+            limit = {
+                has_variable = comet_druznar_recruited_var
+                has_variable = comet_druznar_expedition_completed_var
+                NOT = {
+                    has_variable = comet_druznar_expedition_var
+                }
+            }
+            add = {
+                desc = druznar_recruitment_comp_desc
+                value = 5
+            }
+        }
+
+        #Chronicler
+        if = {
+            limit = {
+                has_variable = comet_chronicler_recruited_var
+                NOT = {
+                    has_variable = comet_chronicler_busy_var
+                    has_variable = comet_chronicler_expedition_var
+                }
+            }
+            add = {
+                desc = chronicler_recruitment_inc_desc
+                value = 6
+            }
+        }
+        if = {
+            limit = {
+                has_variable = comet_chronicler_recruited_var
+                has_variable = comet_chronicler_expedition_completed_var
+                NOT = {
+                    has_variable = comet_chronicler_busy_var
+                    has_variable = comet_chronicler_expedition_var
+                }
+            }
+            add = {
+                desc = chronicler_recruitment_comp_desc
+                value = 4
+            }
+        }
+        if = {
+            limit = {
+                has_variable = comet_chronicler_recruited_var
+                has_variable = comet_chronicler_writing_force_var
+                NOT = {
+                    has_variable = comet_chronicler_busy_var
+                    has_variable = comet_chronicler_expedition_var
+                }
+            }
+            add = {
+                desc = chronicler_recruitment_busy_desc
+                value = -2
+            }
+        }
+
+        #Gnome
+        if = {
+            limit = {
+                has_variable = comet_gnome_recruited_var
+                NOT = {
+                    has_variable = comet_gnome_expedition_var
+                }
+            }
+            add = {
+                desc = gnome_recruitment_inc_desc
+                value = 12
+            }
+        }
+        if = {
+            limit = {
+                has_variable = comet_gnome_busy_var
+                has_variable = comet_gnome_recruited_var
+                NOT = {
+                    has_variable = comet_gnome_expedition_var
+                }
+            }
+            add = {
+                desc = gnome_recruitment_busy_desc
+                value = -4
+            }
+        }
+
+        #Kobold
+        if = {
+            limit = {
+                has_variable = comet_kobold_recruited_var
+                NOT = {
+                    has_variable = comet_kobold_expedition_var
+                    has_variable = comet_kobold_away_var
+                }
+            }
+            add = {
+                desc = kobold_recruitment_inc_desc
+                value = 3
+            }
+        }
+        if = {
+            limit = {
+                has_variable = comet_kobold_recruited_var
+                has_variable = comet_kobold_delay_var
+                NOT = {
+                    has_variable = comet_kobold_expedition_var
+                    has_variable = comet_kobold_away_var
+                }
+            }
+            add = {
+                desc = kobold_recruitment_delay_desc
+                value = -1
+            }
+        }
+
+        #Mwalim
+        if = {
+            limit = {
+                has_variable = comet_mwalim_recruited_var
+                NOT = {
+                    has_variable = comet_mwalim_expedition_var
+                    has_variable = comet_mwalim_busy_var
+                }
+            }
+            add = {
+                desc = mwalim_recruitment_inc_desc
+                value = 5
+            }
+        }
+
+        #Overall Slowdowns
+        if = {
+            limit = {
+                has_variable = comet_evidence_slowdown_var
+            }
+            add = {
+                desc = comet_slowdown_desc
+                value = -15
+            }
+        }
+    }
+
+    start_value = 0
+	min_value = 0
+	max_value = 3000
+}

@@ -1,0 +1,30 @@
+﻿amendment_model_elf_regiments = {
+  parent = law_national_militia
+
+	modifier = {
+		country_officers_pol_str_mult = 0.25
+		state_building_barrack_max_level_add = 10
+		unit_experience_gain_mult = 0.25
+	}
+
+	can_repeal = { }
+	would_sponsor = { }
+	ai_will_revoke = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+}
+
+amendment_salla_saisth = {
+  parent = law_national_militia
+
+	modifier = {
+		country_officers_pol_str_mult = 0.25
+		unit_army_defense_mult = 0.05
+	}
+
+	can_repeal = { }
+	would_sponsor = { }
+	ai_will_revoke = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+}

@@ -1,0 +1,106 @@
+﻿# Anbennar - TODO, can we use these?
+
+# Voice of the People
+votp_theme_trigger = {
+    always = no
+    # OR = {
+    #     votp_theme_france_trigger = yes
+    #     any_primary_culture = {
+    #         has_discrimination_trait = language_francophone
+    #     }
+    # }
+}
+
+votp_theme_france_trigger = {
+    always = no
+    # OR = {
+    #     c:FRA ?= this
+    #     was_formed_from = FRA
+    # }
+}
+
+# Pivot of Empire
+
+poe_theme_trigger = { # anb adjusted, may need more limiting
+    always = no
+    # is_in_geographic_region = geographic_region_india
+}
+
+# National Awakening
+
+na_theme_trigger = {
+    always = no
+    # OR = {
+    #     na_theme_austria_trigger = yes
+    #     is_in_geographic_region = geographic_region_balkans_old
+    # }
+}
+
+na_theme_austria_trigger = {
+    always = no
+    # OR = {
+    #     c:AUS ?= this
+    #     c:KUK ?= this
+    #     was_formed_from = AUS
+    # }
+}
+
+# Iberian Twilight
+itl_theme_trigger = {
+    always = no
+    # OR = {
+    #     itl_portuguese_theme_trigger = yes
+    #     itl_spanish_theme_trigger = yes
+    # }
+}
+
+itl_portuguese_theme_trigger = {
+    always = no
+    # OR = {
+    #     itl_theme_portugal_trigger = yes
+    #     any_primary_culture = {
+    #         has_discrimination_trait = language_lusophone
+    #     }
+    # }
+}
+
+itl_spanish_theme_trigger = {
+    always = no
+    # OR = {
+    #     itl_theme_spain_trigger = yes
+    #     any_primary_culture = {
+    #         has_discrimination_trait = language_hispanophone
+    #     }
+    # }
+}
+
+itl_theme_iberia_trigger = {
+    always = no
+    # OR = {
+    #     itl_theme_spain_trigger = yes
+    #     itl_theme_portugal_trigger = yes
+    # }
+}
+
+itl_theme_spain_trigger = {
+    always = no
+    # OR = {
+    #     c:SPA ?= this
+    #     was_formed_from = SPA
+    # }
+}
+
+itl_theme_portugal_trigger = {
+    always = no
+    # OR = {
+    #     c:POR ?= this
+    #     was_formed_from = POR
+    # }
+}
+
+# The Great Wave
+
+tgw_theme_japan_trigger = {
+    always = no
+    # is_in_geographic_region = geographic_region_japan
+}

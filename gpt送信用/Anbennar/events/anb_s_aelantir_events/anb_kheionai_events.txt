@@ -1,0 +1,91 @@
+﻿namespace = kheionai_events
+
+# Ameion
+
+kheionai_events.1 = { # Ameion starting event
+	type = country_event
+	placement = root
+	
+	title = kheionai_events.1.t
+	desc = kheionai_events.1.d
+	flavor = kheionai_events.1.f
+	
+	gui_window = event_window_2char
+	
+	event_image = {
+		video = "2characters.dds"
+	}
+	
+	left_icon = scope:ruler_scope # commenting out the 2 character thing cause its not working for some reason, shows the pink placeholder text. Not integral so will figure out at some unspecified future date - taka.
+	right_icon = scope:ig_intelligentsia_scope
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/misc/2Characters"
+	
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	
+	duration = 3
+	
+	immediate = {
+		ruler = {
+			save_scope_as = ruler_scope
+		}
+		ig:ig_intelligentsia = {
+			leader = {
+				save_scope_as = ig_intelligentsia_scope
+			}
+		}
+	}
+	
+	option = {
+		name = kheionai_events.1.a
+		default_option = yes
+		change_relations = {  
+			country = c:C37  
+			value = 25
+		}
+		change_relations = {  
+			country = c:C70  
+			value = 25
+		}
+		s:STATE_KLERECHEND = {
+			add_claim = c:C39
+		}
+		s:STATE_DEGITHION = {
+			add_claim = c:C39
+		}
+		s:STATE_NYMBHAVA = {
+			add_claim = c:C39
+		}
+		s:STATE_NEOR_EMPKEIOS = {
+			add_claim = c:C39
+		}
+		s:STATE_MESOKTI = {
+			add_claim = c:C39
+		}
+		add_modifier = {
+			name = kheionai_ambhen_reclamation
+			months = 180
+		}
+		set_strategy = ai_strategy_territorial_expansion
+	}
+	
+	option = {
+		name = kheionai_events.1.b
+		change_relations = {  
+			country = c:C37  
+			value = 25
+		}
+		change_relations = {  
+			country = c:C70  
+			value = 25
+		}
+		c:C60 = {
+			add_liberty_desire = 25
+		}
+		add_modifier = {
+			name = kheionai_ambhen_reflection
+			months = 300
+		}
+	}
+}

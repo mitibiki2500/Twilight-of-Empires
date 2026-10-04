@@ -1,0 +1,5988 @@
+﻿#Cannor + Akasik
+A00 = {	#Testorian Empire. DO NOT DELETE. Used to invalidate some checks
+	color = { 69  69  69 }
+	
+	country_type = recognized
+	
+	tier = empire
+	
+	cultures = { testorian }
+	capital = STATE_DAMESEAR
+}
+
+A01 = {	#Anbennar
+	color = { 211  220  240 }
+	
+	country_type = recognized
+	
+	tier = empire
+	
+	# All culture except costine are removed in history files
+	cultures = { west_damerian east_damerian pearlsedger esmari vernman crownsman arbarani exwesser wexonard arannese uelairey vertesker havener_elf silver_dwarf imperial_gnome beefoot_halfling dovesworn_gnoll costine }
+	#above is for allowing reunification. should be properly coded later when content for anbennar's collapse is made
+
+
+	#cultures = { costine }
+	religion = ravelian
+	capital = STATE_DAMESEAR
+}
+
+A02 = {	#Vivin Empire
+	color = { 0 18 145 }
+	
+	country_type = recognized
+	
+	tier = empire
+	
+	cultures = { arannese corvurian }
+	capital = STATE_ARANNEN
+}
+
+A03 = {	#Lorent
+	color = { 90  0  0 }
+	
+	country_type = recognized
+	
+	tier = empire
+	
+	cultures = { lorentish }
+	capital = STATE_ROSECROWN
+}
+
+A04 = {	#Northern League
+	color = { 48  51  108 }
+	
+	country_type = recognized
+	
+	tier = empire
+	
+	cultures = { gawedi }
+	capital = STATE_GAWED
+}
+
+A05 = {	#Bisan
+	color = { 42  150  23 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { wexonard }
+	capital = STATE_BISAN
+}
+
+A06 = {	#Gnomish Hierarchy
+	color = { 255  105  180 }
+	
+	country_type = recognized
+	
+	tier = empire
+	
+	cultures = { cliff_gnome }	#removed creek to avoid issues with separatist revolts ; they still have very high acceptance anyway
+	capital = STATE_ODDANROY
+}
+
+
+A07 = {	#Reveria
+	color = { 135  129  189 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { reverian }
+	capital = STATE_REVERIA
+}
+
+A08 = {	#Eborthil
+	color = { 207  182  100 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { tefori }
+	capital = STATE_EBORTHIL
+}
+
+A09 = {	#Busilar
+	color = { 211  85  4 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { busilari }
+	capital = STATE_HAPAINE
+}
+
+A10 = {	#Grombar
+	color = { 101  125  134 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { grombari_half_orc grombari_orc }
+	capital = STATE_ESALD
+}
+
+A11 = { #Honderaak
+	color = {189 171 212 }
+
+	country_type = recognized #Established by EOA as homeland for gnolls, ergo recognized
+
+	tier = principality
+
+	cultures = { dovesworn_gnoll}
+	capital = STATE_HONDERAAK
+}
+
+A12 = { #Jazhkredu
+	color = { 43 60 0 }
+	
+	country_type = recognized #Established by Nurcestir as homeland for goblins, ergo recognized
+
+	tier = principality
+
+	cultures = { common_goblin }
+	capital = STATE_BURNOLL
+}
+
+A13 = { #Hammerhome
+	color = { 217 231 232 }
+	
+	country_type = recognized
+
+	tier = grand_principality
+
+	cultures = { iron_dwarf } #Maybe also stone dwarf? Might result in unwanted rebellions though if we add any stone dwarf pops
+	capital = STATE_STEELHYL
+}
+
+A14 = {	#Small Country
+	color = { 197  138  99 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { redfoot_halfling bluefoot_halfling }
+	capital = STATE_HOMEHILLS
+}
+
+A15 = {	#Portnamm
+	color = { 207  255  123 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { creek_gnome }
+	capital = STATE_IOCHAND
+}
+
+A16 = {	#Kobildzan
+	color = { 204  181  189 } 
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { kobildzani_kobold }
+	capital = STATE_DRAGONDEPTHS
+}
+
+A17 = {	#Brecc
+	color = { 193  71  239 }
+	
+	country_type = recognized
+	
+	tier = city_state
+	
+	cultures = { cliff_gnome kobildzani_kobold }
+	capital = STATE_THE_IONDDAMMO
+}
+
+A18 = {	#Bayvek
+	color = { 84  111  192 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { blue_reachman city_goblin }
+	religion = the_thought
+	
+	capital = STATE_BAYVEK
+}
+
+A19 = {	#Vertesk
+	color = { 57  81  87 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { vertesker }
+	capital = STATE_VERTESK
+}
+
+A20 = {	#Ibevar
+	color = { 75 151 232 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { ibevari_elf }
+	religion = regent_court
+	
+	capital = STATE_NORTH_IBEVAR
+}
+
+A21 = {	#Farranean
+	color = { 160 185 85 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { farrani }
+	capital = STATE_FARRANEAN
+}
+
+A22 = {	#Ancardia
+	color = { 167 120 95 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { ancardian }
+	capital = STATE_ANCARDIAN_PLAINS
+}
+
+A23 = {	#Elikhand
+	color = { 232  118  121 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { elikhander }
+	capital = STATE_ROHIBON
+}
+
+A24 = {	#Newshire
+	color = { 181  106  106 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { newfoot_halfling }
+	capital = STATE_NEWSHIRE
+}
+
+A25 = {	#Araionn
+	color = { 162 132 25 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { ionnic }
+	capital = STATE_OUDMERE
+}
+
+A26 = {	#Wyvernheart
+	color = { 171 20 0 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { heartman }
+	capital = STATE_EBONMARCK
+}
+
+A27 = {	#Blademarches
+	color = { 145 140 64 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { marcher }
+	capital = STATE_BLADEMARCH
+}
+
+A28 = {	#Rosande
+	color = { 103 3 36 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { rosanda }
+	capital = STATE_ROSANVORD
+}
+
+A29 = {	#Marrhold
+	color = { 119 76 68 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { marrodic }
+	capital = STATE_MARRHOLD
+}
+
+A30 = {	#Magocratic Demesne / Nurcestir?
+	color = { 144 82 40 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { nurcestiran }
+	capital = STATE_CASTONATH
+}
+
+A31 = {	#Unguldavor
+	color = { 20  160  60 }
+	
+	country_type = recognized #Established by Nurcestir as homeland for orcs, ergo recognized
+	
+	tier = kingdom
+	
+	cultures = { ungulan_orc }
+	capital = STATE_UNGULDAVOR
+}
+
+A32 = {	#Silvermere - maybe?
+	color = { 189  234  234 }
+	
+	country_type = recognized
+	
+	tier = 	principality
+	
+	cultures = { marcher }
+	capital = STATE_BURNOLL
+}
+
+A33 = {	#Ravelian Rectorate
+	color = { 55  55  77 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { east_damerian arannese }
+	capital = STATE_PASHAINE
+}
+
+A34 = { #Damescrown
+	color = { 221 198 129 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { crownsman }
+	capital = STATE_DAMESCROWN
+}
+
+A35 = { #Uelaire
+	color = { 103 252 204 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { uelairey }
+	capital = STATE_ELKMARCH
+}
+
+A36 = { #The Reach
+	color = { 0 0 255 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { blue_reachman }
+	capital = STATE_BAYVEK #Probably
+}
+
+A37 = { # Silverforge
+	color = { 177  177  177 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { silver_dwarf }
+	capital = STATE_ANVILWRIGHT
+}
+
+A38 = { #Stalbór
+	color = { 197 173 218 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { stalboric }
+	capital = STATE_BLADEMARCH
+}
+
+A39 = { #Vrorenmarch
+	color = { 244 244 244 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { white_reachman }
+	capital = STATE_VROREN
+}
+
+A40 = { #Luciande
+	color = { 136 36 9 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { luciander }
+	capital = STATE_CURSEWOOD
+}
+
+A41 = { # Wex
+	color = { 97  0  137 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { wexonard }
+	capital = STATE_WEX
+}
+
+A42 = { #Iochand
+	color = { 173 61 135 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { iochander creek_gnome }
+	capital = STATE_IOCHAND
+}
+
+A43 = { #Beepeck
+	color = { 255 242 100 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { beefoot_halfling }
+	capital = STATE_BEEPECK
+}
+
+A44 = { # Moonhaven
+	color = { 196  243  246 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { havener_elf }
+	religion = ravelian
+	
+	capital = STATE_MOONHAVEN
+}
+
+A45 = { # Pearlsedge
+	color = { 255  249  232 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { pearlsedger }
+	capital = STATE_PEARLSEDGE
+}
+
+A46 = { #Giberd
+	color = { 210 62 230 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { imperial_gnome }
+	capital = STATE_BENNON
+}
+
+A47 = { #Barumand
+	color = { 150 160 60 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { barumandi_orc }
+	capital = STATE_BARUMAND
+}
+
+A48 = { # Verne
+	color = { 150  0  0 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { vernman }
+	capital = STATE_VERNE
+}
+
+A49 = { # Carneter
+	color = { 0  233  117 } # Colour for this from CK3
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { west_damerian pearlsedger roilsardi }
+	religion = regent_court
+	
+	capital = STATE_CARNETER
+}
+
+A50 = { # Wesdam
+	color = { 37  138  164 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { west_damerian }
+	capital = STATE_WESDAM
+}
+
+A51 = { # Istralore
+	color = { 148  201  199 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { east_damerian }
+	religion = corinite
+	
+	capital = STATE_ISTRALORIAN_DALES
+}
+
+A52 = { # Vaengheim
+	color = { 215  218  255 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { jarnklo_harpy }
+	
+	capital = STATE_GULLMORK
+}
+
+A53 = {	#Anbenncost
+	color = { 95  178  186 }
+	
+	country_type = recognized
+	
+	tier = principality
+
+	cultures = { costine }
+
+	capital = STATE_DAMESEAR
+}
+
+A54 = { # Dragonspine
+	color = { 75  147  174 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { kobildzani_kobold }
+	capital = STATE_DRAGONSPINE
+}
+
+A55 = { # Pashaine
+	color = { 130  55  140 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { pashainey }
+	capital = STATE_PASHAINE
+}
+
+A56 = { # Royvibobb
+	color =  { 160 175 226 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { cliff_gnome }
+	capital = STATE_GNOMISH_PASS
+}
+
+A57 = { # Dameria
+	color = { 0  165  187 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { east_damerian west_damerian }
+	religion = corinite #To give a reason for Pashainey secession in the event of Anbennarian collapse
+	
+	capital = STATE_DAMERIAN_HEARTLANDS
+}
+
+A58 = { # Alenor
+	color = { 0  71  171 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { gawedi }
+	capital = STATE_BALMIRE
+}
+
+# A58 = { # Gawed
+# 	color = { 48 51 108 }
+	
+# 	country_type = recognized
+	
+# 	tier = kingdom
+	
+# 	cultures = { gawedi }
+# 	capital = STATE_GAWED
+# }
+
+A59 = { # Westmoors
+	color = { 71 84 102 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { moorman }
+	capital = STATE_WESTMOORS_PROPER
+}
+
+A60 = { # Digoveda
+	color = { 239  131  131 }
+	
+	country_type = unrecognized
+	
+	tier = grand_principality
+	
+	cultures = { forest_troll }
+	capital = STATE_GIFRBYGD
+}
+
+A61 = { # Somkonu
+	color = { 48 174 199 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { lonely_goblin }
+	capital = STATE_LONELY_MOUNTAIN
+}
+
+A62 = { # Bjarnrik
+	color = { 185 122 87 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { dalr }
+	capital = STATE_BJARNLAND
+}
+
+A63 = { # Obrtrol
+	color = { 153  217  234 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { fjord_troll }
+	capital = STATE_FJORDSBAY
+}
+
+A64 = { # Olavlund
+	color = { 110  66  80 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { olavish }
+	capital = STATE_EAST_OLAVLUND
+}
+
+A65 = { # Redglades
+	color = { 191  55  55 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { redglader_elf }
+	religion = regent_court
+	capital = STATE_REDGLADES
+}
+
+A66 = { # Corvuria
+	color = { 119 120 120 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { corvurian }
+	capital = STATE_THE_LAND
+}
+
+A67 = { # Arannen
+	color = { 31  49  138 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { arannese }
+	capital = STATE_ARANNEN
+}
+
+A68 = { # Arbaran
+	color = { 135  166  165 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { arbarani }
+	capital = STATE_FREECESTIR
+}
+
+A69 = { # Esmaria
+	color = { 241  174  118 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { esmari }
+	capital = STATE_CANN_ESMAR
+}
+
+A70 = { # Nathalaire
+	color = { 66 66 66 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { nathalairey } 
+	capital = STATE_CORVELD
+}
+
+A71 = { # Mire Maw
+	color = { 78 173 71 }
+	
+	country_type = unrecognized
+	
+	tier = grand_principality
+	
+	cultures = { mossmouth_ogre }
+	capital = STATE_KABARDA
+}
+
+A72 = { # Celmaldor
+	color = { 133 133 160 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { maldorian_elf }
+	capital = STATE_SERPENTSHEAD
+}
+
+A73 = { # Sorncost
+	color = { 135 3 86 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { sorncosti }
+	capital = STATE_SORNCOST
+}
+
+A74 = { # Roilsard
+	color = { 238  13  121 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { roilsardi }
+	capital = STATE_ROILSARD
+}
+
+A75 = { # Rubyhold
+	color = { 239  52  52 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { ruby_dwarf }
+	capital = STATE_RUBYHOLD
+}
+
+A76 = { # Folly Gnolls
+	color = { 64  36  0 }
+	
+	country_type = decentralized
+	
+	tier = kingdom
+	
+	cultures = { flamemarked_gnoll }
+	capital = STATE_DREADMIRE
+}
+
+A77 = { # Exwes
+	color = { 125  182  192 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { exwesser }
+	capital = STATE_EXWES
+}
+
+
+A78 = { # Deranne
+	color = { 170  37  246 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { derannic }
+	capital = STATE_DERANNE
+}
+
+A79 = { # Cyranvar
+	color = { 10 95 13 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { wood_elven }
+	capital = STATE_LAKE_GROVE
+}
+
+A80 = { # Soyzkaru Cartel
+	color = { 245  18  3 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { soyzkaru_goblin }
+	capital = STATE_OURDIA
+}
+
+
+A81 = { # Ourdia
+	color = { 90  120  60 }
+	
+	country_type = recognized
+	
+	tier = grand_principality
+	
+	cultures = { ourdi }
+	capital = STATE_OURDIA
+}
+
+
+A82 = { # Escann
+	color = { 128 164 206 }
+	
+	country_type = recognized
+	
+	tier = empire
+	
+	cultures = { nurcestiran ionnic heartman marcher rosanda marrodic stalboric ancardian farrani luciander elikhander newfoot_halfling iron_dwarf ungulan_orc common_goblin }
+	capital = STATE_CASTONATH
+}
+
+A83 = { # Karakhanbar
+	color = { 90 25 25 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { karakhanbari_orc }
+	capital = STATE_RIVER_GROVE
+}
+
+
+#North Aelantir + Ruined Sea
+B01 = {	#Asraport
+	color = { 243 120 28 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { alloy_dwarf }
+	capital = STATE_MOUTH_OF_RUIN
+}
+
+B02 = {	#Mykx
+	color = { 74 58 130 }
+	
+	country_type = recognized
+	
+	tier = city_state
+	
+	cultures = { ruinscourge_gnoll }
+	capital = STATE_CORE_ISLANDS
+}
+
+B03 = {	#CLSTC - Calasanni Trading Company
+	color = { 6 45 11 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { arbarani crownsman }	#used to have pearlsedger but fuck em
+	capital = STATE_ISLES_OF_PLENTY
+}
+
+B04 = {	#DTC - Deranne Trading Company
+	color = { 130 27 186 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { derannic }
+	capital = STATE_SILSENSALD_ISLES
+}
+
+B05 = {	#VG - Vanbury Guild
+	color = { 117 134 143 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { vanburian }
+	capital = STATE_STEEL_BAY
+}
+
+B06 = {	#Saamirses
+	color = { 213 98 109 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { abtazari }
+	capital = STATE_SAAMIRSES
+}
+
+B07 = {	#Triarchy
+	color = { 31 81 255 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { tinker_gnome soot_goblin steelscale_kobold }
+	capital = STATE_GOOVRAZ #Vemod Arka
+}
+
+B08 = {	#New Lorincrag
+	color = { 14 73 122 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { crager }
+	capital = STATE_GUARDIAN_ISLANDS
+}
+
+B09 = {	#Minaria
+	color = { 153 0 33 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { minarian }
+	capital = STATE_MINAR_YOLLI
+}
+
+B10 = {	#Haraf
+	color = { 229 187 211 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { haraf_ne }
+	capital = STATE_NANI_NOLIHE
+}
+
+B11 = {	#Raanwair - Sunplains
+	color = { 83 67 29 }
+	
+	country_type = decentralized
+	
+	tier = grand_principality
+	
+	cultures = { epednar }
+	capital = STATE_TUSNATA
+}
+
+B12 = {	#Pirendral
+	color = { 77 209 200 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { pearlsedger }
+	capital = STATE_MOUTH_OF_RUIN
+}
+
+B13 = {	#Varionail
+	color = { 157 224 255 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { havener_elf }
+	capital = STATE_VARIONAIL
+}
+
+B14 = {	#Endralliande
+	color = { 76  95  178 }
+	
+	country_type = colonial
+	
+	tier = kingdom
+	
+	cultures = { endralliander }
+	capital = STATE_CAPE_OF_ENDRAL
+}
+
+B15 = {	#Torrisheah
+	color = { 42  150  23 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { lorentish }
+	capital = STATE_TORRISHEAH
+}
+
+B16 = {	#New Erngrove
+	color = { 255 249 232 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { pearlsedger }
+	capital = STATE_OBAITHAIL
+}
+
+B17 = {	#Aelnar
+	color = { 28 31 150 }
+	
+	country_type = recognized
+	
+	tier = city_state
+	
+	cultures = { star_elf }
+	capital = STATE_DALAIREY_WASTES
+}
+
+B18 = {	#New Redglades
+	color = { 191 55 55 }
+	
+	country_type = colonial
+	
+	tier = kingdom
+	
+	cultures = { bloodgrover }
+	capital = STATE_KWINELLIANDE
+}
+
+B19 = {	#Cestirmark
+	color = { 38  34  128 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { concordian }
+	capital = STATE_CESTIRMARK
+}
+
+B20 = {	#Marlliande
+	color = { 31  49  238 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { concordian }
+	capital = STATE_MARLLIANDE
+}
+
+B21 = {	#Ynnsmouth / Inek
+	color = { 6  33  76 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { boek }
+	capital = STATE_YNNSMOUTH
+}
+
+B22 = {	#Zanlib
+	color = { 167  98  117 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { concordian }
+	religion = old_sun_cult
+	capital = STATE_ZANLIB
+}
+
+B23 = {	#Isobelin
+	color = { 98  52  54 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { concordian }
+	capital = STATE_ISOBELIN
+}
+
+B24 = {	#Thilvis
+	color = { 178  178  178 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { towerfoot_halfling }
+	capital = STATE_THILVIS
+}
+
+B25 = {	#Valorpoint
+	color = { 246 54 77 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { concordian }
+	religion = corinite
+	capital = STATE_VALORPOINT
+}
+
+B26 = {	#Nur Ionnidar
+	color = { 154  172  72 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { lorentish cheshoshi }
+	capital = STATE_OKHIBOLI
+}
+
+B27 = {	#Neratica
+	color = { 33 33 33 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { neratican }
+	capital = STATE_CHESHOSHMAR
+}
+
+B28 = {	#Dokanto
+	color = { 82  65  145 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cheshoshi }
+	capital = STATE_DIHEN
+}
+
+B29 = {	#Sarda Empire
+	color = { 0 209 255 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { sarda }
+	capital = STATE_YRISRAD
+}
+
+B30 = {	#Ynngard
+	color = { 194 129 142 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { ynngarder_half_orc }
+	capital = STATE_CHIPPENGARD
+}
+
+B31 = {	#Veykoda
+	color = { 67 92 183 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { veykodan }
+	capital = STATE_VIZANIRZAG
+}
+
+B32 = {	#Vestipynn
+	color = { 73 147 29 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { pipefoot_halfling }
+	capital = STATE_WEST_TIPNEY
+}
+
+B33 = {	#Corynnpoel
+	color = { 220 178 155 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { east_ynnsman }
+	religion = corinite
+	capital = STATE_CORINSFIELD
+}
+
+B34 = {	#Beggaston
+	color = { 225 205 107 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { steadsman }
+	capital = STATE_BEGGASLAND
+}
+
+B35 = {	#New Havoral
+	color = { 64 111 169 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { east_ynnsman }
+	capital = STATE_NEW_HAVORAL
+}
+
+B36 = {	#Argezvale
+	color = { 177 177 200 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { steel_dwarf }
+	capital = STATE_ARGEZVALE
+}
+
+B37 = {	#Elathael
+	color = { 129 217 235 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { horizon_elf }
+	capital = STATE_ELATHAEL
+}
+
+B38 = {	#Amacimst
+	color = { 220 18 245 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { dolindhan }
+	capital = STATE_VITREYNN
+}
+
+B39 = {	#Bosancovac
+	color = { 48 62 124 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { dolindhan }
+	capital = STATE_USLAD
+}
+
+B40 = {	#Epednar tribes
+	color = { 96 57 19 }
+	
+	country_type = decentralized
+	
+	tier = kingdom
+	
+	cultures = { epednar }
+	capital = STATE_ARANTAS
+}
+
+B41 = {	#Plumstead
+	color = { 150 100 200 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { steadsman }
+	capital = STATE_PLUMSTEAD
+}
+
+B42 = {	#Tiru Moine
+	color = { 230 209 49 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { steadsman }
+	religion = corinite
+	capital = STATE_ESIMOINE
+}
+
+B43 = {	#Psajuweuh
+	color = { 107 90 61 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { chiunife }
+	capital = STATE_TASPAS
+}
+
+B44 = {	#Tellumtir
+	color = { 138 36 118 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { dustman }
+	capital = STATE_TELLUMTIR
+}
+
+B45 = {	#Vels Fadhecai
+	color = { 181 90 237 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { sarda }
+	capital = STATE_EPADARKAN
+}
+
+B46 = {	#Minata
+	color = { 44 130 117 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { sarda }
+	capital = STATE_EPADARKAN
+}
+
+B47 = {	#Arganjuzorn
+	color = { 99 147 104 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { dolindhan tuathak }
+	capital = STATE_ARGANJUZORN
+}
+
+B48 = {	#Ebenmas
+	color = { 170 143 131 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { dustman }
+	capital = STATE_EBENMAS
+}
+
+B49 = {	#Dragon Dominion
+	color = { 0 88 0 }
+	
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { rzentur }
+	capital = STATE_VIZKALADR
+}
+
+B50 = {	#Old Rzentur
+	color = { 74 4 0 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { rzentur }
+	capital = STATE_ARSERGOZHAR
+}
+
+B51 = {	#Arrzreth
+	color = { 0 0 0 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cursed_one }
+	capital = STATE_SILDARBAD
+}
+
+B52 = {	#Drevkenuc
+	color = { 144 77 19 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { dolindhan }
+	capital = STATE_USLAD
+}
+
+B53 = {	#Freemarches
+	color = { 66 245 160 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { freemarcher_half_orc }
+	capital = STATE_VARBUKLAND
+}
+
+B54 = {	#Kewdhemr
+	color = { 64 64 64 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cursed_one }
+	capital = STATE_KEWDHEMR
+}
+
+B55 = {	#Cursed Ones (Dewkeanebl)
+	color = { 128 128 128 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cursed_one }
+	capital = STATE_KEWDHEMR
+}
+
+B56 = {	#Cursed Ones (Whetjul)
+	color = { 48 48 48 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cursed_one }
+	capital = STATE_HEHADEDPAR
+}
+
+B57 = {	#Cursed Ones (Nefrnmehn)
+	color = { 96 96 96 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cursed_one }
+	capital = STATE_HEHADEDPAR
+}
+
+B58 = {	#Cursed Ones (Hehadedpar)
+	color = { 63 73 127 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cursed_one }
+	capital = STATE_HEHADEDPAR
+}
+
+B59 = {	#Themaria
+	color = { 182 210 232 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { themarian }
+	capital = STATE_TRITHEMAR
+}
+
+B60 = {	#Nortiochand
+	color = { 87 151 238 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { glacier_gnome }
+	capital = STATE_MITTANWEK
+}
+
+B61 = {	#Noo Oddansbay
+	color = { 158 235 143 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { cliff_gnome dalairey }
+	capital = STATE_HJORDAL
+}
+
+B62 = {	#Noo Coddorran
+	color = { 170 170 200 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { cliff_gnome vrendzani_kobold }
+	capital = STATE_SILDARBAD
+}
+
+B63 = {	#Cursed Ones (Akewredar)
+	color = { 33 0 127 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cursed_one }
+	capital = STATE_HEHADEDPAR
+}
+
+B64 = {	#Dalairey Wastes
+	color = { 198 233 255 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cursed_one }
+	capital = STATE_DALAIREY_WASTES
+}
+
+B65 = {	#Dalaire
+	color = { 73 96 154 }
+	
+	country_type = colonial
+	
+	tier = kingdom
+	
+	cultures = { dalairey vrendzani_kobold themarian }
+	capital = STATE_HJORDAL
+}
+
+B66 = { #Ynnic Empire
+	color = { 173 27 5 }
+
+	country_type = unrecognized
+
+	tier = empire
+
+	cultures = { sarda dolindhan rzentur }
+	capital = STATE_YRISRAD
+}
+
+B67 = { #Ruincliff Fed
+	color = { 120 120 201 }
+	
+	valid_as_home_country_for_separatists = { always = no }
+
+	country_type = recognized
+
+	tier = empire
+
+	cultures = { concordian steadsman sarda east_ynnsman }
+	capital = STATE_YNNSMOUTH
+}
+
+B68 = { # Cataboek
+	color = { 100  100  255 }
+
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { boek }
+	capital = STATE_YNNSMOUTH
+}
+
+B69 = {	#Neratica-Minaria
+	color = { 183 52 54 }
+
+	country_type = recognized
+
+	tier = empire
+
+	cultures = { neratican minarian }
+	capital = STATE_CHESHOSHMAR
+}
+
+B70 = {	#Quitl
+	color = { 48 49 90 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { mayte }
+	capital = STATE_TLACHIBAR
+}
+
+B71 = {	#Caylen's Reach 
+	color = { 67 198 190 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { trisferian }
+	capital = STATE_MANGROVY_COAST
+}
+
+B72 = { #New Uanced
+	color = { 105 200 130 }
+
+	country_type = recognized
+
+	tier = principality
+
+	cultures = { vernman }
+	capital = STATE_OBAITHAIL
+}
+
+B73 = {	#Teytlaran - Three people
+	color = { 30 76 66 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { mayte }
+	capital = STATE_MANGROVY_COAST
+}
+
+B74 = {	#Keiin'wili - Wild Fire
+	color = { 165 111 63 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { haraf_ne }
+	capital = STATE_E_E_KIDILE
+}
+
+B75 = { #Tropaicost
+	color = { 18 148 29 }
+
+	country_type = colonial
+
+	tier = principality
+
+	cultures = { crager }
+	capital = STATE_VERTEN
+}
+
+B76 = {	#Bokguan
+	color = { 59 58 35 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { gangim }
+	capital = STATE_E_E_KIDILE
+}
+
+B79 = {	#Chooshdiin
+	color = { 255 178 127 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { haraf_ne }
+	capital = STATE_EGASACH
+}
+
+B80 = {	#Eordand Administration
+	color = { 183 93 213 }
+
+	valid_as_home_country_for_separatists = { always = no }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { cliff_gnome }
+	capital = STATE_JHORGASHIRR
+}
+
+B81 = {	#Eighard
+	color = { 81 111 128 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { tuathak }
+	capital = STATE_FOGHARBAC
+}
+
+B82 = {	#Einnsag
+	color = { 22 105 163 }
+	
+	country_type = unrecognized
+	
+	tier = grand_principality
+	
+	cultures = { tuathak }
+	capital = STATE_EINNSAG
+}
+
+B83 = {	#Sglard
+	color = { 163 155 115 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { tuathak }
+	capital = STATE_SGLOLAD
+}
+
+B84 = {	#Arakeprun
+	color = { 112 11 187 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { selphereg }
+	capital = STATE_DARHAN
+}
+
+B85 = {	#Murdkather
+	color = { 11 187 128 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { caamas }
+	capital = STATE_MURDKATHER
+}
+
+B86 = {	#Gladewardens
+	color = { 233 154 64 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { peitar }
+	capital = STATE_DOMANDROD
+}
+
+B86B = { #Mheromar's Legion
+	color = { 233 154 64 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { peitar snecboth }
+	capital = STATE_DOMANDROD
+}
+
+B87 = {	#Eordand
+	color = { 212 175 55 }
+	
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { peitar selphereg caamas tuathak snecboth }
+	capital = STATE_DARHAN
+}
+
+B88 = {	#Fograc
+	color = { 133 13 7 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { fograc }
+	capital = STATE_FOGRACLEAK
+}
+
+B89 = {	#Daxwell
+	color = { 204 136 0 }
+	
+	country_type = recognized
+	
+	tier = city_state
+	
+	cultures = { towerfoot_halfling }
+	capital = STATE_THILVIS
+}
+B91 = { #Ranger Republic
+	color = { 128 63 50 }
+
+	country_type = recognized
+
+	tier = grand_principality
+
+	cultures = { dustman }
+	CAPITAL = STATE_EBENMAS
+}
+
+B92 = { #Sornicande
+	color = { 130 60 108 }
+
+	country_type = recognized
+
+	tier = principality
+
+	cultures = { sornicandi kwineh }
+	CAPITAL = STATE_SORNICANDE
+}
+
+B93 = { #Kwinelliande
+	color = { 190 99 99 }
+
+	country_type = unrecognized
+
+	tier = city_state
+
+	cultures = { kwineh }
+	CAPITAL = STATE_KWINELLIANDE
+}
+
+B94 = { #Spoorland
+	color = { 145 205 150 }
+
+	country_type = recognized
+
+	tier = principality
+
+	cultures = { towerfoot_halfling }
+	CAPITAL = STATE_SPOORLAND
+}
+
+B95 = { #Ultanar
+	color={ 72 135 99 }
+
+	country_type = recognized
+
+	tier = kingdom
+
+	cultures = { ruin_orc }
+	CAPITAL = STATE_VERTEN
+}
+
+B96 = {	#Ghrannblath
+	color={ 255 233 0 }
+
+	country_type = unrecognized
+
+	tier = principality
+
+	cultures = { caamas }
+	CAPITAL = STATE_TRIMGARB
+}
+
+B97 = { #Dolindha
+	color={ 255 182 24 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { dolindhan }
+	CAPITAL = STATE_ROGAIDHA
+}
+
+B98 = { #Trollsbay
+	color = { 32 77 117 }
+
+	country_type = recognized
+
+	tier = kingdom
+
+	cultures = { concordian towerfoot_halfling }
+	CAPITAL = STATE_TROLLSBRIDGE
+}
+#North Aelantir overflow
+G01 = { #Steadsland
+	color={ 6 156 93 }
+
+	country_type = recognized
+
+	tier = grand_principality
+
+	cultures = { steadsman }
+	capital = STATE_PLUMSTEAD
+}
+
+G02 = { #Horizona
+	color = { 223 175 44 }
+
+	country_type = recognized
+
+	tier = kingdom
+
+	cultures = { steadsman horizon_elf dustman ynngarder_half_orc }
+	capital = STATE_ELATHAEL
+}
+
+G03 = { #Cannorian Veykoda
+	color = { 69 52 89 }
+
+	country_type = recognized
+
+	tier = kingdom
+
+	cultures = { east_ynnsman pipefoot_halfling steel_dwarf freemarcher_half_orc }
+	capital = STATE_LETHIR
+}
+
+G04 = { # Autumnal League
+	color = { 221 113 22 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { tuathak }
+	capital = STATE_RAITHLOS
+}
+
+G05 = {	#Kobildzexbirrix
+	color = { 212 145 32 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { vrendzani_kobold }
+	capital = STATE_HJORDAL
+}
+
+G06 = {	#Derhildia
+	color = { 174 126 182 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { dalairey }
+	capital = STATE_HJORDAL
+}
+
+G07 = {	#Nyr Revrhavn
+	color = { 161 142 134 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { dalairey }
+	capital = STATE_SJAVARRUST
+}
+
+G08 = {	#Ollorland - named after Reachman explorer Ollor Frosthair
+	color = { 63 81 181 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { dalairey themarian }
+	capital = STATE_DALAIRRSILD
+}
+
+G09 = {	#Teira
+	color = { 229 115 115 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { teira }
+	capital = STATE_SJAVARRUST
+}
+
+G10 = {	#Gemradcurt
+	color = { 255 204 188 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { snecboth }
+	capital = STATE_GEMRADCURT
+}
+
+#TODO: replace those 1444 crusaders by Daraela and Snecbath. Just need the tags renamed and flags changed. 
+G11 = {	#Jhorgashirr
+	color = { 40 53 147 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { tuathak }
+	capital = STATE_JHORGASHIRR
+}
+
+G12 = {	#Slegcal
+	color = { 229 115 15 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { tuathak }
+	capital = STATE_GALBHAN
+}
+
+G13 = { #Scalehunter Host
+    color = { 117 65 21 }
+
+    country_type = decentralized
+
+    tier = principality
+
+    cultures = { epednar }
+    capital = STATE_CASNAROG
+}
+
+G14 = { #Naamohp
+    color = { 158 88 28 }
+
+    country_type = decentralized
+
+    tier = principality
+
+    cultures = { chiunife }
+    capital = STATE_YECKUNIA
+}
+
+G15 = { #Talcasaht
+    color = { 129 127 38 }
+
+    country_type = decentralized
+
+    tier = principality
+
+    cultures = { chiunife }
+    capital = STATE_ESIMOINE
+}
+
+G16 = { #Tsoreimàr 
+    color = { 255 254 145 }
+
+    country_type = decentralized
+
+    tier = principality
+
+    cultures = { haraf_ne }
+    capital = STATE_WORMWAY
+}
+
+G17 = { #Saiinauf
+    color = { 209 208 119 }
+
+    country_type = decentralized
+
+    tier = principality
+
+    cultures = { haraf_ne }
+    capital = STATE_WORMWAY
+}
+
+G18 = { #Leetine
+    color = { 142 135 58 }
+
+    country_type = decentralized
+
+    tier = principality
+
+    cultures = { haraf_ne }
+    capital = STATE_KITSIL_KINN
+}
+
+G19 = {	#Cheshoshi/Mayte
+	color = { 82  65  145 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { cheshoshi mayte }
+	capital = STATE_CHESHOSHMAR
+}
+
+G20 = {	#Epednar
+	color = { 96 57 19 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { epednar }
+	capital = STATE_ARANTAS
+}
+
+G21 = {	#Chiunife
+	color = { 107 90 61 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { chiunife }
+	capital = STATE_TASPAS
+}
+
+G22 = {	#Kin Forest
+	color = { 0 0 0 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { cursed_one }
+	capital = STATE_SILDARBAD
+}
+
+G23 = {	#Benter - as in the 1754-1789 Benter Republic
+	color = { 48 49 90 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { mayte }
+	capital = STATE_TLACHIBAR
+}
+
+G24 = {	#Seraeddun
+	color = { 133 13 7 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { fograc }
+	capital = STATE_FOGRACLEAK
+}
+
+G25 = {	#Kooras
+	color = { 133 13 7 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { kooras }
+	capital = STATE_ZURZUMEXIA
+}
+
+G27 = {	#Brelar
+	color = { 51 51 51 }
+
+	country_type = unrecognized
+
+	tier = principality
+
+	cultures = { dolindhan }
+	capital = STATE_BRELAR
+}
+
+
+#South Aelantir
+C01 = {	#Rezankand
+	color = { 255 244 102 } #207 140 52
+	
+	country_type = recognized
+	
+	tier = empire
+	
+	cultures = { dawn_elf dawn_ruinborn }
+	capital = STATE_REZANOAN
+}
+
+C02 = {	#Amadia
+	color = { 109 173 192 }
+	
+	country_type = recognized
+	
+	tier = empire
+	
+	cultures = { serenor }
+	capital = STATE_CYMBEAHN
+}
+
+C03 = {	#Ozgarom
+	color = { 78 180 20 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { ozgar_orc }
+	capital = STATE_OZGAR
+}
+
+C04 = {	#Jibirae'n
+	color = { 78 135 85 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { soruinic }
+	capital = STATE_JIBIRAEN
+}
+
+C05 = {	#Nur Dhanaenn
+	color = { 16 138 144 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { dhanaenno }
+	capital = STATE_DALAINE
+}
+
+C06 = {	#Swamp Territories
+	color = { 104 101 80 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { swampman }
+	capital = STATE_SORFEN
+}
+
+C07 = {	#Kiohalen
+	color = { 240 81 86 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { kioha_harpy }
+	capital = STATE_KIOHALEN
+}
+
+C08 = {	#Drakesguard
+	color = { 252 223 120 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { drakesman }
+	capital = STATE_THALASARAN
+}
+
+C09 = {	#Turtleback
+	color = { 51 130 63 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { turtlebacker }
+	capital = STATE_WEST_TURTLEBACK
+}
+
+C10 = {	#Malatel
+	color = { 35 74 190 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { malateli }
+	capital = STATE_NEWSHORE
+}
+
+C11 = {	#Amadian native
+	color = { 255 178 127 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { quruwei }
+	religion = rioqay_diu
+	capital = STATE_HARENAINE
+}
+
+C12 = {	#Sel'Parura
+	color = { 109 137 37 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { parura }
+	capital = STATE_SCREAMING_JUNGLE
+}
+
+C13 = {	#Sel'Machu
+	color = { 0 127 127 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { parura }
+	capital = STATE_SCREAMING_JUNGLE
+}
+
+C14 = {	#Tswohvwoh'íi
+	color = { 2 51 0 }
+	
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { seedthrall }
+	capital = STATE_CENTRAL_EFFELAI
+}
+
+C15 = {	#Effe'i
+	color = { 45 24 2 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { effe_i }
+	capital = STATE_WESTERN_EFFELAI
+}
+
+C16 = {	#Mushroom
+	color = { 183 183 183 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { dugui_hi }
+	capital = STATE_MUSHROOM_FOREST
+}
+
+C17 = {	#Thavo'i
+	color = { 32 86 26 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { thavo_i }
+	capital = STATE_DEEPSONG
+}
+
+C30 = {	#Kheios
+	color = { 60 120 180 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { alebhen }
+	capital = STATE_CENTRAL_KHEIONS
+}
+
+C31 = {	#Anisikheion
+	color = { 125 129 88 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { alebhen }
+	capital = STATE_ANISIKHEION
+}
+
+C32 = {	#The_Devand
+	color = { 12 160 228 }
+	
+	country_type = colonial
+	
+	tier = principality
+	
+	cultures = { vanburian }
+	capital = STATE_EMPKEIOS
+}
+
+C33 = {	#Keyolion
+	color = { 117 149 237 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { devabhen }
+	capital = STATE_KEYOLION
+}
+
+C34 = {	#Eneion
+	color = { 129 24 94 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { devabhen }
+	capital = STATE_ENEION
+}
+
+C35 = {	#Besolaki
+	color = { 232 39 228 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { devabhen }
+	capital = STATE_BESOLAKI
+}
+
+C36 = {	#Apikhoxi
+	color = { 68 5 16 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { devabhen }
+	capital = STATE_APIKHOXI
+}
+
+C37 = {	#Deyeion
+	color = { 217 113 82 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { devabhen }
+	capital = STATE_DEYEION
+}
+
+C38 = {	#Mteibhara
+	color = { 181 201 225 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { mteibhar }
+	capital = STATE_WESTERN_MTEIBHARA
+}
+
+C39 = {	#Ameion
+	color = { 4 18 225 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { ambhen }
+	capital = STATE_AMEION
+}
+
+C40 = {	#Clematar
+	color = { 115 207 251 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { larankarha }
+	capital = STATE_CLEMATAR
+}
+
+C41 = {	#Scenkar
+	color = { 62 14 17 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { advakhalla }
+	capital = STATE_WEST_VEYII_SIKARHA
+}
+
+C42 = {	#Urvand
+	color = { 180 117 63 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { larankarha }
+	capital = STATE_URVAND
+}
+
+C43 = {	#Enlarmai
+	color = { 169 36 47 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { larankarha }
+	capital = STATE_ENLARMAI
+}
+
+C44 = {	#Varaendi
+	color = { 152 208 181 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { yodhanpir }
+	capital = STATE_IRON_HILLS
+}
+
+C45 = {	#Nanru Nakar
+	color = { 112 78 100 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { kalavendhi }
+	capital = STATE_NANRU_NAKAR
+}
+
+C46 = {	#Klerechend
+	color = { 0 12 68 } # old 112 36 65
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { klereyen }
+	capital = STATE_KLERECHEND
+}
+
+C47 = {	#Nymbhava
+	color = { 250 250 255 } # old 75 144 67
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { klereyen }
+	capital = STATE_NYMBHAVA
+}
+
+C48 = {	#Royakottar
+	color = { 216 85 67 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { kalavendhi }
+	religion = ravelian
+	capital = STATE_ORENKORAIM
+}
+
+C49 = {	#Orenkoraim
+	color = { 24 206 183 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { kalavendhi }
+	religion = ravelian
+	capital = STATE_ORENKORAIM
+}
+
+C50 = {	#Degithion
+	color = { 0 43 114 } # old 107 110 226
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { klereyen thekvrystana }
+	religion = ravelian
+	capital = STATE_DEGITHION
+}
+
+C51 = {	#Chendyans
+	color = { 134 145 106 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { chendhyan }
+	capital = STATE_EASTERN_CHENDHYA
+}
+
+C52 = {	#Advagar
+	color = { 179 148 48 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { advakhalla }
+	capital = STATE_WEST_VEYII_SIKARHA
+}
+
+C53 = {	#Nisae
+	color = { 63 0 0 } # old 254 229 91
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { astolbhen }
+	capital = STATE_MESOKTI
+}
+
+C54 = {	#Caergaraen
+	color = { 55 22 64 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { chendhyan }
+	capital = STATE_CAERGARAEN
+}
+
+C55 = {	#Amastól
+	color = { 46 38 160 } # old v2 163 72 79
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { astolbhen }
+	capital = STATE_MESOKTI
+}
+
+C56 = {	#Mesion
+	color = { 67 72 112 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { ambhen }
+	capital = STATE_KLERECHEND
+}
+
+C57 = {	#Bukkabeso
+	color = { 86 157 239 } # old 253 185 240
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { klereyen }
+	capital = STATE_KLERECHEND
+}
+
+C58 = {	#Kattisangmar
+	color = { 44 47 52 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { yodhanpir }
+	capital = STATE_IRON_HILLS
+}
+
+C59 = {	#Degolídir
+	color = { 47 0 142 } # old 71 97 68
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { klereyen }
+	capital = STATE_NYMBHAVA
+}
+
+C60 = {	#Néor Empkeios / Sotereion
+	color = { 65 94 143 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { klereyen }
+	capital = STATE_NEOR_EMPKEIOS
+}
+
+C61 = {	#Akretírchel
+	color = { 112 36 65 } # old 143 128 88
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { klereyen }
+	religion = oren_nayiru
+	capital = STATE_DEGITHION
+}
+
+C62 = {	#Troppaimkq
+	color = { 207 162 85 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { kalavendhi }
+	capital = STATE_ORENKORAIM
+}
+
+C63 = {	#Vettakaramai
+	color = { 247 82 136 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { kalavendhi }
+	religion = oren_nayiru
+	capital = STATE_NANRU_NAKAR
+}
+
+C64 = {	#Uesrlarmai
+	color = { 69 94 127 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { larankarha }
+	religion = oren_nayiru
+	capital = STATE_NANRU_NAKAR
+}
+
+C65 = {	#Pattivaram
+	color = { 69 98 69 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { kalavendhi }
+	capital = STATE_NANRU_NAKAR
+}
+
+C66 = {	#Calinkend
+	color = { 69 89 86 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { larankarha }
+	religion = oren_nayiru
+	capital = STATE_ENLARMAI
+}
+
+C67 = {	#Kannakirva
+	color = { 133 119 138 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { sarihaddi }
+	religion = oren_nayiru
+	capital = STATE_SARIHADDU
+}
+
+C68 = {	#Ethra
+	color = { 54 150 85 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { advakhalla }
+	religion = oren_nayiru
+	capital = STATE_EAST_VEYII_SIKARHA
+}
+
+C69 = {	#Sarihaddu
+	color = { 211 170 147 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { sarihaddi }
+	capital = STATE_SARIHADDU
+}
+
+C70 = {	#Amgremos
+	color = { 159 130 188 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { devabhen }
+	capital = STATE_AMGREMOS
+}
+
+C71 = {	#Empkeios Independent
+	color = { 12 160 228 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { devabhen }
+	capital = STATE_EMPKEIOS
+}
+
+C90 = { #Taychend
+	color = { 210 150 40 }
+
+	country_type = unrecognized
+
+	tier = hegemony
+
+	cultures = { kalavendhi yodhanpir advakhalla larankarha sarihaddi klereyen }
+	capital = STATE_NANRU_NAKAR
+}
+
+C91 = { #Theinos
+	color = { 140 20 140 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { devabhen ambhen }
+	capital = STATE_ENEION
+}
+
+C92 = { #Ambhen Empire
+	color = { 20 20 130 }
+
+	country_type = unrecognized
+
+	tier = empire
+
+	cultures = { ambhen astolbhen klereyen }
+	capital = STATE_AMEION
+}
+
+C93 = { #Chendhya
+	color = { 230 200 60 }
+
+	country_type = unrecognized
+
+	tier = empire
+
+	cultures = { chendhyan astolbhen }
+	capital = STATE_CAERGARAEN
+}
+
+C94 = { #Kaydhano
+	color = { 41 146 173 }
+
+	country_type = decentralized
+
+	tier = principality
+
+	cultures = { chendhyan }
+	capital = STATE_KAYDHANO_SEA
+}
+
+C95 = { #Euneiande
+	color = { 93 166 222 }
+
+	country_type = recognized
+
+	tier = kingdom
+
+	cultures = { trisferian }
+	capital = STATE_BRONRIN
+}
+
+#Serpentspine
+D01 = { #Aul-Dwarov
+	color = { 33 64 96 }
+	
+	country_type = recognized
+	
+	tier = empire
+	
+	cultures = { kronium_dwarf }	#placeholder
+	capital = STATE_AMLDIHR
+}
+
+D02 = { #Krakdhumvror
+	color = { 148 201 230 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { quartz_dwarf }
+	capital = STATE_KRAKDHUMVROR
+}
+
+D03 = { #Dur-Vazhatun
+	color = { 0 25 119 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { kronium_dwarf }
+	capital = STATE_DUR_VAZHATUN
+}
+
+D04 = { #Orlazam-az-dihr
+	color = { 74 111 121 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { kronium_dwarf } # ramsteel_dwarf
+	capital = STATE_ORLAZAM_AZ_DIHR
+}
+
+D05 = { #Amldihr
+	color = { 60 40 80 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { kronium_dwarf }
+	capital = STATE_AMLDIHR
+}
+
+D06 = { #Kuxheztë/Modern Darkscale
+	color = { 81 16 16 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { kuxheztar_kobold }
+	capital = STATE_HARAZ_ORLDHUM
+}
+
+D07 = { #Haraz Orldhum
+	color = { 74 80 97 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { platinum_dwarf }
+	capital = STATE_HARAZ_ORLDHUM
+}
+
+D08 = { #Khugdihr
+	color = { 149 131 101 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { agate_dwarf }
+	capital = STATE_KHUGDIHR
+}
+
+D09 = { #Mithradhum
+	color = { 81 231 213 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { kronium_dwarf } # mithril_dwarf
+	capital = STATE_MITHRADHUM
+}
+
+D10 = { #Allclan / Ves Udzenklan
+	color = { 34 216 0 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { rustroad_goblin cave_goblin }
+	capital = STATE_ER_NATVIR
+}
+
+D11 = { #Er-Natvir
+	color = { 147 191 155 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { kronium_dwarf } # dagrite_dwarf
+	capital = STATE_ER_NATVIR
+}
+
+D12 = { #Hul-Jorkad
+	color = { 160 114 158 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { diamond_dwarf } # lead_dwarf
+	capital = STATE_HUL_JORKAD
+}
+
+D13 = { #Gor Burad
+	color = { 240 72 72 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { basalt_dwarf }
+	capital = STATE_GOR_BURAD
+}
+
+D14 = { #Ovdal Lodhum
+	color = { 247 179 215 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { diamond_dwarf } # garnet_dwarf
+	capital = STATE_OVDAL_LODHUM
+}
+
+D15 = { #Obsidian Legion
+	color = { 8 14 42 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { obsidian_dwarf }
+	capital = STATE_VERKAL_SKOMDIHR
+}
+
+D16 = { #Haraz Dhumankon
+	color = { 56 43 70 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { obsidian_dwarf basalt_dwarf }
+	capital = STATE_VERKAL_SKOMDIHR
+}
+
+D17 = { #Verkal Skomdihr
+	color = { 55 144 90 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { diamond_dwarf } # flint_dwarf 
+	capital = STATE_VERKAL_SKOMDIHR
+}
+
+D18 = { #Arg Ordstun
+	color = { 200 200 200 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { diamond_dwarf }
+	capital = STATE_ARG_ORDSTUN
+}
+
+D19 = { #Shazstundihr
+	color = { 241 242 227 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { diamond_dwarf }
+	capital = STATE_SHAZSTUNDIHR
+}
+
+D20 = { #Orlghelovar
+	color = { 0 71 171 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { diamond_dwarf }
+	capital = STATE_ORLGHELOVAR
+}
+
+D21 = { #Drakonshan/Modern Skewered Drake
+	color = { 178 135 46 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { drakonshani_orc }
+	capital = STATE_GOR_VAZUMBROG
+}
+
+D22 = { #Gor Vazumbrog
+	color = { 223 187 144 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { titanium_dwarf }
+	capital = STATE_GOR_VAZUMBROG
+}
+
+D23 = { #Hehodovar
+	color = { 15 82 186 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { citrine_dwarf } # pyrite_dwarf
+	capital = STATE_HEHODOVAR
+}
+
+D24 = { #Seghdihr
+	color = { 36 96 143 }
+	
+	country_type = recognized
+	tier = kingdom
+	
+	cultures = { citrine_dwarf }
+	capital = STATE_SEGHDIHR
+}
+
+D25 = { #Verkal Gulan
+	color = { 255 198 0 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { gold_dwarf }
+	capital = STATE_VERKAL_GULAN
+}
+
+D26 = { #Underkingdom / Nizhn Korvesto
+	color = { 255 179 230 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { undergrowth_goblin }
+	capital = STATE_EARTHSEED
+}
+
+D27 = { #Gor Ozumbrog
+	color = { 93 161 154 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { topaz_dwarf }
+	capital = STATE_GOR_OZUMBROG
+}
+
+D28 = { #Ovdal Kanzad
+	color = { 230 190 44 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { amber_dwarf }
+	capital = STATE_OVDAL_KANZAD
+}
+
+D29 = { #Grozumdihr
+	color = { 135 225 135 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { peridot_dwarf }
+	capital = STATE_GROZUMDIHR
+}
+
+D30 = { #Ovdal-az-An
+	color = { 114 202 227 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { granite_dwarf }
+	capital = STATE_OVDAL_AZ_AN
+}
+
+D31 = { #Dakaz Carzviya/Modern Chaingrasper
+	color = { 0 105 62 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { undergrowth_goblin }
+	capital = STATE_HUL_AZ_KRAKAZOL
+}
+
+D32 = { #Hul-az-Krakazol
+	color = { 153 108 204 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { amethyst_dwarf }
+	capital = STATE_HUL_AZ_KRAKAZOL
+}
+
+D33 = { #Zerzeko Radin/Jade March
+	color = { 67 111 78 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { march_goblin }
+	capital = STATE_GRONSTUNAD
+}
+
+D34 = { #Tuwad-Dhumankon
+	color = { 27 253 102 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { emerald_dwarf }
+	capital = STATE_TUWAD_DHUMANKON
+}
+
+D35 = { #Gronstunad
+	color = { 0 168 107 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { jade_dwarf }
+	capital = STATE_GRONSTUNAD
+}
+
+D36 = { #Verkal Dromak
+	color = { 255 128 0 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { jade_dwarf } # malachite_dwarf
+	capital = STATE_VERKAL_DROMAK
+}
+
+D37 = { #Kuxhekrë/Modern Siegebreaker
+	color = { 161 210 141 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { kuxhekrar_orc }
+	capital = STATE_CHAINLINK_MINES
+}
+
+
+D38 = { #Stubbed Toe
+	color = { 201 62 62 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cave_goblin }
+	capital = STATE_TRUEPATH_CAVERNS
+}
+
+D39 = { #Ironshark
+	color = { 21 139 148 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cave_goblin }
+	capital = STATE_CHAINLINK_MINES
+}
+
+D40 = { #Fungus Licker
+	color = { 222 148 51 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cave_goblin }
+	capital = STATE_DEAD_CAVERNS
+}
+
+D41 = { #Mouth Breather
+	color = { 48 172 77 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cave_goblin }
+	capital = STATE_DEAD_CAVERNS
+}
+
+D42 = { #Rockeater
+	color = { 161 161 27 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cave_goblin }
+	capital = STATE_DEAD_CAVERNS
+}
+
+
+D43 = { #Spiderwretch
+	color = { 41 40 105 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { crawler_goblin }
+	capital = STATE_SKITTERING_CAVERNS
+}
+
+D44 = { #Bloodhowl
+	color = { 219 28 66 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { black_orc }
+	capital = STATE_CRUMBLING_CAVERNS
+}
+
+D45 = { #Tongue Twister
+	color = { 203 46 203 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cave_goblin }
+	capital = STATE_CRUMBLING_CAVERNS
+}
+
+D46 = { #Firescales
+	color = { 213 20 20 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { darkscale_kobold }
+	capital = STATE_SCALDING_PITS
+}
+
+D47 = { #Burnt Skin
+	color = { 44 31 47 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { skinburner_goblin }
+	capital = STATE_FORGOTTEN_DEPTHS
+}
+
+D48 = { #Cave Breaker
+	color = { 172 140 35 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { black_orc }
+	capital = STATE_ORCSFALL
+}
+
+D49 = { #Thieving Arrow
+	color = { 175 129 123 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { straggler_goblin }
+	capital = STATE_WINDING_CAVERNS
+}
+
+D50 = { #Loaded Die
+	color = { 131 113 113 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { straggler_goblin }
+	capital = STATE_WINDING_CAVERNS
+}
+
+D51 = { #Masked Butcher
+	color = { 51 3 14 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { blooded_orc }
+	capital = STATE_SCREAMING_CAVERNS
+}
+
+D52 = { #Wall Shadows
+	color = { 33 3 3 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { trolltamer_goblin }
+	capital = STATE_FOOLS_PASSAGE
+}
+
+D53 = { #Gembreaker
+	color = { 239 145 4 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { black_orc }
+	capital = STATE_CITRINE_MINES
+}
+
+D54 = { #Straight Spines
+	color = { 34 131 20 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cave_goblin }
+	capital = STATE_CITRINE_MINES
+}
+
+D55 = { #Shadowdreamer
+	color = { 147 133 140 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { black_orc }
+	capital = STATE_FORSAKEN_DEPTHS
+}
+
+D56 = { #Grizehûd
+	color = { 96 30 195 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { cave_troll }
+	capital = STATE_GREATCAVERNS
+}
+
+D57 = { #Ratsnatchers
+	color = { 245 45 158 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { goldtooth_goblin }
+	capital = STATE_RATHOLES
+}
+
+D58 = { #Lazy Eye
+	color = { 32 36 154 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { goldtooth_goblin }
+	capital = STATE_ANCIENT_DEPTHS
+}
+
+D59 = { #Blackened Eye
+	color = { 13 13 21 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { goldtooth_goblin }
+	capital = STATE_ANCIENT_DEPTHS
+}
+
+D60 = { #Verkal Kozenad
+	color = { 255 228 216 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { opal_dwarf }
+	capital = STATE_VERKAL_KOZENAD
+}
+
+D61 = { #Segbandal
+	color = { 36 96 143 }
+		
+	country_type = recognized
+
+	tier = empire
+
+	cultures = { citrine_dwarf gold_dwarf titanium_dwarf topaz_dwarf } # pyrite_dwarf
+	capital = STATE_SEGHDIHR
+}
+
+D62 = { #The Serpentreach
+	color = { 105 100 100 }
+		
+	country_type = recognized
+
+	tier = empire
+
+	cultures = { diamond_dwarf  basalt_dwarf } # flint_dwarf marble_dwarf cobalt_dwarf garnet_dwarf
+	capital = STATE_ARG_ORDSTUN
+}
+
+
+
+
+
+
+
+
+
+#Forbidden Plains
+E01 = { #Kalsyto/Lake Federation
+	color = { 20 50 210 }
+	
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { triunic }
+	capital = STATE_KESH_GOLKHIN
+}
+
+E02 = { #Maghargma
+	color = { 196 180 132 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { fathide_ogre }
+	capital = STATE_DZIMOKLI
+}
+
+E03 = { #Zabutodask
+	color = { 210 90 90 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { orachav }
+	capital = STATE_SOCHULEAG
+}
+
+E04 = { #Shivusdoyen
+	color = { 50 210 20 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { orachav }
+	capital = STATE_ORCHEKH
+}
+
+E05 = { #Altorzamh
+	color = { 46 119 160 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { desert_centaur }
+	capital = STATE_SERPENT_GIFT
+}
+
+E06 = { #Khaeren Ulaeg
+	color = { 100 15 15 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { plains_centaur }
+	capital = STATE_CAUBHEAMEAS
+}
+
+E07 = { #Inaerzamh
+	color = { 245 176 60 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { desert_centaur }
+	religion = the_jadd
+	capital = STATE_IRDU_AGEENEAS
+}
+
+E08 = { #Lejdazamh
+	color = { 58 101 87 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { plains_centaur }
+	capital = STATE_UGHEABAR
+}
+
+E09 = { #Taryeanzamh
+	color = { 179 22 102 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { plains_centaur }
+	capital = STATE_GHANEERSP
+}
+
+E10 = { #Kukamoitsa
+	color = { 114 98 120 }
+
+	country_type = unrecognized
+
+	tier = principality
+
+	cultures = { kukatodic }
+	capital = STATE_MOITSADHI
+}
+
+E11 = { #Ikogshaantus
+	color = { 7 74 74 }
+
+	country_type = unrecognized
+
+	tier = principality
+
+	cultures = { urmanki }
+	capital = STATE_BULREKAYIG
+}
+
+E12 = { #Irdulhain
+	color = { 245 222 179 }
+
+	country_type = unrecognized
+
+	tier = Kingdom
+
+	cultures = { plains_centaur desert_centaur }
+	capital = STATE_GHANEERSP
+}
+
+#Bulwar
+F01 = {	#Jaddanzar Empire
+	color = { 241 135 50 }
+	
+	country_type = recognized
+	
+	tier = empire
+	
+	cultures = { elaiennan_harpy surani sun_elven }
+	capital = STATE_JADDANZAR
+}
+
+F02 = {	#Brasan
+	color = { 205  233  232 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { brasanni }
+	capital = STATE_BRASAN
+}
+
+F03 = {	#Drolakand
+	color = { 153  3  48 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { sun_elven brasanni }
+	capital = STATE_DROLAS
+}
+
+F04 = {	#Sad Sur
+	color = { 148  122  74 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { brasanni sandfang_gnoll }
+	capital = STATE_SAD_SUR
+}
+
+F05 = {	#Medurubar
+	color = { 0  85  100 }
+	
+	country_type = unrecognized
+	
+	tier = grand_principality
+	
+	cultures = { sun_elven brasanni }
+	capital = STATE_LOWER_SURAN
+}
+
+F06 = {	#Aklum
+	color = { 80  120  90 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { brasanni }
+	capital = STATE_LOWER_SURAN
+}
+
+F07 = {	#Zansap
+	color = { 87  177  200 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { zanite }
+	capital = STATE_LOWER_SURAN
+}
+
+F08 = {	#Irrliam
+	color = { 242  206  61 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { sun_elven brasanni }
+	capital = STATE_LOWER_SURAN
+}
+
+F09 = {	#Kuzaram
+	color = { 80  100  100 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { bahari }
+	capital = STATE_KUZARAM
+}
+
+F10 = {	#Garlas-Kel
+	color = { 73  198  52 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { bahari gelkari }
+	religion = old_sun_cult
+	
+	capital = STATE_GARLAS_KEL
+}
+
+F11 = {	#Azka Kam
+	color = { 33  70  106 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { sun_elven gelkari }
+	capital = STATE_GARLAS_KEL
+}
+
+F12 = {	#Kalisad
+	color = { 246  236  103 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { sun_elven zanite }
+	capital = STATE_EAST_NAZA
+}
+
+F13 = {	#Harpylen
+	color = { 200  169  168 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { firanyan_harpy }
+	capital = STATE_HARPYLEN
+}
+
+F14 = {	#Overclan
+	color = { 100  100  200 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { bahari_goblin }
+	capital = STATE_AQATBAHAR
+}
+
+F15 = {	#Ovdal Tungr
+	color = { 204  117  21 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { copper_dwarf }
+	capital = STATE_OVDAL_TUNGR
+}
+
+F16 = {	#Crathánor
+	color = { 59 148 235 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { bahari }
+	capital = STATE_CRATHANOR
+}
+
+F17 = {	#Annail
+	color = { 237 31 61 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { brasanni }
+	capital = STATE_ANNAIL
+}
+
+F18 = {	#Setadazar
+	color =  { 15 190 160 }
+	
+	country_type = unrecognized
+	
+	tier = grand_principality
+	
+	cultures = { sun_elven zanite }
+	capital = STATE_EAST_NAZA
+}
+
+F19 = {	#Azkabar
+	color = { 194 254 117 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { zanite }
+	capital = STATE_WEST_NAZA
+}
+
+F20 = {	#Bulwar
+	color = { 213 98 117 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { zanite }
+	capital = STATE_BULWAR
+}
+
+F21 = {	#Anzabad
+	color = { 19 62 234 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { brasanni }
+	capital = STATE_LOWER_BURANUN
+}
+
+F22 = {	#Eduz-Vacyn
+	color = { 113 232 24 }
+	
+	country_type = unrecognized
+	
+	tier = grand_principality
+	
+	cultures = { surani zanite }
+	capital = STATE_AVAMEZAN
+}
+
+F23 = {	#Hasr
+	color = { 55 77 245 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { surani }
+	capital = STATE_UPPER_SURAN
+}
+
+F24 = {	#Azka-sur
+	color = { 245 207 137 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { surani }
+	capital = STATE_AZKA_SUR
+}
+
+F25 = {	#Edesukeru
+	color = { 200 105 50 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { sun_elven masnsih }
+	capital = STATE_KERUHAR
+}
+
+F26 = {	#Imuluses
+	color = { 150 100 30 }
+	
+	country_type = unrecognized
+	
+	tier = grand_principality
+	
+	cultures = { sun_elven bahari }
+	capital = STATE_BAHAR_PROPER
+}
+
+F27 = {	#Aqatbahar
+	color = { 43 110 96 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { bahari bahari_goblin }
+	capital = STATE_AQATBAHAR
+}
+
+F28 = {	#Re-Uyel
+	color = { 201 118 177 }
+	
+	country_type = unrecognized
+	
+	tier = grand_principality
+	
+	cultures = { bahari }
+	capital = STATE_REUYEL
+}
+
+F29 = {	#Kelharsarra
+	color = { 54 184 198 }
+	
+	country_type = unrecognized
+	
+	tier = grand_principality
+	
+	cultures = { gelkari }
+	capital = STATE_HARPYLEN
+}
+
+F30 = {	#Firanyalen
+	color = { 50 100 30 }
+	
+	country_type = unrecognized
+	
+	tier = grand_principality
+	
+	cultures = { firanyan_harpy black_orc }
+	capital = STATE_FIRANYALEN
+}
+
+
+#Rahen
+R01 = {	#Nahana Jadd
+	color = { 172 30 11 }
+	
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { sun_elven royal_harimari }
+	capital = STATE_UPPER_DHENBASANA
+}
+
+R02 = {	#Ghankedhen
+	color = { 234 77 0 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { ghankedhen }
+	capital = STATE_SOUTH_GHANKEDHEN
+}
+
+R03 = {	#Tudhina
+	color = { 193  89  33 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { royal_harimari pasindesh }
+	capital = STATE_TUDHINA
+}
+
+R04 = {	#Vanrahar
+	color = { 60 2 11 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { royal_harimari }
+	capital = STATE_ASCENSION_JUNGLE
+}
+
+R05 = {	#Bhuvauri
+	color = { 30  58  18 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { sarniryabsad }
+	capital = STATE_EAST_GHAVAANAJ
+}
+
+R06 = {	#Babhagama
+	color = { 145  102  35 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { royal_harimari sobhagand }
+	capital = STATE_BABHAGAMA
+}
+
+R07 = {	#Nadiraji
+	color = { 33 113 170 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { azepyanunin }
+	capital = STATE_RAJNADHAGA
+}
+
+R08 = {	#The Soldiers Republic
+	color = { 153  76  0 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { chimera_hobgoblin azepyanunin }
+	capital = STATE_RAGHAJANDI
+}
+
+R09 = {	#Pordhatti
+	color = { 0  203  216 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { elephant_hobgoblin azepyanunin }
+	capital = STATE_TUGHAYASA
+}
+
+R10 = {	#Khiraspid
+	color = { 153 206 236 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { rasarhid }
+	capital = STATE_DHUJAT
+}
+
+R11 = {	#Keyattordha
+	color = { 225 117 106 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { rasarhid }
+	capital = STATE_DHUJAT
+}
+
+R12 = {	#Maharaaja
+	color = { 45 27 72 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { dhukharuved }
+	capital = STATE_EAST_GHAVAANAJ
+}
+
+R13 = {	#Yodashikyu
+	color = { 60 80 160 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { kintonan }
+	capital = STATE_SARISUNG
+}
+
+R14 = {	#Girakad Command
+	color = { 228 189 180 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { wuhyun_half_orc azepyanunin }
+	capital = STATE_GHILAKHAD
+}
+
+R15 = {	#Unbroken Guard
+	color = { 180 135 125 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { wuhyun_half_orc azepyanunin }
+	capital = STATE_SHAMAKHAD_PLAINS
+}
+
+R16 = {	#Kasardun
+	color = { 119 115 103 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { chimera_hobgoblin azepyanunin }
+	capital = STATE_SHAMAKHAD_PLAINS
+}
+
+R17 = {	#Lion Command
+	color = { 114 175 108 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { chimera_hobgoblin azepyanunin }
+	capital = STATE_GHATASAK
+}
+
+R18 = {	#Bureau of Chains
+	color = { 150 115 120 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { chimera_hobgoblin azepyanunin }
+	capital = STATE_SHAMAKHAD_PLAINS
+}
+
+R19 = {	#Dragon Command
+	color = { 60 10 0 }
+	
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { dragon_hobgoblin ikaniwagain }
+	capital = STATE_NOZANYANBE
+}
+
+R20 = {	#Raghamidesh
+	color = { 50 150 50 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { raghamidesh }
+	capital = STATE_AVHAVUBHIYA
+}
+
+R21 = { #Great Command
+	color = { 153  76  0 }
+		
+	country_type = unrecognized
+
+	tier = empire
+
+	cultures = { chimera_hobgoblin wuhyun_half_orc azepyanunin }
+	capital = STATE_RAGHAJANDI
+
+}
+
+R72 = {	#Dhugajir
+	color = { 84 80 77 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { ghavaanaj }
+	capital = STATE_EAST_GHAVAANAJ
+}
+
+#Yanshen + North Haless
+Y01 = {	#Danggun
+	color = { 60 160 120 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { gowon }
+	capital = STATE_NEOBUNTEO
+}
+
+Y02 = {	#Yanshen
+	color = { 190 190 190 }
+	
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { jiangszun beikling gangim naamjyut jiangyang }
+	capital = STATE_TIANLOU
+}
+
+Y03 = {	#Tianlou
+	color = { 156 172 171 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { jiangszun }
+	capital = STATE_TIANLOU
+}
+
+Y04 = {	#Lingyuk
+	color = { 138 36 118 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { gangim }
+	religion = mystic_accord
+	capital = STATE_LINGYUK
+}
+
+Y05 = {	#Feiten
+	color = { 26 158 201 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { gangim }
+	capital = STATE_IONGSIM
+	religion = ravelian
+}
+
+Y06 = {	#Luoyip
+	color = { 235 181 13 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { gangim }
+	capital = STATE_LUOYIP
+}
+
+Y07 = {	#Zyujyut
+	color = { 195 42 30 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { naamjyut }
+	capital = STATE_ZYUJYUT
+}
+
+Y08 = {	#Zhiqian
+	color = { 11 17 69 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { jiangyang }
+	capital = STATE_XUANBING
+}
+
+Y09 = {	#Azjakuma
+	color = { 192 50 70 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { horned_ogre }
+	capital = STATE_SUGROLTONA
+}
+
+Y10 = {	#Balrijin
+	color = { 208 170 45 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { goldscale_kobold }
+	capital = STATE_BALRIJIN
+}
+
+Y11 = {	#Daxugo
+	color = { 145 116 70 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { shuvuush jiangszun } #settled birdriders
+	capital = STATE_JIANTSIANG
+}
+
+Y12 = {	#Semphrerong
+	color = { 205 87 137 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { chengrong }
+	capital = STATE_KHARUNYANA_BOMDAN
+}
+
+Y13 = {	#Phangban
+	color = { 69 69 69 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { chengrong }
+	capital = STATE_KHARUNYANA_BOMDAN
+}
+
+Y14 = {	#Taiver
+	color = { 10 20 80 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { ranilau }
+	capital = STATE_BIM_LAU
+}
+
+Y15 = {	#Bim Lau
+	color = { 35 153 90 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { ranilau }
+	capital = STATE_BIM_LAU
+}
+
+Y16 = {	#Khabtei Teleni
+	color = { 136 165 164 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { biengdi }
+	capital = STATE_KHABTEI_TELENI
+}
+
+Y17 = {	#Azkare
+	color = { 136 30 9 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { sikai }
+	capital = STATE_SIKAI
+}
+
+Y18 = {	#Rongbek
+	color = { 151 108 14 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { risbeko }
+	capital = STATE_RONGBEK
+}
+
+Y19 = {	#Baihon Xinh
+	color = { 255 174 0 }
+	
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { tamran phonan }
+	capital = STATE_TAMRAN_MA
+}
+
+Y20 = {	#Verkal Ozovar
+	color = { 159 224 208 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { nephrite_dwarf }
+	capital = STATE_VERKAL_OZOVAR
+}
+
+Y21 = {	#Kudet Kai
+	color = { 135 125 85 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { bokai }
+	capital = STATE_KUDET_KAI
+}
+
+Y22 = {	#Sirtan
+	color = { 185 97 97 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { sirtana }
+	capital = STATE_SIRTAN
+}
+
+Y23 = {	#Arawkelin
+	color = { 160 115 20 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { kelino }
+	capital = STATE_ARAWKELIN
+}
+
+Y24 = {	#Jaya Raya
+	color = { 245 255 240 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { hujan }
+	capital = STATE_TLAGUKIT
+}
+
+Y25 = {	#Pelimkana
+	color = { 60 115 20 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { paru }
+	capital = STATE_REWIRANG
+}
+
+Y26 = {	#Isdusama
+	color = { 85 82 102 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { banyak }
+	capital = STATE_REWIRANG
+}
+
+Y27 = {	#Rihasbren
+	color = { 104 109 54 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { banyak }
+	capital = STATE_REWIRANG
+}
+
+Y28 = {	#Tsaesolan
+	color = { 130 127 126 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { banyak }
+	capital = STATE_REWIRANG
+}
+
+Y29 = {	#Lelak
+	color = { 113 232 24 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { banyak }
+	capital = STATE_REWIRANG
+}
+
+Y30 = {	#Hijoadan
+	color = { 23 104 58 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { paru }
+	capital = STATE_MESATULEK
+}
+
+Y31 = {	#Labanyak
+	color = { 81 111 128 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { banyak }
+	capital = STATE_MESATULEK
+}
+
+Y32 = {	#Lorentish Haless Company
+	color = { 42 163 124 }
+	
+	country_type = colonial
+	
+	tier = kingdom
+	
+	cultures = { lorentish }
+	capital = STATE_LOWER_TELEBEI
+}
+
+Y33 = {	#Busilar Haless Company
+	color = { 251 251 249 }
+	
+	country_type = colonial
+	
+	tier = kingdom
+	
+	cultures = { busilari }
+	capital = STATE_MESATULEK
+}
+
+Y35 = {	#Oinukhudi
+	color = { 223 247 44 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { oinukhudi }
+	capital = STATE_OINUKHUDI
+}
+
+Y36 = {	#NH Decentralized 2
+	color = { 120 120 155 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { ulukungu }
+	capital = STATE_KOKEVDAN
+}
+
+Y37 = {	#NH Decentralized 3
+	color = { 120 155 120 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { mogirga }
+	capital = STATE_BAGDAGERIN
+}
+
+Y38 = {	#Beikdugang outpost
+	color = { 119 99 188 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { jiangyang }
+	capital = STATE_TUUSBULAK
+}
+
+Y39 = {	#Nirenun Syul
+	color = { 0 162 232 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { eagle_hobgoblin }
+	capital = STATE_UPPER_KHARUNYANA_BASIN
+}
+
+Y40 = {	#Samthalsu
+	color = { 250 110 17 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { soulseeker_ogre }
+	capital = STATE_NOMSYULHANI_BADLANDS
+}
+
+Y41 = {	#Hakuukulga
+	color = { 21 18 222 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { rukunai }
+	capital = STATE_HAKUURUK
+}
+
+Y42 = {	#Khezkhagak
+	color = { 34 177 76 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { runsukhi }
+	capital = STATE_CENTRAL_KHAASHALG
+}
+
+Y43 = {	#Bazuneizar
+	color = { 255 242 0 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { rukunai }
+	capital = STATE_HAKUURUK
+}
+
+Y44 = {	#Zingshi - Beikling Tag
+	color = { 21 27 30 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { beikling }
+	capital = STATE_MORYOKANG
+}
+
+###Sarhal
+
+L01 = { #Konolkhatep
+	color = { 46 10 10 }
+
+	country_type = unrecognized
+	
+	tier = empire
+	cultures = { sorrowmane_gnoll kheteratan }
+	capital = STATE_KHETERAT
+}
+
+L02 = { #Kheterata
+	color = { 219 148 35 }
+
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { kheteratan }
+	capital = STATE_KHETERAT
+}
+
+L03 = { #Vogkeysa
+	color = { 182 252 3 }
+
+	country_type = unrecognized
+	
+	tier = principality
+	religion = elikhetist
+	cultures = { carrionspite_gnoll }
+	capital = STATE_DESHAK
+}
+
+L04 = {	#Khasa
+	color = { 90 135 65 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { akasi }
+	capital = STATE_KHASA
+}
+
+L05 = {	#Deshak
+	color = { 68 146 194 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { akasi }
+	capital = STATE_DESHAK
+}
+
+L06 = {	#Ekha
+	color = { 206 222 199 }
+	
+	country_type = unrecognized
+	
+	tier = 	principality
+	
+	cultures = { akasi }
+	capital = STATE_EKHA
+}
+
+L07 = {	#Bexanxalga
+	color = { 54 89 71 }
+	
+	country_type = decentralized
+	
+	tier = 	principality
+	
+	cultures = { carrionspite_gnoll }
+	capital = STATE_NORTHERN_SANDSPITE
+}
+
+L08 = {	#Toxkverag
+	color = { 40 65 77 }
+	
+	country_type = decentralized
+	
+	tier = 	principality
+	
+	cultures = { carrionspite_gnoll }
+	capital = STATE_NORTHERN_SANDSPITE
+}
+
+L09 = {	#Yaikobix
+	color = { 122 44 109 }
+	
+	country_type = decentralized
+	
+	tier = 	principality
+	
+	cultures = { carrionspite_gnoll }
+	capital = STATE_NORTHERN_SANDSPITE
+}
+
+L10 = {	#Araxhobix
+	color = { 26 136 153 }
+	
+	country_type = decentralized
+	
+	tier = 	principality
+	
+	cultures = { carrionspite_gnoll }
+	capital = STATE_NORTHERN_SANDSPITE
+}
+
+L11 = {	#Yzhedvren
+	color = { 245 188 66 }
+	
+	country_type = decentralized
+	
+	tier = 	principality
+	
+	cultures = { carrionspite_gnoll }
+	capital = STATE_SOUTHERN_SANDSPITE
+}
+L12 = {	#Ivezukraz
+	color = { 148 163 106 }
+	
+	country_type = decentralized
+	
+	tier = 	principality
+	
+	cultures = { carrionspite_gnoll }
+	capital = STATE_SOUTHERN_SANDSPITE
+}
+
+L13 = {	#Golutzarr
+	color = { 78 237 121 }
+	
+	country_type = unrecognized
+	
+	tier = 	principality
+
+	cultures = { carrionspite_gnoll }
+	religion = xhazobkult
+	capital = STATE_ZIKAAZ
+}
+
+L14 = {	#Videkal
+	color = { 77 31 44 }
+	
+	country_type = decentralized
+	
+	tier = 	principality
+	
+	cultures = { carrionspite_gnoll }
+	capital = STATE_WESTERN_SALAHAD
+}
+
+L15 = {	#Eragobix
+	color = { 88 112 109 }
+	
+	country_type = decentralized
+	
+	tier = 	principality
+	
+	cultures = { carrionspite_gnoll }
+	capital = STATE_WESTERN_SALAHAD
+}
+
+L16 = {	#Itixhad
+	color = { 166 101 108 }
+	
+	country_type = decentralized
+	
+	tier = 	principality
+	
+	cultures = { sorrowmane_gnoll }
+	religion = xhazobkult
+	capital = STATE_CENTRAL_SALAHAD
+}
+
+L17 = {	#Hakhepra (Aramoole eveolution, meaning His Empire)
+	color = { 178 194 162 }
+	
+	country_type = unrecognized
+	
+	tier = 	kingdom
+	
+	cultures = { tijarikheti }
+	capital = STATE_MUKIS
+}
+
+L18 = {	#Haraagtseda
+	color = { 160 110 110 }
+	
+	country_type = unrecognized
+	
+	tier = 	kingdom
+	
+	cultures = { ironpelt_gnoll }
+	capital = STATE_KVANGRAAK
+}
+
+L19 = {	#Coburekal
+	color = { 168 137 74 }
+	
+	country_type = decentralized
+	
+	tier = 	principality
+	
+	cultures = { sorrowmane_gnoll }
+	religion = xhazobkult
+	capital = STATE_DEMON_SANDS
+}
+L20 = {	#Nexkryas
+	color = { 43 79 48 }
+	
+	country_type = decentralized
+	
+	tier = 	principality
+	
+	cultures = { ironpelt_gnoll }
+	capital = STATE_DEMON_SANDS
+}
+
+L21 = {	#Kulugiash
+	color = { 210 180 140 }
+	
+	country_type = unrecognized
+	
+	tier = 	principality
+	
+	cultures = { irsukuba }
+	capital = STATE_IRSUKSHESH
+}
+
+L22 = {	#Jagab Faru
+	color = { 204 204 0 }
+	
+	country_type = unrecognized
+	
+	tier = 	principality
+	
+	cultures = { mantimatu }
+	capital = STATE_KOGINGASA
+}
+
+L23 = {	#Zuvavim
+	color = { 0 102 255 }
+	
+	country_type = unrecognized
+	
+	tier = 	principality
+	
+	cultures = { vurebindu }
+	capital = STATE_ZUVAVIM
+}
+
+L24 = {	#Negefaama
+	color = { 92 92 92 }
+	
+	country_type = unrecognized
+	
+	tier = 	principality
+	
+	cultures = { tamajoba }
+	capital = STATE_WARABANI
+}
+
+L25 = {	#Khatalashya
+	color = { 59 107 78 }
+	
+	country_type = unrecognized
+	
+	tier = 	empire
+	
+	cultures = { ichiadza_lizardfolk }
+	capital = STATE_LASADZA
+}
+
+L26 = {	#Hisost Yamok
+	color = { 133 23 166 }
+	
+	country_type = unrecognized
+	
+	tier = 	principality
+	
+	cultures = { ofehibi }
+	capital = STATE_HISOST
+}
+
+L27 = {	#Melakmengi
+	color = { 20 158 182 }
+	
+	country_type = unrecognized
+	
+	tier = 	empire
+	
+	cultures = { yeteferen }
+	capital = STATE_TELEKIBE
+}
+
+L28 = {	#Yezel Mora
+	color = { 40 40 40 }
+	
+	country_type = unrecognized
+	
+	tier = 	kingdom
+	
+	cultures = { swamp_troll }
+	capital = STATE_AAKEIRITKI
+}
+
+L29 = {	#Naleni
+	color = { 255 138 101 }
+	
+	country_type = unrecognized
+	
+	tier = 	principality
+	religion = ravelian
+	cultures = { nalenian_harpy }
+	capital = STATE_NALENI
+}
+
+
+L30 = {	#Sky Soaring Eagle
+	color = { 32 150 89 }
+	
+	country_type = unrecognized
+	
+	tier = 	principality
+	religion = sky_domain
+	cultures = { tanizu }
+	capital = STATE_RUGRUSHYABA
+}
+
+L31 = {	#Thunder Wielding Buffalo
+	color = { 142 146 156 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { tanizu }
+	capital = STATE_BIKMEGHOME
+}
+
+
+L32 = {	#Umoji Baashidi
+	color = { 11 50 112 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { baashidi }
+	capital = STATE_BEERAGGA
+}
+
+L33 = {	#Bwa Dakinshi
+	color = { 72 158 84 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { dakinshi }
+	capital = STATE_JUUDHULA
+}
+
+L34 = {	#Adzalan
+	color = { 48 0 113 }
+	
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { adzalanas_lizardfolk }
+	capital = STATE_ZULBUR
+}
+
+L35 = {	#Karshyr
+	color = { 46 43 224 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { karshyray_lizardfolk }
+	capital = STATE_RANKATY_ISLANDS
+}
+
+L36 = {	#Nazhni
+	color = { 7 19 20 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { skarakara_lizardfolk }
+	religion = shadow_pact
+	capital = STATE_NAZHNI
+}
+
+
+L37 = {	#Raznyla
+	color = { 121 135 171 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { arraskay_lizardfolk }
+	capital = STATE_IRKLAZ
+}
+L38 = {	#Ktsataya
+	color = { 198 201 85 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { arraskay_lizardfolk }
+	capital = STATE_YADATI
+}
+L39 = {	#Shyakits
+	color = { 130 60 20 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	religion = shadow_pact
+	cultures = { arraskay_lizardfolk }
+	capital = STATE_YADATI
+}
+L40 = {	#Kataritsaya
+	color = { 53 196 65 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { arraskay_lizardfolk }
+	capital = STATE_AZASI
+}
+L41 = {	#Tsurin
+	color = { 59 47 96 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { arraskay_lizardfolk }
+	capital = STATE_NATALAZ
+}
+L42 = {	#Teranbashi
+	color = { 235 152 0 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	religion = shadow_pact
+	cultures = { arraskay_lizardfolk }
+	capital = STATE_ZALKATA
+}
+L43 = {	#Gakatzir
+	color = { 21 86 150 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	religion = shadow_pact
+	
+	cultures = { adzalanas_lizardfolk }
+	capital = STATE_ADGUR
+}
+L44 = {	#Golkhi
+	color = { 221 217 91 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	religion = shadow_pact
+	cultures = { arraskay_lizardfolk }
+	capital = STATE_ZALKATA
+}
+
+L45 = {	#Ardimyan Republic
+	color = { 217 207 15 }
+	
+	country_type = recognized
+	
+	tier = kingdom
+	
+	cultures = { ardimyan }
+	capital = STATE_CADIHLAND
+}
+
+L46 = {	#New Armanhal
+	color = { 196 41 173 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	religion = corinite
+	cultures = { ardimyan }
+	capital = STATE_SOUTHERN_DIVIDE
+}
+
+L47 = {	#Elsine Tower
+	color = { 26 33 59 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	religion = corinite
+	cultures = { ardimyan }
+	capital = STATE_VISAGE_ISLES
+}
+
+L48 = {	#Ragcusub
+	color = { 151 196 165 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { guryadagga }
+	capital = STATE_TAGTO_PENINSULA
+}
+
+L49 = {	#Qasrigah
+	color = { 195 196 151 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { guryadagga }
+	capital = STATE_DJINNAKAH
+}
+
+L50 = {	#Rijalsahil
+	color = { 35 52 77 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { guryadagga }
+	capital = STATE_ARDIMYAN_DESERT
+}
+
+L51 = {	#Ciidmule
+	color = { 114 184 173 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { guryadagga }
+	capital = STATE_ARDIMYAN_DESERT
+}
+
+L52 = {	#Luntakoox
+	color = { 148 77 59 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { guryadagga }
+	capital = STATE_ARDIMYAN_DESERT
+}
+
+
+L53 = {	#Mihitarab
+	color = { 157 197 220 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { sovalezemby_halfling }
+	capital = STATE_MAPONOSY
+}
+L54 = {	#Tibokbo
+	color = { 102 98 236 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { sovalezemby_halfling }
+	capital = STATE_HELIBETIBOKBO
+}
+L55 = {	#Hasakely
+	color = { 110 37 50 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	religion = nakavy_avo
+	
+	cultures = { sovalezemby_halfling }
+	capital = STATE_DRONGORONSI
+}
+L56 = {	#Ananiltra
+	color = { 55 220 220 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { sovalezemby_halfling }
+	capital = STATE_SISINYUYE
+}
+L57 = {	#Amiratsamo
+	color = { 131 25 223 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { mazava_halfling }
+	capital = STATE_TERAMZADAI
+}
+L58 = {	#Taafi
+	color = { 47 78 173 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { taafi }
+	capital = STATE_ZANGALAND
+}
+L59 = {	#Jenkolonnin
+	color = { 35 82 47 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { kaino }
+	capital = STATE_GEMTREE
+}
+L60 = {	#Timberland
+	color = { 28 54 133 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	religion = regent_court
+	cultures = { verneteli }
+	capital = STATE_ASANBOSAM_TU
+}
+L61 = {	#New Hookfield
+	color = { 195 40 209 }
+	
+	country_type = recognized
+	
+	tier = principality
+	
+	cultures = { verneteli }
+	capital = STATE_MARID_DELTA
+}
+L62 = {	#Konoma
+	color = { 97 138 66 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { jiromji }
+	capital = STATE_ASANBOSAM_TU
+}
+L63 = {	#Tamasada
+	color = { 209 172 132 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { tamajoba }
+	capital = STATE_JANAMA
+}
+L64 = {	#Komini Kurun
+	color = { 149 188 204 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { jiromji }
+	capital = STATE_MARID_DELTA
+}
+L65 = {	#Kaino Federation
+	color = { 20 50 30 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { kaino }
+	capital = STATE_JANFANCISO
+}
+L66 = {	#Ndurubu
+	color = { 255 153 0 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	cultures = { ndurubu }
+	capital = STATE_WARABANI
+}
+L67 = {	#Bajana
+	color = { 39 16 122 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	cultures = { tamajoba }
+	capital = STATE_GARPIX_GOXMA
+}
+
+L68 = {	#Tvarateram
+	color = { 249 139 65 }
+	
+	country_type = unrecognized
+	
+	tier = principality
+	
+	religion = ravelian
+	cultures = { sovalezemby_halfling }
+	capital = STATE_AFOMAPOBO
+}
+
+L69 = {	#Akasik
+	color = { 200 60 20 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { akasi }
+	capital = STATE_EKHA
+}
+
+L70 = {	#Surakeš
+	color = { 213  106  98 }
+	
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { zanite surani masnsih bahari gelkari brasanni sun_elven firanyan_harpy elaiennan_harpy bahari_goblin maqeti }
+	capital = STATE_BULWAR
+}
+
+L71 = {	#Fahvanosy
+	color = { 238 186 126 }
+	
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { sovalezemby_halfling mazava_halfling }
+	capital = STATE_MAPONOSY
+}
+
+L72 = {	#Bwa Tanizu
+	color = { 248  50  180 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { tanizu }
+	capital = STATE_BIKMEGHOME
+}
+
+L73 = {	#Horashesh
+	color = { 249 139 65 }
+	
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { vurebindu irsukuba }
+	capital = STATE_ZUVAVIM
+}
+L74 = {	#Jinnakah
+	color = { 229 80 80 }
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { guryadagga }
+	capital = STATE_DJINNAKAH
+}
+
+L75 = {	#Shemasaka
+	color = { 230 80 80 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { sitewosi }
+	capital = STATE_YETEDARA
+}
+
+L76 = {	#Mukis
+	color = { 230 80 81 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { talilibeti }
+	capital = STATE_MEREKAWI
+}
+
+L77 = {	#Shelokmengi
+	color = { 230 80 82 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { yeteferen }
+	capital = STATE_TELEKIBE
+}
+
+L78 = {	#Pechuketema
+	color = { 230 80 83 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { ofehibi talilibeti }
+	capital = STATE_MEWOJALA
+}
+
+L79 = {	#Teleksemayi
+	color = { 230 80 84 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { metobesebi }
+	capital = STATE_FEDONI
+}
+
+L80 = {	#Gebahiri
+	color = { 230 80 85 }
+
+	country_type = unrecognized
+
+	tier = principality
+
+	cultures = { ekedza ofehibi }
+	capital = STATE_SIMAHRIKA
+}
+
+L81 = {	#Telekenid Republic
+	color = { 230 80 84 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { ekedza ofehibi roaming_harimari raindancer_gnoll metobesebi nalenian_harpy }
+	capital = STATE_SIMAHRIKA
+}
+
+L82 = {	#Zangaland
+	color = { 192 192 192 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { binwarji }
+	capital = STATE_ZANGALAND
+}
+
+L83 = {	#Dendugma
+	color = { 128 0 32 }
+
+	country_type = unrecognized
+
+	tier = grand_principality
+
+	cultures = { tamajoba }
+	capital = STATE_JANAMA
+}
+
+L84 = {	#Kunolo
+	color = { 102 153 255 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { jiromji }
+	capital = STATE_KUNOLO
+}
+
+L85 = {	#Anarat
+	color = { 170 76 66 }
+
+	country_type = unrecognized
+
+	tier = principality
+
+	cultures = { kheteratan }
+	capital = STATE_MOTHERS_DELTA
+}
+
+L86 = {	#Shasoura
+	color = { 201 173 165 }
+
+	country_type = unrecognized
+
+	tier = grand_principality
+
+	cultures = { kheteratan }
+	capital = STATE_SHASOURA
+}
+
+L87 = {	#Koroshesh
+	color = { 90 170 150 }
+
+	country_type = unrecognized
+
+	tier = grand_principality
+
+	cultures = { kheteratan }
+	capital = STATE_COAST_OF_TEARS
+}
+
+L88 = {	#Elaienna
+	color = { 253 249 80 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { elaiennan_harpy }
+	capital = STATE_ELAYENNA
+}
+
+L89 = {	#Ufami Sharsedi
+	color = { 180 33 33 }
+
+	country_type = unrecognized
+
+	tier = grand_principality
+
+	cultures = { baashidi }
+	capital = STATE_DADUBAKHA
+}
+
+L90 = {	#Uwakila Baashi
+	color = { 250 255 245 }
+
+	country_type = unrecognized
+
+	tier = grand_principality
+
+	cultures = { baashidi }
+	capital = STATE_UWAKILA_BAASHI
+}
+
+L91 = {	#Shalazar
+	color = { 0 12 108 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { rhada_lizardfolk }
+	capital = STATE_KHUSADZA
+}
+
+L92 = {	#Zatsuti
+	color = { 0 255 0 }
+
+	country_type = unrecognized
+
+	tier = grand_principality
+
+	cultures = { arraskay_lizardfolk }
+	capital = STATE_ZATSUTI
+}
+
+L93 = {	#Azasya
+	color = { 0 171 160 }
+
+	country_type = unrecognized
+
+	tier = grand_principality
+
+	cultures = { arraskay_lizardfolk }
+	capital = STATE_AZASI
+}
+
+L94 = {	#Adinonosy
+	color = { 193 93 38 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { zohebidi_halfling }
+	capital = STATE_SIL_BERKHENS_LAND
+}
+
+L95 = {	#Rombeni
+	color = { 45 22 80 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { echenka }
+	capital = STATE_FIAREKAL
+}
+
+L96 = {	#Irsmahap
+	color = { 219 217 35 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { kheteratan }
+	capital = STATE_IRSMAHAP
+}
+
+L97 = {	#Gnollakaz
+	color = { 160 125 93 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { sorrowmane_gnoll }
+	capital = STATE_GRIZAKEKAL
+}
+
+L98 = {	#Mukkaron
+	color = { 121 147 106 }
+
+	country_type = unrecognized
+
+	tier = grand_principality
+
+	cultures = { mukkaron }
+	capital = STATE_SOUTHERN_SANDSPITE
+}

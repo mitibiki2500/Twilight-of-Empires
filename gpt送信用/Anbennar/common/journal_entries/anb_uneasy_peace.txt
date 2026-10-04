@@ -1,0 +1,137 @@
+﻿#The Uneasy Peace
+je_uneasy_peace = {
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+    group = je_group_historical_content
+
+    scripted_progress_bar = uneasy_peace_bar
+    scripted_button = scripted_button_expanse_cooperation_button
+    scripted_button = scripted_button_expanse_rivalry_button
+
+    # TODO - disabled until loc is given, sept 30 2025
+    possible = {
+		game_date > 2000.1.1
+	}
+
+    immediate = {
+        c:B41 = {
+            save_scope_as = plumstead_nation_scope
+        }
+        c:B34 = {
+            save_scope_as = beggaston_nation_scope
+        }
+        c:B42 = {
+            save_scope_as = tiru_moine_nation_scope
+        }
+        trigger_event = { id = anb_uneasy_peace.001 popup = yes }
+    }
+
+    complete = {
+        AND = {
+            custom_tooltip = { #The unity bar is at the max
+                text = je_uneasy_peace_unity_max
+                scope:journal_entry = {
+                    "scripted_bar_progress(uneasy_peace_bar)" >= 100
+                }
+            }
+            NOT = { #Plumstead is not rivaling Beggaston
+                c:B41 ?= {
+                    has_diplomatic_pact = {who = c:B34 type = rivalry }
+                }
+            }
+            NOT = { #Beggaston is not rivaling Plumstead
+                c:B34 ?= {
+                    has_diplomatic_pact = {who = c:B41 type = rivalry }
+                }
+            }
+        }
+    }
+
+    on_complete = {
+        trigger_event = { id = anb_uneasy_peace.002 }
+    }
+
+    fail = {
+        OR = {
+            custom_tooltip = { #The unity bar is at 0
+                text = je_uneasy_peace_unity_min
+                scope:journal_entry = {
+                    "scripted_bar_progress(uneasy_peace_bar)" <= 0
+                }
+            } 
+            NOT = {
+                c:B41 = { #Plumstead or Beggaston aren't in a defensive pact with Tiru Moine
+                    any_scope_treaty = {
+                        binds = c:B42
+                        any_scope_article = {
+                            has_type = defensive_pact
+                        }
+                    }
+                }
+            }
+            NOT = {
+                c:B34 = { #Plumstead or Beggaston aren't in a defensive pact with Tiru Moine
+                    any_scope_treaty = {
+                        binds = c:B42
+                        any_scope_article = {
+                            has_type = defensive_pact
+                        }
+                    }
+                }
+            }
+            #Plumstead and Beggaston are fighting
+            custom_tooltip = {
+                text = anb_uneasy_peace_war_desc
+                c:B42 = {
+                    has_variable = anb_uneasy_peace_war_var
+                }
+            }
+        }
+    }
+
+    on_fail = {
+        trigger_event = { id = anb_uneasy_peace.003 }
+    }
+
+    on_monthly_pulse = {
+        random_events = {
+            85 = 0
+            5 = anb_uneasy_peace.004
+            5 = anb_uneasy_peace.005
+            5 = anb_uneasy_peace.006
+        }
+    }
+    on_weekly_pulse = {
+        effect = {
+            c:B42 ?= {
+                if = {
+                    limit = {
+                        any_diplomatic_play = {
+                            OR = {
+                                AND = {
+                                    initiator_is = c:B34
+                                    target_is = c:B41
+                                }
+                                AND = {
+                                    initiator_is = c:B41
+                                    target_is = c:B34
+                                }
+                            }
+                        }
+                        NOT = {
+                            has_variable = anb_uneasy_peace_war_var
+                        }
+                    }
+                    c:B42 ?= {
+                        trigger_event = {
+                            id = anb_uneasy_peace.016
+                            popup = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}

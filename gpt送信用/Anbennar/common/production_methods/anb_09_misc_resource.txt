@@ -1,0 +1,669 @@
+﻿## General
+pm_no_enhancements = { 
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+
+pm_no_treatments = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+
+pm_no_automation = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+
+## Logging Camps
+
+pm_no_anima_building_logging_camp = {
+	texture = "gfx/interface/icons/production_method_icons/no_hardwood_selection.dds"
+}
+
+pm_druidic_circle_building_logging_camp = {
+	texture = "gfx/interface/icons/production_method_icons/hardwood_selection.dds"
+
+	unlocking_technologies = {
+		magocracy
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 10	
+			
+			# output goods
+			goods_output_wood_add = 20	
+		}
+
+		level_scaled = {
+			building_employment_mages_add = 250
+		}
+	}
+}
+pm_chronoforests_building_logging_camp = {
+	texture = "gfx/interface/icons/production_method_icons/increased_hardwood.dds"
+	
+	unlocking_technologies = {
+		chronoculture			
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 15
+			goods_input_artificery_doodads_add = 10
+			
+			# output goods
+			goods_output_wood_add = 50
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 500
+		}
+	}
+}
+
+pm_shredder_mechs = {
+	texture = "gfx/interface/icons/production_method_icons/automated_bakery.dds"
+	unlocking_technologies = {
+		industrial_mechs
+	}
+	disallowing_laws = {
+		law_industry_banned
+	}
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+
+
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_engines_add = 2
+			goods_input_automata_add = 4
+		}
+
+		level_scaled = {
+			# employment
+
+			building_employment_laborers_add = -1500
+			building_employment_machinists_add = -750
+			building_employment_engineers_add = 200
+		}
+	}
+}
+
+## Logging Camps - Variant - Cave Coral
+pm_simple_forestry_cave_coral = {
+	texture = "gfx/interface/icons/production_method_icons/simple_forestry.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_wood_add = 20  #Default 30
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 4500
+		}
+	}
+}
+pm_saw_mills_cave_coral = {
+	texture = "gfx/interface/icons/production_method_icons/saw_mills.dds"
+	unlocking_technologies = {
+		steelworking
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 3
+			
+			# output goods
+			goods_output_wood_add = 40 #Default 60
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 4000
+			building_employment_machinists_add = 500
+		}
+	}
+}
+pm_electric_saw_mills_cave_coral = {
+	texture = "gfx/interface/icons/production_method_icons/electric_saw_mills.dds"
+	unlocking_technologies = {
+		electrical_generation
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_tools_add = 7
+			goods_input_electricity_add = 4
+			
+			# output goods
+			goods_output_wood_add = 80 #Default 100
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 500
+		}
+	}
+
+	required_input_goods = electricity
+}
+
+pm_no_hardwood_cave_coral = {
+	texture = "gfx/interface/icons/production_method_icons/no_hardwood_selection.dds"
+	is_default = yes
+}
+pm_hardwood_cave_coral = {
+	texture = "gfx/interface/icons/production_method_icons/hardwood_selection.dds"
+	building_modifiers = {
+		workforce_scaled = {
+			# output goods										
+			goods_output_wood_add = -20
+			goods_output_hardwood_add = 15
+		}
+	}
+}
+pm_increased_hardwood_cave_coral = {
+	texture = "gfx/interface/icons/production_method_icons/increased_hardwood.dds"
+
+	unlocking_production_methods = {
+		pm_saw_mills_cave_coral
+		pm_electric_saw_mills_cave_coral
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# output goods
+			goods_output_wood_add = -40
+			goods_output_hardwood_add = 30
+		}
+	}
+}
+
+pm_shredder_mechs_cave_coral = {
+	texture = "gfx/interface/icons/production_method_icons/automated_bakery.dds"
+	unlocking_technologies = {
+		industrial_mechs
+	}
+	disallowing_laws = {
+		law_industry_banned
+	}
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+
+
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_engines_add = 5	#steam donkey needed 1
+			goods_input_automata_add = 10
+		}
+
+		level_scaled = {
+			# employment
+
+			building_employment_laborers_add = -1500
+			building_employment_machinists_add = -750
+			building_employment_engineers_add = 200
+		}
+	}
+}
+## Rubber Plantation
+pm_growth_bean_rubber_plantation = {
+	texture = "gfx/interface/icons/production_method_icons/growth.dds"
+	unlocking_technologies = {
+		punch_card_artificery			
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods													
+			goods_input_fertilizer_add = 5			
+			goods_input_magical_reagents_add = 2				
+			
+			# output goods													
+			goods_output_rubber_add = 15
+		}
+	}
+}
+
+pm_genetically_transmuted_organisms_rubber_plantation = {
+	texture = "gfx/interface/icons/production_method_icons/transmuted.dds"
+	unlocking_technologies = {
+		gene_transmutation			
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fertilizer_add = 10
+			goods_input_artificery_doodads_add = 4
+			
+			# output goods
+			goods_output_rubber_add = 35
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -250
+			
+			building_employment_machinists_add = 250
+		}
+	}
+}
+
+pm_chronoponics_rubber_plantation = {
+	texture = "gfx/interface/icons/production_method_icons/chronoponics.dds"
+	unlocking_technologies = {
+		chronoculture		
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fertilizer_add = 15
+			goods_input_artificery_doodads_add = 8
+			
+			# output goods
+			goods_output_rubber_add = 65
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -500
+			
+			building_employment_machinists_add = 500
+		}
+	}
+}
+## Fishing Wharf
+pm_lightning_imbued_nets_fishing_wharf = {
+	texture = "gfx/interface/icons/production_method_icons/steam_trawlers.dds"
+	
+	unlocking_technologies = {
+		elemental_elicitation			
+	}
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_artificery_doodads_add = 15
+			
+			# output
+			goods_output_fish_add = 50
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = -250
+			building_employment_machinists_add = 250
+		}
+	}
+}
+pm_catch_enlargement_fishing_wharf = {
+	texture = "gfx/interface/icons/production_method_icons/steam_trawlers.dds"
+	unlocking_technologies = {
+		gene_transmutation		
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_artificery_doodads_add = 25
+			
+			# output
+			goods_output_fish_add = 80
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = -750
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+}
+## Whaling Station
+pm_adventurer_krakeneers = {
+	texture = "gfx/interface/icons/production_method_icons/wooden_whaling_ships.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_clippers_add = 5 #60 300
+			goods_input_artillery_add = 5 #70 350 == 650
+			
+			# output
+			goods_output_magical_reagents_add = 15 #30 450
+			goods_output_meat_add = 10 #30 300
+			goods_output_oil_add = 20 #40 800 == 1550 = 900$
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 4000
+			building_employment_soldiers_add = 500
+		}
+		
+	}
+}
+pm_modern_krakeneer_fleets = {
+	texture = "gfx/interface/icons/production_method_icons/steam_whaling_ships.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+
+	unlocking_technologies = {
+		ironclad_tech
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_artillery_add = 10 #70 700
+			goods_input_ironclads_add = 10 #80 800
+			goods_input_coal_add = 20 #30 600 == 2100
+			
+			# output
+			goods_output_magical_reagents_add = 35 #30 1050
+			goods_output_meat_add = 20 #30 600
+			goods_output_oil_add = 40 #40 1600 == 3250 = 1150$
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3000
+			building_employment_soldiers_add = 1250
+			building_employment_officers_add = 250
+		}
+		
+	}
+}
+pm_lightning_imbued_harpoons_whaling_station = {
+	texture = "gfx/interface/icons/production_method_icons/steam_trawlers.dds"
+	unlocking_technologies = {
+		elemental_elicitation		
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_artificery_doodads_add = 5
+			
+			# output
+			goods_output_magical_reagents_add = 5
+			goods_output_meat_add = 2
+			goods_output_oil_add = 5
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = -250
+			building_employment_machinists_add = 250
+		}
+	}
+}
+pm_catch_enlargement_whaling_station = {
+	texture = "gfx/interface/icons/production_method_icons/steam_trawlers.dds"
+	unlocking_technologies = {
+		gene_transmutation		
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_artificery_doodads_add = 10
+			
+			# output
+			goods_output_magical_reagents_add = 10
+			goods_output_meat_add = 5
+			goods_output_oil_add = 10
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = -750
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+}
+## Oil Rigs
+pm_damesoil_magnetism = {
+	texture = "gfx/interface/icons/production_method_icons/simple_oil_extraction.dds"
+	unlocking_technologies = {
+		thaumic_field_stabilization		
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_damestear_add = 10
+			goods_input_electricity_add = 10
+			
+			# output goods
+			goods_output_oil_add = 20
+		}
+
+		level_scaled = {
+			building_employment_machinists_add = 250
+			building_employment_engineers_add = 500
+		}
+	}
+	required_input_goods = electricity
+}
+
+#pm_automata_drillers = {
+#	texture = "gfx/interface/icons/production_method_icons/automated_bakery.dds"
+#	unlocking_technologies = {
+#		thinking_machinery			
+#	}
+#	unlocking_laws = {
+#		law_mechanim_as_property
+#	}
+#	
+#
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_automata_add = 6	
+#		}
+#
+#		level_scaled = {
+#			building_employment_machinists_add = -2000
+#		}
+#	}
+#}
+
+## Damestear Dives
+pm_basic_sea_floor_harvesting = {
+	texture = "gfx/interface/icons/production_method_icons/basic_sea_floor_harvesting.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_clippers_add = 10
+			goods_input_tools_add = 10
+			#goods_input_magical_reagents_add = 10
+			# output
+			goods_output_damestear_add = 55
+		}
+
+		level_scaled = {	#ive made this not require mages
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 4000
+		}
+	}
+}
+
+pm_damestear_scrying = {
+	texture = "gfx/interface/icons/production_method_icons/advanced_casting_methods.dds"
+	
+	unlocking_technologies = {
+		mages_in_the_workforce	#not really a glamorous mage job which is why its this
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_clippers_add = 20
+			goods_input_tools_add = 10
+			goods_input_magical_reagents_add = 20
+			# output
+			goods_output_damestear_add = 95
+		}
+
+		level_scaled = {	#and made this one the better basic pm that does use mages
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 3500
+			building_employment_mages_add = 500
+		}
+	}
+}
+
+pm_diving_bells = {
+	texture = "gfx/interface/icons/production_method_icons/diving_bells.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	
+	unlocking_technologies = {
+		gantry_cranes
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_steamers_add = 20
+			goods_input_tools_add = 20
+			goods_input_artificery_doodads_add = 10
+			
+			# output
+			goods_output_damestear_add = 130
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2400
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 700
+		}
+	}
+}
+
+pm_harvester_mechs = {
+	texture = "gfx/interface/icons/production_method_icons/harvester_mechs.dds"
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	
+	unlocking_technologies = {
+		industrial_mechs
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_steamers_add = 20
+			goods_input_artificery_doodads_add = 30
+			goods_input_engines_add = 10
+			
+			# output
+			goods_output_damestear_add = 170
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2200
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 800
+		}
+	}
+}
+pm_water_breathing_potions = {
+	texture = "gfx/interface/icons/production_method_icons/water_breathing_potion.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_arcane_curios_add = 3
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = -1000
+		}
+	}
+}
+
+pm_automata_crawlers = {
+	texture = "gfx/interface/icons/production_method_icons/refrigerated_rail_cars.dds"
+
+	unlocking_technologies = {
+		insyaan_analytical_engine
+	}
+
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input
+			goods_input_automata_add = 7
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = -2000
+		}
+	}
+}

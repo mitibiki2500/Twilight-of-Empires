@@ -1,0 +1,202 @@
+﻿#Holds
+pmg_primary_specialization_building_dwarven_hold = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_hold_light_industries
+		pm_hold_heavy_industries
+		pm_hold_urban_specialization
+	}
+}
+pmg_secondary_specialization_building_dwarven_hold = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_hold_no_secondary_specialization
+		pm_hold_staple_industries
+		pm_hold_luxury_industries
+		pm_hold_military_industries
+		pm_hold_construction_industries
+		pm_hold_motor_industries
+		pm_hold_magical_industries
+		pm_hold_trade_specialization
+		pm_hold_government_specialization
+	}
+}
+
+pmg_tertiary_specialization_building_dwarven_hold = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_hold_no_tertiary_specialization
+		pm_hold_tooling_mastery
+		pm_hold_furniture_mastery
+		pm_hold_textile_mastery
+		pm_hold_glassworks_mastery
+		pm_hold_paper_mastery
+		pm_hold_small_arms_mastery
+		pm_hold_artillery_mastery
+		pm_hold_munitions_mastery
+		pm_hold_steel_mastery
+		pm_hold_engines_mastery
+		pm_hold_automotive_mastery
+		pm_hold_artificer_mastery
+		pm_hold_automata_mastery
+		pm_hold_trade_mastery
+		pm_hold_bureaucratic_mastery
+		pm_hold_scientific_mastery
+	}
+}
+
+#Dwarovrod
+pmg_base_building_dwarovrod = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_dwarovrod_minecarts
+		pm_dwarovrod_restored_trains
+		pm_dwarovrod_runic_engines
+		pm_dwarovrod_artifice_engines
+	}
+}
+pmg_rails_building_dwarovrod = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_dwarovrod_no_trade
+		pm_dwarovrod_basic_restoration
+		pm_dwarovrod_dagrite
+		pm_dwarovrod_mithril
+	}
+}
+
+
+#Serpentbloom Farms
+pmg_base_building_serpentbloom_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_simple_farming
+		pm_soil_enriching_farming
+		pm_fertilization
+		pm_chemical_fertilizer
+	}
+}
+pmg_secondary_building_serpentbloom_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_serpentbloom_no_secondary
+		pm_serpentbloom_opium
+	}
+}
+pmg_harvesting_process_building_serpentbloom_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_tools_disabled
+		pm_tools
+		pm_steam_threshers
+		pm_tractors
+		pm_compression_ignition_tractors
+		pm_automata_harvesters
+		pm_autonomous_tractors
+	}
+}
+
+
+
+#Mushroom Farms
+pmg_base_building_mushroom_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_simple_farming
+		pm_soil_enriching_farming
+		pm_fertilization
+		pm_chemical_fertilizer
+	}
+}
+pmg_secondary_building_mushroom_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_mushroom_no_secondary
+		pm_mushroom_liquor
+		pm_herb_gardens
+	}
+}
+pmg_harvesting_process_building_mushroom_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_tools_disabled
+		pm_tools
+		pm_steam_threshers
+		pm_tractors
+		pm_compression_ignition_tractors
+		pm_automata_harvesters
+		pm_autonomous_tractors
+	}
+}
+
+#Cave Coral
+pmg_base_building_cave_coral = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_simple_forestry_cave_coral
+		pm_saw_mills_cave_coral
+		pm_electric_saw_mills_cave_coral
+	}
+}
+pmg_hardwood_cave_coral = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_no_hardwood_cave_coral
+		pm_hardwood_cave_coral
+		pm_increased_hardwood_cave_coral
+	}
+}
+pmg_equipment_cave_coral = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_no_equipment
+		pm_steam_donkey_building_logging_camp
+		pm_chainsaws
+		pm_automata_loggers
+		pm_shredder_mechs_cave_coral
+	}
+}
+pmg_transportation_building_cave_coral = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_road_carts
+		pm_rail_transport_building_logging_camp
+		pm_log_carts
+	}
+}
+
+#Mithril Mine
+pmg_mining_equipment_building_mithril_mine = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_picks_and_shovels_building_mithril_mine
+		pm_atmospheric_engine_pump_building_mithril_mine
+		pm_condensing_engine_pump_building_mithril_mine
+		pm_diesel_pump_building_mithril_mine
+	}
+}
+pmg_explosives_building_mithril_mine = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_no_explosives
+		pm_nitroglycerin_building_mithril_mine
+		pm_dynamite_building_mithril_mine
+	}
+}
+pmg_steam_automation_building_mithril_mine = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_no_steam_automation
+		pm_steam_donkey_mine
+	}
+}
+pmg_train_automation_building_mithril_mine = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_automation.dds"
+	production_methods = {
+		pm_road_carts
+		pm_rail_transport_mine
+	}
+}

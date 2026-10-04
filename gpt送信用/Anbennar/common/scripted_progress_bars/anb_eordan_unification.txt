@@ -1,0 +1,164 @@
+﻿eordan_unification_bar = {
+    name = "eordan_unification_bar"
+	desc = "eordan_unification_bar_desc"
+	is_inverted = yes
+	# display_progressbar_as_months = yes doesnt work in scripted_progress_bars
+
+    default_bad = yes
+
+    monthly_progress = {
+		if = {
+			limit = {
+				NOT = {
+					any_country = {
+						country_has_primary_culture = cu:snecboth
+						OR = {
+							is_subject = no
+							is_country_type = decentralized
+						}
+					}
+				}
+			}
+			add = {
+				desc = "eordan_unification_progress_no_winter"
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_country = {
+						country_has_primary_culture = cu:caamas
+						OR = {
+							is_subject = no
+							is_country_type = decentralized
+						}
+					}
+				}
+			}
+			add = {
+				desc = "eordan_unification_progress_no_summer"
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_country = {
+						country_has_primary_culture = cu:selphereg
+						OR = {
+							is_subject = no
+							is_country_type = decentralized
+						}
+					}
+				}
+			}
+			add = {
+				desc = "eordan_unification_progress_no_spring"
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_country = {
+						country_has_primary_culture = cu:tuathak
+						OR = {
+							is_subject = no
+							is_country_type = decentralized
+						}
+						c:B47 != THIS
+					}
+				}
+			}
+			add = {
+				desc = "eordan_unification_progress_no_autumn"
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = c:B86
+				}
+			}
+			add = {
+				desc = "eordan_unification_progress_no_eordellon"
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = c:B88
+				}
+			}
+			add = {
+				desc = "eordan_unification_progress_no_fograc"
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				any_country = {
+ 					NOT = { any_primary_culture = { has_discrimination_trait = heritage_eordan_ruinborn } }
+ 					any_scope_state = {	region = sr:region_eordand }
+ 				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_technology_researched = nationalism
+					}
+				}
+				add = {
+					desc = "eordan_unification_progress_foreign_nationalism"
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_technology_researched = pan-nationalism
+					}
+				}
+				add = {
+					desc = "eordan_unification_progress_foreign_pan_nationalism"
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_variable = eordan_je_fograc_friend
+			}
+			subtract = {
+				desc = "eordan_unification_progress_fograc_friend"
+				value = 1
+			}
+		}
+    }
+
+    start_value = 0
+	min_value = 0
+	max_value = 960
+}
+
+
+eordan_last_stand_bar = {
+    name = "eordan_last_stand_bar"
+	desc = "eordan_last_stand_bar_desc"
+	# display_progressbar_as_months = yes doesnt work in scripted_progress_bars
+
+    default_green = yes
+	
+	
+	monthly_progress = {
+		subtract = 1
+	}
+	
+	
+	start_value = 120
+	min_value = 0
+	max_value = 120
+}

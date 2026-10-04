@@ -1,0 +1,72 @@
+﻿je_alecand_reclamation = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	group = je_group_internal_affairs
+
+	on_yearly_pulse = {
+		random_events = {
+			40 = 0
+			100 = alecand_reclamation.1
+			100 = alecand_reclamation.2
+			100 = alecand_reclamation.3
+			10 = alecand_reclamation.5
+			10 = alecand_reclamation.6
+			5 = alecand_reclamation.7
+			5 = alecand_reclamation.8
+		}
+	}
+
+	scripted_progress_bar = alecand_reclamation_progress_bar
+
+	scripted_button = je_alecand_reclamation_innovation_button
+    scripted_button = je_alecand_reclamation_construction_button
+    scripted_button = je_stop_innovation_alecand_reclamation_button 
+    scripted_button = je_stop_construction_alecand_reclamation_button
+
+	immediate = {
+		root = {
+			save_scope_as = root_country
+		}
+	}
+
+
+	complete = {
+		scope:journal_entry = {
+			"scripted_bar_progress(alecand_reclamation_progress_bar)" >= 700
+		}
+	}
+
+	#on_weekly_pulse = {
+	#	effect = {
+	#		calculate_alecand_reclamation_progress = yes
+	#	}
+	#}
+
+	on_complete = {
+		trigger_event = {id = alecand_reclamation.4 days = 1 popup = yes}
+		set_global_variable = alecand_reclaimation_done
+		remove_modifier = je_modifier_alecand_reclaiming_land
+		remove_modifier = je_alecand_reclamation_innovation_modifier
+		remove_modifier = je_alecand_reclamation_construction_modifier
+	}
+
+	fail = {
+		OR = {
+			NOT = { owns_entire_state_region = STATE_CENTRAL_KHEIONS }
+			NOT = { owns_entire_state_region = STATE_NORTHERN_KHEIONS }
+			NOT = { owns_entire_state_region = STATE_SOUTHERN_KHEIONS }
+			NOT = { owns_entire_state_region = STATE_SOUTIKAN  }
+			NOT = { owns_entire_state_region = STATE_NORTIKAN  }
+		}
+	}
+
+	on_fail = {
+		remove_modifier = je_modifier_alecand_reclaiming_land
+		remove_variable = alebhen_land_reclaimer
+		remove_modifier = je_alecand_reclamation_innovation_modifier
+		remove_modifier = je_alecand_reclamation_construction_modifier
+	}
+
+	weight = 10
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

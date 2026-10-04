@@ -1,0 +1,261 @@
+﻿### Trollsbay character template file ###
+
+B98_William_Dainuich = { #Marlliander who stood up to the other vampire clans and stayed loyal to the Concord
+	first_name = "Willam"
+	last_name = Dainuich
+	historical = yes
+	noble = yes
+	# age = 41
+	birth_date = 1779.1.1
+	home_region = STATE_MARLLIANDE
+	ig_leader = yes
+	interest_group = ig_landowners
+	ideology = ideology_liberal_leader
+	traits = {
+		brave 
+		experienced_diplomat
+	}
+	culture = cu:concordian
+	religion = rel:regent_court
+}
+
+B98_Frederic_Thadoch = { #Head Concord bureaucrat, created most current institutions
+	first_name = "Frederic"
+	last_name = "Thadoch"
+	historical = yes
+	ruler = yes
+	# age = 65
+	birth_date = 1755.1.1
+	home_region = STATE_YNNSMOUTH	#yes, he's from the city of Ynnsmouth and moved to the Concord before Ynnsmouth was a part of it
+	ig_leader = yes
+	interest_group = ig:ig_intelligentsia
+	ideology = ideology_market_liberal
+	traits = {
+		master_bureaucrat 
+		imperious
+	}
+	culture = cu:concordian
+	religion = rel:ravelian
+}
+
+B98_Dustin_Barrow = { #Thilvisan oligarch
+	first_name = "Dustin"
+	last_name = "Barrows"
+	historical = yes
+	noble = yes
+	# age = 43
+	birth_date = 1777.1.1
+	home_region = STATE_THILVIS
+	interest_group = ig_industrialists
+	ig_leader = yes
+	ideology = ideology_moderate	#breaks legitimacy complately otherwise, to be revisited later
+	traits = {
+		cruel 
+		experienced_political_operator
+	}
+	culture = cu:towerfoot_halfling
+	religion = rel:ravelian
+}
+
+B98_Maurise_Undercliffe = { #Archprovost of Port Isobel
+	first_name = "Maurise"
+	last_name = "Undercliffe"
+	historical = yes
+	# age = 34
+	birth_date = 1786.1.1
+	home_region = STATE_ISOBELIN
+	ig_leader = yes
+	interest_group = ig_devout
+	ideology = ideology_abolitionist
+	traits = {
+		charismatic 
+		persistent
+	}
+	culture = cu:concordian
+	religion = rel:ravelian
+}
+
+B98_Tristan_Ritach = {
+	first_name = "Tristan"
+	last_name = "Ritach"
+	historical = yes
+	# age = 39
+	home_region = STATE_CESTIRMARK
+	birth_date = 1781.1.1
+	ig_leader = yes
+	interest_group = ig_petty_bourgeoisie
+	ideology = ideology_abolitionist
+	traits = {
+		scarred 
+		literary 
+		meticulous
+	}
+	culture = cu:concordian
+	religion = rel:ravelian
+}
+
+B98_Galin_Grey = { #Was in charge of coordinating militias pre-unification
+	first_name = "Galin"
+	last_name = "Grey"
+	historical = yes
+	# age = 46
+	birth_date = 1774.1.1
+	home_region = STATE_VERTESK	#he's an immigrant
+	ig_leader = yes
+	interest_group = ig_armed_forces
+	ideology = ideology_republican_leader
+	traits = {
+		arrogant
+	}
+	culture = cu:concordian
+	religion = rel:ravelian
+}
+
+B98_Evin_Saiste = {
+	first_name = "Evin"
+	last_name = Saiste
+	historical = yes
+	# age = 47
+	birth_date = 1773.1.1
+	ig_leader = yes
+	home_region = STATE_MARLLIANDE	#not a vampire, just a regular Marlliander human
+	interest_group = ig_rural_folk
+	ideology = ideology_land_reformer
+	traits = {
+		direct
+	}
+	culture = cu:concordian
+	religion = rel:ravelian
+}
+
+B98_Olor_Uisarn = {
+	first_name = "Olor"
+	last_name = Uisarn
+	historical = yes
+	# age = 38
+	birth_date = 1782.1.1
+	home_region = STATE_VALORPOINT
+	is_admiral = yes
+	interest_group = ig_armed_forces
+	ideology = ideology_moderate
+	traits = {
+		expert_naval_commander 
+		dockyard_master 
+		direct
+	}
+	culture = cu:concordian
+	religion = rel:corinite
+}
+
+B98_Aldred_sil_Vis = {
+	first_name = "Aldred"
+	last_name = sil_Vis
+	historical = yes
+	noble = yes
+	# age = 56
+	birth_date = 1764.1.1
+	home_region = STATE_THILVIS
+	is_general = yes
+	interest_group = ig_landowners
+	ideology = ideology_market_liberal
+	traits = {
+		expensive_tastes 
+		arrogant
+	}
+	culture = cu:towerfoot_halfling
+	religion = rel:ravelian
+}
+
+B98_Cristof_Bayman = {
+	first_name = "Cristof"
+	last_name = Bayman
+	historical = yes
+	# age = 49
+	birth_date = 1771.1.1
+	home_region = STATE_VALORPOINT
+	is_general = yes
+	interest_group = ig_rural_folk
+	ideology = ideology_pacifist
+	traits = {
+		shellshocked 
+		basic_artillery_commander
+	}
+	culture = cu:concordian
+	religion = rel:corinite
+}
+
+B98_Panthes_Zamuras = {
+	first_name = "Panthes"
+	last_name = Zamuras
+	historical = yes
+	# age = 24
+	birth_date = 1796.1.1
+	home_region = STATE_ZANLIB
+	is_admiral = yes
+	interest_group = ig_intelligentsia
+	ideology = ideology_moderate
+	traits = {
+		charismatic 
+		convoy_raider_commander 
+		erudite
+	}
+	culture = cu:concordian
+	religion = rel:old_sun_cult
+}
+
+B98_Nuriye_szel_Aqatzan = { #Akala of Zanlib, in contact with eldritch friends
+	first_name = "Nuriye"
+	last_name = szel_Aqatzan
+	historical = yes
+	noble = yes
+	is_agitator = yes
+	female = yes
+	# age = 15
+	birth_date = 1805.1.1
+	home_region = STATE_ZANLIB
+	interest_group = ig_rural_folk
+	ideology = ideology_magocrat #to be replaced by an occult pro-evil magic one later
+	traits = {
+		reserved 
+		psychological_affliction
+	}
+	culture = cu:concordian
+	religion = rel:old_sun_cult
+}
+
+# From old Thilvis file and currently not used in Trollsbay file
+# B98_Cecill_Locke = { #Future archprovost of the Trollsbay, in 1850
+	# first_name = "Cecill"
+	# last_name = "Locke"
+	# historical = yes
+	# # age = 36
+	# birth_date = 1784.1.1
+	# home_region = STATE_THILVIS
+	# interest_group = ig_devout
+	# ig_leader = yes
+	# ideology = ideology_moderate
+	# traits = {
+		# ambitious
+	# }
+	# culture = cu:towerfoot_halfling
+	# religion = rel:ravelian
+# }
+
+# From old Isobelin file and currently not used in Trollsbay file
+# B98_Aldarion_Seamoon = { #Owner of Thornsway
+	# first_name = "Aldarion"
+	# last_name = "Seamoon"
+	# historical = yes
+	# # age = 75
+	# birth_date = 1745.1.1
+	# home_region = STATE_REDGLADES
+	# interest_group = ig:ig_intelligentsia
+	# ig_leader = yes
+	# ideology = ideology_moderate
+	# traits = {
+		# opium_addiction 
+		# imperious
+	# }
+	# culture = cu:redglader_elf
+	# religion = rel:ravelian
+# }

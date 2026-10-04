@@ -1,0 +1,850 @@
+﻿namespace = ynnsmouth_crisis
+
+#Trollsbay startup event
+ynnsmouth_crisis.1 = {
+	type = country_event
+	placement = scope:ynnsmouth_capital
+
+	title = ynnsmouth_crisis.1.t
+	desc = ynnsmouth_crisis.1.d
+	flavor = ynnsmouth_crisis.1.f
+
+	event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:B21 = {
+			save_scope_as = ynnsmouth_scope
+			capital = {
+				save_scope_as = ynnsmouth_capital
+			}
+		}
+		c:B29 = {
+			save_scope_as = sarda_scope
+		}
+	}
+
+	option = {
+		name = ynnsmouth_crisis.1.a
+		default_option = yes
+		trigger = {
+			has_treaty_trade_privilege_with = { TARGET = c:B21 }
+		}
+		c:B21 = {
+			trigger_event = { id = ynnsmouth_crisis.2 days = 1 popup = yes }
+		}
+	}
+	
+	option = {
+		name = ynnsmouth_crisis.1.b
+		trigger = {
+			NOT = { has_treaty_trade_privilege_with = { TARGET = c:B21 } }
+		}
+		s:STATE_YNNSMOUTH = {
+			add_claim = ROOT
+		}
+	}
+}
+
+#Ynnsmouth Concord accession
+ynnsmouth_crisis.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = ynnsmouth_crisis.2.t
+	desc = ynnsmouth_crisis.2.d
+	flavor = ynnsmouth_crisis.2.f
+
+	event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:B98 = {
+			save_scope_as = trollsbay_scope
+		}
+		c:B29 = {
+			save_scope_as = sarda_scope
+		}
+	}
+
+	option = {
+		name = ynnsmouth_crisis.2.a
+		trigger = { is_player = no }
+		c:B98 = {
+			set_variable = ynnsmouth_annexation
+			trigger_event = { id = ynnsmouth_crisis.3 days = 1 popup = yes }
+			show_as_tooltip = {
+				c:B98 = {
+					annex = ROOT
+				}
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = ynnsmouth_crisis.2.b
+		c:B29 = {
+			trigger_event = { id = ynnsmouth_crisis.4 days = 1 popup = yes }
+			show_as_tooltip = {
+				create_diplomatic_pact = {
+					country = c:B21
+					type = vassal
+				}
+			}
+		}
+		c:B98 = {
+			set_variable = ynnsmouth_subject
+			trigger_event = { id = ynnsmouth_crisis.3 days = 1 popup = yes }
+		}
+		show_as_tooltip = {
+			s:STATE_YNNSMOUTH = {
+				add_claim = c:B98
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = ynnsmouth_crisis.2.c
+		default_option = yes
+		show_as_tooltip = {
+			change_relations = {
+				country = c:B98
+				value = -30
+			}
+			s:STATE_YNNSMOUTH = {
+				add_claim = c:B98
+			}
+		}
+		c:B98 = {
+			set_variable = ynnsmouth_independent
+			trigger_event = { id = ynnsmouth_crisis.3 days = 1 popup = yes }
+		}
+		add_modifier = {
+			name = the_boek_way
+			days = normal_modifier_time
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+	
+}
+
+# Feedback event for Trollsbay
+ynnsmouth_crisis.3 = {
+	type = country_event
+	placement = scope:ynnsmouth_capital
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	title = ynnsmouth_crisis.3.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = ynnsmouth_crisis.3.d1
+				trigger = {
+					has_variable = ynnsmouth_annexation
+				}
+			}
+			triggered_desc = {
+				desc = ynnsmouth_crisis.3.d2
+				trigger = {
+					has_variable = ynnsmouth_subject
+				}
+			}
+			triggered_desc = {
+				desc = ynnsmouth_crisis.3.d3
+				trigger = {
+					has_variable = ynnsmouth_independent
+				}
+			}
+		}
+	}
+	flavor = ynnsmouth_crisis.3.f
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:B21 = {
+			save_scope_as = ynnsmouth_scope
+			capital = {
+				save_scope_as = ynnsmouth_capital
+			}
+		}
+	}
+
+	option = {
+		name = ynnsmouth_crisis.3.a
+		default_option = yes
+		trigger = {
+			has_variable = ynnsmouth_annexation
+		}
+		annex = c:B21
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_diplomatic_relevance = c:B98
+					NOT = { THIS = ROOT }
+				}
+				post_notification = ynnsmouth_joins_concord
+			}
+		}
+	}
+	option = {
+		name = ynnsmouth_crisis.3.b
+		default_option = yes
+		trigger = {
+			has_variable = ynnsmouth_subject
+		}
+		change_relations = {
+			country = c:B29
+			value = -30
+		}
+		change_relations = {
+			country = c:B21
+			value = -30
+		}
+		s:STATE_YNNSMOUTH = {
+			add_claim = c:B98
+		}
+		hidden_effect = {
+			set_secret_goal = {  
+				country = c:B21  
+				secret_goal = conquer
+			}
+		}
+	}
+	option = {
+		name = ynnsmouth_crisis.3.c
+		default_option = yes
+		trigger = {
+			has_variable = ynnsmouth_independent
+		}
+		change_relations = {
+			country = c:B21
+			value = -30
+		}
+		s:STATE_YNNSMOUTH = {
+			add_claim = c:B98
+		}
+		hidden_effect = {
+			set_secret_goal = {  
+				country = c:B21  
+				secret_goal = conquer
+			}
+		}
+	}
+}
+
+# Feedback event for Sarda - to be modified if Sarda gets the ability to ask for explicit vassalization on their end
+ynnsmouth_crisis.4 = {
+	type = country_event
+	placement = scope:ynnsmouth_capital
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	title = ynnsmouth_crisis.4.t
+	desc = ynnsmouth_crisis.4.d
+	flavor = ynnsmouth_crisis.4.f
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:B21 = {
+			save_scope_as = ynnsmouth_scope
+			capital = {
+				save_scope_as = ynnsmouth_capital
+			}
+		}
+	}
+
+	option = {
+		name = ynnsmouth_crisis.4.a
+		default_option = yes
+		create_diplomatic_pact = {
+			country = c:B21
+			type = vassal
+		}
+		show_as_tooltip = {
+			change_relations = {
+				country = c:B98
+				value = -30
+			}
+			s:STATE_YNNSMOUTH = {
+				add_claim = c:B98
+			}
+		}
+	}
+}
+
+#Trollsbay success event
+ynnsmouth_crisis.5 = {
+	type = country_event
+	placement = s:STATE_YNNSMOUTH
+
+	title = ynnsmouth_crisis.5.t
+	desc = ynnsmouth_crisis.5.d
+	flavor = ynnsmouth_crisis.5.f
+
+	event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:B98 = {
+			save_scope_as = trollsbay_scope
+		}
+	}
+
+	option = {
+		name = ynnsmouth_crisis.5.a
+		add_modifier = {
+			name = ynnsmouth_crisis_victory
+			days = long_modifier_time
+			is_decaying = yes
+		}
+		s:STATE_YNNSMOUTH = {
+			random_scope_state = {
+				if = {
+					limit = {
+						owner = { owns_entire_state_region = STATE_YNNSMOUTH }
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+				}
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:B98"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				create_building={
+					building="building_trade_center"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:B98"
+							levels=1
+							region="STATE_YNNSMOUTH"
+						}
+					} 
+					reserves=1
+				}
+			}
+		}
+	}
+}
+
+#Trollsbay failure event
+ynnsmouth_crisis.6 = {
+	type = country_event
+	placement = ROOT
+
+	title = ynnsmouth_crisis.6.t
+	desc = ynnsmouth_crisis.6.d
+	flavor = ynnsmouth_crisis.6.f
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:B98 = {
+			save_scope_as = trollsbay_scope
+		}
+	}
+
+	option = {
+		name = ynnsmouth_crisis.6.a
+		add_radicals = {
+			value = small_radicals
+			culture = cu:concordian
+		}
+		ig:ig_landowners = {
+			add_modifier = {
+				name = ig_ynnsmouth_crisis_defeat
+				days = long_modifier_time
+				is_decaying = yes
+			}
+		}
+		ig:ig_armed_forces = {
+			add_modifier = {
+				name = ig_ynnsmouth_crisis_defeat
+				days = long_modifier_time
+				is_decaying = yes
+			}
+		}
+		ig:ig_petty_bourgeoisie = {
+			add_modifier = {
+				name = ig_ynnsmouth_crisis_defeat
+				days = long_modifier_time
+				is_decaying = yes
+			}
+		}
+	}
+	
+}
+
+#Sarda startup event
+ynnsmouth_crisis.7 = {
+	type = country_event
+	placement = s:STATE_YNNSMOUTH
+
+	title = ynnsmouth_crisis.7.t
+	desc = ynnsmouth_crisis.7.d
+	flavor = ynnsmouth_crisis.7.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:B29 = {
+			save_scope_as = sarda_scope
+		}
+		s:STATE_YNNSMOUTH = {
+			random_scope_state = {
+				owner = {
+					save_scope_as = ynnsmouth_owner_scope
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ynnsmouth_crisis.7.a
+		add_involvement = {
+			strategic_region = sr:region_noruin
+			value = 2500
+		}
+		s:STATE_YNNSMOUTH = {
+			add_claim = ROOT
+		}
+		hidden_effect = {
+			set_secret_goal = {  
+				country = scope:ynnsmouth_owner_scope  
+				secret_goal = antagonize
+			}
+		}
+	}
+}
+
+#Sarda success event
+ynnsmouth_crisis.8 = {
+	type = country_event
+	placement = ROOT
+
+	title = ynnsmouth_crisis.8.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = ynnsmouth_crisis.8.d1
+				trigger = {
+					has_variable = ynnsmouth_crisis_resolution_force
+				}
+			}
+			triggered_desc = {
+				desc = ynnsmouth_crisis.8.d2
+				trigger = {
+					has_variable = ynnsmouth_crisis_resolution_peaceful
+				}
+			}
+		}
+	}
+	flavor = ynnsmouth_crisis.8.f
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_scope_treaty = {
+					binds = root
+					any_scope_article = {
+						has_type = transit_rights
+						source_country = scope:target_country
+					}
+				}
+			}
+			set_variable = ynnsmouth_crisis_resolution_peaceful
+			random_scope_treaty = {
+				limit = {
+					binds = root
+					any_scope_article = {
+						has_type = transit_rights
+						source_country = scope:target_country
+					}
+				}
+				scope:target_country = {
+					save_scope_as = transit_country_scope
+				}
+			}
+		}
+		else = {
+			set_variable = ynnsmouth_crisis_resolution_force
+		}
+		c:B29 = {
+			save_scope_as = sarda_scope
+		}
+	}
+
+	option = {
+		name = ynnsmouth_crisis.8.a
+		default_option = yes
+		trigger = {
+			has_variable = ynnsmouth_crisis_resolution_force
+		}
+		add_modifier = {
+			name = ynnsmouth_crisis_victory
+			days = long_modifier_time
+			is_decaying = yes
+		}
+		
+		s:STATE_YNNSMOUTH = {
+			random_scope_state = {
+				if = {
+					limit = {
+						owner = { owns_entire_state_region = STATE_YNNSMOUTH }
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+				}
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:B29"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				create_building={
+					building="building_trade_center"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:B29"
+							levels=1
+							region="STATE_YNNSMOUTH"
+						}
+					} 
+					reserves=1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ynnsmouth_crisis.8.b
+		trigger = {
+			owns_entire_state_region = STATE_YNNSMOUTH
+		}
+		add_modifier = {
+			name = ynnsmouth_crisis_victory
+			days = long_modifier_time
+			is_decaying = yes
+		}
+		s:STATE_YNNSMOUTH = {
+			random_scope_state = {
+				if = {
+					limit = {
+						owner = { owns_entire_state_region = STATE_YNNSMOUTH }
+					}
+				}
+				add_loyalists_in_state = {
+					value = 0.1
+				}
+				create_building={
+					building="building_port"
+					add_ownership={
+						country={
+							country="c:B29"
+							levels=1
+						}
+					}
+					reserves=1
+				}
+				create_building={
+					building="building_trade_center"
+					add_ownership={
+						building={
+							type="building_financial_district"
+							country="c:B29"
+							levels=1
+							region="STATE_YNNSMOUTH"
+						}
+					} 
+					reserves=1
+				}
+			}
+		}
+		random_scope_state = {
+			limit = {
+				state_region = s:STATE_YNNSMOUTH
+			}
+			set_state_owner = c:B21
+		}
+		create_diplomatic_pact = {
+			country = c:B21
+			type = vassal
+		}
+		hidden_effect = {	#to restore it if the JE set it to conquer previously
+			set_secret_goal = {  
+				country = c:B21  
+				secret_goal = protect
+			}
+		}
+	}
+
+	option = {
+		name = ynnsmouth_crisis.8.c
+		trigger = {
+			has_variable = ynnsmouth_crisis_resolution_peaceful
+		}
+		add_modifier = {
+			name = ynnsmouth_crisis_victory
+			days = long_modifier_time
+			is_decaying = yes
+		}
+		s:STATE_YNNSMOUTH = {
+			remove_claim = root
+		}
+		create_diplomatic_catalyst = {
+			type = catalyst_event_positive
+			target = scope:transit_country_scope
+		}
+		hidden_effect = {
+			set_mutual_secret_goal = {  
+				country = scope:transit_country_scope  
+				secret_goal = befriend
+			}
+		}
+	}
+}
+
+#Sarda failure event
+ynnsmouth_crisis.9 = {
+	type = country_event
+	placement = s:STATE_YNNSMOUTH
+
+	title = ynnsmouth_crisis.9.t
+	desc = ynnsmouth_crisis.9.d
+	flavor = ynnsmouth_crisis.9.f
+
+	event_image = {
+		video = "asia_westerners_arriving"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		c:B29 = {
+			save_scope_as = sarda_scope
+		}
+	}
+
+	option = {
+		name = ynnsmouth_crisis.9.a
+		add_radicals = {
+			value = small_radicals
+			culture = cu:sarda
+		}
+		ig:ig_landowners = {
+			add_modifier = {
+				name = ig_ynnsmouth_crisis_defeat
+				days = long_modifier_time
+				is_decaying = yes
+			}
+		}
+		ig:ig_armed_forces = {
+			add_modifier = {
+				name = ig_ynnsmouth_crisis_defeat
+				days = long_modifier_time
+				is_decaying = yes
+			}
+		}
+		ig:ig_petty_bourgeoisie = {
+			add_modifier = {
+				name = ig_ynnsmouth_crisis_defeat
+				days = long_modifier_time
+				is_decaying = yes
+			}
+		}
+	}
+}
+
+#Boek rights flavor event
+ynnsmouth_crisis.10 = {
+	type = country_event
+	placement = s:STATE_YNNSMOUTH
+
+	title = ynnsmouth_crisis.10.t
+	desc = ynnsmouth_crisis.10.d
+	flavor = ynnsmouth_crisis.10.f
+
+	event_image = {
+		video = "europenorthamerica_native_american"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		NOT = { has_variable = B98_ynnsmouth_boek_rights }
+		has_variable = ynnsmouth_annexation
+		s:STATE_YNNSMOUTH = {
+			any_scope_state = {
+				owner = root
+				is_incorporated = no
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = B98_ynnsmouth_boek_rights
+	}
+
+	option = {
+		name = ynnsmouth_crisis.10.a
+		s:STATE_YNNSMOUTH = {
+			random_scope_state = {
+				limit = {
+					owner = ROOT
+				}
+				add_modifier = {
+					name = ynnsmouth_boek_integration
+					days = very_long_modifier_time
+				}
+			}
+		}
+		add_radicals = {
+			value = small_radicals
+			culture = cu:concordian
+		}
+	}
+
+	option = {
+		name = ynnsmouth_crisis.10.b
+		default_option = yes
+		if = {
+			limit = {
+				NOT = {
+					any_political_movement = {
+						is_political_movement_type = movement_minority_rights
+					}
+				}
+			}
+			create_political_movement = { type = movement_minority_rights }
+		}
+		else = {
+			create_character = {
+				culture = cu:boek
+				is_agitator = yes
+				interest_group = ig:ig_rural_folk
+				ideology = ideology_reformer
+				traits = {
+					honorable
+					experienced_political_operator
+				}
+				# on_created = { # unused
+				# 	set_variable = ynnsmouthian_boek_agitator
+				# }
+			}
+		}
+	}
+}

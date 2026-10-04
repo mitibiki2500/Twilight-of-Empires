@@ -1,0 +1,54 @@
+﻿#            | existing country | releasing a country | country formation |
+# |==========|==================|=====================|===================|
+# |root      | definition       | definition          | definition        |
+# |----------|------------------|---------------------|-------------------|
+# |target    | country          | N/A                 | N/A               |
+# |----------|------------------|---------------------|-------------------|
+# |initiator | N/A              | player              | player            |
+# |----------|------------------|---------------------|-------------------|
+# |actor     | country          | player              | player            |
+# |----------|------------------|---------------------|-------------------|
+# |          | country's        |                     | player's          |
+# |overlord  | direct overlord  | player              | direct overlord   |
+# |          | if it exists     |                     | if it exists      |
+# |----------|------------------|---------------------|-------------------|
+
+### scope is COUNTRY ###
+
+coa_guild_trigger = {
+	has_government_type = gov_guild
+}
+
+coa_def_guild_flag_trigger = {
+	exists = scope:actor
+	scope:actor = { coa_guild_trigger = yes }
+}
+
+coa_magocracy_trigger = {
+	has_law = law_type:law_magocracy
+}
+
+coa_def_magocracy_flag_trigger = {
+	exists = scope:actor
+	scope:actor = { coa_magocracy_trigger = yes }
+}
+
+coa_controls_part_of_gerudia = {
+	any_scope_state = {
+		state_region = {
+			is_homeland = dalr
+		}
+	}
+}
+
+coa_def_controls_part_of_gerudia = {
+	exists = scope:actor
+	scope:actor = {
+		OR = {
+			coa_controls_part_of_gerudia = yes
+			any_subject_or_below = {
+				coa_controls_part_of_gerudia = yes
+			}
+		}
+	}
+}

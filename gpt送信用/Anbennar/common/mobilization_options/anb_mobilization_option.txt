@@ -1,0 +1,589 @@
+﻿##Infantry Weapons
+
+mobilization_option_sparkdrives = {
+	texture = "gfx/interface/icons/mobilization_options/blackdamestear.dds"
+
+	possible = {
+		market ?= {
+			mg:artificery_doodads ?= {
+				has_potential_supply = yes
+			}
+		}
+		
+	}
+	
+	on_activate_while_mobilized = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	
+	on_deactivate = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	
+	unlocking_technologies = {
+		elemental_armaments
+	}
+	upkeep_modifier = {
+		goods_input_damestear_add = 0.5
+		goods_input_artificery_doodads_add = 0.5
+	}
+	unit_modifier = {
+		unit_morale_damage_mult = 0.2
+	}
+	ai_weight = {
+		value = 1
+	}
+
+    group = infantry_weapons
+}
+
+mobilization_option_doodad_attachments = {
+	texture = "gfx/interface/icons/mobilization_options/machinegunners.dds"
+
+	possible = {
+		market ?= {
+			mg:artificery_doodads ?= {
+				has_potential_supply = yes
+			}
+		}
+		
+	}
+	
+	on_activate_while_mobilized = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	
+	on_deactivate = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	
+	unlocking_technologies = {
+		amaglamated_attachments
+	}
+	upkeep_modifier = {
+		goods_input_small_arms_add = 0.5
+		goods_input_artificery_doodads_add = 0.5
+	}
+	unit_modifier = {
+		unit_offense_mult = 0.1
+		unit_kill_rate_add = 0.25
+	}
+	ai_weight = {
+		value = 1
+	}
+
+    group = infantry_weapons
+}
+
+##Offensive armaments
+
+
+##Defensive Armaments
+
+mobilization_option_portable_turrets = {
+	texture = "gfx/interface/icons/mobilization_options/artificerstuff.dds"
+
+	possible = {
+		market ?= {
+			mg:artificery_doodads?= {
+				has_potential_supply = yes
+			}
+			mg:ammunition ?= {
+				has_potential_supply = yes
+			}
+		}
+		
+	}
+	
+	on_activate_while_mobilized = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	
+	on_deactivate = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	upkeep_modifier = {
+		goods_input_artificery_doodads_add = 0.5
+		goods_input_ammunition_add = 1
+	}
+	unit_modifier = {
+		unit_defense_mult = 0.1
+		unit_provinces_lost_mult = -0.1
+	}
+	ai_weight = {
+		value = 1
+	}
+	
+	unlocking_technologies = {
+		thinking_turrets
+	}
+
+    group = defensive_weapons
+}
+
+mobilization_option_bulletproof_exosuits = {
+	texture = "gfx/interface/icons/mobilization_options/vorpal.dds"
+
+	possible = {
+		# NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_infantry_exosuits } } # currently disabled
+		# NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_warsuits } }
+		market ?= {
+			mg:artificery_doodads ?= {
+				has_potential_supply = yes
+			}
+			mg:flawless_metal ?= {
+				has_potential_supply = yes
+			}
+		}
+	}
+	
+	on_activate_while_mobilized = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	
+	on_deactivate = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	upkeep_modifier = {
+		goods_input_artificery_doodads_add = 1
+		goods_input_flawless_metal_add = 1
+	}
+	unit_modifier = {
+		unit_defense_mult = 0.1
+		battle_casualties_mult = -0.2
+	}
+	ai_weight = {
+		value = 1
+	}
+	unlocking_technologies = {
+		bulletproof_exosuits
+	}
+
+    group = defensive_weapons
+}
+
+# mobilization_option_infantry_exosuits = {
+# 	texture = "gfx/interface/icons/mobilization_options/vorpal.dds"
+
+# 	possible = {
+# 		NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_bulletproof_exosuits } }
+# 		NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_warsuits } }
+# 		market ?= {
+# 			mg:artificery_doodads ?= {
+# 				has_potential_supply = yes
+# 			}
+# 			mg:flawless_metal ?= {
+# 				has_potential_supply = yes
+# 			}
+# 		}
+# 	}
+	
+# 	on_activate_while_mobilized = {
+# 		custom_tooltip = {
+# 			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+# 			add_organization = {
+# 				value = organization
+# 				multiply = -0.5
+# 			}
+# 		}
+# 	}
+	
+# 	on_deactivate = {
+# 		custom_tooltip = {
+# 			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+# 			add_organization = {
+# 				value = organization
+# 				multiply = -0.5
+# 			}
+# 		}
+# 	}
+# 	upkeep_modifier = {
+# 		goods_input_artificery_doodads_add = 0.5
+# 		goods_input_flawless_metal_add = 0.5
+# 	}
+# 	unit_modifier = {
+# 		unit_defense_add = 10
+# 		battle_casualties_mult = -0.1
+# 	}
+# 	ai_weight = {
+# 		value = 1
+# 	}
+	
+# 	unlocking_technologies = {
+# 		handcranked_machine_gun	#wip
+# 	}
+
+#     group = defensive_weapons
+# }
+
+# mobilization_option_warsuits = {
+# 	texture = "gfx/interface/icons/mobilization_options/vorpal.dds"
+
+# 	possible = {
+# 		NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_bulletproof_exosuits } }
+# 		NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_infantry_exosuits } }
+# 		market ?= {
+# 			mg:artificery_doodads ?= {
+# 				has_potential_supply = yes
+# 			}
+# 			mg:flawless_metal ?= {
+# 				has_potential_supply = yes
+# 			}
+# 			mg:rubber ?= {
+# 				has_potential_supply = yes
+# 			}
+# 		}
+# 	}
+	
+# 	on_activate_while_mobilized = {
+# 		custom_tooltip = {
+# 			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+# 			add_organization = {
+# 				value = organization
+# 				multiply = -0.5
+# 			}
+# 		}
+# 	}
+	
+# 	on_deactivate = {
+# 		custom_tooltip = {
+# 			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+# 			add_organization = {
+# 				value = organization
+# 				multiply = -0.5
+# 			}
+# 		}
+# 	}
+# 	upkeep_modifier = {
+# 		goods_input_artificery_doodads_add = 1
+# 		goods_input_flawless_metal_add = 1
+# 		goods_input_rubber_add = 0.5
+# 	}
+# 	unit_modifier = {
+# 		unit_defense_add = 20
+# 		battle_casualties_mult = -0.15
+# 	}
+# 	ai_weight = {
+# 		value = 1
+# 	}
+	
+# 	unlocking_technologies = {
+# 		stormtroopers	#wip
+# 	}
+
+#     group = defensive_weapons
+# }
+
+mobilization_option_triggered_mageshields = {
+	texture = "gfx/interface/icons/mobilization_options/artificerstuff.dds"
+
+	possible = {
+		market ?= {
+			mg:artificery_doodads?= {
+				has_potential_supply = yes
+			}
+		}
+		
+	}
+	
+	on_activate_while_mobilized = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	
+	on_deactivate = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	upkeep_modifier = {
+		goods_input_artificery_doodads_add = 2
+	}
+	unit_modifier = {
+		unit_defense_mult = 0.2	 #technically counters vanilla offensive equipment (e.g. flamethrowers). also required to counter big damage gain from airships
+	}
+	ai_weight = {
+		value = 1
+	}
+	
+	unlocking_technologies = {
+		mageshields
+	}
+
+    group = defensive_weapons
+}
+
+#Supplements
+
+mobilization_option_alchemical_capsule = {
+	texture = "gfx/interface/icons/mobilization_options/pills.dds"
+
+	possible = {
+		market ?= {
+			mg:magical_reagents ?= {
+				has_potential_supply = yes
+			}
+		}
+	}
+
+	on_deactivate_while_mobilized = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_morale_when_you_remove_supplies_while_in_combat_tt
+			every_combat_unit = {
+				add_morale = {
+					value = morale
+					multiply = -0.5
+				}
+			}
+		}
+	}
+
+	upkeep_modifier = {
+		goods_input_magical_reagents_add = 2
+	}
+	unit_modifier = {
+		#unit_morale_recovery_mult = 0.1
+		#unit_offense_add = 5
+
+		unit_morale_loss_mult = -0.2	#different take on morale within its group. counters sparkdrive btw
+	}
+	ai_weight = {
+		value = 1
+	}
+	
+	unlocking_technologies = {
+		alchemical_capsules
+	}
+
+	group = supplements
+}
+
+#Medical
+
+mobilization_option_gene_warriors = {
+	texture = "gfx/interface/icons/mobilization_options/artificerstuff.dds"
+
+	unlocking_technologies = {
+		gene_warriors
+	}
+	possible = {
+		market ?= {
+			mg:opium ?= {
+				has_potential_supply = yes
+			}
+			mg:artificery_doodads ?= {
+				has_potential_supply = yes
+			}
+			mg:fertilizer ?= {
+				has_potential_supply = yes
+			}
+		}
+	}
+	on_activate_while_mobilized = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_to_add_medic_support_tt
+			add_organization = {
+				value = organization
+				multiply = -0.25
+			}
+		}
+	}
+	
+	on_deactivate = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_morale_and_organization_when_you_remove_medic_support_tt
+			every_combat_unit = {
+				add_morale = {
+					value = morale
+					multiply = -0.5
+				}
+			}
+			add_organization = {
+				value = organization
+				multiply = -0.25
+			}
+		}
+	}
+	upkeep_modifier = {
+		goods_input_opium_add = 4
+		goods_input_artificery_doodads_add = 2
+		goods_input_fertilizer_add = 4
+	}
+	unit_modifier = {
+		unit_offense_mult = 0.3	#broken on purpose as these are just supersoldiers tbh. its a multiplier as you do need to give them equipment, which is everything else
+		unit_defense_mult = 0.3
+	}
+	ai_weight = {
+		value = 1
+	}
+
+    group = medic_support
+}
+
+#Transport
+
+#Utilities
+
+mobilization_option_airship_reconaissance = {	#for now this is a weaker planes but you unlock it quicker
+	texture = "gfx/interface/icons/mobilization_options/aerial_reconaissance.dds"
+
+	possible = {
+		# NOT = { scope:military_formation = { has_mobilization_option = mobilization_option:mobilization_option_skyship_reconaissance } } # was removed
+		market ?= {
+			mg:engines ?= {	#TODO: for now we will use these until we do improvements for airships
+				has_potential_supply = yes
+			}
+			mg:artificery_doodads ?= {
+				has_potential_supply = yes
+			}
+		}
+	}
+	
+	on_activate_while_mobilized = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	
+	on_deactivate = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	
+	unlocking_technologies = {
+		military_airships
+	}
+	upkeep_modifier = {
+		goods_input_engines_add = 1
+		goods_input_artificery_doodads_add = 1
+		goods_input_fabric_add = 1
+	}
+	unit_modifier = {
+		unit_occupation_mult = 0.25
+		character_battle_condition_charted_terrain_mult = 0.25
+	}
+	ai_weight = {
+		value = 1
+	}
+
+	group = reconnaissance
+}
+
+mobilization_option_scrying_disruptors= {
+	texture = "gfx/interface/icons/mobilization_options/artificerstuff.dds"
+
+	possible = {
+		market ?= {
+			mg:artificery_doodads ?= {
+				has_potential_supply = yes
+			}
+			mg:porcelain ?= {
+				has_potential_supply = yes
+			}
+		}
+	}
+	
+	on_activate_while_mobilized = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	
+	on_deactivate = {
+		custom_tooltip = {
+			text = mobilization_option_it_hurts_organization_when_you_adjust_equipment_tt
+			add_organization = {
+				value = organization
+				multiply = -0.5
+			}
+		}
+	}
+	
+	unlocking_technologies = {
+		scrying_distruptors
+	}
+	upkeep_modifier = {
+		goods_input_magical_reagents_add = 1
+		goods_input_porcelain_add = 0.5
+	}
+	unit_modifier = {
+		character_battle_condition_surprise_maneuver_mult = 1
+		character_battle_condition_lost_mult = -0.5
+		unit_occupation_mult = 0.5
+	}
+	ai_weight = {
+		value = 1
+	}
+
+    group = reconnaissance
+}

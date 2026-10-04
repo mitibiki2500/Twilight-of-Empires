@@ -1,0 +1,239 @@
+﻿#Make sure to update on_river scripted_trigger after every new river trait
+
+state_trait_kharunyana_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_dhenbasana_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_yanhe_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_telebei_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+	}
+}
+
+state_trait_hukai_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+	}
+}
+
+state_trait_tamran_ma_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 10
+	}
+}
+
+state_trait_kharunyana_falls = {
+	icon = "gfx/interface/icons/state_trait_icons/waterfall.dds"
+	
+	modifier = {
+		goods_output_electricity_mult = 0.15
+	}
+}
+
+state_trait_tughayasa_mountain = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_xianjie_hills = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_demon_hills = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_thidinkai_hills = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_balris_mountains = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_marutha_desert = {
+	icon = "gfx/interface/icons/state_trait_icons/dry_climate.dds"
+	
+	modifier = {
+		building_group_bg_agriculture_throughput_add = -0.25
+		state_construction_mult = -0.25
+		state_infrastructure_mult = -0.25
+	}
+}
+
+state_trait_harimari_jungles = {
+	icon = "gfx/interface/icons/state_trait_icons/jungle.dds"
+	
+	modifier = {
+		goods_output_hardwood_mult = 0.10
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_bomdan_jungles = {
+	icon = "gfx/interface/icons/state_trait_icons/jungle.dds"
+	
+	modifier = {
+		goods_output_hardwood_mult = 0.10
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_lupulan_rainforest = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+	
+	modifier = {
+		goods_output_hardwood_mult = 0.10
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_wanglam_rainforest = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+	
+	modifier = {
+		building_tea_plantation_throughput_add = 0.10
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_mulim_forest = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+	
+	modifier = {
+		goods_output_hardwood_mult = 0.10
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_kohai_salt_flats = {
+	icon = "gfx/interface/icons/state_trait_icons/dry_climate.dds"
+	
+	modifier = {
+		goods_output_groceries_mult = 0.10 ## does not work for this good 
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_feiten_whaling = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_whales.dds"
+	
+	modifier = {
+		building_group_bg_whaling_throughput_add = 0.2
+	}
+}
+
+state_trait_ghankedhen_mineral_fields = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+	
+	modifier = {
+		building_iron_mine_throughput_add = 0.2
+		building_coal_mine_throughput_add = 0.2
+	}
+}
+
+state_trait_south_rahen_river_basin = {
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+	
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.2
+		building_group_bg_plantations_throughput_add = 0.2
+	}
+}
+
+state_trait_porcelain_cities = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_ore.dds"
+	
+	modifier = {
+		goods_output_porcelain_mult = 0.2
+	}
+}
+
+state_trait_great_rahen_estuaries = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+	
+	modifier = {
+		building_shipyard_throughput_add = 0.15
+		building_port_throughput_add = 0.1
+		# state_building_naval_base_max_level_add = 15	
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_tianlou_bay = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+	
+	modifier = {
+		building_shipyard_throughput_add = 0.15
+		building_port_throughput_add = 0.1
+		# state_building_naval_base_max_level_add = 15
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_ghavaanaj_indigo_fields = {
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+	
+	modifier = {
+		building_dye_plantation_throughput_add = 0.2
+	}
+}

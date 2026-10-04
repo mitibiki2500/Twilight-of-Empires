@@ -1,0 +1,852 @@
+﻿namespace = neratica_minaria_events
+
+# Neratica-Minaria success
+neratica_minaria_events.1 = {
+	type = country_event
+	placement = ROOT
+	title = neratica_minaria_events.1.t
+	desc = neratica_minaria_events.1.d
+	flavor =  neratica_minaria_events.1.f
+
+	duration = 3
+
+	event_image = {
+		video = "rp1_brazilian_city"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_subject_or_below = {
+					c:B09 ?= this
+					any_scope_state = {
+						state_region = s:STATE_TAMETER
+					}
+				}
+			}
+			random_subject_or_below = {
+				limit = {
+					c:B09 ?= this
+					any_scope_state = {
+						state_region = s:STATE_TAMETER
+					}
+				}
+				random_scope_state = {
+					limit = {
+						state_region = s:STATE_TAMETER
+					}
+					save_scope_as = tameter_state
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				any_scope_state = {
+					state_region = s:STATE_TAMETER
+				}
+			}
+			random_scope_state = {
+				limit = {
+					state_region = s:STATE_TAMETER
+				}
+				save_scope_as = tameter_state
+			}
+		}
+		else = {
+			capital = {
+				save_scope_as = tameter_state
+			}
+		}
+	}
+
+	option = { # Annex Minaria
+		name = neratica_minaria_events.1.a
+		trigger = {
+			c:B27 ?= this
+		}
+		ai_chance = {
+			base = 1
+		}
+		default_option = yes
+		if = {
+			limit = {
+				c:B09 ?= {
+					is_player = no
+					is_subject_of = c:B27
+				}
+			}
+			annex_with_incorporation = c:B09
+		}
+		change_tag = B69
+		add_primary_culture = cu:minarian
+		root = {
+			save_scope_as = neratica_minaria_scope
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					THIS = ROOT
+				}
+				OR = {
+					has_interest_marker_in_region = sr:region_noruin
+					has_interest_marker_in_region = sr:region_haraf
+				}
+			}
+			post_notification = neratica_minaria_success
+		}
+	}
+
+	option = { #Note that it is possible to become Minaria again if you move capital and release Neratica, thus triggering the breakup event
+		name = neratica_minaria_events.1.b
+		trigger = {
+			c:B09 ?= this
+		}
+		ai_chance = {
+			base = 1
+		}
+		default_option = yes
+		play_as = c:B27
+		c:B27 ?= {
+			if = {
+				limit = {
+					c:B09 ?= {
+						is_subject_of = c:B27
+					}
+				}
+				annex_with_incorporation = c:B09
+				change_tag = B69
+				add_primary_culture = cu:minarian
+			}
+		}
+		root = {
+			save_scope_as = neratica_minaria_scope
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					THIS = ROOT
+				}
+				OR = {
+					has_interest_marker_in_region = sr:region_noruin
+					has_interest_marker_in_region = sr:region_haraf
+				}
+			}
+			post_notification = neratica_minaria_success
+		}
+	}
+}
+
+# Startup
+neratica_minaria_events.2 = {
+	type = country_event
+	placement = ROOT
+	title = neratica_minaria_events.2.t
+	desc = neratica_minaria_events.2.d
+	flavor =  neratica_minaria_events.2.f
+
+	duration = 3
+
+	gui_window = event_window_1char_tabloid
+
+	left_icon = scope:ruler_scope
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {
+		c:B09 ?= {
+			is_subject_of = ROOT
+		}
+	}
+
+	immediate = {
+		c:B09 ?= {
+			save_scope_as = minaria_country
+		}
+		ruler = {
+			save_scope_as = ruler_scope
+		}
+		ig:ig_devout ?= {
+			leader = {
+				save_scope_as = potential_counter_coup_leader_scope
+			}
+		}
+		ig:ig_armed_forces ?= {
+			save_scope_as = armed_forces_ig
+		}
+	}
+
+	option = { #King of the Neraticans and Minarians - same effects as getting the amendement through the normal event
+		name = neratica_minaria_events.2.a
+		default_option = yes
+		activate_law = law_type:law_national_supremacy
+		active_law:lawgroup_governance_principles ?= {
+			add_amendment = {
+				type = amendment_sovereign_of_the_nation
+				sponsor = scope:armed_forces_ig
+				cooldown = 120
+			}
+		}
+		ruler = {
+			add_modifier = {
+				name = modifier_emperor_of_the_nation
+				days = long_modifier_time
+			}
+		}
+		ig:ig_devout ?= {
+			add_modifier = {
+				name = modifier_nerat_primacy_questioned
+				days = long_modifier_time
+			}
+			leader = {
+				add_modifier = {
+					name = modifier_neratic_counter_coup_leader
+					days = long_modifier_time
+				}
+			}
+		}
+
+		c:B09 ?= {
+			add_radicals = {
+				value = small_radicals
+			}
+		}
+		every_country_in_south_na = {
+			limit = {
+				has_diplomatic_relevance = root
+				NOR = {
+					c:B09 ?= this
+					c:B27 ?= this
+				}
+				NOT = {
+					is_country_type = decentralized
+				}
+				is_subject = no	#Lorentish colonies shouldn't be involved in this
+			}
+			trigger_event = { id = neratica_minaria_events.5 days = 7 popup = yes }
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+
+	option = { #King of the Bone Citadel
+		name = neratica_minaria_events.2.b
+		ruler = {
+			add_modifier = {
+				name = modifier_new_onyx_king
+				days = long_modifier_time
+			}
+		}
+		ig:ig_devout ?= {
+			add_modifier = {
+				name = modifier_nerat_primacy_questioned
+				days = long_modifier_time
+			}
+			leader = {
+				add_modifier = {
+					name = modifier_neratic_counter_coup_leader
+					days = long_modifier_time
+				}
+			}
+		}
+		c:B09 ?= {
+			add_radicals = {
+				value = medium_radicals
+			}
+		}
+		every_country_in_south_na = {
+			limit = {
+				has_diplomatic_relevance = root
+				NOR = {
+					c:B09 ?= this
+					c:B27 ?= this
+				}
+				NOT = {
+					is_country_type = decentralized
+				}
+				is_subject = no	#Lorentish colonies shouldn't be involved in this
+			}
+			trigger_event = { id = neratica_minaria_events.5 days = 7 popup = yes }
+		}
+		ai_chance = {
+			base = 5
+		}
+	}
+}
+
+# Breakup before unification
+neratica_minaria_events.3 = {
+	type = country_event
+	placement = ROOT
+	title = neratica_minaria_events.3.t
+	desc = neratica_minaria_events.3.d
+	flavor =  neratica_minaria_events.3.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_aristocrats"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	trigger = {
+
+	}
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = neratica_minaria_events.3.a
+		default_option = yes
+		if = {
+			limit = {
+				c:B09 ?= this
+			}
+			restore_minarian_republic = yes
+		}
+		if = {
+			limit = {
+				c:B27 ?= this
+			}
+			if = {
+				limit = {
+					exists = c:B09
+				}
+				c:B09 ?= {
+					restore_minarian_republic = yes
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					THIS = ROOT
+				}
+				OR = {
+					has_interest_marker_in_region = sr:region_noruin
+					has_interest_marker_in_region = sr:region_haraf
+				}
+			}
+			post_notification = neratica_minaria_collapse
+		}
+	}
+}
+
+# Breakup after unification
+neratica_minaria_events.4 = {
+	type = country_event
+	placement = ROOT
+	title = neratica_minaria_events.4.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = neratica_minaria_events.4.d_1
+				trigger = {
+					any_scope_state = {
+						region = sr:region_noruin
+					}
+				}
+			}
+			triggered_desc = {
+				desc = neratica_minaria_events.4.d_2
+				trigger = {
+					any_scope_state = {
+						region = sr:region_haraf
+					}
+				}
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				desc = neratica_minaria_events.4.f_1
+				trigger = {
+					any_scope_state = {
+						region = sr:region_noruin
+					}
+				}
+			}
+			triggered_desc = {
+				desc = neratica_minaria_events.4.f_2
+				trigger = {
+					any_scope_state = {
+						region = sr:region_haraf
+					}
+				}
+			}
+		}
+	}
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_aristocrats"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	trigger = {
+		c:B69 ?= this
+		is_subject = no
+		has_revolution = no
+		has_any_secessionists_broken_out = no
+		OR = {
+			NOT = {
+				any_scope_state = {
+					region = sr:region_noruin
+				}
+			}
+			NOT = {
+				any_scope_state = {
+					region = sr:region_haraf
+				}
+			}
+		}
+		OR = {
+			any_scope_state = {
+				region = sr:region_haraf
+			}
+			any_scope_state = {
+				region = sr:region_noruin
+			}
+		}
+	}
+
+	immediate = {
+
+	}
+
+	option = {	#Restore Neratica
+		name = neratica_minaria_events.9.a
+		default_option = yes
+		trigger = {
+			any_scope_state = {
+				region = sr:region_noruin
+			}
+		}
+		if = {
+			limit = {
+				exists = c:B27
+			}
+			play_as = c:B27
+			c:B27 ?= {
+				annex_with_incorporation = ROOT
+			}
+		}
+		else = {
+			change_tag = B27
+		}
+	}
+	option = {	#Restore Minaria
+		name = neratica_minaria_events.9.b
+		default_option = yes
+		trigger = {
+			any_scope_state = {
+				region = sr:region_haraf
+			}
+		}
+		if = {
+			limit = {
+				exists = c:B09
+			}
+			play_as = c:B09
+			c:B09 ?= {
+				annex_with_incorporation = ROOT
+			}
+		}
+		else = {
+			change_tag = B09
+		}
+	}
+}
+
+# Concord/Triarchy reaction startup
+neratica_minaria_events.5 = {
+	type = country_event
+	placement = ROOT
+	title = neratica_minaria_events.5.t
+	desc = neratica_minaria_events.5.d
+	flavor =  neratica_minaria_events.5.f
+
+	duration = 3
+
+	event_image = {
+		video = "southamerica_aristocrats"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	trigger = {
+
+	}
+
+	immediate = {
+		c:B27 ?= {
+			ruler = {
+				save_scope_as = emil_sil_onyx_scope
+			}
+		}
+	}
+
+	option = {
+		name = neratica_minaria_events.5.a
+		default_option = yes
+		ai_chance = {
+			base = 50
+		}
+		set_variable = attack_neratica
+		je:je_neratica_minaria ?= {
+			add_involved_country = ROOT
+		}
+		add_modifier = {
+			name = modifier_against_the_onyx_king
+			days = normal_modifier_time
+		}
+		hidden_effect = {
+			c:B27 ?= {
+				set_mutual_secret_goal = {
+					country = root
+					secret_goal = conquer
+				}
+			    every_subject_or_below = { # Wants to assist Minaria in attaining independence
+			        set_mutual_secret_goal = {
+			        	country = root
+			        	secret_goal = befriend
+			        }
+			    }
+			}
+		}
+	}
+
+	option = {
+		name = neratica_minaria_events.5.b
+		ai_chance = {
+			base = 10
+		}
+		set_variable = befriend_neratica
+		je:je_neratica_minaria ?= {
+			add_involved_country = ROOT
+		}
+		change_relations = { country = c:B27 value = 15 }
+		hidden_effect = {
+			c:B27 ?= {
+				set_mutual_secret_goal = {
+					country = root
+					secret_goal = befriend
+				}
+			}
+		}
+	}
+
+	option = {
+		name = neratica_minaria_events.5.c
+		trigger = {
+			NOR = {
+				c:B98 ?= this
+				c:B07 ?= this
+			}
+		}
+		ai_chance = {
+			base = 300
+		}
+		set_variable = ignore_neratica_minaria
+		custom_tooltip = ignore_neratica_minaria_tt
+	}
+}
+
+
+# Second Onyx War success
+neratica_minaria_events.6 = {
+	type = country_event
+	placement = ROOT
+	title = neratica_minaria_events.6.t
+	desc = neratica_minaria_events.6.d
+	flavor =  neratica_minaria_events.6.f
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	trigger = {
+		# Triggered by JE completion
+	}
+
+	immediate = {
+		capital = {
+			save_scope_as = capital_scope
+		}
+	}
+
+	option = {
+		name = neratica_minaria_events.6.a
+		default_option = yes
+		add_modifier = {
+			name = modifier_second_onyx_war_success
+			days = normal_modifier_time
+		}
+	}
+}
+
+# Peaceful solution found
+neratica_minaria_events.7 = {
+	type = country_event
+	placement = ROOT
+	title = neratica_minaria_events.7.t
+	desc = neratica_minaria_events.7.d
+	flavor =  neratica_minaria_events.7.f
+
+	duration = 3
+
+	event_image = {
+		video = "rp1_brazilian_city"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	trigger = {
+		# Triggered by JE completion
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = neratica_minaria_events.7.a
+		default_option = yes
+		add_modifier = {
+			name = modifier_onyx_diplomatic_success
+			days = normal_modifier_time
+		}
+	}
+}
+
+# Second Onyx War failure
+neratica_minaria_events.8 = {
+	type = country_event
+	placement = ROOT
+	title = neratica_minaria_events.8.t
+	desc = neratica_minaria_events.8.d
+	flavor =  neratica_minaria_events.8.f
+
+	duration = 3
+
+	event_image = {
+		video = "middleeast_battlefield_trenches"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	trigger = {
+		# Triggered by JE failure
+	}
+
+	immediate = {
+		c:B69 ?= {
+			save_scope_as = neratica_minaria_scope
+		}
+	}
+
+	option = {
+		name = neratica_minaria_events.8.a
+		default_option = yes
+		add_radicals = {
+			value = small_radicals
+		}
+		add_modifier = {
+			name = modifier_second_onyx_war_failure
+			days = normal_modifier_time
+			is_decaying = yes
+		}
+	}
+}
+
+#Neratican Republic
+neratica_minaria_events.9 = {
+	type = country_event
+	placement = ROOT
+	title = neratica_minaria_events.9.t
+	desc = neratica_minaria_events.9.d
+	flavor =  neratica_minaria_events.9.f
+
+	duration = 3
+
+	event_image = {
+		video = "rp1_brazilian_city"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		
+	}
+
+	option = {	#Time for a republic
+		name = neratica_minaria_events.9.a
+		default_option = yes
+		ruler = {
+			kill_character = yes
+		}
+		activate_law = law_type:law_presidential_republic
+		if = {
+			limit = {
+				country_has_voting_franchise = yes
+			}
+			call_election = {
+				months = 2
+			}
+		}
+		add_modifier = {
+                name = modifier_new_onyx_monarchy_broken
+                days = long_modifier_time
+            }
+		add_radicals = {
+			value = small_radicals
+		}
+		ig:ig_intelligentsia = {
+			add_ruling_interest_group = yes
+		}
+		every_interest_group = {
+			limit = {
+				leader = {
+					has_monarchist_ideology = yes
+				}
+			}
+			leader = {
+				set_ideology = ideology:ideology_theocrat
+			}
+		}
+	}
+
+	option = {	#Go back to the old theocracy
+		name = neratica_minaria_events.9.b
+		trigger = {
+			ig:ig_devout ?= {
+				is_marginal = no
+			}
+		}
+		ruler = {
+			kill_character = yes
+		}
+		activate_law = law_type:law_theocracy
+		add_modifier = {
+                name = modifier_new_onyx_monarchy_broken
+                days = long_modifier_time
+            }
+		add_radicals = {
+			value = medium_radicals
+		}
+		ig:ig_devout = {
+			add_ruling_interest_group = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_political_movement = {
+						is_political_movement_type = movement_nihilist
+					}
+				}
+			}
+			create_political_movement = { type = movement_nihilist }
+		}
+		every_interest_group = {
+			limit = {
+				leader = {
+					has_monarchist_ideology = yes
+				}
+			}
+			leader = {
+				set_ideology = ideology:ideology_moderate
+			}
+		}
+	}
+}
+
+#New Onyx Monarchy cemented
+neratica_minaria_events.10 = {
+	type = country_event
+	placement = ROOT
+	title = neratica_minaria_events.10.t
+	desc = neratica_minaria_events.10.d
+	flavor =  neratica_minaria_events.10.f
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		ruler = {
+			save_scope_as = ruler_scope
+		}
+	}
+
+	option = {	#Make the JE modifier permanent
+		name = neratica_minaria_events.10.a
+		default_option = yes
+		add_modifier = {
+			name = modifier_cheshoshi_military_support
+		}
+		add_loyalists = {
+			value = medium_radicals
+		}
+	}
+
+	option = {	#Remove clergy ideology - this isn't a conversion, just gives them standard stances back on theocracy
+		name = neratica_minaria_events.10.b
+		default_option = yes
+		ig:ig_devout ?= {
+			remove_ideology = ideology_neratic_moralist
+			add_ideology = ideology_adeanic_moralist
+		}
+		add_loyalists = {
+			value = medium_radicals
+		}
+	}
+}

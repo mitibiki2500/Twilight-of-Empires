@@ -1,0 +1,98 @@
+﻿COUNTRIES = {
+	c:B10 ?= {
+		effect_starting_technology_tier_5_tech = yes #in-between T5 and T4
+		add_technology_researched = prospecting
+		add_technology_researched = shaft_mining
+		add_technology_researched = gunsmithing
+		add_technology_researched = centralization
+		add_technology_researched = democracy
+		add_technology_researched = international_trade
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_oligarchy
+		activate_law = law_type:law_subjecthood
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_hereditary_bureaucrats
+		activate_law = law_type:law_professional_army
+		# No home affairs
+
+		activate_law = law_type:law_traditionalism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_land_based_taxation
+		# No colonial affairs
+		# No police
+		# No school system
+		activate_law = law_type:law_no_health_system
+		
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_tenant_farmers
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_women_own_property
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_closed_borders
+		activate_law = law_type:law_debt_slavery
+
+
+		
+		
+		activate_law = law_type:law_nation_of_artifice
+
+		ig:ig_landowners = {
+			add_ruling_interest_group = yes
+		}
+		ig:ig_armed_forces = {
+			add_ruling_interest_group = yes
+		}
+
+		# Magic
+		add_technology_researched = elemental_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_storm_regulation
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_master_of_the_plains
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_perfected_terrain
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 1
+		}
+	}
+}

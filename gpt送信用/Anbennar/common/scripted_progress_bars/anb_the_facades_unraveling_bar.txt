@@ -1,0 +1,116 @@
+﻿the_facades_unraveling_bar = {
+	name = "facade_bar_name"
+	desc = "facade_bar_desc"
+
+	default = yes
+	is_inverted = yes 
+
+	monthly_progress = {
+		add = {
+				desc= "losing_facade_natural"
+				add = -0.5
+			}
+		
+		if = {
+			limit = {
+				ig:ig_devout = {
+					NOT = { is_in_government = yes }
+				} 
+			}
+			add = {
+				desc = "losing_facade_church_government"
+				add = -0.3
+			}
+		}
+		if = {
+			limit = {
+				has_law = law_type:law_freedom_of_conscience
+			}
+			add = {
+				desc = "losing_facade_church_law_1"
+				add = -0.2
+			}
+		}
+		if = {
+			limit = {
+				has_law = law_type:law_total_separation
+			}
+			add = {
+				desc = "losing_facade_church_law_2"
+				add = -0.5
+			}
+		}
+		if = {
+			limit = {
+				has_law = law_type:law_free_trade		# Should this apply for protectionism too?
+			}
+			add = {
+				desc = "losing_facade_free_trade"
+				add = -0.3
+			}
+		}
+		if = {
+			limit = {
+				has_law = law_type:law_interventionism
+			}
+			add = {
+				desc = "losing_facade_interventionism"
+				add = -0.3
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_law = law_type:law_laissez_faire
+					has_law = law_type:law_cooperative_ownership
+					has_law = law_type:law_command_economy
+				}
+			}
+			add = {
+				desc = "losing_facade_economy_law"
+				add = -0.5
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_attitude = {
+						who = c:F01
+						attitude = domineering
+					}
+					has_attitude = {
+						who = c:F01
+						attitude = belligerent
+					}							
+					has_attitude = {
+						who = c:F01
+						attitude = antagonistic
+					}						
+				}
+			}
+			add = {
+				desc = "losing_facade_jaddanzar_opinion"
+				add = -0.5
+			}
+		}
+		if = {
+			limit = {
+				any_political_movement = {
+					OR = {
+						is_political_movement_type = movement_religious_majority
+						is_political_movement_type = movement_cultural_majority
+					}
+					is_insurrectionary = yes
+				}
+			}
+			add = {
+				desc = "losing_facade_political_movement"
+				add = -0.5
+			}
+		}
+	}
+	start_value = 100
+	min_value = 0
+	max_value = 100
+
+}

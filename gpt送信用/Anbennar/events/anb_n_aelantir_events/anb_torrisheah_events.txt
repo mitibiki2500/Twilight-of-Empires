@@ -1,0 +1,1099 @@
+﻿namespace = anb_torrisheah
+
+#A doomed assignment
+# anb_torrisheah.001 = {
+#     type = country_event
+#     placement = root
+
+#     title = anb_torrisheah.001.t  
+#     desc = anb_torrisheah.001.d  
+#     flavor = anb_torrisheah.001.f  
+
+#     event_image = {
+#         video = "unspecific_military_parade" 
+#     }
+
+#     icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+#     on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+#     duration = 3
+
+#     option = {
+#         name = anb_torrisheah.001.a
+#         custom_tooltip = {
+#             text = torrisheah_objective
+#         }
+#     }
+# }
+
+#Lords of the ravenous isle
+anb_torrisheah.002 = {
+    type = country_event
+    placement = root
+
+    title = anb_torrisheah.002.t  
+    desc = anb_torrisheah.002.d  
+    flavor = anb_torrisheah.002.f  
+
+    event_image = {
+        video = "unspecific_ruler_speaking_to_people"
+    }
+
+    icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = anb_torrisheah.002.a
+        remove_modifier = torrisheah_overstretched
+        add_modifier = {
+            name = torrisheah_lords
+            months = 120
+        }
+        add_loyalists = {
+            value = 0.1
+        }
+    }
+}
+
+#Endralliande Steps in
+anb_torrisheah.003 = {
+    type = country_event
+    placement = root
+
+    title = anb_torrisheah.003.t  
+    desc = anb_torrisheah.003.d  
+    flavor = anb_torrisheah.003.f  
+
+    event_image = {
+        video = "unspecific_devastation"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #Fail
+        name = anb_torrisheah.003.a
+        default_option = yes
+        trigger = {
+            has_variable = torrisheah_fail
+        }
+        #Transfer the 3 states to varionail
+        s:STATE_FALILTCOST.region_state:B15 = {
+            set_state_owner = c:B13
+        }
+        s:STATE_SANCTUARY_FIELDS.region_state:B15 = {
+            set_state_owner = c:B13
+        }
+        s:STATE_SILVERTENNAR.region_state:B15 = {
+            set_state_owner = c:B13
+        }
+        c:B13 ?= {
+            trigger_event = anb_varionail.001
+        }
+
+        c:B15 = {
+            trigger_event = { id = anb_torrisheah.020 days = 7 }
+        }
+    }
+
+    option = { #Timeout
+        name = anb_torrisheah.003.b
+        default_option = yes
+        trigger = {
+            has_variable = torrisheah_timeout
+        }
+        #Transfer the 3 states to varionail
+        s:STATE_FALILTCOST.region_state:B15 = {
+            set_state_owner = c:B13
+        }
+        s:STATE_SANCTUARY_FIELDS.region_state:B15 = {
+            set_state_owner = c:B13
+        }
+        s:STATE_SILVERTENNAR.region_state:B15 = {
+            set_state_owner = c:B13
+        }
+        c:B13 ?= {
+            trigger_event = anb_varionail.001
+        }
+        c:B15 = {
+            remove_modifier = torrisheah_overstretched
+        }
+    }
+}
+
+#Plants overrun crucial road
+anb_torrisheah.004 = {
+    type = country_event
+    placement = scope:plant_state
+
+    title = anb_torrisheah.004.t  
+    desc = anb_torrisheah.004.d  
+    flavor = anb_torrisheah.004.f  
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    
+    trigger = {
+        NOT = {
+            has_variable = plants_cooldown
+            has_variable = torris_event_cooldown
+        }
+    }
+
+    immediate = {
+        #Get a state as scope
+        c:B15 = {
+            random_scope_state = {
+                limit = { 
+                    has_state_trait = state_trait_ravenous_isle
+                }
+                save_scope_as = plant_state
+            }
+        }
+        set_variable = {
+            name = plants_cooldown
+            value = yes
+            days = 1095
+        }
+    }
+
+    option = { #Invest money
+        name = anb_torrisheah.004.a
+        trigger = {
+            OR = {
+                is_ai = no
+                net_fixed_income > -3000
+            }
+        }
+        scope:plant_state = {
+            add_modifier = {
+                name = torrisheah_plant_invest
+                years = 3
+            }
+            add_loyalists_in_state = {
+                value = 0.02 
+            }
+        }
+        c:B15 = {
+            add_modifier = {
+                name = torrisheah_plant_invest_cost
+                years = 3
+            }
+        }
+    }
+
+    option = { #Ask Endralliande for Help
+        name = anb_torrisheah.004.b
+        default_option = yes
+        c:B14 = {
+            trigger_event = { id = anb_torrisheah.005 }
+        }
+    }
+
+    option = { #Send the military
+        name = anb_torrisheah.004.c
+        trigger = {
+            army_size >= 5
+        }
+        scope:plant_state = {
+            add_modifier = {
+                name = torrisheah_plant_invest
+                years = 3
+            }
+            state_region = {
+                add_devastation = 10
+            }
+        }
+        c:B15 = {
+            add_radicals = {
+                value = 0.01
+                pop_type = soldiers 
+            }
+        }
+    }
+
+    option = { #Nothing we can do
+        name = anb_torrisheah.004.e
+        trigger = {
+            c:B15 = {
+                is_ai = no
+            }
+        }
+        scope:plant_state = {
+            add_modifier = {
+                name = torrisheah_plant_inaction
+                years = 3
+            }
+            state_region = {
+            add_devastation = 20
+            }
+            add_radicals = {
+                value = 0.05
+            }
+        }
+    }
+}
+
+#Endralliande asked for help plants
+anb_torrisheah.005 = {
+    type = country_event
+    placement = root
+
+    title = anb_torrisheah.005.t  
+    desc = anb_torrisheah.005.d  
+    flavor = anb_torrisheah.005.f  
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #Yes
+        name = anb_torrisheah.005.a
+        default_option = yes
+        c:B15 = {
+            trigger_event = { id = anb_torrisheah.006 }
+        }
+        scope:plant_state = {
+            add_modifier = {
+                name = torrisheah_plant_invest
+                years = 3
+            }
+        }
+        c:B14 = {
+            add_modifier = {
+                name = torrisheah_plant_invest_cost
+                years = 3
+            }
+        }
+        
+    }
+
+    option = { #No
+        name = anb_torrisheah.005.b
+        c:B15 = {
+            trigger_event = { id = anb_torrisheah.007 }
+            show_as_tooltip = {
+                scope:plant_state = {
+                    add_modifier = {
+                        name = torrisheah_plant_inaction
+                        years = 3
+                    }
+                    state_region = {
+                    add_devastation = 20
+                    }
+                    add_radicals = {
+                        value = 0.05
+                    }
+                }
+            }
+        }
+    }
+}
+
+#Endralliande said yes plants
+anb_torrisheah.006 = {
+    type = country_event
+    placement = scope:plant_state
+
+    title = anb_torrisheah.006.t  
+    desc = anb_torrisheah.006.d  
+    flavor = anb_torrisheah.006.f  
+
+    event_image = {
+        video = "unspecific_signed_contract"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #Cool
+        name = anb_torrisheah.006.a
+        default_option = yes
+
+        show_as_tooltip = {
+            scope:plant_state = {
+                add_modifier = {
+                    name = torrisheah_plant_invest
+                    years = 3
+                }
+            }
+            c:B14 = {
+                add_modifier = {
+                    name = torrisheah_plant_invest_cost
+                    years = 3
+                }
+            }
+        }
+    }
+}
+
+#Endralliande said no plants
+anb_torrisheah.007 = {
+    type = country_event
+    placement = scope:plant_state
+
+    title = anb_torrisheah.007.t  
+    desc = anb_torrisheah.007.d  
+    flavor = anb_torrisheah.007.f  
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #Nothing we can do
+        name = anb_torrisheah.007.a
+        default_option = yes
+        scope:plant_state = {
+            add_modifier = {
+                name = torrisheah_plant_inaction
+                years = 3
+            }
+            state_region = {
+                add_devastation = 20
+            }
+            add_radicals = {
+                value = 0.05
+            }
+        }
+    }
+}
+
+#Blackpowder Partisans sabotage key facility
+anb_torrisheah.008 = {
+    type = country_event
+    placement = scope:sabotaged_building
+
+    title = anb_torrisheah.008.t  
+    desc = anb_torrisheah.008.d  
+    flavor = anb_torrisheah.008.f  
+
+    event_image = {
+        video = "unspecific_vandalized_storefront"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        NOT = {
+            has_variable = partisans_cooldown
+            has_variable = torris_event_cooldown
+        }
+    }
+
+    immediate = {
+        #Get building as scope
+        random_scope_building = {
+            limit = {
+                level >= 2
+                NOT = {
+                    is_building_group = bg_subsistence_agriculture
+                    is_building_group = bg_manor_houses
+                    is_building_group = bg_owner_buildings
+                    is_building_group = bg_infrastructure
+                    is_building_group = bg_military
+                }
+            }
+            save_scope_as = sabotaged_building
+        }
+        set_variable = {
+            name = partisans_cooldown
+            value = yes
+            days = 1095
+        }
+    }
+
+    option = { #Send local police to intervene
+        name = anb_torrisheah.008.a
+        default_option = yes
+        trigger = {
+            c:B15 = {
+                has_institution = institution_police 
+            }
+        }
+        scope:sabotaged_building = {
+            add_modifier = {
+                name = torrisheah_sabotage
+                months = 6
+            }
+        }
+        add_modifier = {
+            name = torrisheah_crackdown
+            years = 1
+        }
+    }
+
+    option = { #Invest in rebuilding
+        name = anb_torrisheah.008.b
+        trigger = {
+            OR = {
+                is_ai = no
+                net_fixed_income > -3000
+            }
+        }
+        scope:sabotaged_building = {
+            add_modifier = {
+                name = torrisheah_sabotage
+                months = 3
+            }
+        }
+        add_modifier = {
+            name = torrisheah_rebuilding
+            years = 1 
+        }
+    }
+
+    option = { #Ask endralliande for help
+        name = anb_torrisheah.008.c
+        trigger = {
+            
+        }
+        c:B14 = {
+            trigger_event = { id = anb_torrisheah.009 }
+        }
+    }
+
+    option = { #We can't do anything
+        name = anb_torrisheah.008.e
+        trigger = {
+            c:B15 = {
+                is_ai = no
+            }
+        }
+        scope:sabotaged_building = {
+            add_modifier = {
+                name = torrisheah_sabotage
+                years = 1
+            }
+        }
+    }
+}
+
+#Endralliande asked for help partisans
+anb_torrisheah.009 = {
+    type = country_event
+    placement = root
+
+    title = anb_torrisheah.009.t  
+    desc = anb_torrisheah.009.d  
+    flavor = anb_torrisheah.009.f  
+
+    event_image = {
+        video = "unspecific_vandalized_storefront"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #Yes
+        name = anb_torrisheah.009.a
+        default_option = yes
+        c:B15 = {
+            trigger_event = { id = anb_torrisheah.010 }
+        }
+        scope:sabotaged_building = {
+            add_modifier = {
+                name = torrisheah_sabotage
+                months = 3
+            }
+        }
+        add_modifier = {
+            name = torrisheah_rebuilding
+            years = 1 
+        }
+    }
+
+    option = { #No
+        name = anb_torrisheah.009.b
+        c:B15 = {
+            trigger_event = { id = anb_torrisheah.011 }
+            show_as_tooltip = {
+                scope:sabotaged_building = {
+                    add_modifier = {
+                        name = torrisheah_sabotage
+                        years = 1
+                    }
+                }
+            }
+        }
+    }
+}
+
+#Endralliande said yes partisans
+anb_torrisheah.010 = {
+    type = country_event
+    placement = scope:sabotaged_building
+
+    title = anb_torrisheah.010.t  
+    desc = anb_torrisheah.010.d  
+    flavor = anb_torrisheah.010.f  
+
+    event_image = {
+        video = "unspecific_signed_contract" 
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #Cool
+        name = anb_torrisheah.010.a
+        default_option = yes
+
+        show_as_tooltip = {
+            scope:sabotaged_building = {
+                add_modifier = {
+                    name = torrisheah_sabotage
+                    months = 3
+                }
+            }
+            c:B14 = {
+                add_modifier = {
+                    name = torrisheah_rebuilding
+                    years = 1 
+                }
+            }
+        }
+    }
+}
+
+#Endralliande said no partisans
+anb_torrisheah.011 = {
+    type = country_event
+    placement = scope:sabotaged_building
+
+    title = anb_torrisheah.011.t  
+    desc = anb_torrisheah.011.d  
+    flavor = anb_torrisheah.011.f  
+
+    event_image = {
+        video = "unspecific_vandalized_storefront"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #We can't do anything
+        name = anb_torrisheah.011.a
+        default_option = yes
+        scope:sabotaged_building = {
+            add_modifier = {
+                name = torrisheah_sabotage
+                years = 1
+            }
+        }
+    }
+}
+
+#Ruin orc slaves rise up
+anb_torrisheah.012 = {
+    type = country_event
+    placement = scope:uprising_state
+
+    title = anb_torrisheah.012.t  
+    desc = anb_torrisheah.012.d  
+    flavor = anb_torrisheah.012.f  
+
+    event_image = {
+        video = "southamerica_slave_chains"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        NOT = {
+            has_variable = uprising_cooldown
+            has_variable = torris_event_cooldown
+        }
+    }
+
+    immediate = {
+        #Get a state as scope
+        c:B15 = {
+            random_scope_state = {
+                save_scope_as = uprising_state
+            }
+        }
+        set_variable = {
+            name = uprising_cooldown
+            value = yes
+            days = 1095
+        }
+        set_variable = {
+            name = torris_event_cooldown
+            days = 365
+        }
+    }
+
+    option = { #Send in the military
+        name = anb_torrisheah.012.a
+        default_option = yes
+        trigger = {
+            army_size >= 5
+        }
+        scope:uprising_state = {
+            add_radicals_in_state = {
+                value = 0.1
+                pop_type = slaves
+            }
+            add_loyalists_in_state = {
+                value = 0.05
+                strata = upper
+            }
+            kill_population_in_state = {
+                value = 2000
+                pop_type = slaves
+            }
+        }
+    }
+
+    option = { #Ask for help
+        name = anb_torrisheah.012.b
+        c:B14 = {
+            trigger_event = { id = anb_torrisheah.013 }
+        }
+    }
+
+    option = { #Nothing we can do
+        name = anb_torrisheah.012.c
+        trigger = {
+            c:B15 = {
+                is_ai = no
+            }
+        }
+        scope:uprising_state = {
+            add_radicals_in_state = {
+                value = 0.05
+                strata = upper
+            }
+            add_modifier = {
+                name = torrisheah_slave_revolt
+                years = 3
+            }
+        }
+    }
+}
+
+#Endralliande asked for help slaves
+anb_torrisheah.013 = {
+    type = country_event
+    placement = root
+
+    title = anb_torrisheah.013.t  
+    desc = anb_torrisheah.013.d  
+    flavor = anb_torrisheah.013.f  
+
+    event_image = {
+        video = "europenorthamerica_before_the_battle"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #Yes
+        name = anb_torrisheah.013.a
+        default_option = yes
+        c:B15 = {
+            trigger_event = { id = anb_torrisheah.014 }
+        }
+        scope:uprising_state = {
+            add_radicals_in_state = {
+                value = 0.2
+                pop_type = slaves
+            }
+            kill_population_in_state = {
+                value = 2000
+                pop_type = slaves
+            }
+        }
+    }
+
+    option = { #No
+        name = anb_torrisheah.013.b
+        c:B15 = {
+            trigger_event = { id = anb_torrisheah.015 }
+            show_as_tooltip = {
+                scope:uprising_state = {
+                    add_radicals_in_state = {
+                        value = 0.05
+                        strata = upper
+                    }
+                    add_modifier = {
+                        name = torrisheah_slave_revolt
+                        years = 3
+                    }
+                }
+            }
+        }
+    }
+}
+
+#Endralliande said yes slaves
+anb_torrisheah.014 = {
+    type = country_event
+    placement = root
+
+    title = anb_torrisheah.014.t  
+    desc = anb_torrisheah.014.d  
+    flavor = anb_torrisheah.014.f  
+
+    event_image = {
+        video = "unspecific_military_parade"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #Cool
+        name = anb_torrisheah.014.a
+        default_option = yes
+
+        show_as_tooltip = {
+            scope:uprising_state = {
+                add_radicals_in_state = {
+                    value = 0.1
+                    pop_type = slaves
+                }
+                kill_population_in_state = {
+                    value = 2000
+                    pop_type = slaves
+                }
+            }
+        }
+    }
+}
+
+#Endralliande said no slaves
+anb_torrisheah.015 = {
+    type = country_event
+    placement = root
+
+    title = anb_torrisheah.015.t  
+    desc = anb_torrisheah.015.d  
+    flavor = anb_torrisheah.015.f  
+
+    event_image = {
+        video = "unspecific_devastation"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds" 
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #Nothing we can do
+        name = anb_torrisheah.015.a
+        default_option = yes
+        scope:uprising_state = {
+            add_radicals_in_state = {
+                value = 0.05
+                strata = upper
+            }
+            add_modifier = {
+                name = torrisheah_slave_revolt
+                years = 3
+            }
+        }
+    }
+}
+
+#Pirates assail undefended passes
+anb_torrisheah.016 = {
+    type = country_event
+    placement = scope:pirate_state
+
+    title = anb_torrisheah.016.t  
+    desc = anb_torrisheah.016.d  
+    flavor = anb_torrisheah.016.f  
+
+    event_image = {
+        video = "unspecific_devastation"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    trigger = {
+        NOT = {
+            has_variable = pirates_cooldown
+            has_variable = torris_event_cooldown
+        }
+    }
+
+    immediate = {
+        #Get a state as scope
+        c:B15 = {
+            random_scope_state = {
+                save_scope_as = pirate_state
+            }
+        }
+        set_variable = {
+            name = pirates_cooldown
+            value = yes
+            days = 1095
+        }
+    }
+
+    option = { #Send in the navy
+        name = anb_torrisheah.016.a
+        default_option = yes
+        trigger = {
+            navy_size >= 5
+        }
+        scope:pirate_state = {
+            add_loyalists_in_state = {
+                value = 0.05
+            }
+        }
+        add_modifier = {
+            name = torrisheah_pirates_defeated
+            years = 3
+        }
+    }
+
+    option = { #Fund local pirate hunters
+        name = anb_torrisheah.016.b
+        trigger = {
+            OR = {
+                is_ai = no
+                net_fixed_income > -3000
+            }
+        }
+        c:B15 = {
+            add_modifier = {
+                name = torrisheah_privateers
+                years = 3
+            }
+        }
+    }
+
+    option = { #Ask Endralliande for help
+        name = anb_torrisheah.016.c
+        trigger = {
+            
+        }
+        c:B14 = {
+            trigger_event = { id = anb_torrisheah.017 }
+        }
+    }
+
+    option = { #Nothing we can do
+        name = anb_torrisheah.016.e
+        trigger = {
+            c:B15 = {
+                is_ai = no
+            }
+        }
+        scope:pirate_state = {
+            add_modifier = {
+                name = torrisheah_pirates_rampaging
+                years = 3
+            }
+        }
+    }
+}
+
+#Endralliande asked for help pirates
+anb_torrisheah.017 = {
+    type = country_event
+    placement = root
+
+    title = anb_torrisheah.017.t  
+    desc = anb_torrisheah.017.d  
+    flavor = anb_torrisheah.017.f  
+
+    event_image = {
+        video = "unspecific_devastation"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #Yes
+        name = anb_torrisheah.017.a
+        default_option = yes
+        c:B15 = {
+            trigger_event = { id = anb_torrisheah.018 }
+        }
+        c:B14 = {
+            add_modifier = {
+                name = torrisheah_privateers
+                years = 3
+            }
+        }
+    }
+
+    option = { #No
+        name = anb_torrisheah.017.b
+        c:B15 = {
+            trigger_event = { id = anb_torrisheah.019 }
+            show_as_tooltip = {
+                scope:pirate_state = {
+                    add_modifier = {
+                        name = torrisheah_pirates_rampaging
+                        years = 3
+                    }
+                }
+            }
+        }
+    }
+}
+
+#Endralliande said yes pirates
+anb_torrisheah.018 = {
+    type = country_event
+    placement = scope:pirate_state
+
+    title = anb_torrisheah.018.t  
+    desc = anb_torrisheah.018.d  
+    flavor = anb_torrisheah.018.f  
+
+    event_image = {
+        video = "unspecific_naval_battle"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = anb_torrisheah.018.a
+        default_option = yes
+
+        show_as_tooltip = {
+            c:B14 = {
+                add_modifier = {
+                    name = torrisheah_privateers
+                    years = 3
+                }
+            }
+        }
+    }
+}
+
+#Endralliande said no pirates
+anb_torrisheah.019 = {
+    type = country_event
+    placement = scope:pirate_state
+
+    title = anb_torrisheah.019.t  
+    desc = anb_torrisheah.019.d  
+    flavor = anb_torrisheah.019.f  
+
+    event_image = {
+        video = "unspecific_devastation"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = { #Nothing we can do
+        name = anb_torrisheah.019.a
+        default_option = yes
+        scope:pirate_state = {
+            add_modifier = {
+                name = torrisheah_pirates_rampaging
+                years = 3
+            }
+        }
+    }
+}
+
+anb_torrisheah.020 = {
+    type = country_event
+    placement = root
+
+    title = anb_torrisheah.020.t
+    desc = anb_torrisheah.020.d
+    flavor = anb_torrisheah.020.f
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+
+    option = {
+        name = anb_torrisheah.020.a
+        default_option = yes 
+        c:B14 = {
+            annex = c:B15
+        }
+    }
+}
+
+#The Bankruptcy Button
+anb_torrisheah.021 = {
+    type = country_event
+    hidden = yes
+
+    immediate = {
+        add_treasury = -100000000
+    }
+}

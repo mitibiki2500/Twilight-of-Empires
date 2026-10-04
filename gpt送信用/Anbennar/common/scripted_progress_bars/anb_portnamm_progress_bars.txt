@@ -1,0 +1,236 @@
+﻿portnamm_age_of_art_bar = {
+	name = "portnamm_age_of_art_bar_name"
+	desc = "portnamm_age_of_art_bar_desc"
+
+	default_green = yes
+
+	monthly_progress = {
+		# NEGATIVE MODIFIERS
+		
+		# -20 for being at war
+		if = {
+			limit = {
+				is_at_war = yes
+			}
+			add = {
+				desc = "portnamm_age_of_art_at_war_tt"
+				value = -20
+			}
+		}
+
+		# -1 for not being top 10 producer of fine arts
+		if = {
+			limit = {
+                "goods_production_rank(g:fine_art)" > 10
+			}
+			add = {
+				desc = "portnamm_age_of_art_not_top_producer_tt"
+				value = -1
+			}
+		}
+
+		# -1 for having closed borders
+		if = {
+			limit = {
+				has_law = law_type:law_closed_borders
+			}
+			add = {
+				desc = "portnamm_age_of_art_closed_borders_tt"
+				value = -1
+			}
+		}
+
+		# -0.5 for having migration control
+		if = {
+			limit = {
+				has_law = law_type:law_migration_controls
+			}
+			add = {
+				desc = "portnamm_age_of_art_migration_control_tt"
+				value = -0.5
+			}
+		}
+
+		# -1 for having ethnostate
+		if = {
+			limit = {
+				has_law = law_type:law_ethnostate
+			}
+			add = {
+				desc = "portnamm_age_of_art_ethnostate_tt"
+				value = -1
+			}
+		}
+
+		# -1 for having national supremacy
+		if = {
+			limit = {
+				has_law = law_type:law_national_supremacy
+			}
+			add = {
+				desc = "portnamm_age_of_art_national_supremacy_tt"
+				value = -1
+			}
+		}
+
+		# -0.5 for having racial segregation
+		if = {
+			limit = {
+				has_law = law_type:law_racial_segregation
+			}
+			add = {
+				desc = "portnamm_age_of_art_racial_segregation_tt"
+				value = -0.5
+			}
+		}
+
+		# -0.1 for each great power with < -30 relations
+		add = {
+			desc = "portnamm_age_of_art_hostile_great_powers_tt"
+			every_country = {
+				limit = {
+					country_rank = rank_value:great_power
+					relations:root < -30
+				}
+				add = -0.1
+			}
+		}
+
+		# -1 for JE2 active
+		add = {
+			desc = "portnamm_age_of_art_directorate_active_tt"
+			if = {
+				limit = {
+					has_variable = portnamm_directorate_active
+				}
+				add = -1
+			}
+		}
+
+		# -0.2 for each directorate company active
+		if = {
+			limit = {
+				var:portnamm_activated_directorate_companies ?= 5
+			}
+			add = {
+				desc = "portnamm_age_of_art_directorate_companies_active_tt"
+				value = -1
+			}
+		}
+		if = {
+			limit = {
+				var:portnamm_activated_directorate_companies ?= 4
+			}
+			add = {
+				desc = "portnamm_age_of_art_directorate_companies_active_tt"
+				value = -0.8
+			}
+		}
+		if = {
+			limit = {
+				var:portnamm_activated_directorate_companies ?= 3
+			}
+			add = {
+				desc = "portnamm_age_of_art_directorate_companies_active_tt"
+				value = -0.6
+			}
+		}
+		if = {
+			limit = {
+				var:portnamm_activated_directorate_companies ?= 2
+			}
+			add = {
+				desc = "portnamm_age_of_art_directorate_companies_active_tt"
+				value = -0.4
+			}
+		}
+		if = {
+			limit = {
+				var:portnamm_activated_directorate_companies ?= 1
+			}
+			add = {
+				desc = "portnamm_age_of_art_directorate_companies_active_tt"
+				value = -0.2
+			}
+		}
+
+
+		# POSITIVE MODIFIERS
+
+		# +0.1 for each great power with > 30 relations
+		add = {
+			desc = "portnamm_age_of_art_friendly_great_powers_tt"
+			every_country = {
+				limit = {
+					country_rank = rank_value:great_power
+					relations:root > 30
+				}
+				add = 0.1
+			}
+		}
+
+		# +0.5 for having multiculturalism
+		if = {
+			limit = {
+				has_law = law_type:law_multicultural
+			}
+			add = {
+				desc = "portnamm_age_of_art_multiculturalism_tt"
+				value = 0.5
+			}
+		}
+
+		# +0.5 for having no migration control
+		if = {
+			limit = {
+				has_law = law_type:law_no_migration_controls
+			}
+			add = {
+				desc = "portnamm_age_of_art_no_migration_control_tt"
+				value = 0.5
+			}
+		}
+
+		# +0.5 for having Portnammer Association of Fine Arts company
+		if = {
+			limit = {
+				any_company = {
+					is_company_type = company_portnamm_fine_arts
+					company_is_prosperous = yes
+				}
+			}
+			add = {
+				desc = "portnamm_age_of_art_fine_arts_company_tt"
+				value = 0.5
+			}
+		}
+
+		# +0.5 for being 2nd or 3rd producer of fine arts
+		if = {
+			limit = {
+                "goods_production_rank(g:fine_art)" <= 3
+                "goods_production_rank(g:fine_art)" >= 2
+			}
+			add = {
+				desc = "portnamm_age_of_art_secondary_producer_tt"
+				value = 0.5
+			}
+		}
+
+		# +1 for being 1st producer of fine arts
+		if = {
+			limit = {
+                "goods_production_rank(g:fine_art)" <= 1
+			}
+			add = {
+				desc = "portnamm_age_of_art_primary_producer_tt"
+				value = 1
+			}
+		}
+
+	}
+
+	start_value = 500
+	min_value = 0
+	max_value = 1000
+}

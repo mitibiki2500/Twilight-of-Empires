@@ -1,0 +1,317 @@
+﻿# Anbennar - Removed Vanilla tag references + added our own
+PRODUCTION_METHODS = {
+	c:A01 = { # Anbennar
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+		#All Anb Subjects in the empire
+		every_subject_or_below = {
+			limit = {
+				is_subject_type = subject_type_puppet
+			}
+			activate_production_method = {
+				building_type = building_urban_center
+				production_method = pm_market_squares
+			}
+			activate_production_method = {
+				building_type = building_urban_center
+				production_method = pm_gas_streetlights
+			}
+		}
+	}
+	c:A02 = { # Vivin Empire
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:A03 = { # Lorent
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:A04 = { # Gawed
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:A06 = { # Gnomish Hiearchy
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:A07 = { # Reveria
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:A09 = { # Busilar
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:A10 = { # Grombar
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+	}
+	c:A18 = { # Bayvek
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:A19 = { # Vertesk
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:B98 = { # Trollsbay
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:B29 = { #Sarda Empire
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+	}
+	c:B49 = { #Dragon Dominion
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+	}
+	c:R19 = { # Dragon Command
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+	}
+	c:Y03 = { # Tianlou
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+	}
+	c:Y05 = { # Feiten
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+	}
+	c:D02 = { # Krakdhumvror
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D03 = { # Dur Vazhatun
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D05 = { # Amldihr
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D37 = { # Kuxhekre
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D06 = { # Kuxhezte
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D08 = { # Khugdihr
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D10 = { # Ves Udzenklan
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D12 = { # Hul-Jorkad
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D13 = { # Gor Burad
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D14 = { # Ovdal Lodhum
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D18 = { # Arg Ordstun
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D20 = { # Orlghelovar
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D24 = { # Seghdihr
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D25 = { # Verkal Gulan
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D26 = { # Nizhn Korvesto
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D31 = { # Dakkaz Carzviya
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:D33 = { # Zerzeko Radin
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:E01 = { # Kalsyto
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+	}
+	c:F15 = { # Ovdal Tungr
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+	}
+	c:L25 = { # Khatalashya
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+	}
+	c:L34 = { # Adzalan
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_gas_streetlights
+		}
+	}
+	c:L36 = { # Nazhni
+		activate_production_method = {
+			building_type = building_urban_center
+			production_method = pm_market_squares
+		}
+	}
+}

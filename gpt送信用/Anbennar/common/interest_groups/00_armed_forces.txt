@@ -1,0 +1,954 @@
+﻿ig_armed_forces = {
+	color = hsv{ 0.09 0.29 0.39 }
+	texture = "gfx/interface/icons/ig_icons/armed_forces.dds"
+	layer = "revolution_dynamic_armed_forces"
+	index = 0
+
+	ideologies = {
+		ideology_jingoist
+		ideology_loyalist
+		ideology_patriotic
+	}
+	
+	character_ideologies = {
+		ideology_moderate
+		ideology_authoritarian
+	}
+
+	enable = {
+		always = yes
+	}
+
+	# Deprecated; use on_enable effect to assign traits instead
+	traits = {
+		ig_trait_patriotic_fervor
+		ig_trait_veteran_consultation
+		ig_trait_materiel_waste
+	}
+
+	on_enable = {
+		ig:ig_armed_forces ?= {
+			# Anbennar
+			if = {
+				limit = {
+					owner = {
+						c:A01 ?= this
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_elan_vital
+			}
+			# Gnomes
+			else_if = {
+				limit = {
+					owner = {
+						OR = {
+							country_has_primary_culture = cu:cliff_gnome
+							country_has_primary_culture = cu:creek_gnome
+							country_has_primary_culture = cu:glacier_gnome
+						}
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_self_strengthening
+			}
+			# Ghankedhen
+			else_if = {
+				limit = {
+					owner = {
+						c:R02 ?= this
+					}
+				}
+				set_interest_group_name = ig_paravimata_rangers
+				remove_ideology = ideology_jingoist
+				add_ideology = ideology_elite_core
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_self_supplied_arms
+				set_ig_trait = ig_trait:ig_trait_self_strengthening
+			}
+			# Konolkhatep
+			else_if = {
+				limit = {
+					owner = {
+						c:L01 ?= this
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_rebel_ahati
+				set_ig_trait = ig_trait:ig_trait_ahati_support
+				set_ig_trait = ig_trait:ig_trait_ahati_glory
+				set_interest_group_name = ig_ahati_legions
+				remove_ideology = ideology_loyalist
+				remove_ideology = ideology_patriotic
+				add_ideology = ideology_ahati
+				add_ideology = ideology_ahati_military
+			}
+			# Generic Goblin. Add unique gobbo AF above so else_if targets it first
+			else_if = {
+				limit = {
+					owner = {
+						any_primary_culture = {	#goblins only, no hobgobs allowed!
+							has_discrimination_trait_group = heritage_group_goblinoid
+						}
+						NOT = { c:A80 ?= this } #Soyzkaru Cartel, they get their own unique traits and ideologies
+					}
+				}
+				set_ig_trait = ig_trait:ig_trait_parochial_leadership
+				set_ig_trait = ig_trait:ig_trait_self_supplied_arms
+				set_ig_trait = ig_trait:ig_trait_goblin_wave
+			}
+
+			else_if = {
+				limit = {
+					owner = {
+						OR = {
+							country_has_primary_culture = cu:dustman
+							country_has_primary_culture = cu:steadsman
+							country_has_primary_culture = cu:horizon_elf
+							country_has_primary_culture = cu:ynngarder_half_orc
+						}
+					}
+				}
+				add_ideology = ideology_rangerism
+
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+
+			else_if = {
+				limit = {
+					owner = { c:A33 ?= this }
+				}
+				set_interest_group_name = ig_order_of_st_aldresia
+				add_ideology = ideology_aldresian
+
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+			# Liong Legion of Busilar
+			else_if = {
+				limit = {
+					owner = { c:A09 ?= this }
+				}
+				set_interest_group_name = ig_lion_legion
+				remove_ideology = ideology_loyalist
+				add_ideology = ideology_ravelian_brotherhood
+				
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+			# Lake Fed
+			else_if = {
+				limit = {
+					owner = { c:E01 ?= this }
+				}
+				set_interest_group_name = ig_lake_soldiers
+				remove_ideology = ideology_loyalist
+				add_ideology = ideology_triunic_soldiers
+
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+			# Jadd Empire
+			else_if = {
+				limit = {
+					owner = {
+						OR = {
+							c:F01 ?= this
+							c:R01 ?= this
+						}
+					}
+				}
+				set_interest_group_name = ig_phoenix_legions
+
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+			#Ameion Strateor
+			else_if = {
+				limit = {
+					owner = {
+						OR = { # for amieon
+							c:C39 ?= this # ameion
+							AND = {
+								was_formed_from = C39
+								c:C92 ?= this # ambhen empire
+							}
+						}
+					}
+				}
+					set_interest_group_name = ig_ameion_strateor
+
+					set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+			
+			#Klereyen Fotistrepei
+			else_if = {
+				limit = {
+					owner = {
+						OR = {
+							c:C46 ?= this # klereyen successor states
+							c:C47 ?= this
+							c:C50 ?= this
+							c:C53 ?= this
+							c:C55 ?= this
+							c:C56 ?= this
+							c:C57 ?= this
+							c:C59 ?= this
+							c:C60 ?= this
+							c:C61 ?= this
+							AND = { # for non ameion formed ambhen empire
+								NOT = {
+									was_formed_from = C39
+								}
+								c:C92 ?= this # ambhen empire
+							}
+						}
+					}
+				}
+				set_interest_group_name = ig_klereyen_fotistrepei
+
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+			
+			#Kheios Altreiones, Oktikehion and Arpedifer
+			else_if = {
+				limit = {
+					owner = { c:C30 ?= this }
+				}
+				set_interest_group_name = ig_kheios_altreiones
+
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+			#Nanru Nakar Kilaiek-Mudaliars
+			else_if = {
+				limit = {
+					owner = { c:C45 ?= this }
+				}
+				set_interest_group_name = ig_nanru_nakar_kilaiek
+
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+			#Azjakuma
+			else_if = {
+				limit = {
+					owner = { c:Y09 ?= this }
+				}
+
+				set_ig_trait = ig_trait:ig_trait_materiel_waste_ogre
+				set_ig_trait = ig_trait:ig_trait_hill_demons
+				set_ig_trait = ig_trait:ig_trait_ascetic_discipline
+			}
+			# Soyzkaru Cartel
+			else_if = {
+				limit = {
+					owner = { c:A80 ?= this }
+				}
+				set_interest_group_name = ig_soyzkaru_cartel_maketa_gangs
+
+				remove_ideology = ideology_jingoist
+				remove_ideology = ideology_loyalist	
+				remove_ideology = ideology_patriotic
+
+				add_ideology = ideology_soyzkaru_cartel_contract_defenders
+				add_ideology = ideology_soyzkaru_cartel_trickle_down_faithfuls
+				add_ideology = ideology_soyzkaru_cartel_bouncers
+
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+			#Drozma Tur Host
+			else_if = {
+				limit = {
+					owner = {
+						country_has_state_religion = rel:drozma_tur
+					}
+				}
+				set_interest_group_name = ig_drozma_host
+				add_ideology = ideology_pious
+
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+			# Orcish IGs
+			## Cannorian Orcish AF
+			else_if = {
+				limit = {
+					owner = {
+						OR = {
+							country_has_primary_culture = cu:grombari_orc
+							country_has_primary_culture = cu:grombari_half_orc
+							country_has_primary_culture = cu:ungulan_orc
+							country_has_primary_culture = cu:barumandi_orc
+							country_has_primary_culture = cu:karakhanbari_orc
+							country_has_primary_culture = cu:drakonshani_orc
+						}
+					}
+				}
+				add_ideology = ideology_kratocratic
+
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+			else_if = {
+				limit = {
+					owner = { c:C14 ?= this }
+				}
+				remove_ideology = ideology_jingoist
+				add_ideology = ideology_hive_mind_liberal
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+			else = {
+				set_ig_trait = ig_trait:ig_trait_materiel_waste
+				set_ig_trait = ig_trait:ig_trait_veteran_consultation
+				set_ig_trait = ig_trait:ig_trait_patriotic_fervor
+			}
+			
+			if = {
+				limit = {
+					owner = { c:C14 ?= this }
+				}
+				add_ideology = ideology_hive_mind_obligate
+			}
+		}
+	}
+	on_disable = {}
+	priority_cultures = {}
+ 
+	#priority_cultures = { #Country scope  #anbennar commented out
+	#	rule = {
+	#		trigger = {
+	#			c:BIC ?= this
+	#			any_primary_culture = { 
+	#				cu:british = this
+	#			}
+	#		}
+	#		cultures = {
+	#			british scottish irish
+	#		}
+	#	}
+	#}
+
+	on_character_ig_membership = {}
+	
+	pop_potential = {
+		OR = {
+			is_pop_type = soldiers
+			is_pop_type = officers
+			is_pop_type = aristocrats
+			is_pop_type = adventurers #anbennar
+			is_pop_type = archmages #anbennar
+			is_pop_type = mages #anbennar
+			pop_acceptance >= acceptance_status_4
+		}
+	}
+
+	pop_weight = {
+		value = 0
+
+		#Anbennar
+
+		add = {
+			desc = "POP_ADVENTURERS"	#represents the mercenary sellsword side of adventurers
+			if = {
+				limit = { 
+					is_pop_type = adventurers
+				}
+				value = 25
+			}
+		}
+		
+		add = {
+			desc = "POP_NOT_DISCRIMINATED"
+			if = {
+				limit = {
+					pop_acceptance >= acceptance_status_4
+				}
+				value = 25
+				if = { # Militarisation of colonial settlers
+					limit = {
+						owner = {
+							OR = {
+								has_law_or_variant = law_type:law_colonial_resettlement
+								has_law_or_variant = law_type:law_frontier_colonization
+							}
+						}
+						state = {
+							is_incorporated = no
+						}
+					}
+					add = 50
+				}
+				if = { # Separation of the military and people
+					limit = {
+						NOR = {
+							is_pop_type = soldiers
+							is_pop_type = officers
+						}
+						owner = {
+							has_law_or_variant = law_type:law_professional_army
+							#Anbennar - Hobgoblins don't separate army and civilians
+							NOT = {
+								any_primary_culture = {
+									has_discrimination_trait_group = heritage_group_hobgoblin
+								}
+							}
+						}
+					}
+					divide = 2
+				}
+			}
+		}
+
+		add = {
+			desc = "POP_SOLDIERS"
+			if = {
+				limit = {
+					is_pop_type = soldiers
+				}
+				value = 100
+				if = { # Institutional loyalty
+					limit = {
+						owner = {
+							has_law_or_variant = law_type:law_professional_army
+						}
+					}
+					add = 50
+				}
+				if = { # Pay makes soldiers more inclined to be loyal to Armed Forces
+					limit = {
+						owner = {
+							military_wage_level = very_low
+						}
+					}
+					multiply = 0.75
+				}
+				if = {
+					limit = {
+						owner = {
+							military_wage_level = low
+						}
+					}
+					multiply = 0.85
+				}
+				if = {
+					limit = {
+						owner = {
+							military_wage_level = medium
+						}
+					}
+					multiply = 1
+				}
+				if = {
+					limit = {
+						owner = {
+							military_wage_level = high
+						}
+					}
+					multiply = 1.15
+				}
+				if = {
+					limit = {
+						owner = {
+							military_wage_level = very_high
+						}
+					}
+					multiply = 1.25
+				}
+			}
+		}
+
+		add = {
+			desc = "POP_ARISTOCRATS"
+			if = {
+				limit = {
+					is_pop_type = aristocrats
+				}
+				value = 5
+				if = {
+					limit = {
+						owner = {
+							has_law_or_variant = law_type:law_peasant_levies
+						}
+					}
+					add = 50
+				}
+				if = {
+					limit = {
+						owner = {
+							has_law = law_type:law_stratocracy
+						}
+					}
+					add = 50
+				}
+			}
+		}
+
+		add = { #Anbennar
+			desc = "POP_MAGES"
+			if = {
+				limit = {
+					OR = {
+						is_pop_type = archmages
+						is_pop_type = mages
+					}
+				}
+				value = 10
+				if = {
+					limit = {
+						owner = {
+							has_law_or_variant = law_type:law_peasant_levies
+						}
+					}
+					add = 25
+				}
+				if = {
+					limit = {
+						owner = {
+							has_technology_researched = chi_cultivation_magical_tradition
+						}
+					}
+					add = 30
+				}
+				add = 100
+			}
+		}
+
+		add = {
+			desc = "POP_OFFICERS"
+			if = {
+				limit = {
+					is_pop_type = officers
+				}
+				value = 250
+			}
+		}
+
+		add = { # There's one firearm for every twelve people on the planet. The question is, how do we arm the other eleven?
+			desc = "MILITARY_INDUSTRIES"
+			if = {
+				limit = {
+					pop_employment_building_group = bg_military_industry
+				}
+				if = {
+					limit = {
+						strata = middle
+					}
+					value = 75
+				}
+				if = {
+					limit = {
+						strata = upper
+					}
+					value = 150
+				}
+			}
+		}
+
+		# add = {
+		# 	desc = "POP_MILITARY_BUREAUCRACY"
+		# 	if = {
+		# 		limit = {
+		# 			is_pop_type = bureaucrats
+		# 			owner = {
+		# 				c:ALK ?= this
+		# 				has_government_type = gov_chartered_company
+		# 			}
+		# 		}
+		# 		value = 100
+		# 	}
+		# }
+
+		multiply = {
+			desc = "LEADER_POPULARITY"
+			scope:interest_group ?= {
+				leader ?= {
+					value = popularity
+					multiply = 0.0025
+					add = 1
+					max = 1.25
+					min = 0.75
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group ?= {
+					is_in_government = yes
+				}
+			}
+			multiply = {
+				desc = "IN_GOVERNMENT_ATTRACTION"
+				value = 1
+				add = scope:interest_group.modifier:interest_group_in_government_attraction_mult
+				min = 0
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group ?= {
+					is_in_government = yes
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_LOYALISTS"
+				value = pop_loyalist_fraction
+				divide = 4
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group ?= {
+					is_in_government = no
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_RADICALS"
+				value = pop_radical_fraction
+				divide = 4
+				add = 1
+			}
+		}
+	}
+
+	monarch_weight = {
+		value = 1
+		# Monarch is not likely to adopt a marginal IG
+		if = {
+			limit = {
+				ig_counts_as_marginal = yes
+			}
+			multiply = {
+				value = 0.1
+			}
+		}
+		# Monarch is more likely to adopt a Powerful IG
+		if = {
+			limit = {
+				is_powerful = yes
+			}
+			multiply = {
+				value = 2
+			}
+		}
+		# Monarch more likely to be Armed Forces under an autocratic or oligarchic regime
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law_or_variant = law_type:law_oligarchy
+						has_law_or_variant = law_type:law_autocracy
+						has_law_or_variant = law_type:law_single_party_state
+					}
+				}
+			}
+			multiply = {
+				value = 2
+			}
+		}
+		# Monarch is less likely to be Armed forces in a democratic monarchy
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law_or_variant = law_type:law_universal_suffrage
+						has_law_or_variant = law_type:law_census_voting
+					}
+				}
+			}
+			multiply = {
+				value = 0.5
+			}
+		}
+		# Less likely without Professional Army or Mass Conscription
+		if = {
+			limit = {
+				owner = {
+					NOR = {
+						has_law_or_variant = law_type:law_professional_army
+						has_law_or_variant = law_type:law_mass_conscription
+					}
+				}
+			}
+			multiply = {
+				value = 0.5
+			}
+		}
+	}
+
+	agitator_weight = {
+		# Agitators more likely to come from populist IG's rather than elitist
+		value = 0.5
+		# Agitators will never be part of a marginalized IG
+		if = {
+			limit = {
+				owner.ig:ig_armed_forces ?= {
+					ig_counts_as_marginal = yes
+				}
+			}
+			multiply = {
+				value = 0
+			}
+		}
+	}
+
+	commander_weight = {
+		value = 5.0
+	}
+	
+	magnate_weight = {
+		value = 1.0
+	}	
+
+	executive_weight = {
+		value = 0.2
+	}
+
+	noble_chance = {
+		value = 0.5
+	}
+
+	female_commander_chance = {
+		value = 0.0
+		#Anbennar
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+	}
+	
+	female_executive_chance = {
+		value = 0.0
+		#Anbennar
+		if = {
+			limit = {
+				owner = { #variable from country history gets set after IGs being loaded, this need to be done for it to work
+					OR = {
+						c:F13 ?= this
+						c:L33 ?= this
+						c:L31 ?= this
+						c:L54 ?= this
+						c:L55 ?= this
+						c:L29 ?= this
+						c:A11 ?= this
+						c:L22 ?= this
+					}
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+
+			}
+			add = {
+				value = 0.50
+			}
+		}
+	}
+
+	female_politician_chance = {
+		value = 0.0
+		#Anbennar
+		if = {
+			limit = {
+				owner = { #variable from country history gets set after IGs being loaded, this need to be done for it to work
+					OR = {
+						c:F13 ?= this
+						c:L33 ?= this
+						c:L31 ?= this
+						c:L54 ?= this
+						c:L55 ?= this
+						c:L29 ?= this
+						c:A11 ?= this
+						c:L22 ?= this
+					}
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+
+			}
+			add = {
+				value = 0.50
+			}
+		}
+	}
+
+	female_agitator_chance = {
+		value = 0.01
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.49
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_own_property
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.01
+			}
+		}	
+		
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_in_the_workplace
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.01
+			}
+		}
+	}
+
+	# Multiplier applied to the weight for an appropriate commander will be selected from the character pool to lead the IG
+	# root = interest group
+	commander_leader_weight = {
+		value = 3.0
+	}
+	
+	# Multiplier applied to the weight for an appropriate magnate will be selected from the character pool to lead the IG
+	# root = interest group
+	magnate_leader_weight = {
+		value = 1.0
+		# if = {
+		# 	limit = {
+		# 		c:JAP ?= owner
+		# 		NOT = {
+		# 			has_variable = japan_restoration_complete
+		# 		}
+
+		# 	}
+		# 	add = 5
+		# }
+	}
+
+	# Multiplier applied to the weight for an appropriate executive will be selected from the character pool to lead the IG
+	# root = interest group
+	executive_leader_weight = {
+		value = 0.1
+	}
+}

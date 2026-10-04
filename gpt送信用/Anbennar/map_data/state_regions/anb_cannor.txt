@@ -1,0 +1,3654 @@
+﻿# ARABLE LAND ONLY in this region has been doubled, other resources still need buffing to match what PDX did
+#STATE_TESTORIA = {
+#do not remove ###try and stop me
+#   id = 999
+#  subsistence_building = "building_subsistence_farm"
+# provinces = {}
+#traits = {}
+#city = "x0894c0" #Daromsfort
+#farm = "x0b3cc0" #Greatfield
+#mine = "x0c5400" #Casna Ola
+#wood = "x0f7440" #Mistspear - that weird house on the hill, Medron House from CK3
+#arable_land = 69
+#arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+#capped_resources = {
+#    building_fishing_wharf = 12
+#   building_logging_camp = 6
+#}
+#}
+STATE_DAMESEAR = {
+    id = 1
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x002480" "x0028FF" "x002C40" "x0130C0" "x014759" "x169BDC" "x1870C0" "x36D216" "x4A38FF" "x4F5ADB" "x5AFED6" "x8026C0" "x802A00" "x8132FF" "x813640" "x8A6C5E" "xB79F41" "xBE2330" "xC3F8D7" "xD662A8" "xD6FA07" "xFC700A" }
+    traits = { state_trait_good_soils state_trait_lingering_verdancy state_trait_damesear_dockyards }
+    #Anbenncost
+    city = "x0130c0"
+    #New Damenath
+    port = "xc3f8d7"
+    #Auraire
+    farm = "x1870c0"
+    #Earshore
+    mine = "x4f5adb"
+    #Marionaire
+    wood = "x5afed6"
+    arable_land = 228
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 36
+        building_coal_mine = 92
+        #from eu4
+        building_logging_camp = 9
+        building_fishing_wharf = 17
+        building_lead_mine = 48
+        building_damestear_mine = 20
+        building_gem_mine = 2
+        #moonmount gets gems discovered
+        building_monster_ranch = 2
+
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 2
+    }
+    resource = {
+        type = "building_relics_digsite"
+        undiscovered_amount = 5
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 27
+    }
+    naval_exit_id = 3011
+}
+STATE_ISTRALORIAN_DALES = {
+    id = 2
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x274840" "x2F3400" "x845AFF" "x856A80" "x89224F" "xA74A80" }
+    traits = { state_trait_luna_river }
+    #Istralore
+    city = "xa74a80"
+    #Ricanras
+    port = "x89224f"
+    #Acromton
+    farm = "x2f3400"
+    #Damesdale
+    mine = "x856a80"
+    #Dhanvar
+    wood = "x845aff"
+    arable_land = 84
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_coal_mine = 60
+        building_iron_mine = 66
+        building_logging_camp = 7
+        building_fishing_wharf = 4
+    }
+    naval_exit_id = 3011
+}
+STATE_MOONHAVEN = {
+    id = 3
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x078880" "x078CFF" "x089040" "x5BAD22" "x878AC0" "x878E00" "xD19787" }
+    traits = { state_trait_luna_river }
+    #Moonhaven
+    city = "x878ac0"
+    #Port Munas
+    port = "x078880"
+    #Aistlun
+    farm = "x878e00"
+    #Dancer's Retreat
+    mine = "x078cff"
+    #Arca Airge
+    wood = "xd19787"
+    arable_land = 90
+    arable_resources = { building_wheat_farm building_livestock_ranch building_tea_plantation building_silk_plantation building_vineyard }
+    capped_resources = {
+        building_logging_camp = 20
+        building_fishing_wharf = 10
+        building_relics_digsite = 5
+    }
+    naval_exit_id = 3011
+}
+STATE_DAMERIAN_HEARTLANDS = {
+    id = 4
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0A3820" "x274CC0" "x285480" "x2A7040" "x2E30C0" "x3834FF" "xA85240" }
+    traits = { state_trait_good_soils state_trait_luna_river state_trait_lingering_verdancy }
+    #Plumwall
+    city = "xa85240"
+    #Tirufeld
+    farm = "x2a7040"
+    #Silvelar
+    mine = "x2e30c0"
+    #Palemarket
+    wood = "x274cc0"
+    arable_land = 200
+    #rural heartland of dameria and anbennar
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_iron_mine = 5
+        building_coal_mine = 10
+        building_logging_camp = 5
+        building_gold_mine = 2
+    }
+}
+STATE_PASHAINE = {
+    #REDO
+    id = 5
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x092020" "x0A3020" "x2858FF" "x2A74C0" "x7DF8F1" "x8F7AFF" "xA95E80" "xAA6E00" "xAA76FF" "xAE2E80" "xAF32FF" "xD33680" }
+    traits = { state_trait_luna_river state_trait_lingering_verdancy }
+    #Thanallen
+    city = "x2858ff"
+    #Bellacaire
+    farm = "xd33680"
+    #Galeinn
+    mine = "xaa6e00"
+    #Aranthil
+    wood = "xaa76ff"
+    arable_land = 180
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_coal_mine = 60
+        building_logging_camp = 7
+    }
+}
+STATE_MENIBOR = {
+    id = 6
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x078400" "x285C40" "x4F0008" "x835200" "x867A00" "x878640" "xA856C0" "xA85A00" "xAF3640" "xCC4416" "xD192FF" }
+    traits = { state_trait_luna_river state_trait_lingering_verdancy state_trait_vernmen_krakeneer_base }
+    #Menibor
+    city = "xd192ff"
+    #Napesbay
+    port = "x078400"
+    #Heroes Rest
+    farm = "x285c40"
+    #Idhaine   
+    mine = "xa85a00"
+    #Plainsby
+    wood = "x835200"
+    arable_land = 120
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_tobacco_plantation building_vineyard }
+    capped_resources = {
+        building_fishing_wharf = 12
+        building_logging_camp = 4
+        building_whaling_station = 3
+    }
+    naval_exit_id = 3011
+}
+STATE_VERNE = {
+    id = 7
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x002820" "x143579" "x1FDCFA" "x2960C0" "x296400" "x296880" "x359040" "x65E25D" "x799E1B" "x918387" "xA962FF" "xA96640" "xA96AC0" "xB58E00" }
+    traits = { state_trait_lingering_verdancy }
+    #Verne
+    city = "x296880"
+    #Heartspier
+    port = "x2960c0"
+    #Huntersfield
+    farm = "xa96ac0"
+    #Arca Lar
+    mine = "xa96640"
+    #Clawmarches
+    wood = "xa962ff"
+    arable_land = 150
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_tobacco_plantation building_vineyard }
+    capped_resources = {
+        building_lead_mine = 30
+        building_logging_camp = 8
+        building_fishing_wharf = 9
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 11
+    }
+    naval_exit_id = 3001
+}
+STATE_KONWELL = {
+    id = 8
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x8A2EAD" "xA63AFF" "xA74600" "xC82160" "xD29E00" }
+    traits = { state_trait_lingering_verdancy }
+    #Konwell
+    city = "xa74600"
+    #Coraston
+    port = "xc82160"
+    #Sweetcastle
+    farm = "xd29e00"
+    #Fencewood
+    wood = "xa63aff"
+    #Millsbay
+    mine = "x8a2ead"
+    arable_land = 98
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 17
+        #higher than usual just for the paper vibes
+        building_fishing_wharf = 6
+    }
+    naval_exit_id = 3000
+}
+STATE_ESTALLEN = {
+    id = 9
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0678FF" "x0B447E" "x2744FF" "x285000" "x4AE34D" "x522040" "xA74EFF" "xAB7A40" "xAF3AC0" }
+    traits = { state_trait_esmar_river state_trait_terrman_flower_beatles_dwindling state_trait_lingering_verdancy } #we should add a journal entry to revive their population
+
+    #Estallen
+    city = "x285000"
+    #Seinathil
+    farm = "x0b447e"
+    #Terr
+    mine = "xab7a40"
+    #Deamoine
+    wood = "xaf3ac0"
+    arable_land = 110
+    arable_resources = { building_wheat_farm building_livestock_ranch building_silk_plantation building_dye_plantation building_vineyard }
+    # Silk from Estallen MT, Dye from Terr
+
+    capped_resources = {
+        building_logging_camp = 8
+    }
+}
+STATE_HIGH_ESMAR = {
+    id = 10
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x09247E" "x264080" "x2B7C80" "x8926AD" "xA742C0" "xAC8AFF" }
+    traits = { state_trait_esmar_river state_trait_lingering_verdancy }
+    #Varaine
+    city = "xac8aff"
+    #Leslinpar
+    farm = "x8926ad"
+    #Yellowford
+    mine = "x2b7c80"
+    #Elvellen
+    wood = "x09247e"
+    arable_land = 80
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_sulfur_mine = 8
+        building_logging_camp = 10
+    }
+}
+STATE_SILVERFORGE = {
+    #TODO
+    id = 138
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0B3C7E" "x2C88C0" }
+    traits = { state_trait_esmar_river }
+    #Silverforge Hall
+    city = "x2c88c0"
+    #Grun's Gift
+    mine = "x0b3c7e"
+    #Dorum-Odir
+    farm = "x2c88c0"
+    #Dizalstunad
+    wood = "x0b3c7e"
+    arable_land = 75
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_coal_mine = 60
+        building_iron_mine = 60
+        building_sulfur_mine = 24
+        #from volcano vibe Havoral Divide
+        building_logging_camp = 7
+    }
+}
+STATE_ANVILWRIGHT = {
+    id = 155
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x140F16" "x161318" "x180E1D" "x200F27" "x2A1136" "x2C272F" "x302834" "x3B343F" "x3E3044" "x3F1A51" "x422E4A" "x4B3854" "x510F6B" "x513C5C" "x514656" "x543D5F" "x5C3D6A" "x5D3570" "x5F1C79" "x5F287A" "x634173" "x673A7C" "x695772" "x6B5972" "x6C467E" "x6D3885" "x6E2889" "x6F6673" "x72278F" "x744888" "x755D7F" "x773995" "x903EAF" "xA29E21" "xA664C0" "xA697AD" "xB43EE3" "xC14AF0" "xD0CA27" }
+    impassable = { "xD0CA27" "xa29e21" }
+    traits = { state_trait_dwarven_hold }
+    #Silverkeep
+    city = "x634173"
+    farm = "x3F1A51"
+    #Hinterwood
+    wood = "xae125f"
+    mine = "x3E3044"
+    arable_land = 80
+    #lvl 1 hold
+    arable_resources = { building_mushroom_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 60
+        building_coal_mine = 80
+        building_gem_mine = 30
+    }
+}
+STATE_BENNON = {
+    id = 11
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x2638C0" "x263C00" "x8A36AD" "xA52EC0" "xA63E40" }
+    traits = { state_trait_esmar_river }
+    #Giberd
+    city = "xA63E40"
+    #Bennon
+    farm = "xa63e40"
+    #Oldpassage
+    mine = "xa52ec0"
+    #Havorton
+    wood = "x8a36ad"
+    arable_land = 62
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_sulfur_mine = 20
+        #from volcano vibe Havoral Divide
+        building_iron_mine = 54
+        #Oldpassage mines etc
+        building_coal_mine = 60
+        building_logging_camp = 4
+    }
+}
+STATE_CANN_ESMAR = {
+    id = 12
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x252800" "x2530FF" "x263440" "x8B46AD" "xA53200" "xA63680" }
+    traits = { state_trait_esmar_river state_trait_lingering_verdancy }
+    #Esmaraine
+    city = "x263440"
+    #Ryalanar
+    port = "xa53200"
+    #Themarenn
+    farm = "xa63680"
+    #Gabmorionn
+    mine = "x252800"
+    #Loveswood
+    wood = "x8b46ad"
+    arable_land = 160
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 7
+        building_fishing_wharf = 3
+        building_monster_ranch = 2
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 2
+    }
+    naval_exit_id = 3000
+}
+STATE_TELGEIR_CALASCANDAR = {
+    id = 142
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x249CFF" "x252C80" "x6278B4" "x8B3A4F" "xA526FF" }
+    traits = { state_trait_esmar_river }
+    #Calascandar
+    city = "x249cff"
+    #Coastroad
+    port = "xa526ff"
+    #Aranmas
+    farm = "x252c80"
+    #Telgeir
+    mine = "x8b3a4f"
+    #Arkfloat
+    wood = "x6278b4"
+    arable_land = 58
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 60
+        building_coal_mine = 100
+        building_logging_camp = 4
+        building_fishing_wharf = 2
+        building_sulfur_mine = 30 
+        #from volcano vibe Havoral Divide
+    }
+    naval_exit_id = 3000
+}
+STATE_DAMESCROWN = {
+    id = 13
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0A347E" "x0B4020" "x2174FF" "x8B424F" "xA392FF" "xA49E00" "xA6CB5D" "xAF3E00" }
+    traits = { state_trait_esmar_river state_trait_natural_harbors }
+    #Damescrown
+    city = "x2174ff"
+    #St. Aras
+    port = "xa392ff"
+    #Marcestir
+    farm = "x0b4020"
+    #Elfsmithy
+    mine = "xaf3e00"
+    #Crothan
+    wood = "x8b424f"
+    arable_land = 152
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_fishing_wharf = 14
+        building_gold_mine = 4
+        # Meant to have a lot of gold
+        building_logging_camp = 7
+    }
+    naval_exit_id = 3000
+}
+STATE_ARBARAN = {
+    id = 14
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x03DCFA" "x06C8FA" "x217840" "x227CC0" "x2288FF" "x239400" "x249880" "x2F3CFF" "x9934A5" "xA49AC0" "xB15AFF" }
+    traits = { state_trait_lingering_verdancy }
+    #Arbaran
+    city = "xb15aff"
+    #Derwing
+    farm = "xa49ac0"
+    #Arca Pirvar
+    mine = "x249880"
+    #Arca Dhaneann
+    wood = "x2288ff"
+    arable_land = 164
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 17
+    }
+}
+STATE_FREECESTIR = {
+    id = 15
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x11C8C8" "x238C40" "x2390C0" "x242040" "x2424C0" "x304C80" "x935A57" "x972EA4" "xA38A00" "xA38E80" "xA49AF4" "xB36A80" "xF8886A" }
+    traits = { state_trait_lingering_verdancy }
+    #Freecestir
+    city = "xa38a00"
+    #Teagansfield
+    farm = "x2424c0"
+    #Freetower
+    mine = "x2390c0"
+    #Fort Vigil
+    wood = "x238c40"
+    arable_land = 144
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 17
+    }
+}
+STATE_BISAN = {
+    id = 16
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x2A6CFF" "x2A7800" "x2F3880" "x8C524F" "xD226FF" }
+    traits = {}
+    #Magdalaire
+    city = "x2a6cff"
+    #Bisan
+    farm = "x2a7800"
+    #Aelthil
+    mine = "x8c524f"
+    #Corseton
+    wood = "x2f3880"
+    arable_land = 90
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 7
+        building_coal_mine = 60
+    }
+}
+STATE_WEX = {
+    id = 17
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x2B80FF" "x2B8440" "x851B11" "x892A4F" "xAB7EC0" "xAB8200" "xAB8680" "xD8BD00" }
+    traits = { state_trait_luna_river }
+    #Indlebury
+    city = "x892a4f"
+    #Ottocam
+    farm = "xab8680"
+    #Wexkeep
+    mine = "x2b8440"
+    #Threeguard
+    wood = "xab8200"
+    arable_land = 90
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 75 
+        #apparently Wexhills is one of the largest iron sources in the world from their ideas. Vanilla has 64 as highest
+        building_coal_mine = 100
+        building_logging_camp = 16
+    }
+}
+STATE_WESDAM = {
+    id = 18
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x013400" "x024040" "x0458C0" "x813AC0" "x823E00" "x824280" "x834A40" }
+    traits = {}
+    #Gabelaire
+    city = "x823e00"
+    #Windtower
+    port = "x024040"
+    #Wesdam
+    farm = "x013400"
+    #Modgate
+    mine = "x0458c0"
+    #Lenceiande
+    wood = "x824280"
+    arable_land = 140
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_coal_mine = 40
+        building_iron_mine = 30
+        building_logging_camp = 5
+        building_fishing_wharf = 3
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 29
+    }
+    naval_exit_id = 3011
+}
+STATE_NECKCLIFFE = {
+    id = 19
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0350FF" "x035440" "x1AC8FA" "x834EC0" "x835680" }
+    traits = {}
+    #Neckcliffe
+    city = "x1ac8fa"
+    #Throatport
+    port = "x035440"
+    #Riverstead
+    farm = "x835680"
+    #Stoneview
+    mine = "x0350ff"
+    #Triancost
+    wood = "x834ec0"
+    arable_land = 124
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_vineyard }
+    capped_resources = {
+        building_logging_camp = 6
+        building_fishing_wharf = 6
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 21
+    }
+    naval_exit_id = 3011
+}
+STATE_PEARLSEDGE = {
+    id = 20
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x023CFF" "x067480" "x067C40" "x0680C0" "x857240" "x8676C0" "x867E80" "x8782FF" "x889280" }
+    traits = { state_trait_magical_land_lesser state_trait_natural_harbors }
+    #Old Pearlywine - Dhantras
+    city = "x8782ff"
+    #Jewelpoint
+    port = "x067c40"
+    #New Pearlywine 
+    farm = "x857240"
+    #Tretun
+    mine = "x0680c0"
+    #Timberfort
+    wood = "x889280"
+    arable_land = 156
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_vineyard }
+    capped_resources = {
+        building_lead_mine = 18
+        building_coal_mine = 44
+        building_logging_camp = 12
+        building_fishing_wharf = 8
+        building_gem_mine = 1
+        #the pearls
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 24
+    }
+    naval_exit_id = 3004
+}
+STATE_CARNETER = {
+    id = 21
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x024800" "x034C80" "x045C00" "x8246FF" "x845E40" }
+    traits = { state_trait_magically_drained_lands state_trait_magical_land }
+    #Ordoin
+    city = "x024800"
+    #Ilvandet
+    farm = "x845e40"
+    #Woodwell
+    mine = "x034c80"
+    #Ancard's Crossing
+    wood = "x045c00"
+    arable_land = 98
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_sulfur_mine = 40
+        #same deposits as Roilsard. Makes this place COMPETITIVE!
+        building_coal_mine = 24
+        building_logging_camp = 20
+        building_lead_mine = 9
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 14
+    }
+}
+STATE_EXWES = {
+    id = 22
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0244C0" "x1654FF" "x165840" "x5AC0B5" "x9552C0" "x965A80" }
+    traits = { state_trait_black_soil }
+    #Orston
+    city = "x965a80"
+    #Exwes-by-the-Sea
+    port = "x1654ff"
+    #Exwes
+    farm = "x9552c0"
+    #Troutcoast
+    mine = "x0244c0"
+    #Hookfield
+    wood = "x165840"
+    arable_land = 126
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_fishing_wharf = 8
+        building_logging_camp = 6
+    }
+    naval_exit_id = 3000
+}
+STATE_SUGAMBER = {
+    id = 23
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x8C4A4F" "xAD9A80" "xBA52FF" "xBB5E00" }
+    traits = {}
+    #Rhinmond
+    city = "x8c4a4f"
+    #Lockcastle
+    farm = "xbb5e00"
+    #Escandar
+    mine = "xad9a80"
+    #Birchwhite
+    wood = "xba52ff"
+    arable_land = 50
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 30
+        building_logging_camp = 11
+    }
+}
+STATE_BARDSWOOD = {
+    id = 24
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0C4820" "x2D9CC0" "x8A324F" "xAD9EFF" "xBB6280" }
+    traits = {}
+    #Tellum
+    city = "xbb6280"
+    #Butchersfield
+    farm = "xad9eff"
+    #Vinerick
+    mine = "x8a324f"
+    #Deedaunt
+    wood = "x0c4820"
+    arable_land = 60
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 17
+        building_damestear_mine = 14
+    }
+}
+STATE_CELLIANDE = {
+    id = 25
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x017E90" "x3A5400" "x3A5880" "x3B5CFF" "xBA5640" "xBB5AC0" }
+    traits = {}
+    #Doveswall
+    city = "x3a5880"
+    #Sorncell
+    port = "xbb5ac0"
+    #Hawkshot
+    farm = "x3a5400"
+    #Irmathmas
+    mine = "xba5640"
+    #Old Vache
+    wood = "x3b5cff"
+    arable_land = 75
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_vineyard }
+    capped_resources = {
+        building_coal_mine = 16
+        building_iron_mine = 24
+        building_logging_camp = 5
+        building_fishing_wharf = 14
+    }
+    naval_exit_id = 3002
+}
+STATE_TOARNEN = {
+    id = 26
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0C5020" "x36C8FA" "x3B6040" "x3C8C00" "x8C4EAD" }
+    traits = {}
+    #Aiscestir
+    city = "x0c5020"
+    #Bordercliff
+    port = "x8c4ead"
+    #Rooksmount
+    farm = "x36c8fa"
+    #Aenawick
+    mine = "x3c8c00"
+    #Antirhalan
+    wood = "x3b6040"
+    arable_land = 70
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_vineyard }
+    capped_resources = {
+        building_sulfur_mine = 36
+        #inflammatory gamers
+        building_coal_mine = 60
+        building_logging_camp = 17
+        #cos of tar pine trees, make em more prominent a bit
+        building_fishing_wharf = 12
+    }
+    naval_exit_id = 3002
+}
+STATE_ASHENIANDE = {
+    id = 27
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x092820" "x266F26" "x2C8C00" "x2D2000" "xAC8E40" "xBC6EC0" }
+    traits = { state_trait_ashwheat_fields state_trait_lingering_verdancy }
+    #Cestirbridge
+    city = "x2c8c00"
+    #Ashfield
+    farm = "xac8e40"
+    #Livergrave
+    mine = "x2d2000"
+    #Embergarden
+    wood = "x092820"
+    arable_land = 160
+    #its a proper farming place
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_sulfur_mine = 32
+        #from volcano vibe Havoral Divide
+        building_coal_mine = 48
+        building_logging_camp = 6
+    }
+}
+STATE_ARANNEN = {
+    id = 28
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0A2C7E" "x2E2480" "x2E28FF" "x3B64C0" "x4800F0" "xAE26C0" "xAE2A00" "xBB66FF" }
+    traits = {}
+    #Arannen
+    city = "x0a2c7e"
+    #Marllin
+    farm = "x3b64c0"
+    #Cronesford
+    mine = "xae2a00"
+    #Brinkwick
+    wood = "x2e2480"
+    arable_land = 115
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_coal_mine = 44
+        building_logging_camp = 12
+    }
+}
+STATE_GISDEN = {
+    id = 29
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0c4c7e" "x2c9080" "x2e2c40" "xad2240" }
+    traits = {}
+    #Gisden
+    city = "x2e2c40"
+    #Upsfield
+    farm = "xad2240"
+    #Autumnfield
+    mine = "x0c4c7e"
+    #Quintenbury
+    wood = "x2c9080"
+    arable_land = 50
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_logging_camp = 6
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 10
+    }
+}
+STATE_CORVURIAN_PLAINS = {
+    id = 30
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x3C70FF" "x3C7440" "x3D78C0" "x3D7C00" "xBC7200" "xBD7680" }
+    traits = { state_trait_dostanesck_river }
+    #El?anore
+    city = "x3c7440"
+    #Rackman's Court
+    farm = "x3d78c0"
+    #Shroudfort
+    mine = "x3c70ff"
+    #Cannvalley
+    wood = "x3d7c00"
+    arable_land = 150
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_coal_mine = 84
+        building_iron_mine = 15
+        building_logging_camp = 7
+    }
+}
+STATE_THE_LAND = {
+    #I AM THE LAND -Strahd von Zarovich
+    id = 31
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x3D8080" "x3E84FF" "x3E8CC0" "x3E9000" "x63EE8B" "xA2A80D" "xBD82C0" "xBE8EFF" "xBF9240" "xE98F5C" }
+    impassable = { "x63EE8B" "xE98F5C" }
+    traits = { state_trait_dostanesck_river }
+    #Gablaine
+    city = "xbd82c0"
+    #Cannmarionn
+    farm = "x3d8080"
+    #Village of Corvuria
+    mine = "xbf9240"
+    #Arca Kaldere
+    wood = "x3e84ff"
+    arable_land = 160
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 24
+        #eu4 trade good
+        building_coal_mine = 48
+        building_logging_camp = 20
+    }
+}
+STATE_BLACKWOODS = {
+    id = 32
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x010401" "x3E8840" "x4991EB" "xBD7AFF" "xBE8600" "xBE8A80" "xE1DF19" }
+    impassable = { "xE1DF19" "x4991EB" "x010401" }
+    traits = {}
+    #Kortir
+    city = "xbe8a80"
+    #Holstead
+    farm = "xbd7aff"
+    #Karn's Hold
+    mine = "x3e8840"
+    #Blackwood
+    wood = "xbe8600"
+    arable_land = 70
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_lead_mine = 33
+        #eu4 trade good
+        building_iron_mine = 63
+        building_coal_mine = 92
+        building_logging_camp = 23
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 18
+    }
+}
+STATE_FENNFORT = {
+    id = 33
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0A8D89" "x3F98FF" "x42C8FA" "x85A43D" "xBC6A40" "xBF96C0" "xCAA6E2" "xCCFE72" "xFB0270" }
+    traits = {}
+    #Fennfort
+    city = "x85a43d"
+    #Wisphollow
+    farm = "xbc6a40"
+    #Voltur
+    mine = "xccfe72"
+    #Grufel
+    wood = "x3f98ff"
+    arable_land = 85
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_sulfur_mine = 60
+        building_logging_camp = 6
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 60
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 5
+    }
+}
+STATE_RAVENGARD = {
+    id = 34
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x05C8C8" "x3EC8FA" "x3F9480" "x40FAFA" "x4B9F7B" "x7268FF" "xA5205F" "xA8DA11" "xB735CC" "xBD7E40" "xD42234" "xD6818F" "xDBAC0C" "xFAA187" }
+    traits = { state_trait_dostanesck_river }
+    #Ravenhill
+    city = "xbd7e40"
+    #Dihensein
+    farm = "xfaa187"
+    #Xhazobain's End
+    mine = "xd42234"
+    #Glademarch
+    wood = "x7268ff"
+    arable_land = 100
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_gem_mine = 5
+        building_coal_mine = 84
+        building_sulfur_mine = 44
+        building_logging_camp = 10
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 30
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 7
+    }
+}
+STATE_DREADMIRE = {
+    id = 35
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x3196F8" "x35C8C8" "x3F9C40" "x402400" "x521127" "x601E0C" "x6542B0" "x710F78" "x77B793" "x7C385F" "xBB532D" "xC7E903" "xC7EB17" "xC8AB5B" "xE58594" "xF492A2" }
+    traits = { state_trait_dostanesck_river }
+    #Tcharei
+    city = "x3196f8"
+    #Visfeld
+    farm = "xf492a2"
+    #Cl?maire
+    mine = "x35c8c8"
+    #Lorest's Watch
+    wood = "xbb532d"
+    arable_land = 83
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation }
+    capped_resources = {
+        building_coal_mine = 44
+        building_sulfur_mine = 80
+        building_logging_camp = 8
+        building_damestear_mine = 10
+        building_monster_ranch = 2
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 60
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 14
+    }
+}
+STATE_CORVELD = {
+    id = 36
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x14DCCC" "x26220D" "x30BF2A" "x31C8C8" "x396221" "x4020C0" "x405DCA" "x40AE32" "x489440" "x5B0A19" "x983566" "xBF9A00" "xBF9E80" "xC022FF" "xC02640" }
+    traits = { state_trait_dostanesck_river }
+    #Nathalaire
+    city = "xc02640"
+    #New Corveld
+    port = "xbf9e80"
+    #Jorathur
+    farm = "xbf9a00"
+    #Dostanesck
+    mine = "x30bf2a"
+    #Ueleden
+    wood = "x31c8c8"
+    arable_land = 100
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation }
+    capped_resources = {
+        building_coal_mine = 20
+        building_fishing_wharf = 20
+        building_logging_camp = 6
+        building_damestear_mine = 16
+    #needs discoverable. WIP until Folly is designed
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        discovered_amount = 4
+        undiscovered_amount = 4
+    }
+    resource = {
+        type = "building_relics_digsite"
+        undiscovered_amount = 5
+    }
+    naval_exit_id = 3002
+}
+STATE_ROILSARD = {
+    id = 37
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x046080" "x0464FF" "x057000" "x8462C0" "x8896FF" }
+    traits = { state_trait_thorndocks }
+    #Saloren
+    city = "x046080"
+    #Toarnaire
+    port = "x8462c0"
+    #Roilsard
+    farm = "x8896ff"
+    #Loopuis
+    mine = "x046080"
+    #Vivinmar
+    wood = "x057000"
+    arable_land = 182
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_vineyard }
+    capped_resources = {
+        building_sulfur_mine = 24
+        building_iron_mine = 12
+        building_logging_camp = 9
+        building_fishing_wharf = 7
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 28
+    }
+    naval_exit_id = 3004
+}
+STATE_ROSECROWN = {
+    id = 38
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x056CC0" "x0928C0" "x0A2C00" "x0A3080" "x889A40" "x892680" "x892AFF" "x8A2E40" "x8A32C0" "x8E894F" "xC51517" }
+    traits = { state_trait_bloodwine_river state_trait_oldport }
+    #Lorentaine
+    city = "x892680"
+    #Oldport
+    port = "x056cc0"
+    #Ionnidar
+    farm = "x0a2c00"
+    #Lorenith
+    mine = "x889a40"
+    #Rewanfork
+    wood = "x892aff"
+    arable_land = 196
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_coal_mine = 84 
+        #from eu4
+        building_iron_mine = 39
+        building_logging_camp = 7
+        building_fishing_wharf = 4
+        building_monster_ranch = 2
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 2
+    }
+    naval_exit_id = 3004
+}
+STATE_BLOODWINE = {
+    id = 39
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0B4000" "x0D6040" "x0E64C0" "x0F78C0" "x1084FF" "x344D19" "x397381" "x598D34" "x8B3EFF" "x8D5E00" "x903C03" }
+    traits = { state_trait_bloodwine_river state_trait_magically_enriched_soils }
+    #Rubenaire
+    city = "x0f78c0"
+    #Pircost
+    port = "x0b4000"
+    #Enteben
+    farm = "x0d6040"
+    #Madelaire
+    mine = "x1084ff"
+    #Eilisin
+    wood = "x8b3eff"
+    arable_land = 194
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_lead_mine = 8
+        #overlap from Sorncost deposits
+        building_coal_mine = 6
+        building_logging_camp = 7
+        building_fishing_wharf = 2
+    }
+    naval_exit_id = 3004
+}
+STATE_GREAT_ORDING = {
+    id = 40
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x09DB72" "x0A34FF" "x0D5880" "x345ED1" "x601040" "x8A3600" "x8C4E80" "x8F7680" "x918EFF" "x9DBFBB" }
+    traits = { state_trait_bloodwine_river }
+    #Kyliande becomes the administrative center
+    city = "x0a34ff"
+    #High Ording
+    farm = "x8a3600"
+    #Wesmar
+    mine = "x8c4e80"
+    #Ioriel's Rest
+    wood = "x918eff"
+    arable_land = 154
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_logging_camp = 8
+    }
+}
+STATE_WINEBAY = {
+    id = 41
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0C48FF" "x0C4C40" "x8B4240" "x8D6280" "x8E6A40" "xCDB290" }
+    traits = { state_trait_bloodwine_river state_trait_wineport }
+    #Minar
+    city = "x8d6280"
+    #Wineport
+    port = "x8e6a40"
+    #Foxalley
+    farm = "x8b4240"
+    #Bottlepoint
+    mine = "x0c4c40"
+    #Coruan
+    wood = "x0c48ff"
+    arable_land = 102
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_vineyard }
+    capped_resources = {
+        building_coal_mine = 10
+        building_fishing_wharf = 10
+        building_logging_camp = 2
+    }
+    naval_exit_id = 3004
+}
+STATE_SORNCOST = {
+    id = 42
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0C50C0" "x0C5400" "x0E6800" "x2016BB" "x49AB29" "x813F40" "x8C4A00" "x8C52FF" "x8D5640" "x8E66FF" "xE63CC8" "xE74B82" }
+    traits = { state_trait_sornroy_river state_trait_sornbay }
+    #Sornaire
+    city = "x0c50c0"
+    #Sornbay
+    port = "x8c4a00"
+    #Fioncavin
+    farm = "x8e66ff"
+    #Aelhill
+    mine = "x0e6800"
+    #Ebenuel
+    wood = "x8c52ff"
+    arable_land = 136
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_vineyard }
+    capped_resources = {
+        building_iron_mine = 45
+        building_lead_mine = 22
+        building_coal_mine = 100
+        building_logging_camp = 16
+        building_fishing_wharf = 7
+    }
+    naval_exit_id = 3012
+}
+STATE_RUBY_MOUNTAINS = {
+    id = 139
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x019127" "x089C80" "x0920FF" "x0A75FF" "x1D0B2C" "x2B0D72" "x33301E" "x51E8BE" "x773101" "x871046" "x892200" "x949B67" "xAC3CC6" "xE1DF1D" }
+    impassable = { "xe1df1d" }
+    traits = {}
+    #Rubyhold
+    city = "x0920ff"
+    #Rivergate
+    farm = "x892200"
+    #Redgate
+    wood = "x2b0d72"
+    #Deepmines
+    mine = "x1d0b2c"
+    arable_land = 120
+    #need to be sorted when hold mechanics in
+    arable_resources = { building_mushroom_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 60
+        building_coal_mine = 80
+        building_gem_mine = 30
+    }
+}
+STATE_RUBYHOLD = {
+    id = 154
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x1F000C" "x2B0010" "x2F0313" "x340013" "x3B0A1C" "x3F0017" "x47051E" "x4C001C" "x560724" "x562034" "x58052B" "x5E0023" "x5E0929" "x6B0C30" "x6D0028" "x70203E" "x7A002D" "x7A3850" "x7B083D" "x7B0852" "x7E0D37" "x8B0033" "x8B0C3B" "x94093C" "x951142" "x960A65" "x981168" "x990038" "x99063C" "xA01669" "xA11247" "xA6154B" "xA61573" "xAB003F" "xAE124B" "xAE125F" "xAE1270" "xAF5778" "xB81A54" "xC00047" "xC31867" "xD1004D" "xD12093" "xD52969" "xE45187" "xEA9FBB" "xF118A4" "xF20059" "xFF005E" }
+    traits = { state_trait_dwarven_hold }
+    #Rubyhold
+    city = "xA01669"
+    #Rivergate
+    farm = "xae1270"
+    #Redgate
+    wood = "xae125f"
+    #Deepmines
+    mine = "xae124b"
+    arable_land = 140
+    #need to be sorted when hold mechanics in
+    arable_resources = { building_mushroom_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 60
+        building_coal_mine = 80
+        building_gem_mine = 30
+    }
+}
+STATE_VENAIL = {
+    id = 141
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0D5CFF" "x47561E" "x665F61" "x802240" "x8D5AC0" "x8D9705" "x923C09" "x929E80" }
+    traits = {}
+    #Venail
+    city = "x8d5ac0"
+    #Firstsight
+    port = "x929e80"
+    #Edilliande
+    farm = "x47561e"
+    #Var
+    wood = "x923c09"
+    #Larcas
+    mine = "x8d9705"
+    arable_land = 53
+    arable_resources = { building_wheat_farm building_livestock_ranch building_banana_plantation building_cotton_plantation building_vineyard }
+    capped_resources = {
+        building_logging_camp = 7
+        building_fishing_wharf = 15
+        building_damestear_dives = 8
+    }
+    naval_exit_id = 3012
+}
+STATE_DAROM = {
+    id = 43
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0894C0" "x0B3CC0" "x0B4480" "x0E6C80" "x0E70FF" "x0F7440" "x40F5C0" "x8B46C0" "x8F7200" "x99CD15" "xB3A072" "xC9F9B2" "xD2F055" "xDEB057" }
+    traits = { state_trait_lencesk_seawall }
+    #Daromsfort
+    city = "x0894c0"
+    #Lencesk
+    port = "x0e6c80"
+    #Greatfield
+    farm = "x0b3cc0"
+    #Casna Ola
+    mine = "x0c5400"
+    #Mistspear - that weird house on the hill, Medron House from CK3
+    wood = "x0f7440"
+    arable_land = 160
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_fishing_wharf = 12
+        building_logging_camp = 6
+    }
+    naval_exit_id = 3006
+}
+STATE_DERANNE = {
+    id = 44
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0F7C00" "x108080" "x59968E" "x8F7E40" "x9082C0" "x919240" "xDBA581" }
+    traits = { state_trait_middanroy_river state_trait_westport }
+    #Deranne
+    city = "x9082c0"
+    #Westport
+    port = "x108080"
+    #Rosereach
+    farm = "x8f7e40"
+    #Clearshore
+    mine = "x919240"
+    #Aelvar
+    wood = "x0f7c00"
+    arable_land = 160
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard } 
+    #cotton from aelantir or someshizz
+
+    capped_resources = {
+        building_coal_mine = 24
+        building_logging_camp = 15
+        #cos of aelvar woods
+        building_whaling_station = 5
+        building_fishing_wharf = 12
+    }
+    naval_exit_id = 3006
+}
+STATE_REDGLADES = {
+    id = 45
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x108840" "x108CC0" "x119000" "x8B3A80" "x908600" "x908A80" "xCA4A5D" }
+    traits = { state_trait_middanroy_river state_trait_magical_land state_trait_four_fey }
+    #Ioriellen
+    city = "x908600"
+    #Gladegate
+    farm = "x8b3a80"
+    #Summerglade
+    mine = "x108cc0"
+    #Autumnglade - all these should get better elven names
+    wood = "x108840"
+    arable_land = 90
+    arable_resources = { building_wheat_farm building_livestock_ranch building_silk_plantation building_vineyard }
+    capped_resources = {
+        building_logging_camp = 19
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 6
+    }
+}
+STATE_SOUTHROY = {
+    id = 46
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x1198FF" "x1220C0" "x26C8FA" "x9196C0" "x919A00" "xB63F36" }
+    traits = { state_trait_middanroy_river }
+    #Sildthol
+    city = "x1198ff"
+    #Thunderward
+    port = "x9196c0"
+    #Haysfield
+    farm = "x919a00"
+    #NEW PLACE
+    mine = "x26c8fa"
+    #Southroy
+    wood = "x1220c0"
+    arable_land = 144
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_fishing_wharf = 6
+        building_logging_camp = 12
+    }
+    naval_exit_id = 3006
+}
+STATE_KHENAK = {
+    id = 47
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x14FAFA" "x15C8C8" "x17DCFA" "x337480" "x3478FF" "x7692F9" "x856A7B" "xB376C0" "xC3CF61" "xE7E016" }
+    impassable = { "x7692F9" "xC3CF61" }
+    traits = {}
+    #Elsine
+    city = "x337480"
+    #Stonehold
+    farm = "xb376c0"
+    #Khenak Range
+    mine = "xe7e016"
+    #Hortosare
+    wood = "xb376c0"
+    arable_land = 57
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation }
+    capped_resources = {
+        building_lead_mine = 60
+        #copper
+        building_iron_mine = 15
+        building_logging_camp = 8
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 8
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 6
+    }
+}
+STATE_LORIN_CANNO = {
+    id = 48
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x1BDCFA" "x2CFAFA" "x348400" "x358CFF" "x3694C0" "x5FDDFB" "xB58640" "xB59280" }
+    traits = {}
+    #Cannohap
+    city = "x348400"
+    #Lorin
+    port = "x358cff"
+    #Taulos
+    farm = "xb59280"
+    #Khenahap
+    mine = "xb58640"
+    #Madar
+    wood = "x1bdcfa"
+    arable_land = 86
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_vineyard }
+    capped_resources = {
+        building_lead_mine = 24
+        building_fishing_wharf = 4
+        building_logging_camp = 6
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 3
+    }
+    naval_exit_id = 3005
+}
+STATE_HAPAINE = {
+    id = 49
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x21C8C8" "x329452" "x347C40" "x3A50C0" "xB47A00" "xB47E80" }
+    traits = { state_trait_natural_harbors }
+    #Hapaine
+    city = "x3a50c0"
+    #Port Jaher
+    port = "xb47a00"
+    #Cedor
+    farm = "x329452"
+    #Busilar
+    mine = "xb47e80"
+    #Lorbet
+    wood = "x347c40"
+    arable_land = 96
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_sugar_plantation building_vineyard }
+    capped_resources = {
+        building_lead_mine = 30
+        building_iron_mine = 21
+        building_logging_camp = 5
+        building_fishing_wharf = 6
+    }
+    naval_exit_id = 3002
+}
+STATE_LIONCOST = {
+    id = 50
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x1CFAFA" "x2FDCFA" "x3480C0" "x358880" "x856EFF" "xB58AC0" }
+    traits = {}
+    #Ohitkes
+    city = "x1cfafa"
+    #Arca Haren
+    port = "x3480c0"
+    #Derancestir
+    farm = "xb58ac0"
+    #Carverhouse
+    mine = "x358880"
+    #Lion's Pass
+    wood = "x856eff"
+    arable_land = 80
+    arable_resources = { building_wheat_farm building_livestock_ranch building_silk_plantation building_cotton_plantation building_sugar_plantation building_vineyard }
+    capped_resources = {
+        building_fishing_wharf = 11
+        building_logging_camp = 5
+    }
+    naval_exit_id = 3005
+}
+STATE_EBORTHIL = {
+    id = 51
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x056840" "x369800" "x856600" "xB482FF" "xB696FF" }
+    traits = { state_trait_natural_harbors }
+    #Eborthil
+    city = "x369800"
+    #Port Jurith
+    port = "xb482ff"
+    #Toref Citadel
+    farm = "x856600"
+    #Stonegaze
+    mine = "xb696ff"
+    #New Tefkora
+    wood = "x056840"
+    arable_land = 48
+    arable_resources = { building_rice_farm building_livestock_ranch building_silk_plantation building_cotton_plantation building_tobacco_plantation building_sugar_plantation building_vineyard }
+    capped_resources = {
+        building_sulfur_mine = 80
+        building_lead_mine = 38
+        building_gold_mine = 3
+        building_coal_mine = 84
+        building_fishing_wharf = 16
+        building_logging_camp = 2
+    }
+    naval_exit_id = 3005
+}
+STATE_ROYSFORT = {
+    id = 56
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x122400" "x122880" "x133040" "x4515D2" "x922640" "xBDCB6F" "xDF9239" }
+    traits = { state_trait_black_soil state_trait_middanroy_river }
+    #Breadburd
+    city = "x133040"
+    #Greenberry
+    farm = "x122880"
+    #Roysfort
+    mine = "x922640"
+    #Haibo
+    wood = "x122400"
+    arable_land = 138
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 2
+    }
+}
+STATE_THOMSBRIDGE = {
+    id = 57
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x132CFF" "x155080" "x165CC0" "x176C40" "x4A237A" "x932AC0" "x932E00" "x965EFF" "xD5115E" }
+    traits = { state_trait_black_soil state_trait_middanroy_river }
+    #Thomsbridge
+    city = "x965eff"
+    #Tipney
+    farm = "x932e00"
+    #Lasean
+    mine = "x165cc0"
+    #Middlewood
+    wood = "x132cff"
+    arable_land = 270
+    arable_resources = { building_wheat_farm building_livestock_ranch building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 10
+    }
+}
+STATE_CIDERFIELD = {
+    id = 58
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x28EF12" "x555020" "x933280" "x9336FF" "x943A40" "x954680" "x9766C0" "x976A00" "xA9AF29" }
+    traits = { state_trait_black_soil state_trait_middanroy_river }
+    #Turnwell
+    city = "x943a40"
+    #Pearview
+    farm = "x954680"
+    #Newcobble
+    mine = "x976a00"
+    #Appleton
+    wood = "x9336ff"
+    arable_land = 162
+    arable_resources = { building_rye_farm building_livestock_ranch building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 8
+    }
+}
+STATE_HOMEHILLS = {
+    id = 59
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x013880" "x0A3840" "x166000" "x176480" "x1768FF" "x899EC0" "x954AFF" "x976240" }
+    traits = { state_trait_black_soil state_trait_widderoy_river }
+    #Viswall
+    city = "x899ec0"
+    #Aelcandar
+    farm = "x176480"
+    #Coppertown
+    mine = "x166000"
+    #Norley
+    wood = "x954aff"
+    arable_land = 180
+    arable_resources = { building_rye_farm building_livestock_ranch building_dye_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_coal_mine = 80
+        #from eu4
+        building_lead_mine = 36
+        #as coppertown has copper which is ferrous like lead
+        building_logging_camp = 6
+    }
+}
+STATE_ELKMARCH = {
+    id = 60
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x151BCE" "x15BF9C" "x1D3C40" "x1D40C0" "x1E4400" "x3158C0" "x812E80" "x9D3E80" "x9D42FF" "xB15680" "xDE562E" }
+    traits = { state_trait_widderoy_river state_trait_black_soil }
+    #Twofork
+    city = "x3158c0"
+    #Uelaire
+    port = "x9d3e80"
+    #Newacre
+    farm = "xb15680"
+    #Westmere
+    mine = "x1d40c0"
+    #Elkwood
+    wood = "x1d3c40"
+    arable_land = 100
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_fishing_wharf = 8
+        building_logging_camp = 17
+    }
+    naval_exit_id = 3000
+}
+STATE_BEEPECK = {
+    id = 61
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x089800" "x3EEAFC" "x954E40" "x965600" "x9D3A00" }
+    traits = { state_trait_beepeck_bay state_trait_black_soil state_trait_widderoy_river }
+    #Beepeck
+    city = "x954e40"
+    #Beepiers
+    port = "x089800"
+    #The Strip
+    farm = "x3eeafc"
+    #Saltfort
+    mine = "x965600"
+    #Braydens
+    wood = "x9d3a00"
+    arable_land = 75
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_fishing_wharf = 6
+        building_coal_mine = 22
+        building_logging_camp = 8
+    }
+    naval_exit_id = 3000
+}
+STATE_DRAGONHILLS = {
+    id = 62
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x079CBC" "x092440" "x154C00" "x2999F4" "x9E4640" "x9E4AC0" "xFF3449" }
+    traits = { state_trait_widderoy_river }
+    #Eaglecrest
+    city = "x9e4ac0"
+    #Lodan
+    farm = "x154c00"
+    #Feycombe
+    mine = "x092440"
+    #Grodplodd
+    wood = "x9e4640"
+    arable_land = 65
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_coal_mine = 20
+        building_lead_mine = 21
+        building_logging_camp = 8
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 8
+    }
+}
+STATE_IOCHAND = {
+    id = 63
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0C8FC6" "x129C40" "x143C80" "x23DCFA" "x9222FF" "x943EC0" "xBD889C" }
+    traits = { state_trait_black_soil state_trait_portnamm_bay state_trait_portroy_river}
+    prime_land = { "x129c40" }
+    #Portnamm
+    city = "x129c40"
+    #Eldergreen
+    port = "x9222ff"
+    #Iochand
+    farm = "x143c80"
+    #Carverhold
+    mine = "x943ec0"
+    #Croons
+    wood = "x23dcfa"
+    arable_land = 100
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_fishing_wharf = 4
+        building_logging_camp = 6
+        building_monster_ranch = 2
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 2
+    }
+    naval_exit_id = 3006
+}
+STATE_REVERIA = {
+    id = 64
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x119480" "x1334C0" "x143800" "x1440FF" "x32C8FA" "xB0688D" }
+    traits = { state_trait_black_soil state_trait_portroy_river}
+    #Manerd
+    city = "x1440ff"
+    #Reaver's Landing
+    port = "x1334c0"
+    #Aamdstook
+    farm = "x143800"
+    #Baynoms
+    mine = "x119480"
+    #Stormpoint
+    wood = "x32c8fa"
+    arable_land = 84
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 12
+        building_fishing_wharf = 15
+    }
+    naval_exit_id = 3006
+}
+STATE_GNOMISH_PASS = {
+    id = 65
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x144440" "x1548C0" "x187400" "x1C9894" "x3FC020" "x944200" "x952D2D" "x976E80" "xC20A82" }
+    traits = { state_trait_baycodds_damestear_mine state_trait_portroy_river}
+    #Royvibobb
+    city = "x976e80"
+    #Baycodds
+    port = "x144440"
+    #Olmaddit
+    farm = "x944200"
+    #Haighpeck
+    mine = "x187400"
+    #Manyburrows
+    wood = "x1548c0"
+    arable_land = 32
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_fishing_wharf = 5
+        building_coal_mine = 40
+        building_lead_mine = 27
+        building_logging_camp = 7
+        building_damestear_mine = 16
+        #from baycodds
+    }
+    naval_exit_id = 3006
+}
+STATE_THE_IONDDAMMO = {
+    id = 66
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x02A8B1" "x154F1E" "x1670E8" "x187880" "x187CFF" "x2EC8FA" "x71EF21" "x987640" "x987AC0" "x998A40" "x9A8EC0" "x9A9680" "xBF2BC4" }
+    prime_land = { x2EC8FA }
+    traits = { state_trait_oddanroy_river }
+    #Sildnamm
+    city = "x987ac0"
+    #Widdechand
+    port = "x187880"
+    #Ionddammroy
+    farm = "x998a40"
+    #Brecc
+    mine = "x187cff"
+    #Tholod
+    wood = "x987640"
+    arable_land = 175
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_sulfur_mine = 50
+        building_coal_mine = 120
+        building_iron_mine = 45
+        building_lead_mine = 75
+        building_logging_camp = 9
+        building_fishing_wharf = 8
+    }
+    naval_exit_id = 3006
+}
+STATE_ODDANROY = {
+    #gnomish provs dont have a lot of coal on purpose, make em go electric or other power source later
+    id = 67
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x198040" "x1984C0" "x637E68" "x83C67B" "x9872FF" "x997E00" "x998280" "x9986FF" "xBF832D" "xCD7D5A" "xE5F930" }
+    traits = { state_trait_oddanroy_river state_trait_oddansbay }
+    #Oddansbay
+    city = "x998280"
+    #Nimscodd
+    port = "x9872ff"
+    #Chiddeburd
+    farm = "x997e00"
+    #Norbit
+    mine = "x9986ff"
+    #Norcamb
+    wood = "x1984c0"
+    arable_land = 64
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_sulfur_mine = 60
+        building_logging_camp = 9
+        building_fishing_wharf = 10
+        building_gold_mine = 3
+        building_monster_ranch = 2
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 2
+    }
+    naval_exit_id = 3006
+}
+STATE_DRAGONSPINE = {
+    id = 68
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x140F8A" "x198800" "x1A8C80" "x1A90FF" "x1A98C0" "x1B9C00" "x1C2CC0" "x4339DF" "x47DCFA" "x48FAFA" "x736F00" "x73E788" "x80782D" "x9BBBA9" "x9C2EFF" "xCB362B" "xDF5A92" "xE4BB0E" "xEF7B24" }
+    traits = { state_trait_storm_islands_fishing }
+    #Middanbit
+    city = "x47dcfa"
+    #NEW PLACE
+    port = "x1a8c80"
+    #Moorbob
+    farm = "x1a90ff"
+    #Dragonspine
+    mine = "x9bbba9"
+    #Adderodd
+    wood = "x198800"
+    arable_land = 44
+    arable_resources = { building_livestock_ranch building_rye_farm }
+    capped_resources = {
+        building_iron_mine = 38
+        building_sulfur_mine = 28
+        building_fishing_wharf = 25
+        building_whaling_station = 6
+        building_logging_camp = 19
+        building_damestear_mine = 16
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 35
+    }
+    naval_exit_id = 3010
+}
+STATE_DRAGONMAW = {
+    id = 71
+    subsistence_building = "building_subsistence_cavern_farm"
+    provinces = { "x1A9440" "x93DEDA" "xC9B096" "xE03F75" }
+    impassable = { "xE03F75" }
+    traits = { state_trait_dragonheights state_trait_underground }
+    #Kobildgaru
+    city = "x1a9440"
+    #Urzingaru
+    farm = "x1a9440"
+    #Mallayd
+    mine = "x1a9440"
+    #Kobildzex
+    wood = "x1a9440"
+    arable_land = 97
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 25
+        building_lead_mine = 25
+        building_sulfur_mine = 22
+        building_coal_mine = 20
+        building_gem_mine = 15
+        #big big incentive btw to conquer
+        building_cave_coral = 10
+    }
+}
+STATE_DRAGONDEPTHS = {
+    id = 52
+    subsistence_building = "building_subsistence_cavern_farm"
+    provinces = { "x510EC8" "x7945E1" "x9B9AFF" "xA189FA" "xe0dc75" }
+    impassable = { "xe0dc75" }
+    traits = { state_trait_dragonheights state_trait_underground }
+    #Soxun Kobildzex
+    city = "x9b9aff"
+    #Malazakurn
+    farm = "xa189fa"
+    #Vyrmgurdex
+    mine = "x7945E1"
+    #Iporudzu
+    wood = "x510EC8"
+    arable_land = 100
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 20
+        building_lead_mine = 35
+        building_sulfur_mine = 18
+        building_coal_mine = 60
+        building_gem_mine = 15
+        #big big incentive btw to conquer
+        building_cave_coral = 10
+    }
+}
+STATE_FLOODMARCHES = {
+    id = 72
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0505A1" "x1E4880" "x1E4CFF" "x24D985" "x27E5CF" "x30F440" "x44A804" "x463F7A" "x9C8D87" "x9E4E00" "xE11435" "xF6C505" }
+    traits = { state_trait_alen_river }
+    #Fludhill
+    city = "x30f440"
+    #Wickham
+    port = "x1e4cff"
+    #Puddledrown
+    mine = "x9e4e00"
+    #Lonevalley
+    wood = "x1e4880"
+    #Floodmark
+    farm = "x463f7a"
+    arable_land = 35
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_lead_mine = 15
+        building_logging_camp = 4
+        building_fishing_wharf = 5
+    }
+    naval_exit_id = 3000
+}
+STATE_VERTESK = {
+    id = 73
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x12C8FA" "x1E5040" "x470DAC" "x9F56FF" "xA17600" "xA39640" "xA8CF5A" "xD4BED7" "xF8307F" }
+    traits = { state_trait_alen_river state_trait_natural_harbors }
+    prime_land = { "x470dac" "x1e5040" "xa39640" }
+    # Give land to Vertesk
+    #Vertesk
+    city = "x1e5040"
+    #Highharbour
+    port = "xa39640"
+    #Oakvale
+    farm = "x12c8fa"
+    #Tenbury
+    mine = "x9f56ff"
+    #Greenley
+    wood = "xa17600"
+    arable_land = 100
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_lead_mine = 30
+        building_coal_mine = 72
+        building_fishing_wharf = 12
+        building_logging_camp = 9
+    }
+    naval_exit_id = 3000
+}
+STATE_LOWER_ALEN = {
+    id = 74
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x1F54C0" "x1F5800" "x304800" "x42E15F" "x677591" "x77C95E" "x9F5280" "xA10E01" "xB04280" "xB046FF" "xB0CCD5" }
+    traits = { state_trait_alen_river }
+    #Alenath
+    city = "xb04280"
+    #Elwick-upon-Alen
+    farm = "xb046ff"
+    #Talonmount
+    mine = "x9f5280"
+    #Ginnfield
+    wood = "x1f5800"
+    arable_land = 90
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_coal_mine = 120
+        #coal from eu4 
+        building_lead_mine = 27
+        #moved this from Gawed
+        building_logging_camp = 5
+    }
+}
+STATE_GAWED = {
+    id = 75
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x1F5C80" "x315440" "x61C65C" "x9F5A40" "x9F5EC0" "xB04A40" "xE2992E" }
+    traits = { state_trait_alen_river }
+    #Gaweton
+    city = "x9f5a40"
+    #Norleigh
+    farm = "xb04a40"
+    #Vanbury
+    mine = "x1f5c80"
+    #Drakesford
+    wood = "x9f5ec0"
+    arable_land = 100
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_coal_mine = 100
+        building_iron_mine = 60
+        #not as big as say telgeir or wex, but starts more industrialized
+        building_lead_mine = 6
+        building_logging_camp = 7
+    }
+}
+STATE_ALENIC_EXPANSE = {
+    id = 76
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0A75E4" "x2060FF" "x3044C0" "x8DD539" "x93F8C6" "x9FFCB3" "xA17A80" "xA27EFF" "xA286C0" "xAAB6A5" "xEBF66E" "xF25A1A" "xF85DC8" }
+    traits = {}
+    #Gerwick
+    city = "xa286c0"
+    #Morban
+    farm = "x3044c0"
+    #Baldfather
+    mine = "xa17a80"
+    #Humbercroft
+    wood = "x2060ff"
+    arable_land = 120
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 5
+        building_iron_mine = 12
+    }
+}
+STATE_GREATWOODS = {
+    id = 77
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x13CCFE" "x206440" "x2068C0" "x228000" "x228480" "x3150FF" "x3D7AA7" "x4B202D" "x4D3C2E" "x7FD0E5" "xA06200" "xA06680" "xA28240" "xB14EC0" "xBDD01B" "xC12D85" "xCBA5CE" "xED1861" }
+    traits = { state_trait_alen_river state_trait_greatwoods }
+    #Alenvord
+    city = "xa06200"
+    #Legion's Clearing
+    farm = "x206440"
+    #Oudescker
+    mine = "x3150ff"
+    #Aldtempel
+    wood = "xa06680"
+    arable_land = 140
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_coal_mine = 80
+        #from eu4
+        building_iron_mine = 22
+        building_logging_camp = 39
+        building_damestear_mine = 14
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 15
+    }
+}
+STATE_BERONMOOR = {
+    id = 78
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x131B5B" "x1C3480" "x1D38FF" "x2D94B0" "x4AC8FA" "x58EF72" "x86E45D" "x930F69" "x9486EC" "x9C3240" "x9C78F7" "x9D36C0" "xB6016B" "xCF5BF4" "xD64E92" }
+    traits = {}
+    #Moorton
+    city = "x1c3480"
+    #Cockerwall
+    farm = "x9d36c0"
+    #Beron Heights
+    mine = "x9c3240"
+    #Edgemoor
+    wood = "x1d38ff"
+    arable_land = 48
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_coal_mine = 20
+        building_logging_camp = 2
+        building_damestear_mine = 14
+    }
+}
+STATE_WESTMOORS_PROPER = {
+    id = 79
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x095350" "x119348" "x1B2080" "x1B24FF" "x1C2840" "x1D8E8F" "x343C7E" "x7C855D" "x9B22C0" "x9B2600" "x9B9E40" "xA71BB2" "xB15200" "xB3729B" "xD741B2" "xD85DB4" }
+    traits = {}
+    #Bleakpass
+    city = "xb15200"
+    #Brontay Point
+    port = "x9b9e40"
+    #Cottersea
+    farm = "x1b2080"
+    #Redferne Hill
+    mine = "x1c2840"
+    #Leapdon
+    wood = "x9b22c0"
+    arable_land = 65
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_sulfur_mine = 12
+        building_iron_mine = 15
+        building_coal_mine = 40 
+        #likely from nearby lower alen deposits
+        building_whaling_station = 4
+        building_fishing_wharf = 10
+        building_logging_camp = 1
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 34
+    }
+    naval_exit_id = 3010
+}
+STATE_CODDORRAN_HEIGHTS = {
+    id = 80
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x1CF800" "x36C073" "x3CAECB" "x3F32BC" "x4C8F3C" "x71A859" "x9C2A80" "x9DBA2A" "xA26F82" "xBB28DE" }
+    traits = { state_trait_storm_islands_fishing }
+    #Coddorran City
+    city = "x4c8f3c"
+    #Haighbobben 
+    port = "xa26f82"
+    farm = "x9dba2a"
+    mine = "x1cf800"
+    wood = "x3caecb"
+    arable_land = 25
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_fishing_wharf = 12
+        building_sulfur_mine = 20
+        #dragonheights mountain range has sulfur in general now
+        building_logging_camp = 19
+        building_flawless_metal_mine = 2
+        #Ebonsteel
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 28
+    }
+    naval_exit_id = 3010
+}
+STATE_SERPENTSHEAD = {
+    id = 81
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x2B00F6" "x46B48C" "x638CFF" "x639040" "x6394C0" "x649800" "x680BB5" "x7B994C" "x884170" "x8BC648" "x92E397" "x9E8DF5" "xA409C0" "xB35AD6" "xB3F025" "xC34748" "xCD2826" "xCE989F" "xE38E00" "xE39280" "xE396FF" "xE5B709" "xF162C2" }
+    traits = { state_trait_greatwoods state_trait_giants_grave_fishing state_trait_natural_harbors }
+    #Celmaldor
+    city = "x639040"
+    #Mawdock
+    port = "xe39280"
+    #Serpentback
+    farm = "xe396ff"
+    #Deland
+    mine = "xe38e00"
+    #Coldmarket
+    wood = "x649800"
+    arable_land = 94
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 28
+        building_whaling_station = 5
+        building_fishing_wharf = 14
+    }
+    naval_exit_id = 3010
+}
+STATE_ADSHAW = {
+    id = 82
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0A111D" "x3FAED7" "x404728" "x565EC8" "x602770" "x649C80" "x6B8080" "xD11A3C" "xD82127" "xE46E35" "xE49EC0" "xE85640" }
+    traits = { state_trait_greatwoods }
+    #Dinesck
+    city = "xd82127"
+    #Rycastle
+    farm = "xe85640"
+    #Adderwood
+    mine = "xe49ec0"
+    #Shawmark
+    wood = "x649c80"
+    arable_land = 60
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 56
+        building_damestear_mine = 14
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 12
+    }
+}
+STATE_BAYVEK = {
+    id = 83
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x044592" "x07DCFA" "x61C9C9" "x6748FF" "xE42200" "xE746C0" }
+    traits = { state_trait_greatwoods state_trait_giants_grave_fishing }
+    #Bayvek
+    city = "xe746c0"
+    #Envermarck
+    port = "x6748ff"
+    #Meadby
+    farm = "x07dcfa"
+    #Ordal
+    mine = "xe42200"
+    #Viderton
+    wood = "x61c9c9"
+    arable_land = 88
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_sulfur_mine = 40
+        building_logging_camp = 12
+        building_fishing_wharf = 12
+        building_monster_ranch = 2
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 2
+    }
+    naval_exit_id = 3007
+}
+STATE_REACHSPIER = {
+    id = 84
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x6420FF" "x642440" "x674480" "x6BE153" "x735DA4" "xE74240" "xEDD1E9" }
+    traits = { state_trait_greatwoods state_trait_giants_grave_fishing }
+    #Reachspier
+    city = "xedd1e9"
+    #Everwharf
+    port = "x674480"
+    #Alencay
+    farm = "xe74240"
+    #Drengerton
+    wood = "x642440"
+    mine = "xedd1e9"
+    arable_land = 70
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_sulfur_mine = 20
+        building_logging_camp = 16
+    }
+    naval_exit_id = 3007
+}
+STATE_BALMIRE = {
+    id = 85
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x02250F" "x0B3790" "x206C00" "x217080" "x360474" "x37EB3E" "x3F59F8" "xA06AFF" "xA105A6" "xA16E40" }
+    traits = { state_trait_alen_river }
+    #Bal Mire
+    city = "xa06aff"
+    #Rottenstep
+    farm = "x206c00"
+    #Venomfen
+    mine = "x217080"
+    #Cravens Walk
+    wood = "xa16e40"
+    arable_land = 50
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 16
+        building_damestear_mine = 13
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 10
+    }
+}
+STATE_NORTH_IBEVAR = {
+    id = 86
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x325C00" "x326080" "x337000" "x878E4F" "xA52A40" "xB25E40" }
+    impassable = { "x878E4F" "x325C00" }
+    traits = {}
+    #Ibevar City
+    city = "x326080"
+    #Thanas 
+    farm = "x337000"
+    #Carodir's Pass
+    wood = "xa52a40"
+    #Nurael
+    mine = "xb25e40"
+    arable_land = 80
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_logging_camp = 22
+        building_gem_mine = 2
+        #Carodirs Pass
+        building_damestear_mine = 14
+    }
+}
+STATE_SOUTH_IBEVAR = {
+    id = 87
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x2B6AFC" "x2C94FF" "x3264FF" "x326840" "x3C6C80" "x3EE6FC" "xB262C0" "xB37240" "xC9A17F" }
+    traits = {}
+    #Varillen
+    city = "xb262c0"
+    #Larthan
+    farm = "x3264ff"
+    #Blaidscall
+    wood = "xb37240"
+    #Ar Einnas
+    mine = "x326840"
+    arable_land = 80
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_iron_mine = 30
+        building_logging_camp = 17
+    }
+}
+STATE_CURSEWOOD = {
+    #East Ibevar
+    id = 88
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x015BE4" "x336CC0" "x4780B3" "xA42280" "xB26600" "xB36EFF" "xDDA57F" }
+    traits = {}
+    #Ainethil
+    city = "xb36eff"
+    #Tederfremh
+    farm = "xa42280"
+    #Coldrest
+    wood = "x336cc0"
+    #Brúarlas
+    mine = "xdda57f"
+    arable_land = 110
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_logging_camp = 13
+        #spooky number, didn't update amount like rest of logging
+        building_lead_mine = 15
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 21
+    }
+}
+STATE_FARRANEAN = {
+    id = 89
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x6E3040" "x6F34C0" "x6F3800" "xBC019A" "xE78C45" "xEE2E00" "xEF3280" "xEF36FF" "xFA241C" }
+    traits = {}
+    #Escin
+    city = "xef3280"
+    #Lonesfield
+    farm = "xee2e00"
+    #Hushdell
+    wood = "x6f34c0"
+    #Valefort
+    mine = "x6f3800"
+    arable_land = 150
+    #reduced
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 25
+        building_coal_mine = 29
+        building_logging_camp = 5
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 17
+    }
+}
+STATE_ADENICA = {
+    id = 90
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x6C9480" "x6D98FF" "x715080" "xEC9240" "xED96C0" "xED9A00" }
+    traits = {}
+    #Tiltwick
+    city = "xed9a00"
+    #Listfields
+    farm = "xed96c0"
+    #Upcreek
+    wood = "x6d98ff"
+    #Balgarton
+    mine = "x715080"
+    arable_land = 80
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 7
+        building_coal_mine = 43
+        building_iron_mine = 18
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 28
+    }
+}
+STATE_ROHIBON = {
+    id = 91
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x6D20C0" "x6E2400" "xED22FF" "xEE2640" }
+    traits = {}
+    #Rohibon
+    city = "xed22ff"
+    #Gallopsway
+    farm = "x6d20c0"
+    #Horsemans Advance
+    wood = "x6e2400"
+    #Halansar
+    mine = "xee2640"
+    arable_land = 60
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_logging_camp = 5
+        building_iron_mine = 8
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 19
+    }
+}
+STATE_ANCARDIAN_PLAINS = {
+    id = 92
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x1DC8C8" "x6E2880" "x6E2CFF" "xEE2AC0" }
+    traits = { state_trait_lingering_verdancy }
+    #Ancardaire
+    city = "x6e2cff"
+    #Banwick
+    farm = "x6e2880"
+    #Lasaliande
+    wood = "x1dc8c8"
+    #Cantercurse
+    mine = "xee2ac0"
+    arable_land = 60
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 4
+        building_coal_mine = 73
+        building_sulfur_mine = 22
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 17
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 4
+    }
+}
+STATE_NEWSHIRE = {
+    id = 93
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x2BDCFA" "x5EC9FB" "x6F3C80" "xEF3A40" }
+    traits = { state_trait_lingering_verdancy }
+    #Verteben
+    city = "x6f3c80"
+    #Hillshires
+    farm = "x5ec9fb"
+    #Aesawic
+    wood = "x2bdcfa"
+    #Shieldrest
+    mine = "xef3a40"
+    arable_land = 70
+    arable_resources = { building_wheat_farm building_livestock_ranch building_tobacco_plantation }
+    capped_resources = {
+        building_iron_mine = 25
+        #Mines of Shieldrest from CK3
+        building_logging_camp = 6
+        building_coal_mine = 48
+        building_damestear_mine = 12
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 22
+    }
+}
+STATE_MORECED = {
+    id = 94
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x6D9C40" "x704440" "x7048C0" "x704C00" "xEF3EC0" "xF04200" }
+    traits = {}
+    #Moreced
+    city = "xf04200"
+    #Aldaine
+    farm = "x6d9c40"
+    #Nortmerewood
+    wood = "x7048c0"
+    #Acenaire
+    mine = "xef3ec0"
+    arable_land = 80
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 12
+        building_coal_mine = 40
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 17
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 6
+    }
+}
+STATE_OUDMERE = {
+    id = 95
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x7040FF" "x7154FF" "x715840" "xF04680" "xF04AFF" "xF15600" }
+    traits = {}
+    #Turnmarket
+    city = "xf04680"
+    #Esckerpost
+    farm = "xf04aff"
+    #Acenthan
+    wood = "xf15600"
+    #Craghyl
+    mine = "x7040ff"
+    arable_land = 80
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_iron_mine = 22
+        building_logging_camp = 14
+        building_coal_mine = 49
+        building_lead_mine = 12
+        building_gold_mine = 3
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 11
+    }
+}
+STATE_DEVACED = {
+    id = 96
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "xD7BFD4" "xF14E40" "xF152C0" "xF15A80" "xF25EFF" }
+    traits = {}
+    #Devaced
+    city = "xf15a80"
+    #Catelsvord
+    farm = "xf25eff"
+    #Diremill
+    wood = "xd7bfd4"
+    #Godescker
+    mine = "xf14e40"
+    arable_land = 110
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_iron_mine = 20
+        building_coal_mine = 40
+        building_lead_mine = 10
+        building_logging_camp = 9
+    }
+}
+STATE_BLADEMARCH = {
+    id = 97
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x726000" "x7370C0" "x737400" "x748040" "xF26240" "xF372FF" "xF37640" "xF47E00" "xF48280" }
+    traits = {}
+    #Vernham
+    city = "x7370c0"
+    #Mereham
+    farm = "xf372ff"
+    #Satyr's Stand
+    wood = "xf47e00"
+    #Old Vernham
+    mine = "x726000"
+    arable_land = 150
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_coal_mine = 23
+        building_iron_mine = 19
+        building_logging_camp = 8
+        building_monster_ranch = 2
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 2
+    }
+}
+STATE_DOSTANS_WAY = {
+    id = 98
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x726480" "x736C40" "x747880" "xF266C0" "xF36A00" "xF36E80" }
+    traits = { state_trait_dostanesck_river }
+    #Aldcamp
+    city = "xf36a00"
+    #Woodmarck - coal deposit
+    mine = "x726480"
+    #Dostan's Way - need actual name
+    farm = "xf266c0"
+    #Beastgrave
+    wood = "x747880"
+    arable_land = 96
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_coal_mine = 56 
+        #from eu4
+        building_logging_camp = 18
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 3
+    }
+}
+STATE_BARUMAND = {
+    id = 99
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x078820" "x747CFF" "x7484C0" "x878A4F" "xF47AC0" "xF586FF" }
+    traits = { state_trait_dostanesck_river state_trait_good_soils }
+    #Banesfork - cool new city place that gets trade from marches and marrhold
+    city = "xf47ac0"
+    #Glitterdell
+    farm = "x7484c0"
+    #Swapstoke
+    wood = "x878a4f"
+    #Steward's Hold
+    mine = "xf586ff"
+    arable_land = 160
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_logging_camp = 16
+    }
+}
+STATE_ROSANVORD = {
+    id = 100
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x034C7E" "x7590FF" "x769440" "x834EAD" "xA69B7F" "xF69680" }
+    traits = {}
+    #Ionntras
+    city = "xf69680"
+    #Humac's Rest
+    farm = "x7590ff"
+    #Forkwic
+    wood = "x034c7e"
+    #Grannvale
+    mine = "x834ead"
+    arable_land = 100
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_iron_mine = 9
+        building_logging_camp = 4
+    }
+}
+STATE_MEDIRLEIGH = {
+    id = 101
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x06747E" "x85724F" "x8676AD" "x8786AD" }
+    traits = {}
+    #Hendon
+    city = "x8786ad"
+    #Medirleigh
+    farm = "x06747e"
+    #Breakseben
+    wood = "x85724f"
+    #Boggartstead
+    mine = "x8676ad"
+    arable_land = 80
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_logging_camp = 11
+    }
+}
+STATE_SILVERVORD = {
+    id = 102
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x6C8840" "x6C9000" "xEC8A80" "xEC8EFF" "xED9E80" }
+    traits = {}
+    city = "xec8a80" #Carlanhal
+
+    farm = "xec8eff" #Badeben
+
+    wood = "x6c9000" #Acengard
+
+    mine = "xed9e80" #Feldham
+
+    arable_land = 60
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 17
+        building_lead_mine = 9
+        building_logging_camp = 8
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 14
+    }
+}
+STATE_CANNWOOD = {
+    id = 103
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x6850C0" "x6B7C00" "x6C8CC0" "xE74E80" "xEB7E40" "xEB82C0" }
+    traits = { state_trait_alen_river }
+    #Esckerfort
+    city = "xeb7e40"
+    #Westwatch
+    farm = "xeb82c0"
+    #Westwall Wood
+    wood = "x6c8cc0"
+    #Cannwic
+    mine = "x6b7c00"
+    arable_land = 40
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 17
+        building_sulfur_mine = 26
+        #cos of Cannwood's connotations with Agrados and hell
+        building_damestear_mine = 12
+    }
+}
+STATE_EBONMARCK = {
+    id = 104
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x685400" "x685880" "x6A6C80" "x6A70FF" "x6A78C0" "xBB2497" "xCCCF72" "xD4C3AF" "xE852FF" "xE96A40" "xEA7200" "xEB7AFF" }
+    traits = { state_trait_alen_river }
+    #Athfork
+    city = "xe852ff"
+    #Ebonham
+    farm = "xea7200"
+    #Giantsfort
+    wood = "x6a6c80"
+    #Tencfor
+    mine = "x685400"
+    arable_land = 77
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_coal_mine = 46
+        #Tencfor from EU4
+        building_iron_mine = 16
+        building_logging_camp = 22
+    }
+}
+STATE_MIDDLE_ALEN = {
+    id = 105
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x34CAD9" "x652C00" "x674C40" "x72BC77" "x9E7356" "xAA702A" "xE74A00" }
+    traits = { state_trait_greatwoods state_trait_alen_river }
+    #Garbar
+    city = "xe74a00"
+    #Mirelook
+    wood = "x652c00"
+    #Ordingwood
+    farm = "x72bc77"
+    #Rojanka
+    mine = "x34cad9"
+    arable_land = 65
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 16
+    }
+}
+STATE_DRYADSDALE = {
+    id = 106
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x06A3DF" "x078C7E" "x3DC8C8" "x87824F" "x88924F" }
+    traits = {}
+    #Pixiebury
+    city = "x078c7e"
+    #Wendshaw
+    farm = "x3dc8c8"
+    #Spritescage
+    wood = "x87824f"
+    #Dryadsdale
+    mine = "x88924f"
+    arable_land = 40
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 12
+        building_lead_mine = 7
+        building_logging_camp = 18
+    }
+}
+STATE_HORNWOOD = {
+    id = 107
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x089020" "x08947E" "x089820" "x7DFA09" "x878EAD" "x8896AD" }
+    traits = {}
+    #Lover's Quarrel
+    city = "x08947e"
+    #Nymphlea
+    farm = "x089020"
+    #Doescker
+    wood = "x8896ad"
+    #Willowmore
+    mine = "x089820"
+    arable_land = 50
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 19
+        building_damestear_mine = 14
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 5
+    }
+}
+STATE_MARRVALE = {
+    id = 108
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x089C7E" "x3BDCFA" "x7B2547" "x889A4F" "x899EAD" }
+    impassable = { "x7B2547" }
+    traits = {}
+    #Marrvale
+    city = "x089c7e"
+    #Griffonsgate
+    farm = "x889a4f"
+    #Marrhyl
+    mine = "x899ead"
+    wood = "x3bdcfa"
+    arable_land = 30
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 45
+        #good iron wealth, most in escann proper aside from steelhyl
+        building_logging_camp = 22
+    }
+}
+STATE_ESSHYL = {
+    id = 110
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x067C7E" "x068020" "x07847E" "x3CFAFA" }
+    traits = {}
+    #Esswyck
+    city = "x067c7e"
+    #Gorse
+    farm = "x3cfafa"
+    #Esswood
+    wood = "x068020"
+    #Farhyl
+    mine = "x07847e"
+    arable_land = 40
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 19
+        building_iron_mine = 13
+        building_coal_mine = 22
+        building_gem_mine = 3
+    }
+}
+STATE_UNGULDAVOR = {
+    id = 111
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x056c7e" "x067820" "x84624f" "x856a4f" "x896e6b" "x667f50" "x867a4f" "xcf6c75" "x867ead" "x403914" "x056820" "x04647e" "x845a4f" "x8356ad" "x77996b" }
+    traits = { state_trait_nath_river }
+    #Osdar
+    city = "x067820"
+    #Sardarbar
+    farm = "x867ead"
+    #Sagungul
+    wood = "x056c7e"
+    #Dudgsohul
+    mine = "x856a4f"
+    arable_land = 144
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 36
+        building_iron_mine = 29
+        building_coal_mine = 56
+        building_lead_mine = 13
+        building_gold_mine = 7
+        building_damestear_mine = 12
+        building_monster_ranch = 2
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 6
+    }
+}
+STATE_BURNOLL = {
+    id = 113
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x758800" "x758C80" "xF58A40" "xF58EC0" "xF59200" }
+    traits = {}
+    #Theminath
+    city = "x758800"
+    #Camircost
+    farm = "xf59200"
+    #Smallmere
+    wood = "xf59200"
+    #Burnoll
+    mine = "xf58ec0"
+    arable_land = 80
+    arable_resources = { building_wheat_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_logging_camp = 5
+        building_iron_mine = 10
+        building_lead_mine = 14
+    }
+}
+STATE_CASTONATH = {
+    id = 114
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x002C7E" "x762080" "x7698C0" "x769C00" "x812EAD" "x81324F" "xF69AFF" "xF69E40" "xF722C0" }
+    traits = { state_trait_nath_river }
+    #Castonath
+    city = "xf722c0"
+    #The Manorfields
+    farm = "x769c00"
+    #Trialwood
+    wood = "x81324f"
+    #Ar Urion
+    mine = "x7698c0"
+    arable_land = 125
+    arable_resources = { building_rye_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_logging_camp = 7
+        building_iron_mine = 11
+        building_sulfur_mine = 9
+        building_gem_mine = 3
+        #Trialmount
+        building_monster_ranch = 4
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 12
+    }
+}
+STATE_UPPER_NATH = {
+    id = 115
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x01347E" "x024820" "x82424F" "x8246AD" "x834A4F" "x045C7E" "x046020" "x057020" "x26EC55" "x845EAD" "x8566AD" "x856EAD" }
+    traits = { state_trait_nath_river }
+    #Foarhal
+    city = "x8246ad"
+    #Ardent Keep
+    farm = "x845ead"
+    #Oldhaven
+    wood = "x057020"
+    #Mintirley
+    mine = "x01347e"
+    arable_land = 100
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 23
+    }
+}
+STATE_STEELHYL = {
+    id = 117
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x03547E" "x045820" "x2AC8FA" "x83524F" "xE1F181" }
+    traits = {}
+    #Steelmarket
+    city = "x045820"
+    #Charwic
+    wood = "x83524f"
+    #Old Hyl
+    mine = "x03547e"
+    #Coalton
+    farm = "x045820"
+    arable_land = 40
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_coal_mine = 75
+        #from eu4 
+        building_iron_mine = 67
+        building_lead_mine = 15
+        #from copper in eu4
+        building_logging_camp = 18
+    }
+}
+STATE_SERPENTSMARCK = {
+    id = 118
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x013820" "x02447E" "x035020" "x2BE8DB" "x8136AD" "x813A4F" }
+    traits = { state_trait_alen_river }
+    #Serpentswic
+    city = "x013820"
+    #Nortmarck
+    farm = "x02447e"
+    #Shatterwood
+    wood = "x035020"
+    #Glory Road - need new name
+    mine = "x813a4f"
+    arable_land = 40
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 20
+        building_coal_mine = 25
+        building_sulfur_mine = 9
+        building_damestear_mine = 12
+        #demesne brought down a meteorite here
+        building_gem_mine = 4
+    }
+}
+STATE_NORTHYL = {
+    id = 119
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x023C7E" "x024020" "x6A7440" "x823EAD" "xEA6EC0" }
+    traits = { state_trait_alen_river }
+    #Acenort
+    city = "x6a7440"
+    #Westwood
+    farm = "x023c7e"
+    #Hunters Folly
+    wood = "x024020"
+    #Nortwood
+    mine = "xea6ec0"
+    arable_land = 40
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 19
+        building_coal_mine = 19
+        #eu4 latent good
+        building_iron_mine = 15
+        building_gem_mine = 4
+    }
+}
+STATE_LOWER_NATH = {
+    id = 121
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x00247E" "x013020" "x09C8C8" "x13DCFA" "x6B84FF" "x7724FF" "x80224F" "x8026AD" "x802A4F" "xEA7680" "xEB8600" }
+    traits = { state_trait_magically_enriched_soils state_trait_nath_river }
+    # Esthili MT re-imagined into magic similar to Eilisins
+    #Elderlan
+    city = "x802a4f"
+    #Wardenhall
+    wood = "xeb8600"
+    #Sapphirewatch
+    farm = "x7724ff"
+    #Nurced
+    mine = "x00247e"
+    arable_land = 110
+    arable_resources = { building_rye_farm building_livestock_ranch building_vineyard }
+    capped_resources = {
+        building_logging_camp = 20
+        building_coal_mine = 26
+    }
+}
+STATE_TANNUSVALE = {
+    id = 122
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x03755D" "x41395E" "x653080" "x663840" "xA57389" "xC468BE" "xE52AFF" "xE52E40" "xE85AC0" }
+    traits = { state_trait_greatwoods state_trait_giants_grave_fishing }
+    #Tannusvale
+    city = "x663840"
+    #Ostyar
+    port = "x653080"
+    #Whitwic
+    farm = "xe52aff"
+    #Ungulbar
+    wood = "xe52e40"
+    #Gulletpeak
+    mine = "xe85ac0"
+    arable_land = 87
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 30
+        building_logging_camp = 34
+        building_fishing_wharf = 10
+        building_flawless_metal_mine = 2  
+        #Ebonsteel
+    }
+    naval_exit_id = 3007
+}
+STATE_ESALD = {
+    id = 123
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x65B65D" "x6634FF" "xE49A40" "xE52680" "xE532C0" "xE63600" "xF24934" }
+    traits = { state_trait_giants_grave_fishing }
+    #Garok
+    city = "xe49a40"
+    #Honok Osul
+    port = "xe532c0"
+    #Sondaar
+    farm = "x6634ff"
+    #Eskerborg
+    wood = "xe63600"
+    #Estmark
+    mine = "x65b65d"
+    arable_land = 82
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 24
+        building_fishing_wharf = 20
+        building_whaling_station = 5
+    #makes esald a more special province, especially if its capital of Grombar
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 5
+    }
+    naval_exit_id = 3007
+}
+STATE_CEDESCK = {
+    id = 124
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x442A6C" "x663CC0" "x664000" "x685CFF" "xC5F673" "xE63A80" "xE63EFF" }
+    traits = { state_trait_greatwoods state_trait_giants_grave_fishing }
+    #Cedevik
+    city = "xe63a80"
+    #Rivsby - Rudyar
+    port = "x663cc0"
+    #Vertwic - Bolunduskur
+    farm = "x664000"
+    #Coldwood - Borungul
+    wood = "xe63eff"
+    #Hideguzzle
+    mine = "x685cff"
+    arable_land = 65
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 32
+        building_iron_mine = 30
+        building_lead_mine = 30
+        #some special shizz as Grombar's schtick was trading in metals and rarer stuff
+        building_fishing_wharf = 15
+        building_gem_mine = 1
+        #east gulletpeak
+    }
+    naval_exit_id = 3007
+}
+STATE_VROREN = {
+    id = 125
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x038FD6" "x40C7C7" "x6964C0" "x696800" "x7C04E8" "x822510" "x91C46B" "x95524F" "x9802E3" "x9986AD" "xA37913" "xD9A4A4" "xE96280" "xE966FF" }
+    traits = { state_trait_vroren_river state_trait_mammoth_breeding_area state_trait_giants_grave_fishing state_trait_ur_samozd }
+    #Bal Vroren - Ur Sarmozd
+    city = "x696800"
+    #Saryar
+    port = "x95524f"
+    #Seawall - Zurdavor
+    farm = "x9986ad"
+    #Mammoth Hall - Ostobarg
+    wood = "xe96280"
+    #Serpentswall - Mardavor
+    mine = "xe966ff"
+    arable_land = 103
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_coal_mine = 24
+        building_logging_camp = 22
+        building_fishing_wharf = 5
+        building_gem_mine = 3
+        #soulstones of isle vroren
+    }
+    naval_exit_id = 3007
+}
+STATE_GIANTS_TEARS = {
+    id = 126
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x084CAC" "x0D1457" "x0F4C3D" "x134494" "x16547E" "x165820" "x165C7E" "x1D11A0" "x22DF51" "x320F3D" "x3BCC2A" "x415B94" "x67D51F" "x6D74E2" "x722537" "x9656AD" "x965A4F" "xA49B8E" "xA4AE5C" "xA93A48" "xAD6F70" "xB4F97E" "xDD44A9" "xE019F7" "xE0864A" "xE7CC7E" "xEDEA92" "xF710D7" }
+    traits = { state_trait_vroren_river state_trait_northern_forests state_trait_mammoth_breeding_area }
+    #Boz-Ashkan
+    city = "x9656ad"
+    #Osadar
+    wood = "x165820"
+    #Temargul
+    mine = "x965a4f"
+    #Myrk
+    farm = "xe7cc7e"
+    arable_land = 122
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 53
+        building_coal_mine = 90
+        building_iron_mine = 60
+        building_damestear_mine = 14
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 5
+    }
+    naval_exit_id = 3007
+}
+STATE_GIFRBYGD = {
+    id = 127
+    subsistence_building = "building_subsistence_pasture"
+    provinces = { "x00B4F8" "x00ED15" "x010B0C" "x019360" "x02FE94" "x04CFF9" "x0DB261" "x153FDD" "x154977" "x166785" "x1855B9" "x21E365" "x284A6C" "x2A81F3" "x2CAE68" "x2FBD4F" "x30C5F8" "x317CE6" "x33AEE0" "x35CB07" "x3E6A8B" "x450FD2" "x4A3CA8" "x4A9334" "x4E5FFD" "x4F0DC9" "x553FEC" "x5BEB3A" "x5E833E" "x610513" "x64A663" "x6D7957" "x833E08" "x8C5DC3" "x8CF3A4" "x92F252" "x95326C" "xA4436B" "xAB2AB6" "xB0BA60" "xB99F1B" "xBA7367" "xC0C3C5" "xC3138B" "xC4683F" "xC9C2AD" "xC9D240" "xCB1C1C" "xD1068C" "xD118AD" "xD4910F" "xD52D01" "xE010DE" "xE3CDA2" "xE5BBDB" "xE9617F" "xEE4CFE" "xEE827E" "xF49B63" "xF4AA14" "xF90CD4" "xFA35A3" "xFA91EF" "xFB79F8" "xFCF014" }
+    impassable = { "xe9617f" "xc9d240" }
+    traits = { state_trait_northern_forests }
+    #Dulzabon
+    city = "xe5bbdb"
+    #Kostohul
+    wood = "xb0ba60"
+    #Takht-Darakh
+    mine = "x35cb07"
+    #Grenholt
+    farm = "xcb1c1c"
+    arable_land = 24
+    arable_resources = { building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 40
+        building_flawless_metal_mine = 4
+        #Ebonsteel
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 9
+    }
+}
+STATE_EAST_OLAVLUND = {
+    id = 128
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x144020" "x14447E" "x154820" "x154C7E" "x155020" "x2052C6" "x290F3A" "x32DBED" "x3E6C56" "x55D16A" "x61CDC4" "x68FE93" "x826618" "x8B7040" "x94424F" "x9546AD" "x954A4F" "xA31C28" }
+    traits = { state_trait_olavlund_fjords state_trait_giants_grave_fishing state_trait_titans_mountains }
+    #Brasudar
+    city = "x144020"
+    #Naugsvol
+    port = "x154820"
+    #Orstengard
+    farm = "x14447e"
+    #Nyrford
+    wood = "x94424f"
+    #Urviksten
+    mine = "x154c7e"
+    arable_land = 44
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 20
+        building_fishing_wharf = 12
+        building_sulfur_mine = 12
+        #as per norway in vanilla
+        building_iron_mine = 60
+        #Ebonsteel origin
+        building_flawless_metal_mine = 10
+        #Ebonsteel, primary source
+    }
+    naval_exit_id = 3007
+}
+STATE_WEST_OLAVLUND = {
+    id = 129
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x032D65" "x0497AF" "x13347E" "x143820" "x143C7E" "x2217F9" "x2AC795" "x353E68" "x40A3E5" "x5831DA" "x62C9FB" "x6F8F5A" "x7095F1" "x8589D5" "x9336AD" "x93A4B3" "x943A4F" "x943EAD" "x999BB0" "xAFE394" "xB36D23" "xD0D01F" "xD5C1BD" "xE1DF13" "xE9A726" "xF5709F" }
+    traits = { state_trait_olavlund_fjords state_trait_giants_grave_fishing state_trait_titans_mountains }
+    #Redgarhavn
+    city = "x943a4f"
+    #Redgarhavn port
+    port = "x62c9fb"
+    #Olavsborg
+    farm = "x943ead"
+    #Skaldol
+    wood = "x143c7e"
+    #Glodborg
+    mine = "x143820"
+    arable_land = 40
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 10
+        building_fishing_wharf = 12
+        building_iron_mine = 50
+        building_sulfur_mine = 16
+        #as per norway in vanilla
+        building_gold_mine = 1
+    }
+    naval_exit_id = 3007
+}
+STATE_GIANTS_MANSE = {
+    id = 130
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x25c8c8" "x954ead" }
+    traits = { state_trait_giants_grave_fishing }
+    city = "x954ead" #Giants Manse
+
+    port = "x25c8c8" #Giants Manse
+
+    farm = "x25c8c8"
+    wood = "x954ead"
+    mine = "x954ead"
+    arable_land = 8
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_fishing_wharf = 7
+        building_logging_camp = 4
+    }
+    naval_exit_id = 3007
+}
+STATE_BJARNLAND = {
+    id = 131
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x019470" "x119020" "x11947E" "x12247E" "x1BAA4F" "x2644A5" "x33CAFB" "x3BDDFB" "x5EE205" "x79E4CB" "x83F9A9" "x91924F" "x9196AD" "x96A5E2" "xC0C1F6" "xD0D788" "xDF0A8A" "xE3820F" "xEB9A78" "xEBCE77" "xF1D3A4" }
+    traits = { state_trait_rafn_river state_trait_giants_grave_fishing }
+    #Konungrhavn
+    city = "x11947e"
+    #Hrossland
+    farm = "x3bddfb"
+    #Torbjoldhavn
+    port = "x3bddfb"
+    #Burrholt
+    wood = "x12247e"
+    #Alptborg
+    mine = "x12247e"
+    arable_land = 70
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 4
+        building_coal_mine = 84
+        #keep this "low" in gerudia overall to make em reliant on trade like Scandinavia
+        building_fishing_wharf = 15
+        building_flawless_metal_mine = 4
+        #Ebonsteel
+    }
+    naval_exit_id = 3008
+}
+STATE_SPORREYN = {
+    id = 132
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x108C7E" "x17732A" "x6528C0" "x918EAD" }
+    traits = { state_trait_giants_grave_fishing }
+    #Sporreyn
+    city = "x108c7e"
+    #Fuglborg
+    port = "x918ead"
+    #Jotunsglotta
+    farm = "x6528c0"
+    #Stýriventa
+    wood = "x108c7e"
+    mine = "x108c7e"
+    arable_land = 32
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_fishing_wharf = 15
+        building_coal_mine = 40
+        # Uncovered by Bjarnrik MT
+        building_logging_camp = 4
+    }
+    naval_exit_id = 3008
+}
+STATE_REVRLAND = {
+    id = 133
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x122020" "x129C7E" "x25CEEC" "x4BDCFA" "x919A4F" "x929EAD" "x965EAD" "x9766AD" "xA128AD" "xCA5EA7" "xECCB74" "xF271BF" "xF8562B" "xF8F0E7" }
+    traits = { state_trait_storm_islands_fishing }
+    #Vestrund
+    city = "x129c7e"
+    #Revrhavn
+    port = "x919a4f"
+    #Eikodr
+    farm = "x9766ad"
+    #Haugmyrr
+    wood = "x929ead"
+    #Leifsborg
+    mine = "x122020"
+    arable_land = 42
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 14
+        building_fishing_wharf = 15
+    }
+    naval_exit_id = 3009
+}
+STATE_FEGRAS = {
+    id = 134
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x119820" "x132C7E" "x14395A" "x176820" "x2CEF5A" "x3DB39D" "x3DDD92" "x55904B" "x709ACF" "x92224F" "x932EAD" "x940A43" "xA520AF" "xAA7EAF" "xBD5DCF" "xC6B1C2" "xF2C303" }
+    traits = { state_trait_northern_forests }
+    #Fegras
+    city = "x709acf"
+    #Fegras 2
+    farm = "x119820"
+    #Sarbann
+    wood = "x92224f"
+    #Kaldrborg
+    mine = "xbd5dcf"
+    arable_land = 44
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 16
+        building_iron_mine = 38
+        # Uncovered by Bjarnrik MT
+        building_lead_mine = 15
+        # Just some extra up here
+        building_flawless_metal_mine = 2
+        #Ebonsteel
+    }
+}
+STATE_SIDAETT = {
+    id = 135
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x09BEF7" "x0B96E1" "x122820" "x133020" "x15C016" "x28E955" "x30E89E" "x44E373" "x53DF1E" "x5501C5" "x688659" "x68A16D" "x6BF8B0" "x7CA3C1" "x8ADFBB" "x9226AD" "x932A4F" "x93324F" "x95BC60" "xA6A275" "xACC07E" "xB7971C" "xBEBE88" "xC41AAB" "xFEC41B" }
+    traits = { state_trait_rafn_river state_trait_northern_forests }
+    #Silfrhof
+    city = "x122820"
+    #Sildhalda
+    farm = "x932a4f"
+    #Algrar
+    wood = "x133020"
+    #Vargrhol
+    mine = "x9226ad"
+    arable_land = 69
+    arable_resources = { building_rye_farm building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 25
+        building_damestear_mine = 16
+    }
+}
+STATE_FJORDSBAY = {
+    id = 136
+    subsistence_building = "building_subsistence_pasture"
+    provinces = { "x05CFB2" "x0D20F7" "x10A113" "x113DAE" "x166020" "x17647E" "x176C7E" "x1C2AE9" "x1EE7EA" "x224A7E" "x2DD4D2" "x2E2B77" "x31968A" "x31D64D" "x34765E" "x36F0BC" "x378C15" "x37E773" "x46CDE6" "x5DF742" "x6992A6" "x777469" "x78CC1A" "x7B792F" "x7E848E" "x8FEF2E" "x92249F" "x97624F" "x976A4F" "xB31243" "xB54D80" "xB58248" "xBAFB81" "xBE8253" "xC04062" "xC75BA5" "xC8D7F1" "xCB6785" "xD8759D" "xDE554F" "xF7F8FB" "xFC46FA" }
+    impassable = { "x224a7e" }
+    traits = { state_trait_dalrfjall_prospecting state_trait_fjordsbay_fjords }
+    #Murtrhol
+    city = "x97624f"
+    #Allt
+    port = "x976a4f"
+    #Dukklbjarg
+    farm = "x176c7e"
+    #Brutnord
+    mine = "x166020"
+    #Thurrsbol
+    wood = "x17647e"
+    arable_land = 22
+    arable_resources = { building_livestock_ranch }
+    capped_resources = {
+        building_fishing_wharf = 10
+        # Too cold for many fish
+        building_whaling_station = 5
+        building_iron_mine = 60
+        building_lead_mine = 60
+        # Uncovered by Bjarnrik MT
+        building_sulfur_mine = 12
+        #as per norway in vanilla
+        building_logging_camp = 23
+        building_monster_ranch = 4
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 4
+    }
+    naval_exit_id = 3009
+}
+STATE_GULLMORK = {
+    id = 137
+    subsistence_building = "building_subsistence_pasture"
+    provinces = { "x017ECB" "x2332F8" "x23340B" "x357E0D" "x46AD99" "x4CD64F" "x5BE711" "x64B572" "x71B108" "x81AAB0" "x821D7B" "x8B0C25" "x9FA507" "x9FE3D7" "xAFF0ED" "xB361FC" "xB5C9CA" "xC3A557" "xD43679" "xD4740E" "xD4C879" "xDAD0B0" "xDD8138" "xFB3575" }
+    impassable = { "x9fe3d7" }
+    traits = { state_trait_northern_forests }
+    #Gullmork
+    city = "xd43679"
+    #Sarrvatn
+    farm = "x46ad99"
+    #Hvitrfold
+    wood = "xd4c879"
+    #Hagisander
+    mine = "x81aab0"
+    arable_land = 22
+    arable_resources = { building_livestock_ranch }
+    capped_resources = {
+        building_logging_camp = 16
+    }
+    #From Bjarnrik
+    resource = {
+        type = "building_gold_field"
+        depleted_type = "building_gold_mine"
+        undiscovered_amount = 6
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 6
+    }
+}
+STATE_LAKE_GROVE = {
+    id = 147
+    subsistence_building = "building_subsistence_orchard"
+    provinces = { "x019043" "x1A5496" "x41C8C8" "x8AC169" "xBD6EDC" "xC06EDC" "xCF6EF7" }
+    impassable = { "x019043" }
+    traits = { state_trait_ellyn_river state_trait_deepwoods state_trait_magical_land }
+    city = "xCF6EF7"
+    farm = "x1A5496"
+    wood = "x41C8C8"
+    #Hagisander
+    mine = "xC06EDC"
+    arable_land = 80
+    arable_resources = { building_livestock_ranch building_vineyard building_silk_plantation building_cotton_plantation building_wheat_farm }
+    capped_resources = {
+        building_logging_camp = 32
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 5
+    }
+}
+STATE_MOUNTAIN_GROVE = {
+    id = 148
+    subsistence_building = "building_subsistence_orchard"
+    provinces = { "x20FAFA" "x2DC8C8" "x3FDCFA" "x54716A" "x62B357" "xCE6EDC" "xCF6E03" "xCF6E11" "xCF6EF8" "xCF6EFA" }
+    impassable = { "x62b357" }
+    traits = { state_trait_ellyn_river state_trait_deepwoods state_trait_magical_land }
+    city = "xCE6EDC"
+    farm = "x62B357"
+    mine = "x3FDCFA"
+    wood = "x62B357"
+    arable_land = 64
+    arable_resources = { building_livestock_ranch building_wheat_farm }
+    capped_resources = {
+        building_logging_camp = 29
+        building_iron_mine = 8
+        building_lead_mine = 8
+        building_gem_mine = 2
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 7
+    }
+}
+STATE_THORN_GROVE = {
+    id = 149
+    subsistence_building = "building_subsistence_orchard"
+    provinces = { "x325620" "x33DCFA" "x64FBFB" "xC96EDC" "xCB0338" "xCD8B06" "xCF6E02" "xCF6E0F" }
+    impassable = { "x325620" }
+    traits = { state_trait_ellyn_river state_trait_deepwoods state_trait_magical_land }
+    city = "xCD8B06"
+    farm = "xCB0338"
+    mine = "x325620"
+    wood = "x325620"
+    arable_land = 60
+    arable_resources = { building_livestock_ranch building_wheat_farm building_cotton_plantation }
+    capped_resources = {
+        building_logging_camp = 49
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 5
+    }
+}
+STATE_BONE_GROVE = {
+    id = 140
+    subsistence_building = "building_subsistence_orchard"
+    provinces = { "x04FAFA" "x10B739" "x34FAFA" "x3ED2FC" "x3EDAFC" "x9A14C0" "xC56EDC" "xCF6E10" "xCF6E14" }
+    impassable = { "x10b739" }
+    traits = { state_trait_deepwoods state_trait_magical_land }
+    city = "x3EDAFC"
+    farm = "x9A14C0"
+    mine = "xC56EDC"
+    wood = "xCF6E10"
+    arable_land = 54
+    arable_resources = { building_livestock_ranch building_wheat_farm building_cotton_plantation }
+    capped_resources = {
+        building_logging_camp = 33
+        building_coal_mine = 10
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 28
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 5
+    }
+}
+STATE_ARROW_GROVE = {
+    id = 150
+    subsistence_building = "building_subsistence_orchard"
+    provinces = { "x37DCFA" "x3BEA40" "x46C8FA" "x5D9349" "x7C9625" "x8B0F28" "xCF6E06" "xCF6E07" "xCF6E0C" "xCF6E0E" "xCF6EE7" "xCF6EED" }
+    impassable = { "x5d9349" }
+    traits = { state_trait_ellyn_river state_trait_deepwoods state_trait_magical_land }
+    city = "x8B0F28"
+    farm = "xCF6EE7"
+    mine = "x46C8FA"
+    wood = "xCF6EED"
+    arable_land = 62
+    arable_resources = { building_livestock_ranch building_wheat_farm }
+    capped_resources = {
+        building_logging_camp = 38
+        building_lead_mine = 4
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 6
+    }
+}
+STATE_HUNTER_GROVE = {
+    id = 152
+    subsistence_building = "building_subsistence_orchard"
+    provinces = { "x0EC8FA" "x13DFFD" "x20083F" "x294234" "x3ACAFC" "xCF6E04" "xCF6EDF" }
+    impassable = { "x294234" }
+    traits = { state_trait_ellyn_river state_trait_deepwoods state_trait_magical_land }
+    city = "x20083F"
+    farm = "x3ACAFC"
+    mine = "x294234"
+    wood = "xCF6E04"
+    arable_land = 70
+    arable_resources = { building_livestock_ranch building_wheat_farm }
+    capped_resources = {
+        building_logging_camp = 35
+        building_monster_ranch = 4
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 4
+    }
+}
+STATE_FLOWER_GROVE = {
+    id = 143
+    subsistence_building = "building_subsistence_orchard"
+    provinces = { "x1096C5" "x28FAFA" "x36A036" "x66C9FB" "xCF6E05" "xCF6E08" "xCF6E12" "xCF6E16" "xCF6EE4" }
+    impassable = { "x36a036" }
+    traits = { state_trait_deepwoods state_trait_magical_land }
+    city = "x1096C5"
+    farm = "x66C9FB"
+    mine = "x36A036"
+    wood = "xCF6EE4"
+    arable_land = 78
+    arable_resources = { building_livestock_ranch building_wheat_farm building_dye_plantation building_silk_plantation building_opium_plantation }
+    capped_resources = {
+        building_logging_camp = 30
+        building_coal_mine = 4
+    }
+    resource = {
+        type = "building_rubber_plantation"
+        discovered_amount = 18
+        undiscovered_amount = 18
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 9
+    }
+}
+STATE_RIVER_GROVE = {
+    id = 144
+    subsistence_building = "building_subsistence_orchard"
+    provinces = { "x0AC8FA" "x0FDCFA" "x42DF86" "x44FAFA" "xCF6E0B" "xCF6E13" "xCF6E15" "xCF6EF1" }
+    impassable = { "x42df86" }
+    traits = { state_trait_ellyn_river state_trait_deepwoods state_trait_magical_land }
+    city = "x44FAFA"
+    farm = "xCF6E15"
+    mine = "xCF6EF1"
+    wood = "x42DF86"
+    arable_land = 84
+    arable_resources = { building_livestock_ranch building_wheat_farm building_banana_plantation building_vineyard building_sugar_plantation building_tobacco_plantation building_tea_plantation }
+    capped_resources = {
+        building_logging_camp = 37
+        building_iron_mine = 12
+        building_lead_mine = 4
+        building_gold_mine = 4
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 3
+    }
+    resource = {
+        type = "building_rubber_plantation"
+        discovered_amount = 14
+    }
+}
+STATE_SHADOW_GROVE = {
+    id = 145
+    subsistence_building = "building_subsistence_orchard"
+    provinces = { "x43DCFA" "x48947E" "x67DDFB" "xCBAA78" "xCF6E0D" "xCF6EF6" "xFC7F77" }
+    impassable = { "x48947e" }
+    traits = { state_trait_deepwoods state_trait_magical_land }
+    city = "x67DDFB"
+    farm = "xFC7F77"
+    mine = "x48947E"
+    wood = "xCF6EF6"
+    arable_land = 60
+    arable_resources = { building_livestock_ranch building_wheat_farm building_cotton_plantation }
+    capped_resources = {
+        building_logging_camp = 36
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 10
+    }
+}
+STATE_OURDIA = {
+    id = 146
+    subsistence_building = "building_subsistence_pasture"
+    provinces = { "x040284" "x07B040" "x1B92F3" "x28B3A5" "x4898C0" "x489C00" "x492080" "x6832AB" "x72ADFE" "xA1094B" "xC37ED4" "xC89680" "xC89AFF" "xC922C0" "xC99E40" "xDE33CE" "xF061B7" "xFAFC5B" "xFF3B52" }
+    traits = {}
+    #Mestikisorotin
+    city = "xc89aff"
+    #Landsend
+    farm = "x4898c0"
+    #Bal Ouord
+    wood = "x489c00"
+    #Ciernhibin
+    mine = "xfafc5b"
+    #Fatherwell
+    port = "x492080"
+    arable_land = 71
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_tobacco_plantation building_vineyard }
+    capped_resources = {
+        building_logging_camp = 8
+        building_fishing_wharf = 8
+        building_iron_mine = 22
+        building_coal_mine = 14
+    }
+    naval_exit_id = 3002
+}
+STATE_LONELY_ISLE = {
+    id = 153
+    subsistence_building = "building_subsistence_pasture"
+    provinces = { "x976ead" "xf0f8d5" }
+    traits = {}
+    #Adénnia
+    city = "x976ead"
+    #New Alvierstead
+    farm = "x976ead"
+    #Reaver's Wood
+    wood = "x976ead"
+    #Lonehill
+    mine = "x976ead"
+    #Isleport
+    port = "xf0f8d5"
+    arable_land = 4
+    arable_resources = { building_livestock_ranch }
+    capped_resources = {
+        building_whaling_station = 3
+        building_fishing_wharf = 7
+        building_damestear_dives = 3
+    }
+    naval_exit_id = 3052
+}
+STATE_HONDERAAK = {
+    id = 695
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x2D9840" "x8B3EAD" "xAD9600" }
+    traits = {}
+    #Gnollsgate
+    city = "x2D9840"
+    #Countsbridge
+    farm = "xAD9600"
+    wood = "x8B3EAD"
+    #Whipspring
+    mine = "x8B3EAD"
+    arable_land = 26
+    arable_resources = { building_wheat_farm building_livestock_ranch }
+    capped_resources = {
+        building_iron_mine = 10
+        building_coal_mine = 10
+        building_logging_camp = 4
+    }
+}

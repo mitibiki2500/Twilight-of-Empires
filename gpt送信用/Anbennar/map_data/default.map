@@ -1,0 +1,63 @@
+provinces = "provinces.png"
+topology = "heightmap.heightmap"
+rivers = "rivers.png"
+adjacencies = "adjacencies.csv"
+wrap_x = yes
+
+sea_starts = {	#You need every single sea province in here btw, not just "starts" -Jay
+	x08fafa x16c8fa x69e1ff x30fafa x5dcaca x49c8c8 x5cfbfb x29c8c8 x63ddfb x3ac8fa x38fafa x5ecafc x24fafa x30fafa x10fafa x32c9fb
+
+	#Uelos Lament
+	x37ddfb x69caca x3ecefc x68fbfb x27dcfa x2bdcfb x5cfcfc x32c9fb x3dcaca x5acbfd x78fbfb x3cfbfb x57defc
+	x49caca x6bddfb x55caca
+	x60fcfc
+
+	#Aelantir
+	x00fcfc x7EC9FB x03defc x0dcacb x3fddfb x1cfcfc x25cbcb x6acbfd x0ecafc x4cfcfc x5dc9c9 x77ddfb x6fddfb x73ddfb x6ec9fb x3cfdfd x36cbfd
+	x72cbfd x6bdffd x38fcfc x2dcbcb x32cbfd x39cbcb x60fdfd x68cbcb x31caca x4cfdfd x5dcbcb x6cfdfd x25caca x56cbfd x22cafc x2ecafc
+	x1fdefc x340eec xa729a6 x2d4f87 xe10dad x49c9c9 x4acbfd x64fdfd x16fafa x0dc9c9
+	x3b70b1 x54e2e1
+
+	#Haless
+	x63dcfa x70fafa x6acafc x0bdffd x79c8c8 x48fdfd x7cfafa x7fdcfa x88fdfd x03ddfb x29d8e4 x349df9 x41c9c9 x7edefc x2ac9fb
+
+	#Sarhal
+	x56c8fa x6dcaca x51c8c8 x78fcfc x62cafc x70fcfc x50fcfc x7acafc x7fdefc x59c9c9 x7dcaca x03dffd x28fdfd x7ecafc
+
+	#Insyaa
+	x01cbcb x28fbfb x1fddfb x6bdcfa x74fcfc x66cbfd x20cce0 x341aba x0dfee0 x445572 x405b92 x25c9c9 x23dffd x721b9a x2861cb x0d61a4 x5ecbfd
+	x6147c1 x316868 x17ddfb 
+	
+	#North & South
+	x405b94 x8391b2 x26cafc x8ade90 x6fb3de x43ddfb
+ 
+}
+lakes = {
+	#Lake Silvermere, Cannor
+	x4dc8c8 x5bddfb x0600ec x0bdcfa
+	x5d00f4 x5e00f8 x2400ec x0cfafa x2800e8
+	x01c8c8 x0fddfb x02c8fa
+	x0200f0
+	x4cfafa x0dc8c8
+	
+	#Gerudian Lakes, Cannor
+	x03508a x09ae3f x2e9273 x530ff7 xbed198 x9241f8 x71ea90 x574af4 x8c4a67 xF2DD2A
+	
+	#Bulwar and Salahad
+	x0800f4 x2600f4 x2500f0
+	x0fdffd x2700f8
+
+	#Sarhal
+	x1a00ec x1900e8 x12cbfd x11cbcb x14fdfd x1b00f0 x15cbcb x17dffd x16cbfd x1c00f4 x1500ec x2B839E x10FDFD
+
+	#North Aelantir
+	x7A4624 x6F7C2B x76D398 xD14A32 x76D3CD x4C5EBA xBAA427 x847CBA xBA352E x1D0077 xD3586D x770700 x717761 x53D347 xF04D58 x0EC9FB
+	#South Aelantir
+	x332777 x772961 x401B77 x5B5B77 x772963 x770910 x277743 x63772E x770500 x747753 x52775E x377735 x3E5E77 x770204 x007761 x773D5B x77515C x373C77
+	
+	#Haless and FP
+	x1000ec x1100f0 x0e00f8 x0d00f4 x0c00f0 x1300f8 x1400e8 x0b00ec x4ec8fa x0f00e8 xd89969
+
+	#Insyaa
+	x1600f0 x1700f4 x1d669f x1586dd x11a2a2 x2eb5b5 x5dafef x6bdcfb x14fbfb x18fbfb x21c9c9
+}

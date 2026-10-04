@@ -1,0 +1,388 @@
+﻿namespace = anb_formation
+
+# Anbennar
+anb_formation.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = anb_formation.1.t
+	desc = anb_formation.1.d
+	flavor = anb_formation.1.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+		c:A01 ?= THIS
+	}
+
+	immediate = {
+		save_scope_as = anb_formation_country
+		cu:lao = {
+			save_scope_as = unification_culture
+		}
+		every_country = {
+			limit = {
+				has_diplomatic_relevance = ROOT
+			}
+			post_notification = unification_notification_anbennar
+		}
+	}
+	option = {	#TODO
+		name = anb_formation.1.a
+		default_option = yes
+		if = {
+			limit = {
+				any_state_region = {
+					any_scope_state = {
+						is_homeland_of_country_cultures = ROOT
+						NOT = { owner = ROOT }
+						NOT = { has_claim_by = ROOT }
+					}
+				}
+			}
+			unification_claims_effect = yes
+		}
+		add_modifier = {
+			name = unification_prestige
+			days = very_long_modifier_time
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Great Command
+anb_formation.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = anb_formation.2.t
+	desc = anb_formation.2.d #probably needs a different one if they're no longer a warlord state but a democracy or something
+	flavor = anb_formation.2.f
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+		c:R21 ?= THIS
+		NOT = { has_global_variable = has_reunited_command }
+	}
+
+	immediate = {
+		set_global_variable = has_reunited_command
+		save_scope_as = formation_country
+		ruler = { save_scope_as = ruler_scope }
+		every_country = {
+			limit = {
+				has_diplomatic_relevance = ROOT
+			}
+			post_notification = unification_notification_one_culture
+		}
+		if = {
+            limit = {
+                exists = c:R21
+            }
+            c:R21 = {
+                remove_modifier = anb_command_events.1.a.m
+                remove_modifier = anb_command_events.1.b.m
+                remove_modifier = anb_command_events.1.c.m
+                remove_modifier = anb_command_events.2.a.m
+                remove_modifier = anb_command_events.2.b.m
+                remove_modifier = anb_command_events.2.c.m
+                remove_modifier = anb_command_events.3.a.m
+                remove_modifier = anb_command_events.3.b.m
+                remove_modifier = anb_command_events.3.c.m
+            }
+        }
+        if = {
+            limit = {
+                exists = c:R08
+            }
+            c:R08 = {
+                remove_modifier = anb_command_events.1.a.m
+                remove_modifier = anb_command_events.1.b.m
+                remove_modifier = anb_command_events.1.c.m
+                remove_modifier = anb_command_events.2.a.m
+                remove_modifier = anb_command_events.2.b.m
+                remove_modifier = anb_command_events.2.c.m
+                remove_modifier = anb_command_events.3.a.m
+                remove_modifier = anb_command_events.3.b.m
+                remove_modifier = anb_command_events.3.c.m
+            }
+        }
+        if = {
+            limit = {
+                exists = c:R17
+            }
+            c:R17 = {
+                remove_modifier = anb_command_events.1.a.m
+                remove_modifier = anb_command_events.1.b.m
+                remove_modifier = anb_command_events.1.c.m
+                remove_modifier = anb_command_events.2.a.m
+                remove_modifier = anb_command_events.2.b.m
+                remove_modifier = anb_command_events.2.c.m
+                remove_modifier = anb_command_events.3.a.m
+                remove_modifier = anb_command_events.3.b.m
+                remove_modifier = anb_command_events.3.c.m
+            }
+        }
+        if = {
+            limit = {
+                exists = c:R14
+            }
+            c:R14 = {
+                remove_modifier = anb_command_events.1.a.m
+                remove_modifier = anb_command_events.1.b.m
+                remove_modifier = anb_command_events.1.c.m
+                remove_modifier = anb_command_events.2.a.m
+                remove_modifier = anb_command_events.2.b.m
+                remove_modifier = anb_command_events.2.c.m
+                remove_modifier = anb_command_events.3.a.m
+                remove_modifier = anb_command_events.3.b.m
+                remove_modifier = anb_command_events.3.c.m
+            }
+        }
+        if = {
+            limit = {
+                exists = c:R15
+            }
+            c:R15 = {
+                remove_modifier = anb_command_events.1.a.m
+                remove_modifier = anb_command_events.1.b.m
+                remove_modifier = anb_command_events.1.c.m
+                remove_modifier = anb_command_events.2.a.m
+                remove_modifier = anb_command_events.2.b.m
+                remove_modifier = anb_command_events.2.c.m
+                remove_modifier = anb_command_events.3.a.m
+                remove_modifier = anb_command_events.3.b.m
+                remove_modifier = anb_command_events.3.c.m
+            }
+        }
+        if = {
+            limit = {
+                exists = c:R16
+            }
+            c:R16 = {
+                remove_modifier = anb_command_events.1.a.m
+                remove_modifier = anb_command_events.1.b.m
+                remove_modifier = anb_command_events.1.c.m
+                remove_modifier = anb_command_events.2.a.m
+                remove_modifier = anb_command_events.2.b.m
+                remove_modifier = anb_command_events.2.c.m
+                remove_modifier = anb_command_events.3.a.m
+                remove_modifier = anb_command_events.3.b.m
+                remove_modifier = anb_command_events.3.c.m
+            }
+        }
+        if = {
+            limit = {
+                exists = c:R18
+            }
+            c:R18 = {
+                remove_modifier = anb_command_events.1.a.m
+                remove_modifier = anb_command_events.1.b.m
+                remove_modifier = anb_command_events.1.c.m
+                remove_modifier = anb_command_events.2.a.m
+                remove_modifier = anb_command_events.2.b.m
+                remove_modifier = anb_command_events.2.c.m
+                remove_modifier = anb_command_events.3.a.m
+                remove_modifier = anb_command_events.3.b.m
+                remove_modifier = anb_command_events.3.c.m
+            }
+        }
+	}
+
+	option = {
+		name = anb_formation.2.a
+		default_option = yes
+		#reintegrates the commands they have beaten -probably should open a journal for the others and getting claims on their former extent afterwards too
+		if = {
+			limit = {
+				owns_entire_state_region = STATE_CENTRAL_NADIMRAJ
+				owns_entire_state_region = STATE_EAST_NADIMRAJ
+			}
+			add_primary_culture = cu:tiger_hobgoblin
+		}
+		if = {
+			limit = {
+				owns_entire_state_region = STATE_TUGHAYASA
+			}
+			add_primary_culture = cu:elephant_hobgoblin
+		}
+		if = {
+			limit = {
+				owns_entire_state_region = STATE_SIR
+			}
+			add_primary_culture = cu:dragon_hobgoblin
+		}
+		add_modifier = {
+			name = unification_prestige
+			days = very_long_modifier_time
+		}
+		unification_claims_effect = yes
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Taychend
+anb_formation.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = anb_formation.3.t
+	desc = anb_formation.3.d
+	flavor = anb_formation.3.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+		c:C90 ?= THIS
+	}
+
+	immediate = {
+		save_scope_as = anb_formation_country
+		cu:lao = {
+			save_scope_as = unification_culture
+		}
+		every_country = {
+			limit = {
+				has_diplomatic_relevance = ROOT
+			}
+			post_notification = unification_notification_anbennar
+		}
+	}
+	option = {
+		name = anb_formation.3.a
+		default_option = yes
+		if = {
+			limit = {
+				any_state_region = {
+					any_scope_state = {
+						is_homeland_of_country_cultures = ROOT
+						NOT = { owner = ROOT }
+						NOT = { has_claim_by = ROOT }
+					}
+				}
+			}
+			unification_claims_effect = yes
+		}
+		add_modifier = {
+			name = unification_prestige
+			days = very_long_modifier_time
+		}
+		add_modifier = {
+			name = taychend_baby_boom
+			months = 61	#60 shows as 4 years
+		}
+		add_modifier = {
+			name = taychend_economic_boom
+			days = very_long_modifier_time
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Ruincliff
+anb_formation.4 = {
+	type = country_event
+	placement = ROOT
+
+	title = anb_formation.3.t
+	desc = anb_formation.3.d
+	flavor = anb_formation.3.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 3
+
+	trigger = {
+		c:B67 ?= THIS
+	}
+
+	immediate = {
+		# set_global_variable = has_formed_ruincliff # unused
+		save_scope_as = formation_country
+		ruler = { save_scope_as = ruler_scope }
+		cu:sarda = {
+			save_scope_as = unification_culture
+		}
+		cu:east_ynnsman = {
+			save_scope_as = unification_culture_2
+		}
+		cu:steadsman = {
+			save_scope_as = unification_culture_3
+		}
+		cu:concordian = {
+			save_scope_as = unification_culture_4
+		}
+		every_country = {
+			limit = {
+				has_diplomatic_relevance = ROOT
+			}
+			post_notification = unification_notification_four_culture
+		}
+	}
+	option = {
+		name = anb_formation.4.a
+		default_option = yes
+		if = {
+			limit = {
+				any_state_region = {
+					any_scope_state = {
+						is_homeland_of_country_cultures = ROOT
+						NOT = { owner = ROOT }
+						NOT = { has_claim_by = ROOT }
+					}
+				}
+			}
+			unification_claims_effect = yes
+		}
+		add_modifier = {
+			name = unification_prestige
+			days = very_long_modifier_time
+		}
+		cu:concordian = {
+			add_tradition_trait = tradition_ynnosphere
+		}
+		cu:towerfoot_halfling = {
+			add_tradition_trait = tradition_ynnosphere
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}

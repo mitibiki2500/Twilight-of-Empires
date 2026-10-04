@@ -1,0 +1,749 @@
+﻿# Anbennar - added our own
+
+ig_industrialists = {
+	color = hsv{ 0.06 0.60 0.89 }
+	texture = "gfx/interface/icons/ig_icons/industrialists.dds"
+	layer = "revolution_dynamic_industrialists"
+	index = 2
+
+	ideologies = {
+		ideology_plutocratic
+		ideology_laissez_faire
+		ideology_individualist
+		ideology_machine_servitude
+	}
+	
+	character_ideologies = {
+		ideology_moderate
+		ideology_market_liberal
+		ideology_protectionist
+	}
+
+	enable = {
+		always = yes
+	}
+
+	# Deprecated; use on_enable effect to assign traits instead
+	traits = {
+		ig_trait_job_creators
+		ig_trait_engines_of_progress
+		ig_trait_tax_avoidance
+	}
+	
+	on_enable = {
+		ig:ig_industrialists = {
+			# Ravelian State
+			if = {
+				limit = {
+					owner = { c:A33 ?= this }
+				}	#need to make our own
+				remove_ideology = ideology_plutocratic
+				add_ideology = ideology_rectorate_plutocratic
+				set_ig_trait = ig_trait:ig_trait_tax_avoidance
+				set_ig_trait = ig_trait:ig_trait_engines_of_progress
+				set_ig_trait = ig_trait:ig_trait_job_creators
+			}
+			else_if = {
+				limit = {
+					owner = {
+						OR = {
+							c:B80 ?= this
+							c:B03 ?= this
+							c:Y32 ?= this
+							c:Y33 ?= this
+							c:C09 ?= this
+							is_country_type = company
+						}
+					}
+				}
+				remove_ideology = ideology_laissez_faire
+				add_ideology = ideology_colonialist
+
+				set_ig_trait = ig_trait:ig_trait_tax_avoidance
+				set_ig_trait = ig_trait:ig_trait_engines_of_progress
+				set_ig_trait = ig_trait:ig_trait_job_creators
+			}
+			#Cyranvar
+			else_if = {
+				limit = {
+					owner = { c:A79 ?= this }
+				}
+				set_interest_group_name = ig_cyranvar_hannu
+				remove_ideology = ideology_plutocratic
+				
+				add_ideology = ideology_cyranvar_athyr
+
+				set_ig_trait = ig_trait:ig_trait_tax_avoidance
+				set_ig_trait = ig_trait:ig_trait_engines_of_progress
+				set_ig_trait = ig_trait:ig_trait_job_creators
+			}
+			# Soyzkaru Cartel
+			else_if = {
+				limit = {
+					owner = { c:A80 ?= this }
+				}
+				set_interest_group_name = ig_soyzkaru_cartel_new_guard
+
+				remove_ideology = ideology_laissez_faire
+				remove_ideology = ideology_individualist
+
+				add_ideology = ideology_soyzkaru_cartel_grind_radicals
+				add_ideology = ideology_soyzkaru_cartel_goblibertarians
+
+				set_ig_trait = ig_trait:ig_trait_job_creators
+				set_ig_trait = ig_trait:ig_trait_engines_of_progress
+				set_ig_trait = ig_trait:ig_trait_tax_avoidance
+			}				
+			else_if = {
+				limit = {
+					owner = {
+						c:E01 ?= this
+					}
+				}
+				set_interest_group_name = ig_lake_guns
+				remove_ideology = ideology_plutocratic
+				add_ideology = ideology_triunic_guns
+
+				set_ig_trait = ig_trait:ig_trait_tax_avoidance
+				set_ig_trait = ig_trait:ig_trait_engines_of_progress
+				set_ig_trait = ig_trait:ig_trait_job_creators
+			}
+			else_if = {
+				limit = {
+					owner = {
+						OR = { #Technocracies
+							c:A06 ?= this
+							c:B07 ?= this
+							c:B60 ?= this
+							c:Y43 ?= this
+						}
+					}
+				}
+				remove_ideology = ideology_plutocratic
+				add_ideology = ideology_hierarchy_plutocratic
+
+				set_ig_trait = ig_trait:ig_trait_tax_avoidance
+				set_ig_trait = ig_trait:ig_trait_engines_of_progress
+				set_ig_trait = ig_trait:ig_trait_job_creators
+			}
+			
+			#Kheios Chylgireiones ormam/kherka
+			else_if = {
+				limit ={
+					owner = {
+						c:C30 ?= this
+					}
+				}
+				set_interest_group_name = ig_kheios_chylgireiones
+
+				set_ig_trait = ig_trait:ig_trait_tax_avoidance
+				set_ig_trait = ig_trait:ig_trait_engines_of_progress
+				set_ig_trait = ig_trait:ig_trait_job_creators
+			}
+			
+			#Nanru Nakar Kriadvai-Mudaliars
+			else_if = {
+				limit ={
+					owner = {
+						c:C45 ?= this
+					}
+				}
+				set_interest_group_name = ig_nanru_nakar_kriadvai
+
+				set_ig_trait = ig_trait:ig_trait_tax_avoidance
+				set_ig_trait = ig_trait:ig_trait_engines_of_progress
+				set_ig_trait = ig_trait:ig_trait_job_creators
+			}
+			#Azjakuma
+			else_if = {
+				limit ={
+					owner = {
+						c:Y09 ?= this
+					}
+				}
+				set_interest_group_name = ig_kabiurgarko
+
+				set_ig_trait = ig_trait:ig_trait_tax_avoidance
+				set_ig_trait = ig_trait:ig_trait_kabiurgarko
+				set_ig_trait = ig_trait:ig_trait_job_creators
+			}
+			else_if = {
+				limit = {
+					owner = { c:C14 ?= this }
+				}
+				add_ideology = ideology_hive_mind_liberal
+				set_ig_trait = ig_trait:ig_trait_social_criticism
+				set_ig_trait = ig_trait:ig_trait_avant_garde
+				set_ig_trait = ig_trait:ig_trait_propagandists
+			}
+			else = {
+				set_ig_trait = ig_trait:ig_trait_tax_avoidance
+				set_ig_trait = ig_trait:ig_trait_engines_of_progress
+				set_ig_trait = ig_trait:ig_trait_job_creators
+			}
+			
+			#Hive Mind Obligate
+			if = {
+				limit = {
+					owner = { c:C14 ?= this }
+				}
+				remove_ideology = ideology_individualist
+				remove_ideology = ideology_laissez_faire
+				remove_ideology = ideology_plutocratic
+				add_ideology = ideology_hive_mind_obligate
+			}
+		}
+	}
+
+	on_disable = {}
+	priority_cultures = {}
+	on_character_ig_membership = {}
+
+	pop_potential = {
+		OR = {
+			is_pop_type = capitalists
+			is_pop_type = engineers
+			is_pop_type = shopkeepers
+			is_pop_type = adventurers #anbennar - these guys can be anything
+		}
+	}
+
+	pop_weight = {
+		value = 0
+
+		#Anbennar
+		add = {
+			desc = "POP_ADVENTURERS"
+			if = {
+				limit = {
+					is_pop_type = adventurers
+				}
+				value = 50
+				add = this.standard_of_living
+			}
+		}
+
+		add = {
+			desc = "POP_CAPITALISTS"
+			if = {
+				limit = {
+					is_pop_type = capitalists
+				}
+				value = 250
+				add = this.standard_of_living
+			}
+		}
+
+		add = {
+			desc = "POP_ENGINEERS"
+			if = {
+				limit = {
+					is_pop_type = engineers
+				}
+				value = 50
+				add = {
+					value = this.standard_of_living
+					multiply = 2
+				}
+			}
+		}
+
+		add = {
+			desc = "POP_SHOPKEEPERS"
+			if = {
+				limit = {
+					is_pop_type = shopkeepers
+				}
+				value = 25
+				add = {
+					value = this.standard_of_living
+					multiply = 2.5
+				}
+			}
+		}
+#		if = {
+#			limit = {
+#				owner = {
+#					c:BIC ?= this
+#				}
+#				culture = {
+#					has_discrimination_trait_group = heritage_group_european
+#				}
+#				OR = {
+#					strata = upper
+#					strata = middle
+#				}
+#				NOT = {
+#					is_pop_type = officers
+#				}
+#			}
+#			add = {
+#				desc = "POP_INDIA_EUROPEAN_ADMINISTRATORS"
+#				value = 250
+#			}
+#		}
+#
+		#if = {
+		#	limit = {
+		#		owner = {
+		#			c:BIC ?= this
+		#		}
+		#	}
+		#	if = {
+		#		limit = {
+		#			NOT = {
+		#				culture = {
+		#					has_discrimination_trait_group = heritage_group_european
+		#				}
+		#			}
+		#			OR = {
+		#				is_pop_type = bureaucrats
+		#				is_pop_type = clerks
+		#			}
+		#		}
+		#		add = {
+		#			desc = "POP_INDIA_NATIVE_ADMINISTRATORS"
+		#			value = 25
+		#		}
+		#	}
+		#	else_if = {
+		#		limit = {
+		#			NOT = {
+		#				culture = {
+		#					has_discrimination_trait_group = heritage_group_european
+		#				}
+		#			}
+		#			NOR = {
+		#				is_pop_type = bureaucrats
+		#				is_pop_type = clerks
+		#			}
+		#		}
+		#		multiply = {
+		#			desc = "POP_INDIA_ADMINISTRATION_PRIVILEGES"
+		#			value = 0.05
+		#		}
+		#	}
+		#}
+
+		multiply = {
+			desc = "LEADER_POPULARITY"
+			scope:interest_group ?= {
+				leader ?= {
+					value = popularity
+					multiply = 0.0025
+					add = 1
+					max = 1.25
+					min = 0.75
+				}
+			}
+		}
+
+		multiply = {
+			desc = "decentralized_power"
+			value = 1.0
+
+			if = {
+				limit = {
+					owner = {
+						is_country_type = decentralized
+					}
+				}
+				value = 0.0
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group ?= {
+					is_in_government = yes
+				}
+			}
+			multiply = {
+				desc = "IN_GOVERNMENT_ATTRACTION"
+				value = 1
+				add = scope:interest_group.modifier:interest_group_in_government_attraction_mult
+				min = 0
+			}
+		}
+		
+		if = {
+			limit = {
+				scope:interest_group ?= {
+					is_in_government = yes
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_LOYALISTS"
+				value = pop_loyalist_fraction
+				divide = 4
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group ?= {
+					is_in_government = no
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_RADICALS"
+				value = pop_radical_fraction
+				divide = 4
+				add = 1
+			}
+		}
+	}
+
+	monarch_weight = {
+		value = 1
+		# Monarch is not likely to adopt a marginal IG
+		if = {
+			limit = {
+				ig_counts_as_marginal = yes
+			}
+			multiply = {
+				value = 0.1
+			}
+		}
+		# Monarch is more likely to adopt a Powerful IG
+		if = {
+			limit = {
+				is_powerful = yes
+			}
+			multiply = {
+				value = 2
+			}
+		}
+		# More likely with Wealth Voting or Oligarchy
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_law_or_variant = law_type:law_oligarchy
+						has_law_or_variant = law_type:law_wealth_voting
+					}
+				}
+			}
+			multiply = {
+				value = 2
+			}
+		}
+		# Slightly more likely with LF
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_laissez_faire
+				}
+			}
+			multiply = {
+				value = 1.25
+			}
+		}
+		# Less likely before researching Mutual Funds
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_technology_researched = mutual_funds }
+				}
+			}
+			multiply = {
+				value = 0.5
+			}
+		}
+		# Impossible without Currency Standards
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_technology_researched = currency_standards }
+				}
+			}
+			multiply = {
+				value = 0
+			}
+		}
+	}
+
+	agitator_weight = {
+		# Agitators more likely to come from populist IG's rather than elitist
+		value = 0.25
+		# Agitators will never be part of a marginalized IG
+		if = {
+			limit = {
+				owner.ig:ig_industrialists ?= {
+					ig_counts_as_marginal = yes
+				}
+			}
+			multiply = {
+				value = 0
+			}
+		}
+	}
+
+	commander_weight = {
+		value = 0.5
+	}
+	
+	magnate_weight = {
+		value = 2.0
+	}	
+
+	executive_weight = {
+		value = 5.0
+	}
+
+	noble_chance = {
+		value = 0.3
+	}
+
+	female_commander_chance = {
+		value = 0.0
+		#Anbennar
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+	}
+
+	female_executive_chance = {
+		value = 0.0
+		#Anbennar
+		if = {
+			limit = { #variable from country history gets set after IGs being loaded, this need to be done for it to work
+				owner = {
+					OR = {
+						c:F13 ?= this
+						c:L33 ?= this
+						c:L31 ?= this
+						c:L54 ?= this
+						c:L55 ?= this
+						c:L29 ?= this
+						c:A11 ?= this
+					}
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.025
+			}
+		}
+	}
+
+	female_politician_chance = {
+		value = 0.0
+		#Anbennar
+		if = {
+			limit = { #variable from country history gets set after IGs being loaded, this need to be done for it to work
+				owner = {
+					OR = {
+						c:F13 ?= this
+						c:L33 ?= this
+						c:L31 ?= this
+						c:L54 ?= this
+						c:L55 ?= this
+						c:L29 ?= this
+						c:A11 ?= this
+					}
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.025
+			}
+		}
+	}
+
+	female_agitator_chance = {
+		value = 0.025
+		#Anbennar
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.475
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_own_property
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.025
+			}
+		}	
+		
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_in_the_workplace
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.025
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.025
+			}
+		}		
+	}
+
+	# Multiplier applied to the weight for an appropriate commander will be selected from the character pool to lead the IG
+	# root = interest group
+	commander_leader_weight = {
+		value = 0.5
+	}
+	
+	# Multiplier applied to the weight for an appropriate magnate will be selected from the character pool to lead the IG
+	# root = interest group
+	magnate_leader_weight = {
+		value = 2.0
+		#if = {
+		#	limit = {
+		#		c:JAP ?= owner
+		#		NOT = {
+		#			has_variable = japan_restoration_complete
+		#		}
+		#	}
+		#	add = 5
+		#}
+	}
+
+	# Multiplier applied to the weight for an appropriate executive will be selected from the character pool to lead the IG
+	# root = interest group
+	executive_leader_weight = {
+		value = 3.0
+	}
+}

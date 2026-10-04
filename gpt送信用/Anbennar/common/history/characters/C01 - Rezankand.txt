@@ -1,0 +1,56 @@
+﻿CHARACTERS = {
+	c:C01 ?= {
+		create_character = {
+			# Half-elven, Vaikazelhi ruler of Rezankand, to show the importance of Taychendi there. Will have custom DNA that gives him a beard. The Herald of Flame, he is the leader of the Order of Firebringers and simultaneously the Herald of Light.
+			first_name = Varpanatal
+			last_name = Camnazuir
+			historical = yes
+			ruler = yes
+			is_general = yes
+			age = 76
+			interest_group = ig_devout
+			ideology = ideology_moderate
+			culture = cu:dawn_ruinborn
+			religion = rel:new_sun_cult
+			dna = dna_varpanatal_camnazuir
+			traits = {
+				pious forest_commander basic_defensive_strategist persistent
+			}							
+		}
+		
+		create_character = {
+			# Karodir Varamzuir’s son, the heir to his legacy (he had died during the 1700s). Industrialist because this guy should be peak elven artificer, theocrat because he should support their rule. Called Varamzuir cause I want to highlight the fact that he's THE karodir's son, not just a random karodir
+			first_name = Elanil
+			last_name = Varamzuir
+			historical = yes
+			age = 324
+			interest_group = ig_industrialists
+			ig_leader = yes
+			ideology = ideology_theocrat
+			culture = cu:dawn_elf
+			religion = rel:new_sun_cult
+			dna = dna_elanil_varamzuir
+			traits = {
+				innovative powerful_mage erudite
+			}							
+		}
+		
+		create_character = {
+			# O'onoi descendant leader of the Order of Avengers. Big on campaigning against the Effelai.
+			first_name = Ksadii
+			last_name = szel_Sorukesthi
+			historical = yes
+			is_general = yes
+			age = 46
+			interest_group = ig_armed_forces
+			ig_leader = yes
+			ideology = ideology_moderate
+			culture = cu:dawn_ruinborn
+			religion = rel:new_sun_cult
+			dna = dna_ksadii_szel_sorukesthi
+			traits = {
+				firebrand forest_commander wrathful
+			}							
+		}
+	}
+}

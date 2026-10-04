@@ -1,0 +1,354 @@
+﻿namespace = malachite_coup
+malachite_coup.1 = {
+	type = country_event
+	hidden = yes	
+	immediate  = {
+		s:STATE_DOMANDROD = {
+            random_scope_state = {
+                save_scope_as = B86B_capital
+            }
+        }
+		create_country = {
+			tag = B86B
+			state = scope:B86B_capital
+			on_created = {
+				every_state = {
+					limit = {
+						NOT = { owner ?= c:B86B }
+						OR = {
+							state_region = s:STATE_DOMANDROD
+							state_region = s:STATE_SUMMER_GLADE
+							state_region = s:STATE_SPRING_GLADE
+							state_region = s:STATE_AUTUMN_GLADE
+							state_region = s:STATE_WINTER_GLADE
+						}
+					}
+					set_state_owner = c:B86B
+				}
+				set_country_type = unrecognized
+				give_claims_on_eordand = yes
+				every_interest_group = {
+					limit = {
+						has_ideology = ideology:ideology_liberal
+					}
+					remove_ideology = ideology_liberal
+					add_ideology = ideology_liberal_modern
+				}
+				every_interest_group = {
+					limit = {
+						has_ideology = ideology:ideology_egalitarian
+					}
+					remove_ideology = ideology_egalitarian
+					add_ideology = ideology_egalitarian_modern
+				}
+				ig:ig_landowners = {
+					remove_ideology = ideology_patriarchal
+					add_ideology = ideology_legal_equality
+				}
+				set_state_religion = rel:united_season_court
+				ig:ig_devout = {
+					remove_ideology = ideology_patriarchal
+					add_ideology = ideology_legal_equality
+					remove_ideology = ideology_seasonal_courts
+					add_ideology = ideology_seasonal_courts_unfied
+				}
+
+				activate_law = law_type:law_national_militia
+				activate_law = law_type:law_national_guard
+				activate_law = law_type:law_freedom_of_conscience
+				activate_law = law_type:law_racial_segregation
+				activate_law = law_type:law_autocracy
+				activate_law = law_type:law_theocracy
+				activate_law = law_type:law_migration_controls
+				activate_law = law_type:law_women_in_the_workplace
+				activate_law = law_type:law_peasant_proprietorship
+				activate_law = law_type:law_appointed_bureaucrats
+				if = {
+					limit = { has_global_variable = mheromar_is_alive_global_var }
+					random_character = {
+						limit = { has_variable = mheromar_var }
+						kill_character = yes
+						remove_global_variable = mheromar_is_alive_global_var
+					}
+					
+				}
+				create_character = {
+					template = malachite_knight_character_template
+					on_created = {
+						set_variable = mheromar_var
+						save_scope_as = mheromar_scope
+						add_character_role = politician
+						set_as_interest_group_leader = yes
+						set_character_as_ruler = yes
+						set_character_immortal = yes
+						add_commander_rank = 4
+					}
+				}
+				set_global_variable = mheromar_is_alive_global_var
+				if = {
+					limit = { NOT = { exists = global_var:mheromar_fame_var } }
+					set_global_variable = {
+						name = mheromar_fame_var
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						global_var:mheromar_fame_var = 1
+						scope:mheromar_scope ?= { 
+							NOT = {
+								has_modifier = mheromar_popularity_modifier_tier_1 
+							}
+						}
+					}
+					scope:mheromar_scope ?= {
+						add_modifier = mheromar_popularity_modifier_tier_1
+					}
+				}
+				if = {
+					limit = {
+						global_var:mheromar_fame_var = 2
+						scope:mheromar_scope ?= {
+							NOT = { 
+								has_modifier = mheromar_popularity_modifier_tier_2
+							}
+						}
+					}
+					scope:mheromar_scope ?= {
+						if = {
+							limit = {
+								has_modifier = mheromar_popularity_modifier_tier_1
+							}
+							hidden_effect = { 
+								remove_modifier = mheromar_popularity_modifier_tier_1
+							}
+						}
+						add_modifier = mheromar_popularity_modifier_tier_2
+					}
+				}
+				if = {
+					limit = {
+						global_var:mheromar_fame_var = 3
+						scope:mheromar_scope ?= {
+							NOT = { 
+								has_modifier = mheromar_popularity_modifier_tier_3
+							}
+						}
+					}
+					scope:mheromar_scope ?= {
+						if = {
+							limit = {
+								has_modifier = mheromar_popularity_modifier_tier_2
+							}
+							hidden_effect = { 
+								remove_modifier = mheromar_popularity_modifier_tier_2
+							}
+						}
+						add_modifier = mheromar_popularity_modifier_tier_3
+					}
+				}
+				if = {
+					limit = {
+						global_var:mheromar_fame_var = 4
+						scope:mheromar_scope ?= {
+							NOT = { 
+								has_modifier = mheromar_popularity_modifier_tier_4
+							}
+						}
+					}
+					scope:mheromar_scope ?= {
+						if = {
+							limit = {
+								has_modifier = mheromar_popularity_modifier_tier_3
+							}
+							hidden_effect = { 
+								remove_modifier = mheromar_popularity_modifier_tier_3
+							}
+						}
+						add_modifier = mheromar_popularity_modifier_tier_4
+					}
+				}
+				if = {
+					limit = {
+						global_var:mheromar_fame_var >= 5
+						scope:mheromar_scope ?= {
+							NOT = { 
+								has_modifier = mheromar_popularity_modifier_tier_5
+							}
+						}
+					}
+					scope:mheromar_scope ?= {
+						if = {
+							limit = {
+								has_modifier = mheromar_popularity_modifier_tier_4
+							}
+							hidden_effect = { 
+								remove_modifier = mheromar_popularity_modifier_tier_4
+							}
+						}
+						add_modifier = mheromar_popularity_modifier_tier_5
+					}
+				}
+				if = {
+					limit = {
+						global_var:mheromar_fame_var >= 2
+						scope:mheromar_scope ?= {
+							has_trait = basic_offensive_planner
+						}
+					}
+					scope:mheromar_scope ?= {
+						random_list = {
+							1 = {
+								hidden_effect = { 
+									remove_trait = basic_offensive_planner
+								}
+								add_trait = experienced_offensive_planner
+							}
+							0 = {
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						global_var:mheromar_fame_var >= 4
+						scope:mheromar_scope ?= {
+							has_trait = experienced_offensive_planner
+						}
+					}
+					scope:mheromar_scope ?= {
+						random_list = {
+							1 = {
+								hidden_effect = { 
+									remove_trait = experienced_offensive_planner
+								}
+								add_trait = expert_offensive_planner
+							}
+							0 = {
+							}
+						}
+					}
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				#made it more restrictive so that GPs and majors with lots of interests don't get it unless it's actually relevant to them
+				OR = {
+					#Colonizers involved in Eordand
+					any_subject_or_below = {
+						capital = {
+							region = sr:region_eordand
+						}
+					}
+					#Aelantiri countries with an interest in Eordand
+					AND = {	
+						OR = {
+							country_is_in_north_america = yes
+							country_is_in_central_america = yes
+							country_is_in_south_america = yes
+						}
+						has_interest_marker_in_region = region_eordand
+					}
+				}
+			}
+			trigger_event = malachite_coup.2
+		}
+	}
+}
+
+malachite_coup.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = malachite_coup.2.t
+	desc = malachite_coup.2.d
+	flavor = malachite_coup.2.f
+
+	event_image = {
+		video = "votp_garibaldi"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 2
+
+	immediate = {
+		set_global_variable = mheromar_coup_gladewarden
+	}
+	
+	option = {
+		name = malachite_coup.2.a
+		default_option = yes
+	}
+	
+	option = {
+		name = malachite_coup.2.b
+		trigger = { is_player = yes }
+		play_as = c:B86B
+	}
+
+}
+
+malachite_coup.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = malachite_coup.3.t
+	desc = malachite_coup.3.d
+	flavor = malachite_coup.3.f
+
+	event_image = {
+		video = "votp_garibaldi"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	duration = 2
+	
+	trigger = {
+		NOT = { has_variable = mheromar_coup_warning }
+	}
+
+	immediate = {
+		set_variable = mheromar_coup_warning
+		if = {
+			limit = {
+				NOT = { has_global_variable = mheromar_coup_gladewarden }
+			}
+			set_global_variable = mheromar_coup_gladewarden
+			trigger_event = {
+				id = malachite_coup.1
+				months = 3
+			}
+			every_state = {
+				every_scope_pop = {
+					limit = {
+						OR = {
+							has_pop_religion = spring_court
+							has_pop_religion = summer_court
+							has_pop_religion = autumn_court
+							has_pop_religion = winter_court
+							has_pop_religion = eordellon
+						}
+					}
+					change_pop_religion = {
+						target = rel:united_season_court
+						value = 1.0
+					}
+				}
+			}
+		}
+		
+	}
+	
+	option = {
+		name = malachite_coup.3.a
+		default_option = yes
+	}
+
+}

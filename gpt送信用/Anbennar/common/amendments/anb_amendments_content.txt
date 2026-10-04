@@ -1,0 +1,135 @@
+﻿amendment_naleni_great_reform_1 = {
+
+	parent = law_interventionism
+
+	allowed_laws = {  #All economic laws
+		law_traditionalism
+		law_agrarianism
+		law_interventionism
+		law_industry_banned
+		law_laissez_faire
+		law_cooperative_ownership
+		law_command_economy
+		law_extraction_economy
+	}
+
+	modifier = {
+		country_loan_interest_rate_mult = -0.2
+		state_capitalists_investment_pool_efficiency_mult = 0.20
+		state_clergymen_investment_pool_efficiency_mult = 0.30
+		state_shopkeepers_investment_pool_efficiency_mult = 0.20
+	}
+
+	possible = {
+		OR = {
+			OR = {
+            c:L29 ?= this
+			was_formed_from = L29
+        	}
+		}
+		has_variable = je_naleni_great_reform_main_completed_var
+	}
+
+	would_sponsor = {
+		AND = {
+			exists = scope:approval
+			scope:approval > 0
+		}
+	}
+
+	ai_will_revoke = {
+		always = no
+	}
+
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+
+	amendment_activism_multiplier = 0.5
+}
+
+amendment_naleni_great_reform_conversion = {
+
+	parent = law_freedom_of_conscience
+
+	allowed_laws = {  #only freedom of conscience
+		law_freedom_of_conscience
+	}
+
+	modifier = {
+		country_allow_conversion_second_rate_citizen_bool = yes
+		country_allow_conversion_full_acceptance_bool = yes
+	}
+
+	possible = {
+		OR = {
+			OR = {
+            c:L29 ?= this
+			was_formed_from = L29
+        	}
+		}
+	}
+
+	would_sponsor = {
+		AND = {
+			exists = scope:approval
+			scope:approval > 0
+		}
+	}
+
+	ai_will_revoke = {
+		always = no
+	}
+
+	can_repeal = {
+		legitimacy >= legitimacy_to_repeal_amendment
+	}
+
+	amendment_activism_multiplier = 0.5
+}
+
+amendment_verdant_nature = {
+
+	parent = law_hive_economy
+
+	allowed_laws = {
+		law_hive_economy
+	}
+
+	modifier = {
+		country_magical_expertise_mult = 0.5
+		state_pollution_reduction_health_mult = 0.5
+		state_construction_mult = 0.2 #this helps with the -0.3 from effelai state trait
+		state_infrastructure_add = 0.1 #likewise
+	}
+
+	possible = {
+		c:C14 ?= this 	#Effelai
+	}
+
+	would_sponsor = {
+		ROOT = {
+			OR = {
+				is_interest_group_type = ig_rural_folk
+			}
+		}
+	}
+
+	on_activate = {
+		
+	}
+
+	on_deactivate = {
+		
+	}
+
+	ai_will_revoke = {
+		always = no
+	}
+
+	can_repeal = {
+		always = no
+	}
+
+	amendment_activism_multiplier = 1
+}

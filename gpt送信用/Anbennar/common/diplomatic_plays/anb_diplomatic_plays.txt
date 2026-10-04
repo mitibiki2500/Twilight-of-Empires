@@ -1,0 +1,446 @@
+﻿dp_unify_escann = {
+	war_goal = unification
+	
+	requires_interest_marker = no
+	blocked_by_diplomatic_status = no
+	add_infamy_for_starting_initiator_wargoals = no
+	
+	texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}
+	
+	possible = {
+		NOT = { exists = c:A82 }
+		NOT = { is_country_type = decentralized }
+		has_technology_researched = nationalism
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+dp_leadership_escann = {
+	war_goal = unification_leadership
+	
+	requires_interest_marker = no
+	mirror_war_goal = yes
+	
+	texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}	
+	
+	possible = {
+		has_technology_researched = nationalism			
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+dp_unify_anbennar = {
+	war_goal = unification
+	
+	requires_interest_marker = no
+	blocked_by_diplomatic_status = no
+	add_infamy_for_starting_initiator_wargoals = no
+	
+	texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}
+	
+	possible = {
+		NOT = { exists = c:A01 }
+		NOT = { is_country_type = decentralized }
+		has_technology_researched = pan-nationalism
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+dp_leadership_anbennar = {
+	war_goal = unification_leadership
+	
+	requires_interest_marker = no
+	mirror_war_goal = yes
+	
+	texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}	
+	
+	possible = {
+		has_technology_researched = pan-nationalism			
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+dp_unify_expanse = {
+	war_goal = annex_country
+	
+	texture = "gfx/interface/icons/war_goals/annex_country.dds"
+	
+	selectable_in_lens = {
+		can_form_nation = G02
+	}
+	
+	possible = {
+		NOT = { exists = c:G02 }
+		NOT = { is_country_type = decentralized }
+		has_technology_researched = nationalism
+		is_subject = no 
+		custom_tooltip = {
+			text = G02_tt
+			can_form_nation = G02
+		}
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			aggressive_diplomatic_plays_permitted = yes
+			custom_tooltip = {
+				text = G02_tt
+				can_form_nation = G02
+			}
+		}
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+dp_unify_eordand = {
+	war_goal = unification
+	
+	requires_interest_marker = no
+	blocked_by_diplomatic_status = no
+	add_infamy_for_starting_initiator_wargoals = no
+	
+	texture = "gfx/interface/icons/war_goals/unify_italy.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}
+	
+	possible = {
+		NOT = { exists = c:B87 }
+		NOT = { is_country_type = decentralized }
+		has_technology_researched = pan-nationalism
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+dp_leadership_eordand = {
+	war_goal = unification_leadership
+	
+	requires_interest_marker = no
+	mirror_war_goal = yes
+	
+	texture = "gfx/interface/icons/war_goals/unify_italy.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}	
+	
+	possible = {
+		has_technology_researched = pan-nationalism			
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+dp_unify_command = {
+	war_goal = annex_country
+	
+	texture = "gfx/interface/icons/war_goals/annex_country.dds"
+	
+	selectable_in_lens = {
+		has_government_type = gov_command_warlord
+	}
+	
+	possible = {
+		NOT = { exists = c:R21 }
+		NOT = { is_country_type = decentralized }
+		is_subject = no 
+		has_government_type = gov_command_warlord
+		scope:target_country = {
+			NOT = { is_country_type = decentralized }
+			aggressive_diplomatic_plays_permitted = yes
+			has_government_type = gov_command_warlord
+		}
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+dp_unify_yanshen = {
+	war_goal = unification
+	
+	requires_interest_marker = no
+	blocked_by_diplomatic_status = no
+	add_infamy_for_starting_initiator_wargoals = no
+	
+	texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}
+	
+	possible = {
+		NOT = { exists = c:Y02 }
+		NOT = { is_country_type = decentralized }
+		has_technology_researched = nationalism
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+dp_leadership_yanshen = {
+	war_goal = unification_leadership
+	
+	requires_interest_marker = no
+	mirror_war_goal = yes
+	
+	texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}	
+	
+	possible = {
+		has_technology_researched = nationalism	
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+
+dp_unify_serpentreach = {
+	war_goal = unification
+	
+	requires_interest_marker = no
+	blocked_by_diplomatic_status = no
+	add_infamy_for_starting_initiator_wargoals = no
+	
+	texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}
+	
+	possible = {
+		NOT = { exists = c:D62 }
+		is_subject = no
+		has_technology_researched = nationalism
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+dp_leadership_serpentreach = {
+	war_goal = unification_leadership
+	
+	requires_interest_marker = no
+	mirror_war_goal = yes
+	
+	texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}	
+	
+	possible = {
+		has_technology_researched = nationalism			
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+dp_unify_ruincliffs = {
+	war_goal = unification
+	
+	requires_interest_marker = no
+	blocked_by_diplomatic_status = no
+	add_infamy_for_starting_initiator_wargoals = no
+	
+	texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}
+	
+	possible = {
+		NOT = { exists = c:B67 }
+		NOT = { is_country_type = decentralized }
+		has_technology_researched = pan-nationalism
+		is_subject = no
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+dp_leadership_ruincliffs = {
+	war_goal = unification_leadership
+	
+	requires_interest_marker = no
+	mirror_war_goal = yes
+	
+	texture = "gfx/interface/icons/war_goals/unify_germany.dds"
+	
+	selectable_in_lens = {
+		always = no
+	}	
+	
+	possible = {
+		has_technology_researched = pan-nationalism	
+	}
+	
+	on_weekly_pulse = {}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}
+
+dp_legion_invasion = {
+	war_goal = humiliation
+
+	selectable_in_lens = {
+		always = no
+	}	
+
+	is_epic = yes
+	
+	mirror_war_goal = yes
+
+	texture = "gfx/interface/icons/war_goals/humiliation.dds"
+
+	allow_negotiated_peace = no
+	
+	on_weekly_pulse = {
+		if = {
+			limit = {
+				c:D15 ?= {
+					enemy_occupation < 0.6
+				}
+			}
+			war = {
+				add_war_war_support = {
+					target = c:D15
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				c:D12 ?= {
+					enemy_occupation < 0.6
+				}
+			}
+			war = {
+				add_war_war_support = {
+					target = c:D12
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				c:D13 ?= {
+					enemy_occupation < 0.6
+				}
+			}
+			war = {
+				add_war_war_support = {
+					target = c:D13
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				c:D18 ?= {
+					enemy_occupation < 0.6
+				}
+			}
+			war = {
+				add_war_war_support = {
+					target = c:D18
+					value = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				c:D14 ?= {
+					enemy_occupation < 0.6
+				}
+			}
+			war = {
+				add_war_war_support = {
+					target = c:D14
+					value = 1
+				}
+			}
+		}
+	}
+	
+	on_war_begins = {}
+
+	on_war_end = {}
+}

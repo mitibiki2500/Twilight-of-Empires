@@ -1,0 +1,79 @@
+﻿chendhyan_land_rights = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+    building_group_bg_agriculture_tax_mult  = -0.5
+    building_railway_throughput_add = -0.25
+    #state_radicals_from_sol_change_mult = -0.25 ## modifier does not exist
+}
+
+chendhyan_raiding_conflicts = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+    building_group_bg_agriculture_mortality_mult = 0.10
+    #state_radicals_from_sol_change_mult = 0.25 ## modifier does not exist
+}
+
+chendhyan_security_contracts = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+    country_expenses_add = 1
+}
+
+chendhyan_native_chendhyan_threat_resolved = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+    state_migration_pull_mult = 0.5
+    state_birth_rate_mult = 0.05
+}
+
+chendhyan_migration_pull_caergaraen = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+    state_migration_pull_add = 50
+    state_migration_quota_mult = 1.0
+}
+
+chendhyan_migration_push = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+    state_migration_pull_add = -50
+}
+
+chendhyan_overlord_assistance = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+    state_construction_mult = 0.40
+}
+
+chendhyan_influx_of_visitors = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+    state_migration_pull_mult = 0.25
+    building_group_bg_infrastructure_standard_of_living_add = 2
+}
+
+chendhyan_building_riverside_railway = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+    state_construction_mult = -0.10
+}
+
+chendhyan_building_riverside_railway_country = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+    country_construction_add = -2
+}
+
+chendhyan_marvellous_bridge = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+    country_prestige_add = 15
+}
+
+chendhyan_building_marvellous_bridge = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+    country_expenses_add = 500
+}
+
+chendhyan_gateway_to_taychend = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+    state_migration_pull_mult = 0.25
+    building_railway_throughput_add = 0.10
+    state_market_access_price_impact = 0.05
+}
+
+chendhyan_railway_to_taychend = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+    state_migration_pull_mult = 0.25
+    building_railway_throughput_add = 0.10
+    building_group_bg_oil_extraction_throughput_add = 0.10
+}

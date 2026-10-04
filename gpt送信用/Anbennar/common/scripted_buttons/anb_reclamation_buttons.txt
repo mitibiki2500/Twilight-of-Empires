@@ -1,0 +1,91 @@
+﻿je_alecand_reclamation_innovation_button = {
+	name = "je_alecand_reclamation_innovation_button"
+	desc = "je_alecand_reclamation_innovation_button_desc"
+
+	visible = {
+		NOT = {
+			has_variable = var_innovation_reclamation_button_spent_var
+		}
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+		set_variable = var_innovation_reclamation_button_spent_var
+		add_modifier = {
+			name = je_alecand_reclamation_innovation_modifier
+		}
+		custom_tooltip = {
+			text = anb_je_reclamation_button_innovation_tt
+		}
+	}
+}
+
+je_stop_innovation_alecand_reclamation_button = {
+	name = "je_stop_innovation_alecand_reclamation_button"
+	desc = "je_stop_innovation_alecand_reclamation_button_desc"
+
+	visible = {
+		has_variable = var_innovation_reclamation_button_spent_var
+	}
+	
+	possible = {
+		always = yes
+	}
+
+	effect = {
+		remove_variable = var_innovation_reclamation_button_spent_var
+		remove_modifier = je_alecand_reclamation_innovation_modifier
+		custom_tooltip = {
+			text = anb_je_reclamation_button_stop_innovation_tt
+		}
+	}
+}
+
+je_alecand_reclamation_construction_button = {
+	name = "je_alecand_reclamation_construction_button"
+	desc = "je_alecand_reclamation_construction_button_desc"
+
+	visible = {
+		NOT = {
+			has_variable = var_construction_reclamation_button_spent_var
+		}
+	}
+
+	possible = {
+		always = yes
+	}
+
+	effect = {
+		set_variable = var_construction_reclamation_button_spent_var
+		add_modifier = {
+			name = je_alecand_reclamation_construction_modifier
+		}
+		custom_tooltip = {
+			text = anb_je_reclamation_button_construction_tt
+		}
+	}
+}
+
+je_stop_construction_alecand_reclamation_button = {
+	name = "je_stop_construction_alecand_reclamation_button"
+	desc = "je_stop_construction_alecand_reclamation_button_desc"
+
+	visible = {
+		has_variable = var_construction_reclamation_button_spent_var
+	}
+	
+	possible = {
+		always = yes
+	}
+
+	effect = {	
+		remove_variable = var_construction_reclamation_button_spent_var
+		remove_modifier = je_alecand_reclamation_construction_modifier
+		custom_tooltip = {
+			text = anb_je_reclamation_button_stop_construction_tt
+		}
+	}
+}

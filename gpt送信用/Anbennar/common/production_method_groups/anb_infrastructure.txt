@@ -1,0 +1,30 @@
+﻿pmg_base_building_mage_tower = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_traditional_mages
+		#pm_traditional_technodruid_tower	#TODO: until mages are revamped and aligned upon ive disabled this complexity + we have more techs. half this stuff also wasnt hooked up anyway -Jay
+		pm_curios_artisans
+		#pm_druidic_scholar_network
+		#pm_masters_of_magic
+		#pm_masters_of_technothaumaturgie
+		#pm_modern_archmages
+		#pm_modern_technodruid
+	}
+}
+
+pmg_transmuation_building_mage_tower = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_no_transmutation_building_mage_tower
+		pm_distilled_rainbows_building_mage_tower
+		pm_manaspun_fibers_building_mage_tower
+		# pm_thaumosplastic_rendering_building_mage_tower # disable this according to merlino @1onepower
+	}
+}
+
+pmg_base_building_airship_tower = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_airship_tower
+	}
+}

@@ -1,0 +1,104 @@
+﻿#Anbennar
+gov_dragon_dominion = {
+	transfer_of_power = dictatorial
+	
+	male_ruler = "RULER_TITLE_GOSPODH"
+	female_ruler = "RULER_TITLE_GHOSPA"
+	
+	possible = {
+		exists = c:B49
+		c:B49 = ROOT
+		has_law = law_type:law_theocracy #maybe something else if they enable elections?
+	}	
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}
+
+gov_jadd_empire_theocracy = {
+	transfer_of_power = hereditary
+	male_ruler = "RULER_TITLE_DIVINE_HERALD"
+	female_ruler = "RULER_TITLE_DIVINE_HERALD"
+
+	male_heir = "RULER_TITLE_HEIR_APPARENT"
+	female_heir = "RULER_TITLE_HEIR_APPARENT"
+
+	possible = {
+		has_law = law_type:law_theocracy
+		country_has_state_religion = rel:the_jadd
+		OR = {
+			AND = { #Jaddanzar
+				exists = c:F01
+				c:F01 = ROOT
+			}
+			AND = { #Nahana Jadd
+				exists = c:R01
+				c:R01 = ROOT
+				is_subject_of = c:F01
+				is_subject_type = subject_type_personal_union
+			}
+		}
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}
+
+
+gov_lingyuk_huszien = {
+	transfer_of_power = dictatorial
+	
+	male_ruler = "RULER_TITLE_GREATSPIRIT"
+	female_ruler = "RULER_TITLE_GREATSPIRIT"
+	
+	possible = {
+		OR = {
+			c:Y04 ?= ROOT
+			c:Y01 ?= ROOT
+			AND = {
+				c:Y02 ?= ROOT
+				country_has_state_religion = rel:mystic_accord
+			}
+		}
+		NOT = { has_law = law_type:law_state_atheism }
+		NOT = { has_law = law_type:law_total_separation }
+	}	
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}
+
+gov_theocratic_onyx_monarchy = {
+	transfer_of_power = dictatorial
+
+	male_ruler = "RULER_TITLE_ONYX_KING"
+	female_ruler = "RULER_TITLE_ONYX_QUEEN"
+	
+	possible = {
+		OR = {
+			c:B27 ?= ROOT
+			c:B69 ?= ROOT
+		}
+		has_law = law_type:law_theocracy
+		country_has_voting_franchise = no
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}

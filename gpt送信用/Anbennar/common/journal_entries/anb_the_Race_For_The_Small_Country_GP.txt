@@ -1,0 +1,148 @@
+﻿je_The_Race_For_The_Small_Country_GP = { # nearby powerblocs competing over the Small Country
+	# this is just for racers to track progress, the Small Country one handles events
+	icon = "gfx/interface/icons/event_icons/event_military.dds"	
+
+	group = je_group_historical_content
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	
+	is_shown_when_inactive = {
+		OR = { # show if any of the four relevant powerblocs
+			c:A01 ?= ROOT
+			c:A03 ?= ROOT
+			c:A04 ?= ROOT
+			c:A06 ?= ROOT
+		}
+	}
+
+	possible = {
+		OR = {
+			c:A14 ?= {  # Gnomish Hierarchy owns greater than/equal 10% GDP of Small Country
+				gdp_ownership_ratio = { target ?= c:A06 value >= 0.1 }
+			}
+			c:A06 ?= {  # Gnomish Hierarchy has researched Nationalism (they see halflings as distant cousins)
+				has_technology_researched = nationalism
+			}
+			calc_true_if = { # or if two or more of the key countries have a treaty with investment rights with Small Country
+				amount >= 2
+				c:A01 ?= {  # Anbennar
+					any_scope_treaty = {
+                        binds = c:A14
+                        any_scope_article = {
+                            has_type = foreign_investment_rights
+                        }
+                    }
+				}
+				c:A03 ?= { # Lorent
+					any_scope_treaty = {
+                        binds = c:A14
+                        any_scope_article = {
+                            has_type = foreign_investment_rights
+                        }
+                    }
+				}
+				c:A04 ?= { # Northern League
+					any_scope_treaty = {
+                        binds = c:A14
+                        any_scope_article = {
+                            has_type = foreign_investment_rights
+                        }
+                    }
+				}
+				c:A06 ?= { #Gnomish Hierarchy
+					any_scope_treaty = {
+                        binds = c:A14
+                        any_scope_article = {
+                            has_type = foreign_investment_rights
+                        }
+                    }
+				}
+			}
+		}
+	}
+
+	complete = { # complete je if any of the four countries get 300 leverage on Small Country
+		OR = {
+			c:A01 ?= {
+				power_bloc ?= {
+					leverage_advantage = {
+						target = c:A14
+						value > 300
+					}
+				}
+			}
+			c:A03 ?= {
+				power_bloc ?= {
+					leverage_advantage = {
+						target = c:A14
+						value > 300
+					}
+				}
+			}
+			c:A04 ?= {
+				power_bloc ?= {
+					leverage_advantage = {
+						target = c:A14
+						value > 300
+					}
+				}
+			}
+			c:A06 ?= {
+				power_bloc ?= {
+					leverage_advantage = {
+						target = c:A14
+						value > 300
+					}
+				}
+			}
+		}
+	}
+
+	fail = { # fail je when all four nations are either gone or have -100 leverage
+        AND = {
+            OR = {
+                NOT = { exists = c:A01 }
+                c:A01 ?= { # Anbennar
+                    power_bloc = {
+                        leverage_advantage = {
+                            target = c:A14
+                            value < -100
+                        }
+                    }
+                }
+            }
+            OR = {
+                NOT = { exists = c:A03 }
+                c:A03 ?= { # Lorent
+                    power_bloc = {
+                        leverage_advantage = {
+                            target = c:A14
+                            value < -100
+                        }
+                    }
+                }
+            }
+            OR = {
+                NOT = { exists = c:A04 }
+                c:A04 ?= { # Northern League
+                    power_bloc = {
+                        leverage_advantage = {
+                            target = c:A14
+                            value < -100
+                        }
+                    }
+                }
+            }
+            OR = {
+                NOT = { exists = c:A06 }
+                c:A06 ?= { # Gnomish Hierarchy
+                    power_bloc = {
+                        leverage_advantage = {
+                            target = c:A14
+                            value < -100
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,173 @@
+﻿POLITICAL_MOVEMENTS = {
+	every_country = {
+		limit = { NOT = { is_country_type = decentralized } }
+		### Royalist movements
+		if = {
+			limit = {
+				has_law_or_variant = law_type:law_monarchy
+				country_has_voting_franchise = no
+			}
+			create_political_movement = { type = movement_royalist_absolutist }
+		}
+		else_if = {
+			limit = {
+				has_law_or_variant = law_type:law_monarchy
+				country_has_voting_franchise = yes
+			}
+			create_political_movement = { type = movement_royalist_constitutional }
+		}
+
+		### Liberal movements
+		if = {
+			limit = {
+				has_technology_researched = democracy
+				OR = {
+					has_law_or_variant = law_type:law_landed_voting
+					has_law_or_variant = law_type:law_wealth_voting
+					has_law_or_variant = law_type:law_census_voting
+					has_law_or_variant = law_type:law_universal_suffrage
+				}
+			}
+			create_political_movement = { type = movement_liberal }
+		}
+
+		### Labour movements
+		if = {
+			limit = {
+				has_technology_researched = labor_movement
+			}
+			create_political_movement = { type = movement_labor }
+		}
+
+		### Abolitionist movements
+		if = {
+			limit = {
+				NOT = { has_law_or_variant = law_type:law_slavery_banned }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_law_or_variant = law_type:law_colonial_slavery
+					}
+				}
+				create_political_movement = { type = movement_pro_slavery }
+			}
+			if = {
+				limit = {
+					has_technology_researched = empiricism
+					#NOT = { c:BIC ?= this } # British India has Utilitarians
+				}
+				create_political_movement = { type = movement_anti_slavery }
+			}
+		}
+
+		### Religious movements
+		#removed the equal stuff as it was unfinished and made the syntax invalid
+		if = {
+			limit = {
+				NOT = {
+					c:A00 ?= this	#Testoria, always invalid. Just here to show where to change the code if a country shouldn't have that movement
+				}
+			}
+			create_political_movement = { type = movement_religious_majority }
+		}
+
+
+		### Cultural majority movements
+		#if = {
+		#	limit = {
+		#		OR = {
+		#			country_has_primary_culture = cu:north_german
+		#			country_has_primary_culture = cu:south_german
+		#		}
+		#	}
+		#	create_political_movement = { type = movement_german_national }
+		#}
+		#else_if = {
+		#	limit = {
+		#		OR = {
+		#			country_has_primary_culture = cu:north_italian
+		#			country_has_primary_culture = cu:south_italian
+		#		}
+		#	}
+		#	create_political_movement = { type = movement_italian_national }
+		#}
+		create_political_movement = { type = movement_cultural_majority }
+	}
+	#c:FRA ?= {
+	#	create_political_movement = { type = movement_orleanist }
+	#	create_political_movement = { type = movement_legitimist }
+	#	create_political_movement = { type = movement_bonapartist }
+	#	create_political_movement = { type = movement_radical }
+	#}
+	#c:AUS ?= {
+	#	create_political_movement = { type = movement_cultural_minority culture = cu:polish }
+	#	create_political_movement = { type = movement_cultural_minority culture = cu:czech }
+	#	create_political_movement = { type = movement_cultural_minority culture = cu:north_italian }
+	#	create_political_movement = { type = movement_liberal }
+	#	random_political_movement = {
+	#		limit = {
+	#			is_political_movement_type = movement_liberal
+	#		}
+	#		set_suppression = yes
+	#	}
+	#}
+	#c:HUN ?= {
+	#	create_political_movement = { type = movement_liberal }
+	#	create_political_movement = { type = movement_cultural_minority culture = cu:serb }
+	#}
+	#c:CRO ?= {
+	#	create_political_movement = { type = movement_yugoslav_national }
+	#}
+	#c:SER ?= {
+	#	create_political_movement = { type = movement_yugoslav_national }
+	#}
+	#c:PRU ?= {
+	#	create_political_movement = { type = movement_cultural_minority culture = cu:polish }
+	#}
+	#c:RUS ?= {
+	#	create_political_movement = { type = movement_cultural_minority culture = cu:polish }
+	#}
+	#c:TUR ?= {
+	#	create_political_movement = { type = movement_modernizer }
+	#}
+	#c:SIA ?= {
+	#	create_political_movement = { type = movement_modernizer }
+	#}
+	#c:PRG ?= {
+	#	create_political_movement = { type = movement_modernizer }
+	#}
+	#c:BIC ?= {
+	#	create_political_movement = { type = movement_utilitarian }
+	#}
+	#c:HAI ?= {
+	#	create_political_movement = { type = movement_cultural_minority culture = cu:caribeno }
+	#}
+	#c:GBR ?= {
+	#	create_political_movement = { type = movement_cultural_minority culture = cu:irish }
+	#}
+
+	# brewing rebellions of 1837
+	#c:ONT ?= {
+	#	create_political_movement = { type = movement_radical }
+	#	random_political_movement = {
+	#		limit = {
+	#			is_political_movement_type = movement_radical
+	#		}
+	#		add_modifier = {
+	#			name = can_reformer_movement_fury
+	#			days = very_long_modifier_time
+	#		}
+	#	}
+	#}
+	#Country-specific starting movements
+	c:A01 ?= {	#Anbennar
+		create_political_movement = { type = movement_radical }	#instead of the more tame liberal
+		#maybe the Esmarian/Vernman/etc nationalists ones too ?
+	}
+	c:A04 ?= { #Northern League - breakup movements
+		create_political_movement = { type = movement_cultural_minority culture = cu:blue_reachman }
+		create_political_movement = { type = movement_cultural_minority culture = cu:dalr }
+		#added the labor movement tech so that they start with one
+	}
+}

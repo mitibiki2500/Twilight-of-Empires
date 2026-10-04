@@ -1,0 +1,518 @@
+﻿DIPLOMACY = {
+	
+	c:A01 = { 
+		#Anbennar disliking other big dudes
+		set_relations = { country = c:A02 value = -50 }
+		set_relations = { country = c:A03 value = -50 }
+
+		#Anbennar-Escanni relation
+		set_relations = { country = c:A25 value = -50 }
+		set_relations = { country = c:A26 value = -50 }
+		set_relations = { country = c:A27 value = -30 }
+		set_relations = { country = c:A28 value = -30 }
+		set_relations = { country = c:A29 value = -30 }
+		set_relations = { country = c:A12 value = -30 }
+	}
+
+	c:A02 = {	#Vivin-Ravelian
+		set_relations = { country = c:A33 value = 20 }
+		#vivin-blademarches
+		set_relations = { country = c:A27 value = 0 }
+	}
+	
+	c:A04 = { #Northern League-Grombar
+		set_relations = { country = c:A10 value = -50 }
+		set_relations = { country = c:B60 value = 30 } #NL supports screwing over the Hierarchy
+		set_relations = { country = c:B98 value = 30 } #NL policy to contain Lorent/GH
+		set_relations = { country = c:B07 value = 30 } #NL policy to contain Lorent/GH
+	}
+
+	c:A05 = { #Bisan likes their former overlord Anbennar
+		set_relations = { country = c:A01 value = 20 }
+	}
+
+	
+	c:A06 = {	#Small Country and Gnomish Hierarchy relations for lore reasons and definitely not because it breaks my JE.1
+		set_relations = { country = c:A14 value = 100 }
+		set_relations = { country = c:B07 value = -50 }
+	}
+
+	c:A09 = {	#Busilar
+		set_relations = { country = c:F02 value = 30 } #Surakesh
+		set_relations = { country = c:F14 value = 30 } #Overclan
+		set_relations = { country = c:L01 value = -50 } #Konolkhatep
+	}
+
+	c:A12 = { #Jazhkredu relations with Rosande
+		set_relations = { country = c:A28 value = -50 }
+		#Jazhkredu relations with blademarches
+		set_relations = { country = c:A27 value = 20 }
+	}
+
+	c:A20 = { #Ibevar doesnt like Vivins
+		set_relations = { country = c:A02 value = -20 }
+	}
+
+	c:A22 = { #Ancardia-Jazhkredu
+		set_relations = { country = c:A12 value = 20 }
+			#Ancardia - Anbennar relations
+		set_relations = { country = c:A01 value = 20 }
+	}
+
+	c:A25 = { #Araionn relations with Ancardia
+		set_relations = { country = c:A22 value = -50 }
+	}
+
+	c:A26 = { #Wyvernheart-Grombar
+		set_relations = { country = c:A10 value = -50 }
+		#Wyvernheart - Ancardia
+		set_relations = { country = c:A22 value = -20 }
+	}
+
+	c:A27 = { #Blademarches-Rosande-Marrhold Three Kings Alliance
+		set_relations = { country = c:A28 value = 30 }
+		set_relations = { country = c:A29 value = 30 }
+		#Blademarches - Ancardia relations
+		set_relations = { country = c:A22 value = 25 }
+	}
+
+	c:A28 = { #Blademarches-Rosande-Marrhold Three Kings Alliance
+		set_relations = { country = c:A29 value = 30 }
+	}
+
+	c:A30 = { #Everyone in Escann + Anbennar dislikes magocratic demesne
+		set_relations = { country = c:A25 value = -30 }
+		set_relations = { country = c:A27 value = -30 }
+		set_relations = { country = c:A28 value = -30 }
+		set_relations = { country = c:A29 value = -30 }
+		set_relations = { country = c:A31 value = -30 }
+		set_relations = { country = c:A12 value = 10 }	#Jazhkredu likes MD as they helped their creation
+		set_relations = { country = c:A24 value = -50 }	#cos mages fucked newshire with magical farm famine
+		set_relations = { country = c:A22 value = -30 }
+
+		#Magocratic Demesne-Wyvernheart
+		set_relations = { country = c:A26 value = 20 }
+
+		#Anbennar and Grombar
+		set_relations = { country = c:A01 value = -50 }
+		set_relations = { country = c:A10 value = -50 }
+	}
+
+	c:A31 = { #Ungulvaldor, relations with Marrhold whom they hate for conquest of Esshyl and Rosande who still enslave their bretheren
+		set_relations = { country = c:A29 value = -50 }
+		set_relations = { country = c:A28 value = -25 }
+	}
+
+	c:B05 = { #VG
+		set_relations = { country = c:B07 value = 30 } #Artificer ties
+		set_relations = { country = c:B82 value = -20 } #Eordan invader
+		set_relations = { country = c:B85 value = -20 } #Eordan invader
+		set_relations = { country = c:B84 value = -20 } #Eordan invader
+		set_relations = { country = c:B03 value = -10 } #Trade rivals
+	}
+
+	c:B07 = { #Triarchy
+		set_relations = { country = c:Y03 value = 20 } #Supported during Rending
+		set_relations = { country = c:B76 value = 20 }
+		set_relations = { country = c:C30 value = 20 }
+		set_relations = { country = c:A06 value = -10 } #Bad historical relations
+		set_relations = { country = c:C11 value = 10 }
+	}
+
+	c:B16 = { #New Erngrove - Obaithail civil war
+		set_relations = { country = c:B72 value = -30 } #New Uanced
+	}
+
+
+	c:A02 = {	#Vivin-Ravelian
+		set_relations = { country = c:A33 value = 20 }
+	}
+
+	c:A09 = {	#Busilar
+		set_relations = { country = c:F02 value = 30 } #Surakesh
+		set_relations = { country = c:F14 value = 30 } #Overclan
+		set_relations = { country = c:L01 value = -50 } #Konolkhatep
+        set_relations = { country = c:L45 value = -30 } #Ardimyan Republic
+	}
+
+	c:A06 = {	#Small Country and Gnomish Hierarchy relations for lore reasons and definitely not because it breaks my JE.1
+		set_relations = { country = c:A14 value = 100 }
+	}
+
+	c:A14 = {	#Small Country and Gnomish Hierarchy relations for lore reasons and definitely not because it breaks my JE.2
+		set_relations = { country = c:A06 value = 100 }
+	}
+
+	c:A27 = { #Blademarches-Rosande-Marrhold Three Kings Alliance
+		set_relations = { country = c:A28 value = 30 }
+		set_relations = { country = c:A29 value = 30 }
+	}
+	c:A28 = { #Blademarches-Rosande-Marrhold Three Kings Alliance
+		set_relations = { country = c:A29 value = 30 }
+	}
+
+	c:A05 = { #Bisan likes their former overlord Anbennar
+		set_relations = { country = c:A01 value = 20 }
+	}
+
+	c:A20 = { #Ibevar doesnt like Vivins
+		set_relations = { country = c:A02 value = -20 }
+	}
+	
+	c:A10 = {
+		set_relations = { country = c:A03 value = 20 } #Both absolute monarchies, both don't like NL and Anbennar
+		set_relations = { country = c:A06 value = 20 } #Long story of trade and cooperation
+		set_relations = { country = c:E02 value = 50 } #Grombar-Magharma collaboration in FP
+		set_relations = { country = c:E01 value = -50 } #Grombar intervention in FP
+		set_relations = { country = c:E03 value = -30 } #Grombar intervention in FP
+		set_relations = { country = c:E04 value = -30 } #Grombar intervention in FP
+		set_relations = { country = c:E05 value = -30 } #Centaur Raiders
+		set_relations = { country = c:E06 value = -30 } #Centaur Raiders
+		set_relations = { country = c:E07 value = -30 } #Centaur Raiders
+		set_relations = { country = c:E08 value = -30 } #Centaur Raiders
+		set_relations = { country = c:E09 value = -30 } #Centaur Raiders
+	}
+
+	c:B98 = { 
+		set_relations = { country = c:B21 value = 30 } #Trollsbay supported Ynnsmouth
+		set_relations = { country = c:B07 value = 30 } #Good relations with the other big Aelantir republic
+		set_relations = { country = c:B34 value = 20 } #Trade Treaty of Steephaven
+		set_relations = { country = c:B41 value = 20 } #Trade Treaty of Steephaven
+		set_relations = { country = c:B42 value = 20 } #Trade Treaty of Steephaven
+	}
+
+	c:B42 = { #South Expanse alliance
+		set_relations = { country = c:B34 value = 50 } #Former anti-Plumstead bloc
+		set_relations = { country = c:B41 value = 40 } #Plumstead did a heel turn (still dislikes Beggaston though)
+	}
+
+	c:B41 = { #Plumstead-Beggaston rivalry
+		set_relations = { country = c:B34 value = -30 } #Former oppressor
+    }
+	c:B27 = { 
+		set_relations = { country = c:B09 value = -10 }	#Neratica disliked by former enemies
+		set_relations = { country = c:B26 value = -20 }	#Neratica disliked by former enemies
+		set_relations = { country = c:A03 value = 30 }	#But they actually made amends with Lorent itself ("screw them colonies", said the Ruby Crown)
+		set_relations = { country = c:B07 value = -20 }	#Worrying ambitions for established local powers
+		set_relations = { country = c:B98 value = 30 }	#Worrying ambitions for established local powers
+	}
+
+	c:B29 = { #Sarda Empire
+		set_relations = { country = c:B49 value = -30 } #Main rival
+		set_relations = { country = c:B36 value = 30 } #Anti-Havoric bloc
+		set_relations = { country = c:B31 value = 30 } #Anti-Havoric bloc
+		set_relations = { country = c:B30 value = 50 } #Very loyal
+		set_relations = { country = c:B33 value = -30 } #Resents Sarda
+		set_relations = { country = c:B46 value = -15 } #Was just forced to concede Vels Bacar dam
+		set_relations = { country = c:B39 value = 50 } #Guarantor
+	}
+
+	c:B35 = { #New Havoral is a pariah
+		set_relations = { country = c:B46 value = -10 }
+		set_relations = { country = c:B29 value = -50 }
+		set_relations = { country = c:B31 value = -50 }
+		set_relations = { country = c:B36 value = -25 }
+		set_relations = { country = c:B33 value = -25 }
+		set_relations = { country = c:B32 value = 20 } #Those two fought together in the end
+	}
+
+	c:B39 = { #Bosancovac
+		set_relations = { country = c:B29 value = 50 } #Guaranteed for 5 years
+		set_relations = { country = c:B49 value = 80 } #Guaranteed for 5 years
+	}
+
+	c:B41 = { #Plumstead-Beggaston rivalry
+		set_relations = { country = c:B34 value = -30 } #Former oppressor
+	}
+
+
+	c:B42 = { #South Expanse alliance
+		set_relations = { country = c:B34 value = 50 } #Former anti-Plumstead bloc
+		set_relations = { country = c:B41 value = 40 } #Plumstead did a heel turn (still dislikes Beggaston though)
+	}
+
+	c:B49 = { #Dragon Dominion
+		set_relations = { country = c:B52 value = -50 } #Actively planning an invasion
+		set_relations = { country = c:B38 value = -25 } #They're next
+		set_relations = { country = c:B47 value = 20 } #Common aldanist policies under Nestrin
+		set_relations = { country = c:B39 value = 80 } #Guarantor
+	}
+
+	c:B53 = { #Freemarches
+		set_relations = { country = c:A06 value = 30 } #Gave the Bondbreakers
+	}
+
+	c:B60 = { #Nortiochand
+		set_relations = { country = c:A06 value = -50 } #Evil artificery was revealed
+	}
+
+	c:B82 = { #Einsagg
+		set_relations = { country = c:B81 value = 30 }  #Autumnal League
+		set_relations = { country = c:B83 value = 30 }  #Autumnal League
+		set_relations = { country = c:B85 value = 15 } #Remnant of the Four Seasons Alliance
+		set_relations = { country = c:B84 value = 15 } #Remnant of the Four Seasons Alliance
+		set_relations = { country = c:A06 value = -30 } #Recent invader
+		set_relations = { country = c:B80 value = -50 } #Recent invader
+	}
+
+	c:B84 = { #Arakeprun
+		set_relations = { country = c:B85 value = 15 } #Remnant of the Four Seasons Alliance
+		set_relations = { country = c:A06 value = -30 } #Recent invader
+		set_relations = { country = c:B80 value = -50 } #Recent invader
+	}
+
+	c:B85 = { #Murdkfather
+		set_relations = { country = c:A06 value = -30 } #Recent invader
+		set_relations = { country = c:B80 value = -50 } #Recent invader
+	}
+	
+	c:C14 = { #Effelai
+		set_relations = { country = c:C01 value = -100 } #Rezankand
+		set_relations = { country = c:C03 value = -100 } #Ozgarom
+		set_relations = { country = c:C05 value = -100 } #NurDhanaenn
+		set_relations = { country = c:C08 value = -100 } #Drakesguard
+	}
+
+	c:C39 = { #Deyeion
+		set_relations = { country = c:C37 value = 30 }
+		set_relations = { country = c:C70 value = 30 }
+	}
+	c:C70 = { #Amgremos
+		set_relations = { country = c:C37 value = 30 }
+	}
+
+	c:D02 = { #Krakdhumvror
+		set_relations = { country = c:D05 value = 30 } #Amldihr
+		set_relations = { country = c:A10 value = -50 } #Grombar
+	}
+
+	c:D03 = { #Dur Vazhatun
+		set_relations = { country = c:A10 value = -25 } #Grombar
+		set_relations = { country = c:D06 value = -50 } #Kuxhezte
+		set_relations = { country = c:D37 value = -30 } #Kuxhekre
+	}
+
+	c:D05 = { #Amldihr
+		set_relations = { country = c:D03 value = 50 } #Dur Vazhatun
+		set_relations = { country = c:A10 value = -50 } #Grombar
+		set_relations = { country = c:D06 value = -50 } #Kuxhezte
+		set_relations = { country = c:D37 value = -30 } #Kuxhekre
+	}
+	
+	c:D06 = { #Kuxhezte
+		set_relations = { country = c:D37 value = 30 } #Kuxhekre
+	}
+
+	c:D08 = { #Khugdihr
+		set_relations = { country = c:A10 value = 30 } #Grombar
+		set_relations = { country = c:D06 value = -50 } #Kuxhezte
+		set_relations = { country = c:D37 value = -30 } #Kuxhekre
+		set_relations = { country = c:A30 value = 20 } #Magocratic Demense
+	}
+
+	c:D10 = { #Vez Udenklan/Allclan
+		set_relations = { country = c:D06 value = -50 } #Kuxhezte
+		set_relations = { country = c:D37 value = -30 } #Kuxhekre
+	}
+
+	c:D12 = { #Hul Jorkad
+		set_relations = { country = c:D10 value = -30 } #Allclan/Vez  Udzenklan
+		set_relations = { country = c:D06 value = -50 } #Kuxhezte
+		set_relations = { country = c:D37 value = -20 } #Kuxhekre
+		set_relations = { country = c:D18 value = 20 } #Arg Ordstun
+		set_relations = { country = c:D14 value = 25 } #Ovdal Lodhum
+		set_relations = { country = c:D21 value = -20 } #Drakonshan
+	}
+
+	c:D13 = { #Gor Burad
+		set_relations = { country = c:D14 value = -30 } #Ovdal Lodhum
+		set_relations = { country = c:D12 value = -30 } #Hul Jorkad
+		set_relations = { country = c:D18 value = -30 } #Arg Ordstun
+		set_relations = { country = c:D20 value = -30 } #Orlghelovar
+		set_relations = { country = c:D19 value = -30 } #Shazstundihr
+	}
+
+	c:D14 = { #Ovdal Lodhum
+		set_relations = { country = c:D18 value = 20 } #Arg Ordstun
+	}
+
+	c:D15 = { #Obsidian Legion
+		set_relations = { country = c:D18 value = -50 } #Arg Ordstun
+		set_relations = { country = c:D20 value = -50 } #Orlghelovar
+		set_relations = { country = c:D19 value = -50 } #Shazstundihr
+		set_relations = { country = c:D14 value = -50 } #Ovdal Lodhum
+		set_relations = { country = c:D13 value = 50 } #Gor Burad
+		set_relations = { country = c:D12 value = -50 } #Hul Jorkad
+	}
+
+	c:D18 = { #Arg Ordstun
+		set_relations = { country = c:D20 value = 25 } #Orlghelovar
+		set_relations = { country = c:F14 value = -30 } #Overclan
+	}
+
+	c:D24 = { #Seghidihr
+		set_relations = { country = c:F01 value = -20 } #Jaddanzar
+		set_relations = { country = c:D21 value = -20 } #Drakonshan
+		set_relations = { country = c:D26 value = -50 } #Nizhn Korvesto
+	}
+
+	c:D25 = { #Verkal Gulan
+		set_relations = { country = c:F01 value = 50 } #Jaddanzar
+		set_relations = { country = c:D24 value = -50 } #Seghidhr
+		set_relations = { country = c:D26 value = -50 } #Nizhn Korvesto
+	}
+
+	c:D26 = { #Nizhn Korvesto
+		set_relations = { country = c:D31 value = -50 } #Dakaz Carzviya
+		set_relations = { country = c:D33 value = -50 } #Zerzeko Radin
+	}
+
+	c:D31 = { #Dakaz Carzviya
+		set_relations = { country = c:R07 value = 25 } #Nadiraji
+		set_relations = { country = c:D33 value = -50 } #Zerzeko Radin
+	}
+
+	c:D33 = { #Zerzeko Radin
+		set_relations = { country = c:Y09 value = 20 } #Azjakuma
+		set_relations = { country = c:R08 value = -20 } #Soldiers Republic
+		set_relations = { country = c:R14 value = -20 } #Girakad Command
+		set_relations = { country = c:R15 value = -20 } #Unbroken Guard
+		set_relations = { country = c:R16 value = -20 } #Kasardun aka Command C todo
+		set_relations = { country = c:R17 value = -20 } #Lion Command
+		set_relations = { country = c:R18 value = -20 } #Bureau of chains
+		set_relations = { country = c:R19 value = -20 } #Dragon command
+	}
+
+	c:D37 = { #Kuxhekre
+		set_relations = { country = c:D06 value = 30 } #Kuxhezte
+	}
+
+	c:F01 = {	#Jaddanzar post Deioderan
+		set_relations = { country = c:F02 value = -30 } 
+		set_relations = { country = c:A09 value = -30 }
+	}
+
+	c:F14 = {   #Overclan
+		set_relations = { country = c:F01 value = 25 } #Jaddanzar
+	}
+
+	c:L01 = {	#Konolkhatep
+		set_relations = { country = c:L18 value = 50 } #Haraagtseda 
+		set_relations = { country = c:L13 value = -25 } #Goluztarr, should hate them more but gameplay
+		set_relations = { country = c:L04 value = -25 } #Khasa, wants to conquer them
+	}
+
+	c:L04 = {	#Khasa
+		set_relations = { country = c:A09 value = -25 } #Busilar
+	}
+
+	c:L17 = {	#Hakhepra
+		set_relations = { country = c:L01 value = 25 } #Konolkhatep 
+		set_relations = { country = c:L25 value = -50 } #Khatalashya
+	}
+
+	c:L25 = {	#Khatalashya
+		set_relations = { country = c:L34 value = -25 } #Adzalan
+	}
+
+	c:L26 = {	#Hisost Yamok
+		set_relations = { country = c:L27 value = -25 } #Melakmengi
+		set_relations = { country = c:L18 value = -25 } #Haraagtseda
+	}
+
+	c:L27 = {	#Melakmengi
+		set_relations = { country = c:L30 value = 25 } #Sky Soaring Eagle
+		set_relations = { country = c:L29 value = 25 } #Naleni
+	}
+
+	c:L28 = {	#Yezel Mora
+		set_relations = { country = c:L18 value = -50 } #Haraagtseda
+		set_relations = { country = c:L27 value = -50 } #Melakmengi
+		set_relations = { country = c:L25 value = -50 } #Khatalashya
+	}
+
+	c:L34 = {	#Adzalan
+		set_relations = { country = c:L31 value = 50 } #Thunder Wielding Buffalo
+		set_relations = { country = c:L25 value = -25 } #Khatalashya
+	}
+
+	c:L35 = {	#Karshyr
+		set_relations = { country = c:A09 value = 25 } #Busilar
+		set_relations = { country = c:L25 value = -25 } #Khatalashya
+		set_relations = { country = c:L57 value = 50 } #Amiratsamo
+		set_relations = { country = c:L36 value = -25 } #Nazhni
+	}
+
+	c:L36 = {	#Nazhni
+		set_relations = { country = c:A09 value = 25 } #Busilar, drug trade intermediary
+		set_relations = { country = c:L25 value = -25 } #Khatalashya
+	}
+
+	c:Y09 = { #Azjakuma
+
+		#clowned the command
+		set_relations = { country = c:R07 value = -40 } #Nadiraji
+		set_relations = { country = c:R08 value = -40 } #Soldiers Republic
+		set_relations = { country = c:R14 value = -40 } #Girakad Command
+		set_relations = { country = c:R15 value = -40 } #Unbroken Guard
+		set_relations = { country = c:R16 value = -40 } #Kasardun aka Command C todo
+		set_relations = { country = c:R17 value = -40 } #Lion Command
+		set_relations = { country = c:R18 value = -40 } #Bureau of chains
+		set_relations = { country = c:R09 value = -40 } #pordhatti
+
+		#rending wasn't cool, helped us tho
+		set_relations = { country = c:R19 value = -20 } #Dragon command
+		set_relations = { country = c:R13 value = -20 } #Yodashikyu
+
+		#fugg nod "our" high tembles :(((
+		set_relations = { country = c:R72 value = -50 } #dhugajir
+		set_relations = { country = c:R06 value = -50 } #babhagama
+		set_relations = { country = c:R04 value = -50 } #vanrahar
+		set_relations = { country = c:R12 value = -50 } #maharaaja
+		set_relations = { country = c:R10 value = -50 } #khiraspid
+		set_relations = { country = c:R11 value = -50 } #kheyattorda
+		set_relations = { country = c:Y12 value = -50 } #semphrerong
+		set_relations = { country = c:R03 value = -50 } #thudhina
+		set_relations = { country = c:R05 value = -50 } #bhuvauri
+		set_relations = { country = c:Y13 value = -50 } #phangban
+		set_relations = { country = c:Y15 value = -50 } #bim lau
+		set_relations = { country = c:Y14 value = -50 } #taiver
+		set_relations = { country = c:Y16 value = -50 } #khabtei teleni
+		set_relations = { country = c:R02 value = -50 } #ghankheden
+		set_relations = { country = c:R20 value = -50 } #rhaghamidesh
+
+		#oniphobic bigots/Spirit lovers (ewwww)
+		set_relations = { country = c:Y08 value = -80 } #zhiqian
+		set_relations = { country = c:Y03 value = -80 } #tianlou
+		set_relations = { country = c:Y05 value = -80 } #feiten
+		set_relations = { country = c:Y06 value = -80 } #luoyip
+		set_relations = { country = c:Y09 value = -80 } #zyujut
+		set_relations = { country = c:Y21 value = -80 } #kudet kai
+		set_relations = { country = c:Y20 value = -80 } #ozovar
+		set_relations = { country = c:Y17 value = -80 } #azkare
+		set_relations = { country = c:Y18 value = -80 } #rongbek
+		set_relations = { country = c:Y19 value = -80 } #baihon xinh
+		set_relations = { country = c:Y22 value = -80 } #sirtan
+		set_relations = { country = c:Y24 value = -80 } #jaya raya, not doing the crappy subjects
+		set_relations = { country = c:Y23 value = -80 } #arawkelin
+
+		#rending was possibly not the coolest thing ever
+		set_relations = { country = c:R01 value = -30 } #nahana Jadd
+		set_relations = { country = c:Y39 value = -30 } #nirenan syul
+		set_relations = { country = c:Y42 value = -30 } #khezhagak
+		set_relations = { country = c:Y35 value = -30 } #oinukhudi
+		set_relations = { country = c:Y40 value = -30 } #samthalsu
+		set_relations = { country = c:Y43 value = -30 } #bazuneizar
+		set_relations = { country = c:Y41 value = -30 } #haakukulga
+		set_relations = { country = c:Y11 value = -30 } #daxugo
+ 
+		#food shouldn't rule a country
+		set_relations = { country = c:Y04 value = -100 } #lingyuk
+		set_relations = { country = c:Y01 value = -100 } #danggun
+
+		#masterful prank sire! we love to drill/desecrate temples!
+		set_relations = { country = c:A06 value = 20 } #Gnomish Hierarchy
+		set_relations = { country = c:B07 value = 20 } #Triarchy
+
+	}
+}

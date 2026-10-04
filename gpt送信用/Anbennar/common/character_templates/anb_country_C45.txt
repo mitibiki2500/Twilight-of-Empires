@@ -1,0 +1,105 @@
+﻿### Nanru Nakar character template file ###
+
+C45_Munathik_Mlerek-Mudaliar = {
+	#Patriarch of the three mudaliar familes. Has the obvious Mudaliar flair and wealth, though is very conscious of the Mudaliar's history and legacy.
+	first_name = Munathik
+	last_name = Mlerek-Mudaliar
+	historical = yes
+	ruler = yes
+	# age = 38
+	birth_date = 1782.1.1
+	interest_group = ig_landowners
+	ig_leader = yes
+	ideology = ideology_royalist
+	culture = cu:kalavendhi
+	religion = rel:gods_of_the_taychend
+	dna = dna_munathik_mlerek_mudaliar
+	traits = {
+		romantic 
+		pious 
+		expensive_tastes
+	}
+	on_created = {
+		set_variable = {
+			name = character_description
+			value = flag:munathik_mlerek_mudaliar
+		}                
+	}	
+}
+
+C45_Gelmondar_Kriadvai-Mudaliar = {
+	#Leader of the Kriadvai-Mudaliar branch. Very interested in artificery, wants to employ cannorians to help develop Nanru Nakar's native artificery, though his cousins don't.
+	first_name = Gelmondar
+	last_name = Kriadvai-Mudaliar
+	historical = yes
+	# age = 47
+	birth_date = 1773.1.1
+	interest_group = ig_industrialists
+	ig_leader = yes
+	ideology = ideology_royalist
+	culture = cu:kalavendhi
+	religion = rel:gods_of_the_taychend
+	traits = {
+		erudite 
+		master_bureaucrat 
+		experienced_political_operator
+	}	
+}
+
+C45_Elechana_Kilaiek-Mudaliar = {
+	#leader of the Kilaiek branch of the Mudaliar family. Ambitious, wants to exploit the collapse of Ameion to conquer Taychend
+	first_name = Elechana
+	last_name = Kilaiek-Mudaliar
+	historical = yes
+	female = yes
+	# age = 33
+	birth_date = 1787.1.1
+	interest_group = ig_armed_forces
+	ig_leader = yes
+	ideology = ideology_slaver
+	culture = cu:kalavendhi
+	religion = rel:gods_of_the_taychend
+	traits = {
+		popular_commander 
+		reckless 
+		arrogant
+	}
+}
+
+C45_Triandar_Silvershard_Sarafna = {
+	#Wields the famous twin Galaskatti, and considers herself the heir to the legacy of the infamous Kamrayakval, Elrandar Silverspite, who wielded the blades. Is widely considered the leader of the Kamrayakvalist faction of the wider Oren Nayiru faith, about to lead a revolt against the Mudaliars.
+	first_name = Triandar_Silvershard
+	last_name = Sarafna
+	historical = yes
+	# age = 34
+	birth_date = 1786.1.1
+	interest_group = ig_armed_forces
+	is_agitator = yes
+	ideology = ideology_abolitionist
+	culture = cu:kalavendhi
+	religion = rel:oren_nayiru
+	traits = {
+		firebrand 
+		pious 
+		celebrity_commander
+	}
+}
+
+C45_Aldatam_Chetty = {
+	#The head of one of the pre-eminent scavenger guilds in the city. Lost his left arm to one of the deep elves in the undercity of Nanru Nakar, and has hated them - and most other outsiders - ever since.
+	first_name = Aldatam
+	last_name = Chetty
+	historical = yes
+	# age = 47
+	birth_date = 1773.1.1
+	interest_group = ig_petty_bourgeoisie
+	ig_leader = yes
+	ideology = ideology_moderate
+	culture = cu:kalavendhi
+	religion = rel:gods_of_the_taychend
+	traits = {
+		bigoted 
+		direct 
+		scarred
+	}
+}

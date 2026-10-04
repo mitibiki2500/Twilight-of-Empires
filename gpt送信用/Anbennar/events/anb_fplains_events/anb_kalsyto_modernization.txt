@@ -1,0 +1,1622 @@
+﻿namespace = egduqon
+
+# The Lowered Shield
+egduqon.1 = {
+	type = country_event
+	placement = root
+	title = egduqon.1.t
+	desc = egduqon.1.d
+	flavor = egduqon.1.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	gui_window = event_window_1char_tabloid
+
+	#left_icon = scope:egduqon_ruler
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
+
+	trigger = {
+		# triggered by egduqon JE
+	}
+
+	immediate = {
+		set_variable = {
+			name = egduqon_var
+			value = 0
+		}
+		add_journal_entry = {
+			type = je_egduqon_main
+		}
+		ig:ig_rural_folk = {
+			save_scope_as = rural_folk_ig
+		}
+	}
+	
+	option = { #
+		name = egduqon.1.a
+		add_modifier = {
+			name = modifier_kalsyto_upon_halann_stage
+			is_decaying = yes
+			years = 10
+		}
+		ig:ig_landowners = { remove_ideology = ideology_isolationist }
+		if = {
+			limit = {
+				NOT = {
+					any_political_movement = {
+						is_political_movement_type = movement_modernizer
+					}
+				}
+			}
+			create_political_movement = { type = movement_modernizer }
+		}
+		if = {
+			limit = {
+				NOT = { has_variable = completed_je_egduqon_economy }
+				in_default = no
+				any_scope_state = {
+					filter = {
+						is_incorporated = yes
+						region = sr:region_triunic_lakes
+					}
+					region = sr:region_triunic_lakes
+					any_scope_building = {
+						is_building_type = building_urban_center
+						level >= 5
+					}
+					has_building = building_railway
+					count = all
+				}
+			}
+			add_loyalists = {
+				value = 0.05
+				pop_type = laborers
+			}
+			add_loyalists = {
+				value = 0.05
+				pop_type = capitalists
+			}
+			change_variable = {
+				name = egduqon_var
+				add = 1
+			}
+			set_variable = completed_je_egduqon_economy # If the player manages to skip je_egduqon_economy we still need to set the variable
+		}
+		else = {
+			add_journal_entry = {
+				type = je_egduqon_economy
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_variable = completed_je_egduqon_diplomacy }
+				is_country_type = recognized
+				any_country = {
+					country_rank = rank_value:great_power
+					NOT = { c:E01 ?= this }
+					relations:root >= 40
+				}
+				any_country = {
+					country_rank >= rank_value:unrecognized_major_power 
+					any_scope_treaty = {
+                        binds = root
+                        any_scope_article = {
+                            has_type = trade_privilege
+                        }
+                    }
+				}
+				#insert magic/artifice stuff here
+				is_subject = no
+			}
+			change_variable = {
+				name = egduqon_var
+				add = 1
+			}
+			set_variable = completed_je_egduqon_diplomacy # If the player manages to skip je_egduqon_diplomacy we still need to set the variable
+			trigger_event = {
+				id = egduqon.18
+			}
+		}
+		else = {
+			add_journal_entry = {
+				type = je_egduqon_diplomacy
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_variable = completed_je_egduqon_army }
+				NOT = { has_law = law_type:law_peasant_levies }
+				has_technology_researched = napoleonic_warfare
+				country_has_building_type_levels = {
+					target = bt:building_barrack
+					value >= 100
+				}
+				country_has_building_type_levels = {
+					target = bt:building_naval_logistics_center # anb converted in 1.13, the 40 may be way to high idk TODO POLK
+					value >= 40
+				}
+				NOR = {
+					any_scope_building = {
+						is_building_type = building_barrack
+						has_active_production_method = pm_no_organization
+					}
+					#any_scope_building = {
+					#	is_building_type = building_naval_base
+					#	has_active_production_method = pm_no_organization
+					#}
+					any_military_formation = {
+						filter = {
+							is_army = yes
+						}
+						any_combat_unit = {
+							has_unit_type = unit_type:combat_unit_type_irregular_infantry
+						}
+						percent >= 0.25
+					}
+				}
+			}
+			change_variable = {
+				name = egduqon_var
+				add = 1
+			}
+			set_variable = completed_je_egduqon_army # If the player manages to skip je_egduqon_army we still need to set the variable
+			#trigger_event = {
+				#id = egduqon.3
+			#}
+		}
+		else = {
+			add_journal_entry = {
+				type = je_egduqon_army
+			}
+		}
+	}
+}
+
+#The Shattered Shield
+egduqon.13 = {
+	type = country_event
+	placement = root
+	title = egduqon.13.t
+	desc = egduqon.13.d
+	flavor = egduqon.13.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	event_image = {
+		video = "asia_westerners_arriving"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		# triggered by egduqon JE
+	}
+
+	immediate = {
+		set_variable = {
+			name = egduqon_var
+			value = 0
+		}
+		add_journal_entry = {
+			type = je_egduqon_main
+		}
+	}
+
+	option = {
+		name = egduqon.13.a
+		add_modifier = {
+			name = modifier_kalsyto_reckoning_disturbed_peace
+			is_decaying = yes
+			years = 10
+		}
+		ig:ig_landowners = { remove_ideology = ideology_isolationist }
+		if = {
+			limit = {
+				NOT = {
+					any_political_movement = {
+						is_political_movement_type = movement_modernizer
+					}
+				}
+			}
+			create_political_movement = { type = movement_modernizer }
+		}
+		if = {
+			limit = {
+				NOT = { has_variable = completed_je_egduqon_economy }
+				in_default = no
+				any_scope_state = {
+					filter = {
+						is_incorporated = yes
+						region = sr:region_triunic_lakes
+					}
+					region = sr:region_triunic_lakes
+					any_scope_building = {
+						is_building_type = building_urban_center
+						level >= 5
+					}
+					has_building = building_railway
+					count = all
+				}
+			}
+			add_loyalists = {
+				value = 0.05
+				pop_type = laborers
+			}
+			add_loyalists = {
+				value = 0.05
+				pop_type = capitalists
+			}
+			change_variable = {
+				name = egduqon_var
+				add = 1
+			}
+			set_variable = completed_je_egduqon_economy # If the player manages to skip je_egduqon_economy we still need to set the variable
+		}
+		else = {
+			add_journal_entry = {
+				type = je_egduqon_economy
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_variable = completed_je_egduqon_diplomacy }
+				is_country_type = recognized
+				any_country = {
+					country_rank = rank_value:great_power
+					NOT = { c:E01 ?= this }
+					relations:root >= 40
+				}
+				any_country = {
+					country_rank >= rank_value:unrecognized_major_power 
+					any_scope_treaty = {
+                        binds = root
+                        any_scope_article = {
+                            has_type = trade_privilege
+                        }
+                    }
+				}
+				#insert magic/artifice stuff here
+				is_subject = no
+			}
+			change_variable = {
+				name = egduqon_var
+				add = 1
+			}
+			set_variable = completed_je_egduqon_diplomacy # If the player manages to skip je_egduqon_diplomacy we still need to set the variable
+			trigger_event = {
+				id = egduqon.18
+			}
+		}
+		else = {
+			add_journal_entry = {
+				type = je_egduqon_diplomacy
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_variable = completed_je_egduqon_army }
+				NOT = { has_law = law_type:law_peasant_levies }
+				has_technology_researched = napoleonic_warfare
+				country_has_building_type_levels = {
+					target = bt:building_barrack
+					value >= 100
+				}
+				country_has_building_type_levels = {
+					target = bt:building_naval_logistics_center
+					value >= 40
+				}
+				NOR = {
+					any_scope_building = {
+						is_building_type = building_barrack
+						has_active_production_method = pm_no_organization
+					}
+					#any_scope_building = {
+					#	is_building_type = building_naval_base
+					#	has_active_production_method = pm_no_organization
+					#}
+					any_military_formation = {
+						filter = {
+							is_army = yes
+						}
+						any_combat_unit = {
+							has_unit_type = unit_type:combat_unit_type_irregular_infantry
+						}
+						percent >= 0.25
+					}
+				}
+			}
+			change_variable = {
+				name = egduqon_var
+				add = 1
+			}
+			set_variable = completed_je_egduqon_army # If the player manages to skip je_egduqon_army we still need to set the variable
+			#trigger_event = {
+				#id = egduqon.3
+			#}
+		}
+		else = {
+			add_journal_entry = {
+				type = je_egduqon_army
+			}
+		}
+	}
+}
+
+# Reforms complete!
+egduqon.2 = {
+	type = country_event
+	placement = root
+	title = egduqon.2.t
+	desc = egduqon.2.d
+	flavor = egduqon.2.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	event_image = {
+		video = "asia_confucianism_shinto"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		# triggered by egduqon restoration JE
+	}
+
+	immediate = {
+		ruler = {
+			save_scope_as = egduqon_ruler
+		}
+		#set_global_variable = egduqon_restoration_complete
+	}
+
+	option = {
+		name = egduqon.2.a
+		add_modifier = {
+			name = kalsyto_workers_favored
+			years = 10
+		}
+	}
+	option = {
+		name = egduqon.2.b
+		add_modifier = {
+			name = kalsyto_soldiers_favored
+			years = 10
+		}
+	}
+	option = {
+		name = egduqon.2.c
+		add_modifier = {
+			name = kalsyto_traders_favored
+			years = 10
+		}
+	}
+	option = {
+		name = egduqon.2.g
+		default_option = yes
+		add_modifier = {
+			name = kalsyto_guns_favored
+			years = 10
+		}
+		
+	}
+	option = {
+		name = egduqon.2.h
+		add_modifier = {
+			name = kalsyto_children_favored
+			years = 10
+		}
+	}
+	option = {
+		name = egduqon.2.i
+		default_option = yes
+		add_modifier = {
+			name = kalsyto_citizens_favored
+			years = 10
+		}
+	}
+}
+
+# Western military advisors
+egduqon.4 = {
+	type = country_event
+	placement = root
+	title = egduqon.4.t
+	desc = egduqon.4.d
+	flavor = egduqon.4.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	event_image = {
+		video = "asia_westerners_arriving"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		NOT = {	has_modifier = western_military_consultant }
+		NOT = { has_law = law_type:law_isolationism }
+		any_country = {
+			country_rank >= rank_value:major_power
+			NOT = { c:E01 ?= this }
+			relations:root >= relations_threshold:neutral
+			relations:root >= 0
+			NOT = { is_owed_obligation_by = ROOT }
+			NOT = { has_war_with = ROOT }
+			any_scope_character = {
+				has_role_of_type = general
+				is_busy = no
+			}
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				country_rank >= rank_value:major_power
+				NOT = { c:E01 ?= this }
+				relations:root >= relations_threshold:neutral
+				NOT = { is_owed_obligation_by = ROOT }
+				NOT = { has_war_with = ROOT }
+				any_scope_character = {
+					has_role_of_type = general
+					is_busy = no
+				}
+			}
+			save_scope_as = military_consultant_country
+			random_scope_character = {
+				limit = {
+					has_role_of_type = general
+					is_busy = no
+				}
+				save_scope_as = military_consultant_general
+			}
+		}
+	}
+
+	option = {
+		name = egduqon.4.a
+		default_option = yes
+		set_owes_obligation_to = {
+			country = scope:military_consultant_country
+			setting = yes
+		}
+		add_modifier = {
+			name = western_military_consultant
+			days = normal_modifier_time
+		}
+	}
+	option = {
+		name = egduqon.4.b
+		change_relations = {
+			country = scope:military_consultant_country
+			value = -20
+		}
+	}
+}
+
+# Embassy to the West
+egduqon.5 = {
+	type = country_event
+	placement = root
+	title = egduqon.5.t
+	desc = egduqon.5.d
+	flavor = egduqon.5.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	event_image = {
+		video = "asia_westerners_arriving"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		NOT = { has_modifier = japan_society_tech_modifier }
+		NOT = { has_law = law_type:law_isolationism }
+		any_country = {
+			country_rank = rank_value:great_power
+			NOT = { c:E01 ?= this }
+			relations:root >= relations_threshold:neutral
+			NOT = { has_war_with = ROOT }
+			NOT = { is_owed_obligation_by = ROOT }
+		}
+	}
+	immediate = {
+		random_country = {
+			limit = {
+				country_rank = rank_value:great_power
+				NOT = { c:E01 ?= this }
+				relations:root >= relations_threshold:neutral
+				NOT = { has_war_with = ROOT }
+				NOT = { is_owed_obligation_by = ROOT }
+			}
+			save_scope_as = kalsyto_embassy_country
+			random_interest_group = {
+				limit = {
+					is_in_government = yes
+				}
+				leader = {
+					save_scope_as = kalsyto_embassy_politician
+				}
+			}
+		}
+	}
+
+	option = { # greatly improve relations for a obligation
+		name = egduqon.5.a
+		default_option = yes
+		set_owes_obligation_to = {
+			country = scope:kalsyto_embassy_country
+			setting = yes
+		}
+		change_relations = {
+			country = scope:kalsyto_embassy_country
+			value = 50
+		}
+	}
+	option = { # society tech spread for a obligation
+		name = egduqon.5.b
+		set_owes_obligation_to = {
+			country = scope:kalsyto_embassy_country
+			setting = yes
+		}
+		add_modifier = {
+			name = japan_society_tech_modifier
+			days = normal_modifier_time
+		}
+	}
+	option = { # we don't want anything from them
+		name = egduqon.5.c
+		change_relations = {
+			country = scope:kalsyto_embassy_country
+			value = -20
+		}
+	}
+}
+
+# Foreign Investment
+egduqon.6 = {
+	type = country_event
+	placement = root
+	title = egduqon.6.t
+	desc = egduqon.6.d
+	flavor = egduqon.6.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		NOT = { has_modifier = japan_production_tech_modifier }
+		NOT = { has_law = law_type:law_isolationism }		
+		any_country = {
+			country_rank >= rank_value:major_power
+			NOT = { c:E01 ?= this }
+			relations:root >= relations_threshold:neutral
+			NOT = { has_war_with = ROOT }
+			NOT = { is_owed_obligation_by = ROOT }
+			ig:ig_industrialists = {
+				is_in_government = yes
+			}
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				country_rank >= rank_value:major_power
+				NOT = { c:E01 ?= this }
+				relations:root >= relations_threshold:neutral
+				NOT = { has_war_with = ROOT }
+				NOT = { is_owed_obligation_by = ROOT }
+				ig:ig_industrialists = {
+					is_in_government = yes
+				}
+			}
+			save_scope_as = western_investor_country
+			ig:ig_industrialists = {
+				leader = {
+					save_scope_as = western_investor_ig_leader
+				}
+			}
+		}
+	}
+
+	option = { # production tech spread for a obligation
+		name = egduqon.6.a
+		default_option = yes
+		set_owes_obligation_to = {
+			country = scope:western_investor_country
+			setting = yes
+		}
+		add_modifier = {
+			name = japan_production_tech_modifier
+			days = normal_modifier_time
+		}
+	}
+	option = { # no thanks
+		name = egduqon.6.b
+		change_relations = {
+			country = scope:western_investor_country
+			value = -20
+		}
+	}
+}
+
+# Foreign Railway Engineers
+egduqon.7 = {
+	type = country_event
+	placement = root
+	title = egduqon.7.t
+	desc = egduqon.7.d
+	flavor = egduqon.7.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	event_image = {
+		video = "unspecific_trains"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		NOT = { has_variable = foreign_railway_engineers_event }
+		can_research = railways
+		NOT = { has_technology_researched = railways }
+		any_country = {
+			country_rank = rank_value:great_power
+			NOT = { c:E01 ?= this }
+			has_technology_researched = railways
+			NOT = { has_war_with = root }
+			relations:root > 0
+		}
+	}
+
+	immediate = {
+		set_variable = foreign_railway_engineers_event
+		random_country = {
+			limit = {
+				country_rank = rank_value:great_power
+				NOT = { c:E01 ?= this }
+				has_technology_researched = railways
+				NOT = { has_war_with = root }
+				relations:root > 0
+			}
+			save_scope_as = railway_engineer_country_1
+		}
+		if = {
+			limit = {
+				any_country = {
+					country_rank = rank_value:great_power
+					NOT = { c:E01 ?= this }
+					has_technology_researched = railways
+					NOT = { has_war_with = root }
+					relations:root > 0
+					NOT = { this = scope:railway_engineer_country_1 }
+				}
+			}
+			random_country = {
+				limit = {
+					country_rank = rank_value:great_power
+					NOT = { c:E01 ?= this }
+					has_technology_researched = railways
+					NOT = { has_war_with = root }
+					relations:root > 0
+					NOT = { this = scope:railway_engineer_country_1 }
+				}
+				save_scope_as = railway_engineer_country_2
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:railway_engineer_country_2
+				any_country = {
+					country_rank = rank_value:great_power
+					NOT = { c:E01 ?= this }
+					has_technology_researched = railways
+					NOT = { has_war_with = root }
+					relations:root > 0
+					NOT = { this = scope:railway_engineer_country_1 }
+					NOT = { this = scope:railway_engineer_country_2 }
+				}
+			}
+			random_country = {
+				limit = {
+					country_rank = rank_value:great_power
+					NOT = { c:E01 ?= this }
+					has_technology_researched = railways
+					NOT = { has_war_with = root }
+					relations:root > 0
+					NOT = { this = scope:railway_engineer_country_1 }
+					NOT = { this = scope:railway_engineer_country_2 }
+				}
+				save_scope_as = railway_engineer_country_3
+			}
+		}
+	}
+
+	option = {
+		name = egduqon.7.a
+		default_option = yes
+		change_relations = {
+			country = scope:railway_engineer_country_1
+			value = 10
+		}
+		add_technology_progress = {
+			technology = railways
+			progress = 3500
+		}
+	}
+
+	option = {
+		name = egduqon.7.b
+		trigger = {
+			exists = scope:railway_engineer_country_2
+		}
+		change_relations = {
+			country = scope:railway_engineer_country_2
+			value = 10
+		}
+		add_technology_progress = {
+			technology = railways
+			progress = 3500
+		}
+	}
+
+	option = {
+		name = egduqon.7.c
+		trigger = {
+			exists = scope:railway_engineer_country_3
+		}
+		change_relations = {
+			country = scope:railway_engineer_country_3
+			value = 10
+		}
+		add_technology_progress = {
+			technology = railways
+			progress = 3500
+		}
+	}
+
+	option = {
+		name = egduqon.7.e
+		add_modifier = {
+			name = railway_our_way
+			days = long_modifier_time
+		}
+	}
+}
+
+# Militarized Railways
+egduqon.8 = {
+	type = country_event
+	placement = scope:military_railway_state
+	title = egduqon.8.t
+	desc = egduqon.8.d
+	flavor = egduqon.8.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	event_image = {
+		video = "unspecific_armored_train"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		has_technology_researched = railways
+		any_scope_state = {
+			has_building = building_barrack
+			NOT = { has_building = building_railway }
+		}
+		NOT = { has_modifier = retained_railway_control }
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				has_building = building_barrack
+				NOT = { has_building = building_railway }
+			}
+			save_scope_as = military_railway_state
+		}
+		ig:ig_industrialists = {
+			save_scope_as = industrialists_ig
+		}
+	}
+
+	option = {
+		name = egduqon.8.a
+		scope:military_railway_state = {
+			create_building = {
+				building = building_railway
+				level = 1
+			}
+		}
+		ig:ig_industrialists = {
+			add_modifier = {
+				name = railway_priority
+				days = long_modifier_time
+			}
+		}
+	}
+
+	option = {
+		name = egduqon.8.b
+		default_option = yes
+		add_modifier = {
+			name = retained_railway_control
+			days = long_modifier_time
+		}
+		ig:ig_industrialists = {
+			add_modifier = {
+				name = refused_railway_priority
+				days = normal_modifier_time
+			}
+		}
+	}
+}
+
+# Passivists Reject Militarization
+egduqon.9 = {
+	type = country_event
+	placement = scope:passivist_state
+	title = egduqon.9.t
+	desc = egduqon.9.d
+	flavor = egduqon.9.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	event_image = {
+		video = "asia_westerners_arriving"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				has_building = building_barrack
+			}
+			save_scope_as = passivist_state
+		}
+		ig:ig_industrialists = {
+			save_scope_as = industrialists_ig
+		}
+	}
+	option = {
+		name = egduqon.9.a
+		default_option = yes
+		scope:passivist_state = {
+			add_modifier = {
+				name = kalsyto_slow_militarization
+				days = normal_modifier_time
+			}
+		}
+	}
+
+	option = {
+		name = egduqon.9.b
+		scope:passivist_state = {
+			add_radicals_in_state = {
+				interest_group = ig:ig_rural_folk
+				value = medium_radicals
+			}
+		}
+	}
+}
+
+# Sojda-Kouluuni
+egduqon.10 = {
+	type = country_event
+	placement = s:STATE_GADHLUMO.region_state:E01
+	title = egduqon.10.t
+	desc = egduqon.10.d
+	flavor = egduqon.10.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	event_image = {
+		video = "asia_westerners_arriving"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		NOT = { has_variable = sojda_kouluuni_event }
+		exists = s:STATE_GADHLUMO.region_state:E01
+		s:STATE_GADHLUMO.region_state:E01 = {
+			has_building = building_barrack
+		}
+		ig:ig_armed_forces = {
+			ig_approval <= unhappy
+		}
+	}
+
+	immediate = {
+		set_variable = sojda_kouluuni_event
+		s:STATE_GADHLUMO.region_state:E01 = {
+			save_scope_as = gadhlumo_state
+		}
+		ig:ig_armed_forces = {
+			leader = { save_scope_as = armed_forces_leader }
+		}
+	}
+
+	option = {
+		name = egduqon.10.a
+		s:STATE_GADHLUMO.region_state:E01 = {
+			add_modifier = {
+				name = kalsyto_sojda_kouluuni
+				days = normal_modifier_time
+			}
+			add_radicals_in_state = {
+				pop_type = soldiers
+				value = medium_radicals
+			}
+		}
+	}
+
+	option = {
+		name = egduqon.10.b
+		default_option = yes
+
+		ig:ig_armed_forces = {
+			add_modifier = {
+				name = shut_down_military_academies
+				days = long_modifier_time
+			}
+			leader = {
+				add_modifier = {
+					name = suspected_insurrectionist
+					days = long_modifier_time
+				}
+			}
+		}
+	}
+}
+
+# The Port Incident
+egduqon.11 = {
+	type = country_event
+	placement = root
+	title = egduqon.11.t
+	desc = egduqon.11.d
+	flavor = egduqon.11.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	event_image = {
+		video = "asia_westerners_arriving"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		NOT = { has_variable = kalsyto_port_incident }
+		has_law = law_type:law_isolationism
+		year > 1836
+		any_scope_state = {
+			has_port_state = yes
+		}
+		any_country = {
+			country_rank = rank_value:great_power
+			NOT = { c:E01 ?= this }
+			has_interest_marker_in_region = root.capital.region
+			NOR = {
+				has_subject_relation_with = root
+				is_in_customs_union_with = root
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = kalsyto_port_incident
+			years = 4
+		}
+		random_scope_state = {
+			limit = { has_port_state = yes }
+			save_scope_as = infringed_port_state
+		}
+		random_country = {
+			limit = {
+				country_rank = rank_value:great_power
+				NOT = { c:E01 ?= this }
+				has_interest_marker_in_region = root.capital.region
+				NOR = {
+					has_subject_relation_with = root
+					is_in_customs_union_with = root
+				}
+			}
+			save_scope_as = infringing_country
+		}
+
+		if = {
+			limit = {
+				any_country = {
+					country_rank = rank_value:great_power
+					NOT = { c:E01 ?= this }
+					has_interest_marker_in_region = root.capital.region
+					relations:root >= 2
+					NOT = { this = scope:infringing_country }
+					NOT = { is_owed_obligation_by = root }
+				}
+			}
+			random_country = {
+				limit = {
+					country_rank = rank_value:great_power
+					NOT = { c:E01 ?= this }
+					has_interest_marker_in_region = root.capital.region
+					relations:root >= 2
+					NOT = { this = scope:infringing_country }
+					NOT = { is_owed_obligation_by = root }
+				}
+				save_scope_as = assistance_country
+			}
+		}
+	}
+
+	option = {
+		name = egduqon.11.a
+		change_relations = {
+			country = scope:infringing_country
+			value = -20
+		}
+		scope:infringed_port_state.state_region = {
+			add_devastation = 25
+		}
+	}
+
+	option = {
+		name = egduqon.11.b
+		default_option = yes
+
+		add_modifier = {
+			name = sakoku_violated
+			days = long_modifier_time
+		}
+	}
+
+	option = {
+		name = egduqon.11.c
+		trigger = {
+			exists = scope:assistance_country
+		}
+		set_owes_obligation_to = {
+			country = scope:assistance_country
+			setting = yes
+		}
+	}
+}
+
+# Which Way Kalyin Guides Us
+egduqon.12 = {
+	type = country_event
+	placement = root
+	title = egduqon.12.t
+	desc = egduqon.12.d
+	flavor = egduqon.12.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	event_image = {
+		video = "asia_confucianism_shinto"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		NOT = { has_variable = kalsyto_egduqon_article }
+	}
+
+	immediate = {
+		set_variable = kalsyto_egduqon_article
+	}
+
+	option = {
+		name = egduqon.12.a
+		if = {
+			limit = { exists = c:Y01 }
+			change_relations = {
+				country = c:Y01
+				value = -20
+			}
+		}
+		if = {
+			limit = { exists = c:Y03 }
+			change_relations = {
+				country = c:Y03
+				value = -20
+			}
+		}
+		if = {
+			limit = { exists = c:B98 }
+			change_relations = {
+				country = c:B98
+				value = 30
+			}
+		}
+		if = {
+			limit = { exists = c:A01 }
+			change_relations = {
+				country = c:A01
+				value = 30
+			}
+		}
+		if = {
+			limit = { exists = c:A04 }
+			change_relations = {
+				country = c:A04
+				value = 30
+			}
+		}
+	}
+
+	option = {
+		name = egduqon.12.b
+		if = {
+			limit = { exists = c:Y01 }
+			change_relations = {
+				country = c:Y01
+				value = 15
+			}
+		}
+		if = {
+			limit = { exists = c:Y03 }
+			change_relations = {
+				country = c:Y03
+				value = 15
+			}
+		}
+	}
+
+	option = {
+		name = egduqon.12.c
+		default_option = yes
+		add_modifier = {
+			name = diplomatic_flexibility
+			days = normal_modifier_time
+		}
+	}
+}
+
+# Foreign Artificers
+egduqon.14 = {
+	type = country_event
+	placement = root
+	title = egduqon.14.t
+	desc = egduqon.14.d
+	flavor = egduqon.14.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	event_image = {
+		video = "unspecific_trains"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		NOT = { has_variable = foreign_elemental_artificers_event }
+		can_research = elemental_elicitation
+		NOT = { has_technology_researched = elemental_elicitation }
+		any_country = {
+			country_rank = rank_value:great_power
+			NOT = { c:E01 ?= this }
+			has_technology_researched = elemental_elicitation
+			NOT = { has_war_with = root }
+			relations:root > 0
+		}
+	}
+
+	immediate = {
+		set_variable = foreign_elemental_artificers_event
+		random_country = {
+			limit = {
+				country_rank = rank_value:great_power
+				NOT = { c:E01 ?= this }
+				has_technology_researched = elemental_elicitation
+				NOT = { has_war_with = root }
+				relations:root > 0
+			}
+			save_scope_as = elemental_artificer_country_1
+		}
+		if = {
+			limit = {
+				any_country = {
+					country_rank = rank_value:great_power
+					NOT = { c:E01 ?= this }
+					has_technology_researched = elemental_elicitation
+					NOT = { has_war_with = root }
+					relations:root > 0
+					NOT = { this = scope:elemental_artificer_country_1 }
+				}
+			}
+			random_country = {
+				limit = {
+					country_rank = rank_value:great_power
+					NOT = { c:E01 ?= this }
+					has_technology_researched = elemental_elicitation
+					NOT = { has_war_with = root }
+					relations:root > 0
+					NOT = { this = scope:elemental_artificer_country_1 }
+				}
+				save_scope_as = elemental_artificer_country_2
+			}
+		}
+		if = {
+			limit = {
+				exists = scope:elemental_artificer_country_2
+				any_country = {
+					country_rank = rank_value:great_power
+					NOT = { c:E01 ?= this }
+					has_technology_researched = elemental_elicitation
+					NOT = { has_war_with = root }
+					relations:root > 0
+					NOT = { this = scope:elemental_artificer_country_1 }
+					NOT = { this = scope:elemental_artificer_country_2 }
+				}
+			}
+			random_country = {
+				limit = {
+					country_rank = rank_value:great_power
+					NOT = { c:E01 ?= this }
+					has_technology_researched = elemental_elicitation
+					NOT = { has_war_with = root }
+					relations:root > 0
+					NOT = { this = scope:elemental_artificer_country_1 }
+					NOT = { this = scope:elemental_artificer_country_2 }
+				}
+				save_scope_as = elemental_artificer_country_3
+			}
+		}
+	}
+
+	option = {
+		name = egduqon.14.a
+		default_option = yes
+		change_relations = {
+			country = scope:elemental_artificer_country_1
+			value = 10
+		}
+		add_technology_progress = {
+			technology = elemental_elicitation
+			progress = 3500
+		}
+	}
+
+	option = {
+		name = egduqon.14.b
+		trigger = {
+			exists = scope:elemental_artificer_country_2
+		}
+		change_relations = {
+			country = scope:elemental_artificer_country_2
+			value = 10
+		}
+		add_technology_progress = {
+			technology = elemental_elicitation
+			progress = 3500
+		}
+	}
+
+	option = {
+		name = egduqon.14.c
+		trigger = {
+			exists = scope:elemental_artificer_country_3
+		}
+		change_relations = {
+			country = scope:elemental_artificer_country_3
+			value = 10
+		}
+		add_technology_progress = {
+			technology = elemental_elicitation
+			progress = 3500
+		}
+	}
+
+	option = {
+		name = egduqon.14.e
+		add_modifier = {
+			name = kalsyto_elemental_our_way
+			days = long_modifier_time
+		}
+	}
+}
+
+# Worker Owned Mines
+egduqon.15 = {
+	type = country_event
+	placement = scope:kalsyto_worker_iron
+	title = egduqon.15.t
+	desc = egduqon.15.d
+	flavor = egduqon.15.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	event_image = {
+		video = "unspecific_armored_train"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		any_scope_state = {
+			has_potential_resource = building_iron_mine
+			state_has_building_type_levels = { target = bt:building_iron_mine value < 5 }
+		}
+		NOT = { has_modifier = kalsyto_retained_mine_control }
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				has_potential_resource = building_iron_mine
+				state_has_building_type_levels = { target = bt:building_iron_mine value < 5 }
+			}
+			save_scope_as = kalsyto_worker_iron
+		}
+		ig:ig_trade_unions = {
+			save_scope_as = trade_unions_ig
+		}
+	}
+
+	option = {
+		name = egduqon.15.a
+		scope:kalsyto_worker_iron = {
+			create_building = {
+				building = building_iron_mine
+				level = 1
+			}
+		}
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = kalsyto_mine_priority
+				days = long_modifier_time
+			}
+		}
+	}
+
+	option = {
+		name = egduqon.15.b
+		default_option = yes
+		add_modifier = {
+			name = kalsyto_retained_mine_control
+			days = long_modifier_time
+		}
+		ig:ig_trade_unions = {
+			add_modifier = {
+				name = kalsyto_refused_mine_priority
+				days = normal_modifier_time
+			}
+		}
+	}
+}
+
+#Citizens Rally Against Cannorian Interference
+egduqon.16 = {
+	type = country_event
+	placement = root
+	title = egduqon.16.t
+	desc = egduqon.16.d
+	flavor = egduqon.16.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	event_image = {
+		video = "unspecific_trains"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		any_country = {
+			country_rank = rank_value:great_power
+			NOT = { c:E01 ?= this }
+			NOT = { has_war_with = root }
+			is_owed_obligation_by = root
+			relations:root > 0
+		}
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				country_rank = rank_value:great_power
+				NOT = { c:E01 ?= this }
+				NOT = { has_war_with = root }
+				is_owed_obligation_by = root
+				relations:root > 0
+			}
+			save_scope_as = gp_obligation
+		}
+		ig:ig_intelligentsia = {
+			save_scope_as = intelligentsia_ig
+		}
+	}
+	
+	option = {
+		name = egduqon.16.a
+		default_option = yes
+		change_relations = {
+			country = scope:gp_obligation
+			value = -40
+		}
+		set_owes_obligation_to = {
+			country = scope:gp_obligation
+			setting = no
+		}
+	}
+
+	option = {
+		name = egduqon.16.b
+		change_relations = {
+			country = scope:gp_obligation
+			value = 10
+		}
+		add_radicals = {
+			interest_group = ig:ig_intelligentsia
+			value = medium_radicals
+		}
+	}
+}
+
+# Maritime Trade Port
+egduqon.17 = {
+	type = country_event
+	placement = scope:kalsyto_port_state
+	title = egduqon.17.t
+	desc = egduqon.17.d
+	flavor = egduqon.17.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	event_image = {
+		video = "unspecific_armored_train"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		any_scope_state = {
+			is_coastal = yes
+			NOT = { has_building = building_port }
+		}
+		NOT = { has_modifier = kalsyto_retained_port_control }
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				is_coastal = yes
+				NOT = { has_building = building_port }
+			}
+			save_scope_as = kalsyto_port_state
+		}
+		ig:ig_petty_bourgeoisie = {
+			save_scope_as = petty_bourgeoisie_ig
+		}
+	}
+
+	option = {
+		name = egduqon.17.a
+		scope:kalsyto_port_state = {
+			create_building = {
+				building = building_port
+				level = 1
+			}
+		}
+		ig:ig_petty_bourgeoisie = {
+			add_modifier = {
+				name = kalsyto_port_priority
+				days = long_modifier_time
+			}
+		}
+	}
+
+	option = {
+		name = egduqon.17.b
+		default_option = yes
+		add_modifier = {
+			name = kalsyto_retained_port_control
+			days = long_modifier_time
+		}
+		ig:ig_petty_bourgeoisie = {
+			add_modifier = {
+				name = kalsyto_refused_port_priority
+				days = normal_modifier_time
+			}
+		}
+	}
+}
+
+# Foreign Relations
+egduqon.18 = {
+	type = country_event
+	placement = root
+	title = egduqon.18.t
+	desc = egduqon.18.d
+	flavor = egduqon.18.f
+
+	duration = 3
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	event_image = {
+		video = "asia_westerners_arriving"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	trigger = {
+		# triggered by The Trader and the Steward JE
+	}
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = egduqon.18.a
+		default_option = yes
+		ig:ig_landowners = { add_ideology = ideology_paternalistic }
+		every_country = {
+			limit = {
+				country_rank = rank_value:major_power
+				NOT = { c:E01 ?= this }
+				is_owed_obligation_by = ROOT
+			}
+			ROOT = {
+				set_owes_obligation_to = {
+					country = PREV
+					setting = no
+				}
+			}
+		}
+	}
+	option = {
+		name = egduqon.18.b
+		ig:ig_landowners = { add_ideology = ideology_republican_paternalistic }
+		add_radicals = {
+			value = 0.05
+			interest_group = ig:ig_landowners
+		}
+	}
+}

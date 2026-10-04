@@ -1,0 +1,48 @@
+﻿namespace = anb_rosemetal_events
+
+anb_rosemetal_events.1 = {
+	type = country_event
+	placement = root
+	title = anb_rosemetal_events.1.t
+	desc = anb_rosemetal_events.1.d
+	flavor = anb_rosemetal_events.1.f
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
+
+	trigger = {
+		# triggered by unlock_rubyhold_process
+	}
+
+	immediate = {
+		create_diplomatic_pact = {  
+            country = c:A75
+            type = protectorate
+        }
+	}
+
+	option = {
+		name = anb_rosemetal_events.1.a
+		default_option = yes
+		add_technology_researched = rubyhold_process
+		add_modifier = {
+			name = rosemetal_technoloy_payment
+			months = 3
+			multiplier = 150000
+		}
+		c:A75 = {
+ 			add_modifier = {
+				name = rosemetal_technoloy_received
+				months = 3
+				multiplier = 150000
+			}
+  		}
+	}
+}

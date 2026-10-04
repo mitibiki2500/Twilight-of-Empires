@@ -1,0 +1,72 @@
+﻿airship_tower_decision = {
+	is_shown = {
+        always = no #disabled for now as airships don't work TODO
+		has_technology_researched = commercial_airships
+		NOT = {
+			any_scope_building = {
+				is_building_type = building_airship_tower
+			}
+		}
+		NOT = {
+			any_scope_state = {
+				has_modifier = airship_tower_survey
+			}
+		}
+		NOT = {
+			has_variable = airship_tower_var
+		}
+	}
+
+	possible = {
+        always = no #disabled for now as airships don't work TODO
+		produced_bureaucracy > 100
+		any_scope_state = {
+			is_incorporated = yes
+			is_split_state = no
+			NOT = {
+				has_state_trait = state_trait_underground
+			}
+			any_scope_building = {
+				is_building_type = building_urban_center
+				level >= 5
+			}
+		}
+	}
+	
+	when_taken = {
+		set_variable = {
+			name = airship_tower_var
+			value = 0
+		}
+		add_modifier = {
+			name = airship_tower_survey
+			months = 24
+		}
+		add_journal_entry = {
+			type = je_airship_tower_site
+		}
+	}
+
+	ai_chance = {	#nothing to let the player build the first one, because the AI will need airship towers to #be functional. It's not just a prestige prize
+		value = 0
+		if = {
+			limit = { capital.world_market_access = 0 }	#they REALLY want one if it's their only way to access #the world market
+			add = 100
+		}
+		if = {
+			limit = {
+				produced_bureaucracy > 500	#similar to skyscrapers, if they have more than 5 times the #required amount then they may as well
+			}
+			add = 10
+		}
+		if = {
+			limit = {
+				OR = {
+					is_diplomatic_play_committed_participant = yes
+					is_at_war = yes
+				}
+			}
+			multiply = 0
+		}
+	}
+}

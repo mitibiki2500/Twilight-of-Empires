@@ -1,0 +1,1297 @@
+﻿# NOTE WHEN EDITING THIS FILE
+# Please group names by starting letter, one row per letter
+# Localization is different then EU4! So please note: no accents, no "". For multi-part names do Name1_Name2. Spaces will be added in the loc.
+# Contact @Zardae if you have difficulties adding stuff, he (I) has coded things up to help the process and is happy to do so
+
+#Dwarovar
+
+#Western Dwarovar
+quartz_dwarf = {	#Krakdhumvror
+	color={ 148 201 230 }
+	religion = ancestor_worship
+	heritage = heritage_ancient_dwarf 
+	language = society_western_dwarovar
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+		Shalebeard Trollslayer Earthstriker Iceheart Frozenforge
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+# sapphire_dwarf = {	#Dur-Vazhatun
+# 	color={ 115 54 53 }
+# 	religion = ancestor_worship
+# 	heritage = heritage_cannorian_dwarf
+# 	language = society_western_dwarovar
+# 	male_common_first_names = {
+# 		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+# 		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+# 		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+# 		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+# 		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+# 		Ungrim Urist Urur
+# 	}
+# 	female_common_first_names = {
+# 		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+# 		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+# 	}
+# 	noble_last_names = {
+# 		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+# 		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+# 		#unique
+
+# 	}
+# 	common_last_names = {
+# 		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+# 		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+# 		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+# 	}
+# 	graphics = european
+# 	ethnicities = {
+# 		1 = dwarf
+# 	}
+# }
+# ramsteel_dwarf = {	#Orlazam-az-Dihr
+# 	color = { 74 111 121 }
+# 	religion = ancestor_worship
+# 	heritage = heritage_ancient_dwarf
+# 	language = society_western_dwarovar
+# 	obsessions = { meat }
+# 	male_common_first_names = {
+# 		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+# 		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+# 		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+# 		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+# 		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+# 		Ungrim Urist Urur
+# 	}
+# 	female_common_first_names = {
+# 		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+# 		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+# 	}
+# 	noble_last_names = {
+# 		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+# 		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+# 		#unique
+
+# 	}
+# 	common_last_names = {
+# 		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+# 		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+# 		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+# 	}
+# 	graphics = european
+# 	ethnicities = {
+# 		1 = dwarf
+# 	}
+# }
+kronium_dwarf = {	#Amldihr
+	color={ 60 40 80 }
+	religion = ancestor_worship
+	heritage = heritage_cannorian_dwarf
+	language = society_western_dwarovar
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+platinum_dwarf = {	#Haraz Orldhum
+	color = { 74 80 97 }
+	religion = ancestor_worship
+	heritage = heritage_cannorian_dwarf
+	language = society_western_dwarovar
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+agate_dwarf = {	#Khugdihr
+	color = { 149 131 101 }
+	religion = regent_court
+	heritage = heritage_cannorian_dwarf
+	language = society_western_dwarovar
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+		Asra "az-Khug"
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+# mithril_dwarf = {	#Mithradhum
+# 	color = { 81 231 213 }
+# 	religion = ancestor_worship
+# 	heritage = heritage_ancient_dwarf
+# 	language = society_western_dwarovar
+# 	male_common_first_names = {
+# 		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+# 		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+# 		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+# 		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+# 		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+# 		Ungrim Urist Urur
+# 	}
+# 	female_common_first_names = {
+# 		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+# 		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+# 	}
+# 	noble_last_names = {
+# 		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+# 		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+# 		#unique
+
+# 	}
+# 	common_last_names = {
+# 		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+# 		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+# 		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+# 	}
+# 	graphics = european
+# 	ethnicities = {
+# 		1 = dwarf
+# 	}
+# }
+# dagrite_dwarf = {	#Er-Natvir
+# 	color = { 147 191 155 }
+# 	religion = ancestor_worship
+# 	heritage = heritage_ancient_dwarf
+# 	language = society_western_dwarovar
+# 	male_common_first_names = {
+# 		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+# 		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+# 		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+# 		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+# 		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+# 		Ungrim Urist Urur
+# 	}
+# 	female_common_first_names = {
+# 		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+# 		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+# 	}
+# 	noble_last_names = {
+# 		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+# 		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+# 		#unique
+
+# 	}
+# 	common_last_names = {
+# 		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+# 		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+# 		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+# 	}
+# 	graphics = european
+# 	ethnicities = {
+# 		1 = dwarf
+# 	}
+# }
+opal_dwarf = {	#Verkal Kozenad
+	color = { 255 228 216 }
+	religion = ancestor_worship
+	heritage = heritage_ancient_dwarf
+	language = society_western_dwarovar
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+		Forktongue
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+# lead_dwarf = {	#Hul-Jorkad
+# 	color = { 160 114 158 }
+# 	religion = dwarven_pantheon
+# 	heritage = heritage_cannorian_dwarf
+# 	language = society_western_dwarovar
+# 	male_common_first_names = {
+# 		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+# 		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+# 		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+# 		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+# 		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+# 		Ungrim Urist Urur
+# 	}
+# 	female_common_first_names = {
+# 		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+# 		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+# 	}
+# 	noble_last_names = {
+# 		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+# 		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+# 		#unique
+# 		Leadpipe
+# 	}
+# 	common_last_names = {
+# 		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+# 		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+# 		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+# 	}
+# 	graphics = european
+# 	ethnicities = {
+# 		1 = dwarf
+# 	}
+# }
+
+#Serpentreach
+basalt_dwarf = { #Gor Burad
+	color = { 240 72 72 }
+	religion = ancestor_worship
+	heritage = heritage_cannorian_dwarf
+	language = society_grudgebearer
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+# garnet_dwarf = { #Ovdal Lodhum
+# 	color = { 247 179 215 }
+# 	religion = dwarven_pantheon
+# 	heritage = heritage_ancient_dwarf
+# 	language = society_serpentsreacher
+# 	obsessions = { wine }
+# 	male_common_first_names = {
+# 		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+# 		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+# 		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+# 		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+# 		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+# 		Ungrim Urist Urur
+# 	}
+# 	female_common_first_names = {
+# 		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+# 		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+# 	}
+# 	noble_last_names = {
+# 		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+# 		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+# 		#unique
+# 		Slatecutter
+# 	}
+# 	common_last_names = {
+# 		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+# 		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+# 		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+# 	}
+# 	graphics = european
+# 	ethnicities = {
+# 		1 = dwarf
+# 	}
+# }
+# flint_dwarf = { #Verkal Skomdihr
+# 	color = { 55 144 90 }
+# 	religion = dwarven_pantheon
+# 	heritage = heritage_ancient_dwarf
+# 	language = society_serpentsreacher
+# 	obsessions = { luxury_furniture }
+# 	male_common_first_names = {
+# 		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+# 		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+# 		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+# 		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+# 		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+# 		Ungrim Urist Urur
+# 	}
+# 	female_common_first_names = {
+# 		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+# 		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+# 	}
+# 	noble_last_names = {
+# 		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+# 		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+# 		#unique
+
+# 	}
+# 	common_last_names = {
+# 		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+# 		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+# 		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+# 	}
+# 	graphics = european
+# 	ethnicities = {
+# 		1 = dwarf
+# 	}
+# }
+diamond_dwarf = { #Arg-Ordstun
+	color = { 200 200 200 }
+	religion = dwarven_pantheon
+	heritage = heritage_ancient_dwarf 
+	language = society_serpentsreacher
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+		Stormheart
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+# marble_dwarf = { #Shazstundihr
+# 	color = { 241 242 227 }
+# 	religion = ancestor_worship
+# 	heritage = heritage_bulwari_dwarf
+# 	language = society_bahari
+# 	male_common_first_names = {
+# 		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+# 		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+# 		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+# 		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+# 		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+# 		Ungrim Urist Urur
+# 	}
+# 	female_common_first_names = {
+# 		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+# 		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+# 	}
+# 	noble_last_names = {
+# 		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+# 		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+# 		#unique
+# 		Whitebeard Brightbeard
+# 	}
+# 	common_last_names = {
+# 		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+# 		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+# 		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+# 	}
+# 	graphics = european
+# 	ethnicities = {
+# 		1 = dwarf
+# 	}
+# }
+# cobalt_dwarf = { #Orlghelovar
+# 	color = { 0 71 171 }
+# 	religion = ancestor_worship
+# 	heritage = heritage_cannorian_dwarf
+# 	language = society_serpentsreacher
+# 	male_common_first_names = {
+# 		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+# 		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+# 		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+# 		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+# 		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+# 		Ungrim Urist Urur
+# 	}
+# 	female_common_first_names = {
+# 		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+# 		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+# 	}
+# 	noble_last_names = {
+# 		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+# 		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+# 		#unique
+
+# 	}
+# 	common_last_names = {
+# 		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+# 		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+# 		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+# 	}
+# 	graphics = european
+# 	ethnicities = {
+# 		1 = dwarf
+# 	}
+# }
+
+#Middle Dwarovar
+titanium_dwarf = { #Gor Vazumbrog
+	color = { 223 187 144 }
+	religion = dwarven_pantheon
+	heritage = heritage_segbandalic_dwarf
+	language = society_segbandalic
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+# pyrite_dwarf = { #Hehodovar
+# 	color = { 15 82 186 }
+# 	religion = ancestor_worship
+# 	heritage = heritage_segbandalic_dwarf
+# 	language = society_segbandalic
+# 	male_common_first_names = {
+# 		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+# 		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+# 		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+# 		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+# 		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+# 		Ungrim Urist Urur
+# 	}
+# 	female_common_first_names = {
+# 		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+# 		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+# 	}
+# 	noble_last_names = {
+# 		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+# 		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+# 		#unique
+
+# 	}
+# 	common_last_names = {
+# 		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+# 		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+# 		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+# 	}
+# 	graphics = european
+# 	ethnicities = {
+# 		1 = dwarf
+# 	}
+# }
+citrine_dwarf = { #Seghdihr
+	color = { 36 96 143 }
+	religion = ancestor_worship
+	heritage = heritage_segbandalic_dwarf
+	language = society_segbandalic
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+		az-Segh az-Hargun
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+gold_dwarf = { #Verkal Gulan
+	color={ 255 198 0 }
+	religion = the_jadd
+	heritage = heritage_segbandalic_dwarf
+	language = society_segbandalic
+	obsessions = { luxury_clothes }
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+topaz_dwarf = { #Gor Ozumbrog
+	color = { 93 161 154 }
+	religion = ancestor_worship
+	heritage = heritage_segbandalic_dwarf
+	language = society_segbandalic
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+
+#Tree of Stone
+amber_dwarf = { #Ovdal Kanzad
+	color = { 230 190 44 }
+	religion = ancestor_worship
+	heritage = heritage_segbandalic_dwarf
+	language = society_segbandalic
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+peridot_dwarf = { #Grozumdihr
+	color = { 135 225 135 }
+	religion = dwarven_pantheon
+	heritage = heritage_eastern_dwarf
+	language = society_eastern_dwarovar
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = south_asian
+	ethnicities = {
+		1 = dwarf
+	}
+}
+granite_dwarf = { #Ovdal-az-An
+	color = { 114 202 227 }
+	religion = ancestor_worship
+	heritage = heritage_eastern_dwarf
+	language = society_eastern_dwarovar
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+amethyst_dwarf = { #Hul-az-Krakazol
+	color = { 153 108 204 }
+	religion = dwarven_pantheon
+	heritage = heritage_eastern_dwarf
+	language = society_eastern_dwarovar
+	obsessions = { liquor }
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+
+#Jade Mines
+emerald_dwarf = { #Tuwad Dhumankon
+	color = { 27 253 102 }
+	religion = ancestor_worship
+	heritage = heritage_eastern_dwarf
+	language = society_eastern_dwarovar
+	#obsessions = { groceries }	#TODO - you cannot be obssessed about groceries in vanilla apparently
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+jade_dwarf = { #Gronstunad
+	color = { 0 168 107 }
+	religion = dwarven_pantheon
+	heritage = heritage_eastern_dwarf
+	language = society_eastern_dwarovar
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+# malachite_dwarf = { #Verkal Dromak
+# 	color = { 255 128 0 }
+# 	religion = dwarven_pantheon
+# 	heritage = heritage_eastern_dwarf
+# 	language = society_eastern_dwarovar
+# 	male_common_first_names = {
+# 		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+# 		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+# 		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+# 		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+# 		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+# 		Ungrim Urist Urur
+# 	}
+# 	female_common_first_names = {
+# 		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+# 		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+# 	}
+# 	noble_last_names = {
+# 		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+# 		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+# 		#unique
+
+# 	}
+# 	common_last_names = {
+# 		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+# 		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+# 		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+# 	}
+# 	graphics = european
+# 	ethnicities = {
+# 		1 = dwarf
+# 	}
+# }
+
+#Other
+obsidian_dwarf = { #Obsidian Legion/Haraz Dhumankon
+	color={ 80 65 80 }
+	religion = runefather_worship
+	heritage = heritage_deep_dwarf
+	language = society_grudgebearer
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+		Blackbarrel Bedrock Darkstone Shadowhammer Runebeard
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf	#TODO needs diff one
+	}
+}
+
+
+#Surface
+ruby_dwarf = { #Rubyhold
+	color = { 239 52 52 }
+	religion = dwarven_pantheon
+	heritage = heritage_cannorian_dwarf
+	language = society_lencori
+	traditions = { tradition_lcs }
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+		"of_Harascilde" "of_Nesdhumme" "sina_Gabdarov"
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+
+silver_dwarf = { #Silverforge
+	color={ 177 177 177 }
+	religion = regent_court
+	heritage = heritage_cannorian_dwarf
+	language = society_anbennarian
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+		sil_Balgarionn of_Builderstemple sil_na_Drominarsaraor sina_Dizalstunad sina_Darovionn
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+
+# stone_dwarf = { #Hammerhome
+# 	color={ 112 103 102 }
+# 	religion = corinite
+# 	heritage = heritage_cannorian_dwarf
+# 	language = society_castanorian
+# 	male_common_first_names = {
+# 		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+# 		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+# 		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+# 		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+# 		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+# 		Ungrim Urist Urur
+# 	}
+# 	female_common_first_names = {
+# 		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+# 		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+# 	}
+# 	noble_last_names = {
+# 		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+# 		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+# 		#unique
+# 		"of_Dwarovhul" "of_Vazhabrok"
+# 	}
+# 	common_last_names = {
+# 		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+# 		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+# 		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+# 	}
+# 	graphics = european
+# 	ethnicities = {
+# 		1 = dwarf
+# 	}
+# }
+
+iron_dwarf = { #Hammerhome
+	color={ 217 231 232 }
+	religion = corinite
+	heritage = heritage_cannorian_dwarf
+	language = society_castanorian
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+		"of_Dwarovhul" "of_Vazhabrok"
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+
+steel_dwarf = { #Argezvale
+	color={ 177 177 200 }
+	religion = ravelian
+	heritage = heritage_cannorian_dwarf
+	language = society_ynnsman
+	traditions = { tradition_ynnosphere }
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+
+alloy_dwarf = { #Asraport
+	color={ 243 120 28 }
+	religion = ravelian
+	heritage = heritage_cannorian_dwarf
+	language = society_ruined_sea
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+
+copper_dwarf = { #Ovdal Tungr
+	color={ 204 117 21 }
+	religion = ancestor_worship
+	heritage = heritage_bulwari_dwarf
+	language = society_bahari
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = european
+	ethnicities = {
+		1 = dwarf
+	}
+}
+
+nephrite_dwarf = { #Verkal Ozovar
+	color={ 159 224 208 }
+	religion = dwarven_pantheon
+	heritage = heritage_eastern_dwarf
+	language = society_kai
+	male_common_first_names = {
+		Adar Adranbur Adun Balgar Balgor Balin Bardin Bardur Beldun Belgar Bofur Bolin Bombur Borin Brann Brok Bruenor Calin Cun Dagran Dain Dalbaran Dalmund Dolin Dorin Dorri Durbur Durin Dwalin Dwarin Edun Falstad 
+		Farun Fimbur Flondi Foldan Gorar Goren Gotrek Grim Grimmar Grimmun Gromar Gronmar Gruaim Gruar Grun Gundobad Gundobar Gundobin Gundomar Hardun Harlun Harruk Hjal Hjalmar 
+		Karrom Kazadur Khadan Kildan Kildar Kildum Kurgum Lodun Lorek Lorimbur Madarun Magar 
+		Magni Magnus Magun Morzad Muradin Nali Nalin Norbun Norbur Nori Norimbur Norin Odar Odur Odun Okar Olin Orim Orin Ragun Ragund Runmar Runimur 
+		Sevrund Simbur Simur Simun Sindri Snorri Storin Storlin Storum Thargas Thargor Thinbur Thindobar Thindri Thingrim Thinobad Thorar Thorgrim Thorin Thrain Thrair Thror Thrun Thrur Thudri Tungdil 
+		Ungrim Urist Urur
+	}
+	female_common_first_names = {
+		Adala Aira Anvi Auci Balga Barila Barra Belga Belgia Bella Branma Brenla Brenleil Brenlel Brina Broga Bronis Cala Dalina 
+		Dwalra Edeth Etta Grelba Grimma Groria Gruia Isondi Lahgi Lisban Magda Mistri Moira Mori Moria Naim Ovondi Ronla Sivondi Tharkuni Thohga Ungi
+	}
+	noble_last_names = {
+		Azduran Auirdun Belarruz Bofgribal Calnoraz Dimmal Dwinodar Dwinodum Harrak Grimhammer Gromki Grommubanar Grofgarth Thingribal Throfrum Throm "az-Run" "az-Mag" "az-Regund" "az-Dar" "az-Urgongr" 
+		"az-Shemdur" "az-Lelorn" "az-Modan" az-Fiobmhor "az-Thingr" Grudanar
+
+		#unique
+
+	}
+	common_last_names = {
+		Belarr Calikorbal Underheart Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard 
+		Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow 
+		Shalesmith Shaleaxe Shalehammer Shaleforger Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil Firebane Hammerfist Slatehome Stonebreaker Steelarm
+	}
+	graphics = east_asian
+	ethnicities = {
+		1 = dwarf
+	}
+}
+
+
+

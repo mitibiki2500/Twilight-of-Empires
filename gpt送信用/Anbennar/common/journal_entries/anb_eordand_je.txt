@@ -1,0 +1,302 @@
+﻿je_eordand_diplomatic_unification = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	
+	group = je_group_foreign_affairs
+	
+	scripted_progress_bar = eordan_unification_bar
+
+	scripted_button = je_eordand_diplomacy_unification_button
+	
+	is_shown_when_inactive = {
+		any_scope_state = {	region = sr:region_eordand }
+		NOT = { exists = c:B87 }
+	}
+
+	possible = {
+		NOT = { exists = c:B87 }
+	}
+	
+	fail = {
+		custom_tooltip = {
+			text = eordan_unification_bar_at_full_tt
+			scope:journal_entry = {
+				"scripted_bar_progress(eordan_unification_bar)" >= 960
+			}
+		}
+	}
+	
+	on_fail = {
+		every_country = {
+			limit = {
+				has_interest_marker_in_region = region_eordand
+			}
+			trigger_event = malachite_coup.3
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			trigger_event = { id = eordan_unification.4 }
+		}
+	}
+
+
+	complete = {
+		custom_tooltip = {
+			text = eordan_unification_done_tt
+			has_variable = eordan_unificator
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = eordan_unification.3 popup = yes }
+	}
+	
+	invalid = {
+		exists = c:B87
+	}
+	
+	on_monthly_pulse = {
+		effect = { 
+			trigger_event = { id = eordan_unification.5 }
+			scope:journal_entry = {
+				set_bar_progress = {
+					value = global_var:eordan_unfication_progress
+					name = eordan_unification_bar
+				}
+			}
+		}
+	}
+}
+
+je_eordand_fograc_friendship = {
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	
+	group = je_group_foreign_affairs
+	
+	
+	is_shown_when_inactive = {
+		has_journal_entry = je_eordand_diplomatic_unification
+		OR = {
+			country_has_primary_culture = cu:selphereg
+			country_has_primary_culture = cu:caamas
+			country_has_primary_culture = cu:peitar
+			country_has_primary_culture = cu:tuathak
+			country_has_primary_culture = cu:snecboth
+		}
+	}
+
+	possible = {
+		has_strategic_adjacency = c:B88
+	}
+	
+	immediate = {
+		trigger_event = { id = eordan_unification.2 }
+	}
+	
+
+
+	complete = {
+		OR = {
+			has_law = law_type:law_freedom_of_conscience
+			has_law = law_type:law_total_separation
+		}
+		s:STATE_FOGRACLEAK = {
+			any_scope_state = {
+                owner = root
+            }
+            any_scope_state = {
+                owner = {
+					OR = {
+						country_has_primary_culture = cu:selphereg
+						country_has_primary_culture = cu:caamas
+						country_has_primary_culture = cu:peitar
+						country_has_primary_culture = cu:tuathak
+						country_has_primary_culture = cu:snecboth
+						country_has_primary_culture = cu:fograc
+					}
+				}
+                count = all
+            }
+		}
+	}
+
+	on_complete = {
+		s:STATE_FOGRACLEAK = {
+			add_claim = ROOT
+		}
+		s:STATE_TRIMTHIR = {
+			add_claim = ROOT
+		}
+		s:STATE_EGASACH = {
+			add_claim = ROOT
+		}
+		set_variable = eordand_fograc_contact_var
+		set_global_variable = eordan_je_fograc_friend
+	}
+	
+	invalid = {
+		NOT = { has_journal_entry = je_eordand_diplomatic_unification }
+	}
+}
+
+je_eordand_green_artificery_je = {
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	
+	group = je_group_technology
+	
+	is_shown_when_inactive = {
+		always = no
+		any_primary_culture = {
+			has_discrimination_trait = heritage_eordan_ruinborn
+		}
+	}
+
+	possible = {
+		always = no
+		has_technology_researched = punch_card_artificery
+		NOR = {
+			has_law = law_type:law_total_separation
+			has_law = law_type:law_state_atheism
+		}
+	}
+
+	immediate = {
+		trigger_event = { id = anb_eordand_events.2 days = 1 }
+	}
+
+
+	complete = {
+		any_scope_state = {
+			any_scope_building = {
+				is_building_type = building_mage_tower
+				level >= 5
+			}
+			any_scope_building = {
+				is_building_type = building_doodad_artificeries
+				level >= 5
+			}
+		}
+		NOR = {
+			has_law = law_type:law_total_separation
+			has_law = law_type:law_state_atheism
+		}
+	}
+
+	on_complete = {
+		custom_tooltip = {
+			text = green_artifice_unlock_tt
+			set_variable = green_artifice_unlocked
+		}
+		every_primary_culture = {
+			limit = {
+				NOT = { has_cultural_obsession = arcane_curios }
+				has_discrimination_trait = heritage_eordan_ruinborn
+			}
+			add_cultural_obsession = arcane_curios
+		}
+	}
+	
+}
+
+je_arakeprun_shadowweaver_reform_je = {
+	icon = "gfx/interface/icons/event_icons/tutorial_icon.dds"
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	
+	group = je_group_internal_affairs
+	
+	is_shown_when_inactive = {
+		c:B84 ?= this
+		ruler = { has_template = ruler_elthora_shadowweaver }
+	}
+	
+	possible = {
+		has_technology_researched = central_archives
+		custom_tooltip = {
+			text = arakeprun_shadowweaver_ruler_tt
+			ruler = { has_template = ruler_elthora_shadowweaver }
+		}
+	}
+	
+	complete = {
+		has_law = law_type:law_public_schools
+		has_law = law_type:law_technocracy
+		literacy_rate >= 0.40
+		
+		ig:ig_landowners = {
+			is_powerful = no
+		}
+	}
+	
+	on_complete = {
+		custom_tooltip = {
+			text = arakeprun_shadowweaver_reform_tt
+			set_variable = arakeprun_shadowweaver_reform
+		}
+		owner.institution:institution_schools = {
+			add_modifier = {
+                name = arakeprun_shadowweaver_reform_education_modifier
+                multiplier = owner.institution:institution_schools.investment
+            }
+		}
+	}
+	
+	fail = {
+		custom_tooltip = {
+			text = arakeprun_shadowweaver_not_ruler_tt
+			NOT = { ruler = { has_template = ruler_elthora_shadowweaver } }
+		}
+	}
+}
+
+je_eordand_last_stand = {
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	display_progressbar_as_months = yes
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	
+	group = je_group_foreign_affairs
+	
+	scripted_progress_bar = eordan_last_stand_bar
+	
+	is_shown_when_inactive = {
+		c:B86B ?= THIS
+	}
+
+	possible = {
+		NOT = { has_global_variable = mheromar_death }
+	}
+	
+
+
+	complete = {
+		custom_tooltip = {
+			text = is_eordand_tt
+			exists = c:B87
+		}
+	}
+	
+	fail = {
+		custom_tooltip = {
+			text = eordan_last_stand_bar_at_zero_tt
+			scope:journal_entry = {
+				"scripted_bar_progress(eordan_last_stand_bar)" <= 0
+			}
+		}
+	}
+	
+	on_fail = {
+		every_country = {
+			limit = {
+				has_interest_marker_in_region = region_eordand
+			}
+			trigger_event = mheromar_events.6 
+		}
+	}
+	
+	modifiers_while_active = {
+		mheromar_last_stand
+	}
+}

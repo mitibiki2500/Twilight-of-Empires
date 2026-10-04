@@ -1,0 +1,372 @@
+﻿#Not doing it right now as planes aren't in currently, but this eventually should tie to the Shadow Plane narratively.
+#Maybe the clergy was content with just sealing the rift but Emil and his faction want to go fight there or something like that, to make it more fantasy
+#Perhaps the war damages the Bone Citadel and the Shadow Plane becomes an issue that way
+je_neratica_minaria = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	group = je_group_global_international_situations
+
+	should_be_involved = {
+		OR = {
+			c:B27 ?= this
+			is_subject_of = c:B27
+		}
+	}
+
+	should_show_when_not_involved = {
+		capital ?= {
+			is_in_geographic_region = geographic_region_south_na
+		}
+		NOT = {
+			has_variable = ignore_neratica_minaria
+		}
+	}
+
+	immediate = {
+		cu:neratican = {
+			save_scope_as = neratican_culture
+		}
+		cu:minarian = {
+			save_scope_as = minarian_culture
+		}
+		c:B27 ?= {
+			save_scope_as = neratica_scope
+		}
+		c:B09 ?= {
+			save_scope_as = minaria_scope
+		}
+	}
+	on_monthly_pulse = {
+		effect = {
+			scope:journal_entry ?= {
+				if = {
+					limit = {
+						c:B27 ?= {
+							government_legitimacy >= 50
+						}
+					}
+					change_global_variable = {
+						name = neratica_minaria_var
+						add = 1
+					}
+					if = {	#bonus progress if moving towards securalism
+						limit = {
+							c:B27 ?= {
+								NOT = {
+									has_law_or_variant = law_type:law_state_religion
+								}
+							}
+						}
+						change_global_variable = {
+							name = neratica_minaria_var
+							add = 0.5
+						}
+					}
+				}
+			}
+		}
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			scope:journal_entry = {
+				every_scope_je_involved = {
+					limit = {
+						NOR = {
+							c:B27 ?= this
+							is_subject_of = c:B27
+							capital = {
+								is_in_geographic_region = geographic_region_south_na
+							}
+						}
+					}
+					scope:journal_entry = { remove_involved_country = prev }
+				}
+			}
+		}
+	}
+
+	custom_completion_header = je_neratica_minaria_onyx_victory
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+		c:B27 ?= {
+			is_at_war = no
+		}
+		c:B09 ?= {
+			is_subject_of = c:B27
+		}
+		NOT = {
+			c:B27 ?={
+				any_subject_or_below = {
+					country_has_primary_culture = cu:minarian
+					has_revolution = yes
+				}
+			}
+		}
+	}
+
+	custom_on_completion_header = je_neratica_minaria_on_onyx_victory
+
+	on_complete = {
+		custom_tooltip = {
+			text = neratica_minaria_will_unite_tt
+			if = {
+				limit = {
+					c:B09 ?= {
+						is_player = yes
+					}
+				}
+				c:B09 ?= {
+					trigger_event = {
+						id = neratica_minaria_events.1	#In case of a player Minaria, they get switched to the united country (but they really shouldn't get to that point in the first place)
+					}
+				}
+			}
+			else = {
+				c:B27 ?= {
+					trigger_event = {
+						id = neratica_minaria_events.1
+					}
+				}
+			}
+		}
+	}
+
+	on_complete_all_involved = {
+		if = {
+			limit = {
+				OR = {
+					c:B27 ?= this
+					c:B09 ?= this
+				}
+			}
+			custom_tooltip = all_opponents_lose_prestige_tt
+		}
+		if = {
+			limit = {
+				c:B27 ?= this
+				c:B09 ?= this
+				NOT = { has_variable = befriend_neratica }
+			}
+			remove_variable = attack_neratica
+			remove_variable = befriend_neratica
+			trigger_event = { id = neratica_minaria_events.8 popup = yes }
+		}
+	}
+
+	is_progressing = {
+		c:B27 ?= {
+			government_legitimacy >= 50
+			NOT = {
+				any_subject_or_below = {
+					country_has_primary_culture = cu:minarian
+					has_revolution = yes
+				}
+			}
+		}
+		c:B09 ?= {
+			is_subject_of = c:B27
+		}
+	}
+
+	custom_failure_header = je_neratica_minaria_concord_victory
+
+	fail = {
+		OR = {
+			NOT = {
+				exists = c:B27
+			}
+			OR = {
+				NOT = {
+					exists = c:B09
+				}
+				c:B09 ?= {
+					NOT = { is_subject_of = c:B27 }
+				}
+			}
+			c:B27 ?= {
+				is_subject = yes
+			}
+		}
+	}
+
+	custom_on_failure_header = je_neratica_minaria_on_concord_victory
+
+	on_fail_all_involved = {
+		if = {
+			limit = {
+				c:B27 ?= this
+			}
+			if = {
+				limit = {
+					any_country_in_north_america = {
+						OR = {
+							c:B27 ?= this
+							c:B09 ?= this
+						}
+						is_player = yes
+					}
+				}
+				random_country = {
+					limit = {
+						OR = {
+							c:B27 ?= this
+							c:B09 ?= this
+						}
+						is_player = yes
+					}
+					trigger_event = { id = neratica_minaria_events.3 popup = yes }
+				}
+			}
+			else = {
+				c:B27 ?= {
+					trigger_event = { id = neratica_minaria_events.3 popup = yes }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					exists = c:B27
+				}
+			}
+			c:B09 ?= {
+				trigger_event = { id = neratica_minaria_events.3 popup = yes }
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						country_has_primary_culture = cu:neratican
+						country_has_primary_culture = cu:minarian
+					}
+				}
+			}
+			remove_variable = attack_neratica
+			remove_variable = befriend_neratica
+			custom_tooltip = {
+				text = neratica_minaria_complete_tt
+				if = {
+					limit = {
+						AND = {
+							c:B27 ?= {
+								relations:root >= relations_threshold:amicable
+							}
+							c:B27 ?= {
+								OR = {
+									is_in_customs_union_with = root
+									any_scope_treaty = {
+										binds = root
+										any_scope_article = {
+											has_type = alliance
+										}
+									}
+									any_scope_treaty = {
+										binds = root
+										any_scope_article = {
+											has_type = defensive_pact
+										}
+									}
+								}
+							}
+						}
+					}
+					trigger_event = { id = neratica_minaria_events.7 popup = yes }
+				}
+				else = {
+					trigger_event = { id = neratica_minaria_events.6 popup = yes }
+				}
+			}
+		}
+	}
+
+	invalid = {
+		NOT = {
+			exists = c:B27
+		}
+	}
+
+	current_value = {
+		value = global_var:neratica_minaria_var
+	}
+
+	goal_add_value = {
+		value = 120
+	}
+
+	progressbar = yes
+
+	weight = 10000
+
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
+
+	can_revolution_inherit = yes
+}
+
+# Emil's new secular monarchy is fragile and won't endure a military defeat - made this a JE to avoid putting those events in on_actions, and add a bit more flavor around them
+je_new_onyx_monarchy = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_historical_content
+
+	modifiers_while_active = {
+		modifier_theocratic_rule_remnants
+		modifier_cheshoshi_military_support
+	}
+
+	complete = {
+		AND = {
+			country_or_subject_owns_entire_state_region = STATE_OKHIBOLI	#this one will only really be possible with Lorentish colonial independence content
+			country_or_subject_owns_entire_state_region = STATE_TLACHIBAR
+			country_or_subject_owns_entire_state_region = STATE_MANGROVY_COAST
+		}
+		OR = {
+			country_or_subject_owns_entire_state_region = STATE_SPOORLAND
+			country_or_subject_owns_entire_state_region = STATE_GUARDIAN_ISLANDS
+			country_or_subject_owns_entire_state_region = STATE_ESIMOINE
+		}
+    }
+
+	fail = {
+        custom_tooltip = {
+            text = lost_war_tt
+            OR = {
+                has_variable = recently_lost_war
+                AND = {
+                    has_variable = recently_had_war
+                    NOT = {
+                        has_variable = recently_won_war
+                    }
+                }
+            }
+        }
+    }
+
+	on_fail = {
+        trigger_event = { id = neratica_minaria_events.9 popup = yes }
+		show_as_tooltip = {
+            ruler = {
+				kill_character = yes
+			}
+			add_modifier = {
+                name = modifier_new_onyx_monarchy_broken
+                days = long_modifier_time
+            }
+        }
+	}
+
+	on_complete = {
+        trigger_event = { id = neratica_minaria_events.10 popup = yes }
+    }
+
+    invalid = {
+        is_subject = yes
+    }
+
+    weight = 1000
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

@@ -1,0 +1,331 @@
+﻿MILITARY_FORMATIONS = {
+	c:E01 ?= { #Kalsyto
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_triunic_lakes
+			name = "Grand Army of the Federation"
+			
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SHIK_DAZAR
+				count = 3
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_ZOI_KHORKHIIN
+				count = 2
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SHIKENKHIIN
+				count = 3
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SARTZ_NEISAR
+				count = 3
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_KESH_GOLKHIN
+				count = 5
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_QUSHYIL
+				count = 3
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_YUKAROYOL
+				count = 2
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_YUKARON
+				count = 4
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_PRIKOYOL
+				count = 5
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_GADHLUMO
+				count = 6
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_PEENADHI
+				count = 4
+			}
+		}
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_triunic_lakes
+			name = "Grand Armada of the Federation"
+			
+			ship = {
+				type = ship_type:ship_type_frigate
+				count = 8
+			}
+			ship = {
+				type = ship_type:ship_type_ship_of_the_line
+				count = 3
+			}
+		}
+	}
+	c:E02 ?= { #Magharma
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_forbidden_plains
+			
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_FOIRAKHIAN
+				count = 5
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SHEVROMRZGH
+				count = 10
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SKURKHA_KYARD
+				count = 10
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_OVTO_KIGVAL
+				count = 5
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_KVAKEINOLBA
+				count = 5
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_DZIMOKLI
+				count = 5
+			}
+			save_scope_as = army_E02_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_2
+			save_scope_as = general_E02_1
+		}
+
+		scope:general_E02_1 = { transfer_to_formation = scope:army_E02_1 }
+		
+	}
+	c:E03 ?= { #Zabutodask
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_forbidden_plains
+			
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SOCHULEAG
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SOCHULEAG
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_ADOI_FILEANAN
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_ADOI_FILEANAN
+				count = 4
+			}
+			save_scope_as = army_E03_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_E03_1
+		}
+
+		scope:general_E03_1 = { transfer_to_formation = scope:army_E03_1 }
+	}
+	c:E04 ?= { #Shivusdoyen
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_forbidden_plains
+			 
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_ORCHEKH
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_ORCHEKH
+				count = 4
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_APORLAEN
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_APORLAEN
+				count = 4
+			}
+			save_scope_as = army_E04_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_E04_1
+		}
+
+		scope:general_E04_1 = { transfer_to_formation = scope:army_E04_1 }
+	}
+	c:E05 ?= { #River Centaur
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_forbidden_plains
+			
+			combat_unit = {
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_SERPENT_GIFT
+				count = 9
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_SERPENT_GIFT
+				count = 6
+			}
+			save_scope_as = army_E05_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_E05_1
+		}
+
+		scope:general_E05_1 = { transfer_to_formation = scope:army_E05_1 }
+		
+	}
+	c:E06 ?= { #West Desert Centaur
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_forbidden_plains
+			
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_CAUBHEAMEAS
+				count = 5
+			}
+			save_scope_as = army_E06_1
+		}
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_E06_1
+		}
+
+		scope:general_E06_1 = { transfer_to_formation = scope:army_E06_1 }
+	}
+	c:E07 ?= { #East Desert Centaur
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_forbidden_plains
+			
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_IRDU_AGEENEAS
+				count = 5
+			}
+			save_scope_as = army_E07_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_E07_1
+		}
+
+		scope:general_E07_1 = { transfer_to_formation = scope:army_E07_1 }
+		
+	}
+	c:E08 ?= { #West Steppe Centaur
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_forbidden_plains
+			
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_UGHEABAR
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_UGHEABAR
+				count = 2
+			}
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_NAGLAIBAR
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_NAGLAIBAR
+				count = 2
+			}
+			save_scope_as = army_E08_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_E08_1
+		}
+
+		scope:general_E08_1 = { transfer_to_formation = scope:army_E08_1 }
+		
+	}
+	c:E09 ?= { #East Steppe Centaur
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_forbidden_plains
+			
+			combat_unit = { 
+				type = unit_type:combat_unit_type_irregular_infantry
+				state_region = s:STATE_GHANEERSP
+				count = 6
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_hussars
+				state_region = s:STATE_GHANEERSP
+				count = 4
+			}
+			save_scope_as = army_E09_1
+		}
+		
+		create_character = {
+			is_general = yes
+			commander_rank = commander_rank_1
+			save_scope_as = general_E09_1
+		}
+
+		scope:general_E09_1 = { transfer_to_formation = scope:army_E09_1 }
+		
+	}
+}

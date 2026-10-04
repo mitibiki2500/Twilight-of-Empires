@@ -1,0 +1,107 @@
+﻿# progress_all_quests = {
+# 	possible = {
+# 		ai = no
+# 	}
+# 	when_taken = {
+# 		every_scope_state = { trigger_event = { id = anb_adventurers_wanted.2 } }
+# 	}
+# }
+
+
+# varionail_elfrealm = {
+
+# 	is_shown = {
+# 		exists = c:B15
+# 		has_subject_relation_with = c:B15
+# 		c:B15 = {
+# 			is_player = no
+# 		}
+# 	}
+
+# 	possible = {
+# 		is_at_war = no
+# 		c:B15 = {
+# 			is_subject_of = ROOT
+# 			is_player = no
+# 			scaled_debt > 0
+# 		}
+# 		c:B13 = {
+# 			relations:ROOT >= relations_threshold:cordial
+# 		}
+# 	}
+
+# 	when_taken = {
+# 		s:STATE_SILVERTENNAR = {
+# 			add_homeland = cu:havener_elf
+# 			random_scope_state = {
+# 				limit = {
+# 					owner = {
+# 						OR = {
+# 							ROOT = THIS
+# 							is_subject_of = ROOT
+# 						}
+# 					}
+# 				}
+# 				set_state_owner = c:B13
+# 			}
+# 		}
+# 		s:STATE_FALILTCOST = {
+# 			add_homeland = cu:havener_elf
+# 			random_scope_state = {
+# 				limit = {
+# 					owner = {
+# 						OR = {
+# 							ROOT = THIS
+# 							is_subject_of = ROOT
+# 						}
+# 					}
+# 				}
+# 				set_state_owner = c:B13
+# 			}
+# 		}
+# 		s:STATE_SANCTUARY_FIELDS = {
+# 			add_homeland = cu:havener_elf
+# 			random_scope_state = {
+# 				limit = {
+# 					owner = {
+# 						OR = {
+# 							ROOT = THIS
+# 							is_subject_of = ROOT
+# 						}
+# 					}
+# 				}
+# 				set_state_owner = c:B13
+# 			}
+# 		}
+# 		s:STATE_VARIONAIL = {
+# 			add_homeland = cu:havener_elf
+# 		}
+# 		create_diplomatic_pact = {
+# 			country = c:B13
+# 			type = puppet
+# 		}
+# 		annex = c:B15
+# 	}
+
+# 	ai_chance = {
+# 		base = 100
+# 	}
+# }
+
+#spawn_malachite_legion = {
+#	is_shown = {
+#		exists = c:B86
+#		is_player = yes
+#		has_interest_marker_in_region = region_eordand
+#	}
+#
+#	possible = {
+#		NOT = { exists = c:B86B }
+#	}
+#	
+#	when_taken = {
+#		trigger_event = {
+#			id = malachite_coup.1
+#		}
+#	}
+#}

@@ -1,0 +1,728 @@
+﻿namespace = chendhyan_frontier_events
+
+# Anbennar
+
+chendhyan_frontier_events.1 = { #Chendhyan Raid on Railway
+	type = country_event
+	placement = scope:chendhyan_raid_state
+	title = chendhyan_frontier.1.t
+	desc = chendhyan_frontier.1.d
+	flavor = chendhyan_frontier.1.f
+
+	duration = 3
+
+	cooldown = {
+		years = 100
+	}
+
+
+
+	event_image = {
+		# video = "chendhyan_raid" # TODO this is just a duplicate currently
+		video = "unspecific_armored_train"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/devastation"
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	trigger = {
+		any_scope_state = {
+			OR = {
+				state_region = s:STATE_WESTERN_CHENDHYA
+				state_region = s:STATE_CENTRAL_CHENDHYA
+			}
+			any_scope_building = {
+				is_building_type = building_railway
+				level >= 1
+			}
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				OR = {
+					state_region = s:STATE_WESTERN_CHENDHYA
+					state_region = s:STATE_CENTRAL_CHENDHYA
+				}
+				any_scope_building = {
+					is_building_type = building_railway
+					level >= 1
+				}
+			}
+			save_scope_as = chendhyan_raid_state
+		}
+
+		set_variable = {
+			name = chendhyan_raid_state_population
+			value = scope:chendhyan_raid_state.state_population
+		}
+
+		# Deprecated until patch 1.8
+		# save_scope_as = chendyan_origin_country
+	}
+
+	option = { #Negotiate with the Tribes
+		name = chendhyan_frontier_events.1.a
+
+		ai_chance = {
+			base = 25
+		}
+
+		scope:chendhyan_raid_state = {
+			add_modifier = {
+				name = chendhyan_land_rights
+				years = 5
+			}
+		}
+	}
+
+	option = { #Hire private security
+		name = chendhyan_frontier_events.1.b
+		default_option = yes
+
+		ai_chance = {
+			base = 50
+		}
+
+		scope:chendhyan_raid_state = {
+			add_modifier = {
+				name = chendhyan_raiding_conflicts
+				years = 5
+			}
+
+			add_radicals_in_state = {
+                value = 0.10
+                culture = cu:chendhyan
+            }
+		}
+
+		add_modifier = {
+			name = chendhyan_security_contracts
+			years = 5
+			multiplier = {
+				value = var:chendhyan_raid_state_population
+				divide = 1000
+				round_to = 50
+			}
+		}
+	}
+
+	# Depracated until patch 1.8
+	#option = { #Send the army to quell the resistance
+	#	name = chendhyan_frontier_events.1.c
+
+	#	ai_chance = {
+	#		base = 25
+	#	}
+
+	#	scope:chendhyan_raid_state = {
+	#		state_region = {
+	#			add_devastation = 20
+	#		}
+
+	#		add_radicals_in_state = {
+    #            value = 0.50
+    #            culture = cu:chendhyan
+    #        }
+
+	#		if = {
+	#			limit = { 
+	#				owner = {
+	#					country_has_primary_culture = devabhen
+	#				}
+	#			}
+	#			add_homeland = devabhen
+	#		}
+
+	#		add_modifier = {
+	#			name = chendhyan_native_chendhyan_threat_resolved
+	#			years = 10
+	#		}
+	#	}
+
+	#	s:STATE_CAERGARAEN = {
+	#		random_scope_state = {
+	#			create_mass_migration = {
+	#				origin = scope:chendyan_origin_country
+	#				culture = cu:chendhyan
+	#			}
+	#			hidden_effect = {
+	#				add_modifier = {
+	#					name = chendhyan_migration_pull_caergaraen
+	#					years = 1
+	#				}
+	#			}
+	#		}
+	#	}
+
+	#	c:C54 ?= {
+	#		s:STATE_WESTERN_CHENDHYA = {
+	#			add_claim = c:C54
+	#		}
+	#		s:STATE_CENTRAL_CHENDHYA = {
+	#			add_claim = c:C54
+	#		}
+	#	}
+	#}
+}
+
+chendhyan_frontier_events.2 = { # Overlord/Power Bloc invests in railways
+	type = country_event
+	placement = scope:chendhyan_railway_target_state
+	title = chendhyan_frontier.2.t
+	desc = {
+		triggered_desc = {
+			desc = chendhyan_frontier.2.d1over
+			trigger = {
+				is_subject = yes
+			}
+		}
+		triggered_desc = {
+			desc = chendhyan_frontier.2.d2bloc
+			trigger = {
+				is_subject = no
+			}
+		}
+	}
+	flavor = chendhyan_frontier.2.f
+
+	duration = 3
+
+	# TODO: Verify that cooldown is not performance intensive
+	cooldown = {
+		years = 100
+	}
+
+	event_image = {
+		video = "southamerica_factory_opening"		
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	trigger = {
+		s:STATE_EMPKEIOS = {
+			any_scope_state = {
+				any_scope_building = {
+					is_building_type = building_railway
+					level >= 1
+				}
+			}
+		}
+
+		any_scope_state = {
+			OR = {
+				state_region = s:STATE_WESTERN_CHENDHYA
+				state_region = s:STATE_CENTRAL_CHENDHYA
+			}
+			NOT = {
+                has_building = building_railway
+            }
+		}
+
+
+		OR = {
+			is_subject = yes
+			AND = {
+				is_in_power_bloc = yes
+				is_power_bloc_leader = no
+			}
+		}
+	}
+
+	immediate = {
+		s:STATE_WESTERN_CHENDHYA = {
+			random_scope_state = {
+				if = {
+					limit = {
+						NOT = {
+							has_building = building_railway
+						}
+					}
+					save_scope_as = chendhyan_railway_target_state
+				}
+				else = {
+					s:STATE_CENTRAL_CHENDHYA = {
+						random_scope_state = {
+							save_scope_as = chendhyan_railway_target_state
+						}
+					}
+				}
+			}
+		}
+
+		if = { # Is subject
+			limit = {
+				is_subject = yes
+			}
+			random_overlord_or_above = {
+				save_scope_as = chendhyan_donor
+			}
+		}
+		else = { # Is in power bloc
+			power_bloc = {
+				every_power_bloc_member = {
+					limit = {
+						is_power_bloc_leader = yes
+					}
+					save_scope_as = chendhyan_donor
+				}
+			}
+		}
+	}
+
+	option = { # Their help is welcome
+		name = chendhyan_frontier_events.2.a
+		default_option = yes
+
+		scope:chendhyan_railway_target_state = {
+			add_modifier = {
+				name = chendhyan_overlord_assistance
+				years = 1
+			}
+		}
+
+		if = { # Is subject
+			limit = {
+				is_subject = yes
+			}
+			change_relations = {
+				country = scope:chendhyan_donor
+				value = 30
+			}
+		}
+		else = { # Is in power bloc
+			change_relations = {
+				country = scope:chendhyan_donor
+				value = 30
+			}
+		}
+
+	}
+}
+
+chendhyan_frontier_events.3 = { # Railway Attracts People
+	type = country_event
+	placement = scope:empkeios_influx_state
+	title = chendhyan_frontier.3.t
+	desc = chendhyan_frontier.3.d
+	flavor = chendhyan_frontier.3.f
+
+	duration = 3
+
+	cooldown = {
+		years = 100
+	}
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	trigger = {
+		s:STATE_EMPKEIOS = {
+			any_scope_state = {
+				any_scope_building = {
+					is_building_type = building_railway
+					level >= 1
+				}
+			}
+		}
+
+		sr:region_kheionai = {
+            any_scope_country = {
+                OR = {
+                    has_attitude = {
+                        who = ROOT
+                        attitude = genial
+                    }
+                    has_attitude = {
+                        who = ROOT
+                        attitude = cooperative
+                    }						
+                }	
+            }
+        }
+	}
+
+	immediate = {
+		s:STATE_EMPKEIOS = {
+			random_scope_state = {
+				save_scope_as = empkeios_influx_state
+			}
+		}
+	}
+
+	option = { # Welcome them with open hands
+		name = chendhyan_frontier_events.3.a
+
+		ai_chance = {
+			base = 25
+		}
+
+		scope:empkeios_influx_state = {
+			add_modifier = {
+				name = chendhyan_influx_of_visitors
+				years = 2
+			}
+		}
+	}
+
+	option = { # Establish influential connections
+		name = chendhyan_frontier_events.3.b
+		default_option = yes
+
+		ai_chance = {
+			base = 75
+		}
+
+		create_character = {
+			age = 44
+			ideology = ideology_market_liberal
+			is_agitator = yes
+			traits = {
+				charismatic
+				engineer
+				innovative
+			}
+			on_created = {
+				save_scope_as = chendhyan_character
+			}
+		}
+		custom_tooltip = {
+			text = chendhyan_character_tooltip
+		}
+	}
+}
+
+chendhyan_frontier_events.4 = { # Railway Architecture Decision
+    type = country_event
+    placement = scope:chendhyan_bridge_state
+    title = chendhyan_frontier.4.t
+    desc = chendhyan_frontier.4.d
+    flavor = chendhyan_frontier.4.f
+
+    duration = 3
+
+    cooldown = {
+        years = 100
+    }
+
+    event_image = {
+        # video = "chendhyan_build_bridge" # TODO this is just a duplicate currently
+		video = "europenorthamerica_gold_prospectors"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    trigger = {
+		s:STATE_WESTERN_CHENDHYA = {
+			any_scope_state = {
+				any_scope_building = {
+					is_building_type = building_railway
+					level = 0 
+				}
+			}
+		}
+        has_technology_researched = bessemer_process
+    }
+
+    immediate = {
+		s:STATE_WESTERN_CHENDHYA = {
+			random_scope_state = {
+				save_scope_as = chendhyan_bridge_state
+			}
+		}
+	}
+
+    option = { # Along the river will be longer, but easier to build
+        name = chendhyan_frontier_events.4.a
+        default_option = yes
+		ai_chance = {
+			base = 200
+		}
+
+        scope:chendhyan_bridge_state = {
+            add_modifier = {
+                name = chendhyan_building_riverside_railway
+                years = 1
+            }
+        }
+
+        add_modifier = {
+            name = chendhyan_building_riverside_railway_country
+            years = 1
+        }
+    }
+
+    option = { # A bridge would look amazing
+        name = chendhyan_frontier_events.4.b
+
+		ai_chance = {
+			base = 25
+		}
+		
+		add_modifier = {
+			name = chendhyan_marvellous_bridge
+			years = 15
+			is_decaying = yes
+		}
+
+        add_modifier = {
+            name = chendhyan_building_marvellous_bridge
+            years = 1
+        }
+    }
+}
+
+chendhyan_frontier_events.5 = { # Tamed the Chendhyan Frontier
+    type = country_event
+    placement = scope:empkeios_tamed_state
+    title = chendhyan_frontier.5.t
+    desc = chendhyan_frontier.5.d
+    flavor = chendhyan_frontier.5.f
+
+    duration = 3
+
+    cooldown = {
+        years = 100
+    }
+
+    event_image = {
+        video = "unspecific_trains"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+    trigger = {}
+
+    immediate = {
+		s:STATE_EMPKEIOS = {
+			random_scope_state = {
+				save_scope_as = empkeios_tamed_state
+			}
+		}
+
+		s:STATE_CLEMATAR = {
+			random_scope_state = {
+				owner = {
+					save_scope_as = clematar_owner
+				}
+			}
+		}
+		s:STATE_CLEMATAR = {
+			random_scope_state = {
+				save_scope_as = clematar_state
+			}
+		}
+	}
+
+    option = { # We tamed the Chendhyan Frontier
+        name = chendhyan_frontier_events.5.a
+        default_option = yes
+
+        scope:empkeios_tamed_state = {
+            add_modifier = {
+                name = chendhyan_gateway_to_taychend
+            }
+        }
+
+        s:STATE_WESTERN_CHENDHYA = {
+			random_scope_state = {
+				add_modifier = {
+					name = chendhyan_railway_to_taychend
+				}
+			}
+        }
+
+        s:STATE_CENTRAL_CHENDHYA = {
+			random_scope_state = {
+				add_modifier = {
+					name = chendhyan_railway_to_taychend
+				}
+			}
+        }
+
+        if = {
+            limit = {
+                NOT = {
+					ROOT = scope:clematar_owner
+				}
+            }
+
+			hidden_effect = {
+				# This is a safety net to prevent a crash
+				random_interest_group = {
+					save_scope_as = chendhyan_lobby_ig
+				}
+
+				random_interest_group = {
+					limit = {
+						is_member_of_any_lobby = no
+						ig_clout >= 0.05
+					}
+					save_scope_as = chendhyan_lobby_ig
+				}
+			}
+
+            create_political_lobby = {
+                type = lobby_pro_country
+                target = scope:clematar_owner
+                add_interest_group = scope:chendhyan_lobby_ig
+            }
+
+            change_relations = {
+                country = scope:clematar_owner
+                value = 30
+            }
+        }
+		
+		custom_tooltip = {
+			text = chendhyan_frontier_complete_tt
+			s:STATE_EMPKEIOS = {
+				# set_variable = chendhyan_frontier_complete - Unusued Var, Loc indicates unlocking company.
+			}
+		}
+    }
+}
+
+chendhyan_frontier_events.6 = { # Chendhyan Railway Connection Complete
+    type = country_event
+    placement = scope:clematar_state
+    title = chendhyan_frontier.6.t
+    desc = chendhyan_frontier.6.d
+    flavor = chendhyan_frontier.6.f
+
+    duration = 3
+
+    cooldown = {
+        years = 100
+    }
+
+    event_image = {
+        video = "unspecific_trains"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+    trigger = {
+		s:STATE_EMPKEIOS = {
+			any_scope_state = {
+				NOT = {
+					owner = ROOT
+				}
+			}
+		}
+	}
+
+    immediate = {
+		s:STATE_CLEMATAR = {
+			random_scope_state = {
+				save_scope_as = clematar_state
+			}
+		}
+
+		s:STATE_EMPKEIOS = {
+			random_scope_state = {
+				owner = {
+					save_scope_as = chendhyan_railway_completer
+				}
+			}
+		}
+
+		s:STATE_EMPKEIOS = {
+			random_scope_state = {
+				save_scope_as = chendhyan_empkeios_state
+			}
+		}
+	}
+
+    option = { # Establish deeper relations
+        name = chendhyan_frontier_events.6.a
+        default_option = yes
+
+		s:STATE_EMPKEIOS = {
+			random_scope_state = {
+				owner = {
+					save_scope_as = empkeios_owner
+				}
+			}
+		}
+
+		hidden_effect = {
+			# This is a safety net to prevent a crash
+			random_interest_group = {
+				save_scope_as = chendhyan_lobby_ig
+			}
+
+			random_interest_group = {
+				limit = {
+					is_member_of_any_lobby = no
+					ig_clout >= 0.05
+				}
+				save_scope_as = chendhyan_lobby_ig
+			}
+		}
+
+        create_political_lobby = {
+			type = lobby_pro_country
+            target = scope:empkeios_owner
+            add_interest_group = scope:chendhyan_lobby_ig
+        }
+
+		show_as_tooltip = {
+			change_relations = {
+				country = scope:empkeios_owner
+				value = 30
+			}
+		}
+
+        if = {
+            limit = {
+                AND = {
+                    NOT = { has_technology_researched = railways }
+                    has_technology_researched = atmospheric_engine
+                    has_technology_researched = mechanical_tools
+                }
+            }
+            add_technology_progress = {
+                progress = 5000
+                technology = railways
+            }
+        }
+        else_if = {
+            limit = {
+                NOT = { has_technology_researched = atmospheric_engine }
+            }
+            add_technology_progress = {
+                progress = 5000
+                technology = atmospheric_engine
+            }
+        }
+        else_if = {
+            limit = {
+                AND = {
+                    NOT = { has_technology_researched = mechanical_tools }
+                    has_technology_researched = lathe
+                }
+            }
+            add_technology_progress = {
+                progress = 5000
+                technology = mechanical_tools
+            }
+        }
+    }
+}

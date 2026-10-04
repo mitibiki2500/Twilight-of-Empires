@@ -1,0 +1,913 @@
+﻿POPS = {
+	s:STATE_LASTSIGHT_ISLANDS = {
+		region_state:A03 = {
+			create_pop = {	#60% Elf
+				culture = redglader_elf
+				size = 17817
+			}
+			create_pop = {	#40% Lorentish
+				culture = lorentish
+				size = 11878
+			}
+		}
+	}
+	
+	s:STATE_SILSENSALD_ISLES = {
+		region_state:B04 = {
+			create_pop = {
+				culture = derannic
+				size = 181404
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 6904
+			}
+		}
+	}
+	
+	s:STATE_CAPE_OF_ENDRAL = {
+		region_state:B14 = {	#Half of Cuba, smallest elven percentage in this state
+			create_pop = {
+				culture = endralliander
+				size = 215809
+				religion = regent_court
+			}
+            create_pop = {
+				culture = endralliander
+				size = 53952
+				religion = ravelian
+			}
+			create_pop = {
+				culture = lorentish
+				size = 33306
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 41129
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 86607
+				religion = regent_court
+				pop_type = slaves
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 86607
+				religion = ravelian
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				religion = regent_court
+				size = 44405
+			}
+			create_pop = {
+				culture = endralliander_half_orc
+				religion = regent_court
+				size = 75864
+			}
+		}
+		region_state:B03 = {
+			create_pop = {
+				culture = crownsman
+				size = 3992
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 22000
+				religion = regent_court
+				pop_type = slaves
+			}
+		}
+	}
+	
+	s:STATE_IBSEAN = {
+		region_state:B14 = {
+			create_pop = {
+				culture = endralliander
+				religion = regent_court
+				size = 187294
+			}
+            create_pop = {
+				culture = endralliander
+				religion = ravelian
+				size = 46823
+			}
+			create_pop = {
+				culture = lorentish
+				size = 44124
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 62513
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 102748
+				religion = regent_court
+				pop_type = slaves
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 102748
+				religion = ravelian
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 43499
+				religion = regent_court
+			}
+			create_pop = {
+				culture = endralliander_half_orc
+				size = 122241
+				religion = regent_court
+			}
+		}
+		region_state:B03 = {
+			create_pop = {
+				culture = pearlsedger
+				size = 7200
+			}
+			create_pop = {
+				culture = crownsman
+				size = 3200
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 20000
+				religion = ravelian
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 5000
+				religion = regent_court
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 2000
+			}
+		}
+	}
+	
+	s:STATE_RUBENSHORE = {
+		region_state:B14 = {
+			create_pop = {
+				culture = endralliander
+				size = 106471
+				religion = ravelian
+			}
+            create_pop = {
+				culture = endralliander
+				size = 106471
+				religion = regent_court
+			}
+			create_pop = {
+				culture = lorentish
+				size = 19215
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 79496
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 175864
+				religion = ravelian
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 11954
+				religion = ravelian
+			}
+			create_pop = {
+				culture = endralliander_half_orc
+				size = 132050
+				religion = ravelian
+			}
+		}
+		region_state:A07 = {
+			create_pop = {
+				culture = reverian
+				size = 1995
+			}
+			create_pop = {
+				culture = cliff_gnome
+				size = 1785
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 2500
+			}
+		}
+	}
+	
+	s:STATE_JERCEL = {
+		region_state:B14 = {
+			create_pop = {
+				culture = endralliander
+				size = 130246
+				religion = ravelian
+			}
+            create_pop = {
+				culture = endralliander
+				size = 86830
+				religion = regent_court
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 94578
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 85793
+				pop_type = slaves
+				religion = ravelian
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 28597
+				pop_type = slaves
+				religion = regent_court
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 41097
+				religion = regent_court
+			}
+			create_pop = {
+				culture = endralliander_half_orc
+				size = 62300
+			}
+		}
+	}
+	
+	s:STATE_ENDRALVAR = {
+		region_state:B14 = {
+			create_pop = {
+				culture = endralliander
+				size = 145468
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 93644
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 50246
+				pop_type = slaves
+				religion = ravelian
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 75370
+				pop_type = slaves
+				religion = regent_court
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 16404
+				religion = regent_court
+			}
+			create_pop = {
+				culture = endralliander_half_orc
+				size = 127406
+			}
+		}
+	}
+	
+	s:STATE_MARBELOCH = {
+		region_state:B14 = {
+			create_pop = {
+				culture = endralliander
+				size = 120931
+				religion = regent_court
+			}
+            create_pop = {
+				culture = endralliander
+				size = 40310
+				religion = ravelian
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 71313
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 49182
+				pop_type = slaves
+				religion = ravelian
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 114758
+				pop_type = slaves
+				religion = regent_court
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 38485
+				religion = regent_court
+			}
+			create_pop = {
+				culture = endralliander_half_orc
+				size = 37800
+			}
+		}
+	}
+	
+	s:STATE_OBAITHAIL = {
+		region_state:B16 = {
+			create_pop = {
+				culture = pearlsedger
+				size = 40000
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 143740
+				pop_type = slaves
+				religion = regent_court
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 47913
+				pop_type = slaves
+				religion = bulgu_orazan
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 38335
+				religion = ravelian
+			}
+			create_pop = {
+				culture = dovesworn_gnoll
+				size = 1000
+			}
+			create_pop = {
+				culture = akasi
+				size = 2135
+			}
+		}
+		region_state:B72 = {
+			create_pop = {
+				culture = pearlsedger
+				size = 7524
+			}
+			create_pop = {
+				culture = vernman
+				size = 17476
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 45000
+				religion = regent_court
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 15000
+				religion = corinite
+			}
+			create_pop = {
+				culture = akasi
+				size = 2135
+			}
+		}
+		region_state:A09 = {
+			create_pop = {
+				culture = tefori
+				size = 17000
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 2000
+				religion = ravelian
+			}
+		}
+	}
+	
+	s:STATE_MOUTH_OF_RUIN = {
+		region_state:B01 = {
+			create_pop = {	#50%
+				culture = silver_dwarf
+				size = 90651
+				religion = ravelian
+			}
+			create_pop = {	#15%
+				culture = copper_dwarf
+				size = 31195
+				religion = ravelian
+			}
+			create_pop = {	#2%
+				culture = agate_dwarf
+				size = 2826
+				religion = ravelian
+			}
+			create_pop = {	#33%
+				culture = alloy_dwarf
+				size = 56629
+			}
+			create_pop = {
+				culture = akasi
+				size = 7000
+			}
+		}
+		region_state:B12 = {
+			create_pop = {
+				culture = pearlsedger
+				size = 19692
+			}
+			create_pop = {
+				culture = crownsman
+				size = 2188
+			}
+			create_pop = {
+				culture = cliff_gnome
+				size = 1152
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 36864
+				pop_type = slaves
+				religion = ravelian
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 55296
+				pop_type = slaves
+				religion = bulgu_orazan
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 23040
+				religion = ravelian
+			}
+			create_pop = {
+				culture = akasi
+				size = 3000
+			}
+		}
+		region_state:A09 = {
+			create_pop = {
+				culture = tefori
+				size = 4391
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 13173
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 4391
+			}
+		}
+	}
+	
+	s:STATE_TORRISHEAH = {
+		region_state:B15 = {
+			create_pop = {
+				culture = lorentish
+				size = 26957
+			}
+			create_pop = {
+				culture = tefori
+				size = 2995
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 69888
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 34944
+			}
+		}
+	}
+	
+	s:STATE_FALILTCOST = {
+		region_state:B15 = {
+			create_pop = {
+				culture = lorentish
+				size = 2870
+			}
+			create_pop = {
+				culture = west_damerian
+				size = 26770
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 79040
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 39520
+			}
+		}
+	}
+	
+	s:STATE_SANCTUARY_FIELDS = {
+		region_state:B15 = {
+			create_pop = {
+				culture = lorentish
+				size = 3116
+			}
+			create_pop = {
+				culture = pearlsedger
+				size = 27110
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 90678
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 30226
+			}
+		}
+	}
+	
+	s:STATE_SILVERTENNAR = {
+		region_state:B15 = {
+			create_pop = {
+				culture = lorentish
+				size = 2304
+			}
+			create_pop = {
+				culture = vernman
+				size = 20736
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 69120
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 23040
+			}
+		}
+	}
+	
+	s:STATE_VARIONAIL = {
+		region_state:B13 = {
+			create_pop = {
+				culture = havener_elf
+				size = 19789
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 80000
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 20000
+			}
+		}
+	}
+	
+	s:STATE_CORE_ISLANDS = {
+		region_state:A03 = {
+			create_pop = {
+				culture = lorentish
+				size = 4600
+			}
+			create_pop = {
+				culture = ruinscourge_gnoll
+				size = 500
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 8000
+				religion = regent_court
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 12000
+				religion = bulgu_orazan
+			}
+		}
+		region_state:B06 = {
+			create_pop = {
+				culture = ruinscourge_gnoll
+				size = 9600
+			}
+			#all descendants of gnollish slaves
+			create_pop = {
+				culture = ruin_orc
+				size = 10000
+			}
+			create_pop = { #
+				culture = arbarani
+				size = 2500
+			}
+			create_pop = {	
+				culture = silver_dwarf
+				size = 2500
+			}
+			create_pop = {
+				culture = endralliander_half_orc	#not actually endralliander, result of green orc and arbarani slaves mixing
+				size = 2500
+			}
+		}
+		region_state:A09 = {
+			create_pop = {
+				culture = tefori
+				size = 5260
+			}
+			create_pop = {
+				culture = ruinscourge_gnoll
+				size = 3840
+			}
+			create_pop = {
+				culture = abtazari	#holdovers from the anti-Myxk incursion
+				size = 500
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 36400
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 9100
+			}
+		}
+		region_state:B01 = {
+			create_pop = {	#50%
+				culture = silver_dwarf
+				size = 2350
+			}
+			create_pop = {	#50%
+				culture = alloy_dwarf
+				size = 2350
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 4810
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 1240
+			}
+		}
+		region_state:B03 = {
+			create_pop = {
+				culture = pearlsedger
+				size = 3000
+			}
+			create_pop = {
+				culture = derannic
+				size = 2000
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 20000
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 5000
+			}
+		}
+		region_state:A01 = {
+			create_pop = {
+				culture = west_damerian
+				size = 3700
+			}
+			create_pop = {
+				culture = derannic
+				size = 1800
+			}
+			create_pop = {	#Freed Slaves
+				culture = ruin_orc
+				size = 23000
+			}
+		}
+		region_state:A02 = {
+			create_pop = {
+				culture = arannese
+				size = 1900
+			}
+			create_pop = {	#Freed Slaves
+				culture = ruin_orc
+				size = 8500
+			}
+		}
+	}
+	
+	s:STATE_VERTEN = {
+		region_state:B75 = {
+			create_pop = {
+				culture = crager
+				size = 207630
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 7110
+				pop_type = slaves
+				religion = corinite
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 16590
+				pop_type = slaves
+				religion = bulgu_orazan
+			}
+			create_pop = {
+				culture = ruin_orc #Freed Ruin Orcs
+				size = 25377
+				religion = corinite
+			}
+            create_pop = {
+				culture = ruin_orc #Freed Ruin Orcs
+				size = 25377
+				religion = bulgu_orazan
+			}
+            create_pop = {
+				culture = ruin_orc #Freed Ruin Orcs
+				size = 33836
+				religion = ravelian
+			}
+			create_pop = {
+				culture = tamajoba #Sarhaly immigrants, moved by Busilar for metallurgy industry
+				size = 99970
+				religion = fangaulan_pantheon
+			}
+            create_pop = {
+				culture = tamajoba #Sarhaly immigrants, moved by Busilar for metallurgy industry
+				size = 19994
+				religion = ravelian
+			}
+			create_pop = {
+				culture = cannorian_half_orc #placeholder until we get ruined sea horcs
+				size = 99970
+			}
+			create_pop = {
+				culture = ruinscourge_gnoll #former pirate enclave
+				size = 7690
+				religion = xhazobkult
+			}
+            create_pop = {
+				culture = ruinscourge_gnoll #former pirate enclave
+				size = 30760
+				religion = corinite
+			}
+		}
+	}
+	
+	s:STATE_ISLES_OF_PLENTY = {
+		region_state:B03 = {
+			create_pop = {
+				culture = arbarani
+				size = 23358
+			}
+			create_pop = {
+				culture = pearlsedger
+				size = 6139
+			}
+			create_pop = {
+				culture = derannic
+				size = 1200
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 122790
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 30697
+			}
+		}
+		region_state:A03 = {
+			create_pop = {
+				culture = lorentish
+				size = 17016
+			}
+			create_pop = {
+				culture = pearlsedger
+				size = 4719
+			}
+			create_pop = {
+				culture = derannic
+				size = 1860
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 47190
+				religion = regent_court
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 70785
+				religion = bulgu_orazan
+			}
+		}
+		region_state:A06 = { 	#just a cool gnomish island, research station type deal
+			create_pop = {
+				culture = cliff_gnome
+				size = 6942
+			}
+			create_pop = {
+				culture = reverian	#helpers
+				size = 15194
+			}
+		}
+	}
+	
+	s:STATE_TRICKSTER_ISLE = {
+		region_state:B03 = {
+			create_pop = {
+				culture = crownsman
+				size = 205102
+			}
+			create_pop = {
+				culture = arbarani
+				size = 89431
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 335316
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 269256
+			}
+		}
+		region_state:B04 = {
+			create_pop = {
+				culture = derannic
+				size = 20009
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 90313
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = gawedi
+				size = 2041
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 19078
+			}
+		}
+
+	}
+	
+	s:STATE_SAAMIRSES = {
+		region_state:B06 = {
+			create_pop = {
+				culture = abtazari
+				size = 128693
+				religion = ravelian
+			}
+            create_pop = {
+				culture = abtazari
+				size = 95502
+				religion = new_sun_cult
+			}
+            create_pop = {
+				culture = abtazari
+				size = 29802
+				religion = the_jadd
+			}
+			create_pop = {	#Customers of the resort
+				culture = sun_elven
+				size = 5469
+			}
+		}
+	}
+	
+	s:STATE_GREAT_TUSSOCK = {
+		region_state:B04 = {
+			create_pop = {
+				culture = derannic
+				size = 22616
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 64417
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 16104
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 2073
+			}
+		}
+	}
+}

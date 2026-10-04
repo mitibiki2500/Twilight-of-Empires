@@ -1,0 +1,99 @@
+﻿l_english:
+ je_broken_empire:0 "Broken Empire"
+ je_broken_empire_reason:0 "Anbennar means unity – but in the centuries since its founding by the mages at the Grand Summit of Aranthíl, the Empire has been anything but. The Wars of Rule, the Lilac Wars, the Corinite Wars; time and time again the dream of Anbennar has been tested, the empire fractured and divided. Even the ascent of Camir Silmuna, and a new form of magocratic absolutism alongside him, proved a false hope.\n\nThe Blackpowder Rebellion brought with it the promise of a radical new direction, and a hope that the ideals of Anbennar may yet be fulfilled – but as the ties between Anbennar’s regions fray without a single individual atop the Dove Throne holding them together, and concessions to hold referendums on regional parliaments opening the door to the rising tide of nationalism, even that faint hope seems to be faltering. Why should a Vernman care about the Pearlsedger’s plight? What does a Crownsman have in common with a Wexonard? Why can’t Esmaria or Dameria choose their own, independent path?\n\nThose questions must be answered, one way or another. Time will tell if that answer includes Anbennar at all, or if the dream of the Dove will come crashing down once and for all."
+ je_broken_empire_progress:0 "The status of the #bold Progress Bar#! will #tooltippable;tooltip:je_broken_empire_special_tooltip_advance advance#! or #tooltippable;tooltip:je_broken_empire_special_tooltip_deplete retreat#! based on certain conditions. The #bold Progress Bar#! reaching #variable 100%#! will lead to the potential loss of the central government's control and the revolt of local authorities, if their radicalism is over #bold 20%.#!"
+ je_broken_empire_special_tooltip_deplete:0 "The following conditions will #bold deplete#! the #bold Progress Bar#!:\n• Being at war\n• Winning wars\n• Having higher [GetInstitutionType('institution_police').GetName]\n• Releasing countries from your land\n• Events"
+ je_broken_empire_special_tooltip_advance:0 "The following conditions will #bold advance#! the #bold Progress Bar#!:\n• Radicalism\n• Enacting Regressive Laws\n• Raising [GetInstitutionType('institution_police').GetName]\n• Events"
+#  je_broken_empire_goal:0 "Keep the bar from reaching the end by lowering radicals and increasing policing" # unused 
+
+ broken_empire_time_tt:0 "15 years have passed since the beginning of the unrest (#variable [ROOT.GetCountry.MakeScope.Var('broken_empire_start_year').GetValue]#!)"
+ broken_empire_broken_tt:0 "We or our subjects DO NOT control any state in Cannor, other than Damesear."
+
+ broken_empire_increase_25_tt:0 "The Journal Entry #bold Broken Empire#! increases by a value of #r 25#!."
+ broken_empire_increase_50_tt:0 "The Journal Entry #bold Broken Empire#! increases by a value of #r 50#!."
+ broken_empire_increase_100_tt:0 "The Journal Entry #bold Broken Empire#! increases by a value of #r 100#!."
+ broken_empire_increase_200_tt:0 "The Journal Entry #bold Broken Empire#! increases by a value of #r 200#!."
+ broken_empire_increase_300_tt:0 "The Journal Entry #bold Broken Empire#! decreases by a value of #r 300#!."
+ broken_empire_increase_400_tt:0 "The Journal Entry #bold Broken Empire#! increases by a value of #r 400#!."
+ broken_empire_increase_600_tt:0 "The Journal Entry #bold Broken Empire#! increases by a value of #r 600#!."
+ broken_empire_decrease_25_tt:0 "The Journal Entry #bold Broken Empire#! decreases by a value of #g 25#!."
+ broken_empire_decrease_50_tt:0 "The Journal Entry #bold Broken Empire#! decreases by a value of #g 50#!."
+ broken_empire_decrease_100_tt:0 "The Journal Entry #bold Broken Empire#! decreases by a value of #g 100#!."
+ broken_empire_decrease_200_tt:0 "The Journal Entry #bold Broken Empire#! decreases by a value of #g 200#!."
+ 
+ broken_empire.1.t:0 "Broken Empire"
+ broken_empire.1.d:0 "Since the Grand Summit of Aranthíl, Anbennar has stood for the union of many disparate peoples and races – but the gathering storm of nationalism has wracked the foundations of that once-vaunted dream. Can Anbennar survive?"
+ broken_empire.1.f:0 "An Esmari pamphleteer sits at his desk, deep in thought as he recalls the tragedy he had just watched, a play concerning the Grand Duchy of Esmaria’s fall. He remembers the final stand of the Grand Duke, the bloody banner of the old duchy hung ‘round his shoulders, as he lamented a future of infernal vice and pointless feuding.\n\nFragmentation, under the Dove Throne’s false unity. He had been a Blackpowder man once – trusted in the idea of a black-and-white flag ascendant over Cannor. What had that gotten Esmaria? Crisis, invasion, upheaval, civil war?\n\nThe pamphleteer grimaced, and put pen to paper. He wrote six simple words: “For Esmaria to unite, Anbennar must divide.”"
+ broken_empire.1.a:0 "The Dove’s song grows discordant."
+ 
+ broken_empire.2.t:0 "A Parliament for [SCOPE.sState('anb_indep_state').GetName]" # formerly Independence Referendum
+ broken_empire.2.d:0 "In order to ward off regional revolts during the Blackpowder Rebellion, Anbenncóst made promises of referendums on the question of regional parliaments, allowing the Dameshead’s peoples to decide for themselves whether they wanted self-governance. Finally, these referendums are being held: in [SCOPE.sState('anb_indep_state').GetName], the outcome has not been favourable to Anbenncóst."
+ broken_empire.2.f:0 "The atmosphere in the meeting hall is tense, as the would-be parliamentary leaders sit silently around the table. The hurried entry of a runner breaks the stillness, as he gives the long-awaited news: “the results are in– we won! [SCOPE.sState('anb_indep_state').GetName] has a parliament!”\n\nBut then the stillness returns as quickly as it had passed – and whatever euphoria the announcement had given fades. They all know the question they must ask. Finally, someone puts word to it: “What will Anbenncóst do?”"
+ broken_empire.2.a:0 "An advisory referendum, hijacked by separatists: we will not accept it!"
+ broken_empire.2.b:0 "We made promises in the past, and we must keep them."
+ 
+ broken_empire.3.t:0 "Nationalistic Unrest"
+ broken_empire.3.d:0 "Tensions surrounding the wave of agitation sweeping Anbennar has boiled over recently, as a crowd that had formed to advocate for regional independence has been dispersed with lethal force. Outrage has spread throughout the state, and the massacre has only served to inflame tensions further."
+ broken_empire.3.f:0 "The line of Peacekeepers clutch their rifles, bayonets fixed, as the mob crowds in around them, hurls insults, jabs, jibes, chants their slogans. “Independence now!” “An end to Anbennar!” “Down with the Dove!” Someone throws a brick – strikes a Peacekeeper on the head.\n\nThen a gunshot from who-knows where. The guards’ nerves snap, suddenly. Guns level, then fire. Three volleys crash against the crowd. The square empties, but scores of bloody corpses are left behind on the gravel – and the number of those who cannot tolerate the idea of Anbennar grows ever further."
+ broken_empire.3.a:0 "The Dove bloodies itself..."
+ 
+ broken_empire.4.t:0 "Subject Desires Freedom"
+ broken_empire.4.d:0 "With the tide of nationalism sweeping Anbennar, our subject [SCOPE.sCountry('anb_rebel_subject').GetName] have harnessed the wave of unrest to advocate additional autonomy for their own state."
+ broken_empire.4.f:0 "The envoy shrugs, nonchalant about his demands. “There is a great deal of pressure on us too, you know. The bureaucrats in your foreign ministry don’t have to deal with angry mobs outside your houses, with radicals threatening to subsume you into some grand new nation. All we ask is a way to gain some relief.”\n\nThe foreign minister gives the dignitary an indignant glare. “We diplomats prefer to let the dragoons handle our troublemakers and rampaging mobs – perhaps I should send them over, to show you how #italic they#! would handle your issue?”\n\nThe envoy merely laughs. “Trust me, minister. If you keep that attitude up, one way or another you’ll be calling on them soon!”"
+ broken_empire.4.a:0 "We will not bow down to these upstarts!"
+ broken_empire.4.b:0 "Anbennar is a hornet’s nest – best not to rock it."
+ 
+ broken_empire.5.t:0 "Carnetori Nationalism"
+ broken_empire.5.d:0 "As nationalism rocks our old Anbennarian rivals, our lands in the West Dameshead, particularly the ancient forests of Carneter, have been swept up in the tide. In opposition to the Carnetori however, Tretunic nationalists also clamour for their own ancient claims. Perhaps a concession to one may prevent a revolution from another?"
+ broken_empire.5.f:0 "The gathering at a site near Woodwell is an extraordinary sight. Aged druids, leaning on staves of ancient wood, stand amongst fine-clothed lawyers and intellectuals, as sprites and faeries bob and weave through the gathered revolutionaries.\n\nThey are there to make a pact, out of respect to the fey-powers of the Deruwen Forest, and for the new ideals sweeping across Anbennar: they are there to put an end to over 700 years of subjugation – to make Carneter free at last.\n\nAs the meeting ends, its attendees go their separate ways – and a Redglader Elf, silent-stepped, watches them through the trees. She grimaces, and takes out a note-book to record her findings."
+ broken_empire.5.a:0 "We must swallow our pride, and help Anbennar combat these dangerous ideals!"
+ broken_empire.5.b:0 "A bunch of charletans and rabble-rousers. Lorentish steel will see them off!"
+ broken_empire.5.c:0 "Perhaps it is time for the Tretunic Kingdom to join the Rose Crown?"
+ 
+ broken_empire.6.t:0 "Wexonard Nationalism"
+ broken_empire.6.d:0 "The Wexonards, first cast into political irrelevance, then divided amidst the turmoil of the Blackpowder Rebellion, now agitate for a return to the days of Lothane síl Wex – a Wex united, powerful, strong. As our subjects are wracked by purple-clad nationalists wielding antiquated swords, will our hold on the western frontier withstand the tide?"
+ broken_empire.6.f:0 "It has been hundreds of years since the ambitions of Lothane III dramatically collapsed during the Chastening of Wex, with the old Grand Duchy sundered by an Istralorian coalition. As revolution engulfed Anbennar, the Wexonard nobility seized their chance to secede from the republicans, and reclaim their lost glory – but Vivin aid turned to Vivin domination, and so spurned, the crucible burns hotter than ever. As the leading lights of Wexonard independence meet, they know that from the fires of nationalism, from divided Bisan and Magdalaire, Sugamber and the Wexhills, a new Alenic nation may and must be forged.\n\nThey fall back on that ancient phrase, well-worn, for their manifesto: Wex must rule – and the Wexonards must rule it."
+ broken_empire.6.a:0 "Perhaps we should see if Anbennar is up for a Second Chastening?"
+ broken_empire.6.b:0 "They are naught but a bunch of fools, clinging to medieval glories."
+ broken_empire.6.c:0 "Perhaps Wex must #italic exist…#! but only under our guiding hand."
+ 
+ broken_empire.10.t:0 "The Day of the Dove" # win the JE, prevent disunity
+ broken_empire.10.d:0 "Anbennar has withstood many tumults and trials before – the Wars of Rule, the Imperial Crisis, the Lilac Wars, the Corinite Wars – but each time, the Dove overcomes it all. So too has Anbennar overcome this challenge: Anbennar means unity once more, and for the first time in a long time, the peoples of the Dameshead agree."
+ broken_empire.10.f:0 "The drunken Vernman slams his cup against the table, rises to his feet, proclaims boldly: “so long as the glory of my homeland lives in my heart, and the freedom of the wing thrives in my mustachio, the dream of a free Verne will never die!”\n\nThe Menibór pub quiets, as everyone looks to the cause of the sudden interruption. The Vernman’s drinking partners are mortified – as the mustachio’d man looks around the room, he realizes that, perhaps, his heart and mustachio isn’t enough anymore.\n\nThe Vernman sighs, deflates a little, and holds up his hands. “Ah… sorry, everyone. A bit too much to drink, eh?”"
+ broken_empire.10.a:0 "The new dream dies, and the old endures."
+ 
+ broken_empire.11.t:0 "The Breaking Point" # disloyal states break away in a big war
+ broken_empire.11.d:0 "War! The cry rings through every town and city in the rapidly disintegrating Anbennar, as national revolutionaries reach for their rifles, and the central government’s troops fortify their positions or flee to the slowly consolidating front-lines. Nationalistic fervour has finally reached the breaking point, and Anbennar divides once more…"
+ broken_empire.11.f:0 "“What is Anbennar? Of course, the rote answer would be to say ‘it is unity!’ And then, I presume, thump your chest and praise the mages of Aranthíl.\n\nBut no, not quite, I don’t think so. Anbennar is an empire. At its core, it is the same as the Jaherian realm, or Castanor, or the domains of Ulric the Eagle – the sole, all-important difference, is in the performance. Those practiced lines and grandiose outfits that dazzle the subject with the farce of Anbennar-as-ideal.\n\nI wonder, should the costume be torn away, the mask discarded, if the peoples of the Dameshead will be able to stomach the sight of the actor, naked and trembling beneath the stage-lights?\n– Tomás of Vallusna, Private Correspondence"
+ broken_empire.11.a:0 "Once so unthinkable, then strikingly possible, now horrifically undisputable."
+ 
+ broken_empire.12.t:0 "Artheta Anbennar" # prev. also Cooled Fervor win that war
+ broken_empire.12.d:0 "The nascent nations of the Dameshead lie shattered by cannon-shot, crushed by the infantryman’s advance. Through blood, through battle, through death and devastation, unity has been restored."
+ broken_empire.12.f:0 "The captain’s eyes flitter between his pocket-watch and the wall. The condemned – blindfolded, hands bound – are thrown against the already blood-stained brick. Some are quietly praying, others suppressing sobs, others stoic still. The captain takes the time, glances up to the still-dark sky to make sure it isn’t lying to him, grimaces as he notices the slightest flicker of dawn.\n\n“Ready!” He calls, gaze fixed still above. Ten rifles raise at once. “Aim!” One of the revolutionaries gasps – another cries “mother!” Another still, “Esmaria!” Then “Fire!” And a volley, and the cries of death, and the thud of falling bodies.\n\nThe noise rouses a white bird – too distant to know the breed of – into the air. The captain can’t help but laugh. “Bit late for that now, don’t you think?”"
+ broken_empire.12.a:0 "And Anbennar perseveres."
+ be_culture_change_tt:0 "25% of this culture becomes Cóstine"
+ 
+ broken_empire.13.t:0 "United No More" # breakaways win the war, Anbennar collapses.
+ broken_empire.13.d:0 "The Dove is dead – Anbennar has fallen. A half-dozen new nations rise from the ashes of war and revolt, as the imperial powers of Cannor eye these nascent states with greedy eyes, and worried hearts."
+ broken_empire.13.f:0 "Anbennar’s demise is carried by magic mirror, by sending-stone, by train and rail. Within the day, it is on the front-page of every newspaper in Cannor – within the week, it is known in every port city in the world.\n\nOnce, the Empire of Anbennar had represented a higher ideal – of true peace and harmony, of many disparate peoples and races coming together to share in something greater. Anbennar meant unity, and now it means discord, and chaos, and collapse.\n\nIn blood and fire, the dream dies, and the Dove falls. One must wonder what exactly that means for the world."
+ broken_empire.13.a:0 "A great power felled by the storm of nationalism – who will be next?"
+
+ broken_empire.100.t:0 "TODO"
+ broken_empire.100.d:0 "TODO"
+ broken_empire.100.f:0 "TODO"
+ broken_empire.100.a:0 "TODO"
+
+ broken_empire.101.t:0 "TODO"
+ broken_empire.101.d:0 "TODO"
+ broken_empire.101.f:0 "TODO"
+ broken_empire.101.a:0 "TODO"
+ 
+ broken_empire.102.t:0 "Lorent Stamps Down Nationalism" # notification for Anbennar
+ broken_empire.102.d:0 "Threatened by the rise of Carnetori nationalism, Lorent has reached out to our government to give aid and assistance in crushing dissident efforts on our side of the border."
+ broken_empire.102.f:0 "The Lorentish ambassador hands over a folder thick with dossiers, reports and files. Then another. Then another. “That should be the complete collection of the information we promised you, plus a few… additions. I figured that your intelligence officers – such as they are #italic intelligent#! – would have missed some of the fundamentals. I’ve included those too.”\n\nThe Anbennarian guard captain sighs, shakes his head. “And how big are these ‘additions’ of yours?” The ambassador merely gives a smug smirk in response. “Actually, let me guess: it's the other two folders, isn’t it?”\n\n“My my… perhaps you are not #italic totally#! bereft of intuition after all!”"
+ broken_empire.102.a:0 "What wonder– the thorns have a rose!"
+
+ broken_empire.103.t:0 "Vivin Empire Stamps Down Nationalism" # notification for Anbennar
+ broken_empire.103.d:0 "Threatened by the rise of Wexonard nationalism, the Vivin Empire has reached out to our government to give aid and assistance in crushing dissident efforts on our side of the border."
+ broken_empire.103.f:0 "The Peacekeepers are lying in ambush for the revolutionaries in the dark, foggy night, rifles ready. Then a disruption in the distance, beyond the Arannese border – then screams, shrieks, frantic shouts. The Peacekeepers share a look, confused at first, then concerned.\n\nNot a moment later, a dishevelled rebel bursts into view, clothes torn and bloody, sweat-drenched, frantic. The Peacekeepers rise, cry “HALT!” The rebel replies with a scream. “THEY’RE HUNTING US! THEY’RE HUNTING US!”\n\nThe Anbennarians are too startled to shoot – the rebel manages to throw himself at their captain’s feet, wailing, weeping like a terrified child. Nobody else emerges from the forest."
+ broken_empire.103.a:0 "What strange bedfellows…"

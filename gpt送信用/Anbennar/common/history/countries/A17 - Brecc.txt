@@ -1,0 +1,83 @@
+﻿COUNTRIES = {
+	c:A17 ?= {
+		effect_starting_technology_tier_1_tech = yes
+		effect_starting_artificery_tier_1_tech = yes
+
+		add_technology_researched = percussion_cap
+        add_technology_researched = general_staff
+
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_oligarchy
+		activate_law = law_type:law_cultural_exclusion
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_appointed_bureaucrats	
+		activate_law = law_type:law_national_militia
+		
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_consumption_based_taxation
+		activate_law = law_type:law_tenant_farmers
+		
+		activate_law = law_type:law_right_of_assembly
+		#activate_law = law_type:law_serfdom_banned
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_women_own_property
+		activate_law = law_type:law_slavery_banned
+
+
+		
+			#one of few that start with this
+		activate_law = law_type:law_nation_of_artifice
+
+		# Magic
+		add_technology_researched = cannorian_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_mass_plant_growth
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_evocation_corps
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_magical_feasts
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 1
+		}
+	}
+}

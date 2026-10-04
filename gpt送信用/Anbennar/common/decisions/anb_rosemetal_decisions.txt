@@ -1,0 +1,53 @@
+﻿unlock_rubyhold_process = {
+	is_shown = {
+	    NOT = { has_global_variable = unlocked_rubyhold_process }
+		exists = c:A75
+ 		has_subject_relation_with = c:A75
+ 		c:A75 = {
+ 			is_player = no
+			top_overlord = {
+				THIS = root.top_overlord
+			}
+  		}
+	}
+
+	possible = {
+        c:A75 ?= {
+            is_player = no
+            is_at_war = no
+ 			is_subject_of = ROOT
+ 			is_subject_type = subject_type_puppet
+ 			relations:root >= relations_threshold:amicable
+ 			top_overlord = {
+ 			    country_rank = rank_value:great_power
+				is_at_war = no
+				has_technology_researched = punch_card_artificery
+				cultural_acceptance_base = {
+			    target = cu:ruby_dwarf
+			    value >= acceptance_status_3
+		        }
+			}
+	    }
+  	}
+
+	when_taken = {
+		set_global_variable = unlocked_rubyhold_process
+		trigger_event = { id = anb_rosemetal_events.1 popup = yes }
+		show_as_tooltip = {
+		    add_technology_researched = rubyhold_process
+			add_modifier = {
+				name = rosemetal_technoloy_payment
+				months = 3
+				multiplier = 800000
+			}
+			create_diplomatic_pact = {  
+                country = c:A75
+                type = protectorate
+            }
+		}
+	}
+
+	ai_chance = {
+		value = 1
+	}
+}

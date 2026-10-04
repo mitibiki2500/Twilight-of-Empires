@@ -1,0 +1,555 @@
+﻿STATE_AVHAVUBHIYA = {
+    id = 400
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x033063" "x098C47" "x20DC89" "x420E10" "x58BB96" "x5BA70E" "x7D708C" "xB1AB87" "xC48000" "xC98D06" "xCA4592" "xCB7C7C" "xCF9191" "xD47638" "xD85F6E" "xDC1616" "xDF0625" "xE28B98" "xE5A1D5" "xF26C32" }
+    traits = {}
+    city = "xcb7c7c"
+    port = "xdc1616"
+    farm = "xd47638"
+    mine = "xb1ab87"
+    wood = "xcf9191"
+    arable_land = 220
+    arable_resources = { building_millet_farm building_livestock_ranch building_coffee_plantation building_cotton_plantation building_dye_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 12
+        building_fishing_wharf = 15
+    }
+    naval_exit_id = 3300
+}
+STATE_IYARHASHAR = {
+    id = 401
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x738FB0" "x7BC6A6" "x8B4DF7" "x92CF98" "xCFB674" "xDB9693" "xDDF4D4" "xEDE8AE" "xF0757A" }
+    traits = { state_trait_harimari_jungles }
+    city = "xdb9693"
+    port = "xcfb674"
+    farm = "x738fb0"
+    wood = "xddf4d4"
+    mine = "x8B4DF7"
+    arable_land = 120
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_cotton_plantation building_dye_plantation building_tea_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 16
+        building_fishing_wharf = 9
+        building_damestear_mine = 12
+    }
+    resource = {
+        type = "building_rubber_plantation"
+        undiscovered_amount = 6
+    }
+    naval_exit_id = 3300
+}
+STATE_SOUTH_GHANKEDHEN = {
+    id = 402
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x0F5B6F" "x33CFDB" "x3681CD" "x4CE43D" "x55AEA9" "x6252AB" "x6B0118" "x7A6EED" "x826F33" "x916B9A" "x98C1A6" "xA172C0" "xB43AFD" "xC2D2C7" "xC463AE" "xCD36A8" "xF6FF13" }
+    traits = { state_trait_dhenbasana_river state_trait_ghankedhen_mineral_fields }
+    city = "xcd36a8"
+    farm = "xa172c0"
+    wood = "x916b9a"
+    mine = "x826f33"
+    arable_land = 150
+    arable_resources = { building_millet_farm building_livestock_ranch building_silk_plantation building_coffee_plantation building_cotton_plantation building_dye_plantation building_opium_plantation }
+    capped_resources = {
+        building_iron_mine = 45
+        building_coal_mine = 80
+        building_logging_camp = 11
+    }
+}
+STATE_NORTH_GHANKEDHEN = {
+    id = 403
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x222AD7" "x3D613B" "x3D9F14" "x3E8705" "x479430" "x652F20" "x95B7B5" "x982072" "xA6AE3D" "xA9AB65" "xAB9952" "xBD4102" "xF25A26" }
+    traits = { state_trait_kharunyana_river state_trait_ghankedhen_mineral_fields }
+    city = "x479430"
+    farm = "xa9ab65"
+    wood = "xf25a26"
+    mine = "x222ad7"
+    arable_land = 110
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_dye_plantation building_opium_plantation }
+    capped_resources = {
+        building_iron_mine = 36
+        building_coal_mine = 48
+        building_lead_mine = 32
+        building_logging_camp = 9
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 10
+    }
+}
+STATE_TUDHINA = {
+    id = 404
+    subsistence_building = "building_subsistence_pasture"
+    provinces = { "x081BDE" "x1C4D68" "x1FC199" "x21E462" "x2A6495" "x3BE490" "x452B65" "x47A246" "x489C7E" "x51554F" "x55254E" "x57B3D3" "x60FDAA" "x62A967" "x7F67CF" "x860BE0" "x8D0B5D" "x8D5BFF" "x8F2181" "xA33BD5" "xA345F9" "xA3C3A5" "xA49E8B" "xA8BAED" "xB3BA79" "xC1BF61" "xC2DFCA" "xCC2BBE" "xDB787C" "xE9197F" "xEC9A4C" "xF730EE" "xFA6CB3" }
+    traits = { state_trait_marutha_desert }
+    city = "xb3ba79"
+    farm = "x62a967"
+    mine = "x489c7e"
+    wood = "x51554f"
+    arable_land = 40
+    arable_resources = { building_livestock_ranch }
+    capped_resources = {
+        building_sulfur_mine = 40
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 28
+    }
+}
+STATE_PASIRAGHA = {
+    id = 405
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x4B3E49" "x55713B" "x58C993" "x5C26A5" "x6302DC" "x7DBF42" "x88E800" "x989355" "xA9D442" "xBA9A7D" "xCBAD40" "xD51C9E" "xE7332B" "xEC7C58" "xFA6DD4" }
+    traits = { state_trait_dhenbasana_river state_trait_south_rahen_river_basin }
+    city = "x58c993"
+    farm = "x989355"
+    mine = "xba9a7d"
+    wood = "xcbad40"
+    arable_land = 330
+    arable_resources = { building_millet_farm building_livestock_ranch building_coffee_plantation building_cotton_plantation building_dye_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_iron_mine = 24
+        building_logging_camp = 7
+    }
+}
+STATE_UPPER_DHENBASANA = {
+    id = 406
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x183977" "x2B31CF" "x854117" "x8753C6" "x967664" "xA6BA6A" "xAC7B4E" "xB52626" "xCED26A" "xD4B22A" "xDF4CF9" }
+    traits = { state_trait_dhenbasana_river state_trait_south_rahen_river_basin }
+    city = "xd4b22a"
+    farm = "x183977"
+    mine = "xced26a"
+    wood = "x8753c6"
+    arable_land = 550
+    arable_resources = { building_rice_farm building_livestock_ranch building_coffee_plantation building_cotton_plantation building_dye_plantation building_tobacco_plantation building_sugar_plantation building_silk_plantation }
+    capped_resources = {
+        #bg_haless_spirits = 32
+        building_logging_camp = 9
+        building_coal_mine = 32
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 7
+    }
+}
+STATE_LOWER_DHENBASANA = {
+    id = 407
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x0286E9" "x267B48" "x7190A0" "x75EFA6" "x8DA76D" "x986941" "x996268" "x9A9200" "xA57A78" "xB5E359" "xBAB34E" "xD02575" "xE39494" "xE73A35" }
+    traits = { state_trait_dhenbasana_river state_trait_south_rahen_river_basin }
+    city = "xd02575"
+    farm = "xe39494"
+    wood = "x9a9200"
+    mine = "x986941"
+    arable_land = 500
+    arable_resources = { building_rice_farm building_livestock_ranch building_silk_plantation building_banana_plantation building_coffee_plantation building_cotton_plantation building_dye_plantation building_tea_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 14
+        building_coal_mine = 48
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 4
+    }
+}
+STATE_ASCENSION_JUNGLE = {
+    id = 408
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x00BBDC" "x0C181A" "x161DE6" "x223CA1" "x236961" "x2BAC0F" "x330387" "x4B89B3" "x5B84CF" "x6EC316" "x715195" "x812C2B" "x84A239" "x86B133" "x9958CF" "x9B995A" "xA6FF6A" "xBA4A34" "xBA5A34" "xC9D5D9" "xCC83CA" "xD5C226" "xDCBD8B" "xE58527" "xEA9C1E" }
+    traits = { state_trait_harimari_jungles }
+    city = "xdcbd8b"
+    farm = "x5b84cf"
+    wood = "xea9c1e"
+    mine = "x9b995a"
+    port = "xba5a34"
+    arable_land = 105
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_cotton_plantation building_dye_plantation building_tea_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 26
+        building_iron_mine = 36
+        building_lead_mine = 45
+        building_fishing_wharf = 7
+    }
+    resource = {
+        type = "building_rubber_plantation"
+        undiscovered_amount = 13
+    }
+    resource = {
+        type = "building_relics_digsite"
+        undiscovered_amount = 5
+    }
+    naval_exit_id = 3301 #Gulf of Rahen
+
+}
+STATE_TUJGAL = {
+    id = 409
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x07B7DD" "x44BA85" "x4CB9B2" "x53005A" "x5A32DB" "xCEC69B" "xD48334" "xE36837" }
+    traits = { state_trait_harimari_jungles state_trait_dhenbasana_river }
+    city = "xe36837"
+    farm = "x4cb9b2"
+    wood = "xd48334"
+    mine = "x5a32db"
+    port = "x07b7dd"
+    arable_land = 80
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_cotton_plantation building_dye_plantation building_tea_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 20
+        building_sulfur_mine = 36
+        building_fishing_wharf = 6
+    }
+    resource = {
+        type = "building_rubber_plantation"
+        undiscovered_amount = 8
+    }
+    naval_exit_id = 3301 #Gulf of Rahen
+
+}
+STATE_BABHAGAMA = {
+    id = 410
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x011989" "x1A9F3C" "x213002" "x2C5796" "x4EEDCC" "x724851" "x7B16BC" "x7BD4D4" "xB2C192" "xC908F4" "xD2EC8D" "xDBCB47" "xE6DFF8" "xECD0A7" "xFB8193" }
+    impassable = { xD2EC8D }
+    traits = { state_trait_kharunyana_river }
+    city = "xb2c192"
+    farm = "x213002"
+    mine = "xdbcb47"
+    wood = "xecd0a7"
+    arable_land = 80
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_dye_plantation building_opium_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_coal_mine = 12
+        building_logging_camp = 7
+    }
+}
+STATE_SATARSAYA = {
+    id = 411
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x021E81" "x1F69EF" "x2439A4" "x274A2C" "x29A44C" "x303B2F" "x34A092" "x513CB2" "x6C2988" "x6D9995" "x874215" "x887C4D" "x8B19AF" "x8BD5A7" "x9D4888" "xA08BD5" "xA47B2C" "xB2BD6B" "xBD3A8E" "xC01260" "xC65786" "xC8A1D2" "xD6ECF1" "xDDAB3B" "xFEDBE4" }
+    traits = {}
+    city = "xb2bd6b"
+    farm = "xa47b2c"
+    wood = "x8b19af"
+    mine = "xbd3a8e"
+    arable_land = 230
+    arable_resources = { building_wheat_farm building_livestock_ranch building_coffee_plantation building_cotton_plantation building_dye_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 4
+        building_iron_mine = 42
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 10
+    }
+}
+STATE_WEST_GHAVAANAJ = {
+    id = 412
+    subsistence_building = "building_subsistence_orchard"
+    provinces = { "x046925" "x18436A" "x191604" "x28F806" "x2BFFA5" "x313B77" "x335811" "x5323B3" "x5ED9DA" "x64277A" "x6E9D67" "x717532" "x718520" "x7F286C" "x803A67" "x8602AD" "x88682A" "x8C2231" "x8F7496" "x99E56D" "x9B405E" "xA0D04C" "xA7A32E" "xB33E2B" "xB961F3" "xBB7BB7" "xBFF1E7" "xC02C06" "xDA1BE2" "xDE574A" "xECC11F" }
+    traits = {}
+    city = "x9B405E"
+    farm = "x718520"
+    wood = "x99E56D"
+    mine = "x717532"
+    arable_land = 160
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_dye_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_lead_mine = 48
+    }
+}
+STATE_EAST_GHAVAANAJ = {
+    id = 413
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x023B8E" "x11B1EB" "x162E97" "x166AB9" "x213474" "x213530" "x369190" "x421E74" "x48D125" "x49D932" "x677D7D" "x766E15" "x7B502A" "x945115" "xABB113" "xAE1F62" "xAE245F" "xC13476" "xCD6132" "xCF7FF3" "xD0EA91" "xF0A9C6" "xF9ADD1" "xFF6600" }
+    traits = { state_trait_ghavaanaj_indigo_fields }
+    city = "xc13476"
+    farm = "x945115"
+    wood = "x213474"
+    mine = "x162e97"
+    arable_land = 240
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_dye_plantation building_tea_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 18
+        building_iron_mine = 12
+        building_coal_mine = 22
+    }
+}
+STATE_TUGHAYASA = {
+    id = 414
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x247D83" "x31D0E0" "x546EF7" "x59B9AB" "x64537B" "x7897C4" "x89E4D0" "x8A9CD5" "xB1C8C9" "xB81B6C" "xBEFDCC" }
+    traits = { state_trait_kharunyana_river state_trait_tughayasa_mountain }
+    city = "xb1c8c9"
+    farm = "x247d83"
+    mine = "x546ef7"
+    wood = "x31d0e0"
+    arable_land = 149
+    arable_resources = { building_rice_farm building_livestock_ranch building_silk_plantation building_cotton_plantation building_dye_plantation building_tea_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 9
+        building_coal_mine = 38
+        building_gem_mine = 4
+    }
+}
+STATE_DHUJAT = {
+    id = 415
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x0D216F" "x1E1158" "x237B5F" "x369163" "x4763C8" "x9A991B" "x9C74DD" "xE3AAA9" "xE499B8" "xE69AD4" }
+    prime_land = { "x9A991B" "xE69AD4" "xE499B8" }
+    traits = { state_trait_kharunyana_river state_trait_porcelain_cities state_trait_south_rahen_river_basin }
+    city = "x9a991b"
+    farm = "xe69ad4"
+    wood = "x4763c8"
+    mine = "x9c74dd"
+    arable_land = 180
+    arable_resources = { building_rice_farm building_livestock_ranch building_silk_plantation building_banana_plantation building_cotton_plantation building_dye_plantation building_tea_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 16
+    }
+}
+STATE_SARISUNG = {
+    id = 416
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x1A585C" "x30C77C" "x39BC98" "x4AA200" "x526600" "x664D59" "x73B983" "x9A3028" "xAB8461" "xECCB16" "xF60EE1" "xFB5BC1" }
+    traits = { state_trait_kharunyana_river state_trait_porcelain_cities }
+    city = "x4aa200"
+    farm = "x526600"
+    wood = "x1a585c"
+    mine = "x30c77c"
+    arable_land = 160
+    arable_resources = { building_rice_farm building_livestock_ranch building_silk_plantation building_cotton_plantation building_dye_plantation building_tea_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 11
+        building_coal_mine = 28
+        building_monster_ranch = 4
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 8
+    }
+}
+STATE_TILTAGHAR = {
+    id = 417
+    subsistence_building = "building_subsistence_orchard"
+    provinces = { "x6D55E9" "x704261" "x8459A4" "x91783B" "xA92BCD" "xB35D63" "xB4562F" "xB9BA3C" "xBB7A13" "xBCC49D" "xCFBAE6" "xD6FE46" "xE03798" "xEECE38" }
+    traits = {}
+    city = "xa92bcd"
+    farm = "x91783b"
+    wood = "xcfbae6"
+    mine = "xbb7a13"
+    arable_land = 70
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_dye_plantation building_opium_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 2
+    }
+}
+STATE_WEST_NADIMRAJ = {
+    id = 418
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0C0EF9" x825641 "x459987" "x5383DC" "x5FD458" "x6B4E4F" "x774177" "x9F3C22" "xB1EC34" "xB55685" "xC98557" "xCB6E23" "xCDB3F5" "xD2E586" "xDA0695" "xDB9040" "xF64701" }
+    impassable = { x0C0EF9 x825641 }
+    prime_land = { "xB55685" }
+    traits = { state_trait_kharunyana_river }
+    city = "xb55685"
+    farm = "x5383dc"
+    mine = "xb1ec34"
+    wood = "xdb9040"
+    arable_land = 200
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_dye_plantation building_opium_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 12
+    }
+}
+STATE_RAJNADHAGA = {
+    id = 419
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x186C4F" "x578D23" "x75D26B" "x767E48" "x8FD83F" "xAFD743" "xB8772A" "xD93A1F" "xD9F456" "xFC6F05" }
+    impassable = { xFC6F05 }
+    traits = { state_trait_kharunyana_river }
+    city = "xb8772a"
+    farm = "x578d23"
+    mine = "x75d26b"
+    wood = "xd9f456"
+    arable_land = 220
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_dye_plantation building_opium_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 10
+        building_iron_mine = 24
+    }
+}
+STATE_CENTRAL_NADIMRAJ = {
+    id = 420
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x183A9A" "x1BD435" "x348188" "x4C71CC" "x51697B" "x563791" "x581D5E" "x756403" "x7B63D5" "x876F50" "x8BC46F" "x8F1CA4" "xB451E4" "xCB1E8C" "xF924A2" }
+    impassable = { xF924A2 }
+    traits = { state_trait_kharunyana_river }
+    city = "x183a9a"
+    farm = "xcb1e8c"
+    wood = "x348188"
+    mine = "x1bd435"
+    arable_land = 230
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_dye_plantation building_opium_plantation building_tea_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 9
+        building_monster_ranch = 2
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 2
+    }
+}
+STATE_EAST_NADIMRAJ = {
+    id = 421
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x3D6614" "x4BC4C0" "x74C257" "x7C254E" "x85F7F1" "xC1A245" "xD5B716" "xDB9D74" "xFC167F" }
+    traits = { state_trait_kharunyana_river }
+    city = "xc1a245"
+    farm = "x7c254e"
+    wood = "x3d6614"
+    mine = "x85f7f1"
+    arable_land = 165
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_dye_plantation building_opium_plantation building_tea_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 5
+        building_damestear_mine = 13
+        building_iron_mine = 32
+    }
+}
+STATE_HOBGOBLIN_HOMELANDS = {
+    id = 422
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0E258A" "x12C410" "x263BA6" "x434F9F" "x446C64" "x46BA6B" "x4FFC84" "x64E255" "x8405B0" "x8DD933" "xA64837" "xAB080F" "xB527C7" "xC893E7" "xE36290" "xED8D93" }
+    traits = { state_trait_kharunyana_falls state_trait_kharunyana_river state_trait_yanhe_river }
+    impassable = { x8405B0 }
+    city = "x46ba6b"
+    farm = "xb527c7"
+    wood = "xa64837"
+    mine = "xc893e7"
+    arable_land = 200
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_opium_plantation building_tea_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_iron_mine = 36
+        building_coal_mine = 40
+        building_logging_camp = 18
+    }
+}
+STATE_GHILAKHAD = {
+    id = 423
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x284A4A" "x34A95A" "x3BF09E" "x3D917B" "x3F5D83" "x4C4153" "x58FFEC" "x6C3D34" "x80A851" "xA74263" "xE9D73D" "xF75BB5" }
+    impassable = { x80A851 }
+    traits = { state_trait_kharunyana_river }
+    city = "x3f5d83"
+    farm = "x3d917b"
+    wood = "xf75bb5"
+    mine = "xa74263"
+    arable_land = 90
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_opium_plantation building_tea_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 3
+        building_iron_mine = 52
+    }
+}
+STATE_RAGHAJANDI = {
+    id = 424
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x029FA4" "x03BE78" "x077301" "x38A045" "x3DF490" "x4E59AA" "x7DAFF8" "x80B0FA" "x86D929" "x876160" "x944119" "x948AF5" "xAEAD46" "xAFB1C9" "xBB7F0F" "xBDE894" }
+    traits = { state_trait_yanhe_river }
+    city = "x80b0fa"
+    farm = "x38a045"
+    wood = "xbde894"
+    mine = "x03be78"
+    arable_land = 200
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_opium_plantation building_tea_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 3
+        building_sulfur_mine = 82
+        building_monster_ranch = 2
+    }
+    resource = {
+        type = "building_dungeons"
+        depleted_type = "building_dungeons_quarantined"
+        undiscovered_amount = 2
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 15
+    }
+}
+STATE_GHATASAK = {
+    id = 425
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x148A79" "x1AB89F" "x1C34D3" "x39E482" "x450EFA" "x4F4496" "x79E130" "x7E5BCA" "x8FF202" "x9107A4" "xD10EE1" "xD8B799" "xF945FA" }
+    traits = {}
+    city = "x450efa"
+    farm = "x79e130"
+    wood = "x1c34d3"
+    mine = "xd10ee1"
+    arable_land = 110
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_opium_plantation building_tea_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 4
+    }
+}
+STATE_SHAMAKHAD_PLAINS = {
+    id = 426
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x039700" "x32479D" "x4445C8" "x4DFBE9" "x5889E1" "x71C1CC" "x7F0EC8" "x968DAC" "x985A07" "xA3DF4D" "xA56EBC" "xB0B244" "xC00645" "xD7C67E" "xE89A7F" "xF7AB47" }
+    prime_land = { "x71C1CC" "xB0B244" "x985A07" "x5889E1" }
+    traits = { state_trait_yanhe_river }
+    city = "x985a07"
+    farm = "xc00645"
+    wood = "x7f0ec8"
+    mine = "x32479d"
+    arable_land = 290
+    arable_resources = { building_wheat_farm building_livestock_ranch building_cotton_plantation building_opium_plantation building_tea_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 13
+        building_iron_mine = 46
+    }
+}
+STATE_SIR = {
+    id = 427
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x080EAF" "x09B0E1" "x4ED81B" "x543295" "x594596" "x8189AF" "xA80E96" "xA9B0C8" "xD045AF" "xF889C8" }
+    traits = { state_trait_yanhe_river }
+    city = "xf889c8"
+    farm = "xa80e96"
+    wood = "x080eaf"
+    mine = "xa9b0c8"
+    arable_land = 280
+    arable_resources = { building_rice_farm building_livestock_ranch building_silk_plantation building_opium_plantation building_tea_plantation building_tobacco_plantation }
+    capped_resources = {
+        building_logging_camp = 8
+    }
+}
+STATE_SRAMAYA = {
+    id = 428
+    subsistence_building = "building_subsistence_rice_farm"
+    provinces = { "x19292F" "x4992E3" "x837BF6" "x913643" "xBA8887" "xD1CEE8" }
+    prime_land = { "xBA8887" "xD1CEE8" "x837BF6" }
+    traits = { state_trait_dhenbasana_river state_trait_kharunyana_river state_trait_great_rahen_estuaries state_trait_south_rahen_river_basin }
+    city = "xba8887"
+    farm = "x837bf6"
+    wood = "x913643"
+    mine = "xd1cee8"
+    port = "x4992e3"
+    arable_land = 200
+    arable_resources = { building_rice_farm building_livestock_ranch building_silk_plantation building_banana_plantation building_coffee_plantation building_cotton_plantation building_dye_plantation building_tea_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 12
+        building_fishing_wharf = 12
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 34
+    }
+    naval_exit_id = 3301 #Gulf of Rahen
+
+}

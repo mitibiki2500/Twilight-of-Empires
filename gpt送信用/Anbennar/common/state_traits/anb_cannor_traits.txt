@@ -1,0 +1,429 @@
+﻿#Make sure to update on_river scripted_trigger after every new river trait
+
+state_trait_oddanroy_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_alen_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_widderoy_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_middanroy_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_sornroy_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 10
+	}
+}
+
+state_trait_luna_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_esmar_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_bloodwine_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_ellyn_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_dostanesck_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_rafn_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 10
+	}
+}
+
+state_trait_nath_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_portroy_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 15
+	}
+}
+
+state_trait_magically_drained_lands = { #quasi-placeholder. gained via eilisin MT
+	icon = "gfx/interface/icons/state_trait_icons/poor_soils.dds"
+	
+	modifier = {
+		building_group_bg_agriculture_throughput_add = -0.2
+		building_group_bg_logging_throughput_add = -0.2
+	}
+}
+
+state_trait_verdancy_weed_outbreak = { #verdancy aka magical overgrowths due to magical overexperimentation
+	icon = "gfx/interface/icons/state_trait_icons/poor_soils.dds"
+	
+	modifier = {
+		building_group_bg_agriculture_throughput_add = -0.3
+		building_group_bg_logging_throughput_add = -0.2
+	}
+}
+
+state_trait_lingering_verdancy = { #verdancy aka magical overgrowths due to magical overexperimentation
+	icon = "gfx/interface/icons/state_trait_icons/poor_soils.dds"
+	
+	disabling_technologies = { "gene_transmutation" }
+
+	modifier = {
+		building_group_bg_agriculture_throughput_add = -0.2
+		building_group_bg_logging_throughput_add = -0.2
+	}
+}
+
+state_trait_magically_enriched_soils = {	#quasi-placeholder. gained via eilisin MT
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+	
+	modifier = {
+		building_group_bg_agriculture_throughput_add = 0.2
+	}
+}
+
+state_trait_dalrfjall_prospecting = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_construction_mult = -0.15
+		state_infrastructure_mult = -0.15
+		building_iron_mine_throughput_add = 0.2
+		building_lead_mine_throughput_add = 0.2
+	}
+}
+
+#Ashwheat from EU4 ideas of Asheniande
+state_trait_ashwheat_fields = {	
+	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
+	
+	modifier = {
+		building_wheat_farm_throughput_add = 0.2
+	}
+}
+
+state_trait_terrman_flower_beatles_dwindling = {	#TODO: journal entry to restore to abundant or just remove malus
+	icon = "gfx/interface/icons/state_trait_icons/poor_soils.dds"
+	
+	modifier = {
+		building_dye_plantation_throughput_add = -0.2
+	}
+}
+
+state_trait_terrman_flower_beatles_abundant = {
+	icon = "gfx/interface/icons/state_trait_icons/unused/resources_exotic.dds"
+	
+	modifier = {
+		building_dye_plantation_throughput_add = 0.2
+	}
+}
+
+state_trait_greatwoods = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+	
+	modifier = {
+		building_group_bg_logging_throughput_add = 0.2
+	}
+}
+
+state_trait_titans_mountains = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_construction_mult = -0.15
+		state_infrastructure_mult = -0.15
+	}
+}
+
+state_trait_dragonheights = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		battle_offense_owned_province_mult = 0.2
+		battle_defense_owned_province_mult = 0.2
+		building_iron_mine_throughput_add = 0.10
+		building_lead_mine_throughput_add = 0.10
+		building_sulfur_mine_throughput_add = 0.10
+	}
+}
+
+state_trait_olavlund_fjords = {
+	icon = "gfx/interface/icons/state_trait_icons/fjords.dds"
+	
+	modifier = {
+		building_shipyard_throughput_add = 0.15
+		building_port_throughput_add = 0.15
+		# state_building_naval_base_max_level_add = 15
+		goods_output_electricity_mult = 0.2
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_northern_forests = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+	
+	modifier = {
+		building_group_bg_logging_throughput_add = 0.2
+	}
+}
+
+state_trait_giants_grave_fishing = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_fish.dds"
+	
+	modifier = {
+		building_group_bg_fishing_throughput_add = 0.2
+	}
+}
+
+state_trait_fjordsbay_fjords = {
+	icon = "gfx/interface/icons/state_trait_icons/fjords.dds"
+	
+	modifier = {
+		building_shipyard_throughput_add = 0.15
+		building_port_throughput_add = 0.15
+		# state_building_naval_base_max_level_add = 15
+		goods_output_electricity_mult = 0.2
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_baycodds_damestear_mine = {
+	icon = "gfx/interface/icons/state_trait_icons/turquoise.dds"
+	
+	modifier = {
+		building_group_bg_damestear_mining_throughput_add = 0.15
+	}
+}
+
+state_trait_storm_islands_fishing = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_fish.dds"
+	
+	modifier = {
+		building_group_bg_fishing_throughput_add = 0.3
+	}
+}
+
+state_trait_deepwoods = {
+    icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+
+    modifier = {
+        building_group_bg_agriculture_throughput_add = 0.15
+        building_group_bg_logging_throughput_add = 0.2
+        state_construction_mult = -0.2
+    }
+}
+
+state_trait_vernmen_krakeneer_base = {
+    icon = "gfx/interface/icons/state_trait_icons/resources_whales.dds"
+
+    modifier = {
+        building_group_bg_whaling_throughput_add = 0.25
+    }
+}
+
+state_trait_four_fey = {
+    icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+
+    modifier = {
+        battle_offense_owned_province_mult = 0.2
+		battle_defense_owned_province_mult = 0.2
+		building_group_bg_agriculture_throughput_add = 0.15
+		building_group_bg_logging_throughput_add = 0.2
+		state_construction_mult = -0.2
+		state_migration_pull_mult = -0.2
+    }
+}
+
+#Make sure to update cultural_community_values.txt after every new harbors trait
+
+state_trait_damesear_dockyards = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+
+	modifier = {
+		building_shipyard_throughput_add = 0.15
+		building_port_throughput_add = 0.15
+		state_trade_capacity_mult = 0.25
+		# state_building_naval_base_max_level_add = 15
+		state_market_access_price_impact = 0.05
+		state_infrastructure_add = 10
+	}
+}
+
+state_trait_ur_samozd = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+	modifier = {
+		building_shipyard_throughput_add = 0.20
+		building_port_throughput_add = 0.20
+		# state_building_naval_base_max_level_add = 20
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_westport = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+
+	modifier = {
+		building_shipyard_throughput_add = 0.1
+		building_port_throughput_add = 0.1
+		state_trade_capacity_mult = 0.15
+		# state_building_naval_base_max_level_add = 10
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_lencesk_seawall = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+
+	modifier = {
+		building_shipyard_throughput_add = 0.1
+		building_port_throughput_add = 0.1
+		state_trade_capacity_mult = 0.15
+		# state_building_naval_base_max_level_add = 10
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_sornbay = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+
+	modifier = {
+		building_shipyard_throughput_add = 0.1
+		building_port_throughput_add = 0.1
+		state_trade_capacity_mult = 0.15
+		# state_building_naval_base_max_level_add = 10
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_wineport = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+
+	modifier = {
+		building_shipyard_throughput_add = 0.1
+		building_port_throughput_add = 0.1
+		state_trade_capacity_mult = 0.15
+		# state_building_naval_base_max_level_add = 10
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_oldport = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+
+	modifier = {
+		building_shipyard_throughput_add = 0.1
+		building_port_throughput_add = 0.1
+		state_trade_capacity_mult = 0.15
+		# state_building_naval_base_max_level_add = 10
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_thorndocks = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+
+	modifier = {
+		building_shipyard_throughput_add = 0.1
+		building_port_throughput_add = 0.1
+		state_trade_capacity_mult = 0.15
+		# state_building_naval_base_max_level_add = 10
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_portnamm_bay = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+
+	modifier = {
+		building_shipyard_throughput_add = 0.1
+		building_port_throughput_add = 0.1
+		state_trade_capacity_mult = 0.15
+		# state_building_naval_base_max_level_add = 10
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_beepeck_bay = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+
+	modifier = {
+		building_shipyard_throughput_add = 0.1
+		building_port_throughput_add = 0.1
+		state_trade_capacity_mult = 0.15
+		# state_building_naval_base_max_level_add = 10
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_oddansbay = {
+	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
+
+	modifier = {
+		building_shipyard_throughput_add = 0.1
+		building_port_throughput_add = 0.1
+		state_trade_capacity_mult = 0.15
+		# state_building_naval_base_max_level_add = 10
+		state_market_access_price_impact = 0.05
+	}
+}

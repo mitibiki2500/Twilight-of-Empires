@@ -1,0 +1,121 @@
+﻿COUNTRIES = {
+	c:B98 ?= {
+		effect_starting_technology_tier_2_tech = yes
+
+		add_technology_researched = egalitarianism
+		add_technology_researched = corporate_charters
+		add_technology_researched = punch_card_artificery
+
+		effect_starting_politics_liberal = yes
+
+		set_market_capital = STATE_ISOBELIN
+		
+#		set_tariffs_export_priority = g:fabric
+#		set_tariffs_import_priority = g:dye
+		
+		activate_law = law_type:law_parliamentary_republic
+		activate_law = law_type:law_census_voting
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_total_separation
+		activate_law = law_type:law_elected_bureaucrats
+		activate_law = law_type:law_national_militia
+		# No home affairs
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		# No colonial affairs
+		activate_law = law_type:law_local_police
+		activate_law = law_type:law_private_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_nation_of_artifice
+		
+		activate_law = law_type:law_right_of_assembly
+		activate_law = law_type:law_tenant_farmers
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_women_own_property
+		# No social security
+		# No migration controls
+		activate_law = law_type:law_legacy_slavery
+		
+		set_next_election_date = 1822.07.1
+
+		#Harmonist Party
+		ig:ig_intelligentsia ?= {
+			add_ruling_interest_group = yes
+		}
+
+		add_journal_entry = {	#can be added after Lorentish colonial independence when that's in
+			type = je_spoorland_concord
+		}
+
+		set_variable = free_elections_var
+		active_law:lawgroup_distribution_of_power ?= { # Elections have been fair at the Concord level, and Harmonists wouldn't really be able to rig them even to save themselves
+			add_amendment = {
+				type = amendment_tradition_of_free_elections
+				sponsor = PREV.ig:ig_intelligentsia
+			}
+		}
+
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 2
+		}
+
+		add_company = company_type:company_arangreen
+		company:company_arangreen = {
+			set_company_establishment_date = 1589.1.1
+			set_company_state_region = s:STATE_CESTIRMARK
+		}
+
+		# Magic
+		add_technology_researched = cannorian_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_mass_plant_growth
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_evocation_corps
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_magical_feasts
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 1
+		}
+	}
+}

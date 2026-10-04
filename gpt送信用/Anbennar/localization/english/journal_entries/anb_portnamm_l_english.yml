@@ -1,0 +1,142 @@
+﻿l_english:
+## JE6: GOLDEN AGE OF ART ##
+ je_portnamm_golden_age_of_art:0 "Golden Age of Arts in Portnamm"
+ je_portnamm_golden_age_of_art_reason:0 "As the thunder of the Blackpowder Wars leveled old thrones and choked the continent in revolutionary soot, Portnamm remained a serene enclave of operatic arias and gilded playhouses, its borders firmly closed to the march of boots. In these uncertain years, the city-state's primary mission was to ensure that the fires of neighboring conflicts never reached its renowned art academies.\n\nTo gain progress:\nBe top producer of fine arts\nHave good relations with Great Powers\nForm Portnammer Association of Fine Arts\nHave no migration controls\nHave multiculturalism\n\nTo lose progress:\nBe at war\nNot a top producer of fine arts\nHave bad relations with Great Powers\nHave closed borders or migration controls\nHave ethnostate, national supremacy or racial segregation\n\nThe country gets bonus to intelligentsia attraction and arts throughput according to the bar progress."
+
+ portnamm_age_of_art_bar_name:0 "Patronage of the Arts"
+ portnamm_age_of_art_bar_desc:0 "The level of support for free thoughts and arts within Portnamm"
+ portnamm_age_of_art_tt:0 "The progress bar reaches 0, or something unexpected happens..."
+
+ # Progress bar modifier tooltips
+ portnamm_age_of_art_at_war_tt:0 "Being engaged in war"
+ portnamm_age_of_art_not_top_producer_tt:0 "Not being a top 10 producer of fine arts"
+ portnamm_age_of_art_closed_borders_tt:0 "Having closed borders"
+ portnamm_age_of_art_migration_control_tt:0 "Having migration controls"
+ portnamm_age_of_art_ethnostate_tt:0 "Having ethnostate"
+ portnamm_age_of_art_national_supremacy_tt:0 "Having national supremacy"
+ portnamm_age_of_art_racial_segregation_tt:0 "Having racial segregation"
+ portnamm_age_of_art_hostile_great_powers_tt:0 "For [concept_great_power] with relations less than -30"
+ portnamm_age_of_art_friendly_great_powers_tt:0 "For [concept_great_power] with relations greater than 30"
+ portnamm_age_of_art_multiculturalism_tt:0 "Having multiculturalism"
+ portnamm_age_of_art_no_migration_control_tt:0 "Having no migration controls"
+ portnamm_age_of_art_fine_arts_company_tt:0 "Having the Portnammer Association of Playwrights company and it is prosperous"
+ portnamm_age_of_art_secondary_producer_tt:0 "Being the 2nd or 3rd largest supplier of fine arts"
+ portnamm_age_of_art_primary_producer_tt:0 "Being the 1st supplier of fine arts"
+ portnamm_age_of_art_directorate_active_tt:0 "Operation of the Directorate"
+ portnamm_age_of_art_directorate_companies_active_tt:0 "Directorate companies active"
+
+ # Modifiers
+ portnamm_age_of_art_active_modifier:0 "Golden Age of Arts"
+ portnamm_industrialists_ascendancy:0 "Industrialists Ascendancy"
+
+ ## JE1: RISE OF GNOME INDUSTRIALISTS ##
+ je_portnamm_rise_of_industrialists:0 "Rise of Gnome Industrialists"
+ je_portnamm_rise_of_industrialists_reason:0 "Gnomes are always the smartest, after all – this gift doesn't exclusively belong to artificers from the Hierarchy. As tension increases between Lorent and the Hierarchy, expanding our business operations in Lorent could bring us unthinkable wealth.\n\nA few visionaries from the Portroy Merchant Guild have thus approached us with a proposal. If we can secure their position in our government, they'll convince Lorentish officials to accept the trade deal, by doubtless sordid means that we’d prefer not to hear about."
+ portnamm_je1_active_modifier:0 "Rise of Gnome Industrialists"
+ portnamm_je1_complete_tt:0 "The Lorent investment pact has been secured"
+ portnamm_je1_fail_more_than_one_state_tt:0 "Portnamm has more than one state"
+ portnamm_je1_tech_requirement_tt:0 "We have missed the opportunity to lead technology advancement in the Lorentish market"
+
+ # JE1 Scripted Button
+ portnamm_je1_lorent_pact_button_name:0 "Secure Lorent Investment Deal"
+ portnamm_je1_lorent_pact_button_desc:0 "Use our technological advantage and diplomatic connections to convince Lorent to accept our investment rights."
+ portnamm_je1_button_already_used_tt:0 "The Lorent investment pact hasn't been secured"
+ portnamm_je1_button_make_the_pact_tt:0 "Create a special treaty of investment that can't be manually broken on Lorent."
+ treaty_name_portnamm_investment_lorent:0 "Treaty of Portnamm"
+
+ ## JE2: THE SOVEREIGN LEDGER DIRECTORATE ##
+ portnamm_je_activate_tt:0 "The time has come."
+ je_portnamm_sovereign_ledger:0 "The Sovereign Ledger Directorate"
+ je_portnamm_sovereign_ledger_reason:0 "The flourishing of the Portroy Merchant Guild led ultimately to the formation of the Sovereign Ledger Directorate. The Directorate was initially an institution that organized and coordinated our capitalists operating in the Lorentish market. With key positions occupied by representatives from the Guild, the Directorate’s culture was shaped in the image of the Guild which preceded it — namely, the axiom that more profit is the only thing that ever matters.\n\nWhile neighboring great powers measured strength in soil and soldiers, the Directorate quietly secured the patents and mining-rights that would soon make every foreign factory a subsidiary of gnomish ambition. It was the dawn of the Great Calculation — an era where the stroke of a pen across a ledger became more devastating than the swing of a conqueror's sword.\n\n#blue You can see the amount of owned foreign GDP from the country tab.\nYou get +1 construction section max level and +6 prestige per 2M extracted wealth.\nYou get a series of unique directorate companies, you may use a number of them based on extracted foreign wealth. 1 at 10M, 2 at 30M, 3 at 60M, 4 at 150M, 5 at 300M.\nCalculation behind the scene is based on monthly pulse, so do expect some mismatch.\nUpon JE completion, you keep the modifier but it won't keep updating. #"
+ portnamm_je2_active_modifier:0 "Sovereign Ledger Directorate"
+ portnamm_je2_permanent_modifier:0 "Legacy of the Sovereign Ledger"
+ portnamm_je2_complete_sol_tt:0 "Average standard of living is at least 35"
+ portnamm_je2_complete_wealth_tt:0 "Extracted foreign wealth is at least 1 Billion"
+ portnamm_je2_fail_laws_tt:0 "We've failed to ensure the laws required by the directorate"
+
+ ## JE3: DIRECTORATISM REFORMS ##
+ je_portnamm_directoratism_reforms:0 "Directoratism Reforms"
+ je_portnamm_directoratism_reforms_reason:0 "Executives of the Directorate have come to us today with a list of laws they wish to see. It's not a proposal, it's a demand. With their growing influence in the government, we have to accept, or face the unbearable consequences."
+ portnamm_je3_fail_timeout_tt:0 "#R The deadline for reforms has passed#"
+
+ ## JE4: DIRECTORATISM IDEAS ##
+ je_portnamm_directoratism_ideas:0 "Directoratism Ideas"
+ je_portnamm_directoratism_ideas_reason:0 "At the moment, the Directorate doesn't even care to intervene in the day to day business of government anymore, as everyone knows who ultimately determines the agenda. Knowing the consequence of not doing so, all officials reflexively consider the interest of the Directorate first whenever they make a decision."
+ portnamm_je4_active_modifier:0 "Directoratism Ideas"
+
+ ## JE5: GROWING TENSION IN FACTORIES ##
+ je_portnamm_growing_tension:0 "Growing Tension in Factories"
+ je_portnamm_growing_tension_reason:0 "As the Directorate's monopoly tightened, foreign industrial hubs grew restless under the crushing weight of depressed wages and exported poverty, stoking a volatile resentment in nations that possessed the military might Portnamm lacked. Within the vault-walls of the home country, meanwhile, the traditional gnomish work ethic withered as the citizenry transitioned into a pure rentier class, preferring to manage silken portfolios rather than touch a grease-stained gear.\n\nThis great divergence left Portnamm in a gilded paradox; they owned the world's production but no longer knew how to produce, while those who did the labor were increasingly sharpening their bayonets.\n\n#blue You get penalties to throughput of most production buildings, linear with respect to the percentage of population being capitalists.\n\nAll other countries get modifiers to salary, minimum salary and radicals from SoL changes. Linear with respect to percentage of GDP controlled by Portnamm. Also linear with respect to actual amount of Portnamm controlled GDP but capped at 50M. With 100% control and at least 50M total amount, it's -50% salary, -100% minimum salary and 50% radicals from SoL change.#"
+ portnamm_directorate_company_active_tt:0 "At least one directorate company is active"
+
+ # JE5 Modifiers
+ portnamm_je5_throughput_penalty:0 "Rentier Economy"
+ portnamm_je5_foreign_exploitation:0 "Directorate Exploitation"
+ portnamm_je5_foreign_exploitation_halved:0 "Eased Directorate Exploitation"
+ portnamm_je5_industrialist_penalty:0 "Concessions to Foreign Workers"
+
+ # JE5 Buttons
+ portnamm_je5_half_exploitation_button_name:0 "Ease Foreign Exploitation"
+ portnamm_je5_half_exploitation_button_desc:0 "Halve the exploitation modifiers on foreign states, but incur penalties to Industrialists IG power and approval."
+ portnamm_je5_cancel_half_button_name:0 "Resume Full Exploitation"
+ portnamm_je5_cancel_half_button_desc:0 "Cancel the easing of exploitation and remove the Industrialists penalty."
+
+ # Company requirement tooltips
+ portnamm_directorate_company_requirement_tt:0 "The Sovereign Ledger Directorate is in operation"
+ portnamm_directorate_company_slot_tt:0 "Sufficient extracted foreign wealth to unlock this Directorate branch"
+
+ # Other modifiers
+ portnamm_wealth_extraction_impact:0 "Capital Flowing in!"
+ portnamm_je1_lorent_rejection_cost:0 "Rejected Portnamm Investment Deal"
+
+ ## EVENTS ##
+ anb_portnamm_events.1.t:0 "A Purely Fantasy Timeline"
+ anb_portnamm_events.1.d:0 "Due to recent dramatic changes in the situation, the proposal from the merchants no longer makes sense."
+ anb_portnamm_events.1.f:0 "We had it all mapped out, you know. We planned a campaign not with armies or cannons, but with ink, paper, and the sheer weight of compound interest. Lorent could have been ours—all of it—bought and paid for, if only they had listened and took action. Now I can only sit here, watching the ledgers collect dust while fools play with their little flags, utterly ignorant of the empire we could have built."
+ anb_portnamm_events.1.a:0 "Daydreamers."
+
+ anb_portnamm_events.2.t:0 "The Calculated Coup"
+ anb_portnamm_events.2.d:0 "Unsettled by our recent actions, the Directorate has decided that our current government is not to be trusted. Behind dark curtains and inside closed doors, a conspiracy is quietly unfolding."
+ anb_portnamm_events.2.f:0 "Outraged that the government sought to tax the Directorate’s offshore ventures to fund the crumbling arts, the syndics met in the muffled silence of private vaults to map the nation's financial anatomy. They realized that a revolution did not require barricades or blood, but simply the coordinated freezing of the state’s payroll and the foreclosure of the ministers' private estates. Mere hours after the Directorate gave the signal, the government fell - not to a sword, but because it could no longer afford the ink to sign its own decrees."
+ anb_portnamm_events.2.a:0 "How will this unfold?"
+
+ anb_portnamm_events.21.t:0 "Lorentish Army Approaching!"
+ anb_portnamm_events.21.d:0 "Exploiting the paralyzed state of Portnamm’s leadership during the Directorate’s shadow war, the Empire of Lorent marched its ironclad regiments through the city’s marble arches under the hollow pretense of protecting regional stability."
+ anb_portnamm_events.21.f:0 "The hobnailed boots of foreign infantry now echo across the mosaic floors of the grand theaters, the sanctuary of culture rendered a mere garrison-outpost of imperial ambition. The gnomes’ ledgers are seized, and one thing is clear; they will never again have the chance to achieve their bookkeeper’s fantasy . A bitter lesson indeed; a vault is only as strong as the army that stands before its door."
+ anb_portnamm_events.21.a:0 "What?!"
+
+ anb_portnamm_events.3.t:0 "The Master of the Ledger"
+ anb_portnamm_events.3.d:0 "The Sovereign Ledger Directorate has achieved the once unthinkable: total economic supremacy. A massive fortune in foreign wealth now fills our vaults, and our citizens want for nothing. Without firing a single shot, Portnamm has subordinated the industry of our neighbors, turning mighty empires into our financial subjects."
+ anb_portnamm_events.3.f:0 "The Great Calculation is complete. Every factory across the border works for us, every train carries goods owned by us, and every foreign ruler pays us his dues in silence."
+ anb_portnamm_events.3.a:0 "The world is ours."
+
+ anb_portnamm_events.5.t:0 "Unrest in the Factories"
+ anb_portnamm_events.5.d:0 "While the Directorate showers our investors in unimaginable wealth from abroad, those few traditional gnomes still toiling away in our own domestic factories are growing violently resentful. They see their neighbors turn into a pampered rentier class, while they themselves are left to inhale soot and manage gears for wages that pale in comparison to overseas dividends. The inequality within our own borders is becoming unsustainable."
+ anb_portnamm_events.5.f:0 ""Why should we break our backs to keep the home fires burning, while the syndics sip imported wine and shuffle papers?" reads an angry pamphlet distributed outside a local factory. The traditional gnomish work ethic is dying, suffocated by the very success of our foreign monopolies."
+ anb_portnamm_events.5.a:0 "Troubling indeed."
+
+ anb_portnamm_events.6.t:0 "Fate of the Overseas Workers"
+ anb_portnamm_events.6.d:0 "With the Directorate's supremacy now eternally secured, the persistent unrest in our foreign factories is no longer a threat, but merely a question of policy. We can easily afford to lift the brutal wage suppression that fueled our early rise, yet many syndics insist that maintaining our extreme margins is a matter of principle."
+ anb_portnamm_events.6.f:0 "Charity has no line item on the Sovereign Ledger, but neither does unnecessary cruelty. The board remains divided on what maximizing long-term stability truly entails."
+ anb_portnamm_events.6.a:0 "Let their wages rise. We have enough."
+ anb_portnamm_events.6.b:0 "The extraction must remain absolute."
+
+ anb_portnamm_events.10.t:0 "Suspicious Trade Deal from Portnamm"
+ anb_portnamm_events.10.d:0 "The city-state of Portnamm has approached us with an extraordinary proposal. Their 'Sovereign Ledger Directorate' offers massive capital investment in our industries, promising technological marvels and unprecedented growth. The terms, however, heavily favor their investors, essentially ceding economic control of these new enterprises to gnomish syndics."
+ anb_portnamm_events.10.f:0 "The gnomes speak of mutual prosperity, but one cannot look at their meticulously drafted contracts without feeling as though one is signing away more than just land rights."
+ anb_portnamm_events.10.a:0 "What could ever go wrong?"
+ anb_portnamm_events.10.b:0 "NO, PLEASE, NO!"
+
+
+ ## IDEOLOGIES ##
+ ideology_directoratism:0 "Directoratism"
+ ideology_directoratism_desc:0 "#lore Born in the counting houses of Portnamm's Sovereign Ledger Directorate, Directoratism holds that a society's highest purpose is the efficient extraction and accumulation of wealth by educated capitalist elites. It champions private enterprise in all sectors of life — education, health, and welfare — while demanding a disciplined and meritocratic society that values competence over birth.#!"
+ ideology_vaultarchy:0 "Vaultarchy"
+ ideology_vaultarchy_desc:0 "#lore Vaultarchy is the economic philosophy of Portnamm's gnomish industrialists, not dissimilar to Laissez-Faire, but with the additional maxim that nothing should cross borders other than goods and capital. With the wealth generated abroad flowing back to the homeland, a stronger sense of exclusivity is established between native citizens and the lesser people abroad.#!"
+
+ ## DIPLOMATIC PACT ##
+ portnamm_investment_treaty:0 "Portnamm Investment Rights"
+ portnamm_investment_treaty_desc: "• Establishes unilateral [concept_foreign_investment_rights] in a [concept_country] allowing it to construct [Concept('concept_building', '$concept_buildings$')] in the other $concept_country$.\n• Source country of this treaty can not break the treaty themselves."
+ portnamm_investment_treaty_effects_desc: "• Establishes unilateral [concept_foreign_investment_rights] in a [concept_country] allowing it to construct [Concept('concept_building', '$concept_buildings$')] in the other $concept_country$.\n• Source country of this treaty can not break the treaty themselves."
+ portnamm_investment_treaty_article_short_desc: "Allows [TARGET_COUNTRY.GetNameNoFormatting] to build in [SOURCE_COUNTRY.GetNameNoFormatting]"
+

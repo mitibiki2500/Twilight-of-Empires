@@ -1,0 +1,233 @@
+﻿
+multiple_primary_culture_enforcement_country = { #feel free to reduce the scope of this effect if it's causing unintended culture swaps.  It only selects up to 3 cultures, which could be expanded upon as well
+    if = {
+        limit = {
+            OR = {
+                any_primary_culture = {
+                    count = 2
+                }
+            }
+        }
+        random_primary_culture = {
+        save_scope_as = primary_culture_1
+        }
+        random_primary_culture = {
+            limit = {
+                NOT = { scope:primary_culture_1 ?= this }
+            }
+            save_scope_as = primary_culture_2
+        }
+        every_scope_character = {
+            limit = {
+                is_historical = no
+                OR = {
+                    has_role_of_type = politician
+                    has_role_of_type = general
+                    has_role_of_type = admiral
+                }
+
+            }
+            random_list = {
+                50 = {
+                    change_character_culture = scope:primary_culture_1
+                }
+                50 = {
+                    change_character_culture = scope:primary_culture_2
+                }
+            }
+        }
+        every_scope_pop = { #reduces instances of unaccepted aristocrats
+            limit = {
+                is_pop_type = aristocrats
+            }
+            change_pop_culture = {
+                    target = scope:primary_culture_2
+                    value = 0.3
+            }
+            change_pop_culture = {
+                    target = scope:primary_culture_1
+                    value = 0.3
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            any_primary_culture = {
+                count >= 3
+            }
+            
+        }
+        random_primary_culture = {
+            save_scope_as = primary_culture_1
+        }
+        random_primary_culture = {
+            limit = {
+                NOT = { scope:primary_culture_1 ?= this }
+            }
+            save_scope_as = primary_culture_2
+        }
+        random_primary_culture = {
+            limit = {
+                NOR = { 
+                    scope:primary_culture_1 ?= this
+                    scope:primary_culture_2 ?= this
+                }
+            }
+            save_scope_as = primary_culture_3
+        }
+        every_scope_character = {
+            limit = {
+                is_historical = no
+                OR = {
+                    has_role_of_type = politician
+                    has_role_of_type = general
+                    has_role_of_type = admiral
+                }
+
+            }
+            random_list = {
+                50 = {
+                    change_character_culture = scope:primary_culture_1
+                }
+                50 = {
+                    change_character_culture = scope:primary_culture_2
+                }
+                50 = {
+                    change_character_culture = scope:primary_culture_3
+                }
+            }
+        }
+        every_scope_pop = { #reduces instances of unaccepted aristocrats
+            limit = {
+                is_pop_type = aristocrats
+            }
+            change_pop_culture = {
+                    target = scope:primary_culture_2
+                    value = 0.3
+            }
+            change_pop_culture = {
+                    target = scope:primary_culture_1
+                    value = 0.3
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            OR = {
+                c:A01 ?= this
+            }
+        }
+        capital = {
+            if = {
+                limit = {
+                    any_scope_culture = {
+                        has_discrimination_trait = heritage_anbennarian
+                        count >= 3
+                    }
+                }
+                random_scope_culture = {
+                    limit = {
+                        has_discrimination_trait = heritage_anbennarian
+                    }
+                    save_scope_as = anbennarian_culture_1
+                }
+                random_scope_culture = {
+                    limit = {
+                        has_discrimination_trait = heritage_anbennarian
+                        NOT = { scope:anbennarian_culture_1 ?= this }
+                    }
+                    save_scope_as = anbennarian_culture_2
+                }
+                random_scope_culture = {
+                    limit = {
+                        has_discrimination_trait = heritage_anbennarian
+                        NOT = { scope:anbennarian_culture_1 ?= this }
+                        NOT = { scope:anbennarian_culture_2 ?= this }
+
+                    }
+                    save_scope_as = anbennarian_culture_3
+                }	
+                owner = { set_variable = it_aint_broke }
+            }
+        }
+        if = {
+            limit = {
+                has_variable = it_aint_broke #checking the previous effect was performed correctly
+            }
+            every_scope_character = {
+                limit = {
+                    is_historical = no
+                    OR = {
+                        has_role_of_type = politician
+                        has_role_of_type = general
+                        has_role_of_type = admiral
+                    }
+
+                }
+                random_list = {
+                    50 = {
+                        change_character_culture = scope:anbennarian_culture_1
+                    }
+                    50 = {
+                        change_character_culture = scope:anbennarian_culture_2
+                    }
+                    50 = {
+                        change_character_culture = scope:anbennarian_culture_3
+                    }
+                    35 = {
+                        change_character_culture = cu:east_damerian
+                    }
+                    30 = {
+                        change_character_culture = cu:esmari
+                    }
+                    75 = {
+                        change_character_culture = cu:costine
+                    }
+                }
+            }
+            remove_variable = it_aint_broke
+        }
+        else = {
+            every_scope_character = {
+                limit = {
+                    is_historical = no
+                    OR = {
+                        has_role_of_type = politician
+                        has_role_of_type = general
+                        has_role_of_type = admiral
+                    }
+
+                }
+                random_list = {
+                    35 = {
+                        change_character_culture = cu:east_damerian
+                    }
+                    30 = {
+                        change_character_culture = cu:esmari
+                    }
+                    75 = {
+                        change_character_culture = cu:costine
+                    }
+                }
+            }
+        }
+        every_scope_pop = { #reduces instances of unaccepted aristocrats
+            limit = {
+                is_pop_type = aristocrats
+                NOT = { has_pop_culture = east_damerian }
+            }
+            change_pop_culture = {
+                    target = cu:east_damerian
+                    value = 0.3
+            }
+            change_pop_culture = {
+                    target = cu:costine
+                    value = 0.3
+            }
+            change_pop_culture = {
+                    target = cu:wexonard
+                    value = 0.1
+            }
+        }
+    }
+}

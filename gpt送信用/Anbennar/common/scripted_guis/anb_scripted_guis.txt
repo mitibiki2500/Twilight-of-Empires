@@ -1,0 +1,385 @@
+﻿production_magic_spell_activate_targeted_level_1 = {
+	scope = country
+	effect = {
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = { name = production_magic_spell_changing_level }
+	}
+}
+production_magic_spell_activate_targeted_level_2 = {
+	scope = country
+	effect = {
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 2
+		}
+		set_variable = { name = production_magic_spell_changing_level }
+    }
+}
+production_magic_spell_activate_targeted_level_3 = {
+	scope = country
+	effect = {
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 3
+		}
+		set_variable = { name = production_magic_spell_changing_level }
+    }
+}
+production_magic_spell_activate_targeted_level_4 = {
+	scope = country
+	effect = {
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 4
+		}
+		set_variable = { name = production_magic_spell_changing_level }
+    }
+}
+production_magic_spell_activate_targeted_level_5 = {
+    scope = country
+	effect = {
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 5
+		}
+		set_variable = { name = production_magic_spell_changing_level }
+    }
+}
+military_magic_spell_activate_targeted_level_1 = {
+	scope = country
+	effect = {
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = { name = military_magic_spell_changing_level }
+    }
+}
+military_magic_spell_activate_targeted_level_2 = {
+    scope = country
+	effect = {
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 2
+		}
+		set_variable = { name = military_magic_spell_changing_level }
+    }
+}
+military_magic_spell_activate_targeted_level_3 = {
+	scope = country
+	effect = {
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 3
+		}
+		set_variable = { name = military_magic_spell_changing_level }
+    }
+}
+military_magic_spell_activate_targeted_level_4 = {
+    scope = country
+	effect = {
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 4
+		}
+		set_variable = { name = military_magic_spell_changing_level }
+    }
+}
+military_magic_spell_activate_targeted_level_5 = {
+    scope = country
+	effect = {
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 5
+		}
+		set_variable = { name = military_magic_spell_changing_level }
+    }
+}
+society_magic_spell_activate_targeted_level_1 = {
+	scope = country
+	effect = {
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = { name = society_magic_spell_changing_level }
+    }
+}
+society_magic_spell_activate_targeted_level_2 = {
+    scope = country
+	effect = {
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 2
+		}
+		set_variable = { name = society_magic_spell_changing_level }
+    }
+}
+society_magic_spell_activate_targeted_level_3 = {
+	scope = country
+	effect = {
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 3
+		}
+		set_variable = { name = society_magic_spell_changing_level }
+    }
+}
+society_magic_spell_activate_targeted_level_4 = {
+	scope = country
+	effect = {
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 4
+		}
+		set_variable = { name = society_magic_spell_changing_level }
+    }
+}
+society_magic_spell_activate_targeted_level_5 = {
+	scope = country
+	effect = {
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 5
+		}
+		set_variable = { name = society_magic_spell_changing_level }
+    }
+}
+
+production_magic_spell_stop_level_change = {
+	scope = country
+	effect = {
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = var:production_magic_spell_level_floor
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = var:production_magic_spell_level_floor
+		}
+		remove_variable = production_magic_spell_changing_level
+	}	
+}
+
+military_magic_spell_stop_level_change = {
+	scope = country
+	effect = {
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = var:military_magic_spell_level_floor
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = var:military_magic_spell_level_floor
+		}
+		remove_variable = military_magic_spell_changing_level
+	}	
+}
+
+society_magic_spell_stop_level_change = {
+	scope = country
+	effect = {
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = var:society_magic_spell_level_floor
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = var:society_magic_spell_level_floor
+		}
+		remove_variable = society_magic_spell_changing_level
+	}	
+}
+
+spell_changing_button_stuff = {
+	scope = country
+	saved_scopes = { spellname_flag }
+	effect = {
+		if = {
+			limit = { 
+				any_in_list = {
+					variable = possible_production_spell_flag
+					THIS = scope:spellname_flag
+				}
+			}
+			if = {
+				limit = { scope:spellname_flag = flag:no_production_spell }
+				disable_production_spell = yes
+			}
+			else = {
+				set_variable = {
+					name = production_magic_spell
+					value = scope:spellname_flag
+				}
+				set_variable = {
+					name = production_magic_spell_level_floor
+					value = { 
+						value = var:production_magic_spell_level_floor
+						min = 1
+					}
+				}
+				set_variable = {
+					name = production_magic_spell_level
+					value = var:production_magic_spell_level_floor
+				}
+				set_variable = {
+					name = production_magic_targeted_spell_level
+					value = var:production_magic_spell_level_floor
+				}
+				remove_variable = production_magic_spell_changing_level
+				update_production_spell = yes
+			}
+		}
+		else_if = {
+			limit = { 
+				any_in_list = {
+					variable = possible_military_spell_flag
+					THIS = scope:spellname_flag
+				}
+			}
+			if = {
+				limit = { scope:spellname_flag = flag:no_military_spell }
+				disable_military_spell = yes
+			}
+			else = {
+				set_variable = {
+					name = military_magic_spell_level_floor
+					value = { 
+						value = var:military_magic_spell_level_floor
+						min = 1
+					}
+				}
+				set_variable = {
+					name = military_magic_spell
+					value = scope:spellname_flag
+				}
+				set_variable = {
+					name = military_magic_spell_level
+					value = var:military_magic_spell_level_floor
+				}
+				set_variable = {
+					name = military_magic_targeted_spell_level
+					value = var:military_magic_spell_level_floor
+				}
+				remove_variable = military_magic_spell_changing_level
+				update_military_spell = yes
+			}
+		}
+		else_if = {
+			limit = { 
+				any_in_list = {
+					variable = possible_society_spell_flag
+					THIS = scope:spellname_flag
+				}
+			}
+			if = {
+				limit = { scope:spellname_flag = flag:no_society_spell }
+				disable_society_spell = yes
+			}
+			else = {
+				set_variable = {
+					name = society_magic_spell_level_floor
+					value = { 
+						value = var:society_magic_spell_level_floor
+						min = 1
+					}
+				}
+				set_variable = {
+					name = society_magic_spell
+					value = scope:spellname_flag
+				}
+				set_variable = {
+					name = society_magic_spell_level
+					value = var:society_magic_spell_level_floor
+				}
+				set_variable = {
+					name = society_magic_targeted_spell_level
+					value = var:society_magic_spell_level_floor
+				}
+				
+				remove_variable = society_magic_spell_changing_level
+				update_society_spell = yes
+			}
+		}
+		# commenting out for now for easier testing / so we can get a smoother cooldown
+		# add_modifier = {
+		# 	name = country_magical_spell_cooldown
+		# 	weeks = 40
+		# }
+	}
+	is_valid = {
+    
+		NOT = { has_modifier = country_magical_spell_cooldown }
+
+		OR = {
+			
+			AND = {
+				any_in_list = {
+					variable = possible_production_spell_flag
+					THIS = scope:spellname_flag
+				}
+
+				NOT = {
+                	OR = {
+						AND = {
+							has_variable = production_magic_spell
+							scope:spellname_flag ?= var:production_magic_spell 
+						}
+			
+						AND = {
+                        	NOT = { has_variable = production_magic_spell }
+                        	scope:spellname_flag = flag:no_production_spell
+                    	}
+					}
+				}
+			}
+
+		
+			AND = {
+				any_in_list = {
+					variable = possible_military_spell_flag
+					THIS = scope:spellname_flag
+				}
+
+				NOT = {
+                	OR = {
+						AND = {
+							has_variable = military_magic_spell
+							scope:spellname_flag ?= var:military_magic_spell 
+						}
+			
+						AND = {
+                        	NOT = { has_variable = military_magic_spell }
+                        	scope:spellname_flag = flag:no_military_spell
+                    	}
+					}
+				}
+			}
+
+		
+			AND = {
+				any_in_list = {
+					variable = possible_society_spell_flag
+					THIS = scope:spellname_flag
+				}
+				NOT = {
+                	OR = {
+						AND = {
+							has_variable = society_magic_spell
+							scope:spellname_flag ?= var:society_magic_spell 
+						}
+			
+						AND = {
+                        	NOT = { has_variable = society_magic_spell }
+                        	scope:spellname_flag = flag:no_society_spell
+                    	}
+					}
+				}
+			}
+		}
+	}
+	
+}

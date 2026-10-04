@@ -1,0 +1,54 @@
+﻿## odd file name is to make sure the buildings are in the right order + are grouped with other agro buildings
+building_serpentbloom_farm = {
+	building_group = bg_serpentbloom_farms
+	
+	icon = "gfx/interface/icons/building_icons/serpentbloom_farms.dds"
+
+	city_type = farm
+	levels_per_mesh = 0
+
+	unlocking_technologies = {
+		enclosure
+	}
+
+	production_method_groups = {
+		pmg_base_building_serpentbloom_farm
+		pmg_secondary_building_serpentbloom_farm
+		pmg_enhancements_farm
+		pmg_harvesting_process_building_serpentbloom_farm
+	}
+
+	required_construction = construction_cost_low
+	
+	terrain_manipulator = farmland_wheat
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_farming.dds"
+}
+
+building_mushroom_farm = {
+	building_group = bg_mushroom_farms
+	
+	icon = "gfx/interface/icons/building_icons/mushroom_farms.dds"
+
+	city_type = none
+	levels_per_mesh = 0
+
+	unlocking_technologies = {
+		enclosure
+	}
+
+	production_method_groups = {
+		pmg_base_building_mushroom_farm
+		pmg_secondary_building_mushroom_farm
+		pmg_enhancements_farm
+		pmg_harvesting_process_building_mushroom_farm
+	}
+
+	required_construction = construction_cost_low
+	
+	terrain_manipulator = farmland_rye
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_farming.dds"
+}

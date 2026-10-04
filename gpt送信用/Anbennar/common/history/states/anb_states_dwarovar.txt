@@ -1,0 +1,943 @@
+﻿STATES = {
+
+	####Holds
+	s:STATE_KRAKDHUMVROR = {
+		create_state = {
+			country = c:D02
+			owned_provinces = { "xACA108" "xADB048" "xAEA610" "xAEAB19" "xB3AE09" "xB9C930" "xBACE3A" "xBBD644" "xC1C927" "xC1D84A" "xC2C820" "xC3C00A" "xC4C412" "xC5C719" "xCBE152" "xCBE644" "xCBE64D" "xCBE64E" "xA49A0B" "x9D9D26" "xB7AC29" "xC8BF21" "xA2B215" "x80B811" "x78B024" "xB0BE1A" "xB6BF1F" "xB4D363" "xCFE96D" "x89CC35" "xD1D50D" "x9FE4C0" }
+		}
+		add_homeland = cu:quartz_dwarf
+	}
+	s:STATE_DUR_VAZHATUN = {
+		create_state = {
+			country = c:D03
+			owned_provinces = { "xE6F396" "xE6F62B" "xE7E741" "xE7E92B" "xE7EB2B" "xE8E45C" "xE8FBDF" "xE9D42B" "xE9F9FD" "xEAE27F" "xEBCB2B" "xEBEB2B" "xECBF77" "xECC941" "xECF9F0" "xEDC55F" "xEDD3F5" "xEDE3AB" "xEEACFF" "xEEBD9A" "xEED9DE" "xEEE3CC" "xEEED91" "xEEED93" "xEEEEB1" "xEFB8D3" "xEFBAB8" "xEFCDFE" "xEFF3DA" "xF2ED90" "xF2EDC3" "xF4B9D5" "xF6ECB2" "xF7ADFF" "xF9B8B0" "xF9B9D0" "xFCB299" "xFCDFA4" "xFCF2A9" "xFDC98B" "xFEBA85" "xFFAD80" }
+		}
+		add_homeland = cu:kronium_dwarf
+	}
+	s:STATE_ORLAZAM_AZ_DIHR = {
+		create_state = {
+			country = c:D05
+			owned_provinces = { "x00E029" "x00F662" "x00FF7A" "x0DD81C" "x0DE62E" "x0DED49" "x0FD20D" "x1BE63B" "x1ED21B" "x27E646" "x2BF06A" "x2ED22B" "x37D675" "x3CD58A" "x3DED74" "x3ED336" "x45DD75" "x46E171" "x47D041" "x49DA63" "x4CCD3E" "x4EE184" "x52D86B" "x53E575" "x56D050" "x5EF169" "x5FD877" "x5FED7F" "x62F958" "x63CC4E" "x64D041" "x64D051" "x64D05D" "x6ACE1F" "x74DA38" "x7BDA19" "x80F664" "x82E138" "x82E947" "x82F057" "x8AD893" "x8BF844" "x8CF02C" "x8DE714" "x94BD3B" "x94C36A" }
+		}
+		add_homeland = cu:kronium_dwarf
+	}
+	s:STATE_AMLDIHR = {
+		create_state = {
+			country = c:D05
+			owned_provinces = { "xBB8931" "xA0892F" "x631863" "x670061" "x672747" "x6C493D" "x701C5E" "x78006A" "x7C5138" "x7FDC12" "x832859" "x8E5B32" "x912808" "x924548" "x926668" "x933110" "x94D727" "x953B19" "x95872B" "x95C516" "x964C39" "x965231" "x975A39" "x98A96A" "x9B4109" "x9B5C28" "x9D4054" "x9D6654" "x9D9F52" "x9F4939" "xA26363" "xA37730" "xA3803A" "xA45D27" "xA69044" "xA9AB1B" "xABD13F" "xAC7627" "xAC7D54" "xAE542F" "xAE7420" "xAE934A" "xAFBC48" "xB0630A" "xB16A23" "xB16B12" "xB34D2C" "xB37219" "xB45650" "xB4C45C" "xB57F0B" "xB5875F" "xB5C45C" "xB8AD5F" "xBA9354" "xBAA652" "xBAAE44" "xBAAE4D" "xBAAE4E" "xBE5439" "xC2AA1C" "xC4771E" "xC6B74B" "xC7AA5B" "xC9AA54" "xCA9F59" "xCACE3F" "xCAD368" "xCB4938" "xCD542F" "xCD543A" "xCD5443" "xCDB14A" "xCF5F47" "xCF644F" "xD07044" "xD07E42" "xD35116" "xD47F19" "xD53F64" "xD76543" "xD7A21A" "xD8725B" "xDC5A32" "xDD7228" "xDE8C59" "xE57412" "xE94F25" "xEAC548" "xEC8928" "xEC9F33" "xECB53E" "xED745A" "xEE6C29" "xF68F06" "xF6B220" "xF8990E" "xFA4260" "xFBDB0A" }
+		}
+		add_homeland = cu:kronium_dwarf
+	}
+	s:STATE_AMLHARAZ = {
+		create_state = {
+			country = c:D05
+			owned_provinces = { "x00B407" "x00C519" "x00EA2E" "x03E730" "x08B10C" "x0DE437" "x12F300" "x13EE2D" "x15AE15" "x15DD09" "x15E000" "x15E300" "x15E945" "x18D94E" "x199A55" "x19DA14" "x19F94B" "x1AE23F" "x1CC300" "x1DD225" "x1EC721" "x1FD723" "x20B700" "x23B309" "x23DC31" "x24A520" "x24B052" "x24F652" "x26D835" "x27C254" "x288C58" "x28A32E" "x29B041" "x29CB4A" "x29E52A" "x2AE738" "x2B9F3B" "x2BBA58" "x2D9C46" "x2DEE49" "x2EED4D" "x35E62A" "x35E63F" "x37AF48" "x3A9D47" "x40E538" "x419416" "x438D58" "x449827" "x44AC52" "x479D37" "x489C37" "x4AF535" "x50942E" "x51ED34" "x52B328" "x52B557" "x52F329" "x53E21A" "x559F25" "x588D23" "xA05B84" }
+		}
+		add_homeland = cu:kronium_dwarf
+	}
+	s:STATE_HALL_OF_ANCESTORS = {
+		create_state = {
+			country = c:D05
+			owned_provinces = { "x1DEF93" "x26ED98" "x40EBAA" "x4BF61D" "x53C253" "x53EA1D" "x5CE351" "x5EB7AE" "x5FE9BF" "x65B1C4" "x66D21D" "x6CE177" "x75AFD8" "x7ABB6F" "x7EE1A5" "x85A7FF" "x85B993" "x86C3C5" "x8DB6B4" "x91DC4D" "x93D0E3" "xA7CADF" "xA9CADF" "xA9F9D5" "xAAC2D5" "xADD677" "xAECB93" "xAFD98E" "xB1D74C" "xC2715B" "xC4D456" "xC7CCB5" "xC8A9FF" "xCCC0EF" "xF0BFD3" "xF0C7FD" "xF6B2C5" }
+		}
+		add_homeland = cu:kronium_dwarf
+	}
+	s:STATE_VERKAL_VAZKRON = {
+		create_state = {
+			country = c:D05
+			owned_provinces = { "x0872C3" "x0872CD" "x0872DF" "x0872E8" "x0884B1" "x0886DF" "x08B1C5" "x08C7CE" "x0972A8" "x1072C3" "x1086DF" "x10B1C5" "x1172B1" "x1786DF" "x17B1CD" "x1972C3" "x1B5EC4" "x1BA1C0" "x1C5ABD" "x1F86DF" "x1FB1D5" "x20B2C4" "x2172C3" "x239FBE" "x2686DF" "x26B1DC" "x275ED3" "x28A4CD" "x28B2C3" "x2972C3" "x2AA3DF" "x2CA3CB" "x2E86DF" "x3086E4" "x30A6D3" "x3161DA" "x31A3CB" "x3272C3" "x33E1F3" "x359ECB" "x3686DF" "x36A2D4" "x3786EC" "x3A63E2" "x3AD2F3" "x3C96EA" "x3C99D4" "x3E86DF" "x4194F2" "x4396E8" "x4396E9" "x446FC3" "x4480CD" "x4586DF" "x4A5ED9" "x4A5EEA" "x4A94DF" "x934829" "xAB8B33" "xC28531" "xCD4D4A" "xB9F1CA" }
+		}
+		add_homeland = cu:kronium_dwarf
+	}
+	s:STATE_HARAZ_ORLDHUM = {
+		create_state = {
+			country = c:D06
+			owned_provinces = { "x96002C" "x961A20" "x99301B" "xA10030" "xA91B28" "xB31A04" "xB42107" "xB4432F" "xB5270B" "xB5820A" "xB7321A" "xB76F30" "xBA2B04" "xBA3D12" "xBB2A26" "xBB4326" "xBD301A" "xBF4E16" "xBF551A" "xC15F1F" "xC3710C" "xC55226" "xC74D0F" "xC76121" "xC84205" "xC94610" "xC94708" "xCA4B0B" "xCB3924" "xCC592B" "xCC812A" "xCE722B" "xD06126" "xD06E25" "xD0731F" "xD07323" "xD87129" "xD87922" "xDA7026" "xDA881D" "xDE4224" "xDE4A1F" "xDE531E" "xE1350A" "xED4D08" "xF03411" "xF08221" "xF25B12" "xF26917" "xF2781C" "xF44712" "xF95F03" "xF9760E" "xFA6506" "xFC9105" "xE07A8B" "xC2717C" "xE76769" "xD1D50E" "x9FE4C2" "x5D457F" "xAFD06C" "x339E2E" "x632FF9" }
+		}
+		add_homeland = cu:kuxhekrar_orc
+		add_homeland = cu:kuxheztar_kobold
+	}
+	s:STATE_KHUGDIHR = {
+		create_state = {
+			country = c:D08
+			owned_provinces = { "xBB0796" "xBB326D" "xBD585E" "xBF2691" "xC207A4" "xC46056" "xC6FB1C" "xC7348A" "xCE330D" "xCE546F" "xCE78A1" "xCF3D19" "xCF4827" "xCF573F" "xCF9D42" "xCFE123" "xD05C58" "xD0614D" "xD06B59" "xD1C2A3" "xD24F0E" "xD26D3E" "xD34E82" "xD37881" "xD3B77F" "xD45857" "xD49F49" "xD68A4A" "xD69559" "xD7A669" "xD8C529" "xD9A14E" "xDA893C" "xDA9181" "xDAA972" "xDB8732" "xDC750F" "xDC7D36" "xDC7E1C" "xDD8526" "xDE667C" "xDE9411" "xDFC793" "xE0A358" "xE0A981" "xE0BF7F" "xE0C869" "xE0C878" "xE15B66" "xE48A2E" "xE59E5B" "xE5D174" "xE6C48D" "xE7B78A" "xE7C381" "xE7EC62" "xE7F0A1" "xE85D72" "xE8CA73" "xE9767A" "xEA706F" "xEA8369" "xEA9266" "xEB6022" "xEC9427" "xED7768" "xEDBA29" "xEF6A4D" "xF3871C" "xF55F39" "xF5E16F" "xF69F3E" "xF6B74F" "xF6CF60" "xF87F3F" "xFBA60A" "xFDF90F" }
+		}
+		add_homeland = cu:agate_dwarf
+	}
+	s:STATE_MITHRADHUM = {
+		create_state = {
+			country = c:D10
+			owned_provinces = { "xDF533A" "xDF9A05" "xE29608" "xE6E81F" "xE7920F" "xE7D900" "xE7E131" "xE8763C" "xE8CC37" "xE8F735" "xEAC31A" "xEC8616" "xEC943A" "xECD023" "xEE8320" "xEEDC1E" "xEEDF27" "xEFE02A" "xEFE833" "xF0AA16" "xF0B337" "xF0E736" "xF2DD2C" "xF47D21" "xF4D135" "xF66E0F" "xF6DC27" "xF79627" "xF8741C" "xF88C1D" "xF97A26" "xF97A27" "xFA8316" "xFAF125" "xFC6E20" "xFC9C18" "xFCE725" "xFDC208" "xFDD812" "xFDEE1D" "xFF6519" "xA5BC5C" "xB47135" "xC69442" "x76551E" "x75CC54" "x6E731C" "xC0BB42" "xCFD369" "xC3C823" "xF51831" "xA38F57" }
+		}
+		add_homeland = cu:rustroad_goblin
+		add_homeland = cu:cave_goblin
+	}
+	s:STATE_ER_NATVIR = {
+		create_state = {
+			country = c:D10
+			owned_provinces = { "x08DB45" "x08DB58" "x08E023" "x08E07A" "x08EB47" "x08F159" "x09DB10" "x10DB45" "x10E07A" "x10EB48" "x17E07A" "x17EB56" "x1ADB45" "x1BD646" "x1CE73E" "x1CE74A" "x1DD53A" "x1DD762" "x1DD955" "x1DDB62" "x20DC45" "x20E07A" "x20EB66" "x21DB4A" "x21EC47" "x21EC59" "x21F26F" "x21F886" "x22D761" "x23E851" "x24DB45" "x24E73B" "x25E045" "x27E07A" "x27EB74" "x27F12E" "x28D763" "x29E857" "x29EC45" "x2ADA50" "x2AF893" "x2BE27A" "x2BE645" "x2BE87A" "x2CE15B" "x2DE854" "x2FE07A" "x31E083" "x31E962" "x31EC45" "x32D771" "x32E854" "x34F7A0" "x36E754" "x37E765" "x38E07A" "x39E092" "x3AFBB3" "x3CD87E" "x3CDB45" "x3CE045" "x3CE745" "x3CEDA0" "x3CF4A0" "x3DDC7B" "x3DE175" "x3DE565" "x3DE571" "x3DE58D" "x3FE07A" "x40EC8F" "x43E49D" "x44D96F" "x44E57D" "x44E58B" "x44E58C" "x45D951" "x45DB44" "x45DF56" "x45E56D" "x45EA84" "x47E07A" "x4CD66D" "x4CD68F" "x4CD93B" "x4CE43B" "x4CE47A" "x55D5A6" }
+		}
+		add_homeland = cu:rustroad_goblin
+	}
+	s:STATE_MARRHOLD = {
+		create_state = {
+			country = c:A29
+			owned_provinces = { "x7D03F4" "x8804EC" "x920BB3" "x941E7A" "x9C19DC" "xA016ED" "xA10CAA" "xA20AC6" "xA313C0" "xA40EC5" "xA50CA3" "xA510B4" "xA608D5" "xA611C7" "xA61D9B" "xA70995" "xA815A2" "xAA068A" "xAA129B" "xAB037C" "xAC006F" "xAF08E3" "xB10060" "xB117B9" "xB31480" "xB61199" "xB711F7" "xB906FF" "xB90DD6" "xB913E6" "xB91CBE" "xBA16D9" "xBC0FFE" "xBC1490" "xBF0BDF" "xC01481" "xC1045F" "xC111EB" "xC2066C" "xC3035F" "xC30A7E" "xC31199" "xC4025F" "xC40D8D" "xC714A0" "xCC075F" "xCC178A" "xCE0FE8" "xCE108C" "xCE1CE2" "xCF0D9C" "xCF0EDB" "xCF109D" "xD0139E" "xD110B2" "xD113AF" "xD21380" "xDA10D7" "xDB1185" "xDD1687" "xDE0EC5" "xDF06FF" "xDF10CA" "xE20CAA" "xF60CE0" "xFA09D6" }
+		}
+		add_homeland = cu:marrodic
+	}
+	s:STATE_VERKAL_KOZENAD = {
+		create_state = {
+			country = c:D10
+			owned_provinces = { "xD91A35" "xD91A44" "xDD1A35" "xE11A35" "xE2145F" "xE21C60" "xE5236E" "xE52D6D" "xE6186D" "xE8065E" "xE91A35" "xE9372D" "xEB0C5E" "xED246D" "xED286D" "xED2E6D" "xEE1A35" "xF0175E" "xF0372D" "xF1186E" "xF11A35" "xF11C5B" "xF11E6E" "xF11F35" "xF12145" "xF1246E" "xF12635" "xF12A6E" "xF13235" "xF13262" "xF13835" "xF13844" "xF13852" "xF13860" "xF21A35" "xF32745" "xF5385F" "xF72E45" "xF9364D" "xDF3CB2" "xCF2849" "xCF41A1" "xBB06DC" "xCC5E9D" "xCF1DAD" "xEC44B5" "xBD2E5F" }
+		}
+		add_homeland = cu:opal_dwarf
+		add_homeland = cu:rustroad_goblin
+	}
+	s:STATE_HUL_JORKAD = {
+		create_state = {
+			country = c:D12
+			owned_provinces = { "x00E751" "x00F8A5" "x0FE65C" "x1AF6B8" "x23FB43" "x29E570" "x29F456" "x29F543" "x29F643" "x2FF36E" "x37EC43" "x3BF28D" "x3DE843" "x43E656" "x46E287" "x49F2B5" "x4BEBF6" "x4EDAFF" "x4EE1A5" "x4FE6CE" "x4FEEE2" "x53E9FE" "x54E0C0" "x57DFD8" "x6AE5DC" "x6DE9A5" "x6DEE8D" "x6EEFA1" "x6FEE6A" "x70DFDA" "x7DDC71" "x81DAFF" "x83DE97" "x83E4F2" "x89DFB7" "x8BDFB9" "x8FFCB5" "x9BDCA4" "x9EE699" "x9FFB9A" "xA1F67B" "xA5E093" "xAADA8E" "x06F7A9" "x0DA706" "x17FBCB" "x747968" "x15E03A" "x75DCE4" }
+		}
+		add_homeland = cu:diamond_dwarf
+	}
+
+	s:STATE_GOR_BURAD = {
+		create_state = {
+			country = c:D13
+			owned_provinces = { "x0FFB05" "x12E741" "x12F51E" "x12F705" "x15F43F" "x18ED05" "x1BEA05" "x1BF368" "x1EE91E" "x1FE45F" "x1FFCED" "x20E742" "x21F39C" "x22EDF3" "x23E487" "x23F77E" "x25EBFE" "x26E3AC" "x27E2CB" "x27FAD4" "x2EF8B8" "x32E2CE" "x37F7A4" "x38DF43" "x3ADDFF" "x3EE2A2" "x3EE2C8" "x45DF86" "x45F294" "x46FA99" "x47E977" "x4AE36F" "x4CDD69" "x21D242" "x39B869" "x20CE4F" "x2FC968" "x57C686" }
+		}
+		add_homeland = cu:basalt_dwarf
+	}
+	s:STATE_OVDAL_LODHUM = {
+		create_state = {
+			country = c:D14
+			owned_provinces = { "xFF692A" "xFF7337" "xFF7D54" "xFF7E43" "xFF7F55" "xFF8053" "xFF812D" "xFF8247" "xFF8737" "xFF8A26" "xFF961A" "xFF9C0B" "xFF9C30" "xFFA000" "xFFA56A" "xFFAF65" "xFFB100" "xFFC53D" "xFFCA2A" "xFFCC40" "xFFCE19" "xFFD30B" "xFFD700" "xFFDB00" "xFFDD33" "xFFDD34" "xFFDD43" "xFFDE4C" "xFFDF33" "xFFE043" "xFFE836" "xFFE83F" "xFFE958" "xFFEF00" "xFFF363" "xFFF569" "xFFF75A" "xA1C9A5" "xD23416" "x1244D7" "x1F3A72" "x393C86" "xB9AC84" }
+		}
+		add_homeland = cu:diamond_dwarf
+	}
+	s:STATE_VERKAL_SKOMDIHR = {
+		create_state = {
+			country = c:D15
+			owned_provinces = { "xBF0FBA" "xBF147F" "xC60FBA" "xCC0FBA" "xCD0C7C" "xCF0A7E" "xCF1275" "xD00970" "xD00B8F" "xD00C9F" "xD214A3" "xD3147F" "xD60C7C" "xD61271" "xD71082" "xD814B3" "xD90A9F" "xD91391" "xDA107A" "xDA147C" "xDB12BA" "xDB1AD7" "xDC0F42" "xDD128E" "xDE1143" "xE0139E" "xE0147C" "xE10AAF" "xE1128E" "xE21AE5" "xE50FBA" "xE512A1" "xE80ABF" "xE8127C" "xE818E5" "xE81ABC" "xE90C7C" "xEA0DBB" "xEA11A2" "xEA11D0" "xEC0FBA" "xEE10E2" "xEF11CE" "xF00C7B" "xF00E91" "xF011AB" "xF10FBA" "xF50AAB" "xF50AD2" }
+		}
+		add_homeland = cu:diamond_dwarf
+		add_claim = c:D18
+	}
+	s:STATE_ARG_ORDSTUN = {
+		create_state = {
+			country = c:D18
+			owned_provinces = { "x581B5F" "x5F0D85" "x5F185F" "x671684" "x71115F" "x76169E" "x790F5F" "x830B99" "x831CF4" "x8D0BB2" "x8F19AC" "x950ACA" "x9909DE" "x991AE3" "xAD19D2" "xB709E0" "xC618C5" "xC70787" "xCC06FF" "xEA15BB" "xED07B2" "xEE1ABE" "xF00EA8" "xF80AA3" "xFF069F" "x0DC99B" "x66DAE1" "x1E791B" "x46A7CE" "x2A36F1" "x670856" "x559690" "x30F2CB" "xF20449" "xB9F835" "xE10086" "xF4FC83" "x21D774" "x760D15" "xF27952" "x3BA4FA" "x8C2265" "x2569F3" "x1EEF60" "x9D4B61" "x1423AA" "x55861D" "xCAAE5F" "xB2C6FD" "x8B1D79" "x7FC104" "x5D64BE" "x527F5C" "xD3DC8E" "x7D87D3" "x11C682" "xA3264B" "x9FBDCB" "xA7759D" "x57F3C7" "x1C9A1A" "x16F5E4" "x378E30" "x83802B" "x55A23D" "x499767" "x5E33C2" "x0963C3" "xAF7CEC" "x9C3614" "xBA41CC" "x8642A3" "x92220C" "xAA0B5E" "xEA3E8F" }
+		}
+		add_homeland = cu:diamond_dwarf
+	}
+	s:STATE_SHAZSTUNDIHR = {
+		create_state = {
+			country = c:D19
+			owned_provinces = { "x066514" "x066519" "x066523" "x066528" "x06780A" "x067A23" "x06A614" "x06BE19" "x0A1615" "x0B6514" "x0B7A23" "x0E2E15" "x117A23" "x124815" "x126514" "x134D23" "x136E23" "x167A23" "x16A61D" "x178829" "x17B028" "x186514" "x196414" "x1A5C28" "x1B7A23" "x1BA621" "x1C1623" "x1DD611" "x1E5D17" "x1E6514" "x1E9823" "x1EA224" "x202E23" "x217A23" "x239A28" "x239B28" "x23B128" "x23B828" "x244223" "x245C29" "x245D1C" "x246514" "x248B28" "x277A23" "x28D611" "x29BC29" "x2A5C29" "x2A6514" "x2A7429" "x2A7A14" "x2A7E19" "x2A8B29" "x2A9414" "x2AA229" "x2AAB14" "x2AC029" "x2AC314" "x2AC325" "x2ADA14" "x2ADA19" "x2ADA1F" "x2ADA23" "x2ADA29" "x2B6514" "x2D7A23" "x2D9919" "x2F882D" "x2FDA23" "x317E14" "x327A23" "x32B319" "x35501F" "x355029" "x355A11" "x358811" "x358823" "x35D01D" "x369814" }
+		}
+		add_homeland = cu:diamond_dwarf
+		add_claim = c:D18
+	}
+	s:STATE_ORLGHELOVAR = {
+		create_state = {
+			country = c:D20
+			owned_provinces = { "x00CE0E" "x00D834" "x00F161" "x03EF65" "x06CB19" "x0BED74" "x0CC362" "x12CA2C" "x12ED00" "x14E6A5" "x15C078" "x15C758" "x15E62B" "x15EC85" "x16CC77" "x16DC71" "x17C850" "x17D362" "x17D879" "x17FB45" "x18BB89" "x18BE3F" "x1AAB22" "x1AE44A" "x1BA113" "x1DB99A" "x1EA101" "x1EE868" "x20E570" "x21D6B1" "x22B3BA" "x22CB8A" "x22F96E" "x24D1B9" "x24E039" "x25C395" "x26E127" "x27AF00" "x27B40F" "x27D6A3" "x28C124" "x28CB36" "x28D543" "x2ADF4C" "x2DB600" "x2DD1A0" "x2DE832" "x2ECA98" "x2ECB90" "x2ED1A0" "x2EFA98" "x2FC847" "x2FD248" "x2FDB4A" "x30D261" "x30DC27" "x30DE5D" "x35D38C" "x36B82E" "x36BCAF" "x36D62C" "x37E52E" "x38B4BA" "x38D1A0" "x38D37D" "x39C8AD" "x3ADC9D" "x42D29E" "x45C796" "x45CEB9" "x45F756" "x47BC8B" "x4AAE4A" "x4AB585" }
+		}
+		add_homeland = cu:diamond_dwarf
+	}
+
+	s:STATE_GOR_VAZUMBROG = {
+		create_state = {
+			country = c:D21
+			owned_provinces = { "x005E42" "x008D9E" "x00A0C5" "x096B4A" "x0B4115" "x136B5E" "x15412C" "x214145" "x2378ED" "x2749BC" "x2B4357" "x2B7ABB" "x3159BC" "x3161B6" "x3353A0" "x353764" "x3761D5" "x397CD6" "x4283A9" "x437ACC" "x45347D"   "x473C69" "x473C82" "x4B3A31" "x543293" "x565328" "x5A8DA1"   "x627F47" "x636D20" "x6821AB"     "x4E7773" "x345077" "x21C894" "xD569F1" "x735E92" "xDABC47" "xAE5218" "xFFA47A" "x9F12CE" "xA5CC2E" "x41969C" "x5E76D5" "xD5E999" }
+		}
+		add_homeland = cu:titanium_dwarf
+		add_homeland = cu:drakonshani_orc
+	}
+	s:STATE_HEHODOVAR = {
+		create_state = {
+			country = c:D24
+			owned_provinces = { "xBD4D1E" "xBD4D27" "xBD4D36" "xBD4D3D" "xBD5C36" "xC44D1E" "xC45C36" "xCA5C36" "xCC4D1E" "xD15C36" "xD34D1E" "xD75C36" "xD94D1E" "xDE5C36" "xE14D1E" "xE45C36" "xE8463F" "xE84D1E" "xE8583F" "xE85C1E" "xE8693F" "xE8701E" "xE87B3F" "xE8821E" "xE8913F" "xE8931E" "xE8A51E" "xE8A527" "xE8A52F" "xE8A537" "xE8A53F" "xEB5C36" "xF15C36" "xF5451A" "xF5671A" "xF56736" "xB49712" "xEF9F38" }
+		}
+		add_homeland = cu:citrine_dwarf
+	}
+	s:STATE_SEGHDIHR = {
+		create_state = {
+			country = c:D24
+			owned_provinces = { "x14B852" "x14B869" "x14B892" "x14B8A7" "x14C292" "x14D755" "x14E36B" "x28B852" "x28C292" "x3AC292" "x3FB852" "x45CF4A" "x4FC292" "x52DA6A" "x52E585" "x52F0A1" "x54B852" "x59B752" "x5ACF46" "x61C292" "x61D78B"   "x68B460" "x68B852" "x69F0B0" "x6BD092" "x75C292" "x7CAF87" "x7FB852" "x80F0BF" "x89D079" "x8AC292" "x94B852" "x94C252" "x94CF52" "x94DA52" "x94DCBF" "x94E552" "x94E8BF" "x94F052" "x94F069" "x94F080" "x94F095" "x96B852" "x97CAA9" "x97CC79" "x9DC292" "x9FD8AC" "xA9B485" "xA9CA96" "xA9CAA7" "xA9CAA8" "xABC452" "xACB461" "xACB751" "xACBF67" "xACCA83" "xACD69E" "xAFC292" "xBCAE83" "xBCAEAB" "xBCB346" "xBCC946" "xBCC992" "x66B275" }
+		}
+		add_homeland = cu:citrine_dwarf
+	}
+	s:STATE_VERKAL_GULAN = {
+		create_state = {
+			country = c:D25
+			owned_provinces = { "x0003F6" "x0300F4" "x0306D4" "x070AC8" "x0B04F0" "x1100FF" "x140CC2" "x161F95" "x1906EA" "x230BD1" "x230DBB" "x250689" "x260793" "x260DB6" "x2611C3" "x27089D" "x2709DD" "x2713B3" "x271C9A" "x271FAF" "x280AAA" "x290BC4" "x290DC4" "x2D0DAF" "x2E09E4" "x3008E9" "x300AC3" "x3114B8" "x320080" "x3311B9" "x3312C5" "x3515D1" "x37189F" "x3914BC" "x391ECB" "x3D0E8B" "x3E0F95" "x3E0FA9" "x3F109D" "x41057F" "x410CE0" "x4112EF" "x4614BA" "x4714BA" "x4B077F" "x4B18A1" "x4C10ED" "x4C13BA" "x4D10ED" "x4D11A3" "x4D1EE7" "x5217EA" "x521EFD" "x560ED5" "x560EDE" "x5710D1" "x5712CE" "x5A129D" "x5B09F7" "x5C0ED0" "x5C179F" "x5D10ED"   "x600DBB" "x6214EB" "x6A0BAC" "x6E11EC" "x6F0FB0" "x740DE6" "x751487" "x7709DE" "x7809F3" "x791F8B"   }
+		}
+		add_homeland = cu:gold_dwarf
+	}
+	s:STATE_GOR_OZUMBROG = {
+		create_state = {
+			country = c:D26
+			owned_provinces = { "x21A557" "x22A068" "x269B7E" "x2C7A57" "x326757" "x33A957" "x366268" "x3A5B80" "x3D77F7" "x4085E5" "x4444C7" "x473FDC" "x5B41DE" "x7043DA"   "x69C745" "xDC9A18" "x56CC1B" "xB75155" "xC5BFBF" "x36F41C" "x583C3E" "x218381" "x18984A" "xC0DE75" "xDC8F68" "x7087EA" }
+		}
+		add_homeland = cu:topaz_dwarf
+	}
+
+	s:STATE_OVDAL_KANZAD = {
+		create_state = {
+			country = c:D26
+			owned_provinces = { "x06D2D2" "x06D2DA" "x06D2E7" "x06D2EE" "x06D8E7" "x06E6D3" "x06EDDA" "x0DD2D2" "x0DD8E7" "x12D8E7" "x14D2D2" "x19D8E7" "x19DDF0" "x19E9EF" "x1AD2D2" "x1CCFEF" "x1CD2D2" "x1ED8E7" "x1EE6E5" "x21D0D7" "x21D2D2" "x21E1E7" "x25D8E7" "x26E2EF" "x26E9EF" "x27DEEF" "x28CFF0" "x28D2D2" "x2BD8E7" "x2ECFF0" "x2ED2D2" "x2ED6F0" "x2ED8D2" "x2EDEF0" "x2EE0D2" "x2EE5F0" "x2EE7D2" "x2EEEF0" "x2EEFD2" "x2EEFEA" "x2EF6D2" "x2EF6DA" "x2EF6E1" "x2EF6E8" "x2EF6F0" "x2FD2D2" "x31D8E7" "x33F6E8" "x35DAD2" "x37D8E7" "x3BCBE2" "x3BCBEF" "x3BCFCE" "x3BDDCE" "x3BDDE7"   }
+		}
+		add_homeland = cu:amber_dwarf
+	}
+	s:STATE_GROZUMDIHR = {
+		create_state = {
+			country = c:D26
+			owned_provinces = { "x00CE70" "x00D890" "x00F4CB" "x00FFE4" "x0CEDC5" "x10C781" "x17ECD4" "x18C792" "x1DCCDE" "x20C89D" "x20E9DE" "x24D5DE" "x25DADB" "x28C1A6" "x2CEAD6" "x32E9E9" "x32EED2" "x33F8C1" "x34C0B6" "x35C4A9" "x35C4B9" "x38C385" "x3FBEC4" "x41D27F" "x43F4CD" "x45E4AF" "x45EDC0" "x49CEFE" "x4AE17A" "x4AEC93" "x4EAEA3" "x4EB5D4" "x93165E" "xAD50CA" "x43E1EB" "x612E62" "x697540" "x159354" "x975D73" "x31AB9B" "xA4B2CB" "x3D5D75" "x725D19" "xAFB2F8" "x0D5E17" }
+		}
+		add_homeland = cu:peridot_dwarf
+		add_homeland = cu:amethyst_dwarf
+	}
+	s:STATE_OVDAL_AZ_AN = {
+		create_state = {
+			country = c:D26
+			owned_provinces = { "x5510CC" "x6A405F" "x7010D2" "x72655F" "x7F795F" "x8145CC" "x8177D3" "x8187DE" "x8197E8" "x858A5C" "x859451" "x8952C9" "x9697EE" "x9765C9" "xA575C9" "xA92EE3" "xB63EE3" "xBA10EB" "xBC4CE1" "xC875ED" "xD471E7" "x63D9D5" "x1F4292" "x4DDFE5" "xC82AB5" "x88D774" "x356AB8" "x7B0F59" "x17A27B" "xE6CAE9" "xA03A55" "xCF2431" "x31AA2B" "xA430C5" "x4B6C98" "x9E17C6" "x27DEE2" "x11F7C3" }
+		}
+		add_homeland = cu:undergrowth_goblin
+		add_claim = c:D31
+	}
+	s:STATE_HUL_AZ_KRAKAZOL = {
+		create_state = {
+			country = c:D31
+			owned_provinces = { "x7F6695" "x7FB6C8" "x84B2CB" "x8A619C" "x93AED4" "x99C48D" "x9E5CA8" "x9EA399" "x9EA88D" "x9EAC8D" "xA39EA7" "xA447D6" "xA83CE1" "xA87C8D" "xAC9ABA" "xAD698D" "xAFAC8D" "xB16499" "xB44FB6" "xB55DA9" "xB69BD2" "xB87AFA" "xBA28FF" "xBA4CC8" "xBA60E1" "xBA87ED" "xBB9CE4" "xBD6EFF" "xBD8FB0" "xBE46D9" "xC191A5" "xC279F1" "xC88EBB" "xCD6CEF" "xCE6CEF" "xCF5EEA" "xD05AB9" "xD070B9" "xD170C8" "xD185BA" "xD28AC6" "xD386A5" "xDF71D9" "xE02BFF" "xE259F7" "xE841D5"   "xF06FEE" "xF435C8" "xF657E9" "xFA3DE2" "xFF2ABB" }
+		}
+		add_homeland = cu:undergrowth_goblin
+	}
+
+	s:STATE_TUWAD_DHUMANKON = {
+		create_state = {
+			country = c:D33
+			owned_provinces = { "x6587A9" "x6683B2" "x6D7FBD" "x7664A9" "x7E54A9" "x808AA9" "x8450B2" "x8B4BBE" "x8F62FB" "x926DF2" "x937DEA" "x9938E2" "x9D34ED" "xBA35EE" "xD937EC" "xEB76DA"     "xF150D0" "xF937CD" "x042837" "x0B1D59" "xF11469" "xFEE8B7" "xB5DFE7" }
+		}
+		add_homeland = cu:undergrowth_goblin
+		add_homeland = cu:march_goblin
+	}
+	s:STATE_GRONSTUNAD = {
+		create_state = {
+			country = c:D33
+			owned_provinces = { "x0400C5" "x1200D8" "x282B11" "x2A3521" "x2B4033" "x2B9257" "x2BD52E" "x2C5374" "x2C5865" "x2D6275" "x304613" "x306451" "x334F73" "x359460" "x3CB936"   "x426B14"   "x437347" "x437424"   "x4B779C"         "x5677AE" "x58ACB5" "x58E4D5" "x5B5496" "x5D6692"     "x6244CB" "x6685BA" "x8247C5" "x86329B" "x577983" "x497C72" "x42836B" "x43796C" "x448A67" "x498A67" "x4E8966" "x437A79" "x5D457D" "xE8B837" "xEB9F21" }
+		}
+		add_homeland = cu:march_goblin
+		add_homeland = cu:chimera_hobgoblin
+	}
+	s:STATE_VURDRIZ_ANDRIZ = {
+		create_state = {
+			country = c:D33
+			owned_provinces = { "x00BA10" "x00C93C" "x00EF8F" "x00FFB3" "x2A4E53" "x07E976" "x10B71D" "x1DE687" "x37E49B" "x4DE0A9" "x58CBA5" "x75B5B0" "x91B2C9" "xAFBBD6" "xBC8D56" "xBC969B" "x69C339" "x4C5286" "xAFD06B" }
+		}
+		add_homeland = cu:chimera_hobgoblin
+		add_homeland = cu:march_goblin
+	}
+	s:STATE_VERKAL_DROMAK = {
+		create_state = {
+			country = c:D33
+			owned_provinces = { "xC7210B" "xC7210E" "xC72114" "xC72117" "xD22714" "xD72714" "xD9210B" "xDC2714" "xDF210B" "xE22714" "xE5210B" "xEB210B" "xEB270B" "xEB2D18" "xEB300B" "xEB370B" "xEB3F0B" "xEB460B" "xEB460E" "xEB4614" "xF32714" "xF61D0A" "xF62C0A" "xF62C14" }
+		}
+		add_homeland = cu:march_goblin
+	}
+
+	#West Dwarovar
+	s:STATE_UPPER_DAGRINROD = {
+		create_state = {
+			country = c:D03
+			owned_provinces = {  "xC44A83" "x169050"   "xE7B046" "xFF5ACB" "xE80505" "x86C6C0" "xBC6EDC" "x3E4949" "x30C1BF" "x5D457E" }
+		}
+		add_homeland = cu:kronium_dwarf
+	}
+	s:STATE_LOWER_DAGRINROD = {
+		create_state = {
+			country = c:D05
+			owned_provinces = { "x2219E8" "xE5AB21" "xF8F59D" "x88308E" "x5B7DDE" "x473849" }
+		}
+		create_state = {
+			country = c:D10
+			owned_provinces = {  "xB59660" "xC83A4E" "xE80B0B" "xF315AC" "x339e2D" }
+		}
+		add_homeland = cu:rustroad_goblin
+	}
+	s:STATE_WESTROD = {
+		create_state = {
+			country = c:D08
+			owned_provinces = { "x105B34" "xEF3169" "xC4A55B" }
+		}
+		create_state = {
+			country = c:D06
+			owned_provinces = { "x9A5C19" "xA25B34" "xEA1B1B" "xAB436D" "x5E34D5" }
+		}
+		create_state = {
+			country = c:D05
+			owned_provinces = { "x2B8FC9" }
+		}
+		create_state = {
+			country = c:D10
+			owned_provinces = { "xAF0D3E" "x8DE11F" "x1B9F81" }
+		}
+		add_homeland = cu:kuxheztar_kobold
+		add_homeland = cu:agate_dwarf
+		add_homeland = cu:cave_goblin
+		add_homeland = cu:rustroad_goblin
+	}
+	s:STATE_THE_RAILYARD = {
+		create_state = {
+			country = c:D10
+			owned_provinces = { "xDC3400" "xDEB023" "x37F617" "xB365E5" "x2C48A6" "xCF0F96" "x3A75AB" "x6138D0" "xE12D2D" "xADACC4" }
+		}
+		add_homeland = cu:rustroad_goblin
+		add_homeland = cu:cave_goblin
+		add_homeland = cu:crawler_goblin
+	}
+	s:STATE_JORKAD_JUNCTION = {
+		create_state = {
+			country = c:D12
+			owned_provinces = { "xBF288F" "x098C9F" "xFA0F64" "xA4EA35" "x7C1696" "x8CD717" "xB287C1" "xA5A3A2" }
+		}
+		create_state = {
+			country = c:D21
+			owned_provinces = { "x49690C" "x8B35CD" "xEF2139" "x7084BF" }
+		}
+		add_homeland = cu:rustroad_goblin
+		add_homeland = cu:diamond_dwarf
+		add_homeland = cu:black_orc
+	}
+
+	s:STATE_DEAD_END_MINES = {
+		create_state = {
+			country = c:D02
+			owned_provinces = { "x8170AC" "x65456B" "x482010" "xdab934" }
+		}
+		add_homeland = cu:quartz_dwarf
+		add_homeland = cu:coldcave_goblin
+	}
+	s:STATE_GIANTS_ANVIL = {
+		create_state = {
+			country = c:D02
+			owned_provinces = { "x234470" "x268148" "x2C2D80"  "x59426B"  "x813354" "xE1DF1B" }
+		}
+		add_homeland = cu:quartz_dwarf
+		add_homeland = cu:coldcave_goblin
+	}
+	s:STATE_WESTERN_VALE = {
+		create_state = {
+			country = c:D05
+			owned_provinces = { "x2B6A2B" "xD2CD44" "x19383C" }
+		}
+		create_state = {
+			country = c:A10
+			owned_provinces = { "xd00aa8" "x369d4c" "x719900" "x75961a" "x39d698" "x96d54c" "x6f90f5" }
+			state_type = unincorporated
+		}
+		add_homeland = cu:kronium_dwarf
+		add_homeland = cu:mossmouth_ogre
+
+		add_claim = c:D05
+	}
+	s:STATE_EASTERN_VALE = {
+		create_state = {
+			country = c:D05
+			owned_provinces = { "x2F6B22" "x35A435" "x3E5616" "x4A19EE" "x5B1CE1" "x5F2228" "x7FBA62" "x9FE4C1" "xB1D1FF" "xC6DB39" "xC9BFA9" "xE33636" }
+		}
+		add_homeland = cu:kronium_dwarf
+		add_homeland = cu:mossmouth_ogre
+	}
+	s:STATE_LIMONITE_CAVERNS = {
+		create_state = {
+			country = c:D03
+			owned_provinces = { "xBFC49B" "xDE2F60" "xDE97C8" }
+		}
+		create_state = {
+			country = c:D05
+			owned_provinces = { "xB4D4B4" "x0F0F45" }
+		}
+		create_state = {
+			country = c:D10
+			owned_provinces = {  "xC4120F" "xDE452C" "xCF2A13" "x2EAEB0" }
+		}
+		add_homeland = cu:kronium_dwarf
+		add_homeland = cu:cave_goblin
+	}
+	s:STATE_TRUEPATH_CAVERNS = {
+		create_state = {
+			country = c:D10
+			owned_provinces = { "xD2A435" "xA17997" "x895EEA" "x1C8687" "x1FA2D7" "x2C734A" "xC1004A" "x8C4410" }
+		}
+		create_state = {
+			country = c:D38
+			owned_provinces = { "xAC7620" "xCBA05D" "x39D02A" "x9197D4" "x52600C" "xECE2A9" "x101C0B" "xD07189" "x3A004A" "xCE1796" "x23F0A0" "x3CF8EB"}
+		}
+		add_homeland = cu:cave_goblin
+	}
+	s:STATE_CRIMSON_CAVERNS = {
+		create_state = {
+			country = c:D06
+			owned_provinces = { "x2678B7" "xF46120" "xEAE4AE" "xD9A62B" "x8EB9BA" "x265315" "x64C93D" "xA94A20" "x490640" "xAF0D3D" "x49D185" "x00947B" "x85E079" "xF846A1" "x217E78" }
+		}
+		add_homeland = cu:kuxheztar_kobold
+		add_homeland = cu:kuxhekrar_orc
+	}
+	s:STATE_HARAZA_DEPTHS = {
+		create_state = {
+			country = c:D06
+			owned_provinces = { "xE1F820" "xDC9017" "x7B5672" "xC60C94" "xECE2AA" "xE8C522" "x3E460F" "xED2C00" "x8C4411" "x2C734B" "x5AEF22" "x326C83" "x895EEB" "xAFB1E0" }
+		}
+		add_homeland = cu:kuxheztar_kobold
+		add_homeland = cu:kuxhekrar_orc
+	}
+	s:STATE_KHUGSCAVE = {
+		create_state = {
+			country = c:D08
+			owned_provinces = { "xEDD8C7" "xED2D50" "xC6B8ED" "xED93C7" "x23F0A1" "x7EA036" "x3DEA59" "xA56D45" "xEA8245" "x74E09E" "x3CF8EC" "x2678B8" "x93D2EA" "x4A4306" "x00947C" "xE00F28" }
+		}
+		add_homeland = cu:agate_dwarf
+	}
+	s:STATE_ASRA_DEPTHS = {
+		create_state = {
+			country = c:D08
+			owned_provinces = { "xE3E8ED" "xED6371" "x7B5924" "xEFC092" "x2B2EA7" "x50E0A2" "xF846A2" "xB0429B" "x188C63" }
+		}
+		create_state = {
+			country = c:D37
+			owned_provinces = { "x397023" "xE0642A" "x490641" "xB40F96" }
+		}
+		add_homeland = cu:cave_goblin
+		add_homeland = cu:agate_dwarf
+	}
+	s:STATE_CHAINLINK_MINES = {
+		create_state = {
+			country = c:D37
+			owned_provinces = { "xDB9FB7" "x2C7B2A" "x6ABD68" "x8255AC" "xA4ED5E" "x3A3742" }
+		}
+		create_state = {
+			country = c:D39
+			owned_provinces = { "x21DC1C" "xE1509F" "x241BD0" "x7B7FD0" "xA97F4D" "xB98DA5" "xE0B87F" "x7A9BC2" "x2E7631" }
+		}
+		add_homeland = cu:kuxhekrar_orc
+		add_homeland = cu:cave_goblin
+	}
+	s:STATE_SKULKERS_LAIR = {
+		create_state = {
+			country = c:D10
+			owned_provinces = { "xDC4ECA" "xB6DC06" "xAE136E" "x7A3D69" "xAA79FA" "x282E0A" "x0406A5" "x60C4A4" "xA1FD83" }
+		}
+		add_homeland = cu:rustroad_goblin
+	}
+	s:STATE_DEAD_CAVERNS = {
+		create_state = {
+			country = c:D12
+			owned_provinces = { "xE60FAF" "xBC4631" "xF00FC8" "x0FF1D1" "x46B5E0" "xC1845B" }
+		}
+		create_state = {
+			country = c:D40
+			owned_provinces = { "x85D53E" "xBBCBAD" "x460479" "x0C4570" "xF18F12"  "x7671C4"  }
+		}
+		create_state = {
+			country = c:D41
+			owned_provinces = {  "x1EBC35" "x4E7E3C" "x8D89B0" "x89891B" "xC47540" }
+		}
+		create_state = {
+			country = c:D42
+			owned_provinces = { "xD71149" "x8DC187" "xD7C484" "xFE3499" "xFFF7BE" }
+		}
+		add_homeland = cu:cave_goblin
+	}
+	s:STATE_SKITTERING_CAVERNS = {
+		create_state = {
+			country = c:D10
+			owned_provinces = { "x359824" "xBF5989" "xA8BF95" "x914C88" "x918C62" "x560B78" "xC3B8C4" "x0501E7" }
+		}
+		create_state = {
+			country = c:D43
+			owned_provinces = { "xCF0FAF" "xBF752E" "x30EDF4" "x61B11A" "x043788" "x1CBF46" "x2E6020" "xDB2CC4" "xCFCD25" "x157C3C" "xB57130" "xE37D1A" "x180F9C" "xC62EF9" "x7B7B0E" "x015C88" "xC259A4" }
+		}
+		add_homeland = cu:crawler_goblin
+	}
+	s:STATE_CRUMBLING_CAVERNS = {
+		create_state = {
+			country = c:D44
+			owned_provinces = { "xBF431A" "xBF656B" "xBF2315" "x2B2BBF" "xBF2A88" "xBFB489" "xBF2B15" "xC1832E" "xC1502E" "x564EAD" }
+		}
+		create_state = {
+			country = c:D45
+			owned_provinces = { "xBBBF59" "xBCB7B3" "x86BF4A" "x73BC71" "xBC0006" "x0D32E4" "xC0C178" "x1D669C" }
+		}
+		add_homeland = cu:black_orc
+		add_homeland = cu:cave_goblin
+	}
+
+	#Serpentreach
+	s:STATE_ARGROD_JUNCTION = {
+		create_state = {
+			country = c:D12
+			owned_provinces = { "xF10F0F" "xDE6C45" "xACC166" "xC0DB0A" }
+		}
+		create_state = {
+			country = c:D13
+			owned_provinces = { "xCEE3A9" "xDFEC49" "xEACC96" "xC81375" "x319B63" }
+		}
+		add_homeland = cu:diamond_dwarf
+		add_homeland = cu:basalt_dwarf
+	}
+	s:STATE_ARGROD = {
+		create_state = {
+			country = c:D14
+			owned_provinces = { "xFFEFA3" "x58A3D7" }
+		}
+		create_state = {
+			country = c:D15
+			owned_provinces = { "x79E165" "x59E124" }
+		}
+		create_state = {
+			country = c:D18
+			owned_provinces = { "xD0D547" "x2A48C9" "x79A2D0" }
+		}
+		add_homeland = cu:diamond_dwarf
+	}
+	s:STATE_ARGROD_TERMINUS = {
+		create_state = {
+			country = c:D18
+			owned_provinces = { "xDB543A" "x2D7439" "x6B79BF" "x1D3B9F" "xE08636" "x46E036" "xDCFB2F" }
+		}
+		add_homeland = cu:diamond_dwarf
+		add_homeland = cu:blooded_orc
+	}
+
+
+	s:STATE_SCALDING_PITS = {
+		create_state = {
+			country = c:D13
+			owned_provinces = { "x2C34C9" "xDC1E6A" "xA104B6" "x91A5B1" "xBE211D" }
+		}
+		create_state = {
+			country = c:D14
+			owned_provinces = {  "xAF3A5C" "x2ACFCC" "xF8E788" "x912F27" "xF81313" "xC1B295" }
+		}
+		create_state = {
+			country = c:D46
+			owned_provinces = { "x48C633" "xEC3974" "xECDC74" "xE3A437" "x3DF8BA" "x63CCEA" "xE38735" "x969F2F" "xCFD102" "x1C2A5C" "xE91AD2" }
+		}
+		add_homeland = cu:basalt_dwarf
+		add_homeland = cu:darkscale_kobold
+		add_homeland = cu:diamond_dwarf
+
+		add_claim = c:D13
+		add_claim = c:D14
+	}
+	s:STATE_FORGOTTEN_DEPTHS = {
+		create_state = {
+			country = c:D47
+			owned_provinces = { "x6D5E0A" "x76FC47" "xA9BF61" "x93BCC1" "xC12A19" "x39AC3B" "xF4A275" "x050D7B" "xB11B91" "x075478" "xE308CC" }
+		}
+		add_homeland = cu:skinburner_goblin
+	}
+	s:STATE_ORCSFALL = {
+		create_state = {
+			country = c:D15
+			owned_provinces = { "xE54737" "xD19A2B" }
+		}
+		create_state = {
+			country = c:D48
+			owned_provinces = { "x3A75AC" "xD20F64" "x2AE76C" "x1B2878" "xC80FC8" "xA0EFCA" "xAF5C8A" "x6ACAD7" "x9B78FA" "xA7EA18" "x881EA6" "x593D4E" }
+		}
+		add_homeland = cu:black_orc
+	}
+	s:STATE_WINDING_CAVERNS = {
+		create_state = {
+			country = c:D14
+			owned_provinces = { "xCD1717" "x1674C9" "x0D43A3" }
+		}
+		create_state = {
+			country = c:D50
+			owned_provinces = { "x6D31BB" "xF9F001" "xE79A05" "xF78717" "xB8B4EF" "x8FFF85" "x2FA31C" "x578207" "xE3FD21" "x780D8A" }
+		}
+		create_state = {
+			country = c:D49
+			owned_provinces = { "x20FBD4" "x4BA9D9" "xF30145" "x34FD25" "x96FBCC" "x8BC872" "xE7D134" "xC1956C" "xA5C162" "x980054" "x4501B5" "x72C1B9" "x5F4409" "x75D863" }
+		}
+		add_homeland = cu:straggler_goblin
+	}
+	s:STATE_SCREAMING_CAVERNS = {
+		create_state = {
+			country = c:D20
+			owned_provinces = { "xEC4E00" "xA7BA24" "xBB9C5A" "x0C95BC" "x452E46" "xAA00B3" }
+		}
+		create_state = {
+			country = c:D51
+			owned_provinces = { "x4501B6" "xB987E0" "x63BED8" "xC93655" "x7BBE70" "x6D31BC" "x1674CA" "xDE91A1" "x578208" "xD96C81" "x3A9800" "x9B3D4F" "xA389C1" "x8BC873" "x0D43A4" "xE7D135" "xE3FD22" "xEB9991" "x0E1C16" }
+		}
+		add_homeland = cu:diamond_dwarf
+		add_homeland = cu:blooded_orc
+	}
+	s:STATE_DIAMOND_QUARRY = {
+		create_state = {
+			country = c:D18
+			owned_provinces = { "x20DAAD" "xC468BF" "x44E11A" "x666FAF" "x3DC97B" "xEF2151" "xFF853B" "xF1F914" "xD77545" "x92C6D9" "x4F5FFD" "x56F50B" "x5D94C1" "xC73F59" "x15733B" "x76D60E" }
+		}
+		add_homeland = cu:diamond_dwarf
+	}
+
+
+
+	#Middle Dwarovar
+	s:STATE_VAZUMROD = {
+		create_state = {
+			country = c:D21
+			owned_provinces = { "xED2A0A" "x4FA02F" "xDB1A10" "x0DAC2F" "x3C44DB" }
+		}
+		add_homeland = cu:titanium_dwarf
+		add_homeland = cu:drakonshani_orc
+	}
+	s:STATE_SEGHROD = {
+		create_state = {
+			country = c:D24
+			owned_provinces = { "x65C823" "xB82CDB" "xB17331" "xD75093" "xD95ACC" "x6C50D5" }
+		}
+		create_state = {
+			country = c:D25
+			owned_provinces = { "x6C8C17" "x3358C4" "x32BFC8" }
+		}
+		add_homeland = cu:deep_goblin
+		add_homeland = cu:goldtooth_goblin
+	}
+	s:STATE_OZUMROD = {
+		create_state = {
+			country = c:D25
+			owned_provinces = { "xE7B814" "x65E021" "x77D496" "x9D7CD5" "x67A06C" }
+		}
+		create_state = {
+			country = c:D26
+			owned_provinces = { "x915586" "xDBD94C" }
+		}
+		add_homeland = cu:gold_dwarf
+		add_homeland = cu:goldtooth_goblin
+	}
+
+	s:STATE_DRAKEDENS = {
+		create_state = {
+			country = c:D21
+			owned_provinces = { "xA52C2E" "x775EA5" "xA59272" "xA5814A" "xA51223" "xA55F43" "xDD3924" "x84873E" "x59500B" "x2B47CD" "x317B50" "x8487F4" }
+		}
+		add_homeland = cu:drakonshani_orc
+	}
+	s:STATE_FORSAKEN_DEPTHS = {
+		create_state = {
+			country = c:D21
+			owned_provinces = { "x246174" "x81A4A5" "xF4E6C6" "x696040" "xE9006C" "x0C59F6" "xC3F2B8" }
+		}
+		create_state = {
+			country = c:D55
+			owned_provinces = { "xC32C8C" "x70A5A2" "x0F2BB8" "xBCC838" "x7080A5" "x87A552" "x115F9D" "xA5423B" "xED838D" "xA34A00" "xB8193B" "x52340F" "x9F7BF2" }
+		}
+		add_homeland = cu:drakonshani_orc
+		add_homeland = cu:black_orc
+	}
+	s:STATE_CITRINE_MINES = {
+		create_state = {
+			country = c:D53
+			owned_provinces = { "x7873CF" "xEF0A0A" "x20726F" "xDC9ED1" "x44992D" "x4E8DA8" "x00C361" "x14858F" "xCE4DF0" "xE80C57" "xF1A557"}
+		}
+		create_state = {
+			country = c:D24
+			owned_provinces = { "x4A8F4D" "xB1F9FD" }
+		}
+		create_state = {
+			country = c:D54
+			owned_provinces = { "xF2AF79" "x63C6A8" "x7C9635" "xB56CCE" "xD69FD3" "xD966CA" "x76B0F2" "x37271B" "xD7F2EB" }
+		}
+		add_homeland = cu:deep_goblin
+		add_homeland = cu:black_orc
+	}
+	s:STATE_GREATCAVERNS = {
+		create_state = {
+			country = c:D24
+			owned_provinces = { "x9EBA2C" "xD53C5D" "x4F3AF2" "x34104B" }
+		}
+		create_state = {
+			country = c:D56
+			owned_provinces = { "xE77F2B" "x66337C" "xCF0F64" "x78EC91" "xC50F96" "xC50F64" "xEA646B" "x392AEE" "x79D1F7" "x4FC10C" }
+		}
+		create_state = {
+			country = c:D25
+			owned_provinces = { "xCF0FC8" "x444F05" "xBCA15E" "xAA0F64" "x6C45F6" "xBC3C73" "x8C0F96" "xA00FC8" "x72E35A" "x04F408" "xBBD243" "x7CF8E9" "x630C9E" "x2C2862" }
+		}
+		add_homeland = cu:trolltamer_goblin
+		add_homeland = cu:cave_troll
+	}
+	s:STATE_FOOLS_PASSAGE = {
+		create_state = {
+			country = c:D24
+			owned_provinces = { "x1A3553" "x52E1B0" "xD9ADC7" "x1F6C29" "x1C031B" "x16647B" "x5D0298" }
+		}
+		create_state = {
+			country = c:D52
+			owned_provinces = { "x57DC73" "xDBD935" "x347919" "x60C919" "x2C7189" "xF21A02" "x52143A" "x9E1B25" "xEDA635" }
+		}
+		add_homeland = cu:trolltamer_goblin
+		add_homeland = cu:deep_goblin
+		add_homeland = cu:cave_troll
+	}
+	s:STATE_RATHOLES = {
+		create_state = {
+			country = c:D57
+			owned_provinces = { "xF291CD" "x98E3F2" "xF25B29" "xF2742B" "xEAAEF2" "x1363EF" "xEA9792" "x6B89A5" "xBA5B4D" "xE81D98" "x045E13" "xE02384" "xF2CE7B" "x14B54A" "x5FFFB5" "x26B5F2" "x5DE2C8" }
+		}
+		add_homeland = cu:goldtooth_goblin
+	}
+	s:STATE_ANCIENT_DEPTHS = {
+		create_state = {
+			country = c:D25
+			owned_provinces = { "xB49DF2" "x94902E" "x752A29" "xD0E4F2" "x325190" "x5046D1" "xD230FF" "x385410" }
+		}
+		create_state = {
+			country = c:D58
+			owned_provinces = { "x5A1990" "xD916FC" "xD9C6BE" "xD17302" "x8A9210" "xA0A590" "xA57A3D" "xEFA9F2" "x2F4F3B" "xF2119C" "x9262E1" }
+		}
+		create_state = {
+			country = c:D59
+			owned_provinces = { "xA51C2C" "xA51085" "x9E95A5" "xA5904F" "xA50055" "xA5600B" "xF2E6CD" "x944CCD" "x0E1024" "x5F0FF5" "xF67D0E" }
+		}
+		add_homeland = cu:goldtooth_goblin
+	}
+
+
+
+	#Tree of Stone
+	s:STATE_COPPER_ROAD = {
+		create_state = {
+			country = c:D26
+			owned_provinces = { "x23E030" "xEFE145" "xAA7280" "x98B6C9" "x4585EF" "x96AB13" "x85270A" "xDBDE01" }
+		}
+		add_homeland = cu:undergrowth_goblin
+		add_homeland = cu:amber_dwarf
+	}
+	s:STATE_GROZUMROD = {
+		create_state = {
+			country = c:D26
+			owned_provinces = { "xDE1111" "x0FF1F4" "x53A7BC" "x83C78B" "x2E27C3" "xF28CD0" "x9B12CB" }
+		}
+		add_homeland = cu:peridot_dwarf
+		add_homeland = cu:amethyst_dwarf
+		add_homeland = cu:undergrowth_goblin
+	}
+	s:STATE_HALNROD = {
+		create_state = {
+			country = c:D26
+			owned_provinces = { "xD71E70" "x8DDCAC" "x991ED2" "xD76767" "x2C8E2E" "x2C985F" }
+		}
+		create_state = {
+			country = c:D31
+			owned_provinces = { "x09A985" "xC9923A" }
+		}
+		add_homeland = cu:amber_dwarf
+		add_homeland = cu:amethyst_dwarf
+		add_homeland = cu:undergrowth_goblin
+		add_claim = c:D31
+	}
+	s:STATE_DRUNKEN_ROAD = {
+		create_state = {
+			country = c:D31
+			owned_provinces = { "x4FB551" "xA6325E" "x1FE324" "xAB0D36" "x9FC893" "x6320C8" }
+		}
+		create_state = {
+			country = c:D33
+			owned_provinces = {  "xE74E0A" "xE1CD24" }
+		}
+		add_homeland = cu:march_goblin
+		add_homeland = cu:undergrowth_goblin
+	}
+
+
+	s:STATE_AMBER_MINES = {
+		create_state = {
+			country = c:D26
+			owned_provinces = { "x0336EE" "x83A41B" "xDB1758" "xE0DE5D" "x436BB3" "xD78018" "x37811D" "x5BC421" "xC6C55F" "xD2B336" "xB249B2" "xD43BF4" "xA71977" "x34E6E1" "x9E85F2" "xC417C0" "x906570" "x4A40E1" "x89634C" }
+		}
+		add_homeland = cu:undergrowth_goblin
+	}
+	s:STATE_EARTHSEED = {
+		create_state = {
+			country = c:D26
+			owned_provinces = { "xD6E718" "xFF0E3B" "x354CB0" "x1FD25A" "xDD610C" "xD432AB" "xD1E33B" "xA77A36" "x35C8C3" "xEAA57A" "xC7F2A2" "x6D13AB" "xFCF79C" "xB33737" "xA8A2CB" "xC9758F" }
+		}
+		add_homeland = cu:undergrowth_goblin
+	}
+	s:STATE_ROARING_CAVERNS = {
+		create_state = {
+			country = c:D26
+			owned_provinces = {"x453BC8" "x7F54A4" "x5B908E" "xE92518" "x73FDED" }
+		}
+		create_state = {
+			country = c:D31
+			owned_provinces = { "x4FB81B" "x11C38A" "xA8DB20" "xD2F0F2" "x0D4270" "x804311" "x4E1281" "x7C9EE3" "xEDC6EF" }
+		}
+		add_homeland = cu:undergrowth_goblin
+		add_claim = c:D31
+	}
+	s:STATE_AMETHYST_POCKET = {
+		create_state = {
+			country = c:D31
+			owned_provinces = { "xE2BAEF" "x64017A" "xDE5BAA" "xEF2124" "x3A3BDA" "xBFD7EF" "x4B6C99" "xC74C16" "xC7EF62" "x27DEE3" }
+		}
+		add_homeland = cu:undergrowth_goblin
+	}
+	s:STATE_ALEMINES = {
+		create_state = {
+			country = c:D31
+			owned_provinces = { "x969229" "xD44F9A" "xB2B59E" "x4D7DC3" "x743EB7" "x30A733" "x5D26BE" "x6D5611" "x095861" "x1B4758" "x163405" "xAB0BEF" "x00A0FF" }
+		}
+		create_state = {
+			country = c:D33
+			owned_provinces = { "x46C646" "xB8BEAB" "xFB8DF9" "x0E1F02" "xC87E5B" }
+		}
+		add_homeland = cu:undergrowth_goblin
+	}
+	s:STATE_GRANITE_SPIRES = {
+		create_state = {
+			country = c:D31
+			owned_provinces = { "xBAF492" "x661E93" "xD53838" "x042836" "xE01826" "xB57C7C" "xBBD00A" "xC85C14" "x737BA0" "x53CB56" "x5364BA" "xDFF2D7" "xF246D2" "x01200A" "xC00976" "x64EAFF" "xBAA919" "x63D6EE" "x2637C8" }
+		}
+		add_homeland = cu:undergrowth_goblin
+	}
+
+
+	#Jade Mines
+	s:STATE_WESTERN_JADEROD = {
+		create_state = {
+			country = c:D33
+			owned_provinces = { "x0D5E6D" "xD5C510" "xB86F6F" "xD22A2A" "x756DC9" "x86B18D" "x45194B" "x76B07B" "x879B69" }
+		}
+		#add_homeland = cu:jade_dwarf
+		#add_homeland = cu:emerald_dwarf
+		add_homeland = cu:undergrowth_goblin
+		add_homeland = cu:march_goblin
+	}
+	s:STATE_EASTERN_JADEROD = {
+		create_state = {
+			country = c:D33
+			owned_provinces = { "x9F4949" "x7C3C56" "x33AC6C" "x634DC3" "x3F801B" "xA3B752" "xC353BF" "xC9A71D" "xB9E328" }
+		}
+		add_homeland = cu:march_goblin
+	}
+
+
+
+	s:STATE_INVADERS_PATH = {
+		create_state = {
+			country = c:D33
+			owned_provinces = { "xD2EFDA" "x4F8898" "x1CF796" "xC62F65" "x3CC2AD" "x69DB8E" "x443BEF" "xD9BC68" "x37A696" "x147661" "xEFC562" "x2423D8" }
+		}
+		add_homeland = cu:undergrowth_goblin
+		add_homeland = cu:chimera_hobgoblin
+	}
+	s:STATE_LUSH_CAVERNS = {
+		create_state = {
+			country = c:D33
+			owned_provinces = { "xD047C8" "xC9461E" "x499EA6" "xD79B55" "xEC7014" "xE00C48" "x68C498" "x2D2B0C" "x38BDD7" "x082B6A" "x765BA6" "xEBEFE1" "x90EA02" }
+		}
+		add_homeland = cu:fungrum
+		add_homeland = cu:undergrowth_goblin
+	}
+	s:STATE_PUTRID_PASSAGE = {
+		create_state = {
+			country = c:D33
+			owned_provinces = { "x95BA95" "x005B07" "x86C483" "x592391" "xF4DD83" "x9D4D5A" "x608088" "xB3E368" "x36C16A" "xD40E59" "x707894" "x48F628" "x043A8D" "xEF4A34" "x3EEFBD" "x8906D2" "xB1D71A" "x24173F" "x84BB14" "x791927" }
+		}
+		add_homeland = cu:march_goblin
+		add_homeland = cu:chimera_hobgoblin
+	}
+	s:STATE_SUNLIT_HOLLOW = {
+		create_state = {
+			country = c:D33
+			owned_provinces = { "x53EFDA" "xB2E75E" "x874D7D" "x9B9BC6" "xF8F5AC" "xD0C675" "xBFDC21" "x58E08E" "x6471F4" "xEF6979" "x797632" "x055D1E" "x396DE1" "xAEC3CE" "xC37BD3" }
+		}
+		add_homeland = cu:march_goblin
+		add_homeland = cu:chimera_hobgoblin
+	}
+
+
+	###Northern Pass
+	s:STATE_SARMOBAR = {
+		create_state = {
+			country = c:A10
+			owned_provinces = { "x027C79" "x06DFAD" "x10F0B6" "x300DE7" "x31301C" "x341058" "x35836B" "x3A807D" "x3BFB8A" "x413975" "x47BD82" "x49DCFD" "x583EAD" "x59E519" "x61D86E" "x68458D" "x6C7894" "x717C92" "x7DF74D" "x8163C9" "x828CD4" "x82F97F" "x88BDC5" "x8B7959" "x8C02B7" "x918944" "x9CAD66" "x9D8AFA" "xAF69B3" "xBE3B5C" "xBFD838" "xC0F4E7" "xC8924F" "xD0C6A5" "xE74E17" "xED5522" }
+			state_type = unincorporated
+		}
+		add_homeland = cu:forest_troll
+	}
+	s:STATE_AK_LOGRAN = {
+		create_state = {
+			country = c:A10
+			owned_provinces = { "x3829a0" "x822b5b" "x4a35c6" "x4834da" "x4e3f58" "xdd10a1" "x513fd9" "x4d4ab6" "x85475a" "xec5558" "xbf5eae" "x9668e1" "x1da765" "xb780d5" "xd09528" "x6aa6f0" "xbf93fb" "x06f28d" "xbdc0a8" }
+		}
+		
+		add_homeland = cu:grombari_half_orc
+		add_homeland = cu:grombari_orc
+		add_homeland = cu:forest_troll
+	}
+	
+	s:STATE_KABARDA = {
+		create_state = {
+			country = c:A10
+			owned_provinces = { "x198149" "x509492" "x5E3430" "x66B391" "x829D18" "x8D705A" "x94F3B6" "x9D9615" "xAB403A" "xC460C5" "xCF96D6" "xDEA29E" "xE06947" }
+		}
+		
+		add_homeland = cu:grombari_half_orc
+		add_homeland = cu:mossmouth_ogre
+	}
+
+	s:STATE_ZUDARAKH = {
+		create_state = {
+			country = c:A10
+			owned_provinces = { "x0FA1C6" "x6A22AC" "xB07A95" "xC89393" "xEAD711" "x78FB57" }
+		}
+		
+		add_homeland = cu:grombari_half_orc
+		add_homeland = cu:grombari_orc
+	}
+
+	s:STATE_LONELY_MOUNTAIN = {
+		create_state = {
+			country = c:A10
+			owned_provinces = { "xA4D39C" "x882871" "x89AA24" "xDBBF53" "xBB2486" "x1BCE62" "x1980E6" "x81029E" "x8D15F3" "x6C9CC1" "x35083D" }
+			state_type = unincorporated
+		}
+		add_homeland = cu:lonely_goblin
+	}
+
+	s:STATE_KORZKHAN = {
+		create_state = {
+			country = c:A10
+			owned_provinces = { "x1DA1D8" "x2C6123" "x2D753B" "x38908D" "x3AA24A" "x5484EA" "x688F6A" "x7BC70C" "x829583" "x9003BB" "x94C5E3" "x97B97D" "xBA8F3A" "xD01D65" "xE70D05" }
+		}
+		add_homeland = cu:forest_troll
+		add_homeland = cu:mossmouth_ogre
+		add_claim = c:D02
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

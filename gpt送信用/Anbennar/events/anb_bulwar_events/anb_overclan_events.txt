@@ -1,0 +1,230 @@
+﻿namespace = overclan_events
+
+overclan_events.1 = { # Guarantee event
+    type = country_event
+
+    title = overclan_events.1.t
+    desc = overclan_events.1.d
+    flavor = overclan_events.1.f
+
+    event_image = {
+        video = "europenorthamerica_political_extremism"
+    }
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 2
+
+    option = {
+        name = overclan_events.1.a
+        default_option = yes
+        ai_chance = { base = 100 }
+        create_treaty = {
+            first_country = root
+            second_country = c:F14
+
+            is_draft = no
+            binding_period = { years = 20 }
+
+            articles_to_create = {
+                {
+                    article = guarantee_independence
+                    source_country = root
+                    target_country = c:F14
+                }
+            }
+        }
+        set_variable = protect_overclan
+
+    }
+
+    option = {
+        ai_chance = { base = 0 }
+        name = overclan_events.1.b
+    }
+}
+
+overclan_events.2 = { # Defensive pact event
+    type = country_event
+
+    title = overclan_events.2.t
+    desc = overclan_events.2.d
+    flavor = overclan_events.2.f
+
+    event_image = {
+        video = "europenorthamerica_political_extremism"
+    }
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 2
+
+    option = {
+        name = overclan_events.2.a
+        default_option = yes
+        ai_chance = { base = 100 }
+        create_treaty = {
+            first_country = root
+            second_country = c:F14
+
+            is_draft = no
+            binding_period = { years = 20 }
+
+            articles_to_create = {
+                {
+                    article = defensive_pact
+                }
+            }
+        }
+        set_variable = protect_overclan
+
+    }
+
+    option = {
+        ai_chance = { base = 0 }
+        name = overclan_events.2.b
+    }
+}
+
+overclan_events.3 = { # Ravelian missionaries
+    type = country_event
+    placement = scope:missionary_state
+
+    title = overclan_events.3.t
+    desc = overclan_events.3.d
+    flavor = overclan_events.3.f
+
+    event_image = {
+        video = "europenorthamerica_political_extremism"
+    }
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 2
+
+    trigger = {
+        has_variable = ravelian_missionaries
+    }
+
+    immediate = {
+        random_scope_state = {
+            limit = {
+                owner = ROOT
+            }
+            save_scope_as = missionary_state
+        }
+    }
+
+    option = {
+        name = overclan_events.3.a
+        default_option = yes
+        scope:missionary_state ?= {
+            convert_population = {
+                target = rel:ravelian
+                value = 0.3
+            }
+        }
+    }
+}
+
+overclan_events.4 = { # Ravelian missionaries (Prominent Ravelian Church Constructed)
+    type = country_event
+    placement = scope:missionary_state
+
+    title = overclan_events.4.t
+    desc = overclan_events.4.d
+    flavor = overclan_events.4.f
+
+    event_image = {
+        video = "europenorthamerica_political_extremism"
+    }
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 2
+
+    trigger = {
+        has_variable = ravelian_missionaries
+    }
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = missionary_state
+        }
+    }
+
+    option = {
+        name = overclan_events.4.a
+        default_option = yes
+        scope:missionary_state ?= {
+            convert_population = {
+                target = rel:ravelian
+                value = 0.3
+            }
+        }
+    }
+}
+
+overclan_events.5 = { # Ravelian missionaries (State Supported Conversion)
+    type = country_event
+    placement = scope:missionary_state
+
+    title = overclan_events.5.t
+    desc = overclan_events.5.d
+    flavor = overclan_events.5.f
+
+    event_image = {
+        video = "europenorthamerica_political_extremism"
+    }
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 2
+
+    trigger = {
+           has_variable = ravelian_missionaries
+    }
+
+    immediate = {
+        random_scope_state = {
+            save_scope_as = missionary_state
+        }
+    }
+
+    option = {
+        name = overclan_events.5.a
+        default_option = yes
+        scope:missionary_state ?= {
+            convert_population = {
+                target = rel:ravelian
+                value = 0.3
+            }
+        }
+    }
+}
+
+overclan_events.6 = { # The facade falls
+    type = country_event
+
+
+    title = overclan_events.6.t
+    desc = overclan_events.6.d
+    flavor = overclan_events.6.f
+
+    event_image = {
+        video = "europenorthamerica_political_extremism"
+    }
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 2
+    option = {
+        name = overclan_events.6.a
+        default_option = yes
+        create_diplomatic_play = {
+            name = the_facade_falls_war
+            escalation = 20
+            target_country = c:F14
+            type = dp_regime_change
+            add_war_goal = { 
+                holder = c:F14
+                type = leave_power_bloc
+                target_country = c:F01             
+            }
+        }
+    }
+}

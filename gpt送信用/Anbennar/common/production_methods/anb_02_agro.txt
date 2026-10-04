@@ -1,0 +1,270 @@
+﻿## Farm Secondary Variants
+
+#Serpentbloom Farms
+pm_serpentbloom_no_secondary = {
+	texture = "gfx/interface/icons/production_method_icons/no_orchards.dds"
+	is_default = yes
+}
+pm_serpentbloom_opium = {
+	texture = "gfx/interface/icons/production_method_icons/orchards.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_grain_add = -10
+			goods_output_opium_add = 10
+		}
+	}
+}
+
+#Mushroom Farms
+pm_mushroom_no_secondary = {
+	texture = "gfx/interface/icons/production_method_icons/no_orchards.dds"
+	is_default = yes
+}
+pm_mushroom_liquor = {
+	texture = "gfx/interface/icons/production_method_icons/plant_liquor.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_grain_add = -10
+			goods_output_liquor_add = 15
+		}
+	}
+}
+
+
+## Farms
+
+pm_herb_gardens = {
+	texture = "gfx/interface/icons/production_method_icons/plant_reagents.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_grain_add = -10
+			goods_output_magical_reagents_add = 8
+		}
+	}
+}
+
+pm_herb_gardens_rice_farm = {
+	texture = "gfx/interface/icons/production_method_icons/plant_reagents.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_grain_add = -30
+			goods_output_magical_reagents_add = 22
+		}
+	}
+}
+
+pm_growth_beans_farms = {
+	texture = "gfx/interface/icons/production_method_icons/growth.dds"
+	unlocking_technologies = {
+		punch_card_artificery		
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_artificery_doodads_add = 2
+			goods_input_sulfur_add = 2				
+			
+			# output goods													
+			goods_output_grain_add = 15
+		}
+	}
+}
+
+pm_genetically_transmuted_organisms_farms = {
+	texture = "gfx/interface/icons/production_method_icons/transmuted.dds"
+	unlocking_technologies = {
+		gene_transmutation			
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_artificery_doodads_add = 3
+			goods_input_fertilizer_add = 10			
+			
+			# output goods													
+			goods_output_grain_add = 30
+		}
+
+		level_scaled = {
+			# earnings	
+			building_employment_laborers_add = -250			
+			building_employment_machinists_add = 250
+		}
+	}
+}
+
+pm_chronoponics_farms = {
+	texture = "gfx/interface/icons/production_method_icons/chronoponics.dds"
+	unlocking_technologies = {
+		chronoculture			
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_artificery_doodads_add = 6
+			goods_input_fertilizer_add = 15			
+			
+			# output goods													
+			goods_output_grain_add = 50
+		}
+
+		level_scaled = {
+			# earnings	
+			building_employment_laborers_add = -500		
+			building_employment_machinists_add = 500
+		}
+	}
+}
+
+pm_automata_harvesters = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	unlocking_technologies = {
+		insyaan_analytical_engine			
+	}
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods													
+			goods_input_automata_add = 4
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_autonomous_tractors = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods								
+			goods_input_automata_add = 7
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+			building_employment_farmers_add = -1250
+		}
+	}
+}
+
+## Livestock
+
+pm_no_enchancements_building_livestock_ranch = {
+	texture = "gfx/interface/icons/production_method_icons/no_orchards.dds"
+}
+
+pm_enchantment_herding_building_livestock_ranch = {
+	texture = "gfx/interface/icons/production_method_icons/plant_reagents.dds"
+
+	
+	unlocking_technologies = {
+		magocracy			
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 10	
+			
+			# output goods
+			goods_output_meat_add = 20	
+		}
+
+		level_scaled = {
+			building_employment_mages_add = 250
+		}
+	}
+}
+pm_perpetual_meat_husks_building_livestock_ranch = {
+	texture = "gfx/interface/icons/production_method_icons/potatoes.dds"
+	
+	unlocking_technologies = {
+		gene_transmutation			
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 15
+			goods_input_artificery_doodads_add = 2
+			
+			# output goods
+			goods_output_meat_add = 35	
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 500
+		}
+	}
+}
+
+pm_geas_device = {
+	texture = "gfx/interface/icons/production_method_icons/electric_fencing.dds"	
+	unlocking_technologies = {
+		philosophical_pragmatism	#this is a quick fix to reenable it since psionic theory was removed ; TO BE CHANGED LATER
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_artificery_doodads_add = 5
+			goods_input_electricity_add = 4
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1600
+			building_employment_machinists_add = -900
+		}
+	}
+
+	required_input_goods = electricity
+}
+
+pm_livestock_no_automata = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+
+pm_livestock_automata_usage = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	unlocking_technologies = {
+		thinking_machinery
+	}
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 5
+		}
+
+		level_scaled = {
+			building_employment_farmers_add = -1000
+			building_employment_laborers_add = -1500
+		}
+	}
+}
+
+

@@ -1,0 +1,195 @@
+﻿scripted_button_darkscale_nimrith_revival_generic_button = {
+	name = "scripted_button_darkscale_nimrith_revival_generic_button"
+	desc = "scripted_button_darkscale_nimrith_revival_generic_button_desc"
+
+	possible = {
+		gold_reserves >= 500000
+		bureaucracy >= 350
+		NOT = { has_variable = pressed_generic_button_darkscale }
+	}
+
+	effect = {
+		add_modifier = {
+			name = je_darkscales_nimrith_revival_bureaucracy_penalty years = 2
+		}
+		add_treasury = -500000
+		je:je_darkscale_nimrith_revival = {
+ 			add_progress = { value = 1 name = darkscale_progress_progress_bar }
+ 		}
+ 		set_variable = pressed_generic_button_darkscale
+	}
+}
+
+scripted_button_darkscale_nimrith_revival_who_do_we_get_body_parts_from_button_smith_priests = {
+	name = "scripted_button_darkscale_nimrith_revival_who_do_we_get_body_parts_from_button_smith_priests"
+	desc = "scripted_button_darkscale_nimrith_revival_who_do_we_get_body_parts_from_button_smith_priests_desc"
+
+	visible = {
+		has_variable = stuck_to_smith_priests_darkscales_nimrith_revival_variable
+	}
+
+	possible = {
+		root.gdp > 11000000
+		NOT = { has_variable = pressed_smith_priest_button_darkscale }
+	}
+
+	effect = {
+		je:je_darkscale_nimrith_revival = {
+ 			add_progress = { value = 1 name = darkscale_progress_progress_bar }
+ 		}
+ 		set_variable = pressed_smith_priest_button_darkscale
+	}
+}
+
+scripted_button_darkscale_nimrith_revival_who_do_we_get_body_parts_from_button_artisans = {
+	name = "scripted_button_darkscale_nimrith_revival_who_do_we_get_body_parts_from_button_artisans"
+	desc = "scripted_button_darkscale_nimrith_revival_who_do_we_get_body_parts_from_button_artisans_desc"
+
+	visible = {
+		has_variable = have_partenered_with_artisans_darkscales_nimrith_revival_variable
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_HARAZ_ORLDHUM
+			custom_tooltip = {
+				text = scripted_button_darkscale_nimrith_revival_who_do_we_get_body_parts_from_button_artisans_light_industry_level_requirement
+				25 <= { #checks if there's 25 or less light industry buildings in state
+					every_scope_building = {
+						limit = {
+							is_building_group = bg_light_industry
+						}
+						add = this.level
+					}
+				}
+			}
+		}
+		NOT = { has_variable = pressed_artisan_button_darkscale }
+	}
+
+	effect = {
+		je:je_darkscale_nimrith_revival = {
+ 			add_progress = { value = 1 name = darkscale_progress_progress_bar }
+ 		}
+ 		set_variable = pressed_artisan_button_darkscale
+	}
+}
+
+scripted_button_darkscale_nimrith_revival_who_do_we_get_body_parts_from_button_factories = {
+	name = "scripted_button_darkscale_nimrith_revival_who_do_we_get_body_parts_from_button_factories"
+	desc = "scripted_button_darkscale_nimrith_revival_who_do_we_get_body_parts_from_button_factories_desc"
+
+	visible = {
+		has_variable = have_partenered_with_factories_darkscales_nimrith_revival_variable
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_HARAZ_ORLDHUM
+			any_scope_building = {
+				is_building_type = building_urban_center
+				level >= 22
+			}
+		}
+		NOT = { has_variable = pressed_factory_button_darkscale }
+	}
+
+	effect = {
+		je:je_darkscale_nimrith_revival = {
+ 			add_progress = { value = 1 name = darkscale_progress_progress_bar }
+ 		}
+ 		set_variable = pressed_factory_button_darkscale
+	}
+}
+
+scripted_button_darkscale_nimrith_revival_what_type_of_leader_is_nimrith_button_spiritual_ruler = {
+	name = "scripted_button_darkscale_nimrith_revival_what_type_of_leader_is_nimrith_button_spiritual_ruler"
+	desc = "scripted_button_darkscale_nimrith_revival_what_type_of_leader_is_nimrith_button_spiritual_ruler_desc"
+
+	visible = {
+		has_variable = spiritual_ruler_darkscales_nimrith_revival_variable
+	}
+
+	possible = {
+		has_law_or_variant = law_type:law_religious_schools
+		NOT = { has_variable = pressed_spiritual_ruler_button_darkscale }
+	}
+
+	effect = {
+		je:je_darkscale_nimrith_revival = {
+ 			add_progress = { value = 1 name = darkscale_progress_progress_bar }
+ 		}
+ 		set_variable = pressed_spiritual_ruler_button_darkscale
+	}
+}
+
+scripted_button_darkscale_nimrith_revival_what_type_of_leader_is_nimrith_button_war_leader = {
+	name = "scripted_button_darkscale_nimrith_revival_what_type_of_leader_is_nimrith_button_war_leader"
+	desc = "scripted_button_darkscale_nimrith_revival_what_type_of_leader_is_nimrith_button_war_leader_desc"
+
+	visible = {
+		has_variable = military_ruler_darkscales_nimrith_revival_variable
+	}
+
+	possible = {
+		army_size >= 100
+		NOT = { has_variable = pressed_war_leader_button_darkscale }
+	}
+
+	effect = {
+		je:je_darkscale_nimrith_revival = {
+ 			add_progress = { value = 1 name = darkscale_progress_progress_bar }
+ 		}
+ 		set_variable = pressed_war_leader_button_darkscale
+	}
+}
+
+scripted_button_darkscale_nimrith_revival_what_type_of_leader_is_nimrith_button_material_ruler = {
+	name = "scripted_button_darkscale_nimrith_revival_what_type_of_leader_is_nimrith_button_material_ruler"
+	desc = "scripted_button_darkscale_nimrith_revival_what_type_of_leader_is_nimrith_button_material_ruler_desc"
+
+	visible = {
+		has_variable = intelligentsia_ruler_darkscales_nimrith_revival_variable
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_HARAZ_ORLDHUM
+			any_scope_building = {
+				is_building_type = building_university
+				level >= 7
+			}
+		}
+		NOT = { has_variable = pressed_material_ruler_button_darkscale }
+	}
+
+	effect = {
+		je:je_darkscale_nimrith_revival = {
+ 			add_progress = { value = 1 name = darkscale_progress_progress_bar }
+ 		}
+ 		set_variable = pressed_material_ruler_button_darkscale
+	}
+}
+
+scripted_button_darkscale_sabotage_reset ={
+	name = "scripted_button_darkscale_sabotage_reset"
+	desc = "scripted_button_darkscale_sabotage_reset_desc"
+
+	possible = {
+		NOT = { has_variable = reset_sabotage_progress_darkscale }
+	}
+
+	effect = {
+		je:je_darkscale_nimrith_revival = {
+ 			add_progress = { value = -50 name = darkscale_sabotage_progress_bar }
+ 		}
+ 		add_radicals = {
+ 			value = small_radicals
+ 		}
+ 		add_modifier = {
+ 			name = further_sabotage_apon_landowners_darkscale
+ 			years = 3
+ 		}
+		set_variable = reset_sabotage_progress_darkscale
+	}
+}

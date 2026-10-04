@@ -1,0 +1,151 @@
+﻿#The Ranger's Coup
+je_ranger_coup = {
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+    group = je_group_historical_content
+
+    immediate = {
+        trigger_event = { id = anb_ranger_republic.001 popup = yes }
+    }
+
+    complete = {
+        NOT = { 
+            OR = {
+                exists = c:B37
+                c:B37 ?= {
+                    is_country_alive = yes
+                }
+            }
+            C:B47 ?= {
+                has_diplomatic_pact = {
+                    who = C:B91
+                    type = tributary
+                    is_initiator = yes
+                }
+            }
+            C:B45 ?= {
+                has_diplomatic_pact = {
+                    who = C:B91
+                    type = tributary
+                    is_initiator = yes
+                }
+            }
+        }
+        OR = {
+            has_truce_with = C:B47
+            NOT = {
+                exists = c:B47
+            }
+        }
+         OR = {
+            has_truce_with = C:B45
+            NOT = {
+                exists = c:B45
+            }
+        }
+    }
+
+    on_complete = {
+        trigger_event = { id = anb_ranger_republic.002 }
+    }
+
+    fail = {
+        OR = {
+            OR = {
+                exists = c:B44
+                c:B44 ?= {
+                    is_country_alive = yes
+                }
+            }
+            OR = {
+                exists = c:B48
+                c:B48 ?= {
+                    is_country_alive = yes
+                }
+            }
+            has_truce_with = C:B37
+        }
+    }
+
+    on_fail = {
+        trigger_event = { id = anb_ranger_republic.003 }
+    }
+
+    timeout = 1825
+
+    on_timeout = {
+        trigger_event = { id = anb_ranger_republic.004 }
+    }
+
+    on_weekly_pulse = {
+        events = {
+            anb_ranger_republic.006
+        }
+    }
+
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+#The Ranger's Coup (Not RR)
+je_ranger_coup_response = {
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+    group = je_group_historical_content
+
+    immediate = {
+        trigger_event = { id = anb_ranger_republic.001 popup = yes }
+    }
+
+    complete = {
+        OR = {
+            AND = {
+                OR = {
+                    exists = c:B44
+                    c:B44 ?= {
+                        is_country_alive = yes
+                    }
+                }
+                OR = {
+                    exists = c:B48
+                    c:B48 ?= {
+                        is_country_alive = yes
+                    }
+                }
+            }
+            has_truce_with = C:B91
+            is_owed_obligation_by = C:B91
+        }
+    }
+
+    on_complete = {
+        if = {
+            limit = {
+                is_owed_obligation_by = c:B91
+            }
+            trigger_event = { id = anb_ranger_republic.005 }
+        }
+        # else_if = {
+        #     limit = {
+        #         NOT = {
+        #             exists = c:B44
+        #             c:B44 ?= {
+        #                 is_country_alive = yes
+        #             }
+        #         }
+        #     }
+        #     trigger_event = { id = anb_ranger_republic.004 }
+        # }
+        # else = {
+        #     trigger_event = { id = anb_ranger_republic.011 }
+        # }
+    }
+
+    timeout = 1825
+
+    on_timeout = {
+        trigger_event = { id = anb_ranger_republic.004 }
+    }
+
+    should_be_pinned_by_default_uninvolved_or_context = yes
+
+}

@@ -1,0 +1,347 @@
+﻿sway_government_button = {
+	name = "sway_government_button"
+	desc = "sway_government_button_desc"
+
+	visible = {
+		always = yes
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = ig_has_not_presented_demands_tt
+			OR = {
+				AND = {
+					NOT = {
+						has_variable = landowners_demands_presented
+					}
+					ig:ig_landowners ?= { is_in_government = yes }
+				}
+				AND = {
+					NOT = {
+						has_variable = armed_forces_demands_presented
+					}
+					ig:ig_armed_forces ?= { is_in_government = yes }
+				}
+				AND = {
+					NOT = {
+						has_variable = devout_demands_presented
+					}
+					ig:ig_devout ?= { is_in_government = yes }
+				}
+				AND = {
+					NOT = {
+						has_variable = rural_folk_demands_presented
+					}
+					ig:ig_rural_folk ?= { is_in_government = yes }
+				}
+				AND = {
+					NOT = {
+						has_variable = intelligentsia_demands_presented
+					}
+					ig:ig_intelligentsia ?= { is_in_government = yes }
+				}
+				AND = {
+					NOT = {
+						has_variable = industrialists_demands_presented
+					}
+					ig:ig_industrialists ?= { is_in_government = yes }
+				}
+				AND = {
+					NOT = {
+						has_variable = trade_unions_demands_presented
+					}
+					ig:ig_trade_unions ?= { is_in_government = yes }
+				}
+			}
+		}
+		NOT = { has_modifier = auldwarov_government_deliberations }
+		government_legitimacy >= 50
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = auldwarov_approach_current_government_tt
+			if = {
+				limit = {
+					ig:ig_landowners ?= { is_in_government = yes }
+				}
+				set_variable = landowners_demands_presented
+			}
+			if = {
+				limit = {
+					ig:ig_intelligentsia ?= { is_in_government = yes }
+				}
+				set_variable = intelligentsia_demands_presented
+			}
+			if = {
+				limit = {
+					ig:ig_trade_unions ?= { is_in_government = yes }
+				}
+				set_variable = trade_unions_demands_presented
+			}
+			if = {
+				limit = {
+					ig:ig_industrialists ?= { is_in_government = yes }
+				}
+				set_variable = industrialists_demands_presented
+			}
+			if = {
+				limit = {
+					ig:ig_rural_folk ?= { is_in_government = yes }
+				}
+				set_variable = rural_folk_demands_presented
+			}
+			if = {
+				limit = {
+					ig:ig_devout ?= { is_in_government = yes }
+				}
+				set_variable = devout_demands_presented
+			}
+			if = {
+				limit = {
+					ig:ig_armed_forces ?= { is_in_government = yes }
+				}
+				set_variable = armed_forces_demands_presented
+			}
+		}
+		trigger_event = {
+            id = auldwarov.100
+        }
+	}
+
+	ai_chance = {
+	}
+}
+
+landowners_demands_button = {
+	name = "landowners_demands_button"
+	desc = "landowners_demands_button_desc"
+
+	visible = {
+		has_variable = landowners_demands_presented
+		NOT = { has_variable = landowners_reneged }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = auldwarov_landowners_support_value_tt
+			auldwarov_landowners_support >= 2
+		}
+		NOT = {
+			has_modifier = auldwarov_landowners_swayed
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = set_landowners_swayed_tt
+			set_variable = landowners_swayed_var
+		}
+		add_modifier = {
+			name = auldwarov_landowners_swayed
+		}
+	}
+
+	ai_chance = {
+	}
+}
+
+devout_demands_button = {
+	name = "devout_demands_button"
+	desc = "devout_demands_button_desc"
+
+	visible = {
+		has_variable = devout_demands_presented
+		NOT = { has_variable = devout_reneged }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = auldwarov_devout_support_value_tt
+			auldwarov_devout_support >= 3
+		}
+		NOT = {
+			has_modifier = auldwarov_devout_swayed
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = set_devout_swayed_tt
+			set_variable = devout_swayed_var
+		}
+		add_modifier = {
+			name = auldwarov_devout_swayed
+		}
+	}
+
+	ai_chance = {
+	}
+}
+
+armed_forces_demands_button = {
+	name = "armed_forces_demands_button"
+	desc = "armed_forces_demands_button_desc"
+
+	visible = {
+		has_variable = armed_forces_demands_presented
+		NOT = { has_variable = armed_forces_reneged }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = auldwarov_armed_forces_support_value_tt
+			auldwarov_armed_forces_support >= 2
+		}
+		NOT = {
+			has_modifier = auldwarov_armed_forces_swayed
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = set_armed_forces_swayed_tt
+			set_variable = armed_forces_swayed_var
+		}
+		add_modifier = {
+			name = auldwarov_armed_forces_swayed
+		}
+	}
+
+	ai_chance = {
+	}
+}
+
+
+
+rural_folk_demands_button = {
+	name = "rural_folk_demands_button"
+	desc = "rural_folk_demands_button_desc"
+
+	visible = {
+		has_variable = rural_folk_demands_presented
+		NOT = { has_variable = rural_folk_reneged }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = auldwarov_rural_folk_support_value_tt
+			auldwarov_rural_folk_support >= 3
+		}
+		NOT = {
+			has_modifier = auldwarov_rural_folk_swayed
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = set_rural_folk_swayed_tt
+			set_variable = rural_folk_swayed_var
+		}
+		add_modifier = {
+			name = auldwarov_rural_folk_swayed
+		}
+	}
+
+	ai_chance = {
+	}
+}
+
+intelligentsia_demands_button = {
+	name = "intelligentsia_demands_button"
+	desc = "intelligentsia_demands_button_desc"
+
+	visible = {
+		has_variable = intelligentsia_demands_presented
+		NOT = { has_variable = intelligentsia_reneged }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = auldwarov_intelligentsia_support_value_tt
+			auldwarov_intelligentsia_support >= 4
+		}
+		NOT = {
+			has_modifier = auldwarov_intelligentsia_swayed
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = set_intelligentsia_swayed_tt
+			set_variable = intelligentsia_swayed_var
+		}
+		add_modifier = {
+			name = auldwarov_intelligentsia_swayed
+		}
+	}
+
+	ai_chance = {
+	}
+}
+
+industrialists_demands_button = {
+	name = "industrialists_demands_button"
+	desc = "industrialists_demands_button_desc"
+
+	visible = {
+		has_variable = industrialists_demands_presented
+		NOT = { has_variable = industrialists_reneged }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = auldwarov_industrialists_support_value_tt
+			auldwarov_industrialists_support >= 4
+		}
+		NOT = {
+			has_modifier = auldwarov_industrialists_swayed
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = set_industrialists_swayed_tt
+			set_variable = industrialists_swayed_var
+		}
+		add_modifier = {
+			name = auldwarov_industrialists_swayed
+		}
+	}
+
+	ai_chance = {
+	}
+}
+
+trade_unions_demands_button = {
+	name = "trade_unions_demands_button"
+	desc = "trade_unions_demands_button_desc"
+
+	visible = {
+		has_variable = trade_unions_demands_presented
+		NOT = { has_variable = trade_unions_reneged }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = auldwarov_trade_unions_support_value_tt
+			auldwarov_trade_unions_support >= 6
+		}
+		NOT = {
+			has_modifier = auldwarov_trade_unions_swayed
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = set_trade_unions_swayed_tt
+			set_variable = trade_unions_swayed_var
+		}
+		add_modifier = {
+			name = auldwarov_trade_unions_swayed
+		}
+	}
+
+	ai_chance = {
+	}
+}

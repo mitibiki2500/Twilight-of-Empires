@@ -1,0 +1,154 @@
+﻿# possible - filters out achivements on game start so we dont have to check everything all the time
+# happened - checks if achivement happened
+
+
+
+
+achievement_anb_machine_age = {
+	possible = {
+		always = yes ##Need to update once insyaa is done
+	}
+	happened = {
+		has_law_or_variant = law_type:law_mechanim_freedom
+		custom_tooltip = {
+			text = lot_of_mechanim_tt
+			any_scope_pop = {
+				has_pop_culture = mechanim
+				total_size >= 7500000
+			}
+		}
+	}
+}
+
+achievement_anb_north_aelantir_concord = {
+	possible = {
+		has_variable = north_aelantir_concord_achievement_possible
+	}
+	happened = {
+		custom_tooltip = {
+			text = owns_north_aelantir_tt
+			ROOT = {
+				owned_north_aelantir_region_states = yes
+			}
+		}
+	}
+}
+
+achievement_anb_all_under_the_light = {
+	possible = {
+		has_variable = all_under_light_achievement_possible
+	}
+	happened = {
+		has_law_or_variant = law_type:law_multicultural
+		custom_tooltip = {
+			text = two_hundred_jadd_pops_tt
+			any_scope_pop = {
+				has_pop_religion = the_jadd
+				total_size >= 200000000
+			}
+		}
+		custom_tooltip = {
+			text = twenty_accepted_cultures_tt
+			any_scope_culture = {
+				NOT = {
+					is_primary_culture_of = root
+				}
+				any_scope_pop = {
+					filter = { state.owner = root }
+					pop_acceptance >= acceptance_status_5
+					percent >= 1
+				}
+				count <= 20
+			}
+		}
+	}
+}
+
+achievement_anb_shatter_fate = {
+	possible = {
+		has_variable = hakhepra_shatter_fate_achievement_possible
+	}
+	happened = {
+		custom_tooltip = {
+			text = khatalashya_exists_tt
+			NOT = { exists = c:L25 }
+		}
+		owns_entire_state_region = STATE_LASADZA
+	}
+}
+
+achievement_anb_back_to_our_roots = {
+	possible = {
+		has_variable = back_to_our_roots_achievement_possible
+	}
+	happened = {
+		custom_tooltip = {
+			text = hierarchy_is_subject_tt
+			OR = {
+				c:A06 = {
+					is_subject_of = c:B07
+				}
+				owns_entire_state_region = STATE_ODDANROY
+			}
+		}
+		custom_tooltip = {
+			text = kobildzan_is_subject_tt
+			OR = {
+				c:A16 = {
+					is_subject_of = c:B07
+				}
+				owns_entire_state_region = STATE_DRAGONMAW
+			}
+		}
+		custom_tooltip = {
+			text = bayvek_is_subject_tt
+			OR = {
+				c:A18 = {
+					is_subject_of = c:B07
+				}
+				owns_entire_state_region = STATE_BAYVEK
+			}
+		}
+	}
+}
+
+achievement_anb_new_ice_age = {
+	possible = {
+		has_variable = new_ice_age_achievement_possible
+	}
+	happened = {
+		custom_tooltip = {
+			text = achievement_anb_new_ice_age_tt
+			any_company = {
+				is_company_type = company_type:company_harasar_textile
+			}
+		}
+		custom_tooltip = {
+			text = achievement_anb_new_ice_age_fabric_tt
+			leading_producer_of = g:fabric
+		}
+	}
+}
+
+achievement_anb_democracy = {
+	possible = {
+		has_variable = kalsyto_democracy_achievement_possible
+	}
+	happened = {
+		country_has_voting_franchise = yes
+		custom_tooltip = {
+			text = all_great_powers_democratic_tt
+			any_country = {
+				filter = {
+					country_rank >= rank_value:great_power
+					NOT = {
+						this = root
+					}
+				}
+				country_has_voting_franchise = yes
+				count = all
+			}
+		}
+	}
+}
+

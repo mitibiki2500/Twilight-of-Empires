@@ -1,0 +1,387 @@
+﻿je_egduqon = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	
+	group = je_group_historical_content
+
+	immediate = {
+		set_variable = {
+			name = egduqon_var
+			value = 0
+		}
+	}
+
+	is_progressing = {
+		egduqon_completion_trigger = yes
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					egduqon_completion_trigger = yes
+				}
+				change_variable = {
+					name = egduqon_var
+					add = 1
+				}
+			}
+		}
+	}
+	
+	modifiers_while_active = {
+		modifier_kalsyto_egduqon
+	}
+
+	complete = {
+		NOT = { has_law = law_type:law_isolationism }
+		NOT = { has_law = law_type:law_closed_borders }
+		scope:journal_entry = { is_goal_complete = yes }
+		egduqon_completion_trigger = yes
+	}
+
+	on_complete = {
+		trigger_event = {
+			id = egduqon.1
+		}
+		hidden_effect = { 
+			set_strategy = ai_strategy_industrial_expansion
+			set_strategy = ai_strategy_egduqon_modernization 
+			set_strategy = ai_strategy_maintain_power_balance
+		}
+		set_variable = egduqon_ended
+	}
+	
+	on_fail = {
+		trigger_event = {
+			id = egduqon.13
+		}
+		add_radicals = { 
+			value = 0.1
+			pop_type = peasants
+		}
+		hidden_effect = { 
+			set_strategy = ai_strategy_industrial_expansion
+			set_strategy = ai_strategy_egduqon_modernization 
+			set_strategy = ai_strategy_maintain_power_balance
+		}
+		set_variable = egduqon_ended
+	}
+
+	fail = {
+		OR = {
+			has_modifier = forced_market_opening
+			custom_tooltip = {
+				text = lost_war_tt
+				has_variable = recently_lost_war
+			}
+			custom_tooltip = {
+				text = lacks_homeland_tt
+				any_state = {
+					OR = {
+						state_region = { is_homeland = cu:triunic }
+					}
+					NOT = { owner = ROOT }
+				}
+			}
+		}
+	}
+	
+	on_monthly_pulse = {
+		random_events = {
+			100 = 0
+			10 = egduqon.11
+		}
+	}
+
+	current_value = {
+		value = root.var:egduqon_var
+	}
+
+	goal_add_value = {
+		value = 120
+	}
+
+	progressbar = yes
+
+	weight = 10000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+
+je_egduqon_main = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	
+	group = je_group_historical_content
+
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+		custom_tooltip = {
+			text = has_completed_egduqon_economy_je_tt
+			has_variable = completed_je_egduqon_economy
+		}
+		custom_tooltip = {
+			text = has_completed_egduqon_diplomacy_je_tt
+			has_variable = completed_je_egduqon_diplomacy
+		}
+		custom_tooltip = {
+			text = has_completed_egduqon_army_je_tt
+			has_variable = completed_je_egduqon_army
+		}
+	}
+
+	on_complete = {
+		#set_variable = egduqon_reforms_complete_var - Unused Var
+		s:STATE_YYL_MOITSA = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_MOITSA = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_MOITSADHI = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		trigger_event = {
+			id = egduqon.2
+		}
+	}
+	
+	modifiers_while_active = {
+		modifier_kalsyto_egduqon_base
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			100 = 0
+			10 = egduqon.4
+			10 = egduqon.5
+			10 = egduqon.6
+			10 = egduqon.12
+		}
+	}
+
+	current_value = {
+		value = var:egduqon_var
+	}
+
+	goal_add_value = {
+		add = 3
+	}
+
+	progressbar = yes
+
+	weight = 10000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_egduqon_economy = {
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+	
+	group = je_group_historical_content
+
+	complete = {
+		in_default = no
+		any_scope_state = {
+			filter = {
+				is_incorporated = yes
+				region = sr:region_triunic_lakes
+			}
+			region = sr:region_triunic_lakes
+			any_scope_building = {
+				is_building_type = building_urban_center
+				level >= 5
+			}
+			has_building = building_railway
+			count = all
+		}
+	}
+
+	on_complete = {
+		add_loyalists = {
+			value = 0.05
+			interest_group = ig:ig_trade_unions
+		}
+		add_loyalists = {
+			value = 0.05
+			interest_group = ig:ig_industrialists
+		}
+		change_variable = {
+			name = egduqon_var
+			add = 1
+		}
+		set_variable = completed_je_egduqon_economy
+	}
+	
+	modifiers_while_active = {
+		modifier_kalsyto_egduqon_adm
+	}
+	
+	on_monthly_pulse = {
+		random_events = {
+			100 = 0
+			10 = egduqon.7
+			8 = egduqon.8
+			10 = egduqon.14
+			5 = egduqon.15
+		}
+	}
+
+	transferable = no
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	weight = 5000
+}
+
+je_egduqon_diplomacy = {
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+	
+	group = je_group_historical_content
+
+	complete = {
+		is_country_type = recognized
+		any_country = {
+			country_rank = rank_value:great_power
+			relations:root >= 40
+		}
+		any_country = {
+			country_rank >= rank_value:unrecognized_major_power 
+			any_scope_treaty = {
+                binds = root
+                any_scope_article = {
+                    has_type = trade_privilege
+                }
+            }
+		}
+		#insert magic/artifice stuff here
+		is_subject = no
+	}
+
+	on_complete = {
+		change_variable = {
+			name = egduqon_var
+			add = 1
+		}
+		set_variable = completed_je_egduqon_diplomacy
+		trigger_event = {
+			id = egduqon.18
+		}
+	}
+	
+	modifiers_while_active = {
+		modifier_kalsyto_egduqon_dip
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			100 = 0
+			5 = egduqon.17
+		}
+	}
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	weight = 5000
+}
+
+je_egduqon_army = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	
+	group = je_group_historical_content
+
+	complete = {
+		NOT = { has_law = law_type:law_peasant_levies }
+		has_technology_researched = napoleonic_warfare
+		country_has_building_type_levels = {
+			target = bt:building_barrack
+			value >= 100
+		}
+		country_has_building_type_levels = {
+			target = bt:building_naval_logistics_center # anb converted in 1.13, the 40 may be way to high idk TODO POLK
+			value >= 40
+		}
+		NOR = {
+			any_scope_building = {
+				is_building_type = building_barrack
+				has_active_production_method = pm_no_organization
+			}
+			#any_scope_building = {
+			#	is_building_type = building_naval_base
+			#	has_active_production_method = pm_no_organization
+			#}
+			any_military_formation = {
+				filter = {
+					is_army = yes
+				}
+				any_combat_unit = {
+					has_unit_type = unit_type:combat_unit_type_irregular_infantry
+				}
+				percent >= 0.25
+			}
+		}
+	}
+
+	on_complete = {
+		change_variable = {
+			name = egduqon_var
+			add = 1
+		}
+		ig:ig_armed_forces = {
+			add_ideology = ideology_loyalist
+		}
+		s:STATE_GHANEERSP = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_SARLUN_GOILUST = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_NAGLAIBAR = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		s:STATE_UGHEABAR = { 
+			if = {
+				limit = { any_scope_state = { NOT = { owner = ROOT } } }
+				add_claim = ROOT 
+			}
+		}
+		#trigger_event = {
+			#id = egduqon.3
+		#}
+		set_variable = completed_je_egduqon_army
+	}
+	
+	modifiers_while_active = {
+		modifier_kalsyto_egduqon_mil
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			100 = 0
+			7 = egduqon.9
+			20 = egduqon.10
+			5 = egduqon.16
+		}
+	}
+
+	transferable = no
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	weight = 5000
+}

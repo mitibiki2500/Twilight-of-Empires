@@ -1,0 +1,107 @@
+﻿auldwarov_unification_zeal = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	building_nationalization_cost_mult = -0.5
+	country_initiator_war_goal_maneuver_cost_mult = -0.2
+}
+
+auldwarov_unification_consequences = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	interest_group_ig_petty_bourgeoisie_pop_attraction_mult = 0.1
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.3
+	country_radicals_from_conquest_mult = 0.5
+}
+
+auldwarov_collapse_consequences = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_legitimacy_base_add = -10
+	country_radicalism_increases_violent_hostility_mult = 0.5
+	country_radicalism_increases_cultural_erasure_mult = 0.3
+	country_radicalism_increases_open_prejudice_mult = 0.2
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.5
+	country_acceptance_shared_heritage_trait_add = -10
+	country_acceptance_shared_heritage_trait_group_add = -10
+	country_acceptance_no_shared_heritage_trait_add = -10
+}
+
+auldwarov_rejected_inwards = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_loyalism_increases_second_rate_citizen_mult = 0.05
+	country_loyalism_increases_full_acceptance_mult = 0.1
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = -0.15
+}
+
+auldwarov_rejected_outwards = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_loyalism_increases_open_prejudice_mult = 0.05
+	country_loyalism_increases_second_rate_citizen_mult = 0.05
+	country_loyalism_increases_full_acceptance_mult = 0.05
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = -0.25
+}
+
+auldwarov_unifier_prestige = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_mult = 0.20
+}
+
+auldwarov_unification_downplayed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	interest_group_ig_petty_bourgeoisie_approval_add = -10
+	country_initiator_war_goal_maneuver_cost_mult = 0.3
+}
+
+
+auldwarov_landowners_swayed = {
+	icon = gfx/interface/icons/ig_icons/landowners_30.dds
+	interest_group_ig_landowners_pol_str_mult = 0.1
+}
+
+auldwarov_devout_swayed = {
+	icon = gfx/interface/icons/ig_icons/devout_30.dds
+	interest_group_ig_devout_pol_str_mult = 0.1
+}
+
+auldwarov_armed_forces_swayed = {
+	icon = gfx/interface/icons/ig_icons/armed_forces_30.dds
+	interest_group_ig_armed_forces_pol_str_mult = 0.1
+}
+
+auldwarov_intelligentsia_swayed = {
+	icon = gfx/interface/icons/ig_icons/intelligensia_30.dds
+	interest_group_ig_intelligentsia_pol_str_mult = 0.1
+}
+
+auldwarov_rural_folk_swayed = {
+	icon = gfx/interface/icons/ig_icons/rural_folk_30.dds
+	interest_group_ig_rural_folk_pol_str_mult = 0.1
+}
+
+auldwarov_industrialists_swayed = {
+	icon = gfx/interface/icons/ig_icons/industrialists_30.dds
+	interest_group_ig_industrialists_pol_str_mult = 0.1
+}
+
+auldwarov_trade_unions_swayed = {
+	icon = gfx/interface/icons/ig_icons/trade_unions_30.dds
+	interest_group_ig_trade_unions_pol_str_mult = 0.1
+}
+
+auldwarov_government_deliberations = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_time_mult = 0.1
+}
+
+reneged_amicably = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_pol_str_mult = -0.1
+}
+
+reneged_furiously = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_approval_add = -10
+	interest_group_pol_str_mult = -0.25
+}
+
+auldwarov_project_failure = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_pol_str_mult = -0.4
+}

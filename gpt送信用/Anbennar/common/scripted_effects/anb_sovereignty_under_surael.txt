@@ -1,0 +1,171 @@
+﻿# Sovereignty under Surael scripted effects
+
+calculate_sus_passive_progress = {
+	set_global_variable = { name = sus_jaddanzar_passive_var value = 0 }	# Formerly Russian
+	set_global_variable = { name = sus_nahana_passive_var value = 0 }	# Formerly British
+	set_global_variable = { name = sus_balance_passive_var value = 0 }
+	#set_global_variable = { name = sus_nahana_liberty_desire value = 0 } - Unused
+	
+	# This is where the ticking shit goes
+	#
+	#
+	#
+	#
+	#
+	#
+	c:F01 ?= { # Jaddanzar
+		set_global_variable = {
+			name = jaddanzar_sol
+			value = "owner.average_sol_for_religion(rel:the_jadd)" #Check if this change doesn't break anything
+		}
+		change_global_variable = { 
+			name = sus_jaddanzar_passive_var 
+			subtract = global_var:jaddanzar_sol 
+		}
+	}
+
+	c:R01 ?= { # Nahana
+		set_global_variable = {
+			name = nahana_sol
+			value = "owner.average_sol_for_religion(rel:the_jadd)" #Check if this change doesn't break anything
+		}
+		change_global_variable = { 
+			name = sus_nahana_passive_var 
+			subtract = global_var:nahana_sol 
+		}
+	}
+
+	set_global_variable = { name = sus_balance_passive_var value = global_var:sus_jaddanzar_passive_var }
+	change_global_variable = { name = sus_balance_passive_var subtract = global_var:sus_nahana_passive_var }
+	change_global_variable = { name = sus_balance_passive_var multiply = 5 }
+	change_global_variable = { name = sus_balance_passive_var subtract = 25 }		# Test
+}
+
+sus_nahana_progress_10 = {
+	custom_tooltip = {
+		text = sus_points_nahana_increases_10_tt
+		every_country = {
+			limit = {
+				has_journal_entry = je_sovereignty_under_surael
+			}
+			je:je_sovereignty_under_surael = {
+				add_progress = { value = -10 name = sus_core_progress_bar }
+			}
+			update_sus_progressbar_tooltips = yes
+		}
+	}
+}
+
+sus_nahana_progress_15 = {
+	custom_tooltip = {
+		text = sus_points_nahana_increases_15_tt
+		every_country = {
+			limit = {
+				has_journal_entry = je_sovereignty_under_surael
+			}
+			je:je_sovereignty_under_surael = {
+				add_progress = { value = -15 name = sus_core_progress_bar }
+			}
+			update_sus_progressbar_tooltips = yes
+		}
+	}
+}
+
+sus_nahana_progress_25 = {
+	custom_tooltip = {
+		text = sus_points_nahana_increases_25_tt
+		every_country = {
+			limit = {
+				has_journal_entry = je_sovereignty_under_surael
+			}
+			je:je_sovereignty_under_surael = {
+				add_progress = { value = -25 name = sus_core_progress_bar }
+			}
+			update_sus_progressbar_tooltips = yes
+		}
+	}
+}
+
+sus_nahana_progress_50 = {
+	custom_tooltip = {
+		text = sus_points_nahana_increases_50_tt
+		every_country = {
+			limit = {
+				has_journal_entry = je_sovereignty_under_surael
+			}
+			je:je_sovereignty_under_surael = {
+				add_progress = { value = -50 name = sus_core_progress_bar }
+			}
+			update_sus_progressbar_tooltips = yes
+		}
+	}
+}
+
+sus_jaddanzar_progress_10 = {
+	custom_tooltip = {
+		text = sus_points_jaddanzar_increases_10_tt
+		every_country = {
+			limit = {
+				has_journal_entry = je_sovereignty_under_surael
+			}
+			je:je_sovereignty_under_surael = {
+				add_progress = { value = 10 name = sus_core_progress_bar }
+			}
+			update_sus_progressbar_tooltips = yes
+		}
+	}
+}
+
+sus_jaddanzar_progress_15 = {
+	custom_tooltip = {
+		text = sus_points_jaddanzar_increases_15_tt
+		every_country = {
+			limit = {
+				has_journal_entry = je_sovereignty_under_surael
+			}
+			je:je_sovereignty_under_surael = {
+				add_progress = { value = 15 name = sus_core_progress_bar }
+			}
+			update_sus_progressbar_tooltips = yes
+		}
+	}
+}
+
+sus_jaddanzar_progress_25 = {
+	custom_tooltip = {
+		text = sus_points_jaddanzar_increases_25_tt
+		every_country = {
+			limit = {
+				has_journal_entry = je_sovereignty_under_surael
+			}
+			je:je_sovereignty_under_surael = {
+				add_progress = { value = 25 name = sus_core_progress_bar }
+			}
+			update_sus_progressbar_tooltips = yes
+		}
+	}
+}
+
+update_sus_progressbar_tooltips = {
+	je:je_sovereignty_under_surael = {
+		if = {
+			limit = {
+				"scripted_bar_progress(sus_core_progress_bar)" < 0
+			}
+			set_bar_progress = { value = 0 name = sus_core_progress_bar }
+		}
+		if = {
+			limit = {
+				"scripted_bar_progress(sus_core_progress_bar)" > 200
+			}
+			set_bar_progress = { value = 200 name = sus_core_progress_bar }
+		}
+		set_global_variable = { name = sus_nahana_progress value = "scripted_bar_progress(sus_core_progress_bar)" }
+		set_global_variable = { name = sus_jaddanzar_progress value = 200 }
+		change_global_variable = { name = sus_jaddanzar_progress subtract = global_var:sus_nahana_progress }
+	}
+}
+
+complete_sus_effect = {
+
+}

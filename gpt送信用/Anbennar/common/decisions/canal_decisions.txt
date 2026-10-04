@@ -1,0 +1,186 @@
+﻿dhal_survey_decision = {
+	is_shown = {
+		has_interest_marker_in_region = sr:region_jinnakah
+		NOT = {
+			has_variable = survey_dhal_nikhuvad_taken
+			has_global_variable = dhal_nikhuvad_canal_complete
+		}
+		OR = {
+			country_rank = rank_value:great_power
+			s:STATE_BEERAGGA = {
+				any_scope_state = {
+					owner = ROOT
+				}
+			}
+		}
+		s:STATE_BEERAGGA = {
+			NOT = {
+				any_scope_state = {
+					has_building = building_dhal_nikhuvad_canal
+				}
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = colonization
+		produced_bureaucracy > 1000
+	}
+	
+	when_taken = {
+		set_variable = {
+			name = survey_dhal_nikhuvad_taken
+			value = 0
+		}
+		add_modifier = {
+			name = modifier_surveying_dhal_nikhuvad
+		}
+		add_journal_entry = {
+			type = je_dhal_survey
+		}
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { produced_bureaucracy > 5000 }
+			add = 10
+		}
+		if = {
+			limit = {
+				has_strategy = ai_strategy_armed_isolationism
+			}
+			multiply = 0
+		}
+		if = {
+			limit = {
+				OR = {
+					is_diplomatic_play_committed_participant = yes
+					is_at_war = yes
+				}
+			}
+			multiply = 0
+		}
+	}
+}
+
+stop_dhal_survey_decision = {
+	is_shown = {
+		has_modifier = modifier_surveying_dhal_nikhuvad
+	}
+	possible = {
+		has_modifier = modifier_surveying_dhal_nikhuvad
+	}
+	when_taken = {
+		remove_variable = survey_dhal_nikhuvad_taken
+		remove_modifier = modifier_surveying_dhal_nikhuvad
+	}
+	ai_chance = {
+		value = 0
+	}
+}
+
+dhal_canal_purchase = {
+	is_shown = {
+		has_variable = dhal_nikhuvad_canal_purchase
+		NOT = {
+			has_global_variable = dhal_nikhuvad_canal_purchase_var
+			has_global_variable = dhal_nikhuvad_canal_complete
+		}
+		s:STATE_BEERAGGA = {
+			any_scope_state = {
+				NOT = {
+					has_building = building_dhal_nikhuvad_canal
+				}
+				owner = {
+					owns_treaty_port_in = STATE_BEERAGGA
+					NOT = {
+						has_variable = dhal_nikhuvad_survey_complete
+					}
+				}
+			}
+		}
+	}
+
+	possible = {
+		gdp > 50000000
+		p:x1e6a83.state.owner = {
+			relations:root >= relations_threshold:cordial
+			}
+		NOT = { has_war_with = ROOT }
+	}
+
+	when_taken = {
+		set_global_variable = dhal_nikhuvad_canal_purchase_var
+		if = {
+			limit = {
+				s:STATE_BEERAGGA = {
+					any_scope_state = {
+						owner = {
+							owns_treaty_port_in = STATE_BEERAGGA
+							is_player = no
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				s:STATE_BEERAGGA = {
+					random_scope_state = {
+						limit = {
+							owner = {
+								owns_treaty_port_in = STATE_BEERAGGA
+							}
+						}
+						owner = {
+							add_modifier = {
+								name = dhal_nikhuvad_sale
+								months = 120
+							}
+						}
+					}
+				}
+			}
+			s:STATE_BEERAGGA = {
+				set_owner_of_provinces = {
+					country = ROOT
+					provinces = { x1e6a83 x02090f }
+				}
+			}
+			add_modifier = {
+				name = dhal_nikhuvad_purchase
+				months = 120
+			}
+		}
+		else = {
+			trigger_event = {
+				id = canal_events.1
+				days = 0
+				popup = yes
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { gold_reserves > 15000000 }
+			add = 10
+		}
+		if = {
+			limit = {
+				net_fixed_income > 100000
+				gold_reserves > 0
+			}
+			add = 10
+		}
+		if = {
+			limit = {
+				OR = {
+					is_diplomatic_play_committed_participant = yes
+					is_at_war = yes
+				}
+			}
+			multiply = 0
+		}
+	}
+}

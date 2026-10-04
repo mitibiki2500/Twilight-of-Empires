@@ -1,0 +1,65 @@
+﻿building_dungeons = {
+	building_group = bg_dungeons
+	icon = "gfx/interface/icons/building_icons/adventurers_wanted_base.dds"
+	city_type = mine
+	levels_per_mesh = 5
+	buildable = no
+	expandable = no
+	downsizeable = no
+	#cannot_switch_owner = yes
+	terrain_manipulator = mining
+   
+	unlocking_technologies = {
+		prospecting
+	}
+
+	production_method_groups = {
+		pmg_base_building_dungeons
+	}
+
+	ownership_type = self
+   
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+}
+
+building_dungeons_quarantined = {	#TODO: this is a temporary thing to make dungeons fit lore vision a bit better until we can revisit Adventurers Wanted -Jay. This replaces Monster Ranch for now 
+	building_group = bg_dungeons_quarantined
+	icon = "gfx/interface/icons/building_icons/adventurers_wanted_base.dds"
+	city_type = mine
+	levels_per_mesh = 5
+	required_construction = construction_cost_medium
+	terrain_manipulator = mining
+   
+	unlocking_technologies = {
+		prospecting
+	}
+
+	production_method_groups = {
+		pmg_base_building_dungeons_quarantined
+	}
+
+	ownership_type = self
+   
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+}
+
+building_monster_ranch = {	#This used to be the depletion of the dungeon which didnt make sense to me so thats disconnected. This does still exist as an ordinary resource, however
+	building_group = bg_monster_ranch
+	icon = "gfx/interface/icons/building_icons/adventurers_wanted_combat_dragon.dds"
+	city_type = mine
+	levels_per_mesh = 5
+	required_construction = construction_cost_medium
+	terrain_manipulator = mining
+	
+	unlocking_technologies = {
+		prospecting
+	}
+
+	production_method_groups = {
+		pmg_monster_husbandry_building_monster_ranch
+	}
+	
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+}

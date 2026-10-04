@@ -1,0 +1,21 @@
+﻿## odd file name is to make sure the buildings are in the right order + are grouped with other logging buildings
+
+building_cave_coral = {
+	building_group = bg_cave_coral
+	icon = "gfx/interface/icons/building_icons/cave_coral.dds"
+	city_type = wood
+	required_construction = construction_cost_low
+	terrain_manipulator = forestry
+	levels_per_mesh = 0
+
+	production_method_groups = {
+		pmg_base_building_cave_coral
+		pmg_hardwood_cave_coral
+		pmg_enhancements_building_logging_camp
+		pmg_equipment_cave_coral
+		pmg_transportation_building_cave_coral
+	}
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_farming.dds"
+}

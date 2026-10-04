@@ -1,0 +1,54 @@
+﻿country_magical_expertise_add = {
+	color = good
+	script_only = yes
+	percent = no
+	decimals = 0
+	game_data={
+		ai_value=40
+	}
+}
+
+country_magical_expertise_mult = {
+	color = good
+	script_only = yes
+	percent = yes
+	decimals = 1
+}
+
+country_magical_expertise_cost_per_institution_mult = {
+	color = good
+	script_only = yes
+	percent = yes
+	decimals = 0
+}
+
+state_magical_expertise_decree_cost_add = {
+	color = bad
+	script_only = yes
+	percent = no
+	decimals = 0
+	game_data={
+		ai_value=1
+	}
+}
+country_magical_expertise_decree_cost_mult = {
+	color = bad
+	script_only = yes
+	percent = yes
+	decimals = 0
+}
+country_magical_expertise_cost_add = {
+	color = bad
+	script_only = yes
+	decimals = 0
+}
+
+#polk: this previously did nothing, conceptually this modifier makes very little sense, harvest conditions dont care about country/state, they happen in state region
+# my implementation is therefore to average the state_bad_weather_chance_mult over all states in the SR
+# which is a bit silly, but it works
+state_bad_weather_chance_mult = { 
+	color = bad
+	script_only = yes
+	percent = yes
+	decimals = 0
+}

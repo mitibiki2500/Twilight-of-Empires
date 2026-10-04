@@ -1,0 +1,1066 @@
+﻿dwarf_culture_state = {
+	effect = {
+		if = {
+			limit = {
+				owner = { c:D01 ?= this }
+			}
+			if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:quartz_dwarf
+					}
+					owner = { country_has_primary_culture = cu:quartz_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:quartz_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:quartz_dwarf
+						value = 0.03
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:kronium_dwarf
+					}
+					owner = { country_has_primary_culture = cu:kronium_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:kronium_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:kronium_dwarf
+						value = 0.03
+					}
+				}
+			}
+			# else_if = {
+			# 	limit = {
+			# 		state_region = { 
+			# 			is_homeland = cu:ramsteel_dwarf
+			# 		}
+			# 		owner = { country_has_primary_culture = cu:ramsteel_dwarf }
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 			total_size <= 5000
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:ramsteel_dwarf
+			# 			value = 1
+			# 		}
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:ramsteel_dwarf
+			# 			value = 0.03
+			# 		}
+			# 	}
+			# }
+			# else_if = {
+			# 	limit = {
+			# 		state_region = { 
+			# 			is_homeland = cu:sapphire_dwarf
+			# 		}
+			# 		owner = { country_has_primary_culture = cu:sapphire_dwarf }
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 			total_size <= 5000
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:sapphire_dwarf
+			# 			value = 1
+			# 		}
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:sapphire_dwarf
+			# 			value = 0.03
+			# 		}
+			# 	}
+			# }
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:platinum_dwarf
+					}
+					owner = { country_has_primary_culture = cu:platinum_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:platinum_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:platinum_dwarf
+						value = 0.03
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:agate_dwarf
+					}
+					owner = { country_has_primary_culture = cu:agate_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:agate_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:agate_dwarf
+						value = 0.03
+					}
+				}
+			}
+			# else_if = {
+			# 	limit = {
+			# 		state_region = { 
+			# 			is_homeland = cu:mithril_dwarf
+			# 		}
+			# 		owner = { country_has_primary_culture = cu:mithril_dwarf }
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 			total_size <= 5000
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:mithril_dwarf
+			# 			value = 1
+			# 		}
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:mithril_dwarf
+			# 			value = 0.03
+			# 		}
+			# 	}
+			# }
+			# else_if = {
+			# 	limit = {
+			# 		state_region = { 
+			# 			is_homeland = cu:dagrite_dwarf
+			# 		}
+			# 		owner = { country_has_primary_culture = cu:dagrite_dwarf }
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 			total_size <= 5000
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:dagrite_dwarf
+			# 			value = 1
+			# 		}
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:dagrite_dwarf
+			# 			value = 0.03
+			# 		}
+			# 	}
+			# }
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:opal_dwarf
+					}
+					owner = { country_has_primary_culture = cu:opal_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:opal_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:opal_dwarf
+						value = 0.03
+					}
+				}
+			}
+			# else_if = {
+			# 	limit = {
+			# 		state_region = { 
+			# 			is_homeland = cu:lead_dwarf
+			# 		}
+			# 		owner = { country_has_primary_culture = cu:lead_dwarf }
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 			total_size <= 5000
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:lead_dwarf
+			# 			value = 1
+			# 		}
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:lead_dwarf
+			# 			value = 0.03
+			# 		}
+			# 	}
+			# }
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:basalt_dwarf
+					}
+					owner = { country_has_primary_culture = cu:basalt_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:basalt_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:basalt_dwarf
+						value = 0.03
+					}
+				}
+			}
+			# else_if = {
+			# 	limit = {
+			# 		state_region = { 
+			# 			is_homeland = cu:garnet_dwarf
+			# 		}
+			# 		owner = { country_has_primary_culture = cu:garnet_dwarf }
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 			total_size <= 5000
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:garnet_dwarf
+			# 			value = 1
+			# 		}
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:garnet_dwarf
+			# 			value = 0.03
+			# 		}
+			# 	}
+			# }
+			# else_if = {
+			# 	limit = {
+			# 		state_region = { 
+			# 			is_homeland = cu:flint_dwarf
+			# 		}
+			# 		owner = { country_has_primary_culture = cu:flint_dwarf }
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 			total_size <= 5000
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:flint_dwarf
+			# 			value = 1
+			# 		}
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:flint_dwarf
+			# 			value = 0.03
+			# 		}
+			# 	}
+			# }
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:diamond_dwarf
+					}
+					owner = { country_has_primary_culture = cu:diamond_dwarf }
+				}
+				
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:diamond_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:diamond_dwarf
+						value = 0.03
+					}
+				}
+			}
+			# else_if = {
+			# 	limit = {
+			# 		state_region = { 
+			# 			is_homeland = cu:marble_dwarf
+			# 		}
+			# 		owner = { country_has_primary_culture = cu:marble_dwarf }
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 			total_size <= 5000
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:marble_dwarf
+			# 			value = 1
+			# 		}
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:marble_dwarf
+			# 			value = 0.03
+			# 		}
+			# 	}
+			# }
+			# else_if = {
+			# 	limit = {
+			# 		state_region = { 
+			# 			is_homeland = cu:cobalt_dwarf
+			# 		}
+			# 		owner = { country_has_primary_culture = cu:cobalt_dwarf }
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 			total_size <= 5000
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:cobalt_dwarf
+			# 			value = 1
+			# 		}
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:cobalt_dwarf
+			# 			value = 0.03
+			# 		}
+			# 	}
+			# }
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:titanium_dwarf
+					}
+					owner = { country_has_primary_culture = cu:titanium_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:titanium_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:titanium_dwarf
+						value = 0.03
+					}
+				}
+			}
+			# else_if = {
+			# 	limit = {
+			# 		state_region = { 
+			# 			is_homeland = cu:pyrite_dwarf
+			# 		}
+			# 		owner = { country_has_primary_culture = cu:pyrite_dwarf }
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 			total_size <= 5000
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:pyrite_dwarf
+			# 			value = 1
+			# 		}
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:pyrite_dwarf
+			# 			value = 0.03
+			# 		}
+			# 	}
+			# }
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:citrine_dwarf
+					}
+					owner = { country_has_primary_culture = cu:citrine_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:citrine_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:citrine_dwarf
+						value = 0.03
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:gold_dwarf
+					}
+					owner = { country_has_primary_culture = cu:gold_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:gold_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:gold_dwarf
+						value = 0.003
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:topaz_dwarf
+					}
+					owner = { country_has_primary_culture = cu:topaz_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:topaz_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:topaz_dwarf
+						value = 0.03
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:amber_dwarf
+					}
+					owner = { country_has_primary_culture = cu:amber_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:amber_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:amber_dwarf
+						value = 0.03
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:peridot_dwarf
+					}
+					owner = { country_has_primary_culture = cu:peridot_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:peridot_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:peridot_dwarf
+						value = 0.03
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:granite_dwarf
+					}
+					owner = { country_has_primary_culture = cu:granite_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:granite_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:granite_dwarf
+						value = 0.03
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:amethyst_dwarf
+					}
+					owner = { country_has_primary_culture = cu:amethyst_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:amethyst_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:amethyst_dwarf
+						value = 0.03
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:emerald_dwarf
+					}
+					owner = { country_has_primary_culture = cu:emerald_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:emerald_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:emerald_dwarf
+						value = 0.03
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:jade_dwarf
+					}
+					owner = { country_has_primary_culture = cu:jade_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:jade_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:jade_dwarf
+						value = 0.03
+					}
+				}
+			}
+			# else_if = {
+			# 	limit = {
+			# 		state_region = { 
+			# 			is_homeland = cu:malachite_dwarf
+			# 		}
+			# 		owner = { country_has_primary_culture = cu:malachite_dwarf }
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 			total_size <= 5000
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:malachite_dwarf
+			# 			value = 1
+			# 		}
+			# 	}
+			# 	every_scope_pop = {
+			# 		limit = {
+			# 			culture = { 
+			# 				has_discrimination_trait_group = heritage_group_dwarf
+			# 				NOT = { has_homeland = ROOT }							
+			# 			}
+			# 		}
+			# 		change_pop_culture = {
+			# 			target = cu:malachite_dwarf
+			# 			value = 0.03
+			# 		}
+			# 	}
+			# }
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:nephrite_dwarf
+					}
+					owner = { country_has_primary_culture = cu:nephrite_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:nephrite_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:nephrite_dwarf
+						value = 0.03
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:copper_dwarf
+					}
+					owner = { country_has_primary_culture = cu:copper_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:copper_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:copper_dwarf
+						value = 0.03
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:silver_dwarf
+					}
+					owner = { country_has_primary_culture = cu:silver_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:silver_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:silver_dwarf
+						value = 0.03
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					state_region = { 
+						is_homeland = cu:ruby_dwarf
+					}
+					owner = { country_has_primary_culture = cu:ruby_dwarf }
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+						total_size <= 5000
+					}
+					change_pop_culture = {
+						target = cu:ruby_dwarf
+						value = 1
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = { 
+							has_discrimination_trait_group = heritage_group_dwarf
+							NOT = { has_homeland = ROOT }							
+						}
+					}
+					change_pop_culture = {
+						target = cu:ruby_dwarf
+						value = 0.03
+					}
+				}
+			}
+		}
+	}
+}

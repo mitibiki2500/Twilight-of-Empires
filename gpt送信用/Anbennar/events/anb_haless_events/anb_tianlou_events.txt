@@ -1,0 +1,352 @@
+﻿namespace = tianlou_events
+
+# Freedom from Overseas Burdens - JE completion event - Y03
+tianlou_events.1 = {
+	type = country_event
+	placement = root
+	
+	title = tianlou_events.1.t
+	desc = tianlou_events.1.d
+	flavor = tianlou_events.1.f
+	
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	duration = 3
+	
+	trigger = {
+		# JE completion event (Tianlou)
+	}
+
+	immediate = {
+		c:B07 = {
+			save_scope_as = triarchy_scope
+		}
+	}
+
+	option = {
+		name = tianlou_events.1.b
+		default_option = yes
+		add_modifier = {
+			name = the_jewel_of_yanshen_modifier
+			days = very_long_modifier_time
+		}
+		change_relations = {
+			country = c:B07
+			value = 20
+		}
+	}
+
+	option = {
+		name = tianlou_events.1.a
+		add_modifier = {
+			name = survivors_of_the_fox_demon_modifier
+			days = very_long_modifier_time
+		}
+		change_relations = {
+			country = c:B07
+			value = 20
+		}
+	}
+}
+
+# The Settling of Debts - JE completion event - B07
+tianlou_events.2 = {
+	type = country_event
+	placement = root
+	
+	title = tianlou_events.2.t
+	desc = tianlou_events.2.d
+	flavor = tianlou_events.2.f
+	
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	
+	duration = 3
+	
+	trigger = {
+		# JE completion event (Triarchy)
+	}
+
+	immediate = {
+		c:Y03 = {
+			save_scope_as = haiti_scope
+		}
+		ig:ig_industrialists = {
+			save_scope_as = industrialists_scope
+		}
+	}
+
+	option = {
+		name = tianlou_events.2.a
+		default_option = yes
+		if = {
+			limit = {
+				has_modifier = modifier_tianlou_rending_repayments_1
+			}
+			remove_modifier = modifier_tianlou_rending_repayments_1
+		}
+		change_relations = {
+			country = c:Y03
+			value = 20
+		}
+		ig:ig_industrialists = {
+			add_modifier = {
+				name = end_of_tianlou_repayments_modifier
+				days = normal_modifier_time
+			}
+		}
+	}
+}
+# Tianlou Requests Debt Renegotiation
+tianlou_events.3 = {
+	type = country_event
+	placement = root
+	
+	title = tianlou_events.3.t
+	desc = tianlou_events.3.d
+	flavor = tianlou_events.3.f
+	
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	
+	duration = 3
+	
+	trigger = {
+	}
+
+	immediate = {
+		c:Y03 = {
+			save_scope_as = haiti_scope
+			# set_variable = haiti_debt_renegotiated_var - Unused, most likely cooldown var?
+		}
+	}
+
+	option = {
+		name = tianlou_events.3.a
+		default_option = yes
+		c:Y03 = { 
+			trigger_event = { id = tianlou_events.4 popup = yes }
+		}
+		show_as_tooltip = {
+			if = {
+				limit = {
+					c:B07 = {
+						owes_obligation_to = c:Y03
+					}
+				}
+				c:B07 = {
+					set_owes_obligation_to = {
+						country = c:Y03
+						setting = no
+					}
+				}
+			}
+			else = {
+				c:Y03 = {
+					set_owes_obligation_to = {
+						country = c:B07
+						setting = yes
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_modifier = modifier_tianlou_rending_repayments_4
+			}
+			remove_modifier = modifier_tianlou_rending_repayments_4
+			add_modifier = {
+				name = modifier_tianlou_rending_repayments_3
+				months = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_modifier = modifier_tianlou_rending_repayments_3
+			}
+			remove_modifier = modifier_tianlou_rending_repayments_3
+			add_modifier = {
+				name = modifier_tianlou_rending_repayments_2
+				months = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_modifier = modifier_tianlou_rending_repayments_2
+			}
+			remove_modifier = modifier_tianlou_rending_repayments_2
+			add_modifier = {
+				name = modifier_tianlou_rending_repayments_1
+				months = -1
+			}
+		}
+		change_relations = {
+			country = c:Y03
+			value = 20
+		}
+		ai_chance = {
+			base = 75
+		}
+	}
+	option = {
+		name = tianlou_events.3.b
+		c:Y03 = { trigger_event = { id = tianlou_events.5 popup = yes } }
+		change_relations = {
+			country = c:Y03
+			value = -20
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+# Triarchy Accepts Event
+tianlou_events.4 = {
+	type = country_event
+	placement = root
+	
+	title = tianlou_events.4.t
+	desc = tianlou_events.4.d
+	flavor = tianlou_events.4.f
+	
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	
+	duration = 3
+	
+	trigger = {
+		# triggered by tianlou_events.3
+	}
+
+	immediate = {
+		c:B07 = {
+			save_scope_as = triarchy_scope
+		}
+	}
+
+	option = {
+		name = tianlou_events.4.a
+		default_option = yes
+		if = {
+			limit = {
+				c:B07 = {
+					owes_obligation_to = c:Y03
+				}
+			}
+			c:B07 = {
+				set_owes_obligation_to = {
+					country = c:Y03
+					setting = no
+				}
+			}
+		}
+		else = {
+			c:Y03 = {
+				set_owes_obligation_to = {
+					country = c:B07
+					setting = yes
+				}
+			}
+		}
+		change_relations = {
+			country = c:B07
+			value = 20
+		}
+		if = {
+			limit = {
+				has_modifier = modifier_triarchy_rending_repayments_4
+			}
+			remove_modifier = modifier_triarchy_rending_repayments_4
+			add_modifier = {
+				name = modifier_triarchy_rending_repayments_3
+				months = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_modifier = modifier_triarchy_rending_repayments_3
+			}
+			remove_modifier = modifier_triarchy_rending_repayments_3
+			add_modifier = { 
+				name = modifier_triarchy_rending_repayments_2
+				months = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_modifier = modifier_triarchy_rending_repayments_2
+			}
+			remove_modifier = modifier_triarchy_rending_repayments_2
+			add_modifier = { 
+				name = modifier_triarchy_rending_repayments_1
+				months = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_modifier = modifier_triarchy_rending_repayments_1
+			}
+			remove_modifier = modifier_triarchy_rending_repayments_1
+		}
+	}
+}
+
+# Triarchy Declines Event
+tianlou_events.5 = {
+	type = country_event
+	placement = root
+	
+	title = tianlou_events.5.t
+	desc = tianlou_events.5.d
+	flavor = tianlou_events.5.f
+	
+	event_image = {
+		video = "africa_diplomats_negotiating"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	
+	duration = 3
+	
+	trigger = {
+		# triggered by tianlou_events.3
+	}
+
+	immediate = {
+		c:B07 = {
+			save_scope_as = triarchy_scope
+		}
+	}
+
+	option = {
+		name = tianlou_events.5.a
+		default_option = yes
+		change_relations = {
+			country = c:B07
+			value = -20
+		}
+	}
+}

@@ -1,0 +1,55 @@
+﻿# TODO - disabled until loc is given, sept 30 2025
+l_english:
+  je_ardimya_navy:0 "Ardimyan Naval Dominance (Name WIP)"
+  je_ardimya_navy_reason:0 "TODO Desc"
+  je_ardimya_navy_goal:0 "The following have been true for a combined 200 months:"
+  ardimya_busilar_navy_ratio_desc:0 "The Ardimyan Republic's Naval [concept_power_projection] is at least 40% of [SCOPE.sCountry('busilar_loc_desc').GetName]´s (Needs #variable [ROOT.GetCountry.MakeScope.Var('ardimya_busilar_npp').GetValue]#!)"
+  ardimya_navy_demand_desc:0 "The Ardimyan Republic's Naval [concept_power_projection] is greater than #variable [ROOT.GetCountry.MakeScope.Var('ardimya_required_ships').GetValue]#! (Currently #variable [ROOT.GetCountry.MakeScope.Var('ardimya_npp_demand').GetValue]#!)"
+  ardimya_navy_objective_desc:0 "Within the next 20 years, Ardimya must maintain one of the 15 most powerful navies in the world and maintain pace with [SCOPE.sCountry('busilar_loc_desc').GetName]´s naval growth."
+  je_ardimya_navy_demand:0 "Expanding our Navy"
+  je_ardimya_navy_demand_reason:0 "TODO Desc"
+  
+  ardimya_navy_investment:0 "Investing in Naval Technology"
+  ardimya_navy_no_investment:0 "Ignored Naval Investment"
+  ardimya_navy_completion:0 "Ardimyan Naval Dominance"
+  ardimya_navy_failure:0 "Failed Naval Dominance"
+  ardimya_navy_timeout:0 "Naval Dominance Timeout"
+  ardimya_navy_invest_advice_ignored:0 "Advice Ignored"
+  ardimya_navy_invest_advice_listened:0 "Advice Heeded"
+  ardimya_admiral_fail:0 "Naval Scapegoat"
+  ardimya_admiral_succeed:0 "Naval Hero"
+  ardimya_demand_completed:0 "Demand Completed"
+  ardimya_demand_failed:0 "Demand Failed"
+
+  #Events
+  anb_ardimya.001.t:0 "Ardimyan Naval Dominance"
+  anb_ardimya.001.d:0 "The Ardimyan Navy was instrumental in our victory in the Ardimyan War of Independence 12 years ago. Forces within our government are pushing us to modernise and expand our navy in order to keep up with Busilar."
+  anb_ardimya.001.f:0 "TODO Flavor"
+  anb_ardimya.001.a:0 "We must become a true naval power."
+
+  anb_ardimya.002.t:0 "Sovereignty at Sea"
+  anb_ardimya.002.d:0 "We have successfully expanded our navy, and we are now a pre-eminent naval power in Sarhal."
+  anb_ardimya.002.f:0 "TODO Flavor"
+  anb_ardimya.002.a:0 "Our naval power is unmatched."
+
+  anb_ardimya.003.t:0 "Failed Naval Expansions"
+  anb_ardimya.003.d:0 "We have failed to improve our navy."
+  anb_ardimya.003.f:0 "TODO Flavor"
+  anb_ardimya.003.a:0 "How will we face Busilar now?"
+
+  anb_ardimya.004.t:0 "TODO Timeout"
+  anb_ardimya.004.d:0 "Yeah I'm not sure what to name this one"
+  anb_ardimya.004.f:0 "TODO Flavor"
+  anb_ardimya.004.a:0 "TODO Timeout Desc"
+
+  anb_ardimya.005.t:0 "The Busilari Threat"
+  anb_ardimya.005.d:0 "Admirals within our navy have decried the size of our navy, claiming that it is insufficient to defend against the might of Busilar."
+  anb_ardimya.005.f:0 "TODO Flavor"
+  anb_ardimya.005.a:0 "We must expand our navy immediately."
+  anb_ardimya.005.b:0 "Our navy is fine as it is."
+
+  anb_ardimya.006.t:0 "Admirals Push for Naval Advancement"
+  anb_ardimya.006.d:0 "One of our admirals has made a rousing speech, calling on the government to invest more in naval research to improve our defenses."
+  anb_ardimya.006.f:0 "TODO Flavor"
+  anb_ardimya.006.a:0 "Invest in new Naval Technology."
+  anb_ardimya.006.b:0 "We do not have the resources to do this."

@@ -1,0 +1,414 @@
+﻿namespace = anb_vivin_events
+
+anb_vivin_events.1 = { #Arannese Desertification
+
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_vivin_events.1.t
+	desc = anb_vivin_events.1.d
+	flavor = anb_vivin_events.1.f
+
+	event_image = {
+		video = "europenorthamerica_rich_and_poor"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	immediate = {
+		hidden_effect = {
+			random_state_region = {
+				limit = {
+					is_homeland = cu:arannese
+					region_state:A02 = {
+						state_population < 1200000
+					}
+				}
+				save_scope_as = event_target
+			}
+		}
+	}
+
+	option = { #Migration is good!
+		name = anb_vivin_events.1.a
+		scope:event_target = {
+			region_state:A02 = {
+				add_modifier = {
+					name = arannese_exodus_state_mod
+					months = 240
+				}
+				add_radicals_in_state = {
+					strata = rich
+					value = medium_radicals
+				}
+			}
+		}
+		add_modifier = {
+			name = arannese_exodus_country_mod
+			months = 120
+		}
+	}
+	option = { #Stop them
+		name = anb_vivin_events.1.b
+		default_option = yes
+		scope:event_target = {
+			region_state:A02 = {
+				add_modifier = {
+					name = heavy_migration_control_state_mod
+					months = 120
+				}
+			}
+		}
+		s:STATE_RAVENGARD = {
+			region_state:A02 = {
+				add_modifier = {
+					name = migration_hampered_state_mod
+					months = 120
+				}
+			}
+		}
+		s:STATE_FENNFORT = {
+			region_state:A02 = {
+				add_modifier = {
+					name = migration_hampered_state_mod
+					months = 120
+				}
+			}
+		}
+		s:STATE_CORVELD = {
+			region_state:A02 = {
+				add_modifier = {
+					name = migration_hampered_state_mod
+					months = 120
+				}
+			}
+		}
+		s:STATE_DREADMIRE = {
+			region_state:A02 = {
+				add_modifier = {
+					name = migration_hampered_state_mod
+					months = 120
+				}
+			}
+		}
+	}
+}
+
+anb_vivin_events.2 = { #Hell on Halann
+
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_vivin_events.2.t
+	desc = anb_vivin_events.2.d
+	flavor = anb_vivin_events.2.f
+
+	event_image = {
+		video = "middleeast_battlefield_trenches"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	option = { #Relief fund
+		name = anb_vivin_events.2.a
+		random_list = {
+			1 = { s:STATE_CORVELD = { region_state:A02 = { add_modifier = { name = folly_refief_fund_state_mod months = 120 } } } }
+			1 = { s:STATE_FENNFORT = { region_state:A02 = { add_modifier = { name = folly_refief_fund_state_mod months = 120 } } } }
+			1 = { s:STATE_DREADMIRE = { region_state:A02 = { add_modifier = { name = folly_refief_fund_state_mod months = 120 } } } }
+			1 = { s:STATE_RAVENGARD = { region_state:A02 = { add_modifier = { name = folly_refief_fund_state_mod months = 120 } } } }
+		}
+		add_modifier = {
+			name = folly_refief_fund_country_mod
+			months = 120
+		}
+	}
+	option = { #Lol
+		name = anb_vivin_events.2.b
+		default_option = yes
+		add_modifier = {
+			name = botched_investment_country_modifier
+			months = 120
+		}
+		s:STATE_RAVENGARD = {
+			region_state:A02 = {
+				add_modifier = {
+					name = hell_on_halann_state_mod
+					months = 120
+				}
+			}
+		}
+		s:STATE_FENNFORT = {
+			region_state:A02 = {
+				add_modifier = {
+					name = hell_on_halann_state_mod
+					months = 120
+				}
+			}
+		}
+		s:STATE_CORVELD = {
+			region_state:A02 = {
+				add_modifier = {
+					name = hell_on_halann_state_mod
+					months = 120
+				}
+			}
+		}
+		s:STATE_DREADMIRE = {
+			region_state:A02 = {
+				add_modifier = {
+					name = hell_on_halann_state_mod
+					months = 120
+				}
+			}
+		}
+	}
+}
+
+anb_vivin_events.3 = { #A Hellish Enterprise
+
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_vivin_events.3.t
+	desc = anb_vivin_events.3.d
+	flavor = anb_vivin_events.3.f
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+
+	option = { #A Resounding success
+		name = anb_vivin_events.3.a
+		default_option = yes
+		random_list = {
+			1 = { s:STATE_CORVELD = { region_state:A02 = { start_privately_funded_building_construction = building_tooling_workshop add_loyalists_in_state = { value = 0.05 } } } }
+			1 = { s:STATE_FENNFORT = { region_state:A02 = { start_privately_funded_building_construction = building_tooling_workshop add_loyalists_in_state = { value = 0.05 } } } }
+			1 = { s:STATE_DREADMIRE = { region_state:A02 = { start_privately_funded_building_construction = building_tooling_workshop add_loyalists_in_state = { value = 0.05 } } } }
+			1 = { s:STATE_RAVENGARD = { region_state:A02 = { start_privately_funded_building_construction = building_tooling_workshop add_loyalists_in_state = { value = 0.05 } } } }
+		}
+	}
+}
+
+anb_vivin_events.4 = { #Gnoll Raid in STATE
+
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_vivin_events.4.t
+	desc = anb_vivin_events.4.d
+	flavor = anb_vivin_events.4.f
+
+	event_image = {
+		video = "unspecific_devastation"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	option = { #Flamemarked gnolls are a threat
+		name = anb_vivin_events.4.a
+		default_option = yes
+		s:STATE_CORVELD = {
+			add_devastation = 5
+			region_state:A02 = {
+				add_modifier = {
+					name = anti_gnoll_pogrom_state_mod
+					years = 5
+				}
+			}
+		}
+		s:STATE_FENNFORT = {
+			add_devastation = 5
+			region_state:A02 = {
+				add_modifier = {
+					name = anti_gnoll_pogrom_state_mod
+					years = 5
+				}
+			}
+		}
+		s:STATE_DREADMIRE = {
+			add_devastation = 5
+			region_state:A02 = {
+				add_modifier = {
+					name = anti_gnoll_pogrom_state_mod
+					years = 5
+				}
+			}
+		}
+		s:STATE_RAVENGARD = {
+			add_devastation = 5
+			region_state:A02 = {
+				add_modifier = {
+					name = anti_gnoll_pogrom_state_mod
+					years = 5
+				}
+			}
+		}
+		random_political_movement = {
+			limit = { is_political_movement_type = movement_reactionary }
+			add_modifier = {
+				name = racist_sentiment_political_movement_mod
+				years = 10
+			}
+		}
+	}
+	option = { #Discourage anti gnoll pogroms
+		name = anb_vivin_events.4.b
+		add_modifier = {
+			name = folly_refief_fund_country_mod
+			months = 60
+		}
+		s:STATE_CORVELD = {
+			region_state:A02 = {
+				add_modifier = {
+					name = illegal_anti_gnoll_pogrom_state_mod
+					years = 5
+				}
+				add_radicals_in_state = {
+					value = medium_radicals
+				}
+			}
+		}
+		s:STATE_FENNFORT = {
+			region_state:A02 = {
+				add_modifier = {
+					name = illegal_anti_gnoll_pogrom_state_mod
+					years = 5
+				}
+				add_radicals_in_state = {
+					value = medium_radicals
+				}
+			}
+		}
+		s:STATE_DREADMIRE = {
+			region_state:A02 = {
+				add_modifier = {
+					name = illegal_anti_gnoll_pogrom_state_mod
+					years = 5
+				}
+				add_radicals_in_state = {
+					value = medium_radicals
+				}
+			}
+		}
+		s:STATE_RAVENGARD = {
+			region_state:A02 = {
+				add_modifier = {
+					name = illegal_anti_gnoll_pogrom_state_mod
+					years = 5
+				}
+				add_radicals_in_state = {
+					value = medium_radicals
+				}
+			}
+		}
+	}
+}
+
+anb_vivin_events.5 = { #Human Eating Swamp
+
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_vivin_events.5.t
+	desc = anb_vivin_events.5.d
+	flavor = anb_vivin_events.5.f
+
+	event_image = {
+		video = "unspecific_sick_in_hospital"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	option = { #Bar people from going out at night
+		name = anb_vivin_events.5.a
+		default_option = yes
+		s:STATE_CORVELD = {
+			region_state:A02 = {
+				add_modifier = {
+					name = state_wide_curfew_state_mod
+					years = 10
+				}
+			}
+		}
+		s:STATE_FENNFORT = {
+			region_state:A02 = {
+				add_modifier = {
+					name = state_wide_curfew_state_mod
+					years = 10
+				}
+			}
+		}
+		s:STATE_DREADMIRE = {
+			region_state:A02 = {
+				add_modifier = {
+					name = state_wide_curfew_state_mod
+					years = 10
+				}
+			}
+		}
+		s:STATE_RAVENGARD = {
+			region_state:A02 = {
+				add_modifier = {
+					name = state_wide_curfew_state_mod
+					years = 10
+				}
+			}
+		}
+	}
+	option = { #Discourage anti gnoll pogroms
+		name = anb_vivin_events.5.b
+		add_modifier = {
+			name = folly_refief_fund_country_mod
+			months = 60
+		}
+		default_option = yes
+		s:STATE_CORVELD = {
+			region_state:A02 = {
+				add_modifier = {
+					name = disappearing_population_folly_state_mod
+					years = 10
+				}
+			}
+		}
+		s:STATE_FENNFORT = {
+			region_state:A02 = {
+				add_modifier = {
+					name = disappearing_population_folly_state_mod
+					years = 10
+				}
+			}
+		}
+		s:STATE_DREADMIRE = {
+			region_state:A02 = {
+				add_modifier = {
+					name = disappearing_population_folly_state_mod
+					years = 10
+				}
+			}
+		}
+		s:STATE_RAVENGARD = {
+			region_state:A02 = {
+				add_modifier = {
+					name = disappearing_population_folly_state_mod
+					years = 10
+				}
+			}
+		}
+	}
+}

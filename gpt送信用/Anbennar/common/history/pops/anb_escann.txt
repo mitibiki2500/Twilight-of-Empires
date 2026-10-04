@@ -1,0 +1,719 @@
+﻿POPS = {
+	s:STATE_NORTH_IBEVAR= {
+		region_state:A20 = {
+			create_pop = {
+				culture = ibevari_elf
+				size = 206682
+				religion = elven_forebears
+			}
+            create_pop = {
+				culture = ibevari_elf
+				size = 620046
+				religion = regent_court
+			}
+		}
+	}
+
+	s:STATE_SOUTH_IBEVAR= {
+		region_state:A20 = {
+			create_pop = {
+				culture = ibevari_elf
+				size = 163170
+				religion = elven_forebears
+			}
+            create_pop = {
+				culture = ibevari_elf
+				size = 489510
+				religion = regent_court
+			}
+		}
+	}
+
+	s:STATE_CURSEWOOD= {
+		region_state:A20 = {
+			create_pop = {
+				culture = ibevari_elf
+				size = 24626
+				religion = elven_forebears
+			}
+            create_pop = {
+				culture = ibevari_elf
+				size = 73879
+				religion = regent_court
+			}
+			create_pop = {
+				culture = luciander
+				size = 771769
+			}
+			create_pop = {
+				culture = farrani
+				size = 257256
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 174007
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 125075
+			}
+		}
+	}
+
+	s:STATE_FARRANEAN= {
+		region_state:A20 = {
+			create_pop = {
+				culture = farrani
+				size = 676760
+			}
+			create_pop = {
+				culture = luciander
+				size = 344470
+			}
+			create_pop = {
+				culture = ibevari_elf
+				size = 17150
+				religion = elven_forebears
+			}
+            create_pop = {
+				culture = ibevari_elf
+				size = 51450
+				religion = regent_court
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 125732
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 112855
+			}
+		}
+		region_state:A22 = {	#Ancardian
+			# create_pop = {
+			# 	culture = farrani	#farannean never actually held this so im just not giving it to them, which adds a nice dichotomy to farannean peoples
+			# 	size = 100353
+			# }
+			create_pop = {
+				culture = farrani
+				size = 206292
+			}
+			create_pop = {
+				culture = ancardian
+				size = 304671
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 36505
+			}
+		}
+	}
+
+	s:STATE_ADENICA= {
+		region_state:A22 = {
+			create_pop = {
+				culture = nurcestiran
+				size = 1084583
+			}
+			create_pop = {
+				culture = ancardian
+				size = 382347
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 162708
+			}
+		}
+	}
+
+	s:STATE_ROHIBON= {
+		region_state:A22 = {
+			create_pop = {
+				culture = ancardian
+				size = 98539
+			}
+			create_pop = {
+				culture = luciander
+				size = 298568
+			}
+			create_pop = {
+				culture = elikhander
+				size = 197311
+				religion = corinite
+			}
+            create_pop = {
+				culture = elikhander
+				size = 591933
+				religion = elikhetist
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 26075
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 12414
+			}
+		}
+	}
+
+	s:STATE_ANCARDIAN_PLAINS= {
+		region_state:A22 = {
+			create_pop = {
+				culture = ancardian
+				size = 983870
+			}
+			create_pop = {
+				culture = newfoot_halfling
+				size = 96625
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 179100
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 33857
+			}
+		}
+	}
+
+	s:STATE_MORECED= {
+		region_state:A22 = {
+			create_pop = {
+				culture = ancardian
+				size = 519346
+			}
+			create_pop = {
+				culture = ionnic
+				size = 723996
+			}
+			create_pop = {
+				culture = newfoot_halfling
+				size = 36800
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 231492
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 67713
+			}
+		}
+	}
+
+	s:STATE_OUDMERE= {
+		region_state:A25 = {
+			create_pop = {
+				culture = ionnic
+				size = 784680
+			}
+			create_pop = {
+				culture = marcher
+				size = 137011
+			}
+			create_pop = {
+				culture = newfoot_halfling
+				size = 59955
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 297475
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 362571
+			}
+		}
+	}
+
+	s:STATE_NEWSHIRE= {
+		region_state:A24 = {
+			create_pop = {
+				culture = newfoot_halfling
+				size = 1368340
+			}
+			create_pop = {
+				culture = ancardian
+				size = 86792
+			}
+		}
+	}
+
+	s:STATE_DEVACED= {
+		region_state:A27 = {
+			create_pop = {
+				culture = marcher
+				size = 527835
+			}
+			create_pop = {
+				culture = stalboric
+				size = 306340
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 169925
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 105328
+			}
+			create_pop = {
+				culture = common_goblin
+				size = 345922
+			}
+		}
+	}
+
+	s:STATE_BLADEMARCH= {
+		region_state:A27 = {
+			create_pop = {
+				culture = stalboric
+				size = 1019778
+			}
+			create_pop = {
+				culture = marcher
+				size = 632967
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 301411
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 225703
+			}
+			create_pop = {
+				culture = wood_elven
+				size = 17952
+				religion = corinite
+			}
+		}
+	}
+	s:STATE_DOSTANS_WAY= {
+		region_state:A27 = {
+			create_pop = {
+				culture = marcher
+				size = 535369
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 225703
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 186918
+			}
+			create_pop = {
+				culture = corvurian	#from ravenmarch
+				size = 347285
+			}
+			create_pop = {
+				culture = wood_elven
+				size = 25020
+				religion = corinite
+			}
+		}
+	}
+
+	s:STATE_BARUMAND= {
+		region_state:A27 = {
+			create_pop = {
+				culture = barumandi_orc
+				size = 1504689
+			}
+			create_pop = {
+				culture = marcher
+				size = 328383
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 329945
+			}
+		}
+	}
+	s:STATE_ROSANVORD= {
+		region_state:A28 = {
+			create_pop = {
+				culture = rosanda
+				size = 639346
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 120357
+			}
+			create_pop = {
+				culture = barumandi_orc	#the last vestiges of orcish slavery
+				size = 504778
+				pop_type = slaves
+			}
+		}
+	}
+
+	s:STATE_MEDIRLEIGH= {
+		region_state:A28 = {
+			create_pop = {
+				culture = rosanda
+				size = 409500
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 129000
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 336000
+				pop_type = slaves
+			}
+		}
+	}
+
+	s:STATE_BURNOLL= {
+		region_state:A28 = {
+			create_pop = {
+				culture = rosanda
+				size = 141591
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 108280
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 50804
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = common_goblin
+				size = 88698
+				pop_type = slaves
+			}
+		}
+		region_state:A12 = {
+			create_pop = {
+				culture = marcher
+				size = 151325
+			}
+			create_pop = {
+				culture = rosanda
+				size = 39269
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 312055
+			}
+			create_pop = {
+				culture = common_goblin
+				size = 409882
+			}
+		}
+	}
+
+	s:STATE_SILVERVORD= {
+		region_state:A26 = {
+			create_pop = {
+				culture = heartman
+				size = 572518
+			}
+			create_pop = {
+				culture = nurcestiran
+				size = 583681
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 45278
+			}
+		}
+	}
+
+	s:STATE_CANNWOOD= {
+		region_state:A26 = {
+			create_pop = {
+				culture = heartman
+				size = 724462
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 49300
+			}
+		}
+	}
+
+	s:STATE_EBONMARCK= {
+		region_state:A10 = {
+			create_pop = {
+				culture = grombari_half_orc
+				size = 100988
+			}
+			create_pop = {
+				culture = grombari_orc
+				size = 51944
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 152443
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 36817
+			}
+			create_pop = {
+				culture = heartman
+				size = 726528
+			}
+		}
+	}
+
+	s:STATE_MIDDLE_ALEN= {
+		region_state:A10 = {
+			create_pop = {
+				culture = grombari_half_orc
+				size = 355452
+			}
+			create_pop = {
+				culture = grombari_orc
+				size = 308844
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 31359
+			}
+			create_pop = {
+				culture = gawedi
+				size = 206741
+			}
+			create_pop = {
+				culture = heartman
+				size = 110152
+			}
+		}
+	}
+
+
+	s:STATE_DRYADSDALE= {
+		region_state:A29 = {
+			create_pop = {
+				culture = marrodic
+				size = 597125
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 59419
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 99406
+			}
+		}
+	}
+
+	s:STATE_HORNWOOD= {
+		region_state:A29 = {
+			create_pop = {
+				culture = marrodic
+				size = 641103
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 82987
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 94077
+			}
+		}
+	}
+
+	s:STATE_MARRVALE= {
+		region_state:A29 = {
+			create_pop = {
+				culture = marrodic
+				size = 541222
+			}
+		}
+	}
+
+	s:STATE_MARRHOLD= {
+		region_state:A29 = {
+			create_pop = {
+				culture = marrodic
+				size = 403625 # Assume this is meant to be across all the states in the hold
+			}
+		}
+	}
+
+	s:STATE_ESSHYL= {
+		region_state:A29 = {
+			create_pop = {
+				culture = marrodic
+				size = 248501
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 100355
+			}
+			create_pop = {
+				culture = ungulan_orc
+				size = 298002
+			}
+		}
+	}
+
+	s:STATE_UNGULDAVOR= {
+		region_state:A31 = {
+			create_pop = {
+				culture = ungulan_orc
+				size = 2215516
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 217727
+			}
+		}
+	}
+
+	s:STATE_CASTONATH= {
+		region_state:A30 = {
+			create_pop = {
+				culture = nurcestiran
+				size = 1246111
+			}
+			create_pop = {
+				culture = wood_elven
+				size = 235238	#the unique part of Castonath is the wood elven emigres, derogatorily called 'saps'. dragon age alienage vibe btw
+				religion = corinite
+			}
+			create_pop = {
+				culture = iron_dwarf
+				size = 82867
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 445793
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 107788
+			}
+			create_pop = {
+				culture = common_goblin
+				size = 357756
+			}
+		}
+	}
+
+	s:STATE_UPPER_NATH= {
+		region_state:A30 = {
+			create_pop = {
+				culture = nurcestiran
+				size = 953126
+			}
+			create_pop = {
+				culture = wood_elven
+				size = 46432
+				religion = corinite
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 705652
+			}
+			create_pop = {
+				culture = ungulan_orc
+				size = 247896
+			}
+		}
+	}
+
+	s:STATE_STEELHYL= {
+		region_state:A30 = {
+			create_pop = {
+				culture = iron_dwarf
+				size = 446078
+			}
+			create_pop = {
+				culture = nurcestiran
+				size = 60759
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 36228
+			}
+			create_pop = {
+				culture = ungulan_orc
+				size = 64718
+			}
+		}
+	}
+
+	s:STATE_SERPENTSMARCK= {
+		region_state:A30 = {
+			create_pop = {
+				culture = iron_dwarf
+				#size = 206030
+				size = 100459	#from old hammerhome, but still not a lot of dwarves. most of them migrated to Steelhyl
+			}
+			create_pop = {
+				culture = nurcestiran
+				size = 151235
+			}
+			create_pop = {
+				culture = heartman
+				size = 30321	#leftover from old occupation in 1670s
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 84532
+			}
+			create_pop = {
+				culture = ungulan_orc
+				size = 48539
+			}
+		}
+	}
+
+	s:STATE_NORTHYL= {
+		region_state:A30 = {
+			create_pop = {
+				culture = iron_dwarf
+				#size = 379911
+				size = 130341	#as I said these guys should never be the majority... except I will concede for hammerhome in Steelhyl, as a lot of dwarves went to the dwarovar
+			}
+			create_pop = {
+				culture = agate_dwarf
+				size = 38774
+			}
+			create_pop = {
+				culture = nurcestiran
+				size = 237958
+			}
+			create_pop = {
+				culture = heartman
+				size = 90402	#refugees from wars
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 83187
+			}
+		}
+	}
+
+	s:STATE_LOWER_NATH= {
+		region_state:A30 = {
+			create_pop = {
+				culture = nurcestiran
+				size = 866281
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 212056
+			}
+			create_pop = {
+				culture = wood_elven
+				size = 62882
+				religion = corinite
+			}
+		}
+	}
+
+}

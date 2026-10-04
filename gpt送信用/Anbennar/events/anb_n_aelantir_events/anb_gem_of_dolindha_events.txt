@@ -1,0 +1,41 @@
+﻿namespace = gem_of_dolindha
+
+# JE start
+gem_of_dolindha.1 = {
+	type = country_event
+	placement = root
+	
+	title = gem_of_dolindha.1.t
+	desc =  gem_of_dolindha.1.d
+	flavor = gem_of_dolindha.1.f
+	
+	event_image = {
+		video = "unspecific_world_fair"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+	
+	duration = 3
+	
+	trigger = {
+		OR = {
+			c:B29 ?= this	# Sarda
+			c:B39 ?= this	# Dragon Dominion
+			c:B49 ?= this	# Dragon Dominion
+		}
+	}
+
+	cooldown = { days = never_fire_again_modifier_time }
+
+	immediate = {
+
+	}
+
+	option = { 
+		name = gem_of_dolindha.1.a
+		default_option = yes
+		add_journal_entry = { type = je_gem_of_dolindha }
+	}	
+}

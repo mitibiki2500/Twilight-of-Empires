@@ -1,0 +1,143 @@
+﻿## odd file name is to make sure the buildings are in the right order + are grouped with other mines buildings
+
+building_damestear_mine = {
+	building_group = bg_damestear_mining
+	icon = "gfx/interface/icons/building_icons/damestear_mine.dds"
+	city_type = mine
+	levels_per_mesh = 5
+	required_construction = construction_cost_medium
+	terrain_manipulator = mining
+	
+	unlocking_technologies = {
+		shaft_mining # same as vanilla mines
+	}
+
+	production_method_groups = {
+		pmg_mining_equipment_building_damestear_mine
+		pmg_explosives_building_damestear_mine
+		pmg_magical_treatment_damestear_mine
+		pmg_steam_automation_building_damestear_mine
+		pmg_train_automation_building_damestear_mine
+	}
+	
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+}
+
+# building_damestear_fields = {
+# 	building_group = bg_damestear_fields
+# 	icon = "gfx/interface/icons/building_icons/damestear_fields.dds"
+# 	city_type = mine
+# 	levels_per_mesh = 5
+# 	buildable = no
+# 	expandable = no
+# 	downsizeable = no
+# 	cannot_switch_owner = yes
+# 	terrain_manipulator = mining
+	
+# 	unlocking_technologies = {
+# 		prospecting
+# 	}
+
+# 	production_method_groups = {
+# 		pmg_base_building_damestear_fields
+# 	}
+
+# 	ownership_type = self
+	
+# 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+# }
+
+building_flawless_metal_mine = {
+	building_group = bg_flawless_metal_mining
+	icon = "gfx/interface/icons/building_icons/mithril_mine.dds"
+	city_type = mine
+	levels_per_mesh = 5
+	required_construction = construction_cost_medium
+	terrain_manipulator = mining
+	
+	unlocking_technologies = {
+		shaft_mining # same as vanilla mines
+	}
+
+	production_method_groups = {
+		pmg_mining_equipment_building_flawless_metal_mine
+		pmg_explosives_building_flawless_metal_mine
+		pmg_forging_building_flawless_metal_mine
+		pmg_automation_building_flawless_metal_mine
+	}
+
+	ownership_type = self
+	
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+}
+
+building_mithril_mine = {
+	building_group = bg_mithril_mining
+	icon = "gfx/interface/icons/building_icons/mithril_mine.dds"
+	city_type = mine
+	levels_per_mesh = 5
+	required_construction = construction_cost_medium
+	terrain_manipulator = mining
+	
+	unlocking_technologies = {
+		shaft_mining
+	}
+
+	production_method_groups = {
+		pmg_mining_equipment_building_flawless_metal_mine
+		pmg_explosives_building_flawless_metal_mine
+		pmg_forging_building_flawless_metal_mine
+		pmg_automation_building_flawless_metal_mine
+	}
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+}
+
+building_gem_mine = {
+	building_group = bg_gem_mining
+	icon = "gfx/interface/icons/building_icons/gem_mine.dds"
+	city_type = mine
+	levels_per_mesh = 5
+	required_construction = construction_cost_medium
+	terrain_manipulator = mining
+	
+	unlocking_technologies = {
+		shaft_mining
+	}
+
+	production_method_groups = {
+		pmg_mining_equipment_building_gem_mine
+		pmg_explosives_building_gem_mine
+		pmg_steam_automation_building_gem_mine
+		pmg_train_automation_building_gem_mine
+	}
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+}
+
+building_lava_forge = {
+	building_group = bg_lava_forges
+	icon = "gfx/interface/icons/building_icons/iron_mine.dds"
+	city_type = mine
+	levels_per_mesh = 5
+	required_construction = construction_cost_medium
+	terrain_manipulator = mining
+	
+	unlocking_technologies = {
+		shaft_mining
+	}
+
+	production_method_groups = {
+		pmg_extraction_type_building_lava_forge
+		pmg_smiths_quarters_lava_forge
+		pmg_artisans_quarters_lava_forge
+		pmg_lava_automation_building_lava_forge
+	}
+	ownership_type = self
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_mining.dds"
+}

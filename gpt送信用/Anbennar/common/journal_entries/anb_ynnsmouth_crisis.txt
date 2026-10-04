@@ -1,0 +1,128 @@
+﻿je_ynnsmouth_crisis_trollsbay = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_historical_content
+	
+	progressbar = yes
+	display_progressbar_as_months = yes
+
+	is_shown_when_inactive = {
+		exists = c:B98
+		THIS = c:B98
+	}
+
+	possible = {
+		has_technology_researched = nationalism
+	}
+
+	immediate = {
+		set_variable = {
+			name = ynnsmouth_crisis_var
+			value = 0
+		}
+		trigger_event = { id = ynnsmouth_crisis.1 days = 1 popup = yes }
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					c:B98 ?= this
+					country_or_subject_owns_entire_state_region = STATE_YNNSMOUTH
+				}
+				change_variable = {
+					name = ynnsmouth_crisis_var
+					add = 1
+				}
+			}
+		}
+		random_events = {
+			11 = 0
+			1 = ynnsmouth_crisis.10
+		}
+	}
+
+	complete = {
+		scope:journal_entry = {
+			is_goal_complete = yes
+		}
+		any_scope_state = {
+			state_region = s:STATE_YNNSMOUTH
+			is_incorporated = yes
+			is_split_state = no
+		}
+    }
+
+	on_complete = {
+		remove_variable = ynnsmouth_crisis_var
+		trigger_event = { id = ynnsmouth_crisis.5 }
+	}
+
+	fail = {
+		custom_tooltip = {
+			text = ynnsmouth_crisis_fail_tt
+			scope:journal_entry = {
+				journal_entry_age > 1825
+			}
+		}
+		NOT = { country_or_subject_owns_entire_state_region = STATE_YNNSMOUTH }
+	}
+
+	on_fail = {
+		remove_variable = ynnsmouth_crisis_var
+		trigger_event = { id = ynnsmouth_crisis.6 popup = yes }
+	}
+
+	current_value = {
+		value = root.var:ynnsmouth_crisis_var
+	}
+
+	goal_add_value = {
+		value = 60
+	}
+
+	weight = 100
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_ynnsmouth_crisis_sarda = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_historical_content
+
+	is_shown_when_inactive = {
+		exists = c:B29
+        THIS = c:B29
+	}
+
+	possible = {
+		capital.world_market_access = 0
+	}
+
+	immediate = {
+		trigger_event = { id = ynnsmouth_crisis.7 days = 1 popup = yes }
+	}
+
+	complete = {
+		capital.world_market_access > 0
+	}
+
+	on_complete = {
+		trigger_event = { id = ynnsmouth_crisis.8  popup = yes }
+	}
+
+	timeout = 1825
+
+	on_timeout = {
+		trigger_event = { id = ynnsmouth_crisis.9 }
+	}
+
+	modifiers_while_active = {
+		ynnsmouth_free_interest	#can't be involved in Noruin otherwise
+	}
+
+	weight = 100
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

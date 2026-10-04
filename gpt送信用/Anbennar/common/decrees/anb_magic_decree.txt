@@ -1,0 +1,562 @@
+﻿#decree_magic_template = {
+#	texture = "gfx/interface/icons/decree/decree_promote_national_values.dds"		
+#
+#	state_trigger = {
+#		OR = {
+#			has_decree = decree_magic_template
+#			owner = { country_magical_expertise_balance >= decree_cost_200 }
+#		}
+#		owner = { NOT = { has_law = law_type:law_traditional_magic_banned } }
+#	}
+#	modifier = {
+#		state_magical_expertise_decree_cost_add = 200
+#	}
+#	cost = 0
+#	
+#	ai_weight = {
+#		value = 0	
+#	}
+#}
+
+decree_magic_localized_tranquility = {
+	texture = "gfx/interface/icons/decree/decree_greener_grass_campaign.dds"		
+
+	state_trigger = {
+		OR = {
+			has_decree = decree_magic_localized_tranquility
+			owner = { country_magical_expertise_balance >= decree_cost_400 }
+		}
+		owner = { NOT = { has_law = law_type:law_traditional_magic_banned } }
+	}
+	modifier = {
+		state_magical_expertise_decree_cost_add = 400
+		state_standard_of_living_add = 1.0
+		state_migration_pull_mult = 0.25
+		state_birth_rate_mult = 0.1
+	}
+	cost = 0
+	
+	ai_weight = {	# weights blatantly stolen from migration decree
+		value = 0	
+		if = {
+			limit = { 
+				any_scope_building = {
+					is_subsistence_building = yes
+					occupancy < 0.75
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = { 
+				any_scope_building = {
+					is_subsistence_building = yes
+					occupancy < 0.5
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = { 
+				any_scope_building = {
+					is_subsistence_building = yes
+					occupancy < 0.25
+				}
+			}
+			add = 50
+		}		
+		if = {
+			limit = { 
+				OR = {
+					state_unemployment_rate >= 0.1 
+					owner = { country_magical_expertise_balance < decree_cost_400 } 
+				}
+			}
+			multiply = 0
+		}
+	}
+}
+
+decree_magic_enhanced_dimension = {
+	texture = "gfx/interface/icons/decree/decree_road_maintenance.dds"		
+
+	state_trigger = {
+		OR = {
+			has_decree = decree_magic_enhanced_dimension
+			owner = { country_magical_expertise_balance >= decree_cost_400 }
+		}
+		owner = { NOT = { has_law = law_type:law_traditional_magic_banned } }
+	}
+	modifier = {
+		state_magical_expertise_decree_cost_add = 400
+		state_infrastructure_from_population_mult = 0.2
+		state_infrastructure_from_population_max_mult = 0.2
+		state_market_access_price_impact = 0.025
+	}
+	cost = 0
+	
+	ai_weight = {	#weights blatantly stolen from road_maintenance
+		value = 25		
+		
+		if = {
+			limit = { 
+				OR = {
+					relative_infrastructure < 1 
+					AND = {
+						has_decree = decree_magic_enhanced_dimension
+						relative_infrastructure < 1.25
+					}
+				}
+			
+			}
+			add = 100
+		}
+
+		if = {
+			limit = { 
+				OR = {
+					relative_infrastructure < 0.5
+					AND = {
+						has_decree = decree_magic_enhanced_dimension
+						relative_infrastructure < 0.75
+					}
+				}
+			
+			}
+			add = 100
+		}
+
+		if = {
+			limit = { 
+				OR = {
+					relative_infrastructure < 0.25 
+					AND = {
+						has_decree = decree_magic_enhanced_dimension
+						relative_infrastructure < 0.5
+					}
+				}
+			
+			}
+			add = 100
+		}		
+		
+		if = {
+			limit = { 
+				OR = {
+					relative_infrastructure >= 1.25
+					AND = {
+						has_decree = decree_magic_enhanced_dimension
+						relative_infrastructure >= 1.5
+					}
+					owner = { country_magical_expertise_balance < decree_cost_400 } 
+				}
+			
+			}
+			multiply = 0
+		}
+	}
+}
+
+decree_magic_mage_schools = {
+	texture = "gfx/interface/icons/decree/decree_promote_social_mobility.dds"		
+
+	state_trigger = {
+		OR = {
+			has_decree = decree_magic_mage_schools
+			owner = { country_magical_expertise_balance >= decree_cost_200 }
+		}
+		owner = {
+			NOT = { 
+				has_law = law_type:law_traditional_magic_banned
+				has_law = law_type:law_innovative_contemplations
+			}
+		}
+	}
+	modifier = {
+		state_magical_expertise_decree_cost_add = 200
+		
+		state_education_access_add = 0.25
+
+		building_group_bg_technology_mages_standard_of_living_add = 1
+		building_group_bg_arcane_infrastructure_mages_standard_of_living_add = 1
+		
+	}
+	cost = 0
+	
+	ai_weight = {	#weights stolen from social mobility decree
+		value = 0	
+		if = {
+			limit = { 
+				literacy_rate < 0.25
+			}
+			add = 75
+		}		
+		if = {
+			limit = { 
+				literacy_rate < 0.5
+			}
+			add = 75
+		}
+		if = {
+			limit = { 
+				literacy_rate < 0.75
+			}
+			add = 50
+		}		
+		if = {
+			limit = {
+				scope:country = {
+					OR = {
+						has_strategy = ai_strategy_reactionary_agenda
+					}
+				}
+			}
+			multiply = 0.5
+		}
+		if = {
+			limit = {
+				scope:country = {
+					OR = {
+						has_strategy = ai_strategy_progressive_agenda
+						has_strategy = ai_strategy_egalitarian_agenda
+					}
+				}
+			}
+		}
+			multiply = 1.5
+		if = {
+			limit = {
+				 owner = { country_magical_expertise_balance < decree_cost_200 } 
+			}
+			multiply = 0
+		}
+	}
+}
+
+decree_magic_plant_growth = {
+	texture = "gfx/interface/icons/decree/decree_encourage_agricultural_industry.dds"		
+
+	state_trigger = {
+		OR = {
+			has_decree = decree_magic_plant_growth
+			owner = { country_magical_expertise_balance >= decree_cost_200 }
+		}
+		owner = { NOT = { has_law = law_type:law_traditional_magic_banned } }
+	}
+	modifier = {
+		state_magical_expertise_decree_cost_add = 200
+		
+		building_group_bg_agriculture_throughput_add = 0.2
+		building_group_bg_plantations_throughput_add = 0.2
+		building_group_bg_ranching_throughput_add = 0.2
+	}
+	cost = 0
+	
+	ai_weight = {
+		value = 0	
+		if = {
+			limit = {
+				any_scope_building = {
+					OR = {
+						is_building_group = bg_agriculture
+						is_building_group = bg_ranching
+						is_building_group = bg_plantations
+					}				
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				any_scope_building = {
+					OR = {
+						is_building_group = bg_agriculture
+						is_building_group = bg_ranching
+						is_building_group = bg_plantations
+					}
+					count >= 3
+				}		
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				any_scope_building = {
+					OR = {
+						is_building_group = bg_agriculture
+						is_building_group = bg_ranching
+						is_building_group = bg_plantations
+					}	
+					count >= 5
+				}			
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				scope:country = {
+					OR = {
+						has_strategy = ai_strategy_plantation_economy
+						has_strategy = ai_strategy_agricultural_expansion
+					}					
+				}
+			}
+			multiply = 1.5
+		}	
+		if = {
+			limit = {
+				owner = { country_magical_expertise_balance < decree_cost_200 } 
+			}
+			multiply = 0
+		}
+	}
+}
+
+decree_magic_divined_census = {
+	texture = "gfx/interface/icons/decree/decree_emergency_relief.dds"		
+
+	state_trigger = {
+		OR = {
+			has_decree = decree_magic_divined_census
+			owner = { country_magical_expertise_balance >= decree_cost_200 }
+		}
+		owner = { NOT = { has_law = law_type:law_traditional_magic_banned } }
+	}
+	modifier = {
+		state_magical_expertise_decree_cost_add = 200
+		
+		state_tax_capacity_mult = 0.15
+		
+		building_government_administration_throughput_add = 0.05
+	}
+	cost = 0
+	
+	ai_weight = {
+		value = 0	
+	}
+}
+
+decree_magic_specialized_divination = {
+	texture = "gfx/interface/icons/decree/decree_encourage_resource_industry.dds"		
+
+	state_trigger = {
+		NOT = { has_decree = decree_magic_generalized_divination }
+		OR = {
+			has_decree = decree_magic_specialized_divination
+			owner = { country_magical_expertise_balance >= decree_cost_200 }
+		}
+		owner = { NOT = { has_law = law_type:law_traditional_magic_banned } }
+	}
+	modifier = {
+		state_magical_expertise_decree_cost_add = 200
+		
+		goods_output_damestear_mult = 0.3
+		goods_output_flawless_metal_mult = 0.3
+		goods_output_gold_mult = 0.3
+		# state_minting_mult = 0.3 TODO doesnt exist/work
+	}
+	cost = 0
+	
+	ai_weight = {	#higher weight than generalized div to use this instead for these mines
+		value = 0	
+		if = {
+			limit = {
+				any_scope_building = {
+					OR = {
+						is_building_type = building_gold_mine
+						is_building_type = building_damestear_mine
+						is_building_type = building_mithril_mine
+						is_building_type = building_flawless_metal_mine
+					}	
+				}
+			}
+			add = 80
+		}
+		if = {
+			limit = {
+				any_scope_building = {
+					OR = {
+						is_building_type = building_gold_mine
+						is_building_type = building_damestear_mine
+						is_building_type = building_mithril_mine
+						is_building_type = building_flawless_metal_mine
+					}	
+					count >= 3
+				}			
+			}
+			add = 80
+		}
+		if = {
+			limit = {
+				any_scope_building = {
+					OR = {
+						is_building_type = building_gold_mine
+						is_building_type = building_damestear_mine
+						is_building_type = building_mithril_mine
+						is_building_type = building_flawless_metal_mine
+					}
+					count >= 5
+				}			
+			}
+			add = 80
+		}
+		if = {
+			limit = {
+				scope:country = {
+					has_strategy = ai_strategy_resource_expansion				
+				}
+			}
+			multiply = 1.5
+		}	
+		if = {
+			limit = {
+				owner = { country_magical_expertise_balance < decree_cost_200 } 
+			}
+			multiply = 0
+		}
+	}
+}
+
+decree_magic_generalized_divination = {
+	texture = "gfx/interface/icons/decree/decree_encourage_resource_industry.dds"		
+
+	state_trigger = {
+		NOT = { has_decree = decree_magic_specialized_divination }
+		OR = {
+			has_decree = decree_magic_generalized_divination
+			owner = { country_magical_expertise_balance >= decree_cost_200 }
+		}
+		owner = { NOT = { has_law = law_type:law_traditional_magic_banned } }
+	}
+	modifier = {
+		state_magical_expertise_decree_cost_add = 200
+		
+		building_group_bg_mining_throughput_add = 0.15
+	}
+	cost = 0
+	
+	ai_weight = {
+		value = 0	
+		if = {
+			limit = {
+				any_scope_building = {
+					is_building_group = bg_mining		
+				}
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				any_scope_building = {
+					is_building_group = bg_mining	
+					count >= 3
+				}			
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				any_scope_building = {
+					is_building_group = bg_mining
+					count >= 5
+				}			
+			}
+			add = 50
+		}
+		if = {
+			limit = {
+				scope:country = {
+					has_strategy = ai_strategy_resource_expansion				
+				}
+			}
+			multiply = 1.5
+		}	
+		if = {
+			limit = {
+				owner = { country_magical_expertise_balance < decree_cost_200 } 
+			}
+			multiply = 0
+		}
+	}
+}
+
+decree_magic_enforced_loyalty = {
+	texture = "gfx/interface/icons/decree/decree_promote_national_values.dds"		
+
+	state_trigger = {
+		OR = {
+			has_decree = decree_magic_enforced_loyalty
+			owner = { country_magical_expertise_balance >= decree_cost_200 }
+		}
+		owner = { NOT = { has_law = law_type:law_traditional_magic_banned } }
+	}
+	modifier = {
+		state_magical_expertise_decree_cost_add = 200
+		
+		state_turmoil_effects_mult = -0.25
+		state_radicals_and_loyalists_from_sol_change_mult = -0.25
+		state_radicalism_increases_violent_hostility_mult = -0.25
+		state_radicalism_increases_cultural_erasure_mult = -0.25
+		state_radicalism_increases_open_prejudice_mult = -0.25
+	}
+	cost = 0
+	
+	ai_weight = {	#weights stolen from violent surpression
+		value = 100
+		
+		if = {
+			limit = { 
+				turmoil >= 0.5	
+			
+			}
+			add = 100
+		}
+		if = {
+			limit = { 
+				turmoil >= 0.75	
+			
+			}
+			add = 100
+		}
+		if = {
+			limit = {
+				scope:country = {
+					OR = {
+						has_strategy = ai_strategy_egalitarian_agenda
+						has_strategy = ai_strategy_progressive_agenda
+					}
+				}
+			}
+			multiply = 0.5
+		}
+		if = {
+			limit = {
+				owner = { country_magical_expertise_balance < decree_cost_200 } 
+			}
+			multiply = 0
+		}	
+	}
+}
+
+decree_magic_grand_defense = {
+	texture = "gfx/interface/icons/decree/decree_enlistment_efforts.dds"		
+
+	state_trigger = {
+		OR = {
+			has_decree = decree_magic_grand_defense
+			owner = { country_magical_expertise_balance >= decree_cost_200 }
+		}
+		owner = { NOT = { has_law = law_type:law_traditional_magic_banned } }
+	}
+	modifier = {
+		state_magical_expertise_decree_cost_add = 200
+		
+		battle_defense_owned_province_mult = 0.2
+		battle_offense_owned_province_mult = 0.1
+	}
+	cost = 0
+	
+	ai_weight = {
+		value = 0	
+	}
+}

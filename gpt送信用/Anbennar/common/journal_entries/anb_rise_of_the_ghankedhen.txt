@@ -1,0 +1,42 @@
+﻿je_nasavanite_economic_philosophy = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	
+	group = je_group_historical_content
+
+	complete = {
+		any_scope_state = {
+			state_region = s:STATE_NORTH_GHANKEDHEN
+			any_scope_building = {
+				is_building_type = building_urban_center
+				level >= 5
+			}
+		}
+		any_scope_state = {
+			state_region = s:STATE_SOUTH_GHANKEDHEN
+			any_scope_building = {
+				is_building_type = building_urban_center
+				level >= 5
+			}
+		}
+		any_scope_state = {
+			any_scope_building = {
+				OR = {
+					is_building_type = building_lead_mine
+					is_building_type = building_iron_mine
+					is_building_type = building_coal_mine
+				}
+				level >= 5
+			}
+		}
+		ig:ig_landowners = {
+			ig_approval >= happy
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = rise_of_the_ghankedhen.1 }
+	}
+
+	weight = 100
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

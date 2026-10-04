@@ -1,0 +1,32 @@
+﻿namespace = rise_of_the_ghankedhen
+
+rise_of_the_ghankedhen.1 = {
+	type = country_event
+	placement = root
+	
+	title = rise_of_the_ghankedhen.1.t
+	desc =  rise_of_the_ghankedhen.1.desc
+	flavor = rise_of_the_ghankedhen.1.f
+	
+	event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 3
+	
+	option = { 
+		name = rise_of_the_ghankedhen.1.a
+		default_option = yes
+		
+		ig:ig_landowners = { 
+			remove_ideology = ideology_paternalistic
+			add_ideology = ideology_nasavanite_economics
+		}
+		custom_tooltip = je_nasavanite_economic_philosophy_effect_tt
+		add_modifier = { name = ghankedhen_increased_aristocratic_economic_activity years = 15 }
+	}	
+}

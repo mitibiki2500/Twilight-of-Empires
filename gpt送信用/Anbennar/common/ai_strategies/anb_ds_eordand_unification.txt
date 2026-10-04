@@ -1,0 +1,269 @@
+﻿ai_strategy_eordand_unification = {
+	icon = "gfx/interface/icons/ai_strategy_icons/unification.dds"
+	
+	type = diplomatic
+	
+	undesirable_infamy_level = {
+		value = 50
+	}
+	
+	unacceptable_infamy_level = {
+		value = 100
+	}
+	
+	ideological_opinion_effect_mult = {
+		value = 0.5
+	}
+	
+	wargoal_maneuvers_fraction = {
+		value = 0.1
+	}		
+		
+	diplomatic_play_neutrality = {
+		value = 0
+	}
+	
+	diplomatic_play_boldness = {
+		value = 50
+	}
+		
+	obligation_value = {
+		value = 0
+	
+		if = {
+			limit = { 
+				scope:target_country = { can_form_nation = B87 }
+			}
+			add = 50
+		}
+	}			
+		
+	recklessness = {
+		value = 0.5
+	}	
+	
+	aggression = {
+		value = 0.5
+		
+		if = {
+			limit = { 
+				scope:target_country = { #More aggressive against occupier
+					NOT = { any_primary_culture = { has_discrimination_trait = heritage_eordan_ruinborn } }
+					any_scope_state = {	region = sr:region_eordand	}
+				}
+			}
+			add = 4.5
+		}	
+	}
+
+	building_group_weights = {
+		bg_army = 1
+	}
+	
+	wargoal_scores = {
+		conquer_state = {
+			if = {
+				limit = {
+					scope:target_state = { is_homeland_of_country_cultures = root }
+					can_reach_target_state = yes
+				}
+				add = 100
+			}
+		}
+		liberate_subject = {
+			if = {
+				limit = {
+					scope:target_country = { this = c:B80 }
+				}
+				add = 500
+			}		
+		}
+		take_treaty_port = {
+			if = {
+				limit = {
+					scope:target_state = { is_homeland_of_country_cultures = root }
+					can_reach_target_state = yes
+				}
+				add = 100
+			}
+		}
+		return_state = {
+			if = {
+				limit = {
+					scope:target_state = { is_homeland_of_country_cultures = root }
+					can_reach_target_state = yes
+				}
+				add = 200
+			}
+		}		
+	}
+			
+	secret_goal_scores = {
+		befriend = {
+			trigger = {
+				scope:target_country = { can_form_nation = B87 }
+			}		
+			score = {
+				value = 500
+			}
+		}				
+		conquer = {				
+			trigger = {
+				scope:target_country = { # More aggressive against occupier
+					NOT = { any_primary_culture = { has_discrimination_trait = heritage_eordan_ruinborn } }
+					any_scope_state = {	region = sr:region_eordand	}
+				}
+			}
+			score = {
+				value = 500
+			}
+		}			
+	}	
+
+	possible = {
+		NOT = { exists = c:B87 }
+		can_form_nation = B87
+	}
+
+	weight = {
+		value = 1000
+		if = {
+			limit = { 
+				any_country = {
+					OR = {
+						any_scope_treaty = {
+                            binds = root
+                            any_scope_article = {
+                                has_type = alliance
+                            }
+                        }
+						any_scope_treaty = {
+                            binds = root
+                            any_scope_article = {
+                                has_type = defensive_pact
+                            }
+                        }
+					}
+					has_journal_entry = je_eordand_diplomatic_unification 
+				}
+			}
+			add = 5000
+		}	
+	}
+
+}
+
+ai_strategy_eordand_malachite = {
+	icon = "gfx/interface/icons/ai_strategy_icons/unification.dds"
+	
+	type = diplomatic
+	
+	undesirable_infamy_level = {
+		value = 100
+	}
+	
+	unacceptable_infamy_level = {
+		value = 100
+	}
+	
+	ideological_opinion_effect_mult = {
+		value = 0.5
+	}
+	
+	wargoal_maneuvers_fraction = {
+		value = 0.1
+	}		
+		
+	diplomatic_play_neutrality = {
+		value = 0
+	}
+	
+	diplomatic_play_boldness = {
+		value = 100
+	}
+		
+	obligation_value = {
+		value = 0
+	}			
+		
+	recklessness = {
+		value = 1.0
+	}	
+	
+	aggression = {
+		value = 0.5
+		
+		if = {
+			limit = { 
+				scope:target_country = { #More aggressive for unification
+					any_scope_state = {	region = sr:region_eordand	}
+				}
+			}
+			add = 9.5
+		}	
+	}
+
+	building_group_weights = {
+		bg_army = 10
+	}
+	
+	wargoal_scores = {
+		conquer_state = {
+			if = {
+				limit = {
+					scope:target_state = {				
+						region = sr:region_eordand
+					}
+					can_reach_target_state = yes
+				}
+				add = 300
+			}
+		}
+		take_treaty_port = {
+			if = {
+				limit = {
+					scope:target_state = {				
+						region = sr:region_eordand
+					}
+					can_reach_target_state = yes
+				}
+				add = 300
+			}
+
+		}
+		return_state = {
+			if = {
+				limit = {
+					scope:target_state = {				
+						can_reach_target_state = yes
+					}
+					can_reach_target_state = yes
+				}
+				add = 500
+			}
+		}		
+	}
+			
+	secret_goal_scores = {			
+		conquer = {
+			trigger = {
+				scope:target_country = { # More aggressive
+					any_scope_state = {	region = sr:region_eordand	}
+				}
+			}
+			score = {
+				value = 5000
+			}			
+		}			
+	}	
+
+	possible = {
+		NOT = { exists = c:B87 }
+		has_journal_entry = je_eordand_last_stand 
+	}
+
+	weight = {
+		value = 5000	
+	}
+
+}

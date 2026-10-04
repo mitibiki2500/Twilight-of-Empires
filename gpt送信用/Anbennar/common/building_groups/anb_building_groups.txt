@@ -1,0 +1,211 @@
+﻿# parent_group = parent_group_key		If set, this group is considered a child of the specified group. Default no parent.
+# always_possible = yes/no				If yes, building types in this group are always permitted regardless of resources in state. Default no.
+# economy_of_scale = yes/no				If yes, any non-subsistence buildings in or underneath this group will get an economy of scale throughput modifier for each level > 1. Default no.
+# is_subsistence = yes/no				If yes, buildings of types in this group are considered subsistence buildings that follow special rules. Default no.
+# default_building = building_type_key	Specifies the default building type that will be built unless the state specifies a different one. No default.
+# lens = lens_key						If specified, determines the lens buildings in this group will be sorted under. No default.
+# auto_place_buildings = yes/no
+# capped_by_resources = yes/no
+# discoverable_resource = yes/no
+# depletable_resource = yes/no
+# can_use_slaves = yes/no				Default no, setting yes enables slavery for all contained buildings and groups
+# ignores_hiring_rate = yes/no			Default no, setting yes causes all contained buildings and groups to hire as much as they want
+# land_usage = urban/rural				Which type of state resource the building uses. urban = Urbanization, rural = Arable Land. Default no state resource usage.
+#										If unspecified, will return first non-default land usage type found in parent building group tree.
+# cash_reserves_max = number			Maximum amount of £ (per level) that buildings in this group can store into their cash reserves. If unspecified or set to 0, it will use the value from the parent group. Default 0
+# inheritable_construction =  yes/no	If yes, a construction of this building group will survive a state changing hands or a split state merging
+# stateregion_max_level = yes/no		If yes, any building types in this group with the has_max_level property will consider its level restrictions on state-region rather than state level	
+# urbanization = number					The amount of urbanization buildings in this group provides per level
+
+bg_magical_mining = {
+	parent_group = bg_mining
+
+	default_building = building_damestear_mine
+	
+	can_use_slaves = yes
+}
+
+bg_damestear_mining = {
+	parent_group = bg_magical_mining
+	
+	default_building = building_damestear_mine
+	discoverable_resource = yes
+
+	can_use_slaves = yes
+}
+
+# bg_damestear_fields = {
+# 	parent_group = bg_magical_mining
+
+# 	auto_place_buildings = yes
+
+# 	discoverable_resource = yes
+	
+# 	depletable_resource = yes
+		
+# 	pays_taxes = no
+
+# 	default_building = building_damestear_fields
+	
+# 	fired_pops_become_radical = no
+# }
+
+bg_flawless_metal_mining = {
+	parent_group = bg_magical_mining
+	
+	default_building = building_flawless_metal_mine
+
+	can_use_slaves = yes
+}
+
+bg_arcane_infrastructure = {
+	parent_group = bg_private_infrastructure
+	
+	economy_of_scale = yes
+}
+
+bg_mage_tower = {
+	parent_group = bg_arcane_infrastructure	
+	infrastructure_usage_per_level = 1
+}
+
+#bg_adventurers_wanted = {
+#	#parent_group = bg_monuments
+#
+#	category = development
+#	lens = special
+#	pays_taxes = no
+#
+#	is_government_funded = no
+#	subsidized = yes
+#
+#	always_possible = yes
+#	urbanization = 0
+#}
+
+#bg_haless_spirits = {
+#	category = rural
+#	lens = mine
+#	pays_taxes = no
+#	
+#	capped_by_resources = yes
+#	
+#	cash_reserves_max = 25000
+#	
+#	auto_place_buildings = yes
+#	
+#	default_building = building_haless_spirit_presence
+#	
+#	fired_pops_become_radical = no
+#	
+#	urbanization = 0
+#}
+#
+#bg_haless_extractors = {
+#	parent_group = bg_mining
+#	
+#	default_building = building_spirit_extractors
+#}
+#
+#bg_haless_temples = {
+#	parent_group = bg_mining
+#	
+#	default_building = building_haless_high_temple
+#}
+
+bg_magical_reagents_workshop = {
+	parent_group = bg_light_industry
+
+	default_building = building_magical_reagents_workshop
+}
+
+bg_doodad_artificeries = {
+	parent_group = bg_heavy_industry
+
+	default_building = building_doodad_artificeries
+}
+
+bg_automatories = {
+	parent_group = bg_heavy_industry
+
+	default_building = building_automatories
+}
+
+bg_magical_resources = {
+	parent_group = bg_extraction
+
+	lens = mine
+
+	urbanization = 5
+	infrastructure_usage_per_level = 1
+
+	should_auto_expand = { 
+		default_auto_expand_rule = yes
+	}
+	economy_of_scale_ai_factor = 2.0
+	foreign_investment_ai_factor = 1.0
+}
+
+bg_relics_digsite = {
+	parent_group = bg_magical_resources
+	
+	default_building = building_relics_digsite
+	
+	discoverable_resource = yes
+	
+	can_use_slaves = yes
+}
+
+bg_dungeons = {
+	parent_group = bg_magical_resources
+
+	auto_place_buildings = yes
+
+	discoverable_resource = yes
+	
+	depletable_resource = yes
+	
+	always_self_owning = yes
+	
+	pays_taxes = no
+
+	infrastructure_usage_per_level = 0
+
+	default_building = building_dungeons
+	
+	fired_pops_become_radical = no
+}
+
+bg_dungeons_quarantined = {
+	parent_group = bg_magical_resources
+	
+	default_building = building_dungeons_quarantined
+
+	can_use_slaves = yes
+}
+
+bg_monster_ranch = {
+	parent_group = bg_magical_resources
+	
+	default_building = building_monster_ranch
+
+	can_use_slaves = yes
+}
+bg_damestear_dives = {
+	parent_group = bg_magical_resources
+	
+	default_building = building_damestear_dives
+	discoverable_resource = yes
+
+}
+
+bg_airship_tower = { #disabled for now
+	parent_group  = bg_government
+	economy_of_scale = no
+}
+
+bg_lava_forges = {
+	parent_group = bg_mining
+	
+	default_building = building_lava_forge
+}

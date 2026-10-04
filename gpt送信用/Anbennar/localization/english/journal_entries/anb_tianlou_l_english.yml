@@ -1,0 +1,65 @@
+﻿l_english:
+ je_tianlou_debt:0 "A Rending Debt"
+ je_tianlou_debt_reason:0 "During the great disaster known as the Rending of Realms, the Fox-Spirit led nation of Lingyuk led its armies out of the Mulim forest across Yanshen, in a grand sweeping conquest. They conquered our lands and drove us back to the ancient walls of our city. Besieged on all sides but the sea, the only thing that sustained us was aid from abroad. Great quantities of food and other supplies, as well as military aid were sent by the Triarchy, and eventually allowed us to reclaim our lost territories. While we have recovered, this left us with a massive debt to the Aelantir-based artificers. A debt we have yet to pay off."
+ 
+ je_tianlou_debt_status_4: "Our current debt level is: #bold Massive#!"
+ je_tianlou_debt_status_3: "Our current debt level is: #bold Large#!"
+ je_tianlou_debt_status_2: "Our current debt level is: #bold Significant#!"
+ je_tianlou_debt_status_1: "Our current debt level is: #bold Small#!"
+ 
+ je_tianlou_debt_negotiation_button: "Negotiate Indemnity Reduction"
+ je_tianlou_debt_negotiation_button_desc: "Should diplomatic conditions be right, we could initiate talks with [SCOPE.sCountry('triarchy_scope').GetNameNoFlag] to lower the indemnity owed their creditors. This can only be requested #bold once#!, and, should [SCOPE.sCountry('triarchy_scope').GetNameNoFormatting] accept, will come at the cost of owing an [concept_obligation|l]."
+ je_tianlou_debt_payment_button: "Pay Off Debt Portion"
+ je_tianlou_debt_payment_button_desc: "Authorise a large payment to the [SCOPE.sCountry('triarchy_scope').GetAdjectiveNoFlag] #italic Financial Department#!."
+ je_tianlou_cancel_debt_button: "Unilaterally Cancel Debt"
+ je_tianlou_cancel_debt_button_desc: "Enough is enough. We would rather repay our debt in blood than bleed our coffers dry for the damned [SCOPE.sCountry('triarchy_scope').GetName]."
+ je_tianlou_cancel_debt_button_tt: "This decision will not be well-received in [SCOPE.sCountry('triarchy_scope').GetName], and their willingness to wage war against us can be expected to rise drastically."
+
+ notification_tianlou_stops_paying_triarchy_name: "Tianlou Stops Indemnity Payments"
+ notification_tianlou_stops_paying_triarchy_desc: "Tianlou has refused to make any further payments to our country, unilaterally cancelling any and all debts owed us.\n\nDemands for a punitive expedition are widespread, and we now possess a [concept_claim|l]  on the lands we so kindly saved."
+ notification_tianlou_stops_paying_triarchy_tooltip: "#header $notification_tianlou_stops_paying_triarchy_name$#!\n$TOOLTIP_DELIMITER$\n$notification_tianlou_stops_paying_triarchy_desc$"
+
+ notification_tianlou_pays_off_debt_name: "Tianlou Pays Off Part of Indemnity"
+ notification_tianlou_pays_off_debt_desc: "Tianlou has paid off part of the indemnity owed us, with the #italic Financial Department#! receiving the installment earlier this morning."
+ notification_tianlou_pays_off_debt_tooltip: "#header $notification_tianlou_pays_off_debt_name$#!\n$TOOLTIP_DELIMITER$\n$notification_tianlou_pays_off_debt_desc$"
+ 
+ modifier_triarchy_rending_repayments_1:0 "Small Triarchy Rending Repayments"
+ modifier_tianlou_rending_repayments_1:0 "Small Tianlou Rending Repayments"
+ modifier_triarchy_rending_repayments_2:0 "Significant Triarchy Rending Repayments"
+ modifier_tianlou_rending_repayments_2:0 "Significant Tianlou Rending Repayments"
+ modifier_triarchy_rending_repayments_3:0 "Large Triarchy Rending Repayments"
+ modifier_tianlou_rending_repayments_3:0 "Large Tianlou Rending Repayments"
+ modifier_triarchy_rending_repayments_4:0 "Massive Triarchy Rending Repayments"
+ modifier_tianlou_rending_repayments_4:0 "Massive Tianlou Rending Repayments"
+ modifier_cancelled_tianlou_debt:0 "Unilaterally Cancelled Debt"
+ end_of_tianlou_repayments_modifier:0 "Tianlou Financial Independence"
+ the_jewel_of_yanshen_modifier:0 "The Jewel of Yanshen"
+ survivors_of_the_fox_demon_modifier:0 "Survivors of the Fox Demon"
+ 
+ tianlou_events.1.t:0 "The Last Shadows of the Rending"
+ tianlou_events.1.d:0 "The last shipment of gold has been sent to [SCOPE.sCountry('france_scope').GetName]. Our debt is cleared. We may finally look beyond the shadow of the Rending and into our brighter future."
+ tianlou_events.1.f:0 "Before me stood something more beautiful than any High Temple. More serene than the most remote mountain peak. More magnificent than any pearl of wisdom plucked from the wisest minds who ever lived. A single zero, written on a piece of paper."
+ tianlou_events.1.a:0 "The glory of Tianlou is restored."
+ tianlou_events.1.b:0 "After this we can survive anything."
+ 
+ tianlou_events.2.t:0 "Accounts Balanced"
+ tianlou_events.2.d:0 "[SCOPE.sCountry('tianlou_scope').GetName] has paid its indemnity and debts in full. Per the terms of its agreement with us, they are now free of its obligations."
+ tianlou_events.2.f:0 "The goblin scratched her head at the message in front of her before turning to her aide, a gnome. “It’s true then? They managed to pay it?” For a moment both of them flipped through a flurry of sheets and accounts, running through numbers faster than most minds could comprehend. The gnome looked to his superior. “So it would seem.” He muttered a few more sums under his breath but nothing changed. “Damn. I was hoping we would get more out of them. Well a deal's a deal.” With a stroke of a pen and a stamp, a debt that had nearly destroyed one of the world's largest cities was finally put to rest."
+ tianlou_events.2.a:0 "A contract completed to satisfaction."
+ 
+ tianlou_events.3.t:0 "Tianlou Requests Indemnity Negotiation"
+ tianlou_events.3.d:0 "The country of [SCOPE.sCountry('tianlou_scope').GetName], suffering under a massive indemnity owed us for the exchange of their freedom, has requested a renegotiation of the terms."
+ tianlou_events.3.f:0 "The delegate from Tianlou looked on in exasperation as his lenders debated amongst themselves."
+ tianlou_events.3.a:0 "Granted. Influence is a currecy of its own."
+ tianlou_events.3.b:0 "Denied. A contract is a contract."
+ 
+ tianlou_events.4.t:0 "The Triarchy Agrees to Indemnity Reduction"
+ tianlou_events.4.d:0 "Our negotiations with [SCOPE.sCountry('france_scope').GetName] have borne fruit. In an official letter signed by [SCOPE.sCountry('france_scope').GetRuler.GetPrimaryRoleTitle] [SCOPE.sCountry('france_scope').GetRuler.GetFullName] [SCOPE.sCountry('france_scope').GetRuler.GetHerselfHimself], one quarter of the owed indemnity is written off, though with certain diplomatic strings attached."
+ tianlou_events.4.f:0 ""
+ tianlou_events.4.a:0 "They truly are gracious!"
+ 
+ tianlou_events.5.t:0 "The Triarchy Refuses Indemnity Reduction"
+ tianlou_events.5.d:0 "In display of smallmindedness, [SCOPE.sCountry('france_scope').GetName] has refused any and all suggestions to reduce the indemnity — the [SCOPE.sCountry('france_scope').GetAdjectiveNoFormatting] representative instead launched into a tirade about financial obligations and the technicalities of paperwork."
+ tianlou_events.5.f:0 ""
+ tianlou_events.5.a:0 "They are like the Dragon themselves."
+ 

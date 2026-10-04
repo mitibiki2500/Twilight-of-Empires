@@ -1,0 +1,186 @@
+﻿#The Oracle's Eye Investigation
+je_comet_investigation = {
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+    group = je_group_historical_content
+
+    #Progress bar
+    scripted_progress_bar = dur_vazhatun_bar
+    #Buttons
+    scripted_button = scripted_button_recruit_astronomers_button
+    scripted_button = scripted_button_astronomer_expedition_button
+
+    immediate = {
+        #Trigger starting event
+        trigger_event = { id = anb_comet_investigation.001 }
+
+        #Set the starting character and evidence variables
+        # set_variable = { name = comet_evidence_var value = 0 } # currently unused
+        set_variable = { name = comet_discoveries_var value = 0 }
+        set_variable = { name = comet_druznar_recruited_var value = yes }
+    }
+
+    complete = {
+        custom_tooltip = {
+            text = comet_discoveries_lim
+            var:comet_discoveries_var > 3
+        }
+    }
+
+    on_complete = {
+        #Trigger the final discovery event
+        trigger_event = { id = anb_comet_investigation.501 }
+    }
+
+    fail = {
+        custom_tooltip = { #TODO This is a placeholder condition, it doesn't ever get triggered rn
+            text = comet_druznar_left
+            always = no # while placeholder remains
+            # has_variable = comet_druznar_left_var # currently unused
+        }
+    }
+
+    on_fail = {
+        
+    }
+
+    on_monthly_pulse = {
+        #Random Assorted Events
+        random_events = {
+            100 = 0
+        }
+        effect = {
+            #Character Events
+            random_list = {
+                100 = {}
+                10 = { modifier = {
+                    if = {
+                        limit = {
+                            has_variable = comet_character_cooldown_var
+                        }
+                        add = -10
+                    }
+                } trigger_event = anb_comet_investigation.301 }
+            }
+        }
+    }
+    
+    on_weekly_pulse = {
+        effect = {
+            #Expedition pulses (Contains hidden event that redirect to each char's actual events)
+            if = {
+                limit = {
+                    has_variable = comet_expedition_var
+                }
+                random_list = { #TODO Maybe add more of these?
+                    80 = { }
+                    40 = { 
+                        trigger = {
+                            NOT = {
+                                has_variable = comet_expedition_incap_var
+                            }
+                        }
+                        modifier = {
+                            if = {
+                                limit = {
+                                    has_variable = comet_expedition_break_var
+                                }
+                                add = -20
+                            }
+                        }
+                        change_variable = {
+                            name = comet_expedition_var
+                            add = 1
+                        }
+                    }
+                    10 = {
+                        trigger = {
+                            NOT = {
+                                has_variable = comet_expedition_incap_var
+                            }
+                        }
+                        modifier = {
+                            if = {
+                                limit = {
+                                    has_variable = comet_expedition_event_cooldown_var
+                                }
+                                add = -10
+                            } #Cooldown so that you have at least 3 months between event triggers
+                        }
+                        trigger_event = { id = anb_comet_investigation.201 }
+                    }
+                }
+            }
+
+            #Converting evidence into discoveries #TODO These numbers are very subject to change
+            if = {
+                limit = {
+                    scope:journal_entry = {
+                        "scripted_bar_progress(dur_vazhatun_bar)" >= 1000
+                    }
+                    var:comet_discoveries_var = 0
+                }
+                change_variable = {
+                    name = comet_discoveries_var
+                    add = 1
+                }
+                trigger_event = {
+                    id = anb_comet_investigation.401
+                }
+            }
+            if = {
+                limit = {
+                    scope:journal_entry = {
+                        "scripted_bar_progress(dur_vazhatun_bar)" >= 2000
+                    }
+                    var:comet_discoveries_var = 1
+                }
+                change_variable = {
+                    name = comet_discoveries_var
+                    add = 1
+                }
+                trigger_event = {
+                    id = anb_comet_investigation.402
+                }
+            }
+            if = {
+                limit = {
+                    scope:journal_entry = {
+                        "scripted_bar_progress(dur_vazhatun_bar)" >= 3000
+                    }
+                    var:comet_discoveries_var = 2
+                    NOT = {
+                        has_variable = comet_je_done_var
+                    }
+                }
+                change_variable = {
+                    name = comet_discoveries_var
+                    add = 1
+                }
+                trigger_event = {
+                    id = anb_comet_investigation.403
+                }
+            }
+
+            #Character Search
+            if = {
+                limit = {
+                    OR = {
+                        has_variable = comet_sci_search_var
+                        has_variable = comet_field_search_var
+                        has_variable = comet_mage_search_var
+                    }
+                }
+                random_list = {
+                    100 = { }
+                    10 = { 
+                        trigger_event = { id = anb_comet_investigation.102 }
+                    }
+                }
+            }
+        }
+    }
+
+    should_be_pinned_by_default_uninvolved_or_context = yes
+    
+}

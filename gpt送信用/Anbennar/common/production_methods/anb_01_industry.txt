@@ -1,0 +1,2681 @@
+﻿## Food Industries
+
+pm_chronomantic_food_preservatives = {
+	texture = "gfx/interface/icons/production_method_icons/chrono_food.dds"
+
+	unlocking_technologies = {
+		chronoculture
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_grain_add = 100	
+			goods_input_sugar_add = 40
+			goods_input_artificery_doodads_add = 10
+
+			# output goods
+			goods_output_groceries_add = 200
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2500
+			building_employment_machinists_add = 1250
+			building_employment_engineers_add = 750
+		}
+	}
+}
+
+pm_automata_dough_processors = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+
+	unlocking_technologies = {
+		insyaan_analytical_engine				
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_automata_bakers = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+
+	unlocking_technologies = {
+		thinking_machinery				
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+			building_employment_machinists_add = -1250
+		}
+	}
+}
+
+
+## Textile Mills
+
+pm_no_enhancement_building_textile_mill = {
+	texture = "gfx/interface/icons/production_method_icons/no_textile.dds"
+}
+
+pm_pattern_transmutation_building_textile_mill = {
+	texture = "gfx/interface/icons/production_method_icons/pattern_transmutation.dds"
+	
+	unlocking_technologies = {
+		pathway_transmutation				
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 20	
+			
+			# output goods
+			goods_output_luxury_clothes_add = 10
+			goods_output_clothes_add = 10
+		}
+
+		level_scaled = {
+			building_employment_mages_add = 250
+		}
+	}
+}
+
+pm_seamless_weave_building_textile_mill = {
+	texture = "gfx/interface/icons/production_method_icons/chameleon.dds"
+
+	
+	unlocking_technologies = {
+		catalytic_imbuement				
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 30
+			goods_input_artificery_doodads_add = 10
+			
+			# output goods
+			goods_output_luxury_clothes_add = 20
+			goods_output_clothes_add = 30
+		}
+
+		level_scaled = {
+			# building_employment_mages_add = 500	#added mages here as well to integrate them into industrial process. think of them as artists or skilled technical workers -jay
+			# building_employment_engineers_add = 500
+
+			# 1000 empolyees is unacceptable for this secondary PM in math. but I'll use mages instead of engineers according to comment above @1onepower
+			building_employment_mages_add = 250
+		}
+	}
+}
+
+pm_automata_laborers_textile = {
+	texture = "gfx/interface/icons/production_method_icons/automata_textile.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine	
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -3000
+		}
+	}
+}
+
+pm_automata_machinists_textile = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists_textile.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -3000
+			building_employment_machinists_add = -1000
+		}
+	}
+}
+
+## Furniture Manufactories
+
+pm_no_enhancement_building_furniture_manufactury = {
+	texture = "gfx/interface/icons/production_method_icons/no_luxury_furniture.dds"
+}
+
+pm_never_rot_building_furniture_manufactury = {
+	texture = "gfx/interface/icons/production_method_icons/luxury_furniture.dds"
+	
+	unlocking_technologies = {
+		runescript_integration
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 20	
+			goods_input_artificery_doodads_add = 5
+			
+			# output goods
+			goods_output_furniture_add = 10	
+			goods_output_luxury_furniture_add = 10
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+pm_moving_furniture_building_furniture_manufactury = {
+	texture = "gfx/interface/icons/production_method_icons/precision_tools.dds"
+
+	
+	unlocking_technologies = {
+		thinking_machinery				
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 30
+			goods_input_artificery_doodads_add = 10
+			
+			# output goods
+			goods_output_furniture_add = 20
+			goods_output_luxury_furniture_add = 20	
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+pm_automata_laborers_furniture = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine	
+	}
+
+	
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -3000
+		}
+	}
+}
+
+pm_automata_machinists_furniture = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2750
+			building_employment_machinists_add = -1250
+		}
+	}
+}
+
+
+## Glassworks
+pm_thaumic_insulant_porcelain = {
+	texture = "gfx/interface/icons/production_method_icons/bone_china.dds"
+	
+	unlocking_technologies = {
+		catalytic_imbuement
+	}
+
+	unlocking_production_methods = {
+		pm_crystal_glass
+		pm_houseware_plastics
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_dye_add = 15
+			goods_input_magical_reagents_add = 5
+			
+			# output goods
+			goods_output_glass_add = -40
+			goods_output_porcelain_add = 60
+		}
+		
+		level_scaled = {
+			building_employment_shopkeepers_add = 750
+		}					
+	}														
+}
+
+pm_no_enhancement_building_glassworks = {
+	texture = "gfx/interface/icons/production_method_icons/no_luxury_furniture.dds"
+}
+
+pm_arcane_artistry_building_glassworks = {
+	texture = "gfx/interface/icons/production_method_icons/ceramics.dds"
+	
+	unlocking_technologies = {
+		magocracy				
+	}
+	disallowing_laws = {
+		law_traditional_magic_banned
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 10	
+			
+			# output goods
+			goods_output_glass_add = 10	
+		}
+
+		level_scaled = {
+			building_employment_mages_add = 250
+		}
+	}
+}
+
+pm_moving_mosaic_building_glassworks = {
+	texture = "gfx/interface/icons/production_method_icons/precision_tools.dds"
+	
+	unlocking_technologies = {
+		catalytic_imbuement				
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_magical_reagents_add = 15
+			goods_input_artificery_doodads_add = 2
+			
+			# output goods
+			goods_output_glass_add = 20	
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+pm_automata_laborers_glass = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine			
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_automata_machinists_glass = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2750
+			building_employment_machinists_add = -1250
+		}
+	}
+}
+
+
+## Tooling Workshops
+pm_no_apparatus_production = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+
+pm_mithril_supports = {
+	texture = "gfx/interface/icons/production_method_icons/mithril_supports.dds"
+	
+	unlocking_technologies = {
+		steelworking		
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_flawless_metal_add = 5
+			
+			# output goods
+			goods_output_tools_add = 20
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 500
+		}
+	}
+
+	ai_value = 200
+}
+pm_servo_exo_arms = {
+	texture = "gfx/interface/icons/production_method_icons/exo_arms.dds"
+	unlocking_technologies = {
+		thinking_machinery
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_flawless_metal_add = 10
+			goods_input_artificery_doodads_add = 10
+			
+			# output goods
+			goods_output_tools_add = 45
+		}
+
+		level_scaled = {
+			building_employment_machinists_add = 250
+			building_employment_engineers_add = 250
+		}
+	}
+	ai_value = 200
+}
+
+
+pm_toolbox_of_holding = {
+	texture = "gfx/interface/icons/production_method_icons/exo_suits.dds"
+
+	unlocking_technologies = {
+		catalytic_imbuement
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_flawless_metal_add = 15
+			goods_input_artificery_doodads_add = 15
+			
+			# output goods
+			goods_output_tools_add = 70
+		}
+
+		level_scaled = {
+			building_employment_machinists_add = 250
+			building_employment_engineers_add = 250
+		}
+	}
+	ai_value = 200
+}
+
+pm_automata_laborers_tools = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine		
+	}
+    
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_automata_machinists_tools = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -3000
+			building_employment_machinists_add = -750
+		}
+	}
+}
+
+
+## Paper Mills
+
+# @1onepower
+pm_no_scroll_making = {
+	texture = "gfx/interface/icons/production_method_icons/pulp_pressing.dds"
+}
+
+# @1onepower
+pm_scroll_making = {
+	texture = "gfx/interface/icons/production_method_icons/pulp_pressing.dds"
+
+	unlocking_technologies = {
+		mages_in_the_workforce
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_dye_add = 5
+
+			goods_output_paper_add = -7
+			goods_output_arcane_curios_add = 10
+		}
+
+		level_scaled = {
+			building_employment_mages_add = 250
+		}
+	}
+}
+
+# @1onepower
+pm_industrialized_scroll_making = {
+	texture = "gfx/interface/icons/production_method_icons/pulp_pressing.dds"
+
+	unlocking_technologies = {
+		thaumic_field_stabilization
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_dye_add = 5
+
+			goods_output_paper_add = -20
+			goods_output_arcane_curios_add = 23
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+
+pm_automata_laborers_paper = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_automata_machinists_paper = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2750
+			building_employment_machinists_add = -1000
+		}
+	}
+}
+
+
+
+## Chemical Plants
+pm_no_fertilizer_enhancements = {
+	texture = "gfx/interface/icons/production_method_icons/nitrogen_fixation.dds"
+}
+
+pm_fertilizer_growth_beans = {
+	texture = "gfx/interface/icons/production_method_icons/nitrogen_fixation.dds"
+
+	unlocking_technologies = {
+		punch_card_artificery
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_machinists_add = 500
+		}
+		workforce_scaled = {
+			# input goods
+			goods_input_artificery_doodads_add = 10
+
+			# output goods
+			goods_output_fertilizer_add = 27
+		}
+	}
+}
+
+pm_fertilizer_essence_of_decay = {
+	texture = "gfx/interface/icons/production_method_icons/nitrogen_fixation.dds"
+
+	unlocking_technologies = {
+		gene_transmutation
+	}
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			building_employment_engineers_add = 500
+		}
+		workforce_scaled = {
+			# input goods
+			goods_input_artificery_doodads_add = 20
+
+			# output goods
+			goods_output_fertilizer_add = 57
+		}
+	}
+}
+
+## Explosives Plants
+pm_elemental_gunpowder = {
+	texture = "gfx/interface/icons/production_method_icons/leblanc_process.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		elemental_elicitation		
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fertilizer_add = 15
+			goods_input_magical_reagents_add = 5
+
+			# output goods
+			goods_output_explosives_add = 25
+		}
+	}
+}
+
+pm_spellsculped_detonators = {
+	texture = "gfx/interface/icons/production_method_icons/ammonia_soda_process.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		catalytic_imbuement
+	}
+
+	unlocking_production_methods = {
+		pm_ammonia-soda_process
+		pm_vacuum_evaporation
+		pm_brine_electrolysis
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_fertilizer_add = 15
+			goods_input_artificery_doodads_add = 10
+			goods_input_magical_reagents_add = 10
+
+			# output goods
+			goods_output_explosives_add = 50
+		}
+	}
+}
+
+pm_automata_laborers_chemical_explosives = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine			
+	}
+
+	unlocking_production_methods = {
+		pm_leblanc_process
+		pm_ammonia-soda_process
+		pm_vacuum_evaporation
+		pm_artificial_fertilizers
+		pm_improved_fertilizer
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 6
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2000
+		}
+	}
+}
+
+pm_automata_machinists_chemical_explosives = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	unlocking_production_methods = {
+		pm_leblanc_process
+		pm_ammonia-soda_process
+		pm_vacuum_evaporation
+		pm_artificial_fertilizers
+		pm_improved_fertilizer
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 9
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2000
+			building_employment_machinists_add = -1000
+		}
+	}
+}
+
+pm_automata_machinists_chemical_explosives_advanced = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	unlocking_production_methods = {
+		pm_vacuum_evaporation
+		pm_nitrogen_fixation
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1000
+			building_employment_machinists_add = -1000
+			building_employment_engineers_add = -1000
+		}
+	}
+}
+
+
+## Steel Mills
+
+pm_no_alloy_steel = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+
+pm_alloy_rubyhold_steel = {
+    texture = "gfx/interface/icons/production_method_icons/bessemer_process.dds"
+
+    unlocking_geographic_regions = {
+		geographic_region_rosemetal_region
+	}
+
+    unlocking_technologies = {
+		rubyhold_process
+	}
+
+    is_hidden_when_unavailable = yes
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_damestear_add = 5
+			goods_input_arcane_curios_add = 5
+			
+			# output goods
+			goods_output_steel_add = -20
+			goods_output_flawless_metal_add = 30
+		}
+		# Secondary PMs typically don't change the total workforce as that's set by the main PM group. If they touch the worksforce, they should only convert one job type to another
+		# level_scaled = {
+		# 	building_employment_engineers_add = 250
+		# }
+	}
+}
+
+pm_alloy_precursor_steel = {
+	texture = "gfx/interface/icons/production_method_icons/electric_arc_process.dds"
+	unlocking_technologies = {
+		alchemical_alloys
+	}
+
+	building_modifiers = {
+		workforce_scaled = {	#as those 3 goods have similar prices, made it so damestear amount + steel amount = flawless total. If we want a 1:1 conversion from steel to flawless, we'd need to convert huge amounts of steel at once (50+) and only add small amounts of damestear (5-10) to have a net profit, let alone a significant one
+			# input goods
+			goods_input_damestear_add = 20			# -800
+			
+			# output goods
+			goods_output_steel_add = -40			# -2000
+			goods_output_flawless_metal_add = 60	# +3600
+		}
+	}
+}
+
+pm_no_treatments_steel = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+
+pm_cryo_aeromantic_cooling = {
+	texture = "gfx/interface/icons/production_method_icons/bessemer_process.dds"
+	unlocking_technologies = {
+		elemental_elicitation
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_artificery_doodads_add = 10
+			
+			# output goods
+			goods_output_steel_add = 20
+		}
+	}
+}
+
+pm_thaumic_field_bath = {
+	texture = "gfx/interface/icons/production_method_icons/electric_arc_process.dds"
+	unlocking_technologies = {
+		thaumic_field_stabilization
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_artificery_doodads_add = 20
+			goods_input_porcelain_add = 10
+			
+			# output goods
+			goods_output_steel_add = 50
+		}
+	}
+}
+
+pm_automata_laborers_steel = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_automata_machinists_steel = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+			building_employment_machinists_add = -1250
+		}
+	}
+}
+
+
+## Motor Industries
+
+# This one is not used anywhere, but I'll leave it here according to comments in pmg @1onepower
+pm_sparkdrive_engines = {
+	texture = "gfx/interface/icons/production_method_icons/steamworks.dds"
+	
+	unlocking_technologies = {
+		punch_card_artificery			
+	}
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_steel_add = 30
+			
+			goods_output_engines_add = 40
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 2500
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 500
+		}
+	}
+}
+
+# This one is not used anywhere, but I'll leave it here according to comments in pmg @1onepower
+pm_no_vehicles = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+
+# This one is not used anywhere, but I'll leave it here according to comments in pmg @1onepower
+pm_reliquary_vehicles = {
+	texture = "gfx/interface/icons/production_method_icons/automobiles.dds"
+	
+	unlocking_technologies = {
+		punch_card_artificery		
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_flawless_metal_add = 8
+			goods_input_artificery_doodads_add = 4
+
+			# output goods
+			goods_output_engines_add = -15
+			goods_output_automobiles_add = 16
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = 750
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+# This one is not used anywhere, but I'll leave it here according to comments in pmg @1onepower
+pm_shiny_vehicles = {
+	texture = "gfx/interface/icons/production_method_icons/standardized_automobiles.dds"
+	
+	unlocking_technologies = {
+		combustion_engine
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_flawless_metal_add = 15
+			goods_input_artificery_doodads_add = 5
+
+			# output goods
+			goods_output_automobiles_add = 24
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 1000
+		}
+	}
+}
+
+pm_elemental_cooler = {
+	texture = "gfx/interface/icons/production_method_icons/nitrogen_fixation.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		elemental_elicitation
+	}
+
+	unlocking_production_methods = {
+		pm_steam_engines
+		pm_electric_engines
+		pm_diesel_engines
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_artificery_doodads_add = 5
+
+			# output goods
+			goods_output_engines_add = 8
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = 500
+		}
+	}
+}
+
+
+pm_doodad_tuning = {
+	texture = "gfx/interface/icons/production_method_icons/nitrogen_fixation.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		runescript_integration
+	}
+
+	unlocking_production_methods = {
+		pm_steam_engines
+		pm_electric_engines
+		pm_diesel_engines
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_artificery_doodads_add = 10
+
+			# output goods
+			goods_output_engines_add = 17
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = 250
+			building_employment_machinists_add = 250
+		}
+	}
+}
+
+pm_thaumic_resonator = {
+	texture = "gfx/interface/icons/production_method_icons/nitrogen_fixation.dds"
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 15
+		}
+	}
+
+	unlocking_technologies = {
+		thaumic_field_stabilization	#cos electric and magnets or something
+	}
+
+	unlocking_production_methods = {
+		pm_steam_engines
+		pm_electric_engines
+		pm_diesel_engines
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_artificery_doodads_add = 20
+
+			# output goods
+			goods_output_engines_add = 35
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_machinists_add = 250
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+pm_automata_laborers_motor = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine				
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_automata_machinists_motor = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2000
+			building_employment_machinists_add = -1750
+		}
+	}
+}
+
+pm_automata_laborers_automotive_industry = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine				
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2000
+		}
+	}
+}
+
+pm_automata_machinists_automotive_industry = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2000
+			building_employment_machinists_add = -1500
+		}
+	}
+}
+
+
+# ## Shipyards
+
+pm_automata_laborers_shipyards = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine				
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_automata_machinists_shipyards = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1750
+			building_employment_machinists_add = -2000
+		}
+	}
+}
+
+
+# ## Military Shipyards
+pm_automata_laborers_military_shipyards = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine				
+	}
+    
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_automata_machinists_military_shipyards = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2750
+			building_employment_machinists_add = -1000
+		}
+	}
+}
+
+
+
+## Electrics Industries
+
+pm_interplanar_phones = {
+	texture = "gfx/interface/icons/production_method_icons/telephones.dds"
+	unlocking_technologies = {
+		the_fifth_fundamental_force
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_steel_add = 20
+			goods_input_rubber_add = 5
+			goods_input_artificery_doodads_add = 20
+			goods_input_tools_add = 10
+			
+			goods_output_telephones_add = 70
+		}
+
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 1500
+			building_employment_machinists_add = 2000
+			building_employment_engineers_add = 1000
+		}
+	}
+}
+
+pm_recording_radios = {
+	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+	unlocking_technologies = {
+		radio
+	}
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_electricity_add = 100
+			goods_output_telephones_add = -40
+			goods_output_radios_add = 80
+		}
+		
+		level_scaled = {
+			building_employment_engineers_add = 500
+		}
+	}
+
+	required_input_goods = electricity
+}
+
+
+pm_automata_laborers_electric = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 6
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1500
+		}
+	}
+}
+
+pm_automata_machinists_electric = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1500
+			building_employment_machinists_add = -2000
+		}
+	}
+}
+
+## Arms Industries
+
+
+pm_automata_laborers_arms = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine				
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_automata_machinists_arms = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+			building_employment_machinists_add = -1250
+		}
+	}
+}
+
+pm_no_arms_mithril = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+
+pm_small_arms_mithril = {
+	texture = "gfx/interface/icons/production_method_icons/automated_bakery.dds"
+	
+	unlocking_technologies = {
+	}
+	building_modifiers = {
+
+		workforce_scaled = {
+			# input goodsF
+			goods_input_flawless_metal_add = 5  #60 300
+			goods_output_small_arms_add = 15    #60 900 == 600
+		}
+
+		level_scaled = {
+			building_employment_machinists_add = 250
+		}
+	}
+}
+
+pm_small_arms_mithril_2 = {
+	texture = "gfx/interface/icons/production_method_icons/automated_bakery.dds"
+	
+	unlocking_technologies = {
+		repeaters
+	}
+	building_modifiers = {
+
+		workforce_scaled = {
+			# input goodsF
+			goods_input_flawless_metal_add = 10  #60 600
+			goods_output_small_arms_add = 30    #60 1800 == 1200
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+
+
+## Artillery Foundries
+
+# This one doesn't exist in game before my work, it seems be a dupilcated entry. @1onepower
+pm_automata_laborers_artillery = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine				
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 4	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2000
+		}
+	}
+}
+
+# This one doesn't exist in game before my work. @1onepower
+pm_automata_machinists_artillery = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 9	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2000
+			building_employment_machinists_add = -1500
+		}
+	}
+}
+
+## Munitions Plants
+pm_automata_laborers_munitions = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine				
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_automata_machinists_munitions = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	
+	unlocking_technologies = {
+		thinking_machinery			
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+			building_employment_machinists_add = -1250
+		}
+	}
+}
+
+
+## Magical Reagents Workshop
+
+pm_patent_stills_magical_reagents = {
+	texture = "gfx/interface/icons/production_method_icons/patent_stills.dds"
+    
+	unlocking_technologies = {
+        fractional_distillation
+    }
+
+    building_modifiers = {
+        workforce_scaled = {
+            #input goods
+            goods_input_sugar_add = 5
+			goods_input_glass_add = 10
+
+            #output goods
+            goods_output_magical_reagents_add = 50
+        }
+
+        level_scaled = {
+            building_employment_shopkeepers_add = 500
+            building_employment_laborers_add = 4000
+			building_employment_machinists_add = 500
+		}
+    }
+}
+
+pm_essence_extraction_magical_reagents_workshop = {
+	texture = "gfx/interface/icons/production_method_icons/fertilization.dds"
+
+    unlocking_technologies = {
+        elemental_elicitation
+    }
+
+    building_modifiers = {
+        workforce_scaled = {
+            #input goods
+            goods_input_sugar_add = 10
+			goods_input_glass_add = 10
+			goods_input_fertilizer_add = 5
+
+            #output goods
+            goods_output_magical_reagents_add = 80
+        }
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+            building_employment_laborers_add = 3500
+			building_employment_machinists_add = 1250
+			building_employment_engineers_add = 250
+		}
+    }
+}
+
+pm_synthetic_monster_parts_magical_reagents_workshop = {
+	texture = "gfx/interface/icons/production_method_icons/fertilization.dds"
+
+    unlocking_technologies = {
+        thaumic_field_stabilization
+    }
+
+    building_modifiers = {
+        workforce_scaled = {
+            #input goods
+            goods_input_sugar_add = 20
+			goods_input_glass_add = 10
+			goods_input_fertilizer_add = 10
+			goods_input_meat_add = 5
+			goods_input_electricity_add = 5
+
+            #output goods
+            goods_output_magical_reagents_add = 130
+        }
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+            building_employment_laborers_add = 3000
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 500
+		}
+    }
+	required_input_goods = electricity
+}
+
+pm_no_blueblood = {
+	texture = "gfx/interface/icons/production_method_icons/no_blood.dds"
+}
+
+pm_blueblood_extraction = {
+	texture = "gfx/interface/icons/production_method_icons/blueblood_extraction.dds"
+    
+	unlocking_laws = {
+		law_nation_of_green_artifice
+		law_nation_of_artifice
+		law_traditional_magic_banned
+	}
+
+    building_modifiers = {
+        workforce_scaled = {
+            #output goods
+            goods_output_magical_reagents_add = -20		# -600
+			goods_output_damestear_add = 15				# +600
+	}													#  0 profit
+		level_scaled = {
+			building_employment_laborers_add = -500
+			building_employment_mages_add = 500
+		}
+		unscaled = {
+			building_mages_mortality_mult = 0.4
+		}
+    }
+}
+
+pm_blueblood_synthesis = {
+	texture = "gfx/interface/icons/production_method_icons/blueblood_sythesis.dds"
+    
+	unlocking_technologies = {
+        thaumic_field_stabilization
+    }
+	unlocking_laws = {
+		law_nation_of_green_artifice
+		law_nation_of_artifice
+		law_traditional_magic_banned
+	}
+	
+	unlocking_production_methods = {
+		pm_synthetic_monster_parts_magical_reagents_workshop
+	}
+
+    building_modifiers = {
+        workforce_scaled = {
+			goods_input_meat_add = 5					# -150
+			goods_input_electricity_add = 5				# -150
+			
+            #output goods
+            goods_output_magical_reagents_add = -35		# -1050
+			goods_output_damestear_add = 40				# +1600
+}														#  250 profit
+		level_scaled = {
+			building_employment_laborers_add = -250
+			building_employment_engineers_add = 250
+		}
+    }
+	required_input_goods = electricity
+}
+
+#Copied from Automatories so that they have some, will need rebalancing
+pm_automata_laborers_magical_reagents_workshop = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+
+	unlocking_technologies = {
+		insyaan_analytical_engine	
+	}
+
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_rotary_valve_engine_building_magical_reagents_workshop = {
+	texture = "gfx/interface/icons/production_method_icons/rotary_valve_engine.dds"
+
+
+	unlocking_technologies = {
+		rotary_valve_engine
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_tools_add = 5
+			goods_input_coal_add = 10
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1750
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+}
+
+
+pm_automata_machinists_magical_reagents_workshop = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	unlocking_technologies = {
+		thinking_machinery
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+			building_employment_machinists_add = -1250
+		}
+	}
+}
+
+pm_assembly_lines_building_magical_reagents_workshop = {
+	texture = "gfx/interface/icons/production_method_icons/assembly_lines.dds"
+
+	unlocking_technologies = {
+		conveyors
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_tools_add = 5
+			goods_input_oil_add = 5
+			goods_input_electricity_add = 5
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+}
+
+## Doodad Artificeries 
+pm_damestear_crystals_building_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/crystal_socketry_building_doodad_artificeries.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_damestear_add = 10
+
+			#output goods
+			goods_output_artificery_doodads_add = 22
+		}
+
+		level_scaled = {
+			#employment
+			building_employment_laborers_add = 2900
+			building_employment_machinists_add = 1000
+			building_employment_engineers_add = 100
+		}
+	}
+}
+
+pm_faceted_gemstones_building_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/damesoil_tubes_building_doodad_artificeries.dds"
+	#replacement_if_valid = pm_damesteam_alternating_batteries_building_doodad_artificeries
+
+	unlocking_technologies = {
+		damestear_faceting
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_damestear_add = 20
+
+			#output goods
+			goods_output_artificery_doodads_add = 42
+		}
+
+		level_scaled = {
+			#employment
+			building_employment_laborers_add = 2600
+			building_employment_machinists_add = 1150
+			building_employment_engineers_add = 250
+		}
+	}
+}
+
+pm_damestear_core_building_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/damestear_core_building_doodad_artificeries.dds"
+	#replacement_if_valid = pm_damestear_fusion_core_building_doodad_artificeries
+	
+	unlocking_technologies = {
+		damestear_cores
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_damestear_add = 30
+
+			#output goods
+			goods_output_artificery_doodads_add = 65
+		}
+
+		level_scaled = {
+			#employment
+			building_employment_laborers_add = 2250
+			building_employment_machinists_add = 1250
+			building_employment_engineers_add = 500
+		}
+	}
+}
+
+pm_doodads_only_building_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/no_casing_building_doodad_artificeries.dds"
+}
+
+pm_brass_casing_building_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/standard_casing_building_doodad_artificeries.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			#goods_input_lead_add = 5
+
+			#output goods
+			goods_output_artificery_doodads_add = -15	# -750
+			goods_output_arcane_curios_add = 13			# +780
+		}												#  30 profit
+	}
+}
+
+pm_porcelain_shell_building_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/white_doodadry_building_doodad_artificeries.dds"
+
+	unlocking_technologies = {
+		thaumic_field_stabilization
+	}
+
+	unlocking_production_methods = {	#needs to have a high enough doodad production to convert more of them
+		pm_faceted_gemstones_building_doodad_artificeries
+		pm_damestear_core_building_doodad_artificeries
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_porcelain_add = 5				# -350
+
+			#output goods
+			goods_output_artificery_doodads_add = -25	# -1250
+			goods_output_arcane_curios_add = 30			# +1800
+		}												#  200 profit
+	}
+}
+
+pm_flawless_plating_building_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/relic_receptacles_building_doodad_artificeries.dds"
+	#replacement_if_valid = pm_modern_precursor_steel_shell_building_doodad_artificeries
+
+	unlocking_technologies = {
+		alchemical_alloys
+	}
+
+	unlocking_production_methods = {	#needs to have a high enough doodad production to convert more of them
+		pm_faceted_gemstones_building_doodad_artificeries
+		pm_damestear_core_building_doodad_artificeries
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_flawless_metal_add = 10			# -600
+
+			#output goods
+			goods_output_artificery_doodads_add = -35	# -1750
+			goods_output_arcane_curios_add = 45			# +2700
+		}												#  350 profit
+	}
+}
+
+pm_clockwork_coggery_building_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/copper_wires_building_doodad_artificeries.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_magical_reagents_add = 2
+			goods_input_iron_add = 10
+
+			#output goods
+			goods_output_artificery_doodads_add = 12
+		}
+		level_scaled = {
+			#employment
+			building_employment_laborers_add = 750
+			building_employment_machinists_add = 250
+		}
+		unscaled = {
+			building_laborers_mortality_mult = 0.1
+			building_machinists_mortality_mult = 0.05
+			building_engineers_mortality_mult = 0.025
+		}
+	}
+}
+
+pm_arcane_copper_wiring_building_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/copper_wires_building_doodad_artificeries.dds"
+	#replacement_if_valid = pm_porcelain_integration_building_doodad_artificeries
+
+	unlocking_technologies = {
+		electrical_generation
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_magical_reagents_add = 5
+			goods_input_steel_add = 10
+			goods_input_lead_add = 10
+
+			#output goods
+			goods_output_artificery_doodads_add = 18
+		}
+		level_scaled = {
+			#employment
+			building_employment_laborers_add = 500
+			building_employment_machinists_add = 500
+		}
+		unscaled = {
+			building_laborers_mortality_mult = 0.2
+			building_machinists_mortality_mult = 0.1
+			building_engineers_mortality_mult = 0.05
+		}
+	}
+}
+
+pm_elastomeric_stabilizers_building_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/copper_wires_building_doodad_artificeries.dds"
+	#replacement_if_valid = pm_maximized_insulation_building_doodad_artificeries
+
+	unlocking_technologies = {
+		thaumic_field_stabilization
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_magical_reagents_add = 10
+			goods_input_steel_add = 15
+			goods_input_rubber_add = 10
+
+			#output goods
+			goods_output_artificery_doodads_add = 40
+		}
+		level_scaled = {
+			#employment
+			building_employment_laborers_add = 250
+			building_employment_machinists_add = 750
+		}
+		unscaled = {
+			building_laborers_mortality_mult = 0.3
+			building_machinists_mortality_mult = 0.2
+			building_engineers_mortality_mult = 0.1
+
+		}
+	}
+}
+
+pm_automata_laborers_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+
+	unlocking_technologies = {
+		insyaan_analytical_engine	
+	}
+
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 8	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_rotary_valve_engine_building_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/rotary_valve_engine.dds"
+
+
+	unlocking_technologies = {
+		rotary_valve_engine
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {	#standardized inputs with vanilla - seemed like it was copied from tooling, but that doesn't use tools only because the building also produces tools
+			goods_input_tools_add = 5
+			goods_input_coal_add = 10
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1750	#not touching it, but vanilla has a mix of laborers and machinists here for advanced buildings (check motors)
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+}
+
+
+pm_automata_machinists_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/automata_machinists.dds"
+
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+	unlocking_technologies = {
+		thinking_machinery
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11	
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+			building_employment_machinists_add = -1250
+		}
+	}
+}
+
+pm_assembly_lines_building_doodad_artificeries = {
+	texture = "gfx/interface/icons/production_method_icons/assembly_lines.dds"
+
+	unlocking_technologies = {
+		conveyors
+	}
+	
+	building_modifiers = {
+		workforce_scaled = {	#standardized inputs with vanilla - seemed like it was copied from tooling, but that doesn't use tools only because the building also produces tools
+			goods_input_tools_add = 5
+			goods_input_oil_add = 5
+			goods_input_electricity_add = 5
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500 #not touching it, but vanilla has a mix of laborers and machinists here for advanced buildings (check motors)
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10
+		}
+	}
+}
+
+## Automatories
+pm_metal_frame = {
+	texture = "gfx/interface/icons/production_method_icons/arcop_wires_building_doodad_artificeries.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_artificery_doodads_add = 10
+			goods_input_steel_add = 10
+			goods_input_tools_add = 5
+
+			#output goods
+			goods_output_automata_add = 32
+		}
+		level_scaled = {
+			#employment
+			building_employment_laborers_add = 4150
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 250
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pops_assembled_add = 500
+		}
+	}
+}
+
+pm_porcelain_form = {
+	texture = "gfx/interface/icons/production_method_icons/arcop_wires_building_doodad_artificeries.dds"
+	unlocking_technologies = {
+		thaumic_field_stabilization
+	}
+
+	building_modifiers = {	
+		workforce_scaled = {
+			#input goods
+			goods_input_artificery_doodads_add = 15
+			goods_input_porcelain_add = 10
+			goods_input_tools_add = 10
+
+			#output goods
+			goods_output_automata_add = 48
+		}
+		level_scaled = {
+			#employment
+			building_employment_laborers_add = 3150
+			building_employment_machinists_add = 1250
+			building_employment_engineers_add = 500
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pops_assembled_add = 750
+		}
+	}
+}
+
+# This one is in game before my work although the comment says otherwise. @1onepower
+pm_precursor_steel_body = {	#having this PM should be VERY DANGEROUS. SYNTHS!!! -reply no clue how to handle this. disabling this for now as i dont want to explore this for now -jay
+	texture = "gfx/interface/icons/production_method_icons/arcop_wires_building_doodad_artificeries.dds"
+	unlocking_technologies = {
+		alchemical_alloys #insyaa guys should have a tech alternative
+	}
+	
+
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_artificery_doodads_add = 25
+			goods_input_flawless_metal_add = 10
+			goods_input_tools_add = 15
+			
+			#output goods
+			goods_output_automata_add = 75
+		}
+		level_scaled = {
+			#employment
+			building_employment_laborers_add = 2500
+			building_employment_machinists_add = 1400
+			building_employment_engineers_add = 1000
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pops_assembled_add = 1000
+		}
+	}
+}
+
+# This one doesn't exist in game before my work, and it's not my area to change that. @1onepower
+pm_synthetic_body = {	#having this PM should be VERY DANGEROUS. SYNTHS!!! -reply no clue how to handle this. disabling this for now as i dont want to explore this for now -jay
+	texture = "gfx/interface/icons/production_method_icons/arcop_wires_building_doodad_artificeries.dds"
+	unlocking_technologies = {
+		thinking_machinery	#era 4
+	}
+	
+
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_artificery_doodads_add = 16
+			goods_input_flawless_metal_add = 10
+			goods_input_porcelain_add = 6
+			goods_input_rubber_add = 6
+			goods_input_tools_add = 8
+			
+			#output goods
+			goods_output_automata_add = 68
+		}
+		level_scaled = {
+			#employment
+			building_employment_laborers_add = 2000
+			building_employment_machinists_add = 1500
+			building_employment_engineers_add = 1000
+		}
+	}
+}
+
+pm_obedience_chip_building_automatories = {
+	texture = "gfx/interface/icons/production_method_icons/standard_casing_building_doodad_artificeries.dds"
+
+	disallowing_laws = {
+		law_mechanim_freedom
+	}
+
+	building_modifiers = {
+		level_scaled = {
+			#employment
+			building_employment_shopkeepers_add = 100
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_pops_assembled_add = -1000
+		}
+	}
+}
+
+pm_servant_companion_lines_building_automatories = {
+	texture = "gfx/interface/icons/production_method_icons/standard_casing_building_doodad_artificeries.dds"
+
+	unlocking_laws = {
+		law_mechanim_cognitive_licenses
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_automata_add = -12
+		}
+		level_scaled = {
+			#employment
+			building_employment_shopkeepers_add = 50
+			building_employment_bureaucrats_add = 50
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pops_assembled_add = -250
+		}
+	}
+}
+
+pm_fully_awakened_building_automatories = {
+	texture = "gfx/interface/icons/production_method_icons/standard_casing_building_doodad_artificeries.dds"
+
+	unlocking_laws = {
+		law_mechanim_freedom
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_output_automata_add = -100
+		}
+		level_scaled = {
+			#employment
+			building_employment_bureaucrats_add = 100
+		}
+	}
+}
+
+
+pm_metal_frame_freedom = {
+	texture = "gfx/interface/icons/production_method_icons/copper_wires_building_doodad_artificeries.dds"
+	
+	building_modifiers = {
+		workforce_scaled = {
+			#input goods
+			goods_input_artificery_doodads_add = 4
+			goods_input_steel_add = 10
+			goods_input_tools_add = 2
+
+			#output goods
+		}
+		level_scaled = {
+			#employment
+			building_employment_laborers_add = 400
+			building_employment_machinists_add = 400
+			building_employment_engineers_add = 100
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_pops_assembled_add = 500
+		}
+	}
+}
+#AHHGHAHGJAJNGFJNAJFJIAF BARRIER DO NOT GO DOWN FURTHER
+
+
+
+
+pm_automation_disabled_building_automatories = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+
+pm_self_repairing_automata_automatories = {
+	texture = "gfx/interface/icons/production_method_icons/automated_bakery.dds"
+
+	disallowing_laws = { #should just ban the building?
+		law_mechanim_dismantling
+	}
+	
+	unlocking_technologies = {
+		insyaan_analytical_engine
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_output_automata_add = -8
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+		}
+	}
+}
+
+pm_self_building_automata_automatories = {
+	texture = "gfx/interface/icons/production_method_icons/automated_bakery.dds"
+	
+	disallowing_laws = {
+		law_mechanim_dismantling
+	}
+
+	unlocking_technologies = {
+		thinking_machinery
+	}
+
+	unlocking_production_methods = {
+		pm_porcelain_form
+		pm_synthetic_body
+		pm_precursor_steel_body
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goodsF
+			goods_output_automata_add = -11
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -2500
+			building_employment_machinists_add = -1250
+		}
+	}
+}
+
+pm_synthetic_automata_usage = {
+	texture = "gfx/interface/icons/production_method_icons/automata_laborers.dds"
+	
+	unlocking_laws = {
+		law_mechanim_as_property
+	}
+
+	unlocking_technologies = {
+		thinking_machinery				
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_automata_add = 11
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1000
+			building_employment_machinists_add = -2500
+		}
+	}
+}
+
+
+# This one doesn't exist in game before my work, and it's not my area to change that. @1onepower
+pm_no_artillery_mithril = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+
+# This one doesn't exist in game before my work, and it's not my area to change that. @1onepower
+# commented out @polktech
+# pm_artillery_mithril = {
+# 	texture = "gfx/interface/icons/production_method_icons/automated_bakery.dds"
+	
+# 	unlocking_technologies = {
+# 	}
+# 	building_modifiers = {
+
+# 		workforce_scaled = {
+# 			# input goodsF
+# 			goods_input_flawless_metal_add = 4  #60 240
+# 			goods_output_artillery_add = 12    #70 840 == 600
+# 		}
+
+# 		level_scaled = {
+# 			building_employment_machinists_add = 250
+# 		}
+# 	}
+# }
+
+# This one doesn't exist in game before my work, and it's not my area to change that. @1onepower
+# commented out @polktech
+# pm_artillery_mithril_2 = {
+# 	texture = "gfx/interface/icons/production_method_icons/automated_bakery.dds"
+	
+# 	unlocking_technologies = {
+# 		breech_loading_artillery
+# 	}
+# 	building_modifiers = {
+
+# 		workforce_scaled = {
+# 			# input goodsF
+# 			goods_input_flawless_metal_add = 8  #60 480
+# 			goods_output_small_arms_add = 24    #70 1680 == 1200
+# 		}
+
+# 		level_scaled = {
+# 			building_employment_machinists_add = 500
+# 			building_employment_engineers_add = 250
+# 		}
+# 	}
+# }
+
+# This one doesn't exist in game before my work, and it's not my area to change that. @1onepower
+m_no_mithril_bullets = {
+	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+}
+
+# This one doesn't exist in game before my work, and it's not my area to change that. @1onepower
+pm_mithril_bullets = {
+	texture = "gfx/interface/icons/production_method_icons/automated_bakery.dds"
+	
+	unlocking_technologies = {
+		dynamite
+	}
+	building_modifiers = {
+
+		workforce_scaled = {
+			# input goodsF
+			goods_input_artificery_doodads_add = 15  #50 750
+			goods_input_flawless_metal_add = 15 #50 750 == 1500
+			goods_output_ammunition_add = 50 #50 2500 == 1000
+		}
+
+		level_scaled = {
+			building_employment_engineers_add = 500
+		}
+	}
+}
+
+pm_artifishial_curing = {
+	
+	texture = "gfx/interface/icons/production_method_icons/simple_fishing.dds"		#TODO feel free to replace if you find a better icon. fishing was my next best but the icons are all about boats iirc
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_pollution_generation_add = 10 #smelly fish
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {		#imagine applying plant growth magic to "just" let other organic matter grow
+			# input goods
+			goods_input_meat_add = 50
+			goods_input_fertilizer_add = 4
+			goods_input_artificery_doodads_add = 2
+
+			# output goods
+			goods_output_fish_add = 150	# meat = 1.5 fish => 2x the food units here. primary economic purpose is to let your groceries scale lategame
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_shopkeepers_add = 500
+			building_employment_laborers_add = 1000
+			building_employment_machinists_add = 500
+			building_employment_engineers_add = 2000
+			building_employment_mages_add = 1000
+		}
+	}
+}
+
+pm_saccharine_synthesis = {
+	texture = "gfx/interface/icons/production_method_icons/sweeteners.dds"		#TODO feel free to replace. iirc this is a primary and has the wrong colour for the secondary pm use here
+
+	unlocking_technologies = {	#this pm is art I swear (in line with silk secondary)
+		art_silk
+	}
+
+	building_modifiers = {	#this chemical reaction is possible irl, amplified thru magic. Saccharine is not sugar but a sweetener, primary purpose of this pm is to have something possible here instead of nothing on fish primary, synergizes with fish input like silk with dye
+		workforce_scaled = {
+			# input goods
+			goods_input_coal_add = 8
+			goods_input_artificery_doodads_add = 1
+
+			# output goods
+			goods_output_sugar_add = 30
+		}
+
+		level_scaled = {
+			# employment
+			building_employment_laborers_add = -1000
+			building_employment_machinists_add = 1000
+		}
+	}
+
+}

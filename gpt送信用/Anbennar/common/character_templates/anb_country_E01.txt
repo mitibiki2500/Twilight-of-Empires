@@ -1,0 +1,188 @@
+﻿### Lake Federation character template file ###
+
+E01_Halghit_Ganbaatiin = {
+	first_name = Halghit
+	last_name = Ganbaatiin
+	historical = yes
+	ruler = yes
+	# age = 51
+	birth_date = 1769.1.1
+	interest_group = ig:ig_rural_folk
+	ig_leader = yes
+	ideology = ideology_radical
+	traits = {
+		meticulous 
+		experienced_political_operator
+	}
+	culture = cu:triunic
+}
+
+E01_Paavali_Arjen = {
+	first_name = Paavali
+	last_name = Arjen
+	historical = yes
+	# age = 34
+	birth_date = 1786.1.1
+	interest_group = ig:ig_landowners
+	ig_leader = yes
+	ideology = ideology_moderate
+	traits = {
+		imposing 
+		master_bureaucrat
+	}
+	culture = cu:urmanki
+}
+
+E01_Ilufar_Tentenqh = {
+	first_name = Ilufar
+	last_name = Tentenqh
+	historical = yes
+	female = yes
+	# age = 42
+	birth_date = 1768.1.1
+	interest_group = ig:ig_devout
+	ig_leader = yes
+	ideology = ideology_radical
+	traits = {
+		honorable 
+		inspirational_orator
+	}
+	culture = cu:triunic
+}
+
+E01_Bolgh_Targuun = {
+	first_name = Bolgh
+	last_name = Targuun
+	historical = yes
+	# age = 36
+	birth_date = 1784.1.1
+	interest_group = ig:ig_industrialists
+	ig_leader = yes
+	ideology = ideology_jingoist_leader
+	traits = {
+		ambitious 
+		engineer
+	}
+	culture = cu:triunic
+}
+
+E01_Jaakkima_Mergirn = {
+	is_general = yes
+	first_name = Jaakkima
+	last_name = Mergirn
+	historical = yes
+	female = yes
+	# age = 47
+	birth_date = 1773.1.1
+	interest_group = ig_armed_forces
+	ig_leader = yes
+	ideology = ideology_republican_leader
+	#hq = 
+	commander_rank = commander_rank_2
+	traits = {
+		direct 
+		plains_commander 
+		basic_defensive_strategist
+	}
+	culture = cu:triunic
+	religion = rel:goddess_follower
+}
+
+E01_Hannes_Innomaa = {
+	is_admiral = yes
+	first_name = Hannes
+	last_name = Innomaa
+	historical = yes
+	# age = 46
+	birth_date = 1774.1.1
+	interest_group = ig_armed_forces
+	ideology = ideology_republican_leader
+	#hq = 
+	commander_rank = commander_rank_1
+	traits = {
+		arrogant 
+		traditionalist_commander 
+		basic_naval_commander
+	}
+	culture = cu:kukatodic
+	religion = rel:moitsaliusko
+}
+
+E01_Bakir_Doshurn = {
+	first_name = Bakir
+	last_name = Doshurn
+	historical = yes
+	# age = 32
+	birth_date = 1788.1.1
+	interest_group = ig:ig_petty_bourgeoisie
+	ig_leader = yes
+	ideology = ideology_liberal_leader
+	traits = {
+		tactful 
+		basic_diplomat 
+		literary
+	}
+	culture = cu:triunic
+}
+
+E01_Tuya_Namjaag = {
+	first_name = Tuya
+	last_name = Namjaag
+	historical = yes
+	female = yes
+	# age = 39
+	birth_date = 1781.1.1
+	interest_group = ig:ig_intelligentsia
+	ig_leader = yes
+	ideology = ideology_reformer
+	traits = {
+		reserved 
+		erudite
+	}
+	culture = cu:triunic
+}
+
+E01_Hannes_Eenpala = {
+	first_name = Hannes
+	last_name = Eenpala
+	historical = yes
+	# age = 31
+	birth_date = 1789.1.1
+	interest_group = ig:ig_trade_unions
+	ig_leader = yes
+	ideology = ideology_liberal_leader
+	traits = {
+		cautious 
+		basic_political_operator
+	}
+	culture = cu:triunic
+}
+
+E01_Uruvyeri_Qarecho_lot = { #HeHo
+	first_name = Uruvyeri
+	last_name = Qarecho_lot
+	historical = yes
+	# age = 21
+	birth_date = 1799.1.1
+	interest_group = ig:ig_industrialists
+	ideology = ideology_modernizer_leader
+	traits = {
+		cautious
+		expert_entrepreneur
+		expensive_tastes
+		powerful_mage
+		trait_immortal
+	}
+	culture = cu:triunic
+	on_created = {
+		set_character_immortal = yes
+	}
+	executive_usage = {
+		company_trigger = {
+			is_company_type = company_type:company_horizon_conglomerate
+		}
+		earliest_usage_date = 1820.1.1
+		latest_usage_date = 1936.1.1
+		chance = 100
+    }
+}

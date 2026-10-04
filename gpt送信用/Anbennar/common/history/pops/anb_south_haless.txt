@@ -1,0 +1,877 @@
+﻿POPS = {
+	s:STATE_KHARUNYANA_BOMDAN = {
+		region_state:Y13 = {
+			create_pop = {
+				culture = chengrong
+				size = 1030000
+			}
+			create_pop = {
+				culture = royal_harimari
+				size = 220000
+			}
+		}
+		region_state:Y12 = {
+			create_pop = {
+				culture = chengrong
+				size = 1114000
+			}
+			create_pop = {
+				culture = royal_harimari
+				size = 81000
+			}
+			create_pop = {
+				culture = serene_harimari
+				size = 300000
+				religion = righteous_path
+			}
+		}
+		region_state:Y32 = {
+			create_pop = {
+				culture = chengrong
+				size = 925000
+			}
+			create_pop = {
+				culture = royal_harimari
+				size = 85000
+			}
+			create_pop = {
+				culture = lorentish
+				size = 24080
+			}
+		}
+	}
+	
+	s:STATE_LOWER_TELEBEI = {
+		region_state:Y32 = {
+			create_pop = {
+				culture = ranilau
+				size = 1080540
+			}
+			create_pop = {
+				culture = ranilau
+				size = 266340
+				religion = mystic_accord
+			}
+			create_pop = {
+				culture = lorentish
+				size = 33120
+			}
+		}
+	}
+	
+	s:STATE_BIM_LAU = {
+		region_state:Y15 = {
+			create_pop = {
+				culture = ranilau
+				size = 405600
+			}
+			create_pop = {
+				culture = ranilau
+				size = 104000
+				religion = mystic_accord
+			}
+			create_pop = {
+				culture = roaming_harimari
+				size = 50400
+			}
+		}
+		region_state:Y14 = {
+			create_pop = {
+				culture = ranilau
+				size = 1118000
+			}
+			create_pop = {
+				culture = teplin
+				size = 1384000
+				religion = mystic_accord
+			}
+			create_pop = {
+				culture = ranilau
+				size = 711100
+				religion = mystic_accord
+			}
+			create_pop = {
+				culture = roaming_harimari
+				size = 468600
+			}
+		}
+		region_state:Y32 = {
+			create_pop = {
+				culture = ranilau
+				size = 145120
+			}
+			create_pop = {
+				culture = roaming_harimari
+				size = 11360
+			}
+			create_pop = {
+				culture = lorentish
+				size = 3520
+			}
+		}
+	}
+	
+	s:STATE_JIEZHONG = {
+		region_state:R13 = {
+			create_pop = {
+				culture = kintonan
+				size = 1424400
+			}
+			create_pop = {
+				culture = serene_harimari
+				size = 155200
+				religion = righteous_path
+			}
+			create_pop = {
+				culture = elephant_hobgoblin
+				size = 155200
+			}
+			create_pop = {
+				culture = feng_harpy
+				size = 123300
+			}
+			create_pop = {
+				culture = goldscale_kobold
+				size = 31900
+			}
+		}
+	}
+	
+	s:STATE_QIANZHAOLIN = {
+		region_state:R13 = {
+			create_pop = {
+				culture = kintonan
+				size = 939600
+			}
+			create_pop = {
+				culture = serene_harimari
+				size = 809100
+				religion = righteous_path
+			}
+			create_pop = {
+				culture = elephant_hobgoblin
+				size = 495900
+			}
+			create_pop = {
+				culture = feng_harpy
+				size = 130500
+			}
+			create_pop = {
+				culture = wuhyun_half_orc
+				size = 182700
+			}
+			create_pop = {
+				culture = goldscale_kobold
+				size = 52200
+			}
+		}
+	}
+	
+	s:STATE_WANGQIU = {
+		region_state:R13 = {
+			create_pop = {
+				culture = kintonan
+				size = 984900
+			}
+			create_pop = {
+				culture = serene_harimari
+				size = 147000
+				religion = righteous_path
+			}
+			create_pop = {
+				culture = elephant_hobgoblin
+				size = 73500
+			}
+			create_pop = {
+				culture = feng_harpy
+				size = 88200
+			}
+			create_pop = {
+				culture = wuhyun_half_orc
+				size = 58800
+			}
+			create_pop = {
+				culture = goldscale_kobold
+				size = 117600
+			}
+		}
+	}
+	
+	s:STATE_SIKAI = {
+		region_state:Y17 = {
+			create_pop = {
+				culture = sikai
+				size = 1524000
+			}
+			create_pop = {
+				culture = sikai
+				size = 370000
+				religion = mystic_accord
+			}
+			create_pop = {
+				culture = elephant_hobgoblin
+				size = 200000
+			}
+			create_pop = {
+				culture = kintonan
+				size = 110000
+			}
+			create_pop = {
+				culture = royal_harimari
+				size = 99200
+			}
+			create_pop = {
+				culture = roaming_harimari
+				size = 92560
+			}
+			create_pop = {
+				culture = sunrise_elf
+				size = 76800
+			}
+			create_pop = {
+				culture = nephrite_dwarf
+				size = 39680
+			}
+		}
+	}
+	
+	s:STATE_DEKPHRE = {
+		region_state:Y17 = {
+			create_pop = {
+				culture = teplin
+				size = 626850
+			}
+			create_pop = {
+				culture = teplin
+				size = 288650
+				religion = mystic_accord
+			}
+			create_pop = {
+				culture = royal_harimari
+				size = 113000
+			}
+			create_pop = {
+				culture = swallow_hobgoblin
+				size = 56500
+			}
+		}
+	}
+	
+	s:STATE_KHINDI = {
+		region_state:Y32 = {
+			create_pop = {
+				culture = risbeko
+				size = 960000
+			}
+			create_pop = {
+				culture = biengdi
+				size = 290000
+			}
+			create_pop = {
+				culture = royal_harimari
+				size = 102500
+			}
+			create_pop = {
+				culture = lorentish
+				size = 17500
+			}
+		}
+		region_state:Y16 = {
+			create_pop = {
+				culture = risbeko
+				size = 580000
+			}
+			create_pop = {
+				culture = biengdi
+				size = 120000
+			}
+		}
+	}
+	
+	s:STATE_KHABTEI_TELENI = {
+		region_state:Y16 = {
+			create_pop = {
+				culture = biengdi
+				size = 1519920
+			}
+			create_pop = {
+				culture = royal_harimari
+				size = 74400
+			}
+			create_pop = {
+				culture = roaming_harimari
+				size = 65680
+			}
+		}
+	}
+	
+	s:STATE_RONGBEK = {
+		region_state:Y18 = {
+			create_pop = {
+				culture = risbeko
+				size = 469710
+			}
+			create_pop = {
+				culture = roaming_harimari
+				size = 40290
+			}
+		}
+	}
+	
+	s:STATE_HINPHAT = {
+		region_state:Y20 = {
+			create_pop = {
+				culture = hinphat
+				size = 1360000
+			}
+			create_pop = {
+				culture = nephrite_dwarf
+				size = 180000
+			}
+			create_pop = {
+				culture = feng_harpy
+				size = 160000
+			}
+			create_pop = {
+				culture = hinphat
+				size = 130000
+				religion = mystic_accord
+			}
+		}
+	}
+	
+	s:STATE_NAGON = {
+		region_state:Y19 = {
+			create_pop = {
+				culture = gon
+				size = 333700
+			}
+			create_pop = {
+				culture = gon
+				size = 266300
+				religion = mystic_accord
+			}
+		}
+		region_state:Y32 = {
+			create_pop = {
+				culture = gon
+				size = 273100
+			}
+			create_pop = {
+				culture = gon
+				size = 200200
+				religion = mystic_accord
+			}
+			create_pop = {
+				culture = risbeko
+				size = 78400
+			}
+			create_pop = {
+				culture = lorentish
+				size = 48300
+			}
+		}
+		region_state:B07 = {
+			create_pop = {
+				culture = gon
+				size = 106150
+			}
+			create_pop = {
+				culture = tinker_gnome
+				size = 1980
+			}
+			create_pop = {
+				culture = soot_goblin
+				size = 1210
+			}
+			create_pop = {
+				culture = steelscale_kobold
+				size = 660
+			}
+		}
+	}
+	
+	s:STATE_TAMRAN_MA = {
+		region_state:Y19 = {
+			create_pop = {
+				culture = tamran
+				size = 1948000
+			}
+			create_pop = {
+				culture = tamran
+				size = 560000
+				religion = mystic_accord
+			}
+			create_pop = {
+				culture = phonan
+				size = 255200
+			}
+			create_pop = {
+				culture = sirtana
+				size = 166650
+			}
+			create_pop = {
+				culture = roaming_harimari
+				size = 127700
+			}
+		}
+	}
+	
+	s:STATE_PHONAN = {
+		region_state:Y19 = {
+			create_pop = {
+				culture = phonan
+				size = 959550
+			}
+			create_pop = {
+				culture = phonan
+				size = 236100
+				religion = mystic_accord
+			}
+			create_pop = {
+				culture = tamran
+				size = 74350
+			}
+		}
+	}
+	
+	s:STATE_HOANGDESINH = {
+		region_state:A09 = {
+			create_pop = {
+				culture = pinghoi
+				size = 326000
+			}
+			create_pop = {
+				culture = tamran
+				size = 40500
+			}
+			create_pop = {
+				culture = busilari
+				size = 33500
+			}
+		}
+		region_state:Y19 = {
+			create_pop = {
+				culture = tamran
+				size = 736410
+			}
+			create_pop = {
+				culture = tamran
+				size = 414680
+				religion = mystic_accord
+			}
+			create_pop = {
+				culture = pinghoi
+				size = 185490
+			}
+			create_pop = {
+				culture = paru
+				size = 73420
+			}
+		}
+	}
+	
+	s:STATE_TLAGUKIT = {
+		region_state:Y22 = {
+			create_pop = {
+				culture = hujan
+				size = 100000
+			}
+			create_pop = {
+				culture = sirtana
+				size = 40000
+			}
+		}
+		region_state:Y24 = {
+			create_pop = {
+				culture = banyak
+				size = 300000
+			}
+			create_pop = {
+				culture = hujan
+				size = 240000
+			}
+			create_pop = {
+				culture = hujan
+				size = 60000
+				religion = devouring_path
+			}
+		}
+	}
+	
+	s:STATE_SIRTAN = {
+		region_state:Y22 = {
+			create_pop = {
+				culture = sirtana
+				size = 593960
+			}
+			create_pop = {
+				culture = roaming_harimari
+				size = 26040
+			}
+		}
+	}
+	
+	s:STATE_KUDET_KAI = {
+		region_state:Y33 = {
+			create_pop = {
+				culture = bokai
+				size = 980000
+			}
+			create_pop = {
+				culture = roaming_harimari
+				size = 270000
+			}
+			create_pop = {
+				culture = nephrite_dwarf
+				size = 180000
+			}
+			create_pop = {
+				culture = busilari
+				size = 17500
+			}
+			create_pop = {
+				culture = binhrung
+				size = 75000
+			}
+			create_pop = {
+				culture = bokai
+				size = 72500
+				religion = mystic_accord
+			}
+		}
+		region_state:Y21 = {
+			create_pop = {
+				culture = bokai
+				size = 736940
+			}
+			create_pop = {
+				culture = roaming_harimari
+				size = 61500
+			}
+			create_pop = {
+				culture = nephrite_dwarf
+				size = 31560
+			}
+		}
+	}
+	
+	s:STATE_YEMAKAIBO = {
+		region_state:Y33 = {
+			create_pop = {
+				culture = bokai
+				size = 468280
+			}
+			create_pop = {
+				culture = roaming_harimari
+				size = 55440
+			}
+			create_pop = {
+				culture = busilari
+				size = 22960
+			}
+		}
+	}
+	
+	s:STATE_ARAWKELIN = {
+		region_state:Y23 = {
+			create_pop = {
+				culture = kelino
+				size = 1386380
+			}
+			create_pop = {
+				culture = paru
+				size = 134460
+			}
+			create_pop = {
+				culture = royal_harimari
+				size = 83000
+			}
+			create_pop = {
+				culture = busilari
+				size = 43160
+			}
+			create_pop = {
+				culture = sunrise_elf
+				size = 16600
+				religion = high_philosophy
+			}
+		}
+	}
+	
+	s:STATE_REWIRANG = {
+		region_state:Y23 = {
+			create_pop = {
+				culture = paru
+				size = 57120
+			}
+			create_pop = {
+				culture = kelino
+				size = 2880
+			}
+		}
+		region_state:Y25 = {
+			create_pop = {
+				culture = paru
+				size = 300800
+			}
+			create_pop = {
+				culture = hujan
+				size = 99200
+			}
+		}
+		region_state:Y26 = {
+			create_pop = {
+				culture = banyak
+				size = 75000
+			}
+		}
+		region_state:Y27 = {
+			create_pop = {
+				culture = banyak
+				size = 65400
+			}
+			create_pop = {
+				culture = hujan
+				size = 12600
+			}
+		}
+		region_state:Y28 = {
+			create_pop = {
+				culture = banyak
+				size = 75000
+			}
+		}
+		region_state:Y29 = {
+			create_pop = {
+				culture = banyak
+				size = 75000
+			}
+		}
+	}
+	
+	s:STATE_MESATULEK = {
+		region_state:Y23 = {
+			create_pop = {
+				culture = paru
+				size = 126000
+			}
+			create_pop = {
+				culture = kelino
+				size = 54000
+			}
+		}
+		region_state:Y33 = {
+			create_pop = {
+				culture = paru
+				size = 313800
+			}
+			create_pop = {
+				culture = paru
+				size = 235200
+				religion = ravelian
+			}
+			create_pop = {
+				culture = busilari
+				size = 51000
+			}
+		}
+		region_state:Y30 = {
+			create_pop = {
+				culture = hujan
+				size = 200000
+			}
+		}
+		region_state:Y31 = {
+			create_pop = {
+				culture = hujan
+				size = 144000
+			}
+			create_pop = {
+				culture = banyak
+				size = 40000
+			}
+			create_pop = {
+				culture = binhrung
+				size = 16000
+				religion = mystic_accord
+			}
+		}
+	}
+	
+	s:STATE_NON_CHIEN = {
+		region_state:Y33 = {
+			create_pop = {
+				culture = binhrung
+				size = 773600
+			}
+			create_pop = {
+				culture = binhrung
+				size = 230000
+				religion = mystic_accord
+			}
+			create_pop = {
+				culture = hujan
+				size = 36400
+			}
+		}
+	}
+	
+	s:STATE_BINHRUNGHIN = {
+		region_state:Y33 = {
+			create_pop = {
+				culture = binhrung
+				size = 759200
+			}
+			create_pop = {
+				culture = binhrung
+				size = 356400
+				religion = mystic_accord
+			}
+			create_pop = {
+				culture = busilari
+				size = 8320
+			}
+			create_pop = {
+				culture = bokai
+				size = 119700
+			}
+			create_pop = {
+				culture = nephrite_dwarf
+				size = 21480
+			}
+		}
+	}
+	
+	s:STATE_VERKAL_OZOVAR = {
+		region_state:Y20 = {
+			create_pop = {
+				culture = nephrite_dwarf
+				size = 950000
+			}
+			create_pop = {
+				culture = hinphat
+				size = 90000
+			}
+			create_pop = {
+				culture = roaming_harimari
+				size = 40000
+			}
+			# create_pop = { # merged into below
+			# 	culture = malachite_dwarf
+			# 	size = 40000
+			# }
+			create_pop = {
+				culture = jade_dwarf
+				size = 150000
+			}
+		}
+	}
+	
+	s:STATE_TIPHIYA = {
+		region_state:Y32 = {
+			create_pop = {
+				culture = pinghoi
+				size = 46500
+			}
+			create_pop = {
+				culture = lorentish
+				size = 1000
+			}
+			create_pop = {
+				culture = royal_harimari
+				size = 4500
+			}
+		}
+		region_state:L29 = {
+			create_pop = {
+				culture = ekedza
+				size = 76000
+			}
+			create_pop = {
+				culture = nalenian_harpy
+				size = 50000
+				religion = ravelian
+			}
+			create_pop = {
+				culture = roaming_harimari
+				size = 48000
+				religion = sky_domain
+			}
+		}
+	}
+	
+	s:STATE_KIUBANG = {
+		region_state:Y33 = {
+			create_pop = {
+				culture = pinghoi
+				size = 408000
+			}
+			create_pop = {
+				culture = gataw
+				size = 58000
+			}
+			create_pop = {
+				culture = busilari
+				size = 34000
+			}
+		}
+	}
+	
+	s:STATE_GINHYUT = {
+		region_state:Y33 = {
+			create_pop = {
+				culture = gataw
+				size = 454500
+			}
+			create_pop = {
+				culture = busilari
+				size = 45500
+			}
+		}
+		region_state:B07 = {
+			create_pop = {
+				culture = gataw
+				size = 74000
+			}
+			create_pop = {
+				culture = soot_goblin
+				size = 12000
+			}
+			create_pop = {
+				culture = steelscale_kobold
+				size = 10000
+			}
+			create_pop = {
+				culture = tinker_gnome
+				size = 4000
+			}
+		}
+	}
+	
+	s:STATE_LUNGDOU = {
+		region_state:A04 = {
+			create_pop = {
+				culture = gataw
+				size = 470000
+			}
+			create_pop = {
+				culture = gawedi
+				size = 30000
+			}
+		}
+	}
+	
+	s:STATE_LEOIHOIN = {
+		region_state:Y33 = {
+			create_pop = {
+				culture = gataw
+				size = 480000
+			}
+			create_pop = {
+				culture = busilari
+				size = 20000
+			}
+		}
+	}
+}

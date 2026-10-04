@@ -1,0 +1,91 @@
+﻿COUNTRIES = {
+	c:B89 ?= {
+		effect_starting_technology_tier_3_tech = yes
+
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_landed_voting #Democracy was subverted when Thilvis assumed direct control
+		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_hereditary_bureaucrats
+		activate_law = law_type:law_national_militia
+		# No home affairs
+		activate_law = law_type:law_agrarianism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_land_based_taxation
+		# No colonial affairs
+		# No police
+		# No schools
+		# No health system
+		activate_law = law_type:law_nation_of_artifice
+		activate_law = law_type:law_homesteading
+		activate_law = law_type:law_censorship
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_women_own_property
+		# No social security
+		# No migration controls
+		activate_law = law_type:law_legacy_slavery
+		
+		ig:ig_landowners = {
+			add_ruling_interest_group = yes
+		}
+		# Heavy-handed Trollsbayer involvement means they are not a full democracy
+		# set_variable = free_elections_var
+		# active_law:lawgroup_distribution_of_power ?= { # Trollsbay Subject
+		# 	add_amendment = {
+		# 		type = amendment_tradition_of_free_elections
+		# 		sponsor = PREV.ig:ig_intelligentsia
+		# 	}
+		# }
+
+		# Magic
+		add_technology_researched = cannorian_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_mass_plant_growth
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_evocation_corps
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_magical_feasts
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 1
+		}
+	}
+}

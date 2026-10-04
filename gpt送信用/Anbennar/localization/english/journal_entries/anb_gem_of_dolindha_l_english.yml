@@ -1,0 +1,31 @@
+﻿l_english:
+ je_gem_of_dolindha:0 "Gem of Dolindha"
+ je_gem_of_dolindha_reason:0 "Bosancovac is highly desirable, but in a tenuous position. The Dragon Dominion and The Sarda Empire both wish to include it in their growing spheres of influence, but are cautious to not let it slip into the other's possession first."
+ je_gem_of_dolindha_progress:0 "The #bold Influence Bar#! will #tooltippable;tooltip:je_gem_of_dolindha_special_tooltip_advance move#! according to the amount of influece projected onto #B Bosancovac#!. The #bold Influence Bar#! reaching #variable 100#! for either side will result in #B Bosancovac#! falling under their sway."
+ je_gem_of_dolindha_special_tooltip_advance:0 "The following conditions will #bold move#! the #bold Influence Bar#!:\n• Bosancovaco [concept_gdp_ownership]\n• Each side's [concept_army_power_projection] including subjects\n• A positive [concept_political_lobby] in Bosancovac"
+#  je_gem_of_dolindha_goal:0 "Reach an influence of 100" # unused
+ je_gem_of_dolindha_lobby:0 "Gem of Dolindha"
+
+ je_gem_of_dolindha_bar_completion: "For #v Bosancovac#! to come under sway:\n"
+ je_gem_of_dolindha_on_bar_completion: "When the bar reaches either end:\n$EFFECT$"
+ je_gem_of_dolindha_bar_completion_tt: "The influence of [SCOPE.sCountry('srd_nation_scope').GetName] or [SCOPE.sCountry('drd_nation_scope').GetName] must reach #v 100#!"
+ gem_of_dolindha_ally_power_projection_tt: "[SCOPE.sCountry('bos_nation_scope').GetName] and allies [concept_army_power_projection]: ([GetGlobalVariable('gem_of_dolindha_bosancovac_army_passive_var').GetValue|0]#!) is more than half of [SCOPE.sCountry('srd_nation_scope').GetName] and [SCOPE.sCountry('drd_nation_scope').GetName] combined [concept_army_power_projection]: ([GetGlobalVariable('gem_of_dolindha_total_army_passive_var').GetValue|0])"
+ je_gem_of_dolindha_on_bar_completion_tt: "[SCOPE.sCountry('bos_nation_scope').GetName] becomes a [concept_tributary] of [SCOPE.sCountry('srd_nation_scope').GetName] or [SCOPE.sCountry('drd_nation_scope').GetName]"
+ je_gem_of_dolindha_confederation_victory: "For influence to not work:\n"
+ je_gem_of_dolindha_on_confederation_victory: "In that case, $EFFECT$"
+ je_gem_of_dolindha_on_subject_tt: "If [SCOPE.sCountry('bos_nation_scope').GetName] becomes a [concept_subject]:\n   [SCOPE.sCountry('bos_nation_scope').GetName] has their autonomy decreased"
+ je_gem_of_dolindha_on_bos_win_tt: "Otherwise:\n   The [concept_capital_state] of [SCOPE.sCountry('bos_nation_scope').GetName] receives:\n[GetStaticModifier('bosancovac_immigration_pull').GetDesc]"
+ bosancovac_immigration_pull: "Migration Influx"
+ 
+ gem_of_dolindha_core_progress_bar_name: "Influence"
+ gem_of_dolindha_core_progress_bar_sarda_desc: "[SCOPE.sCountry('srd_nation_scope').GetFlagTextIcon] [GetGlobalVariable('gem_of_dolindha_srd_progress').GetValue|1]#!"
+ gem_of_dolindha_core_progress_bar_dragon_dominion_desc: "[GetGlobalVariable('gem_of_dolindha_drd_progress').GetValue|1]#! [SCOPE.sCountry('drd_nation_scope').GetFlagTextIcon]"
+ gem_of_dolindha_core_progress_gdp_passive_balance: "balance of [concept_gdp_ownership] of #v $B39$#!\n(#v $B29$#!: [GetGlobalVariable('gem_of_dolindha_sarda_gdp_passive_var').GetValue|v1%]#!, #v $dyn_c_dragon_dominion$#!: [GetGlobalVariable('gem_of_dolindha_dragon_dominion_gdp_passive_var').GetValue|v1%]#!)"
+ gem_of_dolindha_core_progress_army_passive_balance: "balance of [concept_army_power_projection]\n(#v $B29$#!: [GetGlobalVariable('gem_of_dolindha_sarda_army_passive_var').GetValue|0]#!, #v $dyn_c_dragon_dominion$#!: [GetGlobalVariable('gem_of_dolindha_dragon_dominion_army_passive_var').GetValue|0]#!) \nover the [concept_army_power_projection] of (#v $B39$#!: [GetGlobalVariable('gem_of_dolindha_bosancovac_army_passive_var').GetValue|0]#!)"
+ gem_of_dolindha_core_progress_lobby_passive_balance: "balance of lobbies in #v $B39$#!\n(#v $B29$#!: [GetGlobalVariable('gem_of_dolindha_sarda_lobby_passive_var').GetValue|v1%]#!, #v $dyn_c_dragon_dominion$#!: [GetGlobalVariable('gem_of_dolindha_dragon_dominion_lobby_passive_var').GetValue|v1%]#!)"
+
+ 
+ gem_of_dolindha.1.t:0 "The Gem of Dolindha"
+ gem_of_dolindha.1.d:0 "Bosancovac is highly desirable, but in a tenuous position. The Dragon Dominion and The Sarda Empire both wish to include it in their growing spheres of influence, but are cautious to not let it slip into the other's possession first."
+ gem_of_dolindha.1.f:0 "Bosancovac is a city built on atop the Ynn, surrounded by water, which makes it a great center of trade and natural barrier, seperating Sarda and Dolindha."
+ gem_of_dolindha.1.a:0 "The game begins."

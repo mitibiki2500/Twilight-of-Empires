@@ -1,0 +1,120 @@
+﻿#
+# Note: the triggers are checked at certain key points in the code, not all the time
+# color_key = {
+#    color = "black"      # the map color
+#    possible = { ... }   # the trigger to enable this color
+# }
+#
+
+# Example
+#dynamic_map_color_swedish_junta = {
+#    color = "black"
+#	
+#	possible = {
+#		exists = c:SWE # you /must/ check that a tag exists before doing anything else
+#		this = c:SWE
+#
+#        exists = ig:ig_armed_forces
+#        ig:ig_armed_forces = {
+#            is_in_government = yes
+#        }
+#	}
+#}
+
+blue_lorent = { #easter egg based on blackpowder chronicles 
+	color = "blue_lorent"
+
+	possible = {
+		exists = c:A03
+		THIS = c:A03
+		has_law = law_type:law_anarchy
+	}
+}
+
+blackpowder_anbennar = {
+	color = "blackpowder_anbennar"
+
+	possible = {
+		exists = c:A01
+		THIS = c:A01
+		
+		OR = {
+			has_law = law_type:law_parliamentary_republic
+			has_law = law_type:law_presidential_republic
+		}
+	}
+}
+
+chippengard_yellow = {
+	color = "chippengard_yellow"
+
+	possible = {
+		exists = c:B30
+		THIS = c:B30
+		
+		NOT = {
+			country_has_state_religion = rel:ynn_river_worship
+			top_overlord = {
+				country_has_state_religion = rel:ynn_river_worship
+			}
+		}
+	}
+}
+
+tipney_red = {
+	color = "tipney_red"
+
+	possible = {
+		exists = c:B32
+		THIS = c:B32
+		
+		NOT = {
+			country_has_state_religion = rel:ynn_river_worship
+			top_overlord = {
+				country_has_state_religion = rel:ynn_river_worship
+			}
+		}
+	}
+}
+
+corinsfield_orange = {
+	color = "corinsfield_orange"
+
+	possible = {
+		exists = c:B33
+		THIS = c:B33
+		
+		NOT = {
+			country_has_state_religion = rel:ynn_river_worship
+			top_overlord = {
+				country_has_state_religion = rel:ynn_river_worship
+			}
+		}
+	}
+}
+#horasheshi formables
+vurebindika = {
+	color = "vurebindika_colour"
+
+	possible = {
+		exists = c:L73
+		THIS = c:L73
+		
+		OR = {
+			was_formed_from = L23
+		}
+	}
+}
+
+irsukumbha = {
+	color = "irsukumbha_colour"
+
+	possible = {
+		exists = c:L73
+		THIS = c:L73
+		
+		OR = {
+			was_formed_from = L21
+		}
+	}
+}

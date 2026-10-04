@@ -1,0 +1,2207 @@
+﻿#Swinthorpe Beverages & Bottling
+company_swinthorpe = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_corn.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_PLUMSTEAD }
+
+	building_types = {
+		building_food_industry
+		building_vineyard
+	}
+
+	extension_building_types = {
+		building_glassworks
+		building_maize_farm
+		building_sugar_plantation #sodas
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_groceries
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_groceries_complete_tt
+			has_variable = prestige_good_generic_groceries_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_ynn
+
+        OR = {
+			cultural_acceptance_base = {
+				target = cu:steadsman
+				value >= acceptance_status_4
+			}
+			cultural_acceptance_base = {
+				target = cu:dustman
+				value >= acceptance_status_4
+			}
+			cultural_acceptance_base = {
+				target = cu:horizon_elf
+				value >= acceptance_status_4
+			}
+        }
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_PLUMSTEAD
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_PLUMSTEAD
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_food_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_radicals_and_loyalists_from_sol_change_mult = 0.05
+		state_migration_pull_mult = 0.2
+		state_migration_quota_mult = 0.2
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_PLUMSTEAD
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_food_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_PLUMSTEAD
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Arangreen Shipping 
+company_arangreen = {
+    icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_harbor_shipbuilding.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_CESTIRMARK }
+
+	building_types = {
+		building_port
+		building_shipyard
+	}
+
+	extension_building_types = {
+		building_railway
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_noruin
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_merchant_marine
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_merchant_marine_complete_tt
+			has_variable = prestige_good_generic_merchant_marine_var
+		}
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_CESTIRMARK
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = gantry_cranes
+		any_scope_state = {
+			state_region = s:STATE_CESTIRMARK
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_port
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_trade_advantage_mult = 0.25
+		building_group_bg_plantations_throughput_add = 0.1
+		#building_port_throughput_add = 0.1
+	}
+
+	ai_will_do = {
+		has_technology_researched = gantry_cranes
+		any_scope_state = {
+			state_region = s:STATE_CESTIRMARK
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_port = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_CESTIRMARK
+			}
+		}	
+	}	
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+# company_arms_vanbury = {
+# 	icon = "gfx/interface/icons/company_icons/custom_anb_vanbury_steel.dds"
+# 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+# 	flavored_company = yes
+
+# 	preferred_headquarters = { STATE_STEEL_BAY }
+
+# 	building_types = {
+# 		building_steel_mill
+# 		building_arms_industry
+# 		building_doodad_artificeries
+# 	}
+
+# 	extension_building_types = {
+# 		building_iron_mine
+# 		building_shipyard
+# 	}
+
+# 	possible_prestige_goods = {
+# 		prestige_good_vanbury_steel
+# 	}
+
+# 	potential = {
+# 		c:B05 ?= this
+# 	}
+
+# 	possible = {
+# 		any_scope_state = {
+# 			state_region = s:STATE_STEEL_BAY
+# 			is_incorporated = yes
+# 			any_scope_building = {
+# 				is_building_type = building_steel_mill
+# 				level >= 5
+# 			}
+# 			any_scope_building = {
+# 				is_building_type = building_arms_industry 
+# 				level >= 5
+# 			}
+# 		}
+# 	}
+
+# 	prosperity_modifier = {
+# 		ship_hull_damage_mult = 0.1
+# 		unit_army_offense_mult = 0.1
+# 	}
+
+# 	ai_will_do = {
+# 		c:B05 ?= this
+# 	}
+
+# 	ai_construction_targets = {
+# 		building_steel_mill = {
+# 				level = 5
+#				state_trigger = {
+#					state_region = s:STATE_STEEL_BAY
+#				}
+# 		}
+# 		building_arms_industry = {
+# 			level = 5
+#			state_trigger = {
+#				state_region = s:STATE_STEEL_BAY
+#			}
+# 		}
+# 	}
+
+# 	ai_weight = {
+# 		value = 5
+# 	}
+# }
+
+#General Expanse Drilling
+company_general_drilling = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_oil_drills.dds"
+
+	flavored_company = yes
+
+	building_types = {
+		building_gold_mine
+		building_oil_rig
+	}
+
+	extension_building_types = {
+		building_iron_mine
+		building_lead_mine
+	}
+
+	possible_prestige_goods = {
+		prestige_good_badlands_oil
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_ynn
+	}
+
+	possible = {
+		has_technology_researched = pumpjacks
+		any_scope_state = {
+			region = sr:region_ynn
+			any_scope_building = {
+				OR = {
+					is_building_type = building_gold_mine
+					is_building_type = building_oil_rig
+				}
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_resource_discovery_chance_mult = 0.25
+		interest_group_ig_industrialists_pol_str_mult = 0.20
+	}
+
+	ai_will_do = {
+		has_technology_researched = pumpjacks
+	}
+
+	ai_construction_targets = {
+		building_gold_mine = {
+			level = 5
+			state_trigger = {
+				region = sr:region_ynn
+			}
+		}
+		building_oil_rig = {
+			level = 5
+			state_trigger = {
+				region = sr:region_ynn
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}
+}
+
+company_redsun_crystals = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_SGLOLAD STATE_GALBHAN }
+
+	building_types = {
+		building_lead_mine
+		building_glassworks
+	}
+
+	extension_building_types = {
+		building_electrics_industry
+		building_gem_mine
+	}
+
+	possible_prestige_goods = {
+		prestige_good_frozenglass_crystal
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_eordand
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				OR = {
+					state_region = s:STATE_SGLOLAD
+					state_region = s:STATE_GALBHAN
+				}
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			OR = {
+				state_region = s:STATE_SGLOLAD
+				state_region = s:STATE_GALBHAN
+			}
+			is_incorporated = yes
+			any_scope_building = {
+				OR = {
+					is_building_type = building_glassworks
+					is_building_type = building_lead_mine
+				}
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_doodad_artificeries_throughput_add = 0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			OR = {
+				state_region = s:STATE_SGLOLAD
+				state_region = s:STATE_GALBHAN
+			}
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_glassworks = {
+			level = 5
+			state_trigger = {
+				OR = {
+					state_region = s:STATE_SGLOLAD
+					state_region = s:STATE_GALBHAN
+				}
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+company_iwandal_starweaver = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+
+	category = shopkeeper_owned
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_MURDKATHER }
+
+	building_types = {
+		building_textile_mill
+		building_silk_plantation
+	}
+
+	extension_building_types = {
+		building_cotton_plantation
+	}
+
+	possible_prestige_goods = {
+		prestige_good_glamoured_eordan_dresses
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_eordand
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_MURDKATHER
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_MURDKATHER
+			is_incorporated = yes
+			any_scope_building = {
+				OR = {
+					is_building_type = building_textile_mill
+					is_building_type = building_silk_plantation
+				}
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_mage_tower_throughput_add = 0.05
+		country_prestige_mult = 0.05
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_MURDKATHER
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_textile_mill = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_MURDKATHER
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Dawnfire House of the Astral and Alchemy
+company_dawnfire_astral_alchemy = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+	
+	category = academic_owned
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_DARHAN }
+
+	building_types = {
+		building_doodad_artificeries
+		building_mage_tower
+		building_relics_digsite
+	}
+
+	extension_building_types = {
+		building_art_academy
+		building_magical_reagents_workshop
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_eordand
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_DARHAN
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_DARHAN
+			is_incorporated = yes
+			any_scope_building = {
+				OR = {
+					is_building_type = building_doodad_artificeries
+					is_building_type = building_mage_tower
+					is_building_type = building_relics_digsite
+				}
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_tech_spread_mult = 0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_DARHAN
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_doodad_artificeries = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_DARHAN
+			}
+		}
+		building_mage_tower = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_DARHAN
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Ollornom Forest Congloom
+company_ollornom = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_wheat.dds"
+
+	flavored_company = yes
+
+	building_types = {
+		building_logging_camp
+		building_livestock_ranch
+	}
+
+	extension_building_types = {
+		building_cave_coral
+		building_railway
+		building_power_plant
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_meat
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_meat_complete_tt
+			has_variable = prestige_good_generic_meat_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_dalaire
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_DALAIRRSILD
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_DALAIRRSILD
+			is_incorporated = yes
+			any_scope_building = {
+				OR = {
+					is_building_type = building_logging_camp
+					is_building_type = building_livestock_ranch
+				}
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_construction_goods_cost_mult = -0.05
+		building_textile_mill_throughput_add = 0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_DALAIRRSILD
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_logging_camp = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_DALAIRRSILD
+			}
+		}
+		building_livestock_ranch = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_DALAIRRSILD
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Pan-Aelantir Railroad Company
+company_pan_aelantir_railroad = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_railways.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_ARGEZVALE }
+
+	building_types = {
+		building_railway
+	}
+
+	extension_building_types = {
+		building_coal_mine
+		building_motor_industry
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_ynn
+	}
+
+	possible = {
+		any_scope_state = {
+			region = sr:region_ynn
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_railway
+				level >= 5
+			}
+			count >= 3
+		}
+	}
+
+	prosperity_modifier = {
+		country_prestige_mult = 0.1
+		state_trade_capacity_mult = 0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			region = sr:region_ynn
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_railway = {
+			level = 5
+			state_trigger = {
+				region = sr:region_ynn
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+company_ancovaci = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_USLAD }
+
+	building_types = {
+		building_doodad_artificeries
+		building_textile_mill
+	}
+
+	extension_building_types = {
+		building_oil_rig
+		building_power_plant
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_ynn
+	}
+
+	attainable = {
+		owns_entire_state_region = STATE_USLAD
+	}
+	
+	possible_prestige_goods = {
+		prestige_good_generic_artificery_doodads
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_artificery_doodads_complete_tt
+			has_variable = prestige_good_generic_artificery_doodads_var
+		}
+	}
+
+	possible = {
+		has_technology_researched = mechanized_workshops
+		any_scope_state = {
+			state_region = s:STATE_USLAD
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_textile_mill
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		interest_group_ig_industrialists_pop_attraction_mult = 0.1
+		state_infrastructure_mult = 0.05
+	}
+
+	ai_will_do = {
+		has_technology_researched = mechanized_workshops
+		any_scope_state = {
+			state_region = s:STATE_USLAD
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_textile_mill = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_USLAD
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Bronzeclaw & Bronzeclaw
+company_bronzeclaw = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+	category = bureaucrat_owned
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_VIZKALADR }
+
+	building_types = {
+		building_doodad_artificeries
+		building_artillery_foundry
+	}
+
+	extension_building_types = {
+		building_automotive_industry
+		building_arms_industry
+		building_tooling_workshop
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_ynn
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_VIZKALADR
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_VIZKALADR
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_doodad_artificeries
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		unit_army_defense_mult = 0.1
+		state_radicals_from_political_movements_mult = -0.05
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_VIZKALADR
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_doodad_artificeries = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_VIZKALADR
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Buck’s Firearms and Patents
+company_bucks = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_TELLUMTIR }
+
+	building_types = {
+		building_arms_industry
+		building_munition_plant
+	}
+
+	extension_building_types = {
+		building_doodad_artificeries
+	}
+
+	possible_prestige_goods = {
+		prestige_good_bucks_revolvers
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_ynn
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_TELLUMTIR
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_TELLUMTIR
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_arms_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		unit_army_offense_mult = 0.1
+		# unit_combat_unit_group_cavalry_offense_mult = 0.2 	#this don't work, kept here for the record
+		unit_morale_loss_mult = -0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_TELLUMTIR
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_arms_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_TELLUMTIR
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Hirn & Lesnik, later known as Hirn General Foods & Mills
+company_big_corn = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_corn.dds"
+
+	flavored_company = yes
+
+	building_types = {
+		building_maize_farm
+		building_chemical_plant
+	}
+
+	extension_building_types = {
+		building_food_industry
+		building_livestock_ranch
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_grain
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_grain_complete_tt
+			has_variable = prestige_good_generic_grain_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_ynn
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				region = sr:region_ynn
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = intensive_agriculture
+		any_scope_state = {
+			region = sr:region_ynn
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_maize_farm
+				level >= 5
+			}
+			count >= 3
+		}
+	}
+
+	prosperity_modifier = {
+		interest_group_ig_rural_folk_pol_str_mult = 0.2
+		building_food_industry_throughput_add = 0.1
+	}
+
+	ai_will_do = {
+		has_technology_researched = intensive_agriculture
+		any_scope_state = {
+			region = sr:region_ynn
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_maize_farm = {
+			level = 5
+			state_trigger = {
+				region = sr:region_ynn
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#United Drozma Tur Glassmakers
+company_dozma_tur_glassmakers = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+
+	category = shopkeeper_owned
+
+	flavored_company = yes
+
+	building_types = {
+		building_glassworks
+		building_dye_plantation
+	}
+
+	extension_building_types = {
+		building_cave_coral
+		building_logging_camp
+		building_art_academy
+	}
+
+	potential = {
+		country_has_state_religion = rel:drozma_tur
+	}
+
+	possible = {
+		any_scope_state = {
+			OR = {
+				state_region = s:STATE_GOMOSENGHA
+				state_region = s:STATE_VIZKALADR
+				state_region = s:STATE_POMVASONN
+				state_region = s:STATE_JUZONDEZAN
+			}
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_glassworks
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_conversion_mult = 0.5
+		interest_group_ig_devout_approval_add = 2
+	}
+
+	ai_will_do = {
+		country_has_state_religion = rel:drozma_tur
+		any_scope_state = {
+			OR = {
+				state_region = s:STATE_GOMOSENGHA
+				state_region = s:STATE_VIZKALADR
+				state_region = s:STATE_POMVASONN
+				state_region = s:STATE_JUZONDEZAN
+			}
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_glassworks = {
+			level = 5
+			state_trigger = {
+				OR = {
+					state_region = s:STATE_GOMOSENGHA
+					state_region = s:STATE_VIZKALADR
+					state_region = s:STATE_POMVASONN
+					state_region = s:STATE_JUZONDEZAN
+				}
+				is_incorporated = yes
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Brefinim Ironhouses Ltd.
+company_brenifim = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_mining.dds"
+
+	flavored_company = yes
+
+	building_types = {
+		building_iron_mine
+		building_tooling_workshop
+	}
+
+	extension_building_types = {
+		building_steel_mill
+		building_arms_industry
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_tools
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_tools_complete_tt
+			has_variable = prestige_good_generic_tools_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_ynn
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_BRELAR
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_BRELAR
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_tooling_workshop
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_construction_sector_throughput_add = 0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_BRELAR
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_tooling_workshop = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_BRELAR
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Imperial Forestry Corporation of Sarda
+company_sarda_imperial_company = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+
+	category = bureaucrat_owned
+
+	flavored_company = yes
+
+	building_types = {
+		building_logging_camp
+		building_furniture_manufactory
+	}
+
+	extension_building_types = {
+		building_cave_coral
+		building_paper_mill
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_furniture
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_furniture_complete_tt
+			has_variable = prestige_good_generic_furniture_var
+		}
+	}
+
+	potential = {
+		country_has_primary_culture = cu:sarda
+	}
+
+	attainable = {
+		any_scope_state = {
+			has_state_trait = state_trait_sarda_forests
+		}
+	}
+
+	possible = {
+		NOT = { has_law = law_type:law_traditionalism }
+		any_scope_state = {
+			has_state_trait = state_trait_sarda_forests
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_furniture_manufactory
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_harvest_condition_flood_impact_mult = -0.2
+		state_harvest_condition_wildfire_impact_mult = -0.2
+		state_harvest_condition_extreme_winds_impact_mult = -0.2
+		state_harvest_condition_drought_impact_mult= -0.2
+		country_loyalists_from_legitimacy_mult = 0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			has_state_trait = state_trait_sarda_forests
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_furniture_manufactory = {
+			level = 5
+			state_trigger = {
+				has_state_trait = state_trait_sarda_forests
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Longriver Leaf Company
+company_longriver_leaf = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_WEST_TIPNEY }
+
+	building_types = {
+		building_tobacco_plantation
+	}
+
+	extension_building_types = {
+		building_opium_plantation
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_ynn
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_WEST_TIPNEY
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_WEST_TIPNEY
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_tobacco_plantation
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_tobacco_plantation_throughput_add = 0.2
+		state_expected_sol_mult = -0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_WEST_TIPNEY
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_tobacco_plantation = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_WEST_TIPNEY
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Doddi Cockdodd & Daughters 
+company_doddi_cockdodd = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = {
+		STATE_HJORDAL
+	}
+
+	building_types = {
+		building_tooling_workshop
+		building_doodad_artificeries
+	}
+
+	extension_building_types = {
+		building_motor_industry
+		building_magical_reagents_workshop
+		building_damestear_mine
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_artificery_doodads
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_artificery_doodads_complete_tt
+			has_variable = prestige_good_generic_artificery_doodads_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_dalaire
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_HJORDAL
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_HJORDAL
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_doodad_artificeries
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_production_tech_research_speed_mult = 0.05
+		country_prestige_mult = 0.05
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_HJORDAL
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_doodad_artificeries = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_HJORDAL
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Gommo Applied Arcane Ltd.
+company_gommo = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+	category = bureaucrat_owned
+
+	flavored_company = yes
+
+	preferred_headquarters = { STATE_GOMMIOCHAND }
+
+	possible_prestige_goods = {
+		prestige_good_arcane_battery
+	}
+
+	building_types = {
+		building_doodad_artificeries
+		building_relics_digsite
+		building_automatories
+	}
+
+	extension_building_types = {
+		building_damestear_mine
+		building_damestear_dives
+		building_automotive_industry
+	}
+
+	potential = {
+		c:B07 ?= this
+	}
+
+	possible = {
+		c:B07 ?= this
+		any_scope_state = {
+			state_region = s:STATE_GOMMIOCHAND
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_doodad_artificeries
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_influence_mult = 0.1
+		country_leverage_generation_mult = 0.05
+		country_production_tech_spread_mult = 0.1
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_GOMMIOCHAND
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_doodad_artificeries = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_GOMMIOCHAND
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Rimgate National Steel Foundries
+company_rimgate_foundries = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+	category = bureaucrat_owned
+
+	flavored_company = yes
+
+	preferred_headquarters = {
+		STATE_TAMETER
+	}
+
+	building_types = {
+		building_steel_mill
+		building_iron_mine
+	}
+
+	extension_building_types = {
+		building_coal_mine
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_steel
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_steel_complete_tt
+			has_variable = prestige_good_generic_steel_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_haraf
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_TAMETER
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = bessemer_process
+		any_scope_state = {
+			state_region = s:STATE_TAMETER
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_steel_mill
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		unit_army_offense_mult = 0.05
+		building_coal_mine_throughput_add = 0.1
+	}
+
+	ai_will_do = {
+		has_technology_researched = bessemer_process
+		any_scope_state = {
+			state_region = s:STATE_TAMETER
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_doodad_artificeries = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_TAMETER
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#West Aelantir Rubber Company
+company_west_aelantir_rubber = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+
+	flavored_company = yes
+
+	building_types = {
+		building_rubber_plantation
+	}
+
+	extension_building_types = {
+		building_cave_coral
+		building_logging_camp
+	}
+
+	potential = {
+		OR = {
+			has_interest_marker_in_region = region_haraf
+		}
+	}
+
+	attainable = {
+		country_or_subject_owns_entire_state_region = STATE_MINAR_YOLLI
+	}
+
+	possible = {
+		has_technology_researched = rubber_mastication
+		any_scope_state = {
+			region = sr:region_haraf
+			any_scope_building = {
+				is_building_type = building_rubber_plantation
+				levels_owned_by_country = {
+					target = ROOT
+					value >= 5
+				}
+			}
+			count >= 2
+		}
+	}
+
+	prosperity_modifier = {
+		state_colony_growth_speed_mult = 0.1
+		building_textile_mill_throughput_add = 0.1
+		building_group_bg_rubber_mortality_mult = 0.1
+	}
+
+	ai_will_do = {
+		has_technology_researched = rubber_mastication
+		OR = {
+			any_scope_state = {
+				region = sr:region_haraf
+				has_potential_resource = building_rubber_plantation
+			}
+			any_subject_or_below = {
+				any_scope_state = {
+					region = sr:region_haraf
+					has_potential_resource = building_rubber_plantation
+				}
+			}
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_rubber_plantation = {
+			level = 5
+			state_trigger = {
+				region = sr:region_haraf
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#General Skyships and Motorcarts Co.
+company_gsm = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = {
+		STATE_VALORPOINT
+	}
+
+	building_types = {
+		building_motor_industry
+		building_automotive_industry
+	}
+
+	extension_building_types = {
+		building_steel_mill
+	}
+
+	possible_prestige_goods = {
+		prestige_good_waller_motorcarts
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_noruin
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_VALORPOINT
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = combustion_engine
+		any_scope_state = {
+			state_region = s:STATE_VALORPOINT
+			is_incorporated = yes
+			OR = {
+				any_scope_building = {
+					is_building_type = building_motor_industry
+					level >= 5
+				}
+				any_scope_building = {
+					is_building_type = building_automotive_industry
+					level >= 5
+				}
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_automotive_industry_throughput_add = 0.1
+		unit_offense_mult = 0.05	#applies to both land and navy since airships support both land and sea
+	}
+
+	ai_will_do = {
+		has_technology_researched = combustion_engine
+		any_scope_state = {
+			state_region = s:STATE_VALORPOINT
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_motor_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_VALORPOINT
+			}
+		}
+		building_automotive_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_VALORPOINT
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Derdíl & Sons
+company_derdil = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_plantation.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = {
+		STATE_UPPER_SELLA
+	}
+
+	building_types = {
+		building_cotton_plantation
+		building_logging_camp
+		building_dye_plantation
+	}
+
+	extension_building_types = {
+		building_cave_coral
+		building_railway
+	}
+
+	possible_prestige_goods = {
+		prestige_good_bentwaters_cotton
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_noruin
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_UPPER_SELLA
+			}
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			state_region = s:STATE_UPPER_SELLA
+			is_incorporated = yes
+			OR = {
+				any_scope_building = {
+					is_building_type = building_cotton_plantation
+					level >= 5
+				}
+				any_scope_building = {
+					is_building_type = building_logging_camp
+					level >= 5
+				}
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_textile_mill_throughput_add = 0.1
+		building_maize_farm_throughput_add = 0.05
+	}
+
+	ai_will_do = {
+		any_scope_state = {
+			state_region = s:STATE_UPPER_SELLA
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_cotton_plantation = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_UPPER_SELLA
+			}
+		}
+		building_logging_camp = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_UPPER_SELLA
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Concord Picture Patents Company
+company_concord_pictures = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_railways.dds"
+
+	category = academic_owned
+
+	flavored_company = yes
+
+	preferred_headquarters = {
+		STATE_ISOBELIN
+	}
+
+	building_types = {
+		building_paper_mill
+		building_art_academy
+	}
+
+	extension_building_types = {
+		building_electrics_industry
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_paper
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_paper_complete_tt
+			has_variable = prestige_good_generic_paper_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_noruin
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				OR = {
+					state_region = s:STATE_ISOBELIN
+					state_region = s:STATE_ZANLIB
+				}
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = camera
+		any_scope_state = {
+			OR = {
+				state_region = s:STATE_ISOBELIN
+				state_region = s:STATE_ZANLIB
+			}
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_paper_mill
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		country_influence_mult = 0.05
+		building_electrics_industry_throughput_add = 0.1
+		state_assimilation_mult = 0.05
+	}
+
+	ai_will_do = {
+		has_technology_researched = camera
+		any_scope_state = {
+			OR = {
+				state_region = s:STATE_ISOBELIN
+				state_region = s:STATE_ZANLIB
+			}
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_paper_mill = {
+			level = 5
+			state_trigger = {
+				OR = {
+					state_region = s:STATE_ISOBELIN
+					state_region = s:STATE_ZANLIB
+				}
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Aesrialt - aka Empire Electronics (just a fancy name like Universal Pictures, etc)
+company_aesrialt = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = {
+		STATE_KWINELLIANDE
+	}
+
+	building_types = {
+		building_electrics_industry
+	}
+
+	extension_building_types = {
+		building_relics_digsite
+	}
+
+	possible_prestige_goods = {
+		prestige_good_aesrialt_apparatus
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_noruin
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_KWINELLIANDE
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = telephone
+		any_scope_state = {
+			state_region = s:STATE_KWINELLIANDE
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_electrics_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_doodad_artificeries_throughput_add = 0.1
+		country_weekly_innovation_mult = 0.05
+	}
+
+	ai_will_do = {
+		has_technology_researched = telephone
+		any_scope_state = {
+			state_region = s:STATE_KWINELLIANDE
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_electrics_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_KWINELLIANDE
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Alfonse Aríth & Company 
+company_alfonse_arith = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_corn.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = {
+		STATE_JERCEL
+	}
+
+	building_types = {
+		building_tooling_workshop
+		building_motor_industry
+	}
+
+	extension_building_types = {
+		building_iron_mine
+		building_shipyard
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_ruined_circle
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_JERCEL
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = railways
+		any_scope_state = {
+			state_region = s:STATE_JERCEL
+			is_incorporated = yes
+			any_scope_building = {
+				is_building_type = building_motor_industry
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_group_bg_agriculture_throughput_add = 0.15
+	}
+
+	ai_will_do = {
+		has_technology_researched = railways
+		any_scope_state = {
+			state_region = s:STATE_JERCEL
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_motor_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_JERCEL
+			}
+		}	
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Firebelly Alchemicals 
+company_firebelly_alchemicals = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_light.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = {
+		STATE_ZURZUMEXIA
+	}
+
+	building_types = {
+		building_chemical_plant
+		building_magical_reagents_workshop
+	}
+
+	extension_building_types = {
+		building_sulfur_mine
+		building_explosives_factory
+		building_sugar_plantation
+	}
+
+	possible_prestige_goods = {
+		prestige_good_generic_fertilizer
+	}
+
+	prestige_goods_trigger = {
+		custom_tooltip = {
+			text = je_prestige_goods_fertilizer_complete_tt
+			has_variable = prestige_good_generic_fertilizer_var
+		}
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_haraf
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_ZURZUMEXIA
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = fractional_distillation
+		any_scope_state = {
+			state_region = s:STATE_ZURZUMEXIA
+			is_incorporated = yes
+			any_scope_building = {
+				OR = {
+					is_building_type = building_chemical_plant
+					is_building_type = building_magical_reagents_workshop
+				}
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		building_food_industry_throughput_add = 0.1
+		unit_army_offense_mult = 0.05
+		country_magical_expertise_mult = -0.1
+	}
+
+	ai_will_do = {
+		has_technology_researched = fractional_distillation
+		any_scope_state = {
+			state_region = s:STATE_ZURZUMEXIA
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_chemical_plant = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_ZURZUMEXIA
+			}
+		}
+		building_magical_reagents_workshop = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_ZURZUMEXIA
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}
+
+#Arcane Energy Transportation and Storage Network Consortium 
+company_aetsn = {
+	icon = "gfx/interface/icons/company_icons/company_placeholder.dds"
+	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_oil_drills.dds"
+
+	flavored_company = yes
+
+	preferred_headquarters = {
+		STATE_GOOVRAZ
+	}
+
+	building_types = {
+		building_power_plant
+		building_electrics_industry
+	}
+
+	extension_building_types = {
+		building_damestear_mine
+		building_mage_tower
+	}
+
+	possible_prestige_goods = {
+		prestige_good_speakstones
+	}
+
+	potential = {
+		has_interest_marker_in_region = region_haraf
+	}
+
+	attainable = {
+		hidden_trigger = {
+			any_scope_state = {
+				state_region = s:STATE_GOOVRAZ
+			}
+		}
+	}
+
+	possible = {
+		has_technology_researched = radio
+		any_scope_state = {
+			state_region = s:STATE_GOOVRAZ
+			is_incorporated = yes
+			any_scope_building = {
+				OR = {
+					is_building_type = building_power_plant
+					is_building_type = building_electrics_industry
+				}
+				level >= 5
+			}
+		}
+	}
+
+	prosperity_modifier = {
+		state_infrastructure_from_population_add = 5
+		state_infrastructure_from_population_max_add = 10
+	}
+
+	ai_will_do = {
+		has_technology_researched = radio
+		any_scope_state = {
+			state_region = s:STATE_GOOVRAZ
+			is_incorporated = yes
+		}
+	}	
+	
+	ai_construction_targets = {
+		building_power_plant = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_GOOVRAZ
+			}
+		}
+		building_electrics_industry = {
+			level = 5
+			state_trigger = {
+				state_region = s:STATE_GOOVRAZ
+			}
+		}
+	}
+
+	ai_weight = {
+		value = 3
+	}	
+}

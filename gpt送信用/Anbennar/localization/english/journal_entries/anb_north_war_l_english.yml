@@ -1,0 +1,51 @@
+﻿l_english:
+
+##### JE #####
+ je_ameion_north_war:0 "Conflict in the Guaraddhi"
+ je_caergaraen_north_war:0 "Conflict in the Guaraddhi"
+ je_ameion_north_war_reason:0 "The savages of Caergaraen are preparing for war; border skirmishes between them and the Astòlbhen buffer states are becoming more and more common. It is only a matter of time before open hostilities are declared. In 1775, when Rakkabuttai fell, the Synkletos was caught by surprise; while total collapse was avoided and the War in the North ended in a stalemate, it came at a great cost. We will not suffer the same humiliation again, this time the first strike will be ours! It is now clear that the Amastòli leadership is too weak to oppose the Chendyans, so we will start by assuming leadership of the Astòlbhen once again."
+ je_caergaraen_north_war_reason:0 "Decades ago we were able to break the Bloodcloaks, who had been terrorizing Chendyans for hundreds of years, and assume control of the eastern plains. We were close to unifying Chendya for the first time in history, but the Kheionai devils and their Taychendi mercenaries held their ground. We made them pay for it in blood, but it was not enough and our king was forced to accept the status quo. In the meantime Chendyan sycophants betrayed our people and aligned with the Kheionai invaders, calling themselves “Astòlbhen” and adopting their ridiculous customs. We need to put an end to this, squash the traitors and lead our people to unify the plains once and for all."
+
+##### MODIFIERS #####
+
+ lost_north_war:0 "Humiliation in Chendya"
+ ameion_chendya_colonization:0 "Astòlbhen settlers"
+ caergaraen_chendya_colonization:0 "Chendyan Tribes settling"
+
+
+##### EVENTS #####
+ anb_north_war.1.t:0 "The powder keg in Chendya"
+ anb_north_war.2.t:0 "The powder keg in Chendya"
+ anb_north_war.3.t:0 "Integrating the Astòlbhen"
+ anb_north_war.4.t:0 "Rise of a Chendyan power"
+ anb_north_war.5.t:0 "Losing ground in Chendya"
+ anb_north_war.6.t:0 "Losing ground in Chendya"
+
+ anb_north_war.1.d:0 "Tensions in the Guaraddhi are reaching a critical level"
+ anb_north_war.2.d:0 "Tensions in the Guaraddhi are reaching a critical level"
+ anb_north_war.3.d:0 "Victory in Amastòl"
+ anb_north_war.4.d:0 "Victory in Amastòl"
+ anb_north_war.5.d:0 "Caergaraen draws first blood"
+ anb_north_war.6.d:0 "Ameion draws first blood"
+
+ anb_north_war.1.f:0 "Ever since the stalemate that ended the First War in the North, both the chendyans of Cargaraen and Ameion have remained high. While the breakaway Astòlbhen have acted as buffer states, with both sides recovering it's becoming more and more clear that a second conflict is inevitable"
+ anb_north_war.2.f:0 "Ever since the stalemate that ended the First War in the North, both the chendyans of Cargaraen and Ameion have remained high. While the breakaway Astòlbhen have acted as buffer states, with both sides recovering it's becoming more and more clear that a second conflict is inevitable"
+ anb_north_war.3.f:0 "Our control over Amastól is now secure and we can begin preparation for a preemptive strike on Caergaraen. At the same time, it's imperative to prevent Chendyans reinforcements to bolster their ranks. We will offer the Guaraddhi plains to Astòlbhen veterans, securing their loyalty and pushing the nomadic tribes westwards."
+ anb_north_war.4.f:0 "A great victory! The Astòlbhen traitors have been conquered leaving us sole claimant to the mantle of Chendya. Let us rally the tribes, their warriors will bolster our ranks and their families will be granted the resources necessary to settle the steppes. Let us prepare to kick the kheionai invaders out of the Guaraddhi once and for all."
+ anb_north_war.5.f:0 "Once again the Chendyans to the north catch us unprepared. The Astòlbhen buffer states have been conquered, and it’s only a matter of time before Caergaraen stages an invasion of Mesolakti. The Synkletos is paralyzed, our armies are stretched thin and it’s clear that Caergaraen is rallying the entire Guaraddhi to confront us. "
+ anb_north_war.6.f:0 "“As you may have heard, the blue-skinned devils have rallied the traitors and are encroaching into tribal lands. Most of the Chendyans are fleeing east, disillusioned with our cause. Surely the Kheionai are already plotting to invade us, but we will not let this setback break us. We will not surrender! We will paint the steppes with the invader’s blood!”"
+
+  # EVENT OPTIONS
+   anb_north_war.1.a:0 "This time we will claim total victory"
+   anb_north_war.2.a:0 "This time we will claim total victory"
+   anb_north_war.3.a:0 "A great victory for Ameion"
+   anb_north_war.4.a:0 "We must strike swift and true"
+   anb_north_war.5.a:0 "All is not lost yet, but dark times are ahead of us"
+   anb_north_war.6.a:0 "[SCOPE.sCharacter('caergaraen_ruler').GetFirstName]’s words ring hollow"
+
+# TOOLTIPS
+ anb_north_war.je:0 "We have subjugated [SCOPE.sCountry('nw_amastol').GetName] or conquered its capital"
+ anb_north_war.am_fail: "[SCOPE.sCountry('nw_caergaraen').GetName] has conquered [SCOPE.sCountry('nw_amastol').GetName] or have lost control of Mesokti"
+ anb_north_war.ca_fail: "[SCOPE.sCountry('nw_ameion').GetName] has conquered [SCOPE.sCountry('nw_amastol').GetName]"
+
+# COMPANY

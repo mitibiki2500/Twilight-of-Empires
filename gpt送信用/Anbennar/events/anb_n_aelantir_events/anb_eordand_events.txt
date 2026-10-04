@@ -1,0 +1,466 @@
+﻿namespace = anb_eordand_events
+
+#TODO : change the tag switch logic not to be a copy/paste of China code, as the origin tag doesn't (shouldn't) survive at all unlike China and releasables shouldn't use Chinese warlord setup effects
+#		Have the admin directly tag switch to the tag in its core area (Snecdath ?) with all gnomish characters being killed, like India code
+#		Maybe include being switched to another tag if you moved capital like for Central America ?
+anb_eordand_events.1 = { #Shatters the Administration
+	type = country_event
+	placement = root
+	duration = 3
+
+	title = anb_eordand_events.1.t
+	desc = anb_eordand_events.1.d
+	flavor = anb_eordand_events.1.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	trigger = {		
+		c:B80 ?= this
+		is_subject = no
+		is_at_war = no
+		#radical_fraction = {
+		#	value >= 0.1
+		#}
+		NOT = {	
+			has_variable = administration_collapse_var
+		}
+	}
+
+	immediate = {	
+		set_variable = administration_collapse_var	
+		if = {
+			limit = { exists = s:STATE_GEMRADCURT.region_state:B80 }
+			create_country = {
+				tag = G10
+				origin = this
+				state = s:STATE_GEMRADCURT.region_state:B80
+				on_created = {
+					warlord_setup_effect = yes
+					set_variable = warlord_state
+				}
+			}
+			c:G10 = { save_scope_as = scope_G10 }
+		}
+		if = {
+			limit = { exists = s:STATE_DARTIR.region_state:B80 }
+			s:STATE_DARTIR.region_state:B80 = {
+				set_state_owner = c:G10
+			}
+		}
+		if = {
+			limit = { exists = s:STATE_JHORGASHIRR.region_state:B80 }
+			create_country = {
+				tag = G11
+				origin = this
+				state = s:STATE_JHORGASHIRR.region_state:B80
+				on_created = {
+					warlord_setup_effect = yes
+					set_variable = warlord_state
+				}
+			}
+			c:G11 = { save_scope_as = scope_G11 }
+		}
+		if = {
+			limit = { exists = s:STATE_GALBHAN.region_state:B80 }
+			create_country = {
+				tag = G12
+				origin = this
+				state = s:STATE_GALBHAN.region_state:B80
+				on_created = {
+					warlord_setup_effect = yes
+					set_variable = warlord_state
+				}
+			}
+			c:G12 = { save_scope_as = scope_G12 }
+		}
+		if = {
+			limit = { exists = s:STATE_TRIMGARB.region_state:B80 }
+			s:STATE_TRIMGARB.region_state:B80 = {
+				set_state_owner = c:G12
+			}
+		}
+
+		if = {
+            limit = {
+                AND = {
+                    exists = c:B84
+                    OR = {
+                        exists = s:STATE_DARHAN.region_state:B80
+                        exists = s:STATE_GATHGOB.region_state:B80
+                        exists = s:STATE_PELODARD.region_state:B80
+                        exists = s:STATE_TRASAND.region_state:B80
+                    }
+                }
+            }
+			s:STATE_DARHAN.region_state:B80 = {
+				set_state_owner = c:B84
+			}
+			s:STATE_GATHGOB.region_state:B80 = {
+				set_state_owner = c:B84
+			}
+			s:STATE_TRASAND.region_state:B80 = {
+				set_state_owner = c:B84
+			}
+			s:STATE_PELODARD.region_state:B80 = {
+				set_state_owner = c:B84
+			}
+		}
+		
+		if = {
+            limit = {
+                AND = {
+                    exists = c:B84
+                    OR = {
+                        exists = s:STATE_DARHAN.region_state:B80
+                        exists = s:STATE_GATHGOB.region_state:B80
+                        exists = s:STATE_PELODARD.region_state:B80
+                        exists = s:STATE_TRASAND.region_state:B80
+                    }
+                }
+            }
+			create_country = {
+				tag = B84
+				origin = this
+				state = s:STATE_DARHAN.region_state:B80
+				on_created = {
+					warlord_setup_effect = yes
+					set_variable = warlord_state
+				}
+			}
+			c:B84 = { save_scope_as = scope_B84 }
+			s:STATE_GATHGOB.region_state:B80 = {
+				set_state_owner = c:B84
+			}
+			s:STATE_TRASAND.region_state:B80 = {
+				set_state_owner = c:B84
+			}
+			s:STATE_PELODARD.region_state:B80 = {
+				set_state_owner = c:B84
+			}
+		}
+		
+		if = {
+            limit = {
+                AND = {
+                    exists = c:B85
+                    OR = {
+                        exists = s:STATE_PASKALA.region_state:B80
+                        exists = s:STATE_DEARKTIR.region_state:B80
+                        exists = s:STATE_MURDKATHER.region_state:B80
+                        exists = s:STATE_TRIMTHIR.region_state:B80
+                    }
+                }
+            }
+			s:STATE_MURDKATHER.region_state:B80 = {
+				set_state_owner = c:B85
+			}
+			s:STATE_PASKALA.region_state:B80 = {
+				set_state_owner = c:B85
+			}
+			s:STATE_DEARKTIR.region_state:B80 = {
+				set_state_owner = c:B85
+			}
+			s:STATE_TRIMTHIR.region_state:B80 = {
+				set_state_owner = c:B85
+			}
+		}
+		
+		if = {
+            limit = {
+                AND = {
+                    exists = c:B85
+                    OR = {
+                        exists = s:STATE_PASKALA.region_state:B80
+                        exists = s:STATE_DEARKTIR.region_state:B80
+                        exists = s:STATE_MURDKATHER.region_state:B80
+                        exists = s:STATE_TRIMTHIR.region_state:B80
+                    }
+                }
+            }
+			create_country = {
+				tag = B85
+				origin = this
+				state = s:STATE_MURDKATHER.region_state:B80
+				on_created = {
+					warlord_setup_effect = yes
+					set_variable = warlord_state
+				}
+			}
+			c:B85 = { save_scope_as = scope_B85 }
+			s:STATE_PASKALA.region_state:B80 = {
+				set_state_owner = c:B85
+			}
+			s:STATE_DEARKTIR.region_state:B80 = {
+				set_state_owner = c:B85
+			}
+			s:STATE_TRIMTHIR.region_state:B80 = {
+				set_state_owner = c:B85
+			}
+		}
+
+		if = {	#Dragon Dominion seizes Armonadh if it neighbors it, to ensure the Admin fully dies
+			limit = {
+				any_scope_state = {
+					OR = {
+						state_region = s:STATE_ARMONADH
+						state_region = s:STATE_ANHOLTIR
+					}
+				}
+				c:B49 ?= {
+					any_scope_state = {
+						state_region = s:STATE_GOMOSENGHA
+					}
+				}
+			}
+			s:STATE_ANHOLTIR.region_state:B80 = {
+				set_state_owner = c:B49
+			}
+			s:STATE_ARMONADH.region_state:B80 = {
+				set_state_owner = c:B49
+			}
+		}
+
+		#using a direct tag switch instead of switching to released countries after will ensure we're never left with a leftover of the Admin, as edge cases would just have an Eordan exclave
+
+		every_subject_or_below = {
+			make_independent = yes
+		}
+
+		random_country = {
+			limit = {
+				has_variable = warlord_state
+				NOR = {
+					has_variable = var_warlord_two
+					has_variable = var_warlord_three 
+				}
+			}
+			save_scope_as = scope_random_warlord_one
+			set_variable = var_warlord_one
+		}
+
+		random_country = {
+			limit = {
+				has_variable = warlord_state
+				NOR = {
+					has_variable = var_warlord_one
+					has_variable = var_warlord_three
+				}
+			}
+			save_scope_as = scope_random_warlord_two
+			set_variable = var_warlord_two
+		}
+
+		random_country = {
+			limit = {
+				has_variable = warlord_state
+				NOR = {
+					has_variable = var_warlord_one
+					has_variable = var_warlord_two
+				}
+			}
+			save_scope_as = scope_random_warlord_three
+			set_variable = var_warlord_three
+		}
+		
+		s:STATE_ARMONADH = {
+			add_claim = c:G10
+			add_claim = c:G11
+			add_claim = c:G12
+		}
+	
+		s:STATE_ANHOLTIR = {
+			add_claim = c:G10
+			add_claim = c:G11
+			add_claim = c:G12
+		}
+	}
+
+	option = {
+		name = anb_eordand_events.1.ab
+		trigger = {
+			exists = scope:scope_random_warlord_one
+			is_player = yes
+		}
+		custom_tooltip = warlord_china_implosion_tt
+		while = {
+			limit = {
+				any_scope_state = {
+					is_capital = no
+					any_neighbouring_state = {
+						owner = { has_variable = warlord_state }
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					has_variable = warlord_state
+					any_neighbouring_state = {
+						is_capital = no
+						owner = ROOT
+					}
+				}
+				save_scope_as = test_scope
+			}
+			random_scope_state = {
+				limit = {
+					is_capital = no
+					any_neighbouring_state = {
+						owner = scope:test_scope
+					}
+				}
+				set_state_owner = scope:test_scope
+			}
+			clear_saved_scope = test_scope
+		}
+		play_as = scope:scope_random_warlord_one
+	}
+
+	option = {
+		name = anb_eordand_events.1.b
+		trigger = {
+			exists = scope:scope_random_warlord_two
+			is_player = yes
+		}
+		custom_tooltip = warlord_china_implosion_tt
+		while = {
+			limit = {
+				any_scope_state = {
+					is_capital = no
+					any_neighbouring_state = {
+						owner = { has_variable = warlord_state }
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					has_variable = warlord_state
+					any_neighbouring_state = {
+						is_capital = no
+						owner = ROOT
+					}
+				}
+				save_scope_as = test_scope
+			}
+			random_scope_state = {
+				limit = {
+					is_capital = no
+					any_neighbouring_state = {
+						owner = scope:test_scope
+					}
+				}
+				set_state_owner = scope:test_scope
+			}
+			clear_saved_scope = test_scope
+		}
+		play_as = scope:scope_random_warlord_two
+	}
+
+	option = {
+		name = anb_eordand_events.1.c
+		trigger = {
+			exists = scope:scope_random_warlord_three
+			is_player = yes
+		}
+		custom_tooltip = warlord_china_implosion_tt
+		while = {
+			limit = {
+				any_scope_state = {
+					is_capital = no
+					any_neighbouring_state = {
+						owner = { has_variable = warlord_state }
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					has_variable = warlord_state
+					any_neighbouring_state = {
+						is_capital = no
+						owner = ROOT
+					}
+				}
+				save_scope_as = test_scope
+			}
+			random_scope_state = {
+				limit = {
+					is_capital = no
+					any_neighbouring_state = {
+						owner = scope:test_scope
+					}
+				}
+				set_state_owner = scope:test_scope
+			}
+			clear_saved_scope = test_scope
+		}
+		play_as = scope:scope_random_warlord_three
+	}
+
+	option = {
+		default_option = yes
+		name = anb_eordand_events.1.a
+		custom_tooltip = warlord_china_implosion_tt
+		while = {
+			limit = {
+				any_scope_state = {
+					is_capital = no
+					any_neighbouring_state = {
+						owner = { has_variable = warlord_state }
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					has_variable = warlord_state
+					any_neighbouring_state = {
+						is_capital = no
+						owner = ROOT
+					}
+				}
+				save_scope_as = test_scope
+			}
+			random_scope_state = {
+				limit = {
+					is_capital = no
+					any_neighbouring_state = {
+						owner = scope:test_scope
+					}
+				}
+				set_state_owner = scope:test_scope
+			}
+			clear_saved_scope = test_scope
+		}
+	}
+}
+
+anb_eordand_events.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = anb_eordand_events.2.t
+	desc = anb_eordand_events.2.d
+	flavor = anb_eordand_events.2.f
+
+	event_image = {
+		video = "unspecific_gears_pistons"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+	duration = 3
+
+	trigger = {
+	}
+
+	option = {
+		name = anb_eordand_events.2.a
+		default_option = yes
+	}
+}

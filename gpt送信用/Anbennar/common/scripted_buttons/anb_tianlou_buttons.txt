@@ -1,0 +1,273 @@
+﻿je_tianlou_debt_negotiation_button = {
+	name = "je_tianlou_debt_negotiation_button"
+	desc = "je_tianlou_debt_negotiation_button_desc"
+
+	# visible = { NOT = { has_variable = tianlou_debt_renegotiated_var } }
+
+	ai_chance = {
+		value = 10
+	}
+
+	possible = {
+		NOT = { 
+			has_war_with = c:B07
+			owes_obligation_to = c:B07 
+		}
+		OR = {
+			c:B07 = {
+				relations:root >= relations_threshold:friendly
+			}
+			is_subject_of = c:B07
+			any_scope_treaty = {
+                binds = c:B07
+                any_scope_article = {
+                    has_type = alliance
+                }
+            }
+		}
+		OR = {
+            has_modifier = modifier_triarchy_rending_repayments_4
+            has_modifier = modifier_triarchy_rending_repayments_3
+            has_modifier = modifier_triarchy_rending_repayments_2
+            has_modifier = modifier_triarchy_rending_repayments_1
+		}
+	}
+
+	effect = {
+		c:B07 = { trigger_event = { id = tianlou_events.3 popup = yes } }
+	}
+}
+
+je_tianlou_debt_payment_button = {
+	name = "je_tianlou_debt_payment_button"
+	desc = "je_tianlou_debt_payment_button_desc"
+
+	visible = { always = yes }
+
+	possible = {
+		NOT = { has_war_with = c:B07 }
+		gold_reserves >= 3000000
+		OR = {
+            has_modifier = modifier_triarchy_rending_repayments_4
+            has_modifier = modifier_triarchy_rending_repayments_3
+            has_modifier = modifier_triarchy_rending_repayments_2
+            has_modifier = modifier_triarchy_rending_repayments_1
+		}
+	}
+
+	ai_chance = {
+		value = 50
+	}
+
+	effect = {
+		add_treasury = -3000000
+		if = {
+			limit = {
+				has_modifier = modifier_triarchy_rending_repayments_4
+			}
+			remove_modifier = modifier_triarchy_rending_repayments_4
+			add_modifier = { 
+				name = modifier_triarchy_rending_repayments_3
+				months = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_modifier = modifier_triarchy_rending_repayments_3
+			}
+			remove_modifier = modifier_triarchy_rending_repayments_3
+			add_modifier = { 
+				name = modifier_triarchy_rending_repayments_2
+				months = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_modifier = modifier_triarchy_rending_repayments_2
+			}
+			remove_modifier = modifier_triarchy_rending_repayments_2
+			add_modifier = { 
+				name = modifier_triarchy_rending_repayments_1
+				months = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_modifier = modifier_triarchy_rending_repayments_1
+			}
+			remove_modifier = modifier_triarchy_rending_repayments_1
+		}
+		c:B07 = {
+			post_notification = tianlou_pays_off_debt
+			add_treasury = 3000000
+			if = {
+				limit = {
+					has_modifier = modifier_tianlou_rending_repayments_4
+				}
+				remove_modifier = modifier_tianlou_rending_repayments_4
+				add_modifier = {
+					name = modifier_tianlou_rending_repayments_3
+					months = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_modifier = modifier_tianlou_rending_repayments_3
+				}
+				remove_modifier = modifier_tianlou_rending_repayments_3
+				add_modifier = {
+					name = modifier_tianlou_rending_repayments_2
+					months = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_modifier = modifier_tianlou_rending_repayments_2
+				}
+				remove_modifier = modifier_tianlou_rending_repayments_2
+				add_modifier = {
+					name = modifier_tianlou_rending_repayments_1
+					months = -1
+				}
+			}
+		}
+	}
+}
+
+je_tianlou_cancel_debt_button = {
+	name = "je_tianlou_cancel_debt_button"
+	desc = "je_tianlou_cancel_debt_button_desc"
+
+	visible = { always = yes }
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = {
+				c:B07 = {
+					OR = {
+						in_default = yes
+						has_revolution = yes
+					}
+				}
+			}
+			add = 10
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						army_size > c:B07.army_size
+						navy_size > c:B07.navy_size
+					}
+					any_scope_ally = {
+						army_size > c:B07.army_size
+						navy_size > c:B07.navy_size
+					}
+				}
+			}
+			add = 10
+		}
+		
+		if = {
+			limit = {
+				country_rank >= rank_value:major_power
+			}
+			add = 2
+		}
+		
+		if = {
+			limit = {
+				OR = {
+					is_diplomatic_play_committed_participant = yes
+					is_at_war = yes
+				}
+			}
+			add = -1000
+		}
+	}
+
+	possible = {
+		OR = {
+			has_modifier = modifier_triarchy_rending_repayments_1
+			has_modifier = modifier_triarchy_rending_repayments_2
+			has_modifier = modifier_triarchy_rending_repayments_3
+			has_modifier = modifier_triarchy_rending_repayments_4
+		}
+	}
+
+	effect = {
+		custom_tooltip = je_tianlou_cancel_debt_button_tt
+		add_modifier = {
+			name = modifier_cancelled_tianlou_debt
+			days = very_long_modifier_time
+		}
+		if = {
+			limit = {
+				has_modifier = modifier_triarchy_rending_repayments_1
+			}
+			remove_modifier = modifier_triarchy_rending_repayments_1
+		}
+		if = {
+			limit = {
+				has_modifier = modifier_triarchy_rending_repayments_2
+			}
+			remove_modifier = modifier_triarchy_rending_repayments_2
+		}
+		if = {
+			limit = {
+				has_modifier = modifier_triarchy_rending_repayments_3
+			}
+			remove_modifier = modifier_triarchy_rending_repayments_3
+		}
+		if = {
+			limit = {
+				has_modifier = modifier_triarchy_rending_repayments_4
+			}
+			remove_modifier = modifier_triarchy_rending_repayments_4
+		}
+		c:B07 = {
+			post_notification = tianlou_stops_paying_triarchy
+			if = {
+				limit = {
+					has_modifier = modifier_tianlou_rending_repayments_1
+				}
+				remove_modifier = modifier_tianlou_rending_repayments_1
+			}
+			if = {
+				limit = {
+					has_modifier = modifier_tianlou_rending_repayments_2
+				}
+				remove_modifier = modifier_tianlou_rending_repayments_2
+			}
+			if = {
+				limit = {
+					has_modifier = modifier_tianlou_rending_repayments_3
+				}
+				remove_modifier = modifier_tianlou_rending_repayments_3
+			}
+			if = {
+				limit = {
+					has_modifier = modifier_tianlou_rending_repayments_4
+				}
+				remove_modifier = modifier_tianlou_rending_repayments_4
+			}
+			change_relations = { 
+				country = c:Y03 
+				value = -70 
+			}
+			hidden_effect = {
+				set_secret_goal = {
+					country = c:Y03
+					secret_goal = conquer
+				}
+				# set_variable = tianlou_stops_paying_triarchy_aggressor
+				# c:Y03 = { set_variable = tianlou_stops_paying_triarchy_target } - Unused Variables.
+			}
+		}
+		change_infamy = 10
+		s:STATE_TIANLOU = {
+			add_claim = c:B07
+		}
+	}
+}

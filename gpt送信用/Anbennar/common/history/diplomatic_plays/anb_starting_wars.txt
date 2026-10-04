@@ -1,0 +1,115 @@
+﻿DIPLOMATIC_PLAYS = {
+	c:B91 = { #Ranger Republic
+		create_diplomatic_play = {
+			name = second_great_skirmish
+		
+			target_state = s:STATE_ELATHAEL.region_state:B37
+			
+			war = yes
+			
+			type = dp_annex_war
+
+#			add_war_goal = {
+#				holder = c:B37 #Elathael
+#				type = war_reparations
+#				target_country = c:B91
+#			}
+		}
+	}
+
+
+
+
+
+
+
+
+	c:D15 = { #Obsidian Legion
+		create_diplomatic_play = {
+			name = obsidian_invasion_war
+		
+			target_state = s:STATE_OVDAL_LODHUM.region_state:D14
+			
+			war = yes
+			
+			type = dp_legion_invasion
+
+			add_initiator_backers = { 
+				c:D13 #Burad
+			}
+			add_target_backers = {
+				c:D18 #Ordstun
+				c:D20 #Orlghelovar
+			}
+
+			#Legion
+			add_war_goal = {
+				holder = c:D15  
+				type = conquer_state
+				target_state = s:STATE_ARGROD.region_state:D18
+			}
+			add_war_goal = {
+				holder = c:D15  
+				type = conquer_state
+				target_state = s:STATE_ARGROD.region_state:D14
+			}
+			add_war_goal = {
+				holder = c:D15  
+				type = conquer_state
+				target_state = s:STATE_SCALDING_PITS.region_state:D14
+			}
+			add_war_goal = {
+				holder = c:D15  
+				type = conquer_state
+				target_state = s:STATE_OVDAL_LODHUM.region_state:D14
+			}
+			add_war_goal = {
+				holder = c:D15  
+				type = conquer_state
+				target_state = s:STATE_WINDING_CAVERNS.region_state:D14
+			}
+			#Ordstun
+			add_war_goal = {
+				holder = c:D18
+				type = return_state
+				target_state = s:STATE_VERKAL_SKOMDIHR.region_state:D15
+			}
+			add_war_goal = {
+				holder = c:D18
+				type = conquer_state
+				target_state = s:STATE_ORCSFALL.region_state:D15
+			}
+			#Lodhum
+			add_war_goal = {
+				holder = c:D14
+				type = conquer_state
+				target_state = s:STATE_ARGROD.region_state:D15
+			}
+			#Hul Jorkad
+			add_war_goal = {
+				holder = c:D12
+				target_country= c:D13
+				type = enforce_treaty_article
+					article = {
+						article = money_transfer
+						source_country = c:D13
+						target_country = c:D12
+						inputs = {
+							{ quantity = 1000 }
+						}
+					}
+			}
+			#Burad
+			add_war_goal = {
+				holder = c:D13
+				type = conquer_state
+				target_state = s:STATE_ARGROD_JUNCTION.region_state:D12
+			}
+			add_war_goal = {
+				holder = c:D13
+				type = revoke_claim
+				target_state = s:STATE_SCALDING_PITS.region_state:D14
+			}
+		}
+	}
+}

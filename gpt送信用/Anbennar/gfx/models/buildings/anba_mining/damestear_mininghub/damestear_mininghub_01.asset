@@ -1,0 +1,92 @@
+pdxmesh = {
+	name = "mininghub_damestear_mesh"
+	file = "damestear_mininghub_01.mesh"
+
+	scale = 2
+
+	lod_percentages = {
+		lod = { index = 0 percent = 24.0 }
+		lod = { index = 1 percent = 12.0 }
+	}
+	
+	
+	meshsettings = {
+		name = "LOD_0_mine"
+		index = 0
+		texture_diffuse = "damestear_mininghub_diffuse.dds"		
+		texture_normal = "damestear_mininghub_normal.dds"
+		texture_specular = "damestear_mininghub_properties.dds"
+
+		
+
+		shader = "standard"
+		additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}	
+
+	# meshsettings = {
+	# 	name = "LOD_0_damestear"
+	# 	index = 0
+	# 	texture_diffuse = "damestear_mininghub_diffuse.dds"	
+	# 	texture_normal = "damestear_mininghub_normal.dds"
+	# 	texture_specular = "damestear_mininghub_properties.dds"
+	# 	shader = "standard"
+	# 	additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+	# 	shader_file = "gfx/FX/pdxmesh.shader"
+	# }	
+
+
+	meshsettings = {
+		name = "LOD_0_ground"
+		index = 0
+		texture_diffuse = "mininghub_centerpiece_decal_diffuse.dds"
+		texture_normal = "mininghub_centerpiece_decal_normal.dds"
+		texture_specular = "mininghub_centerpiece_decal_properties.dds"
+		shader = "decal_local"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "LocalDecals"
+	}
+
+	meshsettings = {
+		name = "LOD_0_mesh_3"
+		index = 0
+		texture_diffuse = "decal_rural_mine_hub_diffuse.dds"
+		texture_normal = "decal_rural_mine_hub_normal.dds"
+		texture_specular = "decal_rural_mine_hub_properties.dds"
+		texture = { file = "decal_city_mask_01.dds" index = 3 }
+		shader = "decal_world"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "Decals"
+	}
+
+	# meshsettings = {
+	# 	name = "LOD_1_mine"
+	# 	index = 0
+	# 	texture_diffuse = "mininghub_damestear_centerpiece_diffuse.dds"
+	# 	#texture_diffuse = "mininghub_centerpiece_diffuse.dds"
+	# 	texture_normal = "mininghub_centerpiece_normal.dds"
+	# 	texture_specular = "mininghub_centerpiece_properties.dds"
+	# 	shader = "standard"
+	# 	additional_shader_defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "EMISSIVE_NIGHT" "SOL_VISUALS" "HUB_BUILDING" }
+	# 	shader_file = "gfx/FX/pdxmesh.shader"
+	# }	
+
+
+	# meshsettings = {
+	# 	name = "LOD_1_ground"
+	# 	index = 0
+	# 	texture_diffuse = "mininghub_centerpiece_decal_diffuse.dds"
+	# 	texture_normal = "mininghub_centerpiece_decal_normal.dds"
+	# 	texture_specular = "mininghub_centerpiece_decal_properties.dds"
+	# 	shader = "decal_local"
+	# 	shader_file = "gfx/FX/pdxmesh_decal.shader"
+	# 	subpass = "LocalDecals"
+	# }
+
+
+}
+
+entity = {
+	name = "mininghub_damestear_entity"
+	pdxmesh = "mininghub_damestear_mesh"
+}

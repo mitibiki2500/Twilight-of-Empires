@@ -1,0 +1,216 @@
+﻿namespace = anb_the_race_for_the_small_country
+
+anb_the_race_for_the_small_country.1 = { # On start event for Small Country
+
+	type = country_event
+	placement = ROOT
+
+	title = anb_the_race_for_the_small_country.1.t
+	desc = anb_the_race_for_the_small_country.1.d
+	flavor = anb_the_race_for_the_small_country.1.f
+
+    duration = 3
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    option = {
+        name = anb_the_race_for_the_small_country.1.a
+        default_option = yes
+        add_modifier = { # decrease capitalist and aristocrat invest pool efficency
+            name = the_race_for_the_small_country
+            months = 120
+        }
+    }
+}
+
+anb_the_race_for_the_small_country.2 = { # On start event for Racers
+
+	type = country_event
+
+	title = anb_the_race_for_the_small_country.2.t
+	desc = anb_the_race_for_the_small_country.2.d
+	flavor = anb_the_race_for_the_small_country.2.f
+
+        duration = 3
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    option = {
+        name = anb_the_race_for_the_small_country.2.a
+        default_option = yes
+        if = { # if you already have investment rights in SC at race start, get influence and relations with SC 
+            limit = {
+                any_scope_treaty = {
+                    binds = c:A14
+                    any_scope_article = {
+                        has_type = foreign_investment_rights
+                    }
+                }
+            }
+            add_modifier = {
+                name = leaders_of_the_race
+                months = 120
+            }
+            change_relations = {  
+                country = c:A14  
+                value = 100
+            }
+        }
+        else_if = { # otherwise send them an foreign investment rights treaty and gain relation with them
+            create_treaty = {  
+                first_country = ROOT
+                second_country = c:A14
+                binding_period = { years = 5 }
+                
+                articles_to_create = {
+                    { 
+                        article = foreign_investment_rights
+                        source_country = c:A14
+                        target_country = ROOT
+                    }
+                }
+            }
+            change_relations = {  
+                country = c:A14 
+                value = 100
+            }
+        }
+    }
+}
+
+
+anb_the_race_for_the_small_country.3 = { # On success for Small Country
+
+	type = country_event
+	placement = ROOT
+
+	title = anb_the_race_for_the_small_country.3.t
+	desc = anb_the_race_for_the_small_country.3.d
+	flavor = anb_the_race_for_the_small_country.3.f
+
+    duration = 3
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    option = { # add prestige and decrease loan interest
+        name = anb_the_race_for_the_small_country.3.a
+        default_option = yes
+        add_modifier = {
+            name = halfling_independence_assured
+            months = 1200
+        }
+        every_power_bloc = { # Force SC out of any power blocs
+            add_leverage = {
+                target = ROOT
+                value = -1000
+            }
+        }
+    }
+}
+
+anb_the_race_for_the_small_country.4 = { # On failure for Small Country/Success for a Racer
+
+	type = country_event
+	placement = ROOT
+
+	title = anb_the_race_for_the_small_country.4.t
+	desc = anb_the_race_for_the_small_country.4.d
+	flavor = anb_the_race_for_the_small_country.4.f
+
+    duration = 3
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+    option = {
+        name = anb_the_race_for_the_small_country.4.a	
+        default_option = yes
+
+        if = { # if they are already in your powerbloc get prestige and leverage
+            limit = {
+                c:A14 = {
+                    is_in_same_power_bloc = ROOT
+                }
+            }
+            add_modifier = {
+                name = victors_of_the_race
+                months = 1200
+            }
+        }
+        else_if = { # otherwise SC joins Bloc              
+            c:A14 = {
+                join_power_bloc = ROOT
+            }
+        }
+        if = { # if Anbennar wins, gain Beepeck back
+            limit = {
+                c:A01 = ROOT
+            }
+            s:STATE_BEEPECK.region_state:A14 ?= { set_state_owner = ROOT }
+        }
+        else_if = { # if Lorent wins, gain Thomsbridge back
+            limit = {
+                c:A03 = ROOT
+            }
+            s:STATE_THOMSBRIDGE.region_state:A14 ?= { set_state_owner = ROOT }
+        }
+        else_if = { # if Northern League wins, gain Dragonhills back
+            limit = {
+                c:A04 = ROOT
+            }
+            s:STATE_DRAGONHILLS.region_state:A14 ?= { set_state_owner = ROOT }
+        }
+    }
+}
+
+anb_the_race_for_the_small_country.5 = { # Unique win for just Gnomish Hierarchy
+
+	type = country_event
+	placement = ROOT
+
+	title = anb_the_race_for_the_small_country.5.t
+	desc = anb_the_race_for_the_small_country.5.d
+	flavor = anb_the_race_for_the_small_country.5.f
+
+        duration = 3
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+        option = { # Small Country gets made a protectorate of Gnomish
+            name = anb_the_race_for_the_small_country.5.a	
+	        default_option = yes
+            create_diplomatic_pact = {  
+                country = c:A14
+                type = protectorate
+            }
+        }
+}

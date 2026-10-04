@@ -1,0 +1,238 @@
+﻿namespace = mechanim_awakening
+
+#On Open Event
+#todo make this a real event
+mechanim_awakening.1 = { 
+	type = country_event
+	placement = root
+	
+	title = mechanim_awakening.1.t
+	desc =  mechanim_awakening.1.d
+	flavor = mechanim_awakening.1.f
+	
+	event_image = {
+		video = "europenorthamerica_russian_serfs"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 1
+	trigger = {
+		#triggered by JE
+	}
+
+	# trigger = {
+	# 	any_scope_state = {
+	# 		sg:automata = {
+	# 			state_goods_consumption >= 1
+	# 		}
+	# 	}
+	# }
+
+	option = { 
+		#TODO spawn mechanim if have them
+		name = mechanim_awakening.1.a
+		default_option = yes		
+	}			
+}
+
+#On Close Event
+mechanim_awakening.2 = { 
+	type = country_event
+	placement = root
+	
+	title = mechanim_awakening.2.t
+	desc =  mechanim_awakening.2.d
+	flavor = mechanim_awakening.2.f
+	
+	event_image = {
+		video = "unspecific_devastation"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 1
+	trigger = {
+		#triggered by JE
+	}
+
+	immediate = {
+	}
+
+	option = { 
+		name = mechanim_awakening.2.a
+		default_option = yes
+		#TODO - set flag for continuing to spawn mechanim
+		#TODO - generic events for spawning mechanim
+	}			
+}
+
+####Random Events####
+
+#Automata outside of automatories awaken
+mechanim_awakening.3 = { 
+	type = country_event
+	placement = root
+	
+	title = mechanim_awakening.3.t
+	desc =  mechanim_awakening.3.d
+	flavor = mechanim_awakening.3.f
+	
+	event_image = {
+		video = "southamerica_slave_chains"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 1
+	
+	trigger = {
+		any_scope_state = {
+			sg:automata = {
+				state_goods_consumption >= 1
+			}
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				sg:automata = {
+					state_goods_consumption >= 1
+				}
+			}
+			save_scope_as = target_state
+		}
+	}
+
+	option = { 
+		name = mechanim_awakening.3.a
+		default_option = yes
+		add_mechanim_awakening_sentience_support_progress_from_event_tracker_point = yes
+
+		scope:target_state = {
+			create_pop = {
+				culture = mechanim
+				pop_type = laborers
+				size = 1000
+			}
+
+			#todo malus on automata usage
+
+			add_radicals_in_state = {
+				strata = upper
+				value = large_radicals
+			}
+		}
+	}	
+
+	option = { 
+		name = mechanim_awakening.3.b
+		subtract_mechanim_awakening_sentience_support_progress_from_event_tracker_point = yes
+
+		scope:target_state = {
+			create_pop = {
+				culture = mechanim
+				pop_type = laborers
+				size = 1000
+			}
+
+			#todo malus on automata usage
+			
+			add_radicals_in_state = {
+				value = small_radicals
+			}
+		}
+	}			
+}
+
+#Automata inside automatories awaken
+mechanim_awakening.4 = { 
+	type = country_event
+	placement = root
+	
+	title = mechanim_awakening.4.t
+	desc =  mechanim_awakening.4.d
+	flavor = mechanim_awakening.4.f
+	
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 1
+	
+	trigger = {
+		any_scope_state = {
+			has_building = building_automatories
+		}
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				has_building = building_automatories
+			}
+			save_scope_as = target_state
+		}
+	}
+
+	option = { 
+		name = mechanim_awakening.4.a
+		default_option = yes
+		add_mechanim_awakening_sentience_support_progress_from_event_tracker_point = yes
+
+		scope:target_state = {
+			create_pop = {
+				culture = mechanim
+				pop_type = laborers
+				size = 1000
+			}
+
+			b:building_automatories = {
+				add_modifier = {
+					name = mechanim_awakening_throughput_debuff
+					days = 180
+				}
+			}
+
+			add_radicals_in_state = {
+				strata = upper
+				value = large_radicals
+			}
+		}
+	}	
+
+	option = { 
+		name = mechanim_awakening.4.b
+		subtract_mechanim_awakening_sentience_support_progress_from_event_tracker_point = yes
+
+		scope:target_state = {
+			create_pop = {
+				culture = mechanim
+				pop_type = laborers
+				size = 1000
+			}
+
+			b:building_automatories = {
+				add_modifier = {
+					name = mechanim_awakening_throughput_debuff
+					days = 180
+				}
+			}
+			
+			add_radicals_in_state = {
+				value = small_radicals
+			}
+		}
+	}			
+}

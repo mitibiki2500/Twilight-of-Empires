@@ -1,0 +1,128 @@
+﻿#Invite Elven Settlers
+scripted_button_varionail_settler_button = {
+    name = "scripted_button_varionail_settler_button_name"
+	desc = "scripted_button_varionail_settler_button_desc"
+
+    possible = {
+        custom_tooltip = {
+            text = varionail_settler_cooldown_desc
+            NOT = {
+                has_variable = varionail_settler_cooldown
+            }
+        }
+    }
+
+    effect = {
+        set_variable = { name = varionail_settler_cooldown months = 4 }
+        custom_tooltip = {
+            text = varionail_settler_migration_desc
+            random_list = {
+                25 = {
+                    trigger = {
+                        NOT = {
+                            has_variable = varionail_010_cooldown
+                        }
+                    }
+                    trigger_event = anb_varionail.010
+                    set_variable = { name = varionail_010_cooldown months = 14 }
+                }
+                25 = {
+                    trigger = {
+                        NOT = {
+                            has_variable = varionail_011_cooldown
+                        }
+                    }
+                    trigger_event = anb_varionail.011
+                    set_variable = { name = varionail_011_cooldown months = 14 }
+                }
+                25 = {
+                    trigger = {
+                        NOT = {
+                            has_variable = varionail_012_cooldown
+                        }
+                    }
+                    trigger_event = anb_varionail.012
+                    set_variable = { name = varionail_012_cooldown months = 14 }
+                }
+                25 = {
+                    trigger = {
+                        NOT = {
+                            has_variable = varionail_013_cooldown
+                        }
+                    }
+                    trigger_event = anb_varionail.013
+                    set_variable = { name = varionail_013_cooldown months = 14 }
+                }
+            }
+        }
+    }
+
+    ai_chance = {
+        value = 20
+    }
+}
+
+#Clear the plants 1
+scripted_button_varionail_plant_button_1 = {
+    name = "scripted_button_varionail_plant_button_name"
+	desc = "scripted_button_varionail_plant_button_desc"
+
+    visible = {
+        NOT = {
+            has_variable = varionail_countermeasure_found_var
+        }
+    }
+
+    possible = {
+        custom_tooltip = {
+            text = varionail_plant_cooldown_desc
+            NOT = {
+                has_variable = varionail_plant_cooldown
+            }
+        }
+        country_has_building_group_levels = {
+            type = bg_relics_digsite
+            value >= 3
+        }
+    }
+
+    effect = {
+        set_variable = { name = varionail_plant_cooldown years = 2 }
+        trigger_event = anb_varionail.003
+    }
+
+    ai_chance = {
+        value = 20
+    }
+}
+
+#Clear the plants 2
+scripted_button_varionail_plant_button_2 = {
+    name = "scripted_button_varionail_plant_button_name"
+	desc = "scripted_button_varionail_plant_button_desc"
+
+    visible = {
+        has_variable = varionail_countermeasure_found_var
+    }
+
+    possible = {
+        custom_tooltip = {
+            text = varionail_plant_cooldown_desc
+            NOT = {
+                has_variable = varionail_plant_cooldown
+            }
+        }
+        any_scope_state = {
+            has_state_trait = state_trait_ravenous_isle
+        }
+    }
+
+    effect = {
+        trigger_event = anb_varionail.005
+        set_variable = { name = varionail_plant_cooldown years = 2 }
+    }
+
+    ai_chance = {
+        value = 20
+    }
+}

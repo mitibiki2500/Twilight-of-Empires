@@ -1,0 +1,628 @@
+﻿ig_rural_folk = {
+	color = hsv{ 0.32 0.45 0.47 }
+	texture = "gfx/interface/icons/ig_icons/rural_folk.dds"
+	layer = "revolution_dynamic_rural_folk"
+	index = 6
+
+	ideologies = {
+		ideology_agrarian
+		ideology_particularist
+		ideology_isolationist
+	}
+	
+	character_ideologies = {
+		ideology_moderate
+		ideology_pacifist
+	}
+
+	enable = {
+		always = yes
+	}
+
+	# Deprecated; use on_enable effect to assign traits instead
+	traits = {
+		ig_trait_farmers_markets
+		ig_trait_honest_work
+		ig_trait_old_ways
+	}
+
+	on_enable = {
+		ig:ig_rural_folk = {
+			if = {
+				limit = {
+					owner = { c:A01 ?= this }	#dummy
+				}
+				set_ig_trait = ig_trait:ig_trait_old_ways
+				set_ig_trait = ig_trait:ig_trait_honest_work
+				set_ig_trait = ig_trait:ig_trait_farmers_markets
+			}
+			else_if = {
+				limit = {
+					owner = { c:E01 ?= this }
+				}
+				set_interest_group_name = ig_lake_children
+				#remove_ideology = ideology_particularist
+				#add_ideology = ideology_liberal
+				add_ideology = ideology_triunic_children
+				
+				set_ig_trait = ig_trait:ig_trait_old_ways
+				set_ig_trait = ig_trait:ig_trait_honest_work
+				set_ig_trait = ig_trait:ig_trait_heaven_upon_halann
+			}
+
+			else_if = {
+				limit = {
+					owner = {
+						OR = {
+							country_has_primary_culture = cu:rzentur
+							country_has_primary_culture = cu:dolindhan
+							country_has_primary_culture = cu:sarda
+						}
+					}
+				}
+				set_interest_group_name = ig_landbound
+				
+				set_ig_trait = ig_trait:ig_trait_old_ways
+				set_ig_trait = ig_trait:ig_trait_honest_work
+				set_ig_trait = ig_trait:ig_trait_farmers_markets
+			}
+
+			else_if = {
+				limit = {
+					owner = {
+						OR = {
+							country_has_primary_culture = cu:rzentur
+							country_has_primary_culture = cu:dolindhan
+							country_has_primary_culture = cu:sarda
+						}
+					}
+				}
+				set_interest_group_name = ig_landbound
+				
+				set_ig_trait = ig_trait:ig_trait_old_ways
+				set_ig_trait = ig_trait:ig_trait_honest_work
+				set_ig_trait = ig_trait:ig_trait_farmers_markets
+			}
+			
+			else_if = {
+				limit = {
+					owner = { c:C14 ?= this }
+				}
+				remove_ideology = ideology_particularist
+				add_ideology = ideology_hive_mind_conservative
+				set_ig_trait = ig_trait:ig_trait_old_ways
+				set_ig_trait = ig_trait:ig_trait_honest_work
+				set_ig_trait = ig_trait:ig_trait_farmers_markets
+			}
+			else = {
+				set_ig_trait = ig_trait:ig_trait_old_ways
+				set_ig_trait = ig_trait:ig_trait_honest_work
+				set_ig_trait = ig_trait:ig_trait_farmers_markets
+			}
+			
+			#Hive Mind Obligate
+			if = {
+				limit = {
+					owner = { c:C14 ?= this }
+				}
+				remove_ideology = ideology_agrarian
+				remove_ideology = ideology_isolationist
+				add_ideology = ideology_hive_mind_obligate
+			}
+		}
+
+		### Specific
+		# Frontier Expansion Ideology. Given to Aelantiri colonies/settlers who are actually still colonizing 
+	}
+	on_disable = {}
+	priority_cultures = {}
+	on_character_ig_membership = {}
+
+	pop_potential = {
+		NOR = {
+			is_pop_type = aristocrats
+			is_pop_type = capitalists
+		}
+		OR = {
+			pop_employment_building_group = bg_agriculture
+			pop_employment_building_group = bg_ranching
+			pop_employment_building_group = bg_plantations
+			pop_employment_building_group = bg_logging
+			pop_employment_building_group = bg_fishing
+			pop_employment_building_group = bg_whaling
+			pop_employment_building_group = bg_manor_houses
+		}
+	}
+
+	pop_weight = {
+		value = 0
+
+		#Anbennar
+		add = {
+			desc = "POP_MAGES"
+			if = {
+				limit = {
+					#OR = {
+					#	is_pop_type = archmages	# This is against vic3 design principle, upper class simply should not support rural folk. In fact, later part of this file also suggests archmages shouldn't support rural folk. @1onepower
+					#	is_pop_type = mages
+					#}
+					is_pop_type = mages
+				}
+				value = 30
+				if = {
+					limit = { owner = { has_technology_researched = chi_cultivation_magical_tradition } }
+					add = 10 
+				}
+				if = {
+					limit = { owner = { has_technology_researched = druidic_magical_tradition } }
+					add = 50 
+				}
+				if = {
+					limit = { owner = { has_technology_researched = shamanism_magical_tradition } }
+					add = 50 
+				}
+				if = {
+					limit = { owner = { has_technology_researched = elemental_magical_tradition } }
+					add = 20 
+				}
+				if = {
+					limit = { owner = { has_law = law_type:law_nation_of_artifice } }
+					multiply = 2
+				}
+				else_if = {
+					limit = { owner = { has_law = law_type:law_traditional_magic_banned } }
+					multiply = 4
+				}
+			}
+		}
+
+		add = {
+			desc = "POP_ADVENTURERS"
+			if = {
+				limit = { 
+					is_pop_type = adventurers
+				}
+				value = 75	#heroes of the commonfolk
+			}
+		}
+		
+		add = {
+			desc = "RURAL_POP"
+			if = {
+				limit = {
+					OR = {
+						pop_employment_building_group = bg_agriculture
+						pop_employment_building_group = bg_ranching
+						pop_employment_building_group = bg_plantations
+						pop_employment_building_group = bg_logging
+						pop_employment_building_group = bg_fishing
+						pop_employment_building_group = bg_whaling
+						pop_employment_building_group = bg_manor_houses
+					}
+					NOT = { is_pop_type = archmages }
+				}
+				if = {
+					limit = {
+						is_pop_type = clergymen
+					}
+					value = 25
+				}
+				else = {
+					value = 100
+				}
+			}
+		}
+
+		add = {
+			desc = "POP_FARMERS"
+			if = {
+				limit = {
+					is_pop_type = farmers
+				}
+				value = 200
+			}
+		}
+
+		add = {
+			desc = "POP_PEASANTS"
+			if = {
+				limit = {
+					is_pop_type = peasants
+				}
+				value = 200
+			}
+		}
+
+		add = {
+			desc = "POP_CLERGYMEN"
+			if = {
+				limit = {
+					is_pop_type = clergymen
+				}
+				value = 75
+			}
+		}
+
+		multiply = {
+			desc = "LEADER_POPULARITY"
+			scope:interest_group ?= {
+				leader ?= {
+					value = popularity
+					multiply = 0.0025
+					add = 1
+					max = 1.25
+					min = 0.75
+				}
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group ?= {
+					is_in_government = yes
+				}
+			}
+			multiply = {
+				desc = "IN_GOVERNMENT_ATTRACTION"
+				value = 1
+				add = scope:interest_group.modifier:interest_group_in_government_attraction_mult
+				min = 0
+			}
+		}
+		
+		if = {
+			limit = {
+				scope:interest_group ?= {
+					is_in_government = yes
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_LOYALISTS"
+				value = pop_loyalist_fraction
+				divide = 4
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				scope:interest_group ?= {
+					is_in_government = no
+				}
+			}
+			multiply = { # Multiplied by 1.25x max
+				desc = "POP_RADICALS"
+				value = pop_radical_fraction
+				divide = 4
+				add = 1
+			}
+		}
+	}
+
+	monarch_weight = {
+		value = 0.25 # this is just inherently unlikely
+		# Monarch is not likely to adopt a marginal IG
+		if = {
+			limit = {
+				ig_counts_as_marginal = yes
+			}
+			multiply = {
+				value = 0.1
+			}
+		}
+		# Monarch is more likely to adopt a Powerful IG
+		if = {
+			limit = {
+				is_powerful = yes
+			}
+			multiply = {
+				value = 2
+			}
+		}
+		# More likely with Homesteading
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_peasant_proprietorship
+				}
+			}
+			multiply = {
+				value = 2
+			}
+		}
+		# Impossible with Serfdom
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_serfdom
+				}
+			}
+			multiply = {
+				value = 0
+			}
+		}
+	}
+
+	agitator_weight = {
+		# Agitators more likely to come from populist IG's rather than elitist
+		value = 1.0
+		# Agitators will never be part of a marginalized IG
+		if = {
+			limit = {
+				owner.ig:ig_rural_folk ?= {
+					ig_counts_as_marginal = yes
+				}
+			}
+			multiply = {
+				value = 0
+			}
+		}
+	}
+
+	commander_weight = {
+		value = 1.0
+	}
+	
+	magnate_weight = {
+		value = 0.25
+	}	
+
+	executive_weight = {
+		value = 0.1
+	}
+
+	noble_chance = {
+		value = 0.2
+	}
+
+	female_commander_chance = {
+		value = 0.0
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+	}
+
+	female_executive_chance = {
+		value = 0.0
+		if = {
+			limit = { #variable from country history gets set after IGs being loaded, this need to be done for it to work
+				owner = {
+					OR = {
+						c:F13 ?= this
+						c:L33 ?= this
+						c:L31 ?= this
+						c:L54 ?= this
+						c:L55 ?= this
+						c:L29 ?= this
+						c:A11 ?= this
+						c:L22 ?= this
+					}
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+					NOT  = { has_technology_researched = tradition_of_equality }
+				}
+
+			}
+			add = {
+				value = 0.025
+			}
+		}
+	}
+
+	female_politician_chance = {
+		value = 0.0
+		if = {
+			limit = { #variable from country history gets set after IGs being loaded, this need to be done for it to work
+				owner = {
+					OR = {
+						c:F13 ?= this
+						c:L33 ?= this
+						c:L31 ?= this
+						c:L54 ?= this
+						c:L55 ?= this
+						c:L29 ?= this
+						c:A11 ?= this
+						c:L22 ?= this
+					}
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.50
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+					NOT  = { has_technology_researched = tradition_of_equality }
+				}
+
+			}
+			add = {
+				value = 0.025
+			}
+		}
+	}
+
+	female_agitator_chance = {
+		value = 0.025
+		#Anbennar
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					NOT = { has_law = law_type:law_womens_suffrage }
+				}
+			}
+			add = {
+				value = 1.0
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = is_matriarchy_var
+					has_law = law_type:law_womens_suffrage
+				}
+			}
+			add = {
+				value = 0.90
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_technology_researched = tradition_of_equality
+				}
+			}
+			add = {
+				value = 0.475
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_own_property
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.025
+			}
+		}	
+		
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_women_in_the_workplace
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.025
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_womens_suffrage
+					NOT  = { has_technology_researched = tradition_of_equality } #Anbennar
+				}
+
+			}
+			add = {
+				value = 0.025
+			}
+		}		
+	}
+
+	# Multiplier applied to the weight for an appropriate commander will be selected from the character pool to lead the IG
+	# root = interest group
+	commander_leader_weight = {
+		value = 0.75
+	}
+
+	# Multiplier applied to the weight for an appropriate magnate will be selected from the character pool to lead the IG
+	# root = interest group
+	magnate_leader_weight = {
+		value = 0.25
+		#if = {
+		#	limit = {
+		#		c:JAP ?= owner
+		#		NOT = {
+		#			has_variable = japan_restoration_complete
+		#		}
+		#	}
+		#	add = 5
+		#}
+	}
+
+	# Multiplier applied to the weight for an appropriate executive will be selected from the character pool to lead the IG
+	# root = interest group
+	executive_leader_weight = {
+		value = 0.1
+	}
+}
+

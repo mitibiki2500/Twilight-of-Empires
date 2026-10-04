@@ -1,0 +1,95 @@
+﻿
+# JE1 modifiers_while_active
+portnamm_je1_active_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_ig_petty_bourgeoisie_pop_attraction_mult = -0.25
+	interest_group_ig_industrialists_pop_attraction_mult = 0.25
+	country_liberty_desire_add = 0.2
+}
+
+# JE6: arts production and attraction from JE progress, monthly update. This modifier is per 1 progress bar
+portnamm_age_of_art_active_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	building_group_bg_arts_throughput_add = 0.0005
+	interest_group_ig_intelligentsia_pop_attraction_mult = 0.0005
+}
+
+# JE6: decaying country modifier upon failure
+portnamm_industrialists_ascendancy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_ig_industrialists_pop_attraction_mult = 0.5
+	interest_group_ig_industrialists_pol_str_mult = 0.5
+}
+
+# JE2: modifiers_while_active
+portnamm_je2_active_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	state_capitalists_investment_pool_efficiency_mult = 0.15
+	country_max_companies_add = 1
+}
+
+# JE2: max construction and prestige from extracted wealth, monthly update. This modifier is per 1M
+portnamm_wealth_extraction_impact = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+    state_building_construction_sector_max_level_add = 1
+	country_prestige_add = 6
+}
+
+# JE2: Permanent modifier given upon JE2 completion
+portnamm_je2_permanent_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	state_capitalists_investment_pool_efficiency_mult = 0.30
+	country_max_companies_add = 1
+}
+
+
+
+
+
+### JE4: Directoratism Ideas ###
+portnamm_je4_active_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_radicals_and_loyalists_from_sol_change_mult = 0.2
+	country_loyalists_from_legitimacy_mult = 0.2
+	state_capitalists_investment_pool_efficiency_mult = 0.1
+}
+
+### JE5: Growing Tension in Factories ###
+
+# Throughput penalty for capitalists population ratio (multiplied by script value)
+portnamm_je5_throughput_penalty = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	building_group_bg_manufacturing_throughput_add = -2
+	building_group_bg_mining_throughput_add = -2
+	building_group_bg_agriculture_throughput_add = -2
+	building_group_bg_plantations_throughput_add = -2
+	building_group_bg_logging_throughput_add = -2
+	building_group_bg_rubber_throughput_add = -2
+	building_group_bg_oil_extraction_throughput_add = -2
+	building_group_bg_fishing_throughput_add = -2
+}
+
+# Foreign state modifier from directorate exploitation (intended in state scope, but due to script limitations moved to country scope)
+portnamm_je5_foreign_exploitation_country = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_non_state_religion_wages_mult = -0.5
+	country_state_religion_wages_mult = -0.5
+	state_radicals_and_loyalists_from_sol_change_mult = 1.0
+	building_minimum_wage_mult = -1.0
+}
+
+portnamm_je5_foreign_exploitation_halved_country = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_non_state_religion_wages_mult = -0.25
+	country_state_religion_wages_mult = -0.25
+	state_radicals_and_loyalists_from_sol_change_mult = 0.5
+	building_minimum_wage_mult = -0.5
+}
+
+# Penalty when JE5 button to halve exploitation is pressed
+portnamm_je5_industrialist_penalty = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_ig_industrialists_pol_str_mult = -0.3
+	interest_group_ig_industrialists_approval_add = -5
+}
+

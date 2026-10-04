@@ -1,0 +1,281 @@
+@tooltip_max_width = 550 #copied from tooltip.gui
+
+@tooltip_fixed_width = 500 #for 2 column layouts etc, since max_width is quite wide
+@tooltip_fixed_column_width = 245 #tooltip_fixed_width/2 - 10/2
+@tooltip_fixed_column_width_minus_40 = 205
+@tooltip_fixed_column_width_minus_16 = 229
+
+types TooltipTypes
+{
+	type FancyTooltip_Production_Spell = FancyTooltipWidgetType { #based on FancyTooltip_Institution
+		blockoverride "text" {
+			text = "DATA_PRODUCTION_SPELL_NAME_TOOLTIP"
+		}
+
+		blockoverride "icon_texture" {
+			texture = "gfx/interface/illustrations/institutions/colonization.dds" #or maybe something else? idk. will probably have to manually assign these eventually
+		}
+		
+		blockoverride "name" {
+			text = "DATA_PRODUCTION_SPELL_TITLE_TOOLTIP"
+		}
+
+		blockoverride "type" {
+			text = "TOOLTIP_TYPE_SPELL"
+		}
+
+		blockoverride "go_to_button_visibility" {
+			visible = yes
+		}
+
+		blockoverride "go_to_button_properties" {
+			onclick = "[InformationPanelBar.ClosePanel]"
+			onclick = "[MapListPanelManager.CloseCurrentPanel]"
+			onclick = "[GetVariableSystem.SetOrToggle('magic_panel_visible', GetVariableSystem.Get('magic_last_tab'))]"
+		}
+	}
+	type FancyTooltip_Military_Spell = FancyTooltipWidgetType { #based on FancyTooltip_Institution
+		blockoverride "text" {
+			text = "DATA_MILITARY_SPELL_NAME_TOOLTIP" 
+		}
+
+		blockoverride "icon_texture" {
+			texture = "gfx/interface/illustrations/institutions/colonization.dds" #or maybe something else? idk. will probably have to manually assign these eventually
+		}
+		
+		blockoverride "name" {
+			text = "DATA_MILITARY_SPELL_TITLE_TOOLTIP"
+		}
+
+		blockoverride "type" {
+			text = "TOOLTIP_TYPE_SPELL"
+		}
+
+		blockoverride "go_to_button_visibility" {
+			visible = yes
+		}
+
+		blockoverride "go_to_button_properties" {
+			onclick = "[InformationPanelBar.ClosePanel]"
+			onclick = "[MapListPanelManager.CloseCurrentPanel]"
+			onclick = "[GetVariableSystem.SetOrToggle('magic_panel_visible', GetVariableSystem.Get('magic_last_tab'))]"
+		}
+	}
+	type FancyTooltip_Society_Spell = FancyTooltipWidgetType { #based on FancyTooltip_Institution
+	#i'm not actually sure this will work, but we can see
+		blockoverride "text" {
+			text = "DATA_SOCIETY_SPELL_NAME_TOOLTIP" #todo
+		}
+
+		blockoverride "icon_texture" {
+			texture = "gfx/interface/illustrations/institutions/colonization.dds" #or maybe something else? idk. will probably have to manually assign these eventually
+		}
+		
+		blockoverride "name" {
+			text = "DATA_SOCIETY_SPELL_TITLE_TOOLTIP" #TODO
+		}
+
+		blockoverride "type" {
+			text = "TOOLTIP_TYPE_SPELL"
+		}
+
+		blockoverride "go_to_button_visibility" {
+			visible = yes
+		}
+
+		blockoverride "go_to_button_properties" {
+			onclick = "[InformationPanelBar.ClosePanel]"
+			onclick = "[MapListPanelManager.CloseCurrentPanel]"
+			onclick = "[GetVariableSystem.SetOrToggle('magic_panel_visible', GetVariableSystem.Get('magic_last_tab'))]"
+		}
+	}
+
+	type FancyTooltip_No_Production_Spell = FancyTooltipWidgetType { 
+		blockoverride "text" {
+			text = "DATA_NO_PRODUCTION_SPELL_TOOLTIP"
+		}
+
+		blockoverride "icon_texture" {
+			texture = "[GetInstitutionType(Scope.GetFlagName).GetIcon]"
+		}
+		
+		blockoverride "name" {
+			text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+		}
+
+		blockoverride "type" {
+			text = "TOOLTIP_TYPE_SPELL"
+		}
+
+		blockoverride "go_to_button_visibility" {
+			visible = yes
+		}
+
+		blockoverride "go_to_button_properties" {
+			onclick = "[InformationPanelBar.ClosePanel]"
+			onclick = "[MapListPanelManager.CloseCurrentPanel]"
+			onclick = "[GetVariableSystem.SetOrToggle('magic_panel_visible', GetVariableSystem.Get('magic_last_tab'))]"
+		}
+	}
+
+	type FancyTooltip_No_Military_Spell = FancyTooltipWidgetType { 
+		blockoverride "text" {
+			text = "DATA_NO_MILITARY_SPELL_TOOLTIP"
+		}
+
+		blockoverride "icon_texture" {
+			texture = "[GetInstitutionType(Scope.GetFlagName).GetIcon]"
+		}
+		
+		blockoverride "name" {
+			text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+		}
+
+		blockoverride "type" {
+			text = "TOOLTIP_TYPE_SPELL"
+		}
+
+		blockoverride "go_to_button_visibility" {
+			visible = yes
+		}
+
+		blockoverride "go_to_button_properties" {
+			onclick = "[InformationPanelBar.ClosePanel]"
+			onclick = "[MapListPanelManager.CloseCurrentPanel]"
+			onclick = "[GetVariableSystem.SetOrToggle('magic_panel_visible', GetVariableSystem.Get('magic_last_tab'))]"
+		}
+	}
+
+	type FancyTooltip_No_Society_Spell = FancyTooltipWidgetType { 
+		blockoverride "text" {
+			text = "DATA_NO_SOCIETY_SPELL_TOOLTIP"
+		}
+
+		blockoverride "icon_texture" {
+			texture = "[GetInstitutionType(Scope.GetFlagName).GetIcon]"
+		}
+		
+		blockoverride "name" {
+			text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+		}
+
+		blockoverride "type" {
+			text = "TOOLTIP_TYPE_SPELL"
+		}
+
+		blockoverride "go_to_button_visibility" {
+			visible = yes
+		}
+
+		blockoverride "go_to_button_properties" {
+			onclick = "[InformationPanelBar.ClosePanel]"
+			onclick = "[MapListPanelManager.CloseCurrentPanel]"
+			onclick = "[GetVariableSystem.SetOrToggle('magic_panel_visible', GetVariableSystem.Get('magic_last_tab'))]"
+		}
+	}
+
+	type FancyTooltip_NationalJournalEntry = FancyTooltipWidgetType { # Change the datamodel wrap to allow for the display of more countries
+		
+		blockoverride "text" {
+		raw_text = "placeholder"
+		}
+		blockoverride "name" {
+			raw_text = "National Journal Entry"
+		}
+
+		blockoverride "type" {
+			raw_text = ""
+		}
+
+		blockoverride "icon_texture" {
+			texture = "gfx/interface/main_hud/journal_btn.dds"
+		}
+		blockoverride "icon_size" {
+			size = { 70 70 }
+		}
+		blockoverride "tooltip_content_after" {	
+			dynamicgridbox = { 
+				datamodel_wrap = 10
+				flipdirection = no
+				datamodel = "[Country.MakeScope.GetList('national_journal_entry_list')]"
+					item = {
+						textbox = {
+							#margin_top = 5
+							#margin_right = 5
+							datacontext = "[Scope.GetCountry]"
+							text = "[Country.GetName]"
+							align = nobaseline
+							autoresize = yes
+						}					
+					}
+			}
+		}				
+	}
+
+	type FancyTooltip_RegionalJournalEntry = FancyTooltipWidgetType { #This just mimics the look of a concept, as I couldn't pull a concept directly into the tooltip.
+		
+		blockoverride "text" {
+		raw_text = "placeholder"
+		}
+		blockoverride "name" {
+			raw_text = "Regional Journal Entry"
+		}
+
+		blockoverride "type" {
+			raw_text = ""
+		}
+
+		blockoverride "icon_texture" {
+			#texture = "gfx/interface/icons/both_small2.dds"
+			#texture = "gfx/interface/icons/outliner_je.dds"
+			texture = "gfx/interface/icons/war_goals/unification.dds"
+			#texture = "gfx/interface/icons/war_goals/secession.dds"
+			#texture = "gfx/interface/icons/generic_icons/secession_culture_ongoing.dds"
+		}
+		blockoverride "icon_size" {
+			size = { 50 50 }
+		}
+		blockoverride "tooltip_content_after" {	
+			textbox = {
+			#text = "REGIONAL_JOURNAL_ENTRY_LIST_LOC"
+			align = nobaseline
+			autoresize = yes
+						}								
+		}				
+	}
+	type FancyTooltip_DescriptionWithIcon = FancyTooltipWidgetType { #Unused rn as using it would require overwriting the entire cooltip txt which would be bad for intermod compatabilitly. If we ever have more major cooltips to add then this could be used for the religion descriptions tt's.
+		blockoverride "text" {
+			
+		}
+		
+
+		blockoverride "name" {
+			raw_text = "#yellow [Religion.GetNameNoFormatting]#! Description"
+		}
+		
+
+		blockoverride "icon_texture" {
+			texture = "[Religion.GetTexture]"
+		}
+
+		blockoverride "type" {
+			text = "TOOLTIP_TYPE_RELIGION"
+		}
+
+		blockoverride "go_to_button_visibility" {
+			visible = yes
+		}
+
+		blockoverride "go_to_button_properties" {
+			onclick = "[InformationPanelBar.OpenReligionInfoPanel(Religion.AccessSelf)]"
+		}
+
+		blockoverride "tooltip_content_after" 
+		{
+
+	}
+	}
+
+}
+
+

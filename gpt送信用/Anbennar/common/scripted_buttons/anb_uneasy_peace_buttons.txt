@@ -1,0 +1,103 @@
+﻿#Foster Cooperation Between The 2
+scripted_button_expanse_cooperation_button = {
+    name = "scripted_button_expanse_cooperation_button_name"
+	desc = "scripted_button_expanse_cooperation_button_desc"
+
+    visible = { #Only available to Tiru Moine
+        c:B42 = this
+    }
+
+    possible = {
+        custom_tooltip = {
+            text = expanse_cooperation_button_options_exhausted
+            NOT = {
+                AND = {
+                    has_variable = joint_operations_completed
+                    has_variable = mutual_concessions_completed
+                }
+            }
+        }
+        custom_tooltip = {
+            text = expanse_cooperation_button_cooldown
+            NOT = {
+                has_variable = expanse_cooperation_button_cooldown
+            }
+        }
+    }
+
+    effect = {
+        trigger_event = { id = anb_uneasy_peace.007 popup = yes }
+    }
+
+    ai_chance = {
+		value = 20
+	}
+}
+
+#Settle the Rivalry
+scripted_button_expanse_rivalry_button = {
+    name = "scripted_button_expanse_rivalry_button_name"
+	desc = "scripted_button_expanse_rivalry_button_desc"
+    
+    visible = { #Only available to Plumstead and Beggaston
+        OR = {
+            c:B41 = this
+            c:B34 = this
+        }
+    }
+
+    cooldown = {
+        years = 5
+    }
+
+    possible = {
+        OR = { 
+            c:B34 ?= {
+                has_diplomatic_pact = {who = c:B41 type = rivalry }
+            }
+            c:B41 ?= {
+                has_diplomatic_pact = {who = c:B34 type = embargo }
+            }
+            c:B34 = { 
+                "relations(scope:plumstead_nation_scope)" >= relations_threshold:neutral
+            }
+        }
+        custom_tooltip = { #The unity bar is at the max
+            text = je_uneasy_peace_unity_75
+            scope:journal_entry = {
+                "scripted_bar_progress(uneasy_peace_bar)" >= 75
+            }
+        } #TODO Add mention of claims
+    }
+
+    effect = {
+        if = {
+            limit = {
+                c:B41 = this
+            }
+            c:B41 = {
+                save_scope_as = rival_setaside_sender
+            }
+            c:B34 = {
+                save_scope_as = rival_setaside_receiver
+                trigger_event = { id = anb_uneasy_peace.010 }
+            }
+        }
+        if = {
+            limit = {
+                c:B34 = this
+            }
+            c:B34 = {
+                save_scope_as = rival_setaside_sender
+            }
+            c:B41 = {
+                save_scope_as = rival_setaside_receiver
+                trigger_event = { id = anb_uneasy_peace.010 } 
+            }
+        }
+    }
+
+    ai_chance = {
+		value = 20
+	}
+}

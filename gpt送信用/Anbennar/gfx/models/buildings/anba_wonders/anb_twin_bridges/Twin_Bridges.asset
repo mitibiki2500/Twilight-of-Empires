@@ -1,0 +1,19 @@
+pdxmesh = {
+	name = "Twin_Bridges_mesh"
+	file = "Twin_Bridges.mesh"
+
+	meshsettings = {
+		name = "Plane.015"
+		index = 0
+		texture_diffuse = "Twin_Bridges_Diffuse.dds"
+		texture_normal = "Twin_Bridges_Normal.dds"
+		texture_specular = "Twin_Bridges_Properties.dds"
+		shader = "standard_alpha_to_coverage"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "Twin_Bridges_entity"
+	pdxmesh = "Twin_Bridges_mesh"
+}

@@ -1,0 +1,2216 @@
+﻿namespace = anb_comet_investigation
+
+#Starting Event (000)
+anb_comet_investigation.001 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.001.t
+    desc = anb_comet_investigation.001.d
+    flavor = anb_comet_investigation.001.f
+
+    event_image = {
+        video = "unspecific_gears_pistons"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #Explainer Option
+        name = anb_comet_investigation.001.a
+        default_option = yes
+
+        custom_tooltip = {
+            text = comet_starting_explanation
+        }
+    }
+}
+
+#Recruiting Events (100)
+##Selecting who to recruit
+anb_comet_investigation.101 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.101.t
+    desc = anb_comet_investigation.101.d
+    flavor = anb_comet_investigation.101.f
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #Look for Scientists
+        name = anb_comet_investigation.101.a
+        default_option = yes
+        trigger = {
+            NOT = {
+                AND = {
+                    has_variable = comet_chronicler_recruited_var
+                    has_variable = comet_gnome_recruited_var 
+                }
+            }
+        }
+        custom_tooltip = {
+            text = comet_sci_search
+            set_variable = { name = comet_sci_search_var value = yes }
+        }
+
+        ai_chance = {
+            base = 50
+        }
+    }
+
+    option = { #Look for Field Workers
+        name = anb_comet_investigation.101.b
+        trigger = {
+            NOT = {
+                has_variable = comet_kobold_recruited_var #Update this as more Experts are added
+            }
+        }
+        custom_tooltip = {
+            text = comet_field_search
+            set_variable = { name = comet_field_search_var value = yes }
+        }
+
+        ai_chance = {
+            base = 50
+        }
+    }
+
+    option = { #Look for Mages
+        name = anb_comet_investigation.101.c
+        trigger = {
+            NOT = {
+                has_variable = comet_mwalim_recruited_var #Update this as more Experts are added
+            }
+        }
+        custom_tooltip = {
+            text = comet_mage_search
+            set_variable = { name = comet_mage_search_var value = yes }
+        }
+
+        ai_chance = {
+            base = 50
+        }
+    }
+
+    option = { #Nevermind
+        name = anb_comet_investigation.101.e
+        remove_variable = comet_char_button_var
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+##Recruitment Redirect
+anb_comet_investigation.102 = {
+    type = country_event
+    hidden = yes
+
+    immediate = {
+        if = {
+            limit = {
+                has_variable = comet_sci_search_var
+            }
+            #List of all Scientist Experts
+            random_list = {
+                33 = { trigger = { NOT = { has_variable = comet_chronicler_recruited_var has_variable = comet_chronicler_no_var } } trigger_event = { id = anb_comet_investigation.103 }}
+                33 = { trigger = { NOT = { has_variable = comet_gnome_recruited_var has_variable = comet_gnome_no_var } } trigger_event = { id = anb_comet_investigation.104 }}
+            }
+        }
+        if = {
+            limit = {
+                has_variable = comet_field_search_var
+            }
+            #List of all Field Worker Experts
+            random_list = {
+                33 = { trigger = { NOT = { has_variable = comet_kobold_recruited_var has_variable = comet_kobold_no_var } } trigger_event = { id = anb_comet_investigation.105 }}
+            }
+        }
+        if = {
+            limit = {
+                has_variable = comet_mage_search_var
+            }
+            random_list = {
+                33 = { trigger = { NOT = { has_variable = comet_mwalim_recruited_var has_variable = comet_mwalim_no_var } } trigger_event = { id = anb_comet_investigation.106 }}
+            }
+        }
+    }
+}
+
+#Chronicler Recruitment
+anb_comet_investigation.103 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.103.t
+    desc = anb_comet_investigation.103.d
+    flavor = anb_comet_investigation.103.f
+
+    event_image = {
+        video = "unspecific_signed_contract"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        remove_variable = comet_sci_search_var
+    }
+
+    option = { #Recruit
+        name = anb_comet_investigation.103.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_chronicler_recruitment_desc
+            set_variable = { name = comet_chronicler_recruited_var value = yes }
+        }
+        add_modifier = {
+            name = comet_chronicler_upkeep
+            is_decaying = no
+        }
+        ai_chance = { #AI should always just recruit the first one that is found
+            base = 100
+        }
+    }
+
+    option = { #Do not recruit
+        name = anb_comet_investigation.103.b
+        custom_tooltip = {
+            text = comet_chronicler_recuitment_no_desc
+            set_variable = { name = comet_chronicler_no_var value = yes years = 2 }
+            set_variable = { name = comet_sci_search_var value = yes }
+        }
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+#Gnome Recruitment
+anb_comet_investigation.104 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.104.t
+    desc = anb_comet_investigation.104.d
+    flavor = anb_comet_investigation.104.f
+
+    event_image = {
+        video = "unspecific_gears_pistons"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        remove_variable = comet_sci_search_var
+    }
+
+    option = { #Recruit
+        name = anb_comet_investigation.104.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_gnome_recruitment_desc
+            set_variable = { name = comet_gnome_recruited_var value = yes }
+        }
+        add_modifier = {
+            name = comet_gnome_upkeep
+            is_decaying = no
+        }
+        ai_chance = { #AI should always just recruit the first one that is found
+            base = 100
+        }
+    }
+
+    option = { #Do not recruit
+        name = anb_comet_investigation.104.b
+        custom_tooltip = {
+            text = comet_gnome_recuitment_no_desc
+            set_variable = { name = comet_gnome_no_var value = yes years = 2 }
+            set_variable = { name = comet_sci_search_var value = yes }
+        }
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+#Kobold Recruitment
+anb_comet_investigation.105 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.105.t
+    desc = anb_comet_investigation.105.d
+    flavor = anb_comet_investigation.105.f
+
+    event_image = {
+        video = "africa_desert_expedition"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        remove_variable = comet_field_search_var
+    }
+
+    option = { #Recruit
+        name = anb_comet_investigation.105.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_kobold_recruitment_desc
+            set_variable = { name = comet_kobold_recruited_var value = yes }
+        }
+        add_modifier = {
+            name = comet_kobold_upkeep
+            is_decaying = no
+        }
+        ai_chance = { #AI should always just recruit the first one that is found
+            base = 100
+        }
+    }
+
+    option = { #Do not recruit
+        name = anb_comet_investigation.105.b
+        custom_tooltip = {
+            text = comet_kobold_recuitment_no_desc
+            set_variable = { name = comet_kobold_no_var value = yes years = 2 }
+            set_variable = { name = comet_field_search_var value = yes }
+        }
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+#Mwalim Recruitment
+anb_comet_investigation.106 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.106.t
+    desc = anb_comet_investigation.106.d
+    flavor = anb_comet_investigation.106.f
+
+    event_image = {
+        video = "africa_diplomats_negotiating"
+    }
+
+    icon = "gfx/interface/icons/pops_icons/mages.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        remove_variable = comet_mage_search_var
+    }
+
+    option = { #Recruit
+        name = anb_comet_investigation.106.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_mwalim_recruitment_desc
+            set_variable = { name = comet_mwalim_recruited_var value = yes }
+        }
+        add_modifier = {
+            name = comet_mwalim_upkeep
+            is_decaying = no
+        }
+        ai_chance = { #AI should always just recruit the first one that is found
+            base = 100
+        }
+    }
+
+    option = { #Do not recruit
+        name = anb_comet_investigation.106.b
+        custom_tooltip = {
+            text = comet_mwalim_recuitment_no_desc
+            set_variable = { name = comet_mwalim_no_var value = yes years = 2 }
+            set_variable = { name = comet_mage_search_var value = yes }
+        }
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+
+
+
+#Field Expedition Events (200)
+##Expedition Redirect
+anb_comet_investigation.201 = {
+    type = country_event
+    hidden = yes
+
+    immediate = {
+        set_variable = {
+            name = comet_expedition_event_cooldown_var
+            value = yes
+            months = 3
+        }
+        #Druznar
+        if = {
+            limit = {
+                has_variable = comet_druznar_expedition_var
+            }
+            if = {
+                limit = {
+                    var:comet_expedition_var < var:comet_druznar_expedition_var
+                }
+                random_list = {
+                    33 = { trigger = { NOT = { has_variable = comet_druznar_event1_triggered_var } } trigger_event = { id = anb_comet_investigation.204 }}
+                    33 = { trigger = { NOT = { has_variable = comet_druznar_event2_triggered_var } } trigger_event = { id = anb_comet_investigation.205 }}
+                    33 = { trigger = { NOT = { has_variable = comet_druznar_event3_triggered_var } } trigger_event = { id = anb_comet_investigation.206 }}
+                }
+            }
+            else = {
+                trigger_event = { id = anb_comet_investigation.207 }
+            }
+        }
+        #Chronicler
+        if = {
+            limit = {
+                has_variable = comet_chronicler_expedition_var
+            }
+            if = {
+                limit = {
+                    var:comet_expedition_var < var:comet_chronicler_expedition_var
+                }
+                random_list = {
+                    33 = { trigger = { NOT = { has_variable = comet_chronicler_event1_triggered_var } } trigger_event = { id = anb_comet_investigation.211 }}
+                    33 = { trigger = { NOT = { has_variable = comet_chronicler_event2_triggered_var } } trigger_event = { id = anb_comet_investigation.212 }}
+                    33 = { trigger = { NOT = { has_variable = comet_chronicler_event3_triggered_var } } trigger_event = { id = anb_comet_investigation.213 }}
+                }
+            }
+            else = {
+                trigger_event = { id = anb_comet_investigation.214 }
+            }
+        }
+        #Gnome
+        if = {
+            limit = {
+                has_variable = comet_gnome_expedition_var
+            }
+            if = {
+                limit = {
+                    var:comet_expedition_var < var:comet_gnome_expedition_var
+                }
+                random_list = { 
+                    33 = { trigger = { NOT = { has_variable = comet_gnome_event1_triggered_var } } trigger_event = { id = anb_comet_investigation.216 }}
+                    33 = { trigger = { NOT = { has_variable = comet_gnome_event2_triggered_var } } trigger_event = { id = anb_comet_investigation.217 }}
+                    33 = { trigger = { NOT = { has_variable = comet_gnome_event3_triggered_var } } trigger_event = { id = anb_comet_investigation.218 }}
+                }
+            }
+            else = {
+                trigger_event = { id = anb_comet_investigation.219 }
+            }
+        }
+        #Kobold
+        if = {
+            limit = {
+                has_variable = comet_kobold_expedition_var
+            }
+            if = {
+                limit = {
+                    var:comet_expedition_var < var:comet_kobold_expedition_var
+                }
+                random_list = { 
+                    33 = { trigger = { NOT = { has_variable = comet_kobold_event1_triggered_var } } trigger_event = { id = anb_comet_investigation.221 }}
+                    33 = { trigger = { NOT = { has_variable = comet_kobold_event2_triggered_var } } trigger_event = { id = anb_comet_investigation.222 }}
+                    33 = { trigger = { NOT = { has_variable = comet_kobold_event3_triggered_var } } trigger_event = { id = anb_comet_investigation.223 }}
+                }
+            }
+            else = {
+                trigger_event = { id = anb_comet_investigation.224 }
+            }
+        }
+        #Mwalim
+        if = {
+            limit = {
+                has_variable = comet_mwalim_expedition_var
+            }
+            if = {
+                limit = {
+                    var:comet_expedition_var < var:comet_mwalim_expedition_var
+                }
+                random_list = {
+                    33 = { trigger = { NOT = { has_variable = comet_mwalim_event1_triggered_var } } trigger_event = { id = anb_comet_investigation.226 }}
+                    33 = { trigger = { NOT = { has_variable = comet_mwalim_event2_triggered_var } } trigger_event = { id = anb_comet_investigation.227 }}
+                }
+            }
+            else = {
+                trigger_event = { id = anb_comet_investigation.228 }
+            }
+        }
+    }
+}
+
+##Selecting an expedition
+anb_comet_investigation.202 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.202.t
+    desc = anb_comet_investigation.202.d
+    flavor = anb_comet_investigation.202.f
+
+    event_image = {
+        video = "unspecific_trains"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #Druznar Option (Event Ids between 203-209)
+        name = anb_comet_investigation.202.a
+        default_option = yes
+        trigger = {
+            has_variable = comet_druznar_recruited_var
+            NOT = {
+                has_variable = comet_druznar_expedition_completed_var
+            }
+        }
+        #These vars will be removed after the field expedition is completed
+        set_variable = { name = comet_druznar_expedition_var value = 20  } #Determines length of expedition #TODO Move these variables to the starting event
+        set_variable = { name = comet_expedition_var value = 0  } #Confirms someone's on the expedition and also tracks it's progress.
+        trigger_event = { id = anb_comet_investigation.203 days = 7 }
+
+        ai_chance = {
+            base = 50
+        }
+    }
+    
+    option = { #Chronicler Option (Event Ids between 210-214)
+        name = anb_comet_investigation.202.b
+        trigger = {
+            has_variable = comet_chronicler_recruited_var
+            NOT = {
+                has_variable = comet_chronicler_expedition_completed_var
+            }
+        }
+        #These vars will be removed after the field expedition is completed
+        set_variable = { name = comet_chronicler_expedition_var value = 26  } #Determines length of expedition
+        set_variable = { name = comet_expedition_var value = 0  } #Confirms someone's on the expedition and also tracks it's progress.
+        trigger_event = { id = anb_comet_investigation.210 months = 1 }
+
+        ai_chance = {
+            base = 50
+        }
+    }
+
+    option = { #Gnome Option (Event Ids between 215-219)
+        name = anb_comet_investigation.202.c
+        trigger = {
+            has_variable = comet_gnome_recruited_var
+            NOT = {
+                has_variable = comet_gnome_expedition_completed_var
+            }
+        }
+        #These vars will be removed after the field expedition is completed
+        set_variable = { name = comet_gnome_expedition_var value = 38  } #Determines length of expedition
+        set_variable = { name = comet_expedition_var value = 0  } #Confirms someone's on the expedition and also tracks it's progress.
+        trigger_event = { id = anb_comet_investigation.215 days = 7 }
+
+        ai_chance = {
+            base = 50
+        }
+    }
+
+    option = { #Kobold Option (Event Ids between 220-224)
+        name = anb_comet_investigation.202.e
+        trigger = {
+            has_variable = comet_kobold_recruited_var
+            NOT = {
+                has_variable = comet_kobold_expedition_completed_var
+                has_variable = comet_kobold_away_var
+            }
+        }
+        #These vars will be removed after the field expedition is completed
+        set_variable = { name = comet_kobold_expedition_var value = 30  } #Determines length of expedition
+        set_variable = { name = comet_expedition_var value = 0  } #Confirms someone's on the expedition and also tracks it's progress.
+        trigger_event = { id = anb_comet_investigation.220 months = 3 }
+
+        ai_chance = {
+            base = 50
+        }
+    }
+
+    option = { #Mwalim Option (Event Ids between 225-230)
+        name = anb_comet_investigation.202.g
+        trigger = {
+            has_variable = comet_mwalim_recruited_var
+            NOT = {
+                has_variable = comet_mwalim_expedition_completed_var
+            }
+        }
+        #These vars will be removed after the field expedition is completed
+        set_variable = { name = comet_mwalim_expedition_var value = 24  } #Determines length of expedition
+        set_variable = { name = comet_expedition_var value = 0  } #Confirms someone's on the expedition and also tracks it's progress.
+        trigger_event = { id = anb_comet_investigation.225 days = 14 }
+
+        ai_chance = {
+            base = 50
+        }
+    }
+
+    option = { #Nevermind
+        name = anb_comet_investigation.202.h
+        remove_variable = comet_expedition_button_var
+
+        ai_chance = {
+            base = 0
+        }
+    }
+}
+
+##Druznar Starting Event
+anb_comet_investigation.203 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.203.t
+    desc = anb_comet_investigation.203.d
+    flavor = anb_comet_investigation.203.f
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = {
+        name = anb_comet_investigation.203.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_explanation_desc
+        }
+    }
+}
+
+##Druznar Event 1: Astral Terror
+anb_comet_investigation.204 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.204.t
+    desc = anb_comet_investigation.204.d
+    flavor = anb_comet_investigation.204.f
+
+    event_image = {
+        video = "unspecific_sick_in_hospital"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_druznar_event1_triggered_var years = 2 }
+    }
+
+    option = { #Force him to take a break
+        name = anb_comet_investigation.204.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_break_desc
+            set_variable = { name = comet_expedition_break_var value = yes months = 4 }
+        }
+    }
+
+    option = { #Let him continue
+        name = anb_comet_investigation.204.b
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_druznar_terror_5050_desc
+            random_list = {
+                50 = {}
+                50 = { set_variable = { name = comet_expedition_incap_var value = yes months = 8 }}
+            }
+        }
+    }
+}
+##Druznar Event 2: Comet Sighted
+anb_comet_investigation.205 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.205.t
+    desc = anb_comet_investigation.205.d
+    flavor = anb_comet_investigation.205.f
+
+    event_image = {
+        video = "unspecific_gears_pistons"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_druznar_event2_triggered_var years = 2 }
+    }
+
+    option = { #A troubling delay
+        name = anb_comet_investigation.205.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_delay_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = -2
+            }
+        }
+    }
+    option = { #Study the comet anyways
+        name = anb_comet_investigation.205.b
+        custom_tooltip = {
+            text = comet_expedition_comet_sighted_5050_desc
+            random_list = {
+                50 = {
+                    change_variable = {
+                        name = comet_expedition_var
+                        add = 3
+                    } #Research progress
+                    add_modifier = {
+                        name = comet_research_boost
+                        years = 2
+                    }
+                }
+                50 = {
+                    change_variable = {
+                        name = comet_expedition_var
+                        add = -4
+                    } #TODO Should there be a post notification?
+                }
+            }
+        }
+    }
+}
+##Druznar Event 3: Queue Troubles
+anb_comet_investigation.206 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.206.t
+    desc = anb_comet_investigation.206.d
+    flavor = anb_comet_investigation.206.f
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_druznar_event3_triggered_var years = 2 }
+    }
+
+    option = { #Accept the wait
+        name = anb_comet_investigation.206.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_delay_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = -2
+            }
+        }
+    }
+    option = { #Have the government step in
+        name = anb_comet_investigation.206.b
+        custom_tooltip = {
+            text = comet_expedition_boost_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = 1
+            }
+        }
+        add_radicals = {
+            value = small_radicals
+            pop_type = academics
+        }
+        ig:ig_intelligentsia = {
+            add_modifier = {
+                name = comet_queue_force
+                months = 6
+            }
+        }
+        add_modifier = {
+            name = comet_queue_auth
+            months = 6
+        }
+    }
+}
+##Druznar Concluding Event
+anb_comet_investigation.207 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.207.t
+    desc = anb_comet_investigation.207.d
+    flavor = anb_comet_investigation.207.f
+
+    event_image = {
+        video = "unspecific_ruler_speaking_to_people"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        remove_variable = comet_expedition_var
+        remove_variable = comet_druznar_expedition_var
+    }
+
+    option = {
+        name = anb_comet_investigation.207.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_druznar_expedition_completed_desc
+            set_variable = {
+                name = comet_druznar_expedition_completed_var
+                value = yes
+            }
+        }
+        je:je_comet_investigation = {
+            add_progress = { value = 150 name = dur_vazhatun_bar }
+        }
+    }
+}
+
+##Chronicler Starting Event
+anb_comet_investigation.210 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.210.t
+    desc = anb_comet_investigation.210.d
+    flavor = anb_comet_investigation.210.f
+
+    event_image = {
+        video = "unspecific_signed_contract"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = {
+        name = anb_comet_investigation.210.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_explanation_desc
+        }
+    }
+}
+##Chronicler Event 1: Caught in the Unrest
+anb_comet_investigation.211 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.211.t
+    desc = anb_comet_investigation.211.d
+    flavor = anb_comet_investigation.211.f
+
+    event_image = {
+        video = "europenorthamerica_springtime_of_nations"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_chronicler_event1_triggered_var years = 2 }
+    }
+
+    option = { #Unfortunate
+        name = anb_comet_investigation.211.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_delay_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = -2
+            }
+        }
+    }
+}
+##Chronicler Event 2: Work Obligations
+anb_comet_investigation.212 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.212.t
+    desc = anb_comet_investigation.212.d
+    flavor = anb_comet_investigation.212.f
+
+    event_image = {
+        video = "unspecific_factory_closed"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_chronicler_event2_triggered_var years = 2 }
+    }
+
+    option = { #Accept the time loss
+        name = anb_comet_investigation.212.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_break_chron_desc
+            set_variable = { name = comet_expedition_break_var value = yes months = 4 }
+        }
+    }
+
+    option = { #Apply some pressure to the order
+        name = anb_comet_investigation.212.b
+        add_modifier = {
+            name = comet_chronicler_pressure
+            months = 6
+        }
+        ig:ig_intelligentsia = {
+            add_modifier = {
+                name = comet_chronicler_pressure_ig
+                years = 1
+            }
+        }
+        custom_tooltip = {
+            text = comet_expedition_boost_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = 2
+            }
+        }
+    }
+}
+##Chronicler Event 3: Buried Knowledge
+anb_comet_investigation.213 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.213.t
+    desc = anb_comet_investigation.213.d
+    flavor = anb_comet_investigation.213.f
+
+    event_image = {
+        video = "unspecific_gears_pistons"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_chronicler_event3_triggered_var years = 2}
+    }
+
+    option = { #Gain Progress
+        name = anb_comet_investigation.213.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_boost_large_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = 3
+            }
+        }
+    }
+
+    option = { #See what else is there
+        name = anb_comet_investigation.213.b
+        custom_tooltip = {
+            text = comet_expedition_delay_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = -2
+            }
+        }
+        #TODO Add More Bonuses?
+        add_modifier = {
+            name = comet_research_boost
+            years = 3
+        }
+    }
+}
+##Chronicler Concluding Event
+anb_comet_investigation.214 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.214.t
+    desc = anb_comet_investigation.214.d
+    flavor = anb_comet_investigation.214.f
+
+    event_image = {
+        video = "unspecific_signed_contract"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        remove_variable = comet_expedition_var
+        remove_variable = comet_chronicler_expedition_var
+    }
+
+    option = { 
+        name = anb_comet_investigation.214.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_chronicler_expedition_completed_desc
+            set_variable = { name = comet_chronicler_expedition_completed_var }
+        }
+        je:je_comet_investigation = {
+            add_progress = { value = 120 name = dur_vazhatun_bar }
+        }
+    }
+}
+
+##Gnome Starting Event
+anb_comet_investigation.215 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.215.t
+    desc = anb_comet_investigation.215.d
+    flavor = anb_comet_investigation.215.f
+
+    event_image = {
+        video = "middleeast_engineer_blueprint"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = {
+        name = anb_comet_investigation.215.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_explanation_desc
+        }
+    }
+}
+##Gnome Event 1: Telescopic Improvements
+anb_comet_investigation.216 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.216.t
+    desc = anb_comet_investigation.216.d
+    flavor = anb_comet_investigation.216.f
+
+    event_image = {
+        video = "unspecific_gears_pistons"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_gnome_event1_triggered_var years = 2 }
+    }
+
+    option = { #This will help significantly.
+        name = anb_comet_investigation.216.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_boost_large_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = 3
+            }
+        }
+        add_loyalists = {
+			value = small_radicals
+			strata = upper
+		}
+    }
+
+    option = { #Impelement more broadly
+        name = anb_comet_investigation.216.b
+        custom_tooltip = {
+            text = comet_expedition_boost_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = 1
+            }
+        }
+        add_loyalists = {
+			value = small_radicals
+			strata = middle
+		}
+        add_loyalists = {
+			value = small_radicals
+			strata = lower
+		}
+        #Research
+        add_modifier = {
+            name = comet_research_boost
+            years = 2
+        }
+        add_modifier = {
+            name = comet_telescopic_wide_implementation
+            years = 2
+        }
+    }
+}
+##Gnome Event 2: The March of Innovation
+anb_comet_investigation.217 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.217.t
+    desc = anb_comet_investigation.217.d
+    flavor = anb_comet_investigation.217.f
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_gnome_event2_triggered_var years = 2 }
+    }
+
+    option = { #Ignore them
+        name = anb_comet_investigation.217.a
+        default_option = yes
+        add_radicals = {
+            value = small_radicals
+            strata = upper
+        }
+        #Decrease IG Approval
+        ig:ig_landowners = {
+            add_modifier = {
+                name = comet_igs_ignored
+                years = 2
+            }
+        }
+    }
+
+    option = { #Pare things back
+        name = anb_comet_investigation.217.b
+        custom_tooltip = {
+            text = comet_expedition_delay_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = -2
+            }
+        }
+        #Add IG approval
+        ig:ig_landowners = {
+            add_modifier = {
+                name = comet_igs_listened
+                years = 2
+            }
+        }
+        add_radicals = {
+            value = small_radicals
+            pop_type = academics
+        }
+    }
+}
+##Gnome Event 3: A Solution in Need of a Problem
+anb_comet_investigation.218 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.218.t
+    desc = anb_comet_investigation.218.d
+    flavor = anb_comet_investigation.218.f
+
+    event_image = {
+        video = "unspecific_factory_closed"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_gnome_event3_triggered_var years = 2}
+    }
+
+    option = { #Convert to money
+        name = anb_comet_investigation.218.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_delay_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = -2
+            }
+        }
+        add_treasury = 8000
+    }
+
+    option = { #Convert to research
+        name = anb_comet_investigation.218.b
+        custom_tooltip = {
+            text = comet_expedition_delay_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = -2
+            }
+        }
+        #Research
+        add_modifier = {
+            name = comet_research_boost
+            years = 1
+        }
+    }
+}
+##Gnome Concluding Event
+anb_comet_investigation.219 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.219.t
+    desc = anb_comet_investigation.219.d
+    flavor = anb_comet_investigation.219.f
+
+    event_image = {
+        video = "middleeast_engineer_blueprint"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        remove_variable = comet_expedition_var
+        remove_variable = comet_gnome_expedition_var
+    }
+
+    option = { 
+        name = anb_comet_investigation.219.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_gnome_expedition_completed_desc
+            set_variable = comet_gnome_expedition_completed_var
+        }
+        je:je_comet_investigation = {
+            add_progress = { value = 200 name = dur_vazhatun_bar }
+        }
+    }
+}
+
+##Kobold Starting Event
+anb_comet_investigation.220 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.220.t
+    desc = anb_comet_investigation.220.d
+    flavor = anb_comet_investigation.220.f
+
+    event_image = {
+        video = "middleeast_jungle_expedition"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = {
+        name = anb_comet_investigation.220.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_explanation_desc
+        }
+    }
+}
+##Kobold Event 1: Harassed by Wildlife
+anb_comet_investigation.221 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.221.t
+    desc = anb_comet_investigation.221.d
+    flavor = anb_comet_investigation.221.f
+
+    event_image = {
+        video = "middleeast_jungle_expedition" 
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_kobold_event1_triggered_var years = 2 }
+    }
+
+    option = { #Send some military support
+        name = anb_comet_investigation.221.a
+        default_option = yes
+        trigger = {
+            army_size > 10
+        }
+        add_modifier = {
+            name = comet_kobold_extra_army
+            years = 1
+        }
+    }
+
+    option = { #Nothing we can do
+        name = anb_comet_investigation.221.b
+        custom_tooltip = {
+            text = comet_expedition_delay_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = -3
+            }
+        }
+    }
+
+#    option = { #Ask Amadia
+#        name = anb_comet_investigation.221.c
+#        #TODO
+#    }
+}
+##Kobold Event 2: Restricted Access
+anb_comet_investigation.222 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.222.t
+    desc = anb_comet_investigation.222.d
+    flavor = anb_comet_investigation.222.f
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_kobold_event2_triggered_var years = 2 }
+    }
+
+    option = { #Send a bribe
+        name = anb_comet_investigation.222.a
+        default_option = yes
+        add_modifier = {
+            name = comet_kobold_bribe
+            years = 1
+        }
+    }
+
+    option = { #Nothing we can do
+        name = anb_comet_investigation.222.b
+        custom_tooltip = {
+            text = comet_expedition_delay_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = -2
+            }
+        }
+    }
+
+#    option = { #Ask Amadia
+#        name = anb_comet_investigation.222.c
+#        #TODO
+#    }
+}
+##Kobold Event 3: Analyzing the Samples
+anb_comet_investigation.223 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.223.t
+    desc = anb_comet_investigation.223.d
+    flavor = anb_comet_investigation.223.f
+
+    event_image = {
+        video = "unspecific_gears_pistons"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_kobold_event3_triggered_var years = 2}
+    }
+
+    option = { #Ship the samples back
+        name = anb_comet_investigation.223.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_mwalim_treatise_slowdown_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = -1
+            }
+        }
+        add_modifier = {
+            name = comet_kobold_shipping
+            months = 6
+        }
+    }
+
+    option = { #Send a scientist over
+        name = anb_comet_investigation.223.b
+        trigger = {
+            OR = {
+                has_variable = comet_chronicler_recruited_var
+                has_variable = comet_gnome_recruited_var
+            }
+        }
+        custom_tooltip = {
+            text = comet_expedition_boost_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = 4
+            }
+        }
+    }
+}
+##Kobold Concluding Event
+anb_comet_investigation.224 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.224.t
+    desc = anb_comet_investigation.224.d
+    flavor = anb_comet_investigation.224.f
+
+    event_image = {
+        video = "unspecific_gears_pistons"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        remove_variable = comet_expedition_var
+        remove_variable = comet_kobold_expedition_var
+    }
+
+    option = {
+        name = anb_comet_investigation.224.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_kobold_expedition_completed_desc
+            set_variable = { name = comet_kobold_expedition_completed_var value = yes}
+        }
+        je:je_comet_investigation = {
+            add_progress = { value = 400 name = dur_vazhatun_bar }
+        }
+    }
+}
+
+##Mwalim Starting Event
+anb_comet_investigation.225 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.225.t
+    desc = anb_comet_investigation.225.d
+    flavor = anb_comet_investigation.225.f
+
+    event_image = {
+        video = "africa_animism"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = {
+        name = anb_comet_investigation.225.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_starting_explanation
+        }
+    }
+}
+##Mwalim Event 1: Studying the Treatises
+anb_comet_investigation.226 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.226.t
+    desc = anb_comet_investigation.226.d
+    flavor = anb_comet_investigation.226.f
+
+    event_image = {
+        video = "unspecific_signed_contract"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_mwalim_event1_triggered_var years = 2 }
+    }
+
+    option = { #Offer some of our own info
+        name = anb_comet_investigation.226.a
+        default_option = yes
+        #Research Penalty
+        add_modifier = {
+            name = comet_mwalim_treatise_tech
+            months = 6
+        }
+        #Progress
+        custom_tooltip = {
+            text = comet_mwalim_treatise_help_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = 2
+            }
+        }
+    }
+
+    option = { #This will take some time
+        name = anb_comet_investigation.226.b
+        custom_tooltip = {
+            text = comet_expedition_delay_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = -1
+            }
+        }
+    }
+
+    option = { #Have chronicler help
+        name = anb_comet_investigation.226.c
+        trigger = {
+            has_variable = comet_chronicler_recruited_var
+            NOT = {
+                has_variable = comet_chronicler_busy_var
+            }
+        }
+        custom_tooltip = {
+            text = comet_expedition_boost_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = 3
+            }
+        }
+        ai_chance = {
+            base = 100
+        }
+    }
+}
+##Mwalim Event 2: Gathering Materials
+anb_comet_investigation.227 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.227.t
+    desc = anb_comet_investigation.227.d
+    flavor = anb_comet_investigation.227.f
+
+    event_image = {
+        video = "asia_farmers_market"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        set_variable = { name = comet_mwalim_event2_triggered_var years = 2 }
+    }
+
+    option = { #Procure the materials
+        name = anb_comet_investigation.227.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_expedition_boost_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = 1
+            }
+        }
+        add_treasury = -20000
+    }
+
+    option = { #We cannot afford it
+        name = anb_comet_investigation.227.b
+        custom_tooltip = {
+            text = comet_expedition_delay_desc
+            change_variable = {
+                name = comet_expedition_var
+                add = -2
+            }
+        }
+    }
+}
+##Mwalim Event 3: Additional Preparations
+anb_comet_investigation.228 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.228.t
+    desc = anb_comet_investigation.228.d
+    flavor = anb_comet_investigation.228.f
+
+    event_image = {
+        video = "asia_buddhism"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #Let's prep some more
+        name = anb_comet_investigation.228.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_mwalim_additional_prep_desc
+            if = {
+                limit = {
+                    has_variable = comet_mwalim_additional_prep_var
+                }
+                change_variable = {
+                    name = comet_mwalim_additional_prep_var
+                    add = 1
+                }
+            }
+            else = {
+                set_variable = {
+                    name = comet_mwalim_additional_prep_var
+                    value = 1
+                }
+            }
+        }
+
+        ai_chance = {
+            base = 50
+            modifier = {
+                trigger = {
+                    has_variable = comet_mwalim_additional_prep_var
+                }
+                add = -40
+            }
+        }
+    }
+
+    option = { #We're ready
+        name = anb_comet_investigation.228.b
+        trigger_event = { id = anb_comet_investigation.229 days = 7 }
+
+        ai_chance = {
+            base = 50   
+        }
+    }
+}
+##Mwalim: The Ritual
+anb_comet_investigation.229 = {
+    type = country_event
+    placement = root
+
+    title = anb_comet_investigation.229.t
+    desc = anb_comet_investigation.229.d
+    flavor = anb_comet_investigation.229.f
+
+    event_image = {
+        video = "africa_animism"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = { #Random list that determines whether it worked or not
+        random_list = {
+            75 = { set_variable = { name = comet_mwalim_expedition_pass_var value = yes months = 3 }}
+            25 = { modifier = {
+                if = {
+                    limit = {
+                        has_variable = comet_mwalim_additional_prep_var
+                    }
+                    add = {
+                        value = -10
+                        multiply = var:comet_mwalim_additional_prep_var #TODO Make sure this works
+                    }
+                }
+            } set_variable = { name = comet_mwalim_expedition_fail_var value = yes months = 3 }}
+        }
+        remove_variable = comet_expedition_var
+        remove_variable = comet_mwalim_expedition_var
+    }
+
+    option = { #It worked
+        name = anb_comet_investigation.229.a
+        default_option = yes
+        trigger = {
+            has_variable = comet_mwalim_expedition_pass_var
+        }
+        custom_tooltip = {
+            text = comet_mwalim_expedition_pass_desc
+            set_variable = { name = comet_mwalim_expedition_completed_var value = yes}
+        }
+        je:je_comet_investigation = {
+            add_progress = { value = 350 name = dur_vazhatun_bar }
+        }
+    }
+
+    option = { #It didn't work
+        name = anb_comet_investigation.229.a
+        default_option = yes
+        trigger = {
+            has_variable = comet_mwalim_expedition_fail_var
+        }
+        custom_tooltip = {
+            text = comet_mwalim_expedition_fail_desc
+        }
+        je:je_comet_investigation = {
+            add_progress = { value = 80 name = dur_vazhatun_bar }
+        }
+        #TODO Debuff?
+    }
+}
+
+#Character Events (300)
+##Redirect event
+anb_comet_investigation.301 = {
+    type = country_event
+    hidden = yes
+
+    immediate = {
+        random_list = {
+            10 = { trigger = { has_variable = comet_druznar_recruited_var NOT = { has_variable = comet_druznar_charevent_1_var }} trigger_event = { id = anb_comet_investigation.302 }}
+            10 = { trigger = { has_variable = comet_chronicler_recruited_var NOT = { has_variable = comet_chronicler_charevent_1_var }} trigger_event = {id = anb_comet_investigation.303 } }
+            10 = { trigger = { has_variable = comet_gnome_recruited_var NOT = { has_variable = comet_gnome_charevent_1_var }} trigger_event = {id = anb_comet_investigation.304 } }
+            10 = { trigger = { has_variable = comet_kobold_recruited_var NOT = { has_variable = comet_kobold_charevent_1_var }} trigger_event = {id = anb_comet_investigation.305 } }
+            10 = { trigger = { has_variable = comet_mwalim_recruited_var NOT = { has_variable = comet_mwalim_charevent_1_var }} trigger_event = {id = anb_comet_investigation.307 } }
+        }
+        set_variable = { name = comet_character_cooldown_var value = yes months = 6 }
+    }
+}
+
+##Druznar: Funding Troubles
+anb_comet_investigation.302 = {
+    type = country_event
+
+    title = anb_comet_investigation.302.t
+    desc = anb_comet_investigation.302.d
+    flavor = anb_comet_investigation.302.f
+
+    event_image = {
+        video = "unspecific_politicians_arguing"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    trigger = {
+        NOT = {
+            has_variable = comet_druznar_expedition_var
+        }
+    }
+
+    immediate = {
+        set_variable = {
+            name = comet_druznar_charevent_1_var
+            value = yes
+        }
+    }
+
+    option = { #Decrease Funding
+        name = anb_comet_investigation.302.a
+        default_option = yes
+        add_modifier = {
+            name = comet_funding_reduced
+            years = 1
+        }
+        #IG Approval Increase
+        ig:ig_landowners = {
+            add_modifier = {
+                name = comet_igs_listened
+                years = 2
+            }
+        }
+        #Significant slowdown
+        custom_tooltip = {
+            text = comet_evidence_slowdown_desc
+            set_variable = { name = comet_evidence_slowdown_var years = 1 }
+        }
+    }
+
+    option = { #Ignore them
+        name = anb_comet_investigation.302.b
+        #IG Approval Decrease
+        ig:ig_landowners = {
+            add_modifier = {
+                name = comet_igs_ignored
+                years = 2
+            }
+        }
+        add_radicals = {
+            value = small_radicals
+            strata = upper
+        }
+    }
+}
+##Chronicler: Time for Writing
+anb_comet_investigation.303 = {
+    type = country_event
+
+    title = anb_comet_investigation.303.t
+    desc = anb_comet_investigation.303.d
+    flavor = anb_comet_investigation.303.f
+
+    event_image = {
+        video = "unspecific_signed_contract"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    trigger = {
+        NOT = {
+            has_variable = comet_chronicler_expedition_var
+        }
+    }
+
+    immediate = {
+        set_variable = {
+            name = comet_chronicler_charevent_1_var
+            value = yes
+        }
+    }
+
+    option = { #Force him to work
+        name = anb_comet_investigation.303.a
+        default_option = yes
+        add_modifier = {
+            name = comet_chronicler_writing_force
+            months = 6
+        }
+        custom_tooltip = {
+            text = comet_chronicler_writing_force_desc
+            set_variable = {
+                name = comet_chronicler_writing_force_var
+                value = yes
+                months = 6
+            }
+        }
+    }
+    option = { #Let him write
+        name = anb_comet_investigation.303.b
+        custom_tooltip = {
+            text = comet_chronicler_writing_busy_desc
+            set_variable = {
+                name = comet_chronicler_busy_var
+                value = yes
+                months = 6
+            }
+        }
+    }
+}
+##Gnome: Side Projects
+anb_comet_investigation.304 = {
+    type = country_event
+
+    title = anb_comet_investigation.304.t
+    desc = anb_comet_investigation.304.d
+    flavor = anb_comet_investigation.304.f
+
+    event_image = {
+        video = "unspecific_gears_pistons"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    trigger = {
+        NOT = {
+            has_variable = comet_gnome_expedition_var
+        }
+    }
+
+    immediate = {
+        set_variable = {
+            name = comet_gnome_charevent_1_var
+            value = yes
+        }
+    }
+
+    option = {
+        name = anb_comet_investigation.304.a
+        default_option = yes
+        add_modifier = {
+            name = comet_gnome_additional_salary
+            years = 2
+        }
+    }
+
+    option = {
+        name = anb_comet_investigation.304.b
+        custom_tooltip = {
+            text = comet_gnome_busy_desc
+            set_variable = { name = comet_gnome_busy_var years = 1 }
+        }
+        add_modifier = {
+            name = comet_gnome_research_bonus
+            years = 1
+        }
+    }
+}
+##Kobold: Away from the Sun
+anb_comet_investigation.305 = {
+    type = country_event
+
+    title = anb_comet_investigation.305.t
+    desc = anb_comet_investigation.305.d
+    flavor = anb_comet_investigation.305.f
+
+    event_image = {
+        video = "unspecific_sick_in_hospital"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    trigger = {
+        NOT = {
+            has_variable = comet_kobold_expedition_var
+        }
+    }
+
+    immediate = {
+        set_variable = {
+            name = comet_kobold_charevent_1_var
+            value = yes
+        }
+    }
+
+    option = { #Let him leave
+        name = anb_comet_investigation.305.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_kobold_away_desc
+            set_variable = { name = comet_kobold_away_var months = 6 }
+            trigger_event = { id = anb_comet_investigation.306 months = 6 }
+        }
+    }
+
+    option = { #He has to deal with it
+        name = anb_comet_investigation.305.b
+        custom_tooltip = {
+            text = comet_kobold_delay_desc
+            set_variable = { name = comet_kobold_delay_var months = 6 }
+        }
+    }
+}
+##Away from the Sun: Completion
+anb_comet_investigation.306 = {
+    type = country_event
+
+    title = anb_comet_investigation.306.t
+    desc = anb_comet_investigation.306.d
+    flavor = anb_comet_investigation.306.f
+
+    event_image = {
+        video = "africa_desert_expedition"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = {
+        name = anb_comet_investigation.306.a
+        default_option = yes
+        add_modifier = {
+            name = comet_research_boost
+            years = 1
+        }
+    }
+}
+##Mwalim: Calls from the Homeland
+anb_comet_investigation.307 = {
+    type = country_event
+
+    title = anb_comet_investigation.307.t
+    desc = anb_comet_investigation.307.d
+    flavor = anb_comet_investigation.307.f
+
+    event_image = {
+        video = "unspecific_steam_ship"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    trigger = {
+        NOT = {
+            has_variable = comet_mwalim_expedition_var
+        }
+    }
+
+    immediate = {
+        set_variable = {
+            name = comet_mwalim_charevent_1_var
+            value = yes
+        }
+    }
+
+    option = { #Nothing we can do about it
+        name = anb_comet_investigation.307.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_mwalim_busy_desc
+            set_variable = { name = comet_mwalim_busy_var value = yes months = 6 }
+        }
+    }
+}
+
+#Discovery Events (400)
+##Discovery 1
+anb_comet_investigation.401 = {
+    type = country_event
+
+    title = anb_comet_investigation.401.t
+    desc = anb_comet_investigation.401.d
+    flavor = anb_comet_investigation.401.f
+
+    event_image = {
+        video = "unspecific_ruler_speaking_to_people"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = {
+        name = anb_comet_investigation.401.a
+        default_option = yes
+        #TODO
+    }
+}
+
+##Discovery 2
+anb_comet_investigation.402 = {
+    type = country_event
+
+    title = anb_comet_investigation.402.t
+    desc = anb_comet_investigation.402.d
+    flavor = anb_comet_investigation.402.f
+
+    event_image = {
+        video = "unspecific_ruler_speaking_to_people"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = {
+        name = anb_comet_investigation.402.a
+        default_option = yes
+        #TODO
+    }
+}
+
+##Discovery 3
+anb_comet_investigation.403 = {
+    type = country_event
+
+    title = anb_comet_investigation.403.t
+    desc = anb_comet_investigation.403.d
+    flavor = anb_comet_investigation.403.f
+
+    event_image = {
+        video = "unspecific_ruler_speaking_to_people"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+    immediate = {
+        set_variable = {
+            name = comet_je_done_var
+            value = yes
+        }
+    }
+
+    option = {
+        name = anb_comet_investigation.403.a
+        default_option = yes
+        change_variable = {
+            name = comet_discoveries_var
+            add = 1
+        }
+    }
+}
+
+
+
+#Concluding Events (500)
+##The Shocking Truth
+anb_comet_investigation.501 = {
+    type = country_event
+
+    title = anb_comet_investigation.501.t
+    desc = anb_comet_investigation.501.d
+    flavor = anb_comet_investigation.501.f
+
+    event_image = {
+        video = "unspecific_ruler_speaking_to_people"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        #Remove the upkeep modifiers
+        if = {
+            limit = {
+                has_modifier = comet_chronicler_upkeep
+            }
+            remove_modifier = comet_chronicler_upkeep
+        }
+        if = {
+            limit = {
+                has_modifier = comet_gnome_upkeep
+            }
+            remove_modifier = comet_gnome_upkeep
+        }
+        if = {
+            limit = {
+                has_modifier = comet_kobold_upkeep
+            }
+            remove_modifier = comet_kobold_upkeep
+        }
+        if = {
+            limit = {
+                has_modifier = comet_mwalim_upkeep
+            }
+            remove_modifier = comet_mwalim_upkeep
+        }
+    }
+
+    option = { #We must tell the world
+        name = anb_comet_investigation.501.a
+        default_option = yes
+        custom_tooltip = {
+            text = comet_tell_everyone
+            every_country = {
+                trigger_event = { id = anb_comet_investigation.502 }
+            }
+        }
+        add_modifier = {
+            name = comet_completion_mod
+            years = 10
+        }
+    }
+}
+
+##Telling the world
+anb_comet_investigation.502 = {
+    type = country_event
+
+    title = anb_comet_investigation.502.t
+    desc = anb_comet_investigation.502.d
+    flavor = anb_comet_investigation.502.f
+
+    event_image = {
+        video = "unspecific_ruler_speaking_to_people"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+    
+    trigger = {
+        is_country_alive = yes
+        NOT = {
+            c:D03 = this
+            is_country_type = decentralized
+        }
+    }
+
+    option = { #TODO Placeholder
+        name = anb_comet_investigation.502.a
+        default_option = yes
+    }
+}

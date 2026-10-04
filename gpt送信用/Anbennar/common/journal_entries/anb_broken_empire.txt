@@ -1,0 +1,197 @@
+﻿je_broken_empire = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	group = je_group_internal_affairs
+
+	on_monthly_pulse = {
+		random_events = {
+			600 = 0
+			150 = broken_empire.2	#Independence
+			100 = broken_empire.3	#Unrest
+			150 = broken_empire.4	#Subject Autonomy
+			300 = broken_empire.100	#Lorent-Carneter
+			300 = broken_empire.101	#Vivin-Wex
+		}
+		effect = {
+			change_variable = { name = anbennar_var add = 1 }
+
+			if = {
+				limit = {
+					is_at_war = yes
+				}
+				change_variable = { name = anbennar_var add = -1 }
+			}
+			if = {
+				limit = {
+					expanding_institution = institution_police
+				}
+				change_variable = { name = anbennar_var add = 2 }
+			}
+
+			if = {
+				limit = {
+					institution_investment_level = {
+						institution = institution_police
+						value >= 5
+					}
+				}
+				change_variable = { name = anbennar_var add = -2.5 }
+			}
+			else_if = {
+				limit = {
+					institution_investment_level = {
+						institution = institution_police
+						value >= 4
+					}
+				}
+				change_variable = { name = anbennar_var add = -2 }
+			}
+			else_if = {
+				limit = {
+					institution_investment_level = {
+						institution = institution_police
+						value >= 3
+					}
+				}
+				change_variable = { name = anbennar_var add = -1.5 }
+			}
+			else_if = {
+				limit = {
+					institution_investment_level = {
+						institution = institution_police
+						value >= 2
+					}
+				}
+				change_variable = { name = anbennar_var add = -1 }
+			}
+			else_if = {
+				limit = {
+					institution_investment_level = {
+						institution = institution_police
+						value >= 1
+					}
+				}
+				change_variable = { name = anbennar_var add = -0.5 }
+			}
+
+			if = {
+				limit = {
+					radical_population_fraction > 0.5
+				}
+				change_variable = { name = anbennar_var add = 64 }
+			}
+			else_if = {
+				limit = {
+					radical_population_fraction > 0.4
+				}
+				change_variable = { name = anbennar_var add = 32 }
+			}
+			else_if = {
+				limit = {
+					radical_population_fraction > 0.35
+				}
+				change_variable = { name = anbennar_var add = 16 }
+			}
+			else_if = {
+				limit = {
+					radical_population_fraction > 0.3
+				}
+				change_variable = { name = anbennar_var add = 8 }
+			}
+			else_if = {
+				limit = {
+					radical_population_fraction > 0.25
+				}
+				change_variable = { name = anbennar_var add = 4 }
+			}
+			else_if = {
+				limit = {
+					radical_population_fraction > 0.2
+				}
+				change_variable = { name = anbennar_var add = 3 }
+			}
+			else_if = {
+				limit = {
+					radical_population_fraction > 0.15
+				}
+				change_variable = { name = anbennar_var add = 2 }
+			}
+			else_if = {
+				limit = {
+					radical_population_fraction > 0.1
+				}
+				change_variable = { name = anbennar_var add = 1 }
+			}
+			else_if = {
+				limit = {
+					radical_population_fraction < 0.05
+				}
+				change_variable = { name = anbennar_var add = -1 }
+			}
+		}
+	}
+
+	immediate = {
+		root = {
+			save_scope_as = root_country
+		}
+	}
+
+
+	complete = {
+		OR = {
+			custom_tooltip = {
+				text = broken_empire_time_tt
+				NOT = { has_global_variable = broken_empire_time_var }
+			}
+			custom_tooltip = {
+				text = broken_empire_broken_tt
+				any_state = {
+					count = all
+					OR = {
+						state_is_in_europe = no
+						is_split_state = yes
+						state_region = s:STATE_DAMESEAR
+					}
+				}
+			}
+		}
+		is_at_war = no
+		is_diplomatic_play_committed_participant = no
+	}
+
+	on_complete = {
+		trigger_event = { id = broken_empire.10 popup = yes }
+	}
+
+	fail = {
+		custom_tooltip = {
+			text = je_caudillo_goal_tt
+			scope:journal_entry = {
+				is_goal_complete = yes
+			}
+		}
+		is_at_war = no
+		is_diplomatic_play_committed_participant = no
+	}
+
+	on_fail = {
+		trigger_event = { id = broken_empire.11 popup = yes }
+	}
+
+	current_value = {
+		value = root.var:anbennar_var
+	}
+
+	goal_add_value = {
+		add = 1200
+	}
+
+	progressbar = yes
+
+	weight = 100
+
+	can_revolution_inherit = yes
+	transferable = yes
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

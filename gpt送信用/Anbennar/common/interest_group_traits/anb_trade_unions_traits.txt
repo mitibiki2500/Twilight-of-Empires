@@ -1,0 +1,8 @@
+﻿ig_trait_effelai_productivity = {
+	icon = "gfx/interface/icons/ig_trait_icons/solidarity.dds"
+	min_approval = loyal
+	
+	modifier = { # this serves to replace the workforce ratio, which caused overflow and negative pop growth
+		country_company_throughput_bonus_add = 0.05
+	}
+}

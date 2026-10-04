@@ -1,0 +1,78 @@
+﻿varionail_je_assimilation = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_assimilation_mult = 0.25
+    state_migration_pull_mult = 0.7
+}
+
+varionail_je_complete = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+    country_prestige_mult = 0.2
+}
+
+varionail_clearing = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+    building_group_bg_plantations_throughput_add = -0.2 
+    building_group_bg_agriculture_throughput_add = -0.2 
+    building_group_bg_ranching_throughput_add = -0.2 
+}
+
+varionail_trade_prioritized = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+    state_migration_pull_mult = -0.15
+    state_infrastructure_mult = 0.15
+}
+
+varionail_settlers_prioritized = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+    state_migration_pull_mult = 0.15
+    state_infrastructure_mult = -0.15
+    #TODO Add something about trade?
+}
+
+varionail_assimilation_investment = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+    country_expenses_add = 400
+    state_assimilation_mult = 0.2
+    state_lower_strata_standard_of_living_add = 1
+}
+
+varionail_assimilation_decrease = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+    state_assimilation_mult = -0.25
+}
+
+varionail_elven_sol_boost = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+    state_havener_elf_standard_of_living_add = 1
+    state_crescent_elf_standard_of_living_add = 1
+}
+
+varionail_elven_sol_decrease = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+    state_havener_elf_standard_of_living_add = -1
+    state_crescent_elf_standard_of_living_add = -1
+}
+
+varionail_human_sol_boost = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+    state_vernman_standard_of_living_add = 1
+    state_pearlsedger_standard_of_living_add = 1
+    state_west_damerian_standard_of_living_add = 1
+    state_lorentish_standard_of_living_add = 1
+}
+
+varionail_human_sol_decrease = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+    state_vernman_standard_of_living_add = -1
+    state_pearlsedger_standard_of_living_add = -1
+    state_west_damerian_standard_of_living_add = -1
+    state_lorentish_standard_of_living_add = -1
+}
+
+varionail_developing_countermeasures = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+    #every_scope_building = { #TODO Get this working
+    #    building_throughput_add = -0.1 
+    #}
+    country_expenses_add = 600
+}

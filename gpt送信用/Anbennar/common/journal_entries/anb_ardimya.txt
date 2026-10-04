@@ -1,0 +1,203 @@
+﻿je_ardimya_navy = {
+    icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
+
+    group = je_group_historical_content
+
+    is_shown_when_inactive = {
+        c:L45 ?= this #Ardimyan Republic
+        game_date > 2000.1.1
+    }
+
+    # TODO - disabled until loc is given, sept 30 2025
+    possible = {
+		game_date > 2000.1.1
+        has_technology_researched = paddle_steamer
+    }
+
+    immediate = {
+        set_variable = {
+			name = ardimya_navy_var
+			value = 0
+		}
+        set_variable = {
+            name = ardimya_busilar_npp
+            value = ardimya_busilar_navy_ratio
+        }
+        c:A09 = {
+            save_scope_as = busilar_loc_desc
+        }
+        trigger_event = anb_ardimya.001
+    }
+
+    complete = {
+        #The bar is complete
+        scope:journal_entry = {
+			is_goal_complete = yes
+		}
+        NOT = { #Naval power in the top 15
+			any_country = {
+				naval_power_projection > c:L45.naval_power_projection
+				count > 15
+			}
+		}
+        #Naval power projection within 40% of Busilar's
+        custom_tooltip = {
+            text = ardimya_busilar_navy_ratio_desc
+            root.naval_power_projection >= ardimya_busilar_navy_ratio
+        }
+        any_scope_character = { #Have an admiral
+			has_role_of_type = admiral
+		}
+    }
+
+    on_complete = {
+        #Trigger Success Event
+        trigger_event = anb_ardimya.002
+    }
+
+    fail = {
+        OR = { #Insignificant Power or subject of Busilar
+            country_rank = rank_value:insignificant_power
+            is_direct_subject_of = c:A09
+        }
+    }
+
+    on_fail = {
+        #Trigger Failure Event
+        trigger_event = anb_ardimya.003
+    }
+
+    timeout = 7300 #Times out after 20 years
+
+    on_timeout = {
+        #Trigger Timeout Event
+        trigger_event = anb_ardimya.004
+    }
+
+    on_monthly_pulse = {
+        random_events = {
+            100 = 0
+            3 = anb_ardimya.005
+            6 = anb_ardimya.006
+        }
+        effect = {
+			if = {
+				limit = {
+					root.naval_power_projection >= ardimya_busilar_navy_ratio
+				}
+				change_variable = {
+					name = ardimya_navy_var
+					add = 1
+				}
+			}
+            if = {
+				limit = {
+                    NOT = { #Naval power in the top 15
+                        any_country = {
+                            naval_power_projection > c:L45.naval_power_projection
+                            count > 15
+                        }
+                    }
+				}
+				change_variable = {
+					name = ardimya_navy_var
+					add = 1
+				}
+			}
+            set_variable = {
+                name = ardimya_busilar_npp
+                value = ardimya_busilar_navy_ratio
+            }
+		}
+    }
+
+    is_progressing = {
+        root.naval_power_projection >= ardimya_busilar_navy_ratio
+        NOT = { #Naval power in the top 15
+            any_country = {
+                naval_power_projection > c:L45.naval_power_projection
+                count > 15
+            }
+        }
+	}
+
+    current_value = {
+		value = root.var:ardimya_navy_var
+	}
+
+    goal_add_value = {
+		add = 200
+	}
+
+	progressbar = yes
+
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_ardimya_navy_demand = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/goods_icons/man_o_wars.dds"
+
+	group = je_group_historical_content
+
+	timeout = 730
+
+	immediate = {
+		set_variable = {
+            name = ardimya_required_ships
+            value = c:L45.naval_power_projection
+        }
+        change_variable = {
+            name = ardimya_required_ships
+            multiply = 1.2
+        }
+        set_variable = {
+            name = ardimya_npp_demand
+            value = c:L45.naval_power_projection
+        }
+	}
+
+	complete = {
+        custom_tooltip = {
+            text = ardimya_navy_demand_desc
+            root.naval_power_projection >= var:ardimya_required_ships
+        }
+	}
+
+	invalid = {
+		NOT = {
+			has_journal_entry = je_ardimya_navy
+		}
+	}
+
+	on_complete = {
+		add_loyalists = {
+            value = 0.1
+            interest_group = ig:ig_armed_forces
+        }
+        add_modifier = {
+            name = ardimya_demand_completed
+            years = 4
+        }
+	}
+
+	on_timeout = {
+		add_radicals = {
+            value = 0.1
+            interest_group = ig:ig_armed_forces
+        }
+        add_modifier = {
+            name = ardimya_demand_failed
+            years = 4
+        }
+	}
+
+    on_monthly_pulse = {
+        effect = {
+            set_variable = {
+                name = ardimya_npp_demand
+                value = c:L45.naval_power_projection
+            }
+        }
+    }
+}

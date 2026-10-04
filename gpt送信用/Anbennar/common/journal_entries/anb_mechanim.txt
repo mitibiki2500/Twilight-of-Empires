@@ -1,0 +1,182 @@
+﻿#TODO - Disabling JE until reworked or removed, Sept 14 2025. 
+# je_mechanim_1 = {
+# 	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+# 	group = je_group_internal_affairs
+
+# 	is_shown_when_inactive = {
+# 		# OR = {
+# 		# 	has_technology_researched = thinking_machinery
+# 		# 	has_technology_researched = human_rights
+# 		# }
+# 		game_date > 2000.1.1
+# 	}
+
+# 	scripted_progress_bar = mechanim_freedom_progress_bar
+# 	scripted_progress_bar = mechanim_revolt_progress_bar
+
+# 	possible = {
+# 		# has_technology_researched = thinking_machinery
+# 		# has_technology_researched = human_rights
+# 		# NOT = {has_variable = mechanim_je_completed}
+# 		# has_law = law_type:law_mechanim_as_property
+# 		game_date > 2000.1.1
+# 	}
+
+# 	immediate = {
+# 		root = {
+# 			save_scope_as = root_country
+# 		}
+# 		set_mechanim_vars = yes
+# 		trigger_event = { id = mechanim_revolt.4 days = 1 popup = yes }
+# 		set_variable = {
+# 			name = mechanim_revolt_happened
+# 		}
+# 	}
+
+# 	on_weekly_pulse = {
+# 		effect = {
+# 			calculate_mechanim_revolt_progress = yes
+# 		}
+# 	}
+
+# 	on_monthly_pulse = {
+# 		random_events = {
+# 			#several events
+# 			50 = 0
+# 			30 = mechanim_revolt.6 #Mechanim escape
+# 			30 = mechanim_revolt.8 #TUs realize Industrialists were pitting them against mechanim in divide and conquer tactic
+# 			30 = mechanim_revolt.9 #Laborers angry
+# 		}
+# 		effect = {
+# 			calculate_mechanim_revolt_progress = yes
+# 		}
+# 	}
+
+# 	fail = {
+# 		custom_tooltip = {
+# 			text = mechanim_revolt_progress_bar_at_full_tt
+# 			scope:journal_entry = {
+# 				"scripted_bar_progress(mechanim_revolt_progress_bar)" >= 250
+# 			}
+# 		}
+# 	}
+
+# 	complete = {
+# 		OR = {
+# 			has_law = law_type:law_mechanim_freedom
+# 			custom_tooltip = {
+# 				text = mechanim_sucess_progress_bar_at_full_tt
+# 				scope:journal_entry = {
+# 					"scripted_bar_progress(mechanim_freedom_progress_bar)" >= 150
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	on_fail = {
+# 		set_variable = {
+# 			name = mechanim_je_completed
+# 		}
+		
+# 		trigger_event = { id = mechanim_revolt.1 popup = yes }
+# 		custom_tooltip = mechanim_je_1_fail_tt
+# 	}
+
+# 	timeout = 1825
+
+# 	on_timeout = {
+# 		trigger_event = { id = mechanim_revolt.2 popup = yes }
+# 		custom_tooltip = mechanim_je_1_timeout_tt
+# 		set_variable = {
+# 			name = mechanim_je_completed
+# 		}
+# 		if = {
+# 			limit = {
+# 				has_law = law_type:law_mechanim_freedom
+# 			}
+# 			add_journal_entry = { type = je_mechanim_2 }
+# 		}
+
+# 	}
+
+# 	on_complete = {
+# 		trigger_event = { id = mechanim_revolt.3 popup = yes }
+# 		custom_tooltip = mechanim_je_1_complete_tt
+# 		set_variable = {
+# 			name = mechanim_je_completed
+# 		}
+# 	}
+
+# 	should_be_pinned_by_default_uninvolved_or_context = yes
+# }
+
+# je_mechanim_2 = {
+# 	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+# 	group = je_group_internal_affairs
+
+# 	immediate = {
+# 		set_variable = {
+# 			name = abolishing_mechanim_slavery_var
+# 			value = 0
+# 		}
+# 	}
+
+# 	on_monthly_pulse = {
+# 		effect = {
+# 			if = {
+# 				limit = {
+# 					has_law = law_type:law_mechanim_freedom
+# 					NOT = {
+# 						any_civil_war = {
+# 							civil_war_progress > 0.5
+# 						}
+# 					}
+# 					has_variable = mechanim_je_completed
+# 				}
+# 				change_variable = {
+# 					name = abolishing_mechanim_slavery_var
+# 					add = 1
+# 				}
+# 			}
+# 		}
+# 	}
+
+# 	complete = {
+# 		scope:journal_entry = {
+# 			is_goal_complete = yes
+# 		}
+# 		has_law = law_type:law_mechanim_freedom
+# 		NOT = {
+# 			any_civil_war = {
+# 				civil_war_progress > 0.5
+# 				is_civil_war_type = revolution
+# 			}
+# 		}
+# 		has_variable = mechanim_je_completed
+# 	}
+
+# 	on_complete = {
+# 		set_variable = depolicised_mechanim
+# 		trigger_event = {
+# 			id = mechanim_revolt.7
+# 		}
+# 	}
+
+# 	invalid = {
+# 	}
+
+# 	current_value = {
+# 		value = root.var:abolishing_mechanim_slavery_var
+# 	}
+
+# 	goal_add_value = {
+# 		add = 60
+# 	}
+
+# 	progressbar = yes
+
+# 	weight = 100
+# 	should_be_pinned_by_default_uninvolved_or_context = yes
+# }

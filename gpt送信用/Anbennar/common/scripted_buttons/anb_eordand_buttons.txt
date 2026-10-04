@@ -1,0 +1,87 @@
+﻿je_eordand_diplomacy_unification_button = {
+	name = "je_eordand_diplomacy_unification_button"
+	desc = "je_eordand_diplomacy_unification_button_desc"
+
+	visible = { always = yes }
+
+	ai_chance = {
+		value = 100
+	}
+
+	possible = {
+		hidden_trigger = {
+			OR = {
+				NOT = {
+					any_country = {
+						OR = {
+							country_has_primary_culture = cu:selphereg
+							country_has_primary_culture = cu:caamas
+							country_has_primary_culture = cu:peitar
+							country_has_primary_culture = cu:tuathak
+							country_has_primary_culture = cu:snecboth
+							country_has_primary_culture = cu:fograc
+						}
+						is_player = yes
+					}
+				}
+				is_player = yes
+			}
+		}
+		OR = {
+			country_has_primary_culture = cu:selphereg
+			country_has_primary_culture = cu:caamas
+			country_has_primary_culture = cu:peitar
+			country_has_primary_culture = cu:tuathak
+			country_has_primary_culture = cu:snecboth
+			country_has_primary_culture = cu:fograc
+		}
+		OR = {
+			has_law = law_type:law_freedom_of_conscience
+			has_law = law_type:law_total_separation
+		}
+		has_technology_researched = nationalism
+		custom_tooltip = {
+			text = eordand_mainland_free_tt
+			any_state = {
+				count = all
+				OR = {
+					NOT = { region = sr:region_eordand }
+					owner = {
+						OR = {
+							OR = {
+								country_has_primary_culture = cu:selphereg
+								country_has_primary_culture = cu:caamas
+								country_has_primary_culture = cu:peitar
+								country_has_primary_culture = cu:tuathak
+								country_has_primary_culture = cu:snecboth
+								country_has_primary_culture = cu:fograc
+							}
+							OR = {
+								this = root
+								is_country_type = decentralized
+								any_scope_treaty = {
+								  binds = root
+								  any_scope_article = {
+									OR = {
+									  has_type = defensive_pact
+									  has_type = alliance
+									  has_type = guarantee_independence
+									}
+								  }
+								}
+								is_subject_of = root
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = unify_eordand_tt
+			set_variable = eordan_unificator
+		}
+	}
+}

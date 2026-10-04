@@ -1,0 +1,6906 @@
+﻿BUILDINGS = {
+	s:STATE_KRAKDHUMVROR = {
+		region_state:D02 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D02"
+						levels=1
+					}
+				}
+				activate_production_methods={  }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D02"
+						levels=3
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_basic_restoration" }
+			}
+			create_building={ 
+				building="building_mage_tower"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D02"
+						levels=1
+						region="STATE_KRAKDHUMVROR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_traditional_mages" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D02"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D02"
+						levels=5
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building = {
+				building = "building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D02"
+						levels=7
+						region="STATE_KRAKDHUMVROR"
+					}
+				}
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D02"
+						levels=4
+						region="STATE_KRAKDHUMVROR"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D02"
+						levels=5
+						region="STATE_KRAKDHUMVROR"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_pot_stills" }
+			}
+			create_building = {
+				building = "building_mithril_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D02"
+						levels=2
+						region="STATE_KRAKDHUMVROR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D02"
+						levels=10
+						region="STATE_KRAKDHUMVROR"
+					}
+				}
+				activate_production_methods={ "pm_mushroom_no_secondary" }
+			}
+			create_building={
+				building="building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D02"
+						levels=10
+						region="STATE_KRAKDHUMVROR"
+					}
+				}
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D02"
+						levels=3
+						region="STATE_KRAKDHUMVROR"
+					}
+				}
+				activate_production_methods={ "pm_slaughterhouses" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D02"
+						levels=2
+						region="STATE_KRAKDHUMVROR"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D02"
+						levels=5
+						region="STATE_KRAKDHUMVROR"
+					}
+					building={
+						type="building_financial_district"
+						country="c:D02"
+						levels=2
+						region="STATE_KRAKDHUMVROR"
+					}
+				}
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D02"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_small_arms_mithril" }
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				add_ownership={
+					country={
+						country="c:D02"
+						levels=1
+					}
+				}
+				activate_production_methods={  } # "pm_artillery_mithril"
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D02"
+						levels=1
+						region="STATE_KRAKDHUMVROR"
+					}
+				}
+			}
+			create_building={
+				building="building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D02"
+						levels=7
+						region="STATE_KRAKDHUMVROR"
+					}
+				}
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:D02"
+						levels=2
+						region="STATE_KRAKDHUMVROR"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" "pm_mithril_supports" }
+			}
+		}
+	}
+	s:STATE_DEAD_END_MINES = {
+		region_state:D02 = {
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D02"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D02"
+						levels=2
+						region="STATE_DEAD_END_MINES"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_disabled_distillery" }
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D02"
+						levels=10
+						region="STATE_DEAD_END_MINES"
+					}
+				}
+				activate_production_methods={ "pm_herb_gardens" "pm_no_enhancements"  }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D02"
+						levels=3
+						region="STATE_DEAD_END_MINES"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_gem_mine"
+				add_ownership={
+					building={
+						type="building_gem_mine"
+						country="c:D02"
+						levels=2
+						region="STATE_DEAD_END_MINES"
+					}
+				}
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_coal_mine"
+						country="c:D02"
+						levels=2
+						region="STATE_DEAD_END_MINES"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_GIANTS_ANVIL = {
+		region_state:D02 = {
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D02"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_simple_organization"  }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D02"
+						levels=3
+						region="STATE_GIANTS_ANVIL"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D02"
+						levels=5
+						region="STATE_GIANTS_ANVIL"
+					}
+				}
+				activate_production_methods={ "pm_slaughterhouses" }
+			}
+		}
+	}
+
+
+
+
+	s:STATE_DUR_VAZHATUN = {
+		region_state:D03 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D03"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D03"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_university"
+				add_ownership={
+					country={
+						country="c:D03"
+						levels=3
+					}
+				}
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D03"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D03"
+						levels=1
+						region="STATE_DUR_VAZHATUN"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D03"
+						levels=3
+						region="STATE_DUR_VAZHATUN"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D03"
+						levels=2
+						region="STATE_DUR_VAZHATUN"
+					}
+				}
+			}
+			create_building={
+				building="building_glassworks"
+				add_ownership={
+					building={
+						type="building_glassworks"
+						country="c:D03"
+						levels=3
+						region="STATE_DUR_VAZHATUN"
+					}
+				}
+				activate_production_methods={ "pm_leaded_glass" "pm_ceramics" }
+			}
+			create_building={
+				building="building_lead_mine"
+				add_ownership={
+					building={
+						type="building_lead_mine"
+						country="c:D03"
+						levels=2
+						region="STATE_DUR_VAZHATUN"
+					}
+				}
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D03"
+						levels=4
+						region="STATE_DUR_VAZHATUN"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_no_secondary" }
+			}
+			create_building = {
+				building = "building_opium_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D03"
+						levels=2
+						region="STATE_DUR_VAZHATUN"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_UPPER_DAGRINROD = {
+		region_state:D03 = {
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D03"
+						levels=5
+						region="STATE_UPPER_DAGRINROD"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+
+
+
+
+	s:STATE_ORLAZAM_AZ_DIHR = {
+		region_state:D05 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=2
+					}
+				}
+				# activate_production_methods = { "pm_hold_no_spec" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D05"
+						levels=2
+						region="STATE_ORLAZAM_AZ_DIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D05"
+						levels=3
+						region="STATE_ORLAZAM_AZ_DIHR"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" }
+			}
+			create_building = {
+				building = "building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D05"
+						levels=7
+						region="STATE_ORLAZAM_AZ_DIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_coal_mine"
+						country="c:D05"
+						levels=3
+						region="STATE_ORLAZAM_AZ_DIHR"
+					}
+				}
+			}
+		}
+	}
+
+	s:STATE_AMLDIHR = {
+		region_state:D05 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=1
+					}
+				}
+				 activate_production_methods = { }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=8
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=3
+					}
+					building={
+						type="building_food_industry"
+						country="c:D05"
+						levels=2
+						region="STATE_AMLDIHR"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_pot_stills" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D05"
+						levels=3
+						region="STATE_AMLDIHR"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D05"
+						levels=8
+						region="STATE_AMLDIHR"
+					}
+				}
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_small_arms_mithril" }
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=1
+					}
+				}
+				activate_production_methods={  } # "pm_artillery_mithril"
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D05"
+						levels=2
+						region="STATE_AMLDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_mithril_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D05"
+						levels=2
+						region="STATE_AMLDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D05"
+						levels=1
+						region="STATE_AMLDIHR"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" "pm_mithril_supports" }
+			}
+		}
+	}
+
+	s:STATE_AMLHARAZ = {
+		region_state:D05 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=1
+					}
+				}
+				 activate_production_methods = { }
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D05"
+						levels=5
+						region="STATE_AMLHARAZ"
+					}
+				}
+				activate_production_methods={ "pm_herb_gardens" "pm_no_enhancements"  }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D05"
+						levels=3
+						region="STATE_AMLHARAZ"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D05"
+						levels=2
+						region="STATE_AMLHARAZ"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_luxury_furniture" }
+			}
+		}
+	}
+
+	s:STATE_HALL_OF_ANCESTORS = {
+		region_state:D05 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D05"
+						levels=1
+						region="STATE_HALL_OF_ANCESTORS"
+					}
+				}
+			}
+			create_building = {
+				building = "building_university"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=3
+					}
+				}
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D05"
+						levels=4
+						region="STATE_HALL_OF_ANCESTORS"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" "pm_no_luxury_clothes" }
+			}
+			create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D05"
+						levels=1
+						region="STATE_HALL_OF_ANCESTORS"
+					}
+				}
+			}
+		}
+	}
+
+	s:STATE_VERKAL_VAZKRON = {
+		region_state:D05 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_small_arms_mithril" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D05"
+						levels=1
+						region="STATE_VERKAL_VAZKRON"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D05"
+						levels=2
+						region="STATE_VERKAL_VAZKRON"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D05"
+						levels=5
+						region="STATE_VERKAL_VAZKRON"
+					}
+				}
+			}
+			create_building={
+				building="building_gold_mine"
+				add_ownership={
+					country={
+						country="c:D05"
+						levels=1
+					}
+				}
+			}
+		}
+	}
+	s:STATE_EASTERN_VALE = {
+		region_state:D05 = {
+			create_building = {
+				building = "building_wheat_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D05"
+						levels=30
+						region="STATE_EASTERN_VALE"
+					}
+				}
+			}
+			create_building = {
+				building = "building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D05"
+						levels=10
+						region="STATE_EASTERN_VALE"
+					}
+				}
+			}
+	}
+	s:STATE_SARMOBAR = {
+		region_state:A10 = {
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_livestock_ranch"
+						country="c:A10"
+						levels=5
+						region="STATE_SARMOBAR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_slaughterhouses" }
+			}
+		}
+	}
+	s:STATE_KORZKHAN = {
+		region_state:A10 = {
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_livestock_ranch"
+						country="c:A10"
+						levels=10
+						region="STATE_KORZKHAN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_slaughterhouses" }
+			}
+		}
+	}
+	s:STATE_WESTERN_VALE = {
+		region_state:A10 = {
+				create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:A10"
+						levels=3
+						region="STATE_WESTERN_VALE"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_pot_stills" }
+			}
+			    create_building = {
+				building = "building_wheat_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D05"
+						levels=3
+						region="STATE_EASTERN_VALE"
+					}
+				}
+				activate_production_methods = { "pm_no_secondary" }
+			}
+		}
+	}
+	s:STATE_SARMOBAR = {
+		region_state:A10 = {
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_livestock_ranch"
+						country="c:A10"
+						levels=5
+						region="STATE_SARMOBAR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_slaughterhouses" }
+			}
+		}
+	}
+	s:STATE_KORZKHAN = {
+		region_state:A10 = {
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_livestock_ranch"
+						country="c:A10"
+						levels=10
+						region="STATE_KORZKHAN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_slaughterhouses" }
+			}
+		}
+	}
+	s:STATE_WESTERN_VALE = {
+		region_state:A10 = {
+				create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:A10"
+						levels=3
+						region="STATE_WESTERN_VALE"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_pot_stills" }
+			}
+			    create_building = {
+				building = "building_wheat_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:A10"
+						levels=15
+						region="STATE_WESTERN_VALE"
+					}
+				}
+				activate_production_methods = { "pm_no_secondary" }
+			}
+			create_building = {
+				building = "building_vineyard"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:A10"
+						levels=5
+						region="STATE_WESTERN_VALE"
+					}
+				}
+			}
+		}
+		region_state:D05 = {
+			create_building = {
+				building = "building_wheat_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D05"
+						levels=5
+						region="STATE_WESTERN_VALE"
+					}
+				}
+				activate_production_methods={ "pm_herb_gardens" }
+			}
+			create_building = {
+				building = "building_vineyard"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D05"
+						levels=4
+						region="STATE_WESTERN_VALE"
+					}
+				}
+			}
+		}
+	}
+
+
+	s:STATE_CHAINLINK_MINES = {
+		region_state:D37 = {
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D37"
+						levels=10
+						region="STATE_CHAINLINK_MINES"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D37"
+						levels=2
+						region="STATE_CHAINLINK_MINES"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D37"
+						levels=10
+						region="STATE_CHAINLINK_MINES"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_opium" "pm_no_enhancements"  }
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D37"
+						levels=1
+						region="STATE_CHAINLINK_MINES"
+					}
+				}
+			}
+			create_building = {
+				building = "building_gem_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D37"
+						levels=2
+						region="STATE_CHAINLINK_MINES"
+					}
+				}
+			}
+		}
+	}
+
+	s:STATE_ASRA_DEPTHS = {
+		region_state:D37 = {
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D37"
+						levels=10
+						region="STATE_ASRA_DEPTHS"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_opium" "pm_no_enhancements"  }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D37"
+						levels=1
+						region="STATE_ASRA_DEPTHS"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+		region_state:D08 = {
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D08"
+						levels=3
+						region="STATE_ASRA_DEPTHS"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_gem_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D08"
+						levels=2
+						region="STATE_KHUGDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_lead_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D08"
+						levels=1
+						region="STATE_KHUGDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D08"
+						levels=2
+						region="STATE_ASRA_DEPTHS"
+					}
+				}
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D08"
+						levels=2
+						region="STATE_ASRA_DEPTHS"
+					}
+				}
+			}
+		}
+	}
+
+
+	s:STATE_HARAZ_ORLDHUM = {
+		region_state:D06 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D06"
+						levels=1
+					}
+				}
+				 activate_production_methods = { }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D06"
+						levels=3
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_basic_restoration" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D06"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D06"
+						levels=5
+						region="STATE_HARAZ_ORLDHUM"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" "pm_no_luxury_clothes" }
+			}
+			create_building={ 
+				building="building_mage_tower"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D06"
+						levels=10
+						region="STATE_HARAZ_ORLDHUM"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_traditional_mages" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D06"
+						levels=3
+					}
+				}
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D06"
+						levels=3
+						region="STATE_HARAZ_ORLDHUM"
+					}
+				}
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D37"
+						levels=9
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D06"
+						levels=20
+						region="STATE_HARAZ_ORLDHUM"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_no_secondary" "pm_no_enhancements"  }
+			}
+			create_building = {
+				building = "building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D06"
+						levels=20
+						region="STATE_HARAZ_ORLDHUM"
+					}
+				}
+				activate_production_methods={ "pm_butchering_tools" }
+			}
+			create_building = {
+				building = "building_gem_mine"
+				add_ownership={
+					building={
+						type="building_gem_mine"
+						country="c:D06"
+						levels=2
+						region="STATE_HARAZ_ORLDHUM"
+					}
+				}
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					country={
+						country="c:D06"
+						levels=3
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D06"
+						levels=3
+						region="STATE_HARAZ_ORLDHUM"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D06"
+						levels=5
+						region="STATE_HARAZ_ORLDHUM"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+		}
+	}
+	s:STATE_CRIMSON_CAVERNS = {
+		region_state:D06 = {
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D06"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D06"
+						levels=5
+						region="STATE_CRIMSON_CAVERNS"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" "pm_no_luxury_clothes" }
+			}
+			create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D06"
+						levels=2
+						region="STATE_CRIMSON_CAVERNS"
+					}
+				}
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D06"
+						levels=7
+						region="STATE_CRIMSON_CAVERNS"
+					}
+				}
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D06"
+						levels=15
+						region="STATE_CRIMSON_CAVERNS"
+					}
+				}
+				activate_production_methods={ "pm_herb_gardens" "pm_no_enhancements"  }
+			}
+			create_building = {
+				building = "building_gem_mine"
+				add_ownership={
+					building={
+						type="building_gem_mine"
+						country="c:D06"
+						levels=2
+						region="STATE_CRIMSON_CAVERNS"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D06"
+						levels=4
+						region="STATE_CRIMSON_CAVERNS"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+	s:STATE_HARAZA_DEPTHS = {
+		region_state:D06 = {
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D06"
+						levels=10
+						region="STATE_HARAZA_DEPTHS"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_no_secondary" "pm_no_enhancements"  }
+			}
+			create_building = {
+				building = "building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D06"
+						levels=5
+						region="STATE_HARAZA_DEPTHS"
+					}
+				}
+			}
+			create_building = {
+				building = "building_gem_mine"
+				add_ownership={
+					building={
+						type="building_gem_mine"
+						country="c:D06"
+						levels=3
+						region="STATE_HARAZA_DEPTHS"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D06"
+						levels=2
+						region="STATE_HARAZA_DEPTHS"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_coal_mine"
+						country="c:D06"
+						levels=1
+						region="STATE_HARAZA_DEPTHS"
+					}
+				}
+			}
+			create_building={
+				building="building_gold_mine"
+				add_ownership={
+					building={
+						type="building_gold_mine"
+						country="c:D06"
+						levels=1
+						region="STATE_HARAZA_DEPTHS"
+					}
+				}
+			}
+		}
+	}
+
+
+
+	s:STATE_KHUGDIHR = {
+		region_state:D08 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D08"
+						levels=1
+					}
+				}
+				 activate_production_methods = { }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D08"
+						levels=6
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_basic_restoration" }
+			}
+			create_building={
+				building="building_trade_center"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D08"
+						levels=8
+						region="STATE_KHUGDIHR"
+					}
+				} 
+				reserves=1
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D08"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D08"
+						levels=1
+					}
+				}
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				add_ownership={
+					country={
+						country="c:D08"
+						levels=1
+					}
+				}
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D08"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D08"
+						levels=2
+						region="STATE_KHUGDIHR"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D08"
+						levels=4
+						region="STATE_KHUGDIHR"
+					}
+					building={
+						type="building_financial_district"
+						country="c:A01"
+						levels=1
+						region="STATE_DAMESEAR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D08"
+						levels=5
+						region="STATE_KHUGDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D08"
+						levels=3
+						region="STATE_KHUGDIHR"
+					}
+				}
+				activate_production_methods={ "pm_slaughterhouses" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D08"
+						levels=2
+						region="STATE_KHUGDIHR"
+					}
+					building={
+						type="building_financial_district"
+						country="c:A01"
+						levels=1
+						region="STATE_DAMESEAR"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" }
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D08"
+						levels=10
+						region="STATE_KHUGDIHR"
+					}
+				}
+				activate_production_methods={ "pm_mushroom_no_secondary" "pm_no_enhancements"  }
+			}
+			create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D08"
+						levels=2
+						region="STATE_KHUGDIHR"
+					}
+				}
+			}
+			create_building={
+				building="building_glassworks"
+				add_ownership={
+					country={
+						country="c:D08"
+						levels=2
+					}
+					building={
+						type="building_financial_district"
+						country="c:D08"
+						levels=2
+						region="STATE_KHUGDIHR"
+					}
+				}
+				activate_production_methods={ "pm_leaded_glass" "pm_ceramics" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D08"
+						levels=2
+						region="STATE_KHUGDIHR"
+					}
+					building={
+						type="building_financial_district"
+						country="c:A01"
+						levels=2
+						region="STATE_DAMESEAR"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D08"
+						levels=2
+						region="STATE_KHUGDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					country={
+						country="c:D08"
+						levels=2
+					}
+					building={
+						type="building_financial_district"
+						country="c:D08"
+						levels=2
+						region="STATE_KHUGDIHR"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_disabled_distillery" }
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D08"
+						levels=3
+						region="STATE_KHUGDIHR"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" "pm_no_luxury_clothes" }
+			}
+			create_building = {
+				building = "building_university"
+				add_ownership={
+					country={
+						country="c:D08"
+						levels=1
+					}
+				}
+			}
+		}
+	}
+	s:STATE_KHUGSCAVE = {
+		region_state:D08 = {
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D08"
+						levels=2
+					}
+				}
+			}
+			create_building = {
+				building = "building_mithril_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D08"
+						levels=2
+						region="STATE_KHUGSCAVE"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D08"
+						levels=2
+						region="STATE_KHUGSCAVE"
+					}
+					building={
+						type="building_financial_district"
+						country="c:D08"
+						levels=2
+						region="STATE_KHUGDIHR"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					country={
+						country="c:D08"
+						levels=3
+					}
+					building={
+						type="building_financial_district"
+						country="c:A01"
+						levels=1
+						region="STATE_DAMESEAR"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_WESTROD = {
+		region_state:D08 = {
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D08"
+						levels=2
+						region="STATE_WESTROD"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+
+
+
+
+
+	s:STATE_MITHRADHUM = {
+		region_state:D10 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=3
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=3
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_small_arms_mithril" }
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=2
+					}
+				}
+				activate_production_methods={  } # "pm_artillery_mithril"
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D10"
+						levels=4
+						region="STATE_MITHRADHUM"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D10"
+						levels=6
+						region="STATE_MITHRADHUM"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" "pm_mithril_supports" }
+			}
+			create_building = {
+				building = "building_university"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=1
+					}
+				}
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D10"
+						levels=8
+						region="STATE_MITHRADHUM"
+					}
+				}
+			}
+			create_building = {
+				building = "building_mithril_mine"
+				add_ownership={
+					building={
+						type="building_mithril_mine"
+						country="c:D10"
+						levels=6
+						region="STATE_MITHRADHUM"
+					}
+				}
+			}
+		}
+	}
+
+	s:STATE_ER_NATVIR = {
+		region_state:D10 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building={ 
+				building="building_mage_tower"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D10"
+						levels=18
+						region="STATE_ER_NATVIR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_curios_artisans" }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=4
+					}
+				}
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=20
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D10"
+						levels=2
+						region="STATE_ER_NATVIR"
+					}
+				}
+			}
+			create_building={
+				building="building_magical_reagents_workshop"
+				add_ownership={
+					building={
+						type="building_magical_reagents_workshop"
+						country="c:D10"
+						levels=4
+						region="STATE_ER_NATVIR"
+					}
+				} 
+				reserves=1
+			}
+			create_building={
+				building="building_doodad_artificeries"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D10"
+						levels=3
+						region="STATE_ER_NATVIR"
+					}
+				} 
+				reserves=1
+			}
+			create_building={ 
+				building="building_damestear_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D10"
+						levels=2
+						region="STATE_ER_NATVIR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_damestear_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D10"
+						levels=3
+						region="STATE_ER_NATVIR"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D10"
+						levels=15
+						region="STATE_ER_NATVIR"
+					}
+				}
+				activate_production_methods={ "pm_herb_gardens" "pm_growth_beans_farms" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D10"
+						levels=15
+						region="STATE_ER_NATVIR"
+					}
+				}
+				activate_production_methods={ "pm_slaughterhouses" "pm_enchantment_herding_building_livestock_ranch" }
+			}
+			create_building={
+				building="building_opium_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D10"
+						levels=10
+						region="STATE_ER_NATVIR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D10"
+						levels=6
+						region="STATE_ER_NATVIR"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D10"
+						levels=5
+						region="STATE_ER_NATVIR"
+					}
+				}
+				activate_production_methods={ "pm_sulfite_pulping" }
+			}
+			create_building = {
+				building = "building_university"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=2
+					}
+				}
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_coal_mine"
+						country="c:D10"
+						levels=10
+						region="STATE_ER_NATVIR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D10"
+						levels=7
+						region="STATE_ER_NATVIR"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" "pm_no_luxury_clothes" }
+			}
+		}
+	}
+	s:STATE_VERKAL_KOZENAD = {
+		region_state:D10 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=5
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D10"
+						levels=10
+						region="STATE_VERKAL_KOZENAD"
+					}
+				}
+				activate_production_methods={ "pm_slaughterhouses" }
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D10"
+						levels=15
+						region="STATE_VERKAL_KOZENAD"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_opium" }
+			}
+			create_building = {
+				building = "building_university"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=2
+					}
+				}
+			}
+			create_building={
+				building="building_glassworks"
+				add_ownership={
+					building={
+						type="building_glassworks"
+						country="c:D10"
+						levels=4
+						region="STATE_VERKAL_KOZENAD"
+					}
+					building={
+						type="building_financial_district"
+						country="c:D10"
+						levels=2
+						region="STATE_VERKAL_KOZENAD"
+					}
+				}
+				activate_production_methods={ "pm_leaded_glass" "pm_ceramics" }
+			}
+			create_building={
+				building="building_lead_mine"
+				add_ownership={
+					building={
+						type="building_lead_mine"
+						country="c:D10"
+						levels=2
+						region="STATE_VERKAL_KOZENAD"
+					}
+					building={
+						type="building_financial_district"
+						country="c:D10"
+						levels=1
+						region="STATE_VERKAL_KOZENAD"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_LIMONITE_CAVERNS = {
+		region_state:D10 = {
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D10"
+						levels=4
+						region="STATE_LIMONITE_CAVERNS"
+					}
+				}
+			}
+			create_building = {
+				building = "building_sulfur_mine"
+				add_ownership={
+					building={
+						type="building_sulfur_mine"
+						country="c:D10"
+						levels=5
+						region="STATE_LIMONITE_CAVERNS"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_SKULKERS_LAIR = {
+		region_state:D10 = {
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D10"
+						levels=3
+						region="STATE_ER_NATVIR"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D10"
+						levels=10
+						region="STATE_SKULKERS_LAIR"
+					}
+				}
+			}
+			create_building={
+				building="building_gold_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D10"
+						levels=2
+						region="STATE_ER_NATVIR"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_SKITTERING_CAVERNS = {
+		region_state:D10 = {
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D10"
+						levels=2
+						region="STATE_VERKAL_KOZENAD"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D10"
+						levels=3
+						region="STATE_SKITTERING_CAVERNS"
+					}
+				}
+				#activate_production_methods={ "pm_growth_beans_dye_plantation" }
+			}
+		}
+	}
+	s:STATE_THE_RAILYARD = {
+		region_state:D10 = {
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D10"
+						levels=1
+					}
+				}
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_serpentbloom_farm"
+						country="c:D10"
+						levels=30
+						region="STATE_THE_RAILYARD"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_opium" }
+			}
+		}
+	}
+
+
+	s:STATE_HUL_JORKAD = {
+		region_state:D12 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D12"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D12"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D12"
+						levels=5
+					}
+				}
+				activate_production_methods={ "pm_simple_organization"  }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D12"
+						levels=1
+						region="STATE_HUL_JORKAD"
+					}
+				}
+				activate_production_methods={ "pm_pulp_pressing" }
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D12"
+						levels=1
+						region="STATE_HUL_JORKAD"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_pot_stills" }
+			}
+			create_building = {
+				building = "building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D12"
+						levels=5
+						region="STATE_HUL_JORKAD"
+					}
+				}
+			}
+			create_building={
+				building="building_glassworks"
+				add_ownership={
+					building={
+						type="building_glassworks"
+						country="c:D12"
+						levels=2
+						region="STATE_HUL_JORKAD"
+					}
+				}
+				activate_production_methods={ "pm_leaded_glass" "pm_disabled_ceramics" }
+			}
+			create_building={
+				building="building_lead_mine"
+				add_ownership={
+					building={
+						type="building_lead_mine"
+						country="c:D12"
+						levels=1
+						region="STATE_HUL_JORKAD"
+					}
+				}
+			}
+			create_building={
+				building="building_magical_reagents_workshop"
+				add_ownership={
+					building={
+						type="building_magical_reagents_workshop"
+						country="c:D12"
+						levels=5
+						region="STATE_HUL_JORKAD"
+					}
+				} 
+				reserves=1
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D12"
+						levels=2
+						region="STATE_HUL_JORKAD"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D12"
+						levels=2
+						region="STATE_HUL_JORKAD"
+					}
+				}
+				activate_production_methods = { "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms" }
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_coal_mine"
+						country="c:D12"
+						levels=3
+						region="STATE_HUL_JORKAD"
+					}
+				}
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D12"
+						levels=5
+						region="STATE_HUL_JORKAD"
+					}
+				}
+				activate_production_methods={ "pm_mushroom_no_secondary" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D12"
+						levels=8
+						region="STATE_HUL_JORKAD"
+					}
+				}
+				activate_production_methods={ "pm_slaughterhouses" "pm_enchantment_herding_building_livestock_ranch" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D12"
+						levels=2
+						region="STATE_HUL_JORKAD"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_druidic_circle_building_logging_camp" "pm_no_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:D12"
+						levels=2
+						region="STATE_HUL_JORKAD"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D12"
+						levels=1
+					}
+				}
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				add_ownership={
+					country={
+						country="c:D12"
+						levels=2
+					}
+				}
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D12"
+						levels=4
+						region="STATE_HUL_JORKAD"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_JORKAD_JUNCTION = {
+		region_state:D12 = {
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D12"
+						levels=1
+						region="STATE_JORKAD_JUNCTION"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D12"
+						levels=4
+						region="STATE_JORKAD_JUNCTION"
+					}
+				}
+				activate_production_methods={ "pm_mushroom_liquor" }
+			}
+		}
+		region_state:D21 = {
+				create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D21"
+						levels=5
+						region="STATE_JORKAD_JUNCTION"
+					}
+				}
+				activate_production_methods={ "pm_herb_gardens" "pm_no_enhancements"  }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=2
+						region="STATE_GOR_VAZUMBROG"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+
+
+
+
+	s:STATE_GOR_BURAD = {
+		region_state:D13 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D13"
+						levels=1
+					}
+				}
+				 activate_production_methods = { }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D13"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D13"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building = {
+				building = "building_opium_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D13"
+						levels=5
+						region="STATE_GOR_BURAD"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D13"
+						levels=2
+						region="STATE_GOR_BURAD"
+					}
+				}
+			}
+						create_building={
+				building="building_glassworks"
+				add_ownership={
+					building={
+						type="building_glassworks"
+						country="c:D13"
+						levels=2
+						region="STATE_GOR_BURAD"
+					}
+				}
+				activate_production_methods={ "pm_forest_glass" "pm_disabled_ceramics" }
+			}
+			create_building={
+				building="building_magical_reagents_workshop"
+				add_ownership={
+					building={
+						type="building_magical_reagents_workshop"
+						country="c:D13"
+						levels=5
+						region="STATE_GOR_BURAD"
+					}
+				} 
+				reserves=1
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D13"
+						levels=2
+						region="STATE_GOR_BURAD"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" "pm_no_luxury_clothes" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D13"
+						levels=2
+						region="STATE_GOR_BURAD"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+			create_building = {
+				building = "building_mithril_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D13"
+						levels=1
+						region="STATE_GOR_BURAD"
+					}
+				}
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D13"
+						levels=1
+						region="STATE_GOR_BURAD"
+					}
+				}
+				activate_production_methods={ "pm_sulfite_pulping" }
+			}
+			create_building = {
+				building = "building_sulfur_mine"
+				add_ownership={
+					building={
+						type="building_sulfur_mine"
+						country="c:D13"
+						levels=1
+						region="STATE_GOR_BURAD"
+					}
+				}
+				activate_production_methods={ "pm_picks_and_shovels_building_sulfur_mine" }
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D13"
+						levels=9
+						region="STATE_GOR_BURAD"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_no_secondary" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D13"
+						levels=8
+						region="STATE_GOR_BURAD"
+					}
+				}
+				activate_production_methods={ "pm_slaughterhouses" "pm_enchantment_herding_building_livestock_ranch" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D13"
+						levels=3
+						region="STATE_GOR_BURAD"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_druidic_circle_building_logging_camp" "pm_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_lava_forge"
+				add_ownership={
+					building={
+						type="building_lava_forge"
+						country="c:D13"
+						levels=2
+						region="STATE_GOR_BURAD"
+					}
+				}
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:D13"
+						levels=1
+						region="STATE_GOR_BURAD"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" "pm_mithril_supports" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D13"
+						levels=2
+					}
+				}
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				add_ownership={
+					country={
+						country="c:D13"
+						levels=1
+					}
+				}
+			}
+		}
+	}
+
+
+	s:STATE_SCALDING_PITS = {
+		region_state:D13 = {
+			create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_dye_plantation"
+						country="c:D13"
+						levels=1
+						region="STATE_SCALDING_PITS"
+					}
+				}
+			}
+			create_building = {
+				building = "building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_sugar_plantation"
+						country="c:D13"
+						levels=3
+						region="STATE_SCALDING_PITS"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D13"
+						levels=2
+						region="STATE_SCALDING_PITS"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_coal_mine"
+						country="c:D13"
+						levels=2
+						region="STATE_SCALDING_PITS"
+					}
+				}
+			}
+		}
+		region_state:D14 = {
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D13"
+						levels=2
+						region="STATE_SCALDING_PITS"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+		}
+	}
+
+
+	s:STATE_OVDAL_LODHUM = {
+		region_state:D14 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D14"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D14"
+						levels=3
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D14"
+						levels=4
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D14"
+						levels=1
+						region="STATE_OVDAL_LODHUM"
+					}
+				}
+				activate_production_methods={ "pm_pulp_pressing" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D14"
+						levels=1
+						region="STATE_OVDAL_LODHUM"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D14"
+						levels=1
+					}
+				}
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D14"
+						levels=2
+						region="STATE_OVDAL_LODHUM"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+			create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_dye_plantation"
+						country="c:D14"
+						levels=1
+						region="STATE_OVDAL_LODHUM"
+					}
+				}
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D14"
+						levels=15
+						region="STATE_OVDAL_LODHUM"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_opium" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D14"
+						levels=10
+						region="STATE_OVDAL_LODHUM"
+					}
+				}
+				activate_production_methods={ "pm_slaughterhouses" }
+			}
+			create_building = {
+				building = "building_vineyard"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D14"
+						levels=9
+						region="STATE_OVDAL_LODHUM"
+					}
+				}
+			}
+			create_building = {
+				building = "building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D14"
+						levels=3
+						region="STATE_OVDAL_LODHUM"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D14"
+						levels=2
+						region="STATE_OVDAL_LODHUM"
+					}
+				}
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D14"
+						levels=3
+						region="STATE_OVDAL_LODHUM"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" }
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D14"
+						levels=2
+						region="STATE_OVDAL_LODHUM"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" "pm_no_luxury_clothes" "pm_traditional_looms" }
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D14"
+						levels=3
+						region="STATE_OVDAL_LODHUM"
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+
+	s:STATE_VERKAL_SKOMDIHR = {
+		region_state:D15 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D15"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D15"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D15"
+						levels=9
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D15"
+						levels=4
+					}
+				}
+			}
+			create_building={
+				building="building_glassworks"
+				add_ownership={
+					building={
+						type="building_glassworks"
+						country="c:D15"
+						levels=4
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+				activate_production_methods={ "pm_leaded_glass" "pm_ceramics" }
+			}
+			create_building={
+				building="building_lead_mine"
+				add_ownership={
+					building={
+						type="building_lead_mine"
+						country="c:D15"
+						levels=2
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+			}
+			create_building={
+				building="building_magical_reagents_workshop"
+				add_ownership={
+					building={
+						type="building_magical_reagents_workshop"
+						country="c:D15"
+						levels=6
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				} 
+				reserves=1
+			}
+			create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D15"
+						levels=2
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+			}
+			create_building={
+				building="building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D15"
+						levels=2
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D15"
+						levels=10
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_opium" }
+			}
+			create_building={
+				building="building_tea_plantation"
+				add_ownership={
+					building={
+						type="building_tea_plantation"
+						country="c:D15"
+						levels=4
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+				activate_production_methods={  }
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D15"
+						levels=7
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D15"
+						levels=10
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+				activate_production_methods={ "pm_slaughterhouses" "pm_enchantment_herding_building_livestock_ranch" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D15"
+						levels=8
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" "pm_druidic_circle_building_logging_camp" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:D15"
+						levels=2
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D15"
+						levels=2
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					building={
+						type="building_arms_industry"
+						country="c:D15"
+						levels=3
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				add_ownership={
+					building={
+						type="building_artillery_foundry"
+						country="c:D15"
+						levels=4
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D15"
+						levels=4
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" "pm_no_luxury_clothes" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D15"
+						levels=2
+						region="STATE_VERKAL_SKOMDIHR"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+		}
+	}
+
+	s:STATE_ORCSFALL = {
+		region_state:D15 = {
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D15"
+						levels=2
+						region="STATE_ORCSFALL"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" "pm_druidic_circle_building_logging_camp" }
+			}
+			create_building = {
+				building = "building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D15"
+						levels=1
+						region="STATE_ORCSFALL"
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+
+	s:STATE_ARG_ORDSTUN = {
+		region_state:D18 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D18"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D18"
+						levels=3
+					}
+				}
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D18"
+						levels=3
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" "pm_fabrication_spells_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D18"
+						levels=8
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
+			}
+			create_building = {
+				building = "building_university"
+				add_ownership={
+					country={
+						country="c:D18"
+						levels=1
+					}
+				}
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D18"
+						levels=4
+						region="STATE_ARG_ORDSTUN"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+			create_building = {
+				building = "building_opium_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D18"
+						levels=10
+						region="STATE_ARG_ORDSTUN"
+					}
+				}
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D18"
+						levels=15
+						region="STATE_ARG_ORDSTUN"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_no_secondary" "pm_no_enhancements"  }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D18"
+						levels=10
+						region="STATE_ARG_ORDSTUN"
+					}
+				}
+				activate_production_methods={ "pm_slaughterhouses" "pm_enchantment_herding_building_livestock_ranch" }
+			}
+			create_building={
+				building="building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D18"
+						levels=3
+						region="STATE_ARG_ORDSTUN"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D18"
+						levels=4
+						region="STATE_ARG_ORDSTUN"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_druidic_circle_building_logging_camp" "pm_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:D18"
+						levels=5
+						region="STATE_ARG_ORDSTUN"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" "pm_mithril_supports" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D18"
+						levels=4
+					}
+				}
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				add_ownership={
+					country={
+						country="c:D18"
+						levels=3
+					}
+				}
+			}
+			create_building = {
+				building = "building_gem_mine"
+				add_ownership={
+					building={
+						type="building_gem_mine"
+						country="c:D18"
+						levels=17
+						region="STATE_ARG_ORDSTUN"
+					}
+				}
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D18"
+						levels=10
+						region="STATE_ARG_ORDSTUN"
+					}
+				}
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_coal_mine"
+						country="c:D18"
+						levels=4
+						region="STATE_ARG_ORDSTUN"
+					}
+				}
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D18"
+						levels=8
+						region="STATE_ARG_ORDSTUN"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" "pm_no_luxury_clothes" }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D18"
+						levels=3
+						region="STATE_ARG_ORDSTUN"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_DIAMOND_QUARRY = {
+		region_state:D18 = {
+			create_building = {
+				building = "building_mithril_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D18"
+						levels=2
+						region="STATE_ARG_ORDSTUN"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D18"
+						levels=4
+						region="STATE_DIAMOND_QUARRY"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_gem_mine"
+				add_ownership={
+					building={
+						type="building_gem_mine"
+						country="c:D18"
+						levels=9
+						region="STATE_DIAMOND_QUARRY"
+					}
+				}
+			}
+			create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D18"
+						levels=2
+						region="STATE_DIAMOND_QUARRY"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_ARGROD_TERMINUS = {
+		region_state:D18 = {
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D18"
+						levels=1
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D18"
+						levels=3
+						region="STATE_ARGROD_TERMINUS"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+	s:STATE_ARGROD = {
+		region_state:D18 = {
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D18"
+						levels=1
+					}
+				}
+			}
+		}
+		region_state:D15 = {
+			#here be nothing
+		}
+	}
+
+
+
+	s:STATE_ORLGHELOVAR = {
+		region_state:D20 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D20"
+						levels=1
+					}
+				}
+				 activate_production_methods = { }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D20"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D20"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
+			}
+			create_building = {
+				building = "building_university"
+				add_ownership={
+					country={
+						country="c:D20"
+						levels=3
+					}
+				}
+			}
+			create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D20"
+						levels=1
+						region="STATE_ORLGHELOVAR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D20"
+						levels=7
+						region="STATE_ORLGHELOVAR"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_no_secondary" "pm_no_enhancements"  }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D20"
+						levels=5
+						region="STATE_ORLGHELOVAR"
+					}
+				}
+				activate_production_methods={ "pm_slaughterhouses" "pm_enchantment_herding_building_livestock_ranch"  }
+			}
+			create_building={
+				building="building_glassworks"
+				add_ownership={
+					building={
+						type="building_glassworks"
+						country="c:D20"
+						levels=4
+						region="STATE_ORLGHELOVAR"
+					}
+				}
+				activate_production_methods={ "pm_leaded_glass" "pm_ceramics" }
+			}
+			create_building={
+				building="building_lead_mine"
+				add_ownership={
+					building={
+						type="building_lead_mine"
+						country="c:D20"
+						levels=2
+						region="STATE_ORLGHELOVAR"
+					}
+				}
+			}
+		
+		
+		}
+	}
+
+	s:STATE_SCREAMING_CAVERNS = {
+		region_state:D20 = {
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D20"
+						levels=10
+						region="STATE_SCREAMING_CAVERNS"
+					}
+				}
+				activate_production_methods={ "pm_herb_gardens" }
+			}
+		}
+	}
+
+
+	
+	s:STATE_SHAZSTUNDIHR = {
+		region_state:D19 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D19"
+						levels=1
+					}
+				}
+				# activate_production_methods = { "pm_hold_no_spec" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D19"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D19"
+						levels=4
+					}
+				}
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D19"
+						levels=13
+						region="STATE_SHAZSTUNDIHR"
+					}
+				}
+				activate_production_methods={ "pm_mushroom_liquor" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D19"
+						levels=2
+						region="STATE_SHAZSTUNDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D19"
+						levels=3
+						region="STATE_SHAZSTUNDIHR"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_gold_mine"
+				add_ownership={
+					country={
+						country="c:D19"
+						levels=1
+					}
+				}
+			}
+			create_building={
+				building="building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D19"
+						levels=2
+						region="STATE_SHAZSTUNDIHR"
+					}
+				}
+			}
+			create_building={
+				building="building_art_academy"
+				add_ownership={
+					country={
+						country="c:D19"
+						levels=1
+					}
+				}
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:D19"
+						levels=1
+						region="STATE_SHAZSTUNDIHR"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" }
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+	s:STATE_GOR_VAZUMBROG = {
+		region_state:D21 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D21"
+						levels=1
+					}
+				}
+			    activate_production_methods = { "pm_hold_light_industries" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D21"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=5
+						region="STATE_GOR_VAZUMBROG"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=2
+						region="STATE_GOR_VAZUMBROG"
+					}
+				}
+				reserves= 1
+				activate_production_methods = { "pm_dye_workshops" "pm_no_luxury_clothes" }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=2
+						region="STATE_GOR_VAZUMBROG"
+					}
+				}
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D21"
+						levels=7
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D21"
+						levels=20
+						region="STATE_GOR_VAZUMBROG"
+					}
+				}
+				activate_production_methods={ "pm_butchering_tools" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D21"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_small_arms_mithril" }
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D21"
+						levels=20
+						region="STATE_GOR_VAZUMBROG"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_opium" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=3
+						region="STATE_GOR_VAZUMBROG"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+			create_building = {
+				building = "building_mithril_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=2
+						region="STATE_GOR_VAZUMBROG"
+					}
+				}
+			}
+			create_building={
+				building="building_gold_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=2
+						region="STATE_GOR_VAZUMBROG"
+					}
+				}
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=6
+						region="STATE_GOR_VAZUMBROG"
+					}
+				}
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=4
+						region="STATE_GOR_VAZUMBROG"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" "pm_mithril_supports" }
+			}
+		}
+	}
+
+	s:STATE_VAZUMROD = {
+		region_state:D21 = {
+				create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=3
+						region="STATE_GOR_VAZUMBROG"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+
+
+	s:STATE_DRAKEDENS = {
+		region_state:D21 = {
+				create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D21"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_small_arms_mithril" }
+			}
+				create_building={
+				building="building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D21"
+						levels=5
+						region="STATE_DRAKEDENS"
+					}
+				}
+			}
+			create_building={
+				building="building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D21"
+						levels=3
+						region="STATE_DRAKEDENS"
+					}
+				}
+			}
+			create_building={
+				building="building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D21"
+						levels=3
+						region="STATE_DRAKEDENS"
+					}
+				}
+			}
+			create_building = {
+				building = "building_gem_mine"
+				add_ownership={
+					country={
+						country="c:D21"
+						levels=4
+					}
+				}
+			}
+			create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D21"
+						levels=1
+						region="STATE_DRAKEDENS"
+					}
+				}
+			}
+			create_building={
+				building="building_gold_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=1
+						region="STATE_DRAKEDENS"
+					}
+				}
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D21"
+						levels=17
+						region="STATE_DRAKEDENS"
+					}
+				}
+				activate_production_methods={ "pm_butchering_tools" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=3
+						region="STATE_DRAKEDENS"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=3
+						region="STATE_DRAKEDENS"
+					}
+				}
+				reserves= 1
+				activate_production_methods = { "pm_dye_workshops" "pm_no_luxury_clothes" }
+			}
+		}
+	}
+
+	s:STATE_FORSAKEN_DEPTHS = {
+		region_state:D21 = {
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D21"
+						levels=1
+						region="STATE_GOR_VAZUMBROG"
+					}
+				}
+				activate_production_methods={ "pm_hardwood_cave_coral" }
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    s:STATE_FOOLS_PASSAGE = {
+		region_state:D24 = {
+				create_building = {
+				building = "building_mithril_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D24"
+						levels=1
+						region="STATE_FOOLS_PASSAGE"
+					}
+				}
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_flawless_metal_mine" }
+			}
+				create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D24"
+						levels=2
+						region="STATE_FOOLS_PASSAGE"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_druidic_circle_building_logging_camp" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+
+
+
+
+	s:STATE_HEHODOVAR = {
+		region_state:D24 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D24"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D24"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D24"
+						levels=4
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D24"
+						levels=4
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_basic_restoration" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D24"
+						levels=2
+						region="STATE_HEHODOVAR"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+		    	create_building = {
+				building = "building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D24"
+						levels=13
+						region="STATE_HEHODOVAR"
+					}
+				}
+			}
+			    create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D24"
+						levels=3
+						region="STATE_HEHODOVAR"
+					}
+				}
+			}
+				create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D24"
+						levels=4
+						region="STATE_HEHODOVAR"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_pot_stills" }
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D24"
+						levels=10
+						region="STATE_HEHODOVAR"
+					}
+				}
+				activate_production_methods={ "pm_mushroom_no_secondary" "pm_no_enhancements"  }
+			}
+			create_building = {
+				building = "building_university"
+				add_ownership={
+					country={
+						country="c:D24"
+						levels=1
+					}
+				}
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:D24"
+						levels=2
+						region="STATE_HEHODOVAR"
+					}
+				}
+				activate_production_methods={ "pm_steel" "pm_mithril_supports" }
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				add_ownership={
+					building={
+						type="building_artillery_foundry"
+						country="c:D24"
+						levels=1
+						region="STATE_HEHODOVAR"
+					}
+				}
+				activate_production_methods={  } # "pm_artillery_mithril"
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D24"
+						levels=2
+						region="STATE_HEHODOVAR"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_druidic_circle_building_logging_camp" "pm_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_coal_mine"
+						country="c:D24"
+						levels=2
+						region="STATE_HEHODOVAR"
+					}
+				}
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine"  }
+			}
+		}
+	}
+
+
+
+
+	s:STATE_SEGHDIHR = {
+		region_state:D24 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D24"
+						levels=1
+					}
+				}
+				activate_production_methods = { }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D24"
+						levels=3
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_basic_restoration" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D24"
+						levels=3
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D24"
+						levels=7
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_coal_mine"
+						country="c:D24"
+						levels=7
+						region="STATE_SEGHDIHR"
+					}
+				}
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_coal_mine" }
+			}
+			create_building={ 
+				building="building_steel_mill"
+				add_ownership={
+					building={
+						type="building_steel_mill"
+						country="c:D24"
+						levels=1
+						region="STATE_SEGHDIHR"
+					}
+				} 
+				reserves=1
+				activate_production_methods={ "pm_bessemer_process" "pm_automation_disabled" }
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				add_ownership={
+					building={
+						type="building_artillery_foundry"
+						country="c:D24"
+						levels=1
+						region="STATE_SEGHDIHR"
+					}
+				}
+				activate_production_methods={  } # "pm_artillery_mithril"
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:D24"
+						levels=3
+						region="STATE_SEGHDIHR"
+					}
+				}
+				activate_production_methods={ "pm_steel" "pm_mithril_supports" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D24"
+						levels=3
+						region="STATE_SEGHDIHR"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+			create_building={
+				building="building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D24"
+						levels=7
+						region="STATE_SEGHDIHR"
+					}
+				}
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_iron_mine" }
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D24"
+						levels=6
+						region="STATE_SEGHDIHR"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_disabled_distillery" }
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D24"
+						levels=20
+						region="STATE_SEGHDIHR"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_no_secondary" "pm_no_enhancements"  }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D24"
+						levels=10
+						region="STATE_SEGHDIHR"
+					}
+				}
+				activate_production_methods={ "pm_slaughterhouses" }
+			}
+			create_building={
+				building="building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D24"
+						levels=10
+						region="STATE_SEGHDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D24"
+						levels=3
+						region="STATE_SEGHDIHR"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" "pm_druidic_circle_building_logging_camp" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					building={
+						type="building_arms_industry"
+						country="c:D24"
+						levels=3
+						region="STATE_SEGHDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_gem_mine"
+				add_ownership={
+					building={
+						type="building_gem_mine"
+						country="c:D24"
+						levels=7
+						region="STATE_SEGHDIHR"
+					}
+				}
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_gem_mine" }
+			}
+			create_building={
+				building="building_coffee_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D24"
+						levels=5
+						region="STATE_SEGHDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D24"
+						levels=6
+						region="STATE_SEGHDIHR"
+					}
+				}
+				activate_production_methods = { "pm_handsewn_clothes" }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D24"
+						levels=3
+						region="STATE_SEGHDIHR"
+					}
+				}
+				activate_production_methods={ "pm_sulfite_pulping" }
+			}
+			create_building = {
+				building = "building_sulfur_mine"
+				add_ownership={
+					building={
+						type="building_sulfur_mine"
+						country="c:D24"
+						levels=1
+						region="STATE_SEGHDIHR"
+					}
+				}
+				activate_production_methods={ "pm_atmospheric_engine_pump_building_sulfur_mine" }
+			}
+		}
+	}
+
+	s:STATE_SEGHROD = {
+		region_state:D24 = {
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D24"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_basic_restoration" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D24"
+						levels=3
+						region="STATE_SEGHROD"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" "pm_druidic_circle_building_logging_camp" }
+			}
+		}
+		region_state:D25 = {
+				create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D25"
+						levels=1
+						region="STATE_SEGHROD"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+				create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D25"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_basic_restoration" }
+			}
+		}
+	}
+
+
+
+
+
+
+
+	s:STATE_VERKAL_GULAN = {
+		region_state:D25 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D25"
+						levels=1
+					}
+				}
+				activate_production_methods = {  }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					building={
+						type="building_dwarovrod"
+						country="c:D25"
+						levels=5
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_basic_restoration" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D25"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building={ 
+				building="building_mage_tower"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D25"
+						levels=5
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_traditional_mages" }
+			}
+			create_building={
+				building="building_trade_center"
+				add_ownership={
+					building={
+						type="building_trade_center"
+						country="c:D25"
+						levels=3
+						region="STATE_VERKAL_GULAN"
+					}
+				} 
+				reserves=1
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D25"
+						levels=11
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D25"
+						levels=7
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				activate_production_methods={ "pm_bakery" "pm_disabled_distillery" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					building={
+						type="building_arms_industry"
+						country="c:D25"
+						levels=2
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				activate_production_methods={ "pm_small_arms_mithril" }
+			}
+			create_building={
+				building="building_gold_mine"
+				add_ownership={
+					building={
+						type="building_gold_mine"
+						country="c:D25"
+						levels=11
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D25"
+						levels=20
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_opium" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D25"
+						levels=6
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_increased_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D25"
+						levels=5
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				activate_production_methods={ "pm_slaughterhouses" }
+			}
+			create_building={
+				building="building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D25"
+						levels=4
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D25"
+						levels=3
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D25"
+						levels=3
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" "pm_craftsman_sewing" }
+			}
+			create_building={
+				building="building_glassworks"
+				add_ownership={
+					building={
+						type="building_glassworks"
+						country="c:D25"
+						levels=3
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D25"
+						levels=1
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				activate_production_methods={ "pm_leaded_glass" "pm_ceramics" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:D25"
+						levels=3
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D25"
+						levels=2
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" "pm_mithril_supports" }
+			}
+			create_building={
+				building="building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D25"
+						levels=8
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D25"
+						levels=8
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+		}
+	}
+
+	s:STATE_ANCIENT_DEPTHS = {
+		region_state:D25 = {
+				create_building = {
+				building = "building_mithril_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D25"
+						levels=2
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+			}
+			create_building={
+				building="building_lead_mine"
+				add_ownership={
+					building={
+						type="building_lead_mine"
+						country="c:D25"
+						levels=2
+						region="STATE_ANCIENT_DEPTHS"
+					}
+				}
+			}
+		}
+	}
+
+	s:STATE_GREATCAVERNS = {
+		region_state:D25 = {
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D25"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_coal_mine"
+						country="c:D25"
+						levels=4
+						region="STATE_GREATCAVERNS"
+					}
+				}
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D25"
+						levels=2
+						region="STATE_VERKAL_GULAN"
+					}
+				}
+			}
+			create_building = {
+				building = "building_opium_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D25"
+						levels=3
+						region="STATE_GREATCAVERNS"
+					}
+				}
+			}
+		}
+	}
+
+    s:STATE_OZUMROD = {
+		region_state:D25 = {
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D25"
+						levels=2
+						region="STATE_OZUMROD"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+		    create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D25"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_basic_restoration" }
+			}
+		}
+		region_state:D26 = {
+						create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=7
+						region="STATE_OVDAL_KANZAD"
+					}
+				}
+				activate_production_methods={ "pm_herb_gardens" }
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	s:STATE_GOR_OZUMBROG = {
+		region_state:D26 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=8
+						region="STATE_GOR_OZUMBROG"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_no_secondary" }
+			}
+			create_building = {
+				building = "building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=6
+						region="STATE_OVDAL_AZ_AN"
+					}
+				}
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D26"
+						levels=2
+						region="STATE_GOR_OZUMBROG"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_pot_stills" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D26"
+						levels=2
+						region="STATE_GOR_OZUMBROG"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+	s:STATE_OVDAL_KANZAD = {
+		region_state:D26 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=3
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building = {
+				building = "building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=3
+						region="STATE_OVDAL_KANZAD"
+					}
+				}
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D26"
+						levels=1
+						region="STATE_OVDAL_KANZAD"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_pot_stills" }
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=21
+						region="STATE_OVDAL_KANZAD"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_no_secondary" }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D26"
+						levels=1
+						region="STATE_OVDAL_KANZAD"
+					}
+				}
+				activate_production_methods={ "pm_sulfite_pulping" }
+			}
+			create_building = {
+				building = "building_sulfur_mine"
+				add_ownership={
+					building={
+						type="building_sulfur_mine"
+						country="c:D26"
+						levels=3
+						region="STATE_OVDAL_KANZAD"
+					}
+				}
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:D26"
+						levels=1
+						region="STATE_OVDAL_KANZAD"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D26"
+						levels=4
+						region="STATE_OVDAL_KANZAD"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				add_ownership={
+					building={
+						type="building_artillery_foundry"
+						country="c:D26"
+						levels=3
+						region="STATE_OVDAL_KANZAD"
+					}
+				}
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D26"
+						levels=2
+						region="STATE_OVDAL_KANZAD"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_GROZUMDIHR = {
+		region_state:D26 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=2
+					}
+				}
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=5
+					}
+				}
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" }
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D26"
+						levels=2
+						region="STATE_GROZUMDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_coal_mine"
+						country="c:D26"
+						levels=6
+						region="STATE_GROZUMDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D26"
+						levels=4
+						region="STATE_GROZUMDIHR"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" }
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=28
+						region="STATE_GROZUMDIHR"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_no_secondary" }
+			}
+			create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=4
+						region="STATE_GROZUMDIHR"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D26"
+						levels=3
+						region="STATE_GROZUMDIHR"
+					}
+				}
+				activate_production_methods={ "pm_simple_forestry_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+	s:STATE_OVDAL_AZ_AN = {
+		region_state:D26 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=1
+					}
+				}
+				 activate_production_methods = { }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=3
+					}
+				}
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=5
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D26"
+						levels=1
+						region="STATE_OVDAL_AZ_AN"
+					}
+				}
+				activate_production_methods={ "pm_sulfite_pulping" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D26"
+						levels=2
+						region="STATE_OVDAL_AZ_AN"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D26"
+						levels=3
+						region="STATE_OVDAL_AZ_AN"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_disabled_distillery" }
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=8
+						region="STATE_OVDAL_AZ_AN"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_opium" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=1
+					}
+				}
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=5
+					}
+				}
+			}
+			create_building = {
+				building = "building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=5
+						region="STATE_OVDAL_AZ_AN"
+					}
+				}
+				activate_production_methods = { "pm_butchering_tools" }
+			}
+			create_building = {
+				building = "building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=5
+						region="STATE_OVDAL_AZ_AN"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=5
+						region="STATE_OVDAL_AZ_AN"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D26"
+						levels=3
+						region="STATE_OVDAL_AZ_AN"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D26"
+						levels=5
+						region="STATE_OVDAL_AZ_AN"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" }
+			}
+		}
+	}
+
+
+	s:STATE_AMBER_MINES = {
+		region_state:D26 = {
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=5
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building={ 
+				building="building_mage_tower"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=8
+						region="STATE_AMBER_MINES"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_traditional_mages" }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D26"
+						levels=1
+						region="STATE_AMBER_MINES"
+					}
+				}
+				activate_production_methods={ "pm_sulfite_pulping" }
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=15
+						region="STATE_AMBER_MINES"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_opium" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D26"
+						levels=6
+						region="STATE_AMBER_MINES"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+
+	s:STATE_EARTHSEED = {
+		region_state:D26 = {
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=5
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D26"
+						levels=1
+						region="STATE_EARTHSEED"
+					}
+				}
+				activate_production_methods={ "pm_sulfite_pulping" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D26"
+						levels=4
+						region="STATE_EARTHSEED"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_luxury_furniture" }
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D26"
+						levels=1
+						region="STATE_EARTHSEED"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" }
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D26"
+						levels=2
+						region="STATE_EARTHSEED"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_pot_stills" }
+			}
+			create_building={
+				building="building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=5
+						region="STATE_EARTHSEED"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D26"
+						levels=8
+						region="STATE_EARTHSEED"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=3
+					}
+				}
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D26"
+						levels=4
+						region="STATE_EARTHSEED"
+					}
+				}
+			}
+			create_building={
+				building="building_gold_mine"
+				add_ownership={
+					building={
+						type="building_gold_mine"
+						country="c:D26"
+						levels=1
+						region="STATE_EARTHSEED"
+					}
+				}
+			}
+		}
+	}
+
+	s:STATE_HALNROD = {
+		region_state:D26 = {
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D26"
+						levels=1
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+
+    s:STATE_ROARING_CAVERNS = {
+		region_state:D31 = {
+				create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D31"
+						levels=2
+						region="STATE_ROARING_CAVERNS"
+					}
+				}
+			}
+		}
+		region_state:D26 = {
+				create_building = {
+				building = "building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D26"
+						levels=2
+						region="STATE_ROARING_CAVERNS"
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+	s:STATE_HUL_AZ_KRAKAZOL = {
+		region_state:D31 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D31"
+						levels=1
+					}
+				}
+				 activate_production_methods = {  }
+			}
+			create_building={ 
+				building="building_mage_tower"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D31"
+						levels=15
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_curios_artisans" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D31"
+						levels=4
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D31"
+						levels=7
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:D31"
+						levels=5
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_disabled_distillery" }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D31"
+						levels=5
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_basic_restoration" }
+			}
+			create_building={
+				building="building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D31"
+						levels=10
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D31"
+						levels=4
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+				activate_production_methods = { "pm_dye_workshops" }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D31"
+						levels=3
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D31"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" "pm_fabrication_spells_buildings" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D31"
+						levels=12
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D31"
+						levels=10
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+				activate_production_methods={ "pm_herb_gardens" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D31"
+						levels=5
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+				activate_production_methods={ "pm_butchering_tools" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D31"
+						levels=2
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:D31"
+						levels=4
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D31"
+						levels=2
+					}
+				}
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				add_ownership={
+					country={
+						country="c:D31"
+						levels=2
+					}
+				}
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_coal_mine"
+						country="c:D31"
+						levels=5
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_ALEMINES = {
+		region_state:D31 = {
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D31"
+						levels=9
+						region="STATE_ALEMINES"
+					}
+				}
+				activate_production_methods={ "pm_mushroom_liquor" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D31"
+						levels=3
+						region="STATE_ALEMINES"
+					}
+				}
+				activate_production_methods={ "pm_butchering_tools" }
+			}
+			create_building={
+				building="building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D31"
+						levels=3
+						region="STATE_ALEMINES"
+					}
+				}
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D31"
+						levels=4
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_disabled_distillery" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D31"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D31"
+						levels=8
+						region="STATE_ALEMINES"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D31"
+						levels=2
+						region="STATE_ALEMINES"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+
+	s:STATE_AMETHYST_POCKET = {
+		region_state:D31 = {
+				create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:D31"
+						levels=2
+						region="STATE_HUL_AZ_KRAKAZOL"
+					}
+				}
+				activate_production_methods={ "pm_sweeteners" "pm_disabled_distillery" }
+			}
+				create_building = {
+				building = "building_cotton_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D31"
+						levels=5
+						region="STATE_AMETHYST_POCKET"
+					}
+				}
+			}
+				create_building = {
+				building = "building_gem_mine"
+				add_ownership={
+					building={
+						type="building_gem_mine"
+						country="c:D31"
+						levels=5
+						region="STATE_AMETHYST_POCKET"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D31"
+						levels=4
+						region="STATE_AMETHYST_POCKET"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+			create_building={
+				building="building_gold_mine"
+				add_ownership={
+					country={
+						country="c:D31"
+						levels=2
+					}
+				}
+			}
+		}
+	}
+	
+
+
+	s:STATE_GRANITE_SPIRES = {
+		region_state:D31 = {
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D31"
+						levels=3
+						region="STATE_GRANITE_SPIRES"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	s:STATE_TUWAD_DHUMANKON = {
+		region_state:D33 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=1
+					}
+				}
+				# activate_production_methods = { "pm_hold_farm" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=7
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D33"
+						levels=15
+						region="STATE_TUWAD_DHUMANKON"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_opium" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D33"
+						levels=7
+						region="STATE_TUWAD_DHUMANKON"
+					}
+				}
+				activate_production_methods={ "pm_butchering_tools" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D33"
+						levels=3
+						region="STATE_TUWAD_DHUMANKON"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+	s:STATE_GRONSTUNAD = {
+		region_state:D33 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=1
+					}
+				}
+				# activate_production_methods = { "pm_hold_military" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={
+					building={
+						type="building_furniture_manufactory"
+						country="c:D33"
+						levels=1
+						region="STATE_GRONSTUNAD"
+					}
+				}
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_no_trade" }
+			}
+			create_building={
+				building="building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D33"
+						levels=1
+						region="STATE_GRONSTUNAD"
+					}
+				}
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:D33"
+						levels=1
+						region="STATE_GRONSTUNAD"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D33"
+						levels=3
+						region="STATE_GRONSTUNAD"
+					}
+				}
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=2
+					}
+				}
+				activate_production_methods={  }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=11
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D33"
+						levels=2
+						region="STATE_GRONSTUNAD"
+					}
+					country={
+						country="c:D33"
+						levels=3		#would be 5 if they could export guns
+					}
+				}
+			}
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D33"
+						levels=3
+						region="STATE_GRONSTUNAD"
+					}
+				}
+				activate_production_methods={ "pm_serpentbloom_no_secondary" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D33"
+						levels=5
+						region="STATE_GRONSTUNAD"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_hardwood_cave_coral" }
+			}
+			create_building = {
+				building = "building_coal_mine"
+				add_ownership={
+					building={
+						type="building_coal_mine"
+						country="c:D33"
+						levels=4
+						region="STATE_GRONSTUNAD"
+					}
+				}
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=2 	
+					}
+				}
+			  activate_production_methods={  }
+			}
+			create_building = {
+				building = "building_artillery_foundry"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=1
+					}
+				}
+				activate_production_methods={  }
+			}
+		}
+	}
+	s:STATE_VURDRIZ_ANDRIZ = {
+		region_state:D33 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=2
+					}
+				}
+				# activate_production_methods = { "pm_hold_artisan" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=1 	
+					}
+				}
+			  activate_production_methods={  }
+			}
+			create_building={
+				building="building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:D33"
+						levels=2
+						region="STATE_VURDRIZ_ANDRIZ"
+					}
+				}
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:D33"
+						levels=2
+						region="STATE_VURDRIZ_ANDRIZ"
+					}
+				}
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=6
+					}
+				}
+				activate_production_methods={ "pm_horizontal_drawer_cabinets"  }
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D33"
+						levels=6
+						region="STATE_VURDRIZ_ANDRIZ"
+					}
+				}
+				activate_production_methods={ "pm_mushroom_liquor" }
+			}
+			create_building={
+				building="building_gold_mine"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=1
+					}
+				}
+			}
+		}
+	}
+	s:STATE_VERKAL_DROMAK = {
+		region_state:D33 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=1
+					}
+				}
+				# activate_production_methods = { "pm_hold_foundry" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=2
+					}
+				}
+				activate_production_methods={ "pm_iron_frame_buildings" }
+			}
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_no_trade" }
+			}
+			create_building = {
+				building = "building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:D33"
+						levels=4
+						region="STATE_VERKAL_DROMAK"
+					}
+				}
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D33"
+						levels=8
+						region="STATE_VERKAL_DROMAK"
+					}
+				}
+				activate_production_methods={ "pm_mushroom_liquor" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:D33"
+						levels=2
+						region="STATE_VERKAL_DROMAK"
+					}
+				}
+				activate_production_methods={ "pm_pig_iron" }
+			}
+			create_building = {
+				building = "building_cave_coral"
+				add_ownership={
+					building={
+						type="building_cave_coral"
+						country="c:D33"
+						levels=2
+						region="STATE_VERKAL_DROMAK"
+					}
+				}
+				activate_production_methods={ "pm_saw_mills_cave_coral" "pm_no_hardwood_cave_coral" }
+			}
+		}
+	}
+	s:STATE_EASTERN_JADEROD = {
+		region_state:D33 = {
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_no_trade" }
+			}
+			create_building = {
+				building = "building_mushroom_farm"
+				add_ownership={
+					building= {
+						type="building_mushroom_farm"
+						country="c:D33"
+						levels=1
+						region="STATE_EASTERN_JADEROD"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_WESTERN_JADEROD = {
+		region_state:D33 = {
+			create_building = {
+				building = "building_dwarovrod"
+				add_ownership={
+					country={
+						country="c:D33"
+						levels=1
+					}
+				}
+				activate_production_methods={ "pm_dwarovrod_minecarts" "pm_dwarovrod_no_trade" }
+			}
+		}
+	}
+	s:STATE_SUNLIT_HOLLOW = {
+		region_state:D33 = {		
+		}
+	}
+	s:STATE_PUTRID_PASSAGE = {
+		region_state:D33 = {
+			create_building = {
+				building = "building_silk_plantation"
+				add_ownership={
+					building= {
+						type="building_silk_plantation"
+						country="c:D33"
+						levels=3
+						region="STATE_PUTRID_PASSAGE"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_LUSH_CAVERNS = {
+		region_state:D33 = {
+			create_building={
+				building="building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:D33"
+						levels=10
+						region="STATE_LUSH_CAVERNS"
+					}
+				}
+			}
+			create_building = {
+				building = "building_cotton_plantation"
+				add_ownership={
+					building= {
+						type="building_manor_house"
+						country="c:D33"
+						levels=1
+						region="STATE_LUSH_CAVERNS"
+					}
+				}
+			}
+		}
+	}
+	s:STATE_INVADERS_PATH = {
+		region_state:D33 = {
+			create_building = {
+				building = "building_serpentbloom_farm"
+				add_ownership={
+					building= {
+						type="building_serpentbloom_farm"
+						country="c:D33"
+						levels=1
+						region="STATE_INVADERS_PATH"
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	s:STATE_AK_LOGRAN = {
+		region_state:A10 = {
+			create_building={
+				building="building_trade_center"
+				add_ownership={
+					building={
+						type="building_trade_center"
+						country="c:A10"
+						levels=4
+						region="STATE_AK_LOGRAN"
+					}
+				} 
+				reserves=1
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+			}
+			create_building = {
+				building = "building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:A10"
+						levels=10
+						region="STATE_AK_LOGRAN"
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building = {
+				building = "building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_livestock_ranch"
+						country="c:A10"
+						levels=15
+						region="STATE_AK_LOGRAN"
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_open_air_stockyards" }
+			}
+		}
+	}
+
+	s:STATE_KABARDA = {
+		region_state:A10 = {
+			create_building={
+				building = "building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:A10"
+						levels=4
+						region="STATE_KABARDA"
+					}
+				}
+				reserves = 1
+				activate_production_methods={ "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building = {
+				building= "building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_livestock_ranch"
+						country="c:A10"
+						levels=3
+						region="STATE_KABARDA"
+					}
+				}
+				reserves= 1
+				activate_production_methods = { "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_open_air_stockyards" }
+			}
+		}
+	}
+
+	s:STATE_ZUDARAKH = {
+		region_state:A10 = {
+			create_building = {
+				building = "building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:A10"
+						levels=2
+						region="STATE_ZUDARAKH"
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building = {
+				building= "building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_livestock_ranch"
+						country="c:A10"
+						levels=3
+						region="STATE_ZUDARAKH"
+					}
+				}
+				reserves= 1
+				activate_production_methods = { "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_open_air_stockyards" }
+			}
+		}
+	}
+
+
+
+
+
+	s:STATE_MARRHOLD = {
+		region_state:A29 = {
+			create_building = {
+				building = "building_dwarven_hold"
+				add_ownership={
+					country={
+						country="c:A29"
+						levels=2
+					}
+				}
+				# activate_production_methods = { "pm_hold_no_spec" }
+			}
+			create_building = {
+				building = "building_food_industry"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:A29"
+						levels=1
+						region="STATE_MARRHOLD"
+					}
+				}
+				activate_production_methods={ "pm_pot_stills" }
+			}
+			create_building={
+				building="building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:A29"
+						levels=1
+						region="STATE_MARRHOLD"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,588 @@
+﻿STATE_LASTSIGHT_ISLANDS = {
+    #Bermuda x2
+    id = 200
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0D5C7E" "x0D6020" "x8D5EAD" "x8D624F" }
+    traits = { state_trait_uelos_sigh_fog }
+    city = "x0d6020" 
+    #Ivrandir
+    port = "x8d5ead" 
+    #Narawen
+    farm = "x0d5c7e" 
+    #Taelarios
+    wood = "x8D624F"
+    mine = "x8D624F"
+    arable_land = 8
+    arable_resources = { building_wheat_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_fishing_wharf = 4
+    }
+    resource = {
+        type = "building_damestear_dives"
+        undiscovered_amount = 3
+    }
+    naval_exit_id = 3100
+}
+STATE_SILSENSALD_ISLES = {
+    #Puerto Rico
+    id = 203
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0D5820" "x333C7D" "x3EC9FB" "x8D56AD" "x8D5A4F" }
+    traits = { state_trait_uelos_sigh_fog }
+    city = "x8d5a4f" 
+    #Cas Colún
+    port = "x3ec9fb" 
+    #East Brunvern
+    farm = "x0d5820" 
+    #Silsensald
+    wood = "x8d56ad" 
+    #Brunvern
+    mine = "x333C7D"
+    arable_land = 20
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 2
+        building_fishing_wharf = 4
+    }
+    naval_exit_id = 3101
+}
+STATE_CAPE_OF_ENDRAL = {
+    #Endralliande is Cuba x3 split acrosss 6 states, so each state is roughly half of Cuba
+    id = 204
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x02704A" "x029B39" "x089656" "x0AE0C8" "x0E36A6" "x0F747E" "x1162AB" "x17E083" "x220567" "x2259C1" "x26540D" "x26D139" "x2B3DB2" "x2B53A8" "x2CD991" "x34D0BC" "x3F2C58" "x404F79" "x4944D3" "x4A347D" "x4EEC43" "x53A7B0" "x544E78" "x5BCCC5" "x5D0D3A" "x5D65F0" "x5E1DAB" "x5F6812" "x67E247" "x68EBDF" "x6B76AC" "x6CC127" "x6E356D" "x7FECD5" "x842BD1" "x86F056" "x892954" "x8E6EAD" "x8E7DEB" "x8F724F" "x8F76AD" "x99824F" "x9C03F5" "x9C22B6" "xA5947F" "xA5B08D" "xB34B4A" "xB8E1C9" "xB9D73F" "xC23712" "xD0FCE8" "xD32697" "xDEAB00" "xE0E5F1" "xE4BADA" "xE4C6CA" "xF74473" "xFD0AC9" }
+    traits = {}
+    city = "x8f76ad" 
+    #Criodhcel
+    port = "x0f747e" 
+    #Celodirin
+    farm = "x8f724f" 
+    #Sister's Coast
+    mine = "xd0fce8" 
+    #NEW PLACE
+    wood = "x99824f" 
+    #Rhademele
+    arable_land = 170
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 8
+        building_fishing_wharf = 7
+        building_relics_digsite = 25
+    #also 1 rare earths deposit
+    }
+    naval_exit_id = 3100
+}
+STATE_IBSEAN = {
+    id = 205
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0C4882" "x0DD446" "x0E2FD7" "x0E647E" "x0E6820" "x0E6C7E" "x0E747E" "x0F7820" "x193C65" "x23015A" "x2766F7" "x27E24A" "x2897D9" "x3128D1" "x352136" "x35F88F" "x37DB58" "x3C0F12" "x40F328" "x4707B8" "x48C0EC" "x5190A5" "x530097" "x551C6D" "x56173B" "x5706C5" "x6C6546" "x722544" "x7B436E" "x8E66AD" "x8E6A4F" "x8F1986" "x967EAD" "x98794F" "x9FC77C" "xA2353E" "xA7492D" "xB0D3D1" "xB2E8D2" "xB5CF1C" "xCB2E10" "xCC8876" "xE0904F" "xE75677" "xE84BB9" "xEE19CF" "xF04FA7" "xF3247D" "xF84BFB" "xFC7D49" "xFF7519" "xFFFB8A" }
+    traits = { state_trait_hibiscus_vale state_trait_uelos_sigh_fog }
+    city = "x0e647e" 
+    #Tifur
+    port = "x0e6820" 
+    #Fláruan
+    farm = "x8e66ad" 
+    #Ibsthemar
+    wood = "x0f7820" 
+    #Mórveren
+    mine = "x0C4882"
+    arable_land = 170
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 9
+        building_fishing_wharf = 7
+        building_relics_digsite = 7
+    }
+    naval_exit_id = 3100
+}
+STATE_RUBENSHORE = {
+    id = 206
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0E7020" "x167820" "x1800F8" "x187020" "x18747E" "x27B9D8" "x385522" "x3CFCFC" "x486D57" "x502084" "x589AA0" "x5A8448" "x5B1F82" "x5CAC43" "x60B07E" "x60F232" "x645A16" "x6D3848" "x6F196A" "x708D3A" "x7D522D" "x7D96CF" "x7DC9C9" "x8B48A1" "x8C0E09" "x964B53" "x98724F" "x99835A" "xA2237D" "xA2369A" "xC3BCEB" "xC7C959" "xCCEEA4" "xF46122" "xF6FF58" }
+    traits = { state_trait_endralaine_river state_trait_uelos_sigh_fog }
+    city = "x18747e" 
+    #Rubenshore
+    port = "x98724f" 
+    #Arbrínne
+    farm = "x187020" 
+    #Scadhimeial
+    wood = "x7dc9c9" 
+    #NEW PLACE (Rubenglade?)
+    mine = "x0E7020"
+    arable_land = 120
+    arable_resources = { building_maize_farm building_livestock_ranch building_cotton_plantation building_tobacco_plantation building_sugar_plantation building_vineyard }
+    capped_resources = {
+        building_logging_camp = 5
+        building_fishing_wharf = 8
+        building_coal_mine = 20
+        building_iron_mine = 12
+    }
+    naval_exit_id = 3101
+}
+STATE_JERCEL = {
+    id = 207
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x05A830" "x177820" "x187820" "x1ED6EA" "x280548" "x3637CD" "x4CA438" "x5962C9" "x5D892B" "x60A061" "x7D6953" "x8AAB3B" "x8BA59A" "x924B81" "x9260C8" "x9876AD" "x987A4F" "xA1C01F" "xA673D8" "xA930B6" "xAD06FA" "xAD65EC" "xB61369" "xB82BAD" "xB93C0F" "xBD5D5E" "xC58442" "xC9C959" "xCA7492" "xD3F176" "xDE73FA" "xE93F3B" "xF15D77" }
+    traits = { state_trait_endralaine_river state_trait_natural_harbors state_trait_uelos_sigh_fog }
+    city = "x187820" 
+    #Jercel
+    port = "x9876ad" 
+    #Brístentír
+    farm = "xc9c959" 
+    #Aelthán
+    mine = "xa930b6" 
+    #NEW PLACE
+    wood = "x987a4f"
+    #Aransilvar
+    arable_land = 150
+    arable_resources = { building_rice_farm building_livestock_ranch building_cotton_plantation building_tobacco_plantation building_sugar_plantation building_vineyard }
+    capped_resources = {
+        building_logging_camp = 4
+        building_fishing_wharf = 6
+        building_iron_mine = 24
+        building_coal_mine = 16
+        building_lead_mine = 12
+    }
+    resource = {
+        type = "building_damestear_dives"
+        undiscovered_amount = 2
+        discovered_amount = 2
+    }
+    naval_exit_id = 3101
+}
+STATE_ENDRALVAR = {
+    id = 208
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x008FBF" "x0AEC53" "x156E2C" "x22D752" "x240567" "x45147B" "x4BA8F3" "x57BBEA" "x60587C" "x61D35A" "x6281A3" "x6D2BEA" "x77DE0A" "x77FF71" "x7B00EB" "x81AB81" "x834C0B" "x9004B8" "x9097A7" "x94C3B2" "x961629" "x9A1755" "x9AEEB0" "x9B4C0C" "x9B8B2F" "xA924E5" "xADD127" "xB048E6" "xB0993C" "xB50E7B" "xB66139" "xBA526D" "xC3A744" "xCA93F7" "xDB0047" "xDDD41F" "xE47AA4" "xE69F1B" "xE6AED6" "xE8C6CA" "xE8F649" "xED0E37" "xEE7E66" "xF18A10" "xF3CC25" "xF4B300" "xF858DE" "xFC63BD" }
+    traits = { state_trait_endralaine_river state_trait_uelos_sigh_fog }
+    city = "x81ab81" 
+    #Upper Endralvar
+    farm = "x9b8b2f" 
+    #Trásainé
+    mine = "x9a1755" 
+    #NEW PLACE
+    wood = "x9b4c0c" 
+    #Lower Endralvar
+    arable_land = 120
+    arable_resources = { building_maize_farm building_livestock_ranch building_cotton_plantation building_tobacco_plantation building_sugar_plantation building_vineyard }
+    capped_resources = {
+        building_logging_camp = 8
+        building_iron_mine = 27
+        building_lead_mine = 24
+    #also 1 uranium deposit and 1 rare earths
+    }
+}
+STATE_MARBELOCH = {
+    id = 209
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x08D21B" "x187C7E" "x198020" "x1F5703" "x22F1E7" "x2FD84B" "x2FDD18" "x314FD8" "x3B9871" "x3BBAA9" "x3C73E5" "x5A2847" "x5D9EB7" "x63D65C" "x6AEC80" "x776418" "x7E64B2" "x8E724E" "x912847" "x997EAD" "xA80BD7" "xAB4778" "xB93F66" "xBB01AA" "xC2C9F9" "xC77C99" "xC8C959" "xCAED6A" "xCB9C02" "xD16CFB" "xD2C207" "xDB6D05" "xDE86FE" "xE62C1D" "xE85708" "xF0E159" "xF7A16A" "xF7B923" "xFB9BFC" "xFE1E0F" }
+    traits = {}
+    city = "x198020" 
+    #Cymcóst
+    port = "x187c7e" 
+    #Márbeloch
+    farm = "x997ead" 
+    #Endral's Reach
+    wood = "x08D21B"
+    mine = "x1F5703"
+    arable_land = 120
+    arable_resources = { building_maize_farm building_livestock_ranch building_cotton_plantation building_tobacco_plantation building_sugar_plantation building_vineyard }
+    capped_resources = {
+        building_logging_camp = 5
+        building_fishing_wharf = 6
+        building_damestear_mine = 8
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 4
+    }
+    naval_exit_id = 3102
+}
+STATE_OBAITHAIL = {
+    #Haiti + Santo Domingo
+    id = 210
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0AED4D" "x0F7C7E" "x108020" "x10847E" "x12A155" "x1C41B0" "x20D434" "x2723EA" "x32D411" "x3CACBA" "x3DE192" "x487FA4" "x50A9C2" "x6B76AB" "x7303AB" "x74E04B" "x804512" "x8F7A4F" "x8F7EAD" "x90824F" "x92791E" "x9BC2A3" "x9D474B" "xA23BD6" "xA40EEF" "xAD2E40" "xB335F9" "xB52E40" "xB8D1F8" "xBD3328" "xBDCC03" "xC5AE92" "xD02F76" "xD2B27D" "xD799EB" "xE0E1D5" }
+    traits = {}
+    city = "x8f7ead"
+    #Soara
+    port = "x9bc2a3"
+    #Sámchí Móine
+    farm = "x0f7c7e"
+    #Orric Chéid
+    mine = "x10847e"
+    #Náidreán
+    wood = "x108020"
+    #Dhainé
+    arable_land = 53
+    arable_resources = { building_wheat_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_tobacco_plantation building_sugar_plantation building_vineyard }
+    capped_resources = {
+        building_logging_camp = 10
+        building_fishing_wharf = 7
+        building_relics_digsite = 8
+    #also 4 rare earths deposits
+    }
+    resource = {
+        #making that place a bit more relevant, can be a reason for Anbennar and Endralliande to care about it
+        type = "building_oil_rig"
+        undiscovered_amount = 12
+    }
+    naval_exit_id = 3100
+}
+STATE_MOUTH_OF_RUIN = {
+    #Puerto Rico + Jamaica
+    id = 212
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x1F5C7E" "x206020" "x355E3D" "x43EF0F" "x4A347C" "x4E7963" "x724488" "x734EF0" "x7A6732" "x95D459" "x9F5A4F" "x9F5EAD" "xB726AD" "xC1B54F" "xE6BE40" "xEE3F9A" "xF4ACB0" }
+    traits = { state_trait_ruined_sea_sulfur }
+    city = "x9f5ead" 
+    #Qáthcel
+    port = "x1f5c7e" 
+    #Irmathuan
+    farm = "xe6be40" 
+    #Fadhin
+    mine = "xb726ad" 
+    #Wanderer's Bay
+    wood = "x734ef0" 
+    #Thorimcóst
+    arable_land = 42
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 5
+        building_fishing_wharf = 9
+        building_iron_mine = 18
+        building_sulfur_mine = 12
+    }
+    resource = {
+        type = "building_damestear_dives"
+        undiscovered_amount = 3
+        discovered_amount = 2
+    }
+    naval_exit_id = 3102
+}
+STATE_TORRISHEAH = {
+    #Jamaica
+    id = 213
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0829C3" "x227C7E" "x22E420" "x273C2C" "x4F530D" "x73A236" "x91210B" "x91F7E2" "x9F6A4F" "xA17A4F" "xA2E2AD" "xF7D732" }
+    traits = {}
+    city = "xa2e2ad"
+    #Sheáhin
+    port = "x227c7e"
+    #Sheáh Frigoria
+    farm = "xa17a4f"
+    #Gearúm Róg
+    mine = "x91210b"
+    #Márlas
+    wood = "x22e420"
+    #Árore
+    arable_land = 18
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 3
+        building_fishing_wharf = 5
+    }
+    resource = {
+        type = "building_damestear_dives"
+        undiscovered_amount = 2
+        discovered_amount = 1
+    }
+    resource = {
+        type = "building_rubber_plantation"
+        undiscovered_amount = 8
+    }
+    naval_exit_id = 3103
+}
+STATE_FALILTCOST = {
+    #Treeles Haiti-
+    id = 214
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x00CE96" "x027352" "x05CACA" "x217820" "x246880" "x2A26EA" "x31E98A" "x49B677" "x4DF8C7" "x4F37ED" "x5CDEE2" "x68837D" "x6C6C09" "x82A48E" "x82EB6D" "x94D92F" "xA176AD" "xC3D26F" "xC66CE4" "xCA588E" "xCE12D2" "xD489E9" "xD72A8B" "xE167BC" "xFDE2CE" "xFF2916" }
+    traits = { state_trait_ravenous_isle }
+    city = "x05caca" 
+    #Fáliltverten
+    port = "x49b677" 
+    #NEW PLACE
+    farm = "xa176ad" 
+    #Lethpáiss
+    mine = "x4f37ed" 
+    #NEW PLACE
+    wood = "x00CE96"
+    arable_land = 26
+    arable_resources = { building_maize_farm building_livestock_ranch building_cotton_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_fishing_wharf = 7
+        building_iron_mine = 9
+        building_relics_digsite = 7
+    #also 1 rare earths deposit
+    }
+    resource = {
+        type = "building_rubber_plantation"
+        undiscovered_amount = 8
+    }
+    naval_exit_id = 3104
+}
+STATE_SANCTUARY_FIELDS = {
+    #Haiti with less trees
+    id = 215
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x02C753" "x039356" "x0A4DD7" "x0CDD47" "x0E25AB" "x17515A" "x17C6FF" "x217020" "x21747E" "x27447E" "x2E518D" "x316FAE" "x32EFF1" "x3A5DA9" "x3C254E" "x3E0BA5" "x42CEFA" "x4D4E5F" "x6313DA" "x832956" "x83B442" "x867CDE" "x8C202B" "x8E8CC0" "x92FD99" "x9B1B7A" "xA1724F" "xA35C5F" "xA4A34F" "xA6ABE1" "xB26E39" "xC678C0" "xD47DD7" "xD98826" "xE4B72C" "xE59F50" "xFDC3D6" }
+    traits = {}
+    city = "x21747e" 
+    #Ciallaire
+    port = "xa1724f" 
+    #Ochchus Coast
+    farm = "x217020" 
+    #Bacadh Trás
+    wood = "x27447e" 
+    #Murmas
+    mine = "x02C753"
+    arable_land = 34
+    arable_resources = { building_maize_farm building_livestock_ranch building_cotton_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 3
+        building_fishing_wharf = 8
+    }
+    resource = {
+        type = "building_rubber_plantation"
+        undiscovered_amount = 12
+    }
+    naval_exit_id = 3104
+}
+STATE_SILVERTENNAR = {
+    #Santo Domingo-ish
+    id = 216
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0586B5" "x0D7FB8" "x175CB3" "x1AFCE2" "x206C7E" "x21657E" "x25447E" "x2EBE9E" "x304607" "x322B2F" "x33EEDF" "x34837B" "x36A5CB" "x37B845" "x3CB6C8" "x4354AB" "x4523D4" "x468AFC" "x494CA5" "x4D883F" "x5A6E4C" "x5DF8E7" "x601E27" "x603C1F" "x69DE3E" "x6AB123" "x70F042" "x7C2C23" "x846B7D" "x884027" "x9B2325" "x9CB25D" "x9D0EB3" "x9FB978" "xA06A4F" "xA16EAD" "xA7424F" "xABE0D5" "xAE51B7" "xB27942" "xB2ABDB" "xB66514" "xB69025" "xB7182C" "xBF4B20" "xBF9E16" "xC0441B" "xCA9F1A" "xCB8ED3" "xCC4246" "xCD83C0" "xD159C4" "xD42833" "xDA626E" "xE5576B" "xEF69BE" "xF53073" "xF64BD9" "xFB9ED5" "xFD2AEF" }
+    traits = { state_trait_ravenous_isle }
+    city = "xa7424f"
+    #Vertencóst
+    port = "xa06a4f"
+    #Cape of Revelations
+    farm = "xa16ead"
+    #Ineilainé
+    mine = "xb27942"
+    #NEW PLACE
+    wood = "x206c7e"
+    #Mórtrín
+    arable_land = 28
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_tea_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        #Double the trees
+        building_logging_camp = 14
+        building_fishing_wharf = 5
+        building_iron_mine = 18
+    #also 1 rare earths deposit
+    }
+    resource = {
+        type = "building_rubber_plantation"
+        undiscovered_amount = 14
+    }
+    naval_exit_id = 3103
+}
+STATE_VARIONAIL = {
+    #Santo Domingo
+    id = 217
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x01701C" "x048D73" "x05E59A" "x06A6DE" "x06BE03" "x079FDE" "x0A8195" "x12B68A" "x167D3E" "x171C81" "x1B1537" "x202975" "x20647E" "x206820" "x284AC0" "x36697F" "x37CC34" "x3CAC15" "x3EC593" "x3EE58F" "x407F95" "x4330D7" "x452A17" "x4A3820" "x4A6D9D" "x4AA714" "x4CFD75" "x4D37ED" "x516E4B" "x57A456" "x58500B" "x589B55" "x644D89" "x64670E" "x65DA0A" "x7435F1" "x77798E" "x791ED3" "x7C69FB" "x7CF0B8" "x7D5BFC" "x81F992" "x89CEF1" "x8F374E" "x8F4B4B" "x945827" "x9B5267" "xA0624F" "xA066AD" "xA0724F" "xA25852" "xA6424F" "xA68C78" "xAAFCB6" "xBFBD94" "xC010E4" "xC1C9D6" "xC4D0BE" "xC83FCF" "xD0B5BF" "xD43CE8" "xD4498F" "xD4E688" "xEBA0EF" "xEFF4AD" "xF202CE" "xF2C5DF" }
+    traits = { state_trait_ravenous_isle }
+    city = "x206820"
+    #Eádohás
+    port = "xa0624f"
+    #Bronnáil
+    farm = "xa066ad"
+    #Vardihen
+    mine = "x452a17"
+    #NEW PLACE
+    wood = "x20647e"
+    #Dochéamur
+    arable_land = 35
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_tea_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        #Double the trees
+        building_logging_camp = 17
+        building_fishing_wharf = 5
+        building_iron_mine = 18
+    #also 1 rare earths deposit
+    }
+    resource = {
+        type = "building_rubber_plantation"
+        undiscovered_amount = 18
+    }
+    naval_exit_id = 3102
+}
+STATE_CORE_ISLANDS = {
+    #Bahamas+
+    id = 218
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x11CACA" "x22847E" "x228820" "x238C7E" "x239020" "x2ACBFD" "x3ACBFD" "xA2824F" "xA286AD" "xA38A4F" "xA38EAD" }
+    traits = { state_trait_ruined_sea_sulfur }
+    city = "xa286ad"
+    #Ilzin Mykx
+    port = "x228820"
+    #Graxilzin / Núr Tef
+    farm = "x238c7e"
+    #Splashback
+    mine = "xa38a4f"
+    #Breccia Stacks
+    wood = "xa2824f"
+    #Graxarr / Úiscestir
+    arable_land = 35
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 4
+        building_fishing_wharf = 8
+        building_sulfur_mine = 48
+        building_relics_digsite = 5
+    }
+    resource = {
+        type = "building_damestear_dives"
+        undiscovered_amount = 6
+        discovered_amount = 4
+    }
+    naval_exit_id = 3105
+}
+STATE_VERTEN = {
+    id = 219
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x16CAFC" "x23947E" "x735670" "xA3924F" }
+    traits = { state_trait_ruined_sea_sulfur }
+    city = "xa3924f"
+    #North Verten #Tropaicóst
+    port = "x23947e"
+    #West Verten #Fort Delian
+    farm = "x735670"
+    #East Verten #Núrohitkes
+    wood = "x16cafc"
+    #NEW PLACE (Central South Verten) #Habtenraak
+    mine = "xA3924F"
+    #Bohinyvy
+    arable_land = 52
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_cotton_plantation building_coffee_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 10
+        building_fishing_wharf = 6
+        building_iron_mine = 10
+        building_coal_mine = 6
+        building_sulfur_mine = 20
+    }
+    resource = {
+        type = "building_oil_rig"
+        undiscovered_amount = 5
+    }
+    resource = {
+        type = "building_damestear_dives"
+        undiscovered_amount = 3
+        discovered_amount = 4
+    }
+    naval_exit_id = 3106
+    #Reaper's Coast
+}
+STATE_ISLES_OF_PLENTY = {
+    #West Indies
+    id = 220
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x20FCFC" "x249820" "x249C7E" "x24E820" "x26347E" "x3DC9C9" "xA396AD" "xA4224F" "xA49A4F" "xA49EAD" "xA636AD" "xA63A4F" }
+    traits = { state_trait_ruined_sea_sulfur }
+    city = "x249820"
+    #New Calas
+    port = "xa636ad"
+    #New Ainway
+    farm = "xa63a4f"
+    #Crownisle
+    wood = "x24e820"
+    #Endless Sun
+    mine = "x20FCFC"
+    arable_land = 46
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_fishing_wharf = 8
+        building_sulfur_mine = 24
+    }
+    naval_exit_id = 3107 
+    #Sea of Respite
+}
+STATE_TRICKSTER_ISLE = {
+    #Average between Santo Domingo and Jamaica
+    id = 221
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x24247E" "x252C7E" "x25F020" "x392CDE" "x484E04" "x4A0FF0" "x4F530E" "x905FD7" "xA526AD" "xA52A4F" "xA52EAD" "xB1C97B" "xF5E251" "xA5324F" "x26F720" "x25F820" "xF2544E"  }
+    traits = { state_trait_ruined_sea_sulfur }
+    city = "x24247e"
+    #Hemnisedlank
+    port = "x25f020"
+    #Brooskneddlag
+    farm = "xa52ead"
+    #North Reprieve
+    mine = "xa52a4f"
+    #Soblickdoorsd
+    wood = "xa526ad"
+    #Plotslickslump
+    arable_land = 95
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 8
+        building_fishing_wharf = 9
+        building_iron_mine = 18
+        building_sulfur_mine = 16
+    }
+    resource = {
+        type = "building_rubber_plantation"
+        undiscovered_amount = 4
+    }
+    resource = {
+        type = "building_damestear_dives"
+        undiscovered_amount = 5
+    }
+    naval_exit_id = 3105
+}
+STATE_SAAMIRSES = {
+    #Puerto Rico
+    id = 223
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x1F547E" "x1F5820" "x33AE7D" "x85B7FE" "x9F56AD" "xCFB481" }
+    traits = {}
+    city = "x1f547e"
+    #Saamiribar
+    port = "x1f5820"
+    #Uturakal
+    farm = "x9f56ad"
+    #Ulmišore
+    wood = "x33AE7D"
+    mine = "x85B7FE"
+    arable_land = 28
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_logging_camp = 2
+        building_fishing_wharf = 4
+        building_relics_digsite = 5
+    }
+    resource = {
+        type = "building_damestear_dives"
+        undiscovered_amount = 2
+        discovered_amount = 1
+    }
+    naval_exit_id = 3106
+}
+STATE_GREAT_TUSSOCK = {
+    #Treeless Jamaica
+    id = 224
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x27DFFD" "x768250" "x9A8EAD" }
+    traits = {}
+    city = "x9a8ead"
+    #Pointy End
+    port = "x27dffd"
+    #NEW PLACE
+    farm = "x768250"
+    #Fat End
+    wood = "x27DFFD"
+    mine = "x768250"
+    arable_land = 28
+    arable_resources = { building_rice_farm building_livestock_ranch building_banana_plantation building_coffee_plantation building_tobacco_plantation building_sugar_plantation }
+    capped_resources = {
+        building_fishing_wharf = 5
+    }
+    naval_exit_id = 3108
+    #Trollsbay
+}

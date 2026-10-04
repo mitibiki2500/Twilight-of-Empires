@@ -1,0 +1,96 @@
+﻿
+
+
+#These are all given through the default character template. Which means if you're creating a new character template to use, you MUST manually add the relevant lifespan traits.
+
+
+#Not naturally given, manual only
+trait_immortal = {
+	type = condition
+	texture = "gfx/interface/icons/character_trait_icons/imposing.dds"
+
+	possible = {
+		always = no
+	}
+
+	weight = 0
+	value = 0
+}
+
+
+
+trait_400_lifespan = {
+	type = condition
+	texture = "gfx/interface/icons/character_trait_icons/imposing.dds"
+
+	character_modifier = {
+		character_health_add = 21
+	}
+
+	possible = {
+		always = no
+	}
+
+	weight = 0
+	value = 0
+}
+
+trait_250_lifespan = {
+	type = condition
+	texture = "gfx/interface/icons/character_trait_icons/imposing.dds"
+
+	character_modifier = {
+		character_health_add = 12
+	}
+
+	possible = {
+		always = no
+	}
+
+	weight = 0
+	value = 0
+}
+
+trait_200_lifespan = {
+	type = condition
+	texture = "gfx/interface/icons/character_trait_icons/imposing.dds"
+
+	character_modifier = {
+		character_health_add = 8
+	}
+
+	possible = {
+		always = no
+	}
+
+	weight = 0
+	value = 0
+}
+
+trait_100_lifespan = {
+	type = condition
+	texture = "gfx/interface/icons/character_trait_icons/imposing.dds"
+
+	character_modifier = {
+		character_health_add = 2
+	}
+
+	possible = {
+		always = no
+	}
+
+	weight = 0
+	value = 0
+}
+
+trait_75_lifespan = {
+	type = condition
+	texture = "gfx/interface/icons/character_trait_icons/imposing.dds"
+
+	possible = {
+		always = no
+	}
+
+	weight = 0
+	value = 0
+}

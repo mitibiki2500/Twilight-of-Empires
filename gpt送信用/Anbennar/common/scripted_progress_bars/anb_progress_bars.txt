@@ -1,0 +1,458 @@
+﻿alecand_reclamation_progress_bar = {
+	name = "alecand_reclamation_progress_bar"
+	desc = "alecand_reclamation_progress_bar_desc"
+
+	default = yes
+
+	monthly_progress = {
+		if = {
+			limit = {
+				has_technology_researched = punch_card_artificery
+			}
+			add = {
+				desc = "anb_reclamation_punch_card_artificery_tt"
+				value = 1
+			}
+		}
+
+		if = {
+			limit = {
+				has_technology_researched = elemental_elicitation
+			}
+			add = {
+				desc = "anb_reclamation_elemental_elicitation_tt"
+				value = 1
+			}
+		}
+
+		if = {
+			limit = {
+				has_technology_researched = thaumic_field_stabilization
+			}
+			add = {
+				desc = "anb_reclamation_thaumic_field_stabilization_tt"
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				has_variable = var_innovation_reclamation_button_spent_var
+			}
+			add = {
+				desc = "anb_reclamation_buttons_innovation_tt"
+				value = 1
+			}
+		}
+
+		if = {
+			limit = {
+				has_variable = var_construction_reclamation_button_spent_var
+			}
+			add = {
+				desc = "anb_reclamation_buttons_construction_tt"
+				value = 2
+			}
+		}
+
+		add = {
+          	desc = "anb_reclamation_goods_tt"
+          	market_capital.market = {
+              	mg:artificery_doodads = {
+                  	if = {
+                      	limit = {
+                          	market_goods_production >= 500
+                      	}
+                      	value = 1
+                  		}
+                  		else = {
+                      	value = market_goods_production
+                      	divide = 500
+                  	}
+              	}
+          	}
+		}
+	}
+
+	start_value = 0
+	min_value = 0
+	max_value = 700
+}
+
+# mechanim_revolt_progress_bar = { #radical time baby, WHOOO
+# 	name = "mechanim_revolt_progress_bar"
+# 	desc = "mechanim_revolt_progress_bar_desc"
+
+# 	default_bad = yes
+
+# 	monthly_progress = {
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					any_scope_state = {
+# 						is_incorporated = yes
+# 						turmoil >= 0.10
+# 					}
+# 				}
+# 			}
+# 			add = {
+# 				desc = "mechanim_revolt_progress_from_radicals_tt"
+# 				owner = {
+# 					every_scope_state = {
+# 						limit = {
+# 							is_incorporated = yes
+# 							turmoil >= 0.10
+# 						}
+# 						add = this.turmoil
+# 					}
+# 				}
+# 			}
+# 		}
+
+# 		if = {
+# 			limit = { #make variable for mechanim based on laws
+# 				has_technology_researched = thinking_machinery
+# 			}
+# 			add = {
+# 				desc = "anb_base_revolt_progress_mechanim_tt"
+# 				value = 2
+# 			}
+# 		}
+
+# 		add = {
+#           	desc = "anb_mechanim_goods_tt"
+#           	market_capital.market = {
+#               	mg:automata = {
+#                   	if = {
+#                       	limit = {
+#                           	market_goods_production >= 500
+#                       	}
+#                       	add = 1
+#                   	}
+#                   	else = {
+#                       	add = market_goods_production
+#                       	divide = 500
+#                   	}
+#               }
+#           }
+#           if = {
+# 			limit = {
+# 				exists = owner.var:mechanim_progress_from_laws
+# 				NOT = {  
+# 					owner.var:mechanim_progress_from_laws = 0
+# 				}
+# 			}
+# 			add = {
+# 				desc = "mechanim_progress_from_laws_tt"
+# 				value = owner.var:mechanim_progress_from_laws
+# 			}
+# 		}
+#           	if = {
+# 				limit = {
+# 					exists = owner.var:mechanim_revolt_progress_var_add
+# 				}
+# 				add = {
+# 					desc = "mechanim_progress_from_events_tt"
+# 					value = owner.var:mechanim_revolt_progress_var_add
+# 				}
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				has_law = law_type:law_sapience_mechanim_compromise
+# 			}
+# 			subtract = {
+# 				desc = "mechanim_compromise_progress_tt"
+# 				value = 1
+# 			}
+# 		}
+# 	}
+
+# 	start_value = 0
+# 	min_value = 0
+# 	max_value = 250
+# } 
+ 
+# mechanim_freedom_progress_bar = {
+# 	name = "mechanim_freedom_progress_bar"
+# 	desc = "mechanim_freedom_progress_bar_desc"
+
+# 	default_green = yes
+
+# 	monthly_progress = {
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					any_scope_character = {
+# 						OR = {
+# 							has_ideology = ideology:ideology_mechanim_liberator 
+# 						}
+# 					}
+# 				}
+# 			}
+# 			add = {
+# 				desc = "mechanim_success_progress_from_characters_tt"
+# 				owner = {
+# 					every_scope_character = {
+# 						limit = {
+# 							OR = {
+# 								has_ideology = ideology:ideology_mechanim_liberator 
+# 							}
+# 						}
+# 						add = this.popularity
+# 						divide = 100
+# 					}
+# 				}
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					any_interest_group = {
+# 						OR = {
+# 							law_stance = {
+# 								law = law_type:law_mechanim_freedom 
+# 								value = approve
+# 							}
+# 							law_stance = {
+# 								law = law_type:law_mechanim_freedom 
+# 								value = strongly_approve
+# 							}
+# 						}
+# 					}
+# 				}
+# 			}
+# 			add = {
+# 				desc = "mechanim_success_progress_from_interest_groups_tt"
+# 				owner = {
+# 					every_interest_group = {
+# 						limit = {
+# 							OR = { # There is a very good reason for this, and that's because of the 'count' value causing problems with a greater-than.
+# 								law_stance = {
+# 									law = law_type:law_mechanim_freedom 
+# 									value = approve
+# 								}
+# 								law_stance = {
+# 									law = law_type:law_mechanim_freedom 
+# 									value = strongly_approve
+# 								}
+# 							}
+# 						}
+# 						add = this.ig_clout
+# 					}
+# 				}
+# 			}
+# 		}
+# 		#if = { #commented out for now to get compatch out for other people
+# 		#	limit = {
+# 		#		any_political_movement = {
+# 		#			is_political_movement_type = movement_mechanim_liberation
+# 		#		}
+# 		#	}
+# 		#	add = {
+# 		#		desc = "mechanim_progress_from_movement_support_tt"
+# 		#		every_political_movement = {
+# 		#			limit = {
+# 		#				is_political_movement_type = movement_mechanim_liberation
+# 		#			}
+# 		#			add = this.political_movement_support
+# 		#			multiply = 10
+# 		#		}
+# 		#	}
+# 		#}
+# 		#if = {
+# 		#	limit = {
+# 		#		any_political_movement = {
+# 		#			is_political_movement_type = movement_mechanim_liberation
+# 		#		}
+# 		#	}
+# 		#	add = {
+# 		#		desc = "mechanim_progress_from_movement_activism_tt"
+# 		#		every_political_movement = {
+# 		#			limit = {
+# 		#				is_political_movement_type = movement_mechanim_liberation
+# 		#			}
+# 		#			add = this.political_movement_radicalism
+# 		#			multiply = 5
+# 		#		}
+# 		#	}
+# 		#}
+# #
+# 		#if = {
+# 		#	limit = {
+# 		#		any_political_movement = {
+# 		#			is_political_movement_type = movement_mechanim_explotation
+# 		#		}
+# 		#	}
+# 		#	subtract = {
+# 		#		desc = "mechanim_detraction_from_movement_support_tt"
+# 		#		every_political_movement = {
+# 		#			limit = {
+# 		#				is_political_movement_type = movement_mechanim_explotation
+# 		#			}
+# 		#			add = this.political_movement_support
+# 		#			multiply = 10
+# 		#		}
+# 		#	}
+# 		#}
+# 		#if = {
+# 		#	limit = {
+# 		#		any_political_movement = {
+# 		#			is_political_movement_type = movement_mechanim_explotation
+# 		#		}
+# 		#	}
+# 		#	subtract = {
+# 		#		desc = "mechanim_detraction_from_movement_activism_tt"
+# 		#		every_political_movement = {
+# 		#			limit = {
+# 		#				is_political_movement_type = movement_mechanim_explotation
+# 		#			}
+# 		#			add = this.political_movement_radicalism
+# 		#			multiply = 5
+# 		#		}
+# 		#	}
+# 		#}
+# 		if = {
+# 			limit = {
+# 				exists = owner.var:mechanim_success_progress_var_add
+# 				NOT = {  
+# 					owner.var:mechanim_success_progress_var_add = 0
+# 				}
+# 			}
+# 			add = {
+# 				desc = "mechanim_success_progress_from_events_tt"
+# 				value = owner.var:mechanim_success_progress_var_add
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					any_scope_state = {
+# 						is_incorporated = yes
+# 						state_unemployment_rate > 0
+# 					}
+# 				}
+# 			}
+# 			subtract = {
+# 				desc = "mechanim_progress_from_employment_tt"
+# 				owner = {
+# 					every_scope_state = {
+# 						limit = {
+# 							is_incorporated = yes
+# 							state_unemployment_rate > 0
+# 						}
+# 						add = this.state_unemployment_rate
+# 					}
+# 				}
+# 			}
+# 		}
+
+# 		# if = {
+#         #     limit = {
+#         #         exists = owner.var:communism_progress_from_poverty
+#         #         owner.var:communism_progress_from_poverty > 0
+#         #     }
+#         #     subtract = {
+#         #         desc = "mechanim_progress_from_poverty_tt"
+#         #         value = owner.var:communism_progress_from_poverty
+#         #     }
+# 		# }
+# 		add = {
+# 			desc = "mechanim_freedom_base_progress.tt"
+# 			value = 1
+# 		}
+# 	}
+
+# 	start_value = 1
+# 	min_value = 0
+# 	max_value = 150
+# }
+
+# Used for Mechanim Awakening JE
+mechanim_awakening_progress_bar = {
+	name = "mechanim_awakening_progress_bar"
+	desc = "mechanim_awakening_progress_bar_desc"
+
+	default_green = yes
+
+	monthly_progress = {
+		if = {
+			limit = {
+				exists = owner.var:mechanim_awakening_sentience_support_progress_tech
+				owner.var:mechanim_awakening_sentience_support_progress_tech != 0 
+			}
+			add = {
+				desc = "mechanim_awakening_sentience_support_progress_tech.tt"
+				value = owner.var:mechanim_awakening_sentience_support_progress_tech
+			}
+		}
+		if = {
+			limit = {
+				exists = owner.var:mechanim_awakening_sentience_support_progress_from_industrialists
+				owner.var:mechanim_awakening_sentience_support_progress_from_industrialists != 0
+			}
+			add = {
+				desc = "mechanim_awakening_sentience_support_progress_from_industrialists.tt"
+				value = owner.var:mechanim_awakening_sentience_support_progress_from_industrialists
+			}
+		}
+		if = {
+			limit = {
+				exists = owner.var:mechanim_awakening_sentience_support_progress_from_events
+				owner.var:mechanim_awakening_sentience_support_progress_from_events != 0
+			}
+			add = {
+				desc = "mechanim_awakening_sentience_support_progress_from_events.tt"
+				value = owner.var:mechanim_awakening_sentience_support_progress_from_events
+			}
+		}
+	}
+
+	start_value = 0
+	min_value = 0
+	max_value = 100
+}
+
+gem_of_dolindha_core_progress_bar = {
+ 	name = "gem_of_dolindha_core_progress_bar_name"
+ 	desc = "gem_of_dolindha_core_progress_bar_sarda_desc"
+ 	second_desc = "gem_of_dolindha_core_progress_bar_dragon_dominion_desc"
+
+ 	double_sided_gold = yes
+
+ 	monthly_progress = {
+		if = {
+			limit = {
+				exists = global_var:gem_of_dolindha_gdp_balance_passive_var
+			}
+			
+			add = {
+			   desc = "gem_of_dolindha_core_progress_gdp_passive_balance"
+			   value = global_var:gem_of_dolindha_gdp_balance_passive_var
+		    }
+		}
+		if = {
+			limit = {
+				exists = global_var:gem_of_dolindha_army_balance_passive_var
+			}
+			
+			add = {
+			   desc = "gem_of_dolindha_core_progress_army_passive_balance"
+			   value = global_var:gem_of_dolindha_army_balance_passive_var
+		    }
+		}
+		if = {
+			limit = {
+				exists = global_var:gem_of_dolindha_lobby_balance_passive_var
+			}
+			
+			add = {
+			   desc = "gem_of_dolindha_core_progress_lobby_passive_balance"
+			   value = global_var:gem_of_dolindha_lobby_balance_passive_var
+		    }
+		}
+ 	}
+
+ 	start_value = 50
+ 	min_value = 0
+ 	max_value = 100
+}

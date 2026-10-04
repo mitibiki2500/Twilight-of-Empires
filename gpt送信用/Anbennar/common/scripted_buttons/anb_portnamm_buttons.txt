@@ -1,0 +1,89 @@
+﻿
+### Portnamm Scripted Buttons ###
+
+# JE1: Rise of Gnome Industrialists - Secure Lorent Investment Pact
+portnamm_je1_lorent_pact_button = {
+	name = "portnamm_je1_lorent_pact_button_name"
+	desc = "portnamm_je1_lorent_pact_button_desc"
+
+	possible = {
+		custom_tooltip = {
+			text = portnamm_je1_button_already_used_tt
+			NOT = { has_variable = portnamm_lorent_pact_active }
+		}
+		"relations(c:A03)" >= 50
+		has_technology_researched = insyaan_analytical_engine
+		has_technology_researched = fractional_distillation
+		has_technology_researched = crystal_glass
+		NAND = {
+			c:A03 = { has_technology_researched = insyaan_analytical_engine }
+			c:A03 = { has_technology_researched = fractional_distillation }
+			c:A03 = { has_technology_researched = crystal_glass }
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = portnamm_je1_button_make_the_pact_tt
+		}
+
+		# Trigger event for Lorent (player Lorent may reject at cost)
+		c:A03 = {
+			trigger_event = { id = anb_portnamm_events.10 }
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+}
+
+# JE5: Half the foreign exploitation modifier
+portnamm_je5_half_exploitation_button = {
+	name = "portnamm_je5_half_exploitation_button_name"
+	desc = "portnamm_je5_half_exploitation_button_desc"
+
+	visible = {
+		always = yes
+	}
+
+	possible = {
+		NOT = { has_global_variable = portnamm_je5_halved }
+	}
+
+	effect = {
+		set_global_variable = portnamm_je5_halved
+		add_modifier = {
+			name = portnamm_je5_industrialist_penalty
+			is_decaying = no
+			months = -1
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+# JE5: Cancel the halving and remove industrialist penalty
+portnamm_je5_cancel_half_button = {
+	name = "portnamm_je5_cancel_half_button_name"
+	desc = "portnamm_je5_cancel_half_button_desc"
+
+	visible = {
+		always = yes
+	}
+
+	possible = {
+		has_global_variable = portnamm_je5_halved
+	}
+
+	effect = {
+		remove_global_variable = portnamm_je5_halved
+		remove_modifier = portnamm_je5_industrialist_penalty
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}

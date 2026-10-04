@@ -1,0 +1,319 @@
+﻿anb_on_hold_built = {
+	effect = {
+		if = {
+			limit = { is_building_type = building_dwarven_hold }
+			state.state_region = { add_arable_land = 20 }
+		}
+	}
+}
+
+anb_on_hold_expanded = {
+	effect = {
+		if = {
+			limit = { is_building_type = building_dwarven_hold }
+			state.state_region = { add_arable_land = 20 }
+		}
+	}
+}
+
+multiple_primary_culture_enforcement_character = { #character scope #feel free to reduce the scope of this effect if it's causing unintended culture swaps.  It only selects up to 3, which could be expanded upon as well
+    effect = {
+	    if = { #primary culture character enforcement
+            limit = {
+				exists = owner
+				owner = { 
+					any_primary_culture = {
+						count = 2
+					}
+				}
+                is_historical = no
+                OR = { #we could add agitators
+                    has_role_of_type = politician
+                    has_role_of_type = general
+                    has_role_of_type = admiral
+                }
+            }
+            owner = {
+                random_primary_culture = {
+
+                    save_scope_as = primary_culture_1
+                }
+                random_primary_culture = {
+                    limit = {
+                        NOT = { scope:primary_culture_1 ?= this }
+                    }
+                    save_scope_as = primary_culture_2
+                }
+            }
+            random_list = {
+                50 = {
+                    change_character_culture = scope:primary_culture_1
+                }
+                50 = {
+                    change_character_culture = scope:primary_culture_2
+                }
+            }
+		}
+        else_if = { #primary culture character enforcement
+			limit = {
+				exists = owner
+				owner = { 
+					any_primary_culture = {
+						count >= 3
+					}
+				}
+                is_historical = no
+                OR = { #we could add agitators
+                    has_role_of_type = politician
+                    has_role_of_type = general
+                    has_role_of_type = admiral
+                }
+            }
+            owner = {
+                random_primary_culture = {
+                    save_scope_as = primary_culture_1
+                }
+                random_primary_culture = {
+                    limit = {
+                        NOT = { scope:primary_culture_1 ?= this }
+                    }
+                    save_scope_as = primary_culture_2
+                }
+                random_primary_culture = {
+                    limit = {
+                        NOR = { 
+                            scope:primary_culture_1 ?= this
+                            scope:primary_culture_2 ?= this
+                        }
+                        
+                    }
+                    save_scope_as = primary_culture_3
+                }
+            }
+            random_list = {
+                50 = {
+                    change_character_culture = scope:primary_culture_1
+                }
+                50 = {
+                    change_character_culture = scope:primary_culture_2
+                }
+                50 = {
+                    change_character_culture = scope:primary_culture_3
+                }
+            }
+		}
+		else_if = {
+			limit = {
+				exists = owner
+				owner = { 
+					c:A01 ?= this
+				}
+			}
+			owner = {
+				random_scope_culture = {
+                    limit = {
+                        has_discrimination_trait = heritage_anbennarian
+                    }
+                    save_scope_as = anbennarian_culture_1
+                }
+			    random_scope_culture = {
+                    limit = {
+                        has_discrimination_trait = heritage_anbennarian
+                        NOT = { scope:anbennarian_culture_1 ?= this }
+                    }
+                    save_scope_as = anbennarian_culture_2
+                }
+			    random_scope_culture = {
+                    limit = {
+                        has_discrimination_trait = heritage_anbennarian
+                        NOT = { scope:anbennarian_culture_1 ?= this }
+                        NOT = { scope:anbennarian_culture_2 ?= this }
+                        
+                    }
+                    save_scope_as = anbennarian_culture_3
+                }
+			}
+        }
+		else_if = {
+			limit = {
+				exists = owner
+				owner = { 
+					c:A01 ?= this
+				}
+			}
+			capital = {
+				if = {
+					limit = {
+                        any_scope_culture = {
+                            has_discrimination_trait = heritage_anbennarian
+                            count >= 3
+                        }
+					}
+                    random_scope_culture = {
+                        limit = {
+                            has_discrimination_trait = heritage_anbennarian
+                        }
+                        save_scope_as = anbennarian_culture_1
+                    }
+                    random_scope_culture = {
+                        limit = {
+                            has_discrimination_trait = heritage_anbennarian
+                            NOT = { scope:anbennarian_culture_1 ?= this }
+                        }
+                        save_scope_as = anbennarian_culture_2
+                    }
+                    random_scope_culture = {
+                        limit = {
+                            has_discrimination_trait = heritage_anbennarian
+                            NOT = { scope:anbennarian_culture_1 ?= this }
+                            NOT = { scope:anbennarian_culture_2 ?= this }
+                            
+                        }
+                        save_scope_as = anbennarian_culture_3
+                    }	
+                    owner = { set_variable = it_aint_broke }
+				}
+			}
+			if = {
+				limit = {
+					owner = { has_variable = it_aint_broke } #checking that the previous effect was performed correctly
+				}
+			    every_scope_character = {
+                    limit = {
+                        is_historical = no
+                        OR = {
+                            has_role_of_type = politician
+                            has_role_of_type = general
+                            has_role_of_type = admiral
+                        }
+
+                    }
+                    random_list = {
+                        50 = {
+                            change_character_culture = scope:anbennarian_culture_1
+                        }
+                        50 = {
+                            change_character_culture = scope:anbennarian_culture_2
+                        }
+                        50 = {
+                            change_character_culture = scope:anbennarian_culture_3
+                        }
+                        35 = {
+                            change_character_culture = cu:east_damerian
+                        }
+                        30 = {
+                            change_character_culture = cu:esmari
+                        }
+                        75 = {
+                            change_character_culture = cu:costine
+                        }
+                    }
+			    }
+			    owner = { remove_variable = it_aint_broke } #removes variable for next cycle
+		    }
+			else = {
+				every_scope_character = {
+                    limit = {
+                        is_historical = no
+                        OR = {
+                            has_role_of_type = politician
+                            has_role_of_type = general
+                            has_role_of_type = admiral
+                        }
+
+                    }
+                    random_list = {
+                        35 = {
+                            change_character_culture = cu:east_damerian
+                        }
+                        30 = {
+                            change_character_culture = cu:esmari
+                        }
+                        75 = {
+                            change_character_culture = cu:costine
+                        }
+                    }
+			    }
+		    }
+	    }
+    }
+}
+#anbennar natural disaster on action
+on_yearly_disaster_events = {
+	random_events = {
+		chance_to_happen = 50
+
+		5 = alecand_reclamation.9
+	}
+}
+
+on_half_yearly_pulse_state = {	#Anbennar btw
+	random_events = { # Adventurers Wanted! 
+		#10 = anb_adventurers_wanted.1
+		chance_to_happen = 0
+	}
+}
+
+anb_on_yearly_events = {
+	random_events = {
+		chance_to_happen = 10
+
+		10 = mechanim_revolt.6
+		10 = mechanim_revolt.9
+	}
+}
+
+# Mheromar
+anb_mheromar_monthly_events = {
+	random_events = {
+		chance_to_happen = 30
+		30 = mheromar_events.1
+		30 = mheromar_events.2
+		2 = mheromar_events.3
+		1 = mheromar_events.4
+	}
+}
+
+anb_mheromar_yearly_events = {
+	random_events = {
+		chance_to_happen = 10
+		1 = malachite_coup.1
+	}
+}
+
+anb_bacaran_republic_release = {
+    effect = {
+        scope:target = {
+            if = {
+                limit = {
+                    country ?= c:B29
+                    country_has_voting_franchise = yes
+                    coa_republic_trigger = yes
+                }
+                change_variable = {
+                    name = bacaran_republic_var add = 1
+                }
+            }
+        }
+    }
+}
+
+seedthrall_yearly_events = {
+    effect = {
+        if = {
+            limit = { c:C14 ?= this }
+            if = {
+                limit = { has_variable = c14_seedthrall_flag }
+                trigger_event = seedthrall.2 #hidden
+            }
+            else = { trigger_event = seedthrall.1 }
+        }
+        else = {
+            if = {
+                limit = { has_variable = not_c14_seedthrall_flag }
+                trigger_event = seedthrall.4 #hidden
+            }
+            else = { trigger_event = seedthrall.3 }
+        }
+    }
+}

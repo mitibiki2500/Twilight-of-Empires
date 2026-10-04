@@ -1,0 +1,92 @@
+﻿COUNTRIES = {
+	c:A15 ?= {
+		effect_starting_technology_tier_1_tech = yes
+		add_technology_researched = tradition_of_equality
+		add_technology_researched = realism
+		add_technology_researched = punch_card_artificery
+		add_technology_researched = stock_exchange
+		
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_oligarchy
+		activate_law = law_type:law_racial_segregation
+		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_appointed_bureaucrats		
+		activate_law = law_type:law_national_militia
+		
+		activate_law = law_type:law_interventionism
+		activate_law = law_type:law_mercantilism
+		activate_law = law_type:law_per_capita_based_taxation
+		activate_law = law_type:law_tenant_farmers
+		activate_law = law_type:law_private_schools
+		
+		activate_law = law_type:law_right_of_assembly	#jokers
+		#activate_law = law_type:law_serfdom_banned
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_women_own_property
+		activate_law = law_type:law_slavery_banned
+		activate_law = law_type:law_migration_controls
+		
+
+		add_journal_entry = { type = je_portnamm_golden_age_of_art }
+		add_journal_entry = { type = je_portnamm_rise_of_industrialists }
+		
+		activate_law = law_type:law_nation_of_artifice	
+
+		set_institution_investment_level = {
+			institution = institution_schools
+			level = 3
+		}
+
+		# Magic
+		add_technology_researched = cannorian_magical_tradition
+		add_technology_researched = bardic_magical_tradition
+		set_variable = {
+			name = production_magic_spell
+			value = flag:spell_spellwoven_luxury
+		}
+		set_variable = {
+			name = production_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = production_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell
+			value = flag:spell_vicious_chants
+		}
+		set_variable = {
+			name = military_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = military_magic_spell_level_floor
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell
+			value = flag:spell_rituals_of_empathy
+		}
+		set_variable = {
+			name = society_magic_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_targeted_spell_level
+			value = 1
+		}
+		set_variable = {
+			name = society_magic_spell_level_floor
+			value = 1
+		}
+	}
+}

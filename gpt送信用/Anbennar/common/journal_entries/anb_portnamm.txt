@@ -1,0 +1,441 @@
+﻿### JE6: Golden Age of Arts in Portnamm ###
+je_portnamm_golden_age_of_art = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	group = je_group_historical_content
+
+	scripted_progress_bar = portnamm_age_of_art_bar
+
+	immediate = {
+		add_modifier = {
+			name = portnamm_age_of_art_active_modifier
+			multiplier = "scope:journal_entry.scripted_bar_progress(portnamm_age_of_art_bar)"
+			is_decaying = no
+			months = -1
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			remove_modifier = portnamm_age_of_art_active_modifier
+			add_modifier = {
+				name = portnamm_age_of_art_active_modifier
+				multiplier = "scope:journal_entry.scripted_bar_progress(portnamm_age_of_art_bar)"
+				is_decaying = no
+				months = -1
+			}
+		}
+	}
+
+	complete = {
+		always = no
+	}
+
+	fail = {
+		scope:journal_entry = {
+			custom_tooltip = {
+				text = portnamm_age_of_art_tt
+				"scripted_bar_progress(portnamm_age_of_art_bar)" <= 0
+			}
+		}
+	}
+
+	on_fail = {
+		add_modifier = {
+			name = portnamm_industrialists_ascendancy
+			years = 20
+			is_decaying = yes
+		}
+		remove_modifier = portnamm_age_of_art_active_modifier
+	}
+
+	weight = 100
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+
+### JE1: Rise of Gnome Industrialists ###
+je_portnamm_rise_of_industrialists = {
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+	group = je_group_historical_content
+
+	immediate = {
+		set_variable = {
+			name = portnamm_activated_directorate_companies
+			value = 0
+		}
+		set_variable = {
+			name = portnamm_directorate_companies_allowed
+			value = 0
+		}
+	}
+
+	modifiers_while_active = {
+		portnamm_je1_active_modifier
+	}
+
+	scripted_button = portnamm_je1_lorent_pact_button
+
+	complete = {
+		ig:ig_industrialists = {
+			ig_clout >= 0.20
+		}
+		custom_tooltip = {
+			text = portnamm_je1_complete_tt
+			has_variable = portnamm_lorent_pact_active
+		}
+	}
+
+	on_complete = {
+		# Remove Individualist and Laissez-Faire from industrialist IG
+		# Add Directoratism and Vaultarchy
+		ig:ig_industrialists = {
+			remove_ideology = ideology_individualist
+			remove_ideology = ideology_laissez_faire
+			add_ideology = ideology_directoratism
+			add_ideology = ideology_vaultarchy
+		}
+
+		# Activate JE2
+		add_journal_entry = { type = je_portnamm_sovereign_ledger }
+		add_journal_entry = { type = je_portnamm_directoratism_reforms }
+	}
+
+	fail = {
+		OR = {
+			NOT = {
+				is_in_same_power_bloc = c:A03
+			}
+			c:A03 = { NOT = { country_rank = rank_value:great_power } }
+			custom_tooltip = {
+				text = portnamm_je1_fail_more_than_one_state_tt
+				any_state = {
+					count >= 2
+					owner = c:A15
+				}
+			}
+			custom_tooltip = {
+				text = portnamm_je1_tech_requirement_tt
+				c:A03 = { has_technology_researched = insyaan_analytical_engine }
+				c:A03 = { has_technology_researched = fractional_distillation }
+				c:A03 = { has_technology_researched = crystal_glass }
+			}
+		}
+	}
+
+	on_fail = {
+		trigger_event = { id = anb_portnamm_events.1 }
+	}
+
+	weight = 100
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+
+### JE2: The Sovereign Ledger Directorate ###
+je_portnamm_sovereign_ledger = {
+	icon = "gfx/interface/icons/event_icons/event_trade.dds"
+	group = je_group_historical_content
+
+	modifiers_while_active = {
+		portnamm_je2_active_modifier
+	}
+
+	immediate = {
+		# Add construction and prestige modifier (scaled by wealth)
+		add_modifier = {
+			name = portnamm_wealth_extraction_impact
+			multiplier = portnamm_extracted_wealth_script_value
+			is_decaying = no
+			months = -1
+		}
+		set_variable = portnamm_directorate_active
+	}
+
+
+	on_monthly_pulse = {
+		effect = {
+			remove_modifier = portnamm_wealth_extraction_impact
+			add_modifier = {
+				name = portnamm_wealth_extraction_impact
+				multiplier = portnamm_extracted_wealth_script_value
+				is_decaying = no
+				months = -1
+			}
+
+			# Calculate how many directorate companies are allowed
+			# 1 at 10M, 2 at 30M, 3 at 60M, 4 at 150M, 5 at 300M, 6 at 500M
+			if = {
+				limit = { portnamm_extracted_wealth_script_value < 5 }
+				change_variable = { name = portnamm_directorate_companies_allowed max = 0 }
+			}
+			else_if = {
+				limit = { 
+					portnamm_extracted_wealth_script_value >= 5
+					portnamm_extracted_wealth_script_value < 15
+				}
+				change_variable = { name = portnamm_directorate_companies_allowed max = 1 }
+			}
+			else_if = {
+				limit = { 
+					portnamm_extracted_wealth_script_value >= 15
+					portnamm_extracted_wealth_script_value < 30
+				}
+				change_variable = { name = portnamm_directorate_companies_allowed max = 2 }
+			}
+			else_if = {
+				limit = { 
+					portnamm_extracted_wealth_script_value >= 30
+					portnamm_extracted_wealth_script_value < 75
+				}
+				change_variable = { name = portnamm_directorate_companies_allowed max = 3 }
+			}
+			else_if = {
+				limit = { 
+					portnamm_extracted_wealth_script_value >= 75
+					portnamm_extracted_wealth_script_value < 150
+				}
+				change_variable = { name = portnamm_directorate_companies_allowed max = 4 }
+			}
+			else_if = {
+				limit = { 
+					portnamm_extracted_wealth_script_value >= 150
+				}
+				change_variable = { name = portnamm_directorate_companies_allowed max = 5 }
+			}
+		}
+	}
+
+	complete = {
+		average_sol >= 35
+		custom_tooltip = {
+			text = portnamm_je2_complete_wealth_tt
+			portnamm_extracted_wealth_script_value >= 500
+		}
+	}
+
+	on_complete = {
+		# Permanent bonuses
+		add_modifier = {
+			name = portnamm_je2_permanent_modifier
+			is_decaying = no
+			months = -1
+		}
+
+		# Keep construction and prestige modifiers (they're already applied)
+		# set_variable = portnamm_je2_complete
+
+		# Congratulation event
+		trigger_event = { id = anb_portnamm_events.3 }
+	}
+
+	fail = {
+		custom_tooltip = {
+			text = portnamm_je2_fail_laws_tt
+			OR = {
+				has_variable = portnamm_je3_timed_out
+				has_variable = portnamm_je4_fail
+			}
+		}
+	}
+
+	on_fail = {
+		remove_modifier = portnamm_wealth_extraction_impact
+		remove_variable = portnamm_directorate_active
+	}
+
+	weight = 100
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+
+### JE3: Directoratism Reforms ###
+je_portnamm_directoratism_reforms = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	group = je_group_historical_content
+
+	immediate = {
+	}
+
+	timeout = 5475  # 15 years in days
+
+	complete = {
+		has_law = law_type:law_closed_borders
+		has_law = law_type:law_laissez_faire
+		has_law = law_type:law_private_schools
+		has_law = law_type:law_private_health_insurance
+	}
+
+	on_complete = {
+		# Activate JE4: Directoratism Ideas
+		add_journal_entry = { type = je_portnamm_directoratism_ideas }
+	}
+
+	on_timeout = {
+		hidden_effect = {
+			set_variable = portnamm_je3_timed_out
+		}
+	}
+
+	fail = {
+		custom_tooltip = {
+			text = portnamm_je3_fail_timeout_tt
+			has_variable = portnamm_je3_timed_out
+		}
+	}
+
+	on_fail = {
+		trigger_event = { id = anb_portnamm_events.2 }
+	}
+
+	weight = 100
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+
+### JE4: Directoratism Ideas ###
+je_portnamm_directoratism_ideas = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	group = je_group_historical_content
+
+	immediate = {
+	}
+
+	modifiers_while_active = {
+		portnamm_je4_active_modifier
+	}
+
+	# Complete when JE2 is complete
+	complete = {
+		always = no
+	}
+
+	on_complete = {
+	}
+
+	# Fail if any required law is lost
+	fail = {
+		OR = {
+			NOT = { has_law = law_type:law_closed_borders }
+			NOT = { has_law = law_type:law_laissez_faire }
+			NOT = { has_law = law_type:law_private_schools }
+			NOT = { has_law = law_type:law_private_health_insurance }
+		}
+	}
+
+	on_fail = {
+		trigger_event = { id = anb_portnamm_events.2 }
+		set_variable = portnamm_je4_fail
+	}
+
+	weight = 100
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+
+### JE5: Growing Tension in Factories ###
+je_portnamm_growing_tension = {
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	group = je_group_historical_content
+
+	is_shown_when_inactive = {
+		exists = c:A15
+		THIS = c:A15
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = portnamm_je_activate_tt
+			has_variable = portnamm_directorate_active
+		}
+		average_sol >= 20
+		custom_tooltip = {
+			text = portnamm_directorate_company_active_tt
+			var:portnamm_activated_directorate_companies >= 1
+		}
+	}
+
+	immediate = {
+	}
+
+	scripted_button = portnamm_je5_half_exploitation_button
+	scripted_button = portnamm_je5_cancel_half_button
+
+	on_monthly_pulse = {
+		effect = {
+			# Apply throughput penalty modifier
+			remove_modifier = portnamm_je5_throughput_penalty
+			add_modifier = {
+				name = portnamm_je5_throughput_penalty
+				multiplier = portnamm_je5_throughput_penalty_script_value
+				is_decaying = no
+				months = -1
+			}
+
+			# Apply foreign exploitation modifiers
+			every_country = {
+				limit = {
+					this != root
+				}
+				remove_modifier = portnamm_je5_foreign_exploitation_country
+				remove_modifier = portnamm_je5_foreign_exploitation_halved_country
+				if = {
+					limit = { "this.gdp_ownership_ratio(root)" > 0 }
+					if = {
+						limit = { has_global_variable = portnamm_je5_halved }
+						add_modifier = {
+							name = portnamm_je5_foreign_exploitation_halved_country
+							multiplier = level_of_control_by_portnamm_script_value
+						}
+					}
+					else = {
+						add_modifier = {
+							name = portnamm_je5_foreign_exploitation_country
+							multiplier = level_of_control_by_portnamm_script_value
+						}
+					}
+				}
+			}
+		}
+
+		# Pulse event for radicals based on production buildings
+		# NOT RIGHT NOW, DON'T FEEL THIS IS GOOD NOW
+		#random_events = {
+		#	50 = anb_portnamm_events.5
+		#	50 = 0
+		#}
+	}
+
+	complete = {
+		# has_variable = portnamm_je2_complete
+		always = no
+	}
+
+	on_complete = {
+		add_modifier = {
+			name = portnamm_je5_throughput_penalty
+			multiplier = portnamm_je5_throughput_penalty_script_value
+			is_decaying = no
+			months = -1
+		}
+		# remove_modifier = portnamm_je5_throughput_penalty
+		# remove_modifier = portnamm_je5_industrialist_penalty
+
+		# Give choice event about keeping salary modifiers
+		# trigger_event = { id = anb_portnamm_events.6 }
+	}
+
+	fail = {
+		always = no
+	}
+
+	weight = 100
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+
+
+
+
+
+
+

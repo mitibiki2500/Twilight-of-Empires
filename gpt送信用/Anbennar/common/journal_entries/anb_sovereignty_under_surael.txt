@@ -1,0 +1,86 @@
+﻿#TODO: Disabling as JE is not complete. Finish or Kill it. - Sept 14 2025
+je_sovereignty_under_surael = {
+	should_be_pinned_by_default_uninvolved_or_context = yes
+	icon = "gfx/interface/icons/objectives/great_game.dds"
+
+	group = je_group_historical_content
+
+	scripted_progress_bar = sus_core_progress_bar
+
+	is_shown_when_inactive = {
+		game_date > 2000.1.1
+	# 	is_in_power_bloc = yes
+  #       is_in_same_power_bloc = c:F01  
+  #   }
+
+  #   possible = {
+	# 		always = yes
+  #   }
+
+	# immediate = {
+	# 	set_global_variable = { name = sus_jaddanzar_progress value = 100 }
+	# 	set_global_variable = { name = sus_nahana_progress value = 100 }
+
+	# 	if = {
+	# 		limit = {
+	# 			is_player = yes
+	# 		}
+	# 		calculate_sus_passive_progress = yes
+
+	# 		scope:journal_entry = {
+	# 			set_global_variable = { name = sus_jaddanzar_progress value = "scripted_bar_progress(sus_core_progress_bar)" }
+	# 			set_global_variable = { name = sus_nahana_progress value = 200 }
+	# 			change_global_variable = { name = sus_nahana_progress subtract = global_var:sus_jaddanzar_progress }
+	# 		}
+	# 	}
+	}
+
+	complete = {
+		game_date = 1840.1.1
+	}
+
+	on_complete = {
+		#trigger_event = {
+		#	id = test_event.10
+		#	days = 0
+		#}
+	}
+
+	invalid = {
+		OR = {
+			NOT = {
+				exists = c:F01
+			}
+			NOT = {
+				exists = c:R01
+			}
+		}
+	}
+
+	on_invalid = {
+	
+	}
+
+	fail = {
+	
+	}
+
+	on_fail = {
+	
+	}
+
+	on_weekly_pulse = {
+
+    }
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					is_player = yes
+				}
+				calculate_sus_passive_progress = yes
+			}
+		}
+	}
+}

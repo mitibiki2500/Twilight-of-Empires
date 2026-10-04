@@ -1,0 +1,41 @@
+﻿# Command Start
+DIPLOMACY = {
+	c:R08 = {
+		create_bidirectional_truce = { country = c:R17 months = 8 }
+		create_bidirectional_truce = { country = c:R14 months = 8 }
+		create_bidirectional_truce = { country = c:R15 months = 8 }
+		create_bidirectional_truce = { country = c:R16 months = 8 }
+		create_bidirectional_truce = { country = c:R18 months = 8 }
+		create_bidirectional_truce = { country = c:R19 months = 8 }
+	}
+	
+	c:R14 = {
+		create_bidirectional_truce = { country = c:R15 months = 8 }
+		create_bidirectional_truce = { country = c:R16 months = 8 }
+		create_bidirectional_truce = { country = c:R18 months = 8 }
+		create_bidirectional_truce = { country = c:R19 months = 8 }
+	}
+	
+	c:R15 = {
+		create_bidirectional_truce = { country = c:R16 months = 8 }
+		create_bidirectional_truce = { country = c:R18 months = 8 }
+		create_bidirectional_truce = { country = c:R19 months = 8 }
+	}
+
+	c:R16 = {
+		create_bidirectional_truce = { country = c:R18 months = 8 }
+		create_bidirectional_truce = { country = c:R19 months = 8 }
+	}
+
+	c:R17 = {
+		create_bidirectional_truce = { country = c:R14 months = 8 }
+		create_bidirectional_truce = { country = c:R15 months = 8 }
+		create_bidirectional_truce = { country = c:R16 months = 8 }
+		create_bidirectional_truce = { country = c:R18 months = 8 }
+		create_bidirectional_truce = { country = c:R19 months = 8 }
+	}
+
+	c:R18 = {
+		create_bidirectional_truce = { country = c:R19 months = 8 }
+	}
+}

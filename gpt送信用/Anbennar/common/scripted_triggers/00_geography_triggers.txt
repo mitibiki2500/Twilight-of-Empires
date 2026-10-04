@@ -1,0 +1,376 @@
+﻿# Anbennar: partially removed for now, some are TODO 
+
+root_owns_state_in_region = { #checks if any_scope_state owned by root
+	any_scope_state = {
+		owner = root
+	}
+}
+
+### Climate triggers
+
+is_arabic_farmland = { # anb TODO
+	always = no
+	# OR = {
+	# 	is_in_geographic_region = geographic_region_anatolia_old
+	# 	is_in_geographic_region = geographic_region_arabic_old
+	# 	is_in_geographic_region = geographic_region_persia_old
+	# 	is_in_geographic_region = geographic_region_central_asia_old
+	# 	is_in_geographic_region = geographic_region_nile_basin
+	# 	is_in_geographic_region = geographic_region_north_africa_old
+	# 	is_in_geographic_region = geographic_region_senegal_old
+	# 	is_in_geographic_region = geographic_region_congo_old
+	# 	is_in_geographic_region = geographic_region_niger_old
+	# 	is_in_geographic_region = geographic_region_ethiopia_old
+	# 	is_in_geographic_region = geographic_region_zanj_old
+	# 	is_in_geographic_region = geographic_region_southern_africa_old
+	# }
+}
+
+is_jungle_hills = { # anb TODO
+	always = no
+	# OR = {
+	# 	is_in_geographic_region = geographic_region_indochina
+	# 	is_in_geographic_region = geographic_region_south_china
+	# 	state_region = s:STATE_RYUKYU_ISLANDS
+	# }
+}
+
+is_asian_farmland = { # anb TODO
+	always = no
+	# OR = {
+	# 	is_in_geographic_region = geographic_region_indochina
+	# 	is_in_geographic_region = geographic_region_indochina
+	# 	is_in_geographic_region = geographic_region_south_china
+	# 	is_in_geographic_region = geographic_region_north_china
+	# 	is_in_geographic_region = geographic_region_manchuria_old
+	# 	is_in_geographic_region = geographic_region_japan_old
+	# }
+}
+
+is_subtropic_farmland = { # anb TODO
+	always = no
+	# OR = {
+	# 	is_in_geographic_region = geographic_region_central_america_old
+	# 	is_in_geographic_region = geographic_region_central_america_old
+	# 	is_in_geographic_region = geographic_region_gran_colombia
+	# 	is_in_geographic_region = geographic_region_andes
+	# 	is_in_geographic_region = geographic_region_brazil
+	# 	is_in_geographic_region = geographic_region_la_plata
+	# 	is_in_geographic_region = geographic_region_central_america_old
+	# }
+}
+
+is_arid_region = { # anb adjusted
+	OR = {
+		state_region ?= s:STATE_NORTHERN_SANDSPITE
+		state_region ?= s:STATE_SOUTHERN_SANDSPITE
+		state_region ?= s:STATE_WESTERN_SALAHAD
+		state_region ?= s:STATE_CENTRAL_SALAHAD
+		state_region ?= s:STATE_DEMON_SANDS
+		state_region ?= s:STATE_ARDU
+		state_region ?= s:STATE_KERUHAR
+		state_region ?= s:STATE_FAR_EAST_SALAHAD
+		region ?= sr:region_far_bulwar
+		region ?= sr:region_fangaula
+		region ?= sr:region_jinnakah
+	}
+}
+
+# Harvest Condition Triggers
+
+is_vulnerable_to_droughts = { # anb adjusted
+	AND = {
+		state_is_in_serpentspine_or_dwarven_hold = no
+		NOT = {
+			region ?= sr:region_alen
+			region ?= sr:region_gerudia
+			region ?= sr:region_dalaire
+		}
+	}
+}
+
+is_vulnerable_to_floods = { # anb adjusted
+	AND = {
+		state_is_in_serpentspine_or_dwarven_hold = no
+		NOT = {
+			state_region ?= s:STATE_NORTHERN_SANDSPITE
+			state_region ?= s:STATE_SOUTHERN_SANDSPITE
+			state_region ?= s:STATE_WESTERN_SALAHAD
+			state_region ?= s:STATE_CENTRAL_SALAHAD
+			state_region ?= s:STATE_DEMON_SANDS
+			state_region ?= s:STATE_ARDU
+			state_region ?= s:STATE_KERUHAR
+			state_region ?= s:STATE_FAR_EAST_SALAHAD
+			region ?= sr:region_far_bulwar
+			region ?= sr:region_fangaula
+			region ?= sr:region_jinnakah
+		}
+	}
+}
+
+is_vulnerable_to_frosts = { # anb adjusted
+	AND = {
+		state_is_in_serpentspine_or_dwarven_hold = no
+		OR = {
+			region ?= sr:region_alen
+			region ?= sr:region_gerudia
+			region ?= sr:region_forbidden_plains
+			region ?= sr:region_west_dwarovar
+			region ?= sr:region_escann
+			region ?= sr:region_dalaire
+			region ?= sr:region_triunic_lakes
+			region ?= sr:region_moduk
+			region ?= sr:region_lencenor
+		}
+	}
+}
+
+is_vulnerable_to_wildfires = { # anb adjusted
+	AND = {
+		state_is_in_serpentspine_or_dwarven_hold = no
+		NOT = {
+			any_scope_state = {
+				OR = {
+					state_region ?= s:STATE_DALAIREY_WASTES
+					state_region ?= s:STATE_MITTANWEK
+					state_region ?= s:STATE_FARPLOTT
+					state_region ?= s:STATE_NORTHERN_SANDSPITE
+					state_region ?= s:STATE_SOUTHERN_SANDSPITE
+					state_region ?= s:STATE_WESTERN_SALAHAD
+					state_region ?= s:STATE_CENTRAL_SALAHAD
+					state_region ?= s:STATE_DEMON_SANDS
+					state_region ?= s:STATE_ARDU
+					state_region ?= s:STATE_KERUHAR
+					state_region ?= s:STATE_FAR_EAST_SALAHAD
+					region ?= sr:region_far_bulwar
+					region ?= sr:region_fangaula
+					region ?= sr:region_jinnakah
+				}
+			}
+		}
+	}
+}
+
+is_vulnerable_to_hailstorm = { # anb: same as vanilla
+	is_vulnerable_to_frosts = yes
+}
+
+is_vulnerable_to_locust_swarms = { # anb adjusted
+	AND = {
+		state_is_in_serpentspine_or_dwarven_hold = no
+		NOT = {
+			region ?= sr:region_gerudia
+			region ?= sr:region_dalaire
+		}
+	}
+}
+
+is_vulnerable_to_heatwaves = { # anb adjusted
+	AND = {
+		state_is_in_serpentspine_or_dwarven_hold = no
+		NOT = {
+			region ?= sr:region_gerudia
+			region ?= sr:region_dalaire
+		}
+	}
+}
+
+is_vulnerable_to_disease_outbreak = { # anb adjusted polktech: but like why?
+	state_is_in_serpentspine_or_dwarven_hold = no
+}
+
+is_vulnerable_to_extreme_winds = {
+	state_is_in_serpentspine_or_dwarven_hold = no
+}
+
+is_vulnerable_to_torrential_rains = { # anb adjusted
+	AND = {
+		is_arid_region = no
+		state_is_in_serpentspine_or_dwarven_hold = no
+	}
+}
+
+has_potential_for_pollinator_surge = { # anb adjusted
+	state_is_in_serpentspine_or_dwarven_hold = no
+}
+
+has_potential_for_optimal_sunlight = { # anb adjusted
+	state_is_in_serpentspine_or_dwarven_hold = no
+}
+
+has_potential_for_moderate_rainfall = { # anb adjusted
+	AND = {
+		is_arid_region = no
+		state_is_in_serpentspine_or_dwarven_hold = no
+	}
+}
+
+is_country_on_same_continent = { # anb adjusted
+	custom_description = {
+		text = "is_country_on_same_continent"
+		subject = this
+		object = $TARGET$
+
+		trigger_if = {
+			limit = {
+				this.capital.state_region = {
+					is_in_geographic_region = geographic_region_cannor
+				}
+			}
+			$TARGET$.capital.state_region = {
+				is_in_geographic_region = geographic_region_cannor
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				this.capital.state_region = {
+					is_in_geographic_region = geographic_region_north_aelantir
+				}
+			}
+			$TARGET$.capital.state_region = {
+				is_in_geographic_region = geographic_region_north_aelantir
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				this.capital.state_region = {
+					is_in_geographic_region = geographic_region_south_aelantir
+				}
+			}
+			$TARGET$.capital.state_region = {
+				is_in_geographic_region = geographic_region_south_aelantir
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				this.capital.state_region = {
+					is_in_geographic_region = geographic_region_haless
+				}
+			}
+			$TARGET$.capital.state_region = {
+				is_in_geographic_region = geographic_region_haless
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				this.capital.state_region = {
+					is_in_geographic_region = geographic_region_sarhal
+				}
+			}
+			$TARGET$.capital.state_region = {
+				is_in_geographic_region = geographic_region_sarhal
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				this.capital.state_region = {
+					is_in_geographic_region = geographic_region_dwarovar
+				}
+			}
+			$TARGET$.capital.state_region = {
+				is_in_geographic_region = geographic_region_dwarovar
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				this.capital.state_region = {
+					is_in_geographic_region = geographic_region_unreleased
+				}
+			}
+			$TARGET$.capital.state_region = {
+				is_in_geographic_region = geographic_region_unreleased
+			}
+		}
+	}
+}
+
+is_vulnerable_to_earthquakes = { # ANB TODO
+	always = no
+	# OR = { # these are an approximation of fault zones and replaces an old scripted trigger
+	# 	is_in_geographic_region = geographic_region_alpide_belt
+	# 	is_in_geographic_region = geographic_region_ring_of_fire
+	# 	is_in_geographic_region = geographic_region_great_rift_valley
+	# }
+}
+
+is_vulnerable_to_ice = { # ANB TODO
+	always = no
+	# OR = {
+	# 	this = s:STATE_BARENTS_SEA
+	# 	this = s:STATE_NORWEGIAN_SEA
+	# 	this = s:STATE_NORTH_SEA
+	# 	this = s:STATE_NORTHERN_NORTH_ATLANTIC_OCEAN
+	# 	this = s:STATE_LABRADOR_SEA
+	# 	this = s:STATE_DAVIS_STRAIT
+	# 	this = s:STATE_HUDSON_BAY
+	# 	this = s:STATE_GULF_OF_FINLAND
+	# 	this = s:STATE_NORTHERN_BALTIC_SEA
+	# 	this = s:STATE_BERING_SEA
+	# 	this = s:STATE_GULF_OF_ALASKA
+	# 	this = s:STATE_GRAND_BANKS
+
+	# 	this = s:STATE_PATAGONIAN_CHANNELS
+	# 	this = s:STATE_PATAGONIAN_SEA
+	# }
+}
+
+is_vulnerable_to_tropical_storm = { # ANB TODO
+	# OR = {
+	# 	this = s:STATE_CAPE_VERDE_SEA
+	# 	this = s:STATE_EQUATORIAL_ATLANTIC_OCEAN
+	# 	this = s:STATE_MAIN_EQUATORIAL_CRURRENT
+	# 	this = s:STATE_AMAZON_DELTA
+	# 	this = s:STATE_COAST_OF_GUYANA
+	# 	this = s:STATE_EASTERN_CARIBBEAN_SEA
+	# 	this = s:STATE_WESTERN_CARIBBEAN_SEA
+	# 	this = s:STATE_GULF_OF_MEXICO
+	# 	this = s:STATE_BAHAMA_BANKS
+	# 	this = s:STATE_SOUTH_ATLANTIC_COAST
+	# 	this = s:STATE_SARGASSO_SEA
+
+	# 	this = s:STATE_SOUTH_BRAZIL_BIGHT
+	# 	this = s:STATE_CAPE_ST_ROQUE
+
+	# 	this = s:STATE_HORN_OF_AFRICA
+	# 	this = s:STATE_ARABIAN_SEA
+	# 	this = s:STATE_ZANZIBAR_COAST
+	# 	this = s:STATE_MOZAMBIQUE_CHANNEL
+	# 	this = s:STATE_WESTERN_INDIAN_OCEAN
+	# 	this = s:STATE_EASTERN_INDIAN_OCEAN
+	# 	this = s:STATE_LACCADIVE_SEA
+	# 	this = s:STATE_BAY_OF_BENGAL
+
+	# 	this = s:STATE_MALACCA_STRAIT
+	# 	this = s:STATE_SOUTH_INDIAN_OCEAN
+	# 	this = s:STATE_JAVA_SEA
+	# 	this = s:STATE_MOLUCCA_SEA
+	# 	this = s:STATE_MALAY_SEA
+	# 	this = s:STATE_SOUTH_CHINA_SEA
+	# 	this = s:STATE_EAST_CHINA_SEA
+	# 	this = s:STATE_YELLOW_SEA
+	# 	this = s:STATE_PHILIPPINES_SEA
+	# 	this = s:STATE_MICRONESIAN_SEA
+	# 	this = s:STATE_CORAL_SEA
+	# 	this = s:STATE_WESTERN_POLYNESIAN_SEA
+
+	# 	this = s:STATE_NORTHERN_POLYNESIAN_SEA
+	# 	this = s:STATE_NORTH_PACIFIC_OCEAN
+	# 	this = s:STATE_CENTROAMERICAN_SEA
+	# 	this = s:STATE_PACIFIC_SEABOARD
+	# }
+}
+
+is_important_strait_state_region = { # anb adjusted
+	OR = {
+		this = s:STATE_PEARLSEDGE
+		this = s:STATE_MENIBOR
+		this = s:STATE_SERPENTSHEAD
+		this = s:STATE_SPORREYN
+		this = s:STATE_EBORTHIL
+		this = s:STATE_DESHAK
+		this = s:STATE_AFOMAPOBO
+		this = s:STATE_TVARASTAMANOSY
+		this = s:STATE_SISINYUYU
+		this = s:STATE_BEERAGA
+	}
+}

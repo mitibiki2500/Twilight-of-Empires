@@ -1,0 +1,786 @@
+﻿POPS = {
+	s:STATE_KWINELLIANDE = {
+		region_state:B18 = { #Most "even" in terms of proportion
+			create_pop = {
+				culture = bloodgrover
+				size = 433300
+				religion = regent_court
+			}
+            create_pop = {
+				culture = bloodgrover
+				size = 185700
+				religion = ravelian
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 121300
+				religion = regent_court
+			}
+            create_pop = {
+				culture = redglader_elf
+				size = 121300
+				religion = ravelian
+			}
+			create_pop = {
+				culture = sornicandi
+				size = 236800
+				religion = ravelian
+			}
+            create_pop = {
+				culture = sornicandi
+				size = 59200
+				religion = regent_court
+			}
+			create_pop = {
+				culture = kwineh
+				size = 9420
+				religion = regent_court
+			}
+            create_pop = {
+				culture = kwineh
+				size = 37680
+				religion = ravelian
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 103638
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 17662
+			}
+		}
+	}
+	s:STATE_NURTHANNCOST = {
+		region_state:B18 = { #High Lorentish majority
+			create_pop = {
+				culture = bloodgrover
+				size = 216760
+				religion = regent_court
+			}
+            create_pop = {
+				culture = bloodgrover
+				size = 216760
+				religion = ravelian
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 21392
+				religion = regent_court
+			}
+            create_pop = {
+				culture = redglader_elf
+				size = 85568
+				religion = ravelian
+			}
+			create_pop = {
+				culture = kwineh
+				size = 3424
+				religion = regent_court
+			}
+            create_pop = {
+				culture = kwineh
+				size = 30816
+				religion = ravelian
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 77370
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 13910
+			}
+		}
+	}
+	s:STATE_REANNIA = {
+		region_state:B18 = {
+			create_pop = {
+				culture = bloodgrover
+				size = 68400
+				religion = ravelian
+			}
+            create_pop = {
+				culture = bloodgrover
+				size = 159600
+				religion = ravelian
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 16462
+				religion = regent_court
+			}
+            create_pop = {
+				culture = redglader_elf
+				size = 65848
+				religion = ravelian
+			}
+			create_pop = {
+				culture = kwineh
+				size = 29350
+				religion = ravelian
+			}
+			create_pop = {
+				culture = sornicandi
+				size = 230770
+				religion = ravelian
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 74202
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 12367
+			}
+		}
+	}
+	s:STATE_SORNICANDE = {
+		region_state:B18 = { #Sornicandi heartland
+			create_pop = {
+				culture = sornicandi
+				size = 461000
+				religion = ravelian
+			}
+			create_pop = {
+				culture = kwineh
+				size = 143800
+				religion = ravelian
+			}
+			create_pop = {
+				culture = bloodgrover
+				size = 28400
+				religion = regent_court
+			}
+            create_pop = {
+				culture = bloodgrover
+				size = 42600
+				religion = ravelian
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 16900
+				religion = regent_court
+			}
+            create_pop = {
+				culture = redglader_elf
+				size = 67600
+				religion = ravelian
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 69750
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 19950
+			}
+		}
+	}
+	s:STATE_SOUTH_DALAIRE = {
+		region_state:B18 = { #Kwineh mainly migrated there
+			create_pop = {
+				culture = kwineh
+				size = 85200
+				religion = ravelian
+			}
+			create_pop = {
+				culture = sornicandi
+				size = 73600
+				religion = ravelian
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 18000
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 3600
+			}
+		}
+	}
+	s:STATE_CESTIRMARK = {
+		region_state:B98 = {
+			create_pop = {
+				culture = concordian
+				size = 915120
+			}
+			create_pop = {
+				culture = boek
+				size = 7380
+				religion = ravelian
+			}
+			create_pop = {
+				culture = towerfoot_halfling
+				size = 123000
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 24600
+				religion = ravelian
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 133250
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 26650
+			}
+		}
+	}
+	s:STATE_UPPER_SELLA = {
+		region_state:B18 = {
+			create_pop = {	#Yanek tribe was peacefully annexed so they may still be well off
+				culture = boek
+				size = 151264
+				religion = ravelian
+			}
+            create_pop = {	#Yanek tribe was peacefully annexed so they may still be well off
+				culture = boek
+				size = 37816
+				religion = dobondotist
+			}
+			create_pop = {
+				culture = concordian
+				size = 58240
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 30200
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 8040
+			}
+		}
+		region_state:B98 = {
+			create_pop = {
+				culture = boek
+				size = 64160
+				religion = ravelian
+			}
+            create_pop = {
+				culture = boek
+				size = 16040
+				religion = dobondotist
+			}
+			create_pop = {
+				culture = concordian
+				size = 45320
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 46200
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 8040
+			}
+			
+		}
+	}
+	s:STATE_TROLLSBRIDGE = {
+		region_state:B98 = {
+			create_pop = {
+				culture = concordian
+				size = 665028
+			}
+			create_pop = {
+				culture = boek
+				size = 4826
+				religion = ravelian
+			}
+            create_pop = {
+				culture = boek
+				size = 1206
+				religion = dobondotist
+			}
+			create_pop = {
+				culture = towerfoot_halfling
+				size = 15080
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 56550
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 11310
+			}
+		}
+	}
+	s:STATE_MARLLIANDE = {
+		region_state:B98 = {
+			create_pop = {
+				culture = concordian
+				size = 417714
+				religion = regent_court
+			}
+            create_pop = {
+				culture = concordian
+				size = 171606
+				religion = ravelian
+			}
+			create_pop = {
+				culture = boek
+				size = 5334
+				religion = regent_court
+			}
+            create_pop = {
+				culture = boek
+				size = 5202
+				religion = ravelian
+			}
+            create_pop = {
+				culture = boek
+				size = 5334
+				religion = dobondotist
+			}
+			create_pop = {
+				culture = towerfoot_halfling
+				size = 52020
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 152140
+				pop_type = slaves
+				religion = regent_court
+			}
+            create_pop = {
+				culture = undercliff_orc
+				size = 354994
+				pop_type = slaves
+				religion = ravelian
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 2655
+			}
+
+		}
+	}
+	s:STATE_YNNSMOUTH = {
+		region_state:B21 = {
+			create_pop = {
+				culture = boek
+				size = 420060
+			}
+			create_pop = {
+				culture = concordian
+				size = 169137
+			}
+			create_pop = {
+				culture = concordian
+				religion = corinite
+				size = 39593
+			}
+			create_pop = {
+				culture = sarda
+				size = 40300
+			}
+		}
+	}
+	s:STATE_ZANLIB = {
+		region_state:B98 = {
+			create_pop = {
+				culture = concordian
+				religion = old_sun_cult
+				size = 822160
+			}
+			create_pop = {
+				culture = towerfoot_halfling
+				size = 34400
+			}
+			create_pop = {
+				culture = boek
+				size = 2752
+				religion = old_sun_cult
+			}
+            create_pop = {
+				culture = boek
+				size = 688
+				religion = dobondotist
+			}
+		}
+	}
+	s:STATE_ISOBELIN = {
+		region_state:B98 = {
+			create_pop = {
+				culture = concordian
+				size = 1405702
+			}
+			create_pop = {	#Jayek tribe, peacefully integrated
+				culture = boek
+				size = 121000
+				religion = ravelian
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 13578
+				religion = ravelian
+			}
+			create_pop = {
+				culture = towerfoot_halfling
+				size = 201560
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 83150
+				religion = ravelian
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 45260
+			}
+			create_pop = {
+				culture = concordian
+				religion = old_sun_cult
+				size = 40080
+			}
+		}
+	}
+	s:STATE_THILVIS = {
+		region_state:B98 = {
+			create_pop = {
+				culture = towerfoot_halfling
+				size = 1192400
+			}
+			create_pop = {	#Boek tribe got heavily repressed, so they may be a minority
+				culture = boek
+				size = 1060
+				religion = ravelian
+			}
+			create_pop = {	#Boek tribe got heavily repressed, so they may be a minority
+				culture = boek
+				size = 2040
+				religion = dobondotist
+			}
+			create_pop = {
+				culture = concordian
+				size = 211700
+			}
+			create_pop = {
+				culture = concordian
+				size = 20000
+				religion = corinite
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 348235
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 39365
+			}
+			create_pop = {
+				culture = creek_gnome
+				size = 5220
+			}
+			create_pop = {
+				culture = kioha_harpy
+				size = 1200
+				religion = ravelian
+			}
+		}
+		region_state:B89 = {
+			create_pop = {
+				culture = concordian
+				size = 10800
+			}
+			create_pop = {
+				culture = towerfoot_halfling
+				size = 60000
+			}
+			create_pop = {
+				culture = boek
+				size = 8040
+				religion = ravelian
+			}
+            create_pop = {
+				culture = boek
+				size = 12060
+				religion = dobondotist
+			}
+		}
+	}
+	s:STATE_VALORPOINT = {
+		region_state:B98 = {
+			create_pop = {
+				culture = concordian
+				size = 463050
+				religion = corinite
+			}
+            create_pop = {
+				culture = concordian
+				size = 198450
+				religion = ravelian
+			}
+			create_pop = {	#Lots of refugees from the rest of the Trollsbay
+				culture = boek
+				size = 20400
+				religion = corinite
+			}
+            create_pop = {	#Lots of refugees from the rest of the Trollsbay
+				culture = boek
+				size = 6800
+				religion = ravelian
+			}
+            create_pop = {	#Lots of refugees from the rest of the Trollsbay
+				culture = boek
+				size = 6800
+				religion = dobondotist
+			}
+			create_pop = {
+				culture = cheshoshi
+				size = 7280
+				religion = corinite
+			}
+            create_pop = {
+				culture = cheshoshi
+				size = 3120
+				religion = ravelian
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 50400
+			}
+		}
+		region_state:B26 = {
+			create_pop = {
+				culture = concordian
+				size = 105700
+				religion = corinite
+			}
+            create_pop = {
+				culture = concordian
+				size = 45300
+				religion = ravelian
+			}
+			create_pop = {
+				culture = boek
+				size = 6400
+				religion = corinite
+			}
+            create_pop = {
+				culture = boek
+				size = 9600
+				religion = ravelian
+			}
+			create_pop = {
+				culture = cheshoshi
+				size = 7000
+				religion = corinite
+			}
+            create_pop = {
+				culture = cheshoshi
+				size = 7000
+				religion = ravelian
+			}
+			create_pop = {
+				culture = lorentish
+				size = 6000
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 5400
+				pop_type = slaves
+			}
+		}
+	}
+	s:STATE_OKHIBOLI = {
+		region_state:B26 = {
+			create_pop = {
+				culture = cheshoshi
+				size = 348840
+				religion = ravelian
+			}
+            create_pop = {
+				culture = cheshoshi
+				size = 38760
+				religion = regent_court
+			}
+			create_pop = {
+				culture = lorentish
+				size = 47025
+				religion = ravelian
+			}
+            create_pop = {
+				culture = lorentish
+				size = 109725
+				religion = regent_court
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 24443
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 1206
+			}
+		}
+	}
+	s:STATE_SPOORLAND = {
+		region_state:B94 = {
+			create_pop = {
+				culture = cheshoshi
+				size = 76575
+				religion = ravelian
+			}
+            create_pop = {
+				culture = cheshoshi
+				size = 25525
+				religion = death_masks
+			}
+			create_pop = {
+				culture = concordian
+				size = 16060
+				religion = corinite
+			}
+            create_pop = {
+				culture = lorentish
+				size = 17200
+				religion = regent_court
+			}
+			create_pop = {
+				culture = towerfoot_halfling
+				size = 317600
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 29347
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = undercliff_orc
+				size = 4192
+			}
+		}
+	}
+	s:STATE_GRAVEROADS = {
+		region_state:B27 = {
+			create_pop = {
+				culture = neratican
+				size = 355320
+			}
+			create_pop = {
+				culture = cheshoshi
+				size = 252400
+				religion = regent_court
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 15240
+				pop_type = slaves
+				religion = bulgu_orazan
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 60960
+				pop_type = slaves
+				religion = regent_court
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 15240
+				religion = regent_court
+			}
+		}
+	}
+	s:STATE_CHESHOSHMAR = {
+		region_state:B27 = {
+			create_pop = {
+				culture = neratican
+				size = 388229
+			}
+			create_pop = {
+				culture = cheshoshi
+				size = 366900
+				religion = regent_court
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 9200
+				pop_type = slaves
+				religion = bulgu_orazan
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 52135
+				pop_type = slaves
+				religion = regent_court
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 12265
+				religion = regent_court
+			}
+		}
+	}
+	s:STATE_DIHEN = {
+		region_state:B28 = {
+			create_pop = {
+				culture = cheshoshi
+				size = 12300
+			}
+		}
+		region_state:B27 = {
+			create_pop = {
+				culture = neratican
+				size = 30400
+			}
+			create_pop = {
+				culture = cheshoshi
+				size = 64600
+				religion = regent_court
+			}
+		}
+	}
+	s:STATE_MORDUN = {
+		region_state:B27 = {
+			create_pop = {	#Largest Cheshoshi minority due to Soru tribe being spared
+				culture = cheshoshi
+				size = 270322
+				religion = regent_court
+			}
+			create_pop = {
+				culture = neratican
+				size = 143864
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 22704
+				pop_type = slaves
+				religion = bulgu_orazan
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 12450
+				pop_type = slaves
+				religion = bulgu_orazan
+			}
+            create_pop = {
+				culture = ruin_orc
+				size = 22180
+				pop_type = slaves
+				religion = regent_court
+			}
+			create_pop = {
+				culture = ruin_orc
+				size = 10385
+				religion = regent_court
+			}
+		}
+	}
+}

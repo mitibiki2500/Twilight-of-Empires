@@ -1,0 +1,37 @@
+﻿naleni_naval_modifier_buff = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    state_trade_advantage_mult = 0.1
+	state_trade_capacity_mult = 0.10
+}
+
+naleni_institutions_buff = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+    country_tech_spread_mult = 0.1
+	interest_group_ig_devout_pol_str_mult = 0.10
+}
+
+modifier_naleni_economic_reforms_sucess_reward = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_authority_mult = 0.1
+	country_legitimacy_base_add = 10
+	country_loyalists_from_legitimacy_mult = 0.2
+	state_migration_pull_mult = 0.1
+}
+
+modifier_naleni_conversion_for_all = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_allow_conversion_second_rate_citizen_bool = yes
+	country_allow_conversion_full_acceptance_bool = yes
+}
+
+modifier_failed_reform_under_god = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_authority_mult = -0.1
+	country_legitimacy_base_add = -10
+	country_radicals_from_legitimacy_mult = 0.2
+	political_movement_pop_attraction_mult = 0.2
+	country_loan_interest_rate_mult = 0.20
+	country_prestige_mult = -0.3
+	state_capitalists_investment_pool_efficiency_mult = -0.15
+	state_aristocrats_investment_pool_efficiency_mult = -0.05
+}

@@ -1,0 +1,79 @@
+﻿je_darkscale_nimrith_revival = {
+	icon = "gfx/interface/icons/religion_icons/nimrithan.dds"
+	
+	group = je_group_internal_affairs
+
+	scripted_progress_bar = darkscale_progress_progress_bar #bad bar for all the naughty kobolds who are desperate to see their father come back with milk even if it isn't really their father
+	scripted_progress_bar = darkscale_sabotage_progress_bar #bad bar for all the naughty kobolds who hate to see their god come back
+
+	is_shown_when_inactive = {
+		c:D06 ?= this
+	}
+
+	is_shown_in_lobby = {
+		c:D06 ?= this
+	}
+
+	possible = {
+		c:D06 ?= this #darkscale tag check
+		has_technology_researched = insyaan_analytical_engine
+		NOT = {
+			has_global_variable = darkscale_nimrith_revival_completed
+			has_global_variable = darkscale_nimrith_revival_failed
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = je_darkscale_progress_progress_bar_success
+			scope:journal_entry = {
+				"scripted_bar_progress(darkscale_progress_progress_bar)" >= 3 #all objectives complete
+			}
+		}
+	}
+
+	scripted_button = scripted_button_darkscale_nimrith_revival_generic_button #adds 1 progress
+	scripted_button = scripted_button_darkscale_nimrith_revival_who_do_we_get_body_parts_from_button_smith_priests #adds 1 progress #not always visible only with the right variable will it be visible aka have chosen devout
+	scripted_button = scripted_button_darkscale_nimrith_revival_who_do_we_get_body_parts_from_button_artisans #adds 1 progress #not always visible only with the right variable will it be visible aka have chosen petite bourgeousie
+	scripted_button = scripted_button_darkscale_nimrith_revival_who_do_we_get_body_parts_from_button_factories #adds 1 progress #not always visible only with the right variable will it be visible aka have chosen industrialists
+	scripted_button = scripted_button_darkscale_nimrith_revival_what_type_of_leader_is_nimrith_button_spiritual_ruler #adds 1 progress #not always visible only with the right variable will it be visible aka have chosen devout
+	scripted_button = scripted_button_darkscale_nimrith_revival_what_type_of_leader_is_nimrith_button_war_leader #adds 1 progress #not always visible only with the right variable will it be visible aka have chosen armed forces
+	scripted_button = scripted_button_darkscale_nimrith_revival_what_type_of_leader_is_nimrith_button_material_ruler #adds 1 progress #not always visible only with the right variable will it be visible aka have chosen intelligentsia
+
+	immediate = {
+		trigger_event = { id = darkscale_nimrith_revival_events.1 } #start event that triggers other events from this and provides more LORE and VIBES
+	}
+
+	on_complete = {
+		trigger_event = { id = darkscale_nimrith_revival_events.4 } #Event which spawns multiple versions of nimrith and other stuff basically the other options available, aka mega character nimrith event
+		set_global_variable = darkscale_nimrith_revival_completed
+	}
+
+	fail = { #check to make sure journal entry finishes when sabotage bar completes
+		custom_tooltip = {
+			text = je_darkscale_nimrith_revival_sabotage_fail
+			scope:journal_entry = {
+				"scripted_bar_progress(darkscale_sabotage_progress_bar)" >= 144
+			}
+		}
+	}
+
+	on_fail = {
+		if = {
+			limit = {
+				NOT = { has_variable = military_ruler_darkscales_nimrith_revival_variable }  #check for other side, because this means intelligentsia is on sabotage side
+			}
+			trigger_event = { id = darkscale_nimrith_revival_events.5 } #dragon egg noble victory
+		}
+		if = {
+			limit = {
+				has_variable = military_ruler_darkscales_nimrith_revival_variable
+			}
+			trigger_event = { id = darkscale_nimrith_revival_events.6 } #secular darkscale victory lots of possibility of finding their new identity
+		}
+		set_global_variable = darkscale_nimrith_revival_failed
+	}
+
+	weight = 10
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

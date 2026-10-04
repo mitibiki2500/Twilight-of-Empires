@@ -1,0 +1,72 @@
+﻿je_effelai_reclamation = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+	
+	group = je_group_historical_content
+
+	immediate = {
+		
+	}
+	
+	#modifiers_while_active = {
+	#	
+	#}
+	
+	scripted_button = C14_reclaim_west
+	scripted_button = C14_reclaim_east
+	scripted_button = C14_reincorp_soruin
+	scripted_button = C14_reincorp_dry
+	
+	complete = {
+		custom_tooltip = {
+			text = C14_reclaim_west_tt
+			has_variable = C14_reclaim_west_var
+		}
+		custom_tooltip = {
+			text = C14_reclaim_east_tt
+			has_variable = C14_reclaim_east_var
+		}
+		custom_tooltip = {
+			text = C14_reincorp_soruin_tt
+			has_variable = C14_reincorp_soruin_var
+		}
+		custom_tooltip = {
+			text = C14_reincorp_dry_tt
+			has_variable = C14_reincorp_dry_var
+		}
+	}
+	
+	modifiers_while_active = {
+		modifier_effelai_adm
+	}
+	
+	on_complete = {
+		add_modifier = {
+			name = modifier_effelai_reclaimed
+			is_decaying = yes
+			years = 20
+		}
+		add_loyalists = {
+			value = 0.05
+		}
+		# set_variable = effelai_reclaimed # unused
+	}
+	
+	#on_fail = {
+	#	
+	#}
+
+	#fail = {
+	#	
+	#}
+	
+	#on_monthly_pulse = {
+	#	random_events = {
+	#		100 = 0
+	#	}
+	#}
+
+
+	weight = 10000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+

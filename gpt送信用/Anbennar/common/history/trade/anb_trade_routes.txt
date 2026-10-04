@@ -1,0 +1,18 @@
+﻿TRADE = {
+    ### Exports
+    s:STATE_BRONRIN = {
+        region_state:C02 = {
+            sg:damestear = {
+                add_exports = 50
+            }
+        }
+    }
+    ### Imports
+    s:STATE_DAMESEAR = {
+        region_state:A01 = {
+            sg:wood = {
+                add_imports = 200
+            }
+        }
+    }
+}

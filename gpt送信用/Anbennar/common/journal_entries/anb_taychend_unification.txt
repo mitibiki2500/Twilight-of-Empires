@@ -1,0 +1,41 @@
+﻿je_taychend_unification = {
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	group = je_group_historical_content
+
+	is_shown_when_inactive = {
+		OR = {
+			country_has_primary_culture = cu:kalavendhi
+			country_has_primary_culture = cu:yodhanpir
+			country_has_primary_culture = cu:advakhalla
+			country_has_primary_culture = cu:larankarha
+			country_has_primary_culture = cu:sarihaddi
+			country_has_primary_culture = cu:klereyen
+		}
+	}
+
+	possible = {
+		OR = {
+			country_has_primary_culture = cu:kalavendhi
+			country_has_primary_culture = cu:yodhanpir
+			country_has_primary_culture = cu:advakhalla
+			country_has_primary_culture = cu:larankarha
+			country_has_primary_culture = cu:sarihaddi
+			country_has_primary_culture = cu:klereyen
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			c:C90 ?= this
+			text = je_taychend_unification_done
+		}
+	}
+
+	on_complete = {
+		trigger_event = {id = anb_formation.3 days = 1 popup = yes}
+	}
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

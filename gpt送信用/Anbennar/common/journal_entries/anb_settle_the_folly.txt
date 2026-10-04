@@ -1,0 +1,280 @@
+﻿je_settle_the_folly = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	group = je_group_expeditions
+
+	complete = {
+		s:STATE_RAVENGARD= {
+			exists = region_state:A02
+			region_state:A02 = {
+				save_temporary_scope_as = STATE_FOLLY
+				is_split_state = no
+				custom_tooltip = { 
+					text = "folly_pop_tt_1"
+					state_population >= 700000
+				}
+				custom_tooltip = { 
+					text = "folly_building_rec_tt"
+					any_scope_building = {
+						is_building_group = bg_manufacturing
+						level >=3
+					}
+					any_scope_building = {
+						OR = {
+							is_building_group = bg_agriculture
+							is_building_group = bg_ranching
+						}
+						NOT = { is_subsistence_building = yes }
+						level >=3
+					}
+					any_scope_building = {
+						is_building_group = bg_mining
+						level >=3
+					}
+				}
+			}
+		}
+		s:STATE_FENNFORT= {
+			exists = region_state:A02
+			region_state:A02 = {
+				save_temporary_scope_as = STATE_FOLLY
+				is_split_state = no
+				custom_tooltip = { 
+					text = "folly_pop_tt_1"
+					state_population >= 700000
+				}
+				custom_tooltip = { 
+					text = "folly_building_rec_tt"
+					any_scope_building = {
+						is_building_group = bg_manufacturing
+						level >=3
+					}
+					any_scope_building = {
+						OR = {
+							is_building_group = bg_agriculture
+							is_building_group = bg_ranching
+						}
+						NOT = { is_subsistence_building = yes }
+						level >=3
+					}
+					any_scope_building = {
+						is_building_group = bg_mining
+						level >=3
+					}
+
+				}
+			}
+		}
+		s:STATE_DREADMIRE= {
+			exists = region_state:A02
+			region_state:A02 = {
+				save_temporary_scope_as = STATE_FOLLY
+				is_split_state = no
+				custom_tooltip = { 
+					text = "folly_pop_tt_1"
+					state_population >= 700000
+				}
+				custom_tooltip = { 
+					text = "folly_building_rec_tt"
+					any_scope_building = {
+						is_building_group = bg_manufacturing
+						level >=3
+					}
+					any_scope_building = {
+						OR = {
+							is_building_group = bg_agriculture
+							is_building_group = bg_ranching
+						}
+						NOT = { is_subsistence_building = yes }
+						level >=3
+					}
+					any_scope_building = {
+						is_building_group = bg_mining
+						level >=3
+					}
+				}
+			}
+		}
+		s:STATE_CORVELD= {
+			exists = region_state:A02
+			region_state:A02 = {
+				save_temporary_scope_as = STATE_FOLLY
+				is_split_state = no
+				custom_tooltip = { 
+					text = "folly_pop_tt_2"
+					state_population >= 1000000
+				}
+				custom_tooltip = { 
+					text = "folly_building_rec_tt"
+					any_scope_building = {
+						is_building_group = bg_manufacturing
+						level >=3
+					}
+					any_scope_building = {
+						OR = {
+							is_building_group = bg_agriculture
+							is_building_group = bg_ranching
+						}
+						NOT = { is_subsistence_building = yes }
+						level >=3
+					}
+					any_scope_building = {
+						is_building_group = bg_mining
+						level >=3
+					}
+				}
+			}
+		}
+	}
+	
+	on_complete = {
+		s:STATE_OURDIA = {
+			add_claim = c:A02
+		}
+		add_modifier = {
+			name = je_folly_success_effect_country
+		}
+		s:STATE_RAVENGARD = {
+			region_state:A02 = {
+				add_modifier = {
+					name = je_folly_success_effect_state
+					months = 300
+				}
+			}
+			add_homeland = cu:arannese
+		}
+		s:STATE_FENNFORT = {
+			region_state:A02 = {
+				add_modifier = {
+					name = je_folly_success_effect_state
+					months = 300
+				}
+			}
+			add_homeland = cu:arannese
+		}
+		s:STATE_CORVELD = {
+			region_state:A02 = {
+				add_modifier = {
+					name = je_folly_success_effect_state
+					months = 300
+				}
+			}
+			add_homeland = cu:arannese
+		}
+		s:STATE_DREADMIRE = {
+			region_state:A02 = {
+				add_modifier = {
+					name = je_folly_success_effect_state
+					months = 300
+				}
+			}
+			add_homeland = cu:arannese
+		}
+	}
+	
+	timeout = 10950
+	
+	on_timeout = {
+		if = {
+			limit = { #idk why it's like this, but it was, does vic3 need you to check for claims before removing or it bugs out?
+				has_claim = s:STATE_DREADMIRE
+			}
+			
+			s:STATE_DREADMIRE = {
+				remove_claim = root
+			}
+		}
+
+		if = {
+			limit = {
+				has_claim = s:STATE_CORVELD
+			}
+
+			s:STATE_CORVELD = {
+				remove_claim = root
+			}
+		}
+
+		if = {
+			limit = {
+				has_claim = s:STATE_FENNFORT
+			}
+			
+			s:STATE_FENNFORT = {
+				remove_claim = root
+			}
+		}
+
+		if = {
+			limit = {
+				has_claim = s:STATE_RAVENGARD
+			}
+			
+			s:STATE_FENNFORT = {
+				remove_claim = root
+			}
+		}
+
+		activate_law = law_type:law_no_colonial_affairs
+		add_modifier = {
+			name = je_folly_failure_effect_country
+			months = 180
+		}
+		
+		ig:ig_armed_forces = {
+			leader = {
+				set_ideology = ideology:ideology_jingoist_leader
+			}
+		}
+		ig:ig_petty_bourgeoisie = {
+			leader = {
+				set_ideology = ideology:ideology_jingoist_leader
+			}
+		}
+		ig:ig_industrialists = {
+			leader = {
+				set_ideology = ideology:ideology_jingoist_leader
+			}
+		}
+	}
+
+	# Own anything in the folly and have colonial affairs
+	possible = {
+		OR = {
+			has_state_in_state_region = STATE_DREADMIRE
+			has_state_in_state_region = STATE_CORVELD
+			has_state_in_state_region = STATE_FENNFORT
+			has_state_in_state_region = STATE_RAVENGARD
+		}
+		
+		institution_investment_level = {
+			institution = institution_colonial_affairs
+			value >= 1
+		}
+	}
+
+	is_shown_when_inactive = {
+		OR = {
+			has_state_in_state_region = STATE_DREADMIRE
+			has_state_in_state_region = STATE_CORVELD
+			has_state_in_state_region = STATE_FENNFORT
+			has_state_in_state_region = STATE_RAVENGARD
+		}
+	}
+	
+	on_yearly_pulse = {
+		random_events = {
+			150 = 0 #150/200 so it's a four ish year pulse
+			10 = anb_vivin_events.1
+			10 = anb_vivin_events.2
+			10 = anb_vivin_events.3
+			10 = anb_vivin_events.4
+			10 = anb_vivin_events.5
+		}
+	}
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+
+	weight = 100
+	
+	can_revolution_inherit = yes
+}

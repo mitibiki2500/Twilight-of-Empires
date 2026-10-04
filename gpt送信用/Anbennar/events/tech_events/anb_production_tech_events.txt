@@ -1,0 +1,60 @@
+﻿namespace = anb_production_tech_events
+
+anb_production_tech_events.001 = { # Artificery Boom
+    type = country_event
+
+    placement = scope:doodad_state
+
+    title = anb_production_tech_events.001.t
+    desc = anb_production_tech_events.001.d
+    flavor = anb_production_tech_events.001.f
+
+
+    event_image = {
+        video = "unspecific_trains" #Placeholder since we don't have any Anbennar specific art
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
+
+    duration = 3
+
+    trigger = {
+    }
+
+    immediate = {
+        random_scope_state = {
+			limit = {
+				any_scope_building = {
+					is_building_type = building_doodad_artificeries
+					occupancy > 0.75
+					cash_reserves_ratio > 0.25
+					weekly_profit > 0
+					level >= 3
+				}
+			}
+			save_scope_as = doodad_state
+		}
+    }
+
+    option = { # doodad throughput
+        name = anb_production_tech_events.100.a
+        default_option = yes
+        scope:doodad_state = {
+            add_modifier = {
+                name = doodad_production_modifier
+                days = normal_modifier_time
+            }
+        }
+    }
+
+    option = { # tech
+        name = anb_production_tech_events.100.b
+		trigger = {
+			NOT = { has_technology_researched = elemental_elicitation }
+			can_research = elemental_elicitation
+		}
+        add_technology_progress = { progress = 4150 technology = elemental_elicitation }
+    }
+}

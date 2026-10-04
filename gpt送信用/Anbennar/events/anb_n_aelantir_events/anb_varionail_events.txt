@@ -1,0 +1,599 @@
+﻿namespace = anb_varionail
+
+#Starting Event
+anb_varionail.001 = {
+    type = country_event
+    placement = root
+
+    title = anb_varionail.001.t
+    desc = anb_varionail.001.d
+    flavor = anb_varionail.001.f
+
+    event_image = {
+        video = "unspecific_steam_ship"
+    }
+
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+    
+    immediate = {
+        set_variable = {
+            name = varionail_je_start_var
+            value = yes
+        }
+    }
+
+    option = { 
+        name = anb_varionail.001.a
+        default_option = yes
+#        add_journal_entry = { type = je_varionail } TODO This wasn't working for some reason
+        #Change primary culture
+        add_primary_culture = cu:crescent_elf
+        remove_primary_culture = cu:havener_elf
+        #Do some initial assimilation
+        custom_tooltip = {
+            text = varionail_inital_assimilation_desc
+            every_scope_state = {
+                every_scope_pop = {
+                    limit = {
+                        this.culture = {
+                            NOT = {
+                                is_primary_culture_of = ROOT
+                            }
+                            shares_heritage_trait_with_any_primary_culture = ROOT
+                        }
+                    }
+                    change_pop_culture = {
+                        target = cu:crescent_elf
+                        value = 0.5
+                    }
+                }
+            }
+        }
+        s:STATE_VARIONAIL = {
+            add_homeland = cu:crescent_elf
+        }
+        s:STATE_FALILTCOST = {
+            add_homeland = cu:crescent_elf
+        }
+        s:STATE_SANCTUARY_FIELDS = {
+            add_homeland = cu:crescent_elf
+        }
+        s:STATE_SILVERTENNAR = {
+            add_homeland = cu:crescent_elf
+        }
+
+    }
+}
+#Concluding Event
+anb_varionail.002 = {
+    type = country_event
+    placement = root
+
+    title = anb_varionail.002.t
+    desc = anb_varionail.002.d
+    flavor = anb_varionail.002.f
+
+    event_image = {
+        video = "unspecific_steam_ship"
+    }
+
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    immediate = {
+        c:B13 ?= {
+            every_scope_state = {
+                remove_modifier = varionail_je_assimilation
+            }
+        }
+    }
+
+    option = {
+        name = anb_varionail.002.a
+        default_option = yes
+        add_modifier = {
+            name = varionail_je_complete
+            years = 20
+        }
+        #Add loyalists for elves
+        add_loyalists = {
+            culture = cu:crescent_elf
+            value = 0.1
+        }
+    }
+}
+#Developing Countermeasures
+anb_varionail.003 = {
+    type = country_event
+    placement = root
+
+    title = anb_varionail.003.t
+    desc = anb_varionail.003.d
+    flavor = anb_varionail.003.f
+
+    event_image = {
+        video = "unspecific_gears_pistons"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds" 
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #Develop countermeasures
+        name = anb_varionail.003.a
+        default_option = yes
+        s:STATE_FALILTCOST.region_state:B13 = {
+            add_modifier = {
+                name = varionail_developing_countermeasures
+                months = 12
+            }
+        }
+        custom_tooltip = {
+            text = varionail_countermeasure_develop_desc
+            trigger_event = { id = anb_varionail.004 months = 12 }
+        }
+    }
+
+    option = { #Nevermind
+        name = anb_varionail.003.b
+        remove_variable = varionail_plant_cooldown
+    }
+}
+#Developing Countermeasures (Complete)
+anb_varionail.004 = {
+    type = country_event
+    placement = root
+
+    title = anb_varionail.004.t
+    desc = anb_varionail.004.d
+    flavor = anb_varionail.004.f
+
+    event_image = {
+        video = "unspecific_gears_pistons"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_fire.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #Clear the Plants
+        name = anb_varionail.004.a
+        default_option = yes
+        custom_tooltip = {
+            text = varionail_countermeasure_clear_desc
+            set_variable = { name = varionail_countermeasure_found_var }
+            set_variable = { name = varionail_countermeasure_clear_var } 
+            remove_variable = varionail_plant_cooldown
+        }
+    }
+
+    option = { #Control the plants
+        name = anb_varionail.004.b
+        custom_tooltip = {
+            text = varionail_countermeasure_control_desc
+            set_variable = { name = varionail_countermeasure_found_var } 
+            #set_variable = { name = varionail_countermeasure_control_var } - Unused Var
+            remove_variable = varionail_plant_cooldown
+        }
+    }
+}
+#Picking a State
+anb_varionail.005 = {
+    type = country_event
+    placement = root
+
+    title = anb_varionail.005.t
+    desc = anb_varionail.005.d
+    flavor = anb_varionail.005.f
+
+    event_image = {
+        video = "unspecific_fire"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = { #Varionail
+        name = anb_varionail.005.a
+        default_option = yes
+        trigger = {
+            s:STATE_VARIONAIL.region_state:B13 = {
+                has_state_trait = state_trait_ravenous_isle
+            }
+        }
+        s:STATE_VARIONAIL.region_state:B13 = {
+            save_scope_as = varionail_clear_state
+            add_devastation = 15
+            add_modifier = {
+                name = varionail_clearing
+                months = 12
+            }
+        }
+    }
+
+    option = { #Silvertennar
+        name = anb_varionail.005.b
+        trigger = {
+            s:STATE_SILVERTENNAR.region_state:B13 = {
+                has_state_trait = state_trait_ravenous_isle
+            }
+        }
+        s:STATE_SILVERTENNAR.region_state:B13 = {
+            save_scope_as = varionail_clear_state
+            add_devastation = 15
+            add_modifier = {
+                name = varionail_clearing
+                months = 12
+            }
+        }
+    }
+
+    option = { #Faliltcost
+        name = anb_varionail.005.c
+        trigger = {
+            s:STATE_FALILTCOST.region_state:B13 = {
+                has_state_trait = state_trait_ravenous_isle
+            }
+        }
+        s:STATE_FALILTCOST.region_state:B13 = {
+            save_scope_as = varionail_clear_state
+            add_devastation = 15
+            add_modifier = {
+                name = varionail_clearing
+                months = 12
+            }
+        }
+    }
+    
+    after = {
+        trigger_event = { id = anb_varionail.006 months = 12 }
+    }
+}
+#Clearing Plants (Complete)
+anb_varionail.006 = {
+    type = country_event
+    placement = root
+
+    title = anb_varionail.006.t
+    desc = anb_varionail.006.d
+    flavor = anb_varionail.006.f
+
+    event_image = {
+        video = "unspecific_fire"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_industry.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    option = {
+        name = anb_varionail.006.a
+        default_option = yes
+        scope:varionail_clear_state = {
+            remove_state_trait = state_trait_ravenous_isle
+            if = {
+                limit = {
+                    c:B13 ?= {
+                        has_variable = varionail_countermeasure_clear_var
+                    }
+                }
+                add_state_trait = state_trait_ravenous_isle_cleared
+            }
+            else = {
+                add_state_trait = state_trait_ravenous_isle_controlled
+            }
+        }
+    }
+}
+#RANDOM EVENTS
+#Assimilation Troubles
+anb_varionail.007 = {
+    type = country_event
+    placement = scope:varionail_random_event_state
+
+    title = anb_varionail.007.t
+    desc = anb_varionail.007.d
+    flavor = anb_varionail.007.f
+
+    event_image = {
+        video = "europenorthamerica_rich_and_poor"
+    }
+
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    trigger = {
+        NOT = {
+            has_variable = varionail_007_cooldown
+        }
+    }
+
+    immediate = {
+        c:B13 ?= {
+            random_scope_state = {
+                save_scope_as = varionail_random_event_state
+            }
+        }
+        set_variable = { name = varionail_007_cooldown years = 1 }
+    }
+
+    option = { #They've just gotta deal
+        name = anb_varionail.007.a
+        default_option = yes
+        scope:varionail_random_event_state = {
+            add_modifier = {
+                name = varionail_assimilation_decrease
+                months = 24
+            }
+            add_radicals_in_state = {
+                value = small_radicals
+                strata = lower
+            }
+        }
+    }
+
+    option = { #Invest into helping
+        name = anb_varionail.007.b
+        scope:varionail_random_event_state = {
+            add_modifier = {
+                name = varionail_assimilation_investment
+                months = 24
+            }
+            add_radicals_in_state = {
+                value = small_radicals
+                strata = upper
+            }
+        }
+    }
+}
+#Overstretched Ports
+anb_varionail.008 = {
+    type = country_event
+    placement = scope:varionail_random_event_state
+
+    title = anb_varionail.008.t
+    desc = anb_varionail.008.d
+    flavor = anb_varionail.008.f
+
+    event_image = {
+        video = "unspecific_steam_ship"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_trade.dds"
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    trigger = {
+        NOT = {
+            has_variable = varionail_008_cooldown
+        }
+    }
+
+    immediate = {
+        c:B13 ?= {
+            random_scope_state = {
+                save_scope_as = varionail_random_event_state
+            }
+        }
+        set_variable = { name = varionail_008_cooldown years = 1 }
+    }
+
+    option = { #Prioritize Trade
+        name = anb_varionail.008.a
+        default_option = yes
+        scope:varionail_random_event_state = {
+            add_modifier = {
+                name = varionail_trade_prioritized
+                years = 2
+            }
+        }
+    }
+
+    option = { #Prioritize Settlers
+        name = anb_varionail.008.b
+        scope:varionail_random_event_state = {
+            add_modifier = {
+                name = varionail_settlers_prioritized
+                years = 2
+            }
+        }
+    }
+}
+#Finding Space
+anb_varionail.009 = {
+    type = country_event
+    placement = scope:varionail_random_event_state
+
+    title = anb_varionail.009.t
+    desc = anb_varionail.009.d
+    flavor = anb_varionail.009.f
+
+    event_image = {
+        video = "africa_construction_colony"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_skull.dds" 
+    on_opened_soundeffect = "event:/SFX/UI/Alerts/event_appear" 
+
+    duration = 3
+
+    trigger = {
+        NOT = {
+            has_variable = varionail_009_cooldown
+        }
+        any_scope_state = {
+            has_state_trait = state_trait_ravenous_isle
+        }
+    }
+
+    immediate = {
+        c:B13 ?= {
+            random_scope_state = {
+                limit = {
+                    has_state_trait = state_trait_ravenous_isle
+                }
+                save_scope_as = varionail_random_event_state
+            }
+        }
+        set_variable = { name = varionail_009_cooldown years = 1 }
+    }
+
+    option = { #Favor Elves
+        name = anb_varionail.009.a
+        default_option = yes
+        scope:varionail_random_event_state = {
+            #Human pops gain radicals
+            custom_tooltip = {
+                text = varionail_human_radicals_desc
+                add_radicals_in_state = {
+                    value = small_radicals
+                    culture = cu:pearlsedger
+                }
+                add_radicals_in_state = {
+                    value = small_radicals
+                    culture = cu:vernman
+                }
+                add_radicals_in_state = {
+                    value = small_radicals
+                    culture = cu:west_damerian
+                }
+                add_radicals_in_state = {
+                    value = small_radicals
+                    culture = cu:lorentish
+                }
+            }
+            #Elven pops get +1 SOL
+            add_modifier = {
+                name = varionail_elven_sol_boost
+                months = 24
+            }
+            #Human pops get -1 SOL
+            add_modifier = {
+                name = varionail_human_sol_decrease
+                months = 24
+            }
+        }
+    }
+
+    option = { #Favor Humans
+        name = anb_varionail.009.b
+        scope:varionail_random_event_state = {
+            add_radicals_in_state = {
+                value = small_radicals
+                #Only for elves
+                culture = cu:crescent_elf
+            }
+            #Elven pops get -1 SOL
+            add_modifier = {
+                name = varionail_elven_sol_decrease
+                months = 24
+            }
+            #Human pops get +1 SOL
+            add_modifier = {
+                name = varionail_human_sol_boost
+                months = 24
+            }
+        }
+    }
+}
+
+anb_varionail.010 = {
+    type = country_event
+    hidden = yes
+
+    immediate = {
+        c:A03 = {
+            random_scope_pop = {
+                limit = {
+                    culture = cu:redglader_elf
+                    total_size < 4000
+                    total_size > 1000
+                    OR = { 
+                        strata = lower 
+                        strata = middle 
+                    }
+                }
+                move_pop = s:STATE_SANCTUARY_FIELDS.region_state:B13
+            }
+        }
+    }
+}
+
+anb_varionail.011 = {
+    type = country_event
+    hidden = yes
+
+    immediate = {
+        c:A44 = {
+            random_scope_pop = {
+                limit = {
+                    culture = cu:havener_elf
+                    total_size < 4000
+                    total_size > 1000
+                    OR = { 
+                        strata = lower 
+                        strata = middle 
+                    }
+                }
+                move_pop = s:STATE_VARIONAIL.region_state:B13
+            }
+        }
+    }
+}
+
+anb_varionail.012 = {
+    type = country_event
+    hidden = yes
+
+    immediate = {
+        c:A20 = {
+            random_scope_pop = {
+                limit = {
+                    culture = cu:ibevari_elf
+                    total_size < 4000
+                    total_size > 1000
+                    OR = { 
+                        strata = lower 
+                        strata = middle 
+                    }
+                }
+                move_pop = s:STATE_FALILTCOST.region_state:B13
+            }
+        }
+    }
+}
+
+anb_varionail.013 = {
+    type = country_event
+    hidden = yes
+
+    immediate = {
+        c:A04 = {
+            random_scope_pop = {
+                limit = {
+                    culture = cu:maldorian_elf
+                    total_size < 4000
+                    total_size > 1000
+                    OR = { 
+                        strata = lower 
+                        strata = middle 
+                    }
+                }
+                move_pop = s:STATE_SILVERTENNAR.region_state:B13
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+﻿### Vanbury Guild character template file ###
+
+B05_Dalyon_of_Vanbury = {
+	first_name = "Dalyon"
+	last_name = "of_Vanbury"
+	historical = yes
+	#ruler = yes	#handled via the company instead
+	# age = 42
+	birth_date = 1778.1.1
+	interest_group = ig_industrialists
+	ideology = ideology_royalist
+	traits = {
+		ambitious 
+		innovative
+	}
+	#TODO: check why this isn't working ; seems to be the case with any starting company leaders being set and not an error with this specific code
+	executive_usage = {
+		country_trigger = { # Must be the country that owns the company
+			c:A01 ?= this
+		}
+		company_trigger = {
+			is_company_type = company_type:company_vanbury_steel_guild
+		}
+		earliest_usage_date = 1820.1.1
+		latest_usage_date = 1838.1.1	#random date, only matters for lore when he gets replaced or the guild is disestablished
+		chance = 100
+	}
+}

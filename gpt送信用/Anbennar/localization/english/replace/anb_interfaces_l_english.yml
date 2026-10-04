@@ -1,0 +1,4 @@
+﻿l_english: 
+ PRODUCTION_METHOD_TOOLTIP_FORMAT:1 "[ConcatIfNeitherEmpty('$PREDICTION$', '\n')][AddTextIf(Not(StringIsEmpty('$TOTAL_VALUES_OUTPUT$')),'$TOOLTIP_DELIMITER$\n')][ConcatIfNeitherEmpty('$TIMED_MODIFIERS$','\n\n')][ConcatIfNeitherEmpty('$TOTAL_VALUES_OUTPUT$','\n\n')]$PER_LEVEL_VALUES_NESTED_TOOLTIP$[AddLocalizationIf(Not(EqualTo_string( Localize(Concatenate(ProductionMethod.GetKey,'_desc')), Concatenate(ProductionMethod.GetKey,'_desc') )), 'PRODUCTION_METHOD_DESCRIPTION')]"
+
+ PRODUCTION_METHOD_DESCRIPTION:0 "\n[Localize(Concatenate(ProductionMethod.GetKey,'_desc'))]"

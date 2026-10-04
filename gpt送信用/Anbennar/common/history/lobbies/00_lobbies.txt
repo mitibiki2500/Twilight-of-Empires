@@ -1,0 +1,142 @@
+﻿LOBBIES = {
+	c:A06 = {
+		create_political_lobby = {
+			type = lobby_anti_country
+			target = c:B07
+			add_interest_group = ig:ig_intelligentsia
+		}
+	}
+
+	c:A27 = { #Pro and anti country lobbys for Blademarches towards Rosande, the struggle between Corinite anti-slavery devout and the more pragmatic voices for Escanni mutual defence
+		create_political_lobby = {
+			type = lobby_anti_country
+			target = c:A28
+			add_interest_group = ig:ig_devout
+		}
+
+		create_political_lobby = {
+			type = lobby_pro_country
+			target = c:A28
+			add_interest_group = ig:ig_landowners
+			add_interest_group = ig:ig_rural_folk
+		}
+	}
+
+	c:A29 = { #lobby to push Marrhold to attack Ungulvaldor further
+		create_political_lobby = {
+			type = lobby_anti_country
+			target = c:A31
+			add_interest_group = ig:ig_landowners
+			add_interest_group = ig:ig_armed_forces
+		}
+		
+	}
+
+	c:A31 = {
+		create_political_lobby = { #lobby to represent the desire to reclaim Esshyl from Marrhold
+			type = lobby_anti_country
+			target = c:A29
+			add_interest_group = ig:ig_landowners
+			add_interest_group = ig:ig_armed_forces
+		}
+	}
+
+	c:B07 = {
+		create_political_lobby = {
+			type = lobby_anti_country
+			target = c:A06
+			add_interest_group = ig:ig_intelligentsia
+			add_interest_group = ig:ig_petty_bourgeoisie
+		}
+	}
+
+	c:B27 = {
+		create_political_lobby = {	#Neratica's army is supported by Lorent since the coup
+			type = lobby_pro_country
+			target = c:A03
+			add_interest_group = ig:ig_armed_forces
+		}
+		create_political_lobby = {	#But the old conservative faction still dislikes the Concord
+			type = lobby_anti_country
+			target = c:B98
+			add_interest_group = ig:ig_devout
+		}
+	}
+
+	c:B21 = {	#Ynnsmouth is split between Sarda and the Concord
+		create_political_lobby = {
+			type = lobby_pro_country
+			target = c:B29
+			add_interest_group = ig:ig_landowners
+		}
+		create_political_lobby = {
+			type = lobby_pro_country
+			target = c:B98
+			add_interest_group = ig:ig_petty_bourgeoisie
+		}
+	}
+
+	c:B94 = {	#Spoorland's population is pro-Concord
+		create_political_lobby = {
+			type = lobby_pro_country
+			target = c:B98
+			add_interest_group = ig:ig_landowners
+			add_interest_group = ig:ig_rural_folk
+		}
+	}
+
+	c:B98 = {
+		create_political_lobby = {
+			type = lobby_pro_country
+			target = c:A04
+			add_interest_group = ig:ig_industrialists
+		}
+	}
+
+	c:B29 = {
+		create_political_lobby = {
+			type = lobby_pro_country
+			target = c:B39
+			add_interest_group = ig:ig_devout
+		}
+	}
+
+	c:B39 = {
+		create_political_lobby = {
+			type = lobby_pro_country
+			target = c:B29
+			add_interest_group = ig:ig_devout
+		}
+		create_political_lobby = {
+			type = lobby_pro_country
+			target = c:B49
+			add_interest_group = ig:ig_armed_forces
+			add_interest_group = ig:ig_petty_bourgeoisie
+		}
+	}
+
+	c:B49 = {
+		create_political_lobby = {
+			type = lobby_pro_country
+			target = c:B39
+			add_interest_group = ig:ig_armed_forces
+		}
+	}
+
+	c:E02 = {
+		create_political_lobby = {
+			type = lobby_pro_country
+			target = c:A10
+			add_interest_group = ig:ig_intelligentsia
+			add_interest_group = ig:ig_industrialists
+			add_interest_group = ig:ig_petty_bourgeoisie
+		}
+	}
+}	
+
+
+
+
+
+
+

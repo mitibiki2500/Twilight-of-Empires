@@ -1,0 +1,50 @@
+﻿je_yansheni_unification = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+	
+	group = je_group_historical_content
+
+	scripted_button = je_yanshen_unify_button
+
+	is_shown_when_inactive = {
+		OR = {
+			country_has_primary_culture = cu:jiangszun
+			country_has_primary_culture = cu:beikling
+			country_has_primary_culture = cu:gangim
+			country_has_primary_culture = cu:naamjyut
+			country_has_primary_culture = cu:jiangyang						
+		}
+		NOR = { 
+			C:Y38 ?= this
+			C:B76 ?= this
+		}		
+	}
+
+	possible = {
+		country_rank >= rank_value:unrecognized_major_power
+		is_subject = no
+	}
+
+	complete = {
+		custom_tooltip = {
+			c:Y02 ?= this
+			text = je_yanshen_unification_complete_trigger_desc
+		}	
+	}
+
+	on_complete = {
+		show_as_tooltip = {
+			trigger_event = { id = yanshen_unification.1 popup = yes } 
+		}
+	}
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_yanshen_status
+			}
+		}
+	}
+
+	weight = 1000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

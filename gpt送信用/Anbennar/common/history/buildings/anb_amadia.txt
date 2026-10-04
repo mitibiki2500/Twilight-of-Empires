@@ -1,0 +1,910 @@
+﻿BUILDINGS= {
+	s:STATE_BRONRIN = {
+		region_state:C02 = {
+			create_building={
+				building="building_maize_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=5
+						region="STATE_BRONRIN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_herb_gardens" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=4
+						region="STATE_BRONRIN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_butchering_tools" }
+			}
+			create_building={
+				building="building_sugar_plantation"	#as of writing, Amadia has slaves freed. CLSTC does NOT like that
+				add_ownership={
+					company={
+						type=company_clstc
+						country="c:A01"
+						levels=2
+					}
+				}
+				reserves=1
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:C02"
+						levels=4
+						region="STATE_BRONRIN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building={
+				building="building_whaling_station"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:C02"
+						levels=1
+						region="STATE_BRONRIN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_whaling" "pm_unrefrigerated" }
+			}
+            create_building={
+				building="building_trade_center"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:C02"
+						levels=2
+						region="STATE_BRONRIN"
+					}
+					company={
+						type=company_clstc	#even if Amadia broke away during blackpowder... the claws of CLSTC is still deep due to its historical ties
+						country="c:A01"
+						levels=2
+					}
+				} 
+				reserves=1
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+			}
+			create_building={
+				building="building_textile_mill"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:C02"
+						levels=2
+						region="STATE_CYMBEAHN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_dye_workshops" "pm_traditional_looms" "pm_no_luxury_clothes" }
+			}
+			create_building={
+				building="building_furniture_manufactory"
+				add_ownership={	#CLSTC props up colonies with plantations and also industry
+					company={
+						type=company_clstc
+						country="c:A01"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_lathe" "pm_no_luxuries" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:C02"
+						levels=1
+						region="STATE_BRONRIN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pig_iron" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_paper_mill"
+				add_ownership={
+					building={
+						type="building_paper_mill"
+						country="c:C02"
+						levels=1
+						region="STATE_BRONRIN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_shipyard"
+				add_ownership={
+					building={
+						type="building_shipyard"
+						country="c:C02"
+						levels=1
+						region="STATE_BRONRIN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_shipbuilding"  }
+			}
+			create_building={
+				building="building_university"
+				add_ownership={
+					country={
+						country="c:C02"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_scholastic_education" "pm_arcane_academia" }
+			}
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:C02"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_secular_bureaucrats" }
+			}
+			
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:C02"
+						levels=1
+					}
+					company={
+						type=company_clstc
+						country="c:A01"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:C02"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+		}
+	}
+
+	s:STATE_NUR_ISTRALORE = {
+		region_state:C02 = {
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=3
+						region="STATE_NUR_ISTRALORE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_butchering_tools" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					building={
+						type="building_fishing_wharf"
+						country="c:C02"
+						levels=1
+						region="STATE_NUR_ISTRALORE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
+			
+		}
+	}
+
+	s:STATE_MUNASIN = {
+		region_state:C02 = {
+			create_building={
+				building="building_banana_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_MUNASIN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_banana_plantation" "pm_no_enhancements" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_maize_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_MUNASIN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_herb_gardens" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_tobacco_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_MUNASIN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tobacco_plantation" "pm_no_enhancements" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_sugar_plantation"	#as of writing, Amadia has slaves freed. CLSTC does NOT like that
+				add_ownership={
+					company={
+						type=company_clstc
+						country="c:A01"
+						levels=2
+					}
+				}
+				reserves=1
+			}
+			# create_building={
+			# 	building="building_coffee_plantation"
+			# 	level=1
+			# 	reserves=1
+			# 	activate_production_methods={ "coffee_plantation_dry_process" "pm_no_enhancements" "pm_road_carts"  }
+			# }
+		}
+	}
+
+	s:STATE_SILVEGOR = {
+		region_state:C02 = {
+			create_building={
+				building="building_maize_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_SILVEGOR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_herb_gardens" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_sugar_plantation"	#as of writing, Amadia has slaves freed. CLSTC does NOT like that
+				add_ownership={
+					company={
+						type=company_clstc
+						country="c:A01"
+						levels=1
+					}
+				}
+				reserves=1
+			}
+			create_building={
+				building="building_tobacco_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_SILVEGOR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tobacco_plantation" "pm_no_enhancements" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_SILVEGOR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_dye_plantation" "pm_no_enhancements" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:C02"
+						levels=1
+						region="STATE_SILVEGOR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:C02"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
+			}
+		}
+	}
+
+	s:STATE_CLAMGUINN = {
+		region_state:C02 = {
+			create_building={
+				building="building_maize_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_CLAMGUINN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_herb_gardens" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_sugar_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_CLAMGUINN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_sugar_plantation" "pm_no_enhancements" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_dye_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_CLAMGUINN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_dye_plantation" "pm_no_enhancements" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:C02"
+						levels=1
+						region="STATE_CLAMGUINN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			
+		}
+	}
+
+	s:STATE_URANCESTIR = {
+		region_state:C02 = {
+			create_building={
+				building="building_banana_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_URANCESTIR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_banana_plantation" "pm_no_enhancements" "pm_road_carts"  }
+			}
+			# create_building={
+			# 	building="building_cotton_plantation"
+			# 	level=1
+			# 	reserves=1
+			# 	activate_production_methods={ "default_building_cotton_plantation" "pm_no_enhancements" "pm_road_carts"  }
+			# }
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=2
+						region="STATE_URANCESTIR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building={
+				building="building_gold_mine"
+				add_ownership={
+					country={
+						country="c:C02"
+						levels=1
+					}
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_URANCESTIR"
+					}
+					building={
+						type="building_financial_district"
+						country="c:C02"
+						levels=1
+						region="STATE_URANCESTIR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_gold_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+		}
+	}
+
+	s:STATE_CALILVAR = {
+		region_state:C02 = {
+			create_building={
+				building="building_maize_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=2
+						region="STATE_CALILVAR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_herb_gardens" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=2
+						region="STATE_CALILVAR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_butchering_tools" }
+			}
+		}
+	}
+
+	s:STATE_CYMBEAHN = {
+		region_state:C02 = {
+			create_building={
+				building="building_maize_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_CYMBEAHN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_herb_gardens" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=2
+						region="STATE_CYMBEAHN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_butchering_tools" }
+			}
+			create_building={
+				building="building_tobacco_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_CYMBEAHN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tobacco_plantation" "pm_no_enhancements" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:C02"
+						levels=1
+						region="STATE_CYMBEAHN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building={
+				building="building_fishing_wharf"
+				add_ownership={
+					building={
+						type="building_fishing_wharf"
+						country="c:C02"
+						levels=1
+						region="STATE_CYMBEAHN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated" }
+			}
+			create_building={
+				building="building_textile_mill"
+				add_ownership={
+					building={
+						type="building_textile_mill"
+						country="c:C02"
+						levels=1
+						region="STATE_CYMBEAHN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_handsewn_clothes" "pm_traditional_looms" "pm_no_luxury_clothes" }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:C02"
+						levels=1
+						region="STATE_CYMBEAHN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pig_iron" "pm_automation_disabled" }
+			}
+			create_building={
+				building="building_arms_industry"
+				add_ownership={
+					building={
+						type="building_arms_industry"
+						country="c:C02"
+						levels=1
+						region="STATE_CYMBEAHN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_muskets"}
+			}
+			create_building={
+				building="building_university"
+				add_ownership={
+					country={
+						country="c:C02"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_scholastic_education" "pm_arcane_academia" }
+			}
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:C02"
+						levels=2
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_secular_bureaucrats" }
+			}
+			
+			create_building={
+				building="building_port"
+				add_ownership={
+					country={
+						country="c:C02"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={
+				building="building_construction_sector"
+				add_ownership={
+					country={
+						country="c:C02"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_wooden_buildings" }
+			}
+		}
+	}
+
+	s:STATE_OOMU_NELIR = {
+		region_state:C02 = {
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_OOMU_NELIR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_butchering_tools" }
+			}
+			create_building={
+				building="building_gold_mine"
+				add_ownership={
+					building={
+						type="building_gold_mine"
+						country="c:C02"
+						levels=1
+						region="STATE_OOMU_NELIR"
+					}
+					building={
+						type="building_financial_district"
+						country="c:C02"
+						levels=1
+						region="STATE_OOMU_NELIR"
+					}
+					building={
+						type="building_financial_district"
+						country="c:C02"
+						levels=1
+						region="STATE_CYMBEAHN"
+					}
+					building={
+						type="building_gold_mine"
+						country="c:C02"
+						levels=1
+						region="STATE_OOMU_NELIR"
+					}
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=2
+						region="STATE_OOMU_NELIR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_gold_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_sulfur_mine"
+				add_ownership={
+					building={
+						type="building_sulfur_mine"
+						country="c:C02"
+						levels=1
+						region="STATE_OOMU_NELIR"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_sulfur_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:C02"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_secular_bureaucrats" }
+			}
+			
+		}
+	}
+
+	s:STATE_CARA_LAFQUEN = {
+		region_state:C02 = {
+			create_building={
+				building="building_maize_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=2
+						region="STATE_CARA_LAFQUEN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_herb_gardens" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=1
+						region="STATE_CARA_LAFQUEN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_butchering_tools" }
+			}
+			create_building={
+				building="building_tobacco_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=2
+						region="STATE_CARA_LAFQUEN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tobacco_plantation" "pm_no_enhancements" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:C02"
+						levels=1
+						region="STATE_CARA_LAFQUEN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building={
+				building="building_government_administration"
+				add_ownership={
+					country={
+						country="c:C02"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_secular_bureaucrats" }
+			}
+			
+		}
+	}
+
+	s:STATE_HARENAINE = {
+		region_state:C11 = {
+		}
+	}
+
+	s:STATE_ARANLAS = {
+		region_state:C02 = {
+						create_building={
+				building="building_iron_mine"
+				add_ownership={
+					building={
+						type="building_iron_mine"
+						country="c:C02"
+						levels=1
+						region="STATE_ARANLAS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+					create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:C02"
+						levels=1
+						region="STATE_ARANLAS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_pig_iron" "pm_automation_disabled" }
+			}
+            create_building={
+				building="building_trade_center"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:C02"
+						levels=4
+						region="STATE_ARANLAS"
+					}
+				} 
+				reserves=1
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:C02"
+						levels=2
+						region="STATE_ARANLAS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" "pm_butchering_tools" }
+			}
+			create_building={ #Biggest in the world
+				building="building_damestear_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:C02"
+						levels=2
+						region="STATE_CYMBEAHN"
+					}
+					building={
+						type="building_financial_district"
+						country="c:C02"
+						levels=5
+						region="STATE_ARANLAS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_damestear_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			
+		}
+		region_state:C11 = {
+		}
+	}
+
+}

@@ -1,0 +1,1549 @@
+@secondary_icon_size = 25
+@line_height = 35
+@item_height = 32
+@item_right_margin_inside = 8
+@item_right_margin_outside = 6
+
+types magic_panel_types
+{
+	type tradition_icon = widget {
+		size = { 105 105 }
+		# widgetid = "[Technology]" # this errors and doesnt seem to do anything, not sure what it was meant to do?
+		visible = "[Technology.HasResearchedTech(GetPlayer.Self)]"
+		icon = {
+			size = { 100% 100% }
+			texture = "gfx/interface/icons/institution_icons/institution_icon_bg.dds"
+		}
+		icon = {
+			size = { 80% 80% }
+			texture = "[Technology.GetTexture]"
+			position = { 10 10 }
+		}
+		tooltipwidget = {
+			FancyTooltip_Technology_Tech_Tree = {}
+		}
+	}
+
+	type magic_panel_default = vbox {
+		datacontext = "[GetPlayer]"
+		margin = { 10 10 }
+		layoutpolicy_horizontal = growing
+		layoutpolicy_vertical = growing
+		spacing = 8
+
+		### INFO TOP (Institution Style)
+		hbox = {
+			datacontext = "[GetPlayer]"
+			layoutpolicy_horizontal = growing
+			margin = { 25 15 }
+
+			using = main_bg
+			
+			hbox = {
+				layoutpolicy_horizontal = growing
+				margin = { 15 10 }
+				spacing = 5
+				
+				background = {
+					using = entry_bg_simple
+				}
+				
+				textbox = {
+					layoutpolicy_horizontal = expanding
+					size = { 0 40 }
+					text = "SPELL_LEVEL_TITLE"
+					align = nobaseline
+					elide = right
+				}
+				
+				hbox = {
+					spacing = 10
+					
+					icon = {
+						texture = "gfx/interface/politics_view/institution_level_icon.dds"
+						size = { 40 40 }
+					}
+					textbox = {
+						text = "[Country.MakeScope.ScriptValue('country_num_spells')|v0]"
+						tooltip = "SPELL_LEVEL_BREAKDOWN"
+						using = fontsize_xxl
+						align = nobaseline
+						elide = right
+						autoresize = yes
+					}
+				}
+			}
+			
+			widget = { 
+				size = { 10 10 }
+			}
+
+			hbox = {
+				layoutpolicy_horizontal = growing
+				margin = { 15 10 }
+				spacing = 5
+				
+				background = {
+					using = entry_bg_simple
+				}
+				
+				textbox = {
+					layoutpolicy_horizontal = expanding
+					size = { 0 40 }
+					text = "COST_PER_SPELL_TITLE"
+					align = nobaseline
+					elide = right
+				}
+
+				textbox = {
+					raw_text = "#v @mages! [Multiply_CFixedPoint(Country.MakeScope.ScriptValue('country_magical_expertise_cost_per_institution'),'(CFixedPoint)-1')|0+]#!"
+					tooltip = "MAGICAL_EXPERTISE_COST_PER_SPELL_LEVEL_BREAKDOWN"
+					using = fontsize_xxl
+					align = nobaseline
+					elide = right
+					autoresize = yes
+				}
+			}
+			
+			widget = {
+				size = { 30 45 }
+				icon = {
+					texture = "gfx/interface/politics_view/summary_arrow_right.dds"
+					size = { 20 45 }
+					parentanchor = center
+				}
+			}
+
+			hbox = {
+				layoutpolicy_horizontal = growing
+				margin = { 15 10 }
+				spacing = 5
+				
+				background = {
+					using = entry_bg_simple
+				}
+				
+				textbox = {
+					layoutpolicy_horizontal = expanding
+					size = { 0 40 }
+					text = "WEEKLY_SPELL_COSTS_TITLE"
+					align = nobaseline
+					elide = right
+				}
+
+				textbox = {
+					raw_text = "@mages! #v [Multiply_CFixedPoint(Country.MakeScope.ScriptValue('country_magical_spell_cost_total'),'(CFixedPoint)-1')|0+]#!"
+					tooltip = "WEEKLY_SPELL_COSTS_BREAKDOWN"
+					using = fontsize_mega
+					align = nobaseline
+					elide = right
+					autoresize = yes
+				}
+			}
+		}
+		
+		### INFO TOP (Non-Institution Style)
+		hbox = {
+			datacontext = "[GetPlayer]"
+			layoutpolicy_horizontal = growing
+			margin = { 25 15 }
+
+			using = main_bg
+			
+			hbox = {
+				layoutpolicy_horizontal = growing
+				margin = { 15 10 }
+				spacing = 5
+				
+				background = {
+					using = entry_bg_simple
+				}
+				
+				textbox = {
+					layoutpolicy_horizontal = expanding
+					size = { 0 40 }
+					text = "MAGICAL_LEGACY_TITLE"
+					align = nobaseline
+					elide = right
+					default_format = "#title"
+					using = fontsize_large
+				}
+				
+				hbox = {
+					spacing = 10
+					
+					tradition_icon = {
+						datacontext = "[GetTechnology('cannorian_magical_tradition')]"
+					}
+					tradition_icon = {
+						datacontext = "[GetTechnology('runecarving_magical_tradition')]"
+					}
+					tradition_icon = {
+						datacontext = "[GetTechnology('fourknowing_magical_tradition')]"
+					}
+					tradition_icon = {
+						datacontext = "[GetTechnology('essence_magical_tradition')]"
+					}
+					tradition_icon = {
+						datacontext = "[GetTechnology('chi_cultivation_magical_tradition')]"
+					}
+					tradition_icon = {
+						datacontext = "[GetTechnology('druidic_magical_tradition')]"
+					}
+					tradition_icon = {
+						datacontext = "[GetTechnology('shamanism_magical_tradition')]"
+					}
+					tradition_icon = {
+						datacontext = "[GetTechnology('bardic_magical_tradition')]"
+					}
+					tradition_icon = {
+						datacontext = "[GetTechnology('precursor_magical_tradition')]"
+					}
+					tradition_icon = {
+						datacontext = "[GetTechnology('elemental_magical_tradition')]"
+					}
+					tradition_icon = {
+						datacontext = "[GetTechnology('necromantic_magical_tradition')]"
+					}
+					tradition_icon = {
+						datacontext = "[GetTechnology('kheterata_magical_tradition')]"
+					}
+				}
+			}
+			
+			widget = { 
+				size = { 10 10 }
+			}	
+		}
+		
+		# Spell row 1: Production
+		spelltype = {
+			datacontext = "[Country.MakeScope.Var('production_magic_spell')]"
+			name = "Production_Magic_Box"
+			visible = "[Country.MakeScope.Var('production_magic_spell_level').IsSet]"
+		}
+
+		# Spell row 2: Military
+		spelltype = {
+			datacontext = "[Country.MakeScope.Var('military_magic_spell')]"
+			name = "Military_Magic_Box"
+			visible = "[Country.MakeScope.Var('military_magic_spell_level').IsSet]"
+		}
+
+		# Spell row 3: Society
+		spelltype = {
+			datacontext = "[Country.MakeScope.Var('society_magic_spell')]"
+			name = "Society_Magic_Box"
+			visible = "[Country.MakeScope.Var('society_magic_spell_level').IsSet]"
+		}
+
+		textbox = {
+			visible = "[And(And(Not(Country.MakeScope.Var('production_magic_spell_level').IsSet),Not(Country.MakeScope.Var('military_magic_spell_level').IsSet)),Not(Country.MakeScope.Var('society_magic_spell_level').IsSet))]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			align = hcenter|nobaseline
+			text = "MAGIC_EMPTY_STATE"
+			autoresize = yes
+			using = fontsize_xxl
+		}
+		
+		widget = {
+			layoutpolicy_vertical = expanding
+			layoutpolicy_horizontal = expanding
+		}
+	}
+}
+types magic_spell_types {
+	# Overall spell template
+	type spelltype = vbox {
+		layoutpolicy_vertical = preferred
+		layoutpolicy_horizontal = growing
+		
+		vbox = {
+			name = "spell_box"
+			layoutpolicy_horizontal = growing
+			spacing = 5
+			vbox = {
+				name = spell_item
+				layoutpolicy_horizontal = growing
+				
+				using = entry_bg_fancy
+				# Background
+				background = {
+					datamodel = "[AccessPlayer.AccessInstitutions]"
+					fittype = centercrop
+					margin_top = -42
+					margin_bottom = -5
+					margin_right = -150
+					margin_left = 70
+					
+					modify_texture = {
+						texture = "gfx/interface/illustrations/institutions/institution_image_mask.dds"
+						spriteType = Corneredstretched
+						spriteborder = { 150 0 }
+						spriteborder_bottom = 50
+						spriteborder_right = 50
+						blend_mode = alphamultiply
+						texture_density = 2
+					}
+				}
+				# Header	
+				default_header_clean = {
+					blockoverride "header_mask" {
+						using = frame_small_mask_top
+					}
+					blockoverride "size" {
+						layoutpolicy_horizontal = growing
+						size = { 0 42 }
+					}
+					
+					blockoverride "textbox" {
+						hbox = {
+							margin = { 20 0 }
+							block "spellheader" {
+								textbox = {
+									layoutpolicy_horizontal = growing
+									size = { 0 30 }
+									raw_text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+									default_format = "#title"
+									using = fontsize_large
+									align = nobaseline
+									elide = right
+								}
+								textbox = {
+									visible = "[EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)]"
+									autoresize = yes
+									raw_text = "Spell Level: [GetPlayer.MakeScope.Var('production_magic_spell_level').GetValue]#!"
+									using = fontsize_large
+									align = right|nobaseline
+									elide = right
+									margin_right = 5
+								}
+								textbox = {
+									visible = "[EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)]"
+									autoresize = yes
+									raw_text = "Spell Level: [GetPlayer.MakeScope.Var('military_magic_spell_level').GetValue]#!"
+									using = fontsize_large
+									align = right|nobaseline
+									elide = right
+									margin_right = 5
+								}
+								textbox = {
+									visible = "[EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)]"
+									autoresize = yes
+									raw_text = "Spell Level: [GetPlayer.MakeScope.Var('society_magic_spell_level').GetValue]#!"
+									using = fontsize_large
+									align = right|nobaseline
+									elide = right
+									margin_right = 5
+								}
+							}
+							icon = {
+								texture = "gfx/interface/politics_view/institution_level_icon.dds"
+								size = { 25 25 }
+							}
+						}
+					}
+				}
+				# Body
+				hbox = {
+					layoutpolicy_horizontal = growing
+					spacing = 10
+					margin = { 5 0 }
+					margin_right = 15
+					# Institution Icon 
+					spell_icon_1 = {
+						# MAKE IT SO THIS CAN BE TRADED OUT FOR OTHER ICONS
+						size = { 105 105 }
+						visible = "[EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)]"
+						using = tooltip_es
+						tooltipwidget = {
+							FancyTooltip_Production_Spell = {}
+						}
+					}
+					spell_icon_1 = {
+						# MAKE IT SO THIS CAN BE TRADED OUT FOR OTHER ICONS
+						size = { 105 105 }
+						visible = "[EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)]"
+						using = tooltip_es
+						tooltipwidget = {
+							FancyTooltip_Military_Spell = {}
+						}
+					}
+					spell_icon_1 = {
+						# MAKE IT SO THIS CAN BE TRADED OUT FOR OTHER ICONS
+						size = { 105 105 }
+						visible = "[EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)]"
+						using = tooltip_es
+						tooltipwidget = {
+							FancyTooltip_Society_Spell = {}
+						}
+					}
+
+					textbox = {
+						text = "[Localize(Concatenate(Scope.GetFlagName,'_stats'))]"
+						align = left|nobaseline
+						elide = right
+						
+						autoresize = yes
+						# have to have this size here to avoid the text pushing out other stuff ( it is adapted for lowest resolution )
+						# https://beta.paradoxplaza.com/browse/PSGE-1949
+						minimumsize = { 400 -1 }
+						maximumsize = { 400 -1 }
+						multiline = yes
+						margin = { 0 10 }
+					}
+					
+					# empty growing widget since there is no other widget growing.
+					widget = {
+						layoutpolicy_horizontal = growing
+						layoutpolicy_vertical = growing
+					}
+					
+					# LEVEL BAR
+					container = {
+						name = spell_level_bar
+						
+						#current progress / cancel
+						level_change_progress = {
+							visible = "[And(Country.MakeScope.Var('production_magic_spell_changing_level').IsSet,EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName))]"
+						}	
+						level_change_progress = {
+							visible = "[And(Country.MakeScope.Var('military_magic_spell_changing_level').IsSet,EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName))]"
+						}					
+						level_change_progress = {
+							visible = "[And(Country.MakeScope.Var('society_magic_spell_changing_level').IsSet,EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName))]"
+						}		
+						#bar w/ icons
+						container = {
+							parentanchor = vcenter
+							position = { 200 0 }
+							spell_icon_section = { 
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	# level change progress
+	type level_change_progress = widget {
+		# Production
+		flowcontainer = {
+			resizeparent = yes
+			parentanchor = vcenter 
+			direction = vertical
+			spacing = 0
+			margin = { -60 10 }
+			
+			alpha = 0
+			position = { 100 0 }
+			
+			state = {
+				name = _show
+				duration = 0.3
+				alpha = 1
+				position_x = 0
+				using = Animation_Curve_Default
+			}
+			state = {
+				name = _hide
+				duration = 0.3
+				alpha = 0
+				position_x = 100
+				using = Animation_Curve_Default
+			}
+			# Production
+			textbox = {
+				visible = "[EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)]"
+				raw_text = "Changing to Level [Country.MakeScope.Var('production_magic_targeted_spell_level').GetValue]"
+				align = center|nobaseline
+				elide = right
+				parentanchor = hcenter
+				using = fontsize_large
+				
+				autoresize = yes
+				minimumsize = { 270 -1 }
+				maximumsize = { 270 -1 }
+				multiline = yes
+			}
+			textbox = {
+				visible = "[And(GreaterThan_CFixedPoint(Country.MakeScope.Var('production_magic_targeted_spell_level').GetValue,Country.MakeScope.Var('production_magic_spell_level').GetValue),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName))]"
+				raw_text = "#V [Country.MakeScope.ScriptValue('weeks_to_target_production_magic_level_increase')]#! Months" 
+				align = center|nobaseline
+				elide = right
+				parentanchor = hcenter
+				
+				autoresize = yes
+				minimumsize = { 270 -1 }
+				maximumsize = { 270 -1 }
+				multiline = yes
+				
+				margin_bottom = 5
+			}
+			textbox = {
+				visible = "[And(LessThan_CFixedPoint(Country.MakeScope.Var('production_magic_targeted_spell_level').GetValue,Country.MakeScope.Var('production_magic_spell_level').GetValue),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName))]"
+				raw_text = "#V [Country.MakeScope.ScriptValue('weeks_to_target_production_magic_level_decrease')]#! Months" 
+				align = center|nobaseline
+				elide = right
+				parentanchor = hcenter
+				
+				autoresize = yes
+				minimumsize = { 270 -1 }
+				maximumsize = { 270 -1 }
+				multiline = yes
+				
+				margin_bottom = 5
+			}
+			button = {
+				visible = "[EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)]"
+				using = default_button_action
+				size = { 200 35 }
+				text = "CANCEL"
+				parentanchor = hcenter
+				using = close_button_sound
+				onclick = "[GetScriptedGui('production_magic_spell_stop_level_change').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+			# Military 
+			textbox = {
+                visible = "[EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)]"
+                raw_text = "Changing to Level [Country.MakeScope.Var('military_magic_targeted_spell_level').GetValue]"
+                align = center|nobaseline
+                elide = right
+                parentanchor = hcenter
+                using = fontsize_large
+                
+                autoresize = yes
+                minimumsize = { 270 -1 }
+                maximumsize = { 270 -1 }
+                multiline = yes
+            }
+            textbox = {
+                visible = "[And(GreaterThan_CFixedPoint(Country.MakeScope.Var('military_magic_targeted_spell_level').GetValue,Country.MakeScope.Var('military_magic_spell_level').GetValue),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName))]"
+                raw_text = "#V [Country.MakeScope.ScriptValue('weeks_to_target_military_magic_level_increase')]#! Months" 
+                align = center|nobaseline
+                elide = right
+                parentanchor = hcenter
+                
+                autoresize = yes
+                minimumsize = { 270 -1 }
+                maximumsize = { 270 -1 }
+                multiline = yes
+                
+                margin_bottom = 5
+            }
+            textbox = {
+                visible = "[And(LessThan_CFixedPoint(Country.MakeScope.Var('military_magic_targeted_spell_level').GetValue,Country.MakeScope.Var('military_magic_spell_level').GetValue),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName))]"
+                raw_text = "#V [Country.MakeScope.ScriptValue('weeks_to_target_military_magic_level_decrease')]#! Months" 
+                align = center|nobaseline
+                elide = right
+                parentanchor = hcenter
+                
+                autoresize = yes
+                minimumsize = { 270 -1 }
+                maximumsize = { 270 -1 }
+                multiline = yes
+                
+                margin_bottom = 5
+            }
+            button = {
+                visible = "[EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)]"
+                using = default_button_action
+                size = { 200 35 }
+                text = "CANCEL"
+                parentanchor = hcenter
+                using = close_button_sound
+                onclick = "[GetScriptedGui('military_magic_spell_stop_level_change').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            }
+			# Society
+			textbox = {
+                visible = "[EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)]"
+                raw_text = "Changing to Level [Country.MakeScope.Var('society_magic_targeted_spell_level').GetValue]"
+                align = center|nobaseline
+                elide = right
+                parentanchor = hcenter
+                using = fontsize_large
+                
+                autoresize = yes
+                minimumsize = { 270 -1 }
+                maximumsize = { 270 -1 }
+                multiline = yes
+            }
+            textbox = {
+                visible = "[And(GreaterThan_CFixedPoint(Country.MakeScope.Var('society_magic_targeted_spell_level').GetValue,Country.MakeScope.Var('society_magic_spell_level').GetValue),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName))]"
+                raw_text = "#V [Country.MakeScope.ScriptValue('weeks_to_target_society_magic_level_increase')]#! Months" 
+                align = center|nobaseline
+                elide = right
+                parentanchor = hcenter
+                
+                autoresize = yes
+                minimumsize = { 270 -1 }
+                maximumsize = { 270 -1 }
+                multiline = yes
+                
+                margin_bottom = 5
+            }
+            textbox = {
+                visible = "[And(LessThan_CFixedPoint(Country.MakeScope.Var('society_magic_targeted_spell_level').GetValue,Country.MakeScope.Var('society_magic_spell_level').GetValue),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName))]"
+                raw_text = "#V [Country.MakeScope.ScriptValue('weeks_to_target_society_magic_level_decrease')]#! Months" 
+                align = center|nobaseline
+                elide = right
+                parentanchor = hcenter
+                
+                autoresize = yes
+                minimumsize = { 270 -1 }
+                maximumsize = { 270 -1 }
+                multiline = yes
+                
+                margin_bottom = 5
+            }
+            button = {
+                visible = "[EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)]"
+                using = default_button_action
+                size = { 200 35 }
+                text = "CANCEL"
+                parentanchor = hcenter
+                using = close_button_sound
+                onclick = "[GetScriptedGui('society_magic_spell_stop_level_change').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+            }
+		}
+	}
+	
+	#spell icons 
+	type spell_icon_section = flowcontainer {
+		visible = "[Scope.IsSet]"
+		layoutpolicy_horizontal = expanding
+		parentanchor = vcenter
+		widget = {
+			size = { 600 100 }
+			container = {
+				parentanchor = center
+				alpha = 0
+				state = {
+					name = _show
+					duration = 0.5
+					alpha = 1
+					using = Animation_Curve_Default
+				}
+				state = {
+					name = _hide
+					duration = 0.5
+					alpha = 0
+					using = Animation_Curve_Default
+				}
+
+				# actual spell tokens
+				block "spell_sections" {
+					full_spell_track_section = { }
+				}
+
+				# dotted lines / spell track
+				spelltrack_dotted_lines = { }
+
+			}
+		}
+	}
+
+	type full_spell_track_section =	widget {
+		size = { 600 100 }						
+		##### PRODUCTION #####
+		# Spell Level 1
+        spell_section_widget_current_level = { 
+            position = { 0 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,'(CFixedPoint)1'),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName))]"
+            tooltip = "PRODUCTION_SPELL_LEVEL_1_TOOLTIP_ACTIVE"
+        }
+        spell_section_widget_chosen = {
+            position = { 0 0 }
+			visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue,'(CFixedPoint)1'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)))]"            
+			tooltip = "PRODUCTION_SPELL_LEVEL_1_TOOLTIP_NOT_ACTIVE"
+        }
+        spell_section_widget_not_selected = { 
+            position = { 0 0 }
+            visible = "[And(
+                Not(Or(
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,'(CFixedPoint)1'),
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue,'(CFixedPoint)1')
+                    )),
+                And(
+                    LessThanOrEqualTo_CFixedPoint('(CFixedPoint)1',Country.MakeScope.Var('country_max_spell_level').GetValue),
+                    EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)))]"
+            blockoverride "details" {       
+                tooltip = "PRODUCTION_SPELL_LEVEL_1_TOOLTIP_NOT_ACTIVE"
+                onclick = "[GetScriptedGui('production_magic_spell_activate_targeted_level_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)1',Country.MakeScope.ScriptValue('country_max_production_magic_level'))]"
+            }
+        }   
+        spell_section_widget_locked = { 
+            position = { 0 0 }
+            visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)1',Country.MakeScope.Var('country_max_spell_level').GetValue),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName))]"
+            tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+        }
+		
+		# Spell Level 2
+        spell_section_widget_current_level = { 
+            position = { 114 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,'(CFixedPoint)2'),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName))]"
+            tooltip = "PRODUCTION_SPELL_LEVEL_2_TOOLTIP_ACTIVE"
+        }
+        spell_section_widget_chosen = {
+            position = { 114 0 }
+			visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue,'(CFixedPoint)2'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)))]"            
+			tooltip = "PRODUCTION_SPELL_LEVEL_2_TOOLTIP_NOT_ACTIVE"
+        }
+        spell_section_widget_not_selected = { 
+            position = { 114 0 }
+            visible = "[And(
+                Not(Or(
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,'(CFixedPoint)2'),
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue,'(CFixedPoint)2')
+                    )),
+                And(
+                    LessThanOrEqualTo_CFixedPoint('(CFixedPoint)2',Country.MakeScope.Var('country_max_spell_level').GetValue),
+                    EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)))]"
+            blockoverride "details" {       
+                tooltip = "PRODUCTION_SPELL_LEVEL_2_TOOLTIP_NOT_ACTIVE"
+                onclick = "[GetScriptedGui('production_magic_spell_activate_targeted_level_2').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)2',Country.MakeScope.ScriptValue('country_max_production_magic_level'))]"
+            }
+        }   
+        spell_section_widget_locked = { 
+            position = { 114 0 }
+            visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)2',Country.MakeScope.Var('country_max_spell_level').GetValue),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName))]"
+            tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+        }   	
+		
+		# Spell Level 3
+		spell_section_widget_current_level = { 
+			position = { 228 0 }
+			visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,'(CFixedPoint)3'),
+			EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName))]"
+			tooltip = "PRODUCTION_SPELL_LEVEL_3_TOOLTIP_ACTIVE"
+		}
+		spell_section_widget_chosen = {
+			position = { 228 0 }
+			visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue,'(CFixedPoint)3'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)))]"			
+			tooltip = "PRODUCTION_SPELL_LEVEL_3_TOOLTIP_NOT_ACTIVE"
+		}
+		spell_section_widget_not_selected = { 
+			position = { 228 0 }
+			visible = "[And(
+				Not(Or(
+					EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,'(CFixedPoint)3'),
+					EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue,'(CFixedPoint)3')
+					)),
+				And(
+					LessThanOrEqualTo_CFixedPoint('(CFixedPoint)3',Country.MakeScope.Var('country_max_spell_level').GetValue),
+					EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)))]"
+			blockoverride "details" {		
+				tooltip = "PRODUCTION_SPELL_LEVEL_3_TOOLTIP_NOT_ACTIVE"
+				onclick = "[GetScriptedGui('production_magic_spell_activate_targeted_level_3').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)3',Country.MakeScope.ScriptValue('country_max_production_magic_level'))]"
+			}
+		}	
+		spell_section_widget_locked = { 
+			position = { 228 0 }
+			visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)3',Country.MakeScope.Var('country_max_spell_level').GetValue),
+			EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName))]"
+			tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+		}	
+		
+		# Spell Level 4
+        spell_section_widget_current_level = { 
+            position = { 342 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,'(CFixedPoint)4'),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName))]"
+            tooltip = "PRODUCTION_SPELL_LEVEL_4_TOOLTIP_ACTIVE"
+        }
+        spell_section_widget_chosen = {
+            position = { 342 0 }
+			visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue,'(CFixedPoint)4'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)))]"            
+			tooltip = "PRODUCTION_SPELL_LEVEL_4_TOOLTIP_NOT_ACTIVE"
+        }
+        spell_section_widget_not_selected = { 
+            position = { 342 0 }
+            visible = "[And(
+                Not(Or(
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,'(CFixedPoint)4'),
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue,'(CFixedPoint)4')
+                    )),
+                And(
+                    LessThanOrEqualTo_CFixedPoint('(CFixedPoint)4',Country.MakeScope.Var('country_max_spell_level').GetValue),
+                    EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)))]"
+            blockoverride "details" {       
+                tooltip = "PRODUCTION_SPELL_LEVEL_4_TOOLTIP_NOT_ACTIVE"
+                onclick = "[GetScriptedGui('production_magic_spell_activate_targeted_level_4').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)4',Country.MakeScope.ScriptValue('country_max_production_magic_level'))]"
+            }
+        }   
+        spell_section_widget_locked = { 
+            position = { 342 0 }
+            visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)4',Country.MakeScope.Var('country_max_spell_level').GetValue),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName))]"
+            tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+        }	
+		
+		# Spell Level 5
+        spell_section_widget_current_level = { 
+            position = { 456 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,'(CFixedPoint)5'),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName))]"
+            tooltip = "PRODUCTION_SPELL_LEVEL_5_TOOLTIP_ACTIVE"
+        }
+        spell_section_widget_chosen = {
+            position = { 456 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue,'(CFixedPoint)5'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)))]"
+            tooltip = "PRODUCTION_SPELL_LEVEL_5_TOOLTIP_NOT_ACTIVE"
+        }
+        spell_section_widget_not_selected = { 
+            position = { 456 0 }
+            visible = "[And(
+                Not(Or(
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_spell_level_floor').GetValue,'(CFixedPoint)5'),
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('production_magic_targeted_spell_level').GetValue,'(CFixedPoint)5')
+                    )),
+                And(
+                    LessThanOrEqualTo_CFixedPoint('(CFixedPoint)5',Country.MakeScope.Var('country_max_spell_level').GetValue),
+                    EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName)))]"
+            blockoverride "details" {       
+                tooltip = "PRODUCTION_SPELL_LEVEL_5_TOOLTIP_NOT_ACTIVE"
+                onclick = "[GetScriptedGui('production_magic_spell_activate_targeted_level_5').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)5',Country.MakeScope.ScriptValue('country_max_production_magic_level'))]"
+            }
+        }   
+        spell_section_widget_locked = { 
+            position = { 456 0 }
+            visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)5',Country.MakeScope.Var('country_max_spell_level').GetValue),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('production_magic_spell').GetFlagName))]"
+            tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+        }	
+
+		##### MILITARY #####
+		# Spell Level 1
+        spell_section_widget_current_level = { 
+            position = { 0 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,'(CFixedPoint)1'),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName))]"
+            tooltip = "MILITARY_SPELL_LEVEL_1_TOOLTIP_ACTIVE"
+        }
+        spell_section_widget_chosen = {
+            position = { 0 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue,'(CFixedPoint)1'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)))]"
+			tooltip = "MILITARY_SPELL_LEVEL_1_TOOLTIP_NOT_ACTIVE"
+        }
+        spell_section_widget_not_selected = { 
+            position = { 0 0 }
+            visible = "[And(
+                Not(Or(
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,'(CFixedPoint)1'),
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue,'(CFixedPoint)1')
+                    )),
+                And(
+                    LessThanOrEqualTo_CFixedPoint('(CFixedPoint)1',Country.MakeScope.Var('country_max_spell_level').GetValue),
+                    EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)))]"
+            blockoverride "details" {       
+                tooltip = "MILITARY_SPELL_LEVEL_1_TOOLTIP_NOT_ACTIVE"
+                onclick = "[GetScriptedGui('military_magic_spell_activate_targeted_level_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)1',Country.MakeScope.ScriptValue('country_max_military_magic_level'))]"
+            }
+        }   
+        spell_section_widget_locked = { 
+            position = { 0 0 }
+            visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)1',Country.MakeScope.Var('country_max_spell_level').GetValue),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName))]"
+            tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+        }
+		
+		# Spell Level 2
+        spell_section_widget_current_level = { 
+            position = { 114 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,'(CFixedPoint)2'),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName))]"
+            tooltip = "MILITARY_SPELL_LEVEL_2_TOOLTIP_ACTIVE"
+        }
+        spell_section_widget_chosen = {
+            position = { 114 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue,'(CFixedPoint)2'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)))]"
+            tooltip = "MILITARY_SPELL_LEVEL_2_TOOLTIP_NOT_ACTIVE"
+        }
+        spell_section_widget_not_selected = { 
+            position = { 114 0 }
+            visible = "[And(
+                Not(Or(
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,'(CFixedPoint)2'),
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue,'(CFixedPoint)2')
+                    )),
+                And(
+                    LessThanOrEqualTo_CFixedPoint('(CFixedPoint)2',Country.MakeScope.Var('country_max_spell_level').GetValue),
+                    EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)))]"
+            blockoverride "details" {       
+                tooltip = "MILITARY_SPELL_LEVEL_2_TOOLTIP_NOT_ACTIVE"
+                onclick = "[GetScriptedGui('military_magic_spell_activate_targeted_level_2').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)2',Country.MakeScope.ScriptValue('country_max_military_magic_level'))]"
+            }
+        }   
+        spell_section_widget_locked = { 
+            position = { 114 0 }
+            visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)2',Country.MakeScope.Var('country_max_spell_level').GetValue),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName))]"
+            tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+        }   	
+		
+		# Spell Level 3
+		spell_section_widget_current_level = { 
+			position = { 228 0 }
+			visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,'(CFixedPoint)3'),
+			EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName))]"
+			tooltip = "MILITARY_SPELL_LEVEL_3_TOOLTIP_ACTIVE"
+		}
+		spell_section_widget_chosen = {
+			position = { 228 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue,'(CFixedPoint)3'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)))]"
+			tooltip = "MILITARY_SPELL_LEVEL_3_TOOLTIP_NOT_ACTIVE"
+		}
+		spell_section_widget_not_selected = { 
+			position = { 228 0 }
+			visible = "[And(
+				Not(Or(
+					EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,'(CFixedPoint)3'),
+					EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue,'(CFixedPoint)3')
+					)),
+				And(
+					LessThanOrEqualTo_CFixedPoint('(CFixedPoint)3',Country.MakeScope.Var('country_max_spell_level').GetValue),
+					EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)))]"
+			blockoverride "details" {		
+				tooltip = "MILITARY_SPELL_LEVEL_3_TOOLTIP_NOT_ACTIVE"
+				onclick = "[GetScriptedGui('military_magic_spell_activate_targeted_level_3').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)3',Country.MakeScope.ScriptValue('country_max_military_magic_level'))]"
+			}
+		}	
+		spell_section_widget_locked = { 
+			position = { 228 0 }
+			visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)3',Country.MakeScope.Var('country_max_spell_level').GetValue),
+			EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName))]"
+			tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+		}	
+		
+		# Spell Level 4
+        spell_section_widget_current_level = { 
+            position = { 342 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,'(CFixedPoint)4'),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName))]"
+            tooltip = "MILITARY_SPELL_LEVEL_4_TOOLTIP_ACTIVE"
+        }
+        spell_section_widget_chosen = {
+            position = { 342 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue,'(CFixedPoint)4'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)))]"
+            tooltip = "MILITARY_SPELL_LEVEL_4_TOOLTIP_NOT_ACTIVE"
+        }
+        spell_section_widget_not_selected = { 
+            position = { 342 0 }
+            visible = "[And(
+                Not(Or(
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,'(CFixedPoint)4'),
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue,'(CFixedPoint)4')
+                    )),
+                And(
+                    LessThanOrEqualTo_CFixedPoint('(CFixedPoint)4',Country.MakeScope.Var('country_max_spell_level').GetValue),
+                    EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)))]"
+            blockoverride "details" {       
+                tooltip = "MILITARY_SPELL_LEVEL_4_TOOLTIP_NOT_ACTIVE"
+                onclick = "[GetScriptedGui('military_magic_spell_activate_targeted_level_4').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)4',Country.MakeScope.ScriptValue('country_max_military_magic_level'))]"
+            }
+        }   
+        spell_section_widget_locked = { 
+            position = { 342 0 }
+            visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)4',Country.MakeScope.Var('country_max_spell_level').GetValue),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName))]"
+            tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+        }	
+		
+		# Spell Level 5
+        spell_section_widget_current_level = { 
+            position = { 456 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,'(CFixedPoint)5'),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName))]"
+            tooltip = "MILITARY_SPELL_LEVEL_5_TOOLTIP_ACTIVE"
+        }
+        spell_section_widget_chosen = {
+            position = { 456 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue,'(CFixedPoint)5'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)))]"
+            tooltip = "MILITARY_SPELL_LEVEL_5_TOOLTIP_NOT_ACTIVE"
+        }
+        spell_section_widget_not_selected = { 
+            position = { 456 0 }
+            visible = "[And(
+                Not(Or(
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_spell_level_floor').GetValue,'(CFixedPoint)5'),
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('military_magic_targeted_spell_level').GetValue,'(CFixedPoint)5')
+                    )),
+                And(
+                    LessThanOrEqualTo_CFixedPoint('(CFixedPoint)5',Country.MakeScope.Var('country_max_spell_level').GetValue),
+                    EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName)))]"
+            blockoverride "details" {       
+                tooltip = "MILITARY_SPELL_LEVEL_5_TOOLTIP_NOT_ACTIVE"
+                onclick = "[GetScriptedGui('military_magic_spell_activate_targeted_level_5').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)5',Country.MakeScope.ScriptValue('country_max_military_magic_level'))]"
+            }
+        }   
+        spell_section_widget_locked = { 
+            position = { 456 0 }
+            visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)5',Country.MakeScope.Var('country_max_spell_level').GetValue),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('military_magic_spell').GetFlagName))]"
+            tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+        }
+
+		##### SOCIETY #####
+		# Spell Level 1
+        spell_section_widget_current_level = { 
+            position = { 0 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,'(CFixedPoint)1'),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName))]"
+            tooltip = "SOCIETY_SPELL_LEVEL_1_TOOLTIP_ACTIVE"
+        }
+        spell_section_widget_chosen = {
+            position = { 0 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue,'(CFixedPoint)1'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)))]"
+            tooltip = "SOCIETY_SPELL_LEVEL_2_TOOLTIP_NOT_ACTIVE"
+        }
+        spell_section_widget_not_selected = { 
+            position = { 0 0 }
+            visible = "[And(
+                Not(Or(
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,'(CFixedPoint)1'),
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue,'(CFixedPoint)1')
+                    )),
+                And(
+                    LessThanOrEqualTo_CFixedPoint('(CFixedPoint)1',Country.MakeScope.Var('country_max_spell_level').GetValue),
+                    EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)))]"
+            blockoverride "details" {       
+                tooltip = "SOCIETY_SPELL_LEVEL_1_TOOLTIP_NOT_ACTIVE"
+                onclick = "[GetScriptedGui('society_magic_spell_activate_targeted_level_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)1',Country.MakeScope.ScriptValue('country_max_society_magic_level'))]"
+            }
+        }   
+        spell_section_widget_locked = { 
+            position = { 0 0 }
+            visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)1',Country.MakeScope.Var('country_max_spell_level').GetValue),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName))]"
+            tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+        }
+		
+		# Spell Level 2
+        spell_section_widget_current_level = { 
+            position = { 114 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,'(CFixedPoint)2'),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName))]"
+            tooltip = "SOCIETY_SPELL_LEVEL_2_TOOLTIP_ACTIVE"
+        }
+        spell_section_widget_chosen = {
+            position = { 114 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue,'(CFixedPoint)2'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)))]"
+			tooltip = "SOCIETY_SPELL_LEVEL_2_TOOLTIP_NOT_ACTIVE"
+        }
+        spell_section_widget_not_selected = { 
+            position = { 114 0 }
+            visible = "[And(
+                Not(Or(
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,'(CFixedPoint)2'),
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue,'(CFixedPoint)2')
+                    )),
+                And(
+                    LessThanOrEqualTo_CFixedPoint('(CFixedPoint)2',Country.MakeScope.Var('country_max_spell_level').GetValue),
+                    EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)))]"
+            blockoverride "details" {       
+                tooltip = "SOCIETY_SPELL_LEVEL_2_TOOLTIP_NOT_ACTIVE"
+                onclick = "[GetScriptedGui('society_magic_spell_activate_targeted_level_2').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)2',Country.MakeScope.ScriptValue('country_max_society_magic_level'))]"
+            }
+        }   
+        spell_section_widget_locked = { 
+            position = { 114 0 }
+            visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)2',Country.MakeScope.Var('country_max_spell_level').GetValue),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName))]"
+            tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+        }   	
+		
+		# Spell Level 3
+		spell_section_widget_current_level = { 
+			position = { 228 0 }
+			visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,'(CFixedPoint)3'),
+			EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName))]"
+			tooltip = "SOCIETY_SPELL_LEVEL_3_TOOLTIP_ACTIVE"
+		}
+        spell_section_widget_chosen = {
+            position = { 228 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue,'(CFixedPoint)3'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)))]"
+            tooltip = "SOCIETY_SPELL_LEVEL_3_TOOLTIP_NOT_ACTIVE"
+        }
+		spell_section_widget_not_selected = { 
+			position = { 228 0 }
+			visible = "[And(
+				Not(Or(
+					EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,'(CFixedPoint)3'),
+					EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue,'(CFixedPoint)3')
+					)),
+				And(
+					LessThanOrEqualTo_CFixedPoint('(CFixedPoint)3',Country.MakeScope.Var('country_max_spell_level').GetValue),
+					EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)))]"
+			blockoverride "details" {		
+				tooltip = "SOCIETY_SPELL_LEVEL_3_TOOLTIP_NOT_ACTIVE"
+				onclick = "[GetScriptedGui('society_magic_spell_activate_targeted_level_3').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)3',Country.MakeScope.ScriptValue('country_max_society_magic_level'))]"
+			}
+		}	
+		spell_section_widget_locked = { 
+			position = { 228 0 }
+			visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)3',Country.MakeScope.Var('country_max_spell_level').GetValue),
+			EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName))]"
+			tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+		}	
+		
+		# Spell Level 4
+        spell_section_widget_current_level = { 
+            position = { 342 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,'(CFixedPoint)4'),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName))]"
+            tooltip = "SOCIETY_SPELL_LEVEL_4_TOOLTIP_ACTIVE"
+        }
+        spell_section_widget_chosen = {
+            position = { 342 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue,'(CFixedPoint)4'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)))]"
+            tooltip = "SOCIETY_SPELL_LEVEL_4_TOOLTIP_NOT_ACTIVE"
+        }
+        spell_section_widget_not_selected = { 
+            position = { 342 0 }
+            visible = "[And(
+                Not(Or(
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,'(CFixedPoint)4'),
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue,'(CFixedPoint)4')
+                    )),
+                And(
+                    LessThanOrEqualTo_CFixedPoint('(CFixedPoint)4',Country.MakeScope.Var('country_max_spell_level').GetValue),
+                    EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)))]"
+            blockoverride "details" {       
+                tooltip = "SOCIETY_SPELL_LEVEL_4_TOOLTIP_NOT_ACTIVE"
+                onclick = "[GetScriptedGui('society_magic_spell_activate_targeted_level_4').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)4',Country.MakeScope.ScriptValue('country_max_society_magic_level'))]"
+            }
+        }   
+        spell_section_widget_locked = { 
+            position = { 342 0 }
+            visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)4',Country.MakeScope.Var('country_max_spell_level').GetValue),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName))]"
+            tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+        }	
+		
+		# Spell Level 5
+        spell_section_widget_current_level = { 
+            position = { 456 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,'(CFixedPoint)5'),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName))]"
+            tooltip = "SOCIETY_SPELL_LEVEL_5_TOOLTIP_ACTIVE"
+        }
+        spell_section_widget_chosen = {
+            position = { 456 0 }
+            visible = "[And(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue,'(CFixedPoint)5'),And(Not(EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue)),EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)))]"
+            tooltip = "SOCIETY_SPELL_LEVEL_5_TOOLTIP_NOT_ACTIVE"
+        }
+        spell_section_widget_not_selected = { 
+            position = { 456 0 }
+            visible = "[And(
+                Not(Or(
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_spell_level_floor').GetValue,'(CFixedPoint)5'),
+                    EqualTo_CFixedPoint(GetPlayer.MakeScope.Var('society_magic_targeted_spell_level').GetValue,'(CFixedPoint)5')
+                    )),
+                And(
+                    LessThanOrEqualTo_CFixedPoint('(CFixedPoint)5',Country.MakeScope.Var('country_max_spell_level').GetValue),
+                    EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName)))]"
+            blockoverride "details" {       
+                tooltip = "SOCIETY_SPELL_LEVEL_5_TOOLTIP_NOT_ACTIVE"
+                onclick = "[GetScriptedGui('society_magic_spell_activate_targeted_level_5').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                enabled = "[LessThanOrEqualTo_CFixedPoint('(CFixedPoint)5',Country.MakeScope.ScriptValue('country_max_society_magic_level'))]"
+            }
+        }   
+        spell_section_widget_locked = { 
+            position = { 456 0 }
+            visible = "[And(GreaterThan_CFixedPoint('(CFixedPoint)5',Country.MakeScope.Var('country_max_spell_level').GetValue),
+            EqualTo_string(Scope.GetFlagName,GetPlayer.MakeScope.Var('society_magic_spell').GetFlagName))]"
+            tooltip = "LOCKED_SPELL_LEVEL_TOOLTIP"
+        }
+	}
+	
+	type spell_section_widget_not_selected = widget {
+		# Available to click
+		size = { 120 100 }
+		button_icon_round_big_action = {
+			size = { 60 60 }
+			using = default_fade_in_out
+			parentanchor = center
+			using = confirm_button_sound
+			
+			blockoverride "icon" {
+				texture = "gfx/interface/icons/institution_icons/schools.dds"
+			}
+			blockoverride "icon_size" {
+				size = { 50 50 }
+			}
+			block "details" {
+
+			}
+			using = tooltip_nw
+			
+			state = {
+				name = _show
+				duration = 0.5
+				alpha = 1
+				scale = 1
+				using = Animation_Curve_Default
+			}
+			
+			state = {
+				name = _hide
+				duration = 0.5
+				alpha = 0
+				scale = 0
+				using = Animation_Curve_Default
+			}
+		}
+	}
+
+	type spell_section_widget_chosen = widget {
+		# target level 
+		size = { 120 100 }
+		using = tooltip_nw
+		state = {
+			name = _show
+			on_start = "[PdxGuiWidget.FindChild('glow').InterruptThenTriggerAnimation('hide','show')]"
+			on_start = "[PdxGuiWidget.FindChild('selection').InterruptThenTriggerAnimation('hide','show')]"
+		}
+		state = {
+			name = _hide
+			on_start = "[PdxGuiWidget.FindChild('glow').InterruptThenTriggerAnimation('show','hide')]"
+			on_start = "[PdxGuiWidget.FindChild('selection').InterruptThenTriggerAnimation('show','hide')]"
+		}
+		icon = {
+			size = { 60 60 }
+			using = circle_bg_simple
+			parentanchor = center
+			using = tooltip_nw
+		}
+		icon = {
+			texture = "gfx/interface/icons/institution_icons/schools.dds"
+			size = { 50 50 }
+			parentanchor = center
+		}
+		icon = {
+			name = glow
+			using = rotate_glow_animation_02
+			size = { 100% 100% }
+			parentanchor = center
+			alpha = 0.4
+			scale = 1.3
+			
+			state = {
+				name = show
+				next = show_2
+				alpha = 1
+				scale = 1.3
+			}
+			state = {
+				name = show_2
+				next = show_3
+				alpha = 1
+				scale = 1.8
+				duration = 0.3
+				using = Animation_Curve_Default
+			}
+			state = {
+				name = show_3
+				alpha = 0.4
+				scale = 1.3
+				duration = 0.7
+				using = Animation_Curve_Default
+			}
+			
+			state = {
+				name = hide
+				duration = 0.5
+				alpha = 0
+				using = Animation_Curve_Default
+			}
+		}
+		icon = {
+			name = selection
+			using = highlighted_circle_selection_small
+			size = { 64 64 }
+			
+			alpha = 0
+			scale = 1.5
+			
+			state = {
+				name = show
+				duration = 0.35
+				alpha = 1
+				scale = 1
+				using = Animation_Curve_Default
+			}
+			
+			state = {
+				name = hide
+				duration = 0.5
+				alpha = 0
+				scale = 1.5
+				using = Animation_Curve_Default
+			}
+		}
+	}
+
+	type spell_section_widget_current_level = widget {
+		size = { 120 100 }
+		# tooltip = "[Institution.GetChangeLevelDesc( InstitutionInvestmentLevel.GetLevel )]"
+		using = tooltip_nw
+		
+		state = {
+			name = _show
+			on_start = "[PdxGuiWidget.FindChild('bg').InterruptThenTriggerAnimation('hide','show')]"
+			on_start = "[PdxGuiWidget.FindChild('icon').InterruptThenTriggerAnimation('hide','show')]"
+			on_start = "[PdxGuiWidget.FindChild('glow').InterruptThenTriggerAnimation('hide','show')]"
+			on_start = "[PdxGuiWidget.FindChild('icon').InterruptThenTriggerAnimation('shimmer_hide','shimmer_show')]"
+		}
+		state = {
+			name = _hide
+			on_start = "[PdxGuiWidget.FindChild('bg').InterruptThenTriggerAnimation('show','hide')]"
+			on_start = "[PdxGuiWidget.FindChild('icon').InterruptThenTriggerAnimation('show','hide')]"
+			on_start = "[PdxGuiWidget.FindChild('glow').InterruptThenTriggerAnimation('show','hide')]"
+			on_start = "[PdxGuiWidget.FindChild('icon').InterruptThenTriggerAnimation('shimmer_show','shimmer_hide')]"
+		}
+		
+		icon = {
+			name = bg
+			size = { 90 105 }
+			texture = "gfx/interface/politics_view/institution_current_level.dds"
+			parentanchor = center
+			
+			state = {
+				name = show
+				duration = 0.5
+				alpha = 1
+				scale = 1
+				using = Animation_Curve_Default
+			}
+			
+			state = {
+				name = hide
+				duration = 0.5
+				alpha = 0
+				scale = 0
+				using = Animation_Curve_Default
+			}
+		}
+		
+		icon = {
+			name = glow
+			using = rotate_glow_animation_02
+			size = { 100% 100% }
+			parentanchor = center
+			alpha = 0
+			scale = 0
+			
+			state = {
+				name = show
+				next = show2
+				duration = 0.7
+				alpha = 1
+				scale = 3
+			}
+			
+			state = {
+				name = show2
+				duration = 1.5
+				alpha = 0
+				scale = 1.5
+				using = Animation_Curve_EaseOut
+			}
+			
+			state = {
+				name = hide
+				alpha = 0
+				scale = 0
+			}
+		}
+		
+		icon = {
+			name = icon
+			size = { 80 80 }
+			texture = "gfx/interface/icons/institution_icons/schools.dds"
+			parentanchor = center
+			
+			state = {
+				name = show
+				next = show2
+				alpha = 0
+				scale = 0
+			}
+			
+			state = {
+				name = show2
+				next = show3
+				duration = 0.4
+				alpha = 1
+				scale = 1.2
+				using = Animation_Curve_Default
+			}
+			
+			state = {
+				name = show3
+				duration = 0.2
+				scale = 1
+				using = Animation_Curve_Default
+			}
+			
+			state = {
+				name = hide
+				duration = 0.5
+				alpha = 0
+				scale = 0
+				using = Animation_Curve_Default
+			}
+			
+			#shimmer
+			modify_texture = {
+				name = "glow"
+				texture = "gfx/interface/animation/shimmer.dds"
+				blend_mode = colordodge
+				translate_uv = { 1 1 }
+			}
+
+			state = {
+				name = shimmer_show
+				delay = 0.5
+				duration = 2
+				using = Animation_Curve_Default
+
+				modify_texture = {
+					name = "glow"
+					translate_uv = { -1 -1 }
+				}
+			}
+
+			
+			state = {
+				name = shimmer_hide
+				duration = 0
+
+				modify_texture = {
+					name = "glow"
+					translate_uv = { 1 1 }
+				}
+			}
+		}
+	}
+
+	type spell_section_widget_locked = widget {
+		size = { 120 100 }
+
+		icon = {
+			size = { 60 60 }
+			using = circle_bg_simple_dark
+			parentanchor = center
+			# tooltip = "[Institution.GetChangeLevelDesc( InstitutionInvestmentLevel.GetLevel )]"
+			# ^ TODO
+			using = tooltip_nw
+			
+			icon = {
+				size = { 40 40 }
+				texture = "gfx/interface/politics_view/institution_max_cap.dds"
+				parentanchor = center
+			}
+		}	
+	}
+
+	type spelltrack_dotted_lines = widget {
+		icon = {
+			using = track_line
+			size = { 54 4 }
+			alpha = 0.75
+			position = {90 50}
+		}
+		icon = {
+			using = track_line
+			size = { 54 4 }
+			alpha = 0.75
+			position = {204 50}
+		}
+		icon = {
+			using = track_line
+			size = { 54 4 }
+			alpha = 0.75
+			position = {318 50}
+		}
+		icon = {
+			using = track_line
+			size = { 54 4 }
+			alpha = 0.75
+			position = {432 50}
+		}
+	}
+
+	type spell_icon_1 = widget {
+		size = { 60 60 }
+		icon = {
+			size = { 100% 100% }
+			texture = "gfx/interface/icons/institution_icons/institution_icon_bg.dds"
+		}
+		icon = {
+			size = { 80% 80% }
+			texture = "[GetInstitutionType(Scope.GetFlagName).GetIcon]"
+			position = { 10 10 }
+		}
+	}
+
+	type spell_icon_2 = widget {
+		size = { 60 60 }
+		icon = {
+			size = { 100% 100% }
+			texture = "gfx/interface/icons/institution_icons/institution_icon_bg.dds"
+		}
+		icon = {
+			size = { 80% 80% }
+			texture = "[GetInstitutionType(Scope.GetFlagName).GetIcon]"
+			position = { 10 10 }
+		}
+	}
+
+	type spell_icon_tree = widget {
+		size = { 60 60 }
+		
+		icon = {
+			size = { 100% 100% }
+			texture = "gfx/interface/icons/institution_icons/institution_icon_bg.dds"
+		}
+		icon = {
+			size = { 100% 100% }
+			texture = "gfx/interface/icons/ai_strategy_icons/agricultural_expansion.dds"
+		}
+	}
+
+	type spell_icon_circles = widget {
+		size = { 60 60 }
+		
+		icon = {
+			size = { 100% 100% }
+			texture = "gfx/interface/icons/institution_icons/institution_icon_bg.dds"
+		}
+		icon = {
+			size = { 100% 100% }
+			texture = "gfx/interface/icons/ai_strategy_icons/placate_population.dds"
+		}
+	}
+
+	
+
+}
+

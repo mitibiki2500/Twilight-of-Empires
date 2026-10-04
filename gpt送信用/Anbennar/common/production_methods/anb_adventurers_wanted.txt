@@ -1,0 +1,4186 @@
+﻿##### DUNGEONS #####
+
+## Brigand Army Base
+#pm_traditional_parties_building_brigand_army_base = {
+#	texture = "gfx/interface/icons/production_method_icons/muskets.dds"
+#	unlocking_technologies = {
+#	}
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_small_arms_add = 4
+#			goods_output_gold_add = 4
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000						
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.9
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 10000
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#	country_modifiers = {
+#		workforce_scaled = {
+#			country_minting_add = 100
+#		}
+#	}
+#}
+#
+#pm_modern_firepower_building_brigand_army_base = {
+#	texture = "gfx/interface/icons/production_method_icons/repeaters.dds"
+#	unlocking_technologies = {
+#		gunsmithing
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 8
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_small_arms_add = 10
+#			goods_output_gold_add = 11
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.8				
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 7500
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 15
+#		}
+#	}
+#	country_modifiers = {
+#		workforce_scaled = {
+#			country_minting_add = 275
+#		}
+#	}
+#}
+#
+#pm_miniature_armies_building_brigand_army_base = {
+#	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+#	unlocking_technologies = {
+#		nco_training
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 12
+#			goods_input_ammunition_add = 6
+#			goods_input_artificery_doodads_add = 4
+#			goods_input_radios_add = 4
+#			# output goods
+#			goods_output_small_arms_add = 22
+#			goods_output_gold_add = 23
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.7				
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 5000
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 25
+#		}
+#	}
+#	country_modifiers = {
+#		workforce_scaled = {
+#			country_minting_add = 575
+#		}
+#	}
+#}
+#
+#pm_no_civilian_infastructure_pmg_dungeons = {
+#	texture = "gfx/interface/icons/production_method_icons/market_stalls.dds"
+#	ai_value = 0
+#	building_modifiers = {
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.1			
+#		}
+#		level_scaled = {
+#			building_employment_shopkeepers_add = 100
+#			building_employment_laborers_add = 500	
+#		}
+#	}
+#}
+#
+#pm_shopkeep_suppliers_building_brigand_army_base = {
+#	texture = "gfx/interface/icons/production_method_icons/market_squares.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_grain_add = 10
+#			goods_input_fabric_add = 5
+#			# output goods
+#			goods_output_small_arms_add = 5
+#			goods_output_gold_add = 5
+#		}
+#		level_scaled = {
+#			building_employment_shopkeepers_add = 250
+#			building_employment_laborers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 2
+#		}
+#	}
+#	country_modifiers = {
+#		workforce_scaled = {
+#			country_minting_add = 125
+#		}
+#	}
+#}
+#
+#pm_migratory_markets_building_brigand_army_base = {
+#	texture = "gfx/interface/icons/production_method_icons/covered_markets.dds"
+#	unlocking_technologies = {
+#		steel_frame_buildings
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_grain_add = 10
+#			goods_input_clothes_add = 10
+#			goods_input_groceries_add = 5
+#			# output goods
+#			goods_output_small_arms_add = 8
+#			goods_output_gold_add = 9
+#		}
+#		level_scaled = {
+#			building_employment_shopkeepers_add = 500
+#			building_employment_laborers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 4
+#		}
+#	}
+#	country_modifiers = {
+#		workforce_scaled = {
+#			country_minting_add = 225
+#		}
+#	}
+#}
+#
+#pm_dungeon_department_stores_building_brigand_army_base = {
+#	texture = "gfx/interface/icons/production_method_icons/arcades.dds"
+#	unlocking_technologies = {
+#		elevator
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_groceries_add = 20
+#			goods_input_luxury_clothes_add = 15
+#			# output goods
+#			goods_output_small_arms_add = 16
+#			goods_output_gold_add = 16
+#		}
+#		level_scaled = {
+#			building_employment_shopkeepers_add = 500
+#			building_employment_laborers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.4		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#	country_modifiers = {
+#		workforce_scaled = {
+#			country_minting_add = 400
+#		}
+#	}
+#}
+#
+#pm_no_delving_support_pmg_dungeons = {
+#	texture = "gfx/interface/icons/production_method_icons/no_explosives.dds"
+#	ai_value = 0
+#	building_modifiers = {
+#		unscaled = {
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1000	
+#		}
+#	}
+#}
+#
+#pm_explosive_charges_building_brigand_army_base = {
+#	texture = "gfx/interface/icons/production_method_icons/nitroglycerin.dds"
+#	unlocking_technologies = {
+#		intensive_agriculture
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_explosives_add = 8
+#			# output goods
+#			goods_output_small_arms_add = 4
+#			goods_output_gold_add = 5
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.1			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 2
+#		}
+#	}
+#	country_modifiers = {
+#		workforce_scaled = {
+#			country_minting_add = 125
+#		}
+#	}
+#}
+#
+#pm_drill_mining_servos_building_brigand_army_base = {
+#	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+#	unlocking_technologies = {
+#		thinking_servos
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_explosives_add = 12
+#			goods_input_artificery_doodads_add = 3
+#			# output goods
+#			goods_output_small_arms_add = 9
+#			goods_output_gold_add = 9
+#		}
+#		level_scaled = {
+#			building_employment_machinists_add = 250
+#			building_employment_laborers_add = 1750	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 4
+#		}
+#	}
+#	country_modifiers = {
+#		workforce_scaled = {
+#			country_minting_add = 225
+#		}
+#	}
+#}
+#
+#pm_subterrenes_building_brigand_army_base = {
+#	texture = "gfx/interface/icons/production_method_icons/tractors.dds"
+#	unlocking_technologies = {
+#		subterrenes
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_explosives_add = 14
+#			goods_input_artificery_doodads_add = 6
+#			goods_input_engines_add = 2
+#			# output goods
+#			goods_output_small_arms_add = 17
+#			goods_output_gold_add = 17
+#		}
+#		level_scaled = {
+#			building_employment_machinists_add = 500
+#			building_employment_laborers_add = 1750
+#			building_employment_engineers_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#	country_modifiers = {
+#		workforce_scaled = {
+#			country_minting_add = 425
+#		}
+#	}
+#}
+#
+## Lich Lair
+#pm_traditional_parties_building_lich_lair = {
+#	texture = "gfx/interface/icons/production_method_icons/muskets.dds"
+#	unlocking_technologies = {
+#	}
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_magical_reagents_add = 5
+#			goods_output_spirit_energy_add = 5
+#			goods_output_arcane_curios_add = 5
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000						
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.9
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 6000
+#			
+#			state_mortality_mult = 0.1
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#}
+#
+#pm_modern_firepower_building_lich_lair = {
+#	texture = "gfx/interface/icons/production_method_icons/repeaters.dds"
+#	unlocking_technologies = {
+#		gunsmithing
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 8
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 12
+#			
+#			goods_output_arcane_curios_add = 12
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.8				
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 4500
+#			75
+#			state_mortality_mult = 0.075
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 15
+#		}
+#	}
+#}
+#
+#pm_miniature_armies_building_lich_lair = {
+#	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+#	unlocking_technologies = {
+#		nco_training
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 12
+#			goods_input_ammunition_add = 6
+#			goods_input_artificery_doodads_add = 4
+#			goods_input_radios_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 26
+#			
+#			goods_output_arcane_curios_add = 26
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.7				
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 3000
+#			5
+#			state_mortality_mult = 0.05
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 25
+#		}
+#	}
+#}
+#
+#pm_shopkeep_suppliers_building_lich_lair = {
+#	texture = "gfx/interface/icons/production_method_icons/market_squares.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_grain_add = 10
+#			goods_input_fabric_add = 5
+#			# output goods
+#			goods_output_magical_reagents_add = 5
+#			goods_output_spirit_energy_add = 5
+#			goods_output_arcane_curios_add = 5
+#		}
+#		level_scaled = {
+#			building_employment_shopkeepers_add = 250
+#			building_employment_laborers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 2
+#		}
+#	}
+#}
+#
+#pm_migratory_markets_building_lich_lair = {
+#	texture = "gfx/interface/icons/production_method_icons/covered_markets.dds"
+#	unlocking_technologies = {
+#		steel_frame_buildings
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_grain_add = 10
+#			goods_input_clothes_add = 10
+#			goods_input_groceries_add = 5
+#			# output goods
+#			goods_output_magical_reagents_add = 10
+#			
+#			goods_output_arcane_curios_add = 10
+#		}
+#		level_scaled = {
+#			building_employment_shopkeepers_add = 500
+#			building_employment_laborers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 6
+#		}
+#	}
+#}
+#
+#pm_dungeon_department_stores_building_lich_lair = {
+#	texture = "gfx/interface/icons/production_method_icons/arcades.dds"
+#	unlocking_technologies = {
+#		elevator
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_groceries_add = 20
+#			goods_input_luxury_clothes_add = 15
+#			# output goods
+#			goods_output_magical_reagents_add = 18
+#			
+#			goods_output_arcane_curios_add = 18
+#		}
+#		level_scaled = {
+#			building_employment_shopkeepers_add = 500
+#			building_employment_laborers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.4		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 10
+#		}
+#	}
+#}
+#
+#pm_explosive_charges_building_lich_lair = {
+#	texture = "gfx/interface/icons/production_method_icons/nitroglycerin.dds"
+#	unlocking_technologies = {
+#		intensive_agriculture
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_explosives_add = 8
+#			# output goods
+#			goods_output_magical_reagents_add = 5
+#			goods_output_spirit_energy_add = 5
+#			goods_output_arcane_curios_add = 5
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.1			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 2
+#		}
+#	}
+#}
+#
+#pm_drill_mining_servos_building_lich_lair = {
+#	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+#	unlocking_technologies = {
+#		thinking_servos
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_explosives_add = 12
+#			goods_input_artificery_doodads_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 10
+#			
+#			goods_output_arcane_curios_add = 10
+#		}
+#		level_scaled = {
+#			building_employment_machinists_add = 250
+#			building_employment_laborers_add = 1750	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 4
+#		}
+#	}
+#}
+#
+#pm_subterrenes_building_lich_lair = {
+#	texture = "gfx/interface/icons/production_method_icons/tractors.dds"
+#	unlocking_technologies = {
+#		subterrenes
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_explosives_add = 14
+#			goods_input_artificery_doodads_add = 6
+#			goods_input_engines_add = 2
+#			# output goods
+#			goods_output_magical_reagents_add = 18
+#			
+#			goods_output_arcane_curios_add = 18
+#		}
+#		level_scaled = {
+#			building_employment_machinists_add = 500
+#			building_employment_laborers_add = 1750
+#			building_employment_engineers_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#}
+#
+## Precursor Base
+#pm_traditional_parties_building_precursor_base = {
+#	texture = "gfx/interface/icons/production_method_icons/muskets.dds"
+#	unlocking_technologies = {
+#	}
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_arcane_curios_add = 9
+#			goods_output_damestear_add = 3
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000						
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.8
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 10000
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#}
+#
+#pm_modern_firepower_building_precursor_base = {
+#	texture = "gfx/interface/icons/production_method_icons/repeaters.dds"
+#	unlocking_technologies = {
+#		gunsmithing
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 8
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_arcane_curios_add = 21
+#			goods_output_damestear_add = 7
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.7				
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 7500
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 15
+#		}
+#	}
+#}
+#
+#pm_miniature_armies_building_precursor_base = {
+#	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+#	unlocking_technologies = {
+#		nco_training
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 12
+#			goods_input_ammunition_add = 6
+#			goods_input_artificery_doodads_add = 4
+#			goods_input_radios_add = 4
+#			# output goods
+#			goods_output_arcane_curios_add = 42
+#			goods_output_damestear_add = 14
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.6				
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 5000
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 25
+#		}
+#	}
+#}
+#
+#pm_shopkeep_suppliers_building_precursor_base = {
+#	texture = "gfx/interface/icons/production_method_icons/market_squares.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_grain_add = 10
+#			goods_input_fabric_add = 5
+#			# output goods
+#			goods_output_arcane_curios_add = 9
+#			goods_output_damestear_add = 3
+#		}
+#		level_scaled = {
+#			building_employment_shopkeepers_add = 250
+#			building_employment_laborers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 2
+#		}
+#	}
+#}
+#
+#pm_migratory_markets_building_precursor_base = {
+#	texture = "gfx/interface/icons/production_method_icons/covered_markets.dds"
+#	unlocking_technologies = {
+#		steel_frame_buildings
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_grain_add = 10
+#			goods_input_clothes_add = 10
+#			goods_input_groceries_add = 5
+#			# output goods
+#			goods_output_arcane_curios_add = 18
+#			goods_output_damestear_add = 6
+#		}
+#		level_scaled = {
+#			building_employment_shopkeepers_add = 500
+#			building_employment_laborers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 4
+#		}
+#	}
+#}
+#
+#pm_dungeon_department_stores_building_precursor_base = {
+#	texture = "gfx/interface/icons/production_method_icons/arcades.dds"
+#	unlocking_technologies = {
+#		elevator
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_groceries_add = 20
+#			goods_input_luxury_clothes_add = 15
+#			# output goods
+#			goods_output_arcane_curios_add = 33
+#			goods_output_damestear_add = 11
+#		}
+#		level_scaled = {
+#			building_employment_shopkeepers_add = 500
+#			building_employment_laborers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.4		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#}
+#
+#pm_explosive_charges_building_precursor_base = {
+#	texture = "gfx/interface/icons/production_method_icons/nitroglycerin.dds"
+#	unlocking_technologies = {
+#		intensive_agriculture
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_explosives_add = 8
+#			# output goods
+#			goods_output_arcane_curios_add = 9
+#			goods_output_damestear_add = 3
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.1			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 2
+#		}
+#	}
+#}
+#
+#pm_drill_mining_servos_building_precursor_base = {
+#	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+#	unlocking_technologies = {
+#		thinking_servos
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_explosives_add = 12
+#			goods_input_artificery_doodads_add = 3
+#			# output goods
+#			goods_output_arcane_curios_add = 18
+#			goods_output_damestear_add = 6
+#		}
+#		level_scaled = {
+#			building_employment_machinists_add = 250
+#			building_employment_laborers_add = 1750	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 4
+#		}
+#	}
+#}
+#
+#pm_subterrenes_building_precursor_base = {
+#	texture = "gfx/interface/icons/production_method_icons/tractors.dds"
+#	unlocking_technologies = {
+#		subterrenes
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_explosives_add = 14
+#			goods_input_artificery_doodads_add = 6
+#			goods_input_engines_add = 2
+#			# output goods
+#			goods_output_arcane_curios_add = 33
+#			goods_output_damestear_add = 11
+#		}
+#		level_scaled = {
+#			building_employment_machinists_add = 500
+#			building_employment_laborers_add = 1750
+#			building_employment_engineers_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#}
+#
+## Sea Monster Nest
+#pm_traditional_parties_building_sea_monster_nest = {
+#	texture = "gfx/interface/icons/production_method_icons/muskets.dds"
+#	unlocking_technologies = {
+#	}
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_magical_reagents_add = 10
+#			goods_output_oil_add = 6
+#			goods_output_meat_add = 4
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000						
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.9
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 6000
+#			building_group_bg_fishing_throughput_add = -0.2
+#			building_group_bg_whaling_throughput_add = -0.2
+#			building_port_throughput_add = -0.2
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#}
+#
+#pm_modern_firepower_building_sea_monster_nest = {
+#	texture = "gfx/interface/icons/production_method_icons/repeaters.dds"
+#	unlocking_technologies = {
+#		gunsmithing
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 8
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 24
+#			goods_output_oil_add = 14
+#			goods_output_meat_add = 10
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.8				
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 4500
+#			building_group_bg_fishing_throughput_add = -0.15
+#			building_group_bg_whaling_throughput_add = -0.15
+#			building_port_throughput_add = -0.15
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 15
+#		}
+#	}
+#}
+#
+#pm_miniature_armies_building_sea_monster_nest = {
+#	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+#	unlocking_technologies = {
+#		nco_training
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 12
+#			goods_input_ammunition_add = 6
+#			goods_input_artificery_doodads_add = 4
+#			goods_input_radios_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 46
+#			goods_output_oil_add = 30
+#			goods_output_meat_add = 20
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.7			
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 3000
+#			building_group_bg_fishing_throughput_add = -0.1
+#			building_group_bg_whaling_throughput_add = -0.1
+#			building_port_throughput_add = -0.1
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 25
+#		}
+#	}
+#}
+#
+#pm_shopkeep_suppliers_building_sea_monster_nest = {
+#	texture = "gfx/interface/icons/production_method_icons/market_squares.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_grain_add = 10
+#			goods_input_fabric_add = 5
+#			# output goods
+#			goods_output_magical_reagents_add = 8
+#			goods_output_oil_add = 6
+#			goods_output_meat_add = 4
+#		}
+#		level_scaled = {
+#			building_employment_shopkeepers_add = 250
+#			building_employment_laborers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 2
+#		}
+#	}
+#}
+#
+#pm_migratory_markets_building_sea_monster_nest = {
+#	texture = "gfx/interface/icons/production_method_icons/covered_markets.dds"
+#	unlocking_technologies = {
+#		steel_frame_buildings
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_grain_add = 10
+#			goods_input_clothes_add = 10
+#			goods_input_groceries_add = 5
+#			# output goods
+#			goods_output_magical_reagents_add = 16
+#			goods_output_oil_add = 12
+#			goods_output_meat_add = 6
+#		}
+#		level_scaled = {
+#			building_employment_shopkeepers_add = 500
+#			building_employment_laborers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 4
+#		}
+#	}
+#}
+#
+#pm_dungeon_department_stores_building_sea_monster_nest = {
+#	texture = "gfx/interface/icons/production_method_icons/arcades.dds"
+#	unlocking_technologies = {
+#		elevator
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_groceries_add = 20
+#			goods_input_luxury_clothes_add = 15
+#			# output goods
+#			goods_output_magical_reagents_add = 32
+#			goods_output_oil_add = 24
+#			goods_output_meat_add = 12
+#		}
+#		level_scaled = {
+#			building_employment_shopkeepers_add = 500
+#			building_employment_laborers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.4		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#}
+#
+#pm_adventurer_ships_pmg_naval_support = {
+#	texture = "gfx/interface/icons/production_method_icons/no_automation.dds"
+#	ai_value = 0
+#	building_modifiers = {
+#		level_scaled = {
+#			building_employment_laborers_add = 1000
+#		}
+#	}
+#}
+#
+#pm_krakeneer_ships_building_sea_monster_nest = {
+#	texture = "gfx/interface/icons/production_method_icons/market_squares.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_clippers_add = 4
+#			goods_input_artillery_add = 2
+#			# output goods
+#			goods_output_magical_reagents_add = 8
+#			goods_output_oil_add = 6
+#			goods_output_meat_add = 4
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 2
+#		}
+#	}
+#}
+#
+#pm_formalized_krakeneer_squadrons_building_sea_monster_nest = {
+#	texture = "gfx/interface/icons/production_method_icons/covered_markets.dds"
+#	unlocking_technologies = {
+#		steel_frame_buildings
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_steamers_add = 8
+#			goods_input_artillery_add = 3
+#			goods_input_ammunition_add = 2
+#			goods_input_coal_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 16
+#			goods_output_oil_add = 12
+#			goods_output_meat_add = 6
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#			building_employment_machinists_add = 250	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.15			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 4
+#		}
+#	}
+#}
+#
+#pm_modern_krakeneer_fleets_building_sea_monster_nest = {
+#	texture = "gfx/interface/icons/production_method_icons/arcades.dds"
+#	unlocking_technologies = {
+#		elevator
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_steamers_add = 10
+#			goods_input_artillery_add = 4
+#			goods_input_ammunition_add = 2
+#			goods_input_oil_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 32
+#			goods_output_oil_add = 24
+#			goods_output_meat_add = 12
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#			building_employment_machinists_add = 500
+#			building_employment_engineers_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#}
+#
+#
+###### SUDDEN THREATS
+#
+## Den of Beasts
+#pm_traditional_parties_building_den_of_beasts = {
+#	texture = "gfx/interface/icons/production_method_icons/muskets.dds"
+#	unlocking_technologies = {
+#	}
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_magical_reagents_add = 6
+#			goods_output_meat_add = 8
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000						
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.7
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 20000
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 6
+#		}
+#	}
+#}
+#
+#pm_modern_firepower_building_den_of_beasts = {
+#	texture = "gfx/interface/icons/production_method_icons/repeaters.dds"
+#	unlocking_technologies = {
+#		gunsmithing
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 8
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 18
+#			goods_output_meat_add = 24
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.6
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 15000
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 13
+#		}
+#	}
+#}
+#
+#pm_miniature_armies_building_den_of_beasts = {
+#	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+#	unlocking_technologies = {
+#		nco_training
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 12
+#			goods_input_ammunition_add = 6
+#			goods_input_artificery_doodads_add = 4
+#			goods_input_radios_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 33
+#			goods_output_meat_add = 44
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.5			
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 10000
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 23
+#		}
+#	}
+#}
+#
+#pm_no_extra_firepower_pmg_extra_firepower = {
+#	texture = "gfx/interface/icons/production_method_icons/no_artillery_production.dds"
+#	ai_value = 0
+#	building_modifiers = {
+#		workforce_scaled = {
+#			building_employment_laborers_add = 1000
+#		}
+#	}
+#}
+#
+#pm_mobile_artillery_building_den_of_beasts = {
+#	texture = "gfx/interface/icons/production_method_icons/smoothbores.dds"
+#	unlocking_technologies = {
+#		napoleonic_warfare
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artillery_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 6
+#			goods_output_meat_add = 6
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750				
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 3
+#		}
+#	}
+#}
+#
+#pm_shrapnel_artillery_building_den_of_beasts = {
+#	texture = "gfx/interface/icons/production_method_icons/recoil_mechanism_artillery_production.dds"
+#	unlocking_technologies = {
+#		breech_loading_artillery
+#	}	
+#	ai_value = 5000	
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artillery_add = 6
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 15
+#			goods_output_meat_add = 15
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750	
+#			building_employment_machinists_add = 250			
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 5
+#		}
+#	}
+#}
+#
+#pm_damestear_behemoths_building_den_of_beasts = {
+#	texture = "gfx/interface/icons/production_method_icons/tanks.dds"
+#	unlocking_technologies = {
+#		mobile_armor
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artillery_add = 9
+#			goods_input_ammunition_add = 6
+#			goods_input_radios_add = 3
+#			goods_input_tanks_add = 3
+#			goods_input_damestear_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 35
+#			goods_output_meat_add = 35
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#			building_employment_machinists_add = 500
+#			building_employment_engineers_add = 250	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.3		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 9
+#		}
+#	}
+#}
+#
+#pm_no_auxiliary_support_pmg_auxiliary_support = {
+#	texture = "gfx/interface/icons/production_method_icons/no_artillery_production.dds"
+#	ai_value = 0
+#	building_modifiers = {
+#		workforce_scaled = {
+#			building_employment_laborers_add = 1000
+#			building_employment_shopkeepers_add = 150
+#		}
+#	}
+#}
+#
+#pm_evocation_corps_building_den_of_beasts = {
+#	texture = "gfx/interface/icons/production_method_icons/smoothbores.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_magical_reagents_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 6
+#			goods_output_meat_add = 6
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750	
+#			building_employment_archmages_add = 250			
+#			building_employment_shopkeepers_add = 200
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 3
+#		}
+#	}
+#}
+#
+#pm_portable_turrets_building_den_of_beasts = {
+#	texture = "gfx/interface/icons/production_method_icons/recoil_mechanism_artillery_production.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artificery_doodads_add = 6
+#			# output goods
+#			goods_output_magical_reagents_add = 10
+#			goods_output_meat_add = 10
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750	
+#			building_employment_machinists_add = 250	
+#			building_employment_shopkeepers_add = 250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 5
+#		}
+#	}
+#}
+#
+#pm_artificed_warsuits_building_den_of_beasts = {
+#	texture = "gfx/interface/icons/production_method_icons/tanks.dds"
+#	unlocking_technologies = {
+#		mobile_armor
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artificery_doodads_add = 6
+#			goods_input_flawless_metal_add = 6
+#			goods_input_rubber_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 21
+#			goods_output_meat_add = 21
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#			building_employment_machinists_add = 500
+#			building_employment_engineers_add = 250	
+#			building_employment_shopkeepers_add = 500
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.3		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 9
+#		}
+#	}
+#}
+#
+## Undead Mob
+#pm_traditional_parties_building_undead_mob = {
+#	texture = "gfx/interface/icons/production_method_icons/muskets.dds"
+#	unlocking_technologies = {
+#	}
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_magical_reagents_add = 4
+#			goods_output_spirit_energy_add = 4
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000						
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.6
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 20000
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 6
+#		}
+#	}
+#}
+#
+#pm_modern_firepower_building_undead_mob = {
+#	texture = "gfx/interface/icons/production_method_icons/repeaters.dds"
+#	unlocking_technologies = {
+#		gunsmithing
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 8
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 16
+#			
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.5
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 15000
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 13
+#		}
+#	}
+#}
+#
+#pm_miniature_armies_building_undead_mob = {
+#	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+#	unlocking_technologies = {
+#		nco_training
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 12
+#			goods_input_ammunition_add = 6
+#			goods_input_artificery_doodads_add = 4
+#			goods_input_radios_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 35
+#			
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.4			
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 10000
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 23
+#		}
+#	}
+#}
+#
+#pm_mobile_artillery_building_undead_mob = {
+#	texture = "gfx/interface/icons/production_method_icons/smoothbores.dds"
+#	unlocking_technologies = {
+#		napoleonic_warfare
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artillery_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 4
+#			goods_output_spirit_energy_add = 4
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750				
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 3
+#		}
+#	}
+#}
+#
+#pm_shrapnel_artillery_building_undead_mob = {
+#	texture = "gfx/interface/icons/production_method_icons/recoil_mechanism_artillery_production.dds"
+#	unlocking_technologies = {
+#		breech_loading_artillery
+#	}	
+#	ai_value = 5000	
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artillery_add = 6
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 16
+#			
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750	
+#			building_employment_machinists_add = 250			
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 5
+#		}
+#	}
+#}
+#
+#pm_damestear_behemoths_building_undead_mob = {
+#	texture = "gfx/interface/icons/production_method_icons/tanks.dds"
+#	unlocking_technologies = {
+#		mobile_armor
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artillery_add = 9
+#			goods_input_ammunition_add = 6
+#			goods_input_radios_add = 3
+#			goods_input_tanks_add = 3
+#			goods_input_damestear_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 35
+#			
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#			building_employment_machinists_add = 500
+#			building_employment_engineers_add = 250	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.3		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 9
+#		}
+#	}
+#}
+#
+#pm_evocation_corps_building_undead_mob = {
+#	texture = "gfx/interface/icons/production_method_icons/smoothbores.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_magical_reagents_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 4
+#			goods_output_spirit_energy_add = 4
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750	
+#			building_employment_archmages_add = 250	
+#			building_employment_shopkeepers_add = 200				
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 3
+#		}
+#	}
+#	country_modifiers = {
+#		workforce_scaled = {
+#			country_minting_add = 75
+#		}
+#	}
+#}
+#
+#pm_portable_turrets_building_undead_mob = {
+#	texture = "gfx/interface/icons/production_method_icons/recoil_mechanism_artillery_production.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artificery_doodads_add = 6
+#			# output goods
+#			goods_output_magical_reagents_add = 8
+#			goods_output_spirit_energy_add = 8
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750	
+#			building_employment_machinists_add = 250	
+#			building_employment_shopkeepers_add = 250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 6
+#		}
+#	}
+#}
+#
+#pm_artificed_warsuits_building_undead_mob = {
+#	texture = "gfx/interface/icons/production_method_icons/tanks.dds"
+#	unlocking_technologies = {
+#		mobile_armor
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artificery_doodads_add = 6
+#			goods_input_flawless_metal_add = 6
+#			goods_input_rubber_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 20
+#			
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#			building_employment_machinists_add = 500
+#			building_employment_engineers_add = 250
+#			building_employment_shopkeepers_add = 500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.3		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 9
+#		}
+#	}
+#}
+#
+## Planar Breach
+#pm_traditional_parties_building_planar_breach = {
+#	texture = "gfx/interface/icons/production_method_icons/muskets.dds"
+#	unlocking_technologies = {
+#	}
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_magical_reagents_add = 8
+#			goods_output_damestear_add = 4
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000						
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.7
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 30000
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 6
+#		}
+#	}
+#}
+#
+#pm_modern_firepower_building_planar_breach = {
+#	texture = "gfx/interface/icons/production_method_icons/repeaters.dds"
+#	unlocking_technologies = {
+#		gunsmithing
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 8
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 22
+#			goods_output_damestear_add = 11
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.6
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 22500
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 13
+#		}
+#	}
+#}
+#
+#pm_miniature_armies_building_planar_breach = {
+#	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+#	unlocking_technologies = {
+#		nco_training
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 12
+#			goods_input_ammunition_add = 6
+#			goods_input_artificery_doodads_add = 4
+#			goods_input_radios_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 42
+#			goods_output_damestear_add = 20
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.5			
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 15000
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 23
+#		}
+#	}
+#}
+#
+#pm_mobile_artillery_building_planar_breach = {
+#	texture = "gfx/interface/icons/production_method_icons/smoothbores.dds"
+#	unlocking_technologies = {
+#		napoleonic_warfare
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artillery_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 6
+#			goods_output_damestear_add = 3
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750				
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 3
+#		}
+#	}
+#}
+#
+#pm_shrapnel_artillery_building_planar_breach = {
+#	texture = "gfx/interface/icons/production_method_icons/recoil_mechanism_artillery_production.dds"
+#	unlocking_technologies = {
+#		breech_loading_artillery
+#	}	
+#	ai_value = 5000	
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artillery_add = 6
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 20
+#			goods_output_damestear_add = 10
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750	
+#			building_employment_machinists_add = 250			
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 5
+#		}
+#	}
+#}
+#
+#pm_damestear_behemoths_building_planar_breach = {
+#	texture = "gfx/interface/icons/production_method_icons/tanks.dds"
+#	unlocking_technologies = {
+#		mobile_armor
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artillery_add = 9
+#			goods_input_ammunition_add = 6
+#			goods_input_radios_add = 3
+#			goods_input_tanks_add = 3
+#			goods_input_damestear_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 38
+#			goods_output_damestear_add = 19
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#			building_employment_machinists_add = 500
+#			building_employment_engineers_add = 250	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.3		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 9
+#		}
+#	}
+#}
+#
+#pm_evocation_corps_building_planar_breach = {
+#	texture = "gfx/interface/icons/production_method_icons/smoothbores.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_magical_reagents_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 6
+#			goods_output_damestear_add = 3
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750	
+#			building_employment_archmages_add = 250		
+#			building_employment_shopkeepers_add = 200	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 3
+#		}
+#	}
+#	country_modifiers = {
+#		workforce_scaled = {
+#			country_minting_add = 75
+#		}
+#	}
+#}
+#
+#pm_portable_turrets_building_planar_breach = {
+#	texture = "gfx/interface/icons/production_method_icons/recoil_mechanism_artillery_production.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artificery_doodads_add = 6
+#			# output goods
+#			goods_output_magical_reagents_add = 10
+#			goods_output_damestear_add = 5
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750	
+#			building_employment_machinists_add = 250	
+#			building_employment_shopkeepers_add = 250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 5
+#		}
+#	}
+#}
+#
+#pm_artificed_warsuits_building_planar_breach = {
+#	texture = "gfx/interface/icons/production_method_icons/tanks.dds"
+#	unlocking_technologies = {
+#		mobile_armor
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artificery_doodads_add = 6
+#			goods_input_flawless_metal_add = 6
+#			goods_input_rubber_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 24
+#			goods_output_damestear_add = 12
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#			building_employment_machinists_add = 500
+#			building_employment_engineers_add = 250	
+#			building_employment_shopkeepers_add = 500
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.3		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 9
+#		}
+#	}
+#}
+#
+## Kraken Attack
+#pm_traditional_parties_building_kraken_attack = {
+#	texture = "gfx/interface/icons/production_method_icons/muskets.dds"
+#	unlocking_technologies = {
+#	}
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_magical_reagents_add = 6
+#			goods_output_oil_add = 3
+#			goods_output_meat_add = 2
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000						
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.7
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 16000
+#			building_group_bg_fishing_throughput_add = -0.2
+#			building_group_bg_whaling_throughput_add = -0.2
+#			building_port_throughput_add = -0.2
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 6
+#		}
+#	}
+#}
+#
+#pm_modern_firepower_building_kraken_attack = {
+#	texture = "gfx/interface/icons/production_method_icons/repeaters.dds"
+#	unlocking_technologies = {
+#		gunsmithing
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 8
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 22
+#			goods_output_oil_add = 10
+#			goods_output_meat_add = 5
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.6
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 12000
+#			building_group_bg_fishing_throughput_add = -0.15
+#			building_group_bg_whaling_throughput_add = -0.15
+#			building_port_throughput_add = -0.15
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 13
+#		}
+#	}
+#}
+#
+#pm_miniature_armies_building_kraken_attack = {
+#	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+#	unlocking_technologies = {
+#		nco_training
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 12
+#			goods_input_ammunition_add = 6
+#			goods_input_artificery_doodads_add = 4
+#			goods_input_radios_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 40
+#			goods_output_oil_add = 20
+#			goods_output_meat_add = 10
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.5			
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 8000
+#			building_group_bg_fishing_throughput_add = -0.1
+#			building_group_bg_whaling_throughput_add = -0.1
+#			building_port_throughput_add = -0.1
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 23
+#		}
+#	}
+#}
+#
+#pm_krakeneer_ships_building_kraken_attack = {
+#	texture = "gfx/interface/icons/production_method_icons/market_squares.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_clippers_add = 4
+#			goods_input_artillery_add = 2
+#			# output goods
+#			goods_output_magical_reagents_add = 8
+#			goods_output_oil_add = 4
+#			goods_output_meat_add = 3
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 3
+#		}
+#	}
+#}
+#
+#pm_formalized_krakeneer_squadrons_building_kraken_attack = {
+#	texture = "gfx/interface/icons/production_method_icons/covered_markets.dds"
+#	unlocking_technologies = {
+#		steel_frame_buildings
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_steamers_add = 8
+#			goods_input_artillery_add = 4
+#			goods_input_ammunition_add = 2
+#			goods_input_coal_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 20
+#			goods_output_oil_add = 10
+#			goods_output_meat_add = 5
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#			building_employment_machinists_add = 250	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.15			
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 5
+#		}
+#	}
+#}
+#
+#pm_modern_krakeneer_fleets_building_kraken_attack = {
+#	texture = "gfx/interface/icons/production_method_icons/arcades.dds"
+#	unlocking_technologies = {
+#		elevator
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_steamers_add = 12
+#			goods_input_artillery_add = 6
+#			goods_input_ammunition_add = 3
+#			goods_input_oil_add = 6
+#			# output goods
+#			goods_output_magical_reagents_add = 33
+#			goods_output_oil_add = 15
+#			goods_output_meat_add = 7
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#			building_employment_machinists_add = 500
+#			building_employment_engineers_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 9
+#		}
+#	}
+#}
+#
+#pm_evocation_corps_building_kraken_attack = {
+#	texture = "gfx/interface/icons/production_method_icons/smoothbores.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_magical_reagents_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 6
+#			goods_output_damestear_add = 3
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750	
+#			building_employment_archmages_add = 250		
+#			building_employment_shopkeepers_add = 200	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 3
+#		}
+#	}
+#	country_modifiers = {
+#		workforce_scaled = {
+#			country_minting_add = 75
+#		}
+#	}
+#}
+#
+#pm_portable_turrets_building_kraken_attack = {
+#	texture = "gfx/interface/icons/production_method_icons/recoil_mechanism_artillery_production.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artificery_doodads_add = 6
+#			# output goods
+#			goods_output_magical_reagents_add = 10
+#			goods_output_damestear_add = 5
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750	
+#			building_employment_machinists_add = 250	
+#			building_employment_shopkeepers_add = 250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 5
+#		}
+#	}
+#}
+#
+#pm_artificed_warsuits_building_kraken_attack = {
+#	texture = "gfx/interface/icons/production_method_icons/tanks.dds"
+#	unlocking_technologies = {
+#		mobile_armor
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_artificery_doodads_add = 6
+#			goods_input_flawless_metal_add = 6
+#			goods_input_rubber_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 24
+#			goods_output_damestear_add = 12
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 1750
+#			building_employment_machinists_add = 500
+#			building_employment_engineers_add = 250	
+#			building_employment_shopkeepers_add = 500
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.3		
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 9
+#		}
+#	}
+#}
+#
+###### INFESTATION #####
+## Fey Incursion
+#pm_traditional_parties_building_fey_incursion = {
+#	texture = "gfx/interface/icons/production_method_icons/muskets.dds"
+#	unlocking_technologies = {
+#	}
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_magical_reagents_add = 6
+#			goods_output_damestear_add = 3
+#			goods_output_wood_add = 3
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000						
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.5
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 6000
+#			building_group_bg_logging_throughput_add = -0.2
+#
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#}
+#
+#pm_modern_firepower_building_fey_incursion = {
+#	texture = "gfx/interface/icons/production_method_icons/repeaters.dds"
+#	unlocking_technologies = {
+#		gunsmithing
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 8
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 18
+#			goods_output_damestear_add = 9
+#			goods_output_wood_add = 9
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.4
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 4500
+#			building_group_bg_logging_throughput_add = -0.15
+#
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 15
+#		}
+#	}
+#}
+#
+#pm_miniature_armies_building_fey_incursion = {
+#	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+#	unlocking_technologies = {
+#		nco_training
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 12
+#			goods_input_ammunition_add = 6
+#			goods_input_artificery_doodads_add = 4
+#			goods_input_radios_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 34
+#			goods_output_damestear_add = 17
+#			goods_output_wood_add = 17
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.3			
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 3000
+#			building_group_bg_logging_throughput_add = -0.1
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 28
+#		}
+#	}
+#}
+#
+#pm_adventurer_search_parties_pmg_extermination_methods = {
+#	texture = "gfx/interface/icons/production_method_icons/no_explosives.dds"
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			building_employment_laborers_add = 1000
+#			building_employment_shopkeepers_add = 250
+#		}
+#	}
+#}
+#
+#pm_magical_herbicides_building_fey_incursion = {
+#	texture = "gfx/interface/icons/production_method_icons/chemical_fertilizers.dds"
+#	unlocking_technologies = {
+#		gene_transmutation
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_fertilizer_add = 4
+#			goods_input_artificery_doodads_add = 2
+#			# output goods
+#			goods_output_magical_reagents_add = 10
+#			goods_output_damestear_add = 5
+#			goods_output_wood_add = 5
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 3000
+#			building_employment_shopkeepers_add = 500					
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 7
+#		}
+#	}
+#}
+#
+#pm_essence_of_decay_building_fey_incursion = {
+#	texture = "gfx/interface/icons/production_method_icons/nitrogen_fixation.dds"
+#	unlocking_technologies = {
+#		essence_extraction
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_fertilizer_add = 6
+#			goods_input_artificery_doodads_add = 3
+#			goods_input_spirit_energy_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 18
+#			goods_output_damestear_add = 9
+#			goods_output_wood_add = 9
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 2500
+#			building_employment_machinists_add = 500
+#			building_employment_shopkeepers_add = 750		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.4
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 14
+#		}
+#	}
+#}
+#
+## Ancient Golems
+#pm_traditional_parties_building_ancient_golems = {
+#	texture = "gfx/interface/icons/production_method_icons/muskets.dds"
+#	unlocking_technologies = {
+#	}
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_magical_reagents_add = 5
+#			goods_output_iron_add = 5
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000						
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.5
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 6000
+#			building_group_bg_mining_throughput_add = -0.2
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#}
+#
+#pm_modern_firepower_building_ancient_golems = {
+#	texture = "gfx/interface/icons/production_method_icons/repeaters.dds"
+#	unlocking_technologies = {
+#		gunsmithing
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 8
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 15
+#			goods_output_iron_add = 15
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.4
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 4500
+#			building_group_bg_mining_throughput_add = -0.15
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 15
+#		}
+#	}
+#}
+#
+#pm_miniature_armies_building_ancient_golems = {
+#	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+#	unlocking_technologies = {
+#		nco_training
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 12
+#			goods_input_ammunition_add = 6
+#			goods_input_artificery_doodads_add = 4
+#			goods_input_radios_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 30
+#			goods_output_iron_add = 30
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.3			
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 3000
+#			building_group_bg_mining_throughput_add = -0.1
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 28
+#		}
+#	}
+#}
+#
+#pm_explosive_charges_building_ancient_golems = {
+#	texture = "gfx/interface/icons/production_method_icons/nitroglycerin.dds"
+#	unlocking_technologies = {
+#		intensive_agriculture
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_explosives_add = 8
+#			# output goods
+#			goods_output_magical_reagents_add = 12
+#			goods_output_iron_add = 12
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 3000
+#			building_employment_shopkeepers_add = 500					
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 7
+#		}
+#	}
+#}
+#
+#pm_drill_mining_servos_building_ancient_golems = {
+#	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+#	unlocking_technologies = {
+#		thinking_servos
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_explosives_add = 12
+#			goods_input_artificery_doodads_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 21
+#			goods_output_iron_add = 21
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 2500
+#			building_employment_machinists_add = 500
+#			building_employment_shopkeepers_add = 750		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.4
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 14
+#		}
+#	}
+#}
+#
+## Awakened Treants
+#pm_traditional_parties_building_awakened_treants = {
+#	texture = "gfx/interface/icons/production_method_icons/muskets.dds"
+#	unlocking_technologies = {
+#	}
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_magical_reagents_add = 4
+#			goods_output_hardwood_add = 4
+#			goods_output_wood_add = 4
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000						
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.5
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 6000
+#			building_group_bg_logging_throughput_add = -0.2
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#}
+#
+#pm_modern_firepower_building_awakened_treants = {
+#	texture = "gfx/interface/icons/production_method_icons/repeaters.dds"
+#	unlocking_technologies = {
+#		gunsmithing
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 8
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 12
+#			goods_output_hardwood_add = 12
+#			goods_output_wood_add = 12
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.4
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 4500
+#			building_group_bg_logging_throughput_add = -0.15
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 15
+#		}
+#	}
+#}
+#
+#pm_miniature_armies_building_awakened_treants = {
+#	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+#	unlocking_technologies = {
+#		nco_training
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 12
+#			goods_input_ammunition_add = 6
+#			goods_input_artificery_doodads_add = 4
+#			goods_input_radios_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 24
+#			goods_output_hardwood_add = 24
+#			goods_output_wood_add = 24
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.3			
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 3000
+#			building_group_bg_logging_throughput_add = -0.1
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 28
+#		}
+#	}
+#}
+#
+#pm_magical_herbicides_building_awakened_treants = {
+#	texture = "gfx/interface/icons/production_method_icons/chemical_fertilizers.dds"
+#	unlocking_technologies = {
+#		gene_transmutation
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_fertilizer_add = 4
+#			goods_input_artificery_doodads_add = 2
+#			# output goods
+#			goods_output_magical_reagents_add = 7
+#			goods_output_hardwood_add = 7
+#			goods_output_wood_add = 7
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 3000
+#			building_employment_shopkeepers_add = 500					
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 7
+#		}
+#	}
+#}
+#
+#pm_essence_of_decay_building_awakened_treants = {
+#	texture = "gfx/interface/icons/production_method_icons/nitrogen_fixation.dds"
+#	unlocking_technologies = {
+#		essence_extraction
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_fertilizer_add = 6
+#			goods_input_artificery_doodads_add = 3
+#			goods_input_spirit_energy_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 14
+#			goods_output_hardwood_add = 14
+#			goods_output_wood_add = 14
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 2500
+#			building_employment_machinists_add = 500
+#			building_employment_shopkeepers_add = 750		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.4
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 14
+#		}
+#	}
+#}
+#
+## Elemental Forge
+#pm_traditional_parties_building_elemental_forge = {
+#	texture = "gfx/interface/icons/production_method_icons/muskets.dds"
+#	unlocking_technologies = {
+#	}
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_magical_reagents_add = 6
+#			goods_output_steel_add = 3
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000						
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.5
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 6000
+#			building_group_bg_mining_throughput_add = -0.2
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 8
+#		}
+#	}
+#}
+#
+#pm_modern_firepower_building_elemental_forge = {
+#	texture = "gfx/interface/icons/production_method_icons/repeaters.dds"
+#	unlocking_technologies = {
+#		gunsmithing
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 8
+#			goods_input_ammunition_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 18
+#			goods_output_steel_add = 9
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.4
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 4500
+#			building_group_bg_mining_throughput_add = -0.15
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 15
+#		}
+#	}
+#}
+#
+#pm_miniature_armies_building_elemental_forge = {
+#	texture = "gfx/interface/icons/production_method_icons/radios.dds"
+#	unlocking_technologies = {
+#		nco_training
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_small_arms_add = 12
+#			goods_input_ammunition_add = 6
+#			goods_input_artificery_doodads_add = 4
+#			goods_input_radios_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 36
+#			goods_output_steel_add = 18
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1500	
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.3			
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 4000
+#			building_group_bg_mining_throughput_add = -0.1
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 28
+#		}
+#	}
+#}
+#
+#pm_explosive_charges_building_elemental_forge = {
+#	texture = "gfx/interface/icons/production_method_icons/nitroglycerin.dds"
+#	unlocking_technologies = {
+#		intensive_agriculture
+#	}	
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_explosives_add = 8
+#			# output goods
+#			goods_output_magical_reagents_add = 12
+#			goods_output_iron_add = 12
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 3000
+#			building_employment_shopkeepers_add = 500					
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.2
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 7
+#		}
+#	}
+#}
+#
+#pm_drill_mining_servos_building_elemental_forge = {
+#	texture = "gfx/interface/icons/production_method_icons/dynamite.dds"
+#	unlocking_technologies = {
+#		thinking_servos
+#	}	
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_explosives_add = 12
+#			goods_input_artificery_doodads_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 21
+#			goods_output_iron_add = 21
+#		}
+#		level_scaled = {
+#			building_employment_laborers_add = 2500
+#			building_employment_machinists_add = 500
+#			building_employment_shopkeepers_add = 750		
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.4
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 14
+#		}
+#	}
+#}
+#
+###### INVESTIGATIONS #####
+#
+## Thieves Guild
+#pm_adventurer_constables_building_thieves_guild = {
+#	texture = "gfx/interface/icons/production_method_icons/simple_organization.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_services_add = 8
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000	
+#			building_employment_laborers_add = 4000
+#			building_employment_shopkeepers_add = 500
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.2
+#			building_shopkeepers_shares_add = 4
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 5000
+#			state_tax_waste_add = 0.1
+#			state_radicals_from_sol_change_mult = -0.1
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 12
+#		}
+#	}
+#}
+#
+#pm_detective_agencies_building_thieves_guild = {
+#	texture = "gfx/interface/icons/production_method_icons/horizontal_drawer_cabinets.dds"
+#	unlocking_technologies = {
+#		law_enforcement
+#	}	
+#	disallowing_laws = {
+#		law_no_police
+#	}
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_paper_add = 5
+#			goods_input_small_arms_add = 2
+#			# output goods
+#			goods_output_services_add = 20
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000	
+#			building_employment_clerks_add = 250
+#			building_employment_laborers_add = 4000
+#			building_employment_shopkeepers_add = 500
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.1
+#			building_shopkeepers_shares_add = 3
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 4000
+#			state_tax_waste_add = 0.08
+#			state_radicals_from_sol_change_mult = -0.08
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 25
+#		}
+#	}
+#}
+#
+#pm_random_searches_building_thieves_guild = {
+#	texture = "gfx/interface/icons/production_method_icons/vertical_filing_cabinets.dds"
+#	unlocking_technologies = {
+#		central_archives
+#	}
+#	disallowing_laws = {
+#		law_no_police
+#		law_guaranteed_liberties
+#	}	
+#	unlocking_production_methods = {
+#		pm_state_oversight_pmg_state_involvement
+#		pm_state_control_pmg_state_involvement
+#		pm_no_appeasement_pmg_appeasement_level
+#	}
+#	ai_value = 7500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_paper_add = 10
+#			goods_input_small_arms_add = 4
+#			# output goods
+#			goods_output_services_add = 40
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250
+#			building_employment_clerks_add = 500
+#			building_employment_laborers_add = 4000
+#			building_employment_shopkeepers_add = 500
+#		}
+#		unscaled = {
+#			building_shopkeepers_shares_add = 2
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 3000
+#			state_tax_waste_add = 0.06
+#			state_radicals_from_sol_change_mult = -0.06
+#			state_mortality_turmoil_mult = 0.05
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 38
+#		}
+#	}
+#}
+#
+#pm_eyes_of_the_state_building_thieves_guild = {
+#	texture = "gfx/interface/icons/production_method_icons/telephone_switchboards.dds"
+#	unlocking_technologies = {
+#		central_archives
+#	}	
+#	unlocking_laws = {
+#		law_secret_police
+#	}
+#	disallowing_laws = {
+#		law_no_police
+#		law_local_police
+#	}	
+#	unlocking_production_methods = {
+#		pm_state_oversight_pmg_state_involvement
+#		pm_state_control_pmg_state_involvement
+#		pm_no_appeasement_pmg_appeasement_level
+#	}
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_paper_add = 15
+#			goods_input_small_arms_add = 6
+#			goods_input_artificery_doodads_add = 3
+#			# output goods
+#			goods_output_services_add = 60
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250
+#			building_employment_clerks_add = 1000
+#			building_employment_laborers_add = 4000
+#			building_employment_shopkeepers_add = 500
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = -0.1
+#			building_shopkeepers_shares_add = 1
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 2000
+#			state_tax_waste_add = 0.04
+#			state_radicals_from_sol_change_mult = -0.04
+#			state_mortality_turmoil_mult = 0.1
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 50
+#		}
+#	}
+#}
+#
+## Hag Dens
+#pm_adventurer_constables_building_hag_dens = {
+#	texture = "gfx/interface/icons/production_method_icons/simple_organization.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_magical_reagents_add = 6
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000	
+#			building_employment_laborers_add = 3750
+#			building_employment_shopkeepers_add = 500
+#			building_employment_archmages_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.4
+#			building_archmages_shares_add = 4
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 8000
+#			state_birth_rate_mult = -0.15
+#			goods_output_magical_reagents_mult = 0.1
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 12
+#		}
+#	}
+#}
+#
+#pm_detective_agencies_building_hag_dens = {
+#	texture = "gfx/interface/icons/production_method_icons/horizontal_drawer_cabinets.dds"
+#	unlocking_technologies = {
+#		law_enforcement
+#	}	
+#	disallowing_laws = {
+#		law_no_police
+#	}
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_paper_add = 5
+#			goods_input_small_arms_add = 2
+#			# output goods
+#			goods_output_magical_reagents_add = 15
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000	
+#			building_employment_clerks_add = 250
+#			building_employment_laborers_add = 3750
+#			building_employment_shopkeepers_add = 500
+#			building_employment_archmages_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.3
+#			building_archmages_shares_add = 3
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 6400
+#			state_birth_rate_mult = -0.12
+#			goods_output_magical_reagents_mult = 0.08
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 25
+#		}
+#	}
+#}
+#
+#pm_random_searches_building_hag_dens = {
+#	texture = "gfx/interface/icons/production_method_icons/vertical_filing_cabinets.dds"
+#	unlocking_technologies = {
+#		central_archives
+#	}
+#	disallowing_laws = {
+#		law_no_police
+#		law_guaranteed_liberties
+#	}	
+#	unlocking_production_methods = {
+#		pm_state_oversight_pmg_state_involvement
+#		pm_state_control_pmg_state_involvement
+#		pm_no_appeasement_pmg_appeasement_level
+#	}
+#	ai_value = 7500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_paper_add = 10
+#			goods_input_small_arms_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 30
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250
+#			building_employment_clerks_add = 500
+#			building_employment_laborers_add = 3750
+#			building_employment_shopkeepers_add = 500
+#			building_employment_archmages_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.2
+#			building_archmages_shares_add = 2
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 4800
+#			state_birth_rate_mult = -0.09
+#			goods_output_magical_reagents_mult = 0.06
+#			state_mortality_turmoil_mult = 0.05
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 38
+#		}
+#	}
+#}
+#
+#pm_eyes_of_the_state_building_hag_dens = {
+#	texture = "gfx/interface/icons/production_method_icons/telephone_switchboards.dds"
+#	unlocking_technologies = {
+#		central_archives
+#	}	
+#	unlocking_laws = {
+#		law_secret_police
+#	}
+#	disallowing_laws = {
+#		law_no_police
+#		law_local_police
+#	}	
+#	unlocking_production_methods = {
+#		pm_state_oversight_pmg_state_involvement
+#		pm_state_control_pmg_state_involvement
+#		pm_no_appeasement_pmg_appeasement_level
+#	}
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_paper_add = 15
+#			goods_input_small_arms_add = 6
+#			goods_input_artificery_doodads_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 50
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250
+#			building_employment_clerks_add = 1000
+#			building_employment_laborers_add = 3750
+#			building_employment_shopkeepers_add = 500
+#			building_employment_archmages_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.1
+#			building_archmages_shares_add = 1
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 3200
+#			state_birth_rate_mult = -0.06
+#			goods_output_magical_reagents_mult = 0.04
+#			state_mortality_turmoil_mult = 0.1
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 50
+#		}
+#	}
+#}
+#
+## Eldritch Cult
+#pm_adventurer_constables_building_eldritch_cult = {
+#	texture = "gfx/interface/icons/production_method_icons/simple_organization.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_magical_reagents_add = 4
+#			goods_output_services_add = 3
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000	
+#			building_employment_laborers_add = 3750
+#			building_employment_shopkeepers_add = 500
+#			building_employment_clergymen_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.4
+#			building_clergymen_shares_add = 4
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 8000
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 12
+#		}
+#	}
+#	country_modifiers = {
+#		unscaled = {
+#			interest_group_ig_devout_approval_add = -1
+#		}
+#	}
+#}
+#
+#pm_detective_agencies_building_eldritch_cult = {
+#	texture = "gfx/interface/icons/production_method_icons/horizontal_drawer_cabinets.dds"
+#	unlocking_technologies = {
+#		law_enforcement
+#	}	
+#	disallowing_laws = {
+#		law_no_police
+#	}
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_paper_add = 5
+#			goods_input_small_arms_add = 2
+#			# output goods
+#			goods_output_magical_reagents_add = 10
+#			goods_output_services_add = 5
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000	
+#			building_employment_clerks_add = 250
+#			building_employment_laborers_add = 3750
+#			building_employment_shopkeepers_add = 500
+#			building_employment_clergymen_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.3
+#			building_clergymen_shares_add = 3
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 6400
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 25
+#		}
+#	}
+#	country_modifiers = {
+#		unscaled = {
+#			interest_group_ig_devout_approval_add = -0.8
+#		}
+#	}
+#}
+#
+#pm_random_searches_building_eldritch_cult = {
+#	texture = "gfx/interface/icons/production_method_icons/vertical_filing_cabinets.dds"
+#	unlocking_technologies = {
+#		central_archives
+#	}
+#	disallowing_laws = {
+#		law_no_police
+#		law_guaranteed_liberties
+#	}	
+#	unlocking_production_methods = {
+#		pm_state_oversight_pmg_state_involvement
+#		pm_state_control_pmg_state_involvement
+#		pm_no_appeasement_pmg_appeasement_level
+#	}
+#	ai_value = 7500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_paper_add = 10
+#			goods_input_small_arms_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 22
+#			goods_output_services_add = 11
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250
+#			building_employment_clerks_add = 500
+#			building_employment_laborers_add = 3750
+#			building_employment_shopkeepers_add = 500
+#			building_employment_clergymen_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.2
+#			building_clergymen_shares_add = 2
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 4800
+#			state_mortality_turmoil_mult = 0.05
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 38
+#		}
+#	}
+#	country_modifiers = {
+#		unscaled = {
+#			interest_group_ig_devout_approval_add = -0.6
+#		}
+#	}
+#}
+#
+#pm_eyes_of_the_state_building_eldritch_cult = {
+#	texture = "gfx/interface/icons/production_method_icons/telephone_switchboards.dds"
+#	unlocking_technologies = {
+#		central_archives
+#	}	
+#	unlocking_laws = {
+#		law_secret_police
+#	}
+#	disallowing_laws = {
+#		law_no_police
+#		law_local_police
+#	}	
+#	unlocking_production_methods = {
+#		pm_state_oversight_pmg_state_involvement
+#		pm_state_control_pmg_state_involvement
+#		pm_no_appeasement_pmg_appeasement_level
+#	}
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_paper_add = 15
+#			goods_input_small_arms_add = 6
+#			goods_input_artificery_doodads_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 34
+#			goods_output_services_add = 17
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250
+#			building_employment_clerks_add = 1000
+#			building_employment_laborers_add = 3750
+#			building_employment_shopkeepers_add = 500
+#			building_employment_clergymen_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.1
+#			building_clergymen_shares_add = 1
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 3200
+#			state_mortality_turmoil_mult = 0.1
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 50
+#		}
+#	}
+#	country_modifiers = {
+#		unscaled = {
+#			interest_group_ig_devout_approval_add = -0.4
+#		}
+#	}
+#}
+#
+## Vampire Family
+#pm_adventurer_constables_building_vampire_family = {
+#	texture = "gfx/interface/icons/production_method_icons/simple_organization.dds"
+#	unlocking_technologies = {
+#	}	
+#	ai_value = 2500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			
+#			# output goods
+#			goods_output_magical_reagents_add = 6
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000	
+#			building_employment_laborers_add = 3750
+#			building_employment_shopkeepers_add = 500
+#			building_employment_aristocrats_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.4
+#			building_aristocrats_shares_add = 4
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 8000
+#			state_rich_standard_of_living_add = 1
+#			state_poor_standard_of_living_add = -0.5
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 12
+#		}
+#	}
+#}
+#
+#pm_detective_agencies_building_vampire_family = {
+#	texture = "gfx/interface/icons/production_method_icons/horizontal_drawer_cabinets.dds"
+#	unlocking_technologies = {
+#		law_enforcement
+#	}	
+#	disallowing_laws = {
+#		law_no_police
+#	}
+#	ai_value = 5000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_paper_add = 5
+#			goods_input_small_arms_add = 2
+#			# output goods
+#			goods_output_magical_reagents_add = 15
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1000	
+#			building_employment_clerks_add = 250
+#			building_employment_laborers_add = 3750
+#			building_employment_shopkeepers_add = 500
+#			building_employment_aristocrats_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.3
+#			building_aristocrats_shares_add = 3
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 6400
+#			state_rich_standard_of_living_add = 0.8
+#			state_poor_standard_of_living_add = -0.4
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 25
+#		}
+#	}
+#}
+#
+#pm_random_searches_building_vampire_family = {
+#	texture = "gfx/interface/icons/production_method_icons/vertical_filing_cabinets.dds"
+#	unlocking_technologies = {
+#		central_archives
+#	}
+#	disallowing_laws = {
+#		law_no_police
+#		law_guaranteed_liberties
+#	}	
+#	unlocking_production_methods = {
+#		pm_state_oversight_pmg_state_involvement
+#		pm_state_control_pmg_state_involvement
+#		pm_no_appeasement_pmg_appeasement_level
+#	}
+#	ai_value = 7500
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_paper_add = 10
+#			goods_input_small_arms_add = 4
+#			# output goods
+#			goods_output_magical_reagents_add = 30
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250
+#			building_employment_clerks_add = 500
+#			building_employment_laborers_add = 3750
+#			building_employment_shopkeepers_add = 500
+#			building_employment_aristocrats_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.2
+#			building_aristocrats_shares_add = 2
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 4800
+#			state_rich_standard_of_living_add = 0.6
+#			state_poor_standard_of_living_add = -0.3
+#			state_mortality_turmoil_mult = 0.05
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 38
+#		}
+#	}
+#}
+#
+#pm_eyes_of_the_state_building_vampire_family = {
+#	texture = "gfx/interface/icons/production_method_icons/telephone_switchboards.dds"
+#	unlocking_technologies = {
+#		central_archives
+#	}	
+#	unlocking_laws = {
+#		law_secret_police
+#	}
+#	disallowing_laws = {
+#		law_no_police
+#		law_local_police
+#	}	
+#	unlocking_production_methods = {
+#		pm_state_oversight_pmg_state_involvement
+#		pm_state_control_pmg_state_involvement
+#		pm_no_appeasement_pmg_appeasement_level
+#	}
+#	ai_value = 1000
+#	building_modifiers = {
+#		workforce_scaled = {
+#			# input goods
+#			goods_input_paper_add = 15
+#			goods_input_small_arms_add = 6
+#			goods_input_artificery_doodads_add = 3
+#			# output goods
+#			goods_output_magical_reagents_add = 50
+#		}
+#		level_scaled = {
+#			building_employment_adventurers_add = 1250
+#			building_employment_clerks_add = 1000
+#			building_employment_laborers_add = 3750
+#			building_employment_shopkeepers_add = 500
+#			building_employment_aristocrats_add = 250
+#		}
+#		unscaled = {
+#			building_adventurers_mortality_mult = 0.1
+#			building_aristocrats_shares_add = 1
+#		}
+#	}
+#	state_modifiers = {
+#		level_scaled = {
+#			state_pollution_generation_add = 3200
+#			state_rich_standard_of_living_add = 0.4
+#			state_poor_standard_of_living_add = -0.2
+#			state_mortality_turmoil_mult = 0.1
+#		}
+#		workforce_scaled = {
+#			state_quest_progress_rate_add = 50
+#		}
+#	}
+#}
+#### APPEASEMENT
+#pm_no_appeasement_pmg_appeasement_level = {
+#	texture = "gfx/interface/icons/production_method_icons/simple_organization.dds"
+#	ai_value = 1000000
+#}
+#
+#pm_wink_and_a_nod_pmg_appeasement_level = {
+#	texture = "gfx/interface/icons/production_method_icons/simple_organization.dds"
+#	building_modifiers = {
+#		unscaled = {
+#			building_throughput_add = 0.5
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_mult = -0.5
+#		}
+#	}
+#}
+#
+#pm_official_non_intervention_pmg_appeasement_level = {
+#	texture = "gfx/interface/icons/production_method_icons/simple_organization.dds"
+#	building_modifiers = {
+#		unscaled = {
+#			building_throughput_add = 1
+#		}
+#	}
+#	state_modifiers = {
+#		workforce_scaled = {
+#			state_quest_progress_rate_mult = -1
+#		}
+#	}
+#}
+#
+###### OWNERSHIP
+#pm_private_adventurers_pmg_state_involvement = {
+#	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds"
+#	disallowing_laws = {
+#		law_command_economy
+#	}
+#	building_modifiers = {
+#		unscaled = {
+#			building_adventurers_shares_add = 10
+#			building_employment_shopkeepers_add = 2
+#		}
+#	}
+#}
+#
+#pm_state_oversight_pmg_state_involvement = {
+#	texture = "gfx/interface/icons/production_method_icons/publicly_traded.dds"
+#	unlocking_technologies = {
+#		central_archives
+#	}
+#	disallowing_laws = {
+#		law_no_police
+#		law_peasant_levies
+#	}
+#	building_modifiers = {
+#		level_scaled = {
+#			building_employment_adventurers_add = -400
+#			building_employment_officers_add = 400
+#		}
+#		unscaled = {
+#			building_adventurers_shares_add = 6
+#			building_officers_shares_add = 2
+#			building_government_shares_add = 2
+#			building_employment_shopkeepers_add = 2
+#			building_throughput_add = -0.25
+#		}
+#	}
+#	state_modifiers = {
+#		unscaled = {
+#			state_quest_progress_rate_mult = 0.5	
+#		}
+#	}
+#}
+#
+#pm_state_control_pmg_state_involvement = {
+#	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
+#	unlocking_technologies = {
+#		central_archives
+#	}
+#	disallowing_laws = {
+#		law_no_police
+#		law_peasant_levies
+#		law_laissez_faire
+#	}
+#	building_modifiers = {
+#		level_scaled = {
+#			building_employment_adventurers_add = -1200
+#			building_employment_officers_add = 400
+#			building_employment_soldiers_add = 800
+#		}
+#		unscaled = {
+#			building_adventurers_shares_add = 6
+#			building_officers_shares_add = 2
+#			building_government_shares_add = 2
+#			building_employment_shopkeepers_add = 2
+#			building_throughput_add = -0.5
+#		}
+#	}
+#	state_modifiers = {
+#		unscaled = {
+#			state_quest_progress_rate_mult = 1	
+#		}
+#	}
+#}
+
+# pm_local_adventuring_parties_building_adventurers_wanted = {
+# 	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+# 	building_modifiers = {
+# 		level_scaled = {
+# 			building_employment_adventurers_add = 1000
+# 		}
+# 	}
+# 	state_modifiers = {
+# 		workforce_scaled = {
+# 			state_quest_progress_rate_add = 1
+# 			state_quest_progress_rate_mult = 0.05
+# 		}
+# 	}
+# }
+
+# pm_hire_adventurer_companies_building_adventurers_wanted = {
+# 	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+# 	building_modifiers = {
+# 		level_scaled = {
+# 			building_employment_adventurers_add = 2000
+# 		}
+# 		workforce_scaled = {
+# 			# input goods
+# 			goods_input_paper_add = 3	#its quest posters bro
+# 		}
+# 	}
+# 	state_modifiers = {
+# 		workforce_scaled = {
+# 			state_quest_progress_rate_add = 1
+# 			state_quest_progress_rate_mult = 0.05
+# 		}
+# 	}
+# }
+
+# pm_military_operation_building_adventurers_wanted = {
+# 	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+# 	building_modifiers = {
+# 		level_scaled = {
+# 			building_employment_soldiers_add = 1500
+# 			building_employment_officers_add = 500
+# 		}
+# 		workforce_scaled = {
+# 			# input goods
+# 			goods_input_small_arms_add = 1
+# 			goods_input_ammunition_add = 1
+# 		}
+# 	}
+# 	state_modifiers = {
+# 		workforce_scaled = {
+# 			state_quest_progress_rate_add = 1
+# 			state_quest_progress_rate_mult = 0.05
+# 		}
+# 	}
+# }
+
+# pm_excavation_crew_building_adventurers_wanted = {
+# 	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+# 	building_modifiers = {
+# 		level_scaled = {
+# 			building_employment_laborers_add = 1500
+# 			building_employment_machinists_add = 500
+# 		}
+# 		workforce_scaled = {
+# 			# input goods
+# 			goods_input_explosives_add = 1
+# 			goods_input_tools_add = 2
+# 		}
+# 	}
+# 	state_modifiers = {
+# 		workforce_scaled = {
+# 			state_quest_progress_rate_add = 1
+# 			state_quest_progress_rate_mult = 0.05
+# 		}
+# 	}
+# }
+
+# pm_internal_agents_building_adventurers_wanted = {
+# 	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+# 	building_modifiers = {
+# 		level_scaled = {
+# 			building_employment_bureaucrats_add = 500
+# 			building_employment_soldiers_add = 1000
+# 			building_employment_officers_add = 500
+# 		}
+# 		workforce_scaled = {
+# 			# input goods
+# 			goods_input_paper_add = 1
+# 			goods_input_tools_add = 2
+# 		}
+# 	}
+# 	state_modifiers = {
+# 		workforce_scaled = {
+# 			state_quest_progress_rate_add = 1
+# 			state_quest_progress_rate_mult = 0.05
+# 		}
+# 	}
+# }
+
+# pm_local_support_building_adventurers_wanted = {
+# 	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+# 	building_modifiers = {
+# 		level_scaled = {
+# 			building_employment_adventurers_add = 250
+# 			building_employment_soldiers_add = 500
+# 			building_soldiers_mortality_mult = 0.5
+# 		}
+# 	}
+# 	state_modifiers = {
+# 		workforce_scaled = {
+# 			state_quest_progress_rate_add = 1
+# 			state_quest_progress_rate_mult = 0.05
+# 		}
+# 	}
+# }
+
+# pm_internal_agents_building_adventurers_wanted = {
+# 	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+# 	building_modifiers = {
+# 		level_scaled = {
+# 			building_employment_bureaucrats_add = 250
+# 			building_employment_soldiers_add = 500
+# 			building_employment_officers_add = 50
+# 		}
+# 	}
+# 	state_modifiers = {
+# 		workforce_scaled = {
+# 			state_quest_progress_rate_add = 1
+# 			state_quest_progress_rate_mult = 0.05
+# 		}
+# 	}
+# }
+
+
+
+# pm_unregulated_loot_building_adventurers_wanted = {
+# 	texture = "gfx/interface/icons/production_method_icons/privately_owned.dds" 
+
+# 	building_modifiers = {
+# 		level_scaled = {
+# 		}
+# 		unscaled = {
+# 			building_adventurers_shares_add = 5
+# 		}
+# 	}
+# }
+
+# pm_regulated_distribution_building_adventurers_wanted = {
+# 	texture = "gfx/interface/icons/production_method_icons/publicly_traded.dds"
+
+# 	building_modifiers = {
+# 		level_scaled = {
+# 			building_employment_clerks_add = 200
+# 		}
+# 		unscaled = {
+# 			building_adventurers_shares_add = 2
+# 			building_clerks_shares_add = 2
+# 		}
+# 	}
+# }
+
+# pm_government_red_tape_building_adventurers_wanted = {
+# 	texture = "gfx/interface/icons/production_method_icons/government_run.dds"
+
+# 	building_modifiers = {
+# 		level_scaled = {
+# 			building_employment_clerks_add = 200
+# 			building_employment_bureaucrats_add = 200
+# 		}
+# 		unscaled = {
+# 			building_bureaucrats_shares_add = 5
+# 		}
+# 	}
+# }
+
+
+# #List of Adventurers Wanted type
+
+# #Default Template
+# default_building_adventurers_wanted = {
+# 	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+# 	building_modifiers = {
+# 		workforce_scaled = {
+# 			goods_output_damestear_add = 5
+# 		}
+# 		#level_scaled = {
+# 		#	building_employment_adventurers_add = 500
+# 		#}
+# 		unscaled = {
+# 			building_adventurers_mortality_mult = 0.25
+# 			building_soldiers_mortality_mult = 0.25
+# 		}
+# 	}
+
+# 	country_modifiers = {
+# 		#workforce_scaled = {
+# 		#	country_minting_add = 100
+# 		#}
+# 	}
+
+# 	state_modifiers = {
+# 		unscaled = {
+# 			state_infrastructure_add = -10	#standard malus is these two
+# 			state_tax_capacity_add = -10
+# 		}
+# 		workforce_scaled = {
+# 				state_quest_progress_rate_add = 1
+# 				state_quest_progress_rate_mult = 0.05
+# 		}
+# 	}
+# }
+
+# #Combat Type (influences generic pms above)
+
+# combat_ancient_catacombs_building_adventurers_wanted = {
+# 	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+# 	building_modifiers = {
+# 		workforce_scaled = {
+# 			goods_output_gold_add = 5
+# 			goods_output_arcane_curios_add = 5
+# 			goods_output_magical_reagents_add = 30
+# 			goods_output_damestear_add = 5
+# 		}
+# 		#level_scaled = {
+# 		#	building_employment_adventurers_add = 500
+# 		#}
+# 		unscaled = {
+# 			building_adventurers_mortality_mult = 0.25
+# 			building_soldiers_mortality_mult = 0.25
+# 		}
+# 	}
+
+# 	country_modifiers = {
+# 		workforce_scaled = {
+# 			country_minting_add = 100
+# 		}
+# 	}
+
+# 	state_modifiers = {
+# 		unscaled = {
+# 			state_infrastructure_add = -10	#standard malus is these two
+# 			state_tax_capacity_add = -10
+# 		}
+# 		workforce_scaled = {
+# 			state_quest_progress_rate_add = 1
+# 			state_quest_progress_rate_mult = 0.05
+# 	}
+# 	}
+# }
+
+# combat_dragon_building_adventurers_wanted = {
+# 	#texture = "gfx/interface/icons/production_method_icons/gold_mining.dds"
+	
+# 	building_modifiers = {
+# 		workforce_scaled = {
+# 			goods_output_gold_add = 10	#Brigand Army Base
+# 			goods_output_magical_reagents_add = 100
+# 		}
+# 		level_scaled = {
+# 			building_employment_adventurers_add = 1000
+# 		}
+# 		unscaled = {
+# 			building_adventurers_mortality_mult = 2
+# 		}
+# 	}
+
+# 	country_modifiers = {
+# 		workforce_scaled = {
+# 			country_minting_add = 200
+# 		}
+# 	}
+
+# 	state_modifiers = {
+# 		workforce_scaled = {
+# 			state_mortality_mult = -0.5
+# 			state_quest_progress_rate_add = 1
+# 			state_quest_progress_rate_mult = 0.05
+# 		}
+# 	}
+# }

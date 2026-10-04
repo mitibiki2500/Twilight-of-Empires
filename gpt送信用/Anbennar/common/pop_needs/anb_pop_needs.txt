@@ -1,0 +1,31 @@
+﻿# goods						The good being referenced
+# weight					The base weight that is applied to this good based on market Sell Order share
+# max_supply_share			The maximum weight that can be applied to this good based on market Sell Order share, relative supply above this amount will have no further impact on base weight
+# min_supply_share			If above 0, a minimum of this multiplier of the base weight will be applied to a good regardless of its market Sell Order share
+
+popneed_magical_items = { #TODO: add in buy packages
+ 	default = magical_reagents
+
+ 	entry = {
+ 		goods = magical_reagents
+		
+ 		weight = 0.5			# very low as it's just not comparable to actual finished magical goods (like silk for luxury items)
+ 		max_supply_share = 0.5	# while it's the default, pops should always want better if possible (like wood for heating)
+		min_supply_share = 0
+ 	} 
+
+ 	entry = {
+ 		goods = arcane_curios
+ 		weight = 2
+ 		max_supply_share = 1
+ 		min_supply_share = 0
+ 	} 
+
+	 entry = {
+		goods = artificery_doodads
+		weight = 1
+		max_supply_share = 0.25	# lowered a lot so that curios are the main consumer good ; doodad pop consumption is just to help quickstart the industry
+		min_supply_share = 0
+	} 
+
+}

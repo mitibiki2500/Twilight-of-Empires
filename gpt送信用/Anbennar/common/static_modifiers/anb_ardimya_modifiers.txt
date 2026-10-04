@@ -1,0 +1,72 @@
+﻿ardimya_navy_investment = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+    country_expenses_add = 300
+    interest_group_ig_armed_forces_approval_add = 3
+}
+
+ardimya_navy_no_investment = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+    interest_group_ig_armed_forces_approval_add = -3
+}
+
+ardimya_navy_completion = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+    interest_group_ig_armed_forces_approval_add = 5
+    interest_group_ig_armed_forces_pol_str_mult = 0.2
+    country_military_tech_research_speed_mult = 0.1
+    country_legitimacy_base_add = 10
+    country_prestige_from_navy_power_projection_mult = 0.2
+}
+
+ardimya_navy_failure = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+    interest_group_ig_armed_forces_approval_add = -10
+    interest_group_ig_armed_forces_pol_str_mult = -0.2
+    country_legitimacy_base_add = -10
+    country_prestige_from_navy_power_projection_mult = -0.25
+}
+
+ardimya_navy_timeout = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+    interest_group_ig_armed_forces_approval_add = -5
+    interest_group_ig_armed_forces_pol_str_mult = -0.1
+    country_legitimacy_base_add = -5
+    country_prestige_from_navy_power_projection_mult = -0.1
+}
+
+ardimya_navy_invest_advice_ignored = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+    character_popularity_add = -25
+}
+
+ardimya_navy_invest_advice_listened = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+    character_popularity_add = 25
+}
+
+ardimya_admiral_fail = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+    character_popularity_add = -50
+}
+
+ardimya_admiral_succeed = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+    character_popularity_add = 50
+}
+
+ardimya_demand_completed = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+    interest_group_ig_armed_forces_approval_add = 5
+    interest_group_ig_armed_forces_pol_str_mult = 0.1
+}
+
+ardimya_demand_failed = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+    interest_group_ig_armed_forces_approval_add = -8
+    interest_group_ig_armed_forces_pol_str_mult = -0.1
+}
+
+ardimya_demand_no = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+    interest_group_ig_armed_forces_approval_add = -4
+}

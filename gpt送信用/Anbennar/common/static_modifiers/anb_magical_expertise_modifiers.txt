@@ -1,0 +1,304 @@
+﻿country_magical_expertise_deficit_malus_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_tech_spread_mult = -0.2
+}
+
+country_magical_expertise_surplus_bonus_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	state_archmages_investment_pool_efficiency_mult = 0.20
+}
+
+country_magical_spell_cooldown = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+}
+
+
+## Military spells
+
+modifier_evocation_corps = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_combat_unit_type_cannon_artillery_offense_mult = 0.04
+	unit_combat_unit_type_mobile_artillery_offense_mult = 0.04
+	unit_combat_unit_type_shrapnel_artillery_offense_mult = 0.04
+}
+modifier_mageshields = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_army_defense_mult = 0.03
+}
+modifier_spellknights = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_combat_unit_type_hussars_offense_add = 3
+	unit_combat_unit_type_hussars_defense_add = 3
+	unit_combat_unit_type_dragoons_offense_add = 3
+	unit_combat_unit_type_dragoons_defense_add = 3
+	unit_combat_unit_type_cuirassiers_offense_add = 3
+	unit_combat_unit_type_cuirassiers_defense_add = 3
+	unit_combat_unit_type_lancers_offense_add = 3
+	unit_combat_unit_type_lancers_defense_add = 3
+	#unit_combat_unit_type_war_rigs_offense_add = 3
+	#unit_combat_unit_type_war_rigs_defense_add = 3
+	#unit_combat_unit_type_turret_cavalry_offense_add = 3
+	#unit_combat_unit_type_turret_cavalry_defense_add = 3
+}
+modifier_foreseen_battle  = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	character_battle_condition_surprise_maneuver_mult = 0.5
+	character_battle_condition_charted_terrain_mult = 0.5
+}
+modifier_undead_army = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_combat_unit_type_undead_infantry_offense_add = 3
+	unit_combat_unit_type_undead_infantry_defense_add = 3
+}
+modifier_master_of_the_plains = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_offense_flat_mult = 0.05
+	battle_combat_width_mult = 0.05
+}
+modifier_earthshaper_fortifications = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	battle_defense_owned_province_mult = 0.05
+	military_formation_attrition_risk_mult = -0.05
+	military_formation_army_movement_speed_mult = 0.05
+}
+modifier_vicious_chants = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_morale_damage_mult = 0.05
+}
+modifier_natures_gift = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_supply_consumption_mult = -0.05
+	country_military_goods_cost_mult = -0.05
+}
+modifier_planewalker_saboteur = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	character_battle_condition_surprise_maneuver_mult = 0.5
+	unit_occupation_mult = 0.05
+}
+modifier_one_with_the_tree = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_defense_forested_mult = 0.05
+	unit_offense_forested_mult = 0.05
+}
+modifier_chi_warriors = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_combat_unit_type_irregular_infantry_offense_mult = 0.04
+	unit_combat_unit_type_line_infantry_offense_mult = 0.04
+	unit_combat_unit_type_skirmish_infantry_offense_mult = 0.04
+	unit_army_experience_gain_mult = 0.05
+
+}
+modifier_imbued_armor = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_combat_unit_type_irregular_infantry_defense_mult = 0.04
+	unit_combat_unit_type_line_infantry_defense_mult = 0.04
+	unit_combat_unit_type_skirmish_infantry_defense_mult = 0.04
+}
+modifier_aakhet_flames_calamity = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	unit_army_offense_mult = 0.03
+	country_prestige_from_army_power_projection_mult = 0.05
+	unit_devastation_mult = 0.05
+}
+modifier_neferkhet_incantation_dust = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	battle_defense_owned_province_mult = 0.05
+	character_battle_condition_camouflaged_mult = 0.1
+	character_battle_condition_surprise_maneuver_mult = 0.2
+}
+modifier_amiskhet_summoning_gale = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_positive.dds
+	ship_hull_damage_mult = 0.03
+	ship_screening_mult = 0.05 # polk: was unit_convoy_raiding_mult = 0.05 , which doesnt exist post 1.13
+	state_trade_advantage_mult = 0.05
+}
+
+
+## Production spells
+
+modifier_deposit_divination = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	building_group_bg_mining_throughput_add = 0.03
+	country_resource_discovery_chance_mult = 0.05
+}
+modifier_spellwoven_luxury = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	building_furniture_manufactory_throughput_add = 0.05
+	building_textile_mill_throughput_add = 0.05
+}
+modifier_magical_arts = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	building_art_academy_throughput_add = 0.05
+	country_prestige_mult = 0.05
+}
+modifier_mass_plant_growth = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	building_group_bg_agriculture_throughput_add = 0.05
+	building_group_bg_plantations_throughput_add = 0.05
+	state_food_security_add = 0.02 # was mult, that however doesnt work/exist
+}
+modifier_enchanted_tools = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_construction_add = 3
+	country_construction_goods_cost_mult = -0.01
+}
+modifier_animal_companionship = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	building_group_bg_ranching_throughput_add = 0.1
+	building_group_bg_fishing_throughput_add = 0.1
+	building_group_bg_whaling_throughput_add = 0.1
+	building_group_bg_damestear_dives_throughput_add = 0.4
+	unit_combat_unit_type_dragoons_offense_add = 1
+}
+modifier_attuned_forestery = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	building_group_bg_logging_throughput_add = 0.05
+	building_group_bg_logging_mortality_mult = -0.05
+	building_group_bg_logging_fertility_mult = 0.05
+}
+modifier_roadshaper_wavechanger = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	state_trade_advantage_mult = 0.05
+	state_trade_capacity_mult = 0.05
+	country_ship_group_supply_ships_construction_efficiency_add = 0.05
+}
+modifier_storm_regulation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	building_group_bg_agriculture_throughput_add = 0.05
+	building_group_bg_plantations_throughput_add = 0.05
+	state_bad_weather_chance_mult = -0.05
+}
+modifier_inscribed_architecture = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	state_infrastructure_from_population_mult = 0.05
+	state_infrastructure_from_population_max_mult = 0.05
+	goods_output_transportation_mult = 0.05
+}
+modifier_ritualized_chi_siphoning = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	building_throughput_add = 0.02
+	state_mortality_mult = 0.02
+}
+modifier_forge_and_flame = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	goods_output_iron_mult = 0.03
+	goods_output_steel_mult = 0.03
+}
+modifier_magical_automata = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	building_working_conditions_mult = -0.1
+	building_group_bg_logging_employee_mult = -0.05
+	building_group_bg_mining_employee_mult = -0.05
+	building_group_bg_agriculture_employee_mult = -0.05
+	building_group_bg_plantations_employee_mult = -0.05
+}
+modifier_horutep_lash_dominance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_liberty_desire_of_subjects_add = -0.02
+	building_group_bg_plantations_throughput_add = 0.05
+	building_slaves_mortality_mult = -0.05
+	building_laborers_mortality_mult = -0.05
+}
+modifier_shurkhet_elevation_sorrow = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	building_group_bg_agriculture_throughput_add = 0.05
+	goods_output_transportation_mult = 0.05
+	country_ship_group_supply_ships_construction_efficiency_add = 0.05
+}
+modifier_baqtkhet_sculpting_land = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	state_infrastructure_from_population_max_add = 5
+	building_coal_mine_throughput_add = 0.05
+	building_group_bg_oil_extraction_throughput_add = 0.05
+}
+
+
+## Society spells
+
+modifier_perfected_terrain = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	state_migration_pull_mult = 0.05
+	country_mass_migration_attraction_mult = 0.05
+	state_colony_growth_speed_mult = 0.05
+}
+modifier_magical_feasts = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_leverage_generation_mult = 0.05
+	country_liberty_desire_of_subjects_add = -0.01
+}
+modifier_magical_authority = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_authority_mult = 0.05
+	country_legitimacy_base_add = 3
+}
+modifier_transmuted_gold_reserves = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_minting_mult = 0.05
+	country_loan_interest_rate_mult = -0.05
+}
+modifier_unleashed_chaos = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	state_birth_rate_mult = 0.02
+	country_authority_mult = -0.04
+}
+modifier_grandstanding = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_diplomatic_play_maneuvers_add = 10
+	country_initiator_war_goal_maneuver_cost_mult = -0.05
+}
+modifier_divining_intent = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_law_enactment_success_add = 0.03
+}
+modifier_veneration_of_tradition = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_loyalism_increases_full_acceptance_mult = 0.05
+	country_bureaucracy_investment_cost_factor_mult = -0.05
+	interest_group_ig_landowners_approval_add = 0.5
+}
+modifier_portable_runes = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	state_lower_strata_standard_of_living_add = 0.5
+	country_government_dividends_efficiency_add = 0.05
+}
+modifier_social_sanctuaries = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_acceptance_shared_heritage_trait_add = 3 
+	country_acceptance_shared_heritage_trait_group_add = 3
+	country_acceptance_no_shared_heritage_trait_add = 3
+	country_tech_spread_mult = 0.01
+	state_radicalism_increases_violent_hostility_mult = -0.05
+	state_radicalism_increases_cultural_erasure_mult = -0.05
+	state_radicalism_increases_open_prejudice_mult = -0.05
+}
+modifier_modern_miracle = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	state_conversion_mult = 0.05
+	state_turmoil_effects_mult = -0.05
+}
+# modifier_inner_spirit = {
+# 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+# 	state_mortality_mult = -0.05
+# }
+modifier_rituals_of_empathy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_infamy_decay_mult = 0.05
+}
+modifier_elikhet_gaze_judgement = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	power_bloc_mandate_progress_mult = 0.05
+	country_opposition_ig_approval_add = 0.5
+	#country_max_declared_interests_add = 1 #something with involvement now?
+}
+modifier_nirakhet_breath_life = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	state_birth_rate_mult = 0.01
+	country_improve_relations_speed_mult = 0.1
+	state_conversion_mult = 0.05
+}
+modifier_shurkhet_voice_wisdom = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	state_education_access_add = 0.02
+	state_migration_pull_mult = 0.05
+	state_radicals_from_political_movements_mult = -0.05
+}

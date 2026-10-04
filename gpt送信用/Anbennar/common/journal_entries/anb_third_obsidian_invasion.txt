@@ -1,0 +1,31 @@
+﻿je_third_obsidian_invasion = {
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	
+	group = je_group_historical_content
+
+	complete = {
+		owns_entire_state_region = STATE_VERKAL_SKOMDIHR
+		owns_entire_state_region = STATE_OVDAL_LODHUM
+		owns_entire_state_region = STATE_ARG_ORDSTUN
+		owns_entire_state_region = STATE_ORLGHELOVAR
+		owns_entire_state_region = STATE_SHAZSTUNDIHR
+		owns_entire_state_region = STATE_ARGROD
+		owns_entire_state_region = STATE_ARGROD_TERMINUS
+		
+		any_scope_state = {
+			state_region = s:STATE_VERKAL_SKOMDIHR
+			any_scope_building = {
+				is_building_type = building_dwarven_hold
+				level >= 2
+			}
+			#add runelink later
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = obsidian_invasions.2 }
+	}
+
+	weight = 100
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

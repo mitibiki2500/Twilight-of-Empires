@@ -1,0 +1,3 @@
+﻿l_english:
+ DATA_CULTURE_NAME_TOOLTIP:2 "[Concept('concept_cultural_trait', '$concept_cultural_traits$')]: [Culture.GetCulturalTraitsDesc]\n[Concept('concept_race', '$concept_race$')]: [Culture.GetCustom('race_name')]\n[concept_religion]: [Culture.GetReligionsDesc]\n[concept_obsession]: [Culture.GetObsessionsDesc]\n[concept_taboo]: [Culture.GetTaboosDesc][ConcatIfNeitherEmpty( '\n\n', AddLocalizationIf( GetPlayer.IsValid, 'DATA_CULTURE_NAME_TOOLTIP_INGAME_ADDED' ) )]"
+ DATA_CULTURE_NAME_TOOLTIP_INGAME_ADDED:0 "[Culture.GetCountryDiscriminationStatus(GetPlayer.Self)][AddLocalizationIf(NotEqualTo_int64(Culture.GetPopulation(GetPlayer.Self),'(int64)0'),'CULTURE_IN_COUNTRY_DESC')]"

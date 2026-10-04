@@ -1,0 +1,293 @@
+﻿## Command example, if you desire any default behavior in your own strategy (found in 00_default_strategy.txt), simply delete the whole block
+## Check 00_default_strategy.txt in general!! Add overrides here for things you want to change
+## Potentially just add your JE conquest trigger into 00_ai_triggers.txt instead of making a new strategy if its simple
+ai_strategy_reunify_command = {
+    icon = "gfx/interface/icons/ai_strategy_icons/unification.dds"
+    
+    type = diplomatic
+    
+	# Set this to true if you want the AI to be able to form a power bloc while they have this strategy on
+    will_form_power_bloc = {}
+
+	# AI will avoid going over this infamy unless it REALLY wants the wargoal
+	# Default: 50
+    undesirable_infamy_level = {
+        value = 50
+    }
+
+	# AI will never go over this infamy
+	# Default: 100 
+    unacceptable_infamy_level = {
+        value = 100
+    }
+
+	# How much ideological differences influence diplomacy
+	# Default 1.0
+    ideological_opinion_effect_mult = {
+        value = 0.5
+    }
+    
+	# How many maneuvers spent in an initial diplomatic phase
+	# Default 0.35, reduced to 0.25 if the enemy is a higher rank than you 
+    wargoal_maneuvers_fraction = {
+        value = 0.35
+    }       
+
+	# AI desire to be neutral in a diplomatic play they can join in on
+	# Default: 50	
+    diplomatic_play_neutrality = {
+        value = 50
+    }
+    
+	# Setting this higher makes the AI never back down in a diplomatic play and to join a side more often
+	# Default: 50
+    diplomatic_play_boldness = {
+        value = 100
+    }
+
+	# Value of an obligation for a war sway
+	# Default: 5, higher if the person with the obligation is a higher rank than us 
+    obligation_value = {
+        if = {
+			# We DON'T want their obligation here because it can lead to an alliance and stagnate the thunderdome
+            limit = {
+                OR = {
+                    scope:target_country = { can_form_nation = R21 }
+                    scope:target_country = { this = c:R19 }
+                }
+            }
+            value = 0
+        }
+    }
+
+	# A multiplier for how powerful they see their own army as
+	# Default: 1.0, 2.0 against pariah (high infamy) and your overlord
+    recklessness = {
+        value = 1.1
+    }   
+    
+	# How likely you start a diplomatic play 
+	# Default 0.5, with a complex default behavior 
+	# This value is one of the biggest dials for how often the AI wars 
+	# Anything >= 100 is basically nonstop war 
+    aggression = {
+        value = 0.5
+        if = {
+			# If it's a JE objective, or someone competing for the JE, be aggressive against them.
+            limit = {
+                OR = {
+                    scope:target_country = {
+                        any_scope_state = {
+                            OR = {
+                                state_region = s:STATE_GHILAKHAD
+                                state_region = s:STATE_HOBGOBLIN_HOMELANDS
+                                state_region = s:STATE_RAGHAJANDI
+                                state_region = s:STATE_GHATASAK
+                                state_region = s:STATE_SHAMAKHAD_PLAINS
+                                state_region = s:STATE_SIR
+                                state_region = s:STATE_CENTRAL_NADIMRAJ
+                                state_region = s:STATE_EAST_NADIMRAJ
+                                state_region = s:STATE_TUGHAYASA
+                            }
+                        }
+                    }
+                    scope:target_country = { can_form_nation = R21 }
+                    scope:target_country = { this = c:R19 }
+                }
+                can_reach_target_country = yes
+                game_date > 1821.1.2
+            }
+            value = 35
+			
+			# 10 years left.. lets finish this or die 
+			if = { limit = { game_date > 1841.1.2 }
+			value = 100
+			}
+        }   
+    }
+
+	# Multiplier to the value of a building group to the AI
+	# Default: 1.0
+    building_group_weights = {
+        bg_army = 1.5
+    }
+
+	# 25% larger wanted army size than default behavior
+    wanted_army_size = {
+        multiply = 1.25
+    }
+
+	# General desire to own a state by another country
+	# Complex default behavior 
+	# Any JE state is valuable
+    state_value = {
+        if = {
+            limit = {
+                scope:target_state = {
+                    OR = {
+                        state_region = s:STATE_GHILAKHAD
+                        state_region = s:STATE_HOBGOBLIN_HOMELANDS
+                        state_region = s:STATE_RAGHAJANDI
+                        state_region = s:STATE_GHATASAK
+                        state_region = s:STATE_SHAMAKHAD_PLAINS
+                        state_region = s:STATE_SIR
+                        state_region = s:STATE_CENTRAL_NADIMRAJ
+                        state_region = s:STATE_EAST_NADIMRAJ
+                        state_region = s:STATE_TUGHAYASA
+                    }
+                }
+                can_reach_target_state = yes
+            }
+            add = 200
+        }
+    }
+    
+	# How much we value each war goal in a diplomatic play 
+    wargoal_scores = {
+		# Annex anyone who is competing for our JE
+        annex_country = {
+            if = {
+                limit = {
+                    OR = {
+                        scope:target_country = { can_form_nation = R21 }
+                        scope:target_country = { this = c:R19 }
+                    }
+                    can_reach_target_country = yes
+                }
+                add = 500
+            }       
+        }
+		# Conquer any JE objective   
+        conquer_state = {
+            if = {
+                limit = {
+                    scope:target_state = {              
+                            OR = {
+                                state_region = s:STATE_GHILAKHAD
+                                state_region = s:STATE_HOBGOBLIN_HOMELANDS
+                                state_region = s:STATE_RAGHAJANDI
+                                state_region = s:STATE_GHATASAK
+                                state_region = s:STATE_SHAMAKHAD_PLAINS
+                                state_region = s:STATE_SIR
+                                state_region = s:STATE_CENTRAL_NADIMRAJ
+                                state_region = s:STATE_EAST_NADIMRAJ
+                                state_region = s:STATE_TUGHAYASA
+                            }
+                    }
+                    can_reach_target_state = yes
+                }
+                add = 100
+            }
+        }
+		# This homeland conveniently unites all JE states 
+		# return is higher than conquer because its a better option.
+        return_state = {
+            if = {
+                limit = {
+                    scope:target_state = {                  
+                        state_region = {
+                            OR = {
+                                is_homeland = cu:azepyanunin
+                            }
+                        }   
+                    }
+                    can_reach_target_state = yes
+                }
+                add = 300
+            }
+        }       
+    }           
+    
+	# Setting strategic desires towards other countries when our update is rolled 
+    secret_goal_scores = {
+		# Don't befriend anyone who has our JE objectives
+        befriend = {
+            trigger = {
+                scope:target_country = {
+                    any_scope_state = {
+                        OR = {
+                            state_region = s:STATE_GHILAKHAD
+                            state_region = s:STATE_HOBGOBLIN_HOMELANDS
+                            state_region = s:STATE_RAGHAJANDI
+                            state_region = s:STATE_GHATASAK
+                            state_region = s:STATE_SHAMAKHAD_PLAINS
+                            state_region = s:STATE_SIR
+                            state_region = s:STATE_CENTRAL_NADIMRAJ
+                            state_region = s:STATE_EAST_NADIMRAJ
+                            state_region = s:STATE_TUGHAYASA
+                        }
+                    }
+                }
+            }
+            score = {
+                value = -10000
+            }
+        }
+		# Don't reconcile other hobgoblins
+        reconcile = { 
+            trigger = {
+                OR = {
+                    scope:target_country = { can_form_nation = R21 }
+                    scope:target_country = { this = c:R19 }
+                }
+            }
+            score = {
+                value = -10000
+            }
+        }
+		# Don't protect other hobgoblins
+        protect = {
+            trigger = {
+                OR = {
+                    scope:target_country = { can_form_nation = R21 }
+                    scope:target_country = { this = c:R19 }
+                }
+            }
+            score = {
+                value = -10000
+            }
+        }
+		# Conquer anyone who has our JE objectives. This replaces the 00_ai_triggers.txt JE conquest boost
+        conquer = {
+            trigger = {
+                scope:target_country = {
+                    any_scope_state = {
+                        OR = {
+                            state_region = s:STATE_GHILAKHAD
+                            state_region = s:STATE_HOBGOBLIN_HOMELANDS
+                            state_region = s:STATE_RAGHAJANDI
+                            state_region = s:STATE_GHATASAK
+                            state_region = s:STATE_SHAMAKHAD_PLAINS
+                            state_region = s:STATE_SIR
+                            state_region = s:STATE_CENTRAL_NADIMRAJ
+                            state_region = s:STATE_EAST_NADIMRAJ
+                            state_region = s:STATE_TUGHAYASA
+                        }
+                    }
+                }
+            }
+            score = {
+                value = 10000
+            }
+        }
+	}          
+
+	# Conditions to get this diplomatic strategy assigned
+	# If we are Dragon Command and any Command splinters exists
+	# OR
+	# If the formable does not exist yet and we can form it
+    possible = {
+        AND = {
+            NOT = { exists = c:R21 }
+            can_form_nation = R21
+            game_date < 1851.1.2
+        }
+    }
+
+	# Chance we get this strategy upon reroll if its possible
+	# Default weights are around 20-50, so 9000 is pretty much "always"
+	# This forces it on until the possible condition is no longer possible 
+    weight = {
+        value = 9000        
+    }
+}

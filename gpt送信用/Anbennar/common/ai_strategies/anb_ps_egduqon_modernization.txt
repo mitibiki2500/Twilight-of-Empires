@@ -1,0 +1,99 @@
+﻿ai_strategy_egduqon_modernization = { #Kalsyto, mostly copied from Meiji
+	icon = "gfx/interface/icons/ai_strategy_icons/progressive_agenda.dds"
+	
+	type = political
+	
+	revolution_aversion = {
+		value = 10
+	}
+	
+	min_law_chance_to_pass = {
+		value = 10
+		if = {
+			limit = { ai_has_reasons_to_not_oppose_law = yes }			
+			multiply = 0.5
+		}	
+	}
+	
+	max_progressiveness = {
+		value = 100
+	}
+	
+	max_regressiveness = {
+		value = 25
+	}
+	
+	change_law_chance = { 
+		value = 50
+	}	
+	
+	pro_interest_groups = {
+		ig_intelligentsia
+		ig_industrialists
+	}
+	
+	anti_interest_groups = {
+		ig_landowners
+		ig_rural_folk
+	}
+	
+	pro_movements = {
+		movement_liberal
+		movement_modernizer
+		movement_anti_slavery
+		movement_land_reform
+		movement_positivist
+		movement_utilitarian
+		movement_feminist
+		movement_corporatist
+		movement_radical
+		movement_religious_majority
+		movement_cultural_majority
+	}
+	
+	anti_movements = {
+		movement_socialist
+		movement_communist
+		movement_anarchist
+		movement_nihilist
+		movement_fascist
+		movement_reactionary
+		movement_pro_slavery
+		movement_royalist_absolutist
+		movement_royalist_constitutional
+		movement_religious_minority
+		movement_cultural_minority
+	}		
+
+	institution_scores = {
+		institution_colonial_affairs = {	
+			value = 75	
+		}				
+		institution_social_security = {	
+			value = 100			
+		}
+		institution_workplace_safety = {	
+			value = 100			
+		}		
+		institution_schools = {	
+			value = 1000
+		}		
+		institution_police = {	
+			value = 75			
+		}		
+		institution_health_system = {	
+			value = 100			
+		}		
+		institution_home_affairs = {	
+			value = 100			
+		}				
+	}
+
+	possible = {
+		has_journal_entry = je_egduqon_main
+	}
+	
+	weight = {
+		value = 10000		
+	}
+}

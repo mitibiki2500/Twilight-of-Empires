@@ -1,0 +1,1671 @@
+﻿POPS = {
+	s:STATE_DAMESEAR = {
+		region_state:A01 = {
+			create_pop = {
+				culture = costine
+				size = 1365600
+				religion = ravelian
+			}
+            create_pop = {
+				culture = costine
+				size = 455200
+				religion = corinite
+			}
+            create_pop = {
+				culture = costine
+				size = 455200
+				religion = regent_court
+			}
+			create_pop = {
+				culture = beefoot_halfling
+				size = 611100
+				religion = ravelian
+			}
+            create_pop = {
+				culture = beefoot_halfling
+				size = 261900
+				religion = corinite
+			}
+			create_pop = {
+				culture = city_goblin
+				size = 246500
+				religion = the_thought
+			}
+            create_pop = {
+				culture = city_goblin
+				size = 246500
+				religion = ravelian
+			}
+			create_pop = {
+				culture = silver_dwarf
+				size = 258300
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 24000
+				religion = ravelian
+			}
+            create_pop = {
+				culture = havener_elf
+				size = 8000
+				religion = corinite
+			}
+            create_pop = {
+				culture = havener_elf
+				size = 24000
+				religion = elven_forebears
+			}
+            create_pop = {
+				culture = havener_elf
+				size = 24000
+				religion = regent_court
+			}
+			create_pop = {
+				culture = imperial_gnome
+				size = 20000
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 259000
+				religion = ravelian
+			}
+            create_pop = {
+				culture = cannorian_half_orc
+				size = 259000
+				religion = corinite
+			}
+			#In order of population: halflings, goblins, half-orcs, dwarves, elves, gnomes, orcs, gnolls, harimari (maybe like 2k), ogres (like 1000 of them)
+		}
+	}
+
+	s:STATE_ISTRALORIAN_DALES = {
+		region_state:A01 = {
+			create_pop = {
+				culture = east_damerian
+				size = 104599
+				religion = ravelian
+			}
+            create_pop = {
+				culture = east_damerian
+				size = 941393
+				religion = corinite
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 13108	#just moon elf expats from moonhaven
+				religion = corinite
+			}
+		}
+	}
+
+	s:STATE_MOONHAVEN = {
+		region_state:A44 = {
+			create_pop = { #as per their MT, they go corinite and then they go ravelian. by the time of post blackpowder, most have seen ravelian light
+				culture = havener_elf
+				size = 180663
+				religion = ravelian
+			}
+            create_pop = {
+				culture = havener_elf
+				size = 88983
+				religion = corinite
+			}
+
+		}
+		region_state:A01 = {
+			create_pop = {
+				culture = costine
+				size = 59148
+				religion = ravelian
+			}
+            create_pop = {
+				culture = costine
+				size = 14787
+				religion = corinite
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 18540	
+			}
+		}
+	}
+
+	s:STATE_DAMERIAN_HEARTLANDS = {
+		region_state:A01 = {
+			create_pop = {
+				culture = east_damerian
+				size = 833568
+				religion = ravelian
+			}
+            create_pop = {
+				culture = east_damerian
+				size = 1389280
+				religion = corinite
+			}
+            create_pop = {
+				culture = east_damerian
+				size = 555712
+				religion = regent_court
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 5116
+			}
+		}
+	}
+
+	s:STATE_PASHAINE = {
+		region_state:A01 = {
+			create_pop = {
+				culture = east_damerian
+				size = 1294160
+				religion = ravelian
+			}
+            create_pop = {
+				culture = east_damerian
+				size = 161770
+				religion = corinite
+			}
+            create_pop = {
+				culture = east_damerian
+				size = 161770
+				religion = regent_court
+			}
+			create_pop = {
+				culture = vernman
+				size = 324214
+				religion = ravelian
+			}
+            create_pop = {
+				culture = vernman
+				size = 324215
+				religion = corinite
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 12183
+			}
+			create_pop = {
+				culture = imperial_gnome
+				size = 29031
+			}
+			create_pop = {
+				culture = beefoot_halfling
+				size = 273982
+				religion = ravelian
+			}
+			create_pop = {
+				culture = silver_dwarf
+				size = 25578
+			}
+		}
+		region_state:A33 = {
+			create_pop = {
+				culture = east_damerian
+				size = 95798
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 1928
+				religion = ravelian
+			}
+			create_pop = {
+				culture = imperial_gnome
+				size = 1264
+			}
+			create_pop = {
+				culture = wexonard
+				size = 20286
+				religion = ravelian
+			}
+		}
+	}
+
+	s:STATE_MENIBOR = {
+		region_state:A01 = {
+			create_pop = {
+				culture = vernman
+				size = 409500
+				religion = ravelian
+			}
+            create_pop = {
+				culture = vernman
+				size = 1228500
+				religion = corinite
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 4410
+			}
+			create_pop = {
+				culture = silver_dwarf
+				size = 212058
+			}
+			create_pop = {
+				culture = imperial_gnome
+				size = 5469
+			}
+		}
+	}
+
+	s:STATE_VERNE = {
+		region_state:A01 = {
+			create_pop = {
+				culture = vernman
+				size = 2186100
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 1311
+				religion = corinite
+			}
+			create_pop = {
+				culture = silver_dwarf
+				size = 10872
+				religion = corinite
+			}
+			create_pop = {
+				culture = beefoot_halfling
+				size = 41618
+				religion = corinite
+			}
+		}
+		region_state:A09 = {	#Busilari Stingport
+			create_pop = {
+				culture = vernman
+				size = 38431
+			}
+		}
+	}
+
+	s:STATE_KONWELL = {
+		region_state:A01 = {
+			create_pop = {
+				culture = esmari
+				size = 1315000
+				religion = ravelian
+			}
+			create_pop = {
+				culture = east_damerian
+				size = 384993
+				religion = ravelian
+			}
+			create_pop = {
+				culture = imperial_gnome
+				size = 67500
+				religion = ravelian
+			}
+            create_pop = {
+				culture = imperial_gnome
+				size = 45000
+				religion = the_thought
+			}
+		}
+	}
+
+	s:STATE_ESTALLEN = {
+		region_state:A01 = {	#A36
+			create_pop = {
+				culture = esmari
+				size = 303200
+				religion = ravelian
+			}
+            create_pop = {
+				culture = esmari
+				size = 1212800
+				religion = regent_court
+			}
+			create_pop = {
+				culture = east_damerian
+				size = 39316
+				religion = ravelian
+			}
+            create_pop = {
+				culture = east_damerian
+				size = 91738 #place where east damerian rc goes as Dameria is more contested with corinites
+				religion = regent_court
+			}
+			create_pop = {
+				culture = beefoot_halfling
+				size = 74538
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 2520
+			}
+		}
+	}
+
+	s:STATE_HIGH_ESMAR = {
+		region_state:A01 = {	#A39
+			create_pop = {
+				culture = esmari
+				size = 126000
+				religion = ravelian
+			}
+            create_pop = {
+				culture = esmari
+				size = 1134000
+				religion = regent_court
+			}
+			create_pop = {
+				culture = imperial_gnome
+				size = 7220
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 13241	#elvellen hearthswood
+				religion = regent_court
+			}
+			create_pop = {
+				culture = silver_dwarf
+				size = 7564
+				religion = regent_court
+			}
+		}
+	}
+
+	s:STATE_SILVERFORGE = {
+		region_state:A37 = {
+			create_pop = {
+				culture = silver_dwarf
+				size = 636454
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 384203
+				pop_type = slaves
+			}
+		}
+	}
+
+	s:STATE_ANVILWRIGHT = {
+		region_state:A37 = {
+			create_pop = {
+				culture = silver_dwarf
+				size = 226283
+				religion = ravelian
+			}
+            create_pop = {
+				culture = silver_dwarf
+				size = 851256
+				religion = regent_court
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 321920
+				pop_type = slaves
+			}
+			create_pop = {
+				culture = esmari
+				size = 76559
+				religion = ravelian
+			}
+            create_pop = {
+				culture = esmari
+				size = 142181
+				religion = regent_court
+			}
+			create_pop = {
+				culture = imperial_gnome
+				size = 48120
+			}
+			create_pop = { #Ibevari elves
+				culture = ibevari_elf
+				religion = regent_court
+				size = 20120
+			}
+		}
+	}
+
+	s:STATE_BENNON = {
+		region_state:A01 = {	#A38
+			create_pop = {
+				culture = esmari
+				size = 146490
+				religion = ravelian
+			}
+            create_pop = {
+				culture = esmari
+				size = 146490
+				religion = corinite
+			}
+            create_pop = {
+				culture = esmari
+				size = 195320
+				religion = regent_court
+			}
+			create_pop = {
+				culture = beefoot_halfling
+				size = 5722
+				religion = ravelian
+			}
+            create_pop = {
+				culture = beefoot_halfling
+				size = 5723
+				religion = corinite
+			}
+			create_pop = {
+				culture = imperial_gnome
+				size = 67306
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 13241
+			}
+			create_pop = {
+				culture = silver_dwarf
+				size = 12327
+			}
+		}
+
+		#Occupied Bennon from Carver Cartel and strip mining
+		region_state:A37 = {
+			create_pop = {
+				culture = silver_dwarf
+				size = 7633
+			}
+			create_pop = {
+				culture = esmari
+				size = 37944
+				religion = ravelian
+			}
+            create_pop = {
+				culture = esmari
+				size = 37944
+				religion = corinite
+			}
+            create_pop = {
+				culture = esmari
+				size = 50593
+				religion = regent_court
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 88819
+				pop_type = slaves
+			}
+		}
+
+	}
+
+	s:STATE_CANN_ESMAR = {
+		region_state:A01 = {	#A40
+			create_pop = {
+				culture = esmari
+				size = 733800
+				religion = ravelian
+			}
+            create_pop = {
+				culture = esmari
+				size = 1712200
+				religion = regent_court
+			}
+			create_pop = {
+				culture = beefoot_halfling
+				size = 165046
+				religion = ravelian
+			}
+            create_pop = {
+				culture = beefoot_halfling
+				size = 70734
+				religion = regent_court
+			}
+			create_pop = {
+				culture = imperial_gnome
+				size = 2646
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 3150
+			}
+		}
+	}
+
+	s:STATE_TELGEIR_CALASCANDAR = {
+		region_state:A01 = {
+			create_pop = {
+				culture = esmari
+				size = 329307
+				religion = ravelian
+			}
+            create_pop = {
+				culture = esmari
+				size = 329307
+				religion = regent_court
+			}
+			create_pop = {
+				culture = crownsman
+				size = 200376
+				religion = ravelian
+			}
+            create_pop = {
+				culture = crownsman
+				size = 200376
+				religion = regent_court
+			}
+			create_pop = {
+				culture = silver_dwarf
+				size = 9224	#telgeir
+				religion = ravelian	#these guys converted to ravelian as the vanburys are
+			}
+		}
+	}
+
+	s:STATE_DAMESCROWN = {
+		region_state:A01 = {
+			create_pop = {
+				culture = crownsman
+				size = 224663
+				religion = ravelian
+			}
+            create_pop = {
+				culture = crownsman
+				size = 1797304
+				religion = regent_court
+			}
+            create_pop = {
+				culture = crownsman
+				size = 224663
+				religion = corinite
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 8823
+			}
+			create_pop = {
+				culture = silver_dwarf
+				size = 29029
+			}
+			create_pop = {
+				culture = beefoot_halfling
+				size = 222389
+				religion = ravelian
+			}
+            create_pop = {
+				culture = beefoot_halfling
+				size = 222389
+				religion = regent_court
+			}
+		}
+	}
+
+	s:STATE_ARBARAN = {
+		region_state:A01 = {
+			create_pop = {
+				culture = arbarani
+				size = 1764000
+				religion = corinite
+			}
+            create_pop = {
+				culture = arbarani
+				size = 756000
+				religion = ravelian
+			}
+			create_pop = {
+				culture = gawedi
+				size = 105850
+				religion = corinite
+			}
+            create_pop = {
+				culture = gawedi
+				size = 26462
+				religion = ravelian
+			}
+
+		}
+	}
+
+	s:STATE_FREECESTIR = {
+		region_state:A01 = {
+			create_pop = {
+				culture = arbarani
+				size = 1499400
+				religion = corinite
+			}
+            create_pop = {
+				culture = arbarani
+				size = 642600
+				religion = ravelian
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 11340
+			}
+			create_pop = {
+				culture = silver_dwarf
+				size = 12978
+				religion = corinite
+			}
+			create_pop = {
+				culture = beefoot_halfling
+				size = 21457
+			}
+		}
+	}
+
+	s:STATE_BISAN = {
+		region_state:A05 = {
+			create_pop = {
+				culture = wexonard
+				size = 1246800
+				religion = corinite
+			}
+            create_pop = {
+				culture = wexonard
+				size = 311700
+				religion = ravelian
+			}
+			create_pop = {
+				culture = beefoot_halfling
+				size = 188058
+				religion = corinite
+			}
+            create_pop = {
+				culture = beefoot_halfling
+				size = 282086
+				religion = ravelian
+			}
+			create_pop = {
+				culture = havener_elf
+				size = 1260
+			}
+			create_pop = {
+				culture = havener_elf
+				pop_type = bureaucrats
+				size = 2520
+			}
+			create_pop = {
+				culture = havener_elf
+				pop_type = shopkeepers
+				size = 3780
+			}
+			create_pop = {
+				culture = havener_elf
+				pop_type = capitalists	#owns glassworks
+				size = 2520
+				religion = ravelian
+			}
+		}
+	}
+
+	s:STATE_WEX = {
+		region_state:A01 = {	#A41
+			create_pop = {
+				culture = wexonard
+				size = 1517040
+			}
+		}
+		region_state:A33 = {
+			create_pop = {
+				culture = wexonard
+				size = 379896
+			}
+
+		}
+	}
+
+	s:STATE_WESDAM = {
+		region_state:A01 = {
+			create_pop = {
+				culture = west_damerian
+				size = 604826
+				religion = ravelian
+			}
+            create_pop = {
+				culture = west_damerian
+				size = 1411262
+				religion = regent_court
+			}
+			create_pop = {
+				culture = ruby_dwarf
+				size = 13554
+			}
+			create_pop = {
+				culture = silver_dwarf
+				size = 32193
+			}
+			create_pop = {
+				culture = creek_gnome
+				size = 6363
+			}
+		}
+	}
+
+	s:STATE_NECKCLIFFE = {
+		region_state:A01 = {
+			create_pop = {
+				culture = west_damerian
+				size = 327701
+				religion = ravelian
+			}
+            create_pop = {
+				culture = west_damerian
+				size = 1310803
+				religion = regent_court
+			}
+			create_pop = {
+				culture = beefoot_halfling
+				size = 192239
+				religion = ravelian
+			}
+            create_pop = {
+				culture = beefoot_halfling
+				size = 192238
+				religion = regent_court
+			}
+		}
+	}
+
+	s:STATE_PEARLSEDGE = {
+		region_state:A01 = {
+			create_pop = {
+				culture = pearlsedger
+				size = 1625625
+			}
+			create_pop = {
+				culture = silver_dwarf
+				size = 17416
+			}
+		}
+		region_state:A03 = {	#Tretun
+			create_pop = {
+				culture = pearlsedger
+				size = 601126
+				religion = corinite #Tretun is Corinite, as per their EU4 ideas
+			}
+		}
+	}
+
+	s:STATE_CARNETER = {
+		region_state:A03 = {
+			create_pop = {
+				culture = west_damerian
+				size = 1092913
+				religion = regent_court
+			}
+            create_pop = {
+				culture = west_damerian
+				size = 468391
+				religion = ravelian
+			}
+			create_pop = {
+				culture = redglader_elf
+				size = 10160
+				religion = regent_court
+			}
+			create_pop = {
+				culture = redfoot_halfling
+				size = 32890
+				religion = regent_court
+			}
+		}
+	}
+
+	s:STATE_EXWES = {
+		region_state:A03 = {
+			create_pop = {
+				culture = exwesser
+				size = 610199
+				religion = ravelian
+			}
+            create_pop = {
+				culture = exwesser
+				size = 366119
+				religion = corinite
+			}
+            create_pop = {
+				culture = exwesser
+				size = 244079
+				religion = regent_court
+			}
+			create_pop = {
+				culture = beefoot_halfling
+				size = 356529
+				religion = ravelian
+			}
+            create_pop = {
+				culture = beefoot_halfling
+				size = 213917
+				religion = corinite
+			}
+            create_pop = {
+				culture = beefoot_halfling
+				size = 142611
+				religion = regent_court
+			}
+		}
+	}
+	
+	s:STATE_FLOODMARCHES = {
+		region_state:A04 = {
+			create_pop = {
+				culture = gawedi
+				size = 37206
+				religion = ravelian
+			}
+            create_pop = {
+				culture = gawedi
+				size = 334854
+				religion = corinite
+			}
+			create_pop = {
+				culture = vertesker
+				size = 234912
+				religion = ravelian
+			}
+            create_pop = {
+				culture = vertesker
+				size = 58728
+				religion = corinite
+			}
+			create_pop = {
+				culture = bluefoot_halfling
+				size = 8650
+				religion = ravelian
+			}
+            create_pop = {
+				culture = bluefoot_halfling
+				size = 77850
+				religion = corinite
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 14310
+				religion = ravelian
+			}
+            create_pop = {
+				culture = barumandi_orc
+				size = 33390
+				religion = corinite
+			}
+		}
+	}
+
+	s:STATE_VERTESK = {
+		region_state:A19 = {
+			create_pop = {
+				culture = vertesker
+				size = 1101020
+				religion = ravelian
+			}
+            create_pop = {
+				culture = vertesker
+				size = 275255
+				religion = corinite
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 111800
+				religion = ravelian
+			}
+            create_pop = {
+				culture = cannorian_half_orc
+				size = 111800
+				religion = corinite
+			}
+			create_pop = {
+				culture = barumandi_orc
+				size = 90600
+				religion = ravelian
+			}
+            create_pop = {
+				culture = barumandi_orc
+				size = 211400
+				religion = corinite
+			}
+		}
+		region_state:A04 = {
+			create_pop = {
+				culture = vertesker
+				size = 184000
+				religion = ravelian
+			}
+            create_pop = {
+				culture = vertesker
+				size = 46000
+				religion = corinite
+			}
+			create_pop = {
+				culture = gawedi
+				size = 152200
+				religion = corinite
+			}
+		}
+	}
+
+	s:STATE_LOWER_ALEN = {
+		region_state:A04 = {
+			create_pop = {
+				culture = gawedi
+				size = 1290189
+				religion = ravelian
+			}
+            create_pop = {
+				culture = gawedi
+				size = 1290189
+				religion = corinite
+			}
+			create_pop = {
+				culture = bluefoot_halfling
+				size = 146160
+				religion = ravelian
+			}
+			create_pop = {
+				culture = maldorian_elf
+				size = 13859
+				religion = ravelian
+			}
+            create_pop = {
+				culture = maldorian_elf
+				size = 13859
+				religion = corinite
+			}
+		}
+	}
+
+	s:STATE_GAWED = {	#as a whole Gawed is the next place to be Ravelianized
+		region_state:A04 = {
+			create_pop = {
+				culture = gawedi
+				size = 2173088
+				religion = ravelian
+			}
+            create_pop = {
+				culture = gawedi
+				size = 724362
+				religion = corinite
+			}
+			create_pop = {
+				culture = bluefoot_halfling
+				size = 54500
+				religion = ravelian
+			}
+            create_pop = {
+				culture = bluefoot_halfling
+				size = 54500
+				religion = corinite
+			}
+			create_pop = {
+				culture = silver_dwarf
+				size = 51900
+				religion = ravelian
+			}
+            create_pop = {
+				culture = silver_dwarf
+				size = 51900
+				religion = corinite
+			}
+		}
+	}
+
+	s:STATE_ALENIC_EXPANSE = {	
+		region_state:A04 = {
+			create_pop = {
+				culture = gawedi
+				size = 184326
+				religion = ravelian
+			}
+            create_pop = {
+				culture = gawedi
+				size = 1658935
+				religion = corinite
+			}
+			create_pop = {
+				culture = arbarani
+				size = 407643
+			}
+		}
+	}
+
+	s:STATE_GREATWOODS = {
+		region_state:A04 = {
+			create_pop = {
+				culture = gawedi
+				size = 359604
+				religion = ravelian
+			}
+            create_pop = {
+				culture = gawedi
+				size = 3236442
+				religion = corinite
+			}
+		}
+	}
+
+	s:STATE_BERONMOOR = {
+		region_state:A04 = {
+			create_pop = {
+				culture = moorman
+				size = 814716
+			}
+			create_pop = {
+				culture = gawedi
+				size = 23335
+				religion = ravelian
+			}
+            create_pop = {
+				culture = gawedi
+				size = 93340
+				religion = corinite
+			}
+		}
+	}
+
+	s:STATE_WESTMOORS_PROPER = {
+		region_state:A04 = {
+			create_pop = {
+				culture = moorman
+				size = 162600
+				religion = ravelian
+			}
+            create_pop = {
+				culture = moorman
+				size = 1463400
+				religion = corinite
+			}
+			create_pop = {
+				culture = gawedi
+				size = 104200
+				religion = ravelian
+			}
+            create_pop = {
+				culture = gawedi
+				size = 416802
+				religion = corinite
+			}
+		}
+	}
+
+	s:STATE_CODDORRAN_HEIGHTS = {
+		region_state:A04 = {
+			create_pop = {
+				culture = moorman
+				size = 274888
+				religion = corinite
+			}
+			create_pop = {
+				culture = cliff_gnome
+				size = 132357
+				religion = the_thought
+			}
+			create_pop = {
+				culture = kobildzani_kobold
+				size = 91463
+				religion = the_thought
+			}
+		}
+	}
+
+	s:STATE_SERPENTSHEAD = {
+		region_state:A04 = {
+			create_pop = {
+				culture = blue_reachman
+				size = 509400
+				religion = regent_court
+			}
+            create_pop = {
+				culture = blue_reachman
+				size = 679200
+				religion = corinite
+			}
+            create_pop = {
+				culture = blue_reachman
+				size = 254700
+				religion = skaldhyrric_faith
+			}
+            create_pop = {
+				culture = blue_reachman
+				size = 254700
+				religion = ravelian
+			}
+			create_pop = {
+				culture = maldorian_elf
+				size = 213756
+				religion = corinite
+			}
+            create_pop = {
+				culture = maldorian_elf
+				size = 213756
+				religion = regent_court
+			}
+			#Own the Furnite and Clothes
+			create_pop = {
+				culture = maldorian_elf
+				size = 90720
+				pop_type = shopkeepers
+				religion = regent_court
+			}
+
+			#Owns the glassworks + shipbuilding. Ravelian rich boys
+			create_pop = {
+				culture = gawedi
+				size = 90162
+				religion = ravelian
+			}
+            create_pop = {
+				culture = gawedi
+				size = 10018
+				religion = corinite
+			}
+
+			#Gray Orc/Half-orc diaspora
+			create_pop = {
+				culture = grombari_orc
+				size = 93577
+			}
+			create_pop = {
+				culture = grombari_half_orc
+				size = 168402
+			}
+		}
+	}
+
+	s:STATE_ADSHAW = {
+		region_state:A04 = {
+			create_pop = {
+				culture = blue_reachman
+				size = 788200
+				religion = ravelian
+			}
+            create_pop = {
+				culture = blue_reachman
+				size = 337800
+				religion = corinite
+			}
+			create_pop = {
+				culture = gawedi
+				size = 215810
+				religion = ravelian
+			}
+            create_pop = {
+				culture = gawedi
+				size = 92490
+				religion = corinite
+			}
+		}
+	}
+
+	s:STATE_BAYVEK = {
+		region_state:A18 = {
+			create_pop = {
+				culture = city_goblin
+				size = 1111950
+				religion = the_thought
+			}
+			create_pop = {
+				culture = blue_reachman
+				size = 706685
+				religion = ravelian
+			}
+            create_pop = {
+				culture = blue_reachman
+				size = 201910
+				religion = corinite
+			}
+            create_pop = {
+				culture = blue_reachman
+				size = 100955
+				religion = the_thought
+			}
+			create_pop = {
+				culture = cliff_gnome
+				size = 15750
+				religion = the_thought
+			}
+			#Gray Orc/Half-orc diaspora
+			create_pop = {
+				culture = grombari_half_orc
+				size = 172997
+				religion = corinite
+			}
+			create_pop = {
+				culture = grombari_orc
+				size = 153607
+			}
+		}
+	}
+
+	s:STATE_REACHSPIER = {
+		region_state:A04 = {
+			create_pop = {
+				culture = blue_reachman
+				size = 204200
+				religion = corinite
+			}
+            create_pop = {
+				culture = blue_reachman
+				size = 816800
+				religion = regent_court
+			}
+			#Gray Orc/Half-orc diaspora
+			create_pop = {
+				culture = grombari_half_orc
+				size = 542300
+				religion = corinite
+			}
+			create_pop = {
+				culture = grombari_orc
+				size = 202909
+			}
+		}
+	}
+
+	s:STATE_BALMIRE = {
+		region_state:A04 = {
+			create_pop = {
+				culture = gawedi
+				size = 956973
+				religion = corinite
+			}
+			create_pop = {
+				culture = cannorian_half_orc
+				size = 245857
+			}
+		}
+	}
+	
+	s:STATE_SPORREYN = {
+		region_state:A04 = {
+			create_pop = {
+				culture = dalr
+				size = 56512
+				religion = ravelian
+			}
+		}
+        region_state:A04 = {
+			create_pop = {
+				culture = dalr
+				size = 56012
+				religion = skaldhyrric_faith
+			}
+		}
+	}
+	
+	s:STATE_FJORDSBAY = {
+		region_state:A04 = {
+			create_pop = {
+				culture = dalr
+				size = 53613
+				religion = ravelian
+			}
+            create_pop = {
+				culture = dalr
+				size = 214452
+				religion = skaldhyrric_faith
+			}
+			create_pop = {
+				culture = fjord_troll
+				size = 94878
+			}
+		}
+	}
+	
+	s:STATE_WEST_OLAVLUND = {
+		region_state:A04 = {
+			create_pop = {
+				culture = olavish
+				size = 61922
+				religion = ravelian
+			}
+            create_pop = {
+				culture = olavish
+				size = 247686
+				religion = skaldhyrric_faith
+			}
+			create_pop = {
+				culture = jarnklo_harpy
+				size = 22875
+			}
+		}
+		region_state:A10 = {
+			create_pop = {
+				culture = grombari_half_orc
+				size = 23944
+			}
+			create_pop = {
+				culture = grombari_orc
+				size = 33944
+			}
+			create_pop = {
+				culture = olavish
+				size = 87632
+				religion = corinite
+			}
+            create_pop = {
+				culture = olavish
+				size = 350529
+				religion = skaldhyrric_faith
+			}
+			create_pop = {
+				culture = jarnklo_harpy
+				size = 10894
+			}
+			create_pop = {
+				culture = iron_dwarf # stone_dwarf
+				size = 3649
+				religion = skaldhyrric_faith
+			}
+		}
+	}
+
+	s:STATE_GIANTS_MANSE = {
+		region_state:A10 = {
+			create_pop = {
+				culture = grombari_half_orc
+				size = 68809
+			}
+			create_pop = {
+				culture = olavish
+				size = 5232
+			}
+			create_pop = {
+				culture = grombari_orc
+				size = 5645
+			}
+		}
+	}
+	
+	s:STATE_REVRLAND = {
+		region_state:A04 = {
+			create_pop = {
+				culture = dalr
+				size = 300370
+				religion = ravelian
+			}
+            create_pop = {
+				culture = dalr
+				size = 557830
+				religion = skaldhyrric_faith
+			}
+			create_pop = {
+				culture = iron_dwarf # stone_dwarf
+				size = 11843
+				religion = skaldhyrric_faith
+			}
+			create_pop = {
+				culture = cliff_gnome
+				size = 2746
+			}
+		}
+	}
+	
+	s:STATE_BJARNLAND = {
+		region_state:A04 = {
+			create_pop = {
+				culture = dalr
+				size = 714215
+				religion = ravelian
+			}
+            create_pop = {
+				culture = dalr
+				size = 838427
+				religion = skaldhyrric_faith
+			}
+			# Some Gawedi Magnates who've moved over
+			create_pop = {
+				culture = gawedi
+				religion = ravelian
+				size = 70182
+			}
+			create_pop = {
+				culture = cliff_gnome
+				size = 23899
+			}
+			create_pop = {
+				culture = jarnklo_harpy
+				size = 12945
+			}
+		}
+	}
+	
+	s:STATE_FEGRAS = {
+		region_state:A04 = {
+			create_pop = {
+				culture = dalr
+				size = 238125
+				religion = ravelian
+			}
+            create_pop = {
+				culture = dalr
+				size = 582997
+				religion = skaldhyrric_faith
+			}
+			create_pop = {
+				culture = iron_dwarf # stone_dwarf
+				size = 17785
+				religion = skaldhyrric_faith
+			}
+		}
+	}
+	
+	s:STATE_SIDAETT = {
+		region_state:A04 = {
+			create_pop = {
+				culture = dalr
+				size = 351397
+				religion = ravelian
+			}
+            create_pop = {
+				culture = dalr
+				size = 746719
+				religion = skaldhyrric_faith
+			}
+			create_pop = {
+				culture = jarnklo_harpy
+				size = 113264
+			}
+		}
+	}
+
+	s:STATE_TANNUSVALE = {
+		region_state:A10 = {
+			create_pop = {
+				culture = grombari_half_orc
+				size = 601636
+			}
+			create_pop = {
+				culture = grombari_orc
+				size = 390862
+			}
+			create_pop = {
+				culture = white_reachman
+				size = 494449
+			}
+		}
+	}
+
+	s:STATE_ESALD = {
+		region_state:A10 = {
+			create_pop = {
+				culture = grombari_half_orc
+				size = 806337
+			}
+			create_pop = {
+				culture = grombari_orc
+				size = 658300
+			}
+			create_pop = {
+				culture = white_reachman
+				size = 743907
+			}
+		}
+	}
+
+	s:STATE_CEDESCK = {
+		region_state:A10 = {
+			create_pop = {
+				culture = white_reachman
+				size = 693542
+			}
+			create_pop = {
+				culture = grombari_half_orc
+				size = 575985
+			}
+			create_pop = {
+				culture = grombari_orc
+				size = 247666
+			}
+		}
+	}
+
+	s:STATE_VROREN = {
+		region_state:A10 = {
+			create_pop = {
+				culture = grombari_orc
+				size = 1177657
+			}
+			create_pop = {
+				culture = grombari_half_orc
+				size = 761436
+			}
+			create_pop = {
+				culture = white_reachman
+				size = 196798
+			}
+			create_pop = {
+				culture = olavish
+				size = 30704
+			}
+		}
+	}
+
+	s:STATE_GIANTS_TEARS = {
+		region_state:A10 = {
+			create_pop = {
+				culture = grombari_orc
+				size = 1353456
+			}
+			create_pop = {
+				culture = grombari_half_orc
+				size = 655949
+			}
+			create_pop = {
+				culture = olavish
+				size = 55983
+			}
+		}
+	}
+
+	s:STATE_GIFRBYGD = {
+		region_state:A10 = {
+			create_pop = {
+				culture = grombari_orc
+				size = 191053
+			}
+			create_pop = {
+				culture = grombari_half_orc
+				size = 115179
+			}
+			create_pop = {
+				culture = olavish
+				size = 20983
+			}
+			create_pop = {
+				culture = forest_troll
+				size = 30491
+			}
+		}
+	}
+
+	s:STATE_EAST_OLAVLUND = {
+		region_state:A10 = {
+			create_pop = {
+				culture = grombari_half_orc
+				size = 114341
+			}
+			create_pop = {
+				culture = grombari_orc
+				size = 174341
+			}
+			create_pop = {
+				culture = olavish
+				size = 90516
+				religion = corinite
+			}
+            create_pop = {
+				culture = olavish
+				size = 362066
+				religion = skaldhyrric_faith
+			}
+			create_pop = {
+				culture = jarnklo_harpy
+				size = 16484
+			}
+		}
+	}
+
+	s:STATE_GULLMORK = {
+		region_state:A10 = {
+			create_pop = {
+				culture = olavish
+				size = 47439
+			}
+			create_pop = {
+				culture = grombari_half_orc
+				size = 43124
+			}
+			create_pop = {
+				culture = grombari_orc
+				size = 18675
+			}
+			create_pop = {
+				culture = jarnklo_harpy
+				size = 115848
+			}
+			create_pop = {
+				culture = forest_troll
+				size = 23184
+			}
+		}
+	}
+
+	s:STATE_KHENAK = {
+		region_state:A09 = {
+			create_pop = {
+				culture = busilari
+				size = 1390939
+			}
+			create_pop = {
+				culture = dovesworn_gnoll
+				size = 50893
+			}
+		}
+	}
+
+	s:STATE_HAPAINE = {
+		region_state:A09 = {
+			create_pop = {
+				culture = busilari
+				size = 3227184
+			}
+		}
+	}
+
+	s:STATE_LIONCOST = {
+		region_state:A09 = {
+			create_pop = {
+				culture = busilari
+				size = 1716184
+			}
+		}
+	}
+
+	s:STATE_LORIN_CANNO = {
+		region_state:A09 = {
+			create_pop = {
+				culture = busilari
+				size = 1765917
+			}
+		}
+	}
+
+	s:STATE_EBORTHIL = {
+		region_state:A09 = {
+			create_pop = {
+				culture = tefori
+				size = 2060671
+			}
+		}
+	}
+}

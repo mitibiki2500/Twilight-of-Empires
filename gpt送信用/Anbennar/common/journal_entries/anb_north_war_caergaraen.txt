@@ -1,0 +1,85 @@
+﻿je_caergaraen_north_war = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	group = je_group_foreign_affairs
+
+	immediate = {
+		c:C55 = {
+			save_scope_as = nw_amastol
+		}
+		c:C39 = {
+			save_scope_as = nw_ameion
+		}
+		ROOT = {
+			save_scope_as = root_country
+		}
+		trigger_event = {
+			id = anb_north_war.2
+			popup = yes
+		}
+	}
+
+	is_shown_when_inactive = {
+		c:C54 ?= ROOT
+		NOT = {
+			OR = {
+				has_variable = ameion_lost_north_war
+				has_variable = ameion_won_north_war
+			}
+		}
+	}
+
+	possible = {
+		OR = {
+			ROOT ?= {
+				has_technology_researched = nationalism
+			}
+			c:C39 ?= {
+				has_technology_researched = nationalism
+			}
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+
+			text = anb_north_war.je
+
+			p:x1A035F = {
+				OR = {
+					owner = ROOT
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+	}
+
+
+	on_complete = {
+		trigger_event = {
+			id = anb_north_war.4
+			popup = yes
+		}
+	}
+
+	fail = {
+		custom_tooltip = {
+
+			text = anb_north_war.ca_fail
+
+			has_variable = ameion_won_north_war
+		}
+	}
+
+	on_fail = {
+		trigger_event = {
+			id = anb_north_war.6
+			popup = yes
+		}
+	}
+
+	weight = 1000
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

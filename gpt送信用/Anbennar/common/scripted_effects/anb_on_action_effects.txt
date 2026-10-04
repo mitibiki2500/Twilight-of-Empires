@@ -1,0 +1,16 @@
+﻿reload_institution_modifier = {
+	if = {
+		limit = { owner ?= { has_institution = institution_schools}}
+		remove_modifier = arakeprun_shadowweaver_reform_education_modifier
+		if = {
+			limit = { owner = { 
+				has_variable = arakeprun_shadowweaver_reform
+				has_law = law_type:law_public_schools
+			} }
+			add_modifier = {
+				name = arakeprun_shadowweaver_reform_education_modifier
+				multiplier = owner.institution:institution_schools.investment
+			}
+		}
+	}
+}

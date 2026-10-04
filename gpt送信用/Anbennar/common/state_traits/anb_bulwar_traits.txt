@@ -1,0 +1,53 @@
+﻿#Make sure to update on_river scripted_trigger after every new river trait
+
+state_trait_suran_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+		state_market_access_price_impact = 0.05
+	}
+}
+
+state_trait_buranun_river = {
+	icon = "gfx/interface/icons/state_trait_icons/river.dds"
+	
+	modifier = {
+		state_infrastructure_add = 20
+	}
+}
+
+state_trait_tungr_mountains = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_harpy_hills = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_sad_sur = {
+	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
+	
+	modifier = {
+		state_infrastructure_mult = -0.1
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_bahari_woodlands = {
+	icon = "gfx/interface/icons/state_trait_icons/resources_lumber.dds"
+	
+	modifier = {
+		building_group_bg_logging_throughput_add = 0.2
+	}
+}

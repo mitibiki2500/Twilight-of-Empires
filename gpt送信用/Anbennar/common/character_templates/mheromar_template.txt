@@ -1,0 +1,27 @@
+﻿malachite_knight_character_template = {	#Malachite
+	first_name = Mheromar
+	last_name = Malartak
+	historical = yes
+	culture = cu:snecboth
+	religion = rel:united_season_court
+	home_region = STATE_JHORGASHIRR	#born into the local Snecboth clans in the 700s
+	is_agitator = yes
+	is_general = yes
+	female = yes
+	interest_group = ig_rural_folk
+	ideology = ideology_eordand_unification_leader
+	birth_date = 695.10.18
+	dna = dna_mheromar_malartak
+	traits = {
+		trait_immortal
+		powerful_mage
+		meticulous
+		persistent
+		pious
+		basic_offensive_planner
+	}
+	on_created = {
+		set_character_immortal = yes
+		set_global_variable = mheromar_is_alive_global_var
+	}
+}

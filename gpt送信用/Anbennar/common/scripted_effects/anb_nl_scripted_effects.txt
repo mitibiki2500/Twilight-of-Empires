@@ -1,0 +1,44 @@
+﻿decrease_woodwaller_stronghold_size = {
+	if = {
+		limit = {
+			has_modifier = nl_woodswaller_stronghold
+		}
+		remove_modifier = nl_woodswaller_stronghold
+		add_modifier = {
+			name = nl_woodswaller_stronghold_small
+			days = long_modifier_time
+		}
+	}
+	else_if = {
+		limit = {
+			has_modifier = nl_woodswaller_stronghold_small
+		}
+		remove_modifier = nl_woodswaller_stronghold_small
+	}
+}
+
+#For random events
+nl_unity_increase_10 = {
+	je:je_northern_thaw_main = {
+		add_progress = { value = 10 name = northern_thaw_league_unity_bar }
+	}
+}
+
+nl_unity_decrease_10 = {
+	je:je_northern_thaw_main = {
+		add_progress = { value = -10 name = northern_thaw_league_unity_bar }
+	}
+}
+
+#For JE rewards/unique events
+nl_unity_increase_50 = {
+	je:je_northern_thaw_main = {
+		add_progress = { value = 50 name = northern_thaw_league_unity_bar }
+	}
+}
+
+nl_unity_decrease_50 = {
+	je:je_northern_thaw_main = {
+		add_progress = { value = -50 name = northern_thaw_league_unity_bar }
+	}
+}

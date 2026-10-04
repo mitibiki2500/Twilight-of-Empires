@@ -1,0 +1,127 @@
+﻿# group = this is the law_group a law belongs to
+# icon = graphical icon shown in-game
+# modifier = {} modifier on country for having adopted this law
+
+law_magocracy = {
+	group = lawgroup_governance_principles
+	
+	icon = "gfx/interface/icons/law_icons/theocracy.dds"
+	
+	progressiveness = -25
+
+	unlocking_technologies = {
+		magocracy
+	}
+
+	disallowing_laws = {
+		law_traditional_magic_banned
+		law_hive_mind 
+	}
+
+	can_impose = {
+		OR = {
+			AND = {
+				is_in_same_power_bloc = scope:target_country
+				AND = {
+					modifier:country_can_impose_same_lawgroup_governance_principles_in_power_bloc_bool = yes
+					has_law = scope:law
+				}
+			}
+			can_impose_law_default = yes
+		}
+	}
+	
+	on_enact = {
+		if = {
+			limit = {
+				has_journal_entry = je_broken_empire
+				OR = {
+					has_law = law_type:law_parliamentary_republic
+					has_law = law_type:law_presidential_republic
+				}
+			}
+			custom_tooltip = {
+				text = broken_empire_increase_200_tt
+				change_variable = { name = anbennar_var add = 200 }
+			}
+		}
+	}
+
+	modifier = {
+		country_legitimacy_headofstate_add = 20
+		country_legitimacy_ideological_incoherence_mult = 0.1
+		country_archmages_pol_str_mult = 0.5
+		country_mages_pol_str_mult = 0.5
+		country_authority_add = 150
+		country_magical_expertise_mult = 0.25
+	}
+	
+#	possible_political_movements = {
+#		law_monarchy
+#		law_presidential_republic
+#		law_parliamentary_republic
+#		law_council_republic
+#	}
+
+#	pop_support = { TODO See if this has been replaced with a new effect
+#		value = 0
+#		
+#		add = {
+#			desc = "POP_MAGES"
+#			if = {
+#				limit = { 
+#					OR = {
+#						is_pop_type = archmages
+#						is_pop_type = mages
+#					}
+#				}
+#				value = 0.33
+#			}
+#		}
+#	}
+	
+	ai_will_do = {
+		exists = ruler
+		ruler = {
+			has_magocrat_ideology = yes
+		}
+	}
+
+	ai_enact_weight_modifier = { #Petitions
+		value = 0
+		
+		if = {
+			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
+			add = 750
+		}
+	}
+	
+	ai_impose_chance = {
+		value = 0
+		
+		if = {
+			limit = {
+				has_law = law_type:law_magocracy
+				has_strategy = ai_strategy_reactionary_agenda
+				#power_bloc ?= { has_identity = identity:identity_religious }
+				#religion = scope:target_country.religion
+				#scope:target_country = { # Is their law different enough from what we want to impose?					
+				#	NOT = { has_law = law_type:law_monarchy }
+				#}				
+			}
+			
+			add = base_impose_law_weight
+			if = {
+				limit = { 
+					scope:target_country = { has_law = law_type:law_council_republic } 
+					NOT = { has_strategy = ai_strategy_egalitarian_agenda }
+				}
+				multiply = 5
+			}		
+			else = {
+				multiply = 0.5 # AI is less likely to mess with governance principles unless dealing with council republics
+			}
+		}
+	}	
+}
+

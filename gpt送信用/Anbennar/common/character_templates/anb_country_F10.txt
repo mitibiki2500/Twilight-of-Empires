@@ -1,0 +1,26 @@
+﻿### Garlas Kel character template file ###
+
+F10_Nuzha_szal_Fazil = {
+	first_name = Nuzha
+	last_name = szal_Fazil
+	historical = yes
+	ruler = yes
+	female = yes
+	is_general = yes
+	birth_date = 10.1.1
+	interest_group = ig_landowners
+	ig_leader = yes
+	ideology = ideology_magocrat
+	culture = cu:bahari
+	religion = rel:old_sun_cult
+	traits = {
+		trait_immortal
+		reserved
+		imposing
+		mountain_commander
+		powerful_mage
+	}
+	on_created = {
+		set_character_immortal = yes
+	}
+}

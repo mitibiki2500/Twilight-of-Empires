@@ -1,0 +1,28 @@
+﻿namespace = anb_magical_expertise
+
+# Startup initialization event (can't happen on day 1 b/c trying to do a lot on start-up goes weird)
+anb_magical_expertise.1 = {
+	type = country_event
+	title = anb_magical_expertise.1.t
+	desc = anb_magical_expertise.1.d
+	flavor = anb_magical_expertise.1.f
+	duration = 1
+	hidden = yes
+	immediate = {
+		update_production_spell = yes
+		update_military_spell = yes
+		update_society_spell = yes
+	}
+}
+
+anb_magical_expertise.2 = {
+	type = country_event
+	title = anb_magical_expertise.1.t
+	desc = anb_magical_expertise.1.d
+	flavor = anb_magical_expertise.1.f
+	duration = 1
+	hidden = yes
+	immediate = {
+		initialize_spells = yes
+	}
+}
