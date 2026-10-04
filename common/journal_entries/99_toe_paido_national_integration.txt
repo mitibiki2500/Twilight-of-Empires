@@ -59,62 +59,15 @@ je_toe_paido_cultural_integration = {
 	should_be_pinned_by_default_uninvolved_or_context = yes
 }
 
+# Disabled: this JE depended on Vanilla French divided-monarchist progress bars.
+# ToE disables those Vanilla bars (same compatibility approach as Anbennar), so keeping
+# this JE would leave dangling progress-bar database references.
 je_toe_paido_monarchist_rivalry = {
 	icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
 	group = je_group_historical_content
 
 	is_shown_in_lobby = { c:PAI ?= this }
-
-	modifiers_while_active = { toe_paido_rival_monarchs }
-
-	# ToEでは開始時にleader未生成のIGが存在するため、
-	# 史実フランス用 fra_* scripted effect は使用しない。
-	# これらは全IGのleader存在を前提にしており、unset scopeを大量発生させていた。
-
-	scripted_progress_bar = divided_monarchists_orleanist_progress_bar
-	scripted_progress_bar = divided_monarchists_legitimist_progress_bar
-
-	on_monthly_pulse = {
-		effect = {
-			set_variable = { name = toe_paido_military_facility_levels value = 0 }
-			every_scope_building = {
-				limit = { is_building_group = bg_military }
-				ROOT = { change_variable = { name = toe_paido_military_facility_levels add = PREV.level } }
-			}
-			scope:journal_entry = {
-				add_progress = {
-					name = divided_monarchists_orleanist_progress_bar
-					value = root.var:toe_paido_military_facility_levels
-				}
-			}
-		}
-	}
-
-	complete = {
-		country_has_monarchy_law = yes
-		scope:journal_entry = {
-			OR = {
-				"scripted_bar_progress(divided_monarchists_orleanist_progress_bar)" >= divided_monarchists_upper_bound
-				"scripted_bar_progress(divided_monarchists_legitimist_progress_bar)" >= divided_monarchists_upper_bound
-			}
-		}
-	}
-
-	on_complete = {
-		if = {
-			limit = {
-				scope:journal_entry = {
-					"scripted_bar_progress(divided_monarchists_orleanist_progress_bar)" > "scripted_bar_progress(divided_monarchists_legitimist_progress_bar)"
-				}
-			}
-			set_variable = toe_paido_innovative_monarchs_won
-		}
-		else = { set_variable = toe_paido_conservative_monarchs_won }
-	}
-
-	invalid = { NOT = { country_has_monarchy_law = yes } }
-
-	weight = 100
+	invalid = { always = yes }
+	weight = 0
 	transferable = no
-	should_be_pinned_by_default_uninvolved_or_context = yes
 }
